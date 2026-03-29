@@ -304,7 +304,7 @@
     </div>
     <div class="fld">
       <label for="fType">Business Type</label>
-      <input type="text" id="fType" placeholder="e.g. Restaurant">
+      <input type="text" id="fType" placeholder="e.g. 1 (Restaurant)">
     </div>
     <div class="fld">
       <label for="fRating">Rating</label>
@@ -333,13 +333,13 @@
       <table>
         <thead>
           <tr>
-            <th class="sortable" data-key="name">Name <span class="arrow"></span></th>
+            <th class="sortable" data-key="n">Name <span class="arrow"></span></th>
             <th>Address</th>
             <th>Postcode</th>
             <th>Local Authority</th>
             <th>Type</th>
-            <th class="sortable" data-key="rating">Rating <span class="arrow"></span></th>
-            <th class="sortable" data-key="lastInspection">Last Inspected <span class="arrow"></span></th>
+            <th class="sortable" data-key="r">Rating <span class="arrow"></span></th>
+            <th class="sortable" data-key="rd">Last Inspected <span class="arrow"></span></th>
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
@@ -371,14 +371,21 @@
 
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
-  const REF = db.ref("daydine");
+  const REF = db.ref("daydine/establishments");
+
+  // Field mapping: compact DB keys → display names
+  // n=name, a=address, la=local authority, pc=postcode,
+  // rd=last inspection date, t=business type (numeric), r=rating, id=FSA ID, lat/lon
 
   const PAGE_SIZE = 50;
   let results = [];
   let page = 0;
-  let sortKey = "name";
+  let sortKey = "n";
   let sortAsc = true;
   let expandedId = null;
+
+  // Friendly sort-key labels for the meta bar
+  const SORT_LABELS = { n: "name", r: "rating", rd: "last inspected" };
 
   // DOM
   const fName   = document.getElementById("fName");
@@ -414,7 +421,7 @@
   async function search() {
     const la     = fLA.value.trim();
     const name   = fName.value.trim().toLowerCase();
-    const type   = fType.value.trim().toLowerCase();
+    const type   = fType.value.trim();
     const rating = fRating.value;
 
     if (!la) {
@@ -433,14 +440,15 @@
       else {
         let entries = Object.entries(data).map(([id, d]) => ({ _id: id, ...d }));
 
-        if (name)        entries = entries.filter(d => d.name && d.name.toLowerCase().includes(name));
-        if (type)        entries = entries.filter(d => d.type && d.type.toLowerCase().includes(type));
-        if (rating !== "") entries = entries.filter(d => d.rating === parseInt(rating, 10));
+        // Client-side filters on compact fields
+        if (name)        entries = entries.filter(d => d.n && d.n.toLowerCase().includes(name));
+        if (type)        entries = entries.filter(d => d.t !== undefined && String(d.t) === type);
+        if (rating !== "") entries = entries.filter(d => d.r !== undefined && d.r === parseInt(rating, 10));
 
         results = entries;
       }
 
-      sortKey = "name"; sortAsc = true;
+      sortKey = "n"; sortAsc = true;
       applySort();
       updateSortArrows();
       page = 0;
@@ -458,12 +466,12 @@
   function applySort() {
     results.sort((a, b) => {
       let va = a[sortKey], vb = b[sortKey];
-      if (sortKey === "rating") {
+      if (sortKey === "r") {
         va = (typeof va === "number") ? va : -1;
         vb = (typeof vb === "number") ? vb : -1;
         return sortAsc ? va - vb : vb - va;
       }
-      if (sortKey === "lastInspection") {
+      if (sortKey === "rd") {
         va = va ? new Date(va).getTime() : 0;
         vb = vb ? new Date(vb).getTime() : 0;
         return sortAsc ? va - vb : vb - va;
@@ -483,7 +491,15 @@
         arrow.textContent = "";
       }
     });
-    metaSort.textContent = "Sorted by " + sortKey + (sortAsc ? " ↑" : " ↓");
+    metaSort.textContent = "Sorted by " + (SORT_LABELS[sortKey] || sortKey) + (sortAsc ? " ↑" : " ↓");
+  }
+
+  // ---- Format helpers ----
+  function formatDate(rd) {
+    if (!rd) return "—";
+    const d = new Date(rd);
+    if (isNaN(d.getTime())) return esc(rd);
+    return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
   }
 
   // ---- Render ----
@@ -508,13 +524,13 @@
       const tr = document.createElement("tr");
       if (d._id === expandedId) tr.classList.add("expanded-parent");
       tr.innerHTML =
-        '<td class="name-cell">' + esc(d.name || "—") + '</td>' +
-        '<td>' + esc(d.address || "—") + '</td>' +
-        '<td>' + esc(d.postcode || "—") + '</td>' +
+        '<td class="name-cell">' + esc(d.n || "—") + '</td>' +
+        '<td>' + esc(d.a || "—") + '</td>' +
+        '<td>' + esc(d.pc || "—") + '</td>' +
         '<td>' + esc(d.la || "—") + '</td>' +
-        '<td>' + esc(d.type || "—") + '</td>' +
-        '<td>' + ratingHTML(d.rating) + '</td>' +
-        '<td>' + esc(d.lastInspection || "—") + '</td>';
+        '<td>' + esc(d.t !== undefined ? String(d.t) : "—") + '</td>' +
+        '<td>' + ratingHTML(d.r) + '</td>' +
+        '<td>' + formatDate(d.rd) + '</td>';
       tr.querySelector(".name-cell").addEventListener("click", () => toggleExpand(d._id));
       tbody.appendChild(tr);
 
@@ -549,33 +565,18 @@
   }
 
   function buildDetail(d) {
-    const s = d.scores || {};
     return '<div class="detail-inner">' +
-      dlBlock("Full Address", (d.address || "") + (d.postcode ? ", " + d.postcode : "")) +
+      dlBlock("Full Address", (d.a || "") + (d.pc ? ", " + d.pc : "")) +
       dlBlock("Local Authority", d.la) +
-      dlBlock("Business Type", d.type) +
-      dlBlock("Last Inspection", d.lastInspection) +
-      scoreBlock("Hygiene", s.hygiene) +
-      scoreBlock("Structural", s.structural) +
-      scoreBlock("Management", s.management) +
+      dlBlock("Business Type", d.t !== undefined ? String(d.t) : "—") +
+      dlBlock("FSA ID", d.id) +
+      dlBlock("Last Inspection", formatDate(d.rd)) +
+      dlBlock("Coordinates", (d.lat && d.lon) ? d.lat + ", " + d.lon : "—") +
     '</div>';
   }
 
   function dlBlock(label, val) {
     return '<div><div class="dl-label">' + esc(label) + '</div><div class="dl-val">' + esc(val || "—") + '</div></div>';
-  }
-
-  function scoreBlock(label, val) {
-    if (val === undefined || val === null) return dlBlock(label, "—");
-    const max = (label === "Management") ? 30 : 20;
-    const pct = Math.max(0, Math.min(100, ((max - val) / max) * 100));
-    const color = pct >= 70 ? "var(--green)" : pct >= 40 ? "var(--yellow)" : "var(--red)";
-    return '<div>' +
-      '<div class="dl-label">' + esc(label) + '</div>' +
-      '<div class="score-bar-wrap">' +
-        '<div class="score-bar"><div class="score-bar-fill" style="width:' + pct + '%;background:' + color + ';"></div></div>' +
-        '<span class="score-val" style="color:' + color + '">' + val + '</span>' +
-      '</div></div>';
   }
 
   function ratingHTML(r) {
