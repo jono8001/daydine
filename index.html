@@ -3,212 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DayDine – UK Restaurant Database</title>
+  <title>DayDine – UK Restaurant Ratings</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --clr-bg: #f5f6f8;
-      --clr-card: #ffffff;
-      --clr-primary: #1a56db;
-      --clr-primary-hover: #1444b0;
-      --clr-text: #1e1e1e;
-      --clr-muted: #6b7280;
-      --clr-border: #e5e7eb;
-      --clr-green: #16a34a;
-      --clr-amber: #d97706;
-      --clr-red: #dc2626;
-      --clr-badge-bg: #eff6ff;
-      --radius: 10px;
-      --shadow: 0 1px 4px rgba(0,0,0,.06);
+      --bg: #0e1117;
+      --bg-card: #161b22;
+      --bg-row-hover: #1c2333;
+      --bg-expanded: #131820;
+      --border: #30363d;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-hover: #79b8ff;
+      --green: #3fb950;
+      --yellow: #d29922;
+      --orange: #db6d28;
+      --red: #f85149;
+      --radius: 8px;
     }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--clr-bg);
-      color: var(--clr-text);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.5;
       min-height: 100vh;
     }
 
     /* ---- Header ---- */
     header {
-      background: var(--clr-primary);
-      color: #fff;
-      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 1.5rem;
     }
     .header-inner {
-      max-width: 1080px;
+      max-width: 1200px;
       margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-    .logo { font-size: 1.6rem; font-weight: 700; letter-spacing: -.02em; }
-    .logo span { font-weight: 400; opacity: .85; }
-    .subtitle { font-size: .88rem; opacity: .8; margin-top: .15rem; }
+    .logo { font-size: 1.5rem; font-weight: 700; color: var(--accent); letter-spacing: -.02em; }
+    .tagline { font-size: .85rem; color: var(--text-muted); }
 
-    /* ---- Search panel ---- */
-    .search-panel {
-      background: var(--clr-card);
-      border-bottom: 1px solid var(--clr-border);
-      padding: 1.25rem 1.5rem;
-      box-shadow: var(--shadow);
+    /* ---- Filters ---- */
+    .filters {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
     }
-    .search-inner {
-      max-width: 1080px;
+    .filters-inner {
+      max-width: 1200px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: .75rem;
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
       align-items: end;
     }
-    .field label {
-      display: block;
-      font-size: .78rem;
+    .fld { display: flex; flex-direction: column; gap: .25rem; }
+    .fld label {
+      font-size: .7rem;
       font-weight: 600;
-      color: var(--clr-muted);
       text-transform: uppercase;
-      letter-spacing: .04em;
-      margin-bottom: .3rem;
+      letter-spacing: .05em;
+      color: var(--text-muted);
     }
-    .field input, .field select {
-      width: 100%;
-      padding: .55rem .75rem;
-      font-size: .92rem;
-      border: 1px solid var(--clr-border);
-      border-radius: 8px;
-      background: #fff;
-      color: var(--clr-text);
+    .fld input, .fld select {
+      padding: .5rem .7rem;
+      font-size: .85rem;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 6px;
       outline: none;
-      transition: border-color .15s;
+      min-width: 160px;
     }
-    .field input:focus, .field select:focus {
-      border-color: var(--clr-primary);
-    }
-    .btn-search {
-      padding: .6rem 1.5rem;
-      background: var(--clr-primary);
-      color: #fff;
-      font-size: .92rem;
+    .fld input:focus, .fld select:focus { border-color: var(--accent); }
+    .fld select option { background: var(--bg-card); }
+    .btn {
+      padding: .5rem 1.3rem;
+      background: var(--accent);
+      color: #000;
       font-weight: 600;
+      font-size: .85rem;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
       transition: background .15s;
-      white-space: nowrap;
+      align-self: end;
     }
-    .btn-search:hover { background: var(--clr-primary-hover); }
-    .btn-search:disabled { opacity: .5; cursor: not-allowed; }
+    .btn:hover { background: var(--accent-hover); }
+    .btn:disabled { opacity: .45; cursor: not-allowed; }
 
     /* ---- Main ---- */
-    main {
-      max-width: 1080px;
-      margin: 1.5rem auto;
-      padding: 0 1.5rem;
-    }
-    .results-bar {
+    main { max-width: 1200px; margin: 1.25rem auto; padding: 0 1.5rem; }
+    .status { text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
+    .meta-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: .75rem;
+      font-size: .82rem;
+      color: var(--text-muted);
       flex-wrap: wrap;
       gap: .5rem;
     }
-    .results-count { font-size: .88rem; color: var(--clr-muted); }
-    .status {
-      text-align: center;
-      padding: 3rem 1rem;
-      color: var(--clr-muted);
-      font-size: 1rem;
-    }
 
-    /* ---- Results table ---- */
-    .table-wrap { overflow-x: auto; }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--clr-card);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      font-size: .88rem;
-    }
-    thead { background: #f9fafb; }
+    /* ---- Table ---- */
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    thead { background: var(--bg-card); }
     th {
       text-align: left;
-      padding: .7rem .9rem;
-      font-size: .76rem;
+      padding: .6rem .8rem;
+      font-size: .72rem;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: .04em;
-      color: var(--clr-muted);
-      border-bottom: 2px solid var(--clr-border);
+      letter-spacing: .05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
+      user-select: none;
+      white-space: nowrap;
     }
-    td {
-      padding: .65rem .9rem;
-      border-bottom: 1px solid var(--clr-border);
-      vertical-align: top;
-    }
-    tbody tr:hover { background: #f9fafb; }
-    .name-cell { font-weight: 600; }
+    th.sortable { cursor: pointer; }
+    th.sortable:hover { color: var(--accent); }
+    th .arrow { margin-left: .3rem; font-size: .65rem; }
+    td { padding: .55rem .8rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tbody tr { transition: background .1s; }
+    tbody tr:hover { background: var(--bg-row-hover); }
+    tbody tr.expanded-parent { background: var(--bg-row-hover); }
+    .name-cell { font-weight: 600; cursor: pointer; color: var(--accent); }
+    .name-cell:hover { text-decoration: underline; }
 
-    /* ---- Rating badge ---- */
-    .rating-badge {
-      display: inline-block;
-      padding: .15rem .55rem;
-      border-radius: 6px;
-      font-size: .8rem;
+    /* ---- Rating colours ---- */
+    .rating {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+      padding: .15rem .5rem;
+      border-radius: 5px;
       font-weight: 700;
-      min-width: 1.8rem;
+      font-size: .82rem;
       text-align: center;
     }
-    .rating-5 { background: #dcfce7; color: var(--clr-green); }
-    .rating-4 { background: #dcfce7; color: var(--clr-green); }
-    .rating-3 { background: #fef9c3; color: var(--clr-amber); }
-    .rating-2 { background: #fed7aa; color: var(--clr-amber); }
-    .rating-1 { background: #fecaca; color: var(--clr-red); }
-    .rating-0 { background: #fecaca; color: var(--clr-red); }
-    .rating-exempt { background: #e5e7eb; color: var(--clr-muted); font-size: .72rem; }
+    .r5 { background: rgba(63,185,80,.15); color: var(--green); }
+    .r4 { background: rgba(63,185,80,.10); color: var(--green); }
+    .r3 { background: rgba(210,153,34,.15); color: var(--yellow); }
+    .r2 { background: rgba(219,109,40,.15); color: var(--orange); }
+    .r1 { background: rgba(248,81,73,.12); color: var(--red); }
+    .r0 { background: rgba(248,81,73,.18); color: var(--red); }
+    .r-exempt { background: rgba(139,148,158,.12); color: var(--text-muted); font-size: .72rem; }
+
+    /* ---- Expanded detail row ---- */
+    .detail-row td { padding: 0; border-bottom: 1px solid var(--border); }
+    .detail-inner {
+      padding: .8rem 1rem .8rem 2.5rem;
+      background: var(--bg-expanded);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: .6rem 2rem;
+      font-size: .82rem;
+    }
+    .detail-inner .dl-label {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--text-muted);
+      margin-bottom: .1rem;
+    }
+    .detail-inner .dl-val { color: var(--text); }
+    .score-bar-wrap { display: flex; align-items: center; gap: .5rem; margin-top: .15rem; }
+    .score-bar {
+      flex: 1;
+      height: 6px;
+      border-radius: 3px;
+      background: var(--border);
+      max-width: 120px;
+    }
+    .score-bar-fill { height: 100%; border-radius: 3px; }
+    .score-val { font-size: .78rem; font-weight: 600; min-width: 1.5rem; }
 
     /* ---- Pagination ---- */
-    .pagination {
-      display: flex;
-      justify-content: center;
-      gap: .5rem;
-      margin-top: 1.25rem;
-      flex-wrap: wrap;
-    }
-    .page-btn {
-      padding: .4rem .85rem;
-      border: 1px solid var(--clr-border);
+    .pagination { display: flex; justify-content: center; gap: .4rem; margin-top: 1rem; flex-wrap: wrap; }
+    .pg-btn {
+      padding: .35rem .75rem;
+      border: 1px solid var(--border);
       border-radius: 6px;
-      background: var(--clr-card);
-      color: var(--clr-text);
-      font-size: .85rem;
+      background: transparent;
+      color: var(--text);
+      font-size: .82rem;
       cursor: pointer;
       transition: all .15s;
     }
-    .page-btn:hover { border-color: var(--clr-primary); color: var(--clr-primary); }
-    .page-btn.active { background: var(--clr-primary); color: #fff; border-color: var(--clr-primary); }
-    .page-btn:disabled { opacity: .4; cursor: not-allowed; }
+    .pg-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .pg-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+    .pg-btn:disabled { opacity: .3; cursor: not-allowed; }
 
-    /* ---- Scores tooltip ---- */
-    .scores-detail {
-      font-size: .78rem;
-      color: var(--clr-muted);
-      line-height: 1.6;
-    }
+    footer { text-align: center; padding: 2rem 1rem; color: var(--text-muted); font-size: .75rem; }
 
-    /* ---- Footer ---- */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: var(--clr-muted);
-      font-size: .8rem;
-    }
-
-    /* ---- Responsive ---- */
-    @media (max-width: 640px) {
-      .search-inner { grid-template-columns: 1fr; }
-      th, td { padding: .5rem .6rem; }
+    @media (max-width: 700px) {
+      .fld input, .fld select { min-width: 120px; }
+      .detail-inner { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
@@ -216,20 +214,28 @@
 
 <header>
   <div class="header-inner">
-    <div class="logo">DayDine <span>UK</span></div>
-    <div class="subtitle">264,791 FSA food hygiene establishments</div>
+    <div class="logo">DayDine</div>
+    <div class="tagline">UK Restaurant Tracking &amp; Ratings &mdash; 264,791 FSA establishments</div>
   </div>
 </header>
 
-<div class="search-panel">
-  <div class="search-inner">
-    <div class="field">
-      <label for="inputLA">Local Authority</label>
-      <input type="text" id="inputLA" placeholder="e.g. Camden, Leeds, Birmingham">
+<div class="filters">
+  <div class="filters-inner">
+    <div class="fld">
+      <label for="fName">Name</label>
+      <input type="text" id="fName" placeholder="Search name…">
     </div>
-    <div class="field">
-      <label for="selectRating">Rating</label>
-      <select id="selectRating">
+    <div class="fld">
+      <label for="fLA">Local Authority</label>
+      <input type="text" id="fLA" placeholder="e.g. Camden">
+    </div>
+    <div class="fld">
+      <label for="fType">Business Type</label>
+      <input type="text" id="fType" placeholder="e.g. Restaurant">
+    </div>
+    <div class="fld">
+      <label for="fRating">Rating</label>
+      <select id="fRating">
         <option value="">Any</option>
         <option value="5">5 — Very good</option>
         <option value="4">4 — Good</option>
@@ -239,55 +245,45 @@
         <option value="0">0 — Urgent improvement necessary</option>
       </select>
     </div>
-    <div class="field">
-      <label for="inputType">Business Type</label>
-      <input type="text" id="inputType" placeholder="e.g. Restaurant/Cafe/Canteen">
-    </div>
-    <div class="field">
-      <label for="inputPostcode">Postcode</label>
-      <input type="text" id="inputPostcode" placeholder="e.g. SW1A or E1 6AN">
-    </div>
-    <button class="btn-search" id="btnSearch">Search</button>
+    <button class="btn" id="btnSearch">Search</button>
   </div>
 </div>
 
 <main>
-  <div id="status" class="status">Enter a Local Authority or Postcode and press Search.</div>
-  <div id="resultsArea" style="display:none;">
-    <div class="results-bar">
-      <span class="results-count" id="resultsCount"></span>
+  <div id="status" class="status">Enter a Local Authority and press Search to query the database.</div>
+  <div id="resultsWrap" style="display:none;">
+    <div class="meta-bar">
+      <span id="metaCount"></span>
+      <span id="metaSort"></span>
     </div>
     <div class="table-wrap">
       <table>
         <thead>
           <tr>
-            <th>Name</th>
+            <th class="sortable" data-key="name">Name <span class="arrow"></span></th>
             <th>Address</th>
             <th>Postcode</th>
+            <th>Local Authority</th>
             <th>Type</th>
-            <th>Rating</th>
-            <th>Last Inspection</th>
-            <th>Scores</th>
+            <th class="sortable" data-key="rating">Rating <span class="arrow"></span></th>
+            <th class="sortable" data-key="lastInspection">Last Inspected <span class="arrow"></span></th>
           </tr>
         </thead>
-        <tbody id="resultsBody"></tbody>
+        <tbody id="tbody"></tbody>
       </table>
     </div>
     <div class="pagination" id="pagination"></div>
   </div>
 </main>
 
-<footer>
-  DayDine &copy; 2026 &mdash; Data from the UK Food Standards Agency
-</footer>
+<footer>DayDine &copy; 2026 — Data sourced from the UK Food Standards Agency</footer>
 
-<!-- Firebase Realtime Database SDK (compat) -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
 
 <script>
   // ============================================================
-  //  FIREBASE CONFIG — replace placeholders with your values
+  //  FIREBASE CONFIG — replace placeholders with your real values
   // ============================================================
   const firebaseConfig = {
     apiKey:            "FIREBASE_API_KEY",
@@ -302,179 +298,238 @@
 
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
-  const DAYDINE_REF = db.ref("daydine");
+  const REF = db.ref("daydine");
 
   const PAGE_SIZE = 50;
-  let currentResults = [];
-  let currentPage = 0;
+  let results = [];
+  let page = 0;
+  let sortKey = "name";
+  let sortAsc = true;
+  let expandedId = null;
 
-  // ---- DOM refs ----
-  const inputLA       = document.getElementById("inputLA");
-  const selectRating  = document.getElementById("selectRating");
-  const inputType     = document.getElementById("inputType");
-  const inputPostcode = document.getElementById("inputPostcode");
-  const btnSearch     = document.getElementById("btnSearch");
-  const statusEl      = document.getElementById("status");
-  const resultsArea   = document.getElementById("resultsArea");
-  const resultsBody   = document.getElementById("resultsBody");
-  const resultsCount  = document.getElementById("resultsCount");
-  const paginationEl  = document.getElementById("pagination");
+  // DOM
+  const fName   = document.getElementById("fName");
+  const fLA     = document.getElementById("fLA");
+  const fType   = document.getElementById("fType");
+  const fRating = document.getElementById("fRating");
+  const btnSearch   = document.getElementById("btnSearch");
+  const statusEl    = document.getElementById("status");
+  const resultsWrap = document.getElementById("resultsWrap");
+  const tbody       = document.getElementById("tbody");
+  const metaCount   = document.getElementById("metaCount");
+  const metaSort    = document.getElementById("metaSort");
+  const pagEl       = document.getElementById("pagination");
 
-  // ---- Search ----
-  btnSearch.addEventListener("click", runSearch);
-  document.querySelectorAll(".field input, .field select").forEach(el => {
-    el.addEventListener("keydown", e => { if (e.key === "Enter") runSearch(); });
+  // ---- Events ----
+  btnSearch.addEventListener("click", search);
+  document.querySelectorAll(".fld input, .fld select").forEach(el => {
+    el.addEventListener("keydown", e => { if (e.key === "Enter") search(); });
   });
 
-  async function runSearch() {
-    const la       = inputLA.value.trim();
-    const rating   = selectRating.value;
-    const type     = inputType.value.trim();
-    const postcode = inputPostcode.value.trim().toUpperCase();
+  document.querySelectorAll("th.sortable").forEach(th => {
+    th.addEventListener("click", () => {
+      const key = th.dataset.key;
+      if (sortKey === key) { sortAsc = !sortAsc; } else { sortKey = key; sortAsc = true; }
+      applySort();
+      page = 0;
+      render();
+      updateSortArrows();
+    });
+  });
 
-    if (!la && !postcode) {
-      showStatus("Please enter at least a Local Authority or Postcode to search.");
+  // ---- Search ----
+  async function search() {
+    const la     = fLA.value.trim();
+    const name   = fName.value.trim().toLowerCase();
+    const type   = fType.value.trim().toLowerCase();
+    const rating = fRating.value;
+
+    if (!la) {
+      showStatus("Please enter a Local Authority to narrow the query (264k records is too large to fetch at once).");
       return;
     }
 
-    showStatus("Searching 264,791 establishments…");
+    showStatus("Querying…");
     btnSearch.disabled = true;
 
     try {
-      let query;
+      const snap = await REF.orderByChild("la").equalTo(la).once("value");
+      const data = snap.val();
 
-      // Use the most selective indexed field as the primary Firebase query.
-      // Apply remaining filters client-side.
-      if (la) {
-        query = DAYDINE_REF.orderByChild("la").equalTo(la);
-      } else if (postcode.length <= 4) {
-        // Outcode prefix search: e.g. "SW1A"
-        query = DAYDINE_REF.orderByChild("postcode").startAt(postcode).endAt(postcode + "\uf8ff");
-      } else {
-        query = DAYDINE_REF.orderByChild("postcode").equalTo(postcode);
+      if (!data) { results = []; }
+      else {
+        let entries = Object.entries(data).map(([id, d]) => ({ _id: id, ...d }));
+
+        if (name)        entries = entries.filter(d => d.name && d.name.toLowerCase().includes(name));
+        if (type)        entries = entries.filter(d => d.type && d.type.toLowerCase().includes(type));
+        if (rating !== "") entries = entries.filter(d => d.rating === parseInt(rating, 10));
+
+        results = entries;
       }
 
-      const snapshot = await query.once("value");
-      const data = snapshot.val();
-
-      if (!data) {
-        currentResults = [];
-      } else {
-        let entries = Object.entries(data).map(([id, d]) => ({ id, ...d }));
-
-        // Client-side filters
-        if (rating !== "") {
-          const r = parseInt(rating, 10);
-          entries = entries.filter(d => d.rating === r);
-        }
-        if (type) {
-          const tLower = type.toLowerCase();
-          entries = entries.filter(d => d.type && d.type.toLowerCase().includes(tLower));
-        }
-        if (la && postcode) {
-          // LA was used as primary query; also filter by postcode client-side
-          if (postcode.length <= 4) {
-            entries = entries.filter(d => d.postcode && d.postcode.toUpperCase().startsWith(postcode));
-          } else {
-            entries = entries.filter(d => d.postcode && d.postcode.toUpperCase() === postcode);
-          }
-        }
-
-        // Sort: highest rating first, then name
-        entries.sort((a, b) => (b.rating || 0) - (a.rating || 0) || (a.name || "").localeCompare(b.name || ""));
-        currentResults = entries;
-      }
-
-      currentPage = 0;
-      renderResults();
+      sortKey = "name"; sortAsc = true;
+      applySort();
+      updateSortArrows();
+      page = 0;
+      expandedId = null;
+      render();
     } catch (err) {
       console.error(err);
-      showStatus("Error: " + err.message + ". Check Firebase config & database rules.");
+      showStatus("Error: " + err.message);
     } finally {
       btnSearch.disabled = false;
     }
   }
 
+  // ---- Sort ----
+  function applySort() {
+    results.sort((a, b) => {
+      let va = a[sortKey], vb = b[sortKey];
+      if (sortKey === "rating") {
+        va = (typeof va === "number") ? va : -1;
+        vb = (typeof vb === "number") ? vb : -1;
+        return sortAsc ? va - vb : vb - va;
+      }
+      if (sortKey === "lastInspection") {
+        va = va ? new Date(va).getTime() : 0;
+        vb = vb ? new Date(vb).getTime() : 0;
+        return sortAsc ? va - vb : vb - va;
+      }
+      va = (va || "").toString().toLowerCase();
+      vb = (vb || "").toString().toLowerCase();
+      return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+    });
+  }
+
+  function updateSortArrows() {
+    document.querySelectorAll("th.sortable").forEach(th => {
+      const arrow = th.querySelector(".arrow");
+      if (th.dataset.key === sortKey) {
+        arrow.textContent = sortAsc ? "▲" : "▼";
+      } else {
+        arrow.textContent = "";
+      }
+    });
+    metaSort.textContent = "Sorted by " + sortKey + (sortAsc ? " ↑" : " ↓");
+  }
+
   // ---- Render ----
-  function renderResults() {
-    if (currentResults.length === 0) {
-      showStatus("No establishments found. Try a different search.");
+  function render() {
+    if (results.length === 0) {
+      showStatus("No establishments found. Try a different Local Authority or adjust filters.");
       return;
     }
-
     statusEl.style.display = "none";
-    resultsArea.style.display = "";
+    resultsWrap.style.display = "";
 
-    const totalPages = Math.ceil(currentResults.length / PAGE_SIZE);
-    const start = currentPage * PAGE_SIZE;
-    const page = currentResults.slice(start, start + PAGE_SIZE);
+    const totalPages = Math.ceil(results.length / PAGE_SIZE);
+    const start = page * PAGE_SIZE;
+    const slice = results.slice(start, start + PAGE_SIZE);
 
-    resultsCount.textContent = currentResults.length.toLocaleString() + " result"
-      + (currentResults.length !== 1 ? "s" : "")
-      + " — page " + (currentPage + 1) + " of " + totalPages;
+    metaCount.textContent = results.length.toLocaleString() + " result" + (results.length !== 1 ? "s" : "")
+      + " — page " + (page + 1) + " of " + totalPages;
 
-    resultsBody.innerHTML = page.map(d => `
-      <tr>
-        <td class="name-cell">${esc(d.name || "—")}</td>
-        <td>${esc(d.address || "—")}</td>
-        <td>${esc(d.postcode || "—")}</td>
-        <td>${esc(d.type || "—")}</td>
-        <td>${ratingBadge(d.rating)}</td>
-        <td>${esc(d.lastInspection || "—")}</td>
-        <td>${formatScores(d.scores)}</td>
-      </tr>
-    `).join("");
+    tbody.innerHTML = "";
+    slice.forEach(d => {
+      // Main row
+      const tr = document.createElement("tr");
+      if (d._id === expandedId) tr.classList.add("expanded-parent");
+      tr.innerHTML =
+        '<td class="name-cell">' + esc(d.name || "—") + '</td>' +
+        '<td>' + esc(d.address || "—") + '</td>' +
+        '<td>' + esc(d.postcode || "—") + '</td>' +
+        '<td>' + esc(d.la || "—") + '</td>' +
+        '<td>' + esc(d.type || "—") + '</td>' +
+        '<td>' + ratingHTML(d.rating) + '</td>' +
+        '<td>' + esc(d.lastInspection || "—") + '</td>';
+      tr.querySelector(".name-cell").addEventListener("click", () => toggleExpand(d._id));
+      tbody.appendChild(tr);
+
+      // Detail row
+      if (d._id === expandedId) {
+        const dr = document.createElement("tr");
+        dr.className = "detail-row";
+        const td = document.createElement("td");
+        td.colSpan = 7;
+        td.innerHTML = buildDetail(d);
+        dr.appendChild(td);
+        tbody.appendChild(dr);
+      }
+    });
 
     // Pagination
-    paginationEl.innerHTML = "";
+    pagEl.innerHTML = "";
     if (totalPages > 1) {
-      addPageBtn("« Prev", currentPage > 0, () => { currentPage--; renderResults(); });
-      const maxBtns = 7;
-      let startP = Math.max(0, currentPage - Math.floor(maxBtns / 2));
-      let endP = Math.min(totalPages, startP + maxBtns);
-      if (endP - startP < maxBtns) startP = Math.max(0, endP - maxBtns);
-      for (let i = startP; i < endP; i++) {
-        addPageBtn(i + 1, true, () => { currentPage = i; renderResults(); }, i === currentPage);
+      pgBtn("« Prev", page > 0, () => { page--; render(); scrollTop(); });
+      let s = Math.max(0, page - 3), e = Math.min(totalPages, s + 7);
+      if (e - s < 7) s = Math.max(0, e - 7);
+      for (let i = s; i < e; i++) {
+        pgBtn(i + 1, true, () => { page = i; render(); scrollTop(); }, i === page);
       }
-      addPageBtn("Next »", currentPage < totalPages - 1, () => { currentPage++; renderResults(); });
+      pgBtn("Next »", page < totalPages - 1, () => { page++; render(); scrollTop(); });
     }
-
-    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function addPageBtn(label, enabled, onClick, active) {
-    const btn = document.createElement("button");
-    btn.className = "page-btn" + (active ? " active" : "");
-    btn.textContent = label;
-    btn.disabled = !enabled;
-    if (enabled) btn.addEventListener("click", onClick);
-    paginationEl.appendChild(btn);
+  function toggleExpand(id) {
+    expandedId = (expandedId === id) ? null : id;
+    render();
   }
 
-  function ratingBadge(rating) {
-    if (rating === null || rating === undefined || rating === "Exempt") {
-      return '<span class="rating-badge rating-exempt">Exempt</span>';
-    }
-    const r = parseInt(rating, 10);
-    if (isNaN(r)) return '<span class="rating-badge rating-exempt">' + esc(String(rating)) + '</span>';
-    return '<span class="rating-badge rating-' + r + '">' + r + '</span>';
+  function buildDetail(d) {
+    const s = d.scores || {};
+    return '<div class="detail-inner">' +
+      dlBlock("Full Address", (d.address || "") + (d.postcode ? ", " + d.postcode : "")) +
+      dlBlock("Local Authority", d.la) +
+      dlBlock("Business Type", d.type) +
+      dlBlock("Last Inspection", d.lastInspection) +
+      scoreBlock("Hygiene", s.hygiene) +
+      scoreBlock("Structural", s.structural) +
+      scoreBlock("Management", s.management) +
+    '</div>';
   }
 
-  function formatScores(scores) {
-    if (!scores || typeof scores !== "object") return '<span class="scores-detail">—</span>';
-    const parts = [];
-    if (scores.hygiene !== undefined) parts.push("Hygiene: " + scores.hygiene);
-    if (scores.structural !== undefined) parts.push("Structural: " + scores.structural);
-    if (scores.management !== undefined) parts.push("Management: " + scores.management);
-    if (parts.length === 0) return '<span class="scores-detail">—</span>';
-    return '<span class="scores-detail">' + parts.map(esc).join("<br>") + '</span>';
+  function dlBlock(label, val) {
+    return '<div><div class="dl-label">' + esc(label) + '</div><div class="dl-val">' + esc(val || "—") + '</div></div>';
+  }
+
+  function scoreBlock(label, val) {
+    if (val === undefined || val === null) return dlBlock(label, "—");
+    // FSA sub-scores: 0 is best, higher is worse. Max typically 20 for hygiene/structural, 30 for management.
+    const max = (label === "Management") ? 30 : 20;
+    const pct = Math.max(0, Math.min(100, ((max - val) / max) * 100));
+    const color = pct >= 70 ? "var(--green)" : pct >= 40 ? "var(--yellow)" : "var(--red)";
+    return '<div>' +
+      '<div class="dl-label">' + esc(label) + '</div>' +
+      '<div class="score-bar-wrap">' +
+        '<div class="score-bar"><div class="score-bar-fill" style="width:' + pct + '%;background:' + color + ';"></div></div>' +
+        '<span class="score-val" style="color:' + color + '">' + val + '</span>' +
+      '</div></div>';
+  }
+
+  function ratingHTML(r) {
+    if (r === null || r === undefined || r === "Exempt")
+      return '<span class="rating r-exempt">Exempt</span>';
+    const n = parseInt(r, 10);
+    if (isNaN(n)) return '<span class="rating r-exempt">' + esc(String(r)) + '</span>';
+    return '<span class="rating r' + n + '">' + n + '</span>';
+  }
+
+  function pgBtn(label, enabled, fn, active) {
+    const b = document.createElement("button");
+    b.className = "pg-btn" + (active ? " active" : "");
+    b.textContent = label;
+    b.disabled = !enabled;
+    if (enabled) b.addEventListener("click", fn);
+    pagEl.appendChild(b);
   }
 
   function showStatus(msg) {
-    resultsArea.style.display = "none";
+    resultsWrap.style.display = "none";
     statusEl.style.display = "";
     statusEl.textContent = msg;
   }
+
+  function scrollTop() { window.scrollTo({ top: 0, behavior: "smooth" }); }
 
   function esc(s) {
     const el = document.createElement("span");

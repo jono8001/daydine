@@ -3,7 +3,7 @@
     "daydine": {
       ".read": true,
       ".write": false,
-      ".indexOn": ["la", "rating", "type", "postcode"]
+      ".indexOn": ["la", "rating", "type", "postcode", "name"]
     }
   }
 }
