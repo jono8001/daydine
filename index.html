@@ -4,28 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DayDine – UK Restaurant Ratings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0e1117;
-      --bg-card: #161b22;
-      --bg-row-hover: #1c2333;
-      --bg-expanded: #131820;
-      --border: #30363d;
-      --text: #e6edf3;
-      --text-muted: #8b949e;
-      --accent: #58a6ff;
-      --accent-hover: #79b8ff;
-      --green: #3fb950;
-      --yellow: #d29922;
-      --orange: #db6d28;
-      --red: #f85149;
-      --radius: 8px;
+      --bg: #F5F0E8;
+      --bg-card: #ffffff;
+      --bg-row-hover: #FBF8F3;
+      --bg-expanded: #FAF7F1;
+      --border: #E5DFD3;
+      --text: #2D2D2D;
+      --text-muted: #7A7265;
+      --accent: #D4942A;
+      --accent-hover: #B87D1E;
+      --accent-light: #FDF5E9;
+      --green: #2E7D32;
+      --green-bg: #E8F5E9;
+      --yellow: #C27A00;
+      --yellow-bg: #FFF8E1;
+      --orange: #D84315;
+      --orange-bg: #FBE9E7;
+      --red: #C62828;
+      --red-bg: #FFEBEE;
+      --radius: 10px;
+      --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.5;
@@ -34,8 +44,10 @@
 
     /* ---- Header ---- */
     header {
+      background: var(--bg-card);
       border-bottom: 1px solid var(--border);
-      padding: 1.2rem 1.5rem;
+      padding: 1.1rem 1.5rem;
+      box-shadow: var(--shadow);
     }
     .header-inner {
       max-width: 1200px;
@@ -45,7 +57,30 @@
       gap: 1rem;
       flex-wrap: wrap;
     }
-    .logo { font-size: 1.5rem; font-weight: 700; color: var(--accent); letter-spacing: -.02em; }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -.02em;
+    }
+    /* Amber dot on the "i" — we split into Day + D + i + ne with the i styled */
+    .logo-day { color: var(--text); }
+    .logo-d { color: var(--text); }
+    .logo-i { position: relative; color: var(--text); }
+    .logo-i::after {
+      content: '';
+      position: absolute;
+      top: -.02em;
+      left: 50%;
+      transform: translateX(-50%);
+      width: .32em;
+      height: .32em;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    /* Hide the natural dot on the i by making it transparent and overlaying */
+    .logo-i { font-style: normal; }
+    .logo-ne { color: var(--text); }
     .tagline { font-size: .85rem; color: var(--text-muted); }
 
     /* ---- Filters ---- */
@@ -71,35 +106,47 @@
       color: var(--text-muted);
     }
     .fld input, .fld select {
-      padding: .5rem .7rem;
+      padding: .5rem .75rem;
       font-size: .85rem;
+      font-family: inherit;
       background: var(--bg);
       color: var(--text);
       border: 1px solid var(--border);
-      border-radius: 6px;
+      border-radius: 8px;
       outline: none;
       min-width: 160px;
+      transition: border-color .15s, box-shadow .15s;
     }
-    .fld input:focus, .fld select:focus { border-color: var(--accent); }
+    .fld input:focus, .fld select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(212,148,42,.15);
+    }
     .fld select option { background: var(--bg-card); }
     .btn {
-      padding: .5rem 1.3rem;
+      padding: .5rem 1.4rem;
       background: var(--accent);
-      color: #000;
+      color: #fff;
+      font-family: inherit;
       font-weight: 600;
       font-size: .85rem;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background .15s;
+      transition: background .15s, box-shadow .15s;
       align-self: end;
+      box-shadow: var(--shadow);
     }
-    .btn:hover { background: var(--accent-hover); }
+    .btn:hover { background: var(--accent-hover); box-shadow: var(--shadow-md); }
     .btn:disabled { opacity: .45; cursor: not-allowed; }
 
     /* ---- Main ---- */
-    main { max-width: 1200px; margin: 1.25rem auto; padding: 0 1.5rem; }
-    .status { text-align: center; padding: 3rem 1rem; color: var(--text-muted); }
+    main { max-width: 1200px; margin: 1.5rem auto; padding: 0 1.5rem; }
+    .status {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+      font-size: .95rem;
+    }
     .meta-bar {
       display: flex;
       justify-content: space-between;
@@ -112,59 +159,73 @@
     }
 
     /* ---- Table ---- */
-    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+    }
     table { width: 100%; border-collapse: collapse; font-size: .85rem; }
-    thead { background: var(--bg-card); }
+    thead { background: #FAF7F2; }
     th {
       text-align: left;
-      padding: .6rem .8rem;
+      padding: .65rem .85rem;
       font-size: .72rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: .05em;
       color: var(--text-muted);
-      border-bottom: 1px solid var(--border);
+      border-bottom: 2px solid var(--border);
       user-select: none;
       white-space: nowrap;
     }
     th.sortable { cursor: pointer; }
     th.sortable:hover { color: var(--accent); }
     th .arrow { margin-left: .3rem; font-size: .65rem; }
-    td { padding: .55rem .8rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
-    tbody tr { transition: background .1s; }
+    td {
+      padding: .6rem .85rem;
+      border-bottom: 1px solid #EDE8DF;
+      vertical-align: middle;
+    }
+    tbody tr { background: var(--bg-card); transition: background .1s; }
     tbody tr:hover { background: var(--bg-row-hover); }
-    tbody tr.expanded-parent { background: var(--bg-row-hover); }
-    .name-cell { font-weight: 600; cursor: pointer; color: var(--accent); }
-    .name-cell:hover { text-decoration: underline; }
+    tbody tr.expanded-parent { background: var(--accent-light); }
+    .name-cell {
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--accent);
+    }
+    .name-cell:hover { color: var(--accent-hover); text-decoration: underline; }
 
-    /* ---- Rating colours ---- */
+    /* ---- Rating badges ---- */
     .rating {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-width: 2rem;
-      padding: .15rem .5rem;
-      border-radius: 5px;
+      padding: .2rem .55rem;
+      border-radius: 6px;
       font-weight: 700;
       font-size: .82rem;
       text-align: center;
     }
-    .r5 { background: rgba(63,185,80,.15); color: var(--green); }
-    .r4 { background: rgba(63,185,80,.10); color: var(--green); }
-    .r3 { background: rgba(210,153,34,.15); color: var(--yellow); }
-    .r2 { background: rgba(219,109,40,.15); color: var(--orange); }
-    .r1 { background: rgba(248,81,73,.12); color: var(--red); }
-    .r0 { background: rgba(248,81,73,.18); color: var(--red); }
-    .r-exempt { background: rgba(139,148,158,.12); color: var(--text-muted); font-size: .72rem; }
+    .r5 { background: var(--green-bg); color: var(--green); }
+    .r4 { background: var(--green-bg); color: var(--green); }
+    .r3 { background: var(--yellow-bg); color: var(--yellow); }
+    .r2 { background: var(--orange-bg); color: var(--orange); }
+    .r1 { background: var(--red-bg); color: var(--red); }
+    .r0 { background: var(--red-bg); color: var(--red); }
+    .r-exempt { background: #F0EDE6; color: var(--text-muted); font-size: .72rem; }
 
     /* ---- Expanded detail row ---- */
     .detail-row td { padding: 0; border-bottom: 1px solid var(--border); }
     .detail-inner {
-      padding: .8rem 1rem .8rem 2.5rem;
+      padding: .9rem 1.1rem .9rem 2.5rem;
       background: var(--bg-expanded);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: .6rem 2rem;
+      gap: .7rem 2rem;
       font-size: .82rem;
     }
     .detail-inner .dl-label {
@@ -172,41 +233,53 @@
       text-transform: uppercase;
       letter-spacing: .04em;
       color: var(--text-muted);
-      margin-bottom: .1rem;
+      margin-bottom: .15rem;
     }
-    .detail-inner .dl-val { color: var(--text); }
-    .score-bar-wrap { display: flex; align-items: center; gap: .5rem; margin-top: .15rem; }
+    .detail-inner .dl-val { color: var(--text); font-weight: 500; }
+    .score-bar-wrap { display: flex; align-items: center; gap: .5rem; margin-top: .2rem; }
     .score-bar {
       flex: 1;
-      height: 6px;
-      border-radius: 3px;
+      height: 7px;
+      border-radius: 4px;
       background: var(--border);
       max-width: 120px;
     }
-    .score-bar-fill { height: 100%; border-radius: 3px; }
+    .score-bar-fill { height: 100%; border-radius: 4px; }
     .score-val { font-size: .78rem; font-weight: 600; min-width: 1.5rem; }
 
     /* ---- Pagination ---- */
-    .pagination { display: flex; justify-content: center; gap: .4rem; margin-top: 1rem; flex-wrap: wrap; }
+    .pagination { display: flex; justify-content: center; gap: .4rem; margin-top: 1.25rem; flex-wrap: wrap; }
     .pg-btn {
-      padding: .35rem .75rem;
+      padding: .38rem .8rem;
       border: 1px solid var(--border);
-      border-radius: 6px;
-      background: transparent;
+      border-radius: 7px;
+      background: var(--bg-card);
       color: var(--text);
+      font-family: inherit;
       font-size: .82rem;
       cursor: pointer;
       transition: all .15s;
+      box-shadow: var(--shadow);
     }
     .pg-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .pg-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
-    .pg-btn:disabled { opacity: .3; cursor: not-allowed; }
+    .pg-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .pg-btn:disabled { opacity: .3; cursor: not-allowed; box-shadow: none; }
 
-    footer { text-align: center; padding: 2rem 1rem; color: var(--text-muted); font-size: .75rem; }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: .78rem;
+    }
 
     @media (max-width: 700px) {
+      .filters-inner { gap: .5rem; }
       .fld input, .fld select { min-width: 120px; }
-      .detail-inner { grid-template-columns: 1fr 1fr; }
+      .detail-inner { grid-template-columns: 1fr 1fr; padding-left: 1rem; }
     }
   </style>
 </head>
@@ -214,7 +287,7 @@
 
 <header>
   <div class="header-inner">
-    <div class="logo">DayDine</div>
+    <div class="logo"><span class="logo-day">Day</span><span class="logo-d">D</span><span class="logo-i">i</span><span class="logo-ne">ne</span></div>
     <div class="tagline">UK Restaurant Tracking &amp; Ratings &mdash; 264,791 FSA establishments</div>
   </div>
 </header>
@@ -494,7 +567,6 @@
 
   function scoreBlock(label, val) {
     if (val === undefined || val === null) return dlBlock(label, "—");
-    // FSA sub-scores: 0 is best, higher is worse. Max typically 20 for hygiene/structural, 30 for management.
     const max = (label === "Management") ? 30 : 20;
     const pct = Math.max(0, Math.min(100, ((max - val) / max) * 100));
     const color = pct >= 70 ? "var(--green)" : pct >= 40 ? "var(--yellow)" : "var(--red)";
