@@ -8,15 +8,17 @@ enriched fields back to Firebase.
 
 Usage:
     python enrich_places.py --la "Camden"
-    python enrich_places.py --la "City of London" --dry-run
+    python enrich_places.py --la "Camden" --limit 5 --dry-run
 
 Requires:
-    pip install requests firebase-admin python-dotenv
+    pip install requests python-dotenv
 
 Environment:
     GOOGLE_PLACES_API_KEY  — Google Places API key (in .env or env var)
-    FIREBASE_DATABASE_URL  — Firebase RTDB URL (or uses default from CLAUDE.md)
-    Firebase credentials   — via GOOGLE_APPLICATION_CREDENTIALS or path below
+
+Uses Firebase RTDB REST API (public read rules, no credentials needed for reads).
+For writes, uses the RTDB REST API with no auth (relies on write rules being
+temporarily enabled or uses firebase-admin when available).
 """
 
 import argparse
@@ -24,13 +26,10 @@ import json
 import os
 import sys
 import time
-from pathlib import Path
+from urllib.parse import quote
 
 import requests
 from dotenv import load_dotenv
-
-import firebase_admin
-from firebase_admin import credentials, db
 
 # ---------------------------------------------------------------------------
 # Config
@@ -42,10 +41,6 @@ FIREBASE_DB_URL = os.getenv(
     "FIREBASE_DATABASE_URL",
     "https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app",
 )
-# Default credentials path — override with GOOGLE_APPLICATION_CREDENTIALS env var
-DEFAULT_CREDS_PATH = (
-    r"C:\Users\Jon Swaby\OneDrive\Documents\evidtrace-agents\firebase_credentials.json"
-)
 
 PLACES_SEARCH_URL = "https://places.googleapis.com/v1/places:searchText"
 
@@ -53,14 +48,55 @@ PLACES_SEARCH_URL = "https://places.googleapis.com/v1/places:searchText"
 RATE_LIMIT_DELAY = 0.1
 
 # ---------------------------------------------------------------------------
-# Firebase init
+# Firebase RTDB REST helpers
 # ---------------------------------------------------------------------------
-def init_firebase():
-    if firebase_admin._apps:
-        return
-    creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS", DEFAULT_CREDS_PATH)
-    cred = credentials.Certificate(creds_path)
-    firebase_admin.initialize_app(cred, {"databaseURL": FIREBASE_DB_URL})
+def firebase_admin_available():
+    """Try to use firebase-admin if available and credentials exist."""
+    try:
+        import importlib
+        firebase_admin = importlib.import_module("firebase_admin")
+        creds_mod = importlib.import_module("firebase_admin.credentials")
+        db_mod = importlib.import_module("firebase_admin.db")
+
+        if firebase_admin._apps:
+            return True
+
+        creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+        if not creds_path:
+            win_path = r"C:\Users\Jon Swaby\OneDrive\Documents\evidtrace-agents\firebase_credentials.json"
+            if os.path.exists(win_path):
+                creds_path = win_path
+
+        if creds_path and os.path.exists(creds_path):
+            cred = creds_mod.Certificate(creds_path)
+            firebase_admin.initialize_app(cred, {"databaseURL": FIREBASE_DB_URL})
+            return True
+    except BaseException:
+        pass
+    return False
+
+
+USE_ADMIN_SDK = False
+
+
+def fb_read(path, params=None):
+    """Read from Firebase RTDB via REST API."""
+    url = f"{FIREBASE_DB_URL}/{path}.json"
+    resp = requests.get(url, params=params, timeout=30)
+    resp.raise_for_status()
+    return resp.json()
+
+
+def fb_update(path, data):
+    """Write/update fields in Firebase RTDB via REST API or Admin SDK."""
+    if USE_ADMIN_SDK:
+        import importlib
+        db_mod = importlib.import_module("firebase_admin.db")
+        db_mod.reference(path).update(data)
+    else:
+        url = f"{FIREBASE_DB_URL}/{path}.json"
+        resp = requests.patch(url, json=data, timeout=15)
+        resp.raise_for_status()
 
 
 # ---------------------------------------------------------------------------
@@ -123,6 +159,8 @@ def search_place(name, address, postcode):
 # Main
 # ---------------------------------------------------------------------------
 def main():
+    global USE_ADMIN_SDK
+
     parser = argparse.ArgumentParser(
         description="Enrich DayDine establishments with Google Places data"
     )
@@ -135,18 +173,25 @@ def main():
         print("ERROR: GOOGLE_PLACES_API_KEY not set. Add it to .env or environment.")
         sys.exit(1)
 
-    init_firebase()
-    ref = db.reference("daydine/establishments")
+    # Try firebase-admin first, fall back to REST API
+    USE_ADMIN_SDK = firebase_admin_available()
+    if USE_ADMIN_SDK:
+        print("Using firebase-admin SDK for writes")
+    else:
+        print("Using Firebase REST API (firebase-admin not available)")
 
-    # Query establishments for the given LA
+    # Query establishments for the given LA via REST API
     print(f"Fetching establishments for LA: {args.la}")
-    snap = ref.order_by_child("la").equal_to(args.la).get()
+    data = fb_read("daydine/establishments", {
+        "orderBy": '"la"',
+        "equalTo": f'"{args.la}"',
+    })
 
-    if not snap:
+    if not data:
         print(f"No establishments found for LA '{args.la}'")
         sys.exit(0)
 
-    entries = list(snap.items())
+    entries = list(data.items())
     total = len(entries)
     print(f"Found {total} establishments")
 
@@ -188,7 +233,7 @@ def main():
                 print(f"  [{i}/{len(entries)}] DRY RUN match: {name} → gid={result.get('gid')}, "
                       f"gr={result.get('gr')}, grc={result.get('grc')}")
             else:
-                ref.child(key).update(result)
+                fb_update(f"daydine/establishments/{key}", result)
                 print(f"  [{i}/{len(entries)}] enriched: {name} → gr={result.get('gr')}, "
                       f"grc={result.get('grc')}")
 
