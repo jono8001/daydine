@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "daydine": {
+      ".read": true,
+      ".write": false,
+      ".indexOn": ["la", "rating", "type", "postcode"]
+    }
+  }
+}
