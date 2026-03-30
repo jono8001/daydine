@@ -1,0 +1,43 @@
+name: Enrich Stratford with Google Places & Score
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  enrich-and-score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch establishments from Firebase
+        run: python .github/scripts/fetch_firebase_stratford.py
+
+      - name: Enrich with Google Places API
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: python .github/scripts/enrich_google_stratford.py
+
+      - name: Merge enrichment into establishments data
+        run: python .github/scripts/merge_enrichment.py
+
+      - name: Run RCS V2 scoring pipeline
+        run: python rcs_scoring_stratford.py --from-cache
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stratford_establishments.json stratford_google_enrichment.json stratford_rcs_scores.csv stratford_rcs_summary.json
+          git diff --cached --quiet || git commit -m "Enrich Stratford with Google Places data and re-score RCS"
+          git push
