@@ -654,7 +654,14 @@
     const resp = await fetch("https://api.postcodes.io/places?q=" + encodeURIComponent(query) + "&limit=5");
     const data = await resp.json();
     if (data.result && data.result.length > 0) {
-      return { lat: data.result[0].latitude, lon: data.result[0].longitude, la: data.result[0].admin_district, suggestions: data.result };
+      const place = data.result[0];
+      const lat = place.latitude;
+      const lon = place.longitude;
+      // /places doesn't return admin_district — reverse-geocode via nearest postcode lookup
+      const revResp = await fetch("https://api.postcodes.io/postcodes?lon=" + lon + "&lat=" + lat + "&limit=1");
+      const revData = await revResp.json();
+      const la = (revData.result && revData.result.length > 0) ? revData.result[0].admin_district : null;
+      return { lat, lon, la, suggestions: data.result };
     }
     return null;
   }
