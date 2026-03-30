@@ -578,11 +578,64 @@ def fetch_establishments(la_name):
 
 
 # ---------------------------------------------------------------------------
+# Google Place Type → Category mapping
+# ---------------------------------------------------------------------------
+
+# Priority order: first match wins (more specific types checked first)
+_CATEGORY_RULES = [
+    # Specific cuisine types
+    ({"indian_restaurant", "bangladeshi_restaurant"}, "Indian Restaurant"),
+    ({"italian_restaurant", "pizza_restaurant"}, "Italian Restaurant"),
+    ({"chinese_restaurant"}, "Chinese Restaurant"),
+    ({"thai_restaurant"}, "Thai Restaurant"),
+    ({"japanese_restaurant"}, "Japanese Restaurant"),
+    ({"french_restaurant", "bistro"}, "French Restaurant"),
+    ({"turkish_restaurant", "greek_restaurant"}, "Mediterranean Restaurant"),
+    ({"asian_restaurant", "vietnamese_restaurant", "noodle_shop"}, "Asian Restaurant"),
+    ({"brazilian_restaurant", "american_restaurant", "hamburger_restaurant",
+      "chicken_restaurant", "chicken_wings_restaurant", "steak_house"}, "American / Grill"),
+    ({"british_restaurant", "fish_and_chips_restaurant", "seafood_restaurant"}, "British Restaurant"),
+    ({"vegan_restaurant", "vegetarian_restaurant"}, "Vegan / Vegetarian"),
+    # Venue types
+    ({"fine_dining_restaurant"}, "Fine Dining"),
+    ({"fast_food_restaurant", "sandwich_shop", "snack_bar"}, "Fast Food / Quick Service"),
+    ({"meal_takeaway", "food_delivery"}, "Takeaway"),
+    ({"pub", "gastropub", "brewpub", "beer_garden"}, "Pub / Bar"),
+    ({"bar", "wine_bar", "cocktail_bar", "lounge_bar", "bar_and_grill"}, "Pub / Bar"),
+    ({"coffee_shop", "coffee_stand", "coffee_roastery", "tea_house"}, "Cafe / Coffee Shop"),
+    ({"cafe", "breakfast_restaurant", "brunch_restaurant", "diner"}, "Cafe / Coffee Shop"),
+    ({"bakery", "pastry_shop", "cake_shop", "confectionery",
+      "dessert_shop", "ice_cream_shop"}, "Bakery / Desserts"),
+    ({"hotel", "lodging", "bed_and_breakfast", "inn"}, "Hotel / Accommodation"),
+    ({"catering_service"}, "Catering"),
+]
+
+
+def classify_category(record):
+    """Assign a category from Google place types. Returns category string."""
+    gty = record.get("gty")
+    if not gty or not isinstance(gty, list):
+        return "Uncategorised"
+
+    types_set = set(gty)
+    for match_types, category in _CATEGORY_RULES:
+        if types_set & match_types:
+            return category
+
+    # Fallback: if it has 'restaurant' type but no specific cuisine
+    if "restaurant" in types_set or "family_restaurant" in types_set:
+        return "Restaurant (General)"
+    if "food" in types_set:
+        return "Food & Drink"
+    return "Other"
+
+
+# ---------------------------------------------------------------------------
 # Pipeline: score all, save CSV + JSON summary
 # ---------------------------------------------------------------------------
 
 CSV_FIELDS = [
-    "rank", "fhrsid", "business_name", "postcode",
+    "rank", "fhrsid", "business_name", "postcode", "category",
     "fsa_tier_score", "google_tier_score", "online_tier_score",
     "ops_tier_score", "menu_tier_score", "reputation_tier_score",
     "community_tier_score",
@@ -597,6 +650,7 @@ def run_pipeline(data):
             "fhrsid": record.get("id") or key,
             "business_name": record.get("n", "Unknown"),
             "postcode": record.get("pc", ""),
+            "category": classify_category(record),
             "fsa_tier_score": result["fsa_tier"],
             "google_tier_score": result["google_tier"],
             "online_tier_score": result["online_tier"],
@@ -689,6 +743,26 @@ def build_summary(scored):
     band_counts = Counter(r["rcs_band"] for r in scored)
     band_order = [b for _, b in BANDS]
 
+    # Build rankings by category (top 5 per category)
+    categories = {}
+    for r in scored:
+        cat = r["category"]
+        if cat not in categories:
+            categories[cat] = []
+        categories[cat].append(r)
+
+    rankings_by_category = {}
+    for cat in sorted(categories):
+        entries = sorted(categories[cat], key=lambda x: x["rank"])
+        rankings_by_category[cat] = {
+            "count": len(entries),
+            "top_5": [
+                {"rank": e["rank"], "name": e["business_name"],
+                 "rcs": e["rcs_final"], "band": e["rcs_band"]}
+                for e in entries[:5]
+            ],
+        }
+
     return {
         "count": len(scored),
         "mean": round(statistics.mean(scores), 2) if scores else 0,
@@ -701,6 +775,7 @@ def build_summary(scored):
                    "pct": round(band_counts.get(band, 0) / len(scored) * 100, 1) if scored else 0}
             for band in band_order
         },
+        "rankings_by_category": rankings_by_category,
         "signals_coverage": {
             "available_per_record_avg": round(
                 statistics.mean(r["signals_available"] for r in scored), 1
