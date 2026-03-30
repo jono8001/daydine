@@ -417,15 +417,15 @@ def apply_penalties(raw_score, record):
     grc = safe_int(record.get("grc"))
     age = days_since(record.get("rd"))
 
-    # FSA rating caps
+    # FSA rating caps (0-10 scale)
     if r is not None and r <= 1:
-        if score > 20:
-            applied.append(("fsa_rating_0_1_cap_20", score, 20))
-            score = 20
+        if score > 2.0:
+            applied.append(("fsa_rating_0_1_cap_2", score, 2.0))
+            score = 2.0
     if r is not None and r == 2:
-        if score > 40:
-            applied.append(("fsa_rating_2_cap_40", score, 40))
-            score = 40
+        if score > 4.0:
+            applied.append(("fsa_rating_2_cap_4", score, 4.0))
+            score = 4.0
 
     # No inspection in 3+ years
     if age is not None and age > 1095:
@@ -456,20 +456,20 @@ def apply_penalties(raw_score, record):
         applied.append(("no_online_presence", score, score - penalty))
         score -= penalty
 
-    return clamp(score, 0, 100), applied
+    return clamp(score, 0, 10), applied
 
 
 # ---------------------------------------------------------------------------
-# Rating bands (0-100 scale)
+# Rating bands (0-10 scale)
 # ---------------------------------------------------------------------------
 
 BANDS = [
-    (80, "Excellent"),
-    (65, "Good"),
-    (50, "Generally Satisfactory"),
-    (35, "Improvement Necessary"),
-    (20, "Major Improvement"),
-    (0,  "Urgent Improvement"),
+    (8.0, "Excellent"),
+    (6.5, "Good"),
+    (5.0, "Generally Satisfactory"),
+    (3.5, "Improvement Necessary"),
+    (2.0, "Major Improvement"),
+    (0.0, "Urgent Improvement"),
 ]
 
 def assign_band(score):
@@ -534,23 +534,23 @@ def compute_rcs_v2(record):
         for t in tier_scores
     )
 
-    # Scale to 0-100
-    raw_score = weighted_sum * 100
+    # Scale to 0-10
+    raw_score = weighted_sum * 10
 
     # Apply penalties
     final_score, penalties = apply_penalties(raw_score, record)
-    final_score = round(clamp(final_score, 0, 100), 1)
+    final_score = round(clamp(final_score, 0, 10), 3)
 
     band = assign_band(final_score)
 
     return {
-        "fsa_tier": round(tier_scores.get("fsa", 0) * 100, 1) if "fsa" in tier_scores else None,
-        "google_tier": round(tier_scores.get("google", 0) * 100, 1) if "google" in tier_scores else None,
-        "online_tier": round(tier_scores.get("online", 0) * 100, 1) if "online" in tier_scores else None,
-        "ops_tier": round(tier_scores.get("ops", 0) * 100, 1) if "ops" in tier_scores else None,
-        "menu_tier": round(tier_scores.get("menu", 0) * 100, 1) if "menu" in tier_scores else None,
-        "reputation_tier": round(tier_scores.get("reputation", 0) * 100, 1) if "reputation" in tier_scores else None,
-        "community_tier": round(tier_scores.get("community", 0) * 100, 1) if "community" in tier_scores else None,
+        "fsa_tier": round(tier_scores.get("fsa", 0) * 10, 3) if "fsa" in tier_scores else None,
+        "google_tier": round(tier_scores.get("google", 0) * 10, 3) if "google" in tier_scores else None,
+        "online_tier": round(tier_scores.get("online", 0) * 10, 3) if "online" in tier_scores else None,
+        "ops_tier": round(tier_scores.get("ops", 0) * 10, 3) if "ops" in tier_scores else None,
+        "menu_tier": round(tier_scores.get("menu", 0) * 10, 3) if "menu" in tier_scores else None,
+        "reputation_tier": round(tier_scores.get("reputation", 0) * 10, 3) if "reputation" in tier_scores else None,
+        "community_tier": round(tier_scores.get("community", 0) * 10, 3) if "community" in tier_scores else None,
         "rcs_final": final_score,
         "rcs_band": band,
         "signals_available": signals_available,
@@ -641,32 +641,28 @@ def apply_tiebreakers(scored):
         r["business_name"].lower(),
     ))
 
-    # Apply offsets to tied scores so each is numerically unique.
-    # Use rank-based offset: score - rank_within_tie * 0.001.
-    # For scores at 0.0, use descending micro-offsets above 0 so
-    # the tiebreaker winner stays highest.
-    i = 0
-    while i < len(scored):
-        j = i + 1
-        while j < len(scored) and scored[j]["rcs_final"] == scored[i]["rcs_final"]:
-            j += 1
+    # Ensure every score is strictly less than the one above it.
+    # Walk top-down: if a score is not strictly less than the previous,
+    # nudge it down by 0.001. This guarantees global uniqueness
+    # regardless of how many ties exist or how close groups are.
+    for i in range(1, len(scored)):
+        if scored[i]["rcs_final"] >= scored[i - 1]["rcs_final"]:
+            scored[i]["rcs_final"] = round(scored[i - 1]["rcs_final"] - 0.001, 3)
 
-        tie_size = j - i
-        if tie_size > 1:
-            base = scored[i]["rcs_final"]
-            if base == 0.0:
-                # All at zero: assign descending micro-scores so first
-                # (best by tiebreaker) gets the highest micro-value
-                for k in range(tie_size):
-                    scored[i + k]["rcs_final"] = round(
-                        0.0 + (tie_size - k) * 0.001, 3
-                    )
-            else:
-                # Normal case: first keeps original, rest get decreasing offsets
-                for k in range(1, tie_size):
-                    scored[i + k]["rcs_final"] = round(base - 0.001 * k, 3)
-
-        i = j
+    # If the walk-down pushed scores below zero, re-space the tail
+    # so the worst record gets 0.000 and others above it are spaced
+    # 0.001 apart ascending.
+    if scored[-1]["rcs_final"] < 0:
+        # Find where scores went negative
+        first_neg = next(i for i, r in enumerate(scored) if r["rcs_final"] < 0)
+        # Also include any zeros that precede the negatives (they'd be ties)
+        while first_neg > 0 and scored[first_neg - 1]["rcs_final"] <= 0:
+            first_neg -= 1
+        tail_count = len(scored) - first_neg
+        for k in range(tail_count):
+            scored[first_neg + k]["rcs_final"] = round(
+                (tail_count - 1 - k) * 0.001, 3
+            )
 
     # Assign sequential ranks
     for rank, row in enumerate(scored, 1):
@@ -724,26 +720,26 @@ def save_summary_json(summary, path):
 def print_results(scored):
     # scored is already sorted by rank from apply_tiebreakers
     print()
-    print("=" * 88)
-    print("  TOP 10 RESTAURANTS BY RCS SCORE")
-    print("=" * 88)
-    print(f"  {'Rank':<6} {'Name':<35} {'PC':<10} {'FSA':>5} {'RCS':>8}  {'Band'}")
-    print("  " + "-" * 84)
+    print("=" * 92)
+    print("  TOP 10 RESTAURANTS BY RCS SCORE (0-10)")
+    print("=" * 92)
+    print(f"  {'Rank':<6} {'Name':<35} {'PC':<10} {'FSA':>6} {'RCS':>7}  {'Band'}")
+    print("  " + "-" * 88)
     for row in scored[:10]:
-        fsa = f"{row['fsa_tier_score']:.0f}" if row["fsa_tier_score"] is not None else "—"
+        fsa = f"{row['fsa_tier_score']:.3f}" if row["fsa_tier_score"] is not None else "  —"
         print(f"  {row['rank']:<6} {row['business_name'][:34]:<35} {row['postcode']:<10} "
-              f"{fsa:>5} {row['rcs_final']:>8.3f}  {row['rcs_band']}")
+              f"{fsa:>6} {row['rcs_final']:>7.3f}  {row['rcs_band']}")
 
     print()
-    print("=" * 88)
-    print("  BOTTOM 10 RESTAURANTS BY RCS SCORE")
-    print("=" * 88)
-    print(f"  {'Rank':<6} {'Name':<35} {'PC':<10} {'FSA':>5} {'RCS':>8}  {'Band'}")
-    print("  " + "-" * 84)
+    print("=" * 92)
+    print("  BOTTOM 10 RESTAURANTS BY RCS SCORE (0-10)")
+    print("=" * 92)
+    print(f"  {'Rank':<6} {'Name':<35} {'PC':<10} {'FSA':>6} {'RCS':>7}  {'Band'}")
+    print("  " + "-" * 88)
     for row in scored[-10:]:
-        fsa = f"{row['fsa_tier_score']:.0f}" if row["fsa_tier_score"] is not None else "—"
+        fsa = f"{row['fsa_tier_score']:.3f}" if row["fsa_tier_score"] is not None else "  —"
         print(f"  {row['rank']:<6} {row['business_name'][:34]:<35} {row['postcode']:<10} "
-              f"{fsa:>5} {row['rcs_final']:>8.3f}  {row['rcs_band']}")
+              f"{fsa:>6} {row['rcs_final']:>7.3f}  {row['rcs_band']}")
 
     # Band summary
     band_counts = Counter(r["rcs_band"] for r in scored)
