@@ -403,9 +403,9 @@
     .btn-nearme:hover { background: var(--accent); color: #fff; }
     .btn-nearme:disabled { opacity: .45; cursor: not-allowed; }
 
-    /* ---- LA Autocomplete ---- */
-    .la-wrap { position: relative; }
-    .la-dropdown {
+    /* ---- Location Autocomplete ---- */
+    .loc-wrap { position: relative; }
+    .loc-dropdown {
       display: none;
       position: absolute;
       top: 100%;
@@ -420,14 +420,17 @@
       border-radius: 0 0 8px 8px;
       box-shadow: var(--shadow-md);
     }
-    .la-dropdown.open { display: block; }
-    .la-option {
+    .loc-dropdown.open { display: block; }
+    .loc-option {
       padding: .45rem .75rem;
       font-size: .85rem;
       cursor: pointer;
       transition: background .1s;
     }
-    .la-option:hover, .la-option.active { background: var(--accent-light); color: var(--accent); }
+    .loc-option:hover, .loc-option.active { background: var(--accent-light); color: var(--accent); }
+
+    /* ---- Distance column ---- */
+    .dist-val { font-size: .82rem; color: var(--text-muted); white-space: nowrap; }
 
     /* ---- View toggle ---- */
     .view-toggle {
@@ -488,15 +491,21 @@
       <label for="fName">Name</label>
       <input type="text" id="fName" placeholder="Search name…">
     </div>
-    <div class="fld la-wrap">
-      <label for="fLA">Local Authority</label>
-      <input type="text" id="fLA" placeholder="e.g. Camden" autocomplete="off">
-      <div class="la-dropdown" id="laDropdown"></div>
+    <div class="fld loc-wrap">
+      <label for="fLocation">Location</label>
+      <input type="text" id="fLocation" placeholder="Town, city or postcode…" autocomplete="off">
+      <div class="loc-dropdown" id="locDropdown"></div>
     </div>
-    <button class="btn-nearme" id="btnNearMe" title="Use my location to find my Local Authority">&#9673; Near Me</button>
+    <button class="btn-nearme" id="btnNearMe" title="Use my location">&#9673; Near Me</button>
     <div class="fld">
-      <label for="fType">Business Type</label>
-      <input type="text" id="fType" placeholder="e.g. 1 (Restaurant)">
+      <label for="fDist">Distance</label>
+      <select id="fDist">
+        <option value="1">1 mile</option>
+        <option value="3">3 miles</option>
+        <option value="5" selected>5 miles</option>
+        <option value="10">10 miles</option>
+        <option value="25">25 miles</option>
+      </select>
     </div>
     <div class="fld">
       <label for="fRating">Rating</label>
@@ -515,7 +524,7 @@
 </div>
 
 <main>
-  <div id="status" class="status">Enter a Local Authority and press Search to query the database.</div>
+  <div id="status" class="status">Enter a town, city or postcode and press Search to find nearby restaurants.</div>
   <div id="resultsWrap" style="display:none;">
     <div class="meta-bar">
       <span id="metaCount"></span>
@@ -535,6 +544,7 @@
             <th class="sortable" data-key="n">Name <span class="arrow"></span></th>
             <th>Postcode</th>
             <th>Local Authority</th>
+            <th class="sortable" data-key="_dist">Distance <span class="arrow"></span></th>
             <th class="sortable" data-key="r">FSA Rating <span class="arrow"></span></th>
             <th>Tier</th>
             <th class="sortable" data-key="gr">Google <span class="arrow"></span></th>
@@ -588,16 +598,20 @@
   let markerLayer = null;
 
   // Friendly sort-key labels for the meta bar
-  const SORT_LABELS = { n: "name", r: "FSA rating", gr: "Google rating", rd: "last inspected" };
+  const SORT_LABELS = { n: "name", r: "FSA rating", gr: "Google rating", rd: "last inspected", _dist: "distance" };
+
+  // Search centre coordinates (set by geocoding)
+  let searchLat = null;
+  let searchLon = null;
 
   // Map marker colours by rating
   const MARKER_COLORS = { 5: "#22c55e", 4: "#14b8a6", 3: "#f59e0b", 2: "#f97316", 1: "#ef4444", 0: "#991b1b" };
 
   // DOM
-  const fName   = document.getElementById("fName");
-  const fLA     = document.getElementById("fLA");
-  const fType   = document.getElementById("fType");
-  const fRating = document.getElementById("fRating");
+  const fName     = document.getElementById("fName");
+  const fLocation = document.getElementById("fLocation");
+  const fDist     = document.getElementById("fDist");
+  const fRating   = document.getElementById("fRating");
   const btnSearch   = document.getElementById("btnSearch");
   const btnNearMe   = document.getElementById("btnNearMe");
   const statusEl    = document.getElementById("status");
@@ -607,92 +621,110 @@
   const metaSort    = document.getElementById("metaSort");
   const pagEl       = document.getElementById("pagination");
   const mapContainer = document.getElementById("mapContainer");
-  const laDropdown   = document.getElementById("laDropdown");
+  const locDropdown  = document.getElementById("locDropdown");
   const btnTableView = document.getElementById("btnTableView");
   const btnMapView   = document.getElementById("btnMapView");
 
-  // ---- LA list for autocomplete (loaded once) ----
-  let allLAs = [];
-  let laDropdownIdx = -1;
+  // ---- Haversine distance (miles) ----
+  function haversine(lat1, lon1, lat2, lon2) {
+    const R = 3958.8; // Earth radius in miles
+    const toRad = d => d * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
 
-  (async function loadLAs() {
-    try {
-      // Try dedicated index first
-      const snap = await db.ref("daydine/la_index").once("value");
-      const data = snap.val();
-      if (data) {
-        allLAs = Array.isArray(data) ? data.sort() : Object.keys(data).sort();
-        return;
+  // ---- Geocode location via postcodes.io ----
+  async function geocodeLocation(query) {
+    query = query.trim();
+    if (!query) return null;
+    // Detect postcode pattern (UK postcodes)
+    const pcPattern = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+    if (pcPattern.test(query)) {
+      const pc = encodeURIComponent(query.replace(/\s+/g, ""));
+      const resp = await fetch("https://api.postcodes.io/postcodes/" + pc);
+      const data = await resp.json();
+      if (data.status === 200 && data.result) {
+        return { lat: data.result.latitude, lon: data.result.longitude, la: data.result.admin_district };
       }
-    } catch (e) {
-      console.warn("Could not load LA index:", e);
+      return null;
     }
-    // Fallback: fetch distinct LAs by sampling — uses orderByChild("la") with a range scan
-    try {
-      const snap = await REF.orderByChild("la").limitToFirst(5000).once("value");
-      const data = snap.val();
-      if (data) {
-        const set = new Set();
-        Object.values(data).forEach(d => { if (d.la) set.add(d.la); });
-        allLAs = [...set].sort();
-      }
-    } catch (e) {
-      console.warn("LA fallback load failed:", e);
+    // Place name search
+    const resp = await fetch("https://api.postcodes.io/places?q=" + encodeURIComponent(query) + "&limit=5");
+    const data = await resp.json();
+    if (data.result && data.result.length > 0) {
+      return { lat: data.result[0].latitude, lon: data.result[0].longitude, la: data.result[0].admin_district, suggestions: data.result };
     }
-  })();
+    return null;
+  }
 
-  // ---- LA autocomplete ----
-  fLA.addEventListener("input", () => {
-    const val = fLA.value.trim().toLowerCase();
-    if (!val || allLAs.length === 0) { closeLADropdown(); return; }
-    const matches = allLAs.filter(la => la.toLowerCase().includes(val)).slice(0, 20);
-    if (matches.length === 0) { closeLADropdown(); return; }
-    laDropdown.innerHTML = "";
-    laDropdownIdx = -1;
-    matches.forEach((la, i) => {
-      const div = document.createElement("div");
-      div.className = "la-option";
-      div.textContent = la;
-      div.addEventListener("mousedown", e => { e.preventDefault(); selectLA(la); });
-      laDropdown.appendChild(div);
-    });
-    laDropdown.classList.add("open");
+  // ---- Location autocomplete (debounced place search) ----
+  let locDropdownIdx = -1;
+  let locDebounce = null;
+
+  fLocation.addEventListener("input", () => {
+    clearTimeout(locDebounce);
+    const val = fLocation.value.trim();
+    if (val.length < 2) { closeLocDropdown(); return; }
+    // Don't autocomplete if it looks like a postcode
+    const pcPattern = /^[A-Z]{1,2}\d/i;
+    if (pcPattern.test(val)) { closeLocDropdown(); return; }
+    locDebounce = setTimeout(async () => {
+      try {
+        const resp = await fetch("https://api.postcodes.io/places?q=" + encodeURIComponent(val) + "&limit=6");
+        const data = await resp.json();
+        if (!data.result || data.result.length === 0) { closeLocDropdown(); return; }
+        locDropdown.innerHTML = "";
+        locDropdownIdx = -1;
+        data.result.forEach(place => {
+          const div = document.createElement("div");
+          div.className = "loc-option";
+          const label = place.name_1 + (place.county_unitary ? ", " + place.county_unitary : "");
+          div.textContent = label;
+          div.dataset.name = place.name_1;
+          div.addEventListener("mousedown", e => { e.preventDefault(); selectLocation(place.name_1); });
+          locDropdown.appendChild(div);
+        });
+        locDropdown.classList.add("open");
+      } catch (e) { closeLocDropdown(); }
+    }, 250);
   });
 
-  fLA.addEventListener("keydown", e => {
-    const opts = laDropdown.querySelectorAll(".la-option");
-    if (!laDropdown.classList.contains("open") || opts.length === 0) return;
+  fLocation.addEventListener("keydown", e => {
+    const opts = locDropdown.querySelectorAll(".loc-option");
+    if (!locDropdown.classList.contains("open") || opts.length === 0) return;
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      laDropdownIdx = Math.min(laDropdownIdx + 1, opts.length - 1);
-      highlightLAOption(opts);
+      locDropdownIdx = Math.min(locDropdownIdx + 1, opts.length - 1);
+      highlightLocOption(opts);
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      laDropdownIdx = Math.max(laDropdownIdx - 1, 0);
-      highlightLAOption(opts);
-    } else if (e.key === "Enter" && laDropdownIdx >= 0) {
+      locDropdownIdx = Math.max(locDropdownIdx - 1, 0);
+      highlightLocOption(opts);
+    } else if (e.key === "Enter" && locDropdownIdx >= 0) {
       e.preventDefault();
-      selectLA(opts[laDropdownIdx].textContent);
+      selectLocation(opts[locDropdownIdx].dataset.name);
     } else if (e.key === "Escape") {
-      closeLADropdown();
+      closeLocDropdown();
     }
   });
 
-  fLA.addEventListener("blur", () => { setTimeout(closeLADropdown, 150); });
+  fLocation.addEventListener("blur", () => { setTimeout(closeLocDropdown, 150); });
 
-  function highlightLAOption(opts) {
-    opts.forEach((o, i) => o.classList.toggle("active", i === laDropdownIdx));
-    if (opts[laDropdownIdx]) opts[laDropdownIdx].scrollIntoView({ block: "nearest" });
+  function highlightLocOption(opts) {
+    opts.forEach((o, i) => o.classList.toggle("active", i === locDropdownIdx));
+    if (opts[locDropdownIdx]) opts[locDropdownIdx].scrollIntoView({ block: "nearest" });
   }
 
-  function selectLA(la) {
-    fLA.value = la;
-    closeLADropdown();
+  function selectLocation(name) {
+    fLocation.value = name;
+    closeLocDropdown();
   }
 
-  function closeLADropdown() {
-    laDropdown.classList.remove("open");
-    laDropdownIdx = -1;
+  function closeLocDropdown() {
+    locDropdown.classList.remove("open");
+    locDropdownIdx = -1;
   }
 
   // ---- Near Me ----
@@ -708,18 +740,21 @@
         navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 10000 });
       });
       const { latitude, longitude } = pos.coords;
+      searchLat = latitude;
+      searchLon = longitude;
+      // Reverse-geocode to get LA
       const resp = await fetch("https://api.postcodes.io/postcodes?lon=" + longitude + "&lat=" + latitude + "&limit=1");
       const data = await resp.json();
       if (data.result && data.result.length > 0) {
         const la = data.result[0].admin_district;
         if (la) {
-          fLA.value = la;
-          search();
+          fLocation.value = data.result[0].admin_district;
+          search(la);
         } else {
-          alert("Could not determine your Local Authority from your location.");
+          alert("Could not determine your location.");
         }
       } else {
-        alert("No postcode found near your location.");
+        alert("No results found near your location.");
       }
     } catch (err) {
       if (err.code === 1) alert("Location access denied. Please allow location access and try again.");
@@ -749,9 +784,9 @@
   }
 
   // ---- Events ----
-  btnSearch.addEventListener("click", search);
+  btnSearch.addEventListener("click", () => search());
   document.querySelectorAll(".fld input, .fld select").forEach(el => {
-    el.addEventListener("keydown", e => { if (e.key === "Enter") { closeLADropdown(); search(); } });
+    el.addEventListener("keydown", e => { if (e.key === "Enter") { closeLocDropdown(); search(); } });
   });
 
   document.querySelectorAll("th.sortable").forEach(th => {
@@ -766,21 +801,43 @@
   });
 
   // ---- Search ----
-  async function search() {
-    const la     = fLA.value.trim();
-    const name   = fName.value.trim().toLowerCase();
-    const type   = fType.value.trim();
-    const rating = fRating.value;
+  async function search(overrideLA) {
+    const location = fLocation.value.trim();
+    const name     = fName.value.trim().toLowerCase();
+    const rating   = fRating.value;
+    const maxDist  = parseFloat(fDist.value);
 
-    if (!la) {
-      showStatus("Please enter a Local Authority to narrow the query (264k records is too large to fetch at once).");
+    if (!location && !overrideLA) {
+      showStatus("Please enter a town, city or postcode to search.");
       return;
     }
 
-    showStatus("Querying…");
+    showStatus("Geocoding…");
     btnSearch.disabled = true;
 
     try {
+      let la = overrideLA || null;
+
+      // Geocode if not already set by Near Me
+      if (!overrideLA) {
+        const geo = await geocodeLocation(location);
+        if (!geo) {
+          showStatus("Could not find that location. Try a town name or full UK postcode (e.g. SW1A 1AA).");
+          btnSearch.disabled = false;
+          return;
+        }
+        searchLat = geo.lat;
+        searchLon = geo.lon;
+        la = geo.la;
+      }
+
+      if (!la) {
+        showStatus("Could not determine the local authority for this location.");
+        btnSearch.disabled = false;
+        return;
+      }
+
+      showStatus("Querying…");
       const snap = await REF.orderByChild("la").equalTo(la).once("value");
       const data = snap.val();
 
@@ -788,15 +845,23 @@
       else {
         let entries = Object.entries(data).map(([id, d]) => ({ _id: id, ...d }));
 
-        // Client-side filters on compact fields
+        // Compute distance and filter
+        if (searchLat != null && searchLon != null) {
+          entries = entries.filter(d => {
+            if (d.lat == null || d.lon == null) return false;
+            d._dist = haversine(searchLat, searchLon, parseFloat(d.lat), parseFloat(d.lon));
+            return d._dist <= maxDist;
+          });
+        }
+
+        // Client-side filters
         if (name)        entries = entries.filter(d => d.n && d.n.toLowerCase().includes(name));
-        if (type)        entries = entries.filter(d => d.t !== undefined && String(d.t) === type);
         if (rating !== "") entries = entries.filter(d => d.r !== undefined && d.r === parseInt(rating, 10));
 
         results = entries;
       }
 
-      sortKey = "n"; sortAsc = true;
+      sortKey = "_dist"; sortAsc = true;
       applySort();
       updateSortArrows();
       page = 0;
@@ -814,9 +879,9 @@
   function applySort() {
     results.sort((a, b) => {
       let va = a[sortKey], vb = b[sortKey];
-      if (sortKey === "r" || sortKey === "gr") {
-        va = (typeof va === "number") ? va : -1;
-        vb = (typeof vb === "number") ? vb : -1;
+      if (sortKey === "_dist" || sortKey === "r" || sortKey === "gr") {
+        va = (typeof va === "number") ? va : 9999;
+        vb = (typeof vb === "number") ? vb : 9999;
         return sortAsc ? va - vb : vb - va;
       }
       if (sortKey === "rd") {
@@ -853,7 +918,7 @@
   // ---- Render ----
   function render() {
     if (results.length === 0) {
-      showStatus("No establishments found. Try a different Local Authority or adjust filters.");
+      showStatus("No establishments found within the selected distance. Try increasing the radius or adjusting filters.");
       return;
     }
     statusEl.style.display = "none";
@@ -877,10 +942,12 @@
       if (d._id === expandedId) tr.classList.add("expanded-parent");
       const isExpanded = d._id === expandedId;
       const chevron = '<span class="expand-chevron">&#9654;</span>';
+      const distStr = (typeof d._dist === "number") ? d._dist.toFixed(1) + ' mi' : '—';
       tr.innerHTML =
         '<td class="name-cell" data-label="Name">' + chevron + esc(d.n || "—") + '</td>' +
         '<td data-label="Postcode">' + esc(d.pc || "—") + '</td>' +
         '<td data-label="Authority" class="mobile-hidden">' + esc(d.la || "—") + '</td>' +
+        '<td data-label="Distance" class="dist-val">' + distStr + '</td>' +
         '<td data-label="FSA Rating">' + ratingHTML(d.r) + '</td>' +
         '<td data-label="Tier">' + tierHTML(d.r) + '</td>' +
         '<td data-label="Google">' + googleRatingHTML(d.gr, d.grc) + '</td>' +
@@ -893,7 +960,7 @@
         const dr = document.createElement("tr");
         dr.className = "detail-row";
         const td = document.createElement("td");
-        td.colSpan = 7;
+        td.colSpan = 8;
         td.innerHTML = buildDetail(d);
         dr.appendChild(td);
         tbody.appendChild(dr);
