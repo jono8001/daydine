@@ -3,6 +3,9 @@ name: Fetch Stratford Data & Run RCS Scoring
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   fetch-and-score:
     runs-on: ubuntu-latest
@@ -16,8 +19,23 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Fetch from FSA API and convert to Firebase format
-        run: python .github/scripts/fetch_fsa_stratford.py
+      - name: Fetch from Firebase RTDB
+        run: |
+          python3 -c "
+import requests, json, csv, os
+url = 'https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app/daydine/establishments.json'
+params = {'orderBy': '\"la\"', 'equalTo': '\"Stratford-on-Avon\"'}
+resp = requests.get(url, params=params, timeout=60)
+resp.raise_for_status()
+data = resp.json()
+print(f'Fetched {len(data)} establishments')
+with open('stratford_establishments.json', 'w') as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+print('Saved stratford_establishments.json')
+# Verify postcodes
+pcs = [r.get('pc','') for r in data.values() if r.get('pc','').startswith('CV')]
+print(f'CV postcodes: {len(pcs)} of {len(data)}')
+"
 
       - name: Run RCS scoring pipeline
         run: python rcs_scoring_stratford.py --from-cache
@@ -26,6 +44,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add stratford_establishments.json stratford_establishments.csv stratford_rcs_scores.csv
-          git diff --cached --quiet || git commit -m "Add Stratford establishments data and RCS scores"
+          git add stratford_establishments.json stratford_rcs_scores.csv
+          git diff --cached --quiet || git commit -m "Add Stratford-on-Avon establishments data and RCS scores"
           git push
