@@ -1,0 +1,58 @@
+name: Full Pipeline (All Tiers except TripAdvisor)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  full-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: "Tier 1: Fetch FSA data from Firebase"
+        run: python .github/scripts/fetch_firebase_stratford.py
+
+      - name: "Tier 2: Enrich with Google Places"
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: |
+          python .github/scripts/enrich_google_stratford.py
+          python .github/scripts/merge_enrichment.py
+
+      - name: "Tier 5: Collect menu data"
+        run: |
+          python .github/scripts/collect_menus.py
+          python .github/scripts/merge_menus.py
+
+      - name: "Tier 6: Collect editorial & awards data"
+        run: |
+          python .github/scripts/collect_editorial.py
+          python .github/scripts/merge_editorial.py
+
+      - name: "Tier 1+: Check FSA enforcement actions"
+        run: |
+          python .github/scripts/collect_enforcement.py
+          python .github/scripts/merge_enforcement.py
+
+      - name: "Score: Run V2 RCS pipeline (all tiers)"
+        run: python rcs_scoring_stratford.py --from-cache
+
+      - name: Commit all results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A stratford_*.json stratford_*.csv
+          git diff --cached --quiet || git commit -m "Full pipeline run: Tiers 1+2+5+6+enforcement, all inferred tiers, re-scored"
+          git pull --rebase origin main
+          git push
