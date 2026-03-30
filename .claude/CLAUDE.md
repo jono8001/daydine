@@ -3,6 +3,40 @@
 ## What It Is
 UK restaurant tracking and ranking platform. MVP shows 264,791 FSA establishments searchable by local authority, business type, rating, and name. Phase 2 adds Google Places enrichment (ratings, review counts, price level). Future phases: TripAdvisor, editorial data, and composite Evidtrace scoring (RCS 0-10).
 
+## Product Vision & Strategy
+
+### Core Thesis
+A data-driven awards platform for consumers that gives diners something they can't get from Google, OpenTable, the Good Food Guide or the National Restaurant Awards. Existing incumbents own the "where should I eat?" moment - a copy-and-paste aggregator would be swamped. We must reframe the problem: not "how do we re-build TripAdvisor?" but "what do diners wish existing awards and review sites did better?"
+
+### Competitive Landscape
+- **Good Food Guide Best Local Restaurants** - reader nominations + anonymous inspections + editor selection. Builds trust but produces yearly static list, not data-driven.
+- **National Restaurant Awards** - 200+ panel of chefs/writers/restaurateurs vote for top-100. Prestige from panel, not data.
+- **Datassential 500** - US programme using proprietary sales data, predictive analytics, consumer sentiment for chains. Industry-facing, not consumer.
+- **Gap**: No existing service provides up-to-date, data-rich, transparent consumer-facing rankings.
+
+### Available Signals
+- UK footfall data is region-level only (BT Active Intelligence). Granular foot-traffic (Huq, O2 Motion) is expensive.
+- FSA hygiene scores are public but "not a guide to food quality" - compliance signal only.
+- Review platforms strongly influence consumer behaviour - scoring model relies on ratings and review velocity.
+- Hygiene, price bands, social media sentiment as secondary signals.
+- Proprietary signals (reservations, covers, footfall) require restaurant data sharing - pushes towards operator-facing model.
+
+### Differentiation Strategy
+1. **Dynamic real-time awards** - weekly/monthly "most improved" and "rising star" based on review velocity, hygiene updates, menu innovation. Makes site habit-forming.
+2. **Theme-based rankings** - "best sustainable restaurants", "hidden gems in towns under 50k residents", measurable sustainability/inclusivity metrics.
+3. **Transparent scoring methodology** - publish weights and data sources, invite independent auditors or food writers to review method.
+4. **User-nominated awards with data checks** - reader nominations ranked by algorithm. Automates Good Food Guide's nominations+inspections process.
+5. **Interactive explorer** - filter by value-for-money, creativity, consistency, neighbourhood, trendiness. Big movers, under-rated spots, consistency over time.
+
+### Commercial Model
+- **Revenue**: Members' club model (paid app for full rankings/perks) over advertising to protect neutrality. Restaurants pay for analytics/feedback without influencing ranking.
+- **Credibility**: Google Place API terms forbid caching - fetch ratings on demand. Invest in moderation and fake-review detection.
+- **Distribution**: Partnerships with travel/lifestyle media. Viral hook: "sustainable dining scorecards".
+- **Long-term**: Treat as niche media product, evolve towards B2B analytics once scoring system proven.
+
+### Verdict
+Standalone consumer awards site works only if materially different from existing guides. Must be data-rich, regularly updated, transparent, theme-based and interactive. Commercial upside modest vs B2B intelligence.
+
 ## Architecture
 - Frontend: Single index.html (static) on Vercel at daydine.vercel.app
 - Database: Firebase RTDB at https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app under /daydine path
