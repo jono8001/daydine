@@ -13,7 +13,17 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 13,
+    "gty": [
+      "cafe",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpc": 4,
+    "gpid": "ChIJtVIsVtA9d0gRr-wqbxCBfqQ"
   },
   "1584577": {
     "a": "Earlswood Nurseries Ltd, Earlswood Nurseries, Forshaw Heath Road, Earlswood",
@@ -29,7 +39,32 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 1375,
+    "gty": [
+      "garden_center",
+      "hardware_store",
+      "garden",
+      "building_materials_store",
+      "supplier",
+      "general_contractor",
+      "service",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJYSihybe4cEgR13eTzFCGqnQ",
+    "goh": [
+      "Monday: 9:00 AM – 6:00 PM",
+      "Tuesday: 9:00 AM – 6:00 PM",
+      "Wednesday: 9:00 AM – 6:00 PM",
+      "Thursday: 9:00 AM – 6:00 PM",
+      "Friday: 9:00 AM – 6:00 PM",
+      "Saturday: 9:00 AM – 6:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ]
   },
   "1695937": {
     "a": "The Phoenix, 38 Guild Street, Stratford-upon-Avon",
@@ -45,7 +80,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 121,
+    "gty": [
+      "pizza_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJT2SzHAPPcEgREWrVNsCQTTI",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: 4:00 – 9:00 PM",
+      "Friday: 4:00 – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 5:00 PM"
+    ]
   },
   "1896718": {
     "a": "Wasps Elite Performance And Innovation Centre, Stratford Road, Henley-in-Arden",
@@ -61,7 +116,17 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 11,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 4,
+    "gpid": "ChIJ_25bTGzHcEgRCmMRsYCpUOI"
   },
   "503081": {
     "a": "71A High Street, Henley-in-Arden",
@@ -77,7 +142,29 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 289,
+    "gpl": 2,
+    "gty": [
+      "chinese_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJF4gmYCXGcEgRCSZWeZHcc6E",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 12:00 – 2:00 PM, 5:00 – 10:00 PM",
+      "Wednesday: 12:00 – 2:00 PM, 5:00 – 10:00 PM",
+      "Thursday: 12:00 – 2:00 PM, 5:00 – 10:00 PM",
+      "Friday: 12:00 – 2:00 PM, 5:00 – 11:00 PM",
+      "Saturday: 5:00 – 11:00 PM",
+      "Sunday: 5:00 – 10:00 PM"
+    ]
   },
   "1927834": {
     "a": "Adventure Golf Course, Swans Nest Lane, Stratford-upon-Avon",
@@ -88,7 +175,25 @@
     "n": "Golden Putter Stratford Upon",
     "pc": "CV37 7LS",
     "rd": "1901-01-01T00:00:00",
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 90,
+    "gty": [
+      "miniature_golf_course",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJsYzIGy7OcEgRDJsw62M9Fc0",
+    "goh": [
+      "Monday: 10:00 AM – 5:00 PM",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ]
   },
   "503585": {
     "a": "Oxhill Centre, Oxhill, Warwick",
@@ -104,7 +209,23 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 566,
+    "gty": [
+      "tourist_attraction",
+      "visitor_center",
+      "tourist_information_center",
+      "pet_care",
+      "tour_agency",
+      "travel_agency",
+      "association_or_organization",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJA8l48PQsd0gRPTXXQ8X__VU"
   },
   "1622070": {
     "a": "13 Waterside, Stratford-upon-Avon",
@@ -120,7 +241,33 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 516,
+    "gpl": 2,
+    "gty": [
+      "italian_restaurant",
+      "breakfast_restaurant",
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJbw23GhHPcEgR77QJDXG8B_4",
+    "goh": [
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 9:00 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 9:00 PM",
+      "Saturday: 9:00 AM – 9:00 PM",
+      "Sunday: 9:00 AM – 8:00 PM"
+    ]
   },
   "503554": {
     "a": "High Street, Bidford-on-Avon, Alcester",
@@ -136,7 +283,27 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 315,
+    "gpl": 2,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJqdHzRFjbcEgRXm4Spbyv-Nk",
+    "goh": [
+      "Monday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Tuesday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Wednesday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Thursday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Friday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Saturday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Sunday: 12:00 – 3:00 PM"
+    ]
   },
   "503316": {
     "a": "12 Sheep Street, Stratford-upon-Avon",
@@ -152,7 +319,28 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 1372,
+    "gpl": 2,
+    "gty": [
+      "restaurant",
+      "british_restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ07kQJjLOcEgR6LZ0g4f17Eg",
+    "goh": [
+      "Monday: 4:45 – 9:00 PM",
+      "Tuesday: 12:00 – 9:00 PM",
+      "Wednesday: 12:00 – 9:00 PM",
+      "Thursday: 12:00 – 9:00 PM",
+      "Friday: 12:00 – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 8:30 PM"
+    ]
   },
   "1381156": {
     "a": "9 Church Street, Stratford-upon-Avon",
@@ -168,7 +356,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 176,
+    "gty": [
+      "thai_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJh9X5PfXPcEgRqNy4_qe9uW4",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 12:00 – 2:45 PM, 5:00 – 10:00 PM",
+      "Wednesday: 12:00 – 2:45 PM, 5:00 – 10:00 PM",
+      "Thursday: 12:00 – 2:45 PM, 5:00 – 10:00 PM",
+      "Friday: 12:00 – 2:45 PM, 5:00 – 10:30 PM",
+      "Saturday: 12:00 – 2:45 PM, 5:00 – 10:30 PM",
+      "Sunday: 12:00 – 2:45 PM, 5:00 – 9:00 PM"
+    ]
   },
   "1299513": {
     "a": "50 Main Street, Long Compton, Shipston-on-Stour",
@@ -182,7 +390,26 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 26,
+    "gty": [
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJb3nFBd4rcUgRV0nnAHxCT1A",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: Closed",
+      "Friday: 7:00 – 10:00 PM",
+      "Saturday: 7:00 – 10:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1826837": {
     "a": "208 Birmingham Road, Stratford-upon-Avon",
@@ -198,7 +425,28 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 291,
+    "gpl": 2,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJXwcOQufPcEgRTSmcK3_J9a4",
+    "goh": [
+      "Monday: 5:00 – 10:30 PM",
+      "Tuesday: 5:00 – 10:30 PM",
+      "Wednesday: 5:00 – 10:30 PM",
+      "Thursday: 5:00 – 10:30 PM",
+      "Friday: 5:00 – 10:30 PM",
+      "Saturday: 5:00 – 10:30 PM",
+      "Sunday: 5:00 – 10:30 PM"
+    ]
   },
   "1563336": {
     "a": "Warwick Services M40 Southbound, Ashorne, Warwick",
@@ -214,7 +462,28 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3,
+    "grc": 39,
+    "gty": [
+      "noodle_shop",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 8,
+    "gpid": "ChIJO6cyUpkzd0gRoAuZT8QUXfc",
+    "goh": [
+      "Monday: 11:45 AM – 8:00 PM",
+      "Tuesday: 11:45 AM – 8:00 PM",
+      "Wednesday: 11:45 AM – 8:00 PM",
+      "Thursday: 11:45 AM – 8:00 PM",
+      "Friday: 11:45 AM – 8:00 PM",
+      "Saturday: 11:45 AM – 8:00 PM",
+      "Sunday: 11:45 AM – 8:00 PM"
+    ]
   },
   "1364372": {
     "a": "Bell Inn, Binton Road, Welford-on-Avon, Stratford-upon-Avon",
@@ -230,7 +499,29 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 1157,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJUfnt47facEgRD3-FdZm4JTY",
+    "goh": [
+      "Monday: 11:45 AM – 11:00 PM",
+      "Tuesday: 11:45 AM – 11:00 PM",
+      "Wednesday: 11:45 AM – 11:00 PM",
+      "Thursday: 11:45 AM – 11:00 PM",
+      "Friday: 11:45 AM – 11:00 PM",
+      "Saturday: 11:45 AM – 11:00 PM",
+      "Sunday: 11:45 AM – 11:00 PM"
+    ]
   },
   "503343": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -246,7 +537,25 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 10079,
+    "gty": [
+      "rest_stop",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ1abMA1Iyd0gRmLbkMlGWa0o",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ]
   },
   "1302779": {
     "a": "The Old Mint, Coventry Street, Southam",
@@ -262,7 +571,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 89,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ26u8MGIxd0gRlQV1h3OGSOk",
+    "goh": [
+      "Monday: 11:00 AM – 11:00 PM",
+      "Tuesday: 11:00 AM – 11:00 PM",
+      "Wednesday: 11:00 AM – 12:00 AM",
+      "Thursday: 11:00 AM – 11:00 PM",
+      "Friday: 11:00 AM – 2:00 AM",
+      "Saturday: 11:00 AM – 1:00 AM",
+      "Sunday: 11:00 AM – 10:30 PM"
+    ]
   },
   "1826834": {
     "a": "Ferment And Flour, 6 Granville Court, Shipston-on-Stour",
@@ -278,7 +607,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 18,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJhxRH5AXVcEgR3cnRjzBs3hU",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 9:00 AM – 1:00 PM",
+      "Thursday: 9:00 AM – 1:00 PM",
+      "Friday: 9:00 AM – 1:00 PM",
+      "Saturday: 9:00 AM – 1:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1500965": {
     "a": "Venue Expresso, 3 High Street, Alcester",
@@ -294,7 +645,34 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 206,
+    "gpl": 2,
+    "gty": [
+      "cafe",
+      "brunch_restaurant",
+      "cocktail_bar",
+      "breakfast_restaurant",
+      "bar",
+      "food_store",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJI6oMR3nDcEgRANDeDB2tboc",
+    "goh": [
+      "Monday: 9:00 AM – 4:00 PM",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 4:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ]
   },
   "503918": {
     "a": "46 Coventry Street, Southam",
@@ -310,7 +688,30 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 97,
+    "gpl": 1,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJzVS9crkwd0gRfxFa5ixUG0w",
+    "goh": [
+      "Monday: 9:00 AM – 3:30 PM",
+      "Tuesday: 9:00 AM – 3:30 PM",
+      "Wednesday: 9:00 AM – 3:30 PM",
+      "Thursday: 9:00 AM – 3:30 PM",
+      "Friday: 9:00 AM – 3:30 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
   },
   "503141": {
     "a": "National Farmers Union Mutual Insurance Society Ltd, Tiddington Road, Stratford-upon-Avon",
@@ -324,7 +725,26 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 98,
+    "gty": [
+      "insurance_agency",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 7,
+    "gpid": "ChIJK3ARcD7OcEgRwaJSEyzsUGg",
+    "goh": [
+      "Monday: 9:00 AM – 5:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
   },
   "1622074": {
     "a": "Brookside Farm, Gaydon Road, Bishops Itchington, Southam",
@@ -340,7 +760,15 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 6,
+    "gty": [
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJT5praqYxd0gRyr_IGx5eWWU"
   },
   "1799218": {
     "a": "Kineton Pizza Junction Ltd, Southam Street, Kineton, Warwick",
@@ -354,7 +782,27 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 133,
+    "gty": [
+      "pizza_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJMZU_iOMtd0gRpw_OhfXFFDI",
+    "goh": [
+      "Monday: 8:30 AM – 10:00 PM",
+      "Tuesday: 8:30 AM – 10:00 PM",
+      "Wednesday: 8:30 AM – 10:00 PM",
+      "Thursday: 8:30 AM – 10:00 PM",
+      "Friday: 8:30 AM – 10:00 PM",
+      "Saturday: 8:30 AM – 10:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "503972": {
     "a": "George Hotel, High Street, Shipston-on-Stour",
@@ -370,7 +818,34 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 1034,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "beer_garden",
+      "bed_and_breakfast",
+      "bar_and_grill",
+      "british_restaurant",
+      "restaurant",
+      "food",
+      "bar",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJRWdHoUjUcEgR7Uf7XalNZmM",
+    "goh": [
+      "Monday: 8:00 AM – 11:00 PM",
+      "Tuesday: 8:00 AM – 11:00 PM",
+      "Wednesday: 8:00 AM – 11:00 PM",
+      "Thursday: 8:00 AM – 11:00 PM",
+      "Friday: 8:00 AM – 12:00 AM",
+      "Saturday: 8:00 AM – 12:00 AM",
+      "Sunday: 8:00 AM – 10:00 PM"
+    ]
   },
   "1712197": {
     "a": "95 High Street, Henley-in-Arden",
@@ -386,7 +861,31 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 8,
+    "gty": [
+      "cafe",
+      "coffee_shop",
+      "sandwich_shop",
+      "food_store",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ1-pC-KrHcEgRViL_8bs2-Hs",
+    "goh": [
+      "Monday: 9:00 AM – 3:00 PM",
+      "Tuesday: 8:00 AM – 2:00 PM",
+      "Wednesday: 8:00 AM – 2:00 PM",
+      "Thursday: 8:00 AM – 2:00 PM",
+      "Friday: 8:00 AM – 2:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1291215": {
     "a": "Studley Garden Centre, Henley Road, Mappleborough Green, Studley",
@@ -402,7 +901,26 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.5,
+    "grc": 12,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 5,
+    "gpid": "ChIJwTbCv-jBcEgRagu1R2goyDk",
+    "goh": [
+      "Monday: 9:00 AM – 5:30 PM",
+      "Tuesday: 9:00 AM – 5:30 PM",
+      "Wednesday: 9:00 AM – 5:30 PM",
+      "Thursday: 9:00 AM – 5:30 PM",
+      "Friday: 9:00 AM – 5:30 PM",
+      "Saturday: 9:00 AM – 5:30 PM",
+      "Sunday: 10:00 AM – 4:30 PM"
+    ]
   },
   "676556": {
     "a": "Whichford Pottery, Whichford, Shipston-on-Stour",
@@ -418,7 +936,29 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 250,
+    "gpl": 2,
+    "gty": [
+      "restaurant",
+      "breakfast_restaurant",
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJc0wULFbVdkgR84G_P8nQHqA",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "503032": {
     "a": "The Spice Room Ltd, 20C High Street, Alcester",
@@ -434,7 +974,28 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 127,
+    "gty": [
+      "meal_takeaway",
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJNcmLQ3nDcEgR3zbCM_f0foM",
+    "goh": [
+      "Monday: 5:30 – 10:30 PM",
+      "Tuesday: 5:30 – 10:30 PM",
+      "Wednesday: 4:30 – 10:30 PM",
+      "Thursday: 5:30 – 10:30 PM",
+      "Friday: 5:30 – 11:30 PM",
+      "Saturday: 5:30 PM – 12:30 AM",
+      "Sunday: 5:30 – 10:15 PM"
+    ]
   },
   "1911092": {
     "a": "Coughton Court, Coughton, Alcester",
@@ -445,7 +1006,20 @@
     "n": "Coughton Court Cafe",
     "pc": "B49 5JA",
     "rd": "1901-01-01T00:00:00",
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 13,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJsaohwxPDcEgRUCP69xcdRsA"
   },
   "1800190": {
     "a": "Village Hall, Burmington",
@@ -459,7 +1033,17 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 20,
+    "gty": [
+      "event_venue",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 6,
+    "gpid": "ChIJk09EfpWxcEgRC9xT2L0gxEI"
   },
   "1339997": {
     "a": "The Water Margin, Marton Road, Long Itchington, Southam",
@@ -475,7 +1059,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 73,
+    "gty": [
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJG1I-0yI7d0gR3UYQ-oZYhhE",
+    "goh": [
+      "Monday: 4:30 – 10:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 4:30 – 10:00 PM",
+      "Thursday: 4:30 – 10:00 PM",
+      "Friday: 4:30 – 10:00 PM",
+      "Saturday: 4:30 – 10:00 PM",
+      "Sunday: 4:30 – 10:00 PM"
+    ]
   },
   "1747703": {
     "a": "6 - 7 High Street, Stratford-upon-Avon",
@@ -491,7 +1095,35 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 139,
+    "gty": [
+      "bakery",
+      "sandwich_shop",
+      "pastry_shop",
+      "coffee_shop",
+      "cafe",
+      "dessert_shop",
+      "confectionery",
+      "food_store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJySavy_fPcEgRTKFtXgWIaDY",
+    "goh": [
+      "Monday: 7:00 AM – 6:00 PM",
+      "Tuesday: 7:00 AM – 6:00 PM",
+      "Wednesday: 7:00 AM – 6:00 PM",
+      "Thursday: 7:00 AM – 6:00 PM",
+      "Friday: 7:00 AM – 6:00 PM",
+      "Saturday: 7:00 AM – 6:00 PM",
+      "Sunday: 7:30 AM – 6:00 PM"
+    ]
   },
   "1452414": {
     "a": "Unit V, The Maybird Centre, Birmingham Road, Stratford-upon-Avon",
@@ -507,7 +1139,30 @@
     "sh": 2.5,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.7,
+    "grc": 256,
+    "gpl": 1,
+    "gty": [
+      "sandwich_shop",
+      "fast_food_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ57_aXLXPcEgRow_8l5TSmsk",
+    "goh": [
+      "Monday: 8:00 AM – 9:00 PM",
+      "Tuesday: 8:00 AM – 9:00 PM",
+      "Wednesday: 8:00 AM – 9:00 PM",
+      "Thursday: 8:00 AM – 9:00 PM",
+      "Friday: 8:00 AM – 9:00 PM",
+      "Saturday: 8:00 AM – 9:00 PM",
+      "Sunday: 8:00 AM – 9:00 PM"
+    ]
   },
   "503481": {
     "a": "13 Sheep Street, Stratford-upon-Avon",
@@ -523,7 +1178,28 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 533,
+    "gpl": 2,
+    "gty": [
+      "bistro",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ7f1ZJjLOcEgREqBVi1vVlKY",
+    "goh": [
+      "Monday: 5:00 – 9:00 PM",
+      "Tuesday: 12:00 – 2:00 PM, 5:00 – 9:00 PM",
+      "Wednesday: 12:00 – 2:00 PM, 5:00 – 9:00 PM",
+      "Thursday: 12:00 – 2:00 PM, 5:00 – 9:00 PM",
+      "Friday: 12:00 – 2:00 PM, 5:00 – 9:00 PM",
+      "Saturday: 12:00 – 2:00 PM, 5:00 – 9:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1808717": {
     "a": "Le Bistro Pierre, Swans Nest Hotel, Swans Nest Lane, Stratford-upon-Avon",
@@ -536,7 +1212,32 @@
     "r": 5,
     "rd": "2026-01-13T00:00:00",
     "s": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 970,
+    "gpl": 2,
+    "gty": [
+      "french_restaurant",
+      "bistro",
+      "pub",
+      "breakfast_restaurant",
+      "restaurant",
+      "food",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJgy6jFjDOcEgRq_eouPDqIFE",
+    "goh": [
+      "Monday: 7:00 AM – 8:30 PM",
+      "Tuesday: 7:00 AM – 8:30 PM",
+      "Wednesday: 7:00 AM – 8:30 PM",
+      "Thursday: 7:00 AM – 8:30 PM",
+      "Friday: 7:00 AM – 8:30 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 8:00 PM"
+    ]
   },
   "503820": {
     "a": "16 Market Hill, Southam",
@@ -552,7 +1253,32 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 215,
+    "gpl": 1,
+    "gty": [
+      "coffee_shop",
+      "breakfast_restaurant",
+      "cafe",
+      "restaurant",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJaf4cLrkwd0gREeHjohjrj6w",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 9:00 AM – 3:00 PM",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1253303": {
     "a": "6 Banbury Road, Ettington, Stratford-upon-Avon",
@@ -568,7 +1294,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 73,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJCTMFo1_TcEgRTeo9kdtDeGA",
+    "goh": [
+      "Monday: 8:30 AM – 4:00 PM",
+      "Tuesday: 8:30 AM – 4:00 PM",
+      "Wednesday: 8:30 AM – 4:00 PM",
+      "Thursday: 8:30 AM – 4:00 PM",
+      "Friday: 8:30 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 1:30 PM",
+      "Sunday: Closed"
+    ]
   },
   "1206081": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -584,7 +1332,16 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 600,
+    "gty": [
+      "corporate_office",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc"
   },
   "1705603": {
     "a": "Escape Community Arts, The Old Slaughterhouse, Sheep Street, Stratford-upon-Avon",
@@ -600,7 +1357,26 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 1,
+    "gty": [
+      "medical_clinic",
+      "health",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 1,
+    "gpid": "ChIJ0-n3fXzPcEgRrdVwLqzbisQ",
+    "goh": [
+      "Monday: 1:00 – 3:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: Closed",
+      "Friday: 10:00 AM – 2:00 PM",
+      "Saturday: 1:30 – 4:30 PM",
+      "Sunday: Closed"
+    ]
   },
   "1739369": {
     "a": "",
@@ -614,7 +1390,29 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 3,
+    "gty": [
+      "butcher_shop",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "manufacturer",
+      "service",
+      "store",
+      "establishment"
+    ],
+    "gpid": "ChIJV-VxFmxCd0gRJqek_tW3Fu0",
+    "goh": [
+      "Monday: 4:00 AM – 11:00 PM",
+      "Tuesday: 4:00 AM – 11:00 PM",
+      "Wednesday: 4:00 AM – 11:00 PM",
+      "Thursday: 4:00 AM – 11:00 PM",
+      "Friday: 4:00 AM – 11:00 PM",
+      "Saturday: 4:00 AM – 11:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1024960": {
     "a": "Welcome Break Ltd (North), Warwick Services M40, Ashorne, Warwick",
@@ -630,7 +1428,36 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.4,
+    "grc": 587,
+    "gpl": 2,
+    "gty": [
+      "coffee_shop",
+      "tea_store",
+      "coffee_stand",
+      "sandwich_shop",
+      "cafe",
+      "meal_takeaway",
+      "tea_house",
+      "food_store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJcRN-OmLedkgR3pyi5KRNs0E",
+    "goh": [
+      "Monday: 5:30 AM – 9:00 PM",
+      "Tuesday: 5:30 AM – 9:00 PM",
+      "Wednesday: 5:30 AM – 9:00 PM",
+      "Thursday: 5:30 AM – 9:00 PM",
+      "Friday: 5:30 AM – 9:00 PM",
+      "Saturday: 5:30 AM – 9:00 PM",
+      "Sunday: 7:00 AM – 9:00 PM"
+    ]
   },
   "503345": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -646,7 +1473,33 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.3,
+    "grc": 373,
+    "gpl": 1,
+    "gty": [
+      "fast_food_restaurant",
+      "electric_vehicle_charging_station",
+      "chicken_restaurant",
+      "chicken_wings_restaurant",
+      "meal_takeaway",
+      "transportation_service",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJkxFJAVEyd0gRCDt3qKCcKdQ",
+    "goh": [
+      "Monday: 11:00 AM – 10:00 PM",
+      "Tuesday: 11:00 AM – 10:00 PM",
+      "Wednesday: 11:00 AM – 10:00 PM",
+      "Thursday: 11:00 AM – 10:00 PM",
+      "Friday: 10:30 AM – 11:00 PM",
+      "Saturday: 10:30 AM – 10:00 PM",
+      "Sunday: 11:00 AM – 10:00 PM"
+    ]
   },
   "1266904": {
     "a": "Welcome Break Ltd (North), Warwick Services M40, Ashorne, Warwick",
@@ -662,7 +1515,25 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.9,
+    "grc": 9507,
+    "gty": [
+      "rest_stop",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJfRd0wgPTcEgRQgEf0g29cmk",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ]
   },
   "1297845": {
     "a": "26 High Street, Alcester",
@@ -678,7 +1549,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 198,
+    "gpl": 1,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "tea_house",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJe9BVXHnDcEgRWmeVk36NZn8",
+    "goh": [
+      "Monday: 9:30 AM – 4:00 PM",
+      "Tuesday: 9:30 AM – 4:00 PM",
+      "Wednesday: 9:30 AM – 4:00 PM",
+      "Thursday: 9:30 AM – 4:00 PM",
+      "Friday: 9:30 AM – 4:00 PM, 5:00 – 10:30 PM",
+      "Saturday: 9:30 AM – 4:00 PM, 5:00 – 10:30 PM",
+      "Sunday: Closed"
+    ]
   },
   "1089841": {
     "a": "Cotswold Distillery, Phillips Field, Stourton, Shipston-on-Stour",
@@ -694,7 +1589,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 1239,
+    "gty": [
+      "tour_agency",
+      "travel_agency",
+      "manufacturer",
+      "store",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJNVfg1U7UcEgREJx3BaPEUpA",
+    "goh": [
+      "Monday: 9:00 AM – 5:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ]
   },
   "1672985": {
     "a": "Bidford On Avon Methodist Church, Chapel Close, Bidford-on-Avon, Alcester",
@@ -708,7 +1625,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 173,
+    "gty": [
+      "cafe",
+      "cake_shop",
+      "bakery",
+      "food_store",
+      "manufacturer",
+      "wholesaler",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJeQ_dcLPbcEgR-G8xyTEdIIs",
+    "goh": [
+      "Monday: 9:00 AM – 3:00 PM",
+      "Tuesday: 9:00 AM – 3:00 PM",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "503054": {
     "a": "Warwick Road, Black Hill, Stratford-upon-Avon",
@@ -724,7 +1666,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 1179,
+    "gty": [
+      "hotel",
+      "gym",
+      "wedding_venue",
+      "sports_activity_location",
+      "lodging",
+      "event_venue",
+      "health",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ4ThqBSrMcEgRFtOxCOY6SOU",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ]
   },
   "503525": {
     "a": "Shahs Restaurant, Charlecote Road, Wellesbourne, Warwick",
@@ -740,7 +1707,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 331,
+    "gpl": 2,
+    "gty": [
+      "indian_restaurant",
+      "asian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJN9B18GzNcEgRCiMERUu5sFs",
+    "goh": [
+      "Monday: 5:30 – 11:00 PM",
+      "Tuesday: 5:30 – 11:00 PM",
+      "Wednesday: 5:30 – 11:00 PM",
+      "Thursday: 5:30 – 11:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:00 – 11:00 PM",
+      "Sunday: 5:00 – 11:00 PM"
+    ]
   },
   "504014": {
     "a": "Kings Head Hotel, Charlecote Road, Wellesbourne, Warwick",
@@ -756,7 +1745,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1952,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "british_restaurant",
+      "gastropub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJgbDXmmzNcEgRwM-DQpl97ow",
+    "goh": [
+      "Monday: 9:00 AM – 11:00 PM",
+      "Tuesday: 9:00 AM – 11:00 PM",
+      "Wednesday: 9:00 AM – 11:00 PM",
+      "Thursday: 9:00 AM – 11:00 PM",
+      "Friday: 9:00 AM – 11:00 PM",
+      "Saturday: 9:00 AM – 11:00 PM",
+      "Sunday: 9:00 AM – 10:30 PM"
+    ]
   },
   "1284339": {
     "a": "Avon Dassett, Southam",
@@ -772,7 +1785,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 391,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ8dsF2q4vd0gRyjlW1Tk0SyU",
+    "goh": [
+      "Monday: 12:00 – 3:00 PM, 5:00 – 10:00 PM",
+      "Tuesday: 12:00 – 3:00 PM, 5:00 – 10:00 PM",
+      "Wednesday: 12:00 – 3:00 PM, 5:00 – 11:00 PM",
+      "Thursday: 12:00 – 3:00 PM, 5:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 9:00 AM – 11:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ]
   },
   "1774612": {
     "a": "Lower Langley Farm, Birmingham Road, Bishopton, Stratford-upon-Avon",
@@ -788,7 +1821,29 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 441,
+    "gty": [
+      "dessert_shop",
+      "confectionery",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJbcLLt28ddkgRzFtGoHUj63Y",
+    "goh": [
+      "Monday: 10:00 AM – 11:00 PM",
+      "Tuesday: 10:00 AM – 11:00 PM",
+      "Wednesday: 10:00 AM – 11:00 PM",
+      "Thursday: 10:00 AM – 11:00 PM",
+      "Friday: 10:00 AM – 12:00 AM",
+      "Saturday: 10:00 AM – 12:00 AM",
+      "Sunday: 10:00 AM – 11:00 PM"
+    ]
   },
   "502872": {
     "a": "Alderminster, Stratford-upon-Avon",
@@ -804,7 +1859,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 1021,
+    "gty": [
+      "hotel",
+      "wedding_venue",
+      "event_venue",
+      "lodging",
+      "restaurant",
+      "service",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJMc_IicbTcEgRy4T1dRHRy8I",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ]
   },
   "1210746": {
     "a": "2 St Faiths Road, Alcester",
@@ -820,7 +1899,33 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 513,
+    "gty": [
+      "inn",
+      "hotel",
+      "live_music_venue",
+      "lodging",
+      "bar",
+      "event_venue",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJjwZhXK7DcEgRK8vJy0yE8GA",
+    "goh": [
+      "Monday: 8:00 AM – 12:00 AM",
+      "Tuesday: 8:00 AM – 12:00 AM",
+      "Wednesday: 8:00 AM – 12:00 AM",
+      "Thursday: 8:00 AM – 12:00 AM",
+      "Friday: 8:00 AM – 12:00 AM",
+      "Saturday: 8:00 AM – 12:00 AM",
+      "Sunday: 8:00 AM – 12:00 AM"
+    ]
   },
   "503216": {
     "a": "Hallmark Hotels - The Welcombe, Warwick Road, Stratford-upon-Avon",
@@ -836,7 +1941,35 @@
     "sh": 2.5,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 1394,
+    "gty": [
+      "hotel",
+      "golf_course",
+      "wedding_venue",
+      "event_venue",
+      "athletic_field",
+      "spa",
+      "sports_activity_location",
+      "lodging",
+      "restaurant",
+      "service",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJxWV3_UHOcEgR1xPLalQrJyg",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ]
   },
   "503781": {
     "a": "Ladbroke Road, Bishops Itchington, Southam",
@@ -852,7 +1985,28 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 253,
+    "gpl": 1,
+    "gty": [
+      "meal_takeaway",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpc": 7,
+    "gpid": "ChIJE19Jp6Uxd0gRsB2TfuTe_Xw",
+    "goh": [
+      "Monday: 5:00 – 9:00 PM",
+      "Tuesday: 5:00 – 9:00 PM",
+      "Wednesday: 5:00 – 9:00 PM",
+      "Thursday: 5:00 – 9:00 PM",
+      "Friday: 4:30 – 9:00 PM",
+      "Saturday: 4:30 – 9:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1421980": {
     "a": "10 Bridge Street, Stratford-upon-Avon",
@@ -868,7 +2022,18 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 302,
+    "gty": [
+      "greek_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ2XVfAVHPcEgRjFq1SL9CdXw"
   },
   "1246463": {
     "a": "37 Rother Street, Stratford-upon-Avon",
@@ -884,7 +2049,32 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 83,
+    "gty": [
+      "beer_garden",
+      "pub",
+      "live_music_venue",
+      "bar",
+      "event_venue",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJrewGXvvPcEgRJOwbvWS3R1Q",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: Closed",
+      "Friday: 6:00 PM – 1:00 AM",
+      "Saturday: 4:00 PM – 1:00 AM",
+      "Sunday: Closed"
+    ]
   },
   "1847445": {
     "a": "Kiosk 3, Bell Court, Stratford-upon-Avon",
@@ -900,7 +2090,35 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 120,
+    "gty": [
+      "cafe",
+      "coffee_roastery",
+      "coffee_stand",
+      "coffee_shop",
+      "dog_cafe",
+      "italian_restaurant",
+      "art_gallery",
+      "food_store",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJqxorPpjPcEgRQDF1FDen5ck",
+    "goh": [
+      "Monday: 9:30 AM – 5:00 PM",
+      "Tuesday: 9:30 AM – 5:00 PM",
+      "Wednesday: 9:30 AM – 5:00 PM",
+      "Thursday: 9:30 AM – 5:00 PM",
+      "Friday: 9:30 AM – 5:00 PM",
+      "Saturday: 9:30 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ]
   },
   "1774606": {
     "a": "Unit 3, Haydon House, 3 - 7 Alcester Road, Studley",
@@ -916,7 +2134,35 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 275,
+    "gty": [
+      "coffee_shop",
+      "pizza_restaurant",
+      "gift_shop",
+      "hamburger_restaurant",
+      "chicken_restaurant",
+      "american_restaurant",
+      "cafe",
+      "restaurant",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ_y5R4e3BcEgRGnB5wqvj-lE",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 9:00 AM – 9:00 PM",
+      "Thursday: 9:00 AM – 9:00 PM",
+      "Friday: 9:00 AM – 10:00 PM",
+      "Saturday: 9:00 AM – 10:00 PM",
+      "Sunday: 9:00 AM – 8:00 PM"
+    ]
   },
   "650308": {
     "a": "Summer Palace, Birmingham Road, Mappleborough Green, Studley",
@@ -932,7 +2178,28 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 522,
+    "gpl": 2,
+    "gty": [
+      "chinese_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ8z0zYS_BcEgRcxL4Ucqp_Gk",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 5:00 – 10:00 PM",
+      "Wednesday: 5:00 – 10:00 PM",
+      "Thursday: 5:00 – 10:00 PM",
+      "Friday: 5:00 – 10:00 PM",
+      "Saturday: 5:00 – 10:00 PM",
+      "Sunday: 12:30 – 10:00 PM"
+    ]
   },
   "1896717": {
     "a": "LITHOS, 64 High Street, Henley-in-Arden",
@@ -945,7 +2212,26 @@
     "r": 5,
     "rd": "2026-03-11T00:00:00",
     "s": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 72,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJw2Ec-BnHcEgRk4QFHHn6P3Y",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 12:00 – 3:00 PM, 5:00 – 9:30 PM",
+      "Wednesday: 12:00 – 3:00 PM, 5:00 – 9:30 PM",
+      "Thursday: 12:00 – 3:00 PM, 5:00 – 9:30 PM",
+      "Friday: 12:00 – 9:30 PM",
+      "Saturday: 12:00 – 9:30 PM",
+      "Sunday: 12:00 – 6:00 PM"
+    ]
   },
   "1622082": {
     "a": "Briar Croft Cafe, Briar Croft, Alcester Road, Stratford-upon-Avon",
@@ -961,7 +2247,15 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gty": [
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJxeB2YQDPcEgRtflbEEKlGN8"
   },
   "503732": {
     "a": "Pizza Hut, Unit P, Maybird Retail Park, Birmingham Road",
@@ -977,7 +2271,24 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 1831,
+    "gpl": 2,
+    "gty": [
+      "pizza_restaurant",
+      "vegan_restaurant",
+      "vegetarian_restaurant",
+      "family_restaurant",
+      "fast_food_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJeyNuhzHOcEgRI1EPt-qlwu8"
   },
   "1388310": {
     "a": "42 Rother Street, Stratford-upon-Avon",
@@ -993,7 +2304,30 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 565,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "brewpub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJsdeYHjPOcEgR_9bOJS2FpG8",
+    "goh": [
+      "Monday: 11:00 AM – 11:00 PM",
+      "Tuesday: 11:00 AM – 11:00 PM",
+      "Wednesday: 11:00 AM – 11:00 PM",
+      "Thursday: 11:00 AM – 12:30 AM",
+      "Friday: 11:00 AM – 12:30 AM",
+      "Saturday: 11:00 AM – 12:30 AM",
+      "Sunday: 11:00 AM – 10:00 PM"
+    ]
   },
   "1584574": {
     "a": "Stratford-upon-Avon Golf Club, Tiddington Road, Stratford-upon-Avon",
@@ -1009,7 +2343,34 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 88,
+    "gty": [
+      "golf_course",
+      "athletic_field",
+      "sporting_goods_store",
+      "sports_school",
+      "sports_activity_location",
+      "sports_club",
+      "sports_coaching",
+      "association_or_organization",
+      "health",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJtUxQYhbOcEgRVh1sfSoeqmQ",
+    "goh": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 6:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 6:00 PM",
+      "Friday: 8:00 AM – 6:00 PM",
+      "Saturday: 8:00 AM – 6:00 PM",
+      "Sunday: 8:00 AM – 6:00 PM"
+    ]
   },
   "1927833": {
     "a": "Kineton Sports And Social Club, Norton Grange, Little Kineton, Warwick",
@@ -1018,7 +2379,26 @@
     "n": "Slimming World",
     "pc": "CV35 0FA",
     "rd": "1901-01-01T00:00:00",
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 176,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJe3HTeKctd0gRsTD-NZlQsRw",
+    "goh": [
+      "Monday: 7:00 – 11:00 PM",
+      "Tuesday: 7:00 – 11:00 PM",
+      "Wednesday: 7:00 – 11:00 PM",
+      "Thursday: 7:00 – 11:00 PM",
+      "Friday: 6:30 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ]
   },
   "1552328": {
     "a": "38 Guild Street, Stratford-upon-Avon",
@@ -1034,7 +2414,30 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 272,
+    "gpl": 2,
+    "gty": [
+      "bar",
+      "pizza_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJv4iJTXTPcEgRWN0-gXmqD74",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 PM – 12:00 AM",
+      "Friday: 12:00 PM – 1:00 AM",
+      "Saturday: 12:00 PM – 1:00 AM",
+      "Sunday: 12:00 – 11:00 PM"
+    ]
   },
   "502702": {
     "a": "Wildmoor Health And Fitness Club, Alcester Road, Stratford-upon-Avon",
@@ -1050,7 +2453,34 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 530,
+    "gty": [
+      "fitness_center",
+      "swimming_pool",
+      "spa",
+      "gym",
+      "sports_club",
+      "sports_activity_location",
+      "association_or_organization",
+      "restaurant",
+      "food",
+      "health",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJPTQLWezPcEgRHYifz9oWO2M",
+    "goh": [
+      "Monday: 6:30 AM – 10:00 PM",
+      "Tuesday: 6:30 AM – 10:00 PM",
+      "Wednesday: 6:30 AM – 10:00 PM",
+      "Thursday: 6:30 AM – 10:00 PM",
+      "Friday: 6:30 AM – 9:00 PM",
+      "Saturday: 7:30 AM – 8:00 PM",
+      "Sunday: 7:30 AM – 8:00 PM"
+    ]
   },
   "1739370": {
     "a": "Unit 17, Bell Court, Stratford-upon-Avon",
@@ -1066,7 +2496,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 481,
+    "gty": [
+      "pizza_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJOaoTM3LPcEgRL5MvaX-6nAY",
+    "goh": [
+      "Monday: 10:00 AM – 9:00 PM",
+      "Tuesday: 10:00 AM – 9:00 PM",
+      "Wednesday: 10:00 AM – 9:00 PM",
+      "Thursday: 10:00 AM – 9:00 PM",
+      "Friday: 10:00 AM – 9:00 PM",
+      "Saturday: 10:00 AM – 9:00 PM",
+      "Sunday: 10:00 AM – 3:30 PM"
+    ]
   },
   "1014807": {
     "a": "McDonalds Restaurant Limited, Western Road, Stratford-upon-Avon",
@@ -1082,7 +2532,34 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.8,
+    "grc": 2386,
+    "gpl": 1,
+    "gty": [
+      "fast_food_restaurant",
+      "hamburger_restaurant",
+      "breakfast_restaurant",
+      "diner",
+      "chicken_restaurant",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJiYe72jTOcEgRQWBv2zWWEpc",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ]
   },
   "1093181": {
     "a": "6 Bards Walk, Stratford-upon-Avon",
@@ -1098,7 +2575,21 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 538,
+    "gpl": 2,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ53EdvDPOcEgRn0d-aG7fXeg"
   },
   "503376": {
     "a": "Dunnington Heath Farm, Dunnington, Alcester",
@@ -1114,7 +2605,27 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 1191,
+    "gty": [
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJeaciHynDcEgRdPnWtWrjwSc",
+    "goh": [
+      "Monday: 8:00 AM – 5:00 PM",
+      "Tuesday: 8:00 AM – 5:00 PM",
+      "Wednesday: 8:00 AM – 5:00 PM",
+      "Thursday: 8:00 AM – 5:00 PM",
+      "Friday: 8:00 AM – 5:00 PM",
+      "Saturday: 8:00 AM – 5:00 PM",
+      "Sunday: 8:00 AM – 4:30 PM"
+    ]
   },
   "1016715": {
     "a": "Shakespaw Cat Café, 6 Union Street, Stratford-upon-Avon",
@@ -1130,7 +2641,27 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 952,
+    "gpl": 2,
+    "gty": [
+      "cat_cafe",
+      "tea_house",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJR8KW3TPOcEgRYdbDIUrFTuk",
+    "goh": [
+      "Monday: 10:30 AM – 6:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 10:30 AM – 6:00 PM",
+      "Thursday: 10:30 AM – 6:00 PM",
+      "Friday: 10:30 AM – 6:00 PM",
+      "Saturday: 10:30 AM – 6:00 PM",
+      "Sunday: 10:30 AM – 6:00 PM"
+    ]
   },
   "504026": {
     "a": "Ragley Hall, Alcester",
@@ -1146,7 +2677,22 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 1395,
+    "gty": [
+      "event_venue",
+      "wedding_venue",
+      "tourist_attraction",
+      "garden",
+      "park",
+      "live_music_venue",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJeazHrhTDcEgRlQMrjbtf_HA"
   },
   "1747706": {
     "a": "Southam Road, Long Itchington, Southam",
@@ -1162,7 +2708,33 @@
     "sh": 10.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 849,
+    "gpl": 1,
+    "gty": [
+      "cafe",
+      "sandwich_shop",
+      "breakfast_restaurant",
+      "diner",
+      "fast_food_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ8Z4phUA3d0gRqFuPwA4VrpI",
+    "goh": [
+      "Monday: 8:30 AM – 3:00 PM",
+      "Tuesday: 8:30 AM – 3:00 PM",
+      "Wednesday: 8:30 AM – 3:00 PM",
+      "Thursday: 8:30 AM – 3:00 PM",
+      "Friday: 8:30 AM – 3:00 PM",
+      "Saturday: 8:30 AM – 3:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ]
   },
   "503114": {
     "a": "Mount Everest Restuarant, 31 Alcester Road, Studley",
@@ -1178,7 +2750,27 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 2.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 297,
+    "gpl": 2,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJzRCeYWjBcEgRt-J6JndF01k",
+    "goh": [
+      "Monday: 5:00 – 11:00 PM",
+      "Tuesday: 5:00 – 11:00 PM",
+      "Wednesday: 5:00 – 11:00 PM",
+      "Thursday: 5:00 – 11:00 PM",
+      "Friday: 5:00 – 11:00 PM",
+      "Saturday: 5:00 – 11:00 PM",
+      "Sunday: 5:00 – 11:00 PM"
+    ]
   },
   "1871630": {
     "a": "Swan Hotel, Banbury Street, Kineton, Warwick",
@@ -1194,7 +2786,33 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 294,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "hotel",
+      "live_music_venue",
+      "wine_bar",
+      "lodging",
+      "bar",
+      "event_venue",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJZ8J-JqEtd0gRs7ktZHEopBs",
+    "goh": [
+      "Monday: 4:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ]
   },
   "1695933": {
     "a": "1 Henley Street, Stratford-upon-Avon",
@@ -1210,7 +2828,35 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1321,
+    "gpl": 2,
+    "gty": [
+      "pastry_shop",
+      "diner",
+      "cafe",
+      "dessert_shop",
+      "confectionery",
+      "bakery",
+      "food_store",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ2WVkljPOcEgRZdG39Hao51Q",
+    "goh": [
+      "Monday: 8:30 AM – 4:00 PM",
+      "Tuesday: 8:30 AM – 4:00 PM",
+      "Wednesday: 8:30 AM – 4:00 PM",
+      "Thursday: 8:30 AM – 4:00 PM",
+      "Friday: 8:30 AM – 4:00 PM",
+      "Saturday: 8:30 AM – 5:00 PM",
+      "Sunday: 8:30 AM – 4:00 PM"
+    ]
   },
   "503735": {
     "a": "Costa Coffee, Unit Q, Maybird Retail Park, Birmingham Road",
@@ -1226,7 +2872,30 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 541,
+    "gpl": 2,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ224ZxTPOcEgR6i7kW_aVzW0",
+    "goh": [
+      "Monday: 7:00 AM – 7:00 PM",
+      "Tuesday: 7:00 AM – 7:00 PM",
+      "Wednesday: 7:00 AM – 7:00 PM",
+      "Thursday: 7:00 AM – 7:00 PM",
+      "Friday: 7:00 AM – 7:00 PM",
+      "Saturday: 7:00 AM – 7:00 PM",
+      "Sunday: 8:00 AM – 5:00 PM"
+    ]
   },
   "1152776": {
     "a": "Gilks Garage, Banbury Road, Kineton, Warwick",
@@ -1242,7 +2911,27 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 935,
+    "gpl": 2,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJd4cutyEtd0gRqyike4QwESk",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ]
   },
   "503565": {
     "a": "Avonbrook House, 198 Masons Road, Stratford-upon-Avon",
@@ -1258,7 +2947,26 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 16,
+    "gty": [
+      "service",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJpSELgbjPcEgR7hvPjGfWNbQ",
+    "goh": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 6:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 6:00 PM",
+      "Friday: 8:00 AM – 5:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
   },
   "503292": {
     "a": "10 - 11 Sheep Street, Stratford-upon-Avon",
@@ -1274,7 +2982,28 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1055,
+    "gpl": 2,
+    "gty": [
+      "restaurant",
+      "italian_restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJw8aSJTLOcEgRmTl3Hf5AN6Y",
+    "goh": [
+      "Monday: 12:00 – 9:00 PM",
+      "Tuesday: 12:00 – 9:00 PM",
+      "Wednesday: 12:00 – 9:00 PM",
+      "Thursday: 12:00 – 9:00 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ]
   },
   "1800192": {
     "a": "4 - 5 Meer Street, Stratford-upon-Avon",
@@ -1290,7 +3019,20 @@
     "sh": 2.5,
     "sm": 0.0,
     "ss": 2.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.9,
+    "grc": 277,
+    "gty": [
+      "tea_house",
+      "breakfast_restaurant",
+      "cafe",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ3xTOpjPOcEgRwAaRKOxTk3c"
   },
   "1754520": {
     "a": "Cinnamon Arch, The Green, Long Itchington, Southam",
@@ -1304,7 +3046,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 52,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ_y24Yes3d0gRNcfliv5mHWo",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 5:30 – 10:30 PM",
+      "Wednesday: 5:30 – 10:30 PM",
+      "Thursday: 5:30 – 10:30 PM",
+      "Friday: 5:30 – 10:30 PM",
+      "Saturday: 5:30 – 10:30 PM",
+      "Sunday: 5:30 – 10:30 PM"
+    ]
   },
   "1206075": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -1320,7 +3082,16 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 600,
+    "gty": [
+      "corporate_office",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc"
   },
   "503960": {
     "a": "The Bakery, 14 Sheep Street, Shipston-on-Stour",
@@ -1336,7 +3107,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 200,
+    "gpl": 2,
+    "gty": [
+      "cafe",
+      "coffee_shop",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ27rYHkbUcEgR0RqbtWwql10",
+    "goh": [
+      "Monday: 8:00 AM – 3:00 PM",
+      "Tuesday: 8:00 AM – 3:00 PM",
+      "Wednesday: 8:00 AM – 3:00 PM",
+      "Thursday: 8:00 AM – 3:00 PM",
+      "Friday: 8:00 AM – 3:00 PM",
+      "Saturday: 8:00 AM – 2:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1842631": {
     "a": "Bearley Road, Snitterfield, Stratford-upon-Avon",
@@ -1352,7 +3146,28 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 102,
+    "gty": [
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJRQgHzYHPcEgRP4WR1yAXcOo",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ]
   },
   "1896714": {
     "a": "The Church Street Townhouse, 16 Church Street, Stratford-upon-Avon",
@@ -1368,7 +3183,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 576,
+    "gpl": 2,
+    "gty": [
+      "hotel",
+      "gastropub",
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJiY16YjLOcEgRf4YND3V9oN4",
+    "goh": [
+      "Monday: 8:00 AM – 10:00 PM",
+      "Tuesday: 8:00 AM – 10:00 PM",
+      "Wednesday: 8:00 AM – 10:00 PM",
+      "Thursday: 8:00 AM – 10:00 PM",
+      "Friday: 8:00 AM – 10:00 PM",
+      "Saturday: 8:00 AM – 10:00 PM",
+      "Sunday: 8:00 AM – 10:00 PM"
+    ]
   },
   "1291217": {
     "a": "Charlecote Gardens, Charlecote, Warwick",
@@ -1384,7 +3224,26 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.9,
+    "grc": 8,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJld4PdmHNcEgR7eajg9iMFco",
+    "goh": [
+      "Monday: 9:00 AM – 4:30 PM",
+      "Tuesday: 9:00 AM – 4:30 PM",
+      "Wednesday: 9:00 AM – 4:30 PM",
+      "Thursday: 9:00 AM – 4:30 PM",
+      "Friday: 9:00 AM – 4:30 PM",
+      "Saturday: 9:00 AM – 4:30 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ]
   },
   "1228994": {
     "a": "Unit 22, Bell Court, Stratford-upon-Avon",
@@ -1400,7 +3259,28 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 275,
+    "gty": [
+      "bakery",
+      "food_store",
+      "point_of_interest",
+      "store",
+      "food",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ4QxF7jPOcEgRq3BYJpBhcnA",
+    "goh": [
+      "Monday: 8:00 AM – 3:00 PM",
+      "Tuesday: 8:00 AM – 3:00 PM",
+      "Wednesday: 8:00 AM – 3:00 PM",
+      "Thursday: 8:00 AM – 3:00 PM",
+      "Friday: 8:00 AM – 3:00 PM",
+      "Saturday: 8:00 AM – 4:00 PM",
+      "Sunday: 8:00 AM – 3:00 PM"
+    ]
   },
   "1453409": {
     "a": "",
@@ -1414,7 +3294,17 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 6,
+    "gty": [
+      "sports_club",
+      "point_of_interest",
+      "association_or_organization",
+      "establishment"
+    ],
+    "gpc": 2,
+    "gpid": "ChIJ410yx1jbcEgRYo4x2QsP2aE"
   },
   "503552": {
     "a": "The Waterways, Birmingham Road, Stratford-upon-Avon",
@@ -1430,7 +3320,21 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1687,
+    "gty": [
+      "hotel",
+      "bed_and_breakfast",
+      "inn",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJMZi2MTXOcEgRdGbQlVELl7M"
   },
   "503821": {
     "a": "4A High Street, Southam",
@@ -1446,7 +3350,28 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 144,
+    "gty": [
+      "meal_takeaway",
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJsQ_9QLkwd0gRSa48I6w27ik",
+    "goh": [
+      "Monday: 5:30 – 10:00 PM",
+      "Tuesday: 5:30 – 10:00 PM",
+      "Wednesday: 5:30 – 10:00 PM",
+      "Thursday: 5:30 – 10:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 10:00 PM"
+    ]
   },
   "1790270": {
     "a": "Cordelia, 31 Sheep Street, Stratford-upon-Avon",
@@ -1462,7 +3387,31 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 416,
+    "gty": [
+      "coffee_shop",
+      "brunch_restaurant",
+      "cafe",
+      "restaurant",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ_98aNTLOcEgRGsiVTAzgtho",
+    "goh": [
+      "Monday: 8:00 AM – 4:30 PM",
+      "Tuesday: 8:00 AM – 4:30 PM",
+      "Wednesday: 8:00 AM – 4:30 PM",
+      "Thursday: 8:00 AM – 4:30 PM",
+      "Friday: 8:00 AM – 4:30 PM",
+      "Saturday: 8:00 AM – 5:00 PM",
+      "Sunday: 8:30 AM – 4:30 PM"
+    ]
   },
   "1854458": {
     "a": "Oversley Mill Services, Alcester Bypass, Alcester",
@@ -1478,7 +3427,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 9,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 4,
+    "gpid": "ChIJJ3gjN9PDcEgRRMARiQWR654",
+    "goh": [
+      "Monday: 5:30 AM – 9:00 PM",
+      "Tuesday: 5:30 AM – 9:00 PM",
+      "Wednesday: 5:30 AM – 9:00 PM",
+      "Thursday: 5:30 AM – 9:00 PM",
+      "Friday: 5:30 AM – 9:00 PM",
+      "Saturday: 6:00 AM – 9:00 PM",
+      "Sunday: 7:00 AM – 8:00 PM"
+    ]
   },
   "503479": {
     "a": "Upton House, Banbury Road, Upton, Banbury",
@@ -1494,7 +3465,26 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 3261,
+    "gpl": 2,
+    "gty": [
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJjzYlpwIsd0gRD6MmTpOZQqY",
+    "goh": [
+      "Monday: 11:00 AM – 4:00 PM",
+      "Tuesday: 11:00 AM – 4:00 PM",
+      "Wednesday: 11:00 AM – 4:00 PM",
+      "Thursday: 11:00 AM – 4:00 PM",
+      "Friday: 11:00 AM – 4:00 PM",
+      "Saturday: 11:00 AM – 4:00 PM",
+      "Sunday: 11:00 AM – 4:00 PM"
+    ]
   },
   "503541": {
     "a": "Tesco Stores Ltd, Birmingham Road, Stratford-upon-Avon",
@@ -1510,7 +3500,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 388,
+    "gpl": 1,
+    "gty": [
+      "supermarket",
+      "market",
+      "convenience_store",
+      "grocery_store",
+      "food_store",
+      "point_of_interest",
+      "store",
+      "food",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ2QQcJ7HPcEgRy100Af-T3Ng",
+    "goh": [
+      "Monday: 6:00 AM – 12:00 AM",
+      "Tuesday: 6:00 AM – 12:00 AM",
+      "Wednesday: 6:00 AM – 12:00 AM",
+      "Thursday: 6:00 AM – 12:00 AM",
+      "Friday: 6:00 AM – 12:00 AM",
+      "Saturday: 6:00 AM – 12:00 AM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ]
   },
   "1835033": {
     "a": "15 Welford Road, Barton, Bidford-on-Avon, Alcester",
@@ -1526,7 +3541,29 @@
     "sh": 5.0,
     "sm": 10.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 598,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJyV-FEEPbcEgR9_4Kx6dX1NU",
+    "goh": [
+      "Monday: 4:00 – 10:00 PM",
+      "Tuesday: 4:00 – 10:00 PM",
+      "Wednesday: 4:00 – 10:00 PM",
+      "Thursday: 12:00 – 10:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ]
   },
   "1474392": {
     "a": "Sports Pavilion, Wellington Avenue, Meon Vale, Stratford-upon-Avon",
@@ -1542,7 +3579,29 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 20,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 2,
+    "gpid": "ChIJnQrcH0vbcEgRUS362fq8WJQ",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "736236": {
     "a": "J N B Gymnastics, Unit 5, Featherbed Lane, Pathlow",
@@ -1558,7 +3617,29 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 194,
+    "gty": [
+      "gym",
+      "sports_school",
+      "sports_complex",
+      "sports_activity_location",
+      "health",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJI2KBRnTPcEgRmnzH4IRBaP4",
+    "goh": [
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 9:00 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 8:00 PM",
+      "Saturday: 9:00 AM – 8:00 PM",
+      "Sunday: 9:00 AM – 8:00 PM"
+    ]
   },
   "503715": {
     "a": "Asda Living, Unit L And M, Maybird Retail Park, Birmingham Road",
@@ -1574,7 +3655,30 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 1546,
+    "gpl": 1,
+    "gty": [
+      "home_goods_store",
+      "cafe",
+      "clothing_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJg07Xy0rOcEgRbYRVrlQuTeI",
+    "goh": [
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 9:00 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 8:00 PM",
+      "Saturday: 9:00 AM – 7:00 PM",
+      "Sunday: 10:30 AM – 4:30 PM"
+    ]
   },
   "1622072": {
     "a": "Unit 10, Dodwell Trading Estate, Evesham Road, Dodwell",
@@ -1590,7 +3694,33 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 132,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "furniture_store",
+      "home_improvement_store",
+      "home_goods_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJxxro7XTPcEgRoIuYj3CLwtM",
+    "goh": [
+      "Monday: 10:00 AM – 5:00 PM",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ]
   },
   "1266894": {
     "a": "Barnabys Fish Restaurant, 22 Waterside, Stratford-upon-Avon",
@@ -1606,7 +3736,30 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 1179,
+    "gpl": 2,
+    "gty": [
+      "fast_food_restaurant",
+      "fish_and_chips_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJNx0QkDHOcEgR-syV1E0kMTc",
+    "goh": [
+      "Monday: 12:00 – 8:00 PM",
+      "Tuesday: 12:00 – 8:00 PM",
+      "Wednesday: 12:00 – 8:00 PM",
+      "Thursday: 12:00 – 8:00 PM",
+      "Friday: 12:00 – 8:00 PM",
+      "Saturday: 12:00 – 8:00 PM",
+      "Sunday: 12:00 – 7:00 PM"
+    ]
   },
   "1552322": {
     "a": "6 Henley Street, Stratford-upon-Avon",
@@ -1622,7 +3775,21 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.9,
+    "grc": 95,
+    "gpl": 2,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJl-fUavDPcEgRTeq2tKtBnpU"
   },
   "1421992": {
     "a": "13 - 14 Meer Street, Stratford-upon-Avon",
@@ -1638,7 +3805,36 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 510,
+    "gpl": 1,
+    "gty": [
+      "cafe",
+      "sandwich_shop",
+      "coffee_shop",
+      "breakfast_restaurant",
+      "tea_house",
+      "british_restaurant",
+      "meal_takeaway",
+      "food_store",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJa9yHDjPOcEgRmD8AOSejzqM",
+    "goh": [
+      "Monday: 9:00 AM – 4:00 PM",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "503105": {
     "a": "7 Greenhill Street, Stratford-upon-Avon",
@@ -1654,7 +3850,28 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 312,
+    "gpl": 1,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJQ3day8zPcEgRY3B5c_xGd84",
+    "goh": [
+      "Monday: 5:30 – 11:00 PM",
+      "Tuesday: 5:30 – 11:00 PM",
+      "Wednesday: 5:30 – 11:00 PM",
+      "Thursday: 5:30 – 11:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 11:00 PM"
+    ]
   },
   "1789006": {
     "a": "12 Market Hill, Southam",
@@ -1670,7 +3887,33 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 188,
+    "gpl": 2,
+    "gty": [
+      "deli",
+      "meal_takeaway",
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJHfG7jUbLcEgRJxsQUicM-3I",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 10:00 AM – 6:00 PM",
+      "Wednesday: 10:00 AM – 6:00 PM",
+      "Thursday: 10:00 AM – 6:00 PM",
+      "Friday: 10:00 AM – 6:00 PM",
+      "Saturday: 10:00 AM – 6:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "503148": {
     "a": "Nuthurst Grange Hotel, Nuthurst Grange Road, Hockley Heath, Solihull",
@@ -1686,7 +3929,31 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 590,
+    "gty": [
+      "hotel",
+      "wedding_venue",
+      "event_venue",
+      "lodging",
+      "restaurant",
+      "service",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJDzgmVfnHcEgRD9V2fmty8Ok",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ]
   },
   "1421981": {
     "a": "45A High Street, Studley",
@@ -1702,7 +3969,28 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 148,
+    "gpl": 2,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJN0Lz6WjBcEgREp2bEDgJKq4",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 5:30 – 10:30 PM",
+      "Wednesday: 5:30 – 10:30 PM",
+      "Thursday: 5:30 – 10:30 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 10:30 PM"
+    ]
   },
   "503286": {
     "a": "Georges Cafe, Unit 5, Beech Tree Park, Bidford-on-Avon",
@@ -1718,7 +4006,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 124,
+    "gpl": 1,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ41s9b1LbcEgRN8Lfx1SxVNU",
+    "goh": [
+      "Monday: 7:30 AM – 2:00 PM",
+      "Tuesday: 7:30 AM – 2:00 PM",
+      "Wednesday: 7:30 AM – 2:00 PM",
+      "Thursday: 7:30 AM – 2:00 PM",
+      "Friday: 7:30 AM – 2:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
   },
   "1552333": {
     "a": "Unit 3, The Rosebird Centre, Shipston Road, Stratford-upon-Avon",
@@ -1734,7 +4042,30 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.7,
+    "grc": 35,
+    "gpl": 2,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 2,
+    "gpid": "ChIJ1xnzSyDPcEgRQTDQGJWgOII",
+    "goh": [
+      "Monday: 6:00 AM – 7:00 PM",
+      "Tuesday: 6:00 AM – 7:00 PM",
+      "Wednesday: 6:00 AM – 7:00 PM",
+      "Thursday: 6:00 AM – 7:00 PM",
+      "Friday: 6:00 AM – 7:00 PM",
+      "Saturday: 7:00 AM – 7:00 PM",
+      "Sunday: 8:00 AM – 6:00 PM"
+    ]
   },
   "1485802": {
     "a": "Home Guard Club, Main Street, Tiddington, Stratford-upon-Avon",
@@ -1750,7 +4081,25 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 121,
+    "gty": [
+      "point_of_interest",
+      "association_or_organization",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJWa__0RLOcEgRhyvdfVw3BAQ",
+    "goh": [
+      "Monday: 6:00 – 11:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 6:00 – 11:00 PM",
+      "Thursday: 6:00 – 11:00 PM",
+      "Friday: 6:00 – 9:00 PM",
+      "Saturday: 12:00 PM – 12:00 AM",
+      "Sunday: 12:00 – 10:00 PM"
+    ]
   },
   "1495078": {
     "a": "4 Greenhill Street, Stratford-upon-Avon",
@@ -1766,7 +4115,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 167,
+    "gty": [
+      "vietnamese_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJLQGVrIDPcEgRRNvQ8J7I2Rk",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 5:00 – 11:00 PM",
+      "Wednesday: 5:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ]
   },
   "503240": {
     "a": "152 High Street, Henley-in-Arden",
@@ -1782,7 +4151,33 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 1160,
+    "gpl": 1,
+    "gty": [
+      "ice_cream_shop",
+      "tea_house",
+      "dessert_shop",
+      "confectionery",
+      "cafe",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJtVAbMzvGcEgRNCgPVQIXIuA",
+    "goh": [
+      "Monday: 9:00 AM – 5:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: 9:00 AM – 5:30 PM",
+      "Sunday: 9:00 AM – 5:30 PM"
+    ]
   },
   "1912631": {
     "a": "1 - 2 Granville Court, Shipston-on-Stour",
@@ -1793,7 +4188,28 @@
     "n": "Shipston Bengal Cuisine",
     "pc": "CV36 4PP",
     "rd": "1901-01-01T00:00:00",
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 127,
+    "gpl": 2,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJxaiyr0jUcEgR_goNQXLedUM",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 5:30 – 11:00 PM",
+      "Wednesday: 5:30 – 11:00 PM",
+      "Thursday: 5:30 – 11:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 11:00 PM"
+    ]
   },
   "1253300": {
     "a": "Keys And Kitchen, 6 Ely Street, Stratford-upon-Avon",
@@ -1809,7 +4225,18 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 387,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJyTHR-TLOcEgROUPYwQCax1k"
   },
   "503270": {
     "a": "Kings Coughton, Alcester",
@@ -1825,7 +4252,13 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gty": [
+      "premise",
+      "street_address"
+    ],
+    "gpc": 5,
+    "gpid": "ChIJ6Wdw5JDDcEgRkh-MB-0rmDI"
   },
   "1799220": {
     "a": "BURGER KING, Unit W And Unit X, The Maybird Centre, Birmingham Road",
@@ -1841,7 +4274,26 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.7,
+    "grc": 218,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJl5iLHADPcEgRBUd7GDvLEkI",
+    "goh": [
+      "Monday: 8:00 AM – 12:00 AM",
+      "Tuesday: 8:00 AM – 11:00 PM",
+      "Wednesday: 8:00 AM – 11:00 PM",
+      "Thursday: 8:00 AM – 11:00 PM",
+      "Friday: 8:00 AM – 12:00 AM",
+      "Saturday: 8:00 AM – 12:00 AM",
+      "Sunday: 8:00 AM – 11:00 PM"
+    ]
   },
   "1344517": {
     "a": "Fox Inn, Loxley, Warwick",
@@ -1854,7 +4306,29 @@
     "r": 5,
     "rd": "2026-02-06T00:00:00",
     "s": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 271,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "restaurant",
+      "food",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJl-BYUnDScEgRdpC19Q8TMX0",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 6:00 – 10:30 PM",
+      "Wednesday: 12:00 – 3:00 PM, 5:00 – 10:00 PM",
+      "Thursday: 12:00 – 3:00 PM, 5:00 – 10:30 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 4:00 PM"
+    ]
   },
   "1781021": {
     "a": "Baptist Church, Payton Street, Stratford-upon-Avon",
@@ -1870,7 +4344,18 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 12,
+    "gty": [
+      "church",
+      "place_of_worship",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 2,
+    "gpid": "ChIJ9SYsTjHOcEgRLxIZs-829wY"
   },
   "503401": {
     "a": "3 Bridge Street, Kineton, Warwick",
@@ -1886,7 +4371,28 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 526,
+    "gpl": 2,
+    "gty": [
+      "bangladeshi_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJsyBm-sk0d0gRZovNEn0rXts",
+    "goh": [
+      "Monday: 5:00 – 10:30 PM",
+      "Tuesday: 5:00 – 10:30 PM",
+      "Wednesday: 5:00 – 10:30 PM",
+      "Thursday: 5:00 – 10:30 PM",
+      "Friday: 5:00 – 11:00 PM",
+      "Saturday: 5:00 – 11:00 PM",
+      "Sunday: 5:00 – 10:30 PM"
+    ]
   },
   "503854": {
     "a": "Stratford Garden Centre, Campden Road, Clifford Chambers, Stratford-upon-Avon",
@@ -1902,7 +4408,27 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 1817,
+    "gty": [
+      "garden_center",
+      "store",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJf3HZJzrQcEgRnCNO_xOfOtg",
+    "goh": [
+      "Monday: 9:00 AM – 5:30 PM",
+      "Tuesday: 9:00 AM – 5:30 PM",
+      "Wednesday: 9:00 AM – 5:30 PM",
+      "Thursday: 9:00 AM – 5:30 PM",
+      "Friday: 9:00 AM – 5:30 PM",
+      "Saturday: 9:00 AM – 5:30 PM",
+      "Sunday: 10:30 AM – 4:30 PM"
+    ]
   },
   "979161": {
     "a": "Spernal Ash Nurseries, Alcester Road, Studley",
@@ -1918,7 +4444,19 @@
     "sh": 5.0,
     "sm": 0.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 108,
+    "gpl": 1,
+    "gty": [
+      "breakfast_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJYUllYuDDcEgR09pb2TDpPrk"
   },
   "676561": {
     "a": "The View, Swans Nest Lane, Stratford-upon-Avon",
@@ -1934,7 +4472,26 @@
     "sh": 5.0,
     "sm": 10.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 820,
+    "gty": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJZVUwRK7PcEgRzsGAt-mPIdw",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ]
   },
   "1747702": {
     "a": "Unit 18, Bell Court, Stratford-upon-Avon",
@@ -1950,7 +4507,27 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 950,
+    "gty": [
+      "brazilian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJmU2Wnl_PcEgRciAZqfMaIBs",
+    "goh": [
+      "Monday: 12:00 – 10:00 PM",
+      "Tuesday: 12:00 – 10:00 PM",
+      "Wednesday: 12:00 – 10:00 PM",
+      "Thursday: 12:00 – 10:00 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ]
   },
   "1397584": {
     "a": "93 High Street, Henley-in-Arden",
@@ -1966,7 +4543,27 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 323,
+    "gpl": 3,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJi-UVQyXGcEgRsjC7Org8c7o",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 12:00 – 2:30 PM, 6:00 – 9:30 PM",
+      "Wednesday: 12:00 – 2:30 PM, 6:00 – 9:30 PM",
+      "Thursday: 12:00 – 2:30 PM, 6:00 – 9:30 PM",
+      "Friday: 12:00 – 2:30 PM, 6:00 – 9:30 PM",
+      "Saturday: 12:00 – 2:30 PM, 6:00 – 9:30 PM",
+      "Sunday: 12:00 – 2:30 PM"
+    ]
   },
   "1838726": {
     "a": "The Cow Shed, Yew Trees Craft Centre, Stratford Road, Wootton Wawen",
@@ -1982,7 +4579,30 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 377,
+    "gpl": 2,
+    "gty": [
+      "cafe",
+      "coffee_shop",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJfX4RLQHGcEgRngJPe3T_H-M",
+    "goh": [
+      "Monday: 10:00 AM – 3:30 PM",
+      "Tuesday: 10:00 AM – 4:30 PM",
+      "Wednesday: 10:00 AM – 4:30 PM",
+      "Thursday: 10:00 AM – 4:30 PM",
+      "Friday: 10:00 AM – 4:30 PM",
+      "Saturday: 10:00 AM – 4:30 PM",
+      "Sunday: 10:00 AM – 4:30 PM"
+    ]
   },
   "503555": {
     "a": "Camp Site, Dog Lane Fisheries, Napton-on-the-Hill",
@@ -1998,7 +4618,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 303,
+    "gty": [
+      "fishing_pond",
+      "campground",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJrVN6LBM7d0gRUfCftiFwaP4",
+    "goh": [
+      "Monday: 7:00 AM – 6:00 PM",
+      "Tuesday: 7:00 AM – 6:00 PM",
+      "Wednesday: 7:00 AM – 6:00 PM",
+      "Thursday: 7:00 AM – 6:00 PM",
+      "Friday: 7:00 AM – 6:00 PM",
+      "Saturday: 7:00 AM – 6:00 PM",
+      "Sunday: 7:00 AM – 6:00 PM"
+    ]
   },
   "503089": {
     "a": "Touchdown Inn, Wellesbourne Mountford Aerodrome, Loxley Road, Wellesbourne",
@@ -2014,7 +4654,33 @@
     "sh": 10.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 1034,
+    "gpl": 1,
+    "gty": [
+      "cafe",
+      "breakfast_restaurant",
+      "tea_house",
+      "coffee_shop",
+      "food_store",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJp9R7u4TNcEgRXvUWcgrovZg",
+    "goh": [
+      "Monday: 9:00 AM – 5:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: 9:00 AM – 5:00 PM"
+    ]
   },
   "1765854": {
     "a": "Roebuck Inn, Birmingham Road, Alcester",
@@ -2027,7 +4693,12 @@
     "r": 4,
     "rd": "2024-11-19T00:00:00",
     "s": 8.0,
-    "t": 1
+    "t": 1,
+    "gty": [
+      "premise",
+      "street_address"
+    ],
+    "gpid": "ChIJD7ixY5zDcEgRDynPaXEfm5w"
   },
   "1808716": {
     "a": "2A Bridge Street, Stratford-upon-Avon",
@@ -2043,7 +4714,26 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 27,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJf-dk59TPcEgRRur8Sk4c0Hc",
+    "goh": [
+      "Monday: 12:00 – 3:00 PM, 5:00 – 9:30 PM",
+      "Tuesday: 12:00 – 3:00 PM, 5:00 – 9:30 PM",
+      "Wednesday: 12:00 – 3:00 PM, 5:00 – 9:30 PM",
+      "Thursday: 12:00 – 3:00 PM, 5:00 – 9:30 PM",
+      "Friday: 12:00 – 3:00 PM, 5:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ]
   },
   "1804017": {
     "a": "86B High Street, Henley-in-Arden",
@@ -2059,7 +4749,26 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 42,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJvVQ6GvLHcEgRl2cLgnooNoE",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM, 5:00 – 8:30 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 4:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ]
   },
   "1577024": {
     "a": "Holt Farm, Holt Road, Southam",
@@ -2075,7 +4784,17 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 75,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ7awRS-w7d0gRKyd3CTO1Wow"
   },
   "1796548": {
     "a": "13 Ely Street, Stratford-upon-Avon",
@@ -2091,7 +4810,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 386,
+    "gpl": 1,
+    "gty": [
+      "fast_food_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJo42y-TLOcEgRl4l0qxujbWs",
+    "goh": [
+      "Monday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Tuesday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Wednesday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Thursday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Friday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Saturday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1854461": {
     "a": "1 Warwick Road, Stratford-upon-Avon",
@@ -2107,7 +4848,28 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 277,
+    "gty": [
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ3aEhwYvPcEgRg8xFWQIJwKs",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ]
   },
   "503926": {
     "a": "The Wight School, High Street, Harbury, Leamington Spa",
@@ -2123,7 +4885,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 26,
+    "gty": [
+      "cafe",
+      "library",
+      "art_gallery",
+      "event_venue",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJMYT7P2Uxd0gRZobO1um1_sU",
+    "goh": [
+      "Monday: 10:00 AM – 4:30 PM",
+      "Tuesday: 10:00 AM – 4:30 PM",
+      "Wednesday: 9:15 AM – 4:30 PM",
+      "Thursday: 9:15 AM – 4:30 PM",
+      "Friday: 9:15 AM – 4:30 PM",
+      "Saturday: 10:00 AM – 12:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1388307": {
     "a": "",
@@ -2137,7 +4922,20 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 79,
+    "gty": [
+      "catering_service",
+      "event_venue",
+      "food_delivery",
+      "food",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ6Xtw-RpOd0gRmN-NXHtVfG4"
   },
   "503772": {
     "a": "3 Bridge Street, Stratford-upon-Avon",
@@ -2153,7 +4951,34 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.8,
+    "grc": 1562,
+    "gpl": 1,
+    "gty": [
+      "fast_food_restaurant",
+      "chicken_restaurant",
+      "breakfast_restaurant",
+      "hamburger_restaurant",
+      "diner",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJs9StcDHOcEgRCSAeFXLChWU",
+    "goh": [
+      "Monday: 6:00 AM – 10:00 PM",
+      "Tuesday: 6:00 AM – 10:00 PM",
+      "Wednesday: 6:00 AM – 10:00 PM",
+      "Thursday: 6:00 AM – 10:00 PM",
+      "Friday: 6:00 AM – 10:00 PM",
+      "Saturday: 6:00 AM – 10:00 PM",
+      "Sunday: 6:00 AM – 10:00 PM"
+    ]
   },
   "503478": {
     "a": "8 - 9 High Street, Stratford-upon-Avon",
@@ -2169,7 +4994,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.8,
+    "grc": 548,
+    "gpl": 2,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "sandwich_shop",
+      "food_store",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ12zgzDPOcEgRrcUkHFLP_QU",
+    "goh": [
+      "Monday: 7:00 AM – 6:00 PM",
+      "Tuesday: 7:00 AM – 6:00 PM",
+      "Wednesday: 7:00 AM – 6:00 PM",
+      "Thursday: 7:00 AM – 6:00 PM",
+      "Friday: 7:00 AM – 6:00 PM",
+      "Saturday: 7:00 AM – 6:00 PM",
+      "Sunday: 8:00 AM – 5:00 PM"
+    ]
   },
   "1800191": {
     "a": "59 High Street, Alcester",
@@ -2185,7 +5035,26 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 96,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJdQ7NvGLDcEgRztma3kWhV7w",
+    "goh": [
+      "Monday: 8:00 AM – 4:00 PM",
+      "Tuesday: 8:00 AM – 4:00 PM",
+      "Wednesday: 8:00 AM – 4:00 PM",
+      "Thursday: 8:00 AM – 4:00 PM",
+      "Friday: 8:00 AM – 11:00 PM",
+      "Saturday: 8:00 AM – 11:00 PM",
+      "Sunday: 8:00 AM – 5:00 PM"
+    ]
   },
   "1774608": {
     "a": "Stratford Marina, Bridgefoot, Stratford-upon-Avon",
@@ -2201,7 +5070,26 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 184,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJkdavonDPcEgRlyrQTXdKJ10",
+    "goh": [
+      "Monday: 11:00 AM – 10:00 PM",
+      "Tuesday: 11:00 AM – 10:00 PM",
+      "Wednesday: 11:00 AM – 10:00 PM",
+      "Thursday: 11:00 AM – 10:00 PM",
+      "Friday: 9:30 AM – 11:00 PM",
+      "Saturday: 9:30 AM – 11:00 PM",
+      "Sunday: 9:30 AM – 10:00 PM"
+    ]
   },
   "1747700": {
     "a": "Cotswold Distilling Company, Phillips Field, Whichford Road, Stourton",
@@ -2217,7 +5105,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 61,
+    "gty": [
+      "cafe",
+      "pizza_restaurant",
+      "coffee_shop",
+      "meal_takeaway",
+      "food_store",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJyy1MA_fVcEgRkpH5ahmB8eo",
+    "goh": [
+      "Monday: 10:00 AM – 5:00 PM",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ]
   },
   "1556368": {
     "a": "Loungers UK Limited, Lounge, 32 - 34 Bridge Street, Stratford-upon-Avon",
@@ -2233,7 +5146,34 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 711,
+    "gpl": 2,
+    "gty": [
+      "restaurant",
+      "family_restaurant",
+      "breakfast_restaurant",
+      "vegan_restaurant",
+      "vegetarian_restaurant",
+      "cafe",
+      "british_restaurant",
+      "bar",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJRXz4BcHPcEgRBsca9EN68EI",
+    "goh": [
+      "Monday: 9:00 AM – 11:00 PM",
+      "Tuesday: 9:00 AM – 11:00 PM",
+      "Wednesday: 9:00 AM – 11:00 PM",
+      "Thursday: 9:00 AM – 11:00 PM",
+      "Friday: 9:00 AM – 12:00 AM",
+      "Saturday: 9:00 AM – 12:00 AM",
+      "Sunday: 9:00 AM – 11:00 PM"
+    ]
   },
   "565220": {
     "a": "The Four Teas, 24 Sheep Street, Stratford-upon-Avon",
@@ -2249,7 +5189,30 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 1602,
+    "gpl": 2,
+    "gty": [
+      "tea_house",
+      "breakfast_restaurant",
+      "diner",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJr_WA2zPOcEgRtI-aiRpb_aI",
+    "goh": [
+      "Monday: 9:30 AM – 4:00 PM",
+      "Tuesday: 9:30 AM – 4:00 PM",
+      "Wednesday: 9:30 AM – 4:00 PM",
+      "Thursday: 9:30 AM – 4:00 PM",
+      "Friday: 9:30 AM – 4:00 PM",
+      "Saturday: 9:30 AM – 4:00 PM",
+      "Sunday: 10:30 AM – 3:30 PM"
+    ]
   },
   "502962": {
     "a": "Curry Rebublic Ltd, 35A High Street, Henley-in-Arden",
@@ -2265,7 +5228,30 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 126,
+    "gpl": 2,
+    "gty": [
+      "indian_restaurant",
+      "asian_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 7,
+    "gpid": "ChIJI1ADly_GcEgR6OS_QdDHjQk",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 5:30 – 11:00 PM",
+      "Wednesday: 5:30 – 11:00 PM",
+      "Thursday: 5:30 – 11:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 11:00 PM"
+    ]
   },
   "1388303": {
     "a": "18 - 19 Rother Street, Stratford-upon-Avon",
@@ -2281,7 +5267,26 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 116,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ4auvednPcEgRTCtTiD8RlQI",
+    "goh": [
+      "Monday: 11:00 AM – 5:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: 11:00 AM – 5:00 PM",
+      "Friday: 11:00 AM – 5:00 PM",
+      "Saturday: 11:00 AM – 5:00 PM",
+      "Sunday: 11:00 AM – 5:00 PM"
+    ]
   },
   "1827674": {
     "a": "1A Daventry Street, Southam",
@@ -2297,7 +5302,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 23,
+    "gty": [
+      "cafe",
+      "breakfast_restaurant",
+      "coffee_shop",
+      "meal_takeaway",
+      "food_store",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ0eTlrBMxd0gRtqKWJ14bRJg",
+    "goh": [
+      "Monday: 9:00 AM – 2:00 PM",
+      "Tuesday: 9:00 AM – 2:00 PM",
+      "Wednesday: 10:00 AM – 2:00 PM",
+      "Thursday: 9:00 AM – 2:00 PM",
+      "Friday: 8:30 AM – 2:00 PM",
+      "Saturday: 9:00 AM – 2:00 PM",
+      "Sunday: 10:00 AM – 2:00 PM"
+    ]
   },
   "502877": {
     "a": "The Double Tree By Hilton, Arden Street, Stratford-upon-Avon",
@@ -2311,7 +5341,20 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1314,
+    "gty": [
+      "hotel",
+      "business_center",
+      "lodging",
+      "event_venue",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ53EdvDPOcEgRF570SBNlU1E"
   },
   "503584": {
     "a": "First Floor, 2 - 4 Swan Street, Alcester",
@@ -2327,7 +5370,32 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 344,
+    "gpl": 2,
+    "gty": [
+      "indian_restaurant",
+      "fine_dining_restaurant",
+      "diner",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJoyNnfnnDcEgRaRxBpBjez-I",
+    "goh": [
+      "Monday: 5:30 – 11:30 PM",
+      "Tuesday: 5:30 – 11:30 PM",
+      "Wednesday: 5:30 – 11:30 PM",
+      "Thursday: 5:30 – 11:30 PM",
+      "Friday: 5:30 – 11:30 PM",
+      "Saturday: 5:30 – 11:30 PM",
+      "Sunday: 5:30 – 11:30 PM"
+    ]
   },
   "1802818": {
     "a": "5 Shrieves Walk, Stratford-upon-Avon",
@@ -2343,7 +5411,17 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 83,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJebKK5HPPcEgRVjRBU43TOfM"
   },
   "1884822": {
     "a": "257 Birmingham Road, Stratford-upon-Avon",
@@ -2359,7 +5437,27 @@
     "sh": 10.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 40,
+    "gty": [
+      "chicken_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJgaVzvbnPcEgRRKlayEgT4Ng",
+    "goh": [
+      "Monday: 11:00 AM – 11:00 PM",
+      "Tuesday: 11:00 AM – 11:00 PM",
+      "Wednesday: 11:00 AM – 11:00 PM",
+      "Thursday: 11:00 AM – 11:00 PM",
+      "Friday: 11:00 AM – 11:00 PM",
+      "Saturday: 11:00 AM – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ]
   },
   "1796553": {
     "a": "3 Union Street, Stratford-upon-Avon",
@@ -2375,7 +5473,26 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 89,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJkeNEhCTPcEgRROED0tkXxwE",
+    "goh": [
+      "Monday: 12:00 – 7:00 PM",
+      "Tuesday: 9:30 AM – 5:30 PM",
+      "Wednesday: 9:30 AM – 7:00 PM",
+      "Thursday: 9:30 AM – 5:30 PM",
+      "Friday: 9:30 AM – 6:30 PM",
+      "Saturday: 9:00 AM – 6:30 PM",
+      "Sunday: 9:00 AM – 6:00 PM"
+    ]
   },
   "1381141": {
     "a": "Bulls Head Inn, Stratford Road, Wootton Wawen, Henley-in-Arden",
@@ -2391,7 +5508,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 691,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJF33hvgjGcEgRMy76kE2rbe0",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 PM – 12:00 AM",
+      "Saturday: 12:00 PM – 12:00 AM",
+      "Sunday: 1:00 – 10:00 PM"
+    ]
   },
   "1589295": {
     "a": "Unit 3, Bell Court, Stratford-upon-Avon",
@@ -2407,7 +5546,35 @@
     "sh": 5.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 120,
+    "gty": [
+      "cafe",
+      "coffee_stand",
+      "coffee_roastery",
+      "coffee_shop",
+      "dog_cafe",
+      "art_gallery",
+      "italian_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food_store",
+      "food",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJqxorPpjPcEgRQDF1FDen5ck",
+    "goh": [
+      "Monday: 9:30 AM – 5:00 PM",
+      "Tuesday: 9:30 AM – 5:00 PM",
+      "Wednesday: 9:30 AM – 5:00 PM",
+      "Thursday: 9:30 AM – 5:00 PM",
+      "Friday: 9:30 AM – 5:00 PM",
+      "Saturday: 9:30 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ]
   },
   "502864": {
     "a": "6A Chapel Street, Stratford-upon-Avon",
@@ -2423,7 +5590,33 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 331,
+    "gpl": 2,
+    "gty": [
+      "indian_restaurant",
+      "asian_restaurant",
+      "bangladeshi_restaurant",
+      "fast_food_restaurant",
+      "fine_dining_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJiSIlQzLOcEgRKxuXkyr2EVE",
+    "goh": [
+      "Monday: 5:00 PM – 12:00 AM",
+      "Tuesday: 5:00 PM – 12:00 AM",
+      "Wednesday: 5:00 PM – 12:00 AM",
+      "Thursday: 5:00 PM – 12:00 AM",
+      "Friday: 5:00 PM – 12:00 AM",
+      "Saturday: 12:30 – 2:30 PM, 5:00 PM – 12:00 AM",
+      "Sunday: 12:30 – 2:30 PM, 5:00 PM – 12:00 AM"
+    ]
   },
   "1513917": {
     "a": "Hollybush Inn, Holly Bush Lane, Priors Marston, Southam",
@@ -2439,7 +5632,27 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 73,
+    "gty": [
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJG1I-0yI7d0gR3UYQ-oZYhhE",
+    "goh": [
+      "Monday: 4:30 – 10:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 4:30 – 10:00 PM",
+      "Thursday: 4:30 – 10:00 PM",
+      "Friday: 4:30 – 10:00 PM",
+      "Saturday: 4:30 – 10:00 PM",
+      "Sunday: 4:30 – 10:00 PM"
+    ]
   },
   "1672980": {
     "a": "Alcester Business Centre, 4 Kinwarton Farm Road, Kinwarton, Alcester",
@@ -2455,7 +5668,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.6,
+    "grc": 58,
+    "gpl": 1,
+    "gty": [
+      "bakery",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJq3T9OMnFcEgREYu0OtbzbeM",
+    "goh": [
+      "Monday: 6:30 AM – 5:00 PM",
+      "Tuesday: 6:30 AM – 5:00 PM",
+      "Wednesday: 6:30 AM – 5:00 PM",
+      "Thursday: 6:30 AM – 5:00 PM",
+      "Friday: 8:00 AM – 3:00 PM",
+      "Saturday: 7:00 AM – 5:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1826838": {
     "a": "67A High Street, Bidford-on-Avon, Alcester",
@@ -2471,7 +5706,27 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 11,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJQcGb6sfbcEgR-AGoWCP56ng",
+    "goh": [
+      "Monday: 5:30 – 10:30 PM",
+      "Tuesday: Closed",
+      "Wednesday: 5:30 – 10:30 PM",
+      "Thursday: 5:00 – 10:30 PM",
+      "Friday: 5:30 – 10:30 PM",
+      "Saturday: 5:30 – 10:30 PM",
+      "Sunday: 5:30 – 10:30 PM"
+    ]
   },
   "559158": {
     "a": "37 Sheep Street, Stratford-upon-Avon",
@@ -2487,7 +5742,27 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 430,
+    "gpl": 2,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJeREMhjHOcEgRuAQ6aDvGYmg",
+    "goh": [
+      "Monday: 10:00 AM – 4:00 PM",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ]
   },
   "565221": {
     "a": "Costa Coffee, 68 High Street, Henley-in-Arden",
@@ -2503,7 +5778,30 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 283,
+    "gpl": 2,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJse01SiXGcEgR9v9CgWLpcMU",
+    "goh": [
+      "Monday: 6:30 AM – 5:30 PM",
+      "Tuesday: 6:30 AM – 5:30 PM",
+      "Wednesday: 6:30 AM – 5:30 PM",
+      "Thursday: 6:30 AM – 5:30 PM",
+      "Friday: 6:30 AM – 5:30 PM",
+      "Saturday: 8:00 AM – 5:00 PM",
+      "Sunday: 8:00 AM – 4:00 PM"
+    ]
   },
   "1743693": {
     "a": "37 Henley Street, Stratford-upon-Avon",
@@ -2519,7 +5817,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 241,
+    "gpl": 1,
+    "gty": [
+      "snack_bar",
+      "cafe",
+      "breakfast_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJSRSWdzPOcEgRYi9OEVxSvKY",
+    "goh": [
+      "Monday: 8:30 AM – 6:00 PM",
+      "Tuesday: 8:30 AM – 6:00 PM",
+      "Wednesday: 8:30 AM – 6:00 PM",
+      "Thursday: 8:30 AM – 6:00 PM",
+      "Friday: 8:30 AM – 6:00 PM",
+      "Saturday: 8:30 AM – 6:00 PM",
+      "Sunday: 8:30 AM – 6:00 PM"
+    ]
   },
   "503218": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -2535,7 +5857,25 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 10079,
+    "gty": [
+      "rest_stop",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ1abMA1Iyd0gRmLbkMlGWa0o",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ]
   },
   "1721314": {
     "a": "Banbury Road, Gaydon, Warwick",
@@ -2551,7 +5891,25 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 468,
+    "gty": [
+      "manufacturer",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ5dKkTxIyd0gRHDR00Zlh41g",
+    "goh": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 6:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 6:00 PM",
+      "Friday: 8:00 AM – 6:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
   },
   "1623426": {
     "a": "Red Hot Mamma, 22 High Street, Stratford-upon-Avon",
@@ -2567,7 +5925,26 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 912,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJSQoU5XrPcEgRIfWfcVFVasI",
+    "goh": [
+      "Monday: 12:00 – 9:00 PM",
+      "Tuesday: 12:00 – 9:00 PM",
+      "Wednesday: 12:00 – 9:00 PM",
+      "Thursday: 12:00 – 9:00 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ]
   },
   "1662496": {
     "a": "2 Shrieves Walk, Stratford-upon-Avon",
@@ -2583,7 +5960,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 311,
+    "gpl": 2,
+    "gty": [
+      "cafe",
+      "restaurant",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJkZxy4SrPcEgRJWOFQ1JG4k4",
+    "goh": [
+      "Monday: 10:00 AM – 3:00 PM",
+      "Tuesday: 10:00 AM – 3:00 PM",
+      "Wednesday: Closed",
+      "Thursday: 10:00 AM – 3:00 PM",
+      "Friday: 10:00 AM – 3:00 PM",
+      "Saturday: 10:00 AM – 3:30 PM",
+      "Sunday: 10:00 AM – 3:30 PM"
+    ]
   },
   "1754519": {
     "a": "14 The Mansley Centre, Timothys Bridge Road, Stratford Enterprise Park, Stratford-upon-Avon",
@@ -2597,7 +5997,23 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gty": [
+      "real_estate_agency",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJU1YCArjPcEgRsGJ31xA82-4",
+    "goh": [
+      "Monday: 9:00 AM – 4:00 PM",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ]
   },
   "1735216": {
     "a": "Lockerbie, Pig Trot Lane, Danzey Green, Solihull",
@@ -2613,7 +6029,17 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 98,
+    "gty": [
+      "bed_and_breakfast",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJF5uVuMi3cEgRhzwIE-KbME4"
   },
   "1699665": {
     "a": "Chesterton Road, Lighthorne, Warwick",
@@ -2629,7 +6055,27 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 453,
+    "gpl": 2,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJowG0UV0yd0gRzMv-vHuZhRE",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ]
   },
   "1467814": {
     "a": "Stratford Sports Club Limited, Stratford Sports Club, Swans Nest Lane, Stratford-upon-Avon",
@@ -2645,7 +6091,26 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 292,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJMYO7XS7OcEgR1qfaiky1Es8",
+    "goh": [
+      "Monday: 10:00 AM – 10:00 PM",
+      "Tuesday: 10:00 AM – 10:00 PM",
+      "Wednesday: 10:00 AM – 10:00 PM",
+      "Thursday: 10:00 AM – 10:00 PM",
+      "Friday: 10:00 AM – 10:00 PM",
+      "Saturday: 10:00 AM – 10:00 PM",
+      "Sunday: 10:00 AM – 10:00 PM"
+    ]
   },
   "503282": {
     "a": "Alcester",
@@ -2661,7 +6126,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 1988,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "beer_garden",
+      "hotel",
+      "lodging",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJGZz0dG3DcEgRNJ-NsIIOmOc",
+    "goh": [
+      "Monday: 10:30 AM – 11:00 PM",
+      "Tuesday: 10:30 AM – 11:00 PM",
+      "Wednesday: 10:30 AM – 11:00 PM",
+      "Thursday: 10:30 AM – 11:00 PM",
+      "Friday: 10:30 AM – 11:00 PM",
+      "Saturday: 10:30 AM – 11:00 PM",
+      "Sunday: 10:30 AM – 10:30 PM"
+    ]
   },
   "1774610": {
     "a": "",
@@ -2691,7 +6181,27 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 294,
+    "gty": [
+      "turkish_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ_3Tk-5nNcEgRqkTDm4wFmLI",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 4:30 – 9:30 PM",
+      "Wednesday: 4:30 – 9:30 PM",
+      "Thursday: 4:30 – 10:00 PM",
+      "Friday: 4:30 – 10:00 PM",
+      "Saturday: 4:30 – 10:00 PM",
+      "Sunday: 12:30 – 9:30 PM"
+    ]
   },
   "503342": {
     "a": "Warwick Services M40 Nothbound, Ashorne, Warwick",
@@ -2707,7 +6217,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 2,
+    "grc": 65,
+    "gpl": 2,
+    "gty": [
+      "fast_food_restaurant",
+      "hamburger_restaurant",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJOV7_VJwzd0gRyA1PYI__0uU",
+    "goh": [
+      "Monday: 10:00 AM – 10:00 PM",
+      "Tuesday: 10:00 AM – 11:00 PM",
+      "Wednesday: 10:00 AM – 10:00 PM",
+      "Thursday: 10:00 AM – 10:00 PM",
+      "Friday: 10:00 AM – 11:00 PM",
+      "Saturday: 10:00 AM – 10:00 PM",
+      "Sunday: 10:00 AM – 11:00 PM"
+    ]
   },
   "1908606": {
     "a": "Brunos Bakery, 40 High Street, Studley",
@@ -2723,7 +6257,41 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 290,
+    "gpl": 1,
+    "gty": [
+      "bakery",
+      "cake_shop",
+      "catering_service",
+      "deli",
+      "breakfast_restaurant",
+      "sandwich_shop",
+      "food_delivery",
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "manufacturer",
+      "wholesaler",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "service",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJIczssGjBcEgRI-NrXjiMaWs",
+    "goh": [
+      "Monday: 7:00 AM – 4:00 PM",
+      "Tuesday: 7:00 AM – 4:00 PM",
+      "Wednesday: 7:00 AM – 4:00 PM",
+      "Thursday: 7:00 AM – 4:00 PM",
+      "Friday: 7:00 AM – 4:00 PM",
+      "Saturday: 7:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1796547": {
     "a": "Unit 10, Long Compton Industrial Estate, Old Road, Long Compton",
@@ -2739,7 +6307,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 105,
+    "gty": [
+      "home_goods_store",
+      "coffee_shop",
+      "cafe",
+      "jewelry_store",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJKyDowFwrcUgRBwYwIMR1NRc",
+    "goh": [
+      "Monday: 10:00 AM – 4:00 PM",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ]
   },
   "1756585": {
     "a": "Alcester Rugby Football Club, Kings Coughton, Alcester",
@@ -2753,7 +6345,26 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 94,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJS38BMZrDcEgRMs_N00fzPZY",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 6:30 – 9:30 PM",
+      "Wednesday: Closed",
+      "Thursday: 6:30 – 9:30 PM",
+      "Friday: Closed",
+      "Saturday: 12:30 – 8:30 PM",
+      "Sunday: 11:30 AM – 6:00 PM"
+    ]
   },
   "1690228": {
     "a": "Compton Verney House Estate, Compton Verney, Warwick",
@@ -2769,7 +6380,24 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 6,
+    "gpid": "ChIJ_YFnKMctd0gRNlwCuVVki28",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ]
   },
   "1029137": {
     "a": "Buck And Bell, The Green, Long Itchington, Southam",
@@ -2785,7 +6413,27 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 331,
+    "gpl": 1,
+    "gty": [
+      "pub",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJu1Arr0A3d0gR1nTU654zTFg",
+    "goh": [
+      "Monday: 10:00 AM – 11:00 PM",
+      "Tuesday: 10:00 AM – 11:00 PM",
+      "Wednesday: 10:00 AM – 11:00 PM",
+      "Thursday: 10:00 AM – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ]
   },
   "503261": {
     "a": "Thespians Restaurant, 26 Sheep Street, Stratford-upon-Avon",
@@ -2801,7 +6449,28 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 581,
+    "gpl": 2,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ7f1ZJjLOcEgRHrp8asL-pyQ",
+    "goh": [
+      "Monday: 5:30 – 11:30 PM",
+      "Tuesday: 5:30 – 11:30 PM",
+      "Wednesday: 5:30 – 11:30 PM",
+      "Thursday: 5:30 – 11:30 PM",
+      "Friday: 5:30 – 11:30 PM",
+      "Saturday: 5:30 – 11:30 PM",
+      "Sunday: 5:30 – 11:30 PM"
+    ]
   },
   "1871632": {
     "a": "7 - 8 Ely Street, Stratford-upon-Avon",
@@ -2817,7 +6486,31 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 426,
+    "gpl": 2,
+    "gty": [
+      "italian_restaurant",
+      "fine_dining_restaurant",
+      "family_restaurant",
+      "seafood_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJzZ6kVzLOcEgRthpKAcmxmOQ",
+    "goh": [
+      "Monday: 12:00 – 9:30 PM",
+      "Tuesday: 12:00 – 9:30 PM",
+      "Wednesday: 12:00 – 9:30 PM",
+      "Thursday: 12:00 – 9:30 PM",
+      "Friday: 12:00 – 9:30 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "503444": {
     "a": "Bridgefoot, Stratford-upon-Avon",
@@ -2833,7 +6526,20 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 3165,
+    "gty": [
+      "hotel",
+      "lodging",
+      "wedding_venue",
+      "event_venue",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJr72NPjHOcEgR6GjIXRRMctU"
   },
   "1155879": {
     "a": "",
@@ -2847,7 +6553,24 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 2,
+    "gty": [
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJhbfsstcld0gRT56GLIcalEI",
+    "goh": [
+      "Monday: 10:00 AM – 4:00 PM",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1339998": {
     "a": "Unit 4, London Road, Little Compton",
@@ -2863,7 +6586,27 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 258,
+    "gpl": 1,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ6Sr6Vq8vcUgRJb4dG-aajAc",
+    "goh": [
+      "Monday: 9:00 AM – 3:00 PM",
+      "Tuesday: 9:00 AM – 3:00 PM",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 1:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "1056848": {
     "a": "Barn Antiques Centre, Station Road, Long Marston, Stratford-upon-Avon",
@@ -2879,7 +6622,28 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 501,
+    "gty": [
+      "furniture_store",
+      "home_improvement_store",
+      "home_goods_store",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJTwQRHHjacEgRWTQKOFaY-BQ",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:30 AM – 4:30 PM"
+    ]
   },
   "502863": {
     "a": "Hotel Indigo, Chapel Street, Stratford-upon-Avon",
@@ -2895,7 +6659,20 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 826,
+    "gty": [
+      "hotel",
+      "wedding_venue",
+      "event_venue",
+      "lodging",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJZ6LNQjLOcEgRujEs2c_ntTg"
   },
   "1019047": {
     "a": "Unit 20, Bell Court, Stratford-upon-Avon",
@@ -2911,7 +6688,28 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 8975,
+    "gpl": 2,
+    "gty": [
+      "steak_house",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ3fwE6sTPcEgR7UuC-xoQ6cA",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ]
   },
   "504050": {
     "a": "Bishops Bowl Lakes, Bishops Itchington, Southam",
@@ -2927,7 +6725,26 @@
     "sh": 5.0,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 144,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJlxLB6ggxd0gRsWcrBKk_vwg",
+    "goh": [
+      "Monday: 7:00 AM – 5:00 PM",
+      "Tuesday: 7:00 AM – 5:00 PM",
+      "Wednesday: 7:00 AM – 5:00 PM",
+      "Thursday: 7:00 AM – 5:00 PM",
+      "Friday: 7:00 AM – 5:00 PM",
+      "Saturday: 7:00 AM – 5:00 PM",
+      "Sunday: 7:00 AM – 5:00 PM"
+    ]
   },
   "503102": {
     "a": "Ashorne Hill, Leamington Spa",
@@ -2943,7 +6760,17 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 489,
+    "gty": [
+      "event_venue",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJe5Q_dyczd0gRwZUAhr4PnuY"
   },
   "1826833": {
     "a": "Pitstop Cafe, Stretton-on-Fosse, Moreton-in-Marsh",
@@ -2959,7 +6786,29 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 118,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJrZMmOQDXcEgRJeQLVDF4Who",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 8:00 AM – 4:00 PM",
+      "Wednesday: 8:00 AM – 4:00 PM",
+      "Thursday: 8:00 AM – 4:00 PM",
+      "Friday: 8:00 AM – 4:00 PM",
+      "Saturday: 8:00 AM – 4:00 PM",
+      "Sunday: 8:00 AM – 4:00 PM"
+    ]
   },
   "1176874": {
     "a": "Wellesbourne Florists, 2 Newbold Road, Wellesbourne, Warwick",
@@ -2975,7 +6824,27 @@
     "sh": 5.0,
     "sm": 10.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 494,
+    "gpl": 2,
+    "gty": [
+      "cafe",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJV17x_LjNcEgR81h6WwjYMUg",
+    "goh": [
+      "Monday: 9:00 AM – 4:30 PM",
+      "Tuesday: 9:00 AM – 4:30 PM",
+      "Wednesday: 9:00 AM – 4:30 PM",
+      "Thursday: 9:00 AM – 4:30 PM",
+      "Friday: 9:00 AM – 4:30 PM",
+      "Saturday: 9:00 AM – 4:30 PM",
+      "Sunday: 9:00 AM – 4:00 PM"
+    ]
   },
   "1838728": {
     "a": "Village Hall, The Crescent, Napton-on-the-Hill, Southam",
@@ -2991,7 +6860,25 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 9,
+    "gty": [
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpc": 3,
+    "gpid": "ChIJE4wcU8Iwd0gRD5BA6zK5G6A",
+    "goh": [
+      "Monday: 8:30 AM – 5:00 PM",
+      "Tuesday: 8:30 AM – 5:00 PM",
+      "Wednesday: 8:30 AM – 5:00 PM",
+      "Thursday: 8:30 AM – 5:00 PM",
+      "Friday: 8:30 AM – 5:00 PM",
+      "Saturday: 10:30 AM – 4:30 PM",
+      "Sunday: 10:30 AM – 4:30 PM"
+    ]
   },
   "503734": {
     "a": "Payton Street, Stratford-upon-Avon",
@@ -3007,7 +6894,21 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 860,
+    "gty": [
+      "hotel",
+      "inn",
+      "bed_and_breakfast",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ9SYsTjHOcEgRxVLnk9c6QhE"
   },
   "503711": {
     "a": "137 High Street, Henley-in-Arden",
@@ -3023,7 +6924,28 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 199,
+    "gpl": 2,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJs6_3KyXGcEgRk-thdjEPg_o",
+    "goh": [
+      "Monday: 5:30 – 11:30 PM",
+      "Tuesday: 5:30 – 11:30 PM",
+      "Wednesday: 5:30 – 11:30 PM",
+      "Thursday: 5:30 – 11:30 PM",
+      "Friday: 5:30 PM – 12:30 AM",
+      "Saturday: 5:30 PM – 12:30 AM",
+      "Sunday: 5:30 – 11:30 PM"
+    ]
   },
   "503931": {
     "a": "Bella Italia Restaurants Ltd, 32 Wood Street, Stratford-upon-Avon",
@@ -3039,7 +6961,24 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1029,
+    "gpl": 2,
+    "gty": [
+      "restaurant",
+      "lounge_bar",
+      "vegan_restaurant",
+      "vegetarian_restaurant",
+      "night_club",
+      "bar",
+      "italian_restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ8f1sqDPOcEgRqoINSjhvWdo"
   },
   "1411434": {
     "a": "Earlswood Village Hall, Shutt Lane, Earlswood, Solihull",
@@ -3053,7 +6992,18 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 32,
+    "gty": [
+      "community_center",
+      "service",
+      "event_venue",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJX1k_CIy4cEgRrKSfJRlEnlA"
   },
   "1206079": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -3069,7 +7019,16 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 600,
+    "gty": [
+      "corporate_office",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc"
   },
   "502838": {
     "a": "Banbury Road, Stratford-upon-Avon",
@@ -3085,7 +7044,21 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.9,
+    "grc": 1938,
+    "gty": [
+      "hotel",
+      "wedding_venue",
+      "spa",
+      "lodging",
+      "service",
+      "event_venue",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJqxlELjvOcEgRCF8FH6frDIE"
   },
   "502681": {
     "a": "Billesley Manor, Billesley, Alcester",
@@ -3101,7 +7074,17 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 1208,
+    "gty": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJz5pCJG3FcEgRgiwBGQLFCLw"
   },
   "1622078": {
     "a": "2 The Minories, Henley Street, Stratford-upon-Avon",
@@ -3117,7 +7100,28 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 141,
+    "gty": [
+      "japanese_restaurant",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJmYylt-vPcEgRk7zRSQVqPqY",
+    "goh": [
+      "Monday: 12:00 – 9:00 PM",
+      "Tuesday: 12:00 – 9:00 PM",
+      "Wednesday: 12:00 – 9:00 PM",
+      "Thursday: 12:00 – 9:00 PM",
+      "Friday: 12:00 – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 5:00 – 9:00 PM"
+    ]
   },
   "1622076": {
     "a": "21 Bridge Street, Stratford-upon-Avon",
@@ -3131,7 +7135,30 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 392,
+    "gpl": 2,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJJ9iLe0ndekgR-rpge-FHeJg",
+    "goh": [
+      "Monday: 6:30 AM – 6:30 PM",
+      "Tuesday: 6:30 AM – 6:30 PM",
+      "Wednesday: 6:30 AM – 6:30 PM",
+      "Thursday: 6:30 AM – 6:30 PM",
+      "Friday: 6:30 AM – 6:30 PM",
+      "Saturday: 7:30 AM – 6:30 PM",
+      "Sunday: 8:30 AM – 6:30 PM"
+    ]
   },
   "676557": {
     "a": "1 The Minories, Rother Street, Stratford-upon-Avon",
@@ -3147,7 +7174,30 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 575,
+    "gpl": 2,
+    "gty": [
+      "vegan_restaurant",
+      "vegetarian_restaurant",
+      "cafe",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ3RJTcYLPcEgRcTfMHnbcNio",
+    "goh": [
+      "Monday: 10:00 AM – 5:00 PM",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: Closed"
+    ]
   },
   "503319": {
     "a": "3 - 5 West Street, Shipston-on-Stour",
@@ -3163,7 +7213,28 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 110,
+    "gty": [
+      "fast_food_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 7,
+    "gpid": "ChIJldAAsUjUcEgRFnK4S2waHWQ",
+    "goh": [
+      "Monday: 4:00 – 11:00 PM",
+      "Tuesday: 4:00 – 11:00 PM",
+      "Wednesday: 4:00 – 11:00 PM",
+      "Thursday: 4:00 – 11:00 PM",
+      "Friday: 4:00 – 11:00 PM",
+      "Saturday: 4:00 – 11:00 PM",
+      "Sunday: 4:00 – 11:00 PM"
+    ]
   },
   "503369": {
     "a": "Studley",
@@ -3179,7 +7250,17 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 1698,
+    "gty": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJX6r4kETBcEgRCuIxuCkUwuY"
   },
   "1131857": {
     "a": "D C S Stadium, Stratford Town Football Club, Knights Lane, Tiddington",
@@ -3195,7 +7276,26 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 219,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJYfipBRLOcEgRKAvjeXYmU8A",
+    "goh": [
+      "Monday: 6:00 – 10:00 PM",
+      "Tuesday: 6:00 – 10:00 PM",
+      "Wednesday: 6:00 – 10:00 PM",
+      "Thursday: 6:00 – 10:00 PM",
+      "Friday: 6:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ]
   },
   "502970": {
     "a": "Must Go, 21 Windsor Street, Stratford-upon-Avon",
@@ -3211,7 +7311,28 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 2.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.3,
+    "grc": 148,
+    "gpl": 2,
+    "gty": [
+      "restaurant",
+      "chinese_restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJA9pebDPOcEgRldRUFwUu6DY",
+    "goh": [
+      "Monday: 12:00 – 10:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 12:00 – 10:00 PM",
+      "Thursday: 12:00 – 10:00 PM",
+      "Friday: 12:00 – 10:30 PM",
+      "Saturday: 12:00 – 10:30 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ]
   },
   "1584576": {
     "a": "Unit 26, Bell Court, Stratford-upon-Avon",
@@ -3227,7 +7348,28 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 184,
+    "gty": [
+      "hamburger_restaurant",
+      "american_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJjYFyyOTPcEgRv-qv8Q-l1lE",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 12:00 – 9:30 PM",
+      "Thursday: 12:00 – 9:30 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:30 PM"
+    ]
   },
   "1317981": {
     "a": "Bargain Booze, 12 Warwick Road, Wellesbourne, Warwick",
@@ -3243,7 +7385,27 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 763,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJ4eCZ5SzNcEgRK501XV8NiJA",
+    "goh": [
+      "Monday: 5:30 – 11:00 PM",
+      "Tuesday: 5:30 – 11:00 PM",
+      "Wednesday: 5:30 – 11:00 PM",
+      "Thursday: 5:30 – 11:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 11:00 PM"
+    ]
   },
   "502816": {
     "a": "3 Sheep Street, Stratford-upon-Avon",
@@ -3259,6 +7421,29 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 1669,
+    "gpl": 2,
+    "gty": [
+      "restaurant",
+      "wine_bar",
+      "british_restaurant",
+      "food",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJPakIOjLOcEgRqV2Dw8uh8QU",
+    "goh": [
+      "Monday: 11:30 AM – 11:00 PM",
+      "Tuesday: 11:30 AM – 11:00 PM",
+      "Wednesday: 11:30 AM – 11:00 PM",
+      "Thursday: 11:30 AM – 11:00 PM",
+      "Friday: 11:30 AM – 11:00 PM",
+      "Saturday: 11:30 AM – 11:00 PM",
+      "Sunday: 11:30 AM – 10:30 PM"
+    ]
   }
 }

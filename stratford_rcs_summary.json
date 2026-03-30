@@ -1,39 +1,39 @@
 {
   "count": 208,
-  "mean": 7.45,
-  "median": 8.08,
-  "min": 0.0,
-  "max": 9.0,
-  "stdev": 1.68,
+  "mean": 8.36,
+  "median": 8.73,
+  "min": 2.0,
+  "max": 9.72,
+  "stdev": 1.19,
   "band_distribution": {
     "Excellent": {
-      "count": 112,
-      "pct": 53.8
+      "count": 152,
+      "pct": 73.1
     },
     "Good": {
-      "count": 55,
-      "pct": 26.4
+      "count": 45,
+      "pct": 21.6
     },
     "Generally Satisfactory": {
-      "count": 25,
-      "pct": 12.0
+      "count": 5,
+      "pct": 2.4
     },
     "Improvement Necessary": {
-      "count": 10,
-      "pct": 4.8
+      "count": 4,
+      "pct": 1.9
     },
     "Major Improvement": {
-      "count": 0,
-      "pct": 0.0
+      "count": 2,
+      "pct": 1.0
     },
     "Urgent Improvement": {
-      "count": 6,
-      "pct": 2.9
+      "count": 0,
+      "pct": 0.0
     }
   },
   "signals_coverage": {
-    "available_per_record_avg": 4.8,
+    "available_per_record_avg": 9.2,
     "total_possible": 35
   },
-  "generated_at": "2026-03-30T22:37:49.084416+00:00"
+  "generated_at": "2026-03-30T22:49:21.811106+00:00"
 }

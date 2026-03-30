@@ -1,209 +1,209 @@
 rank,fhrsid,business_name,postcode,fsa_tier_score,google_tier_score,online_tier_score,ops_tier_score,menu_tier_score,reputation_tier_score,community_tier_score,rcs_final,rcs_band,signals_available,signals_total
-1,503478,Starbucks,CV37 6AU,10.0,,,,,,,9.0,Excellent,5,35
-2,1299513,Oxheart,CV36 5JJ,10.0,,,,,,,8.999,Excellent,5,35
-3,1896717,Lithos Restaurant,B95 5BX,10.0,,,,,,,8.998,Excellent,2,35
-4,1024960,Starbucks Drive Thru,CV35 0AA,10.0,,,,,,,8.997,Excellent,5,35
-5,503282,Arrow Mill,B49 5NL,10.0,,,,,,,8.996,Excellent,5,35
-6,1344517,The Fox Inn,CV35 9JS,10.0,,,,,,,8.995,Excellent,2,35
-7,503735,Costa,CV37 0HZ,10.0,,,,,,,8.994,Excellent,5,35
-8,503054,Stratford Manor Hotel,CV37 0PY,10.0,,,,,,,8.993,Excellent,5,35
-9,1808717,Bistrot Pierre,CV37 7LT,10.0,,,,,,,8.992,Excellent,2,35
-10,1896718,Birmingham City Football Club Ltd,B95 6AB,10.0,,,,,,,8.991,Excellent,5,35
-11,1016715,Shakespaw Cat Cafe,CV37 6QT,10.0,,,,,,,8.99,Excellent,5,35
-12,503102,Ashorne Hill Management College,CV33 9QW,10.0,,,,,,,8.989,Excellent,5,35
-13,1854461,The Red Lion,CV37 6YW,10.0,,,,,,,8.988,Excellent,5,35
-14,1672980,Greggs PLC,B49 6EH,10.0,,,,,,,8.987,Excellent,5,35
-15,1152776,Gilks' Garage Cafe,CV35 0JZ,10.0,,,,,,,8.986,Excellent,5,35
-16,1056848,Espresso Barn,CV37 8RB,10.0,,,,,,,8.985,Excellent,5,35
-17,1854458,Costa Coffee,B49 6PQ,10.0,,,,,,,8.984,Excellent,5,35
-18,503342,Burger King - Northbound,CV35 0AA,10.0,,,,,,,8.983,Excellent,5,35
-19,1802818,11/17 Salt Beef Bar,CV37 6GJ,10.0,,,,,,,8.982,Excellent,5,35
-20,1826834,Ferment And Flour (Bastardos),CV36 4PP,10.0,,,,,,,8.981,Excellent,5,35
-21,1577024,Puddleduck Cafe Ltd,CV47 1AJ,10.0,,,,,,,8.98,Excellent,5,35
-22,1253303,Ettington Garden Cafe,CV37 7TB,10.0,,,,,,,8.979,Excellent,5,35
-23,1552322,Costa Coffee,CV37 6PT,10.0,,,,,,,8.978,Excellent,5,35
-24,559158,No 37 Cafe,CV37 6EE,9.5,,,,,,,8.55,Excellent,5,35
-25,1421992,Deli Cafe,CV37 6QB,9.5,,,,,,,8.549,Excellent,5,35
-26,1721314,Aston Martin Lagonda,CV35 0DB,9.5,,,,,,,8.548,Excellent,5,35
-27,1699665,Nel's At The Pavilion,CV35 0AD,9.5,,,,,,,8.547,Excellent,5,35
-28,503734,Premier Inn,CV37 6UQ,9.5,,,,,,,8.546,Excellent,5,35
-29,1210746,The Alcester Inn,B49 6AQ,9.5,,,,,,,8.545,Excellent,5,35
-30,503854,The Lime Tree Restaurant,CV37 8LW,9.5,,,,,,,8.544,Excellent,5,35
-31,565221,Costa,B95 5DA,9.5,,,,,,,8.543,Excellent,5,35
-32,1896714,The Townhouse Also Trading As JR Hotel And Restaurants LTD,CV37 6HB,9.5,,,,,,,8.542,Excellent,5,35
-33,1014807,McDonald's,CV37 0AH,9.5,,,,,,,8.541,Excellent,5,35
-34,1453409,Bidford Juniors Football Club,,9.5,,,,,,,8.54,Excellent,5,35
-35,1339998,Cotswold Cafe,,9.5,,,,,,,8.539,Excellent,5,35
-36,1871630,LeBuns,CV35 0JS,9.5,,,,,,,8.538,Excellent,5,35
-37,1552333,Costa Coffee,CV37 8LU,9.5,,,,,,,8.537,Excellent,5,35
-38,1842631,Snitterfield Arms,CV37 0JH,9.5,,,,,,,8.536,Excellent,5,35
-39,502838,Alveston Manor Hotel,CV37 7HP,9.5,,,,,,,8.535,Excellent,5,35
-40,1847445,Soma,CV37 6EX,9.5,,,,,,,8.534,Excellent,5,35
-41,1623426,Red Hot Mamma Pizzeria,CV37 6AU,9.5,,,,,,,8.533,Excellent,5,35
-42,1622070,Carluccio's,CV37 6BA,9.5,,,,,,,8.532,Excellent,5,35
-43,1808716,Fast Flavour,CV37 6AB,9.5,,,,,,,8.531,Excellent,5,35
-44,1827674,Pickled & Tipsy's Cafe,CV47 1PH,9.5,,,,,,,8.53,Excellent,5,35
-45,1228994,Mor,CV37 6EX,9.5,,,,,,,8.529,Excellent,5,35
-46,503032,The Spice Room,B49 5AD,9.5,,,,,,,8.528,Excellent,5,35
-47,1800191,Chapter 23,B49 5AF,9.5,,,,,,,8.527,Excellent,5,35
-48,1799218,Pizza Junction Kineton Ltd,CV35 0LN,9.5,,,,,,,8.526,Excellent,5,35
-49,504014,The Kings Head,CV35 9LT,9.5,,,,,,,8.525,Excellent,5,35
-50,1796547,Feel Good Crystals,CV36 5LE,9.5,,,,,,,8.524,Excellent,5,35
-51,1789006,The Pickled Crab Deli,CV47 0HF,9.5,,,,,,,8.523,Excellent,5,35
-52,1774610,Digby's Events,CV47,9.5,,,,,,,8.522,Excellent,5,35
-53,1781021,Stratford Upon Avon Baptist Church,CV37 6UA,9.5,,,,,,,8.521,Excellent,5,35
-54,1747703,GAIL's Stratford-Upon-Avon,CV37 6AU,9.5,,,,,,,8.52,Excellent,5,35
-55,1754519,Nanas Caff,CV37 9NQ,9.5,,,,,,,8.519,Excellent,5,35
-56,1756585,Annie's Cafe & Event Catering,B49 5QF,9.5,,,,,,,8.518,Excellent,5,35
-57,503781,The Bishops Fryer,CV47 2RN,9.5,,,,,,,8.517,Excellent,5,35
-58,1297845,Lounge@26,B49 5AB,9.5,,,,,,,8.516,Excellent,5,35
-59,1743693,The Food Of Love,CV37 6QW,9.5,,,,,,,8.515,Excellent,5,35
-60,1467814,Stratford Adventure Golf,CV37 7LS,9.5,,,,,,,8.514,Excellent,5,35
-61,503479,The Pavillion,OX15 6HT,9.5,,,,,,,8.513,Excellent,5,35
-62,503565,A G D Equipment Ltd,CV37 9LQ,9.5,,,,,,,8.512,Excellent,5,35
-63,1206079,Building 523 Costa And Kitchen,CV35 0RR,9.5,,,,,,,8.511,Excellent,5,35
-64,1206081,South Costa,CV35 0RR,9.5,,,,,,,8.51,Excellent,5,35
-65,1381141,The Bull's Head,B95 6BD,9.025,,,,,,,8.123,Excellent,5,35
-66,1735216,The Stables,B94 5BQ,9.025,,,,,,,8.122,Excellent,5,35
-67,503525,Shah's,CV35 9LU,9.025,,,,,,,8.121,Excellent,5,35
-68,1774612,International Circus Churros 2,CV37 0RN,9.025,,,,,,,8.12,Excellent,5,35
-69,503270,Kings Court Hotel,B49 5QQ,9.025,,,,,,,8.119,Excellent,5,35
-70,1584574,Stratford On Avon Golf Club,CV37 7BA,9.025,,,,,,,8.118,Excellent,5,35
-71,502864,Hussains,CV37 6EP,9.025,,,,,,,8.117,Excellent,5,35
-72,1796548,The Kingfisher FishBar,CV37 6LW,9.025,,,,,,,8.116,Excellent,5,35
-73,502863,Hotel Indigo And The Woodsman,CV37 6HA,9.025,,,,,,,8.115,Excellent,5,35
-74,502872,Ettington Park Hotel,CV37 8BU,9.025,,,,,,,8.114,Excellent,5,35
-75,502702,Bannatyne Health Club And Spa Wildmoor,CV37 9RJ,9.025,,,,,,,8.113,Excellent,5,35
-76,1774606,Bumbles,B80 7AN,9.025,,,,,,,8.112,Excellent,5,35
-77,1552328,The Phoenix,CV37 6QY,9.025,,,,,,,8.111,Excellent,5,35
-78,1556368,Prospero Lounge,CV37 6AD,9.025,,,,,,,8.11,Excellent,5,35
-79,1747702,Beleza Rodizio,CV37 6EX,9.025,,,,,,,8.109,Excellent,5,35
-80,503444,Crowne Plaza,CV37 6YR,9.025,,,,,,,8.108,Excellent,5,35
-81,1622074,Lexi's Loving Spoonful,CV47 2QZ,9.025,,,,,,,8.107,Excellent,5,35
-82,1206075,Dec X Canteen,CV35 0RR,9.025,,,,,,,8.106,Excellent,5,35
-83,503918,Southam Gateway Coffee Shop Ltd,CV47 0EP,9.025,,,,,,,8.105,Excellent,5,35
-84,503772,McDonald's,CV37 6AB,9.025,,,,,,,8.104,Excellent,5,35
-85,503541,Costa,CV37 0UA,9.025,,,,,,,8.103,Excellent,5,35
-86,503552,Premier Inn,CV37 0AZ,9.025,,,,,,,8.102,Excellent,5,35
-87,503369,Studley Castle,B80 7AJ,9.025,,,,,,,8.101,Excellent,5,35
-88,503931,Bella Italia Also Trading As Super Nonna,CV37 6JG,9.025,,,,,,,8.1,Excellent,5,35
-89,1019047,Miller And Carter,CV37 6EX,9.025,,,,,,,8.099,Excellent,5,35
-90,503732,Pizza Hut Restaurants - Dine In,CV37 0HZ,9.025,,,,,,,8.098,Excellent,5,35
-91,1089841,Cotswold Distillery Cafe,CV36 5HG,9.025,,,,,,,8.097,Excellent,5,35
-92,1747700,The Still House Café,CV36 5EX,9.025,,,,,,,8.096,Excellent,5,35
-93,1397584,The Bluebell,B95 5AT,9.0,,,,,,,8.095,Excellent,5,35
-94,503105,Avon Spice,CV37 6LF,9.0,,,,,,,8.094,Excellent,5,35
-95,1266894,Barnabys,CV37 6BA,9.0,,,,,,,8.093,Excellent,5,35
-96,503141,NFU Mutual,CV37 7BJ,9.0,,,,,,,8.092,Excellent,5,35
-97,503376,The Garden Cafe,B49 5PD,9.0,,,,,,,8.091,Excellent,5,35
-98,503316,Lambs,CV37 6EF,9.0,,,,,,,8.09,Excellent,5,35
-99,503345,KFC - Southbound,CV35 0AA,9.0,,,,,,,8.089,Excellent,5,35
-100,503584,Cardamom,B49 5DP,9.0,,,,,,,8.088,Excellent,5,35
-101,1500965,Cafe Des Fleurs,B49 5AE,9.0,,,,,,,8.087,Excellent,5,35
-102,1474392,The Pavilion Coffee Shop And Community Space,CV37 8YE,9.0,,,,,,,8.086,Excellent,5,35
-103,503820,Cafe 16,CV47 0HF,9.0,,,,,,,8.085,Excellent,5,35
-104,1291215,Gardener's Retreat,B80 7DR,9.0,,,,,,,8.084,Excellent,5,35
-105,1317981,Kolshi Restaurant,CV35 9ND,9.0,,,,,,,8.083,Excellent,5,35
-106,1826833,Revs Automobilia,GL56 9RE,9.0,,,,,,,8.082,Excellent,5,35
-107,503481,The Opposition,CV37 6EF,9.0,,,,,,,8.081,Excellent,5,35
-108,1804017,Cafe 86B,B95 5BY,9.0,,,,,,,8.08,Excellent,5,35
-109,504026,Ragley Hall Catering,B49 5NJ,9.0,,,,,,,8.079,Excellent,5,35
-110,1672985,Bidford Community Fridge & Cafe,B50 4QB,9.0,,,,,,,8.078,Excellent,5,35
-111,1485802,Kitty's Kitchen Catering Ltd,CV37 7AY,9.0,,,,,,,8.077,Excellent,5,35
-112,1388307,Chrissie's Kitchen,CV35,9.0,,,,,,,8.076,Excellent,5,35
-113,1563336,Chopstix South,CV35 0AA,8.55,,,,,,,7.695,Good,5,35
-114,1246463,The Avon Lounge,CV37 6LP,8.55,,,,,,,7.694,Good,5,35
-115,1774608,NO4 Bar And Restaurant,CV37 6YY,8.55,,,,,,,7.693,Good,5,35
-116,503343,Starbucks -  Southbound,CV35 0AA,8.55,,,,,,,7.692,Good,5,35
-117,1388310,The Coach House,CV37 6LP,8.55,,,,,,,7.691,Good,5,35
-118,503240,Henley Ice Cream Limited,B95 5BS,8.55,,,,,,,7.69,Good,5,35
-119,1411434,Earlswood Lunch Club,B94 6BZ,8.55,,,,,,,7.689,Good,5,35
-120,1695937,Impasto Micro-Pizzeria,CV37 6QY,8.55,,,,,,,7.688,Good,5,35
-121,503218,Burger King - Southbound,CV35 0AA,8.55,,,,,,,7.687,Good,5,35
-122,502681,Billesley Manor Hotel,B49 6NF,8.55,,,,,,,7.686,Good,5,35
-123,1739369,Paul's Catering,CV37,8.55,,,,,,,7.685,Good,5,35
-124,1131857,Stratford Town FC,CV37 7BZ,8.55,,,,,,,7.684,Good,5,35
-125,503286,George's Cafe,B50 4JF,8.55,,,,,,,7.683,Good,5,35
-126,1739370,Corte Campana,CV37 6EX,8.55,,,,,,,7.682,Good,5,35
-127,676556,The Straw Kitchen,CV36 5PG,8.55,,,,,,,7.681,Good,5,35
-128,1093181,Coffee#1 Limited,CV37 6EY,8.55,,,,,,,7.68,Good,5,35
-129,676557,Plantarium,CV37 6NF,8.55,,,,,,,7.679,Good,5,35
-130,503554,The Bridge,B50 4BG,8.55,,,,,,,7.678,Good,5,35
-131,503585,Redwings Horse Sanctuary,CV35 0RP,8.55,,,,,,,7.677,Good,5,35
-132,502816,Loxleys Restaurant And Wine Bar,CV37 6EF,8.5,,,,,,,7.65,Good,5,35
-133,503081,Sans Oriental Restaurant,B95 5AT,8.5,,,,,,,7.649,Good,5,35
-134,1381156,Pick Thai Ltd,CV37 6HB,8.5,,,,,,,7.648,Good,5,35
-135,1908606,Bruno's Bakery,B80 7HJ,8.5,,,,,,,7.647,Good,5,35
-136,503926,Harbury Library Cafe,CV33 9HW,8.5,,,,,,,7.646,Good,5,35
-137,503972,The George Hotel,CV36 4AJ,8.5,,,,,,,7.645,Good,5,35
-138,1662496,Coffee Clouds,CV37 6GJ,8.5,,,,,,,7.644,Good,5,35
-139,1266904,Good Breakfast,CV35 0AA,8.5,,,,,,,7.643,Good,5,35
-140,1690228,Compton Verney Cafe,CV35 9HZ,8.5,,,,,,,7.642,Good,5,35
-141,1302779,The Olde Mint,CV47 0EP,8.5,,,,,,,7.641,Good,5,35
-142,1622082,The Crofts Cafe Also Trading As New York Pizzas,CV37 6PH,8.5,,,,,,,7.64,Good,5,35
-143,1838728,Elders Who Lunch (Hartley Locums),CV47 8LS,8.5,,,,,,,7.639,Good,5,35
-144,1364372,The Bell Inn,CV37 8EB,8.5,,,,,,,7.638,Good,5,35
-145,1796553,Mr Odie's,CV37 6QT,8.5,,,,,,,7.637,Good,5,35
-146,1799220,Burger King,CV37 0HZ,8.5,,,,,,,7.636,Good,5,35
-147,503711,Arden Tandoori,B95 5AU,8.5,,,,,,,7.635,Good,5,35
-148,1705603,Escape Arts,CV37 6EE,8.1,,,,,,,7.29,Good,5,35
-149,1622076,Caffe Nero,CV37 6AN,8.1,,,,,,,7.289,Good,5,35
-150,736236,JNB Cafe,CV37 0ER,8.1,,,,,,,7.288,Good,5,35
-151,1339997,The Margin,CV47 9PZ,8.075,,,,,,,7.267,Good,5,35
-152,1584576,Libertine Burger,CV37 6JP,8.075,,,,,,,7.266,Good,5,35
-153,1622078,Sushi Land,CV37 6NF,8.075,,,,,,,7.265,Good,5,35
-154,1388303,Lily's,CV37 6LU,8.075,,,,,,,7.264,Good,5,35
-155,1754520,Cinnamon Arch,CV47 9QJ,8.075,,,,,,,7.263,Good,5,35
-156,502877,DoubleTree By Hilton,CV37 6QQ,8.075,,,,,,,7.262,Good,5,35
-157,1421981,Peppers,B80 7HN,8.075,,,,,,,7.261,Good,5,35
-158,1354963,The Tea Shed,CV47 8LT,8.075,,,,,,,7.26,Good,5,35
-159,1712197,The Sandwich Shop,B95 5AT,8.075,,,,,,,7.259,Good,5,35
-160,503960,Blue Bean Coffee Shop,CV36 4AF,8.075,,,,,,,7.258,Good,5,35
-161,1495078,Four Seasons Pho Limited,CV37 6LF,7.65,,,,,,,6.885,Good,5,35
-162,1291217,Gardener's Retreat,CV35 9ER,7.65,,,,,,,6.884,Good,5,35
-163,1155879,Mid-England Barrow Ltd,OX17,9.0,,,,,,,6.883,Good,5,35
-164,1765854,The Roebuck Inn Alcester,B49 5QA,7.6,,,,,,,6.84,Good,2,35
-165,1253300,The Keys,CV37 6LW,7.38,,,,,,,6.642,Good,5,35
-166,503292,Wildwood Kitchen,CV37 6EF,7.315,,,,,,,6.583,Good,5,35
-167,1589295,The Tempest,CV37 6EX,7.315,,,,,,,6.582,Good,5,35
-168,1584577,Shakespeare's,B94 5JU,7.2,,,,,,,6.48,Generally Satisfactory,5,35
-169,1884822,WINGERS STRATFORD,CV37 0BF,7.2,,,,,,,6.479,Generally Satisfactory,5,35
-170,1421980,Tzatziki34,CV37 6AB,7.2,,,,,,,6.478,Generally Satisfactory,5,35
-171,503261,Thespians Indian Restaurant,CV37 6EF,7.2,,,,,,,6.477,Generally Satisfactory,5,35
-172,1176874,The Garden Shed Cafe,CV35 9NZ,7.2,,,,,,,6.476,Generally Satisfactory,5,35
-173,1284339,The Yew Tree,CV47 2AS,7.2,,,,,,,6.475,Generally Satisfactory,5,35
-174,503821,The Balti Hut,CV47 0HA,7.2,,,,,,,6.474,Generally Satisfactory,5,35
-175,1835033,The Cottage Of Content,B50 4NP,7.2,,,,,,,6.473,Generally Satisfactory,5,35
-176,503401,Shukurs,CV35 0HP,6.84,,,,,,,6.156,Generally Satisfactory,5,35
-177,676561,The Embankment,CV37 7LS,6.84,,,,,,,6.155,Generally Satisfactory,5,35
-178,503089,Touchdown Cafe,CV35 9EU,6.84,,,,,,,6.154,Generally Satisfactory,5,35
-179,1513917,The Water Margin @ The Hollybush,CV47 7RW,6.84,,,,,,,6.153,Generally Satisfactory,5,35
-180,1747706,The Long Itch Diner,CV47 9QZ,6.84,,,,,,,6.152,Generally Satisfactory,5,35
-181,1029137,The Buck And Bell,CV47 9PH,6.84,,,,,,,6.151,Generally Satisfactory,5,35
-182,1266889,Turkish Stonebakers,CV35 9NE,6.84,,,,,,,6.15,Generally Satisfactory,5,35
-183,503555,Dog Lane Fishery Caravanning And Camping Site,CV47 8LT,7.65,,,,,,,5.852,Generally Satisfactory,5,35
-184,1871632,Sorrento Restaurant Taste Of Italy,CV37 6LW,5.9,,,,,,,5.31,Generally Satisfactory,5,35
-185,1622072,Hudson's,CV37 9ST,5.9,,,,,,,5.309,Generally Satisfactory,5,35
-186,503319,Shipston Pizza And Kebab House,CV36 4AL,5.9,,,,,,,5.308,Generally Satisfactory,5,35
-187,1826837,Cafe Chutneys,CV37 0AX,5.9,,,,,,,5.307,Generally Satisfactory,5,35
-188,1800190,CAMEO Lunch Club,,5.9,,,,,,,5.306,Generally Satisfactory,5,35
-189,1838726,The Cowshed Cafe,B95 6BY,5.9,,,,,,,5.305,Generally Satisfactory,5,35
-190,504050,Bishops Bowls Lake Cafe,CV47 2SR,5.9,,,,,,,5.304,Generally Satisfactory,5,35
-191,503148,Nuthurst Grange Country House,B94 5NL,5.605,,,,,,,5.045,Generally Satisfactory,5,35
-192,1790270,Bardia's,CV37 6EE,5.605,,,,,,,5.044,Generally Satisfactory,5,35
-193,565220,Four Teas,CV37 6EF,5.4,,,,,,,4.86,Improvement Necessary,5,35
-194,502962,Curry Republic,B95 5AA,5.4,,,,,,,4.859,Improvement Necessary,5,35
-195,1695933,Hobsons Patisseries,CV37 6PT,5.4,,,,,,,4.858,Improvement Necessary,5,35
-196,503715,Cafe Living,CV37 0HZ,5.4,,,,,,,4.857,Improvement Necessary,5,35
-197,1826838,Mouchak,B50 4BG,5.4,,,,,,,4.856,Improvement Necessary,5,35
-198,650308,New Summer Palace Restaurant,B80 7DF,5.13,,,,,,,4.617,Improvement Necessary,5,35
-199,502970,China Garden,CV37 6NL,4.1,,,,,,,3.6,Improvement Necessary,5,35
-200,503216,Welcombe Hotel Golf Resort \& Spa,CV37 0NR,4.1,,,,,,,3.599,Improvement Necessary,5,35
-201,1452414,Subway,CV37 0HZ,4.6,,,,,,,3.598,Improvement Necessary,5,35
-202,503114,Mount Everest Nepalese Cuisine,B80 7NL,3.895,,,,,,,3.506,Improvement Necessary,5,35
-203,979161,Karen's Korner,B80 7PD,2.8,,,,,,,1.8,Urgent Improvement,5,35
-204,1800192,Havilands Tea Room And Restaurant,CV37 6QB,1.8,,,,,,,1.62,Urgent Improvement,5,35
-205,1911092,Coughton Court Cafe,B49 5JA,,,,,,,,0.003,Urgent Improvement,0,35
-206,1927834,Golden Putter Stratford Upon,CV37 7LS,,,,,,,,0.002,Urgent Improvement,0,35
-207,1912631,Shipston Bengal Cuisine,CV36 4PP,,,,,,,,0.001,Urgent Improvement,0,35
-208,1927833,Slimming World,CV35 0FA,,,,,,,,0.0,Urgent Improvement,0,35
+1,1152776,Gilks' Garage Cafe,CV35 0JZ,10.0,9.306,,,,,,9.722,Excellent,10,35
+2,1056848,Espresso Barn,CV37 8RB,10.0,9.158,,,,,,9.663,Excellent,9,35
+3,503102,Ashorne Hill Management College,CV33 9QW,10.0,9.147,,,,,,9.659,Excellent,9,35
+4,1016715,Shakespaw Cat Cafe,CV37 6QT,10.0,9.123,,,,,,9.649,Excellent,10,35
+5,1854461,The Red Lion,CV37 6YW,10.0,9.097,,,,,,9.639,Excellent,9,35
+6,503282,Arrow Mill,B49 5NL,10.0,9.048,,,,,,9.619,Excellent,10,35
+7,1623426,Red Hot Mamma Pizzeria,CV37 6AU,9.5,9.747,,,,,,9.599,Excellent,9,35
+8,503054,Stratford Manor Hotel,CV37 0PY,10.0,8.947,,,,,,9.579,Excellent,9,35
+9,1896717,Lithos Restaurant,B95 5BX,10.0,8.797,,,,,,9.519,Excellent,6,35
+10,1577024,Puddleduck Cafe Ltd,CV47 1AJ,10.0,8.711,,,,,,9.484,Excellent,9,35
+11,1206079,Building 523 Costa And Kitchen,CV35 0RR,9.5,9.451,,,,,,9.48,Excellent,9,35
+12,1206081,South Costa,CV35 0RR,9.5,9.451,,,,,,9.479,Excellent,9,35
+13,1808717,Bistrot Pierre,CV37 7LT,10.0,8.654,,,,,,9.462,Excellent,7,35
+14,1802818,11/17 Salt Beef Bar,CV37 6GJ,10.0,8.652,,,,,,9.461,Excellent,9,35
+15,503854,The Lime Tree Restaurant,CV37 8LW,9.5,9.368,,,,,,9.447,Excellent,9,35
+16,1344517,The Fox Inn,CV35 9JS,10.0,8.603,,,,,,9.441,Excellent,7,35
+17,1253303,Ettington Garden Cafe,CV37 7TB,10.0,8.488,,,,,,9.395,Excellent,9,35
+18,1721314,Aston Martin Lagonda,CV35 0DB,9.5,9.232,,,,,,9.393,Excellent,9,35
+19,1089841,Cotswold Distillery Cafe,CV36 5HG,9.025,9.895,,,,,,9.373,Excellent,9,35
+20,503735,Costa,CV37 0HZ,10.0,8.413,,,,,,9.365,Excellent,10,35
+21,1747702,Beleza Rodizio,CV37 6EX,9.025,9.871,,,,,,9.364,Excellent,9,35
+22,1299513,Oxheart,CV36 5JJ,10.0,8.332,,,,,,9.333,Excellent,9,35
+23,503479,The Pavillion,OX15 6HT,9.5,9.048,,,,,,9.319,Excellent,10,35
+24,1228994,Mor,CV37 6EX,9.5,8.989,,,,,,9.296,Excellent,9,35
+25,503734,Premier Inn,CV37 6UQ,9.5,8.984,,,,,,9.293,Excellent,9,35
+26,502872,Ettington Park Hotel,CV37 8BU,9.025,9.684,,,,,,9.289,Excellent,9,35
+27,1317981,Kolshi Restaurant,CV35 9ND,9.0,9.666,,,,,,9.266,Excellent,9,35
+28,1699665,Nel's At The Pavilion,CV35 0AD,9.5,8.911,,,,,,9.264,Excellent,10,35
+29,502863,Hotel Indigo And The Woodsman,CV37 6HA,9.025,9.597,,,,,,9.254,Excellent,9,35
+30,503478,Starbucks,CV37 6AU,10.0,8.132,,,,,,9.253,Excellent,10,35
+31,1799218,Pizza Junction Kineton Ltd,CV35 0LN,9.5,8.867,,,,,,9.247,Excellent,9,35
+32,1796547,Feel Good Crystals,CV36 5LE,9.5,8.864,,,,,,9.246,Excellent,9,35
+33,504014,The Kings Head,CV35 9LT,9.5,8.857,,,,,,9.243,Excellent,10,35
+34,502838,Alveston Manor Hotel,CV37 7HP,9.5,8.842,,,,,,9.237,Excellent,9,35
+35,503376,The Garden Cafe,B49 5PD,9.0,9.579,,,,,,9.232,Excellent,9,35
+36,504026,Ragley Hall Catering,B49 5NJ,9.0,9.579,,,,,,9.231,Excellent,9,35
+37,1467814,Stratford Adventure Golf,CV37 7LS,9.5,8.806,,,,,,9.222,Excellent,9,35
+38,503369,Studley Castle,B80 7AJ,9.025,9.474,,,,,,9.204,Excellent,9,35
+39,1210746,The Alcester Inn,B49 6AQ,9.5,8.747,,,,,,9.199,Excellent,9,35
+40,1206075,Dec X Canteen,CV35 0RR,9.025,9.451,,,,,,9.195,Excellent,9,35
+41,1896714,The Townhouse Also Trading As JR Hotel And Restaurants LTD,CV37 6HB,9.5,8.724,,,,,,9.19,Excellent,10,35
+42,1847445,Soma,CV37 6EX,9.5,8.715,,,,,,9.186,Excellent,9,35
+43,1842631,Snitterfield Arms,CV37 0JH,9.5,8.641,,,,,,9.156,Excellent,9,35
+44,503032,The Spice Room,B49 5AD,9.5,8.636,,,,,,9.154,Excellent,9,35
+45,1421992,Deli Cafe,CV37 6QB,9.5,8.626,,,,,,9.151,Excellent,10,35
+46,1019047,Miller And Carter,CV37 6EX,9.025,9.333,,,,,,9.148,Excellent,10,35
+47,1800191,Chapter 23,B49 5AF,9.5,8.613,,,,,,9.145,Excellent,9,35
+48,503444,Crowne Plaza,CV37 6YR,9.025,9.263,,,,,,9.12,Excellent,9,35
+49,503552,Premier Inn,CV37 0AZ,9.025,9.263,,,,,,9.119,Excellent,9,35
+50,1024960,Starbucks Drive Thru,CV35 0AA,10.0,7.78,,,,,,9.112,Excellent,10,35
+51,559158,No 37 Cafe,CV37 6EE,9.5,8.508,,,,,,9.103,Excellent,10,35
+52,1774612,International Circus Churros 2,CV37 0RN,9.025,9.205,,,,,,9.097,Excellent,9,35
+53,503316,Lambs,CV37 6EF,9.0,9.238,,,,,,9.095,Excellent,10,35
+54,1622070,Carluccio's,CV37 6BA,9.5,8.488,,,,,,9.094,Excellent,10,35
+55,1774606,Bumbles,B80 7AN,9.025,9.199,,,,,,9.093,Excellent,9,35
+56,1789006,The Pickled Crab Deli,CV47 0HF,9.5,8.452,,,,,,9.081,Excellent,10,35
+57,1339998,Cotswold Cafe,,9.5,8.44,,,,,,9.076,Excellent,10,35
+58,1756585,Annie's Cafe & Event Catering,B49 5QF,9.5,8.393,,,,,,9.057,Excellent,9,35
+59,1747703,GAIL's Stratford-Upon-Avon,CV37 6AU,9.5,8.361,,,,,,9.044,Excellent,9,35
+60,565221,Costa,B95 5DA,9.5,8.335,,,,,,9.034,Excellent,10,35
+61,503732,Pizza Hut Restaurants - Dine In,CV37 0HZ,9.025,9.048,,,,,,9.033,Excellent,10,35
+62,503481,The Opposition,CV37 6EF,9.0,9.073,,,,,,9.029,Excellent,10,35
+63,1381141,The Bull's Head,B95 6BD,9.025,8.99,,,,,,9.011,Excellent,10,35
+64,502702,Bannatyne Health Club And Spa Wildmoor,CV37 9RJ,9.025,8.973,,,,,,9.004,Excellent,9,35
+65,1871630,LeBuns,CV35 0JS,9.5,8.256,,,,,,9.002,Excellent,10,35
+66,1552322,Costa Coffee,CV37 6PT,10.0,7.503,,,,,,9.001,Excellent,10,35
+67,1672985,Bidford Community Fridge & Cafe,B50 4QB,9.0,8.987,,,,,,8.995,Excellent,9,35
+68,503931,Bella Italia Also Trading As Super Nonna,CV37 6JG,9.025,8.857,,,,,,8.958,Excellent,10,35
+69,1014807,McDonald's,CV37 0AH,9.5,8.143,,,,,,8.957,Excellent,10,35
+70,1297845,Lounge@26,B49 5AB,9.5,8.14,,,,,,8.956,Excellent,10,35
+71,1556368,Prospero Lounge,CV37 6AD,9.025,8.811,,,,,,8.94,Excellent,10,35
+72,1388307,Chrissie's Kitchen,CV35,9.0,8.84,,,,,,8.936,Excellent,9,35
+73,1397584,The Bluebell,B95 5AT,9.0,8.818,,,,,,8.927,Excellent,10,35
+74,503525,Shah's,CV35 9LU,9.025,8.781,,,,,,8.926,Excellent,10,35
+75,1743693,The Food Of Love,CV37 6QW,9.5,8.03,,,,,,8.912,Excellent,10,35
+76,503565,A G D Equipment Ltd,CV37 9LQ,9.5,8.004,,,,,,8.902,Excellent,9,35
+77,503585,Redwings Horse Sanctuary,CV35 0RP,8.55,9.424,,,,,,8.9,Excellent,9,35
+78,1552328,The Phoenix,CV37 6QY,9.025,8.7,,,,,,8.895,Excellent,10,35
+79,1854458,Costa Coffee,B49 6PQ,10.0,7.215,,,,,,8.886,Excellent,9,35
+80,1826834,Ferment And Flour (Bastardos),CV36 4PP,10.0,7.216,,,,,,8.885,Excellent,9,35
+81,1827674,Pickled & Tipsy's Cafe,CV47 1PH,9.5,7.96,,,,,,8.884,Excellent,9,35
+82,1826833,Revs Automobilia,GL56 9RE,9.0,8.707,,,,,,8.883,Excellent,9,35
+83,1896718,Birmingham City Football Club Ltd,B95 6AB,10.0,7.201,,,,,,8.881,Excellent,9,35
+84,503584,Cardamom,B49 5DP,9.0,8.701,,,,,,8.88,Excellent,10,35
+85,1808716,Fast Flavour,CV37 6AB,9.5,7.928,,,,,,8.871,Excellent,9,35
+86,1739370,Corte Campana,CV37 6EX,8.55,9.35,,,,,,8.87,Excellent,9,35
+87,1485802,Kitty's Kitchen Catering Ltd,CV37 7AY,9.0,8.613,,,,,,8.845,Excellent,9,35
+88,1266894,Barnabys,CV37 6BA,9.0,8.571,,,,,,8.829,Excellent,10,35
+89,1735216,The Stables,B94 5BQ,9.025,8.517,,,,,,8.822,Excellent,9,35
+90,676557,Plantarium,CV37 6NF,8.55,9.2,,,,,,8.81,Excellent,10,35
+91,503781,The Bishops Fryer,CV47 2RN,9.5,7.765,,,,,,8.806,Excellent,10,35
+92,1584574,Stratford On Avon Golf Club,CV37 7BA,9.025,8.468,,,,,,8.802,Excellent,9,35
+93,502816,Loxleys Restaurant And Wine Bar,CV37 6EF,8.5,9.238,,,,,,8.795,Excellent,10,35
+94,502681,Billesley Manor Hotel,B49 6NF,8.55,9.158,,,,,,8.793,Excellent,9,35
+95,1796548,The Kingfisher FishBar,CV37 6LW,9.025,8.416,,,,,,8.781,Excellent,10,35
+96,1804017,Cafe 86B,B95 5BY,9.0,8.446,,,,,,8.778,Excellent,9,35
+97,1747700,The Still House Café,CV36 5EX,9.025,8.406,,,,,,8.777,Excellent,9,35
+98,502864,Hussains,CV37 6EP,9.025,8.4,,,,,,8.775,Excellent,10,35
+99,1500965,Cafe Des Fleurs,B49 5AE,9.0,8.394,,,,,,8.758,Excellent,10,35
+100,1364372,The Bell Inn,CV37 8EB,8.5,9.143,,,,,,8.757,Excellent,10,35
+101,503820,Cafe 16,CV47 0HF,9.0,8.364,,,,,,8.746,Excellent,10,35
+102,1695937,Impasto Micro-Pizzeria,CV37 6QY,8.55,9.035,,,,,,8.744,Excellent,9,35
+103,503105,Avon Spice,CV37 6LF,9.0,8.328,,,,,,8.731,Excellent,10,35
+104,503240,Henley Ice Cream Limited,B95 5BS,8.55,9.0,,,,,,8.73,Excellent,10,35
+105,1754519,Nanas Caff,CV37 9NQ,9.5,10.0,,,,,,8.729,Excellent,6,35
+106,503972,The George Hotel,CV36 4AJ,8.5,9.048,,,,,,8.719,Excellent,10,35
+107,1672980,Greggs PLC,B49 6EH,10.0,6.775,,,,,,8.71,Excellent,10,35
+108,503343,Starbucks -  Southbound,CV35 0AA,8.55,8.947,,,,,,8.709,Excellent,9,35
+109,503218,Burger King - Southbound,CV35 0AA,8.55,8.947,,,,,,8.708,Excellent,9,35
+110,1774608,NO4 Bar And Restaurant,CV37 6YY,8.55,8.91,,,,,,8.694,Excellent,9,35
+111,676556,The Straw Kitchen,CV36 5PG,8.55,8.855,,,,,,8.672,Excellent,10,35
+112,503772,McDonald's,CV37 6AB,9.025,8.143,,,,,,8.671,Excellent,10,35
+113,1796553,Mr Odie's,CV37 6QT,8.5,8.894,,,,,,8.658,Excellent,9,35
+114,503141,NFU Mutual,CV37 7BJ,9.0,8.096,,,,,,8.638,Excellent,9,35
+115,1266904,Good Breakfast,CV35 0AA,8.5,8.842,,,,,,8.637,Excellent,9,35
+116,503918,Southam Gateway Coffee Shop Ltd,CV47 0EP,9.025,8.035,,,,,,8.629,Excellent,10,35
+117,1381156,Pick Thai Ltd,CV37 6HB,8.5,8.785,,,,,,8.614,Excellent,9,35
+118,503541,Costa,CV37 0UA,9.025,7.942,,,,,,8.592,Excellent,10,35
+119,1662496,Coffee Clouds,CV37 6GJ,8.5,8.66,,,,,,8.564,Excellent,10,35
+120,1131857,Stratford Town FC,CV37 7BZ,8.55,8.569,,,,,,8.558,Excellent,9,35
+121,503554,The Bridge,B50 4BG,8.55,8.57,,,,,,8.557,Excellent,10,35
+122,503081,Sans Oriental Restaurant,B95 5AT,8.5,8.629,,,,,,8.552,Excellent,10,35
+123,1774610,Digby's Events,CV47,9.5,,,,,,,8.55,Excellent,5,35
+124,502877,DoubleTree By Hilton,CV37 6QQ,8.075,9.263,,,,,,8.549,Excellent,9,35
+125,1388310,The Coach House,CV37 6LP,8.55,8.526,,,,,,8.54,Excellent,10,35
+126,1093181,Coffee#1 Limited,CV37 6EY,8.55,8.506,,,,,,8.532,Excellent,10,35
+127,503711,Arden Tandoori,B95 5AU,8.5,8.475,,,,,,8.49,Excellent,10,35
+128,1908606,Bruno's Bakery,B80 7HJ,8.5,8.393,,,,,,8.457,Excellent,10,35
+129,503926,Harbury Library Cafe,CV33 9HW,8.5,8.332,,,,,,8.433,Excellent,9,35
+130,736236,JNB Cafe,CV37 0ER,8.1,8.829,,,,,,8.392,Excellent,9,35
+131,1781021,Stratford Upon Avon Baptist Church,CV37 6UA,9.5,6.715,,,,,,8.386,Excellent,9,35
+132,503286,George's Cafe,B50 4JF,8.55,8.137,,,,,,8.385,Excellent,10,35
+133,1388303,Lily's,CV37 6LU,8.075,8.805,,,,,,8.367,Excellent,9,35
+134,1622078,Sushi Land,CV37 6NF,8.075,8.683,,,,,,8.318,Excellent,9,35
+135,503345,KFC - Southbound,CV35 0AA,9.0,7.259,,,,,,8.304,Excellent,10,35
+136,1246463,The Avon Lounge,CV37 6LP,8.55,7.915,,,,,,8.296,Excellent,9,35
+137,1584576,Libertine Burger,CV37 6JP,8.075,8.595,,,,,,8.283,Excellent,9,35
+138,1799220,Burger King,CV37 0HZ,8.5,7.935,,,,,,8.274,Excellent,9,35
+139,503960,Blue Bean Coffee Shop,CV36 4AF,8.075,8.572,,,,,,8.273,Excellent,10,35
+140,1474392,The Pavilion Coffee Shop And Community Space,CV37 8YE,9.0,7.054,,,,,,8.221,Excellent,9,35
+141,503342,Burger King - Northbound,CV35 0AA,10.0,5.536,,,,,,8.214,Excellent,10,35
+142,1622076,Caffe Nero,CV37 6AN,8.1,8.375,,,,,,8.21,Excellent,10,35
+143,1411434,Earlswood Lunch Club,B94 6BZ,8.55,7.69,,,,,,8.206,Excellent,9,35
+144,1622082,The Crofts Cafe Also Trading As New York Pizzas,CV37 6PH,8.5,10.0,,,,,,8.19,Excellent,6,35
+145,1622074,Lexi's Loving Spoonful,CV47 2QZ,9.025,6.924,,,,,,8.185,Excellent,9,35
+146,1754520,Cinnamon Arch,CV47 9QJ,8.075,8.333,,,,,,8.178,Excellent,9,35
+147,1552333,Costa Coffee,CV37 8LU,9.5,6.137,,,,,,8.155,Excellent,10,35
+148,1302779,The Olde Mint,CV47 0EP,8.5,7.571,,,,,,8.128,Excellent,10,35
+149,1421981,Peppers,B80 7HN,8.075,8.162,,,,,,8.11,Excellent,10,35
+150,1584577,Shakespeare's,B94 5JU,7.2,9.474,,,,,,8.109,Excellent,9,35
+151,1453409,Bidford Juniors Football Club,,9.5,5.977,,,,,,8.091,Excellent,9,35
+152,1339997,The Margin,CV47 9PZ,8.075,8.067,,,,,,8.072,Excellent,9,35
+153,1495078,Four Seasons Pho Limited,CV37 6LF,7.65,8.445,,,,,,7.968,Good,9,35
+154,1712197,The Sandwich Shop,B95 5AT,8.075,7.793,,,,,,7.962,Good,9,35
+155,1739369,Paul's Catering,CV37,8.55,7.032,,,,,,7.943,Good,8,35
+156,503292,Wildwood Kitchen,CV37 6EF,7.315,8.857,,,,,,7.932,Good,10,35
+157,1589295,The Tempest,CV37 6EX,7.315,8.715,,,,,,7.875,Good,9,35
+158,1838728,Elders Who Lunch (Hartley Locums),CV47 8LS,8.5,6.899,,,,,,7.86,Good,9,35
+159,1176874,The Garden Shed Cafe,CV35 9NZ,7.2,8.851,,,,,,7.859,Good,10,35
+160,1284339,The Yew Tree,CV47 2AS,7.2,8.85,,,,,,7.858,Good,10,35
+161,1266889,Turkish Stonebakers,CV35 9NE,6.84,9.23,,,,,,7.796,Good,9,35
+162,1835033,The Cottage Of Content,B50 4NP,7.2,8.644,,,,,,7.778,Good,10,35
+163,1253300,The Keys,CV37 6LW,7.38,8.369,,,,,,7.776,Good,10,35
+164,676561,The Embankment,CV37 7LS,6.84,9.172,,,,,,7.773,Good,9,35
+165,1291215,Gardener's Retreat,B80 7DR,9.0,5.873,,,,,,7.749,Good,9,35
+166,1421980,Tzatziki34,CV37 6AB,7.2,8.505,,,,,,7.722,Good,9,35
+167,1354963,The Tea Shed,CV47 8LT,8.075,7.173,,,,,,7.714,Good,9,35
+168,1765854,The Roebuck Inn Alcester,B49 5QA,7.6,10.0,,,,,,7.704,Good,3,35
+169,503401,Shukurs,CV35 0HP,6.84,8.972,,,,,,7.693,Good,10,35
+170,503089,Touchdown Cafe,CV35 9EU,6.84,8.905,,,,,,7.666,Good,10,35
+171,503261,Thespians Indian Restaurant,CV37 6EF,7.2,8.347,,,,,,7.659,Good,10,35
+172,1563336,Chopstix South,CV35 0AA,8.55,6.201,,,,,,7.61,Good,9,35
+173,503821,The Balti Hut,CV47 0HA,7.2,8.167,,,,,,7.587,Good,9,35
+174,1747706,The Long Itch Diner,CV47 9QZ,6.84,8.647,,,,,,7.563,Good,10,35
+175,1884822,WINGERS STRATFORD,CV37 0BF,7.2,7.897,,,,,,7.479,Good,9,35
+176,1927833,Slimming World,CV35 0FA,,8.785,,,,,,7.467,Good,4,35
+177,1029137,The Buck And Bell,CV47 9PH,6.84,8.352,,,,,,7.445,Good,10,35
+178,1513917,The Water Margin @ The Hollybush,CV47 7RW,6.84,8.067,,,,,,7.331,Good,9,35
+179,503270,Kings Court Hotel,B49 5QQ,9.025,6.667,,,,,,7.274,Good,7,35
+180,1291217,Gardener's Retreat,CV35 9ER,7.65,6.635,,,,,,7.244,Good,9,35
+181,1690228,Compton Verney Cafe,CV35 9HZ,8.5,7.333,,,,,,7.23,Good,7,35
+182,1705603,Escape Arts,CV37 6EE,8.1,5.895,,,,,,7.218,Good,9,35
+183,1927834,Golden Putter Stratford Upon,CV37 7LS,,8.373,,,,,,7.117,Good,4,35
+184,503148,Nuthurst Grange Country House,B94 5NL,5.605,9.338,,,,,,7.098,Good,9,35
+185,1790270,Bardia's,CV37 6EE,5.605,9.178,,,,,,7.034,Good,9,35
+186,1155879,Mid-England Barrow Ltd,OX17,9.0,7.159,,,,,,7.024,Good,9,35
+187,1871632,Sorrento Restaurant Taste Of Italy,CV37 6LW,5.9,8.695,,,,,,7.018,Good,10,35
+188,504050,Bishops Bowls Lake Cafe,CV47 2SR,5.9,8.693,,,,,,7.017,Good,9,35
+189,503555,Dog Lane Fishery Caravanning And Camping Site,CV47 8LT,7.65,9.033,,,,,,6.973,Good,9,35
+190,1622072,Hudson's,CV37 9ST,5.9,8.443,,,,,,6.917,Good,9,35
+191,1838726,The Cowshed Cafe,B95 6BY,5.9,8.358,,,,,,6.883,Good,10,35
+192,565220,Four Teas,CV37 6EF,5.4,9.048,,,,,,6.859,Good,10,35
+193,1826837,Cafe Chutneys,CV37 0AX,5.9,8.251,,,,,,6.841,Good,10,35
+194,1695933,Hobsons Patisseries,CV37 6PT,5.4,8.857,,,,,,6.783,Good,10,35
+195,1912631,Shipston Bengal Cuisine,CV36 4PP,,7.908,,,,,,6.722,Good,5,35
+196,503715,Cafe Living,CV37 0HZ,5.4,8.524,,,,,,6.65,Good,10,35
+197,503319,Shipston Pizza And Kebab House,CV36 4AL,5.9,7.728,,,,,,6.631,Good,9,35
+198,502962,Curry Republic,B95 5AA,5.4,7.905,,,,,,6.402,Generally Satisfactory,10,35
+199,650308,New Summer Palace Restaurant,B80 7DF,5.13,8.303,,,,,,6.399,Generally Satisfactory,10,35
+200,1911092,Coughton Court Cafe,B49 5JA,,7.488,,,,,,6.365,Generally Satisfactory,4,35
+201,1826838,Mouchak,B50 4BG,5.4,7.728,,,,,,6.331,Generally Satisfactory,9,35
+202,1800190,CAMEO Lunch Club,,5.9,6.948,,,,,,6.319,Generally Satisfactory,9,35
+203,502970,China Garden,CV37 6NL,4.1,7.115,,,,,,4.0,Improvement Necessary,10,35
+204,503216,Welcombe Hotel Golf Resort \& Spa,CV37 0NR,4.1,8.947,,,,,,3.999,Improvement Necessary,9,35
+205,1452414,Subway,CV37 0HZ,4.6,7.484,,,,,,3.998,Improvement Necessary,10,35
+206,503114,Mount Everest Nepalese Cuisine,B80 7NL,3.895,8.545,,,,,,3.997,Improvement Necessary,10,35
+207,979161,Karen's Korner,B80 7PD,2.8,8.079,,,,,,2.0,Major Improvement,10,35
+208,1800192,Havilands Tea Room And Restaurant,CV37 6QB,1.8,8.255,,,,,,1.999,Major Improvement,9,35
