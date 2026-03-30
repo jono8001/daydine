@@ -578,12 +578,11 @@ def fetch_establishments(la_name):
 
 
 # ---------------------------------------------------------------------------
-# Google Place Type → Category mapping
+# 3-Tier Category Classifier
 # ---------------------------------------------------------------------------
 
-# Priority order: first match wins (more specific types checked first)
-_CATEGORY_RULES = [
-    # Specific cuisine types
+# --- Tier 1: Google Place Type rules (most reliable) ---
+_GTYPE_RULES = [
     ({"indian_restaurant", "bangladeshi_restaurant"}, "Indian Restaurant"),
     ({"italian_restaurant", "pizza_restaurant"}, "Italian Restaurant"),
     ({"chinese_restaurant"}, "Chinese Restaurant"),
@@ -596,7 +595,6 @@ _CATEGORY_RULES = [
       "chicken_restaurant", "chicken_wings_restaurant", "steak_house"}, "American / Grill"),
     ({"british_restaurant", "fish_and_chips_restaurant", "seafood_restaurant"}, "British Restaurant"),
     ({"vegan_restaurant", "vegetarian_restaurant"}, "Vegan / Vegetarian"),
-    # Venue types
     ({"fine_dining_restaurant"}, "Fine Dining"),
     ({"fast_food_restaurant", "sandwich_shop", "snack_bar"}, "Fast Food / Quick Service"),
     ({"meal_takeaway", "food_delivery"}, "Takeaway"),
@@ -610,24 +608,132 @@ _CATEGORY_RULES = [
     ({"catering_service"}, "Catering"),
 ]
 
+# --- Tier 2: Name-based keyword matching ---
+# Each rule: (set of keywords, category). Match if ANY keyword appears in
+# the lowercased business name. Rules checked in order, first match wins.
+import re
 
-def classify_category(record):
-    """Assign a category from Google place types. Returns category string."""
+_NAME_RULES = [
+    # Indian / South Asian
+    ({"curry", "tandoori", "spice", "masala", "balti", "bengali", "biryani",
+      "naan", "chapati", "bhaji", "tikka", "vindaloo", "korma", "mughal",
+      "raj ", "maharaja", "bombay", "delhi", "punjab", "bengal", "nepal",
+      "everest", "gurkha", "namaste", "nepalese", "mouchak", "chutni",
+      "bengali"}, "Indian Restaurant"),
+    # Chinese
+    ({"chinese", "wok", "dragon", "oriental", "canton", "peking", "szechuan",
+      "dim sum", "chow", "china garden", "summer palace"}, "Chinese Restaurant"),
+    # Italian
+    ({"pizza", "pizzeria", "pasta", "trattoria", "ristorante", "italiano",
+      "napoli", "roma", "vesuvio", "carluccio", "bella italia", "sorrento",
+      "zizzi", "prezzo"}, "Italian Restaurant"),
+    # Thai
+    ({"thai", "siam", "bangkok", "pad thai", "tom yum"}, "Thai Restaurant"),
+    # Japanese
+    ({"sushi", "ramen", "tempura", "miso", "sake", "japanese",
+      "wagamama"}, "Japanese Restaurant"),
+    # Turkish / Mediterranean
+    ({"turkish", "kebab", "mediterranean", "greek", "tzatziki", "meze",
+      "falafel", "shawarma", "stone baker"}, "Mediterranean Restaurant"),
+    # Mexican
+    ({"mexican", "burrito", "taco", "cantina", "enchilada",
+      "tortilla"}, "Mexican Restaurant"),
+    # Fish & Chips
+    ({"fish & chips", "fish and chips", "fish bar", "chippy",
+      "fryer"}, "Fish & Chips"),
+    # Fast Food (check before pub since some share keywords)
+    ({"burger king", "mcdonald", "kfc", "greggs", "domino", "papa john",
+      "subway", "fried chicken", "chicken wings", "chicken express",
+      "burger"}, "Fast Food / Quick Service"),
+    # Cafe / Coffee (before pub to catch "tea" names)
+    ({"cafe", "caff", "coffee", "tea room", "tea shed", "patisserie",
+      "bean", "roast", "costa", "starbucks", "espresso",
+      "canteen"}, "Cafe / Coffee Shop"),
+    # Bakery
+    ({"bakery", "bakehouse", "cake", "patisserie"}, "Bakery / Desserts"),
+    # Hotel / Accommodation
+    ({"hotel", "manor", "hall", "castle", "spa", "resort", "hilton",
+      "marriott", "plaza"}, "Hotel / Accommodation"),
+    # Pub / Bar — pub-specific name patterns
+    ({"arms", "tavern", "ale ", "alehouse", "taphouse"}, "Pub / Bar"),
+    # Catering
+    ({"catering", "lunch club"}, "Catering"),
+]
+
+# Pub names: "The <Animal/Object>" pattern — common pub naming convention
+_PUB_ANIMAL_WORDS = {
+    "inn", "bull", "bell", "swan", "lion", "horse", "crown", "plough",
+    "anchor", "fox", "stag", "hare", "pheasant", "eagle", "bear",
+    "roebuck", "red lion", "bluebell", "black horse", "white hart",
+}
+
+
+def _tier1_google_types(record):
+    """Tier 1: classify from Google place types. Returns (category, True) or (None, False)."""
     gty = record.get("gty")
     if not gty or not isinstance(gty, list):
-        return "Uncategorised"
+        return None, False
 
     types_set = set(gty)
-    for match_types, category in _CATEGORY_RULES:
+    for match_types, category in _GTYPE_RULES:
         if types_set & match_types:
-            return category
+            return category, True
 
-    # Fallback: if it has 'restaurant' type but no specific cuisine
     if "restaurant" in types_set or "family_restaurant" in types_set:
-        return "Restaurant (General)"
+        return "Restaurant (General)", True
     if "food" in types_set:
-        return "Food & Drink"
-    return "Other"
+        return "Food & Drink", True
+    return None, False
+
+
+def _tier2_name_match(record):
+    """Tier 2: classify from business name keywords. Returns (category, True) or (None, False)."""
+    name = (record.get("n") or "").lower().strip()
+    if not name:
+        return None, False
+
+    # Check keyword rules
+    for keywords, category in _NAME_RULES:
+        for kw in keywords:
+            if kw in name:
+                return category, True
+
+    # Pub pattern: "The <Word>" where word is a common pub name element
+    # but NOT "The <X> Hotel/Cafe/Restaurant/Sanctuary/Church"
+    if name.startswith("the "):
+        rest = name[4:]
+        non_pub = {"hotel", "cafe", "restaurant", "sanctuary", "church",
+                   "golf", "college", "school", "club", "centre", "center"}
+        if not any(np in rest for np in non_pub):
+            for pub_word in _PUB_ANIMAL_WORDS:
+                # Use word-boundary matching to avoid substring false
+                # positives (e.g. "lion" inside "pavillion")
+                if re.search(r'\b' + re.escape(pub_word) + r'\b', rest):
+                    return "Pub / Bar", True
+
+    return None, False
+
+
+def classify_category(record):
+    """
+    3-tier category classifier.
+    Tier 1: Google place types (most reliable)
+    Tier 2: Name-based keyword matching (fallback)
+    Tier 3: Web lookup (external script, not run here)
+    Returns (category, source) tuple.
+    """
+    # Tier 1
+    cat, matched = _tier1_google_types(record)
+    if matched:
+        return cat, "google_types"
+
+    # Tier 2
+    cat, matched = _tier2_name_match(record)
+    if matched:
+        return cat, "name_match"
+
+    # Unclassified — Tier 3 would run externally
+    return "Other", "unclassified"
 
 
 # ---------------------------------------------------------------------------
@@ -635,7 +741,7 @@ def classify_category(record):
 # ---------------------------------------------------------------------------
 
 CSV_FIELDS = [
-    "rank", "fhrsid", "business_name", "postcode", "category",
+    "rank", "fhrsid", "business_name", "postcode", "category", "category_source",
     "fsa_tier_score", "google_tier_score", "online_tier_score",
     "ops_tier_score", "menu_tier_score", "reputation_tier_score",
     "community_tier_score",
@@ -646,11 +752,13 @@ def run_pipeline(data):
     scored = []
     for key, record in data.items():
         result = compute_rcs_v2(record)
+        cat, cat_source = classify_category(record)
         scored.append({
             "fhrsid": record.get("id") or key,
             "business_name": record.get("n", "Unknown"),
             "postcode": record.get("pc", ""),
-            "category": classify_category(record),
+            "category": cat,
+            "category_source": cat_source,
             "fsa_tier_score": result["fsa_tier"],
             "google_tier_score": result["google_tier"],
             "online_tier_score": result["online_tier"],

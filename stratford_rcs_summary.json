@@ -143,12 +143,18 @@
       ]
     },
     "Cafe / Coffee Shop": {
-      "count": 43,
+      "count": 53,
       "top_5": [
         {
           "rank": 1,
           "name": "Gilks' Garage Cafe",
           "rcs": 9.722,
+          "band": "Excellent"
+        },
+        {
+          "rank": 2,
+          "name": "Espresso Barn",
+          "rcs": 9.663,
           "band": "Excellent"
         },
         {
@@ -164,16 +170,33 @@
           "band": "Excellent"
         },
         {
-          "rank": 17,
-          "name": "Ettington Garden Cafe",
-          "rcs": 9.395,
+          "rank": 11,
+          "name": "Building 523 Costa And Kitchen",
+          "rcs": 9.48,
+          "band": "Excellent"
+        }
+      ]
+    },
+    "Catering": {
+      "count": 3,
+      "top_5": [
+        {
+          "rank": 87,
+          "name": "Kitty's Kitchen Catering Ltd",
+          "rcs": 8.845,
           "band": "Excellent"
         },
         {
-          "rank": 20,
-          "name": "Costa",
-          "rcs": 9.365,
+          "rank": 143,
+          "name": "Earlswood Lunch Club",
+          "rcs": 8.206,
           "band": "Excellent"
+        },
+        {
+          "rank": 202,
+          "name": "CAMEO Lunch Club",
+          "rcs": 6.319,
+          "band": "Generally Satisfactory"
         }
       ]
     },
@@ -201,7 +224,7 @@
       ]
     },
     "Fast Food / Quick Service": {
-      "count": 10,
+      "count": 11,
       "top_5": [
         {
           "rank": 30,
@@ -276,7 +299,7 @@
       ]
     },
     "Hotel / Accommodation": {
-      "count": 15,
+      "count": 17,
       "top_5": [
         {
           "rank": 8,
@@ -409,14 +432,8 @@
       ]
     },
     "Other": {
-      "count": 38,
+      "count": 22,
       "top_5": [
-        {
-          "rank": 2,
-          "name": "Espresso Barn",
-          "rcs": 9.663,
-          "band": "Excellent"
-        },
         {
           "rank": 3,
           "name": "Ashorne Hill Management College",
@@ -424,27 +441,33 @@
           "band": "Excellent"
         },
         {
-          "rank": 11,
-          "name": "Building 523 Costa And Kitchen",
-          "rcs": 9.48,
-          "band": "Excellent"
-        },
-        {
-          "rank": 12,
-          "name": "South Costa",
-          "rcs": 9.479,
-          "band": "Excellent"
-        },
-        {
           "rank": 15,
           "name": "The Lime Tree Restaurant",
           "rcs": 9.447,
+          "band": "Excellent"
+        },
+        {
+          "rank": 18,
+          "name": "Aston Martin Lagonda",
+          "rcs": 9.393,
+          "band": "Excellent"
+        },
+        {
+          "rank": 23,
+          "name": "The Pavillion",
+          "rcs": 9.319,
+          "band": "Excellent"
+        },
+        {
+          "rank": 37,
+          "name": "Stratford Adventure Golf",
+          "rcs": 9.222,
           "band": "Excellent"
         }
       ]
     },
     "Pub / Bar": {
-      "count": 17,
+      "count": 18,
       "top_5": [
         {
           "rank": 5,
@@ -559,17 +582,6 @@
         }
       ]
     },
-    "Uncategorised": {
-      "count": 1,
-      "top_5": [
-        {
-          "rank": 123,
-          "name": "Digby's Events",
-          "rcs": 8.55,
-          "band": "Excellent"
-        }
-      ]
-    },
     "Vegan / Vegetarian": {
       "count": 1,
       "top_5": [
@@ -586,5 +598,5 @@
     "available_per_record_avg": 9.2,
     "total_possible": 35
   },
-  "generated_at": "2026-03-30T22:59:41.441693+00:00"
+  "generated_at": "2026-03-30T23:12:30.882139+00:00"
 }
