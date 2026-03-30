@@ -218,6 +218,19 @@
     .r0 { background: var(--red-bg); color: var(--red); }
     .r-exempt { background: #F0EDE6; color: var(--text-muted); font-size: .72rem; }
 
+    /* ---- Google rating inline ---- */
+    .google-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .google-star { color: #FBBC04; font-size: .9rem; }
+    .google-score { font-weight: 600; color: var(--text); }
+    .google-count { font-size: .72rem; }
+
     /* ---- Expanded detail row ---- */
     .detail-row td { padding: 0; border-bottom: 1px solid var(--border); }
     .detail-inner {
@@ -338,7 +351,8 @@
             <th>Postcode</th>
             <th>Local Authority</th>
             <th>Type</th>
-            <th class="sortable" data-key="r">Rating <span class="arrow"></span></th>
+            <th class="sortable" data-key="r">FSA Rating <span class="arrow"></span></th>
+            <th class="sortable" data-key="gr">Google <span class="arrow"></span></th>
             <th class="sortable" data-key="rd">Last Inspected <span class="arrow"></span></th>
           </tr>
         </thead>
@@ -385,7 +399,7 @@
   let expandedId = null;
 
   // Friendly sort-key labels for the meta bar
-  const SORT_LABELS = { n: "name", r: "rating", rd: "last inspected" };
+  const SORT_LABELS = { n: "name", r: "FSA rating", gr: "Google rating", rd: "last inspected" };
 
   // DOM
   const fName   = document.getElementById("fName");
@@ -466,7 +480,7 @@
   function applySort() {
     results.sort((a, b) => {
       let va = a[sortKey], vb = b[sortKey];
-      if (sortKey === "r") {
+      if (sortKey === "r" || sortKey === "gr") {
         va = (typeof va === "number") ? va : -1;
         vb = (typeof vb === "number") ? vb : -1;
         return sortAsc ? va - vb : vb - va;
@@ -530,6 +544,7 @@
         '<td>' + esc(d.la || "—") + '</td>' +
         '<td>' + esc(d.t !== undefined ? String(d.t) : "—") + '</td>' +
         '<td>' + ratingHTML(d.r) + '</td>' +
+        '<td>' + googleRatingHTML(d.gr, d.grc) + '</td>' +
         '<td>' + formatDate(d.rd) + '</td>';
       tr.querySelector(".name-cell").addEventListener("click", () => toggleExpand(d._id));
       tbody.appendChild(tr);
@@ -539,7 +554,7 @@
         const dr = document.createElement("tr");
         dr.className = "detail-row";
         const td = document.createElement("td");
-        td.colSpan = 7;
+        td.colSpan = 8;
         td.innerHTML = buildDetail(d);
         dr.appendChild(td);
         tbody.appendChild(dr);
@@ -565,18 +580,35 @@
   }
 
   function buildDetail(d) {
-    return '<div class="detail-inner">' +
+    let html = '<div class="detail-inner">' +
       dlBlock("Full Address", (d.a || "") + (d.pc ? ", " + d.pc : "")) +
       dlBlock("Local Authority", d.la) +
       dlBlock("Business Type", d.t !== undefined ? String(d.t) : "—") +
       dlBlock("FSA ID", d.id) +
       dlBlock("Last Inspection", formatDate(d.rd)) +
-      dlBlock("Coordinates", (d.lat && d.lon) ? d.lat + ", " + d.lon : "—") +
-    '</div>';
+      dlBlock("Coordinates", (d.lat && d.lon) ? d.lat + ", " + d.lon : "—");
+
+    // Google Places fields (if enriched)
+    if (d.gid) {
+      if (d.gr !== undefined) html += dlBlock("Google Rating", d.gr + " / 5.0");
+      if (d.grc !== undefined) html += dlBlock("Google Reviews", d.grc.toLocaleString());
+      if (d.gpl) html += dlBlock("Price Level", d.gpl.replace("PRICE_LEVEL_", ""));
+      if (d.gt && d.gt.length) html += dlBlock("Google Types", d.gt.join(", "));
+      if (d.goh && d.goh.length) html += dlBlock("Opening Hours", d.goh.join(" | "));
+    }
+
+    html += '</div>';
+    return html;
   }
 
   function dlBlock(label, val) {
     return '<div><div class="dl-label">' + esc(label) + '</div><div class="dl-val">' + esc(val || "—") + '</div></div>';
+  }
+
+  function googleRatingHTML(gr, grc) {
+    if (gr === undefined || gr === null) return '<span style="color:var(--text-muted);font-size:.78rem">—</span>';
+    const count = (grc !== undefined && grc !== null) ? '&nbsp;<span class="google-count">(' + Number(grc).toLocaleString() + ')</span>' : '';
+    return '<span class="google-rating"><span class="google-star">&#9733;</span><span class="google-score">' + Number(gr).toFixed(1) + '</span>' + count + '</span>';
   }
 
   function ratingHTML(r) {

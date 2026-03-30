@@ -76,14 +76,45 @@ python enrich_places.py --la "Camden" --limit 50
 - UK-Restaurant-Tracker-Plan.docx: Feasibility plan with data sources, scoring weights, architecture, MVP scope, timeline
 - UK-Restaurant-Tracker-Methodology-Spec.docx: Formal mathematical model for RCS scoring (weighted aggregation, convergence adjustment, temporal decay, penalty rules, calibration)
 
+### RCS computed field (added by restaurant_confidence.py)
+- rcs = Restaurant Confidence Score (0.0-10.0)
+
+## RCS Composite Scoring Engine
+### Formula
+```
+RCS = C(n) * sum(w_i * S_i(t)) - P
+```
+- S_i(t) = source score (0-10) with temporal decay: S * 2^(-age_days / half_life)
+- w_i = source weight, renormalised across available sources
+- C(n) = convergence adjustment: 1 - e^(-n), rewards multi-source coverage
+- P = penalty deductions for critical violations (FSA 0 or 1)
+
+### Source weights (base, renormalised when sources missing)
+- FSA: 0.30 — hygiene rating 0-5 mapped to 0-10, half-life 730 days
+- Google: 0.30 — rating 1-5 mapped to 0-10, volume-adjusted by log10(reviews), half-life 365 days
+- TripAdvisor: 0.20 — (Phase 3 placeholder)
+- Editorial: 0.10 — (Phase 3 placeholder)
+- Recency: 0.10 — (Phase 3 placeholder)
+
+### Usage
+```bash
+# Score a single establishment
+python restaurant_confidence.py --id <firebase_key> --dry-run
+
+# Score all in a local authority
+python restaurant_confidence.py --la "Camden" --dry-run
+
+# Score and write rcs field to Firebase
+python restaurant_confidence.py --la "Camden"
+```
+
 ## What's Next (Phase 2 remaining + Phase 3)
 1. Run enrich_places.py for London boroughs first, then expand
-2. Update index.html to display Google rating/review count alongside FSA data
-3. Composite scoring engine (restaurant_confidence.py) implementing RCS methodology
-4. TripAdvisor integration
-5. Editorial scanning via Brave Search API
-6. Expandable detail rows with score breakdown
-7. Tier assignment (Exceptional/Recommended/Acceptable/Caution/Avoid)
+2. Display RCS score in index.html alongside FSA + Google ratings
+3. TripAdvisor integration (add ta_rating, ta_review_count fields)
+4. Editorial scanning via Brave Search API (add ed_sentiment, ed_count fields)
+5. Expandable detail rows with full RCS score breakdown
+6. Tier assignment (Exceptional/Recommended/Acceptable/Caution/Avoid)
 
 ## Environment
 - Windows 11, Python 3.x
