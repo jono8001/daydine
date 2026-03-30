@@ -1,0 +1,31 @@
+name: Fetch Stratford Data & Run RCS Scoring
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch-and-score:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch from FSA API and convert to Firebase format
+        run: python .github/scripts/fetch_fsa_stratford.py
+
+      - name: Run RCS scoring pipeline
+        run: python rcs_scoring_stratford.py --from-cache
+
+      - name: Commit data files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stratford_establishments.json stratford_establishments.csv stratford_rcs_scores.csv
+          git diff --cached --quiet || git commit -m "Add Stratford establishments data and RCS scores"
+          git push
