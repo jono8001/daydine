@@ -20,22 +20,7 @@ jobs:
         run: pip install requests
 
       - name: Fetch from Firebase RTDB
-        run: |
-          python3 -c "
-import requests, json, csv, os
-url = 'https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app/daydine/establishments.json'
-params = {'orderBy': '\"la\"', 'equalTo': '\"Stratford-on-Avon\"'}
-resp = requests.get(url, params=params, timeout=60)
-resp.raise_for_status()
-data = resp.json()
-print(f'Fetched {len(data)} establishments')
-with open('stratford_establishments.json', 'w') as f:
-    json.dump(data, f, indent=2, ensure_ascii=False)
-print('Saved stratford_establishments.json')
-# Verify postcodes
-pcs = [r.get('pc','') for r in data.values() if r.get('pc','').startswith('CV')]
-print(f'CV postcodes: {len(pcs)} of {len(data)}')
-"
+        run: python .github/scripts/fetch_firebase_stratford.py
 
       - name: Run RCS scoring pipeline
         run: python rcs_scoring_stratford.py --from-cache
