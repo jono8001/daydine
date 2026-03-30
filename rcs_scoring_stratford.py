@@ -192,8 +192,17 @@ def score_tier_google(record):
         components["google_price"] = (clamp(gpl / 4.0), 0.10)
         signals_used += 1
 
-    # google_photos_count: not available yet
-    # google_place_types: not available yet
+    # google_photos_count: gpc from enrichment, cap at 10 = 1.0
+    gpc = safe_int(record.get("gpc"))
+    if gpc is not None:
+        components["google_photos"] = (clamp(gpc / 10.0), 0.10)
+        signals_used += 1
+
+    # google_place_types: gty from enrichment, presence = 1.0
+    gty = record.get("gty")
+    if gty is not None and isinstance(gty, list) and len(gty) > 0:
+        components["google_types"] = (1.0, 0.05)
+        signals_used += 1
 
     if not components:
         return None, 0, signals_total
