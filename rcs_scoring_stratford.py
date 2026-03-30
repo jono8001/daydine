@@ -417,7 +417,8 @@ def compute_rcs(record):
     if n_sources == 0:
         return {
             "rcs": 0.0, "tier": "Avoid", "confidence": "Low",
-            "sources": 0, "c_factor": 0.0, "penalties": [],
+            "sources": 0, "c_factor": 0.0, "rcs_base": 0.0,
+            "penalty_multiplier": 1.0, "penalties": [],
             "flags": [], "breakdown": {},
         }
 
