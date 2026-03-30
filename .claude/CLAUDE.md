@@ -53,13 +53,14 @@ A walk-down algorithm then applies 0.001 decreasing offsets to ensure every fina
 - Zero Google reviews: -5%
 - No online presence at all: -10%
 
-### Stratford Trial Results (208 establishments, Tier 1 only)
-- Excellent: 112 (53.8%)
-- Good: 55 (26.4%)
-- Generally Satisfactory: 25 (12.0%)
-- Improvement Necessary: 10 (4.8%)
-- Urgent Improvement: 6 (2.9%)
-- Signal coverage: 4.8 / 35 avg per record
+### Stratford Trial Results (208 establishments, Tiers 1+2)
+- Excellent: 152 (73.1%)
+- Good: 45 (21.6%)
+- Generally Satisfactory: 5 (2.4%)
+- Improvement Necessary: 4 (1.9%)
+- Major Improvement: 2 (1.0%)
+- Signal coverage: 9.2 / 35 avg per record (Tiers 1+2)
+- With TripAdvisor enrichment (Tier 3): expected ~11/35 avg
 
 ### Live Frontend (daydine.vercel.app)
 - Location-based search using postcodes.io
@@ -77,7 +78,7 @@ A walk-down algorithm then applies 0.001 decreasing offsets to ensure every fina
 |---|---|---|---|
 | 1. FSA | **COMPLETE** | 5/5 | Firebase RTDB (`r`, `sh`, `ss`, `sm`, `rd`) |
 | 2. Google | **READY TO RUN** | 0/5 | Google Places API — script built, needs `GOOGLE_PLACES_API_KEY` secret |
-| 3. Online Presence | **NOT BUILT** | 0/6 | Needs web research agent |
+| 3. Online Presence | **READY TO RUN** | 0/6 | TripAdvisor scraper built, needs workflow trigger |
 | 4. Operational | **PARTIAL** | 0/6 | Some available from Google Places extended fields |
 | 5. Menu & Offering | **NOT BUILT** | 0/3 | Needs web scraping of restaurant websites |
 | 6. Reputation | **NOT BUILT** | 0/3 | Needs Michelin/AA/local awards data |
@@ -90,10 +91,12 @@ A walk-down algorithm then applies 0.001 decreasing offsets to ensure every fina
 - Fields: `gr` (rating), `grc` (review count), `gpl` (price level), `gpc` (photo count), `gty` (types)
 - Action needed: Add `GOOGLE_PLACES_API_KEY` as GitHub repo secret, then trigger `enrich_and_score.yml` workflow
 
-**Tier 3 — Online Presence**
-- Perplexity API or Brave Search to find website, Facebook, Instagram, TripAdvisor presence per restaurant
-- TripAdvisor scraping or unofficial API for ratings/review counts
-- Build enrichment script similar to Google enrichment pattern
+**Tier 3 — Online Presence (TripAdvisor)**
+- Script: `.github/scripts/collect_tripadvisor.py` — scrapes TA search + detail pages
+- Merge: `.github/scripts/merge_tripadvisor.py` — writes `ta`, `trc`, `ta_present`, `ta_url`, `ta_cuisines` fields
+- Workflow: `.github/workflows/collect_tripadvisor.yml` — full pipeline with merge + re-score
+- Action needed: Trigger `collect_tripadvisor.yml` workflow from Actions tab
+- Remaining: website, Facebook, Instagram presence detection (needs Brave Search or Perplexity API)
 
 **Tier 4 — Operational Signals**
 - Extended Google Places fields: wheelchair accessibility, delivery, takeaway
@@ -133,6 +136,9 @@ A walk-down algorithm then applies 0.001 decreasing offsets to ensure every fina
 | `.github/scripts/fetch_firebase_stratford.py` | Fetches Stratford-on-Avon data from Firebase RTDB |
 | `.github/scripts/enrich_google_stratford.py` | Enriches establishments with Google Places API data |
 | `.github/scripts/merge_enrichment.py` | Merges Google enrichment into establishments JSON |
+| `.github/scripts/collect_tripadvisor.py` | Scrapes TripAdvisor for ratings, reviews, cuisine tags |
+| `.github/scripts/merge_tripadvisor.py` | Merges TripAdvisor data into establishments JSON |
+| `.github/scripts/classify_remaining.py` | Tier 3 web-lookup category classifier (stub) |
 | `.github/scripts/fetch_fsa_stratford.py` | FSA API fetcher (unused — Firebase used instead) |
 
 ### GitHub Actions Workflows
@@ -140,6 +146,7 @@ A walk-down algorithm then applies 0.001 decreasing offsets to ensure every fina
 |---|---|
 | `.github/workflows/fetch_and_score.yml` | Fetch Firebase data → run RCS scoring → commit results |
 | `.github/workflows/enrich_and_score.yml` | Fetch Firebase → Google enrichment → merge → score → commit |
+| `.github/workflows/collect_tripadvisor.yml` | Fetch Firebase → Google merge → TripAdvisor scrape → merge → score → commit |
 
 ### Data Files
 | File | Description |

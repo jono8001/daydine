@@ -1,0 +1,45 @@
+name: Collect TripAdvisor Data & Score
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect-and-score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Fetch establishments from Firebase
+        run: python .github/scripts/fetch_firebase_stratford.py
+
+      - name: Merge existing Google enrichment
+        run: python .github/scripts/merge_enrichment.py
+
+      - name: Collect TripAdvisor data
+        run: python .github/scripts/collect_tripadvisor.py
+
+      - name: Merge TripAdvisor data
+        run: python .github/scripts/merge_tripadvisor.py
+
+      - name: Run RCS V2 scoring pipeline
+        run: python rcs_scoring_stratford.py --from-cache
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stratford_establishments.json stratford_tripadvisor.json stratford_rcs_scores.csv stratford_rcs_summary.json
+          git diff --cached --quiet || git commit -m "Collect TripAdvisor data and re-score RCS"
+          git pull --rebase origin main
+          git push

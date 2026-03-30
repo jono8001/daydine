@@ -226,12 +226,19 @@ def score_tier_online(record):
         ("has_website", "web", 0.20),
         ("has_facebook", "fb", 0.15),
         ("has_instagram", "ig", 0.15),
-        ("has_tripadvisor", "ta_present", 0.15),
     ]:
         val = record.get(key)
         if val is not None:
             components[field] = (1.0 if val else 0.0, weight)
             signals_used += 1
+
+    # TripAdvisor presence — derive from ta field if ta_present not set
+    ta_present = record.get("ta_present")
+    if ta_present is None and record.get("ta") is not None:
+        ta_present = True
+    if ta_present is not None:
+        components["has_tripadvisor"] = (1.0 if ta_present else 0.0, 0.15)
+        signals_used += 1
 
     # tripadvisor_rating
     ta = safe_float(record.get("ta"))
