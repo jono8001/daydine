@@ -1,7 +1,7 @@
 {
   "count": 208,
-  "mean": 74.62,
-  "median": 81.0,
+  "mean": 74.61,
+  "median": 80.99,
   "min": 0.0,
   "max": 90.0,
   "stdev": 16.83,
@@ -35,5 +35,5 @@
     "available_per_record_avg": 4.8,
     "total_possible": 35
   },
-  "generated_at": "2026-03-30T22:07:57.387275+00:00"
+  "generated_at": "2026-03-30T22:21:30.539653+00:00"
 }

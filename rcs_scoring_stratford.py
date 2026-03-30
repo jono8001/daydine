@@ -582,7 +582,7 @@ def fetch_establishments(la_name):
 # ---------------------------------------------------------------------------
 
 CSV_FIELDS = [
-    "fhrsid", "business_name", "postcode",
+    "rank", "fhrsid", "business_name", "postcode",
     "fsa_tier_score", "google_tier_score", "online_tier_score",
     "ops_tier_score", "menu_tier_score", "reputation_tier_score",
     "community_tier_score",
@@ -608,7 +608,75 @@ def run_pipeline(data):
             "rcs_band": result["rcs_band"],
             "signals_available": result["signals_available"],
             "signals_total": result["signals_total"],
+            # Tiebreaker fields (not written to CSV)
+            "_fsa_rating": safe_int(record.get("r")) or 0,
+            "_rd_days": days_since(record.get("rd")) or 999999,
+            "_ss": safe_float(record.get("ss")) or 0.0,
+            "_sm": safe_float(record.get("sm")) or 0.0,
         })
+    return scored
+
+
+def apply_tiebreakers(scored):
+    """
+    Sort by rcs_final desc, then break ties so every restaurant has a
+    unique rank and a numerically distinct final score.
+
+    Tiebreaker order (all among records sharing the same rcs_final):
+      1. Higher FSA hygiene_rating
+      2. More recent inspection (fewer days since)
+      3. Higher structural compliance (ss)
+      4. Higher confidence in management (sm)
+      5. Alphabetical by business name (A before Z)
+
+    After sorting, tied scores get a tiny descending offset (0.001 per
+    position within a tie group) so each rcs_final is unique.
+    """
+    scored.sort(key=lambda r: (
+        -r["rcs_final"],
+        -r["_fsa_rating"],
+        r["_rd_days"],          # lower = more recent = better
+        -r["_ss"],
+        -r["_sm"],
+        r["business_name"].lower(),
+    ))
+
+    # Apply offsets to tied scores so each is numerically unique.
+    # Use rank-based offset: score - rank_within_tie * 0.001.
+    # For scores at 0.0, use descending micro-offsets above 0 so
+    # the tiebreaker winner stays highest.
+    i = 0
+    while i < len(scored):
+        j = i + 1
+        while j < len(scored) and scored[j]["rcs_final"] == scored[i]["rcs_final"]:
+            j += 1
+
+        tie_size = j - i
+        if tie_size > 1:
+            base = scored[i]["rcs_final"]
+            if base == 0.0:
+                # All at zero: assign descending micro-scores so first
+                # (best by tiebreaker) gets the highest micro-value
+                for k in range(tie_size):
+                    scored[i + k]["rcs_final"] = round(
+                        0.0 + (tie_size - k) * 0.001, 3
+                    )
+            else:
+                # Normal case: first keeps original, rest get decreasing offsets
+                for k in range(1, tie_size):
+                    scored[i + k]["rcs_final"] = round(base - 0.001 * k, 3)
+
+        i = j
+
+    # Assign sequential ranks
+    for rank, row in enumerate(scored, 1):
+        row["rank"] = rank
+
+    # Clean up internal tiebreaker fields
+    for row in scored:
+        for field in ("_fsa_rating", "_rd_days", "_ss", "_sm"):
+            del row[field]
+
     return scored
 
 
@@ -654,30 +722,28 @@ def save_summary_json(summary, path):
 
 
 def print_results(scored):
-    sorted_rows = sorted(scored, key=lambda x: x["rcs_final"], reverse=True)
-
+    # scored is already sorted by rank from apply_tiebreakers
     print()
-    print("=" * 82)
+    print("=" * 88)
     print("  TOP 10 RESTAURANTS BY RCS SCORE")
-    print("=" * 82)
-    print(f"  {'#':<4} {'Name':<35} {'PC':<10} {'FSA':>5} {'RCS':>6}  {'Band'}")
-    print("  " + "-" * 78)
-    for i, row in enumerate(sorted_rows[:10], 1):
+    print("=" * 88)
+    print(f"  {'Rank':<6} {'Name':<35} {'PC':<10} {'FSA':>5} {'RCS':>8}  {'Band'}")
+    print("  " + "-" * 84)
+    for row in scored[:10]:
         fsa = f"{row['fsa_tier_score']:.0f}" if row["fsa_tier_score"] is not None else "—"
-        print(f"  {i:<4} {row['business_name'][:34]:<35} {row['postcode']:<10} "
-              f"{fsa:>5} {row['rcs_final']:>6.1f}  {row['rcs_band']}")
+        print(f"  {row['rank']:<6} {row['business_name'][:34]:<35} {row['postcode']:<10} "
+              f"{fsa:>5} {row['rcs_final']:>8.3f}  {row['rcs_band']}")
 
     print()
-    print("=" * 82)
+    print("=" * 88)
     print("  BOTTOM 10 RESTAURANTS BY RCS SCORE")
-    print("=" * 82)
-    print(f"  {'#':<4} {'Name':<35} {'PC':<10} {'FSA':>5} {'RCS':>6}  {'Band'}")
-    print("  " + "-" * 78)
-    bottom = sorted_rows[-10:][::-1]
-    for i, row in enumerate(bottom, 1):
+    print("=" * 88)
+    print(f"  {'Rank':<6} {'Name':<35} {'PC':<10} {'FSA':>5} {'RCS':>8}  {'Band'}")
+    print("  " + "-" * 84)
+    for row in scored[-10:]:
         fsa = f"{row['fsa_tier_score']:.0f}" if row["fsa_tier_score"] is not None else "—"
-        print(f"  {i:<4} {row['business_name'][:34]:<35} {row['postcode']:<10} "
-              f"{fsa:>5} {row['rcs_final']:>6.1f}  {row['rcs_band']}")
+        print(f"  {row['rank']:<6} {row['business_name'][:34]:<35} {row['postcode']:<10} "
+              f"{fsa:>5} {row['rcs_final']:>8.3f}  {row['rcs_band']}")
 
     # Band summary
     band_counts = Counter(r["rcs_band"] for r in scored)
@@ -738,6 +804,9 @@ def main():
 
     # Score
     scored = run_pipeline(data)
+
+    # Apply tiebreakers for unique rankings
+    scored = apply_tiebreakers(scored)
 
     # Save CSV
     save_scores_csv(scored, CSV_OUTPUT)
