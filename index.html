@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -345,6 +346,8 @@
       .fld { width: 100%; }
       .fld input, .fld select { min-width: 0; width: 100%; }
       .btn { width: 100%; text-align: center; }
+      .btn-nearme { width: 100%; text-align: center; }
+      #mapContainer { height: 400px; }
       main { padding: 0 .75rem; margin-top: 1rem; }
 
       /* Hide table header, make rows into cards */
@@ -382,6 +385,85 @@
       .pagination { margin-bottom: 1.5rem; }
     }
 
+    /* ---- Near Me button ---- */
+    .btn-nearme {
+      padding: .5rem 1rem;
+      background: #fff;
+      color: var(--accent);
+      font-family: inherit;
+      font-weight: 600;
+      font-size: .85rem;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+      align-self: end;
+      white-space: nowrap;
+    }
+    .btn-nearme:hover { background: var(--accent); color: #fff; }
+    .btn-nearme:disabled { opacity: .45; cursor: not-allowed; }
+
+    /* ---- LA Autocomplete ---- */
+    .la-wrap { position: relative; }
+    .la-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      max-height: 220px;
+      overflow-y: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      box-shadow: var(--shadow-md);
+    }
+    .la-dropdown.open { display: block; }
+    .la-option {
+      padding: .45rem .75rem;
+      font-size: .85rem;
+      cursor: pointer;
+      transition: background .1s;
+    }
+    .la-option:hover, .la-option.active { background: var(--accent-light); color: var(--accent); }
+
+    /* ---- View toggle ---- */
+    .view-toggle {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .view-btn {
+      padding: .35rem .9rem;
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: none;
+      font-family: inherit;
+      font-size: .78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .view-btn + .view-btn { border-left: 1px solid var(--border); }
+    .view-btn:hover { color: var(--accent); }
+    .view-btn.active { background: var(--accent); color: #fff; }
+
+    /* ---- Map ---- */
+    #mapContainer {
+      display: none;
+      height: 550px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    #mapContainer.visible { display: block; }
+
     @media (max-width: 400px) {
       .logo { font-size: 1.3rem; }
       td:before { width: 5.5rem; }
@@ -406,10 +488,12 @@
       <label for="fName">Name</label>
       <input type="text" id="fName" placeholder="Search name…">
     </div>
-    <div class="fld">
+    <div class="fld la-wrap">
       <label for="fLA">Local Authority</label>
-      <input type="text" id="fLA" placeholder="e.g. Camden">
+      <input type="text" id="fLA" placeholder="e.g. Camden" autocomplete="off">
+      <div class="la-dropdown" id="laDropdown"></div>
     </div>
+    <button class="btn-nearme" id="btnNearMe" title="Use my location to find my Local Authority">&#9673; Near Me</button>
     <div class="fld">
       <label for="fType">Business Type</label>
       <input type="text" id="fType" placeholder="e.g. 1 (Restaurant)">
@@ -435,8 +519,15 @@
   <div id="resultsWrap" style="display:none;">
     <div class="meta-bar">
       <span id="metaCount"></span>
-      <span id="metaSort"></span>
+      <div style="display:flex;align-items:center;gap:.75rem;">
+        <div class="view-toggle">
+          <button class="view-btn active" id="btnTableView">Table</button>
+          <button class="view-btn" id="btnMapView">Map</button>
+        </div>
+        <span id="metaSort"></span>
+      </div>
     </div>
+    <div id="mapContainer"></div>
     <div class="table-wrap">
       <table>
         <thead>
@@ -461,6 +552,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <script>
   // ============================================================
@@ -491,9 +583,15 @@
   let sortKey = "n";
   let sortAsc = true;
   let expandedId = null;
+  let currentView = "table"; // "table" or "map"
+  let leafletMap = null;
+  let markerLayer = null;
 
   // Friendly sort-key labels for the meta bar
   const SORT_LABELS = { n: "name", r: "FSA rating", gr: "Google rating", rd: "last inspected" };
+
+  // Map marker colours by rating
+  const MARKER_COLORS = { 5: "#22c55e", 4: "#14b8a6", 3: "#f59e0b", 2: "#f97316", 1: "#ef4444", 0: "#991b1b" };
 
   // DOM
   const fName   = document.getElementById("fName");
@@ -501,17 +599,159 @@
   const fType   = document.getElementById("fType");
   const fRating = document.getElementById("fRating");
   const btnSearch   = document.getElementById("btnSearch");
+  const btnNearMe   = document.getElementById("btnNearMe");
   const statusEl    = document.getElementById("status");
   const resultsWrap = document.getElementById("resultsWrap");
   const tbody       = document.getElementById("tbody");
   const metaCount   = document.getElementById("metaCount");
   const metaSort    = document.getElementById("metaSort");
   const pagEl       = document.getElementById("pagination");
+  const mapContainer = document.getElementById("mapContainer");
+  const laDropdown   = document.getElementById("laDropdown");
+  const btnTableView = document.getElementById("btnTableView");
+  const btnMapView   = document.getElementById("btnMapView");
+
+  // ---- LA list for autocomplete (loaded once) ----
+  let allLAs = [];
+  let laDropdownIdx = -1;
+
+  (async function loadLAs() {
+    try {
+      // Try dedicated index first
+      const snap = await db.ref("daydine/la_index").once("value");
+      const data = snap.val();
+      if (data) {
+        allLAs = Array.isArray(data) ? data.sort() : Object.keys(data).sort();
+        return;
+      }
+    } catch (e) {
+      console.warn("Could not load LA index:", e);
+    }
+    // Fallback: fetch distinct LAs by sampling — uses orderByChild("la") with a range scan
+    try {
+      const snap = await REF.orderByChild("la").limitToFirst(5000).once("value");
+      const data = snap.val();
+      if (data) {
+        const set = new Set();
+        Object.values(data).forEach(d => { if (d.la) set.add(d.la); });
+        allLAs = [...set].sort();
+      }
+    } catch (e) {
+      console.warn("LA fallback load failed:", e);
+    }
+  })();
+
+  // ---- LA autocomplete ----
+  fLA.addEventListener("input", () => {
+    const val = fLA.value.trim().toLowerCase();
+    if (!val || allLAs.length === 0) { closeLADropdown(); return; }
+    const matches = allLAs.filter(la => la.toLowerCase().includes(val)).slice(0, 20);
+    if (matches.length === 0) { closeLADropdown(); return; }
+    laDropdown.innerHTML = "";
+    laDropdownIdx = -1;
+    matches.forEach((la, i) => {
+      const div = document.createElement("div");
+      div.className = "la-option";
+      div.textContent = la;
+      div.addEventListener("mousedown", e => { e.preventDefault(); selectLA(la); });
+      laDropdown.appendChild(div);
+    });
+    laDropdown.classList.add("open");
+  });
+
+  fLA.addEventListener("keydown", e => {
+    const opts = laDropdown.querySelectorAll(".la-option");
+    if (!laDropdown.classList.contains("open") || opts.length === 0) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      laDropdownIdx = Math.min(laDropdownIdx + 1, opts.length - 1);
+      highlightLAOption(opts);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      laDropdownIdx = Math.max(laDropdownIdx - 1, 0);
+      highlightLAOption(opts);
+    } else if (e.key === "Enter" && laDropdownIdx >= 0) {
+      e.preventDefault();
+      selectLA(opts[laDropdownIdx].textContent);
+    } else if (e.key === "Escape") {
+      closeLADropdown();
+    }
+  });
+
+  fLA.addEventListener("blur", () => { setTimeout(closeLADropdown, 150); });
+
+  function highlightLAOption(opts) {
+    opts.forEach((o, i) => o.classList.toggle("active", i === laDropdownIdx));
+    if (opts[laDropdownIdx]) opts[laDropdownIdx].scrollIntoView({ block: "nearest" });
+  }
+
+  function selectLA(la) {
+    fLA.value = la;
+    closeLADropdown();
+  }
+
+  function closeLADropdown() {
+    laDropdown.classList.remove("open");
+    laDropdownIdx = -1;
+  }
+
+  // ---- Near Me ----
+  btnNearMe.addEventListener("click", async () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser.");
+      return;
+    }
+    btnNearMe.disabled = true;
+    btnNearMe.textContent = "Locating…";
+    try {
+      const pos = await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 10000 });
+      });
+      const { latitude, longitude } = pos.coords;
+      const resp = await fetch("https://api.postcodes.io/postcodes?lon=" + longitude + "&lat=" + latitude + "&limit=1");
+      const data = await resp.json();
+      if (data.result && data.result.length > 0) {
+        const la = data.result[0].admin_district;
+        if (la) {
+          fLA.value = la;
+          search();
+        } else {
+          alert("Could not determine your Local Authority from your location.");
+        }
+      } else {
+        alert("No postcode found near your location.");
+      }
+    } catch (err) {
+      if (err.code === 1) alert("Location access denied. Please allow location access and try again.");
+      else alert("Could not determine location: " + err.message);
+    } finally {
+      btnNearMe.disabled = false;
+      btnNearMe.innerHTML = "&#9673; Near Me";
+    }
+  });
+
+  // ---- View toggle ----
+  btnTableView.addEventListener("click", () => switchView("table"));
+  btnMapView.addEventListener("click", () => switchView("map"));
+
+  function switchView(view) {
+    currentView = view;
+    btnTableView.classList.toggle("active", view === "table");
+    btnMapView.classList.toggle("active", view === "map");
+    document.querySelector(".table-wrap").style.display = view === "table" ? "" : "none";
+    pagEl.style.display = view === "table" ? "" : "none";
+    if (view === "map") {
+      mapContainer.classList.add("visible");
+      renderMap();
+    } else {
+      mapContainer.classList.remove("visible");
+    }
+  }
 
   // ---- Events ----
   btnSearch.addEventListener("click", search);
   document.querySelectorAll(".fld input, .fld select").forEach(el => {
-    el.addEventListener("keydown", e => { if (e.key === "Enter") search(); });
+    el.addEventListener("keydown", e => { if (e.key === "Enter") { closeLADropdown(); search(); } });
   });
 
   document.querySelectorAll("th.sortable").forEach(th => {
@@ -618,6 +858,10 @@
     }
     statusEl.style.display = "none";
     resultsWrap.style.display = "";
+    document.querySelector(".table-wrap").style.display = currentView === "table" ? "" : "none";
+    pagEl.style.display = currentView === "table" ? "" : "none";
+    if (currentView === "map") mapContainer.classList.add("visible");
+    else mapContainer.classList.remove("visible");
 
     const totalPages = Math.ceil(results.length / PAGE_SIZE);
     const start = page * PAGE_SIZE;
@@ -655,6 +899,9 @@
         tbody.appendChild(dr);
       }
     });
+
+    // Refresh map if in map view
+    if (currentView === "map") { renderMap(); }
 
     // Pagination
     pagEl.innerHTML = "";
@@ -808,6 +1055,59 @@
     const el = document.createElement("span");
     el.textContent = s;
     return el.innerHTML;
+  }
+
+  // ---- Leaflet Map ----
+  function renderMap() {
+    if (!leafletMap) {
+      leafletMap = L.map("mapContainer").setView([54.5, -2], 6);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+      }).addTo(leafletMap);
+    }
+
+    if (markerLayer) { leafletMap.removeLayer(markerLayer); }
+    markerLayer = L.layerGroup().addTo(leafletMap);
+
+    const bounds = [];
+    results.forEach(d => {
+      if (d.lat == null || d.lon == null) return;
+      const lat = parseFloat(d.lat);
+      const lng = parseFloat(d.lon);
+      if (isNaN(lat) || isNaN(lng) || (lat === 0 && lng === 0)) return;
+
+      const r = (d.r !== undefined && d.r !== null) ? parseInt(d.r, 10) : -1;
+      const color = MARKER_COLORS[r] || "#9ca3af";
+      const tier = TIER_LABELS[r] || "N/A";
+
+      const marker = L.circleMarker([lat, lng], {
+        radius: 7,
+        fillColor: color,
+        color: "#fff",
+        weight: 1.5,
+        fillOpacity: 0.85
+      });
+
+      const popupHTML =
+        '<div style="font-family:Inter,sans-serif;font-size:.85rem;line-height:1.4;">' +
+        '<strong>' + esc(d.n || "Unknown") + '</strong><br>' +
+        '<span style="font-size:.78rem;color:#666;">' + esc(d.a || "") + '</span><br>' +
+        'FSA: ' + ratingHTML(d.r) + '<br>' +
+        'Tier: <span class="tier-badge tier-' + (r >= 0 ? r : '') + '" style="font-size:.65rem;">' + esc(tier) + '</span>' +
+        (d.gr !== undefined ? '<br>Google: <span class="google-star">&#9733;</span> ' + Number(d.gr).toFixed(1) : '') +
+        '</div>';
+
+      marker.bindPopup(popupHTML);
+      marker.addTo(markerLayer);
+      bounds.push([lat, lng]);
+    });
+
+    if (bounds.length > 0) {
+      leafletMap.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
+    }
+    // Invalidate size after display change
+    setTimeout(() => leafletMap.invalidateSize(), 100);
   }
 </script>
 </body>
