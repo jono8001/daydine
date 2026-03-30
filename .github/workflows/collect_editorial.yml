@@ -1,0 +1,40 @@
+name: Collect Editorial & Awards Data
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  collect-and-score:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+      - name: Fetch establishments from Firebase
+        run: python .github/scripts/fetch_firebase_stratford.py
+      - name: Merge existing enrichment data
+        run: |
+          python .github/scripts/merge_enrichment.py
+          python .github/scripts/merge_tripadvisor.py || true
+          python .github/scripts/merge_menus.py || true
+      - name: Collect editorial data
+        run: python .github/scripts/collect_editorial.py
+      - name: Merge editorial data
+        run: python .github/scripts/merge_editorial.py
+      - name: Run RCS scoring
+        run: python rcs_scoring_stratford.py --from-cache
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stratford_establishments.json stratford_editorial.json stratford_rcs_scores.csv stratford_rcs_summary.json
+          git diff --cached --quiet || git commit -m "Collect editorial data and re-score RCS"
+          git pull --rebase origin main
+          git push

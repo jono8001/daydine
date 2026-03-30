@@ -283,8 +283,23 @@ def score_tier_ops(record):
             components[field] = (1.0 if val else 0.0, 1.0 / 6.0)
             signals_used += 1
 
-    # opening_hours_completeness
+    # Infer delivery/takeaway from Google types if not explicitly set
+    gty = record.get("gty", [])
+    if isinstance(gty, list):
+        if "delivery" not in components and "meal_takeaway" in gty:
+            components["takeaway"] = (1.0, 1.0 / 6.0)
+            signals_used += 1
+        if "delivery" not in components and "food_delivery" in gty:
+            components["delivery"] = (1.0, 1.0 / 6.0)
+            signals_used += 1
+
+    # opening_hours_completeness — derive from goh if available
     ohc = safe_float(record.get("opening_hours_completeness"))
+    if ohc is None:
+        goh = record.get("goh")
+        if isinstance(goh, list) and len(goh) > 0:
+            # 7 days = complete, fewer = partial
+            ohc = min(1.0, len(goh) / 7.0)
     if ohc is not None:
         components["hours"] = (clamp(ohc), 1.0 / 6.0)
         signals_used += 1
@@ -318,6 +333,14 @@ def score_tier_menu(record):
         signals_used += 1
 
     cuisines = safe_int(record.get("cuisine_tags_count"))
+    # Infer cuisine count from Google types if not explicitly set
+    if cuisines is None:
+        gty = record.get("gty", [])
+        if isinstance(gty, list):
+            cuisine_types = [t for t in gty if t.endswith("_restaurant")
+                             and t != "fast_food_restaurant"]
+            if cuisine_types:
+                cuisines = len(cuisine_types)
     if cuisines is not None:
         components["cuisine"] = (clamp(cuisines / 3.0), 0.30)
         signals_used += 1
@@ -367,7 +390,7 @@ def score_tier_reputation(record):
 # ---------------------------------------------------------------------------
 
 def score_tier_community(record):
-    """Score Tier 7: Community. Returns (score 0-1, used, total)."""
+    """Score Tier 7: Community & Recency. Returns (score 0-1, used, total)."""
     signals_total = 4
     signals_used = 0
     components = {}
@@ -397,6 +420,38 @@ def score_tier_community(record):
         val = record.get(key)
         if val is not None:
             components[field] = (1.0 if val else 0.0, 0.25)
+            signals_used += 1
+
+    # Compute recency/trend signals from existing data if no explicit fields
+    if not components:
+        # Inspection recency as engagement proxy
+        age = days_since(record.get("rd"))
+        if age is not None:
+            if age < 180:
+                s = 1.0
+            elif age < 365:
+                s = 0.8
+            elif age < 730:
+                s = 0.5
+            else:
+                s = 0.2
+            components["recency"] = (s, 0.30)
+            signals_used += 1
+
+        # Review volume trend — high review counts suggest active community
+        grc = safe_int(record.get("grc"))
+        trc = safe_int(record.get("trc"))
+        total_reviews = (grc or 0) + (trc or 0)
+        if total_reviews > 0:
+            vol = clamp(math.log10(max(1, total_reviews)) / math.log10(2000))
+            components["review_activity"] = (vol, 0.30)
+            signals_used += 1
+
+        # Online presence breadth as community signal
+        presence = sum(1 for f in ["gr", "ta", "web", "fb", "ig"]
+                       if record.get(f) is not None)
+        if presence > 0:
+            components["presence_breadth"] = (clamp(presence / 4.0), 0.40)
             signals_used += 1
 
     if not components:

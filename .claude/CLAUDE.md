@@ -53,14 +53,15 @@ A walk-down algorithm then applies 0.001 decreasing offsets to ensure every fina
 - Zero Google reviews: -5%
 - No online presence at all: -10%
 
-### Stratford Trial Results (208 establishments, Tiers 1+2)
-- Excellent: 152 (73.1%)
-- Good: 45 (21.6%)
-- Generally Satisfactory: 5 (2.4%)
+### Stratford Trial Results (208 establishments, Tiers 1+2+inferred)
+- Excellent: 149 (71.6%)
+- Good: 50 (24.0%)
+- Generally Satisfactory: 3 (1.4%)
 - Improvement Necessary: 4 (1.9%)
 - Major Improvement: 2 (1.0%)
-- Signal coverage: 9.2 / 35 avg per record (Tiers 1+2)
-- With TripAdvisor enrichment (Tier 3): expected ~11/35 avg
+- Signal coverage: 13.4 / 35 avg per record (Tiers 1+2+4+5+7 inferred)
+- Tiers populated: FSA 204, Google 207, Ops 172, Menu 66, Community 208
+- With TripAdvisor enrichment (Tier 3): expected ~16/35 avg
 
 ### Live Frontend (daydine.vercel.app)
 - Location-based search using postcodes.io
@@ -79,10 +80,10 @@ A walk-down algorithm then applies 0.001 decreasing offsets to ensure every fina
 | 1. FSA | **COMPLETE** | 5/5 | Firebase RTDB (`r`, `sh`, `ss`, `sm`, `rd`) |
 | 2. Google | **READY TO RUN** | 0/5 | Google Places API — script built, needs `GOOGLE_PLACES_API_KEY` secret |
 | 3. Online Presence | **READY TO RUN** | 0/6 | TripAdvisor scraper built, needs workflow trigger |
-| 4. Operational | **PARTIAL** | 0/6 | Some available from Google Places extended fields |
-| 5. Menu & Offering | **NOT BUILT** | 0/3 | Needs web scraping of restaurant websites |
-| 6. Reputation | **NOT BUILT** | 0/3 | Needs Michelin/AA/local awards data |
-| 7. Community | **NOT BUILT** | 0/4 | Needs Google review response analysis |
+| 4. Operational | **INFERRED** | 3/6 | Inferred from Google types (takeaway/delivery) + opening hours |
+| 5. Menu & Offering | **READY TO RUN** | 1/3 | Cuisine count inferred from Google types; menu scraper built |
+| 6. Reputation | **READY TO RUN** | 0/3 | Editorial/awards scraper built, needs workflow trigger |
+| 7. Community | **COMPUTED** | 3/4 | Computed from inspection recency + review volume + presence breadth |
 
 ### Data Collection Plan (remaining 30 signals)
 
@@ -126,6 +127,7 @@ A walk-down algorithm then applies 0.001 decreasing offsets to ensure every fina
 | File | Description |
 |---|---|
 | `rcs_scoring_stratford.py` | V2 RCS scoring engine — 35 signals, 7 tiers, 0-10 scale, unique rankings |
+| `run_daydine.py` | Pipeline orchestrator — coordinates all tiers and scoring |
 | `restaurant_confidence.py` | V1 scoring engine (legacy, superseded by V2) |
 | `enrich_places.py` | Google Places enrichment for any LA via Firebase (local use) |
 | `fetch_stratford.py` | Fetch Stratford data from Firebase RTDB (local use) |
@@ -138,6 +140,12 @@ A walk-down algorithm then applies 0.001 decreasing offsets to ensure every fina
 | `.github/scripts/merge_enrichment.py` | Merges Google enrichment into establishments JSON |
 | `.github/scripts/collect_tripadvisor.py` | Scrapes TripAdvisor for ratings, reviews, cuisine tags |
 | `.github/scripts/merge_tripadvisor.py` | Merges TripAdvisor data into establishments JSON |
+| `.github/scripts/collect_menus.py` | Collects menu, dietary, cuisine data from websites |
+| `.github/scripts/merge_menus.py` | Merges menu data into establishments JSON |
+| `.github/scripts/collect_editorial.py` | Checks Michelin Guide, AA, GFG for awards |
+| `.github/scripts/merge_editorial.py` | Merges editorial/awards data into establishments JSON |
+| `.github/scripts/collect_enforcement.py` | Queries FSA API for enforcement actions |
+| `.github/scripts/merge_enforcement.py` | Merges enforcement data into establishments JSON |
 | `.github/scripts/classify_remaining.py` | Tier 3 web-lookup category classifier (stub) |
 | `.github/scripts/fetch_fsa_stratford.py` | FSA API fetcher (unused — Firebase used instead) |
 
@@ -147,6 +155,8 @@ A walk-down algorithm then applies 0.001 decreasing offsets to ensure every fina
 | `.github/workflows/fetch_and_score.yml` | Fetch Firebase data → run RCS scoring → commit results |
 | `.github/workflows/enrich_and_score.yml` | Fetch Firebase → Google enrichment → merge → score → commit |
 | `.github/workflows/collect_tripadvisor.yml` | Fetch Firebase → Google merge → TripAdvisor scrape → merge → score → commit |
+| `.github/workflows/collect_menus.yml` | Collect menu/dietary data → merge → score → commit |
+| `.github/workflows/collect_editorial.yml` | Collect editorial/awards data → merge → score → commit |
 
 ### Data Files
 | File | Description |
