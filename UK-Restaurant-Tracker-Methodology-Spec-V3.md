@@ -1,4 +1,4 @@
-# UK Restaurant Tracker — Methodology Specification V3.1
+# UK Restaurant Tracker — Methodology Specification V3.2 (Corrective)
 
 *DayDine RCS (Restaurant Confidence Score) — Version 3.2*
 *Last updated: 31 March 2026*
@@ -486,15 +486,55 @@ This compresses the top of the distribution without changing the relative orderi
 
 ---
 
-## 12. Version History
+## 12. V3.2 Corrective Changes
+
+The following changes were made in V3.2 based on external methodology review:
+
+### Removed from active scoring
+- **Community tier (Tier 7)**: entirely computed from proxy signals with no observed data. Its 5% weight redistributed to FSA (+2%) and Reputation (+3%).
+- **SCP (Source Credibility Priors)**: removed from active weighting logic. SCP values remain documented for reference but do not multiply tier weights.
+- **Inferred signal discount**: removed from score computation. Provenance now affects confidence grade only, not the RCS score itself.
+- **Band calibration curve**: removed. Scores reflect raw methodology output without artificial compression.
+- **Upward coverage bonus**: removed. Only downward penalties remain (for missing FSA or Google).
+
+### Changed in active scoring
+- **Tier 3 (Online Presence)**: now **TripAdvisor-only** at 12% weight. Website/Facebook/Instagram moved to profile-completeness confidence layer (not part of headline RCS).
+- **Tier 6 (Reputation)**: weight increased 5%→8%. Internal weights rebalanced: Michelin 40%, AA 35%, local awards 25% (was equal thirds).
+- **Tier 1 (FSA)**: weight increased 20%→23% (from Tier 7 redistribution).
+- **Coverage penalty**: narrowed to FSA/Google gaps only. Missing both = 0.85x, missing FSA = 0.92x, missing Google = 0.95x. No upward bonus.
+- **Google 45% cross-tier cap**: now produces an explicit audit trail showing before/after weights and redistribution amounts.
+- **Tie-breaking**: scores are raw (ties allowed). Rank breaks ties by signal count, then FSA rating, then alphabetical. No walk-down score manipulation.
+- **Companies House penalties**: dissolved = cap 3.0, liquidation = cap 5.0, overdue accounts = -0.5 flat.
+
+### V3.2 Tier Weights (sum = 0.93, normalised at runtime)
+
+| Tier | Weight | Change from V3.1 |
+|---|---|---|
+| FSA (Tier 1) | 23% | +3% |
+| Google (Tier 2) | 25% | — |
+| Online/TripAdvisor (Tier 3) | 12% | -8% (TA-only) |
+| Operational (Tier 4) | 15% | — |
+| Menu & Offering (Tier 5) | 10% | — |
+| Reputation (Tier 6) | 8% | +3% |
+| Community (Tier 7) | — | REMOVED |
+
+### Impact on Stratford trial
+- Excellent: 42.6% → **15.7%** (honest without community tier inflation)
+- Good: 42.9% → **71.6%** (majority band, as expected with partial data)
+- Score range: 2.000 – 8.932
+
+---
+
+## 13. Version History
 
 | Version | Date | Changes |
 |---|---|---|
-| V1.0 | Feb 2026 | Initial 5-source scoring engine (restaurant_confidence.py) |
-| V2.0 | Mar 2026 | 35 signals, 7 tiers, 0-10 scale, unique rankings, 6 rating bands |
-| V2.1 | Mar 2026 | FSA weight 30%→20%, Google capped 30%, confidence bands, non-food filter |
-| V3.0 | Mar 2026 | 40 signals, 8 tiers, aspect NLP, GBP completeness, TA recency, Companies House, Apify |
-| V3.1 | Mar 2026 | Coverage bonus/penalty, signal provenance weighting (inferred 70%), Google cross-tier 45% cap, FSA reconciliation, classification confidence, band calibration curve |
+| V1.0 | Feb 2026 | Initial 5-source scoring engine |
+| V2.0 | Mar 2026 | 35 signals, 7 tiers, 0-10 scale, unique rankings |
+| V2.1 | Mar 2026 | FSA 30%→20%, Google capped 30%, confidence bands |
+| V3.0 | Mar 2026 | 40 signals, 8 tiers, aspect NLP, GBP, TA recency, Companies House |
+| V3.1 | Mar 2026 | Coverage bonus/penalty, provenance weighting, cross-tier 45% cap, band calibration |
+| V3.2 | Mar 2026 | **Corrective**: remove Tier 7, SCP, inferred discount, band calibration, upward bonus. Tier 3 TripAdvisor-only. Tier 6 reweighted. Explicit audit trail. Raw scores (ties allowed). |
 
 ---
 

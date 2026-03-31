@@ -48,13 +48,13 @@ TOTAL_SIGNALS = 40
 # ---------------------------------------------------------------------------
 
 TIER_WEIGHTS = {
-    "fsa":        0.20,
+    "fsa":        0.23,   # V3.2: was 0.20, +2% from Tier 7 redistribution
     "google":     0.25,
-    "online":     0.20,
+    "online":     0.12,   # V3.2: TripAdvisor-only, was 0.20 (web/FB/IG moved to confidence layer)
     "ops":        0.15,
     "menu":       0.10,
-    "reputation": 0.05,
-    "community":  0.05,
+    "reputation": 0.08,   # V3.2: was 0.05, +3% from Tier 7 redistribution
+    # community tier REMOVED from active scoring in V3.2
 }
 
 
@@ -391,40 +391,31 @@ def score_tier_google(record):
 # ---------------------------------------------------------------------------
 
 def score_tier_online(record):
-    """Score Tier 3: Online Presence. Returns (score 0-1, used, total)."""
-    signals_total = 7  # web, fb, ig, ta_present, ta_rating, ta_reviews, ta_recency
+    """Score Tier 3: TripAdvisor-only (V3.2). Returns (score 0-1, used, total).
+    Web/FB/IG moved to profile-completeness confidence layer."""
+    signals_total = 4  # ta_present, ta_rating, ta_reviews, ta_recency
     signals_used = 0
     components = {}
-
-    for field, key, weight in [
-        ("has_website", "web", 0.15),
-        ("has_facebook", "fb", 0.10),
-        ("has_instagram", "ig", 0.10),
-    ]:
-        val = record.get(key)
-        if val is not None:
-            components[field] = (1.0 if val else 0.0, weight)
-            signals_used += 1
 
     # TripAdvisor presence
     ta_present = record.get("ta_present")
     if ta_present is None and record.get("ta") is not None:
         ta_present = True
     if ta_present is not None:
-        components["has_tripadvisor"] = (1.0 if ta_present else 0.0, 0.15)
+        components["has_tripadvisor"] = (1.0 if ta_present else 0.0, 0.20)
         signals_used += 1
 
     # TripAdvisor rating
     ta = safe_float(record.get("ta"))
     if ta is not None:
-        components["ta_rating"] = (clamp(ta / 5.0), 0.20)
+        components["ta_rating"] = (clamp(ta / 5.0), 0.35)
         signals_used += 1
 
     # TripAdvisor review count
     trc = safe_int(record.get("trc"))
     if trc is not None:
         vol = clamp(math.log10(max(1, trc)) / math.log10(1000))
-        components["ta_reviews"] = (vol, 0.15)
+        components["ta_reviews"] = (vol, 0.25)
         signals_used += 1
 
     # TripAdvisor review recency (0-1, 1 = all recent)
@@ -548,18 +539,20 @@ def score_tier_reputation(record):
     signals_used = 0
     components = {}
 
-    for field, key in [
-        ("aa_rating", "has_aa_rating"),
-        ("michelin", "has_michelin_mention"),
-    ]:
-        val = record.get(key)
-        if val is not None:
-            components[field] = (1.0 if val else 0.0, 1.0 / 3.0)
-            signals_used += 1
+    # V3.2: Michelin and AA outweigh local awards
+    val = record.get("has_michelin_mention")
+    if val is not None:
+        components["michelin"] = (1.0 if val else 0.0, 0.40)
+        signals_used += 1
+
+    val = record.get("has_aa_rating")
+    if val is not None:
+        components["aa_rating"] = (1.0 if val else 0.0, 0.35)
+        signals_used += 1
 
     awards = safe_int(record.get("local_awards_count"))
     if awards is not None:
-        components["awards"] = (clamp(awards / 3.0), 1.0 / 3.0)
+        components["awards"] = (clamp(awards / 3.0), 0.25)
         signals_used += 1
 
     if not components:
@@ -749,105 +742,115 @@ def assign_band(score):
 # Full V3.1 RCS pipeline
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# V3.2 Weight caps and tier configuration
+# ---------------------------------------------------------------------------
+
 # Tiers that derive signals from Google data (for cross-tier cap)
-GOOGLE_DERIVED_TIERS = {"google", "online", "ops", "menu"}
-GOOGLE_CROSS_TIER_CAP = 0.45  # max total effective weight for Google-derived tiers
-GOOGLE_SINGLE_CAP = 0.30      # max effective weight for Tier 2 alone
+GOOGLE_DERIVED_TIERS = {"google", "ops", "menu"}  # V3.2: online removed (now TA-only)
+GOOGLE_CROSS_TIER_CAP = 0.45
+GOOGLE_SINGLE_CAP = 0.30
 
-# Inferred signal discount — inferred signals carry 70% of nominal weight
-INFERRED_DISCOUNT = 0.70
-
-# Tiers where ALL current signals are inferred (not directly observed)
-# Tier 3 web/fb/ig are inferred; Tier 7 community is computed
-INFERRED_TIERS = {"online", "community"}
+# V3.2: Community tier REMOVED from active scoring
+# V3.2: SCP removed from active weighting
+# V3.2: Inferred discount removed from tier weighting (provenance
+#        now affects confidence grade only, not the score itself)
 
 TIER_SCORERS = {
     "fsa":        score_tier_fsa,
     "google":     score_tier_google,
-    "online":     score_tier_online,
+    "online":     score_tier_online,   # V3.2: TripAdvisor-only
     "ops":        score_tier_ops,
     "menu":       score_tier_menu,
     "reputation": score_tier_reputation,
-    "community":  score_tier_community,
+    # "community" removed from active scoring in V3.2
 }
 
 def _apply_weight_caps(eff_weights):
-    """Apply Google single-tier cap and cross-tier dependency cap."""
-    # Cap 1: Google Tier 2 at 30%
+    """
+    Apply Google caps. Returns modified weights and audit trail.
+    V3.2: Redistribution is explicit and auditable.
+    """
+    audit = {"google_single_before": eff_weights.get("google", 0),
+             "google_derived_before": sum(eff_weights.get(t, 0) for t in GOOGLE_DERIVED_TIERS),
+             "adjustments": []}
+
+    # Cap 1: Google Tier 2 alone at 30%
     if "google" in eff_weights and eff_weights["google"] > GOOGLE_SINGLE_CAP:
-        excess = eff_weights["google"] - GOOGLE_SINGLE_CAP
+        excess = round(eff_weights["google"] - GOOGLE_SINGLE_CAP, 4)
         eff_weights["google"] = GOOGLE_SINGLE_CAP
         others = {t: w for t, w in eff_weights.items() if t != "google"}
         ot = sum(others.values())
         if ot > 0:
             for t in others:
                 eff_weights[t] += excess * (others[t] / ot)
+        audit["adjustments"].append(f"google_single_cap: excess {excess:.4f} redistributed")
 
-    # Cap 2: Total Google-derived tiers at 45%
-    google_derived_total = sum(eff_weights.get(t, 0) for t in GOOGLE_DERIVED_TIERS)
-    if google_derived_total > GOOGLE_CROSS_TIER_CAP:
-        scale = GOOGLE_CROSS_TIER_CAP / google_derived_total
+    # Cap 2: All Google-derived tiers combined at 45%
+    gd_total = sum(eff_weights.get(t, 0) for t in GOOGLE_DERIVED_TIERS)
+    if gd_total > GOOGLE_CROSS_TIER_CAP:
+        scale = GOOGLE_CROSS_TIER_CAP / gd_total
         excess = 0
         for t in GOOGLE_DERIVED_TIERS:
             if t in eff_weights:
                 old = eff_weights[t]
-                eff_weights[t] = old * scale
+                eff_weights[t] = round(old * scale, 4)
                 excess += old - eff_weights[t]
-        # Redistribute excess to non-Google tiers
-        non_google = {t: w for t, w in eff_weights.items() if t not in GOOGLE_DERIVED_TIERS}
-        nt = sum(non_google.values())
+        non_gd = {t: w for t, w in eff_weights.items() if t not in GOOGLE_DERIVED_TIERS}
+        nt = sum(non_gd.values())
         if nt > 0:
-            for t in non_google:
-                eff_weights[t] += excess * (non_google[t] / nt)
+            for t in non_gd:
+                eff_weights[t] += excess * (non_gd[t] / nt)
+        audit["adjustments"].append(f"google_cross_cap: {gd_total:.4f}->{GOOGLE_CROSS_TIER_CAP}, excess {excess:.4f}")
 
-    return eff_weights
+    audit["google_single_after"] = eff_weights.get("google", 0)
+    audit["google_derived_after"] = sum(eff_weights.get(t, 0) for t in GOOGLE_DERIVED_TIERS)
+    return eff_weights, audit
 
 
 def compute_rcs_v2(record):
     """
-    Run V3.1 RCS pipeline on a single establishment.
+    Run V3.2 RCS pipeline on a single establishment.
+
+    V3.2 changes vs V3.1:
+    - Community tier removed from scoring
+    - No SCP weighting, no inferred discount on scores
+    - No upward coverage bonus; narrowed downward penalty (FSA/Google gaps only)
+    - No band calibration curve
+    - 45% Google-derived cap with audit trail
     """
     tier_scores = {}
     signals_available = 0
     signals_in_active_tiers = 0
-    tier_details = {}
 
     for tier_name, scorer in TIER_SCORERS.items():
-        result = scorer(record)
-        score, used, total = result
-        tier_details[tier_name] = {
-            "score": score,
-            "signals_used": used,
-            "signals_total": total,
-        }
+        score, used, total = scorer(record)
         if score is not None:
             tier_scores[tier_name] = score
             signals_in_active_tiers += total
         signals_available += used
 
+    # Also count community signals for provenance tracking (but don't score)
+    comm_score, comm_used, _ = score_tier_community(record)
+    signals_available += comm_used
+
     if not tier_scores:
         return {
             "fsa_tier": None, "google_tier": None, "online_tier": None,
             "ops_tier": None, "menu_tier": None, "reputation_tier": None,
-            "community_tier": None,
+            "community_tier": comm_score * 10 if comm_score else None,
             "rcs_final": 0.0, "rcs_band": "Urgent Improvement",
             "signals_available": 0, "signals_total": TOTAL_SIGNALS,
             "penalties": [],
         }
 
-    # Calculate effective weights with inferred discount
-    raw_weights = {}
-    for t in tier_scores:
-        w = TIER_WEIGHTS[t]
-        if t in INFERRED_TIERS:
-            w *= INFERRED_DISCOUNT  # Inferred tiers carry 70% weight
-        raw_weights[t] = w
-
+    # V3.2: Direct tier weights, no SCP, no inferred discount
+    raw_weights = {t: TIER_WEIGHTS[t] for t in tier_scores}
     total_raw = sum(raw_weights.values())
     eff_weights = {t: w / total_raw for t, w in raw_weights.items()}
 
-    # Apply Google caps (single-tier 30% + cross-tier 45%)
-    eff_weights = _apply_weight_caps(eff_weights)
+    # Apply Google caps with audit trail
+    eff_weights, cap_audit = _apply_weight_caps(eff_weights)
 
     weighted_sum = sum(
         tier_scores[t] * eff_weights[t]
@@ -857,14 +860,17 @@ def compute_rcs_v2(record):
     # Scale to 0-10
     raw_score = weighted_sum * 10
 
-    # Coverage bonus/penalty
-    coverage = signals_available / signals_in_active_tiers if signals_in_active_tiers > 0 else 0
-    if coverage < 0.40:
-        raw_score *= 0.90  # Sparse data penalty
-    elif coverage > 0.70:
-        raw_score *= 1.05  # Rich data bonus
+    # V3.2: Narrowed downward penalty — only for FSA or Google gaps
+    has_fsa = "fsa" in tier_scores
+    has_google = "google" in tier_scores
+    if not has_fsa and not has_google:
+        raw_score *= 0.85  # Missing both core tiers
+    elif not has_fsa:
+        raw_score *= 0.92  # Missing FSA
+    elif not has_google:
+        raw_score *= 0.95  # Missing Google
 
-    # Apply penalties
+    # Apply penalties (Companies House, FSA caps, etc.)
     final_score, penalties = apply_penalties(raw_score, record)
     final_score = round(clamp(final_score, 0, 10), 3)
 
@@ -877,12 +883,11 @@ def compute_rcs_v2(record):
         "ops_tier": round(tier_scores.get("ops", 0) * 10, 3) if "ops" in tier_scores else None,
         "menu_tier": round(tier_scores.get("menu", 0) * 10, 3) if "menu" in tier_scores else None,
         "reputation_tier": round(tier_scores.get("reputation", 0) * 10, 3) if "reputation" in tier_scores else None,
-        "community_tier": round(tier_scores.get("community", 0) * 10, 3) if "community" in tier_scores else None,
+        "community_tier": round(comm_score * 10, 3) if comm_score else None,
         "rcs_final": final_score,
         "rcs_band": band,
         "signals_available": signals_available,
         "signals_total": TOTAL_SIGNALS,
-        "coverage": round(coverage, 2),
         "penalties": penalties,
     }
 
@@ -1579,19 +1584,7 @@ def main():
     # Apply tiebreakers for unique rankings
     scored = apply_tiebreakers(scored)
 
-    # Band calibration: if Excellent > 50% of ranked, compress gently
-    ranked_rows = [r for r in scored if r["rank"] != ""]
-    if ranked_rows:
-        excellent_pct = sum(1 for r in ranked_rows if r["rcs_band"] == "Excellent") / len(ranked_rows)
-        if excellent_pct > 0.50:
-            for r in ranked_rows:
-                if r["rcs_final"] > 8.0:
-                    r["rcs_final"] = round(8.0 + (r["rcs_final"] - 8.0) * 0.85, 3)
-                    r["rcs_band"] = assign_band(r["rcs_final"])
-            # Re-sort after compression (ranks may change)
-            ranked_rows.sort(key=_sort_key)
-            for i, r in enumerate(ranked_rows, 1):
-                r["rank"] = i
+    # V3.2: Band calibration curve REMOVED — scores reflect raw methodology output
 
     # Save CSV
     save_scores_csv(scored, CSV_OUTPUT)
@@ -1660,7 +1653,7 @@ def generate_report(scored, summary):
     L = []
     w = L.append
     w("# DayDine RCS Report - Stratford-upon-Avon")
-    w(f"\n*Generated: {NOW.strftime('%d %B %Y')} | Methodology: RCS V3.2 | Scale: 0.000-10.000*")
+    w(f"\n*Generated: {NOW.strftime('%d %B %Y')} | Methodology: RCS V3.2 (corrective) | Scale: 0.000-10.000*")
     w("\n---\n")
     w("## 1. Executive Summary\n")
     w("| Metric | Value |\n|---|---|")
@@ -1668,7 +1661,7 @@ def generate_report(scored, summary):
     w(f"| Ranked (food service) | **{len(ranked)}** |")
     w(f"| Excluded (non-food) | {len(not_ranked)} |")
     w(f"| Insufficient data | {len(insufficient)} |")
-    w(f"| Methodology | RCS V3.2 - 40 signals, 8 tiers |")
+    w(f"| Methodology | RCS V3.2 (corrective) - 40 signals, 8 tiers |")
     w(f"| Mean RCS | {statistics.mean(ranked_scores):.2f} |")
     w(f"| Median RCS | {statistics.median(ranked_scores):.2f} |")
     w(f"| Signals avg | {avg_sig:.1f} / {TOTAL_SIGNALS} ({avg_sig/TOTAL_SIGNALS*100:.0f}%) |")
