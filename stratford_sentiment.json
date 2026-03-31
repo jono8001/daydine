@@ -1,0 +1,18 @@
+{
+  "503480": {
+    "sentiment_score": 1.0,
+    "positive_count": 14,
+    "negative_count": 0,
+    "red_flag_count": 0,
+    "red_flags": [],
+    "positives_sample": [
+      "fantastic",
+      "exceptional",
+      "delicious",
+      "perfection",
+      "perfect"
+    ],
+    "warning": false,
+    "reviews_analyzed": 5
+  }
+}

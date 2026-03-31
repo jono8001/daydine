@@ -1,5 +1,5 @@
 {
-  "our_count": 238,
+  "our_count": 209,
   "missing_from_our_data": [
     {
       "name": "The Golden Bee - JD Wetherspoon",
@@ -30,6 +30,34 @@
       "best_match_score": 0.42
     },
     {
+      "name": "Pen & Parchment",
+      "address": "Bridge Foot, Stratford-upon-Avon CV37 6YY",
+      "rating": 4.3,
+      "reviews": 2548,
+      "best_match_score": 0.5
+    },
+    {
+      "name": "Garrick",
+      "address": "25 High St, Stratford-upon-Avon CV37 6AU",
+      "rating": 4.4,
+      "reviews": 2507,
+      "best_match_score": 0.5
+    },
+    {
+      "name": "Rose & Crown",
+      "address": "15 Sheep St, Stratford-upon-Avon CV37 6EF",
+      "rating": 4.1,
+      "reviews": 2142,
+      "best_match_score": 0.56
+    },
+    {
+      "name": "El Greco",
+      "address": "27 Rother St, Stratford-upon-Avon CV37 6NE",
+      "rating": 4.7,
+      "reviews": 1764,
+      "best_match_score": 0.52
+    },
+    {
       "name": "Premier Inn Stratford Upon Avon Waterways hotel",
       "address": "The Waterways, Birmingham Rd, Stratford-upon-Avon CV37 0AZ",
       "rating": 4.3,
@@ -44,11 +72,32 @@
       "best_match_score": 0.55
     },
     {
+      "name": "The Fourteas Tea-Room Brasserie",
+      "address": "24 Sheep St, Stratford-upon-Avon CV37 6EF",
+      "rating": 4.5,
+      "reviews": 1602,
+      "best_match_score": 0.46
+    },
+    {
       "name": "The Welcombe Hotel, BW Premier Collection",
       "address": "Warwick Rd, Stratford-upon-Avon CV37 0NR",
       "rating": 4,
       "reviews": 1394,
       "best_match_score": 0.57
+    },
+    {
+      "name": "Windmill",
+      "address": "Church St, Stratford-upon-Avon CV37 6HB",
+      "rating": 4.4,
+      "reviews": 1196,
+      "best_match_score": 0.56
+    },
+    {
+      "name": "Bell",
+      "address": "Shottery, Stratford-upon-Avon CV37 9HD",
+      "rating": 4.4,
+      "reviews": 1073,
+      "best_match_score": 0.5
     },
     {
       "name": "The Baraset Barn",
@@ -65,6 +114,27 @@
       "best_match_score": 0.58
     },
     {
+      "name": "The Piston Club @ The Stag",
+      "address": "Alcester Rd, Stratford-upon-Avon B49 6NQ",
+      "rating": 4.7,
+      "reviews": 777,
+      "best_match_score": 0.53
+    },
+    {
+      "name": "Zoo Sushi & Bubble Tea",
+      "address": "3-5 Cooks Aly, Wood St, Stratford-upon-Avon CV37 6QN",
+      "rating": 4.6,
+      "reviews": 667,
+      "best_match_score": 0.53
+    },
+    {
+      "name": "The Fuzzy Duck",
+      "address": "Ilmington Rd, Armscote, Stratford-upon-Avon CV37 8DD",
+      "rating": 4.5,
+      "reviews": 564,
+      "best_match_score": 0.5
+    },
+    {
       "name": "The Rooftop Restaurant at the Royal Shakespeare Theatre",
       "address": "3rd Floor, Royal Shakespeare Theatre, Waterside, Stratford-upon-Avon CV37 6BB",
       "rating": 4.4,
@@ -79,11 +149,53 @@
       "best_match_score": 0.48
     },
     {
+      "name": "Aladdin's Indian Dining",
+      "address": "4 Main St, Tiddington, Stratford-upon-Avon CV37 7AZ",
+      "rating": 4.5,
+      "reviews": 475,
+      "best_match_score": 0.49
+    },
+    {
+      "name": "Bensons Restaurant & Tea Rooms",
+      "address": "40 Henley St, Stratford-upon-Avon CV37 6QW",
+      "rating": 4.4,
+      "reviews": 379,
+      "best_match_score": 0.58
+    },
+    {
+      "name": "Yorks Cafe & Coffee Roasters (Stratford)",
+      "address": "15 High St, Stratford-upon-Avon CV37 6AU",
+      "rating": 4.3,
+      "reviews": 363,
+      "best_match_score": 0.49
+    },
+    {
+      "name": "Usha Bangladeshi Cuisine",
+      "address": "28 Meer St, Stratford-upon-Avon CV37 6QB",
+      "rating": 4.3,
+      "reviews": 352,
+      "best_match_score": 0.47
+    },
+    {
+      "name": "Mr Chan's Tiddington",
+      "address": "3 Main St, Tiddington, Stratford-upon-Avon CV37 7AN",
+      "rating": 4.3,
+      "reviews": 348,
+      "best_match_score": 0.48
+    },
+    {
       "name": "M&S Foodhall",
       "address": "Butcher Row, Maybird Retail Park, 25-31 Birmingham Rd, Stratford-upon-Avon CV37 0HZ",
       "rating": 4.5,
       "reviews": 289,
-      "best_match_score": 0.45
+      "best_match_score": 0.44
+    },
+    {
+      "name": "Box Brownie Coffee",
+      "address": "20 Henley St, Stratford-upon-Avon CV37 6QW",
+      "rating": 4.7,
+      "reviews": 287,
+      "best_match_score": 0.56
     },
     {
       "name": "Café Cocktail",
@@ -91,6 +203,27 @@
       "rating": 4.9,
       "reviews": 273,
       "best_match_score": 0.46
+    },
+    {
+      "name": "Quill & Cup",
+      "address": "Bridge Foot, Stratford-upon-Avon CV37 6YY",
+      "rating": 4.1,
+      "reviews": 266,
+      "best_match_score": 0.38
+    },
+    {
+      "name": "Bobby's Café",
+      "address": "The Stratford Greenway, Seven Meadows Rd, Stratford-upon-Avon CV37 9LE",
+      "rating": 4.7,
+      "reviews": 258,
+      "best_match_score": 0.53
+    },
+    {
+      "name": "Milcote Cafe (Converted Railway Carriage)",
+      "address": "Station Road, Stratford-upon-Avon CV37 8JW",
+      "rating": 4.6,
+      "reviews": 242,
+      "best_match_score": 0.52
     },
     {
       "name": "Grace & Savour",
@@ -105,6 +238,90 @@
       "rating": 4.8,
       "reviews": 207,
       "best_match_score": 0.54
+    },
+    {
+      "name": "No. 1 Taj Bar & Grill",
+      "address": "1 Shakespeare St, Stratford-upon-Avon CV37 6RN",
+      "rating": 4.6,
+      "reviews": 187,
+      "best_match_score": 0.43
+    },
+    {
+      "name": "The Barge and Quarterdeck",
+      "address": "Waterside, Stratford-upon-Avon CV37 6AT",
+      "rating": 4.6,
+      "reviews": 183,
+      "best_match_score": 0.57
+    },
+    {
+      "name": "Wok Express",
+      "address": "98 Justins Ave, Stratford-upon-Avon CV37 0DE",
+      "rating": 4.2,
+      "reviews": 174,
+      "best_match_score": 0.52
+    },
+    {
+      "name": "The Fresh Baguette Bar",
+      "address": "24 High St, Stratford-upon-Avon CV37 6AU",
+      "rating": 4.8,
+      "reviews": 150,
+      "best_match_score": 0.52
+    },
+    {
+      "name": "Marco: Italian Delicatessen",
+      "address": "20 Church St, Stratford-upon-Avon CV37 6HB",
+      "rating": 4.9,
+      "reviews": 114,
+      "best_match_score": 0.43
+    },
+    {
+      "name": "Sip 'n' Swig",
+      "address": "2 Alderminster Workshops, Alscot Estate, Stratford-upon-Avon CV37 8BN",
+      "rating": 4.9,
+      "reviews": 53,
+      "best_match_score": 0.44
+    },
+    {
+      "name": "Gordon Bleu Takeaway Cafe",
+      "address": "12a Western Rd, Stratford-upon-Avon CV37 0AH",
+      "rating": 4.8,
+      "reviews": 53,
+      "best_match_score": 0.55
+    },
+    {
+      "name": "Golden Phoenix Chinese and Cantonese",
+      "address": "22a Bell Ct, Stratford-upon-Avon CV37 6EX",
+      "rating": 4.6,
+      "reviews": 27,
+      "best_match_score": 0.43
+    },
+    {
+      "name": "Preston Village Shop & Cafe",
+      "address": "Preston on Stour, Stratford-upon-Avon CV37 8NG",
+      "rating": 5,
+      "reviews": 26,
+      "best_match_score": 0.58
+    },
+    {
+      "name": "Bastardo's Trattoria",
+      "address": "6 Granville Ct, Shipston-on-Stour CV36 4PP",
+      "rating": 5,
+      "reviews": 9,
+      "best_match_score": 0.55
+    },
+    {
+      "name": "Mancini's Italian Coffee Carts",
+      "address": "Holy Trinity Parish Centre, 1 Old Town, Stratford-upon-Avon CV37 6BG",
+      "rating": 5,
+      "reviews": 5,
+      "best_match_score": 0.54
+    },
+    {
+      "name": "Mr Tran's",
+      "address": "14-8 Main St, Stratford-upon-Avon CV37 7AX",
+      "rating": null,
+      "reviews": null,
+      "best_match_score": 0.59
     }
   ],
   "non_food_suspects": [
@@ -116,9 +333,9 @@
       "fsa_rating": 5,
       "google_types": [
         "establishment",
+        "point_of_interest",
         "sports_club",
-        "association_or_organization",
-        "point_of_interest"
+        "association_or_organization"
       ]
     },
     {
@@ -128,9 +345,9 @@
       "reason": "google_types: {'miniature_golf_course'}",
       "fsa_rating": null,
       "google_types": [
+        "establishment",
         "point_of_interest",
-        "miniature_golf_course",
-        "establishment"
+        "miniature_golf_course"
       ]
     },
     {
@@ -140,11 +357,11 @@
       "reason": "name_match: horse sanctuary",
       "fsa_rating": 5,
       "google_types": [
-        "tourist_attraction",
-        "service",
-        "visitor_center",
         "association_or_organization",
-        "tourist_information_center"
+        "establishment",
+        "tour_agency",
+        "pet_care",
+        "visitor_center"
       ]
     },
     {
@@ -167,10 +384,10 @@
       "reason": "google_types: {'gym'}",
       "fsa_rating": 5,
       "google_types": [
-        "service",
         "hotel",
         "event_venue",
-        "health",
+        "sports_activity_location",
+        "establishment",
         "gym"
       ]
     },
@@ -181,11 +398,11 @@
       "reason": "name_match: golf club",
       "fsa_rating": 5,
       "google_types": [
-        "sports_school",
+        "sports_coaching",
         "sports_club",
-        "store",
+        "sports_activity_location",
         "association_or_organization",
-        "athletic_field"
+        "establishment"
       ]
     },
     {
@@ -196,9 +413,9 @@
       "fsa_rating": null,
       "google_types": [
         "establishment",
+        "point_of_interest",
         "sports_club",
-        "association_or_organization",
-        "point_of_interest"
+        "association_or_organization"
       ]
     },
     {
@@ -209,9 +426,9 @@
       "fsa_rating": 5,
       "google_types": [
         "establishment",
+        "point_of_interest",
         "sports_club",
-        "association_or_organization",
-        "point_of_interest"
+        "association_or_organization"
       ]
     },
     {
@@ -221,11 +438,11 @@
       "reason": "google_types: {'gym'}",
       "fsa_rating": 5,
       "google_types": [
-        "sports_school",
-        "sports_complex",
-        "gym",
         "sports_activity_location",
-        "health"
+        "establishment",
+        "gym",
+        "point_of_interest",
+        "sports_school"
       ]
     },
     {
@@ -235,11 +452,11 @@
       "reason": "name_match: baptist church",
       "fsa_rating": 5,
       "google_types": [
+        "church",
         "place_of_worship",
         "association_or_organization",
-        "church",
-        "point_of_interest",
-        "establishment"
+        "establishment",
+        "point_of_interest"
       ]
     },
     {
@@ -249,9 +466,9 @@
       "reason": "name_match: aston martin",
       "fsa_rating": 5,
       "google_types": [
-        "manufacturer",
         "establishment",
-        "point_of_interest"
+        "point_of_interest",
+        "manufacturer"
       ]
     },
     {
@@ -261,9 +478,9 @@
       "reason": "google_types: {'real_estate_agency'}",
       "fsa_rating": 5,
       "google_types": [
+        "establishment",
         "real_estate_agency",
         "point_of_interest",
-        "establishment",
         "service"
       ]
     },
@@ -275,9 +492,9 @@
       "fsa_rating": 5,
       "google_types": [
         "establishment",
+        "point_of_interest",
         "sports_club",
-        "association_or_organization",
-        "point_of_interest"
+        "association_or_organization"
       ]
     },
     {
@@ -288,9 +505,9 @@
       "fsa_rating": 5,
       "google_types": [
         "establishment",
+        "point_of_interest",
         "sports_club",
-        "association_or_organization",
-        "point_of_interest"
+        "association_or_organization"
       ]
     },
     {
@@ -301,9 +518,9 @@
       "fsa_rating": 3,
       "google_types": [
         "establishment",
+        "point_of_interest",
         "sports_club",
-        "association_or_organization",
-        "point_of_interest"
+        "association_or_organization"
       ]
     },
     {
@@ -314,9 +531,9 @@
       "fsa_rating": 5,
       "google_types": [
         "establishment",
+        "point_of_interest",
         "sports_club",
-        "association_or_organization",
-        "point_of_interest"
+        "association_or_organization"
       ]
     }
   ],
