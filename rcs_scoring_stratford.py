@@ -40,7 +40,7 @@ SUMMARY_OUTPUT = os.path.join(SCRIPT_DIR, "stratford_rcs_summary.json")
 
 NOW = datetime.now(timezone.utc)
 
-TOTAL_SIGNALS = 36
+TOTAL_SIGNALS = 40
 
 
 # ---------------------------------------------------------------------------
@@ -224,20 +224,97 @@ def _analyze_sentiment(reviews):
     return max(0.0, min(1.0, score)), total_red, list(set(red_list))
 
 
+def _score_aspects(record):
+    """
+    Compute 5 aspect sub-scores from review text (Google + TripAdvisor).
+    Returns dict of {aspect: score_0_to_1} for aspects with data.
+    """
+    from collections import defaultdict
+
+    ASPECT_KW = {
+        "food_quality": {
+            "pos": ["delicious", "tasty", "flavourful", "fresh", "perfectly cooked",
+                    "great food", "excellent food", "amazing food", "gorgeous presentation",
+                    "mouth-watering", "tender", "succulent", "authentic", "homemade"],
+            "neg": ["bland", "tasteless", "stale", "dry", "tough", "undercooked",
+                    "overcooked", "raw", "burnt", "cold food", "lukewarm", "reheated",
+                    "greasy", "inedible", "disgusting", "poor food", "terrible food"],
+        },
+        "service_quality": {
+            "pos": ["friendly", "attentive", "helpful", "professional", "welcoming",
+                    "great service", "excellent service", "fantastic service",
+                    "knowledgeable", "accommodating", "went above and beyond"],
+            "neg": ["rude", "rude staff", "unfriendly", "unhelpful", "ignored",
+                    "poor service", "bad service", "terrible service", "slow service",
+                    "inattentive", "unprofessional"],
+        },
+        "ambience": {
+            "pos": ["great atmosphere", "lovely atmosphere", "cosy", "cozy",
+                    "charming", "romantic", "beautiful decor", "clean", "spotless",
+                    "lovely setting", "wonderful ambience"],
+            "neg": ["noisy", "too loud", "cramped", "crowded", "dirty", "filthy",
+                    "smelly", "stuffy", "dingy", "tired decor", "run down"],
+        },
+        "value": {
+            "pos": ["good value", "great value", "worth every penny", "reasonable",
+                    "affordable", "bargain", "generous portions", "fair price"],
+            "neg": ["overpriced", "expensive", "rip off", "rip-off", "not worth",
+                    "poor value", "small portions", "tiny portions", "extortionate"],
+        },
+        "wait_time": {
+            "pos": ["quick", "prompt", "fast", "no wait", "seated immediately",
+                    "efficient", "food came quickly"],
+            "neg": ["long wait", "waited over an hour", "waited 45 minutes",
+                    "slow", "took ages", "forgot our order", "waited forever"],
+        },
+    }
+
+    texts = []
+    for rev in record.get("g_reviews", []):
+        t = rev.get("text", "")
+        if t:
+            texts.append(t.lower())
+    for rev in record.get("ta_reviews", []):
+        t = rev.get("text", "")
+        if t:
+            texts.append(t.lower())
+
+    if not texts:
+        return {}
+
+    scores = {}
+    for aspect, kw in ASPECT_KW.items():
+        pos = sum(1 for t in texts for p in kw["pos"] if p in t)
+        neg = sum(1 for t in texts for n in kw["neg"] if n in t)
+        total = pos + neg
+        if total > 0:
+            scores[aspect] = pos / total  # 0-1
+    return scores
+
+
 def score_tier_google(record):
-    """Score Tier 2: Google. Returns (score 0-1, signals_used, signals_total)."""
-    signals_total = 6  # rating, sentiment, review_count, price, photos, types
+    """Score Tier 2: Google + aspect sentiment. Returns (score 0-1, used, total)."""
+    signals_total = 11  # rating, 5 aspects, sentiment, review_count, price, photos, types
     signals_used = 0
     components = {}
 
-    # google_rating: 1-5 → 0-1
+    # google_rating: 1-5 → 0-1  (weight 0.20)
     gr = safe_float(record.get("gr"))
     if gr is not None:
-        components["google_rating"] = (clamp(gr / 5.0), 0.35)
+        components["google_rating"] = (clamp(gr / 5.0), 0.20)
         signals_used += 1
 
-    # review_sentiment: keyword-based analysis of review text
-    # Use Google reviews if available, fall back to TripAdvisor reviews
+    # Aspect-based sentiment (5 sub-scores, SCP 0.55-0.62)
+    # Total weight for aspects: 0.25 (0.05 each)
+    aspects = _score_aspects(record)
+    for aspect_name, aspect_score in aspects.items():
+        components[f"aspect_{aspect_name}"] = (clamp(aspect_score), 0.05)
+        signals_used += 1
+    # Store aspects for reporting
+    if aspects:
+        record["_aspects"] = {k: round(v * 10, 1) for k, v in aspects.items()}
+
+    # Overall review sentiment (red flags etc) — weight 0.10
     all_reviews = []
     g_reviews = record.get("g_reviews")
     if g_reviews and isinstance(g_reviews, list):
@@ -248,32 +325,32 @@ def score_tier_google(record):
     if all_reviews:
         sentiment, red_count, red_flags = _analyze_sentiment(all_reviews)
         if sentiment is not None:
-            components["review_sentiment"] = (sentiment, 0.15)
+            components["review_sentiment"] = (sentiment, 0.10)
             signals_used += 1
             record["_sentiment_score"] = round(sentiment, 3)
             record["_red_flag_count"] = red_count
             record["_red_flags"] = red_flags
 
-    # google_review_count: log10 scale, cap 1000
+    # google_review_count: log10 scale, cap 1000  (weight 0.20)
     grc = safe_int(record.get("grc"))
     if grc is not None:
         vol = clamp(math.log10(max(1, grc)) / math.log10(1000))
-        components["google_reviews"] = (vol, 0.25)
+        components["google_reviews"] = (vol, 0.20)
         signals_used += 1
 
-    # google_price_level: 1-4 → 0-1 (presence is signal, not quality)
+    # google_price_level: 1-4  (weight 0.05)
     gpl = safe_int(record.get("gpl"))
     if gpl is not None:
-        components["google_price"] = (clamp(gpl / 4.0), 0.10)
+        components["google_price"] = (clamp(gpl / 4.0), 0.05)
         signals_used += 1
 
-    # google_photos_count: gpc from enrichment, cap at 10 = 1.0
+    # google_photos_count: cap 10  (weight 0.05)
     gpc = safe_int(record.get("gpc"))
     if gpc is not None:
-        components["google_photos"] = (clamp(gpc / 10.0), 0.10)
+        components["google_photos"] = (clamp(gpc / 10.0), 0.05)
         signals_used += 1
 
-    # google_place_types: gty from enrichment, presence = 1.0
+    # google_place_types: presence  (weight 0.05)
     gty = record.get("gty")
     if gty is not None and isinstance(gty, list) and len(gty) > 0:
         components["google_types"] = (1.0, 0.05)
@@ -293,21 +370,21 @@ def score_tier_google(record):
 
 def score_tier_online(record):
     """Score Tier 3: Online Presence. Returns (score 0-1, used, total)."""
-    signals_total = 6
+    signals_total = 7  # web, fb, ig, ta_present, ta_rating, ta_reviews, ta_recency
     signals_used = 0
     components = {}
 
     for field, key, weight in [
-        ("has_website", "web", 0.20),
-        ("has_facebook", "fb", 0.15),
-        ("has_instagram", "ig", 0.15),
+        ("has_website", "web", 0.15),
+        ("has_facebook", "fb", 0.10),
+        ("has_instagram", "ig", 0.10),
     ]:
         val = record.get(key)
         if val is not None:
             components[field] = (1.0 if val else 0.0, weight)
             signals_used += 1
 
-    # TripAdvisor presence — derive from ta field if ta_present not set
+    # TripAdvisor presence
     ta_present = record.get("ta_present")
     if ta_present is None and record.get("ta") is not None:
         ta_present = True
@@ -315,17 +392,23 @@ def score_tier_online(record):
         components["has_tripadvisor"] = (1.0 if ta_present else 0.0, 0.15)
         signals_used += 1
 
-    # tripadvisor_rating
+    # TripAdvisor rating
     ta = safe_float(record.get("ta"))
     if ta is not None:
         components["ta_rating"] = (clamp(ta / 5.0), 0.20)
         signals_used += 1
 
-    # tripadvisor_review_count
+    # TripAdvisor review count
     trc = safe_int(record.get("trc"))
     if trc is not None:
         vol = clamp(math.log10(max(1, trc)) / math.log10(1000))
         components["ta_reviews"] = (vol, 0.15)
+        signals_used += 1
+
+    # TripAdvisor review recency (0-1, 1 = all recent)
+    ta_recency = safe_float(record.get("ta_recency"))
+    if ta_recency is not None:
+        components["ta_recency"] = (clamp(ta_recency), 0.15)
         signals_used += 1
 
     if not components:
@@ -392,23 +475,22 @@ def score_tier_ops(record):
 # ---------------------------------------------------------------------------
 
 def score_tier_menu(record):
-    """Score Tier 5: Menu & Offering. Returns (score 0-1, used, total)."""
-    signals_total = 3
+    """Score Tier 5: Menu & Offering + GBP completeness. Returns (score 0-1, used, total)."""
+    signals_total = 4  # menu, dietary, cuisine, gbp_completeness
     signals_used = 0
     components = {}
 
     val = record.get("has_menu_online")
     if val is not None:
-        components["menu"] = (1.0 if val else 0.0, 0.40)
+        components["menu"] = (1.0 if val else 0.0, 0.30)
         signals_used += 1
 
     diets = safe_int(record.get("dietary_options_count"))
     if diets is not None:
-        components["dietary"] = (clamp(diets / 5.0), 0.30)
+        components["dietary"] = (clamp(diets / 5.0), 0.20)
         signals_used += 1
 
     cuisines = safe_int(record.get("cuisine_tags_count"))
-    # Infer cuisine count from Google types if not explicitly set
     if cuisines is None:
         gty = record.get("gty", [])
         if isinstance(gty, list):
@@ -417,7 +499,13 @@ def score_tier_menu(record):
             if cuisine_types:
                 cuisines = len(cuisine_types)
     if cuisines is not None:
-        components["cuisine"] = (clamp(cuisines / 3.0), 0.30)
+        components["cuisine"] = (clamp(cuisines / 3.0), 0.20)
+        signals_used += 1
+
+    # GBP completeness (SCP 0.62) — how populated is their Google profile
+    gbp = safe_float(record.get("gbp_completeness"))
+    if gbp is not None:
+        components["gbp_completeness"] = (clamp(gbp / 10.0), 0.30)
         signals_used += 1
 
     if not components:
@@ -591,6 +679,28 @@ def apply_penalties(raw_score, record):
     if not has_any_online:
         penalty = score * 0.10
         applied.append(("no_online_presence", score, score - penalty))
+        score -= penalty
+
+    # Companies House penalties (business viability)
+    ch_status = record.get("company_status")
+    if ch_status == "dissolved":
+        applied.append(("ch_dissolved", score, 0.0))
+        score = 0.0
+    elif ch_status == "liquidation":
+        applied.append(("ch_liquidation", score, score * 0.50))
+        score *= 0.50
+    if record.get("accounts_overdue"):
+        penalty = score * 0.18
+        applied.append(("ch_accounts_overdue", score, score - penalty))
+        score -= penalty
+    if record.get("insolvency"):
+        penalty = score * 0.50
+        applied.append(("ch_insolvency", score, score - penalty))
+        score -= penalty
+    dir_changes = safe_int(record.get("director_changes_12m"))
+    if dir_changes is not None and dir_changes >= 3:
+        penalty = score * 0.12
+        applied.append(("ch_director_churn", score, score - penalty))
         score -= penalty
 
     return clamp(score, 0, 10), applied

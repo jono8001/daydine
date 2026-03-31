@@ -1,30 +1,29 @@
 #!/usr/bin/env python3
 """
-sentiment_analysis.py — Keyword-based review sentiment analysis.
+sentiment_analysis.py — Aspect-based review sentiment analysis.
 
-Processes Google review text to produce a sentiment score (0-1) and
-red flag warnings without using any external AI API.
+Processes Google + TripAdvisor review text to produce:
+- Overall sentiment score (0-1)
+- 5 aspect sub-scores (0-10): Food, Service, Ambience, Value, Wait Time
+- Red flag warnings
 
-Can be run standalone to analyze stratford_google_enrichment.json,
-or imported as a module by the scoring pipeline.
+No external AI API — pure keyword/pattern matching.
 
 Usage:
     python .github/scripts/sentiment_analysis.py
 
-Reads:  stratford_google_enrichment.json OR stratford_establishments.json
+Reads:  stratford_establishments.json
 Writes: stratford_sentiment.json
 """
 
 import json
 import os
-import re
 import sys
-from collections import Counter
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 # ---------------------------------------------------------------------------
-# Keyword dictionaries
+# Overall sentiment keywords (kept from V1)
 # ---------------------------------------------------------------------------
 
 RED_FLAGS = [
@@ -38,107 +37,164 @@ RED_FLAGS = [
     "avoid at all costs", "avoid this", "do not go", "don't go",
     "health hazard", "health and safety", "shut down", "closed down",
     "food was off", "gone off", "smelled off", "tasted off",
-    "long wait", "waited over an hour", "waited 45 minutes",
     "overpriced", "rip off", "rip-off", "not worth",
 ]
 
-POSITIVE_PHRASES = [
+POSITIVES = [
     "amazing", "excellent", "outstanding", "exceptional", "superb",
-    "best restaurant", "best meal", "best food", "best we've had",
-    "highly recommend", "would recommend", "can't recommend enough",
+    "best restaurant", "best meal", "best food",
+    "highly recommend", "would recommend",
     "fantastic", "fabulous", "phenomenal", "incredible",
-    "delicious", "mouth-watering", "mouthwatering", "perfectly cooked",
-    "perfect", "perfection", "faultless", "flawless",
-    "wonderful", "lovely", "beautiful", "gorgeous presentation",
+    "delicious", "mouth-watering", "perfectly cooked",
+    "perfect", "faultless", "wonderful", "lovely",
     "friendly staff", "great service", "attentive service",
-    "will definitely return", "will be back", "coming back",
-    "hidden gem", "gem of a place", "must visit",
-    "five stars", "5 stars", "10 out of 10", "10/10",
-    "michelin quality", "michelin standard",
+    "will definitely return", "will be back",
+    "hidden gem", "must visit", "five stars", "5 stars", "10/10",
 ]
 
-# Moderate negatives (less severe than red flags)
 NEGATIVES = [
     "disappointing", "disappointed", "mediocre", "average at best",
-    "nothing special", "overrated", "let down", "not great",
-    "bland", "tasteless", "dry", "tough", "chewy",
-    "slow service", "poor service", "bad service", "terrible service",
-    "small portions", "tiny portions",
-    "noisy", "too loud", "cramped",
-    "won't return", "won't be back",
+    "nothing special", "overrated", "bland", "tasteless",
+    "slow service", "poor service", "bad service",
+    "small portions", "won't return",
 ]
 
+# ---------------------------------------------------------------------------
+# Aspect keyword dictionaries — positive and negative for each
+# ---------------------------------------------------------------------------
 
-def analyze_review_text(text):
+ASPECT_KEYWORDS = {
+    "food_quality": {
+        "pos": [
+            "delicious", "tasty", "flavourful", "flavorful", "flavour",
+            "fresh", "perfectly cooked", "well cooked", "great food",
+            "excellent food", "amazing food", "best food",
+            "gorgeous presentation", "beautifully presented",
+            "mouth-watering", "mouthwatering", "tender", "succulent",
+            "crispy", "juicy", "authentic", "homemade", "home made",
+        ],
+        "neg": [
+            "bland", "tasteless", "stale", "dry", "tough", "chewy",
+            "undercooked", "overcooked", "raw", "burnt", "cold food",
+            "stone cold", "lukewarm", "frozen", "reheated", "microwaved",
+            "greasy", "oily", "salty", "inedible", "disgusting",
+            "poor food", "terrible food", "bad food", "awful food",
+        ],
+    },
+    "service_quality": {
+        "pos": [
+            "friendly", "attentive", "helpful", "professional",
+            "welcoming", "polite", "courteous", "warm welcome",
+            "great service", "excellent service", "fantastic service",
+            "amazing service", "brilliant service", "superb service",
+            "knowledgeable", "accommodating", "went above and beyond",
+        ],
+        "neg": [
+            "rude", "rude staff", "rude waiter", "rude waitress",
+            "unfriendly", "unhelpful", "disinterested", "ignored",
+            "poor service", "bad service", "terrible service",
+            "slow service", "inattentive", "couldn't care less",
+            "no apology", "unprofessional", "arrogant",
+        ],
+    },
+    "ambience": {
+        "pos": [
+            "great atmosphere", "lovely atmosphere", "fantastic atmosphere",
+            "cosy", "cozy", "charming", "romantic", "intimate",
+            "beautiful decor", "lovely decor", "stylish", "elegant",
+            "clean", "spotless", "well maintained", "gorgeous setting",
+            "lovely setting", "great ambiance", "wonderful ambience",
+        ],
+        "neg": [
+            "noisy", "too loud", "deafening", "cramped", "crowded",
+            "dirty", "filthy", "grubby", "smelly", "stuffy",
+            "cold", "draughty", "dark", "dingy", "tired decor",
+            "run down", "needs a refurb", "dated",
+        ],
+    },
+    "value": {
+        "pos": [
+            "good value", "great value", "excellent value",
+            "worth every penny", "worth it", "reasonable",
+            "reasonably priced", "affordable", "bargain",
+            "generous portions", "huge portions", "good portions",
+            "fair price", "well priced", "cheap and cheerful",
+        ],
+        "neg": [
+            "overpriced", "expensive", "rip off", "rip-off",
+            "not worth", "poor value", "bad value", "daylight robbery",
+            "small portions", "tiny portions", "stingy",
+            "too expensive", "sky high prices", "extortionate",
+        ],
+    },
+    "wait_time": {
+        "pos": [
+            "quick", "prompt", "fast", "no wait", "didn't wait long",
+            "seated immediately", "efficient", "speedy",
+            "food came quickly", "food arrived quickly",
+        ],
+        "neg": [
+            "long wait", "waited over an hour", "waited 45 minutes",
+            "waited forever", "slow", "took ages", "took so long",
+            "still waiting", "had to chase", "forgot our order",
+            "wrong order", "waited 30 minutes", "waited an hour",
+        ],
+    },
+}
+
+
+def score_aspect(texts, aspect_name):
     """
-    Analyze a single review text for sentiment signals.
-    Returns dict with red_flags, positives, negatives found.
+    Score a single aspect from 0-10 based on keyword matches.
+    Returns (score, pos_count, neg_count) or (None, 0, 0) if no mentions.
     """
-    text_lower = text.lower()
-    found_red = []
-    found_pos = []
-    found_neg = []
+    keywords = ASPECT_KEYWORDS.get(aspect_name)
+    if not keywords:
+        return None, 0, 0
 
-    for phrase in RED_FLAGS:
-        if phrase in text_lower:
-            found_red.append(phrase)
+    pos_count = 0
+    neg_count = 0
 
-    for phrase in POSITIVE_PHRASES:
-        if phrase in text_lower:
-            found_pos.append(phrase)
+    for text in texts:
+        t = text.lower()
+        for kw in keywords["pos"]:
+            if kw in t:
+                pos_count += 1
+        for kw in keywords["neg"]:
+            if kw in t:
+                neg_count += 1
 
-    for phrase in NEGATIVES:
-        if phrase in text_lower:
-            found_neg.append(phrase)
+    total = pos_count + neg_count
+    if total == 0:
+        return None, 0, 0
 
-    return {
-        "red_flags": found_red,
-        "positives": found_pos,
-        "negatives": found_neg,
-    }
+    # Score: ratio of positive to total, scaled to 0-10
+    raw = pos_count / total  # 0-1
+    score = round(raw * 10, 1)
+    return score, pos_count, neg_count
 
 
-def compute_sentiment_score(reviews):
-    """
-    Compute a sentiment score (0.0-1.0) from a list of review dicts.
-
-    Each review should have 'text' and optionally 'rating'.
-
-    Score formula:
-        base = 0.5 (neutral)
-        + 0.05 per positive phrase found (across all reviews)
-        - 0.08 per negative phrase found
-        - 0.15 per red flag found
-        Clamped to [0.0, 1.0]
-
-    Also returns red_flag_count and warning flag.
-    """
-    if not reviews:
-        return None
-
+def compute_overall_sentiment(texts):
+    """Compute overall sentiment 0-1 from review texts."""
     total_pos = 0
     total_neg = 0
     total_red = 0
-    all_red_flags = []
-    all_positives = []
+    red_list = []
 
-    for rev in reviews:
-        text = rev.get("text", "")
-        if not text:
-            continue
+    for text in texts:
+        t = text.lower()
+        for p in RED_FLAGS:
+            if p in t:
+                total_red += 1
+                red_list.append(p)
+        for p in POSITIVES:
+            if p in t:
+                total_pos += 1
+        for p in NEGATIVES:
+            if p in t:
+                total_neg += 1
 
-        result = analyze_review_text(text)
-        total_pos += len(result["positives"])
-        total_neg += len(result["negatives"])
-        total_red += len(result["red_flags"])
-        all_red_flags.extend(result["red_flags"])
-        all_positives.extend(result["positives"])
-
-    # Compute score
-    score = 0.5
-    score += total_pos * 0.05
-    score -= total_neg * 0.08
-    score -= total_red * 0.15
+    score = 0.5 + total_pos * 0.05 - total_neg * 0.08 - total_red * 0.15
     score = max(0.0, min(1.0, score))
 
     return {
@@ -146,43 +202,48 @@ def compute_sentiment_score(reviews):
         "positive_count": total_pos,
         "negative_count": total_neg,
         "red_flag_count": total_red,
-        "red_flags": list(set(all_red_flags)),
-        "positives_sample": list(set(all_positives))[:5],
+        "red_flags": list(set(red_list)),
         "warning": total_red >= 2,
-        "reviews_analyzed": len([r for r in reviews if r.get("text")]),
     }
 
 
-def process_establishments(est_path):
+def analyze_establishment(record):
     """
-    Process all establishments and compute sentiment scores.
-    Returns dict of {key: sentiment_result}.
+    Full analysis: overall sentiment + 5 aspect scores.
+    Combines Google reviews (g_reviews) and TripAdvisor reviews (ta_reviews).
     """
-    with open(est_path, "r", encoding="utf-8") as f:
-        establishments = json.load(f)
+    texts = []
+    for rev in record.get("g_reviews", []):
+        t = rev.get("text", "")
+        if t:
+            texts.append(t)
+    for rev in record.get("ta_reviews", []):
+        t = rev.get("text", "")
+        if t:
+            texts.append(t)
 
-    results = {}
-    warnings = 0
+    if not texts:
+        return None
 
-    for key, record in establishments.items():
-        reviews = record.get("g_reviews", [])
-        if not reviews:
-            continue
+    result = compute_overall_sentiment(texts)
+    result["reviews_analyzed"] = len(texts)
 
-        sentiment = compute_sentiment_score(reviews)
-        if sentiment:
-            results[key] = sentiment
-            name = record.get("n", "Unknown")
-            if sentiment["warning"]:
-                warnings += 1
-                flags = ", ".join(sentiment["red_flags"][:3])
-                print(f"  WARNING: {name} — {sentiment['red_flag_count']} red flags: {flags}")
+    # Aspect scores
+    aspects = {}
+    for aspect in ["food_quality", "service_quality", "ambience", "value", "wait_time"]:
+        score, pos, neg = score_aspect(texts, aspect)
+        if score is not None:
+            aspects[aspect] = {
+                "score": score,
+                "positive_mentions": pos,
+                "negative_mentions": neg,
+            }
 
-    return results, warnings
+    result["aspects"] = aspects
+    return result
 
 
 def main():
-    # Try establishments first (has merged reviews), fall back to enrichment
     est_path = os.path.join(REPO_ROOT, "stratford_establishments.json")
     output_path = os.path.join(REPO_ROOT, "stratford_sentiment.json")
 
@@ -190,17 +251,41 @@ def main():
         print(f"ERROR: {est_path} not found")
         sys.exit(1)
 
-    print("Analyzing review sentiment...")
-    results, warning_count = process_establishments(est_path)
+    with open(est_path, "r", encoding="utf-8") as f:
+        establishments = json.load(f)
+
+    print("Analyzing review sentiment (aspect-based)...")
+    results = {}
+    warnings = 0
+
+    for key, record in establishments.items():
+        analysis = analyze_establishment(record)
+        if analysis:
+            results[key] = analysis
+            name = record.get("n", "Unknown")
+            if analysis["warning"]:
+                warnings += 1
+                flags = ", ".join(analysis["red_flags"][:3])
+                print(f"  WARNING: {name} — {analysis['red_flag_count']} red flags: {flags}")
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 
     analyzed = len(results)
-    avg_score = sum(r["sentiment_score"] for r in results.values()) / analyzed if analyzed else 0
+    avg = sum(r["sentiment_score"] for r in results.values()) / analyzed if analyzed else 0
+
+    # Aspect coverage
+    aspect_counts = {}
+    for r in results.values():
+        for a in r.get("aspects", {}):
+            aspect_counts[a] = aspect_counts.get(a, 0) + 1
+
     print(f"\nDone. Analyzed: {analyzed} establishments")
-    print(f"  Average sentiment: {avg_score:.3f}")
-    print(f"  Warnings (2+ red flags): {warning_count}")
+    print(f"  Overall sentiment avg: {avg:.3f}")
+    print(f"  Warnings: {warnings}")
+    print(f"  Aspect coverage:")
+    for a, c in sorted(aspect_counts.items()):
+        print(f"    {a}: {c}/{analyzed}")
     print(f"Saved to {output_path}")
 
 
