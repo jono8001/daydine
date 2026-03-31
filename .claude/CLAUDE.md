@@ -102,6 +102,13 @@ Each ranked restaurant gets a confidence level based on signal coverage:
 
 ### Data Collection Plan (remaining 30 signals)
 
+**Tier 1+ — FSA Augmentation**
+- Script: `.github/scripts/augment_fsa_stratford.py`
+- FSA LA ID for Stratford-on-Avon: **320** (not 197 which is Aberdeen)
+- Fetches ALL food business types (1, 7, 14, 7843) not just Restaurant/Cafe/Canteen
+- Known-restaurants list ensures important establishments (The Vintner, Dirty Duck, etc.) are never missed
+- Action needed: Trigger full pipeline workflow to augment dataset
+
 **Tier 2 — Google Places API (New)**
 - Script: `.github/scripts/enrich_google_stratford.py`
 - Fields: `gr` (rating), `grc` (review count), `gpl` (price level), `gpc` (photo count), `gty` (types)

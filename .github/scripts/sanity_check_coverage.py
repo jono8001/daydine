@@ -194,7 +194,28 @@ def main():
             "top rated restaurants Stratford-upon-Avon",
             "fine dining Stratford-upon-Avon",
             "wine bar Stratford-upon-Avon",
+            "pub food Stratford-upon-Avon",
+            "cafe Stratford-upon-Avon",
+            "Indian restaurant Stratford-upon-Avon",
+            "Italian restaurant Stratford-upon-Avon",
+            "Chinese restaurant Stratford-upon-Avon",
+            "takeaway Stratford-upon-Avon",
+            "brunch Stratford-upon-Avon",
         ]
+
+        # Also search for specific known restaurants that should be in data
+        known_names = [
+            "The Vintner Stratford-upon-Avon",
+            "The Dirty Duck Stratford-upon-Avon",
+            "Baraset Barn Stratford-upon-Avon",
+            "The Rooftop Restaurant RSC Stratford",
+            "Boston Tea Party Stratford-upon-Avon",
+            "Osteria Da Gino Stratford-upon-Avon",
+            "Grace & Savour Stratford-upon-Avon",
+            "The Golden Bee Wetherspoon Stratford",
+            "Caffeine & Machine Stratford",
+        ]
+        queries.extend(known_names)
 
         all_external = {}
         for query in queries:

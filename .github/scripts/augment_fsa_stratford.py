@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 """
-augment_fsa_stratford.py — Fetch additional Stratford establishments from FSA API.
+augment_fsa_stratford.py — Augment Stratford data with ALL FSA establishments.
 
-The Firebase RTDB only has BusinessTypeId=1 (Restaurant/Cafe/Canteen).
-This script fetches types 7 (Pub/bar/nightclub) and 14 (Takeaway/sandwich shop)
-from the FSA API and merges them into stratford_establishments.json.
+The Firebase RTDB only has a subset of FSA-registered establishments.
+This script fetches ALL food-related business types from the FSA API
+for Stratford-on-Avon district and merges any missing records.
 
-This catches missing venues like wine bars, pubs with food, and takeaways.
+Also checks a list of known important restaurants to ensure they're
+included.
+
+FSA LA ID for Stratford-on-Avon: 320
 """
 
 import json
@@ -18,14 +21,44 @@ import requests
 FSA_URL = "https://api.ratings.food.gov.uk/Establishments"
 FSA_HEADERS = {"x-api-version": "2", "accept": "application/json"}
 
-# Stratford-on-Avon District Council
-LA_ID = 197
+# CORRECT FSA local authority ID for Stratford-on-Avon District Council
+LA_ID = 320
 
-# Business types to fetch (not already in Firebase)
-EXTRA_TYPES = [
+# All food-related business types in the FSA system
+FOOD_TYPES = [
+    (1, "Restaurant/Cafe/Canteen"),
     (7, "Pub/bar/nightclub"),
     (14, "Takeaway/sandwich shop"),
+    (7843, "Hotel/B&B/Guest House"),
 ]
+
+# Known important restaurants that MUST be in the dataset
+# If they're still missing after the FSA fetch, flag them
+KNOWN_RESTAURANTS = [
+    {"fhrsid": "503480", "name": "The Vintner", "postcode": "CV37 6EF"},
+    {"fhrsid": None, "name": "The Dirty Duck", "postcode": "CV37 6BA"},
+    {"fhrsid": None, "name": "The Rooftop Restaurant", "postcode": "CV37 6BB"},
+    {"fhrsid": None, "name": "The Golden Bee", "postcode": "CV37 6QW"},
+    {"fhrsid": None, "name": "Baraset Barn", "postcode": "CV35 9AA"},
+    {"fhrsid": None, "name": "Boston Tea Party", "postcode": "CV37 6HJ"},
+    {"fhrsid": None, "name": "Osteria Da Gino", "postcode": "CV37 6HJ"},
+    {"fhrsid": None, "name": "Grace & Savour", "postcode": "CV37 6BA"},
+]
+
+
+def fetch_fsa_all(la_id):
+    """Fetch ALL establishments for the LA from FSA API (no type filter)."""
+    params = {
+        "localAuthorityId": la_id,
+        "pageSize": 0,  # 0 = return all
+    }
+    print(f"Fetching ALL FSA establishments for LA ID {la_id}...")
+    resp = requests.get(FSA_URL, params=params, headers=FSA_HEADERS, timeout=60)
+    resp.raise_for_status()
+    data = resp.json()
+    establishments = data.get("establishments", [])
+    print(f"  FSA API returned {len(establishments)} total establishments")
+    return establishments
 
 
 def fetch_fsa_type(la_id, business_type_id, type_name):
@@ -35,12 +68,12 @@ def fetch_fsa_type(la_id, business_type_id, type_name):
         "BusinessTypeId": business_type_id,
         "pageSize": 0,
     }
-    print(f"Fetching FSA type {business_type_id} ({type_name})...")
+    print(f"  Fetching type {business_type_id} ({type_name})...")
     resp = requests.get(FSA_URL, params=params, headers=FSA_HEADERS, timeout=60)
     resp.raise_for_status()
     data = resp.json()
     establishments = data.get("establishments", [])
-    print(f"  Found {len(establishments)} establishments")
+    print(f"    Found {len(establishments)}")
     return establishments
 
 
@@ -86,13 +119,18 @@ def convert_to_firebase_format(fsa_record):
         except (ValueError, TypeError):
             sm = None
 
+    # Build address string
+    addr_parts = [
+        fsa_record.get("AddressLine1", ""),
+        fsa_record.get("AddressLine2", ""),
+        fsa_record.get("AddressLine3", ""),
+        fsa_record.get("AddressLine4", ""),
+    ]
+    address = ", ".join(p for p in addr_parts if p)
+
     return {
         "n": fsa_record.get("BusinessName", ""),
-        "a": ", ".join(filter(None, [
-            fsa_record.get("AddressLine1", ""),
-            fsa_record.get("AddressLine2", ""),
-            fsa_record.get("AddressLine3", ""),
-        ])),
+        "a": address,
         "pc": fsa_record.get("PostCode", ""),
         "la": "Stratford-on-Avon",
         "r": rv,
@@ -118,26 +156,89 @@ def main():
         establishments = json.load(f)
 
     existing_ids = {str(v.get("id", k)) for k, v in establishments.items()}
-    print(f"Existing: {len(establishments)} establishments ({len(existing_ids)} unique IDs)")
+    existing_ids.update(establishments.keys())
+    print(f"Existing: {len(establishments)} establishments ({len(existing_ids)} tracked IDs)")
 
+    # Remove bad augment data (wrong LA — check for non-Stratford postcodes)
+    bad_keys = []
+    for k, v in establishments.items():
+        pc = v.get("pc", "")
+        # Stratford-on-Avon postcodes: CV37, CV35, CV36, CV47, B49, B50, B80, B94, B95
+        stratford_prefixes = ("CV3", "CV4", "B49", "B50", "B80", "B94", "B95")
+        if v.get("t") is None and pc and not pc.startswith(stratford_prefixes):
+            bad_keys.append(k)
+
+    if bad_keys:
+        print(f"Removing {len(bad_keys)} incorrectly augmented records (wrong LA)")
+        for k in bad_keys:
+            del establishments[k]
+
+    # Fetch all food-related types from FSA
     added = 0
-    for type_id, type_name in EXTRA_TYPES:
+    for type_id, type_name in FOOD_TYPES:
         fsa_records = fetch_fsa_type(LA_ID, type_id, type_name)
         for fsa_rec in fsa_records:
             fhrsid = str(fsa_rec.get("FHRSID", ""))
             if fhrsid in existing_ids:
-                continue  # Already in dataset
+                continue
 
             record = convert_to_firebase_format(fsa_rec)
             establishments[fhrsid] = record
             existing_ids.add(fhrsid)
             added += 1
-            print(f"  + {record['n']} ({record['pc']}) [type {type_id}]")
+            print(f"    + {record['n']} ({record['pc']}) [type {type_id}]")
+
+    # Check known important restaurants
+    print(f"\nChecking {len(KNOWN_RESTAURANTS)} known important restaurants...")
+    still_missing = []
+    for known in KNOWN_RESTAURANTS:
+        found = False
+        name_lower = known["name"].lower()
+
+        # Check by FHRSID
+        if known.get("fhrsid") and known["fhrsid"] in existing_ids:
+            found = True
+
+        # Check by name
+        if not found:
+            for v in establishments.values():
+                if name_lower in v.get("n", "").lower():
+                    found = True
+                    break
+
+        if not found:
+            still_missing.append(known)
+            print(f"  STILL MISSING: {known['name']} ({known['postcode']})")
+        else:
+            print(f"  OK: {known['name']}")
+
+    # For still-missing known restaurants, try fetching by FHRSID directly
+    for known in still_missing:
+        fhrsid = known.get("fhrsid")
+        if not fhrsid:
+            continue
+        try:
+            url = f"https://api.ratings.food.gov.uk/Establishments/{fhrsid}"
+            resp = requests.get(url, headers=FSA_HEADERS, timeout=15)
+            if resp.status_code == 200:
+                fsa_rec = resp.json()
+                record = convert_to_firebase_format(fsa_rec)
+                establishments[fhrsid] = record
+                existing_ids.add(fhrsid)
+                added += 1
+                print(f"  ADDED by FHRSID: {record['n']} ({record['pc']})")
+        except requests.RequestException as e:
+            print(f"  Error fetching FHRSID {fhrsid}: {e}")
 
     with open(est_path, "w", encoding="utf-8") as f:
         json.dump(establishments, f, indent=2, ensure_ascii=False)
 
-    print(f"\nAdded {added} new establishments. Total: {len(establishments)}")
+    print(f"\nAdded {added} new establishments. Removed {len(bad_keys)} bad records.")
+    print(f"Total: {len(establishments)}")
+
+    # Final check
+    vintner = any("vintner" in v.get("n", "").lower() for v in establishments.values())
+    print(f"Vintner present: {vintner}")
 
 
 if __name__ == "__main__":

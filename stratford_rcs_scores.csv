@@ -166,65 +166,35 @@ rank,fhrsid,business_name,postcode,category,category_source,is_food,confidence,c
 165,565220,Four Teas,CV37 6EF,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.4,9.048,,10.0,7.143,0.0,6.912,7.376,Good,17,35
 166,503319,Shipston Pizza And Kebab House,CV36 4AL,Fast Food / Quick Service,google_types,True,Medium,0.5,5.9,7.728,,10.0,10.0,0.0,5.255,7.343,Good,16,35
 167,1790270,Bardia's,CV37 6EE,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.605,9.178,,10.0,7.143,0.0,4.88,7.342,Good,16,35
-168,622169,CFINE - COMMUNITY FOOD INITIATIVES NORTH EAST,AB11 5RW,Food & Drink,google_types,True,Low,0.8,,6.848,,10.0,10.0,0.0,3.868,7.341,Good,10,35
-169,1838728,Elders Who Lunch (Hartley Locums),CV47 8LS,Other,unclassified,True,Medium,0.5,8.5,6.899,,10.0,,0.0,4.267,7.34,Good,14,35
-170,1253300,The Keys,CV37 6LW,Pub / Bar,google_types,True,Medium,0.5,7.38,8.369,,,10.0,0.0,3.952,7.332,Good,15,35
-171,504050,Bishops Bowls Lake Cafe,CV47 2SR,Cafe / Coffee Shop,name_match,True,Medium,0.5,5.9,8.693,,10.0,,0.0,5.362,7.316,Good,14,35
-172,503342,Burger King - Northbound,CV35 0AA,American / Grill,google_types,True,Medium,0.5,10.0,5.536,,10.0,7.143,0.0,5.048,7.313,Good,17,35
-173,1291217,Gardener's Retreat,CV35 9ER,Restaurant (General),google_types,True,Medium,0.5,7.65,6.635,,10.0,10.0,0.0,2.421,7.262,Good,15,35
-174,1826837,Cafe Chutneys,CV37 0AX,Indian Restaurant,google_types,True,Medium,0.5,5.9,8.251,,10.0,7.143,0.0,5.639,7.174,Good,17,35
-175,502962,Curry Republic,B95 5AA,Indian Restaurant,google_types,True,Medium,0.5,5.4,7.905,,10.0,8.571,0.0,5.909,7.136,Good,18,35
-176,1752431,ANN'C,AB24 3NU,Food & Drink,google_types,True,Low,0.8,,6.422,,10.0,10.0,0.0,2.774,7.074,Good,10,35
-177,1421980,Tzatziki34,CV37 6AB,Mediterranean Restaurant,google_types,True,Medium,0.5,7.2,8.505,,,7.143,0.0,6.254,7.067,Good,15,35
-178,1354963,The Tea Shed,CV47 8LT,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.075,7.173,,,10.0,0.0,3.512,7.052,Good,14,35
-179,1690228,Compton Verney Cafe,CV35 9HZ,Restaurant (General),google_types,True,Low,0.8,8.5,7.333,,10.0,,0.0,8.0,6.986,Good,10,35
-180,1898715,GOURMET BOUTIQUE,AB10 1LG,Food & Drink,google_types,True,Low,0.8,,8.937,,10.0,10.0,0.0,3.591,6.961,Good,10,35
-181,1411434,Earlswood Lunch Club,B94 6BZ,Catering,name_match,True,Low,0.8,8.55,7.69,,,,0.0,3.868,6.956,Good,13,35
-182,650308,New Summer Palace Restaurant,B80 7DF,Chinese Restaurant,google_types,True,Medium,0.5,5.13,8.303,,10.0,7.143,0.0,4.97,6.955,Good,17,35
-183,1806783,ONE SEEDPOD,AB21 9TT,Food & Drink,google_types,True,Low,0.8,,5.895,,10.0,10.0,0.0,3.4,6.906,Good,10,35
-184,1622082,The Crofts Cafe Also Trading As New York Pizzas,CV37 6PH,American / Grill,google_types,True,Low,0.8,8.5,10.0,,,3.333,0.0,8.0,6.831,Good,9,35
-185,1826838,Mouchak,B50 4BG,Indian Restaurant,google_types,True,Medium,0.5,5.4,7.728,,10.0,7.143,0.0,4.346,6.804,Good,16,35
-186,1622074,Lexi's Loving Spoonful,CV47 2QZ,Other,unclassified,True,Low,0.8,9.025,6.924,,,,0.0,3.207,6.721,Good,13,35
-187,1705603,Escape Arts,CV37 6EE,Other,unclassified,True,Medium,0.5,8.1,5.895,,10.0,,0.0,1.6,6.677,Good,14,35
-188,503555,Dog Lane Fishery Caravanning And Camping Site,CV47 8LT,Hotel / Accommodation,google_types,True,Medium,0.5,7.65,9.033,,10.0,,0.0,3.855,6.656,Good,14,35
-189,622083,FLIGHTCARE MULTISERVICES LUK LTD,AB21 7DU,Other,unclassified,True,Low,0.8,,8.526,,10.0,,0.0,4.581,6.563,Good,9,35
-190,1226508,DUNNS FOOD AND DRINK,AB12 3LE,Cafe / Coffee Shop,google_types,True,Low,0.8,,7.716,,10.0,10.0,0.0,2.718,6.467,Generally Satisfactory,10,35
-191,622130,BOOKER CASH & CARRY,AB16 6HQ,Food & Drink,google_types,True,Low,0.8,,7.482,,10.0,10.0,0.0,3.152,6.415,Generally Satisfactory,10,35
-192,1533313,WINE AWAY THE HOURZ,AB21 9NY,Food & Drink,google_types,True,Low,0.8,,7.321,,10.0,10.0,0.0,2.741,6.329,Generally Satisfactory,10,35
-193,799319,INSTANT NEIGHBOUR,AB24 3YJ,Other,unclassified,True,Low,0.8,,8.144,,10.0,,0.0,3.542,6.312,Generally Satisfactory,9,35
-194,1912631,Shipston Bengal Cuisine,CV36 4PP,Indian Restaurant,google_types,True,Low,0.8,,7.908,,10.0,7.143,0.0,3.512,6.187,Generally Satisfactory,12,35
-195,1208662,DALZIEL LTD (STORAGE & DISTRIBUTION,AB21 7GA,Food & Drink,google_types,True,Low,0.8,,7.032,,10.0,10.0,0.0,2.034,6.176,Generally Satisfactory,9,35
-196,503270,Kings Court Hotel,B49 5QQ,Hotel / Accommodation,name_match,True,Low,0.8,9.025,6.667,,,,0.0,5.0,6.09,Generally Satisfactory,9,35
-197,1870859,DOLE LTD T/A MARK MURPHY LTD,AB12 3LE,Food & Drink,google_types,True,Low,0.8,,6.842,,10.0,10.0,0.0,1.6,6.078,Generally Satisfactory,10,35
-198,622114,THE STREAMLINE TERMINAL,AB11 5PU,Other,unclassified,True,Low,0.8,,7.171,,10.0,,0.0,3.248,5.874,Generally Satisfactory,9,35
-199,1800190,CAMEO Lunch Club,,Catering,name_match,True,Low,0.8,5.9,6.948,,,,0.0,4.582,5.72,Generally Satisfactory,13,35
-200,1911092,Coughton Court Cafe,B49 5JA,Cafe / Coffee Shop,google_types,True,Low,0.8,,7.488,,,10.0,0.0,2.612,5.672,Generally Satisfactory,9,35
-201,622151,EARLY BIRD CATERING LTD,AB22 8NT,Food & Drink,google_types,True,Low,0.8,,5.502,,10.0,10.0,0.0,2.034,5.635,Generally Satisfactory,9,35
-202,622137,CABER COFFEE,AB10 7JQ,Cafe / Coffee Shop,name_match,True,Low,0.8,,6.317,,10.0,,0.0,1.874,5.394,Generally Satisfactory,9,35
-203,622089,NORFOOD LTD,AB12 3LE,Other,unclassified,True,Low,0.8,,5.708,,10.0,,0.0,2.802,5.214,Generally Satisfactory,9,35
-204,622156,VEITCH MOIR [ABERDEEN] LTD,AB11 5AN,Food & Drink,google_types,True,Low,0.8,,6.527,,,10.0,0.0,1.874,5.148,Generally Satisfactory,9,35
-205,622179,STRACHANS LTD,AB12 3AX,Food & Drink,google_types,True,Low,0.8,,6.471,,,10.0,0.0,1.6,5.096,Generally Satisfactory,8,35
-206,622132,BOC LTD,AB23 8BU,Other,unclassified,True,Low,0.8,,5.266,,10.0,,0.0,2.421,4.994,Improvement Necessary,9,35
-207,622138,SIMS FRUIT,AB12 3HB,Food & Drink,google_types,True,Low,0.8,,2.587,,10.0,10.0,0.0,2.235,4.155,Improvement Necessary,9,35
-208,1342060,BCC VENDING,AB23 8JW,Other,unclassified,True,Low,0.8,,6.317,,,,0.0,1.874,4.063,Improvement Necessary,8,35
-209,502970,China Garden,CV37 6NL,Chinese Restaurant,google_types,True,Medium,0.5,4.1,7.115,,10.0,7.143,0.0,5.972,4.0,Improvement Necessary,17,35
-210,503216,Welcombe Hotel Golf Resort \& Spa,CV37 0NR,Hotel / Accommodation,google_types,True,Medium,0.5,4.1,8.947,,10.0,10.0,0.0,6.858,3.999,Improvement Necessary,15,35
-211,1452414,Subway,CV37 0HZ,Fast Food / Quick Service,google_types,True,Medium,0.5,4.6,7.484,,10.0,10.0,0.0,6.189,3.998,Improvement Necessary,17,35
-212,503114,Mount Everest Nepalese Cuisine,B80 7NL,Restaurant (General),google_types,True,Medium,0.5,3.895,8.545,,10.0,10.0,0.0,4.747,3.997,Improvement Necessary,16,35
-213,979161,Karen's Korner,B80 7PD,Cafe / Coffee Shop,google_types,True,Medium,0.5,2.8,8.079,,,7.143,0.0,5.248,2.0,Major Improvement,16,35
-214,1800192,Havilands Tea Room And Restaurant,CV37 6QB,Cafe / Coffee Shop,google_types,True,Medium,0.5,1.8,8.255,,,7.143,0.0,5.62,1.999,Major Improvement,15,35
-215,622085,K N DRINKS LOGISTICS,AB12 3QY,Other,unclassified,True,Low,0.8,,1.684,,,,0.0,1.6,1.095,Urgent Improvement,8,35
+168,1838728,Elders Who Lunch (Hartley Locums),CV47 8LS,Other,unclassified,True,Medium,0.5,8.5,6.899,,10.0,,0.0,4.267,7.34,Good,14,35
+169,1253300,The Keys,CV37 6LW,Pub / Bar,google_types,True,Medium,0.5,7.38,8.369,,,10.0,0.0,3.952,7.332,Good,15,35
+170,504050,Bishops Bowls Lake Cafe,CV47 2SR,Cafe / Coffee Shop,name_match,True,Medium,0.5,5.9,8.693,,10.0,,0.0,5.362,7.316,Good,14,35
+171,503342,Burger King - Northbound,CV35 0AA,American / Grill,google_types,True,Medium,0.5,10.0,5.536,,10.0,7.143,0.0,5.048,7.313,Good,17,35
+172,1291217,Gardener's Retreat,CV35 9ER,Restaurant (General),google_types,True,Medium,0.5,7.65,6.635,,10.0,10.0,0.0,2.421,7.262,Good,15,35
+173,1826837,Cafe Chutneys,CV37 0AX,Indian Restaurant,google_types,True,Medium,0.5,5.9,8.251,,10.0,7.143,0.0,5.639,7.174,Good,17,35
+174,502962,Curry Republic,B95 5AA,Indian Restaurant,google_types,True,Medium,0.5,5.4,7.905,,10.0,8.571,0.0,5.909,7.136,Good,18,35
+175,1421980,Tzatziki34,CV37 6AB,Mediterranean Restaurant,google_types,True,Medium,0.5,7.2,8.505,,,7.143,0.0,6.254,7.067,Good,15,35
+176,1354963,The Tea Shed,CV47 8LT,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.075,7.173,,,10.0,0.0,3.512,7.052,Good,14,35
+177,1690228,Compton Verney Cafe,CV35 9HZ,Restaurant (General),google_types,True,Low,0.8,8.5,7.333,,10.0,,0.0,8.0,6.986,Good,10,35
+178,1411434,Earlswood Lunch Club,B94 6BZ,Catering,name_match,True,Low,0.8,8.55,7.69,,,,0.0,3.868,6.956,Good,13,35
+179,650308,New Summer Palace Restaurant,B80 7DF,Chinese Restaurant,google_types,True,Medium,0.5,5.13,8.303,,10.0,7.143,0.0,4.97,6.955,Good,17,35
+180,1622082,The Crofts Cafe Also Trading As New York Pizzas,CV37 6PH,American / Grill,google_types,True,Low,0.8,8.5,10.0,,,3.333,0.0,8.0,6.831,Good,9,35
+181,1826838,Mouchak,B50 4BG,Indian Restaurant,google_types,True,Medium,0.5,5.4,7.728,,10.0,7.143,0.0,4.346,6.804,Good,16,35
+182,1622074,Lexi's Loving Spoonful,CV47 2QZ,Other,unclassified,True,Low,0.8,9.025,6.924,,,,0.0,3.207,6.721,Good,13,35
+183,1705603,Escape Arts,CV37 6EE,Other,unclassified,True,Medium,0.5,8.1,5.895,,10.0,,0.0,1.6,6.677,Good,14,35
+184,503555,Dog Lane Fishery Caravanning And Camping Site,CV47 8LT,Hotel / Accommodation,google_types,True,Medium,0.5,7.65,9.033,,10.0,,0.0,3.855,6.656,Good,14,35
+185,1912631,Shipston Bengal Cuisine,CV36 4PP,Indian Restaurant,google_types,True,Low,0.8,,7.908,,10.0,7.143,0.0,3.512,6.187,Generally Satisfactory,12,35
+186,503270,Kings Court Hotel,B49 5QQ,Hotel / Accommodation,name_match,True,Low,0.8,9.025,6.667,,,,0.0,5.0,6.09,Generally Satisfactory,9,35
+187,1800190,CAMEO Lunch Club,,Catering,name_match,True,Low,0.8,5.9,6.948,,,,0.0,4.582,5.72,Generally Satisfactory,13,35
+188,1911092,Coughton Court Cafe,B49 5JA,Cafe / Coffee Shop,google_types,True,Low,0.8,,7.488,,,10.0,0.0,2.612,5.672,Generally Satisfactory,9,35
+189,502970,China Garden,CV37 6NL,Chinese Restaurant,google_types,True,Medium,0.5,4.1,7.115,,10.0,7.143,0.0,5.972,4.0,Improvement Necessary,17,35
+190,503216,Welcombe Hotel Golf Resort \& Spa,CV37 0NR,Hotel / Accommodation,google_types,True,Medium,0.5,4.1,8.947,,10.0,10.0,0.0,6.858,3.999,Improvement Necessary,15,35
+191,1452414,Subway,CV37 0HZ,Fast Food / Quick Service,google_types,True,Medium,0.5,4.6,7.484,,10.0,10.0,0.0,6.189,3.998,Improvement Necessary,17,35
+192,503114,Mount Everest Nepalese Cuisine,B80 7NL,Restaurant (General),google_types,True,Medium,0.5,3.895,8.545,,10.0,10.0,0.0,4.747,3.997,Improvement Necessary,16,35
+193,979161,Karen's Korner,B80 7PD,Cafe / Coffee Shop,google_types,True,Medium,0.5,2.8,8.079,,,7.143,0.0,5.248,2.0,Major Improvement,16,35
+194,1800192,Havilands Tea Room And Restaurant,CV37 6QB,Cafe / Coffee Shop,google_types,True,Medium,0.5,1.8,8.255,,,7.143,0.0,5.62,1.999,Major Improvement,15,35
 ,1765854,The Roebuck Inn Alcester,B49 5QA,Pub / Bar,name_match,True,Insufficient,1.5,7.6,10.0,,,,0.0,5.0,6.987,Insufficient Data,5,35
 ,1774610,Digby's Events,CV47,Other,unclassified,True,Insufficient,1.5,9.5,,,,,0.0,5.0,6.45,Insufficient Data,7,35
-,622115,T.N.T.,AB12 3LY,Other,unclassified,True,Insufficient,1.5,,10.0,,,,0.0,2.0,5.683,Insufficient Data,3,35
-,1882116,BOLDROOT VENTURES LTD,AB11 8DR,Other,unclassified,True,Insufficient,1.5,,10.0,,,,0.0,2.0,5.683,Insufficient Data,3,35
-,1737674,FOOD SOURCE LTD,AB24 5SU,Other,unclassified,True,Insufficient,1.5,,10.0,,,,0.0,2.0,5.683,Insufficient Data,3,35
-,1220279,FOUR SEASONS FOODS ABERDEEN LTD,AB11 5BX,Other,unclassified,True,Insufficient,1.5,,10.0,,,,0.0,2.0,5.683,Insufficient Data,3,35
-,622157,BUTLERS SHIP STORES LTD,AB11 5PB,Other,unclassified,True,Insufficient,1.5,,6.471,,,,0.0,1.6,4.123,Insufficient Data,7,35
-,622149,PHOENIX HEALTHCARE DISTRIBUTION,AB12 3LE,Other,unclassified,True,Insufficient,1.5,,6.471,,,,0.0,1.6,4.123,Insufficient Data,7,35
-,622165,OSPREY VENDING SERVICES,AB21 0GU,Cafe / Coffee Shop,google_types,True,Insufficient,1.5,,4.0,,10.0,,0.0,2.0,3.978,Insufficient Data,5,35
-,622086,AAH PHARMACEUTICALS LTD,AB12 3LU,Other,unclassified,True,Insufficient,1.5,,2.119,,,,0.0,1.874,1.363,Insufficient Data,7,35
-,932673,BIG CUP COFFEE,AB12 3BN,Cafe / Coffee Shop,name_match,True,Insufficient,1.5,,,,,,0.0,2.0,0.765,Insufficient Data,2,35
 ,1721314,Aston Martin Lagonda,CV35 0DB,Other,unclassified,False,Medium,0.5,9.5,9.232,,10.0,,0.0,6.427,8.613,Not Ranked,14,35
 ,1584574,Stratford On Avon Golf Club,CV37 7BA,Other,unclassified,False,Medium,0.5,9.025,8.468,,10.0,,0.0,4.267,8.05,Not Ranked,14,35
 ,503141,NFU Mutual,CV37 7BJ,Other,unclassified,False,Medium,0.5,9.0,8.096,,10.0,,0.0,5.81,8.021,Not Ranked,14,35
