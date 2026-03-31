@@ -1,6 +1,6 @@
-# DayDine RCS Report — Stratford-upon-Avon
+# DayDine RCS Report - Stratford-upon-Avon
 
-*Generated: 31 March 2026 | Methodology: RCS V2 | Scale: 0.000–10.000*
+*Generated: 31 March 2026 | Methodology: RCS V2.1 | Scale: 0.000-10.000*
 
 ---
 
@@ -8,70 +8,77 @@
 
 | Metric | Value |
 |---|---|
-| Establishments scored | **208** |
+| Total establishments | **208** |
+| Ranked (food service verified) | **194** |
+| Excluded (non-food) | 12 |
+| Insufficient data | 2 |
 | Location | Stratford-upon-Avon district (Warwickshire) |
-| Methodology | RCS V2 — 35 signals, 7 weighted tiers |
-| Score scale | 0.000 – 10.000 (3 decimal places) |
-| Mean RCS | 7.87 |
-| Median RCS | 8.13 |
-| Std deviation | 1.03 |
+| Methodology | RCS V2.1 - 35 signals, 7 tiers (reweighted) |
+| Tier weights | FSA 20%, Google 25%, Online 20%, Ops 15%, Menu 10%, Rep 5%, Community 5% |
+| Score scale | 0.000 - 10.000 (3 decimal places) |
+| Mean RCS (ranked) | 7.86 |
+| Median RCS (ranked) | 8.11 |
+| Std deviation | 1.00 |
 | Signal coverage | 15.1 / 35 avg per record (43%) |
 | Tiers active | 6 / 7 |
-| Unique rankings | Yes — every score is numerically distinct |
+| Unique rankings | Yes - every ranked score is numerically distinct |
+| Confidence bands | High (+-0.3), Medium (+-0.5), Low (+-0.8) |
 
 ## 2. Top 10 Restaurants
 
-| Rank | Name | Postcode | Category | RCS | Band |
-|---:|---|---|---|---:|---|
-| 1 | Gilks' Garage Cafe | CV35 0JZ | Cafe / Coffee Shop | 9.054 | Excellent |
-| 2 | 11/17 Salt Beef Bar | CV37 6GJ | Restaurant (General) | 9.03 | Excellent |
-| 3 | Arrow Mill | B49 5NL | Pub / Bar | 9.011 | Excellent |
-| 4 | The Red Lion | CV37 6YW | Pub / Bar | 8.977 | Excellent |
-| 5 | Red Hot Mamma Pizzeria | CV37 6AU | Restaurant (General) | 8.946 | Excellent |
-| 6 | Shakespaw Cat Cafe | CV37 6QT | Cafe / Coffee Shop | 8.88 | Excellent |
-| 7 | Lithos Restaurant | B95 5BX | Restaurant (General) | 8.875 | Excellent |
-| 8 | The Fox Inn | CV35 9JS | Pub / Bar | 8.86 | Excellent |
-| 9 | Stratford Manor Hotel | CV37 0PY | Hotel / Accommodation | 8.839 | Excellent |
-| 10 | Espresso Barn | CV37 8RB | Cafe / Coffee Shop | 8.832 | Excellent |
+| Rank | Name | Postcode | Category | RCS | Confidence | Band |
+|---:|---|---|---|---:|---|---|
+| 1 | Gilks' Garage Cafe | CV35 0JZ | Cafe / Coffee Shop | 8.952 | Medium (+-0.5) | Excellent |
+| 2 | Red Hot Mamma Pizzeria | CV37 6AU | Restaurant (General) | 8.927 | Medium (+-0.5) | Excellent |
+| 3 | Arrow Mill | B49 5NL | Pub / Bar | 8.89 | Medium (+-0.5) | Excellent |
+| 4 | The Red Lion | CV37 6YW | Pub / Bar | 8.857 | Medium (+-0.5) | Excellent |
+| 5 | 11/17 Salt Beef Bar | CV37 6GJ | Restaurant (General) | 8.851 | Medium (+-0.5) | Excellent |
+| 6 | The Garden Cafe | B49 5PD | Food & Drink | 8.793 | Medium (+-0.5) | Excellent |
+| 7 | Shakespaw Cat Cafe | CV37 6QT | Cafe / Coffee Shop | 8.737 | Medium (+-0.5) | Excellent |
+| 8 | Ettington Park Hotel | CV37 8BU | Hotel / Accommodation | 8.735 | Medium (+-0.5) | Excellent |
+| 9 | Lithos Restaurant | B95 5BX | Restaurant (General) | 8.73 | Low (+-0.8) | Excellent |
+| 10 | The Fox Inn | CV35 9JS | Pub / Bar | 8.702 | Low (+-0.8) | Excellent |
 
-## 3. Bottom 10 Restaurants
+## 3. Bottom 10 Ranked Restaurants
 
-| Rank | Name | Postcode | Category | RCS | Band |
-|---:|---|---|---|---:|---|
-| 199 | Golden Putter Stratford Upon | CV37 7LS | Other | 6.315 | Generally Satisfactory |
-| 200 | Shipston Bengal Cuisine | CV36 4PP | Indian Restaurant | 6.138 | Generally Satisfactory |
-| 201 | CAMEO Lunch Club |  | Catering | 5.648 | Generally Satisfactory |
-| 202 | Coughton Court Cafe | B49 5JA | Cafe / Coffee Shop | 5.585 | Generally Satisfactory |
-| 203 | China Garden | CV37 6NL | Chinese Restaurant | 4.0 | Improvement Necessary |
-| 204 | Welcombe Hotel Golf Resort \& Spa | CV37 0NR | Hotel / Accommodation | 3.999 | Improvement Necessary |
-| 205 | Subway | CV37 0HZ | Fast Food / Quick Service | 3.998 | Improvement Necessary |
-| 206 | Mount Everest Nepalese Cuisine | B80 7NL | Restaurant (General) | 3.997 | Improvement Necessary |
-| 207 | Karen's Korner | B80 7PD | Cafe / Coffee Shop | 2.0 | Major Improvement |
-| 208 | Havilands Tea Room And Restaurant | CV37 6QB | Cafe / Coffee Shop | 1.999 | Major Improvement |
+| Rank | Name | Postcode | Category | RCS | Confidence | Band |
+|---:|---|---|---|---:|---|---|
+| 185 | Shipston Bengal Cuisine | CV36 4PP | Indian Restaurant | 6.187 | Low (+-0.8) | Generally Satisfactory |
+| 186 | Kings Court Hotel | B49 5QQ | Hotel / Accommodation | 6.09 | Low (+-0.8) | Generally Satisfactory |
+| 187 | CAMEO Lunch Club |  | Catering | 5.72 | Low (+-0.8) | Generally Satisfactory |
+| 188 | Coughton Court Cafe | B49 5JA | Cafe / Coffee Shop | 5.672 | Low (+-0.8) | Generally Satisfactory |
+| 189 | China Garden | CV37 6NL | Chinese Restaurant | 4.0 | Medium (+-0.5) | Improvement Necessary |
+| 190 | Welcombe Hotel Golf Resort \& Spa | CV37 0NR | Hotel / Accommodation | 3.999 | Medium (+-0.5) | Improvement Necessary |
+| 191 | Subway | CV37 0HZ | Fast Food / Quick Service | 3.998 | Medium (+-0.5) | Improvement Necessary |
+| 192 | Mount Everest Nepalese Cuisine | B80 7NL | Restaurant (General) | 3.997 | Medium (+-0.5) | Improvement Necessary |
+| 193 | Karen's Korner | B80 7PD | Cafe / Coffee Shop | 2.0 | Medium (+-0.5) | Major Improvement |
+| 194 | Havilands Tea Room And Restaurant | CV37 6QB | Cafe / Coffee Shop | 1.999 | Medium (+-0.5) | Major Improvement |
 
 ## 4. Rating Band Distribution
 
 | Band | RCS Range | Count | % |
 |---|---|---:|---:|
-| Excellent | 8.000–10.000 | 128 | 61.5% |
-| Good | 6.500–7.999 | 67 | 32.2% |
-| Generally Satisfactory | 5.000–6.499 | 7 | 3.4% |
-| Improvement Necessary | 3.500–4.999 | 4 | 1.9% |
-| Major Improvement | 2.000–3.499 | 2 | 1.0% |
-| Urgent Improvement | 0.000–1.999 | 0 | 0.0% |
-| **Total** | | **208** | |
+| Excellent | 8.000-10.000 | 115 | 59.3% |
+| Good | 6.500-7.999 | 69 | 35.6% |
+| Generally Satisfactory | 5.000-6.499 | 4 | 2.1% |
+| Improvement Necessary | 3.500-4.999 | 4 | 2.1% |
+| Major Improvement | 2.000-3.499 | 2 | 1.0% |
+| Urgent Improvement | 0.000-1.999 | 0 | 0.0% |
+| **Ranked Total** | | **194** | |
+| *Insufficient Data* | | *2* | |
+| *Not Ranked (non-food)* | | *12* | |
 
 ## 5. Signal Coverage by Tier
 
 | Tier | Weight | Records | Coverage | Status |
 |---|---:|---:|---:|---|
-| FSA (Tier 1) | 30% | 204 | 98% | Live — Firebase RTDB |
-| Google (Tier 2) | 20% | 207 | 100% | Live — Google Places API |
-| Online Presence (Tier 3) | 15% | 0 | 0% | Pending — TripAdvisor workflow ready |
-| Operational (Tier 4) | 15% | 172 | 83% | Inferred — from Google types + hours |
-| Menu & Offering (Tier 5) | 10% | 157 | 75% | Live — from Google types + menu scrape |
-| Reputation (Tier 6) | 5% | 208 | 100% | Live — Michelin/AA/editorial check |
-| Community (Tier 7) | 5% | 208 | 100% | Computed — from recency + reviews + presence |
+| FSA (Tier 1) | 20% | 204 | 98% | Live - Firebase RTDB |
+| Google (Tier 2) | 25% | 207 | 100% | Live - Google Places API |
+| Online Presence (Tier 3) | 20% | 0 | 0% | Pending - TripAdvisor workflow ready |
+| Operational (Tier 4) | 15% | 172 | 83% | Inferred - from Google types + hours |
+| Menu & Offering (Tier 5) | 10% | 157 | 75% | Live - Google types + menu scrape |
+| Reputation (Tier 6) | 5% | 208 | 100% | Live - Michelin/AA/editorial check |
+| Community (Tier 7) | 5% | 208 | 100% | Computed - recency + reviews + presence |
 
 **Average signals per establishment:** 15.1 / 35 (43%)
 
@@ -79,648 +86,563 @@
 
 ### American / Grill (9 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 25 | Miller And Carter | CV37 6EX | 8.646 | Excellent |
-| 2 | 55 | Beleza Rodizio | CV37 6EX | 8.418 | Excellent |
-| 3 | 80 | McDonald's | CV37 0AH | 8.286 | Excellent |
-| 4 | 120 | KFC - Southbound | CV35 0AA | 8.03 | Excellent |
-| 5 | 123 | McDonald's | CV37 6AB | 8.024 | Excellent |
-| 6 | 147 | Libertine Burger | CV37 6JP | 7.745 | Good |
-| 7 | 148 | Burger King - Northbound | CV35 0AA | 7.734 | Good |
-| 8 | 171 | WINGERS STRATFORD | CV37 0BF | 7.325 | Good |
-| 9 | 192 | The Crofts Cafe Also Trading As New York Pizzas | CV37 6PH | 6.793 | Good |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 17 | Miller And Carter | CV37 6EX | 8.642 | Medium (+-0.5) | Excellent |
+| 2 | 41 | Beleza Rodizio | CV37 6EX | 8.434 | Medium (+-0.5) | Excellent |
+| 3 | 94 | McDonald's | CV37 0AH | 8.125 | Medium (+-0.5) | Excellent |
+| 4 | 126 | McDonald's | CV37 6AB | 7.906 | Medium (+-0.5) | Good |
+| 5 | 131 | KFC - Southbound | CV35 0AA | 7.861 | Medium (+-0.5) | Good |
+| 6 | 137 | Libertine Burger | CV37 6JP | 7.757 | Medium (+-0.5) | Good |
+| 7 | 164 | WINGERS STRATFORD | CV37 0BF | 7.377 | Medium (+-0.5) | Good |
+| 8 | 171 | Burger King - Northbound | CV35 0AA | 7.313 | Medium (+-0.5) | Good |
+| 9 | 180 | The Crofts Cafe Also Trading As New York Pizzas | CV37 6PH | 6.831 | Low (+-0.8) | Good |
 
 ### Asian Restaurant (2 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 151 | Chopstix South | CV35 0AA | 7.65 | Good |
-| 2 | 158 | Four Seasons Pho Limited | CV37 6LF | 7.505 | Good |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 156 | Four Seasons Pho Limited | CV37 6LF | 7.546 | Medium (+-0.5) | Good |
+| 2 | 163 | Chopstix South | CV35 0AA | 7.447 | Medium (+-0.5) | Good |
 
 ### Bakery / Desserts (3 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 18 | Mor | CV37 6EX | 8.74 | Excellent |
-| 2 | 35 | International Circus Churros 2 | CV37 0RN | 8.581 | Excellent |
-| 3 | 59 | Greggs PLC | B49 6EH | 8.394 | Excellent |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 15 | Mor | CV37 6EX | 8.66 | Medium (+-0.5) | Excellent |
+| 2 | 24 | International Circus Churros 2 | CV37 0RN | 8.564 | Medium (+-0.5) | Excellent |
+| 3 | 99 | Greggs PLC | B49 6EH | 8.092 | Medium (+-0.5) | Excellent |
 
 ### British Restaurant (7 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 46 | Prospero Lounge | CV37 6AD | 8.499 | Excellent |
-| 2 | 65 | Deli Cafe | CV37 6QB | 8.368 | Excellent |
-| 3 | 66 | The Kings Head | CV35 9LT | 8.365 | Excellent |
-| 4 | 67 | Lambs | CV37 6EF | 8.358 | Excellent |
-| 5 | 93 | Barnabys | CV37 6BA | 8.198 | Excellent |
-| 6 | 94 | Loxleys Restaurant And Wine Bar | CV37 6EF | 8.186 | Excellent |
-| 7 | 104 | The George Hotel | CV36 4AJ | 8.13 | Excellent |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 40 | Prospero Lounge | CV37 6AD | 8.453 | Medium (+-0.5) | Excellent |
+| 2 | 57 | Lambs | CV37 6EF | 8.333 | Medium (+-0.5) | Excellent |
+| 3 | 66 | The Kings Head | CV35 9LT | 8.254 | Medium (+-0.5) | Excellent |
+| 4 | 69 | Deli Cafe | CV37 6QB | 8.242 | Medium (+-0.5) | Excellent |
+| 5 | 73 | Loxleys Restaurant And Wine Bar | CV37 6EF | 8.213 | Medium (+-0.5) | Excellent |
+| 6 | 91 | The George Hotel | CV36 4AJ | 8.141 | Medium (+-0.5) | Excellent |
+| 7 | 96 | Barnabys | CV37 6BA | 8.121 | Medium (+-0.5) | Excellent |
 
 ### Cafe / Coffee Shop (53 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 1 | Gilks' Garage Cafe | CV35 0JZ | 9.054 | Excellent |
-| 2 | 6 | Shakespaw Cat Cafe | CV37 6QT | 8.88 | Excellent |
-| 3 | 10 | Espresso Barn | CV37 8RB | 8.832 | Excellent |
-| 4 | 11 | Costa | CV37 0HZ | 8.831 | Excellent |
-| 5 | 13 | Nel's At The Pavilion | CV35 0AD | 8.768 | Excellent |
-| 6 | 14 | Ettington Garden Cafe | CV37 7TB | 8.767 | Excellent |
-| 7 | 24 | No 37 Cafe | CV37 6EE | 8.672 | Excellent |
-| 8 | 26 | Cotswold Cafe |  | 8.644 | Excellent |
-| 9 | 28 | Feel Good Crystals | CV36 5LE | 8.634 | Excellent |
-| 10 | 29 | Chapter 23 | B49 5AF | 8.627 | Excellent |
-| 11 | 30 | Costa | B95 5DA | 8.622 | Excellent |
-| 12 | 32 | Cotswold Distillery Cafe | CV36 5HG | 8.603 | Excellent |
-| 13 | 38 | Puddleduck Cafe Ltd | CV47 1AJ | 8.568 | Excellent |
-| 14 | 47 | Lounge@26 | B49 5AB | 8.479 | Excellent |
-| 15 | 48 | Revs Automobilia | GL56 9RE | 8.477 | Excellent |
-| 16 | 51 | Bidford Community Fridge & Cafe | B50 4QB | 8.446 | Excellent |
-| 17 | 52 | Ferment And Flour (Bastardos) | CV36 4PP | 8.436 | Excellent |
-| 18 | 54 | Costa Coffee | B49 6PQ | 8.419 | Excellent |
-| 19 | 61 | Cafe 86B | B95 5BY | 8.392 | Excellent |
-| 20 | 63 | Henley Ice Cream Limited | B95 5BS | 8.387 | Excellent |
-| 21 | 69 | Coffee Clouds | CV37 6GJ | 8.347 | Excellent |
-| 22 | 70 | Mr Odie's | CV37 6QT | 8.338 | Excellent |
-| 23 | 73 | Annie's Cafe & Event Catering | B49 5QF | 8.323 | Excellent |
-| 24 | 75 | Building 523 Costa And Kitchen | CV35 0RR | 8.319 | Excellent |
-| 25 | 76 | South Costa | CV35 0RR | 8.318 | Excellent |
-| 26 | 83 | Southam Gateway Coffee Shop Ltd | CV47 0EP | 8.27 | Excellent |
-| 27 | 88 | Costa Coffee | CV37 6PT | 8.229 | Excellent |
-| 28 | 90 | Harbury Library Cafe | CV33 9HW | 8.212 | Excellent |
-| 29 | 97 | Starbucks -  Southbound | CV35 0AA | 8.173 | Excellent |
-| 30 | 103 | George's Cafe | B50 4JF | 8.132 | Excellent |
-| 31 | 112 | Cafe 16 | CV47 0HF | 8.109 | Excellent |
-| 32 | 114 | The Pavilion Coffee Shop And Community Space | CV37 8YE | 8.082 | Excellent |
-| 33 | 115 | Dec X Canteen | CV35 0RR | 8.081 | Excellent |
-| 34 | 116 | Blue Bean Coffee Shop | CV36 4AF | 8.078 | Excellent |
-| 35 | 119 | Costa Coffee | CV37 8LU | 8.056 | Excellent |
-| 36 | 127 | Caffe Nero | CV37 6AN | 8.003 | Excellent |
-| 37 | 129 | The Straw Kitchen | CV36 5PG | 7.982 | Good |
-| 38 | 133 | Nanas Caff | CV37 9NQ | 7.92 | Good |
-| 39 | 134 | The Garden Shed Cafe | CV35 9NZ | 7.909 | Good |
-| 40 | 136 | Coffee#1 Limited | CV37 6EY | 7.879 | Good |
-| 41 | 139 | JNB Cafe | CV37 0ER | 7.84 | Good |
-| 42 | 164 | Touchdown Cafe | CV35 9EU | 7.422 | Good |
-| 43 | 167 | Hudson's | CV37 9ST | 7.359 | Good |
-| 44 | 170 | The Cowshed Cafe | B95 6BY | 7.328 | Good |
-| 45 | 172 | Hobsons Patisseries | CV37 6PT | 7.298 | Good |
-| 46 | 176 | Cafe Living | CV37 0HZ | 7.223 | Good |
-| 47 | 177 | The Tea Shed | CV47 8LT | 7.189 | Good |
-| 48 | 183 | Four Teas | CV37 6EF | 7.046 | Good |
-| 49 | 184 | Bishops Bowls Lake Cafe | CV47 2SR | 7.036 | Good |
-| 50 | 185 | Bardia's | CV37 6EE | 7.03 | Good |
-| 51 | 202 | Coughton Court Cafe | B49 5JA | 5.585 | Generally Satisfactory |
-| 52 | 207 | Karen's Korner | B80 7PD | 2.0 | Major Improvement |
-| 53 | 208 | Havilands Tea Room And Restaurant | CV37 6QB | 1.999 | Major Improvement |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 1 | Gilks' Garage Cafe | CV35 0JZ | 8.952 | Medium (+-0.5) | Excellent |
+| 2 | 7 | Shakespaw Cat Cafe | CV37 6QT | 8.737 | Medium (+-0.5) | Excellent |
+| 3 | 12 | Espresso Barn | CV37 8RB | 8.689 | Medium (+-0.5) | Excellent |
+| 4 | 13 | Nel's At The Pavilion | CV35 0AD | 8.685 | Medium (+-0.5) | Excellent |
+| 5 | 16 | Costa | CV37 0HZ | 8.659 | Medium (+-0.5) | Excellent |
+| 6 | 19 | Cotswold Distillery Cafe | CV36 5HG | 8.635 | Medium (+-0.5) | Excellent |
+| 7 | 21 | Ettington Garden Cafe | CV37 7TB | 8.596 | Medium (+-0.5) | Excellent |
+| 8 | 26 | No 37 Cafe | CV37 6EE | 8.558 | Medium (+-0.5) | Excellent |
+| 9 | 28 | Feel Good Crystals | CV36 5LE | 8.541 | Medium (+-0.5) | Excellent |
+| 10 | 30 | Cotswold Cafe |  | 8.524 | Medium (+-0.5) | Excellent |
+| 11 | 32 | Chapter 23 | B49 5AF | 8.517 | Medium (+-0.5) | Excellent |
+| 12 | 35 | Costa | B95 5DA | 8.494 | Medium (+-0.5) | Excellent |
+| 13 | 44 | Revs Automobilia | GL56 9RE | 8.426 | Medium (+-0.5) | Excellent |
+| 14 | 46 | Bidford Community Fridge & Cafe | B50 4QB | 8.411 | Medium (+-0.5) | Excellent |
+| 15 | 47 | Henley Ice Cream Limited | B95 5BS | 8.405 | Medium (+-0.5) | Excellent |
+| 16 | 52 | Puddleduck Cafe Ltd | CV47 1AJ | 8.358 | Medium (+-0.5) | Excellent |
+| 17 | 53 | Mr Odie's | CV37 6QT | 8.353 | Medium (+-0.5) | Excellent |
+| 18 | 54 | Coffee Clouds | CV37 6GJ | 8.348 | Medium (+-0.5) | Excellent |
+| 19 | 59 | Lounge@26 | B49 5AB | 8.33 | Medium (+-0.5) | Excellent |
+| 20 | 60 | Cafe 86B | B95 5BY | 8.319 | Medium (+-0.5) | Excellent |
+| 21 | 74 | Building 523 Costa And Kitchen | CV35 0RR | 8.207 | Low (+-0.8) | Excellent |
+| 22 | 75 | South Costa | CV35 0RR | 8.206 | Low (+-0.8) | Excellent |
+| 23 | 80 | Harbury Library Cafe | CV33 9HW | 8.184 | Medium (+-0.5) | Excellent |
+| 24 | 81 | Starbucks -  Southbound | CV35 0AA | 8.174 | Medium (+-0.5) | Excellent |
+| 25 | 86 | Ferment And Flour (Bastardos) | CV36 4PP | 8.164 | Medium (+-0.5) | Excellent |
+| 26 | 88 | Annie's Cafe & Event Catering | B49 5QF | 8.161 | Medium (+-0.5) | Excellent |
+| 27 | 89 | Southam Gateway Coffee Shop Ltd | CV47 0EP | 8.16 | Medium (+-0.5) | Excellent |
+| 28 | 90 | Costa Coffee | B49 6PQ | 8.146 | Medium (+-0.5) | Excellent |
+| 29 | 98 | Blue Bean Coffee Shop | CV36 4AF | 8.11 | Medium (+-0.5) | Excellent |
+| 30 | 101 | George's Cafe | B50 4JF | 8.08 | Medium (+-0.5) | Excellent |
+| 31 | 104 | The Garden Shed Cafe | CV35 9NZ | 8.056 | Medium (+-0.5) | Excellent |
+| 32 | 109 | Dec X Canteen | CV35 0RR | 8.034 | Low (+-0.8) | Excellent |
+| 33 | 111 | Cafe 16 | CV47 0HF | 8.014 | Medium (+-0.5) | Excellent |
+| 34 | 112 | Caffe Nero | CV37 6AN | 8.013 | Medium (+-0.5) | Excellent |
+| 35 | 119 | The Straw Kitchen | CV36 5PG | 7.965 | Medium (+-0.5) | Good |
+| 36 | 125 | Nanas Caff | CV37 9NQ | 7.907 | Low (+-0.8) | Good |
+| 37 | 128 | The Pavilion Coffee Shop And Community Space | CV37 8YE | 7.903 | Medium (+-0.5) | Good |
+| 38 | 129 | Costa Coffee | CV37 6PT | 7.901 | Medium (+-0.5) | Good |
+| 39 | 130 | JNB Cafe | CV37 0ER | 7.873 | Medium (+-0.5) | Good |
+| 40 | 133 | Coffee#1 Limited | CV37 6EY | 7.824 | Medium (+-0.5) | Good |
+| 41 | 138 | Costa Coffee | CV37 8LU | 7.756 | Medium (+-0.5) | Good |
+| 42 | 146 | Hobsons Patisseries | CV37 6PT | 7.633 | Medium (+-0.5) | Good |
+| 43 | 150 | Hudson's | CV37 9ST | 7.609 | Medium (+-0.5) | Good |
+| 44 | 153 | Touchdown Cafe | CV35 9EU | 7.588 | Medium (+-0.5) | Good |
+| 45 | 155 | The Cowshed Cafe | B95 6BY | 7.571 | Medium (+-0.5) | Good |
+| 46 | 159 | Cafe Living | CV37 0HZ | 7.532 | Medium (+-0.5) | Good |
+| 47 | 165 | Four Teas | CV37 6EF | 7.376 | Medium (+-0.5) | Good |
+| 48 | 167 | Bardia's | CV37 6EE | 7.342 | Medium (+-0.5) | Good |
+| 49 | 170 | Bishops Bowls Lake Cafe | CV47 2SR | 7.316 | Medium (+-0.5) | Good |
+| 50 | 176 | The Tea Shed | CV47 8LT | 7.052 | Medium (+-0.5) | Good |
+| 51 | 188 | Coughton Court Cafe | B49 5JA | 5.672 | Low (+-0.8) | Generally Satisfactory |
+| 52 | 193 | Karen's Korner | B80 7PD | 2.0 | Medium (+-0.5) | Major Improvement |
+| 53 | 194 | Havilands Tea Room And Restaurant | CV37 6QB | 1.999 | Medium (+-0.5) | Major Improvement |
 
 ### Catering (3 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 105 | Kitty's Kitchen Catering Ltd | CV37 7AY | 8.129 | Excellent |
-| 2 | 178 | Earlswood Lunch Club | B94 6BZ | 7.161 | Good |
-| 3 | 201 | CAMEO Lunch Club |  | 5.648 | Generally Satisfactory |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 107 | Kitty's Kitchen Catering Ltd | CV37 7AY | 8.04 | Medium (+-0.5) | Excellent |
+| 2 | 178 | Earlswood Lunch Club | B94 6BZ | 6.956 | Low (+-0.8) | Good |
+| 3 | 187 | CAMEO Lunch Club |  | 5.72 | Low (+-0.8) | Generally Satisfactory |
 
 ### Chinese Restaurant (3 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 128 | Sans Oriental Restaurant | B95 5AT | 8.002 | Excellent |
-| 2 | 193 | New Summer Palace Restaurant | B80 7DF | 6.662 | Good |
-| 3 | 203 | China Garden | CV37 6NL | 4.0 | Improvement Necessary |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 118 | Sans Oriental Restaurant | B95 5AT | 7.979 | Medium (+-0.5) | Good |
+| 2 | 179 | New Summer Palace Restaurant | B80 7DF | 6.955 | Medium (+-0.5) | Good |
+| 3 | 189 | China Garden | CV37 6NL | 4.0 | Medium (+-0.5) | Improvement Necessary |
 
 ### Fast Food / Quick Service (11 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 15 | Starbucks | CV37 6AU | 8.766 | Excellent |
-| 2 | 23 | Starbucks Drive Thru | CV35 0AA | 8.684 | Excellent |
-| 3 | 45 | GAIL's Stratford-Upon-Avon | CV37 6AU | 8.523 | Excellent |
-| 4 | 62 | The Kingfisher FishBar | CV37 6LW | 8.391 | Excellent |
-| 5 | 98 | Burger King - Southbound | CV35 0AA | 8.172 | Excellent |
-| 6 | 107 | The Food Of Love | CV37 6QW | 8.122 | Excellent |
-| 7 | 130 | Bruno's Bakery | B80 7HJ | 7.947 | Good |
-| 8 | 140 | The Sandwich Shop | B95 5AT | 7.82 | Good |
-| 9 | 168 | The Long Itch Diner | CV47 9QZ | 7.357 | Good |
-| 10 | 179 | Shipston Pizza And Kebab House | CV36 4AL | 7.151 | Good |
-| 11 | 205 | Subway | CV37 0HZ | 3.998 | Improvement Necessary |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 23 | Starbucks | CV37 6AU | 8.572 | Medium (+-0.5) | Excellent |
+| 2 | 39 | Starbucks Drive Thru | CV35 0AA | 8.463 | Medium (+-0.5) | Excellent |
+| 3 | 49 | GAIL's Stratford-Upon-Avon | CV37 6AU | 8.391 | Medium (+-0.5) | Excellent |
+| 4 | 61 | The Kingfisher FishBar | CV37 6LW | 8.314 | Medium (+-0.5) | Excellent |
+| 5 | 82 | Burger King - Southbound | CV35 0AA | 8.173 | Medium (+-0.5) | Excellent |
+| 6 | 120 | The Food Of Love | CV37 6QW | 7.944 | Medium (+-0.5) | Good |
+| 7 | 127 | Bruno's Bakery | B80 7HJ | 7.905 | Medium (+-0.5) | Good |
+| 8 | 134 | The Sandwich Shop | B95 5AT | 7.787 | Medium (+-0.5) | Good |
+| 9 | 161 | The Long Itch Diner | CV47 9QZ | 7.503 | Medium (+-0.5) | Good |
+| 10 | 166 | Shipston Pizza And Kebab House | CV36 4AL | 7.343 | Medium (+-0.5) | Good |
+| 11 | 191 | Subway | CV37 0HZ | 3.998 | Medium (+-0.5) | Improvement Necessary |
 
 ### Food & Drink (3 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 12 | The Garden Cafe | B49 5PD | 8.771 | Excellent |
-| 2 | 82 | Costa | CV37 0UA | 8.281 | Excellent |
-| 3 | 143 | Paul's Catering | CV37 | 7.786 | Good |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 6 | The Garden Cafe | B49 5PD | 8.793 | Medium (+-0.5) | Excellent |
+| 2 | 85 | Costa | CV37 0UA | 8.166 | Medium (+-0.5) | Excellent |
+| 3 | 145 | Paul's Catering | CV37 | 7.643 | Medium (+-0.5) | Good |
 
 ### French Restaurant (2 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 33 | The Opposition | CV37 6EF | 8.598 | Excellent |
-| 2 | 39 | Bistrot Pierre | CV37 7LT | 8.566 | Excellent |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 22 | The Opposition | CV37 6EF | 8.578 | Medium (+-0.5) | Excellent |
+| 2 | 48 | Bistrot Pierre | CV37 7LT | 8.392 | Medium (+-0.5) | Excellent |
 
 ### Hotel / Accommodation (17 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 9 | Stratford Manor Hotel | CV37 0PY | 8.839 | Excellent |
-| 2 | 21 | Ettington Park Hotel | CV37 8BU | 8.713 | Excellent |
-| 3 | 42 | Premier Inn | CV37 6UQ | 8.543 | Excellent |
-| 4 | 71 | Premier Inn | CV37 0AZ | 8.331 | Excellent |
-| 5 | 87 | Alveston Manor Hotel | CV37 7HP | 8.23 | Excellent |
-| 6 | 89 | Ragley Hall Catering | B49 5NJ | 8.214 | Excellent |
-| 7 | 101 | Hotel Indigo And The Woodsman | CV37 6HA | 8.141 | Excellent |
-| 8 | 106 | Studley Castle | B80 7AJ | 8.123 | Excellent |
-| 9 | 118 | Crowne Plaza | CV37 6YR | 8.059 | Excellent |
-| 10 | 144 | Billesley Manor Hotel | B49 6NF | 7.769 | Good |
-| 11 | 149 | The Stables | B94 5BQ | 7.711 | Good |
-| 12 | 155 | DoubleTree By Hilton | CV37 6QQ | 7.57 | Good |
-| 13 | 156 | The Embankment | CV37 7LS | 7.525 | Good |
-| 14 | 165 | Nuthurst Grange Country House | B94 5NL | 7.412 | Good |
-| 15 | 195 | Dog Lane Fishery Caravanning And Camping Site | CV47 8LT | 6.567 | Good |
-| 16 | 198 | Kings Court Hotel | B49 5QQ | 6.436 | Generally Satisfactory |
-| 17 | 204 | Welcombe Hotel Golf Resort \& Spa | CV37 0NR | 3.999 | Improvement Necessary |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 8 | Ettington Park Hotel | CV37 8BU | 8.735 | Medium (+-0.5) | Excellent |
+| 2 | 14 | Stratford Manor Hotel | CV37 0PY | 8.681 | Medium (+-0.5) | Excellent |
+| 3 | 42 | Premier Inn | CV37 6UQ | 8.43 | Medium (+-0.5) | Excellent |
+| 4 | 63 | Premier Inn | CV37 0AZ | 8.296 | Medium (+-0.5) | Excellent |
+| 5 | 78 | Ragley Hall Catering | B49 5NJ | 8.196 | Low (+-0.8) | Excellent |
+| 6 | 97 | Hotel Indigo And The Woodsman | CV37 6HA | 8.112 | Low (+-0.8) | Excellent |
+| 7 | 100 | Studley Castle | B80 7AJ | 8.082 | Low (+-0.8) | Excellent |
+| 8 | 105 | Alveston Manor Hotel | CV37 7HP | 8.054 | Low (+-0.8) | Excellent |
+| 9 | 117 | Crowne Plaza | CV37 6YR | 7.992 | Low (+-0.8) | Good |
+| 10 | 136 | Nuthurst Grange Country House | B94 5NL | 7.758 | Medium (+-0.5) | Good |
+| 11 | 139 | Billesley Manor Hotel | B49 6NF | 7.754 | Low (+-0.8) | Good |
+| 12 | 141 | The Embankment | CV37 7LS | 7.741 | Medium (+-0.5) | Good |
+| 13 | 147 | DoubleTree By Hilton | CV37 6QQ | 7.632 | Low (+-0.8) | Good |
+| 14 | 157 | The Stables | B94 5BQ | 7.545 | Low (+-0.8) | Good |
+| 15 | 184 | Dog Lane Fishery Caravanning And Camping Site | CV47 8LT | 6.656 | Medium (+-0.5) | Good |
+| 16 | 186 | Kings Court Hotel | B49 5QQ | 6.09 | Low (+-0.8) | Generally Satisfactory |
+| 17 | 190 | Welcombe Hotel Golf Resort \& Spa | CV37 0NR | 3.999 | Medium (+-0.5) | Improvement Necessary |
 
 ### Indian Restaurant (16 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 56 | Kolshi Restaurant | CV35 9ND | 8.41 | Excellent |
-| 2 | 64 | Hussains | CV37 6EP | 8.385 | Excellent |
-| 3 | 77 | Shah's | CV35 9LU | 8.306 | Excellent |
-| 4 | 78 | The Spice Room | B49 5AD | 8.302 | Excellent |
-| 5 | 92 | Cardamom | B49 5DP | 8.2 | Excellent |
-| 6 | 111 | Avon Spice | CV37 6LF | 8.11 | Excellent |
-| 7 | 132 | Arden Tandoori | B95 5AU | 7.922 | Good |
-| 8 | 150 | Cinnamon Arch | CV47 9QJ | 7.654 | Good |
-| 9 | 152 | Peppers | B80 7HN | 7.639 | Good |
-| 10 | 161 | Thespians Indian Restaurant | CV37 6EF | 7.493 | Good |
-| 11 | 163 | Shukurs | CV35 0HP | 7.423 | Good |
-| 12 | 166 | The Balti Hut | CV47 0HA | 7.383 | Good |
-| 13 | 188 | Cafe Chutneys | CV37 0AX | 6.961 | Good |
-| 14 | 190 | Curry Republic | B95 5AA | 6.887 | Good |
-| 15 | 194 | Mouchak | B50 4BG | 6.585 | Good |
-| 16 | 200 | Shipston Bengal Cuisine | CV36 4PP | 6.138 | Generally Satisfactory |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 45 | Kolshi Restaurant | CV35 9ND | 8.415 | Medium (+-0.5) | Excellent |
+| 2 | 62 | Hussains | CV37 6EP | 8.306 | Medium (+-0.5) | Excellent |
+| 3 | 68 | Shah's | CV35 9LU | 8.246 | Medium (+-0.5) | Excellent |
+| 4 | 83 | The Spice Room | B49 5AD | 8.172 | Medium (+-0.5) | Excellent |
+| 5 | 93 | Cardamom | B49 5DP | 8.131 | Medium (+-0.5) | Excellent |
+| 6 | 113 | Avon Spice | CV37 6LF | 8.012 | Medium (+-0.5) | Excellent |
+| 7 | 132 | Arden Tandoori | B95 5AU | 7.828 | Medium (+-0.5) | Good |
+| 8 | 144 | Cinnamon Arch | CV47 9QJ | 7.644 | Medium (+-0.5) | Good |
+| 9 | 149 | Peppers | B80 7HN | 7.617 | Medium (+-0.5) | Good |
+| 10 | 152 | Shukurs | CV35 0HP | 7.593 | Medium (+-0.5) | Good |
+| 11 | 154 | Thespians Indian Restaurant | CV37 6EF | 7.583 | Medium (+-0.5) | Good |
+| 12 | 162 | The Balti Hut | CV47 0HA | 7.455 | Medium (+-0.5) | Good |
+| 13 | 173 | Cafe Chutneys | CV37 0AX | 7.174 | Medium (+-0.5) | Good |
+| 14 | 174 | Curry Republic | B95 5AA | 7.136 | Medium (+-0.5) | Good |
+| 15 | 181 | Mouchak | B50 4BG | 6.804 | Medium (+-0.5) | Good |
+| 16 | 185 | Shipston Bengal Cuisine | CV36 4PP | 6.187 | Low (+-0.8) | Generally Satisfactory |
 
 ### Italian Restaurant (13 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 37 | Pizza Hut Restaurants - Dine In | CV37 0HZ | 8.577 | Excellent |
-| 2 | 57 | Bumbles | B80 7AN | 8.4 | Excellent |
-| 3 | 68 | Pizza Junction Kineton Ltd | CV35 0LN | 8.357 | Excellent |
-| 4 | 74 | Soma | CV37 6EX | 8.32 | Excellent |
-| 5 | 79 | Carluccio's | CV37 6BA | 8.3 | Excellent |
-| 6 | 91 | Bella Italia Also Trading As Super Nonna | CV37 6JG | 8.201 | Excellent |
-| 7 | 109 | The Phoenix | CV37 6QY | 8.115 | Excellent |
-| 8 | 110 | Corte Campana | CV37 6EX | 8.113 | Excellent |
-| 9 | 125 | The Still House Café | CV36 5EX | 8.011 | Excellent |
-| 10 | 126 | Impasto Micro-Pizzeria | CV37 6QY | 8.007 | Excellent |
-| 11 | 154 | Wildwood Kitchen | CV37 6EF | 7.58 | Good |
-| 12 | 160 | The Tempest | CV37 6EX | 7.496 | Good |
-| 13 | 174 | Sorrento Restaurant Taste Of Italy | CV37 6LW | 7.277 | Good |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 27 | Pizza Hut Restaurants - Dine In | CV37 0HZ | 8.55 | Medium (+-0.5) | Excellent |
+| 2 | 51 | Bumbles | B80 7AN | 8.372 | Medium (+-0.5) | Excellent |
+| 3 | 67 | Pizza Junction Kineton Ltd | CV35 0LN | 8.247 | Medium (+-0.5) | Excellent |
+| 4 | 77 | Soma | CV37 6EX | 8.197 | Medium (+-0.5) | Excellent |
+| 5 | 87 | Carluccio's | CV37 6BA | 8.162 | Medium (+-0.5) | Excellent |
+| 6 | 92 | Corte Campana | CV37 6EX | 8.136 | Medium (+-0.5) | Excellent |
+| 7 | 95 | Bella Italia Also Trading As Super Nonna | CV37 6JG | 8.124 | Medium (+-0.5) | Excellent |
+| 8 | 108 | The Phoenix | CV37 6QY | 8.037 | Medium (+-0.5) | Excellent |
+| 9 | 114 | Impasto Micro-Pizzeria | CV37 6QY | 8.003 | Medium (+-0.5) | Excellent |
+| 10 | 124 | The Still House Café | CV36 5EX | 7.909 | Medium (+-0.5) | Good |
+| 11 | 142 | Wildwood Kitchen | CV37 6EF | 7.692 | Medium (+-0.5) | Good |
+| 12 | 151 | The Tempest | CV37 6EX | 7.594 | Medium (+-0.5) | Good |
+| 13 | 158 | Sorrento Restaurant Taste Of Italy | CV37 6LW | 7.538 | Medium (+-0.5) | Good |
 
 ### Japanese Restaurant (1 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 145 | Sushi Land | CV37 6NF | 7.76 | Good |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 135 | Sushi Land | CV37 6NF | 7.778 | Medium (+-0.5) | Good |
 
 ### Mediterranean Restaurant (2 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 162 | Turkish Stonebakers | CV35 9NE | 7.47 | Good |
-| 2 | 186 | Tzatziki34 | CV37 6AB | 6.983 | Good |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 143 | Turkish Stonebakers | CV35 9NE | 7.659 | Medium (+-0.5) | Good |
+| 2 | 175 | Tzatziki34 | CV37 6AB | 7.067 | Medium (+-0.5) | Good |
 
-### Other (22 establishments)
+### Other (9 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 16 | The Lime Tree Restaurant | CV37 8LW | 8.762 | Excellent |
-| 2 | 22 | Aston Martin Lagonda | CV35 0DB | 8.69 | Excellent |
-| 3 | 34 | Ashorne Hill Management College | CV33 9QW | 8.586 | Excellent |
-| 4 | 36 | The Pavillion | OX15 6HT | 8.579 | Excellent |
-| 5 | 49 | Stratford Adventure Golf | CV37 7LS | 8.464 | Excellent |
-| 6 | 95 | Good Breakfast | CV35 0AA | 8.185 | Excellent |
-| 7 | 96 | A G D Equipment Ltd | CV37 9LQ | 8.174 | Excellent |
-| 8 | 99 | Stratford On Avon Golf Club | CV37 7BA | 8.153 | Excellent |
-| 9 | 100 | NFU Mutual | CV37 7BJ | 8.146 | Excellent |
-| 10 | 124 | Stratford Town FC | CV37 7BZ | 8.014 | Excellent |
-| 11 | 138 | Shakespeare's | B94 5JU | 7.863 | Good |
-| 12 | 141 | Birmingham City Football Club Ltd | B95 6AB | 7.813 | Good |
-| 13 | 146 | Redwings Horse Sanctuary | CV35 0RP | 7.758 | Good |
-| 14 | 157 | Elders Who Lunch (Hartley Locums) | CV47 8LS | 7.524 | Good |
-| 15 | 173 | Stratford Upon Avon Baptist Church | CV37 6UA | 7.278 | Good |
-| 16 | 180 | Bidford Juniors Football Club |  | 7.135 | Good |
-| 17 | 182 | Lexi's Loving Spoonful | CV47 2QZ | 7.088 | Good |
-| 18 | 187 | Digby's Events | CV47 | 6.975 | Good |
-| 19 | 189 | Escape Arts | CV37 6EE | 6.919 | Good |
-| 20 | 196 | Slimming World | CV35 0FA | 6.496 | Generally Satisfactory |
-| 21 | 197 | Mid-England Barrow Ltd | OX17 | 6.489 | Generally Satisfactory |
-| 22 | 199 | Golden Putter Stratford Upon | CV37 7LS | 6.315 | Generally Satisfactory |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 11 | The Lime Tree Restaurant | CV37 8LW | 8.7 | Medium (+-0.5) | Excellent |
+| 2 | 37 | The Pavillion | OX15 6HT | 8.481 | Medium (+-0.5) | Excellent |
+| 3 | 50 | Ashorne Hill Management College | CV33 9QW | 8.38 | Low (+-0.8) | Excellent |
+| 4 | 56 | Stratford Adventure Golf | CV37 7LS | 8.341 | Medium (+-0.5) | Excellent |
+| 5 | 79 | Good Breakfast | CV35 0AA | 8.186 | Medium (+-0.5) | Excellent |
+| 6 | 103 | Shakespeare's | B94 5JU | 8.073 | Medium (+-0.5) | Excellent |
+| 7 | 168 | Elders Who Lunch (Hartley Locums) | CV47 8LS | 7.34 | Medium (+-0.5) | Good |
+| 8 | 182 | Lexi's Loving Spoonful | CV47 2QZ | 6.721 | Low (+-0.8) | Good |
+| 9 | 183 | Escape Arts | CV37 6EE | 6.677 | Medium (+-0.5) | Good |
 
-### Pub / Bar (18 establishments)
+### Pub / Bar (17 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 3 | Arrow Mill | B49 5NL | 9.011 | Excellent |
-| 2 | 4 | The Red Lion | CV37 6YW | 8.977 | Excellent |
-| 3 | 8 | The Fox Inn | CV35 9JS | 8.86 | Excellent |
-| 4 | 19 | The Alcester Inn | B49 6AQ | 8.733 | Excellent |
-| 5 | 20 | The Townhouse Also Trading As JR Hotel And Restaurants LTD | CV37 6HB | 8.73 | Excellent |
-| 6 | 27 | Snitterfield Arms | CV37 0JH | 8.635 | Excellent |
-| 7 | 31 | LeBuns | CV35 0JS | 8.604 | Excellent |
-| 8 | 43 | The Bull's Head | B95 6BD | 8.541 | Excellent |
-| 9 | 50 | The Bell Inn | CV37 8EB | 8.456 | Excellent |
-| 10 | 81 | Cafe Des Fleurs | B49 5AE | 8.284 | Excellent |
-| 11 | 84 | The Coach House | CV37 6LP | 8.259 | Excellent |
-| 12 | 117 | The Avon Lounge | CV37 6LP | 8.071 | Excellent |
-| 13 | 122 | The Olde Mint | CV47 0EP | 8.026 | Excellent |
-| 14 | 135 | The Yew Tree | CV47 2AS | 7.903 | Good |
-| 15 | 137 | The Cottage Of Content | B50 4NP | 7.865 | Good |
-| 16 | 153 | The Buck And Bell | CV47 9PH | 7.602 | Good |
-| 17 | 175 | The Keys | CV37 6LW | 7.265 | Good |
-| 18 | 191 | The Roebuck Inn Alcester | B49 5QA | 6.795 | Good |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 3 | Arrow Mill | B49 5NL | 8.89 | Medium (+-0.5) | Excellent |
+| 2 | 4 | The Red Lion | CV37 6YW | 8.857 | Medium (+-0.5) | Excellent |
+| 3 | 10 | The Fox Inn | CV35 9JS | 8.702 | Low (+-0.8) | Excellent |
+| 4 | 18 | The Alcester Inn | B49 6AQ | 8.638 | Medium (+-0.5) | Excellent |
+| 5 | 20 | The Townhouse Also Trading As JR Hotel And Restaurants LTD | CV37 6HB | 8.633 | Medium (+-0.5) | Excellent |
+| 6 | 29 | Snitterfield Arms | CV37 0JH | 8.527 | Medium (+-0.5) | Excellent |
+| 7 | 33 | The Bull's Head | B95 6BD | 8.508 | Medium (+-0.5) | Excellent |
+| 8 | 36 | The Bell Inn | CV37 8EB | 8.493 | Medium (+-0.5) | Excellent |
+| 9 | 38 | LeBuns | CV35 0JS | 8.47 | Medium (+-0.5) | Excellent |
+| 10 | 70 | The Coach House | CV37 6LP | 8.239 | Medium (+-0.5) | Excellent |
+| 11 | 76 | Cafe Des Fleurs | B49 5AE | 8.201 | Medium (+-0.5) | Excellent |
+| 12 | 106 | The Yew Tree | CV47 2AS | 8.05 | Medium (+-0.5) | Excellent |
+| 13 | 115 | The Avon Lounge | CV37 6LP | 8.001 | Medium (+-0.5) | Excellent |
+| 14 | 116 | The Cottage Of Content | B50 4NP | 7.997 | Medium (+-0.5) | Good |
+| 15 | 121 | The Olde Mint | CV47 0EP | 7.939 | Medium (+-0.5) | Good |
+| 16 | 140 | The Buck And Bell | CV47 9PH | 7.744 | Medium (+-0.5) | Good |
+| 17 | 169 | The Keys | CV37 6LW | 7.332 | Medium (+-0.5) | Good |
 
 ### Restaurant (General) (15 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 2 | 11/17 Salt Beef Bar | CV37 6GJ | 9.03 | Excellent |
-| 2 | 5 | Red Hot Mamma Pizzeria | CV37 6AU | 8.946 | Excellent |
-| 3 | 7 | Lithos Restaurant | B95 5BX | 8.875 | Excellent |
-| 4 | 17 | Oxheart | CV36 5JJ | 8.742 | Excellent |
-| 5 | 40 | The Bluebell | B95 5AT | 8.562 | Excellent |
-| 6 | 44 | Bannatyne Health Club And Spa Wildmoor | CV37 9RJ | 8.53 | Excellent |
-| 7 | 53 | Fast Flavour | CV37 6AB | 8.435 | Excellent |
-| 8 | 72 | NO4 Bar And Restaurant | CV37 6YY | 8.324 | Excellent |
-| 9 | 85 | The Bridge | B50 4BG | 8.256 | Excellent |
-| 10 | 102 | Burger King | CV37 0HZ | 8.133 | Excellent |
-| 11 | 108 | Lily's | CV37 6LU | 8.12 | Excellent |
-| 12 | 142 | Gardener's Retreat | B80 7DR | 7.792 | Good |
-| 13 | 169 | Gardener's Retreat | CV35 9ER | 7.345 | Good |
-| 14 | 181 | Compton Verney Cafe | CV35 9HZ | 7.1 | Good |
-| 15 | 206 | Mount Everest Nepalese Cuisine | B80 7NL | 3.997 | Improvement Necessary |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 2 | Red Hot Mamma Pizzeria | CV37 6AU | 8.927 | Medium (+-0.5) | Excellent |
+| 2 | 5 | 11/17 Salt Beef Bar | CV37 6GJ | 8.851 | Medium (+-0.5) | Excellent |
+| 3 | 9 | Lithos Restaurant | B95 5BX | 8.73 | Low (+-0.8) | Excellent |
+| 4 | 25 | Oxheart | CV36 5JJ | 8.559 | Medium (+-0.5) | Excellent |
+| 5 | 31 | The Bluebell | B95 5AT | 8.523 | Medium (+-0.5) | Excellent |
+| 6 | 34 | Bannatyne Health Club And Spa Wildmoor | CV37 9RJ | 8.496 | Medium (+-0.5) | Excellent |
+| 7 | 58 | NO4 Bar And Restaurant | CV37 6YY | 8.332 | Medium (+-0.5) | Excellent |
+| 8 | 65 | Fast Flavour | CV37 6AB | 8.271 | Medium (+-0.5) | Excellent |
+| 9 | 71 | The Bridge | B50 4BG | 8.238 | Medium (+-0.5) | Excellent |
+| 10 | 84 | Lily's | CV37 6LU | 8.169 | Medium (+-0.5) | Excellent |
+| 11 | 102 | Burger King | CV37 0HZ | 8.075 | Medium (+-0.5) | Excellent |
+| 12 | 160 | Gardener's Retreat | B80 7DR | 7.522 | Medium (+-0.5) | Good |
+| 13 | 172 | Gardener's Retreat | CV35 9ER | 7.262 | Medium (+-0.5) | Good |
+| 14 | 177 | Compton Verney Cafe | CV35 9HZ | 6.986 | Low (+-0.8) | Good |
+| 15 | 192 | Mount Everest Nepalese Cuisine | B80 7NL | 3.997 | Medium (+-0.5) | Improvement Necessary |
 
 ### Takeaway (6 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 41 | The Pickled Crab Deli | CV47 0HF | 8.551 | Excellent |
-| 2 | 58 | The Bishops Fryer | CV47 2RN | 8.397 | Excellent |
-| 3 | 60 | Chrissie's Kitchen | CV35 | 8.393 | Excellent |
-| 4 | 113 | Pickled & Tipsy's Cafe | CV47 1PH | 8.104 | Excellent |
-| 5 | 131 | The Margin | CV47 9PZ | 7.936 | Good |
-| 6 | 159 | The Water Margin @ The Hollybush | CV47 7RW | 7.5 | Good |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 43 | The Pickled Crab Deli | CV47 0HF | 8.427 | Medium (+-0.5) | Excellent |
+| 2 | 55 | Chrissie's Kitchen | CV35 | 8.345 | Medium (+-0.5) | Excellent |
+| 3 | 72 | The Bishops Fryer | CV47 2RN | 8.219 | Medium (+-0.5) | Excellent |
+| 4 | 122 | The Margin | CV47 9PZ | 7.927 | Medium (+-0.5) | Good |
+| 5 | 123 | Pickled & Tipsy's Cafe | CV47 1PH | 7.92 | Medium (+-0.5) | Good |
+| 6 | 148 | The Water Margin @ The Hollybush | CV47 7RW | 7.618 | Medium (+-0.5) | Good |
 
 ### Thai Restaurant (1 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 121 | Pick Thai Ltd | CV37 6HB | 8.027 | Excellent |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 110 | Pick Thai Ltd | CV37 6HB | 8.016 | Medium (+-0.5) | Excellent |
 
 ### Vegan / Vegetarian (1 establishments)
 
-| Cat Rank | Overall Rank | Name | Postcode | RCS | Band |
-|---:|---:|---|---|---:|---|
-| 1 | 86 | Plantarium | CV37 6NF | 8.25 | Excellent |
+| Cat Rank | Overall Rank | Name | Postcode | RCS | Confidence | Band |
+|---:|---:|---|---|---:|---|---|
+| 1 | 64 | Plantarium | CV37 6NF | 8.272 | Medium (+-0.5) | Excellent |
 
-## 7. Complete Rankings (1–208)
+## 7. Complete Rankings (1-194)
 
-| Rank | Name | Postcode | Category | FSA | Google | RCS | Band | Signals |
-|---:|---|---|---|---:|---:|---:|---|---:|
-| 1 | Gilks' Garage Cafe | CV35 0JZ | Cafe / Coffee Shop | 10.0 | 9.306 | 9.054 | Excellent | 16/35 |
-| 2 | 11/17 Salt Beef Bar | CV37 6GJ | Restaurant (General) | 10.0 | 8.652 | 9.03 | Excellent | 15/35 |
-| 3 | Arrow Mill | B49 5NL | Pub / Bar | 10.0 | 9.048 | 9.011 | Excellent | 16/35 |
-| 4 | The Red Lion | CV37 6YW | Pub / Bar | 10.0 | 9.097 | 8.977 | Excellent | 15/35 |
-| 5 | Red Hot Mamma Pizzeria | CV37 6AU | Restaurant (General) | 9.5 | 9.747 | 8.946 | Excellent | 15/35 |
-| 6 | Shakespaw Cat Cafe | CV37 6QT | Cafe / Coffee Shop | 10.0 | 9.123 | 8.88 | Excellent | 15/35 |
-| 7 | Lithos Restaurant | B95 5BX | Restaurant (General) | 10.0 | 8.797 | 8.875 | Excellent | 12/35 |
-| 8 | The Fox Inn | CV35 9JS | Pub / Bar | 10.0 | 8.603 | 8.86 | Excellent | 13/35 |
-| 9 | Stratford Manor Hotel | CV37 0PY | Hotel / Accommodation | 10.0 | 8.947 | 8.839 | Excellent | 14/35 |
-| 10 | Espresso Barn | CV37 8RB | Cafe / Coffee Shop | 10.0 | 9.158 | 8.832 | Excellent | 14/35 |
-| 11 | Costa | CV37 0HZ | Cafe / Coffee Shop | 10.0 | 8.413 | 8.831 | Excellent | 16/35 |
-| 12 | The Garden Cafe | B49 5PD | Food & Drink | 9.0 | 9.579 | 8.771 | Excellent | 15/35 |
-| 13 | Nel's At The Pavilion | CV35 0AD | Cafe / Coffee Shop | 9.5 | 8.911 | 8.768 | Excellent | 16/35 |
-| 14 | Ettington Garden Cafe | CV37 7TB | Cafe / Coffee Shop | 10.0 | 8.488 | 8.767 | Excellent | 15/35 |
-| 15 | Starbucks | CV37 6AU | Fast Food / Quick Service | 10.0 | 8.132 | 8.766 | Excellent | 16/35 |
-| 16 | The Lime Tree Restaurant | CV37 8LW | Other | 9.5 | 9.368 | 8.762 | Excellent | 14/35 |
-| 17 | Oxheart | CV36 5JJ | Restaurant (General) | 10.0 | 8.332 | 8.742 | Excellent | 15/35 |
-| 18 | Mor | CV37 6EX | Bakery / Desserts | 9.5 | 8.989 | 8.74 | Excellent | 15/35 |
-| 19 | The Alcester Inn | B49 6AQ | Pub / Bar | 9.5 | 8.747 | 8.733 | Excellent | 15/35 |
-| 20 | The Townhouse Also Trading As JR Hotel And Restaurants LTD | CV37 6HB | Pub / Bar | 9.5 | 8.724 | 8.73 | Excellent | 16/35 |
-| 21 | Ettington Park Hotel | CV37 8BU | Hotel / Accommodation | 9.025 | 9.684 | 8.713 | Excellent | 15/35 |
-| 22 | Aston Martin Lagonda | CV35 0DB | Other | 9.5 | 9.232 | 8.69 | Excellent | 14/35 |
-| 23 | Starbucks Drive Thru | CV35 0AA | Fast Food / Quick Service | 10.0 | 7.78 | 8.684 | Excellent | 17/35 |
-| 24 | No 37 Cafe | CV37 6EE | Cafe / Coffee Shop | 9.5 | 8.508 | 8.672 | Excellent | 16/35 |
-| 25 | Miller And Carter | CV37 6EX | American / Grill | 9.025 | 9.333 | 8.646 | Excellent | 16/35 |
-| 26 | Cotswold Cafe |  | Cafe / Coffee Shop | 9.5 | 8.44 | 8.644 | Excellent | 16/35 |
-| 27 | Snitterfield Arms | CV37 0JH | Pub / Bar | 9.5 | 8.641 | 8.635 | Excellent | 15/35 |
-| 28 | Feel Good Crystals | CV36 5LE | Cafe / Coffee Shop | 9.5 | 8.864 | 8.634 | Excellent | 15/35 |
-| 29 | Chapter 23 | B49 5AF | Cafe / Coffee Shop | 9.5 | 8.613 | 8.627 | Excellent | 15/35 |
-| 30 | Costa | B95 5DA | Cafe / Coffee Shop | 9.5 | 8.335 | 8.622 | Excellent | 16/35 |
-| 31 | LeBuns | CV35 0JS | Pub / Bar | 9.5 | 8.256 | 8.604 | Excellent | 16/35 |
-| 32 | Cotswold Distillery Cafe | CV36 5HG | Cafe / Coffee Shop | 9.025 | 9.895 | 8.603 | Excellent | 14/35 |
-| 33 | The Opposition | CV37 6EF | French Restaurant | 9.0 | 9.073 | 8.598 | Excellent | 16/35 |
-| 34 | Ashorne Hill Management College | CV33 9QW | Other | 10.0 | 9.147 | 8.586 | Excellent | 13/35 |
-| 35 | International Circus Churros 2 | CV37 0RN | Bakery / Desserts | 9.025 | 9.205 | 8.581 | Excellent | 15/35 |
-| 36 | The Pavillion | OX15 6HT | Other | 9.5 | 9.048 | 8.579 | Excellent | 15/35 |
-| 37 | Pizza Hut Restaurants - Dine In | CV37 0HZ | Italian Restaurant | 9.025 | 9.048 | 8.577 | Excellent | 17/35 |
-| 38 | Puddleduck Cafe Ltd | CV47 1AJ | Cafe / Coffee Shop | 10.0 | 8.711 | 8.568 | Excellent | 14/35 |
-| 39 | Bistrot Pierre | CV37 7LT | French Restaurant | 10.0 | 8.654 | 8.566 | Excellent | 14/35 |
-| 40 | The Bluebell | B95 5AT | Restaurant (General) | 9.0 | 8.818 | 8.562 | Excellent | 16/35 |
-| 41 | The Pickled Crab Deli | CV47 0HF | Takeaway | 9.5 | 8.452 | 8.551 | Excellent | 17/35 |
-| 42 | Premier Inn | CV37 6UQ | Hotel / Accommodation | 9.5 | 8.984 | 8.543 | Excellent | 14/35 |
-| 43 | The Bull's Head | B95 6BD | Pub / Bar | 9.025 | 8.99 | 8.541 | Excellent | 16/35 |
-| 44 | Bannatyne Health Club And Spa Wildmoor | CV37 9RJ | Restaurant (General) | 9.025 | 8.973 | 8.53 | Excellent | 15/35 |
-| 45 | GAIL's Stratford-Upon-Avon | CV37 6AU | Fast Food / Quick Service | 9.5 | 8.361 | 8.523 | Excellent | 15/35 |
-| 46 | Prospero Lounge | CV37 6AD | British Restaurant | 9.025 | 8.811 | 8.499 | Excellent | 17/35 |
-| 47 | Lounge@26 | B49 5AB | Cafe / Coffee Shop | 9.5 | 8.14 | 8.479 | Excellent | 16/35 |
-| 48 | Revs Automobilia | GL56 9RE | Cafe / Coffee Shop | 9.0 | 8.707 | 8.477 | Excellent | 15/35 |
-| 49 | Stratford Adventure Golf | CV37 7LS | Other | 9.5 | 8.806 | 8.464 | Excellent | 14/35 |
-| 50 | The Bell Inn | CV37 8EB | Pub / Bar | 8.5 | 9.143 | 8.456 | Excellent | 16/35 |
-| 51 | Bidford Community Fridge & Cafe | B50 4QB | Cafe / Coffee Shop | 9.0 | 8.987 | 8.446 | Excellent | 15/35 |
-| 52 | Ferment And Flour (Bastardos) | CV36 4PP | Cafe / Coffee Shop | 10.0 | 7.216 | 8.436 | Excellent | 15/35 |
-| 53 | Fast Flavour | CV37 6AB | Restaurant (General) | 9.5 | 7.928 | 8.435 | Excellent | 15/35 |
-| 54 | Costa Coffee | B49 6PQ | Cafe / Coffee Shop | 10.0 | 7.215 | 8.419 | Excellent | 15/35 |
-| 55 | Beleza Rodizio | CV37 6EX | American / Grill | 9.025 | 9.871 | 8.418 | Excellent | 16/35 |
-| 56 | Kolshi Restaurant | CV35 9ND | Indian Restaurant | 9.0 | 9.666 | 8.41 | Excellent | 16/35 |
-| 57 | Bumbles | B80 7AN | Italian Restaurant | 9.025 | 9.199 | 8.4 | Excellent | 16/35 |
-| 58 | The Bishops Fryer | CV47 2RN | Takeaway | 9.5 | 7.765 | 8.397 | Excellent | 17/35 |
-| 59 | Greggs PLC | B49 6EH | Bakery / Desserts | 10.0 | 6.775 | 8.394 | Excellent | 16/35 |
-| 60 | Chrissie's Kitchen | CV35 | Takeaway | 9.0 | 8.84 | 8.393 | Excellent | 15/35 |
-| 61 | Cafe 86B | B95 5BY | Cafe / Coffee Shop | 9.0 | 8.446 | 8.392 | Excellent | 15/35 |
-| 62 | The Kingfisher FishBar | CV37 6LW | Fast Food / Quick Service | 9.025 | 8.416 | 8.391 | Excellent | 17/35 |
-| 63 | Henley Ice Cream Limited | B95 5BS | Cafe / Coffee Shop | 8.55 | 9.0 | 8.387 | Excellent | 16/35 |
-| 64 | Hussains | CV37 6EP | Indian Restaurant | 9.025 | 8.4 | 8.385 | Excellent | 18/35 |
-| 65 | Deli Cafe | CV37 6QB | British Restaurant | 9.5 | 8.626 | 8.368 | Excellent | 18/35 |
-| 66 | The Kings Head | CV35 9LT | British Restaurant | 9.5 | 8.857 | 8.365 | Excellent | 17/35 |
-| 67 | Lambs | CV37 6EF | British Restaurant | 9.0 | 9.238 | 8.358 | Excellent | 17/35 |
-| 68 | Pizza Junction Kineton Ltd | CV35 0LN | Italian Restaurant | 9.5 | 8.867 | 8.357 | Excellent | 16/35 |
-| 69 | Coffee Clouds | CV37 6GJ | Cafe / Coffee Shop | 8.5 | 8.66 | 8.347 | Excellent | 16/35 |
-| 70 | Mr Odie's | CV37 6QT | Cafe / Coffee Shop | 8.5 | 8.894 | 8.338 | Excellent | 15/35 |
-| 71 | Premier Inn | CV37 0AZ | Hotel / Accommodation | 9.025 | 9.263 | 8.331 | Excellent | 14/35 |
-| 72 | NO4 Bar And Restaurant | CV37 6YY | Restaurant (General) | 8.55 | 8.91 | 8.324 | Excellent | 15/35 |
-| 73 | Annie's Cafe & Event Catering | B49 5QF | Cafe / Coffee Shop | 9.5 | 8.393 | 8.323 | Excellent | 14/35 |
-| 74 | Soma | CV37 6EX | Italian Restaurant | 9.5 | 8.715 | 8.32 | Excellent | 16/35 |
-| 75 | Building 523 Costa And Kitchen | CV35 0RR | Cafe / Coffee Shop | 9.5 | 9.451 | 8.319 | Excellent | 13/35 |
-| 76 | South Costa | CV35 0RR | Cafe / Coffee Shop | 9.5 | 9.451 | 8.318 | Excellent | 13/35 |
-| 77 | Shah's | CV35 9LU | Indian Restaurant | 9.025 | 8.781 | 8.306 | Excellent | 17/35 |
-| 78 | The Spice Room | B49 5AD | Indian Restaurant | 9.5 | 8.636 | 8.302 | Excellent | 17/35 |
-| 79 | Carluccio's | CV37 6BA | Italian Restaurant | 9.5 | 8.488 | 8.3 | Excellent | 17/35 |
-| 80 | McDonald's | CV37 0AH | American / Grill | 9.5 | 8.143 | 8.286 | Excellent | 17/35 |
-| 81 | Cafe Des Fleurs | B49 5AE | Pub / Bar | 9.0 | 8.394 | 8.284 | Excellent | 17/35 |
-| 82 | Costa | CV37 0UA | Food & Drink | 9.025 | 7.942 | 8.281 | Excellent | 16/35 |
-| 83 | Southam Gateway Coffee Shop Ltd | CV47 0EP | Cafe / Coffee Shop | 9.025 | 8.035 | 8.27 | Excellent | 16/35 |
-| 84 | The Coach House | CV37 6LP | Pub / Bar | 8.55 | 8.526 | 8.259 | Excellent | 16/35 |
-| 85 | The Bridge | B50 4BG | Restaurant (General) | 8.55 | 8.57 | 8.256 | Excellent | 16/35 |
-| 86 | Plantarium | CV37 6NF | Vegan / Vegetarian | 8.55 | 9.2 | 8.25 | Excellent | 17/35 |
-| 87 | Alveston Manor Hotel | CV37 7HP | Hotel / Accommodation | 9.5 | 8.842 | 8.23 | Excellent | 13/35 |
-| 88 | Costa Coffee | CV37 6PT | Cafe / Coffee Shop | 10.0 | 7.503 | 8.229 | Excellent | 15/35 |
-| 89 | Ragley Hall Catering | B49 5NJ | Hotel / Accommodation | 9.0 | 9.579 | 8.214 | Excellent | 13/35 |
-| 90 | Harbury Library Cafe | CV33 9HW | Cafe / Coffee Shop | 8.5 | 8.332 | 8.212 | Excellent | 15/35 |
-| 91 | Bella Italia Also Trading As Super Nonna | CV37 6JG | Italian Restaurant | 9.025 | 8.857 | 8.201 | Excellent | 16/35 |
-| 92 | Cardamom | B49 5DP | Indian Restaurant | 9.0 | 8.701 | 8.2 | Excellent | 18/35 |
-| 93 | Barnabys | CV37 6BA | British Restaurant | 9.0 | 8.571 | 8.198 | Excellent | 18/35 |
-| 94 | Loxleys Restaurant And Wine Bar | CV37 6EF | British Restaurant | 8.5 | 9.238 | 8.186 | Excellent | 17/35 |
-| 95 | Good Breakfast | CV35 0AA | Other | 8.5 | 8.842 | 8.185 | Excellent | 14/35 |
-| 96 | A G D Equipment Ltd | CV37 9LQ | Other | 9.5 | 8.004 | 8.174 | Excellent | 14/35 |
-| 97 | Starbucks -  Southbound | CV35 0AA | Cafe / Coffee Shop | 8.55 | 8.947 | 8.173 | Excellent | 14/35 |
-| 98 | Burger King - Southbound | CV35 0AA | Fast Food / Quick Service | 8.55 | 8.947 | 8.172 | Excellent | 14/35 |
-| 99 | Stratford On Avon Golf Club | CV37 7BA | Other | 9.025 | 8.468 | 8.153 | Excellent | 14/35 |
-| 100 | NFU Mutual | CV37 7BJ | Other | 9.0 | 8.096 | 8.146 | Excellent | 14/35 |
-| 101 | Hotel Indigo And The Woodsman | CV37 6HA | Hotel / Accommodation | 9.025 | 9.597 | 8.141 | Excellent | 13/35 |
-| 102 | Burger King | CV37 0HZ | Restaurant (General) | 8.5 | 7.935 | 8.133 | Excellent | 15/35 |
-| 103 | George's Cafe | B50 4JF | Cafe / Coffee Shop | 8.55 | 8.137 | 8.132 | Excellent | 16/35 |
-| 104 | The George Hotel | CV36 4AJ | British Restaurant | 8.5 | 9.048 | 8.13 | Excellent | 17/35 |
-| 105 | Kitty's Kitchen Catering Ltd | CV37 7AY | Catering | 9.0 | 8.613 | 8.129 | Excellent | 14/35 |
-| 106 | Studley Castle | B80 7AJ | Hotel / Accommodation | 9.025 | 9.474 | 8.123 | Excellent | 13/35 |
-| 107 | The Food Of Love | CV37 6QW | Fast Food / Quick Service | 9.5 | 8.03 | 8.122 | Excellent | 18/35 |
-| 108 | Lily's | CV37 6LU | Restaurant (General) | 8.075 | 8.805 | 8.12 | Excellent | 15/35 |
-| 109 | The Phoenix | CV37 6QY | Italian Restaurant | 9.025 | 8.7 | 8.115 | Excellent | 18/35 |
-| 110 | Corte Campana | CV37 6EX | Italian Restaurant | 8.55 | 9.35 | 8.113 | Excellent | 16/35 |
-| 111 | Avon Spice | CV37 6LF | Indian Restaurant | 9.0 | 8.328 | 8.11 | Excellent | 17/35 |
-| 112 | Cafe 16 | CV47 0HF | Cafe / Coffee Shop | 9.0 | 8.364 | 8.109 | Excellent | 17/35 |
-| 113 | Pickled & Tipsy's Cafe | CV47 1PH | Takeaway | 9.5 | 7.96 | 8.104 | Excellent | 17/35 |
-| 114 | The Pavilion Coffee Shop And Community Space | CV37 8YE | Cafe / Coffee Shop | 9.0 | 7.054 | 8.082 | Excellent | 15/35 |
-| 115 | Dec X Canteen | CV35 0RR | Cafe / Coffee Shop | 9.025 | 9.451 | 8.081 | Excellent | 13/35 |
-| 116 | Blue Bean Coffee Shop | CV36 4AF | Cafe / Coffee Shop | 8.075 | 8.572 | 8.078 | Excellent | 16/35 |
-| 117 | The Avon Lounge | CV37 6LP | Pub / Bar | 8.55 | 7.915 | 8.071 | Excellent | 15/35 |
-| 118 | Crowne Plaza | CV37 6YR | Hotel / Accommodation | 9.025 | 9.263 | 8.059 | Excellent | 13/35 |
-| 119 | Costa Coffee | CV37 8LU | Cafe / Coffee Shop | 9.5 | 6.137 | 8.056 | Excellent | 16/35 |
-| 120 | KFC - Southbound | CV35 0AA | American / Grill | 9.0 | 7.259 | 8.03 | Excellent | 18/35 |
-| 121 | Pick Thai Ltd | CV37 6HB | Thai Restaurant | 8.5 | 8.785 | 8.027 | Excellent | 16/35 |
-| 122 | The Olde Mint | CV47 0EP | Pub / Bar | 8.5 | 7.571 | 8.026 | Excellent | 16/35 |
-| 123 | McDonald's | CV37 6AB | American / Grill | 9.025 | 8.143 | 8.024 | Excellent | 17/35 |
-| 124 | Stratford Town FC | CV37 7BZ | Other | 8.55 | 8.569 | 8.014 | Excellent | 14/35 |
-| 125 | The Still House Café | CV36 5EX | Italian Restaurant | 9.025 | 8.406 | 8.011 | Excellent | 17/35 |
-| 126 | Impasto Micro-Pizzeria | CV37 6QY | Italian Restaurant | 8.55 | 9.035 | 8.007 | Excellent | 16/35 |
-| 127 | Caffe Nero | CV37 6AN | Cafe / Coffee Shop | 8.1 | 8.375 | 8.003 | Excellent | 16/35 |
-| 128 | Sans Oriental Restaurant | B95 5AT | Chinese Restaurant | 8.5 | 8.629 | 8.002 | Excellent | 18/35 |
-| 129 | The Straw Kitchen | CV36 5PG | Cafe / Coffee Shop | 8.55 | 8.855 | 7.982 | Good | 17/35 |
-| 130 | Bruno's Bakery | B80 7HJ | Fast Food / Quick Service | 8.5 | 8.393 | 7.947 | Good | 18/35 |
-| 131 | The Margin | CV47 9PZ | Takeaway | 8.075 | 8.067 | 7.936 | Good | 16/35 |
-| 132 | Arden Tandoori | B95 5AU | Indian Restaurant | 8.5 | 8.475 | 7.922 | Good | 17/35 |
-| 133 | Nanas Caff | CV37 9NQ | Cafe / Coffee Shop | 9.5 | 10.0 | 7.92 | Good | 9/35 |
-| 134 | The Garden Shed Cafe | CV35 9NZ | Cafe / Coffee Shop | 7.2 | 8.851 | 7.909 | Good | 16/35 |
-| 135 | The Yew Tree | CV47 2AS | Pub / Bar | 7.2 | 8.85 | 7.903 | Good | 16/35 |
-| 136 | Coffee#1 Limited | CV37 6EY | Cafe / Coffee Shop | 8.55 | 8.506 | 7.879 | Good | 15/35 |
-| 137 | The Cottage Of Content | B50 4NP | Pub / Bar | 7.2 | 8.644 | 7.865 | Good | 16/35 |
-| 138 | Shakespeare's | B94 5JU | Other | 7.2 | 9.474 | 7.863 | Good | 14/35 |
-| 139 | JNB Cafe | CV37 0ER | Cafe / Coffee Shop | 8.1 | 8.829 | 7.84 | Good | 14/35 |
-| 140 | The Sandwich Shop | B95 5AT | Fast Food / Quick Service | 8.075 | 7.793 | 7.82 | Good | 15/35 |
-| 141 | Birmingham City Football Club Ltd | B95 6AB | Other | 10.0 | 7.201 | 7.813 | Good | 13/35 |
-| 142 | Gardener's Retreat | B80 7DR | Restaurant (General) | 9.0 | 5.873 | 7.792 | Good | 15/35 |
-| 143 | Paul's Catering | CV37 | Food & Drink | 8.55 | 7.032 | 7.786 | Good | 14/35 |
-| 144 | Billesley Manor Hotel | B49 6NF | Hotel / Accommodation | 8.55 | 9.158 | 7.769 | Good | 13/35 |
-| 145 | Sushi Land | CV37 6NF | Japanese Restaurant | 8.075 | 8.683 | 7.76 | Good | 16/35 |
-| 146 | Redwings Horse Sanctuary | CV35 0RP | Other | 8.55 | 9.424 | 7.758 | Good | 13/35 |
-| 147 | Libertine Burger | CV37 6JP | American / Grill | 8.075 | 8.595 | 7.745 | Good | 16/35 |
-| 148 | Burger King - Northbound | CV35 0AA | American / Grill | 10.0 | 5.536 | 7.734 | Good | 17/35 |
-| 149 | The Stables | B94 5BQ | Hotel / Accommodation | 9.025 | 8.517 | 7.711 | Good | 13/35 |
-| 150 | Cinnamon Arch | CV47 9QJ | Indian Restaurant | 8.075 | 8.333 | 7.654 | Good | 16/35 |
-| 151 | Chopstix South | CV35 0AA | Asian Restaurant | 8.55 | 6.201 | 7.65 | Good | 15/35 |
-| 152 | Peppers | B80 7HN | Indian Restaurant | 8.075 | 8.162 | 7.639 | Good | 17/35 |
-| 153 | The Buck And Bell | CV47 9PH | Pub / Bar | 6.84 | 8.352 | 7.602 | Good | 16/35 |
-| 154 | Wildwood Kitchen | CV37 6EF | Italian Restaurant | 7.315 | 8.857 | 7.58 | Good | 17/35 |
-| 155 | DoubleTree By Hilton | CV37 6QQ | Hotel / Accommodation | 8.075 | 9.263 | 7.57 | Good | 13/35 |
-| 156 | The Embankment | CV37 7LS | Hotel / Accommodation | 6.84 | 9.172 | 7.525 | Good | 14/35 |
-| 157 | Elders Who Lunch (Hartley Locums) | CV47 8LS | Other | 8.5 | 6.899 | 7.524 | Good | 14/35 |
-| 158 | Four Seasons Pho Limited | CV37 6LF | Asian Restaurant | 7.65 | 8.445 | 7.505 | Good | 16/35 |
-| 159 | The Water Margin @ The Hollybush | CV47 7RW | Takeaway | 6.84 | 8.067 | 7.5 | Good | 16/35 |
-| 160 | The Tempest | CV37 6EX | Italian Restaurant | 7.315 | 8.715 | 7.496 | Good | 16/35 |
-| 161 | Thespians Indian Restaurant | CV37 6EF | Indian Restaurant | 7.2 | 8.347 | 7.493 | Good | 17/35 |
-| 162 | Turkish Stonebakers | CV35 9NE | Mediterranean Restaurant | 6.84 | 9.23 | 7.47 | Good | 16/35 |
-| 163 | Shukurs | CV35 0HP | Indian Restaurant | 6.84 | 8.972 | 7.423 | Good | 17/35 |
-| 164 | Touchdown Cafe | CV35 9EU | Cafe / Coffee Shop | 6.84 | 8.905 | 7.422 | Good | 17/35 |
-| 165 | Nuthurst Grange Country House | B94 5NL | Hotel / Accommodation | 5.605 | 9.338 | 7.412 | Good | 15/35 |
-| 166 | The Balti Hut | CV47 0HA | Indian Restaurant | 7.2 | 8.167 | 7.383 | Good | 17/35 |
-| 167 | Hudson's | CV37 9ST | Cafe / Coffee Shop | 5.9 | 8.443 | 7.359 | Good | 15/35 |
-| 168 | The Long Itch Diner | CV47 9QZ | Fast Food / Quick Service | 6.84 | 8.647 | 7.357 | Good | 18/35 |
-| 169 | Gardener's Retreat | CV35 9ER | Restaurant (General) | 7.65 | 6.635 | 7.345 | Good | 15/35 |
-| 170 | The Cowshed Cafe | B95 6BY | Cafe / Coffee Shop | 5.9 | 8.358 | 7.328 | Good | 16/35 |
-| 171 | WINGERS STRATFORD | CV37 0BF | American / Grill | 7.2 | 7.897 | 7.325 | Good | 16/35 |
-| 172 | Hobsons Patisseries | CV37 6PT | Cafe / Coffee Shop | 5.4 | 8.857 | 7.298 | Good | 16/35 |
-| 173 | Stratford Upon Avon Baptist Church | CV37 6UA | Other | 9.5 | 6.715 | 7.278 | Good | 13/35 |
-| 174 | Sorrento Restaurant Taste Of Italy | CV37 6LW | Italian Restaurant | 5.9 | 8.695 | 7.277 | Good | 17/35 |
-| 175 | The Keys | CV37 6LW | Pub / Bar | 7.38 | 8.369 | 7.265 | Good | 15/35 |
-| 176 | Cafe Living | CV37 0HZ | Cafe / Coffee Shop | 5.4 | 8.524 | 7.223 | Good | 16/35 |
-| 177 | The Tea Shed | CV47 8LT | Cafe / Coffee Shop | 8.075 | 7.173 | 7.189 | Good | 14/35 |
-| 178 | Earlswood Lunch Club | B94 6BZ | Catering | 8.55 | 7.69 | 7.161 | Good | 13/35 |
-| 179 | Shipston Pizza And Kebab House | CV36 4AL | Fast Food / Quick Service | 5.9 | 7.728 | 7.151 | Good | 16/35 |
-| 180 | Bidford Juniors Football Club |  | Other | 9.5 | 5.977 | 7.135 | Good | 13/35 |
-| 181 | Compton Verney Cafe | CV35 9HZ | Restaurant (General) | 8.5 | 7.333 | 7.1 | Good | 10/35 |
-| 182 | Lexi's Loving Spoonful | CV47 2QZ | Other | 9.025 | 6.924 | 7.088 | Good | 13/35 |
-| 183 | Four Teas | CV37 6EF | Cafe / Coffee Shop | 5.4 | 9.048 | 7.046 | Good | 17/35 |
-| 184 | Bishops Bowls Lake Cafe | CV47 2SR | Cafe / Coffee Shop | 5.9 | 8.693 | 7.036 | Good | 14/35 |
-| 185 | Bardia's | CV37 6EE | Cafe / Coffee Shop | 5.605 | 9.178 | 7.03 | Good | 16/35 |
-| 186 | Tzatziki34 | CV37 6AB | Mediterranean Restaurant | 7.2 | 8.505 | 6.983 | Good | 15/35 |
-| 187 | Digby's Events | CV47 | Other | 9.5 | — | 6.975 | Good | 7/35 |
-| 188 | Cafe Chutneys | CV37 0AX | Indian Restaurant | 5.9 | 8.251 | 6.961 | Good | 17/35 |
-| 189 | Escape Arts | CV37 6EE | Other | 8.1 | 5.895 | 6.919 | Good | 14/35 |
-| 190 | Curry Republic | B95 5AA | Indian Restaurant | 5.4 | 7.905 | 6.887 | Good | 18/35 |
-| 191 | The Roebuck Inn Alcester | B49 5QA | Pub / Bar | 7.6 | 10.0 | 6.795 | Good | 5/35 |
-| 192 | The Crofts Cafe Also Trading As New York Pizzas | CV37 6PH | American / Grill | 8.5 | 10.0 | 6.793 | Good | 9/35 |
-| 193 | New Summer Palace Restaurant | B80 7DF | Chinese Restaurant | 5.13 | 8.303 | 6.662 | Good | 17/35 |
-| 194 | Mouchak | B50 4BG | Indian Restaurant | 5.4 | 7.728 | 6.585 | Good | 16/35 |
-| 195 | Dog Lane Fishery Caravanning And Camping Site | CV47 8LT | Hotel / Accommodation | 7.65 | 9.033 | 6.567 | Good | 14/35 |
-| 196 | Slimming World | CV35 0FA | Other | — | 8.785 | 6.496 | Generally Satisfactory | 9/35 |
-| 197 | Mid-England Barrow Ltd | OX17 | Other | 9.0 | 7.159 | 6.489 | Generally Satisfactory | 14/35 |
-| 198 | Kings Court Hotel | B49 5QQ | Hotel / Accommodation | 9.025 | 6.667 | 6.436 | Generally Satisfactory | 9/35 |
-| 199 | Golden Putter Stratford Upon | CV37 7LS | Other | — | 8.373 | 6.315 | Generally Satisfactory | 9/35 |
-| 200 | Shipston Bengal Cuisine | CV36 4PP | Indian Restaurant | — | 7.908 | 6.138 | Generally Satisfactory | 12/35 |
-| 201 | CAMEO Lunch Club |  | Catering | 5.9 | 6.948 | 5.648 | Generally Satisfactory | 13/35 |
-| 202 | Coughton Court Cafe | B49 5JA | Cafe / Coffee Shop | — | 7.488 | 5.585 | Generally Satisfactory | 9/35 |
-| 203 | China Garden | CV37 6NL | Chinese Restaurant | 4.1 | 7.115 | 4.0 | Improvement Necessary | 17/35 |
-| 204 | Welcombe Hotel Golf Resort \& Spa | CV37 0NR | Hotel / Accommodation | 4.1 | 8.947 | 3.999 | Improvement Necessary | 15/35 |
-| 205 | Subway | CV37 0HZ | Fast Food / Quick Service | 4.6 | 7.484 | 3.998 | Improvement Necessary | 17/35 |
-| 206 | Mount Everest Nepalese Cuisine | B80 7NL | Restaurant (General) | 3.895 | 8.545 | 3.997 | Improvement Necessary | 16/35 |
-| 207 | Karen's Korner | B80 7PD | Cafe / Coffee Shop | 2.8 | 8.079 | 2.0 | Major Improvement | 16/35 |
-| 208 | Havilands Tea Room And Restaurant | CV37 6QB | Cafe / Coffee Shop | 1.8 | 8.255 | 1.999 | Major Improvement | 15/35 |
+| Rank | Name | Postcode | Category | FSA | Google | RCS | Conf | Band | Sig |
+|---:|---|---|---|---:|---:|---:|---|---|---:|
+| 1 | Gilks' Garage Cafe | CV35 0JZ | Cafe / Coffee Shop | 10.0 | 9.306 | 8.952 | Medium | Excellent | 16/35 |
+| 2 | Red Hot Mamma Pizzeria | CV37 6AU | Restaurant (General) | 9.5 | 9.747 | 8.927 | Medium | Excellent | 15/35 |
+| 3 | Arrow Mill | B49 5NL | Pub / Bar | 10.0 | 9.048 | 8.89 | Medium | Excellent | 16/35 |
+| 4 | The Red Lion | CV37 6YW | Pub / Bar | 10.0 | 9.097 | 8.857 | Medium | Excellent | 15/35 |
+| 5 | 11/17 Salt Beef Bar | CV37 6GJ | Restaurant (General) | 10.0 | 8.652 | 8.851 | Medium | Excellent | 15/35 |
+| 6 | The Garden Cafe | B49 5PD | Food & Drink | 9.0 | 9.579 | 8.793 | Medium | Excellent | 15/35 |
+| 7 | Shakespaw Cat Cafe | CV37 6QT | Cafe / Coffee Shop | 10.0 | 9.123 | 8.737 | Medium | Excellent | 15/35 |
+| 8 | Ettington Park Hotel | CV37 8BU | Hotel / Accommodation | 9.025 | 9.684 | 8.735 | Medium | Excellent | 15/35 |
+| 9 | Lithos Restaurant | B95 5BX | Restaurant (General) | 10.0 | 8.797 | 8.73 | Low | Excellent | 12/35 |
+| 10 | The Fox Inn | CV35 9JS | Pub / Bar | 10.0 | 8.603 | 8.702 | Low | Excellent | 13/35 |
+| 11 | The Lime Tree Restaurant | CV37 8LW | Other | 9.5 | 9.368 | 8.7 | Medium | Excellent | 14/35 |
+| 12 | Espresso Barn | CV37 8RB | Cafe / Coffee Shop | 10.0 | 9.158 | 8.689 | Medium | Excellent | 14/35 |
+| 13 | Nel's At The Pavilion | CV35 0AD | Cafe / Coffee Shop | 9.5 | 8.911 | 8.685 | Medium | Excellent | 16/35 |
+| 14 | Stratford Manor Hotel | CV37 0PY | Hotel / Accommodation | 10.0 | 8.947 | 8.681 | Medium | Excellent | 14/35 |
+| 15 | Mor | CV37 6EX | Bakery / Desserts | 9.5 | 8.989 | 8.66 | Medium | Excellent | 15/35 |
+| 16 | Costa | CV37 0HZ | Cafe / Coffee Shop | 10.0 | 8.413 | 8.659 | Medium | Excellent | 16/35 |
+| 17 | Miller And Carter | CV37 6EX | American / Grill | 9.025 | 9.333 | 8.642 | Medium | Excellent | 16/35 |
+| 18 | The Alcester Inn | B49 6AQ | Pub / Bar | 9.5 | 8.747 | 8.638 | Medium | Excellent | 15/35 |
+| 19 | Cotswold Distillery Cafe | CV36 5HG | Cafe / Coffee Shop | 9.025 | 9.895 | 8.635 | Medium | Excellent | 14/35 |
+| 20 | The Townhouse Also Trading As JR Hotel And Restaurants LTD | CV37 6HB | Pub / Bar | 9.5 | 8.724 | 8.633 | Medium | Excellent | 16/35 |
+| 21 | Ettington Garden Cafe | CV37 7TB | Cafe / Coffee Shop | 10.0 | 8.488 | 8.596 | Medium | Excellent | 15/35 |
+| 22 | The Opposition | CV37 6EF | French Restaurant | 9.0 | 9.073 | 8.578 | Medium | Excellent | 16/35 |
+| 23 | Starbucks | CV37 6AU | Fast Food / Quick Service | 10.0 | 8.132 | 8.572 | Medium | Excellent | 16/35 |
+| 24 | International Circus Churros 2 | CV37 0RN | Bakery / Desserts | 9.025 | 9.205 | 8.564 | Medium | Excellent | 15/35 |
+| 25 | Oxheart | CV36 5JJ | Restaurant (General) | 10.0 | 8.332 | 8.559 | Medium | Excellent | 15/35 |
+| 26 | No 37 Cafe | CV37 6EE | Cafe / Coffee Shop | 9.5 | 8.508 | 8.558 | Medium | Excellent | 16/35 |
+| 27 | Pizza Hut Restaurants - Dine In | CV37 0HZ | Italian Restaurant | 9.025 | 9.048 | 8.55 | Medium | Excellent | 17/35 |
+| 28 | Feel Good Crystals | CV36 5LE | Cafe / Coffee Shop | 9.5 | 8.864 | 8.541 | Medium | Excellent | 15/35 |
+| 29 | Snitterfield Arms | CV37 0JH | Pub / Bar | 9.5 | 8.641 | 8.527 | Medium | Excellent | 15/35 |
+| 30 | Cotswold Cafe |  | Cafe / Coffee Shop | 9.5 | 8.44 | 8.524 | Medium | Excellent | 16/35 |
+| 31 | The Bluebell | B95 5AT | Restaurant (General) | 9.0 | 8.818 | 8.523 | Medium | Excellent | 16/35 |
+| 32 | Chapter 23 | B49 5AF | Cafe / Coffee Shop | 9.5 | 8.613 | 8.517 | Medium | Excellent | 15/35 |
+| 33 | The Bull's Head | B95 6BD | Pub / Bar | 9.025 | 8.99 | 8.508 | Medium | Excellent | 16/35 |
+| 34 | Bannatyne Health Club And Spa Wildmoor | CV37 9RJ | Restaurant (General) | 9.025 | 8.973 | 8.496 | Medium | Excellent | 15/35 |
+| 35 | Costa | B95 5DA | Cafe / Coffee Shop | 9.5 | 8.335 | 8.494 | Medium | Excellent | 16/35 |
+| 36 | The Bell Inn | CV37 8EB | Pub / Bar | 8.5 | 9.143 | 8.493 | Medium | Excellent | 16/35 |
+| 37 | The Pavillion | OX15 6HT | Other | 9.5 | 9.048 | 8.481 | Medium | Excellent | 15/35 |
+| 38 | LeBuns | CV35 0JS | Pub / Bar | 9.5 | 8.256 | 8.47 | Medium | Excellent | 16/35 |
+| 39 | Starbucks Drive Thru | CV35 0AA | Fast Food / Quick Service | 10.0 | 7.78 | 8.463 | Medium | Excellent | 17/35 |
+| 40 | Prospero Lounge | CV37 6AD | British Restaurant | 9.025 | 8.811 | 8.453 | Medium | Excellent | 17/35 |
+| 41 | Beleza Rodizio | CV37 6EX | American / Grill | 9.025 | 9.871 | 8.434 | Medium | Excellent | 16/35 |
+| 42 | Premier Inn | CV37 6UQ | Hotel / Accommodation | 9.5 | 8.984 | 8.43 | Medium | Excellent | 14/35 |
+| 43 | The Pickled Crab Deli | CV47 0HF | Takeaway | 9.5 | 8.452 | 8.427 | Medium | Excellent | 17/35 |
+| 44 | Revs Automobilia | GL56 9RE | Cafe / Coffee Shop | 9.0 | 8.707 | 8.426 | Medium | Excellent | 15/35 |
+| 45 | Kolshi Restaurant | CV35 9ND | Indian Restaurant | 9.0 | 9.666 | 8.415 | Medium | Excellent | 16/35 |
+| 46 | Bidford Community Fridge & Cafe | B50 4QB | Cafe / Coffee Shop | 9.0 | 8.987 | 8.411 | Medium | Excellent | 15/35 |
+| 47 | Henley Ice Cream Limited | B95 5BS | Cafe / Coffee Shop | 8.55 | 9.0 | 8.405 | Medium | Excellent | 16/35 |
+| 48 | Bistrot Pierre | CV37 7LT | French Restaurant | 10.0 | 8.654 | 8.392 | Medium | Excellent | 14/35 |
+| 49 | GAIL's Stratford-Upon-Avon | CV37 6AU | Fast Food / Quick Service | 9.5 | 8.361 | 8.391 | Medium | Excellent | 15/35 |
+| 50 | Ashorne Hill Management College | CV33 9QW | Other | 10.0 | 9.147 | 8.38 | Low | Excellent | 13/35 |
+| 51 | Bumbles | B80 7AN | Italian Restaurant | 9.025 | 9.199 | 8.372 | Medium | Excellent | 16/35 |
+| 52 | Puddleduck Cafe Ltd | CV47 1AJ | Cafe / Coffee Shop | 10.0 | 8.711 | 8.358 | Medium | Excellent | 14/35 |
+| 53 | Mr Odie's | CV37 6QT | Cafe / Coffee Shop | 8.5 | 8.894 | 8.353 | Medium | Excellent | 15/35 |
+| 54 | Coffee Clouds | CV37 6GJ | Cafe / Coffee Shop | 8.5 | 8.66 | 8.348 | Medium | Excellent | 16/35 |
+| 55 | Chrissie's Kitchen | CV35 | Takeaway | 9.0 | 8.84 | 8.345 | Medium | Excellent | 15/35 |
+| 56 | Stratford Adventure Golf | CV37 7LS | Other | 9.5 | 8.806 | 8.341 | Medium | Excellent | 14/35 |
+| 57 | Lambs | CV37 6EF | British Restaurant | 9.0 | 9.238 | 8.333 | Medium | Excellent | 17/35 |
+| 58 | NO4 Bar And Restaurant | CV37 6YY | Restaurant (General) | 8.55 | 8.91 | 8.332 | Medium | Excellent | 15/35 |
+| 59 | Lounge@26 | B49 5AB | Cafe / Coffee Shop | 9.5 | 8.14 | 8.33 | Medium | Excellent | 16/35 |
+| 60 | Cafe 86B | B95 5BY | Cafe / Coffee Shop | 9.0 | 8.446 | 8.319 | Medium | Excellent | 15/35 |
+| 61 | The Kingfisher FishBar | CV37 6LW | Fast Food / Quick Service | 9.025 | 8.416 | 8.314 | Medium | Excellent | 17/35 |
+| 62 | Hussains | CV37 6EP | Indian Restaurant | 9.025 | 8.4 | 8.306 | Medium | Excellent | 18/35 |
+| 63 | Premier Inn | CV37 0AZ | Hotel / Accommodation | 9.025 | 9.263 | 8.296 | Medium | Excellent | 14/35 |
+| 64 | Plantarium | CV37 6NF | Vegan / Vegetarian | 8.55 | 9.2 | 8.272 | Medium | Excellent | 17/35 |
+| 65 | Fast Flavour | CV37 6AB | Restaurant (General) | 9.5 | 7.928 | 8.271 | Medium | Excellent | 15/35 |
+| 66 | The Kings Head | CV35 9LT | British Restaurant | 9.5 | 8.857 | 8.254 | Medium | Excellent | 17/35 |
+| 67 | Pizza Junction Kineton Ltd | CV35 0LN | Italian Restaurant | 9.5 | 8.867 | 8.247 | Medium | Excellent | 16/35 |
+| 68 | Shah's | CV35 9LU | Indian Restaurant | 9.025 | 8.781 | 8.246 | Medium | Excellent | 17/35 |
+| 69 | Deli Cafe | CV37 6QB | British Restaurant | 9.5 | 8.626 | 8.242 | Medium | Excellent | 18/35 |
+| 70 | The Coach House | CV37 6LP | Pub / Bar | 8.55 | 8.526 | 8.239 | Medium | Excellent | 16/35 |
+| 71 | The Bridge | B50 4BG | Restaurant (General) | 8.55 | 8.57 | 8.238 | Medium | Excellent | 16/35 |
+| 72 | The Bishops Fryer | CV47 2RN | Takeaway | 9.5 | 7.765 | 8.219 | Medium | Excellent | 17/35 |
+| 73 | Loxleys Restaurant And Wine Bar | CV37 6EF | British Restaurant | 8.5 | 9.238 | 8.213 | Medium | Excellent | 17/35 |
+| 74 | Building 523 Costa And Kitchen | CV35 0RR | Cafe / Coffee Shop | 9.5 | 9.451 | 8.207 | Low | Excellent | 13/35 |
+| 75 | South Costa | CV35 0RR | Cafe / Coffee Shop | 9.5 | 9.451 | 8.206 | Low | Excellent | 13/35 |
+| 76 | Cafe Des Fleurs | B49 5AE | Pub / Bar | 9.0 | 8.394 | 8.201 | Medium | Excellent | 17/35 |
+| 77 | Soma | CV37 6EX | Italian Restaurant | 9.5 | 8.715 | 8.197 | Medium | Excellent | 16/35 |
+| 78 | Ragley Hall Catering | B49 5NJ | Hotel / Accommodation | 9.0 | 9.579 | 8.196 | Low | Excellent | 13/35 |
+| 79 | Good Breakfast | CV35 0AA | Other | 8.5 | 8.842 | 8.186 | Medium | Excellent | 14/35 |
+| 80 | Harbury Library Cafe | CV33 9HW | Cafe / Coffee Shop | 8.5 | 8.332 | 8.184 | Medium | Excellent | 15/35 |
+| 81 | Starbucks -  Southbound | CV35 0AA | Cafe / Coffee Shop | 8.55 | 8.947 | 8.174 | Medium | Excellent | 14/35 |
+| 82 | Burger King - Southbound | CV35 0AA | Fast Food / Quick Service | 8.55 | 8.947 | 8.173 | Medium | Excellent | 14/35 |
+| 83 | The Spice Room | B49 5AD | Indian Restaurant | 9.5 | 8.636 | 8.172 | Medium | Excellent | 17/35 |
+| 84 | Lily's | CV37 6LU | Restaurant (General) | 8.075 | 8.805 | 8.169 | Medium | Excellent | 15/35 |
+| 85 | Costa | CV37 0UA | Food & Drink | 9.025 | 7.942 | 8.166 | Medium | Excellent | 16/35 |
+| 86 | Ferment And Flour (Bastardos) | CV36 4PP | Cafe / Coffee Shop | 10.0 | 7.216 | 8.164 | Medium | Excellent | 15/35 |
+| 87 | Carluccio's | CV37 6BA | Italian Restaurant | 9.5 | 8.488 | 8.162 | Medium | Excellent | 17/35 |
+| 88 | Annie's Cafe & Event Catering | B49 5QF | Cafe / Coffee Shop | 9.5 | 8.393 | 8.161 | Medium | Excellent | 14/35 |
+| 89 | Southam Gateway Coffee Shop Ltd | CV47 0EP | Cafe / Coffee Shop | 9.025 | 8.035 | 8.16 | Medium | Excellent | 16/35 |
+| 90 | Costa Coffee | B49 6PQ | Cafe / Coffee Shop | 10.0 | 7.215 | 8.146 | Medium | Excellent | 15/35 |
+| 91 | The George Hotel | CV36 4AJ | British Restaurant | 8.5 | 9.048 | 8.141 | Medium | Excellent | 17/35 |
+| 92 | Corte Campana | CV37 6EX | Italian Restaurant | 8.55 | 9.35 | 8.136 | Medium | Excellent | 16/35 |
+| 93 | Cardamom | B49 5DP | Indian Restaurant | 9.0 | 8.701 | 8.131 | Medium | Excellent | 18/35 |
+| 94 | McDonald's | CV37 0AH | American / Grill | 9.5 | 8.143 | 8.125 | Medium | Excellent | 17/35 |
+| 95 | Bella Italia Also Trading As Super Nonna | CV37 6JG | Italian Restaurant | 9.025 | 8.857 | 8.124 | Medium | Excellent | 16/35 |
+| 96 | Barnabys | CV37 6BA | British Restaurant | 9.0 | 8.571 | 8.121 | Medium | Excellent | 18/35 |
+| 97 | Hotel Indigo And The Woodsman | CV37 6HA | Hotel / Accommodation | 9.025 | 9.597 | 8.112 | Low | Excellent | 13/35 |
+| 98 | Blue Bean Coffee Shop | CV36 4AF | Cafe / Coffee Shop | 8.075 | 8.572 | 8.11 | Medium | Excellent | 16/35 |
+| 99 | Greggs PLC | B49 6EH | Bakery / Desserts | 10.0 | 6.775 | 8.092 | Medium | Excellent | 16/35 |
+| 100 | Studley Castle | B80 7AJ | Hotel / Accommodation | 9.025 | 9.474 | 8.082 | Low | Excellent | 13/35 |
+| 101 | George's Cafe | B50 4JF | Cafe / Coffee Shop | 8.55 | 8.137 | 8.08 | Medium | Excellent | 16/35 |
+| 102 | Burger King | CV37 0HZ | Restaurant (General) | 8.5 | 7.935 | 8.075 | Medium | Excellent | 15/35 |
+| 103 | Shakespeare's | B94 5JU | Other | 7.2 | 9.474 | 8.073 | Medium | Excellent | 14/35 |
+| 104 | The Garden Shed Cafe | CV35 9NZ | Cafe / Coffee Shop | 7.2 | 8.851 | 8.056 | Medium | Excellent | 16/35 |
+| 105 | Alveston Manor Hotel | CV37 7HP | Hotel / Accommodation | 9.5 | 8.842 | 8.054 | Low | Excellent | 13/35 |
+| 106 | The Yew Tree | CV47 2AS | Pub / Bar | 7.2 | 8.85 | 8.05 | Medium | Excellent | 16/35 |
+| 107 | Kitty's Kitchen Catering Ltd | CV37 7AY | Catering | 9.0 | 8.613 | 8.04 | Medium | Excellent | 14/35 |
+| 108 | The Phoenix | CV37 6QY | Italian Restaurant | 9.025 | 8.7 | 8.037 | Medium | Excellent | 18/35 |
+| 109 | Dec X Canteen | CV35 0RR | Cafe / Coffee Shop | 9.025 | 9.451 | 8.034 | Low | Excellent | 13/35 |
+| 110 | Pick Thai Ltd | CV37 6HB | Thai Restaurant | 8.5 | 8.785 | 8.016 | Medium | Excellent | 16/35 |
+| 111 | Cafe 16 | CV47 0HF | Cafe / Coffee Shop | 9.0 | 8.364 | 8.014 | Medium | Excellent | 17/35 |
+| 112 | Caffe Nero | CV37 6AN | Cafe / Coffee Shop | 8.1 | 8.375 | 8.013 | Medium | Excellent | 16/35 |
+| 113 | Avon Spice | CV37 6LF | Indian Restaurant | 9.0 | 8.328 | 8.012 | Medium | Excellent | 17/35 |
+| 114 | Impasto Micro-Pizzeria | CV37 6QY | Italian Restaurant | 8.55 | 9.035 | 8.003 | Medium | Excellent | 16/35 |
+| 115 | The Avon Lounge | CV37 6LP | Pub / Bar | 8.55 | 7.915 | 8.001 | Medium | Excellent | 15/35 |
+| 116 | The Cottage Of Content | B50 4NP | Pub / Bar | 7.2 | 8.644 | 7.997 | Medium | Good | 16/35 |
+| 117 | Crowne Plaza | CV37 6YR | Hotel / Accommodation | 9.025 | 9.263 | 7.992 | Low | Good | 13/35 |
+| 118 | Sans Oriental Restaurant | B95 5AT | Chinese Restaurant | 8.5 | 8.629 | 7.979 | Medium | Good | 18/35 |
+| 119 | The Straw Kitchen | CV36 5PG | Cafe / Coffee Shop | 8.55 | 8.855 | 7.965 | Medium | Good | 17/35 |
+| 120 | The Food Of Love | CV37 6QW | Fast Food / Quick Service | 9.5 | 8.03 | 7.944 | Medium | Good | 18/35 |
+| 121 | The Olde Mint | CV47 0EP | Pub / Bar | 8.5 | 7.571 | 7.939 | Medium | Good | 16/35 |
+| 122 | The Margin | CV47 9PZ | Takeaway | 8.075 | 8.067 | 7.927 | Medium | Good | 16/35 |
+| 123 | Pickled & Tipsy's Cafe | CV47 1PH | Takeaway | 9.5 | 7.96 | 7.92 | Medium | Good | 17/35 |
+| 124 | The Still House Café | CV36 5EX | Italian Restaurant | 9.025 | 8.406 | 7.909 | Medium | Good | 17/35 |
+| 125 | Nanas Caff | CV37 9NQ | Cafe / Coffee Shop | 9.5 | 10.0 | 7.907 | Low | Good | 9/35 |
+| 126 | McDonald's | CV37 6AB | American / Grill | 9.025 | 8.143 | 7.906 | Medium | Good | 17/35 |
+| 127 | Bruno's Bakery | B80 7HJ | Fast Food / Quick Service | 8.5 | 8.393 | 7.905 | Medium | Good | 18/35 |
+| 128 | The Pavilion Coffee Shop And Community Space | CV37 8YE | Cafe / Coffee Shop | 9.0 | 7.054 | 7.903 | Medium | Good | 15/35 |
+| 129 | Costa Coffee | CV37 6PT | Cafe / Coffee Shop | 10.0 | 7.503 | 7.901 | Medium | Good | 15/35 |
+| 130 | JNB Cafe | CV37 0ER | Cafe / Coffee Shop | 8.1 | 8.829 | 7.873 | Medium | Good | 14/35 |
+| 131 | KFC - Southbound | CV35 0AA | American / Grill | 9.0 | 7.259 | 7.861 | Medium | Good | 18/35 |
+| 132 | Arden Tandoori | B95 5AU | Indian Restaurant | 8.5 | 8.475 | 7.828 | Medium | Good | 17/35 |
+| 133 | Coffee#1 Limited | CV37 6EY | Cafe / Coffee Shop | 8.55 | 8.506 | 7.824 | Medium | Good | 15/35 |
+| 134 | The Sandwich Shop | B95 5AT | Fast Food / Quick Service | 8.075 | 7.793 | 7.787 | Medium | Good | 15/35 |
+| 135 | Sushi Land | CV37 6NF | Japanese Restaurant | 8.075 | 8.683 | 7.778 | Medium | Good | 16/35 |
+| 136 | Nuthurst Grange Country House | B94 5NL | Hotel / Accommodation | 5.605 | 9.338 | 7.758 | Medium | Good | 15/35 |
+| 137 | Libertine Burger | CV37 6JP | American / Grill | 8.075 | 8.595 | 7.757 | Medium | Good | 16/35 |
+| 138 | Costa Coffee | CV37 8LU | Cafe / Coffee Shop | 9.5 | 6.137 | 7.756 | Medium | Good | 16/35 |
+| 139 | Billesley Manor Hotel | B49 6NF | Hotel / Accommodation | 8.55 | 9.158 | 7.754 | Low | Good | 13/35 |
+| 140 | The Buck And Bell | CV47 9PH | Pub / Bar | 6.84 | 8.352 | 7.744 | Medium | Good | 16/35 |
+| 141 | The Embankment | CV37 7LS | Hotel / Accommodation | 6.84 | 9.172 | 7.741 | Medium | Good | 14/35 |
+| 142 | Wildwood Kitchen | CV37 6EF | Italian Restaurant | 7.315 | 8.857 | 7.692 | Medium | Good | 17/35 |
+| 143 | Turkish Stonebakers | CV35 9NE | Mediterranean Restaurant | 6.84 | 9.23 | 7.659 | Medium | Good | 16/35 |
+| 144 | Cinnamon Arch | CV47 9QJ | Indian Restaurant | 8.075 | 8.333 | 7.644 | Medium | Good | 16/35 |
+| 145 | Paul's Catering | CV37 | Food & Drink | 8.55 | 7.032 | 7.643 | Medium | Good | 14/35 |
+| 146 | Hobsons Patisseries | CV37 6PT | Cafe / Coffee Shop | 5.4 | 8.857 | 7.633 | Medium | Good | 16/35 |
+| 147 | DoubleTree By Hilton | CV37 6QQ | Hotel / Accommodation | 8.075 | 9.263 | 7.632 | Low | Good | 13/35 |
+| 148 | The Water Margin @ The Hollybush | CV47 7RW | Takeaway | 6.84 | 8.067 | 7.618 | Medium | Good | 16/35 |
+| 149 | Peppers | B80 7HN | Indian Restaurant | 8.075 | 8.162 | 7.617 | Medium | Good | 17/35 |
+| 150 | Hudson's | CV37 9ST | Cafe / Coffee Shop | 5.9 | 8.443 | 7.609 | Medium | Good | 15/35 |
+| 151 | The Tempest | CV37 6EX | Italian Restaurant | 7.315 | 8.715 | 7.594 | Medium | Good | 16/35 |
+| 152 | Shukurs | CV35 0HP | Indian Restaurant | 6.84 | 8.972 | 7.593 | Medium | Good | 17/35 |
+| 153 | Touchdown Cafe | CV35 9EU | Cafe / Coffee Shop | 6.84 | 8.905 | 7.588 | Medium | Good | 17/35 |
+| 154 | Thespians Indian Restaurant | CV37 6EF | Indian Restaurant | 7.2 | 8.347 | 7.583 | Medium | Good | 17/35 |
+| 155 | The Cowshed Cafe | B95 6BY | Cafe / Coffee Shop | 5.9 | 8.358 | 7.571 | Medium | Good | 16/35 |
+| 156 | Four Seasons Pho Limited | CV37 6LF | Asian Restaurant | 7.65 | 8.445 | 7.546 | Medium | Good | 16/35 |
+| 157 | The Stables | B94 5BQ | Hotel / Accommodation | 9.025 | 8.517 | 7.545 | Low | Good | 13/35 |
+| 158 | Sorrento Restaurant Taste Of Italy | CV37 6LW | Italian Restaurant | 5.9 | 8.695 | 7.538 | Medium | Good | 17/35 |
+| 159 | Cafe Living | CV37 0HZ | Cafe / Coffee Shop | 5.4 | 8.524 | 7.532 | Medium | Good | 16/35 |
+| 160 | Gardener's Retreat | B80 7DR | Restaurant (General) | 9.0 | 5.873 | 7.522 | Medium | Good | 15/35 |
+| 161 | The Long Itch Diner | CV47 9QZ | Fast Food / Quick Service | 6.84 | 8.647 | 7.503 | Medium | Good | 18/35 |
+| 162 | The Balti Hut | CV47 0HA | Indian Restaurant | 7.2 | 8.167 | 7.455 | Medium | Good | 17/35 |
+| 163 | Chopstix South | CV35 0AA | Asian Restaurant | 8.55 | 6.201 | 7.447 | Medium | Good | 15/35 |
+| 164 | WINGERS STRATFORD | CV37 0BF | American / Grill | 7.2 | 7.897 | 7.377 | Medium | Good | 16/35 |
+| 165 | Four Teas | CV37 6EF | Cafe / Coffee Shop | 5.4 | 9.048 | 7.376 | Medium | Good | 17/35 |
+| 166 | Shipston Pizza And Kebab House | CV36 4AL | Fast Food / Quick Service | 5.9 | 7.728 | 7.343 | Medium | Good | 16/35 |
+| 167 | Bardia's | CV37 6EE | Cafe / Coffee Shop | 5.605 | 9.178 | 7.342 | Medium | Good | 16/35 |
+| 168 | Elders Who Lunch (Hartley Locums) | CV47 8LS | Other | 8.5 | 6.899 | 7.34 | Medium | Good | 14/35 |
+| 169 | The Keys | CV37 6LW | Pub / Bar | 7.38 | 8.369 | 7.332 | Medium | Good | 15/35 |
+| 170 | Bishops Bowls Lake Cafe | CV47 2SR | Cafe / Coffee Shop | 5.9 | 8.693 | 7.316 | Medium | Good | 14/35 |
+| 171 | Burger King - Northbound | CV35 0AA | American / Grill | 10.0 | 5.536 | 7.313 | Medium | Good | 17/35 |
+| 172 | Gardener's Retreat | CV35 9ER | Restaurant (General) | 7.65 | 6.635 | 7.262 | Medium | Good | 15/35 |
+| 173 | Cafe Chutneys | CV37 0AX | Indian Restaurant | 5.9 | 8.251 | 7.174 | Medium | Good | 17/35 |
+| 174 | Curry Republic | B95 5AA | Indian Restaurant | 5.4 | 7.905 | 7.136 | Medium | Good | 18/35 |
+| 175 | Tzatziki34 | CV37 6AB | Mediterranean Restaurant | 7.2 | 8.505 | 7.067 | Medium | Good | 15/35 |
+| 176 | The Tea Shed | CV47 8LT | Cafe / Coffee Shop | 8.075 | 7.173 | 7.052 | Medium | Good | 14/35 |
+| 177 | Compton Verney Cafe | CV35 9HZ | Restaurant (General) | 8.5 | 7.333 | 6.986 | Low | Good | 10/35 |
+| 178 | Earlswood Lunch Club | B94 6BZ | Catering | 8.55 | 7.69 | 6.956 | Low | Good | 13/35 |
+| 179 | New Summer Palace Restaurant | B80 7DF | Chinese Restaurant | 5.13 | 8.303 | 6.955 | Medium | Good | 17/35 |
+| 180 | The Crofts Cafe Also Trading As New York Pizzas | CV37 6PH | American / Grill | 8.5 | 10.0 | 6.831 | Low | Good | 9/35 |
+| 181 | Mouchak | B50 4BG | Indian Restaurant | 5.4 | 7.728 | 6.804 | Medium | Good | 16/35 |
+| 182 | Lexi's Loving Spoonful | CV47 2QZ | Other | 9.025 | 6.924 | 6.721 | Low | Good | 13/35 |
+| 183 | Escape Arts | CV37 6EE | Other | 8.1 | 5.895 | 6.677 | Medium | Good | 14/35 |
+| 184 | Dog Lane Fishery Caravanning And Camping Site | CV47 8LT | Hotel / Accommodation | 7.65 | 9.033 | 6.656 | Medium | Good | 14/35 |
+| 185 | Shipston Bengal Cuisine | CV36 4PP | Indian Restaurant | - | 7.908 | 6.187 | Low | Generally Satisfactory | 12/35 |
+| 186 | Kings Court Hotel | B49 5QQ | Hotel / Accommodation | 9.025 | 6.667 | 6.09 | Low | Generally Satisfactory | 9/35 |
+| 187 | CAMEO Lunch Club |  | Catering | 5.9 | 6.948 | 5.72 | Low | Generally Satisfactory | 13/35 |
+| 188 | Coughton Court Cafe | B49 5JA | Cafe / Coffee Shop | - | 7.488 | 5.672 | Low | Generally Satisfactory | 9/35 |
+| 189 | China Garden | CV37 6NL | Chinese Restaurant | 4.1 | 7.115 | 4.0 | Medium | Improvement Necessary | 17/35 |
+| 190 | Welcombe Hotel Golf Resort \& Spa | CV37 0NR | Hotel / Accommodation | 4.1 | 8.947 | 3.999 | Medium | Improvement Necessary | 15/35 |
+| 191 | Subway | CV37 0HZ | Fast Food / Quick Service | 4.6 | 7.484 | 3.998 | Medium | Improvement Necessary | 17/35 |
+| 192 | Mount Everest Nepalese Cuisine | B80 7NL | Restaurant (General) | 3.895 | 8.545 | 3.997 | Medium | Improvement Necessary | 16/35 |
+| 193 | Karen's Korner | B80 7PD | Cafe / Coffee Shop | 2.8 | 8.079 | 2.0 | Medium | Major Improvement | 16/35 |
+| 194 | Havilands Tea Room And Restaurant | CV37 6QB | Cafe / Coffee Shop | 1.8 | 8.255 | 1.999 | Medium | Major Improvement | 15/35 |
 
-## 8. Data Quality Notes
+## 8. Excluded Establishments
+
+### Not Ranked (non-food businesses)
+
+| Name | Postcode | Category | Reason |
+|---|---|---|---|
+| Aston Martin Lagonda | CV35 0DB | Other | Non-food business |
+| Stratford On Avon Golf Club | CV37 7BA | Other | Non-food business |
+| NFU Mutual | CV37 7BJ | Other | Non-food business |
+| Stratford Town FC | CV37 7BZ | Other | Non-food business |
+| A G D Equipment Ltd | CV37 9LQ | Other | Non-food business |
+| Redwings Horse Sanctuary | CV35 0RP | Other | Non-food business |
+| Birmingham City Football Club Ltd | B95 6AB | Other | Non-food business |
+| Stratford Upon Avon Baptist Church | CV37 6UA | Other | Non-food business |
+| Bidford Juniors Football Club |  | Other | Non-food business |
+| Slimming World | CV35 0FA | Other | Non-food business |
+| Golden Putter Stratford Upon | CV37 7LS | Other | Non-food business |
+| Mid-England Barrow Ltd | OX17 | Other | Non-food business |
+
+### Insufficient Data (<8 signals)
+
+| Name | Postcode | Category | RCS | Signals |
+|---|---|---|---:|---:|
+| The Roebuck Inn Alcester | B49 5QA | Pub / Bar | 6.987 | 5/35 |
+| Digby's Events | CV47 | Other | 6.45 | 7/35 |
+
+## 9. Data Quality Notes
 
 ### Actual vs Inferred Data
-
 | Data Type | Source | Reliability |
 |---|---|---|
-| FSA hygiene rating | Firebase RTDB (from FSA API) | High — official government data |
-| FSA sub-scores (hygiene, structural, CIM) | Firebase RTDB | High — normalised 0-10 |
-| Google rating & review count | Google Places API (New) | High — live API data |
-| Google photos count & types | Google Places API (New) | High |
-| Opening hours completeness | Inferred from Google `goh` field | Medium — 7 days = 100% |
-| Delivery / takeaway | Inferred from Google place types | Medium — type presence only |
-| Cuisine tags | Inferred from Google `*_restaurant` types | Medium — limited to typed cuisines |
-| Menu presence | Inferred from restaurant + review presence | Low — assumed, not verified |
-| Reputation & awards | Michelin Guide search + known lists | Medium — web search dependent |
-| Community & engagement | Computed from recency + volume + breadth | Medium — proxy signals |
+| FSA hygiene rating + sub-scores | Firebase RTDB (FSA API) | High |
+| Google rating, reviews, photos, types | Google Places API (New) | High |
+| Opening hours completeness | Inferred from Google goh field | Medium |
+| Delivery / takeaway | Inferred from Google place types | Medium |
+| Cuisine tags | Inferred from Google restaurant types | Medium |
+| Menu presence | Inferred from restaurant + review presence | Low |
+| Reputation & awards | Michelin Guide search + known lists | Medium |
+| Community & engagement | Computed from recency + reviews + presence | Medium |
 
-### Missing Data (Not Yet Collected)
+### Missing Data
+| Signal | Impact | Status |
+|---|---|---|
+| TripAdvisor (Tier 3, 20% weight) | High | Scraper built, workflow ready |
+| Website/Facebook/Instagram presence | Medium | Needs web search API |
+| Wheelchair/parking/reservations | Low | Available from Google Places extended |
+| Dietary options count | Medium | Needs website scraping |
+| Pubs/bars/takeaways (FSA types 7+14) | High | augment_fsa_stratford.py ready |
 
-| Signal | Tier | Impact | Status |
-|---|---|---|---|
-| TripAdvisor rating & reviews | Tier 3 (Online Presence) | High — would add ~3 signals | Scraper built, workflow ready |
-| Website / Facebook / Instagram presence | Tier 3 | Medium — 3 boolean signals | Needs web search API |
-| Wheelchair / parking / reservations | Tier 4 (Operational) | Low — boolean signals | Available from Google Places extended |
-| Dietary options count | Tier 5 (Menu) | Medium — requires website scrape | Script built, needs website URLs |
-| AA Rosettes | Tier 6 (Reputation) | Low — few Stratford restaurants listed | Manual curation needed |
-| Review response rate & time | Tier 7 (Community) | Medium — 2 signals | Available from Google Places API |
+## 10. Methodology Changes (V2.1)
 
-### Known Limitations
-
-- **4 establishments lack FSA data** — these score based on available tiers only
-- **1 establishment lacks Google data** — Digby's Events (no Google Places match)
-- **TripAdvisor tier is empty** — the collect_tripadvisor.yml workflow is ready but not yet triggered
-- **Reputation scores are minimal** — most Stratford restaurants don't appear in Michelin/AA guides
-- **Menu presence is largely inferred** — assumed from Google/TA listing, not verified by website scrape
-- **Category classification** — 22 establishments remain 'Other' (non-restaurant FSA registrations like sports clubs, churches)
-
----
-
-## 9. Robustness Assessment & Critical Analysis
-
-### 9.1 Potential Ranking Criticisms
-
-**Chains are ranked alongside independents — and doing well.**
-20 chain outlets appear in the rankings, many in the top half. Costa has 6 entries (ranks #11, #30, #54, #75, #82, #119), Starbucks has 3 (ranks #15, #23, #97), and McDonald's has 2 (ranks #80, #123). These chains score well because they consistently achieve FSA 5 and have high Google review volumes. This is arguably fair for hygiene confidence, but it tells you nothing about food quality, atmosphere, or value — signals we don't yet capture.
-
-**Starbucks (#15, RCS 8.766) outranks every Indian restaurant in the district.** The highest-ranked Indian restaurant is Chutni Indian Kitchen at #17. A coffee chain outranking a sit-down curry house will feel wrong to most diners. The root cause: Starbucks has a perfect FSA score, 548 Google reviews, and benefits from inferred operational signals (takeaway, hours). Chutni has comparable FSA but fewer reviews. When TripAdvisor data arrives, Indian restaurants with strong TA ratings should climb.
-
-**No fine dining restaurants exist in the data.** Zero establishments were classified as "Fine Dining" — this is a classification gap, not a data gap. Restaurants like Oxheart, Salt, and The Fuzzy Duck likely qualify but Google's place types don't consistently tag them as `fine_dining_restaurant`. This means there's no separate fine dining leaderboard, and these restaurants compete directly with cafes and takeaways.
-
-**Non-restaurants are ranked.** 22 establishments classified as "Other" include Aston Martin Lagonda (#22, RCS 8.690), Stratford Adventure Golf (#49), Birmingham City Football Club (#76), and Slimming World (#170). These are FSA-registered food premises but not restaurants in any meaningful sense. Five of them sit in the top 50. They should either be filtered out or flagged with a "Non-Restaurant" badge.
-
-**Cafes dominate the top 20.** 6 of the top 20 are cafes/coffee shops, 5 are pubs. This reflects the reality that cafes and pubs are the most common food establishment types in a market town, but it also suggests the scoring rewards "safe" establishments (high FSA, moderate Google reviews) over exceptional but niche ones.
-
-**Takeaways are compared against sit-down restaurants.** A takeaway with FSA 5 and 200 Google reviews will score similarly to a restaurant with the same metrics, despite being fundamentally different experiences. The current methodology doesn't distinguish between service models. A "type weighting" adjustment could address this.
-
-### 9.2 Data Gaps & Their Impact
-
-**39% of scored signals are inferred, not measured.**
-Of the 15.1 average signals per establishment, 9.2 come from actual data sources (FSA + Google Places API) and 5.9 are inferred from those same sources. The inferred signals are:
-- **Operational** (Tier 4): delivery/takeaway inferred from Google `meal_takeaway` type; hours completeness from `goh` field length
-- **Menu** (Tier 5): cuisine tag count inferred from Google `*_restaurant` types; menu presence assumed for all Google-listed food establishments
-- **Community** (Tier 7): entirely computed from inspection recency, combined review volume, and online presence breadth
-
-This means two different restaurants with identical FSA + Google data will get identical scores across Tiers 4, 5, and 7 — there's no actual differentiation for those tiers yet.
-
-**TripAdvisor (Tier 3, weight 15%) is completely empty.**
-Adding TripAdvisor data would activate the third-heaviest tier. Estimated impact:
-- Restaurants with strong TA ratings (4.5+) could gain 0.3–0.7 points
-- Restaurants with weak TA ratings (<3.5) could lose 0.3–0.5 points
-- 70 restaurants currently sit within ±0.3 of the Excellent/Good boundary (8.0) — TripAdvisor data could reclassify many of these
-
-**11 restaurants have ≤12 signals and are most vulnerable to re-ranking:**
-
-| Rank | Name | RCS | Signals | Risk |
-|---:|---|---:|---:|---|
-| 7 | Lithos Restaurant | 8.875 | 12 | Could drop if TA/menu data is weak |
-| 133 | Nanas Caff | 7.920 | 9 | High uncertainty — near Good/GenSat boundary |
-| 181 | Compton Verney Cafe | 7.100 | 10 | Could cross into Generally Satisfactory |
-| 187 | Digby's Events | 6.975 | 7 | Lowest signal count — essentially unscored |
-| 191 | The Roebuck Inn Alcester | 6.795 | 5 | Only FSA data — score is unreliable |
-
-**Reputation tier (Tier 6) is populated but nearly empty of actual awards.** The editorial collection found no Michelin-starred, AA-rosetted, or Good Food Guide-listed restaurants in the Stratford dataset. Every establishment scores 0/10 on reputation. This tier's 5% weight is currently wasted — it contributes nothing to differentiation.
-
-### 9.3 Methodology Weaknesses
-
-**43% signal coverage is insufficient for confident rankings.** The V2 methodology specifies 35 signals, but we're measuring 15.1 on average. More than half the scoring model is either inferred or absent. At this coverage level, the RCS is essentially a **weighted FSA + Google composite** with minor adjustments. The ranking is honest about what it measures, but calling it a "35-signal score" overstates the current reality.
-
-**FSA rating (30% weight) conflates hygiene with quality.** A chip shop with perfect hygiene scores identically to a Michelin-starred restaurant on the FSA tier. Since FSA is the single largest tier weight (30%), and nearly all Stratford establishments score 4-5, it compresses the top of the distribution. 128 of 208 (61.5%) are rated "Excellent" — this feels generous and suggests the FSA tier is pulling everyone upward.
-
-**Google review volume advantages chains.** The review count signal uses a log10 scale capped at 1000, but several chains have absurd volumes: Starbucks Southbound has 10,079 reviews, McDonald's has 2,386, Pizza Hut has 1,831. While the log scale dampens this, a chain with 2,000 reviews still gets a higher volume score than a village pub with 50 genuine reviews. This is a known bias toward volume over authenticity.
-
-**The "no online presence" penalty (-10%) punishes the wrong restaurants.** This penalty applies to any establishment without Google, TripAdvisor, or website data. In practice, it hits 0 establishments (since nearly all have Google data from enrichment). But conceptually, a restaurant without an online presence isn't necessarily bad — it might just be a traditional pub that doesn't need one. The penalty conflates digital marketing with food quality.
-
-**Category classification has 22 unresolved "Other" entries.** These include football clubs, a car manufacturer (Aston Martin), a miniature golf course, and a church. They hold FSA registrations because they serve food, but they distort the rankings. More critically, some genuine restaurants might be miscategorised — "The Lime Tree Restaurant" is classified as "Other" (rank #16) because Google tagged it as a `garden_center`, not a restaurant.
-
-**Tiebreaker offsets distort the bottom of the distribution.** The walk-down algorithm ensures unique scores, but it means the difference between rank #203 and #206 is artificial (0.001 per position). Four restaurants are clustered at RCS ~4.0 (China Garden, Welcombe Hotel, Subway, Mount Everest) with essentially identical scores separated only by tiebreaker offsets. Their relative ordering is determined by FSA sub-scores, not meaningful quality differences.
-
-### 9.4 What Would Make This More Robust
-
-**Highest-impact additions (in priority order):**
-
-| Addition | Tier | Impact | Effort |
-|---|---|---|---|
-| TripAdvisor ratings + reviews | Tier 3 | High — activates 15% weight, adds 3 real signals | Low — scraper built |
-| Website/social presence detection | Tier 3 | Medium — 3 boolean signals | Medium — needs search API |
-| Google Places extended fields (wheelchair, reservations) | Tier 4 | Medium — replaces inferred with actual | Low — extend existing API call |
-| Restaurant website menu scrape | Tier 5 | Medium — replaces inferred menu presence | Medium — per-site scraping |
-| Review response rate from Google | Tier 7 | Medium — real engagement signal | Low — available in API |
-
-**Recommended minimum signal threshold:** Establishments with fewer than 8 signals (currently 2 records) should be flagged as "Insufficient Data" rather than ranked. At 8+ signals, at least 2 tiers have actual data, which provides a minimum basis for comparison.
-
-**Separate leaderboards by establishment type.** Rather than one combined ranking, publish separate lists for: Restaurants, Cafes, Pubs, Takeaways/Fast Food, Hotels. This prevents the "Starbucks outranks the curry house" problem and gives each segment a meaningful competition.
-
-**Reduce FSA weight from 30% to 20%.** FSA hygiene data is important but it's a baseline, not a differentiator. Most establishments score 4-5, so the tier adds little discrimination. Redistributing 10% to Google (→30%) or Online Presence (→20%) would give consumer-facing signals more influence.
-
-**Add a "confidence" indicator per restaurant.** Rather than publishing a single RCS number, show a confidence band: e.g. "8.3 ± 0.5 (Medium Confidence, 15/35 signals)". This is more honest than implying 3-decimal precision when 57% of signals are missing.
+| Change | Rationale |
+|---|---|
+| FSA weight reduced 30% -> 20% | Hygiene is baseline, not differentiator |
+| Google weight increased 20% -> 25% | Consumer signals need more influence |
+| Online Presence weight increased 15% -> 20% | Will carry TripAdvisor data |
+| Non-food establishments excluded | Golf clubs, churches, etc. not restaurants |
+| Minimum 8-signal threshold | Below this, data is insufficient for ranking |
+| Confidence bands added | Honest about precision given signal coverage |
+| Food-service verification | Google types + FSA rating 3+ + name keywords |
 
 ---
 
-*Report generated from `stratford_rcs_scores.csv` (208 records) by `rcs_scoring_stratford.py` V2*
+*Report generated from stratford_rcs_scores.csv (208 records, 194 ranked) by rcs_scoring_stratford.py V2.1*
