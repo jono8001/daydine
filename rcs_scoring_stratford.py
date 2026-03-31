@@ -727,8 +727,20 @@ def assign_band(score):
 
 
 # ---------------------------------------------------------------------------
-# Full V2 RCS pipeline
+# Full V3.1 RCS pipeline
 # ---------------------------------------------------------------------------
+
+# Tiers that derive signals from Google data (for cross-tier cap)
+GOOGLE_DERIVED_TIERS = {"google", "online", "ops", "menu"}
+GOOGLE_CROSS_TIER_CAP = 0.45  # max total effective weight for Google-derived tiers
+GOOGLE_SINGLE_CAP = 0.30      # max effective weight for Tier 2 alone
+
+# Inferred signal discount — inferred signals carry 70% of nominal weight
+INFERRED_DISCOUNT = 0.70
+
+# Tiers where ALL current signals are inferred (not directly observed)
+# Tier 3 web/fb/ig are inferred; Tier 7 community is computed
+INFERRED_TIERS = {"online", "community"}
 
 TIER_SCORERS = {
     "fsa":        score_tier_fsa,
@@ -740,14 +752,45 @@ TIER_SCORERS = {
     "community":  score_tier_community,
 }
 
+def _apply_weight_caps(eff_weights):
+    """Apply Google single-tier cap and cross-tier dependency cap."""
+    # Cap 1: Google Tier 2 at 30%
+    if "google" in eff_weights and eff_weights["google"] > GOOGLE_SINGLE_CAP:
+        excess = eff_weights["google"] - GOOGLE_SINGLE_CAP
+        eff_weights["google"] = GOOGLE_SINGLE_CAP
+        others = {t: w for t, w in eff_weights.items() if t != "google"}
+        ot = sum(others.values())
+        if ot > 0:
+            for t in others:
+                eff_weights[t] += excess * (others[t] / ot)
+
+    # Cap 2: Total Google-derived tiers at 45%
+    google_derived_total = sum(eff_weights.get(t, 0) for t in GOOGLE_DERIVED_TIERS)
+    if google_derived_total > GOOGLE_CROSS_TIER_CAP:
+        scale = GOOGLE_CROSS_TIER_CAP / google_derived_total
+        excess = 0
+        for t in GOOGLE_DERIVED_TIERS:
+            if t in eff_weights:
+                old = eff_weights[t]
+                eff_weights[t] = old * scale
+                excess += old - eff_weights[t]
+        # Redistribute excess to non-Google tiers
+        non_google = {t: w for t, w in eff_weights.items() if t not in GOOGLE_DERIVED_TIERS}
+        nt = sum(non_google.values())
+        if nt > 0:
+            for t in non_google:
+                eff_weights[t] += excess * (non_google[t] / nt)
+
+    return eff_weights
+
+
 def compute_rcs_v2(record):
     """
-    Run V2 RCS pipeline on a single establishment.
-
-    Returns dict with per-tier scores, final score, band, and metadata.
+    Run V3.1 RCS pipeline on a single establishment.
     """
     tier_scores = {}
     signals_available = 0
+    signals_in_active_tiers = 0
     tier_details = {}
 
     for tier_name, scorer in TIER_SCORERS.items():
@@ -760,9 +803,9 @@ def compute_rcs_v2(record):
         }
         if score is not None:
             tier_scores[tier_name] = score
+            signals_in_active_tiers += total
         signals_available += used
 
-    # Re-weight available tiers
     if not tier_scores:
         return {
             "fsa_tier": None, "google_tier": None, "online_tier": None,
@@ -773,21 +816,19 @@ def compute_rcs_v2(record):
             "penalties": [],
         }
 
-    # Calculate effective weights with Google cap at 30%
-    GOOGLE_CAP = 0.30
-    raw_weights = {t: TIER_WEIGHTS[t] for t in tier_scores}
+    # Calculate effective weights with inferred discount
+    raw_weights = {}
+    for t in tier_scores:
+        w = TIER_WEIGHTS[t]
+        if t in INFERRED_TIERS:
+            w *= INFERRED_DISCOUNT  # Inferred tiers carry 70% weight
+        raw_weights[t] = w
+
     total_raw = sum(raw_weights.values())
     eff_weights = {t: w / total_raw for t, w in raw_weights.items()}
 
-    # If Google exceeds cap, redistribute excess to other tiers
-    if "google" in eff_weights and eff_weights["google"] > GOOGLE_CAP:
-        excess = eff_weights["google"] - GOOGLE_CAP
-        eff_weights["google"] = GOOGLE_CAP
-        others = {t: w for t, w in eff_weights.items() if t != "google"}
-        others_total = sum(others.values())
-        if others_total > 0:
-            for t in others:
-                eff_weights[t] += excess * (others[t] / others_total)
+    # Apply Google caps (single-tier 30% + cross-tier 45%)
+    eff_weights = _apply_weight_caps(eff_weights)
 
     weighted_sum = sum(
         tier_scores[t] * eff_weights[t]
@@ -796,6 +837,13 @@ def compute_rcs_v2(record):
 
     # Scale to 0-10
     raw_score = weighted_sum * 10
+
+    # Coverage bonus/penalty
+    coverage = signals_available / signals_in_active_tiers if signals_in_active_tiers > 0 else 0
+    if coverage < 0.40:
+        raw_score *= 0.90  # Sparse data penalty
+    elif coverage > 0.70:
+        raw_score *= 1.05  # Rich data bonus
 
     # Apply penalties
     final_score, penalties = apply_penalties(raw_score, record)
@@ -815,6 +863,7 @@ def compute_rcs_v2(record):
         "rcs_band": band,
         "signals_available": signals_available,
         "signals_total": TOTAL_SIGNALS,
+        "coverage": round(coverage, 2),
         "penalties": penalties,
     }
 
@@ -1437,6 +1486,26 @@ def main():
 
     # Apply tiebreakers for unique rankings
     scored = apply_tiebreakers(scored)
+
+    # Band calibration: if Excellent > 50% of ranked, apply gentle compression
+    ranked_rows = [r for r in scored if r["rank"] != ""]
+    if ranked_rows:
+        excellent_pct = sum(1 for r in ranked_rows if r["rcs_band"] == "Excellent") / len(ranked_rows)
+        if excellent_pct > 0.50:
+            # Compress scores above 8.0 toward 8.0 gently
+            # score' = 8.0 + (score - 8.0) * 0.85
+            for r in ranked_rows:
+                if r["rcs_final"] > 8.0:
+                    r["rcs_final"] = round(8.0 + (r["rcs_final"] - 8.0) * 0.85, 3)
+                    r["rcs_band"] = assign_band(r["rcs_final"])
+            # Re-ensure uniqueness after compression
+            ranked_rows.sort(key=lambda x: -x["rcs_final"])
+            for i in range(1, len(ranked_rows)):
+                if ranked_rows[i]["rcs_final"] >= ranked_rows[i-1]["rcs_final"]:
+                    ranked_rows[i]["rcs_final"] = round(ranked_rows[i-1]["rcs_final"] - 0.001, 3)
+            # Reassign ranks
+            for i, r in enumerate(ranked_rows, 1):
+                r["rank"] = i
 
     # Save CSV
     save_scores_csv(scored, CSV_OUTPUT)

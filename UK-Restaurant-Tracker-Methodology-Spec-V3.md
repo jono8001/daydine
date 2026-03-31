@@ -1,6 +1,6 @@
-# UK Restaurant Tracker — Methodology Specification V3
+# UK Restaurant Tracker — Methodology Specification V3.1
 
-*DayDine RCS (Restaurant Confidence Score) — Version 3.0*
+*DayDine RCS (Restaurant Confidence Score) — Version 3.1*
 *Last updated: 31 March 2026*
 
 ---
@@ -423,14 +423,78 @@ External script for remaining "Other" classifications.
 
 ---
 
-## 11. Version History
+## 11. V3.1 Enhancements
+
+### 11.1 Coverage Bonus/Penalty
+
+A coverage multiplier adjusts the raw score based on signal density:
+
+```
+coverage = signals_available / signals_in_active_tiers
+
+If coverage < 40%: raw_score × 0.90 (sparse data penalty)
+If coverage > 70%: raw_score × 1.05 (rich data bonus, capped at 10.0)
+```
+
+This rewards establishments with comprehensive data and penalises those scored from very few signals.
+
+### 11.2 Signal Provenance Weighting
+
+Every signal is tagged as either **observed** (directly from API/scrape) or **inferred** (derived from other data). Inferred signals carry **70% of their nominal weight**.
+
+Currently inferred tiers:
+- **Tier 3 (Online Presence)**: web, Facebook, Instagram presence are inferred from Google data
+- **Tier 7 (Community)**: entirely computed from inspection recency + review volume + presence breadth
+
+Effect: Inferred tiers contribute less to the final score until they are populated with directly observed data (e.g. actual TripAdvisor scrape results replace inferred presence).
+
+### 11.3 Google Cross-Tier Dependency Cap
+
+Tiers 2 (Google), 3 (Online — partially Google-inferred), 4 (Operational — Google types), and 5 (Menu — Google types + GBP) all derive some signals from Google data.
+
+**Two-stage cap:**
+1. Tier 2 (Google) alone: max **30%** effective weight
+2. All Google-derived tiers combined: max **45%** effective weight
+
+If re-normalisation pushes the combined Google-derived influence above 45%, excess is redistributed to non-Google tiers (FSA, Reputation, Community).
+
+### 11.4 FSA Data Reconciliation
+
+After FSA augmentation, our establishment count is compared against the FSA API total for LA 320 (Stratford-on-Avon). If the difference exceeds 5%, a `DATA_GAP` warning is flagged in the sanity report.
+
+### 11.5 Non-Food Classification Confidence
+
+Each keep/exclude decision now carries a confidence score (0-1):
+- **0.9**: Name blacklist match (e.g. "Football Club")
+- **0.8**: Google non-food type with no food types
+- **Reduced by 0.6×** if FSA rating ≥ 3 (may actually serve food)
+- **Reduced by 0.5×** if food keywords in name
+
+Decisions with confidence < 0.6 are flagged for manual review in the sanity report.
+
+### 11.6 Band Calibration Curve
+
+Target band distribution: Excellent ≤40%, Good 25-35%, Generally Satisfactory 15-25%.
+
+If Excellent exceeds 50% of ranked establishments, a gentle curve compression is applied:
+```
+For scores above 8.0:
+    score' = 8.0 + (score - 8.0) × 0.85
+```
+
+This compresses the top of the distribution without changing the relative ordering, improving score spread across bands.
+
+---
+
+## 12. Version History
 
 | Version | Date | Changes |
 |---|---|---|
 | V1.0 | Feb 2026 | Initial 5-source scoring engine (restaurant_confidence.py) |
 | V2.0 | Mar 2026 | 35 signals, 7 tiers, 0-10 scale, unique rankings, 6 rating bands |
 | V2.1 | Mar 2026 | FSA weight 30%→20%, Google capped 30%, confidence bands, non-food filter |
-| V3.0 | Mar 2026 | 40 signals, 8 tiers, aspect NLP (5 sub-scores), GBP completeness, TA recency, Companies House penalties, Apify TripAdvisor |
+| V3.0 | Mar 2026 | 40 signals, 8 tiers, aspect NLP, GBP completeness, TA recency, Companies House, Apify |
+| V3.1 | Mar 2026 | Coverage bonus/penalty, signal provenance weighting (inferred 70%), Google cross-tier 45% cap, FSA reconciliation, classification confidence, band calibration curve |
 
 ---
 

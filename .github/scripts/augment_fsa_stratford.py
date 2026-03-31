@@ -43,7 +43,26 @@ KNOWN_RESTAURANTS = [
     {"fhrsid": None, "name": "Boston Tea Party", "postcode": "CV37 6HJ"},
     {"fhrsid": None, "name": "Osteria Da Gino", "postcode": "CV37 6HJ"},
     {"fhrsid": None, "name": "Grace & Savour", "postcode": "CV37 6BA"},
+    {"fhrsid": "503104", "name": "Simla Takeaway", "postcode": "CV37 6LE"},
 ]
+
+
+def reconcile_fsa_count(la_id, our_count):
+    """Check our count vs FSA total for data gap detection."""
+    try:
+        params = {"localAuthorityId": la_id, "pageSize": 1}
+        resp = requests.get(FSA_URL, params=params, headers=FSA_HEADERS, timeout=15)
+        resp.raise_for_status()
+        fsa_total = resp.json().get("meta", {}).get("totalCount", 0)
+        gap_pct = abs(fsa_total - our_count) / fsa_total * 100 if fsa_total > 0 else 0
+        print(f"\nFSA reconciliation: FSA total={fsa_total}, ours={our_count}, gap={gap_pct:.1f}%")
+        if gap_pct > 5:
+            print(f"  WARNING: DATA_GAP — {gap_pct:.1f}% difference from FSA total")
+        return {"fsa_total": fsa_total, "our_total": our_count,
+                "gap_pct": round(gap_pct, 1), "warning": gap_pct > 5}
+    except requests.RequestException as e:
+        print(f"  FSA reconciliation check failed: {e}")
+        return None
 
 
 def fetch_fsa_all(la_id):
@@ -239,6 +258,9 @@ def main():
     # Final check
     vintner = any("vintner" in v.get("n", "").lower() for v in establishments.values())
     print(f"Vintner present: {vintner}")
+
+    # FSA reconciliation
+    reconcile_fsa_count(LA_ID, len(establishments))
 
 
 if __name__ == "__main__":

@@ -115,7 +115,10 @@ def search_google_text(query):
 
 
 def check_non_food(establishments):
-    """Identify establishments that look like non-food businesses."""
+    """
+    Identify establishments that look like non-food businesses.
+    Returns list of suspects with classification confidence score.
+    """
     non_food_indicators = {
         "sports_club", "church", "place_of_worship", "insurance_agency",
         "real_estate_agency", "miniature_golf_course", "gym", "fitness_center",
@@ -124,27 +127,49 @@ def check_non_food(establishments):
         "slimming world", "football club", "golf club", "aston martin",
         "nfu mutual", "baptist church", "horse sanctuary",
     }
+    food_types = {"restaurant", "cafe", "food", "bar", "pub",
+                  "meal_takeaway", "bakery", "coffee_shop"}
 
     suspects = []
     for key, record in establishments.items():
         name = (record.get("n") or "").lower()
         gty = set(record.get("gty", []) or [])
+        fsa_r = record.get("r")
 
         is_suspect = False
         reason = ""
+        confidence = 0.0
 
         # Check Google types
-        if gty & non_food_indicators and not gty & {"restaurant", "cafe", "food",
-                "bar", "pub", "meal_takeaway", "bakery"}:
+        if gty & non_food_indicators and not gty & food_types:
             is_suspect = True
             reason = f"google_types: {gty & non_food_indicators}"
+            confidence = 0.8
 
         # Check names
         for nf in non_food_names:
             if nf in name:
                 is_suspect = True
                 reason = f"name_match: {nf}"
+                confidence = 0.9
                 break
+
+        # Reduce confidence if FSA rating suggests food service
+        if is_suspect and fsa_r is not None:
+            try:
+                if int(fsa_r) >= 3:
+                    # Has good FSA rating — might actually serve food
+                    confidence *= 0.6
+                    reason += " (but FSA 3+ — may serve food)"
+            except (ValueError, TypeError):
+                pass
+
+        # Food keywords in name increase doubt about exclusion
+        food_kw = {"cafe", "caff", "restaurant", "kitchen", "catering",
+                   "lunch", "coffee", "tea", "food", "bistro", "grill"}
+        if is_suspect and any(fk in name for fk in food_kw):
+            confidence *= 0.5
+            reason += " (food keyword in name)"
 
         if is_suspect:
             suspects.append({
@@ -152,11 +177,27 @@ def check_non_food(establishments):
                 "name": record.get("n", ""),
                 "postcode": record.get("pc", ""),
                 "reason": reason,
-                "fsa_rating": record.get("r"),
+                "fsa_rating": fsa_r,
                 "google_types": list(gty)[:5],
+                "classification_confidence": round(confidence, 2),
+                "needs_manual_review": confidence < 0.6,
             })
 
     return suspects
+
+
+def check_fsa_reconciliation():
+    """Compare our establishment count against FSA API total for LA 320."""
+    import requests as req
+    FSA_URL = "https://api.ratings.food.gov.uk/Establishments"
+    FSA_HEADERS = {"x-api-version": "2", "accept": "application/json"}
+    try:
+        params = {"localAuthorityId": 320, "pageSize": 1}
+        resp = req.get(FSA_URL, params=params, headers=FSA_HEADERS, timeout=15)
+        resp.raise_for_status()
+        return resp.json().get("meta", {}).get("totalCount", 0)
+    except Exception:
+        return None
 
 
 def main():
@@ -177,13 +218,34 @@ def main():
         "external_searches": [],
     }
 
-    # Check for non-food businesses
+    # Check for non-food businesses (with confidence scores)
     print("\nChecking for non-food businesses...")
     suspects = check_non_food(establishments)
     report["non_food_suspects"] = suspects
     print(f"  Found {len(suspects)} non-food suspects")
+    needs_review = [s for s in suspects if s.get("needs_manual_review")]
     for s in suspects:
-        print(f"    {s['name']}: {s['reason']}")
+        flag = " ** NEEDS REVIEW" if s.get("needs_manual_review") else ""
+        print(f"    {s['name']}: conf={s['classification_confidence']}{flag}")
+    if needs_review:
+        print(f"  {len(needs_review)} decisions need manual review (confidence < 0.6)")
+
+    # FSA reconciliation
+    print("\nChecking FSA reconciliation...")
+    fsa_total = check_fsa_reconciliation()
+    if fsa_total:
+        gap_pct = abs(fsa_total - len(establishments)) / fsa_total * 100
+        report["fsa_reconciliation"] = {
+            "fsa_total": fsa_total,
+            "our_total": len(establishments),
+            "gap_pct": round(gap_pct, 1),
+            "warning": gap_pct > 5,
+        }
+        print(f"  FSA total: {fsa_total}, ours: {len(establishments)}, gap: {gap_pct:.1f}%")
+        if gap_pct > 5:
+            print(f"  WARNING: DATA_GAP — {gap_pct:.1f}% difference")
+    else:
+        print("  Could not reach FSA API for reconciliation")
 
     # Search Google Places for restaurants we might be missing
     if GOOGLE_API_KEY:
