@@ -1,18 +1,28 @@
 {
   "503480": {
     "sentiment_score": 1.0,
-    "positive_count": 14,
+    "positive_count": 13,
     "negative_count": 0,
     "red_flag_count": 0,
     "red_flags": [],
-    "positives_sample": [
-      "delicious",
-      "would recommend",
-      "perfection",
-      "exceptional",
-      "fantastic"
-    ],
     "warning": false,
-    "reviews_analyzed": 5
+    "reviews_analyzed": 5,
+    "aspects": {
+      "food_quality": {
+        "score": 10.0,
+        "positive_mentions": 5,
+        "negative_mentions": 0
+      },
+      "service_quality": {
+        "score": 10.0,
+        "positive_mentions": 7,
+        "negative_mentions": 0
+      },
+      "ambience": {
+        "score": 5.0,
+        "positive_mentions": 1,
+        "negative_mentions": 1
+      }
+    }
   }
 }
