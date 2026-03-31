@@ -6,10 +6,10 @@
     "red_flag_count": 0,
     "red_flags": [],
     "positives_sample": [
-      "fantastic",
-      "exceptional",
-      "delicious",
       "perfection",
+      "would recommend",
+      "excellent",
+      "lovely",
       "perfect"
     ],
     "warning": false,
