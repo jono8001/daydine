@@ -1514,8 +1514,139 @@ def main():
     summary = build_summary(scored)
     save_summary_json(summary, SUMMARY_OUTPUT)
 
+    # Generate report
+    generate_report(scored, summary)
+
     # Print
     print_results(scored)
+
+
+# ---------------------------------------------------------------------------
+# Report generator — produces stratford_rcs_report.md
+# ---------------------------------------------------------------------------
+
+REPORT_PATH = os.path.join(SCRIPT_DIR, "stratford_rcs_report.md")
+
+def generate_report(scored, summary):
+    """Generate stratford_rcs_report.md from scored data."""
+    ranked = [r for r in scored if r["rank"] != ""]
+    not_ranked = [r for r in scored if r["rcs_band"] == "Not Ranked"]
+    insufficient = [r for r in scored if r["rcs_band"] == "Insufficient Data"]
+    bands = Counter(r["rcs_band"] for r in ranked)
+    band_order = ["Excellent", "Good", "Generally Satisfactory",
+                  "Improvement Necessary", "Major Improvement", "Urgent Improvement"]
+    ranges_map = {"Excellent": "8.000-10.000", "Good": "6.500-7.999",
+                  "Generally Satisfactory": "5.000-6.499",
+                  "Improvement Necessary": "3.500-4.999",
+                  "Major Improvement": "2.000-3.499",
+                  "Urgent Improvement": "0.000-1.999"}
+
+    cats = {}
+    for r in ranked:
+        cats.setdefault(r["category"], []).append(r)
+
+    ranked_scores = [r["rcs_final"] for r in ranked]
+    avg_sig = sum(r["signals_available"] for r in scored) / len(scored) if scored else 0
+
+    tier_info = [
+        ("fsa", "FSA (Tier 1)", "20%"), ("google", "Google (Tier 2)", "25%"),
+        ("online", "Online (Tier 3)", "20%"), ("ops", "Operational (Tier 4)", "15%"),
+        ("menu", "Menu (Tier 5)", "10%"), ("reputation", "Reputation (Tier 6)", "5%"),
+        ("community", "Community (Tier 7)", "5%"),
+    ]
+    tier_pop = {}
+    for t, *_ in tier_info:
+        col = f"{t}_tier_score"
+        tier_pop[t] = sum(1 for r in scored if r.get(col) and r[col] not in ("", None))
+
+    # Load sanity report if available
+    sanity_path = os.path.join(SCRIPT_DIR, "stratford_sanity_report.json")
+    sanity = {}
+    if os.path.exists(sanity_path):
+        with open(sanity_path, "r", encoding="utf-8") as f:
+            sanity = json.load(f)
+    missing = sanity.get("missing_from_our_data", [])
+    nf_suspects = sanity.get("non_food_suspects", [])
+
+    with_sent = [r for r in ranked if r.get("sentiment_score") and r["sentiment_score"] != ""]
+    red_flagged = [r for r in ranked if int(r.get("red_flag_count", 0)) >= 2]
+
+    L = []
+    w = L.append
+    w("# DayDine RCS Report - Stratford-upon-Avon")
+    w(f"\n*Generated: {NOW.strftime('%d %B %Y')} | Methodology: RCS V3.1 | Scale: 0.000-10.000*")
+    w("\n---\n")
+    w("## 1. Executive Summary\n")
+    w("| Metric | Value |\n|---|---|")
+    w(f"| Total establishments | **{len(scored)}** |")
+    w(f"| Ranked (food service) | **{len(ranked)}** |")
+    w(f"| Excluded (non-food) | {len(not_ranked)} |")
+    w(f"| Insufficient data | {len(insufficient)} |")
+    w(f"| Methodology | RCS V3.1 - 40 signals, 8 tiers |")
+    w(f"| Mean RCS | {statistics.mean(ranked_scores):.2f} |")
+    w(f"| Median RCS | {statistics.median(ranked_scores):.2f} |")
+    w(f"| Signals avg | {avg_sig:.1f} / {TOTAL_SIGNALS} ({avg_sig/TOTAL_SIGNALS*100:.0f}%) |")
+    w(f"| Review sentiment | {len(with_sent)} analyzed, {len(red_flagged)} red flags |")
+    w("")
+    w("## 2. Top 10\n")
+    w("| Rank | Name | Postcode | Category | RCS | Conf | Band |\n|---:|---|---|---|---:|---|---|")
+    for r in ranked[:10]:
+        w(f"| {r['rank']} | {r['business_name']} | {r['postcode']} | {r['category']} | {r['rcs_final']} | {r['confidence']} (+-{r['confidence_margin']}) | {r['rcs_band']} |")
+    w("")
+    w("## 3. Bottom 10\n")
+    w("| Rank | Name | Postcode | Category | RCS | Conf | Band |\n|---:|---|---|---|---:|---|---|")
+    for r in ranked[-10:]:
+        w(f"| {r['rank']} | {r['business_name']} | {r['postcode']} | {r['category']} | {r['rcs_final']} | {r['confidence']} (+-{r['confidence_margin']}) | {r['rcs_band']} |")
+    w("")
+    w("## 4. Band Distribution\n")
+    w("| Band | Range | Count | % |\n|---|---|---:|---:|")
+    for band in band_order:
+        c = bands.get(band, 0)
+        pct = c / len(ranked) * 100 if ranked else 0
+        w(f"| {band} | {ranges_map[band]} | {c} | {pct:.1f}% |")
+    w(f"| **Ranked** | | **{len(ranked)}** | |")
+    if not_ranked:
+        w(f"| *Not Ranked* | | *{len(not_ranked)}* | |")
+    w("")
+    w("## 5. Signal Coverage\n")
+    w("| Tier | Weight | Coverage |\n|---|---:|---:|")
+    for t, name, weight in tier_info:
+        pop = tier_pop[t]
+        pct = pop / len(scored) * 100 if scored else 0
+        w(f"| {name} | {weight} | {pop}/{len(scored)} ({pct:.0f}%) |")
+    w("")
+    w("## 6. Rankings by Category\n")
+    for cat_name in sorted(cats):
+        cat_rows = sorted(cats[cat_name], key=lambda x: x["rank"])
+        w(f"### {cat_name} ({len(cat_rows)})\n")
+        w("| # | Rank | Name | PC | RCS | Band |\n|---:|---:|---|---|---:|---|")
+        for j, r in enumerate(cat_rows, 1):
+            w(f"| {j} | {r['rank']} | {r['business_name']} | {r['postcode']} | {r['rcs_final']} | {r['rcs_band']} |")
+        w("")
+    w(f"## 7. Complete Rankings (1-{len(ranked)})\n")
+    w("| Rank | Name | PC | Category | FSA | Google | RCS | Conf | Band | Sig |\n|---:|---|---|---|---:|---:|---:|---|---|---:|")
+    for r in ranked:
+        fsa = r["fsa_tier_score"] if r["fsa_tier_score"] else "-"
+        ggl = r["google_tier_score"] if r["google_tier_score"] else "-"
+        w(f"| {r['rank']} | {r['business_name']} | {r['postcode']} | {r['category']} | {fsa} | {ggl} | {r['rcs_final']} | {r['confidence']} | {r['rcs_band']} | {r['signals_available']}/{TOTAL_SIGNALS} |")
+    w("")
+    w("## 8. Excluded\n")
+    if not_ranked:
+        w("| Name | Postcode | Category |\n|---|---|---|")
+        for r in not_ranked:
+            w(f"| {r['business_name']} | {r['postcode']} | {r['category']} |")
+    w("")
+    if missing:
+        w(f"## 9. Sanity Check ({len(missing)} missing)\n")
+        w("| Name | Rating | Reviews |\n|---|---:|---:|")
+        for m in missing:
+            w(f"| {m['name']} | {m.get('rating', '-')} | {m.get('reviews', '-')} |")
+    w("\n---\n")
+    w(f"*Generated by rcs_scoring_stratford.py V3.1 ({len(scored)} records, {len(ranked)} ranked)*")
+
+    with open(REPORT_PATH, "w", encoding="utf-8") as f:
+        f.write("\n".join(L))
+    print(f"Generated report: {REPORT_PATH} ({len(L)} lines)")
 
 
 if __name__ == "__main__":
