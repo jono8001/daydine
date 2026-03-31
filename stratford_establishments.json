@@ -25,7 +25,9 @@
     "gpc": 4,
     "gpid": "ChIJtVIsVtA9d0gRr-wqbxCBfqQ",
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "fb": false,
+    "ig": false
   },
   "1584577": {
     "a": "Earlswood Nurseries Ltd, Earlswood Nurseries, Forshaw Heath Road, Earlswood",
@@ -67,7 +69,10 @@
       "Saturday: 9:00 AM – 6:00 PM",
       "Sunday: 10:00 AM – 4:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1695937": {
     "a": "The Phoenix, 38 Guild Street, Stratford-upon-Avon",
@@ -109,7 +114,10 @@
     "cuisine_tags": [
       "pizza"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1896718": {
     "a": "Wasps Elite Performance And Innovation Centre, Stratford Road, Henley-in-Arden",
@@ -136,7 +144,10 @@
     ],
     "gpc": 4,
     "gpid": "ChIJ_25bTGzHcEgRCmMRsYCpUOI",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503081": {
     "a": "71A High Street, Henley-in-Arden",
@@ -181,7 +192,10 @@
       "chinese"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1927834": {
     "a": "Adventure Golf Course, Swans Nest Lane, Stratford-upon-Avon",
@@ -211,7 +225,10 @@
       "Saturday: 10:00 AM – 5:00 PM",
       "Sunday: 10:00 AM – 5:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503585": {
     "a": "Oxhill Centre, Oxhill, Warwick",
@@ -244,7 +261,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJA8l48PQsd0gRPTXXQ8X__VU",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1622070": {
     "a": "13 Waterside, Stratford-upon-Avon",
@@ -293,7 +313,10 @@
       "italian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503554": {
     "a": "High Street, Bidford-on-Avon, Alcester",
@@ -332,7 +355,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503316": {
     "a": "12 Sheep Street, Stratford-upon-Avon",
@@ -376,7 +402,10 @@
       "british"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1381156": {
     "a": "9 Church Street, Stratford-upon-Avon",
@@ -418,7 +447,10 @@
     "cuisine_tags": [
       "thai"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1299513": {
     "a": "50 Main Street, Long Compton, Shipston-on-Stour",
@@ -453,7 +485,8 @@
       "Sunday: Closed"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "ig": false
   },
   "1826837": {
     "a": "208 Birmingham Road, Stratford-upon-Avon",
@@ -497,7 +530,10 @@
       "indian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1563336": {
     "a": "Warwick Services M40 Southbound, Ashorne, Warwick",
@@ -536,7 +572,8 @@
       "Sunday: 11:45 AM – 8:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "ig": false
   },
   "1364372": {
     "a": "Bell Inn, Binton Road, Welford-on-Avon, Stratford-upon-Avon",
@@ -577,7 +614,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503343": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -612,7 +652,10 @@
       "Saturday: Open 24 hours",
       "Sunday: Open 24 hours"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "1302779": {
     "a": "The Old Mint, Coventry Street, Southam",
@@ -651,7 +694,9 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": false
   },
   "1826834": {
     "a": "Ferment And Flour, 6 Granville Court, Shipston-on-Stour",
@@ -691,7 +736,9 @@
       "Sunday: Closed"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "fb": false,
+    "ig": false
   },
   "1500965": {
     "a": "Venue Expresso, 3 High Street, Alcester",
@@ -737,7 +784,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503918": {
     "a": "46 Coventry Street, Southam",
@@ -779,7 +829,9 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": true
   },
   "503141": {
     "a": "National Farmers Union Mutual Insurance Society Ltd, Tiddington Road, Stratford-upon-Avon",
@@ -813,7 +865,10 @@
       "Saturday: Closed",
       "Sunday: Closed"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1622074": {
     "a": "Brookside Farm, Gaydon Road, Bishops Itchington, Southam",
@@ -838,7 +893,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJT5praqYxd0gRyr_IGx5eWWU",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1799218": {
     "a": "Kineton Pizza Junction Ltd, Southam Street, Kineton, Warwick",
@@ -878,7 +936,10 @@
     "cuisine_tags": [
       "pizza"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "503972": {
     "a": "George Hotel, High Street, Shipston-on-Stour",
@@ -928,7 +989,10 @@
       "british"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1712197": {
     "a": "95 High Street, Henley-in-Arden",
@@ -970,7 +1034,10 @@
       "Sunday: Closed"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1291215": {
     "a": "Studley Garden Centre, Henley Road, Mappleborough Green, Studley",
@@ -1007,7 +1074,9 @@
       "Sunday: 10:00 AM – 4:30 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "fb": false,
+    "ig": false
   },
   "676556": {
     "a": "Whichford Pottery, Whichford, Shipston-on-Stour",
@@ -1048,7 +1117,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503032": {
     "a": "The Spice Room Ltd, 20C High Street, Alcester",
@@ -1091,7 +1163,10 @@
     "cuisine_tags": [
       "indian"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1911092": {
     "a": "Coughton Court, Coughton, Alcester",
@@ -1117,7 +1192,9 @@
     "gpc": 10,
     "gpid": "ChIJsaohwxPDcEgRUCP69xcdRsA",
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "fb": false,
+    "ig": false
   },
   "1800190": {
     "a": "Village Hall, Burmington",
@@ -1142,7 +1219,10 @@
     ],
     "gpc": 6,
     "gpid": "ChIJk09EfpWxcEgRC9xT2L0gxEI",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1339997": {
     "a": "The Water Margin, Marton Road, Long Itchington, Southam",
@@ -1180,7 +1260,9 @@
       "Sunday: 4:30 – 10:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": false
   },
   "1747703": {
     "a": "6 - 7 High Street, Stratford-upon-Avon",
@@ -1226,7 +1308,10 @@
       "Sunday: 7:30 AM – 6:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1452414": {
     "a": "Unit V, The Maybird Centre, Birmingham Road, Stratford-upon-Avon",
@@ -1268,7 +1353,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503481": {
     "a": "13 Sheep Street, Stratford-upon-Avon",
@@ -1308,7 +1396,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1808717": {
     "a": "Le Bistro Pierre, Swans Nest Hotel, Swans Nest Lane, Stratford-upon-Avon",
@@ -1353,7 +1444,10 @@
       "french"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503820": {
     "a": "16 Market Hill, Southam",
@@ -1397,7 +1491,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1253303": {
     "a": "6 Banbury Road, Ettington, Stratford-upon-Avon",
@@ -1437,7 +1534,9 @@
       "Sunday: Closed"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": true
   },
   "1206081": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -1463,7 +1562,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "1705603": {
     "a": "Escape Community Arts, The Old Slaughterhouse, Sheep Street, Stratford-upon-Avon",
@@ -1499,7 +1601,10 @@
       "Saturday: 1:30 – 4:30 PM",
       "Sunday: Closed"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1739369": {
     "a": "",
@@ -1537,7 +1642,10 @@
       "Sunday: Closed"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1024960": {
     "a": "Welcome Break Ltd (North), Warwick Services M40, Ashorne, Warwick",
@@ -1585,7 +1693,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503345": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -1630,7 +1741,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1266904": {
     "a": "Welcome Break Ltd (North), Warwick Services M40, Ashorne, Warwick",
@@ -1665,7 +1779,10 @@
       "Saturday: Open 24 hours",
       "Sunday: Open 24 hours"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1297845": {
     "a": "26 High Street, Alcester",
@@ -1708,7 +1825,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1089841": {
     "a": "Cotswold Distillery, Phillips Field, Stourton, Shipston-on-Stour",
@@ -1747,7 +1867,10 @@
       "Saturday: 9:00 AM – 5:00 PM",
       "Sunday: 10:00 AM – 5:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1672985": {
     "a": "Bidford On Avon Methodist Church, Chapel Close, Bidford-on-Avon, Alcester",
@@ -1788,7 +1911,10 @@
       "Sunday: Closed"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503054": {
     "a": "Warwick Road, Black Hill, Stratford-upon-Avon",
@@ -1830,7 +1956,10 @@
       "Saturday: Open 24 hours",
       "Sunday: Open 24 hours"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503525": {
     "a": "Shahs Restaurant, Charlecote Road, Wellesbourne, Warwick",
@@ -1876,7 +2005,10 @@
       "indian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "504014": {
     "a": "Kings Head Hotel, Charlecote Road, Wellesbourne, Warwick",
@@ -1923,7 +2055,10 @@
       "british"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1284339": {
     "a": "Avon Dassett, Southam",
@@ -1962,7 +2097,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1774612": {
     "a": "Lower Langley Farm, Birmingham Road, Bishopton, Stratford-upon-Avon",
@@ -2002,7 +2140,10 @@
       "Sunday: 10:00 AM – 11:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": true
   },
   "502872": {
     "a": "Alderminster, Stratford-upon-Avon",
@@ -2044,7 +2185,10 @@
       "Sunday: Open 24 hours"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1210746": {
     "a": "2 St Faiths Road, Alcester",
@@ -2088,7 +2232,10 @@
       "Sunday: 8:00 AM – 12:00 AM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503216": {
     "a": "Hallmark Hotels - The Welcombe, Warwick Road, Stratford-upon-Avon",
@@ -2134,7 +2281,10 @@
       "Sunday: Open 24 hours"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503781": {
     "a": "Ladbroke Road, Bishops Itchington, Southam",
@@ -2174,7 +2324,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1421980": {
     "a": "10 Bridge Street, Stratford-upon-Avon",
@@ -2207,7 +2360,10 @@
     "cuisine_tags": [
       "greek"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1246463": {
     "a": "37 Rother Street, Stratford-upon-Avon",
@@ -2250,7 +2406,9 @@
       "Sunday: Closed"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": false
   },
   "1847445": {
     "a": "Kiosk 3, Bell Court, Stratford-upon-Avon",
@@ -2300,7 +2458,10 @@
     "cuisine_tags": [
       "italian"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1774606": {
     "a": "Unit 3, Haydon House, 3 - 7 Alcester Road, Studley",
@@ -2351,7 +2512,10 @@
       "pizza",
       "american"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "650308": {
     "a": "Summer Palace, Birmingham Road, Mappleborough Green, Studley",
@@ -2395,7 +2559,10 @@
       "chinese"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1896717": {
     "a": "LITHOS, 64 High Street, Henley-in-Arden",
@@ -2429,7 +2596,9 @@
       "Sunday: 12:00 – 6:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": false
   },
   "1622082": {
     "a": "Briar Croft Cafe, Briar Croft, Alcester Road, Stratford-upon-Avon",
@@ -2458,7 +2627,10 @@
     "cuisine_tags": [
       "american"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503732": {
     "a": "Pizza Hut, Unit P, Maybird Retail Park, Birmingham Road",
@@ -2500,7 +2672,10 @@
       "pizza"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1388310": {
     "a": "42 Rother Street, Stratford-upon-Avon",
@@ -2542,7 +2717,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1584574": {
     "a": "Stratford-upon-Avon Golf Club, Tiddington Road, Stratford-upon-Avon",
@@ -2586,7 +2764,10 @@
       "Saturday: 8:00 AM – 6:00 PM",
       "Sunday: 8:00 AM – 6:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1927833": {
     "a": "Kineton Sports And Social Club, Norton Grange, Little Kineton, Warwick",
@@ -2615,7 +2796,10 @@
       "Saturday: 12:00 – 11:00 PM",
       "Sunday: 12:00 – 9:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1552328": {
     "a": "38 Guild Street, Stratford-upon-Avon",
@@ -2661,7 +2845,10 @@
       "pizza"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "502702": {
     "a": "Wildmoor Health And Fitness Club, Alcester Road, Stratford-upon-Avon",
@@ -2706,7 +2893,10 @@
       "Sunday: 7:30 AM – 8:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1739370": {
     "a": "Unit 17, Bell Court, Stratford-upon-Avon",
@@ -2748,7 +2938,10 @@
     "cuisine_tags": [
       "pizza"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1014807": {
     "a": "McDonalds Restaurant Limited, Western Road, Stratford-upon-Avon",
@@ -2798,7 +2991,10 @@
       "american"
     ],
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1093181": {
     "a": "6 Bards Walk, Stratford-upon-Avon",
@@ -2831,7 +3027,10 @@
     "gpid": "ChIJ53EdvDPOcEgRn0d-aG7fXeg",
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503376": {
     "a": "Dunnington Heath Farm, Dunnington, Alcester",
@@ -2869,7 +3068,10 @@
       "Sunday: 8:00 AM – 4:30 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1016715": {
     "a": "Shakespaw Cat Café, 6 Union Street, Stratford-upon-Avon",
@@ -2907,7 +3109,10 @@
       "Sunday: 10:30 AM – 6:00 PM"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "504026": {
     "a": "Ragley Hall, Alcester",
@@ -2939,7 +3144,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJeazHrhTDcEgRlQMrjbtf_HA",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1747706": {
     "a": "Southam Road, Long Itchington, Southam",
@@ -2984,7 +3192,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503114": {
     "a": "Mount Everest Restuarant, 31 Alcester Road, Studley",
@@ -3023,7 +3234,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1871630": {
     "a": "Swan Hotel, Banbury Street, Kineton, Warwick",
@@ -3068,7 +3282,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1695933": {
     "a": "1 Henley Street, Stratford-upon-Avon",
@@ -3115,7 +3332,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503735": {
     "a": "Costa Coffee, Unit Q, Maybird Retail Park, Birmingham Road",
@@ -3157,7 +3377,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1152776": {
     "a": "Gilks Garage, Banbury Road, Kineton, Warwick",
@@ -3196,7 +3419,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503565": {
     "a": "Avonbrook House, 198 Masons Road, Stratford-upon-Avon",
@@ -3232,7 +3458,10 @@
       "Saturday: Closed",
       "Sunday: Closed"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503292": {
     "a": "10 - 11 Sheep Street, Stratford-upon-Avon",
@@ -3276,7 +3505,10 @@
       "italian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1800192": {
     "a": "4 - 5 Meer Street, Stratford-upon-Avon",
@@ -3309,7 +3541,10 @@
     "has_menu_online": true,
     "local_awards_count": 0,
     "has_enforcement": true,
-    "enforcement_severity": "major"
+    "enforcement_severity": "major",
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1754520": {
     "a": "Cinnamon Arch, The Green, Long Itchington, Southam",
@@ -3349,7 +3584,9 @@
     "cuisine_tags": [
       "indian"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": false
   },
   "1206075": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -3375,7 +3612,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503960": {
     "a": "The Bakery, 14 Sheep Street, Shipston-on-Stour",
@@ -3417,7 +3657,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1842631": {
     "a": "Bearley Road, Snitterfield, Stratford-upon-Avon",
@@ -3456,7 +3699,10 @@
       "Sunday: 12:00 – 11:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1896714": {
     "a": "The Church Street Townhouse, 16 Church Street, Stratford-upon-Avon",
@@ -3500,7 +3746,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1291217": {
     "a": "Charlecote Gardens, Charlecote, Warwick",
@@ -3537,7 +3786,10 @@
       "Sunday: 10:00 AM – 4:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1228994": {
     "a": "Unit 22, Bell Court, Stratford-upon-Avon",
@@ -3576,7 +3828,10 @@
       "Sunday: 8:00 AM – 3:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "1453409": {
     "a": "",
@@ -3601,7 +3856,10 @@
     ],
     "gpc": 2,
     "gpid": "ChIJ410yx1jbcEgRYo4x2QsP2aE",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503552": {
     "a": "The Waterways, Birmingham Road, Stratford-upon-Avon",
@@ -3633,7 +3891,10 @@
     "gpc": 10,
     "gpid": "ChIJMZi2MTXOcEgRdGbQlVELl7M",
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503821": {
     "a": "4A High Street, Southam",
@@ -3676,7 +3937,10 @@
     "cuisine_tags": [
       "indian"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1790270": {
     "a": "Cordelia, 31 Sheep Street, Stratford-upon-Avon",
@@ -3718,7 +3982,10 @@
       "Sunday: 8:30 AM – 4:30 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1854458": {
     "a": "Oversley Mill Services, Alcester Bypass, Alcester",
@@ -3758,7 +4025,10 @@
       "Sunday: 7:00 AM – 8:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "503479": {
     "a": "Upton House, Banbury Road, Upton, Banbury",
@@ -3795,7 +4065,10 @@
       "Sunday: 11:00 AM – 4:00 PM"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503541": {
     "a": "Tesco Stores Ltd, Birmingham Road, Stratford-upon-Avon",
@@ -3839,7 +4112,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "1835033": {
     "a": "15 Welford Road, Barton, Bidford-on-Avon, Alcester",
@@ -3880,7 +4156,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1474392": {
     "a": "Sports Pavilion, Wellington Avenue, Meon Vale, Stratford-upon-Avon",
@@ -3920,7 +4199,8 @@
       "Sunday: Closed"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "ig": false
   },
   "736236": {
     "a": "J N B Gymnastics, Unit 5, Featherbed Lane, Pathlow",
@@ -3959,7 +4239,10 @@
       "Saturday: 9:00 AM – 8:00 PM",
       "Sunday: 9:00 AM – 8:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503715": {
     "a": "Asda Living, Unit L And M, Maybird Retail Park, Birmingham Road",
@@ -4001,7 +4284,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1622072": {
     "a": "Unit 10, Dodwell Trading Estate, Evesham Road, Dodwell",
@@ -4045,7 +4331,10 @@
       "Sunday: 10:00 AM – 4:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1266894": {
     "a": "Barnabys Fish Restaurant, 22 Waterside, Stratford-upon-Avon",
@@ -4087,7 +4376,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1552322": {
     "a": "6 Henley Street, Stratford-upon-Avon",
@@ -4120,7 +4412,10 @@
     "gpid": "ChIJl-fUavDPcEgRTeq2tKtBnpU",
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1421992": {
     "a": "13 - 14 Meer Street, Stratford-upon-Avon",
@@ -4172,7 +4467,10 @@
       "british"
     ],
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503105": {
     "a": "7 Greenhill Street, Stratford-upon-Avon",
@@ -4216,7 +4514,10 @@
       "indian"
     ],
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1789006": {
     "a": "12 Market Hill, Southam",
@@ -4261,7 +4562,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503148": {
     "a": "Nuthurst Grange Hotel, Nuthurst Grange Road, Hockley Heath, Solihull",
@@ -4303,7 +4607,10 @@
       "Sunday: Open 24 hours"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1421981": {
     "a": "45A High Street, Studley",
@@ -4347,7 +4654,10 @@
       "indian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "503286": {
     "a": "Georges Cafe, Unit 5, Beech Tree Park, Bidford-on-Avon",
@@ -4386,7 +4696,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1552333": {
     "a": "Unit 3, The Rosebird Centre, Shipston Road, Stratford-upon-Avon",
@@ -4428,7 +4741,9 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "fb": true,
+    "ig": true
   },
   "1485802": {
     "a": "Home Guard Club, Main Street, Tiddington, Stratford-upon-Avon",
@@ -4463,7 +4778,10 @@
       "Saturday: 12:00 PM – 12:00 AM",
       "Sunday: 12:00 – 10:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1495078": {
     "a": "4 Greenhill Street, Stratford-upon-Avon",
@@ -4505,7 +4823,10 @@
     "cuisine_tags": [
       "vietnamese"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "503240": {
     "a": "152 High Street, Henley-in-Arden",
@@ -4550,7 +4871,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1912631": {
     "a": "1 - 2 Granville Court, Shipston-on-Stour",
@@ -4589,7 +4913,10 @@
       "indian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1253300": {
     "a": "Keys And Kitchen, 6 Ely Street, Stratford-upon-Avon",
@@ -4619,7 +4946,10 @@
     "gpid": "ChIJyTHR-TLOcEgROUPYwQCax1k",
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503270": {
     "a": "Kings Coughton, Alcester",
@@ -4642,7 +4972,10 @@
     ],
     "gpc": 5,
     "gpid": "ChIJ6Wdw5JDDcEgRkh-MB-0rmDI",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1799220": {
     "a": "BURGER KING, Unit W And Unit X, The Maybird Centre, Birmingham Road",
@@ -4679,7 +5012,10 @@
       "Sunday: 8:00 AM – 11:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1344517": {
     "a": "Fox Inn, Loxley, Warwick",
@@ -4717,7 +5053,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1781021": {
     "a": "Baptist Church, Payton Street, Stratford-upon-Avon",
@@ -4745,7 +5084,10 @@
     ],
     "gpc": 2,
     "gpid": "ChIJ9SYsTjHOcEgRLxIZs-829wY",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503401": {
     "a": "3 Bridge Street, Kineton, Warwick",
@@ -4789,7 +5131,10 @@
       "bangladeshi"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503854": {
     "a": "Stratford Garden Centre, Campden Road, Clifford Chambers, Stratford-upon-Avon",
@@ -4826,7 +5171,10 @@
       "Saturday: 9:00 AM – 5:30 PM",
       "Sunday: 10:30 AM – 4:30 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "979161": {
     "a": "Spernal Ash Nurseries, Alcester Road, Studley",
@@ -4859,7 +5207,10 @@
     "price_range": "£",
     "local_awards_count": 0,
     "has_enforcement": true,
-    "enforcement_severity": "major"
+    "enforcement_severity": "major",
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "676561": {
     "a": "The View, Swans Nest Lane, Stratford-upon-Avon",
@@ -4895,7 +5246,10 @@
       "Saturday: Open 24 hours",
       "Sunday: Open 24 hours"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1747702": {
     "a": "Unit 18, Bell Court, Stratford-upon-Avon",
@@ -4933,7 +5287,10 @@
       "Sunday: 12:00 – 10:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1397584": {
     "a": "93 High Street, Henley-in-Arden",
@@ -4972,7 +5329,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1838726": {
     "a": "The Cow Shed, Yew Trees Craft Centre, Stratford Road, Wootton Wawen",
@@ -5014,7 +5374,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503555": {
     "a": "Camp Site, Dog Lane Fisheries, Napton-on-the-Hill",
@@ -5051,7 +5414,10 @@
       "Saturday: 7:00 AM – 6:00 PM",
       "Sunday: 7:00 AM – 6:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": false,
+    "ig": false
   },
   "503089": {
     "a": "Touchdown Inn, Wellesbourne Mountford Aerodrome, Loxley Road, Wellesbourne",
@@ -5096,7 +5462,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1765854": {
     "a": "Roebuck Inn, Birmingham Road, Alcester",
@@ -5115,7 +5484,10 @@
       "street_address"
     ],
     "gpid": "ChIJD7ixY5zDcEgRDynPaXEfm5w",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1808716": {
     "a": "2A Bridge Street, Stratford-upon-Avon",
@@ -5152,7 +5524,8 @@
       "Sunday: 12:00 – 9:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "ig": false
   },
   "1804017": {
     "a": "86B High Street, Henley-in-Arden",
@@ -5189,7 +5562,8 @@
       "Sunday: 9:00 AM – 3:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "ig": false
   },
   "1577024": {
     "a": "Holt Farm, Holt Road, Southam",
@@ -5217,7 +5591,9 @@
     "gpc": 10,
     "gpid": "ChIJ7awRS-w7d0gRKyd3CTO1Wow",
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": true
   },
   "1796548": {
     "a": "13 Ely Street, Stratford-upon-Avon",
@@ -5258,7 +5634,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1854461": {
     "a": "1 Warwick Road, Stratford-upon-Avon",
@@ -5297,7 +5676,10 @@
       "Sunday: 12:00 – 10:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503926": {
     "a": "The Wight School, High Street, Harbury, Leamington Spa",
@@ -5338,7 +5720,8 @@
       "Sunday: Closed"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "ig": false
   },
   "1388307": {
     "a": "",
@@ -5367,7 +5750,10 @@
     "gpc": 10,
     "gpid": "ChIJ6Xtw-RpOd0gRmN-NXHtVfG4",
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503772": {
     "a": "3 Bridge Street, Stratford-upon-Avon",
@@ -5417,7 +5803,10 @@
       "american"
     ],
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503478": {
     "a": "8 - 9 High Street, Stratford-upon-Avon",
@@ -5461,7 +5850,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1800191": {
     "a": "59 High Street, Alcester",
@@ -5498,7 +5890,9 @@
       "Sunday: 8:00 AM – 5:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": true
   },
   "1774608": {
     "a": "Stratford Marina, Bridgefoot, Stratford-upon-Avon",
@@ -5535,7 +5929,10 @@
       "Sunday: 9:30 AM – 10:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1747700": {
     "a": "Cotswold Distilling Company, Phillips Field, Whichford Road, Stourton",
@@ -5582,7 +5979,9 @@
     "cuisine_tags": [
       "pizza"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": true
   },
   "1556368": {
     "a": "Loungers UK Limited, Lounge, 32 - 34 Bridge Street, Stratford-upon-Avon",
@@ -5634,7 +6033,10 @@
       "vegan"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "565220": {
     "a": "The Four Teas, 24 Sheep Street, Stratford-upon-Avon",
@@ -5676,7 +6078,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "502962": {
     "a": "Curry Rebublic Ltd, 35A High Street, Henley-in-Arden",
@@ -5723,7 +6128,10 @@
       "indian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1388303": {
     "a": "18 - 19 Rother Street, Stratford-upon-Avon",
@@ -5760,7 +6168,10 @@
       "Sunday: 11:00 AM – 5:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1827674": {
     "a": "1A Daventry Street, Southam",
@@ -5803,7 +6214,8 @@
       "Sunday: 10:00 AM – 2:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "ig": false
   },
   "502877": {
     "a": "The Double Tree By Hilton, Arden Street, Stratford-upon-Avon",
@@ -5831,7 +6243,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJ53EdvDPOcEgRF570SBNlU1E",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503584": {
     "a": "First Floor, 2 - 4 Swan Street, Alcester",
@@ -5879,7 +6294,10 @@
       "indian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1802818": {
     "a": "5 Shrieves Walk, Stratford-upon-Avon",
@@ -5909,7 +6327,9 @@
     "has_menu_online": true,
     "has_michelin_mention": true,
     "michelin_type": "plate",
-    "local_awards_count": 1
+    "local_awards_count": 1,
+    "web": true,
+    "ig": false
   },
   "1884822": {
     "a": "257 Birmingham Road, Stratford-upon-Avon",
@@ -5947,7 +6367,8 @@
       "Sunday: 12:00 – 11:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "ig": false
   },
   "1796553": {
     "a": "3 Union Street, Stratford-upon-Avon",
@@ -5984,7 +6405,9 @@
       "Sunday: 9:00 AM – 6:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": true
   },
   "1381141": {
     "a": "Bulls Head Inn, Stratford Road, Wootton Wawen, Henley-in-Arden",
@@ -6025,7 +6448,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1589295": {
     "a": "Unit 3, Bell Court, Stratford-upon-Avon",
@@ -6075,7 +6501,10 @@
     "cuisine_tags": [
       "italian"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "502864": {
     "a": "6A Chapel Street, Stratford-upon-Avon",
@@ -6126,7 +6555,10 @@
       "bangladeshi"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1513917": {
     "a": "Hollybush Inn, Holly Bush Lane, Priors Marston, Southam",
@@ -6164,7 +6596,9 @@
       "Sunday: 4:30 – 10:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "ig": false
   },
   "1672980": {
     "a": "Alcester Business Centre, 4 Kinwarton Farm Road, Kinwarton, Alcester",
@@ -6205,7 +6639,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "1826838": {
     "a": "67A High Street, Bidford-on-Avon, Alcester",
@@ -6247,7 +6684,9 @@
     "cuisine_tags": [
       "indian"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "fb": false,
+    "ig": false
   },
   "559158": {
     "a": "37 Sheep Street, Stratford-upon-Avon",
@@ -6286,7 +6725,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "565221": {
     "a": "Costa Coffee, 68 High Street, Henley-in-Arden",
@@ -6328,7 +6770,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1743693": {
     "a": "37 Henley Street, Stratford-upon-Avon",
@@ -6371,7 +6816,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503218": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -6406,7 +6854,10 @@
       "Saturday: Open 24 hours",
       "Sunday: Open 24 hours"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "1721314": {
     "a": "Banbury Road, Gaydon, Warwick",
@@ -6441,7 +6892,10 @@
       "Saturday: Closed",
       "Sunday: Closed"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1623426": {
     "a": "Red Hot Mamma, 22 High Street, Stratford-upon-Avon",
@@ -6478,7 +6932,10 @@
       "Sunday: 12:00 – 9:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1662496": {
     "a": "2 Shrieves Walk, Stratford-upon-Avon",
@@ -6520,7 +6977,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1754519": {
     "a": "14 The Mansley Centre, Timothys Bridge Road, Stratford Enterprise Park, Stratford-upon-Avon",
@@ -6551,7 +7011,10 @@
       "Saturday: Closed",
       "Sunday: Closed"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1735216": {
     "a": "Lockerbie, Pig Trot Lane, Danzey Green, Solihull",
@@ -6578,7 +7041,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJF5uVuMi3cEgRhzwIE-KbME4",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": false,
+    "ig": false
   },
   "1699665": {
     "a": "Chesterton Road, Lighthorne, Warwick",
@@ -6617,7 +7083,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1467814": {
     "a": "Stratford Sports Club Limited, Stratford Sports Club, Swans Nest Lane, Stratford-upon-Avon",
@@ -6653,7 +7122,10 @@
       "Saturday: 10:00 AM – 10:00 PM",
       "Sunday: 10:00 AM – 10:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503282": {
     "a": "Alcester",
@@ -6697,7 +7169,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1774610": {
     "a": "",
@@ -6712,7 +7187,10 @@
     "sm": 10.0,
     "ss": 10.0,
     "t": 1,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1266889": {
     "a": "Dudley Taylor Pharmacies Ltd, 5 Kineton Road, Wellesbourne, Warwick",
@@ -6754,7 +7232,10 @@
     "cuisine_tags": [
       "turkish"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503342": {
     "a": "Warwick Services M40 Nothbound, Ashorne, Warwick",
@@ -6801,7 +7282,10 @@
       "american"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1908606": {
     "a": "Brunos Bakery, 40 High Street, Studley",
@@ -6854,7 +7338,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1796547": {
     "a": "Unit 10, Long Compton Industrial Estate, Old Road, Long Compton",
@@ -6896,7 +7383,10 @@
       "Sunday: 10:00 AM – 4:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1756585": {
     "a": "Alcester Rugby Football Club, Kings Coughton, Alcester",
@@ -6930,7 +7420,10 @@
       "Saturday: 12:30 – 8:30 PM",
       "Sunday: 11:30 AM – 6:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1690228": {
     "a": "Compton Verney House Estate, Compton Verney, Warwick",
@@ -6964,7 +7457,10 @@
       "Saturday: 10:00 AM – 5:00 PM",
       "Sunday: 10:00 AM – 5:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1029137": {
     "a": "Buck And Bell, The Green, Long Itchington, Southam",
@@ -7003,7 +7499,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503261": {
     "a": "Thespians Restaurant, 26 Sheep Street, Stratford-upon-Avon",
@@ -7047,7 +7546,10 @@
       "indian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1871632": {
     "a": "7 - 8 Ely Street, Stratford-upon-Avon",
@@ -7095,7 +7597,10 @@
       "italian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503444": {
     "a": "Bridgefoot, Stratford-upon-Avon",
@@ -7125,7 +7630,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJr72NPjHOcEgR6GjIXRRMctU",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1155879": {
     "a": "",
@@ -7157,7 +7665,10 @@
       "Saturday: 10:00 AM – 4:00 PM",
       "Sunday: Closed"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1339998": {
     "a": "Unit 4, London Road, Little Compton",
@@ -7196,7 +7707,10 @@
     ],
     "has_menu_online": true,
     "price_range": "£",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1056848": {
     "a": "Barn Antiques Centre, Station Road, Long Marston, Stratford-upon-Avon",
@@ -7234,7 +7748,10 @@
       "Saturday: 10:00 AM – 5:00 PM",
       "Sunday: 10:30 AM – 4:30 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "502863": {
     "a": "Hotel Indigo, Chapel Street, Stratford-upon-Avon",
@@ -7264,7 +7781,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJZ6LNQjLOcEgRujEs2c_ntTg",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1019047": {
     "a": "Unit 20, Bell Court, Stratford-upon-Avon",
@@ -7304,7 +7824,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "504050": {
     "a": "Bishops Bowl Lakes, Bishops Itchington, Southam",
@@ -7340,7 +7863,10 @@
       "Saturday: 7:00 AM – 5:00 PM",
       "Sunday: 7:00 AM – 5:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503102": {
     "a": "Ashorne Hill, Leamington Spa",
@@ -7367,7 +7893,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJe5Q_dyczd0gRwZUAhr4PnuY",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1826833": {
     "a": "Pitstop Cafe, Stretton-on-Fosse, Moreton-in-Marsh",
@@ -7407,7 +7936,10 @@
       "Sunday: 8:00 AM – 4:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1176874": {
     "a": "Wellesbourne Florists, 2 Newbold Road, Wellesbourne, Warwick",
@@ -7446,7 +7978,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1838728": {
     "a": "Village Hall, The Crescent, Napton-on-the-Hill, Southam",
@@ -7481,7 +8016,10 @@
       "Saturday: 10:30 AM – 4:30 PM",
       "Sunday: 10:30 AM – 4:30 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503734": {
     "a": "Payton Street, Stratford-upon-Avon",
@@ -7513,7 +8051,10 @@
     "gpc": 10,
     "gpid": "ChIJ9SYsTjHOcEgRxVLnk9c6QhE",
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503711": {
     "a": "137 High Street, Henley-in-Arden",
@@ -7557,7 +8098,10 @@
       "indian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "503931": {
     "a": "Bella Italia Restaurants Ltd, 32 Wood Street, Stratford-upon-Avon",
@@ -7599,7 +8143,10 @@
       "italian"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1411434": {
     "a": "Earlswood Village Hall, Shutt Lane, Earlswood, Solihull",
@@ -7625,7 +8172,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJX1k_CIy4cEgRrKSfJRlEnlA",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1206079": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -7651,7 +8201,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "502838": {
     "a": "Banbury Road, Stratford-upon-Avon",
@@ -7682,7 +8235,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJqxlELjvOcEgRCF8FH6frDIE",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "502681": {
     "a": "Billesley Manor, Billesley, Alcester",
@@ -7709,7 +8265,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJz5pCJG3FcEgRgiwBGQLFCLw",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1622078": {
     "a": "2 The Minories, Henley Street, Stratford-upon-Avon",
@@ -7752,7 +8311,10 @@
     "cuisine_tags": [
       "japanese"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1622076": {
     "a": "21 Bridge Street, Stratford-upon-Avon",
@@ -7792,7 +8354,10 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "676557": {
     "a": "1 The Minories, Rother Street, Stratford-upon-Avon",
@@ -7839,7 +8404,10 @@
       "vegan"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503319": {
     "a": "3 - 5 West Street, Shipston-on-Stour",
@@ -7878,7 +8446,10 @@
       "Sunday: 4:00 – 11:00 PM"
     ],
     "has_menu_online": true,
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "503369": {
     "a": "Studley",
@@ -7905,7 +8476,10 @@
     ],
     "gpc": 10,
     "gpid": "ChIJX6r4kETBcEgRCuIxuCkUwuY",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1131857": {
     "a": "D C S Stadium, Stratford Town Football Club, Knights Lane, Tiddington",
@@ -7941,7 +8515,10 @@
       "Saturday: 12:00 – 10:00 PM",
       "Sunday: 12:00 – 10:00 PM"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "502970": {
     "a": "Must Go, 21 Windsor Street, Stratford-upon-Avon",
@@ -7985,7 +8562,10 @@
       "chinese"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1584576": {
     "a": "Unit 26, Bell Court, Stratford-upon-Avon",
@@ -8028,7 +8608,10 @@
     "cuisine_tags": [
       "american"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1317981": {
     "a": "Bargain Booze, 12 Warwick Road, Wellesbourne, Warwick",
@@ -8070,7 +8653,10 @@
     "cuisine_tags": [
       "indian"
     ],
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "502816": {
     "a": "3 Sheep Street, Stratford-upon-Avon",
@@ -8116,7 +8702,10 @@
       "british"
     ],
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503480": {
     "n": "Vintner Wine Bar",
@@ -8184,6 +8773,9 @@
     ],
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "web": true,
+    "fb": true,
+    "ig": true
   }
 }

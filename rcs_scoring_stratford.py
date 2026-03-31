@@ -657,11 +657,24 @@ def compute_rcs_v2(record):
             "penalties": [],
         }
 
-    available_weight_sum = sum(
-        TIER_WEIGHTS[t] for t in tier_scores
-    )
+    # Calculate effective weights with Google cap at 30%
+    GOOGLE_CAP = 0.30
+    raw_weights = {t: TIER_WEIGHTS[t] for t in tier_scores}
+    total_raw = sum(raw_weights.values())
+    eff_weights = {t: w / total_raw for t, w in raw_weights.items()}
+
+    # If Google exceeds cap, redistribute excess to other tiers
+    if "google" in eff_weights and eff_weights["google"] > GOOGLE_CAP:
+        excess = eff_weights["google"] - GOOGLE_CAP
+        eff_weights["google"] = GOOGLE_CAP
+        others = {t: w for t, w in eff_weights.items() if t != "google"}
+        others_total = sum(others.values())
+        if others_total > 0:
+            for t in others:
+                eff_weights[t] += excess * (others[t] / others_total)
+
     weighted_sum = sum(
-        tier_scores[t] * (TIER_WEIGHTS[t] / available_weight_sum)
+        tier_scores[t] * eff_weights[t]
         for t in tier_scores
     )
 
