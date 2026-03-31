@@ -1015,5 +1015,12 @@
   "503480": {
     "price_range": "££",
     "has_menu_online": true
+  },
+  "503104": {
+    "cuisine_tags_count": 1,
+    "cuisine_tags": [
+      "indian"
+    ],
+    "has_menu_online": true
   }
 }

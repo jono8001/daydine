@@ -8986,5 +8986,78 @@
     "has_menu_online": true,
     "price_range": "££",
     "local_awards_count": 0
+  },
+  "503104": {
+    "n": "Simla Takeaway",
+    "a": "24 Greenhill Street, Stratford-upon-Avon",
+    "pc": "CV37 6LE",
+    "la": "Stratford-on-Avon",
+    "r": 5,
+    "rd": "2025-01-30T00:00:00",
+    "lat": 52.192994,
+    "lon": -1.711204,
+    "id": 503104,
+    "t": null,
+    "sh": 10.0,
+    "ss": 8.0,
+    "sm": 10.0,
+    "s": 10.0,
+    "gr": 4,
+    "grc": 73,
+    "gty": [
+      "meal_takeaway",
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 7,
+    "gpid": "ChIJRTeBOzPOcEgRDJp1aOUQV_c",
+    "goh": [
+      "Monday: 5:00 – 11:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 5:00 – 11:00 PM",
+      "Thursday: 5:00 – 11:00 PM",
+      "Friday: 5:00 – 11:00 PM",
+      "Saturday: 5:00 – 11:00 PM",
+      "Sunday: 5:00 – 11:00 PM"
+    ],
+    "g_reviews": [
+      {
+        "text": "Takeaway only, no dine in option.\n\nFood is excellent, fresh produce (fresh salad/sides, etc), well spiced and served piping hot.     Extensive menu and above all, everything tasted great.\n\nI was staying in a nearby hotel overnight and brought the food back to my room, so if staying in Stratford and don't want to use the bland hotel menus, then this is worth a visit.",
+        "rating": 4,
+        "time": "7 months ago"
+      },
+      {
+        "text": "Honestly the best Indian in Stratford! Never had a bad meal. A lot of places are hit and miss but not this place. Curries nice and thick sauce and the delivery guys are super friendly and always bring up to my flat for me. Lamb tikka makhani is amazing!",
+        "rating": 5,
+        "time": "a year ago"
+      },
+      {
+        "text": "The BEST takeaway in Stratford, absolutely gorgeous food and happy smiling staff. No need to order from anywhere else. Thank you. The Real Ron 👍🙏",
+        "rating": 5,
+        "time": "7 months ago"
+      },
+      {
+        "text": "Ordered through just eat and found glass in my food, ordered before and has always been amazing however really not happy about this and when I tried to contacting them they said there was nothing they could do (contacted through just eat)",
+        "rating": 1,
+        "time": "2 years ago"
+      },
+      {
+        "text": "We always have great food from Simla!  Definitely our favourite Indian takeaway in Stratford-on-Avon! The drivers are very professional and very friendly! Great value for money too.",
+        "rating": 5,
+        "time": "11 months ago"
+      }
+    ],
+    "web": true,
+    "ig": false,
+    "gbp_completeness": 8.0,
+    "has_menu_online": true,
+    "cuisine_tags_count": 1,
+    "cuisine_tags": [
+      "indian"
+    ],
+    "local_awards_count": 0
   }
 }
