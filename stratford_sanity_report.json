@@ -2,17 +2,10 @@
   "our_count": 209,
   "missing_from_our_data": [
     {
-      "name": "Saxon Mill Warwick",
-      "address": "Coventry Rd, Guys Cliffe, Warwick CV34 5YN",
-      "rating": 4.3,
-      "reviews": 7026,
-      "best_match_score": 0.5
-    },
-    {
       "name": "The Golden Bee - JD Wetherspoon",
       "address": "41-42 Sheep St, Stratford-upon-Avon CV37 6EE",
       "rating": 4,
-      "reviews": 4929,
+      "reviews": 4928,
       "best_match_score": 0.53
     },
     {
@@ -33,21 +26,21 @@
       "name": "Dirty Duck",
       "address": "Waterside, Stratford-upon-Avon CV37 6BA",
       "rating": 4.4,
-      "reviews": 3257,
+      "reviews": 3258,
       "best_match_score": 0.42
     },
     {
       "name": "Pen & Parchment",
       "address": "Bridge Foot, Stratford-upon-Avon CV37 6YY",
       "rating": 4.3,
-      "reviews": 2548,
+      "reviews": 2550,
       "best_match_score": 0.5
     },
     {
       "name": "Garrick",
       "address": "25 High St, Stratford-upon-Avon CV37 6AU",
       "rating": 4.4,
-      "reviews": 2507,
+      "reviews": 2506,
       "best_match_score": 0.5
     },
     {
@@ -75,14 +68,14 @@
       "name": "The White Swan Hotel, Stratford",
       "address": "Rother St, Stratford-upon-Avon CV37 6NH",
       "rating": 4.5,
-      "reviews": 1681,
+      "reviews": 1682,
       "best_match_score": 0.55
     },
     {
       "name": "The Fourteas Tea-Room Brasserie",
       "address": "24 Sheep St, Stratford-upon-Avon CV37 6EF",
-      "rating": 4.5,
-      "reviews": 1602,
+      "rating": 4.4,
+      "reviews": 1601,
       "best_match_score": 0.46
     },
     {
@@ -133,6 +126,13 @@
       "rating": 4.5,
       "reviews": 564,
       "best_match_score": 0.5
+    },
+    {
+      "name": "Papa Johns Pizza",
+      "address": "39 Greenhill St, Stratford-upon-Avon CV37 6LE",
+      "rating": 4.6,
+      "reviews": 530,
+      "best_match_score": 0.49
     },
     {
       "name": "The Rooftop Restaurant at the Royal Shakespeare Theatre",
@@ -205,6 +205,13 @@
       "best_match_score": 0.46
     },
     {
+      "name": "Quill & Cup",
+      "address": "Bridge Foot, Stratford-upon-Avon CV37 6YY",
+      "rating": 4.1,
+      "reviews": 266,
+      "best_match_score": 0.38
+    },
+    {
       "name": "Bobby's Café",
       "address": "The Stratford Greenway, Seven Meadows Rd, Stratford-upon-Avon CV37 9LE",
       "rating": 4.7,
@@ -233,6 +240,13 @@
       "best_match_score": 0.43
     },
     {
+      "name": "The Barge and Quarterdeck",
+      "address": "Waterside, Stratford-upon-Avon CV37 6AT",
+      "rating": 4.6,
+      "reviews": 183,
+      "best_match_score": 0.57
+    },
+    {
       "name": "Wok Express",
       "address": "98 Justins Ave, Stratford-upon-Avon CV37 0DE",
       "rating": 4.2,
@@ -254,18 +268,11 @@
       "best_match_score": 0.43
     },
     {
-      "name": "Sip 'n' Swig",
-      "address": "2 Alderminster Workshops, Alscot Estate, Stratford-upon-Avon CV37 8BN",
-      "rating": 4.9,
-      "reviews": 53,
-      "best_match_score": 0.44
-    },
-    {
-      "name": "Gordon Bleu Takeaway Cafe",
-      "address": "12a Western Rd, Stratford-upon-Avon CV37 0AH",
-      "rating": 4.8,
-      "reviews": 53,
-      "best_match_score": 0.55
+      "name": "Bodega 19",
+      "address": "19 Greenhill St, Stratford-upon-Avon CV37 6LF",
+      "rating": 4.6,
+      "reviews": 49,
+      "best_match_score": 0.38
     },
     {
       "name": "Golden Phoenix Chinese and Cantonese",
@@ -275,25 +282,11 @@
       "best_match_score": 0.43
     },
     {
-      "name": "Preston Village Shop & Cafe",
-      "address": "Preston on Stour, Stratford-upon-Avon CV37 8NG",
-      "rating": 5,
-      "reviews": 26,
-      "best_match_score": 0.58
-    },
-    {
       "name": "Bastardo's Trattoria",
       "address": "6 Granville Ct, Shipston-on-Stour CV36 4PP",
       "rating": 5,
       "reviews": 9,
       "best_match_score": 0.55
-    },
-    {
-      "name": "Mancini's Italian Coffee Carts",
-      "address": "Holy Trinity Parish Centre, 1 Old Town, Stratford-upon-Avon CV37 6BG",
-      "rating": 5,
-      "reviews": 5,
-      "best_match_score": 0.54
     },
     {
       "name": "Mr Tran's",
@@ -311,10 +304,10 @@
       "reason": "name_match: football club",
       "fsa_rating": 5,
       "google_types": [
-        "establishment",
+        "point_of_interest",
         "association_or_organization",
         "sports_club",
-        "point_of_interest"
+        "establishment"
       ]
     },
     {
@@ -324,9 +317,9 @@
       "reason": "google_types: {'miniature_golf_course'}",
       "fsa_rating": null,
       "google_types": [
-        "establishment",
         "point_of_interest",
-        "miniature_golf_course"
+        "miniature_golf_course",
+        "establishment"
       ]
     },
     {
@@ -336,11 +329,11 @@
       "reason": "name_match: horse sanctuary",
       "fsa_rating": 5,
       "google_types": [
-        "service",
         "tourist_attraction",
-        "visitor_center",
+        "association_or_organization",
         "establishment",
-        "travel_agency"
+        "point_of_interest",
+        "pet_care"
       ]
     },
     {
@@ -350,10 +343,10 @@
       "reason": "name_match: nfu mutual",
       "fsa_rating": 5,
       "google_types": [
-        "establishment",
-        "service",
+        "point_of_interest",
         "insurance_agency",
-        "point_of_interest"
+        "establishment",
+        "service"
       ]
     },
     {
@@ -363,11 +356,11 @@
       "reason": "google_types: {'gym'}",
       "fsa_rating": 5,
       "google_types": [
-        "service",
         "sports_activity_location",
+        "point_of_interest",
+        "lodging",
         "gym",
-        "hotel",
-        "health"
+        "wedding_venue"
       ]
     },
     {
@@ -377,11 +370,11 @@
       "reason": "name_match: golf club",
       "fsa_rating": 5,
       "google_types": [
-        "sporting_goods_store",
-        "golf_course",
+        "association_or_organization",
         "sports_activity_location",
+        "point_of_interest",
         "sports_school",
-        "sports_club"
+        "sports_coaching"
       ]
     },
     {
@@ -391,10 +384,10 @@
       "reason": "name_match: slimming world",
       "fsa_rating": null,
       "google_types": [
-        "establishment",
+        "point_of_interest",
         "association_or_organization",
         "sports_club",
-        "point_of_interest"
+        "establishment"
       ]
     },
     {
@@ -404,10 +397,10 @@
       "reason": "name_match: football club",
       "fsa_rating": 5,
       "google_types": [
-        "establishment",
+        "point_of_interest",
         "association_or_organization",
         "sports_club",
-        "point_of_interest"
+        "establishment"
       ]
     },
     {
@@ -419,9 +412,9 @@
       "google_types": [
         "sports_complex",
         "sports_activity_location",
-        "gym",
+        "point_of_interest",
         "sports_school",
-        "health"
+        "gym"
       ]
     },
     {
@@ -432,10 +425,10 @@
       "fsa_rating": 5,
       "google_types": [
         "place_of_worship",
-        "establishment",
-        "point_of_interest",
         "association_or_organization",
-        "church"
+        "point_of_interest",
+        "church",
+        "establishment"
       ]
     },
     {
@@ -445,9 +438,9 @@
       "reason": "name_match: aston martin",
       "fsa_rating": 5,
       "google_types": [
-        "establishment",
         "manufacturer",
-        "point_of_interest"
+        "point_of_interest",
+        "establishment"
       ]
     },
     {
@@ -457,10 +450,10 @@
       "reason": "google_types: {'real_estate_agency'}",
       "fsa_rating": 5,
       "google_types": [
-        "real_estate_agency",
         "service",
+        "point_of_interest",
         "establishment",
-        "point_of_interest"
+        "real_estate_agency"
       ]
     },
     {
@@ -470,10 +463,10 @@
       "reason": "google_types: {'sports_club'}",
       "fsa_rating": 5,
       "google_types": [
-        "establishment",
+        "point_of_interest",
         "association_or_organization",
         "sports_club",
-        "point_of_interest"
+        "establishment"
       ]
     },
     {
@@ -483,10 +476,10 @@
       "reason": "google_types: {'sports_club'}",
       "fsa_rating": 5,
       "google_types": [
-        "establishment",
+        "point_of_interest",
         "association_or_organization",
         "sports_club",
-        "point_of_interest"
+        "establishment"
       ]
     },
     {
@@ -496,10 +489,10 @@
       "reason": "google_types: {'sports_club'}",
       "fsa_rating": 3,
       "google_types": [
-        "establishment",
+        "point_of_interest",
         "association_or_organization",
         "sports_club",
-        "point_of_interest"
+        "establishment"
       ]
     },
     {
@@ -509,10 +502,10 @@
       "reason": "google_types: {'sports_club'}",
       "fsa_rating": 5,
       "google_types": [
-        "establishment",
+        "point_of_interest",
         "association_or_organization",
         "sports_club",
-        "point_of_interest"
+        "establishment"
       ]
     }
   ],
