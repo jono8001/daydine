@@ -48,6 +48,9 @@ jobs:
           python .github/scripts/collect_enforcement.py
           python .github/scripts/merge_enforcement.py
 
+      - name: "Sentiment: Analyze Google review text"
+        run: python .github/scripts/sentiment_analysis.py
+
       - name: "Score: Run V2 RCS pipeline (all tiers)"
         run: python rcs_scoring_stratford.py --from-cache
 

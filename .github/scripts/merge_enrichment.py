@@ -38,7 +38,7 @@ def main():
             continue
 
         # Merge Google fields into the establishment record
-        for field in ["gr", "grc", "gpl", "gty", "gpc", "gpid", "goh"]:
+        for field in ["gr", "grc", "gpl", "gty", "gpc", "gpid", "goh", "g_reviews"]:
             if field in google_data:
                 establishments[key][field] = google_data[field]
         merged += 1

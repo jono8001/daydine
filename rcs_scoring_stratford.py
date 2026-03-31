@@ -40,7 +40,7 @@ SUMMARY_OUTPUT = os.path.join(SCRIPT_DIR, "stratford_rcs_summary.json")
 
 NOW = datetime.now(timezone.utc)
 
-TOTAL_SIGNALS = 35
+TOTAL_SIGNALS = 36
 
 
 # ---------------------------------------------------------------------------
@@ -161,29 +161,98 @@ def score_tier_fsa(record):
 
 
 # ---------------------------------------------------------------------------
-# Tier 2: Google Signals — Weight 20%
+# Tier 2: Google Signals — Weight 25%
 #
 # Firebase fields: gr (rating 1-5), grc (review count), gpl (price level 1-4)
-# Weights: rating 50%, review_count 30%, price_level 10%, photos 10%
+# Weights: rating 35%, sentiment 15%, review_count 25%, price 10%, photos 10%, types 5%
 # ---------------------------------------------------------------------------
+
+# Import sentiment analysis (works whether run from repo root or .github/scripts)
+def _analyze_sentiment(reviews):
+    """Keyword-based sentiment analysis of review texts. Returns score 0-1."""
+    if not reviews:
+        return None, 0, []
+
+    RED_FLAGS = [
+        "food poisoning", "sick after", "made me sick", "made us sick",
+        "dirty", "filthy", "cockroach", "cockroaches", "rat ", "rats ",
+        "hair in", "cold food", "stone cold", "raw chicken", "raw meat",
+        "undercooked", "pink chicken", "rude staff", "rude waiter",
+        "worst restaurant", "worst meal", "worst experience", "worst food",
+        "disgusting", "revolting", "inedible", "never again",
+        "avoid at all costs", "avoid this", "do not go",
+        "health hazard", "shut down", "closed down",
+    ]
+    POSITIVES = [
+        "amazing", "excellent", "outstanding", "exceptional", "superb",
+        "best restaurant", "best meal", "best food",
+        "highly recommend", "would recommend",
+        "fantastic", "fabulous", "phenomenal", "incredible",
+        "delicious", "mouth-watering", "perfectly cooked",
+        "perfect", "faultless", "flawless",
+        "wonderful", "lovely", "friendly staff", "great service",
+        "will definitely return", "will be back", "hidden gem",
+        "five stars", "5 stars", "10/10",
+    ]
+    NEGATIVES = [
+        "disappointing", "disappointed", "mediocre", "average at best",
+        "nothing special", "overrated", "bland", "tasteless",
+        "slow service", "poor service", "bad service",
+        "small portions", "won't return",
+    ]
+
+    total_pos = 0
+    total_neg = 0
+    total_red = 0
+    red_list = []
+    for rev in reviews:
+        text = (rev.get("text") or "").lower()
+        if not text:
+            continue
+        for p in RED_FLAGS:
+            if p in text:
+                total_red += 1
+                red_list.append(p)
+        for p in POSITIVES:
+            if p in text:
+                total_pos += 1
+        for p in NEGATIVES:
+            if p in text:
+                total_neg += 1
+
+    score = 0.5 + total_pos * 0.05 - total_neg * 0.08 - total_red * 0.15
+    return max(0.0, min(1.0, score)), total_red, list(set(red_list))
+
 
 def score_tier_google(record):
     """Score Tier 2: Google. Returns (score 0-1, signals_used, signals_total)."""
-    signals_total = 5  # rating, review_count, price_level, photos, place_types
+    signals_total = 6  # rating, sentiment, review_count, price, photos, types
     signals_used = 0
     components = {}
 
     # google_rating: 1-5 → 0-1
     gr = safe_float(record.get("gr"))
     if gr is not None:
-        components["google_rating"] = (clamp(gr / 5.0), 0.50)
+        components["google_rating"] = (clamp(gr / 5.0), 0.35)
         signals_used += 1
+
+    # review_sentiment: keyword-based analysis of review text
+    g_reviews = record.get("g_reviews")
+    if g_reviews and isinstance(g_reviews, list):
+        sentiment, red_count, red_flags = _analyze_sentiment(g_reviews)
+        if sentiment is not None:
+            components["review_sentiment"] = (sentiment, 0.15)
+            signals_used += 1
+            # Store red flags for reporting (picked up in run_pipeline)
+            record["_sentiment_score"] = round(sentiment, 3)
+            record["_red_flag_count"] = red_count
+            record["_red_flags"] = red_flags
 
     # google_review_count: log10 scale, cap 1000
     grc = safe_int(record.get("grc"))
     if grc is not None:
         vol = clamp(math.log10(max(1, grc)) / math.log10(1000))
-        components["google_reviews"] = (vol, 0.30)
+        components["google_reviews"] = (vol, 0.25)
         signals_used += 1
 
     # google_price_level: 1-4 → 0-1 (presence is signal, not quality)
@@ -929,6 +998,7 @@ CSV_FIELDS = [
     "ops_tier_score", "menu_tier_score", "reputation_tier_score",
     "community_tier_score",
     "rcs_final", "rcs_band", "signals_available", "signals_total",
+    "sentiment_score", "red_flag_count", "red_flags",
 ]
 
 def run_pipeline(data):
@@ -966,6 +1036,9 @@ def run_pipeline(data):
             "rcs_band": result["rcs_band"],
             "signals_available": result["signals_available"],
             "signals_total": result["signals_total"],
+            "sentiment_score": record.get("_sentiment_score", ""),
+            "red_flag_count": record.get("_red_flag_count", 0),
+            "red_flags": "; ".join(record.get("_red_flags", [])),
             # Tiebreaker fields (not written to CSV)
             "_fsa_rating": safe_int(record.get("r")) or 0,
             "_rd_days": days_since(record.get("rd")) or 999999,
@@ -1114,6 +1187,14 @@ def build_summary(scored):
             ) if scored else 0,
             "total_possible": TOTAL_SIGNALS,
         },
+        "sentiment_warnings": [
+            {"rank": r.get("rank", ""), "name": r["business_name"],
+             "postcode": r["postcode"], "rcs": r["rcs_final"],
+             "sentiment": r["sentiment_score"],
+             "red_flag_count": r["red_flag_count"],
+             "red_flags": r["red_flags"]}
+            for r in scored if r.get("red_flag_count", 0) >= 2
+        ],
         "generated_at": NOW.isoformat(),
     }
 

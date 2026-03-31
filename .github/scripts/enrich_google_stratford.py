@@ -43,6 +43,7 @@ def search_place(name, address, postcode):
             "places.priceLevel,"
             "places.types,"
             "places.photos,"
+            "places.reviews,"
             "places.regularOpeningHours.weekdayDescriptions,"
             "places.currentOpeningHours.weekdayDescriptions"
         ),
@@ -86,6 +87,22 @@ def search_place(name, address, postcode):
     hours = place.get("regularOpeningHours") or place.get("currentOpeningHours")
     if hours and "weekdayDescriptions" in hours:
         result["goh"] = hours["weekdayDescriptions"]
+
+    # Reviews — extract up to 5 most relevant
+    reviews = place.get("reviews", [])
+    if reviews:
+        extracted = []
+        for rev in reviews[:5]:
+            entry = {}
+            orig = rev.get("originalText") or rev.get("text")
+            if orig:
+                entry["text"] = orig.get("text", "") if isinstance(orig, dict) else str(orig)
+            entry["rating"] = rev.get("rating")
+            entry["time"] = rev.get("relativePublishTimeDescription", "")
+            if entry.get("text"):
+                extracted.append(entry)
+        if extracted:
+            result["g_reviews"] = extracted
 
     return result
 
