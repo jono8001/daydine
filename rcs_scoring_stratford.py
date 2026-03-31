@@ -48,9 +48,9 @@ TOTAL_SIGNALS = 35
 # ---------------------------------------------------------------------------
 
 TIER_WEIGHTS = {
-    "fsa":        0.30,
-    "google":     0.20,
-    "online":     0.15,
+    "fsa":        0.20,
+    "google":     0.25,
+    "online":     0.20,
     "ops":        0.15,
     "menu":       0.10,
     "reputation": 0.05,
@@ -799,11 +799,132 @@ def classify_category(record):
 
 
 # ---------------------------------------------------------------------------
+# Food-service verification — checks if an establishment actually serves food
+# ---------------------------------------------------------------------------
+
+# Google types that confirm food service
+_FOOD_TYPES = {
+    "restaurant", "cafe", "coffee_shop", "bakery", "bar", "pub",
+    "meal_takeaway", "food", "food_delivery", "diner", "bistro",
+    "gastropub", "brewpub", "tea_house", "dessert_shop", "ice_cream_shop",
+    "pastry_shop", "cake_shop", "confectionery", "deli", "snack_bar",
+    "fast_food_restaurant", "sandwich_shop", "pizza_restaurant",
+    "indian_restaurant", "chinese_restaurant", "italian_restaurant",
+    "thai_restaurant", "japanese_restaurant", "french_restaurant",
+    "turkish_restaurant", "greek_restaurant", "asian_restaurant",
+    "vietnamese_restaurant", "mexican_restaurant", "brazilian_restaurant",
+    "american_restaurant", "british_restaurant", "seafood_restaurant",
+    "steak_house", "hamburger_restaurant", "chicken_restaurant",
+    "noodle_shop", "fine_dining_restaurant", "family_restaurant",
+    "breakfast_restaurant", "brunch_restaurant", "vegan_restaurant",
+    "vegetarian_restaurant", "fish_and_chips_restaurant",
+    "bangladeshi_restaurant", "wine_bar", "cocktail_bar", "beer_garden",
+    "bar_and_grill", "dog_cafe", "cat_cafe",
+}
+
+# Google types that confirm NOT a food business
+_NON_FOOD_TYPES = {
+    "insurance_agency", "real_estate_agency", "church", "place_of_worship",
+    "miniature_golf_course", "gym", "fitness_center", "swimming_pool",
+    "medical_clinic", "library", "clothing_store", "jewelry_store",
+}
+
+# Names that confirm NOT a food business
+_NON_FOOD_NAMES = {
+    "slimming world", "nfu mutual", "aston martin", "football club",
+    "golf club", "baptist church", "juniors fc", "town fc",
+    "barrow ltd", "equipment ltd", "horse sanctuary",
+}
+
+
+def is_food_establishment(record):
+    """
+    Verify whether an establishment actually serves food.
+    Returns (is_food: bool, reason: str).
+
+    Priority: name blacklist → Google food types → FSA rating as
+    strong override → Google non-food types → name food keywords.
+    """
+    name = (record.get("n") or "").lower()
+    gty = record.get("gty", [])
+    types_set = set(gty) if isinstance(gty, list) else set()
+    fsa_rating = record.get("r")
+
+    # Step 1: Hard-exclude by name (known non-food businesses)
+    for nf in _NON_FOOD_NAMES:
+        if nf in name:
+            return False, f"non_food_name:{nf}"
+
+    # Step 2: If ANY Google food type is present → definitely food
+    if types_set & _FOOD_TYPES:
+        return True, "google_food_type"
+
+    # Step 3: FSA rating 3+ is strong evidence of real food service,
+    # even if Google types are wrong (misclassified gym, estate agent, etc.)
+    if fsa_rating is not None:
+        try:
+            if int(fsa_rating) >= 3:
+                return True, "fsa_high_rating"
+        except (ValueError, TypeError):
+            pass
+
+    # Step 4: Hotels/lodging without food types — keep (likely have restaurant)
+    if "hotel" in types_set or "lodging" in types_set:
+        return True, "hotel_assumed_food"
+
+    # Step 5: Check name for food keywords (catches cafes in gyms, etc.)
+    food_names = {"cafe", "caff", "catering", "kitchen", "restaurant",
+                  "canteen", "lunch", "coffee", "tea", "food", "diner",
+                  "bistro", "grill", "bakery", "pizza"}
+    if any(fn in name for fn in food_names):
+        return True, "food_name_keyword"
+
+    # Step 6: Google non-food types with no food evidence
+    if types_set & _NON_FOOD_TYPES:
+        return False, "google_non_food_type"
+
+    # Step 7: Sports clubs / venues with low or no FSA rating
+    if types_set & {"sports_club", "event_venue", "community_center"}:
+        if fsa_rating is not None:
+            return True, "venue_with_fsa"
+        return False, "venue_no_food_evidence"
+
+    # Step 8: Has an FSA registration at all → include
+    if fsa_rating is not None:
+        return True, "fsa_registered"
+
+    return True, "default_include"
+
+
+# ---------------------------------------------------------------------------
+# Confidence calculation
+# ---------------------------------------------------------------------------
+
+MIN_SIGNALS_FOR_RANKING = 8
+
+
+def compute_confidence(signals_available, n_tiers_active):
+    """
+    Compute confidence level and band width.
+    Returns (level: str, margin: float).
+    """
+    if signals_available >= 20 and n_tiers_active >= 5:
+        return "High", 0.3
+    elif signals_available >= 14 and n_tiers_active >= 4:
+        return "Medium", 0.5
+    elif signals_available >= MIN_SIGNALS_FOR_RANKING:
+        return "Low", 0.8
+    else:
+        return "Insufficient", 1.5
+
+
+# ---------------------------------------------------------------------------
 # Pipeline: score all, save CSV + JSON summary
 # ---------------------------------------------------------------------------
 
 CSV_FIELDS = [
     "rank", "fhrsid", "business_name", "postcode", "category", "category_source",
+    "is_food", "confidence", "confidence_margin",
     "fsa_tier_score", "google_tier_score", "online_tier_score",
     "ops_tier_score", "menu_tier_score", "reputation_tier_score",
     "community_tier_score",
@@ -815,12 +936,25 @@ def run_pipeline(data):
     for key, record in data.items():
         result = compute_rcs_v2(record)
         cat, cat_source = classify_category(record)
+        food_ok, food_reason = is_food_establishment(record)
+
+        n_tiers = sum(1 for t in ["fsa_tier", "google_tier", "online_tier",
+                                   "ops_tier", "menu_tier", "reputation_tier",
+                                   "community_tier"]
+                      if result.get(t) is not None)
+        conf_level, conf_margin = compute_confidence(
+            result["signals_available"], n_tiers)
+
         scored.append({
             "fhrsid": record.get("id") or key,
             "business_name": record.get("n", "Unknown"),
             "postcode": record.get("pc", ""),
             "category": cat,
             "category_source": cat_source,
+            "is_food": food_ok,
+            "_food_reason": food_reason,
+            "confidence": conf_level,
+            "confidence_margin": conf_margin,
             "fsa_tier_score": result["fsa_tier"],
             "google_tier_score": result["google_tier"],
             "online_tier_score": result["online_tier"],
@@ -841,63 +975,84 @@ def run_pipeline(data):
     return scored
 
 
-def apply_tiebreakers(scored):
-    """
-    Sort by rcs_final desc, then break ties so every restaurant has a
-    unique rank and a numerically distinct final score.
-
-    Tiebreaker order (all among records sharing the same rcs_final):
-      1. Higher FSA hygiene_rating
-      2. More recent inspection (fewer days since)
-      3. Higher structural compliance (ss)
-      4. Higher confidence in management (sm)
-      5. Alphabetical by business name (A before Z)
-
-    After sorting, tied scores get a tiny descending offset (0.001 per
-    position within a tie group) so each rcs_final is unique.
-    """
-    scored.sort(key=lambda r: (
+def _sort_key(r):
+    return (
         -r["rcs_final"],
         -r["_fsa_rating"],
-        r["_rd_days"],          # lower = more recent = better
+        r["_rd_days"],
         -r["_ss"],
         -r["_sm"],
         r["business_name"].lower(),
-    ))
+    )
 
-    # Ensure every score is strictly less than the one above it.
-    # Walk top-down: if a score is not strictly less than the previous,
-    # nudge it down by 0.001. This guarantees global uniqueness
-    # regardless of how many ties exist or how close groups are.
-    for i in range(1, len(scored)):
-        if scored[i]["rcs_final"] >= scored[i - 1]["rcs_final"]:
-            scored[i]["rcs_final"] = round(scored[i - 1]["rcs_final"] - 0.001, 3)
 
-    # If the walk-down pushed scores below zero, re-space the tail
-    # so the worst record gets 0.000 and others above it are spaced
-    # 0.001 apart ascending.
-    if scored[-1]["rcs_final"] < 0:
-        # Find where scores went negative
-        first_neg = next(i for i, r in enumerate(scored) if r["rcs_final"] < 0)
-        # Also include any zeros that precede the negatives (they'd be ties)
-        while first_neg > 0 and scored[first_neg - 1]["rcs_final"] <= 0:
+def _walk_down_unique(rows):
+    """Ensure every rcs_final is strictly decreasing. Returns rows."""
+    for i in range(1, len(rows)):
+        if rows[i]["rcs_final"] >= rows[i - 1]["rcs_final"]:
+            rows[i]["rcs_final"] = round(rows[i - 1]["rcs_final"] - 0.001, 3)
+    # Fix negatives at tail
+    if rows and rows[-1]["rcs_final"] < 0:
+        first_neg = next(i for i, r in enumerate(rows) if r["rcs_final"] < 0)
+        while first_neg > 0 and rows[first_neg - 1]["rcs_final"] <= 0:
             first_neg -= 1
-        tail_count = len(scored) - first_neg
-        for k in range(tail_count):
-            scored[first_neg + k]["rcs_final"] = round(
-                (tail_count - 1 - k) * 0.001, 3
-            )
+        tail = len(rows) - first_neg
+        for k in range(tail):
+            rows[first_neg + k]["rcs_final"] = round((tail - 1 - k) * 0.001, 3)
+    return rows
 
-    # Assign sequential ranks
-    for rank, row in enumerate(scored, 1):
+
+def apply_tiebreakers(scored):
+    """
+    Rank establishments with three groups:
+    1. Food establishments with sufficient data → ranked 1..N
+    2. Food establishments with insufficient data → marked "Insufficient Data"
+    3. Non-food establishments → marked "Not Ranked"
+
+    Within group 1, tiebreakers ensure unique scores.
+    """
+    # Split into groups
+    ranked = []
+    insufficient = []
+    non_food = []
+
+    for row in scored:
+        if not row["is_food"]:
+            non_food.append(row)
+        elif row["confidence"] == "Insufficient":
+            insufficient.append(row)
+        else:
+            ranked.append(row)
+
+    # Sort and deduplicate ranked group
+    ranked.sort(key=_sort_key)
+    ranked = _walk_down_unique(ranked)
+
+    # Assign sequential ranks to food establishments only
+    for rank, row in enumerate(ranked, 1):
         row["rank"] = rank
 
-    # Clean up internal tiebreaker fields
-    for row in scored:
-        for field in ("_fsa_rating", "_rd_days", "_ss", "_sm"):
-            del row[field]
+    # Insufficient data: score but don't rank
+    insufficient.sort(key=_sort_key)
+    for row in insufficient:
+        row["rank"] = ""
+        row["rcs_band"] = "Insufficient Data"
 
-    return scored
+    # Non-food: don't rank
+    non_food.sort(key=_sort_key)
+    for row in non_food:
+        row["rank"] = ""
+        row["rcs_band"] = "Not Ranked"
+
+    # Combine: ranked first, then insufficient, then non-food
+    all_rows = ranked + insufficient + non_food
+
+    # Clean up internal fields
+    for row in all_rows:
+        for field in ("_fsa_rating", "_rd_days", "_ss", "_sm", "_food_reason"):
+            row.pop(field, None)
+
+    return all_rows
 
 
 def save_scores_csv(rows, path):
@@ -909,13 +1064,17 @@ def save_scores_csv(rows, path):
 
 
 def build_summary(scored):
-    scores = [r["rcs_final"] for r in scored]
-    band_counts = Counter(r["rcs_band"] for r in scored)
+    ranked = [r for r in scored if r["rank"] != ""]
+    not_ranked = [r for r in scored if r["rcs_band"] == "Not Ranked"]
+    insufficient = [r for r in scored if r["rcs_band"] == "Insufficient Data"]
+
+    scores = [r["rcs_final"] for r in ranked]
+    band_counts = Counter(r["rcs_band"] for r in ranked)
     band_order = [b for _, b in BANDS]
 
-    # Build rankings by category (top 5 per category)
+    # Build rankings by category (top 5 per category, ranked food only)
     categories = {}
-    for r in scored:
+    for r in ranked:
         cat = r["category"]
         if cat not in categories:
             categories[cat] = []
@@ -935,6 +1094,9 @@ def build_summary(scored):
 
     return {
         "count": len(scored),
+        "ranked": len(ranked),
+        "not_ranked": len(not_ranked),
+        "insufficient_data": len(insufficient),
         "mean": round(statistics.mean(scores), 2) if scores else 0,
         "median": round(statistics.median(scores), 2) if scores else 0,
         "min": round(min(scores), 2) if scores else 0,
@@ -963,51 +1125,68 @@ def save_summary_json(summary, path):
 
 
 def print_results(scored):
-    # scored is already sorted by rank from apply_tiebreakers
+    ranked = [r for r in scored if r["rank"] != ""]
+    not_ranked = [r for r in scored if r["rcs_band"] == "Not Ranked"]
+    insufficient = [r for r in scored if r["rcs_band"] == "Insufficient Data"]
+
     print()
-    print("=" * 92)
+    print("=" * 98)
     print("  TOP 10 RESTAURANTS BY RCS SCORE (0-10)")
-    print("=" * 92)
-    print(f"  {'Rank':<6} {'Name':<35} {'PC':<10} {'FSA':>6} {'RCS':>7}  {'Band'}")
-    print("  " + "-" * 88)
-    for row in scored[:10]:
+    print("=" * 98)
+    print(f"  {'Rank':<6} {'Name':<32} {'PC':<10} {'FSA':>6} {'RCS':>7}  {'Conf':<6} {'Band'}")
+    print("  " + "-" * 94)
+    for row in ranked[:10]:
         fsa = f"{row['fsa_tier_score']:.3f}" if row["fsa_tier_score"] is not None else "  —"
-        print(f"  {row['rank']:<6} {row['business_name'][:34]:<35} {row['postcode']:<10} "
-              f"{fsa:>6} {row['rcs_final']:>7.3f}  {row['rcs_band']}")
+        margin = f"\u00b1{row['confidence_margin']}"
+        print(f"  {row['rank']:<6} {row['business_name'][:31]:<32} {row['postcode']:<10} "
+              f"{fsa:>6} {row['rcs_final']:>7.3f}  {margin:<6} {row['rcs_band']}")
 
     print()
-    print("=" * 92)
-    print("  BOTTOM 10 RESTAURANTS BY RCS SCORE (0-10)")
-    print("=" * 92)
-    print(f"  {'Rank':<6} {'Name':<35} {'PC':<10} {'FSA':>6} {'RCS':>7}  {'Band'}")
-    print("  " + "-" * 88)
-    for row in scored[-10:]:
+    print("=" * 98)
+    print("  BOTTOM 10 RANKED RESTAURANTS")
+    print("=" * 98)
+    print(f"  {'Rank':<6} {'Name':<32} {'PC':<10} {'FSA':>6} {'RCS':>7}  {'Conf':<6} {'Band'}")
+    print("  " + "-" * 94)
+    for row in ranked[-10:]:
         fsa = f"{row['fsa_tier_score']:.3f}" if row["fsa_tier_score"] is not None else "  —"
-        print(f"  {row['rank']:<6} {row['business_name'][:34]:<35} {row['postcode']:<10} "
-              f"{fsa:>6} {row['rcs_final']:>7.3f}  {row['rcs_band']}")
+        margin = f"\u00b1{row['confidence_margin']}"
+        print(f"  {row['rank']:<6} {row['business_name'][:31]:<32} {row['postcode']:<10} "
+              f"{fsa:>6} {row['rcs_final']:>7.3f}  {margin:<6} {row['rcs_band']}")
 
-    # Band summary
-    band_counts = Counter(r["rcs_band"] for r in scored)
+    # Band summary (ranked only)
+    band_counts = Counter(r["rcs_band"] for r in ranked)
     band_order = [b for _, b in BANDS]
-    total = len(scored)
+    total_ranked = len(ranked)
 
     print()
-    print("=" * 50)
-    print("  BAND DISTRIBUTION")
-    print("=" * 50)
+    print("=" * 55)
+    print("  BAND DISTRIBUTION (ranked food establishments)")
+    print("=" * 55)
     print(f"  {'Band':<26} {'Count':>7} {'%':>7}")
-    print("  " + "-" * 46)
+    print("  " + "-" * 51)
     for band in band_order:
         count = band_counts.get(band, 0)
-        pct = (count / total * 100) if total else 0
+        pct = (count / total_ranked * 100) if total_ranked else 0
         print(f"  {band:<26} {count:>7} {pct:>6.1f}%")
-    print("  " + "-" * 46)
-    print(f"  {'TOTAL':<26} {total:>7}")
+    print("  " + "-" * 51)
+    print(f"  {'Ranked':<26} {total_ranked:>7}")
+    if insufficient:
+        print(f"  {'Insufficient Data':<26} {len(insufficient):>7}")
+    if not_ranked:
+        print(f"  {'Not Ranked (non-food)':<26} {len(not_ranked):>7}")
+    print(f"  {'Total records':<26} {len(scored):>7}")
 
     # Signal coverage
     avg_signals = statistics.mean(r["signals_available"] for r in scored) if scored else 0
     print()
     print(f"  Signals: {avg_signals:.1f} / {TOTAL_SIGNALS} avg per record")
+
+    if not_ranked:
+        print(f"\n  Non-food excluded ({len(not_ranked)}):")
+        for row in not_ranked[:10]:
+            print(f"    {row['business_name']}: {row['category']}")
+        if len(not_ranked) > 10:
+            print(f"    ... and {len(not_ranked) - 10} more")
     print()
 
 

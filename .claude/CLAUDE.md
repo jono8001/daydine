@@ -27,9 +27,9 @@ Currently running a **Stratford-upon-Avon trial** (208 FSA-registered restaurant
 
 | Tier | Weight | Description | Signals |
 |---|---|---|---|
-| 1. FSA | 30% | Food Safety Authority hygiene data | hygiene_rating, structural, CIM, food_hygiene, inspection_recency |
-| 2. Google | 20% | Google Places signals | rating, review_count, price_level, photos_count, place_types |
-| 3. Online Presence | 15% | Web & social media presence | website, facebook, instagram, tripadvisor_presence, ta_rating, ta_reviews |
+| 1. FSA | 20% | Food Safety Authority hygiene data | hygiene_rating, structural, CIM, food_hygiene, inspection_recency |
+| 2. Google | 25% | Google Places signals | rating, review_count, price_level, photos_count, place_types |
+| 3. Online Presence | 20% | Web & social media presence | website, facebook, instagram, tripadvisor_presence, ta_rating, ta_reviews |
 | 4. Operational | 15% | Service capabilities | reservations, delivery, takeaway, wheelchair, parking, hours_completeness |
 | 5. Menu & Offering | 10% | Food offering breadth | menu_online, dietary_options, cuisine_tags |
 | 6. Reputation & Awards | 5% | Editorial recognition | aa_rating, michelin_mention, local_awards |
@@ -44,6 +44,21 @@ When scores are identical after 3-decimal rounding, ties are broken in order:
 5. Alphabetical by business name
 
 A walk-down algorithm then applies 0.001 decreasing offsets to ensure every final score is numerically unique.
+
+### Non-Food Exclusion Filter
+Establishments verified as non-food businesses are excluded from rankings:
+- Checks Google types for food service (restaurant, cafe, pub, food, etc.)
+- FSA rating 3+ overrides Google misclassification (keeps cafes in gyms, etc.)
+- Name blacklist catches Slimming World, football clubs, Aston Martin, etc.
+- Hotels assumed to have food service (kept in rankings)
+- Excluded establishments marked "Not Ranked" in CSV
+
+### Confidence Bands
+Each ranked restaurant gets a confidence level based on signal coverage:
+- **High** (±0.3): 20+ signals, 5+ tiers active
+- **Medium** (±0.5): 14+ signals, 4+ tiers active
+- **Low** (±0.8): 8+ signals
+- **Insufficient** (not ranked): <8 signals — marked "Insufficient Data"
 
 ### Penalty Rules (implemented)
 - FSA rating 0-1: score capped at 2.0
