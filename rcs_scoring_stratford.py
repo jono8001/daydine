@@ -237,13 +237,19 @@ def score_tier_google(record):
         signals_used += 1
 
     # review_sentiment: keyword-based analysis of review text
+    # Use Google reviews if available, fall back to TripAdvisor reviews
+    all_reviews = []
     g_reviews = record.get("g_reviews")
     if g_reviews and isinstance(g_reviews, list):
-        sentiment, red_count, red_flags = _analyze_sentiment(g_reviews)
+        all_reviews.extend(g_reviews)
+    ta_reviews = record.get("ta_reviews")
+    if ta_reviews and isinstance(ta_reviews, list):
+        all_reviews.extend(ta_reviews)
+    if all_reviews:
+        sentiment, red_count, red_flags = _analyze_sentiment(all_reviews)
         if sentiment is not None:
             components["review_sentiment"] = (sentiment, 0.15)
             signals_used += 1
-            # Store red flags for reporting (picked up in run_pipeline)
             record["_sentiment_score"] = round(sentiment, 3)
             record["_red_flag_count"] = red_count
             record["_red_flags"] = red_flags

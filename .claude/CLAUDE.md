@@ -114,12 +114,13 @@ Each ranked restaurant gets a confidence level based on signal coverage:
 - Fields: `gr` (rating), `grc` (review count), `gpl` (price level), `gpc` (photo count), `gty` (types)
 - Action needed: Add `GOOGLE_PLACES_API_KEY` as GitHub repo secret, then trigger `enrich_and_score.yml` workflow
 
-**Tier 3 — Online Presence (TripAdvisor)**
-- Script: `.github/scripts/collect_tripadvisor.py` — scrapes TA search + detail pages
-- Merge: `.github/scripts/merge_tripadvisor.py` — writes `ta`, `trc`, `ta_present`, `ta_url`, `ta_cuisines` fields
-- Workflow: `.github/workflows/collect_tripadvisor.yml` — full pipeline with merge + re-score
-- Action needed: Trigger `collect_tripadvisor.yml` workflow from Actions tab
-- Remaining: website, Facebook, Instagram presence detection (needs Brave Search or Perplexity API)
+**Tier 3 — Online Presence (TripAdvisor + Web Presence)**
+- TripAdvisor: `.github/scripts/collect_tripadvisor_apify.py` — uses Apify scraper API (~$0.50 per run)
+- Web presence: `.github/scripts/check_web_presence.py` — infers website/FB/IG from Google data
+- Merge: `.github/scripts/merge_tripadvisor.py` — writes `ta`, `trc`, `ta_present`, `ta_url`, `ta_cuisines`, `ta_reviews`
+- Direct scraper (blocked): `.github/scripts/collect_tripadvisor.py` — kept as fallback
+- Action needed: Add `APIFY_TOKEN` as GitHub repo secret, then trigger full pipeline
+- Web presence already active: 143 websites, 137 Facebook, 126 Instagram inferred from Google data
 
 **Tier 4 — Operational Signals**
 - Extended Google Places fields: wheelchair accessibility, delivery, takeaway
@@ -204,7 +205,8 @@ Each ranked restaurant gets a confidence level based on signal coverage:
 ---
 
 ## Environment Variables
-- `GOOGLE_PLACES_API_KEY` — GitHub repo secret (needs adding). Used by `enrich_google_stratford.py`
+- `GOOGLE_PLACES_API_KEY` — GitHub repo secret. Used by `enrich_google_stratford.py` and `sanity_check_coverage.py`
+- `APIFY_TOKEN` — GitHub repo secret (needs adding). Used by `collect_tripadvisor_apify.py`. Get from apify.com/account/integrations
 - Firebase RTDB URL — public read, hardcoded: `https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app`
 - Firebase config — embedded in `index.html` (public read-only)
 

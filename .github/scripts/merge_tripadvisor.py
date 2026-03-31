@@ -51,6 +51,10 @@ def main():
             est["ta_cuisines"] = ta_record["ta_cuisines"]
         if ta_record.get("ta_price"):
             est["ta_price"] = ta_record["ta_price"]
+        if ta_record.get("ta_reviews"):
+            est["ta_reviews"] = ta_record["ta_reviews"]
+        if ta_record.get("ta_ranking"):
+            est["ta_ranking"] = ta_record["ta_ranking"]
 
     # Save merged data
     with open(est_path, "w", encoding="utf-8") as f:
