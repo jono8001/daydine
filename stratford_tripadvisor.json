@@ -9,17 +9,16 @@
     "_no_match": true
   },
   "1896718": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_skipped": true
   },
   "503081": {
     "_no_match": true
   },
   "1927834": {
-    "_no_match": true
+    "_skipped": true
   },
   "503585": {
-    "_no_match": true
+    "_skipped": true
   },
   "1622070": {
     "_no_match": true
@@ -61,8 +60,7 @@
     "_no_match": true
   },
   "503141": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_skipped": true
   },
   "1622074": {
     "_no_match": true
@@ -140,7 +138,7 @@
     "_no_match": true
   },
   "503054": {
-    "_no_match": true
+    "_skipped": true
   },
   "503525": {
     "_no_match": true
@@ -194,12 +192,10 @@
     "_no_match": true
   },
   "1584574": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_skipped": true
   },
   "1927833": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_skipped": true
   },
   "1552328": {
     "_no_match": true
@@ -274,8 +270,7 @@
     "_no_match": true
   },
   "1453409": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_skipped": true
   },
   "503552": {
     "_no_match": true
@@ -302,7 +297,7 @@
     "_no_match": true
   },
   "736236": {
-    "_no_match": true
+    "_skipped": true
   },
   "503715": {
     "_no_match": true
@@ -362,8 +357,7 @@
     "_no_match": true
   },
   "1781021": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_skipped": true
   },
   "503401": {
     "_no_match": true
@@ -492,7 +486,7 @@
     "_no_match": true
   },
   "1721314": {
-    "_no_match": true
+    "_skipped": true
   },
   "1623426": {
     "_no_match": true
@@ -501,8 +495,7 @@
     "_no_match": true
   },
   "1754519": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_no_match": true
   },
   "1735216": {
     "_no_match": true
@@ -511,8 +504,7 @@
     "_no_match": true
   },
   "1467814": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_skipped": true
   },
   "503282": {
     "_no_match": true
@@ -533,8 +525,7 @@
     "_no_match": true
   },
   "1756585": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_skipped": true
   },
   "1690228": {
     "_no_match": true
@@ -567,8 +558,7 @@
     "_no_match": true
   },
   "504050": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_skipped": true
   },
   "503102": {
     "_no_match": true
@@ -619,8 +609,7 @@
     "_no_match": true
   },
   "1131857": {
-    "_skipped": true,
-    "_reason": "non_food"
+    "_skipped": true
   },
   "502970": {
     "_no_match": true

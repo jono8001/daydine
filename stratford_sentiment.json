@@ -6,11 +6,11 @@
     "red_flag_count": 0,
     "red_flags": [],
     "positives_sample": [
-      "highly recommend",
+      "delicious",
+      "would recommend",
       "perfection",
-      "friendly staff",
-      "lovely",
-      "delicious"
+      "exceptional",
+      "fantastic"
     ],
     "warning": false,
     "reviews_analyzed": 5

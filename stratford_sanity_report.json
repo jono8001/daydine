@@ -114,11 +114,11 @@
       "best_match_score": 0.53
     },
     {
-      "name": "Zoo Sushi & Bubble Tea",
-      "address": "3-5 Cooks Aly, Wood St, Stratford-upon-Avon CV37 6QN",
-      "rating": 4.6,
-      "reviews": 667,
-      "best_match_score": 0.53
+      "name": "Clopton Catch",
+      "address": "124 Clopton Rd, Stratford-upon-Avon CV37 6SW",
+      "rating": 4.4,
+      "reviews": 714,
+      "best_match_score": 0.56
     },
     {
       "name": "The Fuzzy Duck",
@@ -268,11 +268,11 @@
       "best_match_score": 0.43
     },
     {
-      "name": "Bodega 19",
-      "address": "19 Greenhill St, Stratford-upon-Avon CV37 6LF",
-      "rating": 4.6,
-      "reviews": 49,
-      "best_match_score": 0.38
+      "name": "Sip 'n' Swig",
+      "address": "2 Alderminster Workshops, Alscot Estate, Stratford-upon-Avon CV37 8BN",
+      "rating": 4.9,
+      "reviews": 53,
+      "best_match_score": 0.44
     },
     {
       "name": "Golden Phoenix Chinese and Cantonese",
@@ -280,13 +280,6 @@
       "rating": 4.6,
       "reviews": 27,
       "best_match_score": 0.43
-    },
-    {
-      "name": "Bastardo's Trattoria",
-      "address": "6 Granville Ct, Shipston-on-Stour CV36 4PP",
-      "rating": 5,
-      "reviews": 9,
-      "best_match_score": 0.55
     },
     {
       "name": "Mr Tran's",
@@ -304,10 +297,10 @@
       "reason": "name_match: football club",
       "fsa_rating": 5,
       "google_types": [
-        "point_of_interest",
         "association_or_organization",
-        "sports_club",
-        "establishment"
+        "establishment",
+        "point_of_interest",
+        "sports_club"
       ]
     },
     {
@@ -317,9 +310,9 @@
       "reason": "google_types: {'miniature_golf_course'}",
       "fsa_rating": null,
       "google_types": [
+        "establishment",
         "point_of_interest",
-        "miniature_golf_course",
-        "establishment"
+        "miniature_golf_course"
       ]
     },
     {
@@ -329,11 +322,11 @@
       "reason": "name_match: horse sanctuary",
       "fsa_rating": 5,
       "google_types": [
-        "tourist_attraction",
         "association_or_organization",
-        "establishment",
+        "tourist_attraction",
         "point_of_interest",
-        "pet_care"
+        "travel_agency",
+        "service"
       ]
     },
     {
@@ -343,10 +336,10 @@
       "reason": "name_match: nfu mutual",
       "fsa_rating": 5,
       "google_types": [
-        "point_of_interest",
-        "insurance_agency",
+        "service",
         "establishment",
-        "service"
+        "point_of_interest",
+        "insurance_agency"
       ]
     },
     {
@@ -356,11 +349,11 @@
       "reason": "google_types: {'gym'}",
       "fsa_rating": 5,
       "google_types": [
-        "sports_activity_location",
-        "point_of_interest",
         "lodging",
-        "gym",
-        "wedding_venue"
+        "point_of_interest",
+        "health",
+        "sports_activity_location",
+        "service"
       ]
     },
     {
@@ -371,10 +364,10 @@
       "fsa_rating": 5,
       "google_types": [
         "association_or_organization",
-        "sports_activity_location",
-        "point_of_interest",
-        "sports_school",
-        "sports_coaching"
+        "store",
+        "athletic_field",
+        "health",
+        "sports_school"
       ]
     },
     {
@@ -384,10 +377,10 @@
       "reason": "name_match: slimming world",
       "fsa_rating": null,
       "google_types": [
-        "point_of_interest",
         "association_or_organization",
-        "sports_club",
-        "establishment"
+        "establishment",
+        "point_of_interest",
+        "sports_club"
       ]
     },
     {
@@ -397,10 +390,10 @@
       "reason": "name_match: football club",
       "fsa_rating": 5,
       "google_types": [
-        "point_of_interest",
         "association_or_organization",
-        "sports_club",
-        "establishment"
+        "establishment",
+        "point_of_interest",
+        "sports_club"
       ]
     },
     {
@@ -410,11 +403,11 @@
       "reason": "google_types: {'gym'}",
       "fsa_rating": 5,
       "google_types": [
-        "sports_complex",
-        "sports_activity_location",
         "point_of_interest",
+        "health",
         "sports_school",
-        "gym"
+        "sports_activity_location",
+        "establishment"
       ]
     },
     {
@@ -424,11 +417,11 @@
       "reason": "name_match: baptist church",
       "fsa_rating": 5,
       "google_types": [
-        "place_of_worship",
         "association_or_organization",
         "point_of_interest",
-        "church",
-        "establishment"
+        "place_of_worship",
+        "establishment",
+        "church"
       ]
     },
     {
@@ -439,8 +432,8 @@
       "fsa_rating": 5,
       "google_types": [
         "manufacturer",
-        "point_of_interest",
-        "establishment"
+        "establishment",
+        "point_of_interest"
       ]
     },
     {
@@ -450,10 +443,10 @@
       "reason": "google_types: {'real_estate_agency'}",
       "fsa_rating": 5,
       "google_types": [
-        "service",
-        "point_of_interest",
+        "real_estate_agency",
         "establishment",
-        "real_estate_agency"
+        "point_of_interest",
+        "service"
       ]
     },
     {
@@ -463,10 +456,10 @@
       "reason": "google_types: {'sports_club'}",
       "fsa_rating": 5,
       "google_types": [
-        "point_of_interest",
         "association_or_organization",
-        "sports_club",
-        "establishment"
+        "establishment",
+        "point_of_interest",
+        "sports_club"
       ]
     },
     {
@@ -476,10 +469,10 @@
       "reason": "google_types: {'sports_club'}",
       "fsa_rating": 5,
       "google_types": [
-        "point_of_interest",
         "association_or_organization",
-        "sports_club",
-        "establishment"
+        "establishment",
+        "point_of_interest",
+        "sports_club"
       ]
     },
     {
@@ -489,10 +482,10 @@
       "reason": "google_types: {'sports_club'}",
       "fsa_rating": 3,
       "google_types": [
-        "point_of_interest",
         "association_or_organization",
-        "sports_club",
-        "establishment"
+        "establishment",
+        "point_of_interest",
+        "sports_club"
       ]
     },
     {
@@ -502,10 +495,10 @@
       "reason": "google_types: {'sports_club'}",
       "fsa_rating": 5,
       "google_types": [
-        "point_of_interest",
         "association_or_organization",
-        "sports_club",
-        "establishment"
+        "establishment",
+        "point_of_interest",
+        "sports_club"
       ]
     }
   ],
