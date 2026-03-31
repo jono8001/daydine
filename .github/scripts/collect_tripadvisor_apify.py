@@ -194,12 +194,17 @@ def main():
         establishments = json.load(f)
     print(f"Loaded {len(establishments)} establishments")
 
-    # Resume support
+    # Resume support — only keep records that have actual TA data
     ta_data = {}
     if os.path.exists(OUTPUT_PATH):
         with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
-            ta_data = json.load(f)
-        print(f"Loaded {len(ta_data)} existing records (resuming)")
+            existing = json.load(f)
+        # Only keep successful results (have a ta rating), discard
+        # _skipped/_no_match/_error from previous failed runs
+        for k, v in existing.items():
+            if v.get("ta") is not None:
+                ta_data[k] = v
+        print(f"Loaded {len(ta_data)} existing records with TA data (resuming)")
 
     matched = 0
     no_match = 0
