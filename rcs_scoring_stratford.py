@@ -282,13 +282,35 @@ def _score_aspects(record):
     if not texts:
         return {}
 
+    # Aspect weights: food and service matter more than ambience/value/wait
+    ASPECT_WEIGHTS = {
+        "food_quality": 0.30,
+        "service_quality": 0.25,
+        "ambience": 0.15,
+        "value": 0.15,
+        "wait_time": 0.15,
+    }
+
     scores = {}
     for aspect, kw in ASPECT_KW.items():
         pos = sum(1 for t in texts for p in kw["pos"] if p in t)
         neg = sum(1 for t in texts for n in kw["neg"] if n in t)
         total = pos + neg
         if total > 0:
-            scores[aspect] = pos / total  # 0-1
+            raw = pos / total  # 0-1
+            # Apply aspect weight so food/service dominate the combined score
+            scores[aspect] = raw
+
+    # If we have multiple aspects, compute a weighted composite
+    # stored as _aspect_composite for potential use
+    if scores:
+        weighted = sum(scores.get(a, 0.5) * w
+                       for a, w in ASPECT_WEIGHTS.items()
+                       if a in scores)
+        total_w = sum(w for a, w in ASPECT_WEIGHTS.items() if a in scores)
+        if total_w > 0:
+            scores["_composite"] = weighted / total_w
+
     return scores
 
 
@@ -684,19 +706,16 @@ def apply_penalties(raw_score, record):
     # Companies House penalties (business viability)
     ch_status = record.get("company_status")
     if ch_status == "dissolved":
-        applied.append(("ch_dissolved", score, 0.0))
-        score = 0.0
+        if score > 3.0:
+            applied.append(("ch_dissolved_cap_3", score, 3.0))
+            score = 3.0
     elif ch_status == "liquidation":
-        applied.append(("ch_liquidation", score, score * 0.50))
-        score *= 0.50
+        if score > 5.0:
+            applied.append(("ch_liquidation_cap_5", score, 5.0))
+            score = 5.0
     if record.get("accounts_overdue"):
-        penalty = score * 0.18
-        applied.append(("ch_accounts_overdue", score, score - penalty))
-        score -= penalty
-    if record.get("insolvency"):
-        penalty = score * 0.50
-        applied.append(("ch_insolvency", score, score - penalty))
-        score -= penalty
+        applied.append(("ch_accounts_overdue", score, score - 0.5))
+        score -= 0.5
     dir_changes = safe_int(record.get("director_changes_12m"))
     if dir_changes is not None and dir_changes >= 3:
         penalty = score * 0.12
@@ -1150,14 +1169,19 @@ def is_food_establishment(record):
 MIN_SIGNALS_FOR_RANKING = 8
 
 
-def compute_confidence(signals_available, n_tiers_active):
+def compute_confidence(signals_available, n_tiers_active, provenance_ratio=1.0):
     """
     Compute confidence level and band width.
+    Factors in provenance ratio: 60% signal count + 40% provenance.
     Returns (level: str, margin: float).
     """
-    if signals_available >= 20 and n_tiers_active >= 5:
+    # Composite confidence score: signal count normalized + provenance
+    count_score = min(1.0, signals_available / 25)  # 25 signals = 1.0
+    composite = 0.60 * count_score + 0.40 * provenance_ratio
+
+    if composite >= 0.70 and signals_available >= 20 and n_tiers_active >= 5:
         return "High", 0.3
-    elif signals_available >= 14 and n_tiers_active >= 4:
+    elif composite >= 0.50 and signals_available >= 14 and n_tiers_active >= 4:
         return "Medium", 0.5
     elif signals_available >= MIN_SIGNALS_FOR_RANKING:
         return "Low", 0.8
@@ -1175,9 +1199,75 @@ CSV_FIELDS = [
     "fsa_tier_score", "google_tier_score", "online_tier_score",
     "ops_tier_score", "menu_tier_score", "reputation_tier_score",
     "community_tier_score",
-    "rcs_final", "rcs_band", "signals_available", "signals_total",
+    "rcs_final", "rcs_band", "quality_score", "digital_presence_score",
+    "signals_available", "signals_total",
+    "observed_signals", "inferred_signals", "provenance_ratio",
     "sentiment_score", "red_flag_count", "red_flags",
+    "companies_house_status",
 ]
+
+def _count_observed_signals(record):
+    """Count directly observed vs inferred signals."""
+    observed = 0
+    # FSA fields: directly from API
+    for f in ["r", "sh", "ss", "sm", "rd"]:
+        if record.get(f) is not None:
+            observed += 1
+    # Google fields: directly from API
+    for f in ["gr", "grc", "gpl", "gpc", "gty"]:
+        if record.get(f) is not None:
+            observed += 1
+    # TripAdvisor: directly from Apify
+    for f in ["ta", "trc", "ta_recency"]:
+        if record.get(f) is not None:
+            observed += 1
+    # Review text (observed if present)
+    if record.get("g_reviews") or record.get("ta_reviews"):
+        observed += 1  # sentiment signal
+    return observed
+
+
+def _compute_quality_score(result, record):
+    """Quality sub-score: FSA + sentiment + menu + reputation + aspects."""
+    components = []
+    if result.get("fsa_tier") is not None:
+        components.append(result["fsa_tier"])
+    sent = record.get("_sentiment_score")
+    if sent is not None:
+        components.append(sent * 10)  # 0-1 → 0-10
+    if result.get("menu_tier") is not None:
+        components.append(result["menu_tier"])
+    if result.get("reputation_tier") is not None:
+        components.append(result["reputation_tier"])
+    aspects = record.get("_aspects", {})
+    if aspects:
+        aspect_vals = [v for v in aspects.values() if v is not None]
+        if aspect_vals:
+            components.append(sum(aspect_vals) / len(aspect_vals))
+    if not components:
+        return None
+    return round(sum(components) / len(components), 3)
+
+
+def _compute_digital_score(result, record):
+    """Digital presence sub-score: website, social, Google, photos."""
+    checks = 0
+    total = 6
+    if record.get("web") is True:
+        checks += 1
+    if record.get("fb") is True:
+        checks += 1
+    if record.get("ig") is True:
+        checks += 1
+    if record.get("gr") is not None:
+        checks += 1
+    gpc = record.get("gpc")
+    if gpc is not None and int(gpc) > 0:
+        checks += 1
+    if record.get("ta") is not None:
+        checks += 1
+    return round(checks / total * 10, 3)
+
 
 def run_pipeline(data):
     scored = []
@@ -1190,8 +1280,23 @@ def run_pipeline(data):
                                    "ops_tier", "menu_tier", "reputation_tier",
                                    "community_tier"]
                       if result.get(t) is not None)
+
+        # Signal provenance
+        observed = _count_observed_signals(record)
+        total_sig = result["signals_available"]
+        inferred = max(0, total_sig - observed)
+        prov_ratio = round(observed / total_sig, 2) if total_sig > 0 else 0
+
+        # Confidence with provenance weighting (60% count + 40% provenance)
         conf_level, conf_margin = compute_confidence(
-            result["signals_available"], n_tiers)
+            result["signals_available"], n_tiers, prov_ratio)
+
+        # Quality vs Digital sub-scores
+        quality = _compute_quality_score(result, record)
+        digital = _compute_digital_score(result, record)
+
+        # Companies House status
+        ch_status = record.get("company_status", "not_checked")
 
         scored.append({
             "fhrsid": record.get("id") or key,
@@ -1212,11 +1317,17 @@ def run_pipeline(data):
             "community_tier_score": result["community_tier"],
             "rcs_final": result["rcs_final"],
             "rcs_band": result["rcs_band"],
-            "signals_available": result["signals_available"],
+            "quality_score": quality,
+            "digital_presence_score": digital,
+            "signals_available": total_sig,
             "signals_total": result["signals_total"],
+            "observed_signals": observed,
+            "inferred_signals": inferred,
+            "provenance_ratio": prov_ratio,
             "sentiment_score": record.get("_sentiment_score", ""),
             "red_flag_count": record.get("_red_flag_count", 0),
             "red_flags": "; ".join(record.get("_red_flags", [])),
+            "companies_house_status": ch_status,
             # Tiebreaker fields (not written to CSV)
             "_fsa_rating": safe_int(record.get("r")) or 0,
             "_rd_days": days_since(record.get("rd")) or 999999,
@@ -1229,6 +1340,7 @@ def run_pipeline(data):
 def _sort_key(r):
     return (
         -r["rcs_final"],
+        -r["signals_available"],   # more signals = higher rank among ties
         -r["_fsa_rating"],
         r["_rd_days"],
         -r["_ss"],
@@ -1237,32 +1349,12 @@ def _sort_key(r):
     )
 
 
-def _walk_down_unique(rows):
-    """Ensure every rcs_final is strictly decreasing. Returns rows."""
-    for i in range(1, len(rows)):
-        if rows[i]["rcs_final"] >= rows[i - 1]["rcs_final"]:
-            rows[i]["rcs_final"] = round(rows[i - 1]["rcs_final"] - 0.001, 3)
-    # Fix negatives at tail
-    if rows and rows[-1]["rcs_final"] < 0:
-        first_neg = next(i for i, r in enumerate(rows) if r["rcs_final"] < 0)
-        while first_neg > 0 and rows[first_neg - 1]["rcs_final"] <= 0:
-            first_neg -= 1
-        tail = len(rows) - first_neg
-        for k in range(tail):
-            rows[first_neg + k]["rcs_final"] = round((tail - 1 - k) * 0.001, 3)
-    return rows
-
-
 def apply_tiebreakers(scored):
     """
-    Rank establishments with three groups:
-    1. Food establishments with sufficient data → ranked 1..N
-    2. Food establishments with insufficient data → marked "Insufficient Data"
-    3. Non-food establishments → marked "Not Ranked"
-
-    Within group 1, tiebreakers ensure unique scores.
+    Rank establishments in three groups. Scores are kept as-is (ties
+    allowed in rcs_final). Ties are broken only in the rank column
+    using secondary sort by signal count then alphabetical.
     """
-    # Split into groups
     ranked = []
     insufficient = []
     non_food = []
@@ -1275,11 +1367,11 @@ def apply_tiebreakers(scored):
         else:
             ranked.append(row)
 
-    # Sort and deduplicate ranked group
+    # Sort ranked group — ties in rcs_final are broken by signal count,
+    # FSA rating, recency, sub-scores, then alphabetical
     ranked.sort(key=_sort_key)
-    ranked = _walk_down_unique(ranked)
 
-    # Assign sequential ranks to food establishments only
+    # Assign sequential ranks (no score manipulation)
     for rank, row in enumerate(ranked, 1):
         row["rank"] = rank
 
@@ -1295,7 +1387,7 @@ def apply_tiebreakers(scored):
         row["rank"] = ""
         row["rcs_band"] = "Not Ranked"
 
-    # Combine: ranked first, then insufficient, then non-food
+    # Combine
     all_rows = ranked + insufficient + non_food
 
     # Clean up internal fields
@@ -1487,23 +1579,17 @@ def main():
     # Apply tiebreakers for unique rankings
     scored = apply_tiebreakers(scored)
 
-    # Band calibration: if Excellent > 50% of ranked, apply gentle compression
+    # Band calibration: if Excellent > 50% of ranked, compress gently
     ranked_rows = [r for r in scored if r["rank"] != ""]
     if ranked_rows:
         excellent_pct = sum(1 for r in ranked_rows if r["rcs_band"] == "Excellent") / len(ranked_rows)
         if excellent_pct > 0.50:
-            # Compress scores above 8.0 toward 8.0 gently
-            # score' = 8.0 + (score - 8.0) * 0.85
             for r in ranked_rows:
                 if r["rcs_final"] > 8.0:
                     r["rcs_final"] = round(8.0 + (r["rcs_final"] - 8.0) * 0.85, 3)
                     r["rcs_band"] = assign_band(r["rcs_final"])
-            # Re-ensure uniqueness after compression
-            ranked_rows.sort(key=lambda x: -x["rcs_final"])
-            for i in range(1, len(ranked_rows)):
-                if ranked_rows[i]["rcs_final"] >= ranked_rows[i-1]["rcs_final"]:
-                    ranked_rows[i]["rcs_final"] = round(ranked_rows[i-1]["rcs_final"] - 0.001, 3)
-            # Reassign ranks
+            # Re-sort after compression (ranks may change)
+            ranked_rows.sort(key=_sort_key)
             for i, r in enumerate(ranked_rows, 1):
                 r["rank"] = i
 
@@ -1574,7 +1660,7 @@ def generate_report(scored, summary):
     L = []
     w = L.append
     w("# DayDine RCS Report - Stratford-upon-Avon")
-    w(f"\n*Generated: {NOW.strftime('%d %B %Y')} | Methodology: RCS V3.1 | Scale: 0.000-10.000*")
+    w(f"\n*Generated: {NOW.strftime('%d %B %Y')} | Methodology: RCS V3.2 | Scale: 0.000-10.000*")
     w("\n---\n")
     w("## 1. Executive Summary\n")
     w("| Metric | Value |\n|---|---|")
@@ -1582,7 +1668,7 @@ def generate_report(scored, summary):
     w(f"| Ranked (food service) | **{len(ranked)}** |")
     w(f"| Excluded (non-food) | {len(not_ranked)} |")
     w(f"| Insufficient data | {len(insufficient)} |")
-    w(f"| Methodology | RCS V3.1 - 40 signals, 8 tiers |")
+    w(f"| Methodology | RCS V3.2 - 40 signals, 8 tiers |")
     w(f"| Mean RCS | {statistics.mean(ranked_scores):.2f} |")
     w(f"| Median RCS | {statistics.median(ranked_scores):.2f} |")
     w(f"| Signals avg | {avg_sig:.1f} / {TOTAL_SIGNALS} ({avg_sig/TOTAL_SIGNALS*100:.0f}%) |")
@@ -1624,11 +1710,12 @@ def generate_report(scored, summary):
             w(f"| {j} | {r['rank']} | {r['business_name']} | {r['postcode']} | {r['rcs_final']} | {r['rcs_band']} |")
         w("")
     w(f"## 7. Complete Rankings (1-{len(ranked)})\n")
-    w("| Rank | Name | PC | Category | FSA | Google | RCS | Conf | Band | Sig |\n|---:|---|---|---|---:|---:|---:|---|---|---:|")
+    w("| Rank | Name | PC | Category | RCS | Quality | Digital | Conf | Band | Obs/Inf | Prov |\n|---:|---|---|---|---:|---:|---:|---|---|---|---:|")
     for r in ranked:
-        fsa = r["fsa_tier_score"] if r["fsa_tier_score"] else "-"
-        ggl = r["google_tier_score"] if r["google_tier_score"] else "-"
-        w(f"| {r['rank']} | {r['business_name']} | {r['postcode']} | {r['category']} | {fsa} | {ggl} | {r['rcs_final']} | {r['confidence']} | {r['rcs_band']} | {r['signals_available']}/{TOTAL_SIGNALS} |")
+        qual = r["quality_score"] if r["quality_score"] is not None else "-"
+        digi = r["digital_presence_score"] if r["digital_presence_score"] is not None else "-"
+        obs_inf = f"{r['observed_signals']}/{r['inferred_signals']}"
+        w(f"| {r['rank']} | {r['business_name']} | {r['postcode']} | {r['category']} | {r['rcs_final']} | {qual} | {digi} | {r['confidence']} | {r['rcs_band']} | {obs_inf} | {r['provenance_ratio']} |")
     w("")
     w("## 8. Excluded\n")
     if not_ranked:

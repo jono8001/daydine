@@ -1,6 +1,6 @@
 {
-  "count": 209,
-  "ranked": 197,
+  "count": 210,
+  "ranked": 198,
   "not_ranked": 12,
   "insufficient_data": 0,
   "mean": 7.46,
@@ -11,15 +11,15 @@
   "band_distribution": {
     "Excellent": {
       "count": 84,
-      "pct": 40.2
+      "pct": 40.0
     },
     "Good": {
-      "count": 84,
-      "pct": 40.2
+      "count": 85,
+      "pct": 40.5
     },
     "Generally Satisfactory": {
       "count": 19,
-      "pct": 9.1
+      "pct": 9.0
     },
     "Improvement Necessary": {
       "count": 7,
@@ -47,7 +47,7 @@
         {
           "rank": 24,
           "name": "Miller And Carter",
-          "rcs": 8.451,
+          "rcs": 8.452,
           "band": "Excellent"
         },
         {
@@ -74,13 +74,13 @@
       "count": 2,
       "top_5": [
         {
-          "rank": 137,
+          "rank": 138,
           "name": "Four Seasons Pho Limited",
           "rcs": 7.194,
           "band": "Good"
         },
         {
-          "rank": 172,
+          "rank": 173,
           "name": "Chopstix South",
           "rcs": 6.398,
           "band": "Generally Satisfactory"
@@ -184,19 +184,19 @@
       "count": 3,
       "top_5": [
         {
-          "rank": 152,
+          "rank": 153,
           "name": "Kitty's Kitchen Catering Ltd",
           "rcs": 7.016,
           "band": "Good"
         },
         {
-          "rank": 179,
+          "rank": 180,
           "name": "Earlswood Lunch Club",
           "rcs": 5.966,
           "band": "Generally Satisfactory"
         },
         {
-          "rank": 188,
+          "rank": 189,
           "name": "CAMEO Lunch Club",
           "rcs": 4.828,
           "band": "Improvement Necessary"
@@ -213,13 +213,13 @@
           "band": "Excellent"
         },
         {
-          "rank": 166,
+          "rank": 167,
           "name": "New Summer Palace Restaurant",
           "rcs": 6.633,
           "band": "Good"
         },
         {
-          "rank": 191,
+          "rank": 192,
           "name": "China Garden",
           "rcs": 4.0,
           "band": "Improvement Necessary"
@@ -265,9 +265,9 @@
       "count": 3,
       "top_5": [
         {
-          "rank": 101,
+          "rank": 99,
           "name": "Costa",
-          "rcs": 7.719,
+          "rcs": 7.721,
           "band": "Good"
         },
         {
@@ -277,7 +277,7 @@
           "band": "Good"
         },
         {
-          "rank": 173,
+          "rank": 174,
           "name": "Paul's Catering",
           "rcs": 6.384,
           "band": "Generally Satisfactory"
@@ -337,7 +337,7 @@
       ]
     },
     "Indian Restaurant": {
-      "count": 16,
+      "count": 17,
       "top_5": [
         {
           "rank": 33,
@@ -352,9 +352,9 @@
           "band": "Excellent"
         },
         {
-          "rank": 58,
+          "rank": 57,
           "name": "Hussains",
-          "rcs": 8.237,
+          "rcs": 8.238,
           "band": "Excellent"
         },
         {
@@ -410,7 +410,7 @@
       "count": 1,
       "top_5": [
         {
-          "rank": 120,
+          "rank": 121,
           "name": "Sushi Land",
           "rcs": 7.44,
           "band": "Good"
@@ -421,13 +421,13 @@
       "count": 2,
       "top_5": [
         {
-          "rank": 130,
+          "rank": 131,
           "name": "Turkish Stonebakers",
           "rcs": 7.367,
           "band": "Good"
         },
         {
-          "rank": 131,
+          "rank": 133,
           "name": "Tzatziki34",
           "rcs": 7.362,
           "band": "Good"
@@ -450,19 +450,19 @@
           "band": "Good"
         },
         {
-          "rank": 133,
+          "rank": 134,
           "name": "Stratford Adventure Golf",
           "rcs": 7.355,
           "band": "Good"
         },
         {
-          "rank": 139,
+          "rank": 140,
           "name": "Ashorne Hill Management College",
           "rcs": 7.175,
           "band": "Good"
         },
         {
-          "rank": 141,
+          "rank": 142,
           "name": "Good Breakfast",
           "rcs": 7.136,
           "band": "Good"
@@ -520,7 +520,7 @@
           "band": "Excellent"
         },
         {
-          "rank": 30,
+          "rank": 31,
           "name": "The Bluebell",
           "rcs": 8.392,
           "band": "Excellent"
@@ -543,9 +543,9 @@
       "count": 6,
       "top_5": [
         {
-          "rank": 31,
+          "rank": 30,
           "name": "The Pickled Crab Deli",
-          "rcs": 8.391,
+          "rcs": 8.392,
           "band": "Excellent"
         },
         {
@@ -555,19 +555,19 @@
           "band": "Excellent"
         },
         {
-          "rank": 136,
+          "rank": 137,
           "name": "The Margin",
           "rcs": 7.206,
           "band": "Good"
         },
         {
-          "rank": 151,
+          "rank": 152,
           "name": "Chrissie's Kitchen",
           "rcs": 7.018,
           "band": "Good"
         },
         {
-          "rank": 157,
+          "rank": 158,
           "name": "Pickled & Tipsy's Cafe",
           "rcs": 6.941,
           "band": "Good"
@@ -598,9 +598,9 @@
     }
   },
   "signals_coverage": {
-    "available_per_record_avg": 19.0,
+    "available_per_record_avg": 19.1,
     "total_possible": 40
   },
   "sentiment_warnings": [],
-  "generated_at": "2026-03-31T17:31:32.516627+00:00"
+  "generated_at": "2026-03-31T17:55:24.919041+00:00"
 }

@@ -1,211 +1,211 @@
-rank,fhrsid,business_name,postcode,category,category_source,is_food,confidence,confidence_margin,fsa_tier_score,google_tier_score,online_tier_score,ops_tier_score,menu_tier_score,reputation_tier_score,community_tier_score,rcs_final,rcs_band,signals_available,signals_total,sentiment_score,red_flag_count,red_flags
-1,1152776,Gilks' Garage Cafe,CV35 0JZ,Cafe / Coffee Shop,google_types,True,High,0.3,10.0,9.365,10.0,10.0,10.0,0.0,9.7,8.903,Excellent,20,40,,0,
-2,503282,Arrow Mill,B49 5NL,Pub / Bar,google_types,True,High,0.3,10.0,9.182,10.0,10.0,10.0,0.0,9.998,8.891,Excellent,20,40,,0,
-3,503054,Stratford Manor Hotel,CV37 0PY,Hotel / Accommodation,google_types,True,Medium,0.5,10.0,9.2,10.0,10.0,9.0,0.0,9.791,8.81,Excellent,18,40,,0,
-4,1854461,The Red Lion,CV37 6YW,Pub / Bar,google_types,True,Medium,0.5,10.0,9.017,10.0,10.0,9.5,0.0,9.22,8.774,Excellent,19,40,,0,
-5,503735,Costa,CV37 0HZ,Cafe / Coffee Shop,google_types,True,High,0.3,10.0,8.568,10.0,10.0,10.0,0.0,9.484,8.748,Excellent,20,40,,0,
-6,1344517,The Fox Inn,CV35 9JS,Pub / Bar,google_types,True,Medium,0.5,10.0,8.567,10.0,10.0,10.0,0.0,9.211,8.73,Excellent,17,40,,0,
-7,503478,Starbucks,CV37 6AU,Fast Food / Quick Service,google_types,True,High,0.3,10.0,8.356,10.0,10.0,10.0,0.0,9.489,8.712,Excellent,20,40,,0,
-8,1623426,Red Hot Mamma Pizzeria,CV37 6AU,Restaurant (General),google_types,True,Medium,0.5,9.5,9.787,10.0,10.0,9.5,0.0,9.09,8.708,Excellent,19,40,,0,
-9,1808717,Bistrot Pierre,CV37 7LT,French Restaurant,google_types,True,Medium,0.5,10.0,8.875,10.0,10.0,8.333,0.0,9.714,8.701,Excellent,18,40,,0,
-10,1024960,Starbucks Drive Thru,CV35 0AA,Fast Food / Quick Service,google_types,True,High,0.3,10.0,8.101,10.0,10.0,10.0,0.0,9.516,8.669,Excellent,21,40,,0,
-11,1699665,Nel's At The Pavilion,CV35 0AD,Cafe / Coffee Shop,google_types,True,High,0.3,9.5,8.91,10.0,10.0,10.0,0.0,9.414,8.611,Excellent,20,40,,0,
-12,1896714,The Townhouse Also Trading As JR Hotel And Restaurants LTD,CV37 6HB,Pub / Bar,google_types,True,High,0.3,9.5,8.819,10.0,10.0,10.0,0.0,9.509,8.601,Excellent,20,40,,0,
-13,1210746,The Alcester Inn,B49 6AQ,Pub / Bar,google_types,True,Medium,0.5,9.5,8.893,10.0,10.0,9.5,0.0,9.463,8.576,Excellent,19,40,,0,
-14,559158,No 37 Cafe,CV37 6EE,Cafe / Coffee Shop,google_types,True,High,0.3,9.5,8.592,10.0,10.0,10.0,0.0,9.393,8.554,Excellent,20,40,,0,
-15,503734,Premier Inn,CV37 6UQ,Hotel / Accommodation,google_types,True,Medium,0.5,9.5,9.193,10.0,,9.0,0.0,9.667,8.547,Excellent,18,40,,0,
-16,565221,Costa,B95 5DA,Cafe / Coffee Shop,google_types,True,High,0.3,9.5,8.372,10.0,10.0,10.0,0.0,9.228,8.504,Excellent,20,40,,0,
-17,1339998,Cotswold Cafe,,Cafe / Coffee Shop,google_types,True,High,0.3,9.5,8.387,10.0,10.0,10.0,0.0,9.192,8.503,Excellent,20,40,,0,
-18,1871630,LeBuns,CV35 0JS,Pub / Bar,google_types,True,High,0.3,9.5,8.319,10.0,10.0,10.0,0.0,9.243,8.496,Excellent,20,40,,0,
-19,502872,Ettington Park Hotel,CV37 8BU,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,9.76,10.0,10.0,9.5,0.0,8.235,8.462,Excellent,19,40,,0,
-20,1253303,Ettington Garden Cafe,CV37 7TB,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,8.244,10.0,10.0,9.0,0.0,7.093,8.46,Excellent,18,40,,0,
-21,1421992,Deli Cafe,CV37 6QB,British Restaurant,google_types,True,High,0.3,9.5,8.673,10.0,10.0,8.333,0.0,9.461,8.455,Excellent,22,40,,0,
-22,504014,The Kings Head,CV35 9LT,British Restaurant,google_types,True,High,0.3,9.5,9.036,10.0,10.0,8.333,0.0,8.49,8.454,Excellent,21,40,,0,
-23,1014807,McDonald's,CV37 0AH,American / Grill,google_types,True,High,0.3,9.5,8.445,10.0,10.0,8.333,0.0,10.0,8.452,Excellent,21,40,,0,
-24,1019047,Miller And Carter,CV37 6EX,American / Grill,google_types,True,High,0.3,9.025,9.4,10.0,10.0,10.0,0.0,8.5,8.451,Excellent,20,40,,0,
-25,1802818,11/17 Salt Beef Bar,CV37 6GJ,Restaurant (General),google_types,True,Medium,0.5,10.0,8.399,6.0,,8.5,6.667,7.144,8.45,Excellent,18,40,,0,
-26,502838,Alveston Manor Hotel,CV37 7HP,Hotel / Accommodation,google_types,True,Medium,0.5,9.5,9.12,10.0,,8.0,0.0,9.388,8.416,Excellent,17,40,,0,
-27,503481,The Opposition,CV37 6EF,French Restaurant,google_types,True,High,0.3,9.0,9.069,10.0,10.0,10.0,0.0,8.878,8.41,Excellent,20,40,,0,
-28,1622070,Carluccio's,CV37 6BA,Italian Restaurant,google_types,True,High,0.3,9.5,8.615,10.0,10.0,8.333,0.0,8.865,8.405,Excellent,21,40,,0,
-29,503316,Lambs,CV37 6EF,British Restaurant,google_types,True,High,0.3,9.0,9.327,10.0,10.0,8.333,0.0,9.851,8.404,Excellent,21,40,,0,
-30,1397584,The Bluebell,B95 5AT,Restaurant (General),google_types,True,High,0.3,9.0,8.814,10.0,10.0,10.0,0.0,9.28,8.392,Excellent,20,40,,0,
-31,1789006,The Pickled Crab Deli,CV47 0HF,Takeaway,google_types,True,High,0.3,9.5,8.375,10.0,10.0,10.0,0.0,7.567,8.391,Excellent,21,40,,0,
-32,503732,Pizza Hut Restaurants - Dine In,CV37 0HZ,Italian Restaurant,google_types,True,High,0.3,9.025,9.182,10.0,10.0,9.625,0.0,8.465,8.385,Excellent,21,40,,0,
-33,1317981,Kolshi Restaurant,CV35 9ND,Indian Restaurant,google_types,True,High,0.3,9.0,9.683,10.0,10.0,7.958,0.0,9.02,8.384,Excellent,20,40,,0,
-34,1796547,Feel Good Crystals,CV36 5LE,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,8.615,10.0,10.0,9.5,0.0,7.337,8.383,Excellent,19,40,,0,
-35,1747702,Beleza Rodizio,CV37 6EX,American / Grill,google_types,True,High,0.3,9.025,9.89,10.0,10.0,7.958,0.0,8.206,8.375,Excellent,20,40,,0,
-36,1381141,The Bull's Head,B95 6BD,Pub / Bar,google_types,True,High,0.3,9.025,9.06,10.0,10.0,10.0,0.0,8.081,8.364,Excellent,20,40,,0,
-37,1577024,Puddleduck Cafe Ltd,CV47 1AJ,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,8.42,10.0,,8.5,0.0,7.104,8.35,Excellent,17,40,,0,
-38,1297845,Lounge@26,B49 5AB,Cafe / Coffee Shop,google_types,True,High,0.3,9.5,8.102,10.0,10.0,10.0,0.0,7.587,8.346,Excellent,20,40,,0,
-39,1556368,Prospero Lounge,CV37 6AD,British Restaurant,google_types,True,High,0.3,9.025,8.93,10.0,10.0,10.0,0.0,8.092,8.342,Excellent,21,40,,0,
-40,1747703,GAIL's Stratford-Upon-Avon,CV37 6AU,Fast Food / Quick Service,google_types,True,Medium,0.5,9.5,8.297,10.0,10.0,9.5,0.0,7.448,8.335,Excellent,19,40,,0,
-41,503552,Premier Inn,CV37 0AZ,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,9.44,10.0,,9.0,0.0,8.433,8.334,Excellent,18,40,,0,
-42,1847445,Soma,CV37 6EX,Italian Restaurant,google_types,True,High,0.3,9.5,8.532,10.0,10.0,7.958,0.0,8.29,8.325,Excellent,20,40,,0,
-43,502702,Bannatyne Health Club And Spa Wildmoor,CV37 9RJ,Restaurant (General),google_types,True,Medium,0.5,9.025,9.072,10.0,10.0,9.5,0.0,7.976,8.324,Excellent,19,40,,0,
-44,1266894,Barnabys,CV37 6BA,British Restaurant,google_types,True,High,0.3,9.0,8.818,10.0,10.0,8.333,0.0,9.791,8.31,Excellent,22,40,,0,
-45,1800191,Chapter 23,B49 5AF,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,8.403,10.0,10.0,9.0,0.0,7.202,8.302,Excellent,18,40,,0,
-46,503781,The Bishops Fryer,CV47 2RN,Takeaway,google_types,True,High,0.3,9.5,7.813,10.0,10.0,10.0,0.0,7.684,8.301,Excellent,21,40,,0,
-47,503931,Bella Italia Also Trading As Super Nonna,CV37 6JG,Italian Restaurant,google_types,True,High,0.3,9.025,9.036,10.0,,9.625,0.0,8.238,8.294,Excellent,20,40,,0,
-48,1552322,Costa Coffee,CV37 6PT,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,7.506,10.0,,9.0,0.0,8.197,8.274,Excellent,19,40,,0,
-49,503369,Studley Castle,B80 7AJ,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,9.6,10.0,,8.0,0.0,8.435,8.272,Excellent,17,40,,0,
-50,1364372,The Bell Inn,CV37 8EB,Pub / Bar,google_types,True,High,0.3,8.5,9.255,10.0,10.0,10.0,0.0,9.184,8.27,Excellent,20,40,,0,
-51,502863,Hotel Indigo And The Woodsman,CV37 6HA,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,9.649,10.0,,8.0,0.0,8.151,8.264,Excellent,17,40,,0,
-52,1774606,Bumbles,B80 7AN,Italian Restaurant,google_types,True,High,0.3,9.025,9.092,10.0,10.0,8.792,0.0,7.717,8.26,Excellent,20,40,,0,
-53,503584,Cardamom,B49 5DP,Indian Restaurant,google_types,True,High,0.3,9.0,8.693,10.0,10.0,8.333,0.0,9.305,8.255,Excellent,22,40,,0,
-54,1796548,The Kingfisher FishBar,CV37 6LW,Fast Food / Quick Service,google_types,True,High,0.3,9.025,8.453,10.0,10.0,10.0,0.0,7.851,8.242,Excellent,21,40,,0,
-55,503444,Crowne Plaza,CV37 6YR,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,9.44,10.0,,8.0,0.0,8.5,8.241,Excellent,17,40,,0,
-56,1500965,Cafe Des Fleurs,B49 5AE,Pub / Bar,google_types,True,High,0.3,9.0,8.35,10.0,10.0,9.167,0.0,9.103,8.24,Excellent,21,40,,0,
-57,1826833,Revs Automobilia,GL56 9RE,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.0,8.523,10.0,10.0,9.5,0.0,8.283,8.238,Excellent,19,40,,0,
-58,502864,Hussains,CV37 6EP,Indian Restaurant,google_types,True,High,0.3,9.025,8.454,10.0,10.0,10.0,0.0,7.79,8.237,Excellent,22,40,,0,
-59,503525,Shah's,CV35 9LU,Indian Restaurant,google_types,True,High,0.3,9.025,8.745,10.0,10.0,9.167,0.0,7.79,8.23,Excellent,21,40,,0,
-60,1743693,The Food Of Love,CV37 6QW,Fast Food / Quick Service,google_types,True,High,0.3,9.5,8.06,10.0,10.0,8.333,0.0,7.665,8.226,Excellent,22,40,,0,
-61,502816,Loxleys Restaurant And Wine Bar,CV37 6EF,British Restaurant,google_types,True,High,0.3,8.5,9.327,10.0,10.0,8.333,0.0,9.929,8.216,Excellent,21,40,,0,
-62,503240,Henley Ice Cream Limited,B95 5BS,Cafe / Coffee Shop,google_types,True,High,0.3,8.55,9.1,10.0,10.0,10.0,0.0,8.285,8.201,Excellent,20,40,,0,
-63,503105,Avon Spice,CV37 6LF,Indian Restaurant,google_types,True,High,0.3,9.0,8.341,10.0,10.0,8.333,0.0,9.267,8.191,Excellent,21,40,,0,
-64,1672985,Bidford Community Fridge & Cafe,B50 4QB,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.0,8.824,10.0,10.0,9.5,0.0,6.634,8.18,Excellent,19,40,,0,
-65,503972,The George Hotel,CV36 4AJ,British Restaurant,google_types,True,High,0.3,8.5,9.182,10.0,10.0,8.333,0.0,9.74,8.178,Excellent,21,40,,0,
-66,503820,Cafe 16,CV47 0HF,Cafe / Coffee Shop,google_types,True,High,0.3,9.0,8.291,10.0,10.0,8.333,0.0,9.12,8.172,Excellent,21,40,,0,
-67,1662496,Coffee Clouds,CV37 6GJ,Cafe / Coffee Shop,google_types,True,High,0.3,8.5,8.64,10.0,10.0,10.0,0.0,9.265,8.167,Excellent,20,40,,0,
-68,503772,McDonald's,CV37 6AB,American / Grill,google_types,True,High,0.3,9.025,8.445,10.0,10.0,8.333,0.0,8.402,8.16,Excellent,21,40,,0,
-69,1552328,The Phoenix,CV37 6QY,Italian Restaurant,google_types,True,High,0.3,9.025,8.642,10.0,10.0,8.333,0.0,7.713,8.148,Excellent,22,40,,0,
-70,503480,Vintner Wine Bar,CV37 6EF,Pub / Bar,google_types,True,High,0.3,8.265,9.444,10.0,10.0,10.0,0.0,8.179,8.145,Excellent,24,40,1.0,0,
-71,676557,Plantarium,CV37 6NF,Vegan / Vegetarian,google_types,True,High,0.3,8.55,9.181,10.0,10.0,9.167,0.0,8.008,8.138,Excellent,21,40,,0,
-72,1842631,Snitterfield Arms,CV37 0JH,Pub / Bar,google_types,True,Medium,0.5,9.5,8.438,7.143,10.0,9.5,0.0,8.225,8.131,Excellent,19,40,,0,
-73,503345,KFC - Southbound,CV35 0AA,American / Grill,google_types,True,High,0.3,9.0,7.563,10.0,10.0,9.167,0.0,9.337,8.117,Excellent,22,40,,0,
-74,1388310,The Coach House,CV37 6LP,Pub / Bar,google_types,True,High,0.3,8.55,8.663,10.0,10.0,10.0,0.0,8.001,8.105,Excellent,20,40,,0,
-75,1739370,Corte Campana,CV37 6EX,Italian Restaurant,google_types,True,High,0.3,8.55,9.336,10.0,10.0,7.958,0.0,7.938,8.076,Excellent,20,40,,0,
-76,503554,The Bridge,B50 4BG,Restaurant (General),google_types,True,High,0.3,8.55,8.574,10.0,10.0,10.0,0.0,7.77,8.074,Excellent,20,40,,0,
-77,1799218,Pizza Junction Kineton Ltd,CV35 0LN,Italian Restaurant,google_types,True,High,0.3,9.5,8.672,7.143,10.0,7.958,0.0,8.33,8.071,Excellent,20,40,,0,
-78,1228994,Mor,CV37 6EX,Bakery / Desserts,google_types,True,Medium,0.5,9.5,8.932,5.714,10.0,9.0,0.0,8.617,8.069,Excellent,19,40,,0,
-79,503342,Burger King - Northbound,CV35 0AA,American / Grill,google_types,True,High,0.3,10.0,5.925,10.0,10.0,7.958,0.0,8.048,8.043,Excellent,21,40,,0,
-80,503081,Sans Oriental Restaurant,B95 5AT,Chinese Restaurant,google_types,True,High,0.3,8.5,8.601,10.0,10.0,8.333,0.0,9.236,8.041,Excellent,22,40,,0,
-81,503032,The Spice Room,B49 5AD,Indian Restaurant,google_types,True,High,0.3,9.5,8.485,7.143,10.0,7.958,0.0,8.312,8.037,Excellent,21,40,,0,
-82,502681,Billesley Manor Hotel,B49 6NF,Hotel / Accommodation,google_types,True,Medium,0.5,8.55,9.36,10.0,,8.0,0.0,8.301,8.028,Excellent,17,40,,0,
-83,1908606,Bruno's Bakery,B80 7HJ,Fast Food / Quick Service,google_types,True,High,0.3,8.5,8.376,10.0,10.0,8.333,0.0,9.238,8.002,Excellent,22,40,,0,
-84,503918,Southam Gateway Coffee Shop Ltd,CV47 0EP,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.025,7.872,10.0,10.0,9.5,0.0,6.306,8.0,Excellent,19,40,,0,
-85,1093181,Coffee#1 Limited,CV37 6EY,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.55,8.637,10.0,,9.5,0.0,7.982,7.994,Good,19,40,,0,
-86,1799220,Burger King,CV37 0HZ,Restaurant (General),google_types,True,Medium,0.5,8.5,8.078,10.0,10.0,9.5,0.0,8.525,7.984,Good,19,40,,0,
-87,676556,The Straw Kitchen,CV36 5PG,Cafe / Coffee Shop,google_types,True,High,0.3,8.55,8.743,10.0,10.0,8.333,0.0,7.679,7.981,Good,21,40,,0,
-88,1796553,Mr Odie's,CV37 6QT,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.5,8.599,10.0,10.0,9.0,0.0,7.172,7.949,Good,18,40,,0,
-89,503286,George's Cafe,B50 4JF,Cafe / Coffee Shop,google_types,True,High,0.3,8.55,8.001,10.0,10.0,10.0,0.0,7.403,7.948,Good,20,40,,0,
-90,1552333,Costa Coffee,CV37 8LU,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,6.108,10.0,10.0,9.0,0.0,7.403,7.912,Good,19,40,,0,
-91,1747700,The Still House Café,CV36 5EX,Italian Restaurant,google_types,True,High,0.3,9.025,8.14,10.0,10.0,7.583,0.0,6.123,7.9,Good,20,40,,0,
-92,1672980,Greggs PLC,B49 6EH,Bakery / Desserts,google_types,True,High,0.3,10.0,6.801,5.714,10.0,9.0,0.0,8.603,7.886,Good,20,40,,0,
-93,502877,DoubleTree By Hilton,CV37 6QQ,Hotel / Accommodation,google_types,True,Medium,0.5,8.075,9.44,10.0,,8.0,0.0,8.334,7.864,Good,17,40,,0,
-94,503960,Blue Bean Coffee Shop,CV36 4AF,Cafe / Coffee Shop,google_types,True,High,0.3,8.075,8.48,10.0,10.0,10.0,0.0,7.591,7.862,Good,20,40,,0,
-95,1622076,Caffe Nero,CV37 6AN,Cafe / Coffee Shop,google_types,True,High,0.3,8.1,8.471,10.0,10.0,10.0,0.0,6.957,7.827,Good,20,40,,0,
-96,1016715,Shakespaw Cat Cafe,CV37 6QT,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,9.229,0.0,10.0,9.0,0.0,9.707,7.825,Good,19,40,,0,
-97,1774608,NO4 Bar And Restaurant,CV37 6YY,Restaurant (General),google_types,True,Medium,0.5,8.55,8.78,7.143,10.0,9.5,0.0,7.558,7.78,Good,19,40,,0,
-98,1381156,Pick Thai Ltd,CV37 6HB,Thai Restaurant,google_types,True,High,0.3,8.5,8.674,7.143,10.0,7.958,0.0,9.041,7.733,Good,20,40,,0,
-99,1206079,Building 523 Costa And Kitchen,CV35 0RR,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.5,9.464,5.714,,7.0,0.0,8.025,7.721,Good,17,40,,0,
-100,1206081,South Costa,CV35 0RR,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.5,9.464,5.714,,7.0,0.0,8.025,7.72,Good,17,40,,0,
-101,503541,Costa,CV37 0UA,Food & Drink,google_types,True,High,0.3,9.025,8.093,5.714,10.0,9.5,0.0,7.853,7.719,Good,20,40,,0,
-102,1854458,Costa Coffee,B49 6PQ,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,6.672,5.714,10.0,8.0,0.0,7.267,7.703,Good,19,40,,0,
-103,1056848,Espresso Barn,CV37 8RB,Cafe / Coffee Shop,name_match,True,Medium,0.5,10.0,9.2,0.0,10.0,8.0,0.0,8.854,7.692,Good,18,40,,0,
-104,1176874,The Garden Shed Cafe,CV35 9NZ,Cafe / Coffee Shop,google_types,True,High,0.3,7.2,8.883,10.0,10.0,10.0,0.0,8.848,7.68,Good,20,40,,0,
-105,503343,Starbucks -  Southbound,CV35 0AA,Cafe / Coffee Shop,name_match,True,Medium,0.5,8.55,9.2,5.714,10.0,8.0,0.0,8.5,7.671,Good,18,40,,0,
-106,503218,Burger King - Southbound,CV35 0AA,Fast Food / Quick Service,name_match,True,Medium,0.5,8.55,9.2,5.714,10.0,8.0,0.0,8.5,7.67,Good,18,40,,0,
-107,1284339,The Yew Tree,CV47 2AS,Pub / Bar,google_types,True,High,0.3,7.2,8.833,10.0,10.0,10.0,0.0,8.756,7.665,Good,20,40,,0,
-108,1835033,The Cottage Of Content,B50 4NP,Pub / Bar,google_types,True,High,0.3,7.2,8.766,10.0,10.0,10.0,0.0,8.923,7.664,Good,20,40,,0,
-109,1695937,Impasto Micro-Pizzeria,CV37 6QY,Italian Restaurant,google_types,True,High,0.3,8.55,8.777,7.143,10.0,7.958,0.0,7.393,7.66,Good,20,40,,0,
-110,503854,The Lime Tree Restaurant,CV37 8LW,Other,unclassified,True,Medium,0.5,9.5,9.52,0.0,10.0,8.0,0.0,9.962,7.63,Good,18,40,,0,
-111,503711,Arden Tandoori,B95 5AU,Indian Restaurant,google_types,True,High,0.3,8.5,8.405,7.143,10.0,8.333,0.0,7.589,7.614,Good,21,40,,0,
-112,1774612,International Circus Churros 2,CV37 0RN,Bakery / Desserts,google_types,True,Medium,0.5,9.025,9.206,2.857,10.0,9.0,0.0,7.903,7.604,Good,19,40,,0,
-113,503292,Wildwood Kitchen,CV37 6EF,Italian Restaurant,google_types,True,High,0.3,7.315,9.036,10.0,10.0,8.333,0.0,8.248,7.594,Good,21,40,,0,
-114,1388303,Lily's,CV37 6LU,Restaurant (General),google_types,True,Medium,0.5,8.075,8.593,7.143,10.0,9.5,0.0,7.376,7.551,Good,19,40,,0,
-115,503261,Thespians Indian Restaurant,CV37 6EF,Indian Restaurant,google_types,True,High,0.3,7.2,8.532,10.0,10.0,8.333,0.0,9.512,7.546,Good,21,40,,0,
-116,503479,The Pavillion,OX15 6HT,Other,unclassified,True,Medium,0.5,9.5,9.182,0.0,10.0,9.0,0.0,8.5,7.542,Good,19,40,,0,
-117,503376,The Garden Cafe,B49 5PD,Food & Drink,google_types,True,Medium,0.5,9.0,9.68,0.0,10.0,9.0,0.0,9.795,7.524,Good,19,40,,0,
-118,676561,The Embankment,CV37 7LS,Hotel / Accommodation,google_types,True,Medium,0.5,6.84,9.325,10.0,10.0,9.0,0.0,8.148,7.501,Good,18,40,,0,
-119,1584576,Libertine Burger,CV37 6JP,American / Grill,google_types,True,High,0.3,8.075,8.54,7.143,10.0,7.958,0.0,7.558,7.446,Good,20,40,,0,
-120,1622078,Sushi Land,CV37 6NF,Japanese Restaurant,google_types,True,High,0.3,8.075,8.546,7.143,10.0,7.958,0.0,7.453,7.44,Good,20,40,,0,
-121,1253300,The Keys,CV37 6LW,Pub / Bar,google_types,True,Medium,0.5,7.38,8.464,10.0,,9.5,0.0,6.952,7.435,Good,19,40,,0,
-122,503104,Simla Takeaway,CV37 6LE,Indian Restaurant,google_types,True,High,0.3,9.12,7.461,6.0,10.0,7.583,0.0,6.193,7.428,Good,24,40,0.57,0,
-123,1589295,The Tempest,CV37 6EX,Italian Restaurant,google_types,True,High,0.3,7.315,8.532,10.0,10.0,7.958,0.0,7.39,7.421,Good,20,40,,0,
-124,503089,Touchdown Cafe,CV35 9EU,Cafe / Coffee Shop,google_types,True,High,0.3,6.84,9.027,10.0,10.0,8.333,0.0,8.24,7.408,Good,21,40,,0,
-125,1089841,Cotswold Distillery Cafe,CV36 5HG,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.025,9.92,0.0,10.0,8.0,0.0,8.311,7.406,Good,18,40,,0,
-126,1302779,The Olde Mint,CV47 0EP,Pub / Bar,google_types,True,Medium,0.5,8.5,7.545,6.0,10.0,9.5,0.0,7.172,7.405,Good,19,40,,0,
-127,1421981,Peppers,B80 7HN,Indian Restaurant,google_types,True,High,0.3,8.075,8.103,7.143,10.0,8.333,0.0,7.472,7.39,Good,21,40,,0,
-128,503401,Shukurs,CV35 0HP,Indian Restaurant,google_types,True,High,0.3,6.84,8.989,10.0,10.0,8.333,0.0,7.973,7.384,Good,21,40,,0,
-129,1029137,The Buck And Bell,CV47 9PH,Pub / Bar,google_types,True,High,0.3,6.84,8.373,10.0,10.0,10.0,0.0,7.79,7.38,Good,20,40,,0,
-130,1246463,The Avon Lounge,CV37 6LP,Pub / Bar,google_types,True,Medium,0.5,8.55,7.839,6.0,10.0,9.0,0.0,6.244,7.378,Good,18,40,,0,
-131,1266889,Turkish Stonebakers,CV35 9NE,Mediterranean Restaurant,google_types,True,High,0.3,6.84,9.131,10.0,10.0,7.958,0.0,7.743,7.367,Good,20,40,,0,
-132,1421980,Tzatziki34,CV37 6AB,Mediterranean Restaurant,google_types,True,Medium,0.5,7.2,8.587,10.0,,7.583,0.0,9.254,7.362,Good,19,40,,0,
-133,1747706,The Long Itch Diner,CV47 9QZ,Fast Food / Quick Service,google_types,True,High,0.3,6.84,8.796,10.0,10.0,8.333,0.0,8.162,7.361,Good,22,40,,0,
-134,1467814,Stratford Adventure Golf,CV37 7LS,Other,unclassified,True,Medium,0.5,9.5,8.807,0.0,10.0,8.0,0.0,7.741,7.355,Good,18,40,,0,
-135,1896717,Lithos Restaurant,B95 5BX,Restaurant (General),google_types,True,Medium,0.5,10.0,8.476,6.0,10.0,9.0,0.0,7.688,7.332,Good,15,40,,0,
-136,1299513,Oxheart,CV36 5JJ,Restaurant (General),google_types,True,Medium,0.5,10.0,7.887,0.0,10.0,8.5,0.0,6.286,7.323,Good,17,40,,0,
-137,1339997,The Margin,CV47 9PZ,Takeaway,google_types,True,Medium,0.5,8.075,7.924,6.0,10.0,9.0,0.0,6.193,7.206,Good,19,40,,0,
-138,1495078,Four Seasons Pho Limited,CV37 6LF,Asian Restaurant,google_types,True,High,0.3,7.65,8.404,7.143,10.0,7.958,0.0,6.62,7.194,Good,20,40,,0,
-139,1826834,Ferment And Flour (Bastardos),CV36 4PP,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,6.954,0.0,10.0,8.5,0.0,6.541,7.176,Good,18,40,,0,
-140,503102,Ashorne Hill Management College,CV33 9QW,Other,unclassified,True,Medium,0.5,10.0,9.186,0.0,,7.0,0.0,9.444,7.175,Good,17,40,,0,
-141,1756585,Annie's Cafe & Event Catering,B49 5QF,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.5,8.231,0.0,10.0,7.0,0.0,7.293,7.153,Good,18,40,,0,
-142,1266904,Good Breakfast,CV35 0AA,Other,unclassified,True,Medium,0.5,8.5,9.12,0.0,10.0,8.0,0.0,9.4,7.136,Good,18,40,,0,
-143,1871632,Sorrento Restaurant Taste Of Italy,CV37 6LW,Italian Restaurant,google_types,True,High,0.3,5.9,8.733,10.0,10.0,9.167,0.0,9.39,7.13,Good,21,40,,0,
-144,1754520,Cinnamon Arch,CV47 9QJ,Indian Restaurant,google_types,True,Medium,0.5,8.075,8.048,6.0,10.0,7.583,0.0,6.06,7.119,Good,19,40,,0,
-145,503821,The Balti Hut,CV47 0HA,Indian Restaurant,google_types,True,High,0.3,7.2,8.158,7.143,10.0,7.958,0.0,8.362,7.095,Good,21,40,,0,
-146,1838726,The Cowshed Cafe,B95 6BY,Cafe / Coffee Shop,google_types,True,High,0.3,5.9,8.45,10.0,10.0,10.0,0.0,8.741,7.094,Good,20,40,,0,
-147,503148,Nuthurst Grange Country House,B94 5NL,Hotel / Accommodation,google_types,True,Medium,0.5,5.605,9.374,10.0,10.0,9.5,0.0,8.018,7.06,Good,19,40,,0,
-148,1622072,Hudson's,CV37 9ST,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.9,8.347,10.0,10.0,9.5,0.0,8.927,7.055,Good,19,40,,0,
-149,1735216,The Stables,B94 5BQ,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,8.335,4.286,,7.0,0.0,7.31,7.05,Good,17,40,,0,
-150,1695933,Hobsons Patisseries,CV37 6PT,Cafe / Coffee Shop,google_types,True,High,0.3,5.4,9.036,10.0,10.0,10.0,0.0,9.236,7.039,Good,20,40,,0,
-151,1808716,Fast Flavour,CV37 6AB,Restaurant (General),google_types,True,Medium,0.5,9.5,7.588,0.0,10.0,8.5,0.0,5.701,7.038,Good,17,40,,0,
-152,1388307,Chrissie's Kitchen,CV35,Takeaway,google_types,True,Medium,0.5,9.0,8.53,0.0,10.0,8.0,0.0,6.325,7.018,Good,19,40,,0,
-153,1485802,Kitty's Kitchen Catering Ltd,CV37 7AY,Catering,name_match,True,Medium,0.5,9.0,8.457,0.0,10.0,8.0,0.0,6.493,7.016,Good,18,40,,0,
-154,565220,Four Teas,CV37 6EF,Cafe / Coffee Shop,google_types,True,High,0.3,5.4,9.182,10.0,10.0,8.333,0.0,9.912,6.993,Good,21,40,,0,
-155,503715,Cafe Living,CV37 0HZ,Cafe / Coffee Shop,google_types,True,High,0.3,5.4,8.736,10.0,10.0,10.0,0.0,9.298,6.99,Good,20,40,,0,
-156,1826837,Cafe Chutneys,CV37 0AX,Indian Restaurant,google_types,True,High,0.3,5.9,8.314,10.0,10.0,8.333,0.0,8.639,6.947,Good,21,40,,0,
-157,1804017,Cafe 86B,B95 5BY,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.0,8.084,0.0,10.0,8.5,0.0,5.875,6.944,Good,17,40,,0,
-158,1827674,Pickled & Tipsy's Cafe,CV47 1PH,Takeaway,google_types,True,Medium,0.5,9.5,7.576,0.0,10.0,7.208,0.0,5.638,6.941,Good,19,40,,0,
-159,1790270,Bardia's,CV37 6EE,Cafe / Coffee Shop,google_types,True,High,0.3,5.605,9.172,10.0,10.0,7.958,0.0,7.88,6.907,Good,20,40,,0,
-160,504026,Ragley Hall Catering,B49 5NJ,Hotel / Accommodation,name_match,True,Medium,0.5,9.0,9.68,0.0,,7.0,0.0,9.258,6.884,Good,17,40,,0,
-161,1206075,Dec X Canteen,CV35 0RR,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.025,9.464,0.0,,7.0,0.0,8.025,6.764,Good,17,40,,0,
-162,1584577,Shakespeare's,B94 5JU,Other,unclassified,True,Medium,0.5,7.2,9.6,0.0,10.0,8.0,0.0,9.852,6.749,Good,18,40,,0,
-163,503926,Harbury Library Cafe,CV33 9HW,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.5,7.887,0.0,10.0,8.5,0.0,6.286,6.744,Good,17,40,,0,
-164,736236,JNB Cafe,CV37 0ER,Cafe / Coffee Shop,name_match,True,Medium,0.5,8.1,8.73,0.0,10.0,8.0,0.0,6.679,6.729,Good,18,40,,0,
-165,1513917,The Water Margin @ The Hollybush,CV47 7RW,Takeaway,google_types,True,Medium,0.5,6.84,7.924,6.0,10.0,9.0,0.0,6.193,6.728,Good,19,40,,0,
-166,1474392,The Pavilion Coffee Shop And Community Space,CV37 8YE,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.0,6.695,0.0,10.0,8.5,0.0,6.182,6.72,Good,17,40,,0,
-167,650308,New Summer Palace Restaurant,B80 7DF,Chinese Restaurant,google_types,True,High,0.3,5.13,8.476,10.0,10.0,8.333,0.0,7.97,6.633,Good,21,40,,0,
-168,503319,Shipston Pizza And Kebab House,CV36 4AL,Fast Food / Quick Service,google_types,True,High,0.3,5.9,7.702,7.143,10.0,9.5,0.0,8.255,6.614,Good,20,40,,0,
-169,1291215,Gardener's Retreat,B80 7DR,Restaurant (General),google_types,True,Medium,0.5,9.0,5.739,0.0,10.0,8.5,0.0,6.981,6.606,Good,18,40,,0,
-170,502962,Curry Republic,B95 5AA,Indian Restaurant,google_types,True,High,0.3,5.4,7.819,7.143,10.0,9.167,0.0,8.909,6.463,Generally Satisfactory,22,40,,0,
-171,1712197,The Sandwich Shop,B95 5AT,Fast Food / Quick Service,google_types,True,Medium,0.5,8.075,7.204,0.0,10.0,8.0,0.0,6.321,6.427,Generally Satisfactory,19,40,,0,
-172,1754519,Nanas Caff,CV37 9NQ,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.5,10.0,0.0,10.0,3.0,0.0,6.429,6.412,Generally Satisfactory,14,40,,0,
-173,1563336,Chopstix South,CV35 0AA,Asian Restaurant,google_types,True,Medium,0.5,8.55,6.321,0.0,10.0,8.5,0.0,4.946,6.398,Generally Satisfactory,17,40,,0,
-174,1739369,Paul's Catering,CV37,Food & Drink,google_types,True,Medium,0.5,8.55,6.262,0.0,10.0,7.5,0.0,5.934,6.384,Generally Satisfactory,18,40,,0,
-175,1838728,Elders Who Lunch (Hartley Locums),CV47 8LS,Other,unclassified,True,Medium,0.5,8.5,6.412,0.0,10.0,6.0,0.0,7.267,6.375,Generally Satisfactory,18,40,,0,
-176,1622082,The Crofts Cafe Also Trading As New York Pizzas,CV37 6PH,American / Grill,google_types,True,Medium,0.5,8.5,10.0,0.0,,2.533,0.0,7.714,6.224,Generally Satisfactory,14,40,,0,
-177,1884822,WINGERS STRATFORD,CV37 0BF,American / Grill,google_types,True,Medium,0.5,7.2,7.656,0.0,10.0,7.208,0.0,6.456,6.122,Generally Satisfactory,18,40,,0,
-178,1291217,Gardener's Retreat,CV35 9ER,Restaurant (General),google_types,True,Medium,0.5,7.65,6.324,0.0,10.0,8.0,0.0,5.421,6.048,Generally Satisfactory,19,40,,0,
-179,503555,Dog Lane Fishery Caravanning And Camping Site,CV47 8LT,Hotel / Accommodation,google_types,True,Medium,0.5,7.65,8.989,4.286,10.0,9.0,0.0,6.855,6.039,Generally Satisfactory,18,40,,0,
-180,1411434,Earlswood Lunch Club,B94 6BZ,Catering,name_match,True,Medium,0.5,8.55,7.447,0.0,,6.0,0.0,6.868,5.966,Generally Satisfactory,17,40,,0,
-181,504050,Bishops Bowls Lake Cafe,CV47 2SR,Cafe / Coffee Shop,name_match,True,Medium,0.5,5.9,8.558,0.0,10.0,8.0,0.0,8.362,5.963,Generally Satisfactory,18,40,,0,
-182,1690228,Compton Verney Cafe,CV35 9HZ,Restaurant (General),google_types,True,Medium,0.5,8.5,8.0,0.0,10.0,4.0,0.0,7.714,5.89,Generally Satisfactory,15,40,,0,
-183,503270,Kings Court Hotel,B49 5QQ,Hotel / Accommodation,name_match,True,Medium,0.5,9.025,7.5,0.0,,3.0,0.0,6.429,5.841,Generally Satisfactory,14,40,,0,
-184,1705603,Escape Arts,CV37 6EE,Other,unclassified,True,Medium,0.5,8.1,5.1,0.0,10.0,6.0,0.0,4.6,5.81,Generally Satisfactory,18,40,,0,
-185,1622074,Lexi's Loving Spoonful,CV47 2QZ,Other,unclassified,True,Medium,0.5,9.025,6.478,0.0,,5.0,0.0,6.207,5.797,Generally Satisfactory,17,40,,0,
-186,1354963,The Tea Shed,CV47 8LT,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.075,6.725,0.0,,8.0,0.0,5.512,5.728,Generally Satisfactory,17,40,,0,
-187,1826838,Mouchak,B50 4BG,Indian Restaurant,google_types,True,Medium,0.5,5.4,7.229,0.0,10.0,7.208,0.0,6.346,5.345,Generally Satisfactory,19,40,,0,
-188,1765854,The Roebuck Inn Alcester,B49 5QA,Pub / Bar,name_match,True,Low,0.8,7.6,10.0,0.0,,2.0,0.0,6.429,5.165,Generally Satisfactory,10,40,,0,
-189,1800190,CAMEO Lunch Club,,Catering,name_match,True,Medium,0.5,5.9,6.695,0.0,,6.0,0.0,7.582,4.828,Improvement Necessary,17,40,,0,
-190,1912631,Shipston Bengal Cuisine,CV36 4PP,Indian Restaurant,google_types,True,Medium,0.5,,7.877,7.143,10.0,8.333,0.0,6.512,4.435,Improvement Necessary,16,40,,0,
-191,1774610,Digby's Events,CV47,Other,unclassified,True,Low,0.8,9.5,,0.0,,0.0,0.0,6.429,4.101,Improvement Necessary,12,40,,0,
-192,502970,China Garden,CV37 6NL,Chinese Restaurant,google_types,True,High,0.3,4.1,7.303,7.143,10.0,8.333,0.0,8.972,4.0,Improvement Necessary,21,40,,0,
-193,503216,Welcombe Hotel Golf Resort \& Spa,CV37 0NR,Hotel / Accommodation,google_types,True,Medium,0.5,4.1,9.2,10.0,10.0,9.5,0.0,9.858,3.999,Improvement Necessary,19,40,,0,
-194,1452414,Subway,CV37 0HZ,Fast Food / Quick Service,google_types,True,High,0.3,4.6,7.655,10.0,10.0,10.0,0.0,9.189,3.998,Improvement Necessary,21,40,,0,
-195,503114,Mount Everest Nepalese Cuisine,B80 7NL,Restaurant (General),google_types,True,High,0.3,3.895,8.543,10.0,10.0,10.0,0.0,7.747,3.997,Improvement Necessary,20,40,,0,
-196,1911092,Coughton Court Cafe,B49 5JA,Cafe / Coffee Shop,google_types,True,Low,0.8,,7.085,0.0,,8.0,0.0,4.612,2.69,Major Improvement,12,40,,0,
-197,979161,Karen's Korner,B80 7PD,Cafe / Coffee Shop,google_types,True,High,0.3,2.8,7.928,7.143,,7.958,0.0,8.248,2.0,Major Improvement,20,40,,0,
-198,1800192,Havilands Tea Room And Restaurant,CV37 6QB,Cafe / Coffee Shop,google_types,True,Medium,0.5,1.8,8.377,10.0,,7.583,0.0,8.62,1.999,Major Improvement,19,40,,0,
-,1721314,Aston Martin Lagonda,CV35 0DB,Other,unclassified,False,Medium,0.5,9.5,9.24,0.0,10.0,8.0,0.0,9.427,7.545,Not Ranked,18,40,,0,
-,503141,NFU Mutual,CV37 7BJ,Other,unclassified,False,Medium,0.5,9.0,7.955,0.0,10.0,7.0,0.0,8.81,7.014,Not Ranked,18,40,,0,
-,503565,A G D Equipment Ltd,CV37 9LQ,Other,unclassified,False,Medium,0.5,9.5,7.525,0.0,10.0,7.0,0.0,6.594,6.982,Not Ranked,18,40,,0,
-,1584574,Stratford On Avon Golf Club,CV37 7BA,Other,unclassified,False,Medium,0.5,9.025,8.273,0.0,10.0,7.0,0.0,7.267,6.975,Not Ranked,18,40,,0,
-,1131857,Stratford Town FC,CV37 7BZ,Other,unclassified,False,Medium,0.5,8.55,8.561,0.0,10.0,8.0,0.0,7.627,6.937,Not Ranked,18,40,,0,
-,503585,Redwings Horse Sanctuary,CV35 0RP,Other,unclassified,False,Medium,0.5,8.55,9.43,0.0,,7.0,0.0,7.102,6.51,Not Ranked,17,40,,0,
-,1896718,Birmingham City Football Club Ltd,B95 6AB,Other,unclassified,False,Medium,0.5,10.0,6.709,0.0,,6.0,0.0,7.946,6.438,Not Ranked,17,40,,0,
-,1781021,Stratford Upon Avon Baptist Church,CV37 6UA,Other,unclassified,False,Medium,0.5,9.5,6.319,0.0,,6.0,0.0,6.481,6.061,Not Ranked,17,40,,0,
-,1453409,Bidford Juniors Football Club,,Other,unclassified,False,Medium,0.5,9.5,5.598,0.0,,5.0,0.0,7.707,5.89,Not Ranked,17,40,,0,
-,1155879,Mid-England Barrow Ltd,OX17,Other,unclassified,False,Medium,0.5,9.0,6.401,0.0,10.0,6.0,0.0,4.874,5.444,Not Ranked,18,40,,0,
-,1927833,Slimming World,CV35 0FA,Other,unclassified,False,Low,0.8,,8.674,0.0,10.0,8.0,0.0,6.641,3.509,Not Ranked,13,40,,0,
-,1927834,Golden Putter Stratford Upon,CV37 7LS,Other,unclassified,False,Low,0.8,,8.206,0.0,10.0,7.0,0.0,6.376,3.349,Not Ranked,13,40,,0,
+rank,fhrsid,business_name,postcode,category,category_source,is_food,confidence,confidence_margin,fsa_tier_score,google_tier_score,online_tier_score,ops_tier_score,menu_tier_score,reputation_tier_score,community_tier_score,rcs_final,rcs_band,quality_score,digital_presence_score,signals_available,signals_total,observed_signals,inferred_signals,provenance_ratio,sentiment_score,red_flag_count,red_flags,companies_house_status
+1,1152776,Gilks' Garage Cafe,CV35 0JZ,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,9.365,10.0,10.0,10.0,0.0,9.7,8.903,Excellent,6.667,8.333,20,40,10,10,0.5,,0,,not_checked
+2,503282,Arrow Mill,B49 5NL,Pub / Bar,google_types,True,Medium,0.5,10.0,9.182,10.0,10.0,10.0,0.0,9.998,8.891,Excellent,6.667,8.333,20,40,10,10,0.5,,0,,not_checked
+3,503054,Stratford Manor Hotel,CV37 0PY,Hotel / Accommodation,google_types,True,Medium,0.5,10.0,9.2,10.0,10.0,9.0,0.0,9.791,8.81,Excellent,6.333,8.333,18,40,9,9,0.5,,0,,not_checked
+4,1854461,The Red Lion,CV37 6YW,Pub / Bar,google_types,True,Medium,0.5,10.0,9.017,10.0,10.0,9.5,0.0,9.22,8.774,Excellent,6.5,8.333,19,40,9,10,0.47,,0,,not_checked
+5,503735,Costa,CV37 0HZ,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,8.568,10.0,10.0,10.0,0.0,9.484,8.748,Excellent,6.667,8.333,20,40,10,10,0.5,,0,,not_checked
+6,1344517,The Fox Inn,CV35 9JS,Pub / Bar,google_types,True,Medium,0.5,10.0,8.567,10.0,10.0,10.0,0.0,9.211,8.73,Excellent,6.667,8.333,17,40,7,10,0.41,,0,,not_checked
+7,503478,Starbucks,CV37 6AU,Fast Food / Quick Service,google_types,True,Medium,0.5,10.0,8.356,10.0,10.0,10.0,0.0,9.489,8.712,Excellent,6.667,8.333,20,40,10,10,0.5,,0,,not_checked
+8,1623426,Red Hot Mamma Pizzeria,CV37 6AU,Restaurant (General),google_types,True,Medium,0.5,9.5,9.787,10.0,10.0,9.5,0.0,9.09,8.708,Excellent,6.333,8.333,19,40,9,10,0.47,,0,,not_checked
+9,1808717,Bistrot Pierre,CV37 7LT,French Restaurant,google_types,True,Medium,0.5,10.0,8.875,10.0,10.0,8.333,0.0,9.714,8.701,Excellent,6.111,8.333,18,40,7,11,0.39,,0,,not_checked
+10,1024960,Starbucks Drive Thru,CV35 0AA,Fast Food / Quick Service,google_types,True,Medium,0.5,10.0,8.101,10.0,10.0,10.0,0.0,9.516,8.669,Excellent,6.667,8.333,21,40,10,11,0.48,,0,,not_checked
+11,1699665,Nel's At The Pavilion,CV35 0AD,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,8.91,10.0,10.0,10.0,0.0,9.414,8.611,Excellent,6.5,8.333,20,40,10,10,0.5,,0,,not_checked
+12,1896714,The Townhouse Also Trading As JR Hotel And Restaurants LTD,CV37 6HB,Pub / Bar,google_types,True,Medium,0.5,9.5,8.819,10.0,10.0,10.0,0.0,9.509,8.601,Excellent,6.5,8.333,20,40,10,10,0.5,,0,,not_checked
+13,1210746,The Alcester Inn,B49 6AQ,Pub / Bar,google_types,True,Medium,0.5,9.5,8.893,10.0,10.0,9.5,0.0,9.463,8.576,Excellent,6.333,8.333,19,40,9,10,0.47,,0,,not_checked
+14,559158,No 37 Cafe,CV37 6EE,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,8.592,10.0,10.0,10.0,0.0,9.393,8.554,Excellent,6.5,8.333,20,40,10,10,0.5,,0,,not_checked
+15,503734,Premier Inn,CV37 6UQ,Hotel / Accommodation,google_types,True,Medium,0.5,9.5,9.193,10.0,,9.0,0.0,9.667,8.547,Excellent,6.167,8.333,18,40,9,9,0.5,,0,,not_checked
+16,565221,Costa,B95 5DA,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,8.372,10.0,10.0,10.0,0.0,9.228,8.504,Excellent,6.5,8.333,20,40,10,10,0.5,,0,,not_checked
+17,1339998,Cotswold Cafe,,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,8.387,10.0,10.0,10.0,0.0,9.192,8.504,Excellent,6.5,8.333,20,40,10,10,0.5,,0,,not_checked
+18,1871630,LeBuns,CV35 0JS,Pub / Bar,google_types,True,Medium,0.5,9.5,8.319,10.0,10.0,10.0,0.0,9.243,8.496,Excellent,6.5,8.333,20,40,10,10,0.5,,0,,not_checked
+19,502872,Ettington Park Hotel,CV37 8BU,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,9.76,10.0,10.0,9.5,0.0,8.235,8.462,Excellent,6.175,8.333,19,40,9,10,0.47,,0,,not_checked
+20,1253303,Ettington Garden Cafe,CV37 7TB,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,8.244,10.0,10.0,9.0,0.0,7.093,8.46,Excellent,6.333,6.667,18,40,9,9,0.5,,0,,not_checked
+21,1421992,Deli Cafe,CV37 6QB,British Restaurant,google_types,True,High,0.3,9.5,8.673,10.0,10.0,8.333,0.0,9.461,8.455,Excellent,5.944,8.333,22,40,10,12,0.45,,0,,not_checked
+22,504014,The Kings Head,CV35 9LT,British Restaurant,google_types,True,Medium,0.5,9.5,9.036,10.0,10.0,8.333,0.0,8.49,8.454,Excellent,5.944,8.333,21,40,10,11,0.48,,0,,not_checked
+23,1014807,McDonald's,CV37 0AH,American / Grill,google_types,True,Medium,0.5,9.5,8.445,10.0,10.0,8.333,0.0,10.0,8.452,Excellent,5.944,8.333,21,40,10,11,0.48,,0,,not_checked
+24,1019047,Miller And Carter,CV37 6EX,American / Grill,google_types,True,Medium,0.5,9.025,9.4,10.0,10.0,10.0,0.0,8.5,8.452,Excellent,6.342,8.333,20,40,10,10,0.5,,0,,not_checked
+25,1802818,11/17 Salt Beef Bar,CV37 6GJ,Restaurant (General),google_types,True,Medium,0.5,10.0,8.399,6.0,,8.5,6.667,7.144,8.45,Excellent,8.389,5.0,18,40,9,9,0.5,,0,,not_checked
+26,502838,Alveston Manor Hotel,CV37 7HP,Hotel / Accommodation,google_types,True,Medium,0.5,9.5,9.12,10.0,,8.0,0.0,9.388,8.416,Excellent,5.833,8.333,17,40,9,8,0.53,,0,,not_checked
+27,503481,The Opposition,CV37 6EF,French Restaurant,google_types,True,Medium,0.5,9.0,9.069,10.0,10.0,10.0,0.0,8.878,8.41,Excellent,6.333,8.333,20,40,10,10,0.5,,0,,not_checked
+28,1622070,Carluccio's,CV37 6BA,Italian Restaurant,google_types,True,Medium,0.5,9.5,8.615,10.0,10.0,8.333,0.0,8.865,8.405,Excellent,5.944,8.333,21,40,10,11,0.48,,0,,not_checked
+29,503316,Lambs,CV37 6EF,British Restaurant,google_types,True,Medium,0.5,9.0,9.327,10.0,10.0,8.333,0.0,9.851,8.404,Excellent,5.778,8.333,21,40,10,11,0.48,,0,,not_checked
+30,1789006,The Pickled Crab Deli,CV47 0HF,Takeaway,google_types,True,Medium,0.5,9.5,8.375,10.0,10.0,10.0,0.0,7.567,8.392,Excellent,6.5,8.333,21,40,10,11,0.48,,0,,not_checked
+31,1397584,The Bluebell,B95 5AT,Restaurant (General),google_types,True,Medium,0.5,9.0,8.814,10.0,10.0,10.0,0.0,9.28,8.392,Excellent,6.333,8.333,20,40,10,10,0.5,,0,,not_checked
+32,503732,Pizza Hut Restaurants - Dine In,CV37 0HZ,Italian Restaurant,google_types,True,Medium,0.5,9.025,9.182,10.0,10.0,9.625,0.0,8.465,8.385,Excellent,6.217,8.333,21,40,10,11,0.48,,0,,not_checked
+33,1317981,Kolshi Restaurant,CV35 9ND,Indian Restaurant,google_types,True,Medium,0.5,9.0,9.683,10.0,10.0,7.958,0.0,9.02,8.384,Excellent,5.653,8.333,20,40,9,11,0.45,,0,,not_checked
+34,1796547,Feel Good Crystals,CV36 5LE,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,8.615,10.0,10.0,9.5,0.0,7.337,8.384,Excellent,6.333,8.333,19,40,9,10,0.47,,0,,not_checked
+35,1747702,Beleza Rodizio,CV37 6EX,American / Grill,google_types,True,Medium,0.5,9.025,9.89,10.0,10.0,7.958,0.0,8.206,8.375,Excellent,5.661,8.333,20,40,9,11,0.45,,0,,not_checked
+36,1381141,The Bull's Head,B95 6BD,Pub / Bar,google_types,True,Medium,0.5,9.025,9.06,10.0,10.0,10.0,0.0,8.081,8.364,Excellent,6.342,8.333,20,40,10,10,0.5,,0,,not_checked
+37,1577024,Puddleduck Cafe Ltd,CV47 1AJ,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,8.42,10.0,,8.5,0.0,7.104,8.35,Excellent,6.167,6.667,17,40,9,8,0.53,,0,,not_checked
+38,1297845,Lounge@26,B49 5AB,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,8.102,10.0,10.0,10.0,0.0,7.587,8.346,Excellent,6.5,8.333,20,40,10,10,0.5,,0,,not_checked
+39,1556368,Prospero Lounge,CV37 6AD,British Restaurant,google_types,True,Medium,0.5,9.025,8.93,10.0,10.0,10.0,0.0,8.092,8.342,Excellent,6.342,8.333,21,40,10,11,0.48,,0,,not_checked
+40,1747703,GAIL's Stratford-Upon-Avon,CV37 6AU,Fast Food / Quick Service,google_types,True,Medium,0.5,9.5,8.297,10.0,10.0,9.5,0.0,7.448,8.335,Excellent,6.333,8.333,19,40,9,10,0.47,,0,,not_checked
+41,503552,Premier Inn,CV37 0AZ,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,9.44,10.0,,9.0,0.0,8.433,8.334,Excellent,6.008,8.333,18,40,9,9,0.5,,0,,not_checked
+42,1847445,Soma,CV37 6EX,Italian Restaurant,google_types,True,Medium,0.5,9.5,8.532,10.0,10.0,7.958,0.0,8.29,8.325,Excellent,5.819,8.333,20,40,9,11,0.45,,0,,not_checked
+43,502702,Bannatyne Health Club And Spa Wildmoor,CV37 9RJ,Restaurant (General),google_types,True,Medium,0.5,9.025,9.072,10.0,10.0,9.5,0.0,7.976,8.324,Excellent,6.175,8.333,19,40,9,10,0.47,,0,,not_checked
+44,1266894,Barnabys,CV37 6BA,British Restaurant,google_types,True,High,0.3,9.0,8.818,10.0,10.0,8.333,0.0,9.791,8.31,Excellent,5.778,8.333,22,40,10,12,0.45,,0,,not_checked
+45,1800191,Chapter 23,B49 5AF,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,8.403,10.0,10.0,9.0,0.0,7.202,8.302,Excellent,6.167,6.667,18,40,9,9,0.5,,0,,not_checked
+46,503781,The Bishops Fryer,CV47 2RN,Takeaway,google_types,True,Medium,0.5,9.5,7.813,10.0,10.0,10.0,0.0,7.684,8.301,Excellent,6.5,8.333,21,40,10,11,0.48,,0,,not_checked
+47,503931,Bella Italia Also Trading As Super Nonna,CV37 6JG,Italian Restaurant,google_types,True,Medium,0.5,9.025,9.036,10.0,,9.625,0.0,8.238,8.294,Excellent,6.217,8.333,20,40,10,10,0.5,,0,,not_checked
+48,1552322,Costa Coffee,CV37 6PT,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,7.506,10.0,,9.0,0.0,8.197,8.274,Excellent,6.333,8.333,19,40,10,9,0.53,,0,,not_checked
+49,503369,Studley Castle,B80 7AJ,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,9.6,10.0,,8.0,0.0,8.435,8.272,Excellent,5.675,8.333,17,40,9,8,0.53,,0,,not_checked
+50,1364372,The Bell Inn,CV37 8EB,Pub / Bar,google_types,True,Medium,0.5,8.5,9.255,10.0,10.0,10.0,0.0,9.184,8.27,Excellent,6.167,8.333,20,40,10,10,0.5,,0,,not_checked
+51,502863,Hotel Indigo And The Woodsman,CV37 6HA,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,9.649,10.0,,8.0,0.0,8.151,8.264,Excellent,5.675,8.333,17,40,9,8,0.53,,0,,not_checked
+52,1774606,Bumbles,B80 7AN,Italian Restaurant,google_types,True,Medium,0.5,9.025,9.092,10.0,10.0,8.792,0.0,7.717,8.26,Excellent,5.939,8.333,20,40,9,11,0.45,,0,,not_checked
+53,503584,Cardamom,B49 5DP,Indian Restaurant,google_types,True,High,0.3,9.0,8.693,10.0,10.0,8.333,0.0,9.305,8.255,Excellent,5.778,8.333,22,40,10,12,0.45,,0,,not_checked
+54,1796548,The Kingfisher FishBar,CV37 6LW,Fast Food / Quick Service,google_types,True,Medium,0.5,9.025,8.453,10.0,10.0,10.0,0.0,7.851,8.242,Excellent,6.342,8.333,21,40,10,11,0.48,,0,,not_checked
+55,503444,Crowne Plaza,CV37 6YR,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,9.44,10.0,,8.0,0.0,8.5,8.242,Excellent,5.675,8.333,17,40,9,8,0.53,,0,,not_checked
+56,1500965,Cafe Des Fleurs,B49 5AE,Pub / Bar,google_types,True,Medium,0.5,9.0,8.35,10.0,10.0,9.167,0.0,9.103,8.24,Excellent,6.056,8.333,21,40,10,11,0.48,,0,,not_checked
+57,502864,Hussains,CV37 6EP,Indian Restaurant,google_types,True,High,0.3,9.025,8.454,10.0,10.0,10.0,0.0,7.79,8.238,Excellent,6.342,8.333,22,40,10,12,0.45,,0,,not_checked
+58,1826833,Revs Automobilia,GL56 9RE,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.0,8.523,10.0,10.0,9.5,0.0,8.283,8.238,Excellent,6.167,8.333,19,40,9,10,0.47,,0,,not_checked
+59,503525,Shah's,CV35 9LU,Indian Restaurant,google_types,True,Medium,0.5,9.025,8.745,10.0,10.0,9.167,0.0,7.79,8.23,Excellent,6.064,8.333,21,40,10,11,0.48,,0,,not_checked
+60,1743693,The Food Of Love,CV37 6QW,Fast Food / Quick Service,google_types,True,High,0.3,9.5,8.06,10.0,10.0,8.333,0.0,7.665,8.226,Excellent,5.944,8.333,22,40,10,12,0.45,,0,,not_checked
+61,502816,Loxleys Restaurant And Wine Bar,CV37 6EF,British Restaurant,google_types,True,Medium,0.5,8.5,9.327,10.0,10.0,8.333,0.0,9.929,8.216,Excellent,5.611,8.333,21,40,10,11,0.48,,0,,not_checked
+62,503240,Henley Ice Cream Limited,B95 5BS,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.55,9.1,10.0,10.0,10.0,0.0,8.285,8.201,Excellent,6.183,8.333,20,40,10,10,0.5,,0,,not_checked
+63,503105,Avon Spice,CV37 6LF,Indian Restaurant,google_types,True,Medium,0.5,9.0,8.341,10.0,10.0,8.333,0.0,9.267,8.191,Excellent,5.778,8.333,21,40,10,11,0.48,,0,,not_checked
+64,1672985,Bidford Community Fridge & Cafe,B50 4QB,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.0,8.824,10.0,10.0,9.5,0.0,6.634,8.18,Excellent,6.167,8.333,19,40,9,10,0.47,,0,,not_checked
+65,503972,The George Hotel,CV36 4AJ,British Restaurant,google_types,True,Medium,0.5,8.5,9.182,10.0,10.0,8.333,0.0,9.74,8.178,Excellent,5.611,8.333,21,40,10,11,0.48,,0,,not_checked
+66,503820,Cafe 16,CV47 0HF,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.0,8.291,10.0,10.0,8.333,0.0,9.12,8.172,Excellent,5.778,8.333,21,40,10,11,0.48,,0,,not_checked
+67,1662496,Coffee Clouds,CV37 6GJ,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.5,8.64,10.0,10.0,10.0,0.0,9.265,8.167,Excellent,6.167,8.333,20,40,10,10,0.5,,0,,not_checked
+68,503772,McDonald's,CV37 6AB,American / Grill,google_types,True,Medium,0.5,9.025,8.445,10.0,10.0,8.333,0.0,8.402,8.16,Excellent,5.786,8.333,21,40,10,11,0.48,,0,,not_checked
+69,503480,Vintner Wine Bar,CV37 6EF,Pub / Bar,google_types,True,High,0.3,8.265,9.477,10.0,10.0,10.0,0.0,8.179,8.15,Excellent,7.653,8.333,25,40,11,14,0.44,1.0,0,,not_checked
+70,1552328,The Phoenix,CV37 6QY,Italian Restaurant,google_types,True,High,0.3,9.025,8.642,10.0,10.0,8.333,0.0,7.713,8.148,Excellent,5.786,8.333,22,40,10,12,0.45,,0,,not_checked
+71,676557,Plantarium,CV37 6NF,Vegan / Vegetarian,google_types,True,Medium,0.5,8.55,9.181,10.0,10.0,9.167,0.0,8.008,8.138,Excellent,5.906,8.333,21,40,10,11,0.48,,0,,not_checked
+72,1842631,Snitterfield Arms,CV37 0JH,Pub / Bar,google_types,True,Medium,0.5,9.5,8.438,7.143,10.0,9.5,0.0,8.225,8.131,Excellent,6.333,6.667,19,40,9,10,0.47,,0,,not_checked
+73,503345,KFC - Southbound,CV35 0AA,American / Grill,google_types,True,High,0.3,9.0,7.563,10.0,10.0,9.167,0.0,9.337,8.117,Excellent,6.056,8.333,22,40,10,12,0.45,,0,,not_checked
+74,1388310,The Coach House,CV37 6LP,Pub / Bar,google_types,True,Medium,0.5,8.55,8.663,10.0,10.0,10.0,0.0,8.001,8.105,Excellent,6.183,8.333,20,40,10,10,0.5,,0,,not_checked
+75,1739370,Corte Campana,CV37 6EX,Italian Restaurant,google_types,True,Medium,0.5,8.55,9.336,10.0,10.0,7.958,0.0,7.938,8.076,Excellent,5.503,8.333,20,40,9,11,0.45,,0,,not_checked
+76,503554,The Bridge,B50 4BG,Restaurant (General),google_types,True,Medium,0.5,8.55,8.574,10.0,10.0,10.0,0.0,7.77,8.074,Excellent,6.183,8.333,20,40,10,10,0.5,,0,,not_checked
+77,1799218,Pizza Junction Kineton Ltd,CV35 0LN,Italian Restaurant,google_types,True,Medium,0.5,9.5,8.672,7.143,10.0,7.958,0.0,8.33,8.071,Excellent,5.819,6.667,20,40,9,11,0.45,,0,,not_checked
+78,1228994,Mor,CV37 6EX,Bakery / Desserts,google_types,True,Medium,0.5,9.5,8.932,5.714,10.0,9.0,0.0,8.617,8.069,Excellent,6.167,6.667,19,40,9,10,0.47,,0,,not_checked
+79,503342,Burger King - Northbound,CV35 0AA,American / Grill,google_types,True,Medium,0.5,10.0,5.925,10.0,10.0,7.958,0.0,8.048,8.043,Excellent,5.986,8.333,21,40,10,11,0.48,,0,,not_checked
+80,503081,Sans Oriental Restaurant,B95 5AT,Chinese Restaurant,google_types,True,High,0.3,8.5,8.601,10.0,10.0,8.333,0.0,9.236,8.041,Excellent,5.611,8.333,22,40,10,12,0.45,,0,,not_checked
+81,503032,The Spice Room,B49 5AD,Indian Restaurant,google_types,True,Medium,0.5,9.5,8.485,7.143,10.0,7.958,0.0,8.312,8.037,Excellent,5.819,6.667,21,40,9,12,0.43,,0,,not_checked
+82,502681,Billesley Manor Hotel,B49 6NF,Hotel / Accommodation,google_types,True,Medium,0.5,8.55,9.36,10.0,,8.0,0.0,8.301,8.028,Excellent,5.517,8.333,17,40,9,8,0.53,,0,,not_checked
+83,1908606,Bruno's Bakery,B80 7HJ,Fast Food / Quick Service,google_types,True,High,0.3,8.5,8.376,10.0,10.0,8.333,0.0,9.238,8.002,Excellent,5.611,8.333,22,40,10,12,0.45,,0,,not_checked
+84,503918,Southam Gateway Coffee Shop Ltd,CV47 0EP,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.025,7.872,10.0,10.0,9.5,0.0,6.306,8.0,Excellent,6.175,6.667,19,40,10,9,0.53,,0,,not_checked
+85,1093181,Coffee#1 Limited,CV37 6EY,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.55,8.637,10.0,,9.5,0.0,7.982,7.994,Good,6.017,8.333,19,40,10,9,0.53,,0,,not_checked
+86,1799220,Burger King,CV37 0HZ,Restaurant (General),google_types,True,Medium,0.5,8.5,8.078,10.0,10.0,9.5,0.0,8.525,7.984,Good,6.0,8.333,19,40,9,10,0.47,,0,,not_checked
+87,676556,The Straw Kitchen,CV36 5PG,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.55,8.743,10.0,10.0,8.333,0.0,7.679,7.981,Good,5.628,8.333,21,40,10,11,0.48,,0,,not_checked
+88,503286,George's Cafe,B50 4JF,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.55,8.001,10.0,10.0,10.0,0.0,7.403,7.949,Good,6.183,8.333,20,40,10,10,0.5,,0,,not_checked
+89,1796553,Mr Odie's,CV37 6QT,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.5,8.599,10.0,10.0,9.0,0.0,7.172,7.949,Good,5.833,6.667,18,40,9,9,0.5,,0,,not_checked
+90,1552333,Costa Coffee,CV37 8LU,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.5,6.108,10.0,10.0,9.0,0.0,7.403,7.912,Good,6.167,6.667,19,40,10,9,0.53,,0,,not_checked
+91,1747700,The Still House Café,CV36 5EX,Italian Restaurant,google_types,True,Medium,0.5,9.025,8.14,10.0,10.0,7.583,0.0,6.123,7.9,Good,5.536,6.667,20,40,9,11,0.45,,0,,not_checked
+92,1672980,Greggs PLC,B49 6EH,Bakery / Desserts,google_types,True,Medium,0.5,10.0,6.801,5.714,10.0,9.0,0.0,8.603,7.886,Good,6.333,6.667,20,40,10,10,0.5,,0,,not_checked
+93,502877,DoubleTree By Hilton,CV37 6QQ,Hotel / Accommodation,google_types,True,Medium,0.5,8.075,9.44,10.0,,8.0,0.0,8.334,7.864,Good,5.358,8.333,17,40,9,8,0.53,,0,,not_checked
+94,503960,Blue Bean Coffee Shop,CV36 4AF,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.075,8.48,10.0,10.0,10.0,0.0,7.591,7.862,Good,6.025,8.333,20,40,10,10,0.5,,0,,not_checked
+95,1622076,Caffe Nero,CV37 6AN,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.1,8.471,10.0,10.0,10.0,0.0,6.957,7.827,Good,6.033,8.333,20,40,10,10,0.5,,0,,not_checked
+96,1016715,Shakespaw Cat Cafe,CV37 6QT,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,9.229,0.0,10.0,9.0,0.0,9.707,7.825,Good,6.333,3.333,19,40,10,9,0.53,,0,,not_checked
+97,1774608,NO4 Bar And Restaurant,CV37 6YY,Restaurant (General),google_types,True,Medium,0.5,8.55,8.78,7.143,10.0,9.5,0.0,7.558,7.78,Good,6.017,6.667,19,40,9,10,0.47,,0,,not_checked
+98,1381156,Pick Thai Ltd,CV37 6HB,Thai Restaurant,google_types,True,Medium,0.5,8.5,8.674,7.143,10.0,7.958,0.0,9.041,7.733,Good,5.486,6.667,20,40,9,11,0.45,,0,,not_checked
+99,503541,Costa,CV37 0UA,Food & Drink,google_types,True,Medium,0.5,9.025,8.093,5.714,10.0,9.5,0.0,7.853,7.721,Good,6.175,6.667,20,40,10,10,0.5,,0,,not_checked
+100,1206079,Building 523 Costa And Kitchen,CV35 0RR,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.5,9.464,5.714,,7.0,0.0,8.025,7.721,Good,5.5,6.667,17,40,9,8,0.53,,0,,not_checked
+101,1206081,South Costa,CV35 0RR,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.5,9.464,5.714,,7.0,0.0,8.025,7.721,Good,5.5,6.667,17,40,9,8,0.53,,0,,not_checked
+102,1854458,Costa Coffee,B49 6PQ,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,6.672,5.714,10.0,8.0,0.0,7.267,7.703,Good,6.0,6.667,19,40,9,10,0.47,,0,,not_checked
+103,1056848,Espresso Barn,CV37 8RB,Cafe / Coffee Shop,name_match,True,Medium,0.5,10.0,9.2,0.0,10.0,8.0,0.0,8.854,7.692,Good,6.0,3.333,18,40,9,9,0.5,,0,,not_checked
+104,1176874,The Garden Shed Cafe,CV35 9NZ,Cafe / Coffee Shop,google_types,True,Medium,0.5,7.2,8.883,10.0,10.0,10.0,0.0,8.848,7.68,Good,5.733,8.333,20,40,10,10,0.5,,0,,not_checked
+105,503343,Starbucks -  Southbound,CV35 0AA,Cafe / Coffee Shop,name_match,True,Medium,0.5,8.55,9.2,5.714,10.0,8.0,0.0,8.5,7.671,Good,5.517,6.667,18,40,9,9,0.5,,0,,not_checked
+106,503218,Burger King - Southbound,CV35 0AA,Fast Food / Quick Service,name_match,True,Medium,0.5,8.55,9.2,5.714,10.0,8.0,0.0,8.5,7.671,Good,5.517,6.667,18,40,9,9,0.5,,0,,not_checked
+107,1284339,The Yew Tree,CV47 2AS,Pub / Bar,google_types,True,Medium,0.5,7.2,8.833,10.0,10.0,10.0,0.0,8.756,7.665,Good,5.733,8.333,20,40,10,10,0.5,,0,,not_checked
+108,1835033,The Cottage Of Content,B50 4NP,Pub / Bar,google_types,True,Medium,0.5,7.2,8.766,10.0,10.0,10.0,0.0,8.923,7.665,Good,5.733,8.333,20,40,10,10,0.5,,0,,not_checked
+109,1695937,Impasto Micro-Pizzeria,CV37 6QY,Italian Restaurant,google_types,True,Medium,0.5,8.55,8.777,7.143,10.0,7.958,0.0,7.393,7.66,Good,5.503,6.667,20,40,9,11,0.45,,0,,not_checked
+110,503854,The Lime Tree Restaurant,CV37 8LW,Other,unclassified,True,Medium,0.5,9.5,9.52,0.0,10.0,8.0,0.0,9.962,7.63,Good,5.833,3.333,18,40,9,9,0.5,,0,,not_checked
+111,503711,Arden Tandoori,B95 5AU,Indian Restaurant,google_types,True,Medium,0.5,8.5,8.405,7.143,10.0,8.333,0.0,7.589,7.614,Good,5.611,6.667,21,40,10,11,0.48,,0,,not_checked
+112,1774612,International Circus Churros 2,CV37 0RN,Bakery / Desserts,google_types,True,Medium,0.5,9.025,9.206,2.857,10.0,9.0,0.0,7.903,7.604,Good,6.008,5.0,19,40,9,10,0.47,,0,,not_checked
+113,503292,Wildwood Kitchen,CV37 6EF,Italian Restaurant,google_types,True,Medium,0.5,7.315,9.036,10.0,10.0,8.333,0.0,8.248,7.594,Good,5.216,8.333,21,40,10,11,0.48,,0,,not_checked
+114,1388303,Lily's,CV37 6LU,Restaurant (General),google_types,True,Medium,0.5,8.075,8.593,7.143,10.0,9.5,0.0,7.376,7.551,Good,5.858,6.667,19,40,9,10,0.47,,0,,not_checked
+115,503261,Thespians Indian Restaurant,CV37 6EF,Indian Restaurant,google_types,True,Medium,0.5,7.2,8.532,10.0,10.0,8.333,0.0,9.512,7.546,Good,5.178,8.333,21,40,10,11,0.48,,0,,not_checked
+116,503479,The Pavillion,OX15 6HT,Other,unclassified,True,Medium,0.5,9.5,9.182,0.0,10.0,9.0,0.0,8.5,7.542,Good,6.167,3.333,19,40,10,9,0.53,,0,,not_checked
+117,503376,The Garden Cafe,B49 5PD,Food & Drink,google_types,True,Medium,0.5,9.0,9.68,0.0,10.0,9.0,0.0,9.795,7.524,Good,6.0,3.333,19,40,9,10,0.47,,0,,not_checked
+118,676561,The Embankment,CV37 7LS,Hotel / Accommodation,google_types,True,Medium,0.5,6.84,9.325,10.0,10.0,9.0,0.0,8.148,7.501,Good,5.28,8.333,18,40,9,9,0.5,,0,,not_checked
+119,1584576,Libertine Burger,CV37 6JP,American / Grill,google_types,True,Medium,0.5,8.075,8.54,7.143,10.0,7.958,0.0,7.558,7.446,Good,5.344,6.667,20,40,9,11,0.45,,0,,not_checked
+120,503104,Simla Takeaway,CV37 6LE,Indian Restaurant,google_types,True,High,0.3,9.12,7.53,6.0,10.0,7.583,0.0,6.193,7.441,Good,6.246,5.0,25,40,10,15,0.4,0.57,0,,not_checked
+121,1622078,Sushi Land,CV37 6NF,Japanese Restaurant,google_types,True,Medium,0.5,8.075,8.546,7.143,10.0,7.958,0.0,7.453,7.44,Good,5.344,6.667,20,40,9,11,0.45,,0,,not_checked
+122,1253300,The Keys,CV37 6LW,Pub / Bar,google_types,True,Medium,0.5,7.38,8.464,10.0,,9.5,0.0,6.952,7.435,Good,5.627,8.333,19,40,10,9,0.53,,0,,not_checked
+123,1589295,The Tempest,CV37 6EX,Italian Restaurant,google_types,True,Medium,0.5,7.315,8.532,10.0,10.0,7.958,0.0,7.39,7.421,Good,5.091,8.333,20,40,9,11,0.45,,0,,not_checked
+124,503089,Touchdown Cafe,CV35 9EU,Cafe / Coffee Shop,google_types,True,Medium,0.5,6.84,9.027,10.0,10.0,8.333,0.0,8.24,7.408,Good,5.058,8.333,21,40,10,11,0.48,,0,,not_checked
+125,1089841,Cotswold Distillery Cafe,CV36 5HG,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.025,9.92,0.0,10.0,8.0,0.0,8.311,7.406,Good,5.675,3.333,18,40,9,9,0.5,,0,,not_checked
+126,1302779,The Olde Mint,CV47 0EP,Pub / Bar,google_types,True,Medium,0.5,8.5,7.545,6.0,10.0,9.5,0.0,7.172,7.405,Good,6.0,5.0,19,40,10,9,0.53,,0,,not_checked
+127,1421981,Peppers,B80 7HN,Indian Restaurant,google_types,True,Medium,0.5,8.075,8.103,7.143,10.0,8.333,0.0,7.472,7.39,Good,5.469,6.667,21,40,10,11,0.48,,0,,not_checked
+128,503401,Shukurs,CV35 0HP,Indian Restaurant,google_types,True,Medium,0.5,6.84,8.989,10.0,10.0,8.333,0.0,7.973,7.384,Good,5.058,8.333,21,40,10,11,0.48,,0,,not_checked
+129,1029137,The Buck And Bell,CV47 9PH,Pub / Bar,google_types,True,Medium,0.5,6.84,8.373,10.0,10.0,10.0,0.0,7.79,7.38,Good,5.613,8.333,20,40,10,10,0.5,,0,,not_checked
+130,1246463,The Avon Lounge,CV37 6LP,Pub / Bar,google_types,True,Medium,0.5,8.55,7.839,6.0,10.0,9.0,0.0,6.244,7.378,Good,5.85,5.0,18,40,9,9,0.5,,0,,not_checked
+131,1266889,Turkish Stonebakers,CV35 9NE,Mediterranean Restaurant,google_types,True,Medium,0.5,6.84,9.131,10.0,10.0,7.958,0.0,7.743,7.367,Good,4.933,8.333,20,40,9,11,0.45,,0,,not_checked
+132,1747706,The Long Itch Diner,CV47 9QZ,Fast Food / Quick Service,google_types,True,High,0.3,6.84,8.796,10.0,10.0,8.333,0.0,8.162,7.362,Good,5.058,8.333,22,40,10,12,0.45,,0,,not_checked
+133,1421980,Tzatziki34,CV37 6AB,Mediterranean Restaurant,google_types,True,Medium,0.5,7.2,8.587,10.0,,7.583,0.0,9.254,7.362,Good,4.928,8.333,19,40,9,10,0.47,,0,,not_checked
+134,1467814,Stratford Adventure Golf,CV37 7LS,Other,unclassified,True,Medium,0.5,9.5,8.807,0.0,10.0,8.0,0.0,7.741,7.355,Good,5.833,3.333,18,40,9,9,0.5,,0,,not_checked
+135,1896717,Lithos Restaurant,B95 5BX,Restaurant (General),google_types,True,Medium,0.5,10.0,8.476,6.0,10.0,9.0,0.0,7.688,7.332,Good,6.333,5.0,15,40,6,9,0.4,,0,,not_checked
+136,1299513,Oxheart,CV36 5JJ,Restaurant (General),google_types,True,Medium,0.5,10.0,7.887,0.0,10.0,8.5,0.0,6.286,7.323,Good,6.167,3.333,17,40,9,8,0.53,,0,,not_checked
+137,1339997,The Margin,CV47 9PZ,Takeaway,google_types,True,Medium,0.5,8.075,7.924,6.0,10.0,9.0,0.0,6.193,7.206,Good,5.692,5.0,19,40,9,10,0.47,,0,,not_checked
+138,1495078,Four Seasons Pho Limited,CV37 6LF,Asian Restaurant,google_types,True,Medium,0.5,7.65,8.404,7.143,10.0,7.958,0.0,6.62,7.194,Good,5.203,6.667,20,40,9,11,0.45,,0,,not_checked
+139,1826834,Ferment And Flour (Bastardos),CV36 4PP,Cafe / Coffee Shop,google_types,True,Medium,0.5,10.0,6.954,0.0,10.0,8.5,0.0,6.541,7.176,Good,6.167,3.333,18,40,9,9,0.5,,0,,not_checked
+140,503102,Ashorne Hill Management College,CV33 9QW,Other,unclassified,True,Medium,0.5,10.0,9.186,0.0,,7.0,0.0,9.444,7.175,Good,5.667,3.333,17,40,9,8,0.53,,0,,not_checked
+141,1756585,Annie's Cafe & Event Catering,B49 5QF,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.5,8.231,0.0,10.0,7.0,0.0,7.293,7.153,Good,5.5,3.333,18,40,9,9,0.5,,0,,not_checked
+142,1266904,Good Breakfast,CV35 0AA,Other,unclassified,True,Medium,0.5,8.5,9.12,0.0,10.0,8.0,0.0,9.4,7.136,Good,5.5,3.333,18,40,9,9,0.5,,0,,not_checked
+143,1871632,Sorrento Restaurant Taste Of Italy,CV37 6LW,Italian Restaurant,google_types,True,Medium,0.5,5.9,8.733,10.0,10.0,9.167,0.0,9.39,7.13,Good,5.022,8.333,21,40,10,11,0.48,,0,,not_checked
+144,1754520,Cinnamon Arch,CV47 9QJ,Indian Restaurant,google_types,True,Medium,0.5,8.075,8.048,6.0,10.0,7.583,0.0,6.06,7.119,Good,5.219,5.0,19,40,9,10,0.47,,0,,not_checked
+145,503821,The Balti Hut,CV47 0HA,Indian Restaurant,google_types,True,Medium,0.5,7.2,8.158,7.143,10.0,7.958,0.0,8.362,7.095,Good,5.053,6.667,21,40,9,12,0.43,,0,,not_checked
+146,1838726,The Cowshed Cafe,B95 6BY,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.9,8.45,10.0,10.0,10.0,0.0,8.741,7.095,Good,5.3,8.333,20,40,10,10,0.5,,0,,not_checked
+147,503148,Nuthurst Grange Country House,B94 5NL,Hotel / Accommodation,google_types,True,Medium,0.5,5.605,9.374,10.0,10.0,9.5,0.0,8.018,7.06,Good,5.035,8.333,19,40,9,10,0.47,,0,,not_checked
+148,1622072,Hudson's,CV37 9ST,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.9,8.347,10.0,10.0,9.5,0.0,8.927,7.055,Good,5.133,8.333,19,40,9,10,0.47,,0,,not_checked
+149,1735216,The Stables,B94 5BQ,Hotel / Accommodation,google_types,True,Medium,0.5,9.025,8.335,4.286,,7.0,0.0,7.31,7.05,Good,5.342,5.0,17,40,9,8,0.53,,0,,not_checked
+150,1695933,Hobsons Patisseries,CV37 6PT,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.4,9.036,10.0,10.0,10.0,0.0,9.236,7.039,Good,5.133,8.333,20,40,10,10,0.5,,0,,not_checked
+151,1808716,Fast Flavour,CV37 6AB,Restaurant (General),google_types,True,Medium,0.5,9.5,7.588,0.0,10.0,8.5,0.0,5.701,7.038,Good,6.0,3.333,17,40,9,8,0.53,,0,,not_checked
+152,1388307,Chrissie's Kitchen,CV35,Takeaway,google_types,True,Medium,0.5,9.0,8.53,0.0,10.0,8.0,0.0,6.325,7.018,Good,5.667,3.333,19,40,9,10,0.47,,0,,not_checked
+153,1485802,Kitty's Kitchen Catering Ltd,CV37 7AY,Catering,name_match,True,Medium,0.5,9.0,8.457,0.0,10.0,8.0,0.0,6.493,7.016,Good,5.667,3.333,18,40,9,9,0.5,,0,,not_checked
+154,565220,Four Teas,CV37 6EF,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.4,9.182,10.0,10.0,8.333,0.0,9.912,6.993,Good,4.578,8.333,21,40,10,11,0.48,,0,,not_checked
+155,503715,Cafe Living,CV37 0HZ,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.4,8.736,10.0,10.0,10.0,0.0,9.298,6.99,Good,5.133,8.333,20,40,10,10,0.5,,0,,not_checked
+156,1826837,Cafe Chutneys,CV37 0AX,Indian Restaurant,google_types,True,Medium,0.5,5.9,8.314,10.0,10.0,8.333,0.0,8.639,6.947,Good,4.744,8.333,21,40,10,11,0.48,,0,,not_checked
+157,1804017,Cafe 86B,B95 5BY,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.0,8.084,0.0,10.0,8.5,0.0,5.875,6.944,Good,5.833,3.333,17,40,9,8,0.53,,0,,not_checked
+158,1827674,Pickled & Tipsy's Cafe,CV47 1PH,Takeaway,google_types,True,Medium,0.5,9.5,7.576,0.0,10.0,7.208,0.0,5.638,6.941,Good,5.569,3.333,19,40,9,10,0.47,,0,,not_checked
+159,1790270,Bardia's,CV37 6EE,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.605,9.172,10.0,10.0,7.958,0.0,7.88,6.907,Good,4.521,8.333,20,40,9,11,0.45,,0,,not_checked
+160,504026,Ragley Hall Catering,B49 5NJ,Hotel / Accommodation,name_match,True,Medium,0.5,9.0,9.68,0.0,,7.0,0.0,9.258,6.884,Good,5.333,3.333,17,40,9,8,0.53,,0,,not_checked
+161,1206075,Dec X Canteen,CV35 0RR,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.025,9.464,0.0,,7.0,0.0,8.025,6.764,Good,5.342,3.333,17,40,9,8,0.53,,0,,not_checked
+162,1584577,Shakespeare's,B94 5JU,Other,unclassified,True,Medium,0.5,7.2,9.6,0.0,10.0,8.0,0.0,9.852,6.749,Good,5.067,3.333,18,40,9,9,0.5,,0,,not_checked
+163,503926,Harbury Library Cafe,CV33 9HW,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.5,7.887,0.0,10.0,8.5,0.0,6.286,6.744,Good,5.667,3.333,17,40,9,8,0.53,,0,,not_checked
+164,1513917,The Water Margin @ The Hollybush,CV47 7RW,Takeaway,google_types,True,Medium,0.5,6.84,7.924,6.0,10.0,9.0,0.0,6.193,6.729,Good,5.28,5.0,19,40,9,10,0.47,,0,,not_checked
+165,736236,JNB Cafe,CV37 0ER,Cafe / Coffee Shop,name_match,True,Medium,0.5,8.1,8.73,0.0,10.0,8.0,0.0,6.679,6.729,Good,5.367,3.333,18,40,9,9,0.5,,0,,not_checked
+166,1474392,The Pavilion Coffee Shop And Community Space,CV37 8YE,Cafe / Coffee Shop,google_types,True,Medium,0.5,9.0,6.695,0.0,10.0,8.5,0.0,6.182,6.72,Good,5.833,3.333,17,40,9,8,0.53,,0,,not_checked
+167,650308,New Summer Palace Restaurant,B80 7DF,Chinese Restaurant,google_types,True,Medium,0.5,5.13,8.476,10.0,10.0,8.333,0.0,7.97,6.633,Good,4.488,8.333,21,40,10,11,0.48,,0,,not_checked
+168,503319,Shipston Pizza And Kebab House,CV36 4AL,Fast Food / Quick Service,google_types,True,Medium,0.5,5.9,7.702,7.143,10.0,9.5,0.0,8.255,6.614,Good,5.133,6.667,20,40,9,11,0.45,,0,,not_checked
+169,1291215,Gardener's Retreat,B80 7DR,Restaurant (General),google_types,True,Medium,0.5,9.0,5.739,0.0,10.0,8.5,0.0,6.981,6.606,Good,5.833,3.333,18,40,9,9,0.5,,0,,not_checked
+170,502962,Curry Republic,B95 5AA,Indian Restaurant,google_types,True,High,0.3,5.4,7.819,7.143,10.0,9.167,0.0,8.909,6.463,Generally Satisfactory,4.856,6.667,22,40,10,12,0.45,,0,,not_checked
+171,1712197,The Sandwich Shop,B95 5AT,Fast Food / Quick Service,google_types,True,Medium,0.5,8.075,7.204,0.0,10.0,8.0,0.0,6.321,6.427,Generally Satisfactory,5.358,3.333,19,40,9,10,0.47,,0,,not_checked
+172,1754519,Nanas Caff,CV37 9NQ,Cafe / Coffee Shop,name_match,True,Medium,0.5,9.5,10.0,0.0,10.0,3.0,0.0,6.429,6.412,Generally Satisfactory,4.167,0.0,14,40,6,8,0.43,,0,,not_checked
+173,1563336,Chopstix South,CV35 0AA,Asian Restaurant,google_types,True,Medium,0.5,8.55,6.321,0.0,10.0,8.5,0.0,4.946,6.398,Generally Satisfactory,5.683,3.333,17,40,9,8,0.53,,0,,not_checked
+174,1739369,Paul's Catering,CV37,Food & Drink,google_types,True,Medium,0.5,8.55,6.262,0.0,10.0,7.5,0.0,5.934,6.384,Generally Satisfactory,5.35,1.667,18,40,8,10,0.44,,0,,not_checked
+175,1838728,Elders Who Lunch (Hartley Locums),CV47 8LS,Other,unclassified,True,Medium,0.5,8.5,6.412,0.0,10.0,6.0,0.0,7.267,6.375,Generally Satisfactory,4.833,3.333,18,40,9,9,0.5,,0,,not_checked
+176,1622082,The Crofts Cafe Also Trading As New York Pizzas,CV37 6PH,American / Grill,google_types,True,Medium,0.5,8.5,10.0,0.0,,2.533,0.0,7.714,6.224,Generally Satisfactory,3.678,0.0,14,40,6,8,0.43,,0,,not_checked
+177,1884822,WINGERS STRATFORD,CV37 0BF,American / Grill,google_types,True,Medium,0.5,7.2,7.656,0.0,10.0,7.208,0.0,6.456,6.122,Generally Satisfactory,4.803,3.333,18,40,9,9,0.5,,0,,not_checked
+178,1291217,Gardener's Retreat,CV35 9ER,Restaurant (General),google_types,True,Medium,0.5,7.65,6.324,0.0,10.0,8.0,0.0,5.421,6.048,Generally Satisfactory,5.217,3.333,19,40,9,10,0.47,,0,,not_checked
+179,503555,Dog Lane Fishery Caravanning And Camping Site,CV47 8LT,Hotel / Accommodation,google_types,True,Medium,0.5,7.65,8.989,4.286,10.0,9.0,0.0,6.855,6.039,Generally Satisfactory,5.55,5.0,18,40,9,9,0.5,,0,,not_checked
+180,1411434,Earlswood Lunch Club,B94 6BZ,Catering,name_match,True,Medium,0.5,8.55,7.447,0.0,,6.0,0.0,6.868,5.966,Generally Satisfactory,4.85,3.333,17,40,9,8,0.53,,0,,not_checked
+181,504050,Bishops Bowls Lake Cafe,CV47 2SR,Cafe / Coffee Shop,name_match,True,Medium,0.5,5.9,8.558,0.0,10.0,8.0,0.0,8.362,5.963,Generally Satisfactory,4.633,3.333,18,40,9,9,0.5,,0,,not_checked
+182,1690228,Compton Verney Cafe,CV35 9HZ,Restaurant (General),google_types,True,Medium,0.5,8.5,8.0,0.0,10.0,4.0,0.0,7.714,5.89,Generally Satisfactory,4.167,1.667,15,40,7,8,0.47,,0,,not_checked
+183,503270,Kings Court Hotel,B49 5QQ,Hotel / Accommodation,name_match,True,Medium,0.5,9.025,7.5,0.0,,3.0,0.0,6.429,5.841,Generally Satisfactory,4.008,1.667,14,40,7,7,0.5,,0,,not_checked
+184,1705603,Escape Arts,CV37 6EE,Other,unclassified,True,Medium,0.5,8.1,5.1,0.0,10.0,6.0,0.0,4.6,5.81,Generally Satisfactory,4.7,3.333,18,40,9,9,0.5,,0,,not_checked
+185,1622074,Lexi's Loving Spoonful,CV47 2QZ,Other,unclassified,True,Medium,0.5,9.025,6.478,0.0,,5.0,0.0,6.207,5.797,Generally Satisfactory,4.675,3.333,17,40,9,8,0.53,,0,,not_checked
+186,1354963,The Tea Shed,CV47 8LT,Cafe / Coffee Shop,google_types,True,Medium,0.5,8.075,6.725,0.0,,8.0,0.0,5.512,5.728,Generally Satisfactory,5.358,3.333,17,40,9,8,0.53,,0,,not_checked
+187,1826838,Mouchak,B50 4BG,Indian Restaurant,google_types,True,Medium,0.5,5.4,7.229,0.0,10.0,7.208,0.0,6.346,5.345,Generally Satisfactory,4.203,3.333,19,40,9,10,0.47,,0,,not_checked
+188,1765854,The Roebuck Inn Alcester,B49 5QA,Pub / Bar,name_match,True,Low,0.8,7.6,10.0,0.0,,2.0,0.0,6.429,5.165,Generally Satisfactory,3.2,0.0,10,40,3,7,0.3,,0,,not_checked
+189,1800190,CAMEO Lunch Club,,Catering,name_match,True,Medium,0.5,5.9,6.695,0.0,,6.0,0.0,7.582,4.828,Improvement Necessary,3.967,3.333,17,40,9,8,0.53,,0,,not_checked
+190,1912631,Shipston Bengal Cuisine,CV36 4PP,Indian Restaurant,google_types,True,Medium,0.5,,7.877,7.143,10.0,8.333,0.0,6.512,4.435,Improvement Necessary,4.167,6.667,16,40,6,10,0.38,,0,,not_checked
+191,1774610,Digby's Events,CV47,Other,unclassified,True,Low,0.8,9.5,,0.0,,0.0,0.0,6.429,4.101,Improvement Necessary,3.167,0.0,12,40,5,7,0.42,,0,,not_checked
+192,502970,China Garden,CV37 6NL,Chinese Restaurant,google_types,True,Medium,0.5,4.1,7.303,7.143,10.0,8.333,0.0,8.972,4.0,Improvement Necessary,4.144,6.667,21,40,10,11,0.48,,0,,not_checked
+193,1452414,Subway,CV37 0HZ,Fast Food / Quick Service,google_types,True,Medium,0.5,4.6,7.655,10.0,10.0,10.0,0.0,9.189,4.0,Improvement Necessary,4.867,8.333,21,40,10,11,0.48,,0,,not_checked
+194,503114,Mount Everest Nepalese Cuisine,B80 7NL,Restaurant (General),google_types,True,Medium,0.5,3.895,8.543,10.0,10.0,10.0,0.0,7.747,4.0,Improvement Necessary,4.632,8.333,20,40,10,10,0.5,,0,,not_checked
+195,503216,Welcombe Hotel Golf Resort \& Spa,CV37 0NR,Hotel / Accommodation,google_types,True,Medium,0.5,4.1,9.2,10.0,10.0,9.5,0.0,9.858,4.0,Improvement Necessary,4.533,8.333,19,40,9,10,0.47,,0,,not_checked
+196,1911092,Coughton Court Cafe,B49 5JA,Cafe / Coffee Shop,google_types,True,Low,0.8,,7.085,0.0,,8.0,0.0,4.612,2.69,Major Improvement,4.0,3.333,12,40,5,7,0.42,,0,,not_checked
+197,979161,Karen's Korner,B80 7PD,Cafe / Coffee Shop,google_types,True,Medium,0.5,2.8,7.928,7.143,,7.958,0.0,8.248,2.0,Major Improvement,3.586,6.667,20,40,10,10,0.5,,0,,not_checked
+198,1800192,Havilands Tea Room And Restaurant,CV37 6QB,Cafe / Coffee Shop,google_types,True,Medium,0.5,1.8,8.377,10.0,,7.583,0.0,8.62,2.0,Major Improvement,3.128,8.333,19,40,9,10,0.47,,0,,not_checked
+,1721314,Aston Martin Lagonda,CV35 0DB,Other,unclassified,False,Medium,0.5,9.5,9.24,0.0,10.0,8.0,0.0,9.427,7.545,Not Ranked,5.833,3.333,18,40,9,9,0.5,,0,,not_checked
+,503141,NFU Mutual,CV37 7BJ,Other,unclassified,False,Medium,0.5,9.0,7.955,0.0,10.0,7.0,0.0,8.81,7.014,Not Ranked,5.333,3.333,18,40,9,9,0.5,,0,,not_checked
+,503565,A G D Equipment Ltd,CV37 9LQ,Other,unclassified,False,Medium,0.5,9.5,7.525,0.0,10.0,7.0,0.0,6.594,6.982,Not Ranked,5.5,3.333,18,40,9,9,0.5,,0,,not_checked
+,1584574,Stratford On Avon Golf Club,CV37 7BA,Other,unclassified,False,Medium,0.5,9.025,8.273,0.0,10.0,7.0,0.0,7.267,6.975,Not Ranked,5.342,3.333,18,40,9,9,0.5,,0,,not_checked
+,1131857,Stratford Town FC,CV37 7BZ,Other,unclassified,False,Medium,0.5,8.55,8.561,0.0,10.0,8.0,0.0,7.627,6.937,Not Ranked,5.517,3.333,18,40,9,9,0.5,,0,,not_checked
+,503585,Redwings Horse Sanctuary,CV35 0RP,Other,unclassified,False,Medium,0.5,8.55,9.43,0.0,,7.0,0.0,7.102,6.51,Not Ranked,5.183,3.333,17,40,9,8,0.53,,0,,not_checked
+,1896718,Birmingham City Football Club Ltd,B95 6AB,Other,unclassified,False,Medium,0.5,10.0,6.709,0.0,,6.0,0.0,7.946,6.438,Not Ranked,5.333,3.333,17,40,9,8,0.53,,0,,not_checked
+,1781021,Stratford Upon Avon Baptist Church,CV37 6UA,Other,unclassified,False,Medium,0.5,9.5,6.319,0.0,,6.0,0.0,6.481,6.061,Not Ranked,5.167,3.333,17,40,9,8,0.53,,0,,not_checked
+,1453409,Bidford Juniors Football Club,,Other,unclassified,False,Medium,0.5,9.5,5.598,0.0,,5.0,0.0,7.707,5.89,Not Ranked,4.833,3.333,17,40,9,8,0.53,,0,,not_checked
+,1155879,Mid-England Barrow Ltd,OX17,Other,unclassified,False,Medium,0.5,9.0,6.401,0.0,10.0,6.0,0.0,4.874,5.444,Not Ranked,5.0,3.333,18,40,9,9,0.5,,0,,not_checked
+,1927833,Slimming World,CV35 0FA,Other,unclassified,False,Low,0.8,,8.674,0.0,10.0,8.0,0.0,6.641,3.509,Not Ranked,4.0,3.333,13,40,5,8,0.38,,0,,not_checked
+,1927834,Golden Putter Stratford Upon,CV37 7LS,Other,unclassified,False,Low,0.8,,8.206,0.0,10.0,7.0,0.0,6.376,3.349,Not Ranked,3.5,3.333,13,40,5,8,0.38,,0,,not_checked

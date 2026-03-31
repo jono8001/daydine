@@ -1,6 +1,6 @@
 # UK Restaurant Tracker — Methodology Specification V3.1
 
-*DayDine RCS (Restaurant Confidence Score) — Version 3.1*
+*DayDine RCS (Restaurant Confidence Score) — Version 3.2*
 *Last updated: 31 March 2026*
 
 ---
