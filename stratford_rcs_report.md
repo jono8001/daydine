@@ -642,4 +642,85 @@
 
 ---
 
+## 9. Robustness Assessment & Critical Analysis
+
+### 9.1 Potential Ranking Criticisms
+
+**Chains are ranked alongside independents — and doing well.**
+20 chain outlets appear in the rankings, many in the top half. Costa has 6 entries (ranks #11, #30, #54, #75, #82, #119), Starbucks has 3 (ranks #15, #23, #97), and McDonald's has 2 (ranks #80, #123). These chains score well because they consistently achieve FSA 5 and have high Google review volumes. This is arguably fair for hygiene confidence, but it tells you nothing about food quality, atmosphere, or value — signals we don't yet capture.
+
+**Starbucks (#15, RCS 8.766) outranks every Indian restaurant in the district.** The highest-ranked Indian restaurant is Chutni Indian Kitchen at #17. A coffee chain outranking a sit-down curry house will feel wrong to most diners. The root cause: Starbucks has a perfect FSA score, 548 Google reviews, and benefits from inferred operational signals (takeaway, hours). Chutni has comparable FSA but fewer reviews. When TripAdvisor data arrives, Indian restaurants with strong TA ratings should climb.
+
+**No fine dining restaurants exist in the data.** Zero establishments were classified as "Fine Dining" — this is a classification gap, not a data gap. Restaurants like Oxheart, Salt, and The Fuzzy Duck likely qualify but Google's place types don't consistently tag them as `fine_dining_restaurant`. This means there's no separate fine dining leaderboard, and these restaurants compete directly with cafes and takeaways.
+
+**Non-restaurants are ranked.** 22 establishments classified as "Other" include Aston Martin Lagonda (#22, RCS 8.690), Stratford Adventure Golf (#49), Birmingham City Football Club (#76), and Slimming World (#170). These are FSA-registered food premises but not restaurants in any meaningful sense. Five of them sit in the top 50. They should either be filtered out or flagged with a "Non-Restaurant" badge.
+
+**Cafes dominate the top 20.** 6 of the top 20 are cafes/coffee shops, 5 are pubs. This reflects the reality that cafes and pubs are the most common food establishment types in a market town, but it also suggests the scoring rewards "safe" establishments (high FSA, moderate Google reviews) over exceptional but niche ones.
+
+**Takeaways are compared against sit-down restaurants.** A takeaway with FSA 5 and 200 Google reviews will score similarly to a restaurant with the same metrics, despite being fundamentally different experiences. The current methodology doesn't distinguish between service models. A "type weighting" adjustment could address this.
+
+### 9.2 Data Gaps & Their Impact
+
+**39% of scored signals are inferred, not measured.**
+Of the 15.1 average signals per establishment, 9.2 come from actual data sources (FSA + Google Places API) and 5.9 are inferred from those same sources. The inferred signals are:
+- **Operational** (Tier 4): delivery/takeaway inferred from Google `meal_takeaway` type; hours completeness from `goh` field length
+- **Menu** (Tier 5): cuisine tag count inferred from Google `*_restaurant` types; menu presence assumed for all Google-listed food establishments
+- **Community** (Tier 7): entirely computed from inspection recency, combined review volume, and online presence breadth
+
+This means two different restaurants with identical FSA + Google data will get identical scores across Tiers 4, 5, and 7 — there's no actual differentiation for those tiers yet.
+
+**TripAdvisor (Tier 3, weight 15%) is completely empty.**
+Adding TripAdvisor data would activate the third-heaviest tier. Estimated impact:
+- Restaurants with strong TA ratings (4.5+) could gain 0.3–0.7 points
+- Restaurants with weak TA ratings (<3.5) could lose 0.3–0.5 points
+- 70 restaurants currently sit within ±0.3 of the Excellent/Good boundary (8.0) — TripAdvisor data could reclassify many of these
+
+**11 restaurants have ≤12 signals and are most vulnerable to re-ranking:**
+
+| Rank | Name | RCS | Signals | Risk |
+|---:|---|---:|---:|---|
+| 7 | Lithos Restaurant | 8.875 | 12 | Could drop if TA/menu data is weak |
+| 133 | Nanas Caff | 7.920 | 9 | High uncertainty — near Good/GenSat boundary |
+| 181 | Compton Verney Cafe | 7.100 | 10 | Could cross into Generally Satisfactory |
+| 187 | Digby's Events | 6.975 | 7 | Lowest signal count — essentially unscored |
+| 191 | The Roebuck Inn Alcester | 6.795 | 5 | Only FSA data — score is unreliable |
+
+**Reputation tier (Tier 6) is populated but nearly empty of actual awards.** The editorial collection found no Michelin-starred, AA-rosetted, or Good Food Guide-listed restaurants in the Stratford dataset. Every establishment scores 0/10 on reputation. This tier's 5% weight is currently wasted — it contributes nothing to differentiation.
+
+### 9.3 Methodology Weaknesses
+
+**43% signal coverage is insufficient for confident rankings.** The V2 methodology specifies 35 signals, but we're measuring 15.1 on average. More than half the scoring model is either inferred or absent. At this coverage level, the RCS is essentially a **weighted FSA + Google composite** with minor adjustments. The ranking is honest about what it measures, but calling it a "35-signal score" overstates the current reality.
+
+**FSA rating (30% weight) conflates hygiene with quality.** A chip shop with perfect hygiene scores identically to a Michelin-starred restaurant on the FSA tier. Since FSA is the single largest tier weight (30%), and nearly all Stratford establishments score 4-5, it compresses the top of the distribution. 128 of 208 (61.5%) are rated "Excellent" — this feels generous and suggests the FSA tier is pulling everyone upward.
+
+**Google review volume advantages chains.** The review count signal uses a log10 scale capped at 1000, but several chains have absurd volumes: Starbucks Southbound has 10,079 reviews, McDonald's has 2,386, Pizza Hut has 1,831. While the log scale dampens this, a chain with 2,000 reviews still gets a higher volume score than a village pub with 50 genuine reviews. This is a known bias toward volume over authenticity.
+
+**The "no online presence" penalty (-10%) punishes the wrong restaurants.** This penalty applies to any establishment without Google, TripAdvisor, or website data. In practice, it hits 0 establishments (since nearly all have Google data from enrichment). But conceptually, a restaurant without an online presence isn't necessarily bad — it might just be a traditional pub that doesn't need one. The penalty conflates digital marketing with food quality.
+
+**Category classification has 22 unresolved "Other" entries.** These include football clubs, a car manufacturer (Aston Martin), a miniature golf course, and a church. They hold FSA registrations because they serve food, but they distort the rankings. More critically, some genuine restaurants might be miscategorised — "The Lime Tree Restaurant" is classified as "Other" (rank #16) because Google tagged it as a `garden_center`, not a restaurant.
+
+**Tiebreaker offsets distort the bottom of the distribution.** The walk-down algorithm ensures unique scores, but it means the difference between rank #203 and #206 is artificial (0.001 per position). Four restaurants are clustered at RCS ~4.0 (China Garden, Welcombe Hotel, Subway, Mount Everest) with essentially identical scores separated only by tiebreaker offsets. Their relative ordering is determined by FSA sub-scores, not meaningful quality differences.
+
+### 9.4 What Would Make This More Robust
+
+**Highest-impact additions (in priority order):**
+
+| Addition | Tier | Impact | Effort |
+|---|---|---|---|
+| TripAdvisor ratings + reviews | Tier 3 | High — activates 15% weight, adds 3 real signals | Low — scraper built |
+| Website/social presence detection | Tier 3 | Medium — 3 boolean signals | Medium — needs search API |
+| Google Places extended fields (wheelchair, reservations) | Tier 4 | Medium — replaces inferred with actual | Low — extend existing API call |
+| Restaurant website menu scrape | Tier 5 | Medium — replaces inferred menu presence | Medium — per-site scraping |
+| Review response rate from Google | Tier 7 | Medium — real engagement signal | Low — available in API |
+
+**Recommended minimum signal threshold:** Establishments with fewer than 8 signals (currently 2 records) should be flagged as "Insufficient Data" rather than ranked. At 8+ signals, at least 2 tiers have actual data, which provides a minimum basis for comparison.
+
+**Separate leaderboards by establishment type.** Rather than one combined ranking, publish separate lists for: Restaurants, Cafes, Pubs, Takeaways/Fast Food, Hotels. This prevents the "Starbucks outranks the curry house" problem and gives each segment a meaningful competition.
+
+**Reduce FSA weight from 30% to 20%.** FSA hygiene data is important but it's a baseline, not a differentiator. Most establishments score 4-5, so the tier adds little discrimination. Redistributing 10% to Google (→30%) or Online Presence (→20%) would give consumer-facing signals more influence.
+
+**Add a "confidence" indicator per restaurant.** Rather than publishing a single RCS number, show a confidence band: e.g. "8.3 ± 0.5 (Medium Confidence, 15/35 signals)". This is more honest than implying 3-decimal precision when 57% of signals are missing.
+
+---
+
 *Report generated from `stratford_rcs_scores.csv` (208 records) by `rcs_scoring_stratford.py` V2*
