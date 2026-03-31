@@ -1,0 +1,54 @@
+{
+  "503480": {
+    "sentiment_score": 1.0,
+    "positive_count": 13,
+    "negative_count": 0,
+    "red_flag_count": 0,
+    "red_flags": [],
+    "warning": false,
+    "reviews_analyzed": 5,
+    "aspects": {
+      "food_quality": {
+        "score": 10.0,
+        "positive_mentions": 5,
+        "negative_mentions": 0
+      },
+      "service_quality": {
+        "score": 10.0,
+        "positive_mentions": 7,
+        "negative_mentions": 0
+      },
+      "ambience": {
+        "score": 5.0,
+        "positive_mentions": 1,
+        "negative_mentions": 1
+      }
+    }
+  },
+  "503104": {
+    "sentiment_score": 0.57,
+    "positive_count": 3,
+    "negative_count": 1,
+    "red_flag_count": 0,
+    "red_flags": [],
+    "warning": false,
+    "reviews_analyzed": 5,
+    "aspects": {
+      "food_quality": {
+        "score": 6.7,
+        "positive_mentions": 2,
+        "negative_mentions": 1
+      },
+      "service_quality": {
+        "score": 10.0,
+        "positive_mentions": 3,
+        "negative_mentions": 0
+      },
+      "value": {
+        "score": 10.0,
+        "positive_mentions": 1,
+        "negative_mentions": 0
+      }
+    }
+  }
+}

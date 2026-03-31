@@ -1,182 +1,273 @@
 # DayDine Project State
 
 ## What It Is
-UK restaurant tracking and ranking platform. MVP shows 264,791 FSA establishments searchable by location (town/city/postcode), with distance-based results, interactive Leaflet map, and tier badges. Phase 2 adds Google Places enrichment. Phase 3 implements the full Evidtrace RCS composite scoring engine.
+UK restaurant ranking platform using the **RCS (Restaurant Confidence Score)** — a composite 0-10 score derived from 35 signals across 7 weighted tiers. The scoring engine is transparent, auditable, and designed to surface inconsistencies between data sources while rewarding convergence.
+
+Currently running a **Stratford-upon-Avon trial** (208 FSA-registered restaurants) with Tier 1 (FSA) data fully populated. Google Places enrichment (Tier 2) is built and ready to run.
 
 ## Current State (30 March 2026)
 
-### Live Features (daydine.vercel.app)
-- Location-based search using postcodes.io (type town, city or postcode)
-- Place autocomplete suggestions as you type
-- Distance-based results sorted by proximity (Haversine formula)
-- Distance dropdown filter (1/3/5/10/25 miles)
+### RCS V2 Scoring Engine — IMPLEMENTED
+- **Script**: `rcs_scoring_stratford.py` — full V2 pipeline
+- **Scale**: 0.000–10.000 (3 decimal places)
+- **35 signals** across 7 weighted tiers
+- **Unique rankings** guaranteed — tiebreaker system ensures no two restaurants share the same score or rank
+- **6 rating bands** on 0-10 scale:
+
+| Band | RCS Range |
+|---|---|
+| Excellent | 8.000–10.000 |
+| Good | 6.500–7.999 |
+| Generally Satisfactory | 5.000–6.499 |
+| Improvement Necessary | 3.500–4.999 |
+| Major Improvement | 2.000–3.499 |
+| Urgent Improvement | 0.000–1.999 |
+
+### Tier Weights
+
+| Tier | Weight | Description | Signals |
+|---|---|---|---|
+| 1. FSA | 20% | Food Safety Authority hygiene data | hygiene_rating, structural, CIM, food_hygiene, inspection_recency |
+| 2. Google | 25% | Google Places signals | rating, review_count, price_level, photos_count, place_types |
+| 3. Online Presence | 20% | Web & social media presence | website, facebook, instagram, tripadvisor_presence, ta_rating, ta_reviews |
+| 4. Operational | 15% | Service capabilities | reservations, delivery, takeaway, wheelchair, parking, hours_completeness |
+| 5. Menu & Offering | 10% | Food offering breadth | menu_online, dietary_options, cuisine_tags |
+| 6. Reputation & Awards | 5% | Editorial recognition | aa_rating, michelin_mention, local_awards |
+| 7. Community | 5% | Engagement & responsiveness | responds_to_reviews, response_time, events, loyalty_program |
+
+### Tiebreaker System
+When scores are identical after 3-decimal rounding, ties are broken in order:
+1. Higher FSA hygiene rating
+2. More recent inspection date
+3. Higher structural compliance sub-score
+4. Higher confidence in management sub-score
+5. Alphabetical by business name
+
+A walk-down algorithm then applies 0.001 decreasing offsets to ensure every final score is numerically unique.
+
+### Non-Food Exclusion Filter
+Establishments verified as non-food businesses are excluded from rankings:
+- Checks Google types for food service (restaurant, cafe, pub, food, etc.)
+- FSA rating 3+ overrides Google misclassification (keeps cafes in gyms, etc.)
+- Name blacklist catches Slimming World, football clubs, Aston Martin, etc.
+- Hotels assumed to have food service (kept in rankings)
+- Excluded establishments marked "Not Ranked" in CSV
+
+### Confidence Bands
+Each ranked restaurant gets a confidence level based on signal coverage:
+- **High** (±0.3): 20+ signals, 5+ tiers active
+- **Medium** (±0.5): 14+ signals, 4+ tiers active
+- **Low** (±0.8): 8+ signals
+- **Insufficient** (not ranked): <8 signals — marked "Insufficient Data"
+
+### Penalty Rules (implemented)
+- FSA rating 0-1: score capped at 2.0
+- FSA rating 2: score capped at 4.0
+- No inspection in 3+ years: -15%
+- Google rating < 2.0: -10%
+- Zero Google reviews: -5%
+- No online presence at all: -10%
+
+### Stratford Trial Results (208 establishments, Tiers 1+2+inferred)
+- Excellent: 149 (71.6%)
+- Good: 50 (24.0%)
+- Generally Satisfactory: 3 (1.4%)
+- Improvement Necessary: 4 (1.9%)
+- Major Improvement: 2 (1.0%)
+- Signal coverage: 13.4 / 35 avg per record (Tiers 1+2+4+5+7 inferred)
+- Tiers populated: FSA 204, Google 207, Ops 172, Menu 66, Community 208
+- With TripAdvisor enrichment (Tier 3): expected ~16/35 avg
+
+### Live Frontend (daydine.vercel.app)
+- Location-based search using postcodes.io
+- Place autocomplete, distance filtering (1/3/5/10/25 miles)
 - Interactive Leaflet map with colour-coded markers by FSA rating
-- Table/Map toggle view
-- Expandable detail rows (address, FSA sub-scores, Google data when available)
-- Tier badges based on FSA rating (Excellent/Good/Generally Satisfactory/Improvement Necessary/Major Improvement/Urgent Improvement)
-- Mobile-responsive layout
-- DayDine branding with Beta badge
-- Near Me geolocation button
-
-### Repository Files
-- `index.html` — Single-page app (Firebase + Leaflet + postcodes.io)
-- `enrich_places.py` — Google Places enrichment script (ready to run locally)
-- `restaurant_confidence.py` — RCS scoring engine (NEEDS FULL REWRITE - see below)
-- `firebase-rules.json` — Realtime Database rules
-- `vercel.json` — Deployment config
-
-### Firebase Structure
-- `establishments/{la_name}/{index}` — FSA data with fields: n (name), a1/a2/a3/a4 (address), pc (postcode), la (local authority), bt (business type), rv (rating value), rd (rating date), lat, lng, fhrsid
-- `la_index/{la_name}` — Local authority index for search
-- Google enrichment fields (when populated): gr (Google rating), grc (Google review count), gpl (price level), gty (types), goh (opening hours), gpid (place ID)
-
-## Product Vision & Strategy
-
-### Core Thesis
-A data-driven awards platform for consumers that gives diners something they can't get from Google, OpenTable, the Good Food Guide or the National Restaurant Awards. We must reframe the problem: not "how do we re-build TripAdvisor?" but "what do diners wish existing awards and review sites did better?"
-
-### Competitive Landscape
-- **Good Food Guide** — reader nominations + anonymous inspections. Yearly static list, not data-driven.
-- **National Restaurant Awards** — 200+ panel vote for top-100. Prestige from panel, not data.
-- **Datassential 500** — US, proprietary sales data for chains. Industry-facing, not consumer.
-- **Gap**: No existing service provides up-to-date, data-rich, transparent consumer-facing rankings.
-
-### Differentiation Strategy
-1. **Dynamic real-time awards** — weekly/monthly "most improved" and "rising star"
-2. **Theme-based rankings** — "best sustainable restaurants", "hidden gems in towns under 50k"
-3. **Transparent scoring methodology** — publish weights and data sources
-4. **User-nominated awards with data checks** — reader nominations ranked by algorithm
-5. **Interactive explorer** — filter by value-for-money, creativity, consistency, trendiness
-
-### Commercial Model
-- **Revenue**: Members' club model over advertising to protect neutrality
-- **Credibility**: Google Place API terms forbid caching - fetch on demand
-- **Distribution**: Partnerships with travel/lifestyle media
-- **Long-term**: Niche media product, evolve towards B2B analytics
+- Table/Map toggle, expandable detail rows
+- Mobile-responsive layout, DayDine branding with Beta badge
+- 264,791 FSA establishments in Firebase RTDB
 
 ---
 
-## TASK BACKLOG (Priority Order)
+## Data Collection Status
 
-### PRIORITY 1: UI Fixes (Next Claude Code Session)
+| Tier | Status | Signals Available | Source |
+|---|---|---|---|
+| 1. FSA | **COMPLETE** | 5/5 | Firebase RTDB (`r`, `sh`, `ss`, `sm`, `rd`) |
+| 2. Google | **READY TO RUN** | 0/5 | Google Places API — script built, needs `GOOGLE_PLACES_API_KEY` secret |
+| 3. Online Presence | **READY TO RUN** | 0/6 | TripAdvisor scraper built, needs workflow trigger |
+| 4. Operational | **INFERRED** | 3/6 | Inferred from Google types (takeaway/delivery) + opening hours |
+| 5. Menu & Offering | **READY TO RUN** | 1/3 | Cuisine count inferred from Google types; menu scraper built |
+| 6. Reputation | **READY TO RUN** | 0/3 | Editorial/awards scraper built, needs workflow trigger |
+| 7. Community | **COMPUTED** | 3/4 | Computed from inspection recency + review volume + presence breadth |
 
-#### Task 1.1: Map View Button Refactor
-- Rename "Near Me" button to "Map View"
-- When clicked: toggle between table and map view for current search results
-- If no search done yet: show message "Search for a location first"
-- Remove the separate Table/Map toggle buttons (replaced by Map View button)
-- Move geolocation (GPS detect) into the Location input field as a small location pin icon inside the field (like Google Maps search bar)
+### Data Collection Plan (remaining 30 signals)
 
-#### Task 1.2: Hide Empty Google Column
-- Hide the "GOOGLE" column in results table when no establishments in current results have Google data (gr field)
-- Show column automatically once enrichment data exists
-- Avoids confusing users with a column of dashes
+**Tier 1+ — FSA Augmentation**
+- Script: `.github/scripts/augment_fsa_stratford.py`
+- FSA LA ID for Stratford-on-Avon: **320** (not 197 which is Aberdeen)
+- Fetches ALL food business types (1, 7, 14, 7843) not just Restaurant/Cafe/Canteen
+- Known-restaurants list ensures important establishments (The Vintner, Dirty Duck, etc.) are never missed
+- Action needed: Trigger full pipeline workflow to augment dataset
 
-#### Task 1.3: Fix Tier Badges
-- Current tier badges are based ONLY on FSA hygiene rating — this is WRONG for the final product
-- Interim: keep FSA-based badges but label them clearly as "FSA Hygiene" not just "Tier"
-- Future: replace with RCS-based tiers once scoring engine is complete (see Priority 3)
+**Tier 2 — Google Places API (New)**
+- Script: `.github/scripts/enrich_google_stratford.py`
+- Fields: `gr` (rating), `grc` (review count), `gpl` (price level), `gpc` (photo count), `gty` (types)
+- Action needed: Add `GOOGLE_PLACES_API_KEY` as GitHub repo secret, then trigger `enrich_and_score.yml` workflow
 
-### PRIORITY 2: Data Enrichment
+**Tier 3 — Online Presence (TripAdvisor + Web Presence)**
+- TripAdvisor: `.github/scripts/collect_tripadvisor_apify.py` — uses Apify scraper API (~$0.50 per run)
+- Web presence: `.github/scripts/check_web_presence.py` — infers website/FB/IG from Google data
+- Merge: `.github/scripts/merge_tripadvisor.py` — writes `ta`, `trc`, `ta_present`, `ta_url`, `ta_cuisines`, `ta_reviews`
+- Direct scraper (blocked): `.github/scripts/collect_tripadvisor.py` — kept as fallback
+- Action needed: Add `APIFY_TOKEN` as GitHub repo secret, then trigger full pipeline
+- Web presence already active: 143 websites, 137 Facebook, 126 Instagram inferred from Google data
 
-#### Task 2.1: Run Google Places Enrichment (LOCAL — not Claude Code)
-- Run `enrich_places.py` locally for London boroughs first
-- Command: `python enrich_places.py --la "Camden" --dry-run` (test first)
-- Then: `python enrich_places.py --la "Camden"` (for real)
-- Work through all London LAs, then expand nationally
-- Requires GOOGLE_PLACES_API_KEY in .env
+**Tier 4 — Operational Signals**
+- Extended Google Places fields: wheelchair accessibility, delivery, takeaway
+- Web research for parking, reservations, opening hours completeness
+- Some fields available from Google Places API response (extend `enrich_google_stratford.py`)
 
-#### Task 2.2: Upload Methodology Spec to Repo
-- Add `UK-Restaurant-Tracker-Methodology-Spec.docx` to repo (or convert to .md)
-- Claude Code needs this as reference for the scoring engine rewrite
+**Tier 5 — Menu & Offering**
+- Scrape restaurant websites for online menu presence
+- Count dietary options (vegan, gluten-free, halal, etc.) from menus
+- Extract cuisine tags from Google types + menu analysis
 
-### PRIORITY 3: Scoring Engine — FULL REWRITE of restaurant_confidence.py
+**Tier 6 — Reputation & Awards**
+- Scrape Michelin Guide (guide.michelin.com) for stars/Bib Gourmand
+- AA Restaurant Guide for rosette ratings
+- Local food award lists (regional tourism boards, local press)
 
-The current `restaurant_confidence.py` is a basic scaffold that does NOT implement the methodology spec. It must be completely rewritten to implement the full Evidtrace 7-stage pipeline.
-
-#### RCS Methodology Spec Summary (from UK-Restaurant-Tracker-Methodology-Spec.docx)
-
-**Source Credibility Priors (SCP):**
-| Source | SCP | Update Freq |
-|---|---|---|
-| FSA Food Hygiene | 0.92 | Inspection-driven |
-| Google Places | 0.72 | Real-time |
-| TripAdvisor | 0.68 | Real-time |
-| Michelin/Good Food Guide | 0.90 | Annual |
-| Local Press/Food Critics | 0.75 | Irregular |
-| Environmental Health Records | 0.94 | Event-driven |
-
-**Signal Normalisation (all to 0-10 scale):**
-- FSA: `(hygiene_rating / 5) * 10`
-- Google: `(star_rating / 5) * 10`
-- TripAdvisor: `(star_rating / 5) * 10`
-- Editorial: award tier score (Michelin 3→10, 2→9, 1→8, Bib→7; GFG proportional)
-- Enforcement: `10 - (penalty_count * severity_weight)`
-
-**Category Weights:**
-| Signal Category | Weight | Rationale |
-|---|---|---|
-| Food Hygiene (FSA) | 0.20 | Statutory safety baseline |
-| Primary Review (Google) | 0.25 | Largest review corpus |
-| Secondary Review (TripAdvisor) | 0.12 | Tourist-skewed but useful for convergence |
-| Editorial Recognition | 0.18 | Expert judgment, high signal-to-noise |
-| Review Consistency | 0.15 | Penalises high variance across sources |
-| Recency Trend | 0.10 | Temporal weighting recent vs historical |
-
-**7-Stage Scoring Pipeline:**
-1. **NORMALISE** — Raw signals to 0-10 scale
-2. **TEMPORAL DECAY** — `T_weight(t) = e^(-λt)` where λ=0.0023 (300-day half-life). Signals >18 months flagged stale. >24 months excluded.
-3. **PENALTY RULES** — 16+ rules across 5 groups (Review Integrity, Hygiene, Editorial, Consistency, Temporal). Multipliers 0.60x to 1.05x boost. Anti-accumulation cap: 4 most severe at full weight, additional at 0.95x each.
-4. **WEIGHTED AGGREGATION** — `RCS_base = Σ(w_i * SCP_i * S_i) / Σ(w_i * SCP_i)`
-5. **CONVERGENCE ADJUSTMENT** — Pairwise divergence matrix with source-pair credibility weighting. `C_factor = 1.0 - α * D_weighted` where α=0.15. Divergence flags: HYGIENE-RATING SPLIT, REVIEW PLATFORM CONFLICT, EDITORIAL ORPHAN, STALE CONSENSUS.
-6. **CALIBRATION CORRECTION** — Ground-truth cases (known-excellent, known-problematic, known-mid-range). Target: correct+close ≥ 75%.
-7. **TIER ASSIGNMENT** — Exceptional (8.5-10), Recommended (7.0-8.4), Acceptable (5.0-6.9), Caution (3.0-4.9), Avoid (0.0-2.9). Confidence bands widen as scores decrease.
-
-**Penalty Rules (16+ rules):**
-- Review Integrity: fake review spike (0.75x), review bombing (0.80x), owner response rate (1.03x boost), low review volume (0.90x)
-- Hygiene: FSA rating decline (0.80x), enforcement action (0.60x), score improvement post-action (0.95x), awaiting inspection (0.88x)
-- Editorial: award recency >2yr (0.90x), multi-guide recognition (1.05x boost), guide delisting (0.78x)
-- Consistency: rating-hygiene divergence (0.85x), platform divergence (0.88x), sentiment-rating mismatch (0.90x)
-- Temporal: declining trend (0.88x), improving trend (1.04x boost), new establishment <6mo (0.92x)
-
-### PRIORITY 4: UI Updates Post-Scoring Engine
-
-#### Task 4.1: RCS Score Display
-- Replace current FSA-only tier badges with RCS-based tiers
-- Show RCS score (0-10) as primary metric in results
-- Show confidence level (High/Medium/Low)
-- Expandable details show: individual source scores, divergence flags, penalties applied, score breakdown
-
-#### Task 4.2: Map Colours Based on RCS
-- Update map marker colours to use RCS tiers instead of FSA rating
-- Exceptional=green, Recommended=teal, Acceptable=amber, Caution=orange, Avoid=red
-
-### PRIORITY 5: Additional Data Sources
-
-#### Task 5.1: TripAdvisor Integration
-- Add ta (TripAdvisor rating), trc (review count) fields to Firebase schema
-- Build enrichment script similar to enrich_places.py
-
-#### Task 5.2: Editorial Scanning
-- Brave Search API for editorial mentions/reviews
-- Michelin/Good Food Guide recognition data
-
-#### Task 5.3: Environmental Health Records
-- FSA enforcement actions data
-
-### PRIORITY 6: Calibration Framework
-- Build calibration case set (known-excellent, known-problematic, known-mid-range restaurants)
-- Implement accuracy metrics (correct + close ≥ 75%)
-- Calibration feedback loop for rule adjustment
+**Tier 7 — Community & Engagement**
+- Google Places API: owner response rate to reviews
+- Web research: community events, loyalty programs
+- Calculate average response time from review timestamps
 
 ---
 
-## Environment Variables Required
-- `GOOGLE_PLACES_API_KEY` — For enrich_places.py
-- Firebase config is embedded in index.html (public read-only)
+## Repository Files
+
+### Core Scripts
+| File | Description |
+|---|---|
+| `rcs_scoring_stratford.py` | V2 RCS scoring engine — 35 signals, 7 tiers, 0-10 scale, unique rankings |
+| `run_daydine.py` | Pipeline orchestrator — coordinates all tiers and scoring |
+| `restaurant_confidence.py` | V1 scoring engine (legacy, superseded by V2) |
+| `enrich_places.py` | Google Places enrichment for any LA via Firebase (local use) |
+| `fetch_stratford.py` | Fetch Stratford data from Firebase RTDB (local use) |
+
+### GitHub Actions Scripts
+| File | Description |
+|---|---|
+| `.github/scripts/fetch_firebase_stratford.py` | Fetches Stratford-on-Avon data from Firebase RTDB |
+| `.github/scripts/enrich_google_stratford.py` | Enriches establishments with Google Places API data |
+| `.github/scripts/merge_enrichment.py` | Merges Google enrichment into establishments JSON |
+| `.github/scripts/collect_tripadvisor.py` | Scrapes TripAdvisor for ratings, reviews, cuisine tags |
+| `.github/scripts/merge_tripadvisor.py` | Merges TripAdvisor data into establishments JSON |
+| `.github/scripts/collect_menus.py` | Collects menu, dietary, cuisine data from websites |
+| `.github/scripts/merge_menus.py` | Merges menu data into establishments JSON |
+| `.github/scripts/collect_editorial.py` | Checks Michelin Guide, AA, GFG for awards |
+| `.github/scripts/merge_editorial.py` | Merges editorial/awards data into establishments JSON |
+| `.github/scripts/collect_enforcement.py` | Queries FSA API for enforcement actions |
+| `.github/scripts/merge_enforcement.py` | Merges enforcement data into establishments JSON |
+| `.github/scripts/classify_remaining.py` | Tier 3 web-lookup category classifier (stub) |
+| `.github/scripts/fetch_fsa_stratford.py` | FSA API fetcher (unused — Firebase used instead) |
+
+### GitHub Actions Workflows
+| File | Description |
+|---|---|
+| `.github/workflows/fetch_and_score.yml` | Fetch Firebase data → run RCS scoring → commit results |
+| `.github/workflows/enrich_and_score.yml` | Fetch Firebase → Google enrichment → merge → score → commit |
+| `.github/workflows/collect_tripadvisor.yml` | Fetch Firebase → Google merge → TripAdvisor scrape → merge → score → commit |
+| `.github/workflows/collect_menus.yml` | Collect menu/dietary data → merge → score → commit |
+| `.github/workflows/collect_editorial.yml` | Collect editorial/awards data → merge → score → commit |
+
+### Data Files
+| File | Description |
+|---|---|
+| `stratford_establishments.json` | 208 Stratford-on-Avon establishments from Firebase RTDB |
+| `stratford_rcs_scores.csv` | Scored results with rank, per-tier scores, final RCS, band |
+| `stratford_rcs_summary.json` | Summary stats: mean, median, band distribution |
+
+### Frontend & Config
+| File | Description |
+|---|---|
+| `index.html` | Single-page app (Firebase + Leaflet + postcodes.io) |
+| `firebase-rules.json` | RTDB rules (public read, no write) |
+| `vercel.json` | Vercel deployment config |
+| `UK-Restaurant-Tracker-Methodology-Spec-V2.docx` | Full V2 methodology specification |
+| `.claude/CLAUDE.md` | This file — project state and instructions |
+
+### Firebase RTDB Structure
+- Path: `daydine/establishments/{fhrsid}`
+- Fields: `n` (name), `a` (address), `pc` (postcode), `la` (local authority), `r` (FSA rating 1-5), `rd` (rating date), `s` (overall score 0-10), `sh` (hygiene sub 0-10), `ss` (structural sub 0-10), `sm` (management sub 0-10), `lat`, `lon`, `id` (FHRSID), `t` (business type)
+- Google enrichment fields (when populated): `gr`, `grc`, `gpl`, `gpc`, `gty`, `gpid`, `goh`
+
+---
+
+## Environment Variables
+- `GOOGLE_PLACES_API_KEY` — GitHub repo secret. Used by `enrich_google_stratford.py` and `sanity_check_coverage.py`
+- `APIFY_TOKEN` — GitHub repo secret (needs adding). Used by `collect_tripadvisor_apify.py`. Get from apify.com/account/integrations
+- Firebase RTDB URL — public read, hardcoded: `https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app`
+- Firebase config — embedded in `index.html` (public read-only)
 
 ## Tech Stack
-- Frontend: Vanilla HTML/CSS/JS, Firebase Realtime Database, Leaflet.js, postcodes.io API
-- Backend scripts: Python (enrich_places.py, restaurant_confidence.py)
-- Hosting: Vercel (auto-deploys from main branch)
-- Database: Firebase Realtime Database (recursive-research-eu project)
+- **Frontend**: Vanilla HTML/CSS/JS, Firebase Realtime Database, Leaflet.js, postcodes.io API
+- **Scoring engine**: Python 3.11 (`rcs_scoring_stratford.py`)
+- **Data pipeline**: Python scripts + GitHub Actions workflows
+- **Hosting**: Vercel (auto-deploys from `main` branch)
+- **Database**: Firebase Realtime Database (recursive-research-eu project, EU West 1)
+
+---
+
+## V2 Methodology Spec vs Implementation — Gaps
+
+The `UK-Restaurant-Tracker-Methodology-Spec-V2.docx` defines a more comprehensive system than what is currently implemented. Key differences:
+
+| Aspect | V2 Spec | Current Implementation |
+|---|---|---|
+| Signals | 36 | 35 (close match) |
+| Tier names | Safety & Compliance, Consumer Reviews, Editorial & Awards, Social Presence, Digital Presence, Cross-Source Consistency, Value & Accessibility | FSA, Google, Online Presence, Operational, Menu, Reputation, Community |
+| Tier weights | 0.16/0.23/0.18/0.12/0.08/0.13/0.10 | 0.30/0.20/0.15/0.15/0.10/0.05/0.05 |
+| Rating bands | 5 bands (Exceptional/Recommended/Acceptable/Caution/Avoid) | 6 bands (Excellent/Good/Generally Satisfactory/Improvement Necessary/Major Improvement/Urgent Improvement) |
+| Band thresholds | 8.5/7.0/5.0/3.0/0.0 | 8.0/6.5/5.0/3.5/2.0/0.0 |
+| Penalty rules | 34 rules in 6 groups | 6 rules (core penalties only) |
+| SCP weighting | Full SCP priors per signal | Not implemented (simplified weighted average) |
+| Convergence | Intra-tier + inter-tier pairwise divergence | Not implemented yet |
+| Temporal decay | e^(-λt) with λ=0.0023 | Not implemented yet |
+| Calibration | Ground-truth correction (β offset) | Passthrough (no calibration data yet) |
+| Tiebreakers | Not specified | Implemented (unique rankings guaranteed) |
+| Scale | 0-10 | 0-10 (matches) |
+
+**The spec .docx needs updating** to reflect:
+- The 6-band system (not 5)
+- Updated tier weights (FSA 30% not 16%)
+- Tiebreaker/unique ranking requirement
+- Simplified penalty rules for MVP
+
+---
+
+## Next Steps (Priority Order)
+
+### 1. Google Places Enrichment
+- Add `GOOGLE_PLACES_API_KEY` to GitHub repo secrets
+- Trigger `enrich_and_score.yml` workflow
+- Expected: Tier 2 signals populated for ~180+ of 208 establishments
+
+### 2. Expand Penalty Rules
+- Implement remaining 28 penalty rules from V2 spec
+- Add SCP weighting to aggregation formula
+- Add temporal decay (λ=0.0023, 300-day half-life)
+
+### 3. Build Tier 3-7 Data Collection
+- Priority: Tier 3 (Online Presence) and Tier 6 (Reputation) — highest impact signals
+- Use web research APIs (Brave Search, Perplexity) for presence detection
+- Scrape Michelin/AA guides for award data
+
+### 4. UI Integration
+- Show RCS score (0-10) as primary metric in search results
+- Replace FSA-only tier badges with RCS-based bands
+- Update map marker colours to RCS bands
+
+### 5. Scale Beyond Stratford
+- Run pipeline for other local authorities (start with London boroughs)
+- Automate nightly scoring via GitHub Actions cron
