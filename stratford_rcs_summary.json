@@ -1,37 +1,37 @@
 {
-  "count": 208,
-  "ranked": 194,
+  "count": 238,
+  "ranked": 215,
   "not_ranked": 12,
-  "insufficient_data": 2,
-  "mean": 7.86,
-  "median": 8.11,
-  "min": 2.0,
+  "insufficient_data": 11,
+  "mean": 7.65,
+  "median": 8.04,
+  "min": 1.09,
   "max": 8.95,
-  "stdev": 1.0,
+  "stdev": 1.23,
   "band_distribution": {
     "Excellent": {
       "count": 115,
-      "pct": 55.3
+      "pct": 48.3
     },
     "Good": {
-      "count": 69,
-      "pct": 33.2
+      "count": 74,
+      "pct": 31.1
     },
     "Generally Satisfactory": {
-      "count": 4,
-      "pct": 1.9
+      "count": 16,
+      "pct": 6.7
     },
     "Improvement Necessary": {
-      "count": 4,
-      "pct": 1.9
+      "count": 7,
+      "pct": 2.9
     },
     "Major Improvement": {
       "count": 2,
-      "pct": 1.0
+      "pct": 0.8
     },
     "Urgent Improvement": {
-      "count": 0,
-      "pct": 0.0
+      "count": 1,
+      "pct": 0.4
     }
   },
   "rankings_by_category": {
@@ -146,7 +146,7 @@
       ]
     },
     "Cafe / Coffee Shop": {
-      "count": 53,
+      "count": 55,
       "top_5": [
         {
           "rank": 1,
@@ -190,13 +190,13 @@
           "band": "Excellent"
         },
         {
-          "rank": 178,
+          "rank": 181,
           "name": "Earlswood Lunch Club",
           "rcs": 6.956,
           "band": "Good"
         },
         {
-          "rank": 187,
+          "rank": 199,
           "name": "CAMEO Lunch Club",
           "rcs": 5.72,
           "band": "Generally Satisfactory"
@@ -213,13 +213,13 @@
           "band": "Good"
         },
         {
-          "rank": 179,
+          "rank": 182,
           "name": "New Summer Palace Restaurant",
           "rcs": 6.955,
           "band": "Good"
         },
         {
-          "rank": 189,
+          "rank": 209,
           "name": "China Garden",
           "rcs": 4.0,
           "band": "Improvement Necessary"
@@ -262,7 +262,7 @@
       ]
     },
     "Food & Drink": {
-      "count": 3,
+      "count": 15,
       "top_5": [
         {
           "rank": 6,
@@ -280,6 +280,18 @@
           "rank": 145,
           "name": "Paul's Catering",
           "rcs": 7.643,
+          "band": "Good"
+        },
+        {
+          "rank": 168,
+          "name": "CFINE - COMMUNITY FOOD INITIATIVES NORTH EAST",
+          "rcs": 7.341,
+          "band": "Good"
+        },
+        {
+          "rank": 176,
+          "name": "ANN'C",
+          "rcs": 7.074,
           "band": "Good"
         }
       ]
@@ -427,7 +439,7 @@
           "band": "Good"
         },
         {
-          "rank": 175,
+          "rank": 177,
           "name": "Tzatziki34",
           "rcs": 7.067,
           "band": "Good"
@@ -435,7 +447,7 @@
       ]
     },
     "Other": {
-      "count": 9,
+      "count": 16,
       "top_5": [
         {
           "rank": 11,
@@ -598,8 +610,8 @@
     }
   },
   "signals_coverage": {
-    "available_per_record_avg": 15.1,
+    "available_per_record_avg": 14.2,
     "total_possible": 35
   },
-  "generated_at": "2026-03-31T00:50:59.602517+00:00"
+  "generated_at": "2026-03-31T07:51:04.750812+00:00"
 }

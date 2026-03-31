@@ -1,0 +1,324 @@
+{
+  "our_count": 238,
+  "missing_from_our_data": [
+    {
+      "name": "The Golden Bee - JD Wetherspoon",
+      "address": "41-42 Sheep St, Stratford-upon-Avon CV37 6EE",
+      "rating": 4,
+      "reviews": 4929,
+      "best_match_score": 0.53
+    },
+    {
+      "name": "Caffeine & Machine: The Hill",
+      "address": "Caffeine and Machine Ltd, Ettington, Stratford-upon-Avon CV37 7NS",
+      "rating": 4.7,
+      "reviews": 4577,
+      "best_match_score": 0.55
+    },
+    {
+      "name": "Boston Tea Party",
+      "address": "St Gregory's Hall, Henley St, Stratford-upon-Avon CV37 6QW",
+      "rating": 4.7,
+      "reviews": 3380,
+      "best_match_score": 0.53
+    },
+    {
+      "name": "Dirty Duck",
+      "address": "Waterside, Stratford-upon-Avon CV37 6BA",
+      "rating": 4.4,
+      "reviews": 3257,
+      "best_match_score": 0.42
+    },
+    {
+      "name": "Premier Inn Stratford Upon Avon Waterways hotel",
+      "address": "The Waterways, Birmingham Rd, Stratford-upon-Avon CV37 0AZ",
+      "rating": 4.3,
+      "reviews": 1687,
+      "best_match_score": 0.59
+    },
+    {
+      "name": "The White Swan Hotel, Stratford",
+      "address": "Rother St, Stratford-upon-Avon CV37 6NH",
+      "rating": 4.5,
+      "reviews": 1681,
+      "best_match_score": 0.55
+    },
+    {
+      "name": "The Welcombe Hotel, BW Premier Collection",
+      "address": "Warwick Rd, Stratford-upon-Avon CV37 0NR",
+      "rating": 4,
+      "reviews": 1394,
+      "best_match_score": 0.57
+    },
+    {
+      "name": "The Baraset Barn",
+      "address": "Pimlico Ln, Stratford-upon-Avon CV37 7RJ",
+      "rating": 4.6,
+      "reviews": 1032,
+      "best_match_score": 0.57
+    },
+    {
+      "name": "Premier Inn Stratford Upon Avon Central hotel",
+      "address": "Payton St, Stratford-upon-Avon CV37 6UQ",
+      "rating": 4.1,
+      "reviews": 861,
+      "best_match_score": 0.58
+    },
+    {
+      "name": "The Rooftop Restaurant at the Royal Shakespeare Theatre",
+      "address": "3rd Floor, Royal Shakespeare Theatre, Waterside, Stratford-upon-Avon CV37 6BB",
+      "rating": 4.4,
+      "reviews": 509,
+      "best_match_score": 0.49
+    },
+    {
+      "name": "Osteria Da Gino",
+      "address": "7-9 Union St, Stratford-upon-Avon CV37 6QT",
+      "rating": 4.5,
+      "reviews": 475,
+      "best_match_score": 0.48
+    },
+    {
+      "name": "M&S Foodhall",
+      "address": "Butcher Row, Maybird Retail Park, 25-31 Birmingham Rd, Stratford-upon-Avon CV37 0HZ",
+      "rating": 4.5,
+      "reviews": 289,
+      "best_match_score": 0.45
+    },
+    {
+      "name": "Café Cocktail",
+      "address": "3, Windsor Court, Greenhill St, Stratford-upon-Avon CV37 6GG",
+      "rating": 4.9,
+      "reviews": 273,
+      "best_match_score": 0.46
+    },
+    {
+      "name": "Grace & Savour",
+      "address": "Hampton Manor, Shadowbrook Ln, Hampton in Arden, Solihull B92 0EN",
+      "rating": 4.8,
+      "reviews": 226,
+      "best_match_score": 0.58
+    },
+    {
+      "name": "The Royal Oak",
+      "address": "The Royal Oak, Whatcote, Shipston-on-Stour CV36 5EF",
+      "rating": 4.8,
+      "reviews": 207,
+      "best_match_score": 0.54
+    }
+  ],
+  "non_food_suspects": [
+    {
+      "fhrsid": "1896718",
+      "name": "Birmingham City Football Club Ltd",
+      "postcode": "B95 6AB",
+      "reason": "name_match: football club",
+      "fsa_rating": 5,
+      "google_types": [
+        "establishment",
+        "sports_club",
+        "association_or_organization",
+        "point_of_interest"
+      ]
+    },
+    {
+      "fhrsid": "1927834",
+      "name": "Golden Putter Stratford Upon",
+      "postcode": "CV37 7LS",
+      "reason": "google_types: {'miniature_golf_course'}",
+      "fsa_rating": null,
+      "google_types": [
+        "point_of_interest",
+        "miniature_golf_course",
+        "establishment"
+      ]
+    },
+    {
+      "fhrsid": "503585",
+      "name": "Redwings Horse Sanctuary",
+      "postcode": "CV35 0RP",
+      "reason": "name_match: horse sanctuary",
+      "fsa_rating": 5,
+      "google_types": [
+        "tourist_attraction",
+        "service",
+        "visitor_center",
+        "association_or_organization",
+        "tourist_information_center"
+      ]
+    },
+    {
+      "fhrsid": "503141",
+      "name": "NFU Mutual",
+      "postcode": "CV37 7BJ",
+      "reason": "name_match: nfu mutual",
+      "fsa_rating": 5,
+      "google_types": [
+        "establishment",
+        "point_of_interest",
+        "insurance_agency",
+        "service"
+      ]
+    },
+    {
+      "fhrsid": "503054",
+      "name": "Stratford Manor Hotel",
+      "postcode": "CV37 0PY",
+      "reason": "google_types: {'gym'}",
+      "fsa_rating": 5,
+      "google_types": [
+        "service",
+        "hotel",
+        "event_venue",
+        "health",
+        "gym"
+      ]
+    },
+    {
+      "fhrsid": "1584574",
+      "name": "Stratford On Avon Golf Club",
+      "postcode": "CV37 7BA",
+      "reason": "name_match: golf club",
+      "fsa_rating": 5,
+      "google_types": [
+        "sports_school",
+        "sports_club",
+        "store",
+        "association_or_organization",
+        "athletic_field"
+      ]
+    },
+    {
+      "fhrsid": "1927833",
+      "name": "Slimming World",
+      "postcode": "CV35 0FA",
+      "reason": "name_match: slimming world",
+      "fsa_rating": null,
+      "google_types": [
+        "establishment",
+        "sports_club",
+        "association_or_organization",
+        "point_of_interest"
+      ]
+    },
+    {
+      "fhrsid": "1453409",
+      "name": "Bidford Juniors Football Club",
+      "postcode": "",
+      "reason": "name_match: football club",
+      "fsa_rating": 5,
+      "google_types": [
+        "establishment",
+        "sports_club",
+        "association_or_organization",
+        "point_of_interest"
+      ]
+    },
+    {
+      "fhrsid": "736236",
+      "name": "JNB Cafe",
+      "postcode": "CV37 0ER",
+      "reason": "google_types: {'gym'}",
+      "fsa_rating": 5,
+      "google_types": [
+        "sports_school",
+        "sports_complex",
+        "gym",
+        "sports_activity_location",
+        "health"
+      ]
+    },
+    {
+      "fhrsid": "1781021",
+      "name": "Stratford Upon Avon Baptist Church",
+      "postcode": "CV37 6UA",
+      "reason": "name_match: baptist church",
+      "fsa_rating": 5,
+      "google_types": [
+        "place_of_worship",
+        "association_or_organization",
+        "church",
+        "point_of_interest",
+        "establishment"
+      ]
+    },
+    {
+      "fhrsid": "1721314",
+      "name": "Aston Martin Lagonda",
+      "postcode": "CV35 0DB",
+      "reason": "name_match: aston martin",
+      "fsa_rating": 5,
+      "google_types": [
+        "manufacturer",
+        "establishment",
+        "point_of_interest"
+      ]
+    },
+    {
+      "fhrsid": "1754519",
+      "name": "Nanas Caff",
+      "postcode": "CV37 9NQ",
+      "reason": "google_types: {'real_estate_agency'}",
+      "fsa_rating": 5,
+      "google_types": [
+        "real_estate_agency",
+        "point_of_interest",
+        "establishment",
+        "service"
+      ]
+    },
+    {
+      "fhrsid": "1467814",
+      "name": "Stratford Adventure Golf",
+      "postcode": "CV37 7LS",
+      "reason": "google_types: {'sports_club'}",
+      "fsa_rating": 5,
+      "google_types": [
+        "establishment",
+        "sports_club",
+        "association_or_organization",
+        "point_of_interest"
+      ]
+    },
+    {
+      "fhrsid": "1756585",
+      "name": "Annie's Cafe & Event Catering",
+      "postcode": "B49 5QF",
+      "reason": "google_types: {'sports_club'}",
+      "fsa_rating": 5,
+      "google_types": [
+        "establishment",
+        "sports_club",
+        "association_or_organization",
+        "point_of_interest"
+      ]
+    },
+    {
+      "fhrsid": "504050",
+      "name": "Bishops Bowls Lake Cafe",
+      "postcode": "CV47 2SR",
+      "reason": "google_types: {'sports_club'}",
+      "fsa_rating": 3,
+      "google_types": [
+        "establishment",
+        "sports_club",
+        "association_or_organization",
+        "point_of_interest"
+      ]
+    },
+    {
+      "fhrsid": "1131857",
+      "name": "Stratford Town FC",
+      "postcode": "CV37 7BZ",
+      "reason": "google_types: {'sports_club'}",
+      "fsa_rating": 5,
+      "google_types": [
+        "establishment",
+        "sports_club",
+        "association_or_organization",
+        "point_of_interest"
+      ]
+    }
+  ],
+  "external_searches": []
+}
