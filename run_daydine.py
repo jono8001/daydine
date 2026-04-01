@@ -18,8 +18,8 @@ Tier pipeline:
     4. Collect & merge menu data (Tier 5: Menu & Offering)
     5. Collect & merge editorial data (Tier 6: Reputation & Awards)
     6. Collect & merge enforcement data (FSA enforcement)
-    7. Run V2 RCS scoring engine
-    8. Output CSV + summary JSON
+    7. Run V3.4 RCS scoring engine
+    8. Output CSV + summary JSON + report
 """
 
 import argparse
