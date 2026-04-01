@@ -209,6 +209,91 @@ def _generate_recs(venue, scorecard, benchmarks, deltas):
                     "rec_type": "watch",
                 })
 
+        # Weakest dimension vs peers — always generates a watch item
+        for dim in ["experience", "visibility", "trust", "conversion", "prestige"]:
+            dim_data = ring1.get("dimensions", {}).get(dim)
+            if dim_data and dim_data.get("percentile") is not None:
+                if dim_data["percentile"] < 40:
+                    recs.append({
+                        "theme": dim, "dimension": dim,
+                        "title": f"{dim.title()} below peer average",
+                        "description": (f"Your {dim.title()} score ({dim_data['score']:.1f}) "
+                                        f"sits at P{dim_data['percentile']} vs local peers "
+                                        f"(avg {dim_data['peer_mean']:.1f}). "
+                                        f"Monitor for further decline."),
+                        "evidence": f"{dim}_pct={dim_data['percentile']}",
+                        "owner": "management", "priority_score": 5.5,
+                        "expected_upside": f"+{dim_data['peer_mean'] - dim_data['score']:.1f} {dim.title()} to reach parity",
+                        "confidence": 0.65, "rec_type": "watch",
+                    })
+
+    # --- Opportunity recs for strong venues ---
+    # These ensure even top performers get actionable intelligence
+
+    # Review volume growth opportunity
+    grc = venue.get("grc")
+    if grc is not None and 20 <= int(grc) < 200:
+        recs.append({
+            "theme": "visibility", "dimension": "visibility",
+            "title": "Accelerate review volume toward 200+",
+            "description": (f"At {grc} reviews, your rating is credible but not dominant. "
+                            "Venues with 200+ reviews rank higher in Google Maps. "
+                            "Consider post-visit SMS/email review prompts."),
+            "evidence": f"grc={grc}",
+            "owner": "marketing", "priority_score": 5.0,
+            "expected_upside": "+0.5 Visibility, improved Google Maps ranking",
+            "confidence": 0.75, "rec_type": "action",
+        })
+
+    # GBP completeness opportunity
+    gbp = venue.get("gbp_completeness")
+    if gbp is not None and float(gbp) < 8.0:
+        recs.append({
+            "theme": "visibility", "dimension": "visibility",
+            "title": "Complete your Google Business Profile",
+            "description": (f"GBP completeness is {gbp}/10. Complete profiles get "
+                            "70% more direction requests. Add photos, menu link, "
+                            "booking link, and business description."),
+            "evidence": f"gbp_completeness={gbp}",
+            "owner": "marketing", "priority_score": 4.5,
+            "expected_upside": "+0.5 Visibility",
+            "confidence": 0.8, "rec_type": "action",
+        })
+
+    # Prestige opportunity for strong venues
+    overall_score = scorecard.get("overall")
+    if overall_score and overall_score >= 7.5:
+        if not venue.get("has_michelin_mention") and not venue.get("has_aa_rating"):
+            recs.append({
+                "theme": "prestige", "dimension": "prestige",
+                "title": "Pursue editorial recognition",
+                "description": ("Your operational scores support a credible submission "
+                                "to the AA Restaurant Guide or local food awards. "
+                                "Editorial recognition would differentiate you from "
+                                "peers and justify premium positioning."),
+                "evidence": f"overall={overall_score}",
+                "owner": "management", "priority_score": 3.5,
+                "expected_upside": "+2.0 Prestige, brand differentiation",
+                "confidence": 0.5, "rec_type": "action",
+            })
+
+    # Conversion optimisation for venues with high experience but low conversion
+    exp = scorecard.get("experience")
+    conv = scorecard.get("conversion")
+    if exp and conv and exp >= 7.0 and conv < 6.0:
+        recs.append({
+            "theme": "conversion", "dimension": "conversion",
+            "title": "Close the experience-to-conversion gap",
+            "description": ("Strong experience score but low conversion readiness "
+                            "means you're delivering a good product that customers "
+                            "can't easily access. Ensure hours, menu, and ordering "
+                            "options are visible online."),
+            "evidence": f"experience={exp}, conversion={conv}",
+            "owner": "operations", "priority_score": 6.0,
+            "expected_upside": "+1.5 Conversion",
+            "confidence": 0.8, "rec_type": "action",
+        })
+
     return recs
 
 
@@ -292,11 +377,86 @@ def generate_recommendations(venue, scorecard, benchmarks, deltas, month_str):
     watches = sorted([r for r in active if r.get("rec_type") == "watch"],
                      key=lambda x: -x["priority_score"])
 
-    # What not to do: lowest-priority action that might be tempting
+    # --- Guarantee 3 actions, 2 watches, 1 what-not-to-do ---
+
+    # If fewer than 3 actions, promote watches or add standing recs
+    if len(actions) < 3 and len(watches) > 2:
+        # Promote lowest-priority watches to actions
+        while len(actions) < 3 and watches:
+            promoted = watches.pop()
+            promoted["rec_type"] = "action"
+            actions.append(promoted)
+        actions.sort(key=lambda x: -x["priority_score"])
+
+    # Standing recommendations for strong venues that generate few issues
+    _STANDING_ACTIONS = [
+        {"theme": "visibility", "dimension": "visibility",
+         "title": "Respond to recent Google reviews",
+         "description": "Active review responses signal engagement to both Google's "
+                        "algorithm and prospective customers. Aim to respond to all "
+                        "reviews within 48 hours, especially critical ones.",
+         "evidence": "standing_best_practice", "owner": "front-of-house",
+         "priority_score": 4.0, "expected_upside": "Review engagement, discovery signal",
+         "confidence": 0.8, "rec_type": "action", "status": "new"},
+        {"theme": "trust", "dimension": "trust",
+         "title": "Audit compliance documentation ahead of next inspection",
+         "description": "Even with a strong FSA record, proactive documentation review "
+                        "ensures you maintain rating 5 at the next unannounced inspection. "
+                        "Check HACCP logs, allergen records, and cleaning schedules.",
+         "evidence": "standing_best_practice", "owner": "compliance",
+         "priority_score": 3.5, "expected_upside": "Protect Trust score",
+         "confidence": 0.85, "rec_type": "action", "status": "new"},
+        {"theme": "experience", "dimension": "experience",
+         "title": "Review the last 10 Google reviews for pattern shifts",
+         "description": "Even highly-rated venues develop blind spots. Read the most "
+                        "recent 10 reviews looking for recurring minor complaints — "
+                        "these are early warning signals before they affect your rating.",
+         "evidence": "standing_best_practice", "owner": "operations",
+         "priority_score": 3.0, "expected_upside": "Early issue detection",
+         "confidence": 0.7, "rec_type": "action", "status": "new"},
+    ]
+    standing_idx = 0
+    while len(actions) < 3 and standing_idx < len(_STANDING_ACTIONS):
+        actions.append(_STANDING_ACTIONS[standing_idx])
+        standing_idx += 1
+
+    # Guarantee 2 watches
+    _STANDING_WATCHES = [
+        {"theme": "competitive", "dimension": "overall",
+         "title": "Monitor local competitor openings and closures",
+         "description": "New entrants or closures in your category within 5 miles "
+                        "can shift your competitive position. Stay aware of planning "
+                        "applications and social media announcements.",
+         "evidence": "standing_market_awareness", "owner": "management",
+         "priority_score": 3.0, "expected_upside": "Market awareness",
+         "confidence": 0.6, "rec_type": "watch", "status": "new"},
+        {"theme": "visibility", "dimension": "visibility",
+         "title": "Track Google rating trend month-over-month",
+         "description": "A sustained 0.1-point drop over 3 months can indicate "
+                        "systemic issues before they become obvious. Monitor monthly.",
+         "evidence": "standing_monitoring", "owner": "management",
+         "priority_score": 2.5, "expected_upside": "Early warning",
+         "confidence": 0.7, "rec_type": "watch", "status": "new"},
+    ]
+    standing_w_idx = 0
+    while len(watches) < 2 and standing_w_idx < len(_STANDING_WATCHES):
+        watches.append(_STANDING_WATCHES[standing_w_idx])
+        standing_w_idx += 1
+
+    # What not to do: lowest-priority action beyond top 3, or standing fallback
     dont = None
     if len(actions) > 3:
-        dont = actions[-1]
-        dont["_reason"] = "Low impact relative to effort — deprioritise this month."
+        dont = actions[3]
+        dont["_reason"] = ("Low impact relative to effort this month. Spending time here "
+                           "diverts attention from the three actions above that will "
+                           "move your scores more effectively.")
+    else:
+        dont = {"title": "Don't chase prestige before fixing fundamentals",
+                "_reason": ("Avoid spending time on awards submissions, PR, or premium "
+                            "positioning until Experience, Trust, and Visibility scores "
+                            "are all above 7.0. The fundamentals compound into commercial "
+                            "value; prestige without substance doesn't."),
+                "dimension": "prestige", "status": "new"}
 
     return {
         "priority_actions": actions[:3],
