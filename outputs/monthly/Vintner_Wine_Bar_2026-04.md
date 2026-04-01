@@ -219,40 +219,67 @@ This section compares what customers see (public signals) against what the data 
 
 **Based on 5 customer reviews with full text analysis.**
 
+### Rating & Volume Context
+
+- 887 reviews — strong base. Rating is stable but a sustained negative pattern could shift it.
+- 4.6/5 places you in the top tier of Google search results. This drives discovery.
+- **Sample vs aggregate:** Analysed reviews average 4.8★ vs overall 4.6/5. Recent/prominent reviews skew higher than the lifetime average — may indicate improvement or selection bias in Google's 'most relevant' algorithm.
+
+### Sentiment Distribution
+
+Of 5 reviews analysed: **5 positive**, **0 negative**, **0 mixed**.
+
+All sampled reviews are positive. This is encouraging but note that Google's 'most relevant' algorithm tends to surface popular reviews. Negative signals may exist deeper in the review corpus.
+
 ### Sentiment by Topic
 
-| Topic | Score | + | - | Read |
-|-------|------:|--:|--:|------|
-| Food Quality | 10.0/10 | 3 | 0 | Strength |
-| Service & Hospitality | 10.0/10 | 7 | 0 | Strength |
-| Atmosphere & Setting | 10.0/10 | 3 | 0 | Strength |
-| Value for Money | 10.0/10 | 1 | 0 | Strength |
-| Speed & Efficiency | 10.0/10 | 1 | 0 | Strength |
+| Topic | Score | Positive | Negative | Total | Read |
+|-------|------:|---------:|---------:|------:|------|
+| Service & Hospitality | 10.0/10 | 7 | 0 | 7 | Strength |
+| Atmosphere & Setting | 10.0/10 | 3 | 0 | 3 | Strength |
+| Food Quality | 10.0/10 | 3 | 0 | 3 | Strength |
+| Value for Money | 10.0/10 | 1 | 0 | 1 | Strength |
+| Booking & Accessibility | 10.0/10 | 1 | 0 | 1 | Strength |
 
 ### What Customers Praise
 
-**Service & Hospitality** (7 mentions)
-> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly!"*
-> *"Vintner provided great pre-theatre service helped us get to our showing on time.
+**Service & Hospitality** (7 positive mentions)
+> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
+> *"The staff were attentive throughout, checking in at the right moments"*
 
-I had the vegan risotto, which was solid and what I was looking for."*
+**Atmosphere & Setting** (3 positive mentions)
+> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
 
-**Food Quality** (3 mentions)
-> *"This was our second visit to The Vinter, & it didn’t disappoint! We come to Stratford several times a year to visit the RSC."*
+**Food Quality** (3 positive mentions)
+> *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
 
-**Atmosphere & Setting** (3 mentions)
+**Value for Money** (1 positive mentions)
+> *"The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service"*
 
-**Value for Money** (1 mentions)
+**Booking & Accessibility** (1 positive mentions)
+> *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
 
-**Speed & Efficiency** (1 mentions)
+### Criticism Assessment
 
-### Key Quotes
+No negative themes detected across 5 analysed reviews. While positive, note that Google surfaces its 'most relevant' reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on Google Maps — these may reveal issues not captured here.
 
-**Strongest positive:**
-> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly!"*
-> *"Vintner provided great pre-theatre service helped us get to our showing on time.
+### Rating Trajectory
 
-I had the vegan risotto, which was solid and what I was looking for."*
+Recent reviews trend higher than earlier ones in the sample. This may indicate recent operational improvements landing with customers.
+
+### Review-by-Review Summary
+
+| # | Rating | Sentiment | Topics | Snippet |
+|--:|-------:|-----------|--------|---------|
+| 1 | 5★ | positive | Service & Hospitality, Atmosphere & Setting | We went with our dog and were seated in the cozy, pet-friendly section by the do... |
+| 2 | 4★ | positive | Service & Hospitality | The staff were attentive throughout, checking in at the right moments |
+| 3 | 5★ | positive | Service & Hospitality, Value for Money | The service was exceptional, the waitress was very friendly and polite and very ... |
+| 4 | 5★ | positive | Food Quality, Booking & Accessibility | We pre-booked online (would recommend pre booking, especially weekends) & advise... |
+| 5 | 5★ | positive | Service & Hospitality | Great choice of "Sharable" starters with very friendly staff especially Charlie. |
+
+### Analysis Limitations
+
+This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution across all 887 reviews.
 
 ## Conversion Friction Analysis
 

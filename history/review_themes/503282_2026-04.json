@@ -49,5 +49,160 @@
       "negative": 0,
       "sentiment": 10.0
     }
+  },
+  "analysis": {
+    "reviews_analyzed": 5,
+    "aspect_scores": {
+      "service": {
+        "score": 10.0,
+        "positive": 18,
+        "negative": 0,
+        "mentions": 18
+      },
+      "value": {
+        "score": 10.0,
+        "positive": 1,
+        "negative": 0,
+        "mentions": 1
+      },
+      "speed": {
+        "score": 10.0,
+        "positive": 3,
+        "negative": 0,
+        "mentions": 3
+      },
+      "food_quality": {
+        "score": 10.0,
+        "positive": 7,
+        "negative": 0,
+        "mentions": 7
+      },
+      "ambience": {
+        "score": 10.0,
+        "positive": 3,
+        "negative": 0,
+        "mentions": 3
+      }
+    },
+    "praise_themes": [
+      {
+        "aspect": "service",
+        "label": "Service & Hospitality",
+        "mentions": 18,
+        "quotes": [
+          "The staff were all VERTY friendly and helpful",
+          "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"
+        ]
+      },
+      {
+        "aspect": "food_quality",
+        "label": "Food Quality",
+        "mentions": 7,
+        "quotes": [
+          "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa",
+          "Hi, would just like to say what a lovely meal we had with you this afternoon"
+        ]
+      },
+      {
+        "aspect": "speed",
+        "label": "Speed & Efficiency",
+        "mentions": 3,
+        "quotes": [
+          "The staff were all VERTY friendly and helpful",
+          "The staff were all very welcoming and friendly and we had quick service"
+        ]
+      },
+      {
+        "aspect": "ambience",
+        "label": "Atmosphere & Setting",
+        "mentions": 3,
+        "quotes": [
+          "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa",
+          "From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after"
+        ]
+      },
+      {
+        "aspect": "value",
+        "label": "Value for Money",
+        "mentions": 1,
+        "quotes": [
+          "The staff were all VERTY friendly and helpful"
+        ]
+      }
+    ],
+    "criticism_themes": [],
+    "rating_distribution": {
+      "5": 5
+    },
+    "average_sample_rating": 5.0,
+    "sentiment_distribution": {
+      "positive": 5
+    },
+    "risk_flags": [],
+    "trajectory": "stable",
+    "per_review": [
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "The staff were all VERTY friendly and helpful",
+        "aspects": [
+          "service",
+          "value",
+          "speed"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa",
+        "aspects": [
+          "food_quality",
+          "service",
+          "ambience"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Hi, would just like to say what a lovely meal we had with you this afternoon",
+        "aspects": [
+          "food_quality",
+          "service"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "The staff were all very welcoming and friendly and we had quick service",
+        "aspects": [
+          "food_quality",
+          "service",
+          "speed"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after",
+        "aspects": [
+          "food_quality",
+          "service",
+          "ambience"
+        ],
+        "risk_count": 0
+      }
+    ]
+  },
+  "volume_signals": {
+    "volume_tier": "dominant",
+    "volume_note": "1,988 reviews — statistically robust rating. Individual reviews have negligible impact.",
+    "rating_position": "premium",
+    "rating_note": "4.5/5 places you in the top tier of Google search results. This drives discovery.",
+    "aggregate_rating": 4.5,
+    "review_count": 1988
   }
 }

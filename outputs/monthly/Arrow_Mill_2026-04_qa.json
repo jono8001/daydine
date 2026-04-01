@@ -59,7 +59,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 15,
+      "lines": 37,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -102,5 +102,5 @@
   "validation_errors": [],
   "validation_warnings": [],
   "confidence_level": "medium",
-  "report_lines": 217
+  "report_lines": 244
 }

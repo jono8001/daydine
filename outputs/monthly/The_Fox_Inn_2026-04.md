@@ -224,37 +224,69 @@ This section compares what customers see (public signals) against what the data 
 
 **Based on 5 customer reviews with full text analysis.**
 
+### Rating & Volume Context
+
+- 271 reviews — adequate but not dominant. 5 consecutive low ratings could drop average by ~0.1.
+- 4.6/5 places you in the top tier of Google search results. This drives discovery.
+- **Sample vs aggregate:** Analysed reviews average 5.0★ vs overall 4.6/5. Recent/prominent reviews skew higher than the lifetime average — may indicate improvement or selection bias in Google's 'most relevant' algorithm.
+
+### Sentiment Distribution
+
+Of 5 reviews analysed: **5 positive**, **0 negative**, **0 mixed**.
+
+All sampled reviews are positive. This is encouraging but note that Google's 'most relevant' algorithm tends to surface popular reviews. Negative signals may exist deeper in the review corpus.
+
 ### Sentiment by Topic
 
-| Topic | Score | + | - | Read |
-|-------|------:|--:|--:|------|
-| Service & Hospitality | 10.0/10 | 6 | 0 | Strength |
-| Speed & Efficiency | 10.0/10 | 1 | 0 | Strength |
-| Food Quality | 10.0/10 | 2 | 0 | Strength |
-| Atmosphere & Setting | 10.0/10 | 2 | 0 | Strength |
-| Value for Money | 10.0/10 | 1 | 0 | Strength |
+| Topic | Score | Positive | Negative | Total | Read |
+|-------|------:|---------:|---------:|------:|------|
+| Service & Hospitality | 10.0/10 | 6 | 0 | 6 | Strength |
+| Food Quality | 10.0/10 | 3 | 0 | 3 | Strength |
+| Atmosphere & Setting | 10.0/10 | 3 | 0 | 3 | Strength |
+| Speed & Efficiency | 10.0/10 | 1 | 0 | 1 | Strength |
+| Value for Money | 10.0/10 | 1 | 0 | 1 | Strength |
 
 ### What Customers Praise
 
-**Service & Hospitality** (6 mentions)
-> *"We had a wonderful Sunday roast at The Fox in Loxley. We arrived just after 12 and were seated at a table by the fireplace."*
-> *"Wow! This place is a rare gem!
-From the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your nee"*
+**Service & Hospitality** (6 positive mentions)
+> *"The service was incredible, James, our waiter was friendly, chatty and very efficient"*
+> *"From the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your needs"*
 
-**Food Quality** (2 mentions)
-> *"Not local to the area, we had asked for recommendations for dining and The Fox lived delightfully up to them."*
+**Food Quality** (3 positive mentions)
+> *"Beautifully decorated with a charming modern food menu"*
+> *"Really enjoyed our bank holiday lunch here Portion sizes were so generous we had to take some home but that in no way affected the quality, everything from starter through to desert was absolutely del"*
 
-**Atmosphere & Setting** (2 mentions)
+**Atmosphere & Setting** (3 positive mentions)
+> *"Beautifully decorated with a charming modern food menu"*
+> *"From the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your needs"*
 
-**Speed & Efficiency** (1 mentions)
+**Speed & Efficiency** (1 positive mentions)
+> *"The service was incredible, James, our waiter was friendly, chatty and very efficient"*
 
-**Value for Money** (1 mentions)
+**Value for Money** (1 positive mentions)
+> *"Reasonable amount of parking space"*
 
-### Key Quotes
+### Criticism Assessment
 
-**Strongest positive:**
-> *"We had a wonderful Sunday roast at The Fox in Loxley. We arrived just after 12 and were seated at a table by the fireplace."*
-> *"Not local to the area, we had asked for recommendations for dining and The Fox lived delightfully up to them."*
+No negative themes detected across 5 analysed reviews. While positive, note that Google surfaces its 'most relevant' reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on Google Maps — these may reveal issues not captured here.
+
+### Rating Trajectory
+
+Rating across the sample is stable — no significant upward or downward trajectory detected.
+
+### Review-by-Review Summary
+
+| # | Rating | Sentiment | Topics | Snippet |
+|--:|-------:|-----------|--------|---------|
+| 1 | 5★ | positive | Service & Hospitality, Speed & Efficiency | The service was incredible, James, our waiter was friendly, chatty and very effi... |
+| 2 | 5★ | positive | Food Quality, Atmosphere & Setting | Beautifully decorated with a charming modern food menu |
+| 3 | 5★ | positive | Service & Hospitality, Atmosphere & Setting | From the cosy atmosphere, with locals and tourists alike, to the kind and welcom... |
+| 4 | 5★ | positive | Food Quality, Service & Hospitality | Really enjoyed our bank holiday lunch here Portion sizes were so generous we had... |
+| 5 | 5★ | positive | Service & Hospitality, Value for Money | Reasonable amount of parking space |
+
+### Analysis Limitations
+
+This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution across all 271 reviews.
 
 ## Conversion Friction Analysis
 

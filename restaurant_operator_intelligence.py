@@ -36,6 +36,7 @@ from operator_intelligence.review_delta import (
     extract_review_intelligence, compute_review_delta,
     save_review_snapshot, load_review_snapshot,
 )
+from operator_intelligence.review_analysis import analyse_reviews, analyse_volume_signals
 from operator_intelligence.report_generator import (
     generate_monthly_report, generate_monthly_json, write_monthly_csv_row,
     generate_quarterly_report, generate_conditional_blocks,
@@ -94,6 +95,21 @@ def run_monthly_venue(venue_key, venue_rec, data, all_cards, month_str):
 
     # Review intelligence (two-mode: narrative-rich or structured-signal)
     review_intel = extract_review_intelligence(venue_rec, sentiment_data)
+
+    # Deep review analysis if text is available
+    if review_intel.get("has_narrative"):
+        reviews_raw = []
+        for field in ["g_reviews", "ta_reviews"]:
+            for rev in venue_rec.get(field, []):
+                text = (rev.get("text") or "").strip()
+                if text:
+                    reviews_raw.append((text, rev.get("rating")))
+        review_intel["analysis"] = analyse_reviews(reviews_raw)
+
+    # Volume/momentum signals (always available from structured data)
+    review_intel["volume_signals"] = analyse_volume_signals(
+        venue_rec, venue_rec.get("gr"), venue_rec.get("grc"))
+
     prev_review = load_review_snapshot(venue_id, prev_month)
     rev_delta = compute_review_delta(review_intel, prev_review)
     save_review_snapshot(venue_id, review_intel, month_str)

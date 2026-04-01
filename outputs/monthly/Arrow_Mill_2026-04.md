@@ -246,30 +246,70 @@ This section compares what customers see (public signals) against what the data 
 
 **Based on 5 customer reviews with full text analysis.**
 
+### Rating & Volume Context
+
+- 1,988 reviews — statistically robust rating. Individual reviews have negligible impact.
+- 4.5/5 places you in the top tier of Google search results. This drives discovery.
+- **Sample vs aggregate:** Analysed reviews average 5.0★ vs overall 4.5/5. Recent/prominent reviews skew higher than the lifetime average — may indicate improvement or selection bias in Google's 'most relevant' algorithm.
+
+### Sentiment Distribution
+
+Of 5 reviews analysed: **5 positive**, **0 negative**, **0 mixed**.
+
+All sampled reviews are positive. This is encouraging but note that Google's 'most relevant' algorithm tends to surface popular reviews. Negative signals may exist deeper in the review corpus.
+
 ### Sentiment by Topic
 
-| Topic | Score | + | - | Read |
-|-------|------:|--:|--:|------|
-| Service & Hospitality | 10.0/10 | 9 | 0 | Strength |
-| Speed & Efficiency | 10.0/10 | 2 | 0 | Strength |
-| Food Quality | 10.0/10 | 2 | 0 | Strength |
+| Topic | Score | Positive | Negative | Total | Read |
+|-------|------:|---------:|---------:|------:|------|
+| Service & Hospitality | 10.0/10 | 18 | 0 | 18 | Strength |
+| Food Quality | 10.0/10 | 7 | 0 | 7 | Strength |
+| Speed & Efficiency | 10.0/10 | 3 | 0 | 3 | Strength |
+| Atmosphere & Setting | 10.0/10 | 3 | 0 | 3 | Strength |
+| Value for Money | 10.0/10 | 1 | 0 | 1 | Strength |
 
 ### What Customers Praise
 
-**Service & Hospitality** (9 mentions)
-> *"Attended yesterday Sunday 15th February 2026, for an impromptu birthday lunch for my friend. We did not have a booking, and it was packed."*
-> *"We visited for my birthday meal. The staff were all very welcoming and friendly and we had quick service."*
+**Service & Hospitality** (18 positive mentions)
+> *"The staff were all VERTY friendly and helpful"*
+> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
 
-**Speed & Efficiency** (2 mentions)
+**Food Quality** (7 positive mentions)
+> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
+> *"Hi, would just like to say what a lovely meal we had with you this afternoon"*
 
-**Food Quality** (2 mentions)
-> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression sh"*
+**Speed & Efficiency** (3 positive mentions)
+> *"The staff were all VERTY friendly and helpful"*
+> *"The staff were all very welcoming and friendly and we had quick service"*
 
-### Key Quotes
+**Atmosphere & Setting** (3 positive mentions)
+> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
+> *"From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after"*
 
-**Strongest positive:**
-> *"Attended yesterday Sunday 15th February 2026, for an impromptu birthday lunch for my friend. We did not have a booking, and it was packed."*
-> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression sh"*
+**Value for Money** (1 positive mentions)
+> *"The staff were all VERTY friendly and helpful"*
+
+### Criticism Assessment
+
+No negative themes detected across 5 analysed reviews. While positive, note that Google surfaces its 'most relevant' reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on Google Maps — these may reveal issues not captured here.
+
+### Rating Trajectory
+
+Rating across the sample is stable — no significant upward or downward trajectory detected.
+
+### Review-by-Review Summary
+
+| # | Rating | Sentiment | Topics | Snippet |
+|--:|-------:|-----------|--------|---------|
+| 1 | 5★ | positive | Service & Hospitality, Value for Money, Speed & Efficiency | The staff were all VERTY friendly and helpful |
+| 2 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was... |
+| 3 | 5★ | positive | Food Quality, Service & Hospitality | Hi, would just like to say what a lovely meal we had with you this afternoon |
+| 4 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency | The staff were all very welcoming and friendly and we had quick service |
+| 5 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | From the moment we arrived, the atmosphere was welcoming and relaxed, and the st... |
+
+### Analysis Limitations
+
+This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution across all 1988 reviews.
 
 ## Conversion Friction Analysis
 
