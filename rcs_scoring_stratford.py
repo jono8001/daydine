@@ -10,8 +10,8 @@ V3.4 changes vs V3.2:
   - Temporal decay: e^(-λt) applied to FSA inspection age and review recency
   - Cross-source convergence: bonus/penalty when Google, TA, and FSA agree/diverge
   - Expanded penalties: 18 rules (was 10)
-  - Community tier reactivated at 2% weight
-  - Tier weights rebalanced
+  - Community tier permanently removed (double-counts Tiers 1-3)
+  - Tier weights rebalanced: 6 active tiers + Companies House penalties
 
 Usage:
     python rcs_scoring_stratford.py --from-cache
@@ -72,13 +72,14 @@ def temporal_decay(days_elapsed, lam=TEMPORAL_LAMBDA):
 # ---------------------------------------------------------------------------
 
 TIER_WEIGHTS = {
-    "fsa":        0.22,   # V3.4: was 0.23, -1% to fund community reactivation
-    "google":     0.24,   # V3.4: was 0.25, -1% to fund community reactivation
-    "online":     0.12,   # V3.2+: TripAdvisor-only
+    "fsa":        0.23,   # V3.4: +1% from community removal (was 0.22)
+    "google":     0.24,
+    "online":     0.13,   # V3.4: TripAdvisor-only, +1% from community removal (was 0.12)
     "ops":        0.15,
     "menu":       0.10,
     "reputation": 0.08,
-    "community":  0.02,   # V3.4: reactivated at 2% (was removed in V3.2)
+    # V3.4: Community tier REMOVED — double-counts signals from Tiers 1-3,
+    # no directly observed data. Its 2% redistributed to FSA and Online.
     # V3.4: convergence applied as post-hoc adjustment, not a tier
 }
 
@@ -923,7 +924,7 @@ GOOGLE_DERIVED_TIERS = {"google", "ops", "menu"}
 GOOGLE_CROSS_TIER_CAP = 0.45
 GOOGLE_SINGLE_CAP = 0.30
 
-# V3.4: Community tier REACTIVATED at 2% (was removed in V3.2)
+# V3.4: Community tier REMOVED — double-counts Tiers 1-3, no directly observed data
 # V3.4: Convergence scoring applied as post-hoc multiplier
 # V3.4: Temporal decay replaces step-function recency penalties
 
@@ -934,7 +935,7 @@ TIER_SCORERS = {
     "ops":        score_tier_ops,
     "menu":       score_tier_menu,
     "reputation": score_tier_reputation,
-    "community":  score_tier_community,   # V3.4: reactivated
+    # community removed in V3.4 — function retained for legacy reporting only
 }
 
 def _apply_weight_caps(eff_weights):
@@ -984,7 +985,7 @@ def compute_rcs_v2(record):
     Run V3.4 RCS pipeline on a single establishment.
 
     V3.4 changes vs V3.2:
-    - Community tier reactivated at 2%
+    - Community tier removed (double-counts Tiers 1-3, no observed data)
     - Temporal decay on FSA inspection age and review recency
     - Cross-source convergence bonus/penalty
     - Expanded penalty rules (18 total)
@@ -1003,7 +1004,6 @@ def compute_rcs_v2(record):
         return {
             "fsa_tier": None, "google_tier": None, "online_tier": None,
             "ops_tier": None, "menu_tier": None, "reputation_tier": None,
-            "community_tier": None,
             "rcs_final": 0.0, "rcs_band": "Urgent Improvement",
             "signals_available": 0, "signals_total": TOTAL_SIGNALS,
             "penalties": [], "convergence": "no_data",
@@ -1052,7 +1052,6 @@ def compute_rcs_v2(record):
         "ops_tier": round(tier_scores.get("ops", 0) * 10, 3) if "ops" in tier_scores else None,
         "menu_tier": round(tier_scores.get("menu", 0) * 10, 3) if "menu" in tier_scores else None,
         "reputation_tier": round(tier_scores.get("reputation", 0) * 10, 3) if "reputation" in tier_scores else None,
-        "community_tier": round(tier_scores.get("community", 0) * 10, 3) if "community" in tier_scores else None,
         "rcs_final": final_score,
         "rcs_band": band,
         "signals_available": signals_available,
@@ -1373,7 +1372,6 @@ CSV_FIELDS = [
     "is_food", "confidence", "confidence_margin",
     "fsa_tier_score", "google_tier_score", "online_tier_score",
     "ops_tier_score", "menu_tier_score", "reputation_tier_score",
-    "community_tier_score",
     "rcs_final", "rcs_band", "convergence",
     "quality_score", "digital_presence_score",
     "signals_available", "signals_total",
@@ -1453,8 +1451,7 @@ def run_pipeline(data):
         food_ok, food_reason = is_food_establishment(record)
 
         n_tiers = sum(1 for t in ["fsa_tier", "google_tier", "online_tier",
-                                   "ops_tier", "menu_tier", "reputation_tier",
-                                   "community_tier"]
+                                   "ops_tier", "menu_tier", "reputation_tier"]
                       if result.get(t) is not None)
 
         # Signal provenance
@@ -1490,7 +1487,6 @@ def run_pipeline(data):
             "ops_tier_score": result["ops_tier"],
             "menu_tier_score": result["menu_tier"],
             "reputation_tier_score": result["reputation_tier"],
-            "community_tier_score": result["community_tier"],
             "rcs_final": result["rcs_final"],
             "rcs_band": result["rcs_band"],
             "convergence": result.get("convergence", ""),
@@ -1732,7 +1728,7 @@ def print_results(scored):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="V3.4 RCS Scoring Engine — 40 signals, 8 tiers, 6 rating bands"
+        description="V3.4 RCS Scoring Engine — 40 signals, 7 tiers, 6 rating bands"
     )
     parser.add_argument("--la", default="Stratford-on-Avon",
                         help="Local authority name")
@@ -1756,7 +1752,7 @@ def main():
             json.dump(data, f, indent=2, ensure_ascii=False)
 
     print(f"\nRunning V3.4 RCS pipeline on {len(data)} establishments...")
-    print(f"  8 tiers | 40 signals | 6 rating bands | temporal decay | convergence\n")
+    print(f"  7 tiers | 40 signals | 6 rating bands | temporal decay | convergence\n")
 
     # Score
     scored = run_pipeline(data)
@@ -1808,10 +1804,9 @@ def generate_report(scored, summary):
     avg_sig = sum(r["signals_available"] for r in scored) / len(scored) if scored else 0
 
     tier_info = [
-        ("fsa", "FSA (Tier 1)", "22%"), ("google", "Google (Tier 2)", "24%"),
-        ("online", "Online (Tier 3)", "12%"), ("ops", "Operational (Tier 4)", "15%"),
+        ("fsa", "FSA (Tier 1)", "23%"), ("google", "Google (Tier 2)", "24%"),
+        ("online", "Online (Tier 3)", "13%"), ("ops", "Operational (Tier 4)", "15%"),
         ("menu", "Menu (Tier 5)", "10%"), ("reputation", "Reputation (Tier 6)", "8%"),
-        ("community", "Community (Tier 7)", "2%"),
     ]
     tier_pop = {}
     for t, *_ in tier_info:
@@ -1841,7 +1836,7 @@ def generate_report(scored, summary):
     w(f"| Ranked (food service) | **{len(ranked)}** |")
     w(f"| Excluded (non-food) | {len(not_ranked)} |")
     w(f"| Insufficient data | {len(insufficient)} |")
-    w(f"| Methodology | RCS V3.4 — 40 signals, 8 tiers, temporal decay, convergence |")
+    w(f"| Methodology | RCS V3.4 — 40 signals, 7 tiers, temporal decay, convergence |")
     w(f"| Mean RCS | {statistics.mean(ranked_scores):.2f} |")
     w(f"| Median RCS | {statistics.median(ranked_scores):.2f} |")
     w(f"| Signals avg | {avg_sig:.1f} / {TOTAL_SIGNALS} ({avg_sig/TOTAL_SIGNALS*100:.0f}%) |")

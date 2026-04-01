@@ -10,7 +10,7 @@ Currently running a **Stratford-upon-Avon trial** (210 establishments, 197 ranke
 ### RCS V3.4 Scoring Engine — IMPLEMENTED
 - **Script**: `rcs_scoring_stratford.py` — full V3.4 pipeline
 - **Scale**: 0.000–10.000 (3 decimal places)
-- **40 signals** across 8 weighted tiers (7 active + Companies House penalties)
+- **40 signals** across 7 weighted tiers (6 active + Companies House penalties)
 - **Temporal decay**: e^(-λt) applied to FSA inspection age and review recency (λ=0.0023, ~300-day half-life)
 - **Cross-source convergence**: bonus/penalty when Google, TripAdvisor, and FSA ratings agree or diverge
 - **18 penalty rules** (expanded from 10 in V3.2)
@@ -30,14 +30,15 @@ Currently running a **Stratford-upon-Avon trial** (210 establishments, 197 ranke
 
 | Tier | Weight | Description | Signals |
 |---|---|---|---|
-| 1. FSA | 22% | Food Safety Authority hygiene data | hygiene_rating, structural, CIM, food_hygiene, inspection_recency |
+| 1. FSA | 23% | Food Safety Authority hygiene data | hygiene_rating, structural, CIM, food_hygiene, inspection_recency |
 | 2. Google | 24% | Google Places + aspect sentiment | rating, 5 aspect scores, sentiment, review_count, price_level, photos, types |
-| 3. Online Presence | 12% | TripAdvisor-only (web/FB/IG → confidence layer) | ta_present, ta_rating, ta_reviews, ta_recency |
+| 3. Online Presence | 13% | TripAdvisor-only (web/FB/IG → confidence layer) | ta_present, ta_rating, ta_reviews, ta_recency |
 | 4. Operational | 15% | Service capabilities | reservations, delivery, takeaway, wheelchair, parking, hours_completeness |
 | 5. Menu & Offering | 10% | Food offering breadth | menu_online, dietary_options, cuisine_tags, gbp_completeness |
 | 6. Reputation & Awards | 8% | Editorial recognition | michelin_mention, aa_rating, local_awards |
-| 7. Community | 2% | Engagement & responsiveness (reactivated V3.4) | responds_to_reviews, response_time, events, loyalty_program |
-| 8. Companies House | penalty-only | Business viability | company_status, accounts_overdue, director_changes |
+| 7. Companies House | penalty-only | Business viability | company_status, accounts_overdue, director_changes |
+
+*Community tier removed in V3.4 — it double-counted signals already present in Tiers 1-3 (inspection recency, review volume, online presence breadth) and had no directly observed data.*
 
 ### Temporal Decay (V3.4)
 Exponential decay e^(-λt) applied to time-sensitive signals:
@@ -141,7 +142,7 @@ Each ranked restaurant gets a confidence level based on signal coverage:
 | 4. Operational | **INFERRED** | 3/6 | Inferred from Google types (takeaway/delivery) + opening hours |
 | 5. Menu & Offering | **READY TO RUN** | 1/3 | Cuisine count inferred from Google types; menu scraper built |
 | 6. Reputation | **READY TO RUN** | 0/3 | Editorial/awards scraper built, needs workflow trigger |
-| 7. Community | **COMPUTED** | 3/4 | Computed from inspection recency + review volume + presence breadth |
+| 7. Community | **REMOVED** | — | Removed in V3.4: double-counted signals from Tiers 1-3 |
 
 ### Data Collection Plan (remaining 30 signals)
 
@@ -270,8 +271,8 @@ The `UK-Restaurant-Tracker-Methodology-Spec-V2.docx` defines the original spec. 
 | Aspect | V2 Spec | V3.4 Implementation |
 |---|---|---|
 | Signals | 36 | 40 (expanded with aspect sentiment + Companies House) |
-| Tiers | 7 | 8 (7 active + Companies House penalty-only) |
-| Tier weights | 0.16/0.23/0.18/0.12/0.08/0.13/0.10 | 0.22/0.24/0.12/0.15/0.10/0.08/0.02 + penalties |
+| Tiers | 7 | 7 (6 active + Companies House penalty-only) |
+| Tier weights | 0.16/0.23/0.18/0.12/0.08/0.13/0.10 | 0.23/0.24/0.13/0.15/0.10/0.08 + penalties |
 | Rating bands | 5 bands | 6 bands (Excellent/Good/Generally Satisfactory/Improvement Necessary/Major Improvement/Urgent Improvement) |
 | Band thresholds | 8.5/7.0/5.0/3.0/0.0 | 8.0/6.5/5.0/3.5/2.0/0.0 |
 | Penalty rules | 34 rules in 6 groups | 18 rules in 6 groups |
@@ -289,7 +290,7 @@ The `UK-Restaurant-Tracker-Methodology-Spec-V2.docx` defines the original spec. 
 | V2 | Dec 2025 | Original 35-signal, 7-tier scoring engine |
 | V3.1 | Mar 2026 | Aspect-based sentiment, Companies House penalties, 3-tier classifier |
 | V3.2 | Mar 2026 | Community tier removed, SCP removed, Google caps, provenance tracking |
-| V3.4 | Apr 2026 | Temporal decay, cross-source convergence, 18 penalty rules, community reactivated at 2% |
+| V3.4 | Apr 2026 | Temporal decay, cross-source convergence, 18 penalty rules, community tier permanently removed |
 
 ---
 
