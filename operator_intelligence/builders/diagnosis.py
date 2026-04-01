@@ -66,8 +66,10 @@ def build_performance(w, scorecard, deltas, benchmarks, review_intel):
 
 
 def build_commercial(w, scorecard, deltas, benchmarks, review_intel):
+    """Proposition-led commercial diagnosis. Diagnoses bottleneck, positioning,
+    and where money is being left on the table."""
     w("## Commercial Diagnosis\n")
-    lines = []
+
     gr = scorecard.get("google_rating")
     grc = scorecard.get("google_reviews") or 0
     fsa = scorecard.get("fsa_rating")
@@ -77,93 +79,110 @@ def build_commercial(w, scorecard, deltas, benchmarks, review_intel):
     vis = scorecard.get("visibility")
     conv = scorecard.get("conversion")
     prest = scorecard.get("prestige")
+    cat = scorecard.get("category", "venue")
 
-    # --- Rating × volume matrix ---
-    if gr is not None:
-        gr = float(gr)
-        if gr >= 4.5 and grc >= 500:
-            lines.append(f"A {gr}/5 Google rating across {grc:,} reviews is a commanding position. "
-                         "This volume means the rating is statistically stable — individual reviews "
-                         "won't move it. The commercial value is in Google Maps ranking, where "
-                         "high-rating + high-volume venues dominate local search results.")
-        elif gr >= 4.5 and grc >= 100:
-            lines.append(f"Your {gr}/5 rating across {grc} reviews represents genuine earned "
-                         "reputation. This drives discovery through Google Maps and 'near me' "
-                         "searches. The priority is maintaining this rating while building "
-                         "volume toward 500+ for maximum algorithmic benefit.")
-        elif gr >= 4.0 and grc < 50:
-            lines.append(f"A {gr}/5 rating on {grc} reviews looks solid on the surface, but "
-                         "at this volume the rating is fragile. Three consecutive 1-star reviews "
-                         "would drop your average by ~0.2 points. Building review volume is "
-                         "a protective measure as much as a growth strategy.")
-        elif gr >= 4.0:
-            lines.append(f"Your {gr}/5 rating across {grc} reviews is adequate but not distinctive. "
-                         "In a competitive local market, this positions you as acceptable rather "
-                         "than compelling. The gap to 4.5 — where Google's algorithm provides "
-                         "meaningful ranking uplift — is achievable with operational focus.")
-        elif gr < 4.0 and grc >= 100:
-            lines.append(f"A {gr}/5 rating across {grc} reviews is a persistent negative signal. "
-                         "Google suppresses sub-4.0 venues in local search results, and customers "
-                         "filtering by rating will exclude you. This volume means the low rating "
-                         "reflects a real, sustained pattern — not bad luck with a few reviewers.")
-        elif gr < 4.0:
-            lines.append(f"Google rating of {gr}/5 is below the threshold where most customers "
-                         "will consider visiting. This is the single most commercially urgent "
-                         "metric. Every week at this rating represents lost discovery.")
+    analysis = review_intel.get("analysis") if review_intel else None
+    praise = analysis.get("praise_themes", []) if analysis else []
+    top_theme = praise[0]["label"].lower() if praise else None
 
-    # --- Trust vs Experience alignment ---
-    if trust is not None and exp is not None:
-        gap = trust - exp
-        if gap > 2.0:
-            lines.append("Your compliance scores significantly exceed your customer experience "
-                         "scores. This is an unusual pattern — it means the kitchen and back-of-house "
-                         "are strong, but something in the front-of-house delivery, menu, or "
-                         "service is not landing with customers. This is typically a management "
-                         "and training issue, not a compliance one.")
-        elif gap < -2.0:
-            lines.append("Customer experience outpaces compliance — guests enjoy the venue but "
-                         "your regulatory scores are lagging. This creates a risk: a poor re-inspection "
-                         "result would be visible on the FSA website and could undermine the "
-                         "positive perception you've built. Address compliance before it surfaces publicly.")
-        elif trust is not None and trust >= 8.0 and exp is not None and exp >= 8.0:
-            lines.append("Trust and Experience are aligned at a high level. This is the strongest "
-                         "commercial position — what customers experience is backed by genuine "
-                         "operational rigour. Focus on sustaining this alignment.")
-
-    # --- Conversion friction as commercial cost ---
-    if conv is not None and conv < 5.0 and exp is not None and exp >= 7.0:
-        lines.append(f"There is a significant gap between your experience quality ({exp:.1f}) "
-                     f"and your conversion readiness ({conv:.1f}). Commercially, this means "
-                     "you're generating demand you can't capture. Customers who discover you "
-                     "via Google or word-of-mouth then hit friction — missing hours, no online "
-                     "menu, unclear booking options. Each friction point is a measurable loss "
-                     "of potential covers.")
-    elif conv is not None and conv < 5.0:
-        lines.append("Low conversion readiness suggests customers may struggle to find your "
-                     "hours, menu, or ordering options online. In a market where competitors "
-                     "have complete Google profiles, this is a competitive disadvantage.")
-
-    # --- Peer position commercial implication ---
     ring1 = (benchmarks or {}).get("ring1_local") or (benchmarks or {}).get("ring2_catchment")
+    pct = None
     if ring1 and ring1.get("dimensions", {}).get("overall"):
         pct = ring1["dimensions"]["overall"].get("percentile")
-        peer_count = ring1.get("peer_count", 0)
-        if pct is not None:
-            if pct >= 80:
-                lines.append(f"At P{pct} among {peer_count} local peers, you hold a strong "
-                             "market position. The commercial question is not how to fix problems "
-                             "but how to capture the upside of your position — premium pricing, "
-                             "event hosting, private dining, or catering extensions.")
-            elif 50 <= pct < 80:
-                lines.append(f"At P{pct} locally, you're above average but not dominant. "
-                             "Customers have better-rated alternatives nearby. The commercial "
-                             "risk is being 'fine but forgettable' — adequate enough to survive "
-                             "but not distinctive enough to generate strong word-of-mouth.")
-            elif pct < 50:
-                lines.append(f"At P{pct} locally, the majority of direct competitors are "
-                             "outperforming you. Customers searching for your category in this "
-                             "area will likely find and choose alternatives first. This has "
-                             "direct revenue implications.")
+
+    # --- 1. Diagnose the main bottleneck ---
+    w("### Main Bottleneck\n")
+    if gr and float(gr) < 4.0:
+        w(f"**Discovery suppression.** A {gr}/5 Google rating actively prevents "
+          f"customers from finding you. Google's local search algorithm deprioritises "
+          f"sub-4.0 venues, and most customers filter by 4+ stars. Until this lifts, "
+          f"all other investment — marketing, menu changes, refurbishment — will "
+          f"underperform because fewer people see it.\n")
+    elif conv and conv < 5.5 and exp and exp >= 7.5:
+        w("**Demand leakage.** The venue generates strong guest outcomes but loses "
+          "potential customers at the point of conversion — when they try to check "
+          "hours, see the menu, or book. This is the classic 'great product, poor "
+          "shopfront' pattern. The fix is operational and digital, not culinary.\n")
+    elif exp and exp < 7.0:
+        w("**Experience gap.** The guest experience is the binding constraint. "
+          "Until this improves, stronger visibility or better conversion simply "
+          "accelerates exposure to a product that isn't landing consistently.\n")
+    elif trust and trust < 7.0 and exp and exp >= 7.5:
+        w("**Trust deficit.** Guests enjoy the venue but formal trust signals "
+          "(compliance record, inspection recency) lag behind. This creates "
+          "a hidden risk — one poor inspection could make a private gap public.\n")
+    elif pct and pct >= 80 and prest and prest < 3.0:
+        w("**Under-recognition.** The venue operates at a level that justifies "
+          "premium positioning but carries none of the formal recognition that "
+          "would support premium pricing, press attention, or talent recruitment. "
+          "The bottleneck is not quality — it's credentialing.\n")
+    else:
+        w("**No single binding constraint identified.** The venue is operationally "
+          "balanced. The commercial focus should be on marginal gains across "
+          "the proposition rather than fixing a single bottleneck.\n")
+
+    # --- 2. Positioning assessment ---
+    w("### Positioning\n")
+    if pct is not None:
+        if pct >= 80:
+            if top_theme:
+                w(f"The venue is positioned as the local category leader, primarily "
+                  f"known for {top_theme}. Commercially, this position supports "
+                  f"premium pricing, event hosting, and extension opportunities "
+                  f"(private dining, catering, seasonal events). The risk is "
+                  f"complacency — leadership must be actively maintained.\n")
+            else:
+                w("Strong market position — the venue leads its local peer set. "
+                  "The commercial opportunity is to leverage this into premium "
+                  "pricing and proposition extensions rather than continuing "
+                  "to compete on fundamentals.\n")
+        elif pct >= 50:
+            w("The venue sits above the local median but hasn't established a "
+              "distinctive market position. Commercially, this is the 'good but "
+              "forgettable' zone — adequate for steady trade but not generating "
+              "the word-of-mouth or destination appeal that drives growth.\n")
+        else:
+            w("Below the local median. Customers in this area have demonstrably "
+              "better-rated alternatives available. The commercial implication is "
+              "direct: without a distinctive proposition or significant improvement, "
+              "the venue competes primarily on convenience and price.\n")
+
+    # --- 3. Where money is being left on the table ---
+    w("### Revenue Left on the Table\n")
+    money_items = []
+    if conv and conv < 6.0 and exp and exp >= 7.0:
+        money_items.append(
+            "**Incomplete digital shopfront.** Interested customers who can't "
+            "confirm hours, see a menu, or book online will choose a competitor "
+            "who makes it easier. This is measurable lost footfall.")
+    if grc < 200 and gr and float(gr) >= 4.0:
+        money_items.append(
+            f"**Unrealised review authority.** At {grc} reviews, you lack the "
+            f"volume to dominate local search. Venues with 500+ reviews at "
+            f"similar ratings rank higher in Google Maps — that translates "
+            f"directly to walk-in and 'near me' discovery.")
+    if prest and prest < 2.0 and overall and overall >= 7.5:
+        money_items.append(
+            "**No formal credentialing.** Quality supports premium pricing but "
+            "without editorial recognition (AA, Michelin Plate, local awards), "
+            "the venue cannot justify the price point that its experience "
+            "quality would support.")
+    if exp and exp >= 8.0 and top_theme:
+        money_items.append(
+            f"**Proposition not explicitly marketed.** Guests consistently praise "
+            f"{top_theme}, but this isn't visibly communicated in the venue's "
+            f"online presence. Making this the headline proposition in Google "
+            f"Business Profile, social media, and website would sharpen "
+            f"customer expectations and attract the right guests.")
+
+    if money_items:
+        for item in money_items[:3]:
+            w(f"- {item}")
+        w("")
+    else:
+        w("No significant revenue leakage identified from available signals. "
+          "Additional data (TripAdvisor cross-reference, booking platform "
+          "integration) would enable deeper commercial analysis.\n")
 
     # --- Prestige vs fundamentals ---
     if prest is not None and prest < 2.0 and overall is not None and overall >= 7.5:
