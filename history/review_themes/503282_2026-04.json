@@ -1,6 +1,53 @@
 {
-  "has_narrative": false,
-  "review_count_google": 1988,
-  "review_count_ta": null,
-  "aspects": null
+  "has_narrative": true,
+  "reviews_analyzed": 5,
+  "praise_themes": [
+    {
+      "aspect": "service",
+      "label": "Service & Hospitality",
+      "mentions": 9,
+      "quotes": [
+        "Attended yesterday Sunday 15th February 2026, for an impromptu birthday lunch for my friend. We did not have a booking, and it was packed.",
+        "We visited for my birthday meal. The staff were all very welcoming and friendly and we had quick service."
+      ]
+    },
+    {
+      "aspect": "speed",
+      "label": "Speed & Efficiency",
+      "mentions": 2,
+      "quotes": []
+    },
+    {
+      "aspect": "food_quality",
+      "label": "Food Quality",
+      "mentions": 2,
+      "quotes": [
+        "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression sh"
+      ]
+    }
+  ],
+  "criticism_themes": [],
+  "strongest_positive_quotes": [
+    "Attended yesterday Sunday 15th February 2026, for an impromptu birthday lunch for my friend. We did not have a booking, and it was packed.",
+    "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression sh",
+    "Hi, would just like to say what a lovely meal we had with you this afternoon."
+  ],
+  "strongest_constructive_quotes": [],
+  "aspect_scores": {
+    "service": {
+      "positive": 9,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "speed": {
+      "positive": 2,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "food_quality": {
+      "positive": 2,
+      "negative": 0,
+      "sentiment": 10.0
+    }
+  }
 }

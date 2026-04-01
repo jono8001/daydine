@@ -16,7 +16,7 @@
 
 **Top priority this month:** Close the experience-to-conversion gap (Conversion, expected upside: +1.5 Conversion).
 
-*Based on structured signals (1988 Google reviews aggregated, no individual review text collected yet). Narrative depth will increase with review text enrichment.*
+*This report includes narrative analysis from 5 customer reviews.*
 
 ## Management Priorities
 
@@ -244,12 +244,32 @@ This section compares what customers see (public signals) against what the data 
 
 ## Review & Reputation Intelligence
 
-**Source coverage:** No individual review text collected. Analysis below uses aggregated rating and volume signals.
+**Based on 5 customer reviews with full text analysis.**
 
-- **Review volume (1988):** Strong social proof. Rating stable.
-- **TripAdvisor:** No presence. Missed discovery channel.
+### Sentiment by Topic
 
-*Run Google Places review text enrichment to unlock narrative analysis.*
+| Topic | Score | + | - | Read |
+|-------|------:|--:|--:|------|
+| Service & Hospitality | 10.0/10 | 9 | 0 | Strength |
+| Speed & Efficiency | 10.0/10 | 2 | 0 | Strength |
+| Food Quality | 10.0/10 | 2 | 0 | Strength |
+
+### What Customers Praise
+
+**Service & Hospitality** (9 mentions)
+> *"Attended yesterday Sunday 15th February 2026, for an impromptu birthday lunch for my friend. We did not have a booking, and it was packed."*
+> *"We visited for my birthday meal. The staff were all very welcoming and friendly and we had quick service."*
+
+**Speed & Efficiency** (2 mentions)
+
+**Food Quality** (2 mentions)
+> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression sh"*
+
+### Key Quotes
+
+**Strongest positive:**
+> *"Attended yesterday Sunday 15th February 2026, for an impromptu birthday lunch for my friend. We did not have a booking, and it was packed."*
+> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression sh"*
 
 ## Conversion Friction Analysis
 
@@ -292,7 +312,7 @@ Track these specific metrics before the next report to measure progress:
 |--------|--------|:---------:|
 | FSA Hygiene Rating | Rating 5/5 | ✓ |
 | Google Business Profile | 4.5★ (1988 reviews) | ✓ |
-| Google Review Text | Not collected | — |
+| Google Review Text | 5 reviews analyzed | ✓ |
 | TripAdvisor | Not collected | — |
 | Companies House | Not checked | — |
 
@@ -300,7 +320,6 @@ Track these specific metrics before the next report to measure progress:
 
 **What additional collection would unlock:**
 
-- **Google review text** → sentiment-by-topic, complaint clustering, quoted evidence
 - **TripAdvisor enrichment** → cross-platform validation, convergence scoring
 
 ## Evidence Appendix
