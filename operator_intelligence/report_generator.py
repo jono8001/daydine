@@ -269,10 +269,218 @@ def _explain_weakness(dim, score, scorecard):
     return "Below threshold across available signals."
 
 def _section_review_intelligence(w, review_intel, review_delta):
-    pass
+    """Review intelligence — bifurcated by data availability."""
+    w("## Review & Reputation Intelligence\n")
+
+    if not review_intel or not review_intel.get("has_narrative"):
+        # Structured-signal mode — honest about what we know
+        w("**Source coverage:** No individual review text collected for this venue. "
+          "The analysis below is based on aggregated rating and volume signals.\n")
+        grc = review_intel.get("review_count_google") if review_intel else None
+        trc = review_intel.get("review_count_ta") if review_intel else None
+        ext_aspects = review_intel.get("aspects") if review_intel else None
+
+        if grc is not None:
+            if grc >= 500:
+                w(f"- **Review volume ({grc} Google reviews):** Strong social proof. "
+                  "High volume provides confidence that the aggregate rating is stable "
+                  "and resistant to individual outlier reviews.")
+            elif grc >= 100:
+                w(f"- **Review volume ({grc} Google reviews):** Adequate base for "
+                  "rating stability. Continue encouraging reviews to build further authority.")
+            elif grc >= 20:
+                w(f"- **Review volume ({grc} Google reviews):** Moderate. A few negative "
+                  "reviews can materially shift your rating at this volume. "
+                  "Active review generation would reduce volatility.")
+            else:
+                w(f"- **Review volume ({grc} Google reviews):** Low. Your rating is "
+                  "fragile — a single 1-star review could drop your average significantly. "
+                  "This is a priority gap.")
+
+        if trc is not None and trc > 0:
+            w(f"- **TripAdvisor:** {trc} reviews present — adds cross-platform credibility.")
+        elif trc == 0 or trc is None:
+            w("- **TripAdvisor:** No presence detected. For hospitality venues, "
+              "TripAdvisor absence is a missed discovery channel.")
+
+        # External sentiment data if available
+        if ext_aspects and isinstance(ext_aspects, dict):
+            w("\n**Pre-computed aspect sentiment** (from prior enrichment run):\n")
+            aspects = ext_aspects.get("aspects", ext_aspects)
+            if isinstance(aspects, dict):
+                for asp, data in aspects.items():
+                    if isinstance(data, dict):
+                        score = data.get("score", data.get("sentiment"))
+                        pos = data.get("positive_mentions", data.get("positive", 0))
+                        neg = data.get("negative_mentions", data.get("negative", 0))
+                        w(f"- **{asp.replace('_', ' ').title()}:** {score}/10 "
+                          f"({pos} positive, {neg} negative mentions)")
+
+        w("\n*To unlock full review narrative analysis, run the Google Places review "
+          "text enrichment pipeline (`enrich_google_stratford.py` with review text enabled).*\n")
+        return
+
+    # Narrative-rich mode — real review text available
+    n_reviews = review_intel.get("reviews_analyzed", 0)
+    w(f"**Based on {n_reviews} customer reviews with full text analysis.**\n")
+
+    # Aspect sentiment table
+    aspects = review_intel.get("aspect_scores", {})
+    if aspects:
+        w("### Sentiment by Topic\n")
+        w("| Topic | Score | Positive | Negative | Read |")
+        w("|-------|------:|---------:|---------:|------|")
+        for asp, data in sorted(aspects.items(), key=lambda x: -x[1].get("sentiment", 0)):
+            sent = data.get("sentiment", 0)
+            pos = data.get("positive", 0)
+            neg = data.get("negative", 0)
+            label = ASPECT_LABELS.get(asp, asp.replace("_", " ").title())
+            if sent >= 8.0:
+                read = "Strength"
+            elif sent >= 6.0:
+                read = "Positive"
+            elif sent >= 4.0:
+                read = "Mixed"
+            else:
+                read = "Concern"
+            w(f"| {label} | {sent:.1f}/10 | {pos} | {neg} | {read} |")
+        w("")
+
+    # Praise themes with quotes
+    praise = review_intel.get("praise_themes", [])
+    if praise:
+        w("### What Customers Praise\n")
+        for theme in praise:
+            w(f"**{theme['label']}** ({theme['mentions']} mentions)")
+            for q in theme.get("quotes", []):
+                w(f'> *"{q}"*')
+            w("")
+
+    # Criticism themes with quotes
+    criticism = review_intel.get("criticism_themes", [])
+    if criticism:
+        w("### What Needs Attention\n")
+        for theme in criticism:
+            w(f"**{theme['label']}** ({theme['mentions']} mentions)")
+            for q in theme.get("quotes", []):
+                w(f'> *"{q}"*')
+            w("")
+
+    # Strongest quotes overall
+    pos_q = review_intel.get("strongest_positive_quotes", [])
+    neg_q = review_intel.get("strongest_constructive_quotes", [])
+    if pos_q or neg_q:
+        w("### Key Quotes\n")
+        if pos_q:
+            w("**Strongest positive:**")
+            for q in pos_q[:2]:
+                w(f'> *"{q}"*')
+            w("")
+        if neg_q:
+            w("**Strongest constructive:**")
+            for q in neg_q[:2]:
+                w(f'> *"{q}"*')
+            w("")
+
+    # Delta vs prior month
+    if review_delta and review_delta.get("has_delta"):
+        w("### Narrative Shifts vs Prior Month\n")
+        new_asp = review_delta.get("new_aspects", [])
+        fading = review_delta.get("fading_aspects", [])
+        shifts = review_delta.get("aspect_shifts", {})
+
+        if new_asp:
+            labels = [ASPECT_LABELS.get(a, a) for a in new_asp]
+            w(f"**Emerging topics:** {', '.join(labels)} — "
+              "these were not mentioned last month and may indicate a shift "
+              "in customer experience or expectations.\n")
+        if fading:
+            labels = [ASPECT_LABELS.get(a, a) for a in fading]
+            w(f"**Fading topics:** {', '.join(labels)} — "
+              "no longer appearing in recent reviews. If these were complaints, "
+              "that may signal resolution.\n")
+        if shifts:
+            for asp, shift in shifts.items():
+                if abs(shift["change"]) >= 2.0:
+                    direction = "improved" if shift["change"] > 0 else "declined"
+                    w(f"- **{ASPECT_LABELS.get(asp, asp)}** {direction} "
+                      f"({shift['prev']:.0f} → {shift['current']:.0f})")
+            w("")
+
 
 def _section_commercial_diagnosis(w, scorecard, deltas, benchmarks, review_intel):
-    pass
+    """Evidence-backed commercial interpretation — not generic platitudes."""
+    w("## Commercial Diagnosis\n")
+
+    lines = []
+    dim_scores = {d: scorecard.get(d) for d in DIM_ORDER if scorecard.get(d) is not None}
+    overall = scorecard.get("overall")
+    gr = scorecard.get("google_rating")
+    grc = scorecard.get("google_reviews") or 0
+    fsa = scorecard.get("fsa_rating")
+
+    # Rating vs volume analysis
+    if gr is not None:
+        gr = float(gr)
+        if gr >= 4.5 and grc >= 100:
+            lines.append(f"A {gr}/5 Google rating across {grc} reviews represents "
+                         "genuine earned reputation — this is a real competitive asset "
+                         "that drives discovery and conversion.")
+        elif gr >= 4.0 and grc < 50:
+            lines.append(f"Your {gr}/5 rating looks solid but is based on only {grc} reviews. "
+                         "At this volume, the rating is volatile — a cluster of negative "
+                         "reviews could move it materially. Building volume is protective.")
+        elif gr < 4.0 and grc >= 100:
+            lines.append(f"A {gr}/5 rating across {grc} reviews is a persistent signal, "
+                         "not an anomaly. This rating is suppressing discovery — Google "
+                         "prioritises 4.0+ venues in local search results.")
+        elif gr < 4.0:
+            lines.append(f"Google rating of {gr}/5 is below the threshold where "
+                         "most customers will consider visiting. This is the single "
+                         "most commercially urgent metric to improve.")
+
+    # Trust vs experience gap
+    trust = dim_scores.get("trust")
+    experience = dim_scores.get("experience")
+    if trust is not None and experience is not None:
+        gap = trust - experience
+        if gap > 2.0:
+            lines.append("Your Trust score significantly exceeds your Experience score. "
+                         "This means compliance is strong but the customer-facing experience "
+                         "isn't matching — operational standards are good but the product "
+                         "or service delivery needs attention.")
+        elif gap < -2.0:
+            lines.append("Experience outscores Trust by a wide margin. Customers enjoy "
+                         "the venue but compliance scores are lagging — an FSA re-inspection "
+                         "or addressing structural concerns would bring Trust in line.")
+
+    # Conversion gap
+    conversion = dim_scores.get("conversion")
+    if conversion is not None and conversion < 5.0:
+        lines.append("Low Conversion score means potential customers can't easily "
+                     "find your hours, order online, or confirm you're open. "
+                     "This creates friction at the point of purchase intent.")
+
+    # Peer position implication
+    ring1 = (benchmarks or {}).get("ring1_local") or (benchmarks or {}).get("ring2_catchment")
+    if ring1 and ring1.get("dimensions", {}).get("overall"):
+        pct = ring1["dimensions"]["overall"].get("percentile")
+        if pct is not None:
+            if pct >= 80:
+                lines.append(f"At P{pct} locally, you're in the top tier of your competitive set. "
+                             "The focus should be on protecting position and building prestige, "
+                             "not fixing fundamentals.")
+            elif pct <= 30:
+                lines.append(f"At P{pct} locally, you're being outperformed by the majority "
+                             "of direct competitors. Customers have better-scored alternatives "
+                             "within walking distance.")
+
+    if not lines:
+        lines.append("Limited signal data constrains diagnosis depth. "
+                     "Additional data enrichment would unlock more specific insights.")
+
+    for line in lines:
+        w(line + "\n")
 
 def _section_priority_actions(w, recs):
     pass
