@@ -29,6 +29,125 @@ def detect_report_mode(review_intel):
 
 
 # ---------------------------------------------------------------------------
+# Review Confidence Tiers
+# ---------------------------------------------------------------------------
+# Governs how assertively the report can make claims from review data.
+# Based on: review text count, source breadth, rating volume.
+
+@dataclass
+class ReviewConfidence:
+    tier: str              # "anecdotal", "indicative", "directional", "established"
+    review_text_count: int
+    source_count: int      # how many independent sources (Google, TA, etc.)
+    rating_volume: int     # aggregate review count (not text count)
+    can_claim_themes: bool
+    can_claim_proposition: bool
+    can_claim_trajectory: bool
+    qualifier: str         # prefix for claims at this confidence level
+
+
+def assess_review_confidence(review_intel):
+    """Determine review confidence tier from available data."""
+    if not review_intel:
+        return ReviewConfidence(
+            tier="none", review_text_count=0, source_count=0, rating_volume=0,
+            can_claim_themes=False, can_claim_proposition=False,
+            can_claim_trajectory=False, qualifier="no review data available")
+
+    text_count = 0
+    sources = 0
+    analysis = review_intel.get("analysis")
+    if analysis:
+        text_count = analysis.get("reviews_analyzed", 0)
+
+    if review_intel.get("has_narrative"):
+        sources += 1
+    vol_signals = review_intel.get("volume_signals", {})
+    rating_volume = vol_signals.get("review_count", 0)
+
+    # Tier assignment
+    # "anecdotal": 1-5 texts from 1 source — can observe, cannot conclude
+    # "indicative": 6-15 texts or 2+ sources — can identify directions
+    # "directional": 16-30 texts from 2+ sources — can make supported claims
+    # "established": 30+ texts from 2+ sources — can state with confidence
+
+    if text_count == 0:
+        return ReviewConfidence(
+            tier="none", review_text_count=0, source_count=sources,
+            rating_volume=rating_volume,
+            can_claim_themes=False, can_claim_proposition=False,
+            can_claim_trajectory=False,
+            qualifier="no review text available")
+
+    if text_count <= 5 and sources <= 1:
+        return ReviewConfidence(
+            tier="anecdotal", review_text_count=text_count, source_count=sources,
+            rating_volume=rating_volume,
+            can_claim_themes=True, can_claim_proposition=False,
+            can_claim_trajectory=False,
+            qualifier="from a limited sample")
+
+    if text_count <= 15:
+        return ReviewConfidence(
+            tier="indicative", review_text_count=text_count, source_count=sources,
+            rating_volume=rating_volume,
+            can_claim_themes=True, can_claim_proposition=True,
+            can_claim_trajectory=False,
+            qualifier="based on early evidence")
+
+    if text_count <= 30:
+        can_prop = sources >= 2
+        return ReviewConfidence(
+            tier="directional", review_text_count=text_count, source_count=sources,
+            rating_volume=rating_volume,
+            can_claim_themes=True, can_claim_proposition=can_prop,
+            can_claim_trajectory=True,
+            qualifier="supported by moderate evidence")
+
+    return ReviewConfidence(
+        tier="established", review_text_count=text_count, source_count=sources,
+        rating_volume=rating_volume,
+        can_claim_themes=True, can_claim_proposition=True,
+        can_claim_trajectory=True,
+        qualifier="well-supported by review evidence")
+
+
+# Wording rules per tier — used by builders to select appropriate language
+CONFIDENCE_LANGUAGE = {
+    "none": {
+        "theme_verb": "cannot be assessed from available data",
+        "proposition_verb": "cannot be determined",
+        "strong": "",  # never used
+        "hedge": "No review text is available for this venue. ",
+    },
+    "anecdotal": {
+        "theme_verb": "appears in the limited sample",
+        "proposition_verb": "may be emerging as",
+        "strong": "In the small sample available, ",
+        "hedge": "Based on a limited sample of {n} reviews (Google's 'most relevant' selection), ",
+    },
+    "indicative": {
+        "theme_verb": "is consistently mentioned",
+        "proposition_verb": "is becoming associated with",
+        "strong": "Early evidence suggests ",
+        "hedge": "Across {n} reviews, ",
+    },
+    "directional": {
+        "theme_verb": "is a recurring theme",
+        "proposition_verb": "is increasingly known for",
+        "strong": "Review evidence consistently points to ",
+        "hedge": "Across {n} reviews from {s} sources, ",
+    },
+    "established": {
+        "theme_verb": "is a well-established strength",
+        "proposition_verb": "is known for",
+        "strong": "Customers consistently highlight ",
+        "hedge": "",  # no hedging needed
+    },
+}
+
+
+# ---------------------------------------------------------------------------
 # Section Definitions
 # ---------------------------------------------------------------------------
 
