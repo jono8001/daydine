@@ -33,8 +33,8 @@ from operator_intelligence.scorecard import (
 from operator_intelligence.peer_benchmarking import compute_peer_benchmarks
 from operator_intelligence.recommendations import generate_recommendations
 from operator_intelligence.review_delta import (
-    extract_themes, compute_review_delta, interpret_commercially,
-    save_theme_snapshot, load_theme_snapshot,
+    extract_review_intelligence, compute_review_delta,
+    save_review_snapshot, load_review_snapshot,
 )
 from operator_intelligence.report_generator import (
     generate_monthly_report, generate_monthly_json, write_monthly_csv_row,
@@ -85,14 +85,18 @@ def run_monthly_venue(venue_key, venue_rec, data, all_cards, month_str):
     # Peer benchmarks
     benchmarks = compute_peer_benchmarks(card, all_cards)
 
-    # Review themes and delta
-    themes = extract_themes(venue_rec)
-    prev_themes = load_theme_snapshot(venue_id, prev_month)
-    review_delta = compute_review_delta(themes, prev_themes)
-    save_theme_snapshot(venue_id, themes, month_str)
+    # Load external sentiment data if available
+    sentiment_path = os.path.join(SCRIPT_DIR, "stratford_sentiment.json")
+    sentiment_data = None
+    if os.path.exists(sentiment_path):
+        with open(sentiment_path, "r", encoding="utf-8") as f:
+            sentiment_data = json.load(f)
 
-    # Commercial interpretation
-    commercial = interpret_commercially(themes, review_delta)
+    # Review intelligence (two-mode: narrative-rich or structured-signal)
+    review_intel = extract_review_intelligence(venue_rec, sentiment_data)
+    prev_review = load_review_snapshot(venue_id, prev_month)
+    rev_delta = compute_review_delta(review_intel, prev_review)
+    save_review_snapshot(venue_id, review_intel, month_str)
 
     # Recommendations
     recs = generate_recommendations(venue_rec, card, benchmarks, deltas, month_str)
@@ -103,8 +107,8 @@ def run_monthly_venue(venue_key, venue_rec, data, all_cards, month_str):
     # Generate markdown report
     report_md = generate_monthly_report(
         venue_name, month_str, card, deltas,
-        benchmarks, themes, review_delta,
-        commercial, recs, cond_blocks,
+        benchmarks, review_intel, rev_delta,
+        recs, cond_blocks,
     )
 
     # Generate JSON summary
