@@ -19,7 +19,7 @@
     },
     "management_priorities": {
       "present": true,
-      "lines": 18,
+      "lines": 16,
       "meets_minimum": true
     },
     "watch_list": {
@@ -59,7 +59,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 37,
+      "lines": 38,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -102,5 +102,5 @@
   "validation_errors": [],
   "validation_warnings": [],
   "confidence_level": "medium",
-  "report_lines": 263
+  "report_lines": 262
 }

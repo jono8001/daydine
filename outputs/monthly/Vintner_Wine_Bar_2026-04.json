@@ -13,19 +13,19 @@
   "priority_actions": [
     {
       "title": "Fix the digital shopfront — you're losing walk-ins",
-      "status": "ongoing",
+      "status": "new",
       "priority": 6.0,
       "dimension": "conversion"
     },
     {
       "title": "Compliance record trailing local standards",
-      "status": "ongoing",
+      "status": "new",
       "priority": 5.5,
       "dimension": "trust"
     },
     {
       "title": "Guest experience trailing local competitors",
-      "status": "ongoing",
+      "status": "new",
       "priority": 5.5,
       "dimension": "experience"
     }
@@ -33,7 +33,7 @@
   "watch_items": [
     {
       "title": "Below local median — competitive risk",
-      "status": "ongoing"
+      "status": "new"
     },
     {
       "title": "Monitor local competitor openings and closures",

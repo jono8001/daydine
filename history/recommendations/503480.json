@@ -12,9 +12,9 @@
     "rec_type": "watch",
     "rec_id": "41b29689be4c",
     "venue_id": "503480",
-    "status": "ongoing",
+    "status": "new",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 1,
     "last_seen": "2026-04"
   },
   "84abd7b5e537": {
@@ -30,9 +30,9 @@
     "rec_type": "watch",
     "rec_id": "84abd7b5e537",
     "venue_id": "503480",
-    "status": "ongoing",
+    "status": "new",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 1,
     "last_seen": "2026-04"
   },
   "356f5b88fba0": {
@@ -48,9 +48,9 @@
     "rec_type": "watch",
     "rec_id": "356f5b88fba0",
     "venue_id": "503480",
-    "status": "ongoing",
+    "status": "new",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 1,
     "last_seen": "2026-04"
   },
   "a5bde007590a": {
@@ -66,9 +66,9 @@
     "rec_type": "action",
     "rec_id": "a5bde007590a",
     "venue_id": "503480",
-    "status": "ongoing",
+    "status": "new",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 1,
     "last_seen": "2026-04"
   }
 }

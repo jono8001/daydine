@@ -22,7 +22,7 @@
 
 Vintner Wine Bar is a well-established pub dining venue with a strong public reputation — 4.6/5 across 887 Google reviews. That volume means the reputation is earned, not manufactured.
 
-Guest feedback centres on **service & hospitality** (7 mentions) and **atmosphere & setting** (3 mentions). These are the pillars of the current proposition as guests perceive it.
+Based on a limited sample of 5 reviews (Google's 'most relevant' selection), **service & hospitality** (7 mentions) and **atmosphere & setting** (3 mentions) are the most frequent themes. Whether these represent settled guest perception or sampling artefact cannot be determined from this evidence base alone.
 
 The venue currently sits below the local median. Guests have demonstrably higher-rated alternatives nearby, which constrains the venue's ability to define its own market identity.
 
@@ -30,7 +30,7 @@ The venue currently sits below the local median. Guests have demonstrably higher
 
 Your score is solid but not dominant. The management question is *which specific dimension, if improved, would most change your commercial trajectory* — and which can you realistically move?
 
-### Priority 1: Fix the digital shopfront — you're losing walk-ins [ONGOING]
+### Priority 1: Fix the digital shopfront — you're losing walk-ins [NEW]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Check: can a new customer confirm your hours, see your menu, and book or walk in — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -39,9 +39,8 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.7, conversion=5.5`
-- *This recommendation has appeared 2 consecutive months.*
 
-### Priority 2: Compliance record trailing local standards [ONGOING]
+### Priority 2: Compliance record trailing local standards [NEW]
 
 Most local peers carry stronger formal compliance signals. This may not affect daily footfall yet but creates exposure if an inspection goes poorly or a customer complaint escalates.
 
@@ -50,9 +49,8 @@ Most local peers carry stronger formal compliance signals. This may not affect d
 - **Owner:** management | **Confidence:** 65%
 - **Expected upside:** Closing 1.1-point gap to peer average
 - **Evidence:** `trust: 7.2 vs peer avg 8.3`
-- *This recommendation has appeared 2 consecutive months.*
 
-### Priority 3: Guest experience trailing local competitors [ONGOING]
+### Priority 3: Guest experience trailing local competitors [NEW]
 
 Peers are delivering a more consistent or higher-quality guest experience. Identify what they do differently — is it menu depth, service style, or ambience? — and decide whether to match or differentiate.
 
@@ -61,7 +59,6 @@ Peers are delivering a more consistent or higher-quality guest experience. Ident
 - **Owner:** management | **Confidence:** 65%
 - **Expected upside:** Closing 0.3-point gap to peer average
 - **Evidence:** `experience: 8.7 vs peer avg 9.0`
-- *This recommendation has appeared 2 consecutive months.*
 
 ## Protect / Improve / Ignore
 
@@ -90,11 +87,12 @@ Below the local median. Customers in this area have demonstrably better-rated al
 ### Revenue Left on the Table
 
 - **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier. This is measurable lost footfall.
-- **Proposition not explicitly marketed.** Guests consistently praise service & hospitality, but this isn't visibly communicated in the venue's online presence. Making this the headline proposition in Google Business Profile, social media, and website would sharpen customer expectations and attract the right guests.
+- **Potential proposition signal.** Early review data (from a limited sample) suggests service & hospitality resonates with guests. If confirmed by broader evidence, this could become a marketable differentiator.
 
 ## Review & Reputation Intelligence
 
 **Based on 5 customer reviews with full text analysis.**
+**Evidence tier: Anecdotal** — from a limited sample.
 
 ### Rating & Volume Context
 
@@ -156,7 +154,7 @@ Recent reviews trend higher than earlier ones in the sample. This may indicate r
 
 ### Analysis Limitations
 
-This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution across all 887 reviews.
+**Evidence tier: Anecdotal.** This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm out of 887 total. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution. Claims above are calibrated to this evidence level — themes are observed, not confirmed as settled reputation patterns.
 
 ## Market Position
 
@@ -313,7 +311,7 @@ This section identifies specific barriers between customer interest and a comple
 
 ## Watch List
 
-**Below local median — competitive risk** [ONGOING]
+**Below local median — competitive risk** [NEW]
 
 Ranked #6 of 9 locally (P37.5). Peers are outperforming you on aggregate.
 
@@ -331,10 +329,10 @@ Avoid spending time on awards submissions, PR, or premium positioning until Expe
 
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
-| 1 | Below local median — competitive risk | ongoing | 2026-04 | 2 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | ongoing | 2026-04 | 2 | operations | conversion |
-| 3 | Guest experience trailing local competitors | ongoing | 2026-04 | 2 | management | experience |
-| 4 | Compliance record trailing local standards | ongoing | 2026-04 | 2 | management | trust |
+| 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
+| 2 | Fix the digital shopfront — you're losing walk-ins | new | 2026-04 | 1 | operations | conversion |
+| 3 | Guest experience trailing local competitors | new | 2026-04 | 1 | management | experience |
+| 4 | Compliance record trailing local standards | new | 2026-04 | 1 | management | trust |
 
 ## Next-Month Monitoring Plan
 

@@ -12,9 +12,9 @@
     "rec_type": "action",
     "rec_id": "ce2c9bc72ab0",
     "venue_id": "503282",
-    "status": "ongoing",
+    "status": "new",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 1,
     "last_seen": "2026-04"
   },
   "485d036dd057": {
@@ -30,9 +30,9 @@
     "rec_type": "action",
     "rec_id": "485d036dd057",
     "venue_id": "503282",
-    "status": "ongoing",
+    "status": "new",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 1,
     "last_seen": "2026-04"
   }
 }

@@ -22,7 +22,7 @@
 
 Arrow Mill is a well-established pub dining venue with a strong public reputation — 4.5/5 across 1,988 Google reviews. That volume means the reputation is earned, not manufactured.
 
-Guest feedback centres on **service & hospitality** (18 mentions) and **food quality** (7 mentions). These are the pillars of the current proposition as guests perceive it.
+Based on a limited sample of 5 reviews (Google's 'most relevant' selection), **service & hospitality** (18 mentions) and **food quality** (7 mentions) are the most frequent themes. Whether these represent settled guest perception or sampling artefact cannot be determined from this evidence base alone.
 
 Within the local pub dining market (5 peers), this venue leads the field. The identity is that of a category leader — the venue others are compared against.
 
@@ -32,7 +32,7 @@ The public proof (ratings, compliance) aligns with what guests actually experien
 
 Your score is solid but not dominant. The management question is *which specific dimension, if improved, would most change your commercial trajectory* — and which can you realistically move?
 
-### Priority 1: Fix the digital shopfront — you're losing walk-ins [ONGOING]
+### Priority 1: Fix the digital shopfront — you're losing walk-ins [NEW]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Check: can a new customer confirm your hours, see your menu, and book or walk in — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -41,9 +41,8 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=9.42, conversion=5.5`
-- *This recommendation has appeared 2 consecutive months.*
 
-### Priority 2: Pursue editorial recognition [ONGOING]
+### Priority 2: Pursue editorial recognition [NEW]
 
 Your operational scores support a credible submission to the AA Restaurant Guide or local food awards. Editorial recognition would differentiate you from peers and justify premium positioning.
 
@@ -52,7 +51,6 @@ Your operational scores support a credible submission to the AA Restaurant Guide
 - **Owner:** management | **Confidence:** 50%
 - **Expected upside:** +2.0 Prestige, brand differentiation
 - **Evidence:** `overall=7.94`
-- *This recommendation has appeared 2 consecutive months.*
 
 ### Priority 3: Turn strong guest warmth into fresh public proof [NEW]
 
@@ -68,7 +66,7 @@ Respond to every Google review within 48 hours — positive and negative. For sa
 
 ### Protect
 
-- **The service & hospitality reputation.** This is the core of what guests value. It's earned through consistency, not marketing, and it erodes the moment standards slip. Protect this with staffing depth, supplier quality, and management presence on the floor.
+- **Guest experience quality.** Early review signals (from a limited sample) point to service & hospitality as a strength. Protect operational consistency while the evidence base builds.
 - **Search visibility.** 1,988 Google reviews at 4.5/5 gives you a discovery advantage that took years to build. Protect it by continuing to respond to reviews and keeping your profile current.
 
 ### Improve
@@ -87,17 +85,18 @@ Respond to every Google review within 48 hours — positive and negative. For sa
 
 ### Positioning
 
-The venue is positioned as the local category leader, primarily known for service & hospitality. Commercially, this position supports premium pricing, event hosting, and extension opportunities (private dining, catering, seasonal events). The risk is complacency — leadership must be actively maintained.
+The venue leads its local peer set. Early review signals point toward service & hospitality as a differentiator, though the evidence base is limited (5 review texts). Commercially, this position supports premium pricing and extension opportunities. The risk is complacency.
 
 ### Revenue Left on the Table
 
 - **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier. This is measurable lost footfall.
 - **No formal credentialing.** Quality supports premium pricing but without editorial recognition (AA, Michelin Plate, local awards), the venue cannot justify the price point that its experience quality would support.
-- **Proposition not explicitly marketed.** Guests consistently praise service & hospitality, but this isn't visibly communicated in the venue's online presence. Making this the headline proposition in Google Business Profile, social media, and website would sharpen customer expectations and attract the right guests.
+- **Potential proposition signal.** Early review data (from a limited sample) suggests service & hospitality resonates with guests. If confirmed by broader evidence, this could become a marketable differentiator.
 
 ## Review & Reputation Intelligence
 
 **Based on 5 customer reviews with full text analysis.**
+**Evidence tier: Anecdotal** — from a limited sample.
 
 ### Rating & Volume Context
 
@@ -162,7 +161,7 @@ Rating across the sample is stable — no significant upward or downward traject
 
 ### Analysis Limitations
 
-This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution across all 1988 reviews.
+**Evidence tier: Anecdotal.** This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm out of 1,988 total. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution. Claims above are calibrated to this evidence level — themes are observed, not confirmed as settled reputation patterns.
 
 ## Market Position
 
@@ -360,8 +359,8 @@ Avoid spending time on awards submissions, PR, or premium positioning until Expe
 
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
-| 1 | Fix the digital shopfront — you're losing walk-ins | ongoing | 2026-04 | 2 | operations | conversion |
-| 2 | Pursue editorial recognition | ongoing | 2026-04 | 2 | management | prestige |
+| 1 | Fix the digital shopfront — you're losing walk-ins | new | 2026-04 | 1 | operations | conversion |
+| 2 | Pursue editorial recognition | new | 2026-04 | 1 | management | prestige |
 
 ## Next-Month Monitoring Plan
 
