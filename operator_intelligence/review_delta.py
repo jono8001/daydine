@@ -128,21 +128,27 @@ def extract_review_intelligence(record, sentiment_data=None):
                     snippet = snippet[:idx + 1]
                     break
 
+        # Attribute quote to the aspect with the MOST keyword matches in this review
         if rating is not None and rating >= 4:
             all_quotes_pos.append(snippet)
-            # Attribute quote to strongest matching aspect
-            for keyword, (aspect, polarity) in THEME_MAP.items():
-                if keyword in text_lower and polarity == "pos":
-                    if aspect in aspect_scores and len(aspect_scores[aspect]["quotes_pos"]) < 2:
-                        aspect_scores[aspect]["quotes_pos"].append(snippet)
-                    break
+            aspect_hits = {}
+            for kw, (asp, pol) in THEME_MAP.items():
+                if kw in text_lower and pol == "pos":
+                    aspect_hits[asp] = aspect_hits.get(asp, 0) + 1
+            if aspect_hits:
+                best_asp = max(aspect_hits, key=aspect_hits.get)
+                if best_asp in aspect_scores and len(aspect_scores[best_asp]["quotes_pos"]) < 2:
+                    aspect_scores[best_asp]["quotes_pos"].append(snippet)
         elif rating is not None and rating <= 2:
             all_quotes_neg.append(snippet)
-            for keyword, (aspect, polarity) in THEME_MAP.items():
-                if keyword in text_lower and polarity == "neg":
-                    if aspect in aspect_scores and len(aspect_scores[aspect]["quotes_neg"]) < 2:
-                        aspect_scores[aspect]["quotes_neg"].append(snippet)
-                    break
+            aspect_hits = {}
+            for kw, (asp, pol) in THEME_MAP.items():
+                if kw in text_lower and pol == "neg":
+                    aspect_hits[asp] = aspect_hits.get(asp, 0) + 1
+            if aspect_hits:
+                best_asp = max(aspect_hits, key=aspect_hits.get)
+                if best_asp in aspect_scores and len(aspect_scores[best_asp]["quotes_neg"]) < 2:
+                    aspect_scores[best_asp]["quotes_neg"].append(snippet)
 
     # Build praise/criticism theme lists
     praise = []

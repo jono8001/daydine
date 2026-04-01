@@ -94,6 +94,11 @@ def build_market_position(w, scorecard, benchmarks):
 
     w(f"**Category:** {cat}\n")
 
+    # Detect ring overlap — if ring2 and ring3 have same peer count and same
+    # top peer, compress ring3 into a one-liner instead of repeating
+    prev_ring_peers = None
+    prev_ring_top = None
+
     for ring_key in ["ring1_local", "ring2_catchment", "ring3_uk_cohort"]:
         ring = benchmarks.get(ring_key, {})
         if ring.get("peer_count", 0) == 0:
@@ -102,6 +107,18 @@ def build_market_position(w, scorecard, benchmarks):
         label = ring["label"]
         peer_count = ring["peer_count"]
         dims = ring.get("dimensions", {})
+        top_peers = ring.get("top_peers", [])
+        top_name = top_peers[0]["name"] if top_peers else None
+
+        # If this ring is essentially identical to the previous one, compress it
+        if prev_ring_peers == peer_count and prev_ring_top == top_name:
+            w(f"### {label}\n")
+            w(f"*Same competitive set as above ({peer_count} peers). "
+              f"In this market, the catchment and category cohort overlap completely.*\n")
+            continue
+
+        prev_ring_peers = peer_count
+        prev_ring_top = top_name
         ov = dims.get("overall", {})
 
         # Section header with summary line
@@ -198,6 +215,75 @@ _DIM_CONTEXT = {
 }
 
 
+def _dim_management_action(dim, score, peer_avg, scorecard):
+    """Return dimension-specific management guidance. Never generic."""
+    gap = score - peer_avg if peer_avg is not None else 0
+
+    if dim == "experience":
+        if score >= 8.0 and gap >= 1.0:
+            return ("Your experience advantage is real but perishable. It depends on "
+                    "consistency across every service. One bad month of staffing or supply "
+                    "issues can erode this faster than it was built.")
+        if score >= 8.0:
+            return ("Strong experience but peers are close. Monitor your most recent "
+                    "reviews for early signs of drift — the last 10 reviews matter more "
+                    "than the aggregate.")
+        if score < 6.0:
+            gr = scorecard.get("google_rating")
+            return (f"At {gr}/5 Google, customers are telling you something specific. "
+                    "Read the 3 most recent negative reviews and identify the recurring theme. "
+                    "That theme is your highest-ROI operational fix." if gr else
+                    "Experience is the dimension customers feel directly. Prioritise "
+                    "front-of-house training and menu quality review.")
+        return None
+
+    if dim == "visibility":
+        if score >= 8.0 and gap >= 1.0:
+            return ("Your visibility lead is a competitive moat. Maintain it by continuing "
+                    "to respond to reviews and keeping your profile current. Competitors "
+                    "will eventually invest here.")
+        if score < 6.0:
+            grc = scorecard.get("google_reviews") or 0
+            return (f"At {grc} reviews, you are likely invisible in 'near me' and category "
+                    "searches. This is fixable within 60 days with a systematic review "
+                    "request programme.")
+        return None
+
+    if dim == "trust":
+        fsa = scorecard.get("fsa_rating")
+        if score >= 8.0:
+            return ("Strong trust position. Maintain documentation rigour — the next "
+                    "unannounced inspection should confirm, not surprise.")
+        if fsa and int(fsa) < 5:
+            return (f"FSA {fsa} is the binding constraint. Request a re-inspection once "
+                    "you've addressed the specific points from the last report. A move "
+                    "to 5 unlocks material score improvement.")
+        return "Inspection age may be dragging this down. Recent compliance is not reflected in the score yet."
+
+    if dim == "conversion":
+        if score < 5.0:
+            return ("Multiple conversion signals are missing. Walk through the customer "
+                    "journey on Google Maps and your website — can a new customer find your "
+                    "hours, see your menu, and book or order in under 60 seconds? If not, "
+                    "that's your fix list.")
+        if score < 7.0:
+            return ("Some operational signals present, but gaps remain. Each missing element "
+                    "is a percentage of potential customers who never complete their intent.")
+        return None
+
+    if dim == "prestige":
+        if score < 2.0 and scorecard.get("overall", 0) >= 7.5:
+            return ("Your operational quality would support a credible awards submission. "
+                    "This is a long-cycle play — start with local food guides and AA "
+                    "before targeting Michelin.")
+        if score < 2.0:
+            return ("Low prestige is normal for most operators and not commercially urgent. "
+                    "Focus on Experience and Trust first — prestige follows quality.")
+        return None
+
+    return None
+
+
 def build_dimension_diagnosis(w, scorecard, deltas, benchmarks):
     w("## Dimension-by-Dimension Diagnosis\n")
 
@@ -253,13 +339,10 @@ def build_dimension_diagnosis(w, scorecard, deltas, benchmarks):
         # What drives it
         w(f"**Driven by:** {ctx.get('signals', '')}\n")
 
-        # Management action
-        if score < 6.0:
-            w(f"**Action required:** This score requires active intervention. "
-              f"Review the Priority Actions section for specific steps.\n")
-        elif score >= 8.0 and peer_avg and score - peer_avg >= 1.0:
-            w(f"**Protect this advantage.** Competitors scoring {peer_avg:.1f} on average "
-              f"means this is a genuine differentiator worth maintaining.\n")
+        # Management action — varied per dimension, never generic
+        _action = _dim_management_action(dim, score, peer_avg, scorecard)
+        if _action:
+            w(f"**Management note:** {_action}\n")
         w("")
 
 

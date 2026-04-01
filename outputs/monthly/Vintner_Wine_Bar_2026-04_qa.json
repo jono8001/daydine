@@ -34,7 +34,7 @@
     },
     "market_position": {
       "present": true,
-      "lines": 38,
+      "lines": 27,
       "meets_minimum": true
     },
     "scorecard": {
@@ -44,13 +44,13 @@
     },
     "dimension_diagnosis": {
       "present": true,
-      "lines": 27,
+      "lines": 29,
       "meets_minimum": true
     },
     "commercial_diagnosis": {
       "present": true,
-      "lines": 1,
-      "meets_minimum": false
+      "lines": 2,
+      "meets_minimum": true
     },
     "public_vs_reality": {
       "present": true,
@@ -59,7 +59,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 22,
+      "lines": 21,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -102,5 +102,5 @@
   "validation_errors": [],
   "validation_warnings": [],
   "confidence_level": "medium",
-  "report_lines": 216
+  "report_lines": 207
 }

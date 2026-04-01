@@ -160,7 +160,7 @@ You are in the top quintile of this peer set. Your overall score of 7.9 exceeds 
 
 **Driven by:** Google rating, TripAdvisor rating, FSA food hygiene sub-score, sentiment analysis
 
-**Protect this advantage.** Competitors scoring 8.2 on average means this is a genuine differentiator worth maintaining.
+**Management note:** Your experience advantage is real but perishable. It depends on consistency across every service. One bad month of staffing or supply issues can erode this faster than it was built.
 
 
 ### Visibility — 8.5/10
@@ -174,7 +174,7 @@ You are in the top quintile of this peer set. Your overall score of 7.9 exceeds 
 
 **Driven by:** Google review count, photo count, GBP completeness, web/social presence, TripAdvisor presence
 
-**Protect this advantage.** Competitors scoring 6.5 on average means this is a genuine differentiator worth maintaining.
+**Management note:** Your visibility lead is a competitive moat. Maintain it by continuing to respond to reviews and keeping your profile current. Competitors will eventually invest here.
 
 
 ### Trust — 9.7/10
@@ -188,7 +188,7 @@ You are in the top quintile of this peer set. Your overall score of 7.9 exceeds 
 
 **Driven by:** FSA hygiene rating, structural compliance, management confidence, inspection recency
 
-**Protect this advantage.** Competitors scoring 7.8 on average means this is a genuine differentiator worth maintaining.
+**Management note:** Strong trust position. Maintain documentation rigour — the next unannounced inspection should confirm, not surprise.
 
 
 ### Conversion — 5.5/10
@@ -202,7 +202,7 @@ You are in the top quintile of this peer set. Your overall score of 7.9 exceeds 
 
 **Driven by:** Opening hours, menu online, delivery/takeaway, reservations, price level
 
-**Action required:** This score requires active intervention. Review the Priority Actions section for specific steps.
+**Management note:** Some operational signals present, but gaps remain. Each missing element is a percentage of potential customers who never complete their intent.
 
 
 ### Prestige — 1.5/10
@@ -216,14 +216,18 @@ You are in the top quintile of this peer set. Your overall score of 7.9 exceeds 
 
 **Driven by:** Michelin mentions, AA rating, local awards, price positioning
 
-**Action required:** This score requires active intervention. Review the Priority Actions section for specific steps.
+**Management note:** Your operational quality would support a credible awards submission. This is a long-cycle play — start with local food guides and AA before targeting Michelin.
 
 
 ## Commercial Diagnosis
 
-A 4.5/5 rating across 1988 reviews — genuine earned reputation driving discovery.
+A 4.5/5 Google rating across 1,988 reviews is a commanding position. This volume means the rating is statistically stable — individual reviews won't move it. The commercial value is in Google Maps ranking, where high-rating + high-volume venues dominate local search results.
 
-P100.0 locally — top tier. Protect position, build prestige.
+Trust and Experience are aligned at a high level. This is the strongest commercial position — what customers experience is backed by genuine operational rigour. Focus on sustaining this alignment.
+
+At P100.0 among 5 local peers, you hold a strong market position. The commercial question is not how to fix problems but how to capture the upside of your position — premium pricing, event hosting, private dining, or catering extensions.
+
+Your fundamentals are strong but you have zero prestige markers. This caps your ability to command premium pricing or attract media attention. A credible awards submission (AA, local food guides) would be a low-cost, high-signal move at your current quality level.
 
 ## Public Proof vs Operational Reality
 

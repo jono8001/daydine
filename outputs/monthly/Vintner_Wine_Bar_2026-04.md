@@ -113,25 +113,9 @@ You are below the median of your peer set. At 7.0 vs peer average 6.8, competito
 - The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5) — leads you by 0.5
 - The Bull's Head (7.5) — leads you by 0.5
 
-### UK Category Cohort (18 peers in Pub / Bar)
+### UK Category Cohort
 
-**Position:** #11 of 19 (Percentile 44.4)
-
-You are below the median of your peer set. At 7.0 vs peer average 6.8, competitors are outperforming you. The top performer scores 7.9. Customers in this area have demonstrably better-rated alternatives.
-
-**Dimension gaps vs peers:**
-
-- Visibility: 8.2 (+1.0 above peer avg 7.2)
-- Prestige: 1.5 (+0.8 above peer avg 0.8)
-- Trust: 7.2 (-0.9 below peer avg 8.1)
-
-**Closest competitors:**
-
-- Arrow Mill (7.9) — leads you by 0.9
-- The Fox Inn (7.7) — leads you by 0.7
-- The Red Lion (7.6) — leads you by 0.5
-- The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5) — leads you by 0.5
-- The Bull's Head (7.5) — leads you by 0.5
+*Same competitive set as above (18 peers). In this market, the catchment and category cohort overlap completely.*
 
 ## Dimension Scorecard
 
@@ -157,6 +141,8 @@ You are below the median of your peer set. At 7.0 vs peer average 6.8, competito
 
 **Driven by:** Google rating, TripAdvisor rating, FSA food hygiene sub-score, sentiment analysis
 
+**Management note:** Strong experience but peers are close. Monitor your most recent reviews for early signs of drift — the last 10 reviews matter more than the aggregate.
+
 
 ### Visibility — 8.2/10
 
@@ -181,6 +167,8 @@ You are below the median of your peer set. At 7.0 vs peer average 6.8, competito
 
 **Driven by:** FSA hygiene rating, structural compliance, management confidence, inspection recency
 
+**Management note:** Inspection age may be dragging this down. Recent compliance is not reflected in the score yet.
+
 
 ### Conversion — 5.5/10
 
@@ -193,7 +181,7 @@ You are below the median of your peer set. At 7.0 vs peer average 6.8, competito
 
 **Driven by:** Opening hours, menu online, delivery/takeaway, reservations, price level
 
-**Action required:** This score requires active intervention. Review the Priority Actions section for specific steps.
+**Management note:** Some operational signals present, but gaps remain. Each missing element is a percentage of potential customers who never complete their intent.
 
 
 ### Prestige — 1.5/10
@@ -207,12 +195,14 @@ You are below the median of your peer set. At 7.0 vs peer average 6.8, competito
 
 **Driven by:** Michelin mentions, AA rating, local awards, price positioning
 
-**Action required:** This score requires active intervention. Review the Priority Actions section for specific steps.
+**Management note:** Low prestige is normal for most operators and not commercially urgent. Focus on Experience and Trust first — prestige follows quality.
 
 
 ## Commercial Diagnosis
 
-A 4.6/5 rating across 887 reviews — genuine earned reputation driving discovery.
+A 4.6/5 Google rating across 887 reviews is a commanding position. This volume means the rating is statistically stable — individual reviews won't move it. The commercial value is in Google Maps ranking, where high-rating + high-volume venues dominate local search results.
+
+At P37.5 locally, the majority of direct competitors are outperforming you. Customers searching for your category in this area will likely find and choose alternatives first. This has direct revenue implications.
 
 ## Public Proof vs Operational Reality
 
@@ -242,13 +232,12 @@ This section compares what customers see (public signals) against what the data 
 ### What Customers Praise
 
 **Service & Hospitality** (7 mentions)
+> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly!"*
 > *"Vintner provided great pre-theatre service helped us get to our showing on time.
 
 I had the vegan risotto, which was solid and what I was looking for."*
-> *"Great little joint, had the Beef Rump and a Sticky Toffee Pudding and both were fantastic and good for the price."*
 
 **Food Quality** (3 mentions)
-> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly!"*
 > *"This was our second visit to The Vinter, & it didn’t disappoint! We come to Stratford several times a year to visit the RSC."*
 
 **Atmosphere & Setting** (3 mentions)
