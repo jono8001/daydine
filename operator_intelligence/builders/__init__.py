@@ -20,17 +20,12 @@ from operator_intelligence.builders.actions_tracker import (
     build_conditional_intelligence,
     build_data_coverage,
 )
-
-__all__ = [
-    "build_executive_summary",
-    "build_scorecard",
-    "build_performance_diagnosis",
-    "build_commercial_diagnosis",
-    "build_review_intelligence",
-    "build_priority_actions",
-    "build_watch_list",
-    "build_what_not_to_do",
-    "build_recommendation_tracker",
-    "build_conditional_intelligence",
-    "build_data_coverage",
-]
+from operator_intelligence.builders.long_form import (
+    build_management_priorities,
+    build_market_position,
+    build_dimension_diagnosis,
+    build_public_vs_reality,
+    build_conversion_analysis,
+    build_monitoring_plan,
+    build_evidence_appendix,
+)
