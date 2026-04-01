@@ -10,7 +10,35 @@
     "overall": 7.94
   },
   "deltas": null,
-  "priority_actions": [],
-  "watch_items": [],
-  "active_recommendations": 0
+  "priority_actions": [
+    {
+      "title": "Close the experience-to-conversion gap",
+      "status": "new",
+      "priority": 6.0,
+      "dimension": "conversion"
+    },
+    {
+      "title": "Pursue editorial recognition",
+      "status": "new",
+      "priority": 3.5,
+      "dimension": "prestige"
+    },
+    {
+      "title": "Respond to recent Google reviews",
+      "status": "new",
+      "priority": 4.0,
+      "dimension": "visibility"
+    }
+  ],
+  "watch_items": [
+    {
+      "title": "Monitor local competitor openings and closures",
+      "status": "new"
+    },
+    {
+      "title": "Track Google rating trend month-over-month",
+      "status": "new"
+    }
+  ],
+  "active_recommendations": 2
 }

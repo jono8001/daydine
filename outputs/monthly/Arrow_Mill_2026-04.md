@@ -1,111 +1,130 @@
-# Operator Intelligence Report
-## Arrow Mill
+# Arrow Mill — Operator Intelligence Report
 *2026-04 | Generated 01 April 2026 | DayDine Premium*
 
 ---
 
-## 1. Executive Summary
+## Executive Summary
 
-**Overall Operator Score: 7.94/10**
-*First report — no prior month for comparison.*
+**Overall Operator Score: 7.9 / 10**
+*Baseline month — no prior period for comparison*
 
-**Peer Position:**
-- Local Peers (5mi): #1 of 6 (P100.0) — peer avg 6.19, top 7.44
-- Catchment (15mi): #1 of 15 (P100.0) — peer avg 6.79, top 7.69
-- UK Category Cohort: #1 of 19 (P100.0) — peer avg 6.79, top 7.69
+**Strongest dimension:** Trust (9.7). **Weakest:** Prestige (1.5). Internal gap: 8.2 points.
 
-> Customers respond well to your food quality, service & hospitality.
+**Competitive position:** Local Peers (5mi): #1 of 6 (P100.0) — peer avg 6.19, top 7.44
+  Catchment (15mi): #1 of 15 (P100.0) — peer avg 6.79, top 7.69
+  UK Category Cohort: #1 of 19 (P100.0) — peer avg 6.79, top 7.69
 
-## 2. Dimension Scorecard
+**Top priority this month:** Close the experience-to-conversion gap (Conversion dimension, expected upside: +1.5 Conversion).
 
-| Dimension | Score | Change | Status |
-|-----------|------:|-------:|--------|
-| Experience | 9.4 | — | NEW |
-| Visibility | 8.5 | — | NEW |
-| Trust | 9.7 | — | NEW |
-| Conversion | 5.5 | — | NEW |
-| Prestige | 1.5 | — | NEW |
-| **Overall** | **7.9** | **—** | |
+*Based on structured signals (1988 Google reviews aggregated, no individual review text collected yet). Narrative depth will increase with review text enrichment.*
 
-## 3. Peer Benchmarking
+## Dimension Scorecard
 
-### Local Peers (5mi) (5 peers)
+| Dimension | Score | Δ | Peer Avg | Gap | Read |
+|-----------|------:|--:|---------:|----:|------|
+| Experience | 9.4 | — | 8.2 | +1.2 | Above peers |
+| Visibility | 8.5 | — | 6.5 | +2.0 | Clear strength |
+| Trust | 9.7 | — | 7.8 | +1.9 | Clear strength |
+| Conversion | 5.5 | — | 5.2 | +0.2 | In line |
+| Prestige | 1.5 | — | 0.6 | +0.9 | Above peers |
+| **Overall** | **7.9** | **—** | | | |
 
-| Dimension | You | Rank | Peer Avg | Percentile |
-|-----------|----:|-----:|---------:|-----------:|
-| Experience | 9.4 | #1/5 | 8.2 | P100.0 |
-| Visibility | 8.5 | #1/6 | 6.5 | P100.0 |
-| Trust | 9.7 | #1/6 | 7.8 | P100.0 |
-| Conversion | 5.5 | #1/5 | 5.2 | P100.0 |
-| Prestige | 1.5 | #1/6 | 0.6 | P100.0 |
-| Overall | 7.9 | #1/6 | 6.2 | P100.0 |
+## Performance Diagnosis
 
-**Top peers:**
-- Cafe Des Fleurs (7.4)
-- The Bell Inn (7.2)
-- The Alcester Inn (7.0)
+**Strengths:**
 
-### Catchment (15mi) (14 peers)
+- **Trust (9.7)**: FSA rating 5/5 with strong sub-scores across hygiene, structural, and management compliance. Recent inspection adds freshness.
+- **Experience (9.4)**: Google rating of 4.5/5 reflects consistently positive customer experience. This is a genuine earned strength, not a scoring artefact.
+- **Visibility (8.5)**: 1988 Google reviews and strong profile completeness give you significant search discovery advantage.
 
-| Dimension | You | Rank | Peer Avg | Percentile |
-|-----------|----:|-----:|---------:|-----------:|
-| Experience | 9.4 | #4/14 | 8.8 | P76.9 |
-| Visibility | 8.5 | #1/15 | 7.2 | P100.0 |
-| Trust | 9.7 | #1/15 | 8.1 | P100.0 |
-| Conversion | 5.5 | #1/14 | 5.0 | P100.0 |
-| Prestige | 1.5 | #1/15 | 0.8 | P100.0 |
-| Overall | 7.9 | #1/15 | 6.8 | P100.0 |
+**Vulnerabilities:**
 
-**Top peers:**
-- The Fox Inn (7.7)
-- The Red Lion (7.6)
-- The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5)
+- **Prestige (1.5)**: No editorial recognition detected. Not critical for most operators, but limits premium positioning potential.
 
-### UK Category Cohort (18 peers)
+**Biggest competitive advantage:** Visibility (+2.0 vs peer average). Protect this.
 
-| Dimension | You | Rank | Peer Avg | Percentile |
-|-----------|----:|-----:|---------:|-----------:|
-| Experience | 9.4 | #4/18 | 8.8 | P82.4 |
-| Visibility | 8.5 | #1/19 | 7.2 | P100.0 |
-| Trust | 9.7 | #1/19 | 8.0 | P100.0 |
-| Conversion | 5.5 | #1/18 | 5.1 | P100.0 |
-| Prestige | 1.5 | #1/19 | 0.8 | P100.0 |
-| Overall | 7.9 | #1/19 | 6.8 | P100.0 |
+## Review & Reputation Intelligence
 
-**Top peers:**
-- The Fox Inn (7.7)
-- The Red Lion (7.6)
-- The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5)
+**Source coverage:** No individual review text collected for this venue. The analysis below is based on aggregated rating and volume signals.
 
-## 4. Review Intelligence
+- **Review volume (1988 Google reviews):** Strong social proof. High volume provides confidence that the aggregate rating is stable and resistant to individual outlier reviews.
+- **TripAdvisor:** No presence detected. For hospitality venues, TripAdvisor absence is a missed discovery channel.
 
-**What customers praise:**
-- Food Quality (3 mentions)
-- Service & Hospitality (1 mentions)
+*To unlock full review narrative analysis, run the Google Places review text enrichment pipeline (`enrich_google_stratford.py` with review text enabled).*
 
-## 5. Commercial Diagnosis
+## Commercial Diagnosis
 
-Customers respond well to your food quality, service & hospitality.
+A 4.5/5 Google rating across 1988 reviews represents genuine earned reputation — this is a real competitive asset that drives discovery and conversion.
 
-## 6. Priority Actions
+At P100.0 locally, you're in the top tier of your competitive set. The focus should be on protecting position and building prestige, not fixing fundamentals.
 
-No priority actions this month — you're in strong shape.
+## Priority Actions
 
-## 7. Recommendation Tracker
+### 1. Close the experience-to-conversion gap [NEW]
 
-## 8. What Not to Do This Month
+Strong experience score but low conversion readiness means you're delivering a good product that customers can't easily access. Ensure hours, menu, and ordering options are visible online.
 
-No deprioritised actions this month.
+- **Owner:** operations | **Dimension:** Conversion
+- **Expected upside:** +1.5 Conversion | **Confidence:** 80%
+- **Evidence:** `experience=9.42, conversion=5.5`
+
+### 2. Pursue editorial recognition [NEW]
+
+Your operational scores support a credible submission to the AA Restaurant Guide or local food awards. Editorial recognition would differentiate you from peers and justify premium positioning.
+
+- **Owner:** management | **Dimension:** Prestige
+- **Expected upside:** +2.0 Prestige, brand differentiation | **Confidence:** 50%
+- **Evidence:** `overall=7.94`
+
+### 3. Respond to recent Google reviews [NEW]
+
+Active review responses signal engagement to both Google's algorithm and prospective customers. Aim to respond to all reviews within 48 hours, especially critical ones.
+
+- **Owner:** front-of-house | **Dimension:** Visibility
+- **Expected upside:** Review engagement, discovery signal | **Confidence:** 80%
+- **Evidence:** `standing_best_practice`
+
+## Watch List
+
+**Monitor local competitor openings and closures** [NEW]
+
+New entrants or closures in your category within 5 miles can shift your competitive position. Stay aware of planning applications and social media announcements.
+
+**Track Google rating trend month-over-month** [NEW]
+
+A sustained 0.1-point drop over 3 months can indicate systemic issues before they become obvious. Monitor monthly.
+
+## What Not to Do This Month
+
+**Don't chase prestige before fixing fundamentals**
+
+Avoid spending time on awards submissions, PR, or premium positioning until Experience, Trust, and Visibility scores are all above 7.0. The fundamentals compound into commercial value; prestige without substance doesn't.
+
+## Recommendation Tracker
+
+| # | Recommendation | Status | Since | Months | Owner | Dimension |
+|--:|---------------|--------|-------|-------:|-------|-----------|
+| 1 | Close the experience-to-conversion gap | new | 2026-04 | 1 | operations | conversion |
+| 2 | Pursue editorial recognition | new | 2026-04 | 1 | management | prestige |
 
 ---
 
-## Appendix: Data Sources
+## Data Coverage & Confidence
 
-| Source | Status |
-|--------|--------|
-| FSA Hygiene Rating | Rating 5 |
-| Google Business Profile | 4.5★ (1988 reviews) |
-| Category | Pub / Bar |
-| Postcode | B49 5NL |
+| Source | Status | Available |
+|--------|--------|:---------:|
+| FSA Hygiene Rating | Rating 5/5 | ✓ |
+| Google Business Profile | 4.5★ (1988 reviews) | ✓ |
+| Google Review Text | Not collected | — |
+| TripAdvisor | Not collected | — |
+| Companies House | Not checked | — |
 
-*Report generated by DayDine Operator Intelligence v1.0 — 2026-04*
+**Report confidence: Medium** — Core signals available but some dimensions rely on limited data.
+
+**What additional collection would unlock:**
+
+- **Google review text collection** would enable sentiment-by-topic analysis, complaint clustering, and quoted evidence in recommendations
+- **TripAdvisor enrichment** would add cross-platform validation and unlock convergence scoring
+
+
+*Report generated by DayDine Operator Intelligence v2.0 — 2026-04*

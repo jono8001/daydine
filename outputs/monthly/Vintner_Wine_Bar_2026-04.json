@@ -1,0 +1,44 @@
+{
+  "venue": "Vintner Wine Bar",
+  "month": "2026-04",
+  "scorecard": {
+    "experience": 8.7,
+    "visibility": 8.23,
+    "trust": 7.21,
+    "conversion": 5.5,
+    "prestige": 1.5,
+    "overall": 7.03
+  },
+  "deltas": null,
+  "priority_actions": [
+    {
+      "title": "Close the experience-to-conversion gap",
+      "status": "new",
+      "priority": 6.0,
+      "dimension": "conversion"
+    },
+    {
+      "title": "Trust below peer average",
+      "status": "new",
+      "priority": 5.5,
+      "dimension": "trust"
+    },
+    {
+      "title": "Experience below peer average",
+      "status": "new",
+      "priority": 5.5,
+      "dimension": "experience"
+    }
+  ],
+  "watch_items": [
+    {
+      "title": "Below local median — competitive risk",
+      "status": "new"
+    },
+    {
+      "title": "Monitor local competitor openings and closures",
+      "status": "new"
+    }
+  ],
+  "active_recommendations": 4
+}

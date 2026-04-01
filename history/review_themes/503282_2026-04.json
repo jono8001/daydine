@@ -1,8 +1,6 @@
 {
-  "themes": {
-    "food_quality": 3,
-    "service": 1
-  },
-  "quotes_positive": [],
-  "quotes_constructive": []
+  "has_narrative": false,
+  "review_count_google": 1988,
+  "review_count_ta": null,
+  "aspects": null
 }
