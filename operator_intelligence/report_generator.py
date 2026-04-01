@@ -17,7 +17,7 @@ from operator_intelligence.report_spec import (
 from operator_intelligence.builders import (
     build_executive_summary, build_scorecard,
     build_performance_diagnosis, build_commercial_diagnosis,
-    build_review_intelligence, build_priority_actions,
+    build_review_intelligence,
     build_watch_list, build_what_not_to_do,
     build_recommendation_tracker, build_conditional_intelligence,
     build_data_coverage,
@@ -25,13 +25,14 @@ from operator_intelligence.builders import (
     build_dimension_diagnosis, build_public_vs_reality,
     build_conversion_analysis, build_monitoring_plan,
     build_evidence_appendix,
+    build_known_for, build_protect_improve_ignore,
 )
 
 DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
 
 
 # ---------------------------------------------------------------------------
-# Monthly Report Assembly — 18 sections, management-grade depth
+# Monthly Report Assembly — proposition-led, business-language-first
 # ---------------------------------------------------------------------------
 
 def generate_monthly_report(venue_name, month_str, scorecard, deltas,
@@ -43,30 +44,41 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     L = []
     w = L.append
 
+    # --- Proposition-first sections ---
     # 1. Executive Summary
     build_executive_summary(w, venue_name, month_str, mode, scorecard,
                             deltas, benchmarks, review_intel, recs)
-    # 2. Management Priorities (replaces simple action list)
+    # 2. What This Venue Is Becoming Known For
+    build_known_for(w, venue_name, scorecard, benchmarks, review_intel)
+    # 3. Management Priorities
     build_management_priorities(w, scorecard, deltas, benchmarks, recs)
-    # 3. Watch List
-    build_watch_list(w, recs)
-    # 4. What Not to Do
-    build_what_not_to_do(w, recs)
-    # 5. Market Position (3-ring deep analysis)
-    build_market_position(w, scorecard, benchmarks)
-    # 6. Dimension Scorecard (compact table)
-    build_scorecard(w, scorecard, deltas, benchmarks)
-    # 7. Dimension-by-Dimension Diagnosis
-    build_dimension_diagnosis(w, scorecard, deltas, benchmarks)
-    # 8. Commercial Diagnosis
+    # 4. Protect / Improve / Ignore
+    build_protect_improve_ignore(w, scorecard, deltas, benchmarks, review_intel, recs)
+    # 5. Commercial Diagnosis (bottleneck, positioning, revenue leakage)
     build_commercial_diagnosis(w, scorecard, deltas, benchmarks, review_intel)
-    # 9. Public Proof vs Operational Reality
-    build_public_vs_reality(w, scorecard)
-    # 10. Review & Reputation Intelligence
+
+    # --- Evidence and analysis sections ---
+    # 6. Review & Reputation Intelligence
     build_review_intelligence(w, mode, review_intel, review_delta)
-    # 11. Conversion Friction Analysis
+    # 7. Market Position (3-ring peer analysis)
+    build_market_position(w, scorecard, benchmarks)
+    # 8. Public Proof vs Operational Reality
+    build_public_vs_reality(w, scorecard)
+    # 9. Conversion Friction Analysis
     build_conversion_analysis(w, scorecard, venue_rec)
-    # 12. Recommendation Tracker
+
+    # --- Score detail (supporting, not driving) ---
+    # 10. Dimension Scorecard (compact table)
+    build_scorecard(w, scorecard, deltas, benchmarks)
+    # 11. Dimension-by-Dimension Diagnosis
+    build_dimension_diagnosis(w, scorecard, deltas, benchmarks)
+
+    # --- Tracking and monitoring ---
+    # 12. Watch List
+    build_watch_list(w, recs)
+    # 13. What Not to Do
+    build_what_not_to_do(w, recs)
+    # 14. Recommendation Tracker
     build_recommendation_tracker(w, recs)
     # 13. Conditional Intelligence
     build_conditional_intelligence(w, conditional_blocks)

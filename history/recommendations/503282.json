@@ -12,27 +12,27 @@
     "rec_type": "action",
     "rec_id": "ce2c9bc72ab0",
     "venue_id": "503282",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
-  "18f262bb6a1a": {
+  "485d036dd057": {
     "theme": "conversion",
     "dimension": "conversion",
-    "title": "Close the experience-to-conversion gap",
-    "description": "Strong experience score but low conversion readiness means you're delivering a good product that customers can't easily access. Ensure hours, menu, and ordering options are visible online.",
+    "title": "Fix the digital shopfront — you're losing walk-ins",
+    "description": "You deliver a strong experience but your online presence doesn't make it easy to act on. Check: can a new customer confirm your hours, see your menu, and book or walk in — all within 60 seconds on their phone? If not, that's your fix list.",
     "evidence": "experience=9.42, conversion=5.5",
     "owner": "operations",
     "priority_score": 6.0,
-    "expected_upside": "+1.5 Conversion",
+    "expected_upside": "Capture demand you're currently losing",
     "confidence": 0.8,
     "rec_type": "action",
-    "rec_id": "18f262bb6a1a",
+    "rec_id": "485d036dd057",
     "venue_id": "503282",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

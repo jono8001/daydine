@@ -14,59 +14,149 @@
   Catchment (15mi): #11 of 19 (P44.4) — peer avg 6.84, top 7.94
   UK Category Cohort: #11 of 19 (P44.4) — peer avg 6.84, top 7.94
 
-**Top priority this month:** Close the experience-to-conversion gap (Conversion, expected upside: +1.5 Conversion).
+**Top priority this month:** Fix the digital shopfront — you're losing walk-ins (Conversion, expected upside: Capture demand you're currently losing).
 
 *This report includes narrative analysis from 5 customer reviews.*
+
+## What This Venue Is Becoming Known For
+
+Vintner Wine Bar is a well-established pub dining venue with a strong public reputation — 4.6/5 across 887 Google reviews. That volume means the reputation is earned, not manufactured.
+
+Guest feedback centres on **service & hospitality** (7 mentions) and **atmosphere & setting** (3 mentions). These are the pillars of the current proposition as guests perceive it.
+
+The venue currently sits below the local median. Guests have demonstrably higher-rated alternatives nearby, which constrains the venue's ability to define its own market identity.
 
 ## Management Priorities
 
 Your score is solid but not dominant. The management question is *which specific dimension, if improved, would most change your commercial trajectory* — and which can you realistically move?
 
-### Priority 1: Close the experience-to-conversion gap [NEW]
+### Priority 1: Fix the digital shopfront — you're losing walk-ins [ONGOING]
 
-Strong experience score but low conversion readiness means you're delivering a good product that customers can't easily access. Ensure hours, menu, and ordering options are visible online.
+You deliver a strong experience but your online presence doesn't make it easy to act on. Check: can a new customer confirm your hours, see your menu, and book or walk in — all within 60 seconds on their phone? If not, that's your fix list.
 
 **Management implication:** This is a demand-capture problem. You are generating interest (experience and visibility are strong) but losing potential customers at the point they try to act on that interest. Every day this remains unresolved represents lost covers.
 
 - **Owner:** operations | **Confidence:** 80%
-- **Expected upside:** +1.5 Conversion
+- **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.7, conversion=5.5`
+- *This recommendation has appeared 2 consecutive months.*
 
-### Priority 2: Trust below peer average [NEW]
+### Priority 2: Compliance record trailing local standards [ONGOING]
 
-Your Trust score (7.2) sits at P12.5 vs local peers (avg 8.3). Monitor for further decline.
+Most local peers carry stronger formal compliance signals. This may not affect daily footfall yet but creates exposure if an inspection goes poorly or a customer complaint escalates.
 
 **Management implication:** Trust is a foundational score. Low trust creates a ceiling on your overall position regardless of how strong other dimensions become. This should be treated as a compliance project, not a marketing initiative.
 
 - **Owner:** management | **Confidence:** 65%
-- **Expected upside:** +1.1 Trust to reach parity
-- **Evidence:** `trust_pct=12.5`
+- **Expected upside:** Closing 1.1-point gap to peer average
+- **Evidence:** `trust: 7.2 vs peer avg 8.3`
+- *This recommendation has appeared 2 consecutive months.*
 
-### Priority 3: Experience below peer average [NEW]
+### Priority 3: Guest experience trailing local competitors [ONGOING]
 
-Your Experience score (8.7) sits at P25.0 vs local peers (avg 9.0). Monitor for further decline.
+Peers are delivering a more consistent or higher-quality guest experience. Identify what they do differently — is it menu depth, service style, or ambience? — and decide whether to match or differentiate.
 
 **Management implication:** Experience is the most commercially sensitive dimension — it drives reviews, return visits, and word-of-mouth. Improvements here compound faster than any other dimension.
 
 - **Owner:** management | **Confidence:** 65%
-- **Expected upside:** +0.3 Experience to reach parity
-- **Evidence:** `experience_pct=25.0`
+- **Expected upside:** Closing 0.3-point gap to peer average
+- **Evidence:** `experience: 8.7 vs peer avg 9.0`
+- *This recommendation has appeared 2 consecutive months.*
 
-## Watch List
+## Protect / Improve / Ignore
 
-**Below local median — competitive risk** [NEW]
+### Protect
 
-Ranked #6 of 9 locally (P37.5). Peers are outperforming you on aggregate.
+- **Search visibility.** 887 Google reviews at 4.6/5 gives you a discovery advantage that took years to build. Protect it by continuing to respond to reviews and keeping your profile current.
 
-**Monitor local competitor openings and closures** [NEW]
+### Improve
 
-New entrants or closures in your category within 5 miles can shift your competitive position. Stay aware of planning applications and social media announcements.
+- **Demand capture.** You're generating interest that isn't being fully converted. Check that hours, menu, and booking/ordering options are complete and prominent on Google. Each missing element is lost footfall.
 
-## What Not to Do This Month
+### Ignore
 
-**Don't chase prestige before fixing fundamentals**
+- **Awards and editorial pursuit.** Your fundamentals need strengthening before prestige investment makes sense. Awards don't fix a weak proposition; they amplify a strong one.
 
-Avoid spending time on awards submissions, PR, or premium positioning until Experience, Trust, and Visibility scores are all above 7.0. The fundamentals compound into commercial value; prestige without substance doesn't.
+## Commercial Diagnosis
+
+### Main Bottleneck
+
+**No single binding constraint identified.** The venue is operationally balanced. The commercial focus should be on marginal gains across the proposition rather than fixing a single bottleneck.
+
+### Positioning
+
+Below the local median. Customers in this area have demonstrably better-rated alternatives available. The commercial implication is direct: without a distinctive proposition or significant improvement, the venue competes primarily on convenience and price.
+
+### Revenue Left on the Table
+
+- **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier. This is measurable lost footfall.
+- **Proposition not explicitly marketed.** Guests consistently praise service & hospitality, but this isn't visibly communicated in the venue's online presence. Making this the headline proposition in Google Business Profile, social media, and website would sharpen customer expectations and attract the right guests.
+
+## Review & Reputation Intelligence
+
+**Based on 5 customer reviews with full text analysis.**
+
+### Rating & Volume Context
+
+- 887 reviews — strong base. Rating is stable but a sustained negative pattern could shift it.
+- 4.6/5 places you in the top tier of Google search results. This drives discovery.
+- **Sample vs aggregate:** Analysed reviews average 4.8★ vs overall 4.6/5. Recent/prominent reviews skew higher than the lifetime average — may indicate improvement or selection bias in Google's 'most relevant' algorithm.
+
+### Sentiment Distribution
+
+Of 5 reviews analysed: **5 positive**, **0 negative**, **0 mixed**.
+
+All sampled reviews are positive. This is encouraging but note that Google's 'most relevant' algorithm tends to surface popular reviews. Negative signals may exist deeper in the review corpus.
+
+### Sentiment by Topic
+
+| Topic | Score | Positive | Negative | Total | Read |
+|-------|------:|---------:|---------:|------:|------|
+| Service & Hospitality | 10.0/10 | 7 | 0 | 7 | Strength |
+| Atmosphere & Setting | 10.0/10 | 3 | 0 | 3 | Strength |
+| Food Quality | 10.0/10 | 3 | 0 | 3 | Strength |
+| Value for Money | 10.0/10 | 1 | 0 | 1 | Strength |
+| Booking & Accessibility | 10.0/10 | 1 | 0 | 1 | Strength |
+
+### What Customers Praise
+
+**Service & Hospitality** (7 positive mentions)
+> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
+> *"The staff were attentive throughout, checking in at the right moments"*
+
+**Atmosphere & Setting** (3 positive mentions)
+> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
+
+**Food Quality** (3 positive mentions)
+> *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
+
+**Value for Money** (1 positive mentions)
+> *"The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service"*
+
+**Booking & Accessibility** (1 positive mentions)
+> *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
+
+### Criticism Assessment
+
+No negative themes detected across 5 analysed reviews. While positive, note that Google surfaces its 'most relevant' reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on Google Maps — these may reveal issues not captured here.
+
+### Rating Trajectory
+
+Recent reviews trend higher than earlier ones in the sample. This may indicate recent operational improvements landing with customers.
+
+### Review-by-Review Summary
+
+| # | Rating | Sentiment | Topics | Snippet |
+|--:|-------:|-----------|--------|---------|
+| 1 | 5★ | positive | Service & Hospitality, Atmosphere & Setting | We went with our dog and were seated in the cozy, pet-friendly section by the do... |
+| 2 | 4★ | positive | Service & Hospitality | The staff were attentive throughout, checking in at the right moments |
+| 3 | 5★ | positive | Service & Hospitality, Value for Money | The service was exceptional, the waitress was very friendly and polite and very ... |
+| 4 | 5★ | positive | Food Quality, Booking & Accessibility | We pre-booked online (would recommend pre booking, especially weekends) & advise... |
+| 5 | 5★ | positive | Service & Hospitality | Great choice of "Sharable" starters with very friendly staff especially Charlie. |
+
+### Analysis Limitations
+
+This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution across all 887 reviews.
 
 ## Market Position
 
@@ -116,6 +206,29 @@ You are below the median of your peer set. At 7.0 vs peer average 6.8, competito
 ### UK Category Cohort
 
 *Same competitive set as above (18 peers). In this market, the catchment and category cohort overlap completely.*
+
+## Public Proof vs Operational Reality
+
+This section compares what customers see (public signals) against what the data reveals about operational depth.
+
+| Aspect | Public Signal | Operational Reality |
+|--------|-------------|---------------------|
+| Customer Rating | 4.6/5 Google (Strong) | Experience 8.7/10 (Strong) — Aligned |
+| Hygiene Rating | FSA 5/5 (Top mark) | Trust 7.2/10 (Adequate) |
+| Review Volume | 887 reviews (High) | Visibility 8.2/10 (Strong) |
+| Booking/Ordering | What customers can find | Conversion 5.5/10 (Partial) |
+
+## Conversion Friction Analysis
+
+This section identifies specific barriers between customer interest and a completed visit or order.
+
+| Friction Point | Impact | Fix |
+|---------------|--------|-----|
+| No delivery/takeaway signal | Google Maps filters for 'delivery' and 'takeaway'. If you offer these services but haven't flagged them, you're invisible to that search intent. | Update Google Business Profile service attributes. |
+
+**1 friction point(s) identified.** Each one represents a leak in your conversion funnel where interested customers drop off before reaching you.
+
+**Overall conversion readiness: Partial.** Some signals are present but gaps remain. Each missing element is a percentage of potential customers who never reach you.
 
 ## Dimension Scorecard
 
@@ -198,109 +311,30 @@ You are below the median of your peer set. At 7.0 vs peer average 6.8, competito
 **Management note:** Low prestige is normal for most operators and not commercially urgent. Focus on Experience and Trust first — prestige follows quality.
 
 
-## Commercial Diagnosis
+## Watch List
 
-A 4.6/5 Google rating across 887 reviews is a commanding position. This volume means the rating is statistically stable — individual reviews won't move it. The commercial value is in Google Maps ranking, where high-rating + high-volume venues dominate local search results.
+**Below local median — competitive risk** [ONGOING]
 
-At P37.5 locally, the majority of direct competitors are outperforming you. Customers searching for your category in this area will likely find and choose alternatives first. This has direct revenue implications.
+Ranked #6 of 9 locally (P37.5). Peers are outperforming you on aggregate.
 
-## Public Proof vs Operational Reality
+**Monitor local competitor openings and closures** [NEW]
 
-This section compares what customers see (public signals) against what the data reveals about operational depth.
+New entrants or closures in your category within 5 miles can shift your competitive position. Stay aware of planning applications and social media announcements.
 
-| Aspect | Public Signal | Operational Reality |
-|--------|-------------|---------------------|
-| Customer Rating | 4.6/5 Google (Strong) | Experience 8.7/10 (Strong) — Aligned |
-| Hygiene Rating | FSA 5/5 (Top mark) | Trust 7.2/10 (Adequate) |
-| Review Volume | 887 reviews (High) | Visibility 8.2/10 (Strong) |
-| Booking/Ordering | What customers can find | Conversion 5.5/10 (Partial) |
+## What Not to Do This Month
 
-## Review & Reputation Intelligence
+**Don't chase prestige before fixing fundamentals**
 
-**Based on 5 customer reviews with full text analysis.**
-
-### Rating & Volume Context
-
-- 887 reviews — strong base. Rating is stable but a sustained negative pattern could shift it.
-- 4.6/5 places you in the top tier of Google search results. This drives discovery.
-- **Sample vs aggregate:** Analysed reviews average 4.8★ vs overall 4.6/5. Recent/prominent reviews skew higher than the lifetime average — may indicate improvement or selection bias in Google's 'most relevant' algorithm.
-
-### Sentiment Distribution
-
-Of 5 reviews analysed: **5 positive**, **0 negative**, **0 mixed**.
-
-All sampled reviews are positive. This is encouraging but note that Google's 'most relevant' algorithm tends to surface popular reviews. Negative signals may exist deeper in the review corpus.
-
-### Sentiment by Topic
-
-| Topic | Score | Positive | Negative | Total | Read |
-|-------|------:|---------:|---------:|------:|------|
-| Service & Hospitality | 10.0/10 | 7 | 0 | 7 | Strength |
-| Atmosphere & Setting | 10.0/10 | 3 | 0 | 3 | Strength |
-| Food Quality | 10.0/10 | 3 | 0 | 3 | Strength |
-| Value for Money | 10.0/10 | 1 | 0 | 1 | Strength |
-| Booking & Accessibility | 10.0/10 | 1 | 0 | 1 | Strength |
-
-### What Customers Praise
-
-**Service & Hospitality** (7 positive mentions)
-> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
-> *"The staff were attentive throughout, checking in at the right moments"*
-
-**Atmosphere & Setting** (3 positive mentions)
-> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
-
-**Food Quality** (3 positive mentions)
-> *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
-
-**Value for Money** (1 positive mentions)
-> *"The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service"*
-
-**Booking & Accessibility** (1 positive mentions)
-> *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
-
-### Criticism Assessment
-
-No negative themes detected across 5 analysed reviews. While positive, note that Google surfaces its 'most relevant' reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on Google Maps — these may reveal issues not captured here.
-
-### Rating Trajectory
-
-Recent reviews trend higher than earlier ones in the sample. This may indicate recent operational improvements landing with customers.
-
-### Review-by-Review Summary
-
-| # | Rating | Sentiment | Topics | Snippet |
-|--:|-------:|-----------|--------|---------|
-| 1 | 5★ | positive | Service & Hospitality, Atmosphere & Setting | We went with our dog and were seated in the cozy, pet-friendly section by the do... |
-| 2 | 4★ | positive | Service & Hospitality | The staff were attentive throughout, checking in at the right moments |
-| 3 | 5★ | positive | Service & Hospitality, Value for Money | The service was exceptional, the waitress was very friendly and polite and very ... |
-| 4 | 5★ | positive | Food Quality, Booking & Accessibility | We pre-booked online (would recommend pre booking, especially weekends) & advise... |
-| 5 | 5★ | positive | Service & Hospitality | Great choice of "Sharable" starters with very friendly staff especially Charlie. |
-
-### Analysis Limitations
-
-This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution across all 887 reviews.
-
-## Conversion Friction Analysis
-
-This section identifies specific barriers between customer interest and a completed visit or order.
-
-| Friction Point | Impact | Fix |
-|---------------|--------|-----|
-| No delivery/takeaway signal | Google Maps filters for 'delivery' and 'takeaway'. If you offer these services but haven't flagged them, you're invisible to that search intent. | Update Google Business Profile service attributes. |
-
-**1 friction point(s) identified.** Each one represents a leak in your conversion funnel where interested customers drop off before reaching you.
-
-**Overall conversion readiness: Partial.** Some signals are present but gaps remain. Each missing element is a percentage of potential customers who never reach you.
+Avoid spending time on awards submissions, PR, or premium positioning until Experience, Trust, and Visibility scores are all above 7.0. The fundamentals compound into commercial value; prestige without substance doesn't.
 
 ## Recommendation Tracker
 
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
-| 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Close the experience-to-conversion gap | new | 2026-04 | 1 | operations | conversion |
-| 3 | Experience below peer average | new | 2026-04 | 1 | management | experience |
-| 4 | Trust below peer average | new | 2026-04 | 1 | management | trust |
+| 1 | Below local median — competitive risk | ongoing | 2026-04 | 2 | management | overall |
+| 2 | Fix the digital shopfront — you're losing walk-ins | ongoing | 2026-04 | 2 | operations | conversion |
+| 3 | Guest experience trailing local competitors | ongoing | 2026-04 | 2 | management | experience |
+| 4 | Compliance record trailing local standards | ongoing | 2026-04 | 2 | management | trust |
 
 ## Next-Month Monitoring Plan
 
@@ -310,8 +344,8 @@ Track these specific metrics before the next report to measure progress:
 |----------------|-----------------|--------|-------|
 | Google rating | 4.6/5 | Maintain or improve | Front-of-house |
 | Google review count | 887 | 897+ | Marketing |
-| Close the experience-to-conversion gap | Action raised | Complete | operations |
-| Trust below peer average | Action raised | Complete | management |
+| Fix the digital shopfront — you're losin | Action raised | Complete | operations |
+| Compliance record trailing local standar | Action raised | Complete | management |
 | Below local median — competitive risk | Watch raised | Monitor | management |
 
 **Review date:** First week of next month. Compare these baselines against updated data to measure whether actions had impact.

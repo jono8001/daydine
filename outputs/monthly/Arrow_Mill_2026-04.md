@@ -14,25 +14,36 @@
   Catchment (15mi): #1 of 15 (P100.0) — peer avg 6.79, top 7.69
   UK Category Cohort: #1 of 19 (P100.0) — peer avg 6.79, top 7.69
 
-**Top priority this month:** Close the experience-to-conversion gap (Conversion, expected upside: +1.5 Conversion).
+**Top priority this month:** Fix the digital shopfront — you're losing walk-ins (Conversion, expected upside: Capture demand you're currently losing).
 
 *This report includes narrative analysis from 5 customer reviews.*
+
+## What This Venue Is Becoming Known For
+
+Arrow Mill is a well-established pub dining venue with a strong public reputation — 4.5/5 across 1,988 Google reviews. That volume means the reputation is earned, not manufactured.
+
+Guest feedback centres on **service & hospitality** (18 mentions) and **food quality** (7 mentions). These are the pillars of the current proposition as guests perceive it.
+
+Within the local pub dining market (5 peers), this venue leads the field. The identity is that of a category leader — the venue others are compared against.
+
+The public proof (ratings, compliance) aligns with what guests actually experience. This consistency is commercially valuable — it means expectations set online are met in person.
 
 ## Management Priorities
 
 Your score is solid but not dominant. The management question is *which specific dimension, if improved, would most change your commercial trajectory* — and which can you realistically move?
 
-### Priority 1: Close the experience-to-conversion gap [NEW]
+### Priority 1: Fix the digital shopfront — you're losing walk-ins [ONGOING]
 
-Strong experience score but low conversion readiness means you're delivering a good product that customers can't easily access. Ensure hours, menu, and ordering options are visible online.
+You deliver a strong experience but your online presence doesn't make it easy to act on. Check: can a new customer confirm your hours, see your menu, and book or walk in — all within 60 seconds on their phone? If not, that's your fix list.
 
 **Management implication:** This is a demand-capture problem. You are generating interest (experience and visibility are strong) but losing potential customers at the point they try to act on that interest. Every day this remains unresolved represents lost covers.
 
 - **Owner:** operations | **Confidence:** 80%
-- **Expected upside:** +1.5 Conversion
+- **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=9.42, conversion=5.5`
+- *This recommendation has appeared 2 consecutive months.*
 
-### Priority 2: Pursue editorial recognition [NEW]
+### Priority 2: Pursue editorial recognition [ONGOING]
 
 Your operational scores support a credible submission to the AA Restaurant Guide or local food awards. Editorial recognition would differentiate you from peers and justify premium positioning.
 
@@ -41,32 +52,117 @@ Your operational scores support a credible submission to the AA Restaurant Guide
 - **Owner:** management | **Confidence:** 50%
 - **Expected upside:** +2.0 Prestige, brand differentiation
 - **Evidence:** `overall=7.94`
+- *This recommendation has appeared 2 consecutive months.*
 
-### Priority 3: Respond to recent Google reviews [NEW]
+### Priority 3: Turn strong guest warmth into fresh public proof [NEW]
 
-Active review responses signal engagement to both Google's algorithm and prospective customers. Aim to respond to all reviews within 48 hours, especially critical ones.
+Respond to every Google review within 48 hours — positive and negative. For satisfied tables, a brief 'we'd love your feedback on Google' at bill presentation converts private goodwill into public evidence. This compounds monthly.
 
 **Management implication:** Visibility directly drives discovery. A venue that isn't found can't convert. This is a marketing and digital operations issue that can typically be moved within 60 days.
 
 - **Owner:** front-of-house | **Confidence:** 80%
-- **Expected upside:** Review engagement, discovery signal
+- **Expected upside:** Review velocity → discovery ranking
 - **Evidence:** `standing_best_practice`
 
-## Watch List
+## Protect / Improve / Ignore
 
-**Monitor local competitor openings and closures** [NEW]
+### Protect
 
-New entrants or closures in your category within 5 miles can shift your competitive position. Stay aware of planning applications and social media announcements.
+- **The service & hospitality reputation.** This is the core of what guests value. It's earned through consistency, not marketing, and it erodes the moment standards slip. Protect this with staffing depth, supplier quality, and management presence on the floor.
+- **Search visibility.** 1,988 Google reviews at 4.5/5 gives you a discovery advantage that took years to build. Protect it by continuing to respond to reviews and keeping your profile current.
 
-**Track Google rating trend month-over-month** [NEW]
+### Improve
 
-A sustained 0.1-point drop over 3 months can indicate systemic issues before they become obvious. Monitor monthly.
+- **Demand capture.** You're generating interest that isn't being fully converted. Check that hours, menu, and booking/ordering options are complete and prominent on Google. Each missing element is lost footfall.
 
-## What Not to Do This Month
+### Ignore
 
-**Don't chase prestige before fixing fundamentals**
+- **Prestige score anxiety.** Low prestige is normal — most excellent operators have zero editorial recognition. It does not affect footfall, discovery, or day-to-day revenue. Pursue it when the time is right, but don't let it distract from operational priorities.
 
-Avoid spending time on awards submissions, PR, or premium positioning until Experience, Trust, and Visibility scores are all above 7.0. The fundamentals compound into commercial value; prestige without substance doesn't.
+## Commercial Diagnosis
+
+### Main Bottleneck
+
+**Under-recognition.** The venue operates at a level that justifies premium positioning but carries none of the formal recognition that would support premium pricing, press attention, or talent recruitment. The bottleneck is not quality — it's credentialing.
+
+### Positioning
+
+The venue is positioned as the local category leader, primarily known for service & hospitality. Commercially, this position supports premium pricing, event hosting, and extension opportunities (private dining, catering, seasonal events). The risk is complacency — leadership must be actively maintained.
+
+### Revenue Left on the Table
+
+- **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier. This is measurable lost footfall.
+- **No formal credentialing.** Quality supports premium pricing but without editorial recognition (AA, Michelin Plate, local awards), the venue cannot justify the price point that its experience quality would support.
+- **Proposition not explicitly marketed.** Guests consistently praise service & hospitality, but this isn't visibly communicated in the venue's online presence. Making this the headline proposition in Google Business Profile, social media, and website would sharpen customer expectations and attract the right guests.
+
+## Review & Reputation Intelligence
+
+**Based on 5 customer reviews with full text analysis.**
+
+### Rating & Volume Context
+
+- 1,988 reviews — statistically robust rating. Individual reviews have negligible impact.
+- 4.5/5 places you in the top tier of Google search results. This drives discovery.
+- **Sample vs aggregate:** Analysed reviews average 5.0★ vs overall 4.5/5. Recent/prominent reviews skew higher than the lifetime average — may indicate improvement or selection bias in Google's 'most relevant' algorithm.
+
+### Sentiment Distribution
+
+Of 5 reviews analysed: **5 positive**, **0 negative**, **0 mixed**.
+
+All sampled reviews are positive. This is encouraging but note that Google's 'most relevant' algorithm tends to surface popular reviews. Negative signals may exist deeper in the review corpus.
+
+### Sentiment by Topic
+
+| Topic | Score | Positive | Negative | Total | Read |
+|-------|------:|---------:|---------:|------:|------|
+| Service & Hospitality | 10.0/10 | 18 | 0 | 18 | Strength |
+| Food Quality | 10.0/10 | 7 | 0 | 7 | Strength |
+| Speed & Efficiency | 10.0/10 | 3 | 0 | 3 | Strength |
+| Atmosphere & Setting | 10.0/10 | 3 | 0 | 3 | Strength |
+| Value for Money | 10.0/10 | 1 | 0 | 1 | Strength |
+
+### What Customers Praise
+
+**Service & Hospitality** (18 positive mentions)
+> *"The staff were all VERTY friendly and helpful"*
+> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
+
+**Food Quality** (7 positive mentions)
+> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
+> *"Hi, would just like to say what a lovely meal we had with you this afternoon"*
+
+**Speed & Efficiency** (3 positive mentions)
+> *"The staff were all VERTY friendly and helpful"*
+> *"The staff were all very welcoming and friendly and we had quick service"*
+
+**Atmosphere & Setting** (3 positive mentions)
+> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
+> *"From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after"*
+
+**Value for Money** (1 positive mentions)
+> *"The staff were all VERTY friendly and helpful"*
+
+### Criticism Assessment
+
+No negative themes detected across 5 analysed reviews. While positive, note that Google surfaces its 'most relevant' reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on Google Maps — these may reveal issues not captured here.
+
+### Rating Trajectory
+
+Rating across the sample is stable — no significant upward or downward trajectory detected.
+
+### Review-by-Review Summary
+
+| # | Rating | Sentiment | Topics | Snippet |
+|--:|-------:|-----------|--------|---------|
+| 1 | 5★ | positive | Service & Hospitality, Value for Money, Speed & Efficiency | The staff were all VERTY friendly and helpful |
+| 2 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was... |
+| 3 | 5★ | positive | Food Quality, Service & Hospitality | Hi, would just like to say what a lovely meal we had with you this afternoon |
+| 4 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency | The staff were all very welcoming and friendly and we had quick service |
+| 5 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | From the moment we arrived, the atmosphere was welcoming and relaxed, and the st... |
+
+### Analysis Limitations
+
+This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution across all 1988 reviews.
 
 ## Market Position
 
@@ -135,6 +231,31 @@ You are in the top quintile of this peer set. Your overall score of 7.9 exceeds 
 - The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5) — you lead by 0.4
 - The Bull's Head (7.5) — you lead by 0.4
 - Cafe Des Fleurs (7.4) — you lead by 0.5
+
+## Public Proof vs Operational Reality
+
+This section compares what customers see (public signals) against what the data reveals about operational depth.
+
+| Aspect | Public Signal | Operational Reality |
+|--------|-------------|---------------------|
+| Customer Rating | 4.5/5 Google (Strong) | Experience 9.4/10 (Strong) — Aligned |
+| Hygiene Rating | FSA 5/5 (Top mark) | Trust 9.7/10 (Strong) |
+| Review Volume | 1988 reviews (High) | Visibility 8.5/10 (Strong) |
+| Booking/Ordering | What customers can find | Conversion 5.5/10 (Partial) |
+
+**Interpretation:** Public perception and operational reality are well-aligned. Your public ratings are backed by genuine compliance strength. This is sustainable.
+
+## Conversion Friction Analysis
+
+This section identifies specific barriers between customer interest and a completed visit or order.
+
+| Friction Point | Impact | Fix |
+|---------------|--------|-----|
+| No delivery/takeaway signal | Google Maps filters for 'delivery' and 'takeaway'. If you offer these services but haven't flagged them, you're invisible to that search intent. | Update Google Business Profile service attributes. |
+
+**1 friction point(s) identified.** Each one represents a leak in your conversion funnel where interested customers drop off before reaching you.
+
+**Overall conversion readiness: Partial.** Some signals are present but gaps remain. Each missing element is a percentage of potential customers who never reach you.
 
 ## Dimension Scorecard
 
@@ -219,116 +340,28 @@ You are in the top quintile of this peer set. Your overall score of 7.9 exceeds 
 **Management note:** Your operational quality would support a credible awards submission. This is a long-cycle play — start with local food guides and AA before targeting Michelin.
 
 
-## Commercial Diagnosis
+## Watch List
 
-A 4.5/5 Google rating across 1,988 reviews is a commanding position. This volume means the rating is statistically stable — individual reviews won't move it. The commercial value is in Google Maps ranking, where high-rating + high-volume venues dominate local search results.
+**Monitor local competitor openings and closures** [NEW]
 
-Trust and Experience are aligned at a high level. This is the strongest commercial position — what customers experience is backed by genuine operational rigour. Focus on sustaining this alignment.
+New entrants or closures in your category within 5 miles can shift your competitive position. Stay aware of planning applications and social media announcements.
 
-At P100.0 among 5 local peers, you hold a strong market position. The commercial question is not how to fix problems but how to capture the upside of your position — premium pricing, event hosting, private dining, or catering extensions.
+**Track Google rating trend month-over-month** [NEW]
 
-Your fundamentals are strong but you have zero prestige markers. This caps your ability to command premium pricing or attract media attention. A credible awards submission (AA, local food guides) would be a low-cost, high-signal move at your current quality level.
+A sustained 0.1-point drop over 3 months can indicate systemic issues before they become obvious. Monitor monthly.
 
-## Public Proof vs Operational Reality
+## What Not to Do This Month
 
-This section compares what customers see (public signals) against what the data reveals about operational depth.
+**Don't chase prestige before fixing fundamentals**
 
-| Aspect | Public Signal | Operational Reality |
-|--------|-------------|---------------------|
-| Customer Rating | 4.5/5 Google (Strong) | Experience 9.4/10 (Strong) — Aligned |
-| Hygiene Rating | FSA 5/5 (Top mark) | Trust 9.7/10 (Strong) |
-| Review Volume | 1988 reviews (High) | Visibility 8.5/10 (Strong) |
-| Booking/Ordering | What customers can find | Conversion 5.5/10 (Partial) |
-
-**Interpretation:** Public perception and operational reality are well-aligned. Your public ratings are backed by genuine compliance strength. This is sustainable.
-
-## Review & Reputation Intelligence
-
-**Based on 5 customer reviews with full text analysis.**
-
-### Rating & Volume Context
-
-- 1,988 reviews — statistically robust rating. Individual reviews have negligible impact.
-- 4.5/5 places you in the top tier of Google search results. This drives discovery.
-- **Sample vs aggregate:** Analysed reviews average 5.0★ vs overall 4.5/5. Recent/prominent reviews skew higher than the lifetime average — may indicate improvement or selection bias in Google's 'most relevant' algorithm.
-
-### Sentiment Distribution
-
-Of 5 reviews analysed: **5 positive**, **0 negative**, **0 mixed**.
-
-All sampled reviews are positive. This is encouraging but note that Google's 'most relevant' algorithm tends to surface popular reviews. Negative signals may exist deeper in the review corpus.
-
-### Sentiment by Topic
-
-| Topic | Score | Positive | Negative | Total | Read |
-|-------|------:|---------:|---------:|------:|------|
-| Service & Hospitality | 10.0/10 | 18 | 0 | 18 | Strength |
-| Food Quality | 10.0/10 | 7 | 0 | 7 | Strength |
-| Speed & Efficiency | 10.0/10 | 3 | 0 | 3 | Strength |
-| Atmosphere & Setting | 10.0/10 | 3 | 0 | 3 | Strength |
-| Value for Money | 10.0/10 | 1 | 0 | 1 | Strength |
-
-### What Customers Praise
-
-**Service & Hospitality** (18 positive mentions)
-> *"The staff were all VERTY friendly and helpful"*
-> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
-
-**Food Quality** (7 positive mentions)
-> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
-> *"Hi, would just like to say what a lovely meal we had with you this afternoon"*
-
-**Speed & Efficiency** (3 positive mentions)
-> *"The staff were all VERTY friendly and helpful"*
-> *"The staff were all very welcoming and friendly and we had quick service"*
-
-**Atmosphere & Setting** (3 positive mentions)
-> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
-> *"From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after"*
-
-**Value for Money** (1 positive mentions)
-> *"The staff were all VERTY friendly and helpful"*
-
-### Criticism Assessment
-
-No negative themes detected across 5 analysed reviews. While positive, note that Google surfaces its 'most relevant' reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on Google Maps — these may reveal issues not captured here.
-
-### Rating Trajectory
-
-Rating across the sample is stable — no significant upward or downward trajectory detected.
-
-### Review-by-Review Summary
-
-| # | Rating | Sentiment | Topics | Snippet |
-|--:|-------:|-----------|--------|---------|
-| 1 | 5★ | positive | Service & Hospitality, Value for Money, Speed & Efficiency | The staff were all VERTY friendly and helpful |
-| 2 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was... |
-| 3 | 5★ | positive | Food Quality, Service & Hospitality | Hi, would just like to say what a lovely meal we had with you this afternoon |
-| 4 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency | The staff were all very welcoming and friendly and we had quick service |
-| 5 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | From the moment we arrived, the atmosphere was welcoming and relaxed, and the st... |
-
-### Analysis Limitations
-
-This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution across all 1988 reviews.
-
-## Conversion Friction Analysis
-
-This section identifies specific barriers between customer interest and a completed visit or order.
-
-| Friction Point | Impact | Fix |
-|---------------|--------|-----|
-| No delivery/takeaway signal | Google Maps filters for 'delivery' and 'takeaway'. If you offer these services but haven't flagged them, you're invisible to that search intent. | Update Google Business Profile service attributes. |
-
-**1 friction point(s) identified.** Each one represents a leak in your conversion funnel where interested customers drop off before reaching you.
-
-**Overall conversion readiness: Partial.** Some signals are present but gaps remain. Each missing element is a percentage of potential customers who never reach you.
+Avoid spending time on awards submissions, PR, or premium positioning until Experience, Trust, and Visibility scores are all above 7.0. The fundamentals compound into commercial value; prestige without substance doesn't.
 
 ## Recommendation Tracker
 
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
-| 1 | Close the experience-to-conversion gap | new | 2026-04 | 1 | operations | conversion |
-| 2 | Pursue editorial recognition | new | 2026-04 | 1 | management | prestige |
+| 1 | Fix the digital shopfront — you're losing walk-ins | ongoing | 2026-04 | 2 | operations | conversion |
+| 2 | Pursue editorial recognition | ongoing | 2026-04 | 2 | management | prestige |
 
 ## Next-Month Monitoring Plan
 
@@ -338,7 +371,7 @@ Track these specific metrics before the next report to measure progress:
 |----------------|-----------------|--------|-------|
 | Google rating | 4.5/5 | Maintain or improve | Front-of-house |
 | Google review count | 1988 | 1998+ | Marketing |
-| Close the experience-to-conversion gap | Action raised | Complete | operations |
+| Fix the digital shopfront — you're losin | Action raised | Complete | operations |
 | Pursue editorial recognition | Action raised | Complete | management |
 | Monitor local competitor openings and cl | Watch raised | Monitor | management |
 

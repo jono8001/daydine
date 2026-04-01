@@ -184,16 +184,3 @@ def build_commercial(w, scorecard, deltas, benchmarks, review_intel):
           "Additional data (TripAdvisor cross-reference, booking platform "
           "integration) would enable deeper commercial analysis.\n")
 
-    # --- Prestige vs fundamentals ---
-    if prest is not None and prest < 2.0 and overall is not None and overall >= 7.5:
-        lines.append("Your fundamentals are strong but you have zero prestige markers. "
-                     "This caps your ability to command premium pricing or attract media "
-                     "attention. A credible awards submission (AA, local food guides) would "
-                     "be a low-cost, high-signal move at your current quality level.")
-
-    if not lines:
-        lines.append("Limited signal data constrains diagnostic depth. Additional "
-                     "data enrichment would unlock more specific commercial insights.")
-
-    for line in lines:
-        w(line + "\n")
