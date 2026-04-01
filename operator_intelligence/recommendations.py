@@ -91,13 +91,15 @@ def _generate_recs(venue, scorecard, benchmarks, deltas):
         recs.append({
             "theme": "experience",
             "dimension": "experience",
-            "title": "Address service quality signals",
-            "description": (f"Google rating is {gr}/5. Focus on the specific "
-                            "criticisms in recent reviews to lift this."),
+            "title": "Identify and fix the recurring guest complaint",
+            "description": (f"At {gr}/5 on Google, something specific is landing badly. "
+                            "Read the 5 most recent negative reviews, identify the common "
+                            "thread (food, service, wait, or environment), and fix it at "
+                            "source. The rating won't move until the root cause does."),
             "evidence": f"gr={gr}",
             "owner": "operations",
             "priority_score": 9.0 if float(gr) < 3.5 else 7.0,
-            "expected_upside": "+1.5 Experience",
+            "expected_upside": "Rating recovery → discovery recovery",
             "confidence": 0.8,
             "rec_type": "action",
         })
@@ -123,16 +125,19 @@ def _generate_recs(venue, scorecard, benchmarks, deltas):
     from rcs_scoring_stratford import days_since
     age = days_since(venue.get("rd"))
     if age is not None and age > 730:
+        years = round(age / 365, 1)
         recs.append({
             "theme": "trust",
             "dimension": "trust",
-            "title": "Request FSA re-inspection",
-            "description": (f"Last inspected {age} days ago. A fresh 5-rating "
-                            "would materially lift your Trust score."),
+            "title": "Get ahead of the next inspection",
+            "description": (f"Last inspected {years} years ago. A stale inspection "
+                            "date signals to both customers and the algorithm that "
+                            "compliance isn't actively managed. Request a voluntary "
+                            "re-inspection once you're confident of a strong result."),
             "evidence": f"inspection_age={age}d",
             "owner": "compliance",
             "priority_score": 7.0,
-            "expected_upside": "+1.0 Trust",
+            "expected_upside": "Fresh compliance proof, trust signal renewal",
             "confidence": 0.7,
             "rec_type": "action",
         })
@@ -143,9 +148,11 @@ def _generate_recs(venue, scorecard, benchmarks, deltas):
         recs.append({
             "theme": "trust",
             "dimension": "trust",
-            "title": f"Improve FSA hygiene rating from {r} to 5",
-            "description": ("A rating below 5 caps your Trust score. "
-                            "Address the inspector's specific concerns."),
+            "title": f"Close the hygiene gap — {r} to 5",
+            "description": (f"An FSA rating of {r} is visible on your Google listing "
+                            "and the FSA website. Customers see it before they see your "
+                            "menu. Address the inspector's specific findings — the report "
+                            "will tell you exactly what to fix."),
             "evidence": f"r={r}",
             "owner": "compliance",
             "priority_score": 8.5 if int(r) <= 3 else 6.0,
@@ -209,21 +216,40 @@ def _generate_recs(venue, scorecard, benchmarks, deltas):
                     "rec_type": "watch",
                 })
 
-        # Weakest dimension vs peers — always generates a watch item
+        # Weakest dimension vs peers — watch items in operator language
+        _DIM_WATCH_LANG = {
+            "experience": ("Guest experience trailing local competitors",
+                           "Peers are delivering a more consistent or higher-quality guest "
+                           "experience. Identify what they do differently — is it menu depth, "
+                           "service style, or ambience? — and decide whether to match or "
+                           "differentiate."),
+            "visibility": ("Online discoverability behind competitors",
+                           "Competitors have stronger online presence. Customers searching "
+                           "'near me' are finding them first. Review your Google profile "
+                           "completeness and review generation strategy."),
+            "trust": ("Compliance record trailing local standards",
+                      "Most local peers carry stronger formal compliance signals. This "
+                      "may not affect daily footfall yet but creates exposure if an "
+                      "inspection goes poorly or a customer complaint escalates."),
+            "conversion": ("Conversion readiness gap vs peers",
+                           "Competitors make it easier for customers to act on interest — "
+                           "clearer hours, visible menus, booking options. Customers who "
+                           "can't convert on your venue convert elsewhere."),
+            "prestige": ("No editorial edge vs peers",
+                         "Some competitors carry editorial recognition that you lack. "
+                         "This matters most at the premium end of the market."),
+        }
         for dim in ["experience", "visibility", "trust", "conversion", "prestige"]:
             dim_data = ring1.get("dimensions", {}).get(dim)
             if dim_data and dim_data.get("percentile") is not None:
                 if dim_data["percentile"] < 40:
+                    title, desc = _DIM_WATCH_LANG.get(dim, (f"{dim.title()} gap", "Monitor."))
                     recs.append({
                         "theme": dim, "dimension": dim,
-                        "title": f"{dim.title()} below peer average",
-                        "description": (f"Your {dim.title()} score ({dim_data['score']:.1f}) "
-                                        f"sits at P{dim_data['percentile']} vs local peers "
-                                        f"(avg {dim_data['peer_mean']:.1f}). "
-                                        f"Monitor for further decline."),
-                        "evidence": f"{dim}_pct={dim_data['percentile']}",
+                        "title": title, "description": desc,
+                        "evidence": f"{dim}: {dim_data['score']:.1f} vs peer avg {dim_data['peer_mean']:.1f}",
                         "owner": "management", "priority_score": 5.5,
-                        "expected_upside": f"+{dim_data['peer_mean'] - dim_data['score']:.1f} {dim.title()} to reach parity",
+                        "expected_upside": f"Closing {dim_data['peer_mean'] - dim_data['score']:.1f}-point gap to peer average",
                         "confidence": 0.65, "rec_type": "watch",
                     })
 
@@ -283,14 +309,15 @@ def _generate_recs(venue, scorecard, benchmarks, deltas):
     if exp and conv and exp >= 7.0 and conv < 6.0:
         recs.append({
             "theme": "conversion", "dimension": "conversion",
-            "title": "Close the experience-to-conversion gap",
-            "description": ("Strong experience score but low conversion readiness "
-                            "means you're delivering a good product that customers "
-                            "can't easily access. Ensure hours, menu, and ordering "
-                            "options are visible online."),
+            "title": "Fix the digital shopfront — you're losing walk-ins",
+            "description": ("You deliver a strong experience but your online presence "
+                            "doesn't make it easy to act on. Check: can a new customer "
+                            "confirm your hours, see your menu, and book or walk in — "
+                            "all within 60 seconds on their phone? If not, that's your "
+                            "fix list."),
             "evidence": f"experience={exp}, conversion={conv}",
             "owner": "operations", "priority_score": 6.0,
-            "expected_upside": "+1.5 Conversion",
+            "expected_upside": "Capture demand you're currently losing",
             "confidence": 0.8, "rec_type": "action",
         })
 
@@ -391,26 +418,29 @@ def generate_recommendations(venue, scorecard, benchmarks, deltas, month_str):
     # Standing recommendations for strong venues that generate few issues
     _STANDING_ACTIONS = [
         {"theme": "visibility", "dimension": "visibility",
-         "title": "Respond to recent Google reviews",
-         "description": "Active review responses signal engagement to both Google's "
-                        "algorithm and prospective customers. Aim to respond to all "
-                        "reviews within 48 hours, especially critical ones.",
+         "title": "Turn strong guest warmth into fresh public proof",
+         "description": "Respond to every Google review within 48 hours — positive "
+                        "and negative. For satisfied tables, a brief 'we'd love your "
+                        "feedback on Google' at bill presentation converts private "
+                        "goodwill into public evidence. This compounds monthly.",
          "evidence": "standing_best_practice", "owner": "front-of-house",
-         "priority_score": 4.0, "expected_upside": "Review engagement, discovery signal",
+         "priority_score": 4.0, "expected_upside": "Review velocity → discovery ranking",
          "confidence": 0.8, "rec_type": "action", "status": "new"},
         {"theme": "trust", "dimension": "trust",
-         "title": "Audit compliance documentation ahead of next inspection",
-         "description": "Even with a strong FSA record, proactive documentation review "
-                        "ensures you maintain rating 5 at the next unannounced inspection. "
-                        "Check HACCP logs, allergen records, and cleaning schedules.",
+         "title": "Tighten compliance documentation before next inspection",
+         "description": "Even with a clean record, walk the floor with an inspector's "
+                        "eye. Check HACCP logs are current, allergen matrices are posted, "
+                        "cleaning schedules are signed off. The next visit is unannounced — "
+                        "preparation is the only lever you control.",
          "evidence": "standing_best_practice", "owner": "compliance",
-         "priority_score": 3.5, "expected_upside": "Protect Trust score",
+         "priority_score": 3.5, "expected_upside": "Protect compliance record",
          "confidence": 0.85, "rec_type": "action", "status": "new"},
         {"theme": "experience", "dimension": "experience",
-         "title": "Review the last 10 Google reviews for pattern shifts",
-         "description": "Even highly-rated venues develop blind spots. Read the most "
-                        "recent 10 reviews looking for recurring minor complaints — "
-                        "these are early warning signals before they affect your rating.",
+         "title": "Read the last 10 Google reviews — look for the quiet complaint",
+         "description": "Strong venues develop blind spots. The complaints that matter "
+                        "aren't the angry 1-star rants — they're the 3-star reviews that "
+                        "say 'good but...' followed by a specific operational miss. "
+                        "Those are the early warning signals.",
          "evidence": "standing_best_practice", "owner": "operations",
          "priority_score": 3.0, "expected_upside": "Early issue detection",
          "confidence": 0.7, "rec_type": "action", "status": "new"},
