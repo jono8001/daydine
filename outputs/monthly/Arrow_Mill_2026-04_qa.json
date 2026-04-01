@@ -17,29 +17,9 @@
       "lines": 8,
       "meets_minimum": true
     },
-    "scorecard": {
+    "management_priorities": {
       "present": true,
-      "lines": 8,
-      "meets_minimum": true
-    },
-    "performance_diagnosis": {
-      "present": true,
-      "lines": 7,
-      "meets_minimum": true
-    },
-    "review_intelligence": {
-      "present": true,
-      "lines": 4,
-      "meets_minimum": true
-    },
-    "commercial_diagnosis": {
-      "present": true,
-      "lines": 2,
-      "meets_minimum": true
-    },
-    "priority_actions": {
-      "present": true,
-      "lines": 12,
+      "lines": 16,
       "meets_minimum": true
     },
     "watch_list": {
@@ -52,9 +32,44 @@
       "lines": 2,
       "meets_minimum": true
     },
+    "market_position": {
+      "present": true,
+      "lines": 41,
+      "meets_minimum": true
+    },
+    "scorecard": {
+      "present": true,
+      "lines": 8,
+      "meets_minimum": true
+    },
+    "dimension_diagnosis": {
+      "present": true,
+      "lines": 30,
+      "meets_minimum": true
+    },
+    "commercial_diagnosis": {
+      "present": true,
+      "lines": 2,
+      "meets_minimum": true
+    },
+    "public_vs_reality": {
+      "present": true,
+      "lines": 8,
+      "meets_minimum": true
+    },
+    "review_intelligence": {
+      "present": true,
+      "lines": 4,
+      "meets_minimum": true
+    },
+    "conversion_friction": {
+      "present": true,
+      "lines": 6,
+      "meets_minimum": true
+    },
     "recommendation_tracker": {
       "present": true,
-      "lines": 5,
+      "lines": 4,
       "meets_minimum": true
     },
     "market_intelligence": {
@@ -62,9 +77,19 @@
       "lines": 0,
       "meets_minimum": false
     },
+    "monitoring_plan": {
+      "present": true,
+      "lines": 10,
+      "meets_minimum": true
+    },
     "data_coverage": {
       "present": true,
-      "lines": 12,
+      "lines": 11,
+      "meets_minimum": true
+    },
+    "evidence_appendix": {
+      "present": true,
+      "lines": 19,
       "meets_minimum": true
     }
   },
@@ -77,5 +102,5 @@
   "validation_errors": [],
   "validation_warnings": [],
   "confidence_level": "medium",
-  "report_lines": 80
+  "report_lines": 202
 }
