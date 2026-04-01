@@ -1,6 +1,6 @@
 """Review & reputation intelligence section builder — uses deep analysis engine."""
 
-from operator_intelligence.report_spec import MODE_NARRATIVE
+from operator_intelligence.report_spec import MODE_NARRATIVE, assess_review_confidence
 from operator_intelligence.review_analysis import ASPECT_LABELS
 
 
@@ -54,7 +54,9 @@ def _narrative(w, ri, rd):
         return
 
     n = analysis.get("reviews_analyzed", 0)
-    w(f"**Based on {n} customer reviews with full text analysis.**\n")
+    rc = assess_review_confidence(ri)
+    w(f"**Based on {n} customer reviews with full text analysis.**")
+    w(f"**Evidence tier: {rc.tier.title()}** — {rc.qualifier}.\n")
 
     # --- Rating & Volume Context ---
     if vol:
@@ -188,9 +190,12 @@ def _narrative(w, ri, rd):
                 w(f"**{label_text}:** {', '.join(labels)}\n")
 
     # --- Data Limitation Note ---
+    review_count = ri.get('volume_signals', {}).get('review_count', 0)
     w("### Analysis Limitations\n")
-    w(f"This analysis is based on {n} reviews surfaced by Google's 'most relevant' "
-      "algorithm. The Google Places API limits retrieval to 5 reviews per venue "
-      "with no pagination or sort control. This sample is likely skewed toward "
-      "popular positive reviews and may not represent the full sentiment distribution "
-      f"across all {ri.get('volume_signals', {}).get('review_count', 'N/A')} reviews.\n")
+    w(f"**Evidence tier: {rc.tier.title()}.** This analysis is based on {n} reviews "
+      f"surfaced by Google's 'most relevant' algorithm out of {review_count:,} total. "
+      "The Google Places API limits retrieval to 5 reviews per venue with no pagination "
+      "or sort control. This sample is likely skewed toward popular positive reviews "
+      "and may not represent the full sentiment distribution. "
+      "Claims above are calibrated to this evidence level — themes are observed, "
+      "not confirmed as settled reputation patterns.\n")

@@ -7,6 +7,7 @@ commercially meaningful management language.
 """
 
 from operator_intelligence.review_analysis import ASPECT_LABELS
+from operator_intelligence.report_spec import assess_review_confidence, CONFIDENCE_LANGUAGE
 
 DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
 
@@ -78,21 +79,34 @@ def build_known_for(w, venue_name, scorecard, benchmarks, review_intel):
         lines.append(f"{venue_name} operates in the {prop} category with a public "
                      f"rating of {gr}/5 that is currently limiting discovery.")
 
-    # What guests value — from review evidence
-    if top_theme and second_theme:
-        lines.append(f"Guest feedback centres on **{top_theme['label'].lower()}** "
+    # What guests value — calibrated by review confidence
+    rc = assess_review_confidence(review_intel)
+    lang = CONFIDENCE_LANGUAGE.get(rc.tier, CONFIDENCE_LANGUAGE["none"])
+
+    if top_theme and second_theme and rc.can_claim_proposition:
+        lines.append(f"Guest feedback {rc.qualifier} centres on "
+                     f"**{top_theme['label'].lower()}** ({top_theme['mentions']} mentions) "
+                     f"and **{second_theme['label'].lower()}** ({second_theme['mentions']} "
+                     f"mentions). {lang['strong']}these are becoming defining elements "
+                     f"of the proposition as guests perceive it.")
+    elif top_theme and second_theme:
+        # Anecdotal tier — can observe themes but not claim proposition
+        hedge = lang["hedge"].format(n=rc.review_text_count, s=rc.source_count)
+        lines.append(f"{hedge}**{top_theme['label'].lower()}** "
                      f"({top_theme['mentions']} mentions) and "
-                     f"**{second_theme['label'].lower()}** "
-                     f"({second_theme['mentions']} mentions). "
-                     f"These are the pillars of the current proposition as guests perceive it.")
+                     f"**{second_theme['label'].lower()}** ({second_theme['mentions']} "
+                     f"mentions) are the most frequent themes. Whether these represent "
+                     f"settled guest perception or sampling artefact cannot be determined "
+                     f"from this evidence base alone.")
     elif top_theme:
-        lines.append(f"The dominant guest theme is **{top_theme['label'].lower()}** "
-                     f"({top_theme['mentions']} mentions) — this is what the venue "
-                     f"is primarily known for in customer language.")
+        hedge = lang["hedge"].format(n=rc.review_text_count, s=rc.source_count)
+        lines.append(f"{hedge}**{top_theme['label'].lower()}** "
+                     f"({top_theme['mentions']} mentions) {lang['theme_verb']}.")
     elif exp and exp >= 8.0:
-        lines.append("No individual review text is available for narrative analysis, "
-                     "but the aggregate experience score (based on rating and compliance) "
-                     "suggests consistently positive guest outcomes.")
+        lines.append("No individual review text is available for narrative analysis. "
+                     "The aggregate experience score (based on rating and compliance) "
+                     "is directionally positive but cannot confirm what specifically "
+                     "guests value.")
 
     # Peer context — what the position means for identity
     ring1 = (benchmarks or {}).get("ring1_local") or (benchmarks or {}).get("ring2_catchment")
@@ -163,17 +177,24 @@ def build_protect_improve_ignore(w, scorecard, deltas, benchmarks, review_intel,
     w("### Protect\n")
     protect_items = []
 
+    rc = assess_review_confidence(review_intel)
+
     # Protect the strongest dimension that leads peers
     for dim in DIM_ORDER:
         score = dims.get(dim)
         peer = ring1_dims.get(dim, {})
         if score and score >= 8.0 and peer.get("peer_mean") and score - peer["peer_mean"] >= 0.5:
             if dim == "experience" and top_theme:
-                protect_items.append(
-                    f"**The {top_theme} reputation.** This is the core of what guests "
-                    f"value. It's earned through consistency, not marketing, and it erodes "
-                    f"the moment standards slip. Protect this with staffing depth, "
-                    f"supplier quality, and management presence on the floor.")
+                if rc.can_claim_proposition:
+                    protect_items.append(
+                        f"**The {top_theme} reputation.** This is what guests "
+                        f"consistently value. It's earned through consistency, not "
+                        f"marketing, and it erodes the moment standards slip.")
+                else:
+                    protect_items.append(
+                        f"**Guest experience quality.** Early review signals "
+                        f"({rc.qualifier}) point to {top_theme} as a strength. "
+                        f"Protect operational consistency while the evidence base builds.")
             elif dim == "trust":
                 protect_items.append(
                     f"**Compliance record.** FSA {fsa}/5 with strong sub-scores is a "

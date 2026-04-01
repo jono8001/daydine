@@ -1,5 +1,7 @@
 """Performance diagnosis + commercial diagnosis builders."""
 
+from operator_intelligence.report_spec import assess_review_confidence
+
 DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
 
 _STRENGTH = {
@@ -125,12 +127,19 @@ def build_commercial(w, scorecard, deltas, benchmarks, review_intel):
     w("### Positioning\n")
     if pct is not None:
         if pct >= 80:
-            if top_theme:
+            rc = assess_review_confidence(review_intel)
+            if top_theme and rc.can_claim_proposition:
                 w(f"The venue is positioned as the local category leader, primarily "
                   f"known for {top_theme}. Commercially, this position supports "
                   f"premium pricing, event hosting, and extension opportunities "
                   f"(private dining, catering, seasonal events). The risk is "
                   f"complacency — leadership must be actively maintained.\n")
+            elif top_theme:
+                w(f"The venue leads its local peer set. Early review signals "
+                  f"point toward {top_theme} as a differentiator, though the "
+                  f"evidence base is limited ({rc.review_text_count} review texts). "
+                  f"Commercially, this position supports premium pricing and "
+                  f"extension opportunities. The risk is complacency.\n")
             else:
                 w("Strong market position — the venue leads its local peer set. "
                   "The commercial opportunity is to leverage this into premium "
@@ -168,12 +177,18 @@ def build_commercial(w, scorecard, deltas, benchmarks, review_intel):
             "the venue cannot justify the price point that its experience "
             "quality would support.")
     if exp and exp >= 8.0 and top_theme:
-        money_items.append(
-            f"**Proposition not explicitly marketed.** Guests consistently praise "
-            f"{top_theme}, but this isn't visibly communicated in the venue's "
-            f"online presence. Making this the headline proposition in Google "
-            f"Business Profile, social media, and website would sharpen "
-            f"customer expectations and attract the right guests.")
+        rc = assess_review_confidence(review_intel)
+        if rc.can_claim_proposition:
+            money_items.append(
+                f"**Proposition not explicitly marketed.** Guests consistently praise "
+                f"{top_theme}, but this isn't visibly communicated in the venue's "
+                f"online presence. Making this the headline proposition would sharpen "
+                f"customer expectations and attract the right guests.")
+        else:
+            money_items.append(
+                f"**Potential proposition signal.** Early review data ({rc.qualifier}) "
+                f"suggests {top_theme} resonates with guests. If confirmed by broader "
+                f"evidence, this could become a marketable differentiator.")
 
     if money_items:
         for item in money_items[:3]:
