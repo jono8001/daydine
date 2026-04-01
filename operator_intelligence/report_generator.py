@@ -483,22 +483,146 @@ def _section_commercial_diagnosis(w, scorecard, deltas, benchmarks, review_intel
         w(line + "\n")
 
 def _section_priority_actions(w, recs):
-    pass
+    """Top 3 priority actions — always present, never empty."""
+    w("## Priority Actions\n")
+    actions = recs.get("priority_actions", [])
+    for i, a in enumerate(actions[:3], 1):
+        status = a.get("status", "new").upper()
+        w(f"### {i}. {a['title']} [{status}]\n")
+        w(f"{a['description']}\n")
+        w(f"- **Owner:** {a['owner']} | **Dimension:** {a['dimension'].title()}")
+        w(f"- **Expected upside:** {a['expected_upside']} | **Confidence:** {a['confidence']:.0%}")
+        if a.get("evidence"):
+            w(f"- **Evidence:** `{a['evidence']}`")
+        if a.get("times_seen", 1) > 1:
+            w(f"- *This recommendation has appeared {a['times_seen']} consecutive months.*")
+        w("")
+
 
 def _section_watch_list(w, recs):
-    pass
+    """Top 2 watch items — things to monitor, not act on yet."""
+    w("## Watch List\n")
+    watches = recs.get("watch_items", [])
+    if watches:
+        for wa in watches[:2]:
+            w(f"**{wa['title']}** [{wa.get('status', 'new').upper()}]\n")
+            w(f"{wa['description']}\n")
+    else:
+        w("No specific watch items this month. Maintain current trajectory.\n")
+
 
 def _section_what_not_to_do(w, recs):
-    pass
+    """Top 1 what-not-to-do — always present."""
+    w("## What Not to Do This Month\n")
+    dont = recs.get("what_not_to_do")
+    if dont:
+        w(f"**{dont['title']}**\n")
+        reason = dont.get("_reason", dont.get("description", ""))
+        w(f"{reason}\n")
+    else:
+        # Always provide one — fallback to general advice
+        w("**Don't chase vanity metrics over fundamentals.**\n")
+        w("Avoid spending time on prestige or awards pursuit when core dimensions "
+          "(Experience, Trust, Visibility) have room to grow. Focus energy where "
+          "it compounds into commercial value — review ratings and discovery signals.\n")
+
 
 def _section_recommendation_tracker(w, recs):
-    pass
+    """Full recommendation lifecycle table."""
+    w("## Recommendation Tracker\n")
+    all_recs = recs.get("all_recs", [])
+    active = [r for r in all_recs if r.get("status") not in ("resolved", "dropped", "completed")]
+    resolved = [r for r in all_recs if r.get("status") in ("resolved", "completed")]
+    dropped = [r for r in all_recs if r.get("status") == "dropped"]
+
+    if active:
+        w("| # | Recommendation | Status | Since | Months | Owner | Dimension |")
+        w("|--:|---------------|--------|-------|-------:|-------|-----------|")
+        for i, r in enumerate(sorted(active, key=lambda x: -x.get("priority_score", 0)), 1):
+            w(f"| {i} | {r['title'][:50]} | {r['status']} | {r.get('first_seen', '—')} "
+              f"| {r.get('times_seen', 1)} | {r.get('owner', '—')} | {r.get('dimension', '—')} |")
+        w("")
+    else:
+        w("No active recommendations carried forward.\n")
+
+    if resolved:
+        w(f"*{len(resolved)} recommendation(s) resolved/completed in prior months.*\n")
+    if dropped:
+        w(f"*{len(dropped)} recommendation(s) dropped (no longer relevant).*\n")
+
 
 def _section_conditional_intelligence(w, conditional_blocks):
-    pass
+    """Market intelligence blocks — only rendered when triggered."""
+    if not conditional_blocks:
+        return
+    w("## Market Intelligence\n")
+    for block in conditional_blocks:
+        w(f"### {block['title']}\n")
+        w(f"{block['content']}\n")
+
 
 def _section_data_coverage(w, scorecard, review_intel):
-    pass
+    """Honest data coverage and confidence assessment."""
+    w("---\n")
+    w("## Data Coverage & Confidence\n")
+
+    # Source inventory
+    sources = []
+    fsa = scorecard.get("fsa_rating")
+    gr = scorecard.get("google_rating")
+    grc = scorecard.get("google_reviews")
+    has_narrative = review_intel.get("has_narrative", False) if review_intel else False
+
+    sources.append(("FSA Hygiene Rating",
+                    f"Rating {fsa}/5" if fsa else "Not available",
+                    fsa is not None))
+    sources.append(("Google Business Profile",
+                    f"{gr}★ ({grc} reviews)" if gr else "Not available",
+                    gr is not None))
+    sources.append(("Google Review Text",
+                    f"{review_intel.get('reviews_analyzed', 0)} reviews analyzed" if has_narrative else "Not collected",
+                    has_narrative))
+    sources.append(("TripAdvisor",
+                    "Not collected" if not review_intel or not review_intel.get("review_count_ta") else
+                    f"{review_intel['review_count_ta']} reviews",
+                    review_intel.get("review_count_ta") is not None if review_intel else False))
+    sources.append(("Companies House",
+                    "Not checked", False))
+
+    w("| Source | Status | Available |")
+    w("|--------|--------|:---------:|")
+    for name, status, avail in sources:
+        check = "✓" if avail else "—"
+        w(f"| {name} | {status} | {check} |")
+    w("")
+
+    # Confidence level
+    available_count = sum(1 for _, _, a in sources if a)
+    if available_count >= 4:
+        conf = "High"
+        conf_note = "Multiple independent sources corroborate this assessment."
+    elif available_count >= 2:
+        conf = "Medium"
+        conf_note = "Core signals available but some dimensions rely on limited data."
+    else:
+        conf = "Low"
+        conf_note = "Sparse data constrains diagnostic depth."
+
+    w(f"**Report confidence: {conf}** — {conf_note}\n")
+
+    # What would unlock more
+    unlocks = []
+    if not has_narrative:
+        unlocks.append("**Google review text collection** would enable sentiment-by-topic analysis, "
+                       "complaint clustering, and quoted evidence in recommendations")
+    if not review_intel or not review_intel.get("review_count_ta"):
+        unlocks.append("**TripAdvisor enrichment** would add cross-platform validation "
+                       "and unlock convergence scoring")
+    if unlocks:
+        w("**What additional collection would unlock:**\n")
+        for u in unlocks:
+            w(f"- {u}")
+        w("")
 
 
 # ---------------------------------------------------------------------------
