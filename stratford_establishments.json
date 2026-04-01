@@ -5152,9 +5152,9 @@
     "gpl": 2,
     "gty": [
       "pub",
+      "bar",
       "restaurant",
       "food",
-      "bar",
       "point_of_interest",
       "establishment"
     ],
@@ -5175,7 +5175,34 @@
     "gbp_completeness": 10.0,
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "g_reviews": [
+      {
+        "text": "We had a wonderful Sunday roast at The Fox in Loxley. We arrived just after 12 and were seated at a table by the fireplace. The service was incredible, James, our waiter was friendly, chatty and very efficient. The food was great and it was nice to be able to see the chef serving up the meals at the pass and the smooth transition from the pass to the tables. The atmosphere was bubbly and light and the pub was full by 13.30. Would definitely recommend booking before you go to guarantee a table. We hadn't booked but the staff were incredibly kind and squeezed us in and we are really happy they did! It was honestly one of the best Sunday roasts we had eaten out and really reasonably priced as well. There were the options to have a small or large portion and even the small had plenty on it (I was enjoying it so much I forgot to take a photo.)\n\nSet in the middle of the village you can tell that the pub is popular and the heart of the local community. Would definitely visit again!",
+        "rating": 5,
+        "time": "5 months ago"
+      },
+      {
+        "text": "Not local to the area, we had asked for recommendations for dining and The Fox lived delightfully up to them. You can feel the love from the community which flows in to the pub. Beautifully decorated with a charming modern food menu. Do excuse the bite out of the cheesecake/lemon meringue photo - it was that delicious, we couldn’t wait! Belinda and Adrian deserve all the success here, with the merge of Belinda’s homely hospitality and Adrian’s flair for elevated pub cuisine - you’re lucky if this is your local. Keep supporting it!",
+        "rating": 5,
+        "time": "8 months ago"
+      },
+      {
+        "text": "Wow! This place is a rare gem!\nFrom the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your needs. In love with the food, hearty fare full of love and care. Portion sizes are generous. So many gluten free options all home made. The pie has a reputation, and doesn't disappoint. Will come back again and can't recommend enough. Thank you chef Gemma and Andy and Sally for a joyful and fulfilling evening.",
+        "rating": 5,
+        "time": "4 months ago"
+      },
+      {
+        "text": "Really enjoyed our bank holiday lunch here Portion sizes were so generous we had to take some home but that in no way affected the quality, everything from starter through to desert was absolutely delicious! Staff were attentive and friendly throughout, and there are a couple of cracking pints on draught. I wouldn't hesitate to recommend this great pub to anyone in the area.",
+        "rating": 5,
+        "time": "8 years ago"
+      },
+      {
+        "text": "Reasonable amount of parking space. Great welcome and very friendly staff. Good British pub atmosphere. Varied tables and seating either in the main area or quieter off to one side. Good selection of dishes and drinks. Super local food well prepared and presented. Sensible prices and no pressure. A really great place and I hope you enjoy your visit as much as I did.",
+        "rating": 5,
+        "time": "5 months ago"
+      }
+    ]
   },
   "1781021": {
     "a": "Baptist Church, Payton Street, Stratford-upon-Avon",
@@ -7318,10 +7345,10 @@
       "pub",
       "beer_garden",
       "hotel",
+      "bar",
       "lodging",
       "restaurant",
       "food",
-      "bar",
       "point_of_interest",
       "establishment"
     ],

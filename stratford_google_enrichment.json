@@ -2687,30 +2687,6 @@
       "Sunday: 8:00 AM – 11:00 PM"
     ]
   },
-  "1344517": {
-    "gpid": "ChIJl-BYUnDScEgRdpC19Q8TMX0",
-    "gr": 4.6,
-    "grc": 271,
-    "gpl": 2,
-    "gty": [
-      "pub",
-      "restaurant",
-      "food",
-      "bar",
-      "point_of_interest",
-      "establishment"
-    ],
-    "gpc": 10,
-    "goh": [
-      "Monday: Closed",
-      "Tuesday: 6:00 – 10:30 PM",
-      "Wednesday: 12:00 – 3:00 PM, 5:00 – 10:00 PM",
-      "Thursday: 12:00 – 3:00 PM, 5:00 – 10:30 PM",
-      "Friday: 12:00 – 11:00 PM",
-      "Saturday: 12:00 – 11:00 PM",
-      "Sunday: 12:00 – 4:00 PM"
-    ]
-  },
   "1781021": {
     "gpid": "ChIJ9SYsTjHOcEgRLxIZs-829wY",
     "gr": 4.6,
@@ -5092,6 +5068,111 @@
       "Sunday: 12:00 – 8:00 PM"
     ]
   },
+  "1344517": {
+    "gpid": "ChIJl-BYUnDScEgRdpC19Q8TMX0",
+    "gr": 4.6,
+    "grc": 271,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 6:00 – 10:30 PM",
+      "Wednesday: 12:00 – 3:00 PM, 5:00 – 10:00 PM",
+      "Thursday: 12:00 – 3:00 PM, 5:00 – 10:30 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 4:00 PM"
+    ],
+    "g_reviews": [
+      {
+        "text": "We had a wonderful Sunday roast at The Fox in Loxley. We arrived just after 12 and were seated at a table by the fireplace. The service was incredible, James, our waiter was friendly, chatty and very efficient. The food was great and it was nice to be able to see the chef serving up the meals at the pass and the smooth transition from the pass to the tables. The atmosphere was bubbly and light and the pub was full by 13.30. Would definitely recommend booking before you go to guarantee a table. We hadn't booked but the staff were incredibly kind and squeezed us in and we are really happy they did! It was honestly one of the best Sunday roasts we had eaten out and really reasonably priced as well. There were the options to have a small or large portion and even the small had plenty on it (I was enjoying it so much I forgot to take a photo.)\n\nSet in the middle of the village you can tell that the pub is popular and the heart of the local community. Would definitely visit again!",
+        "rating": 5,
+        "time": "5 months ago"
+      },
+      {
+        "text": "Not local to the area, we had asked for recommendations for dining and The Fox lived delightfully up to them. You can feel the love from the community which flows in to the pub. Beautifully decorated with a charming modern food menu. Do excuse the bite out of the cheesecake/lemon meringue photo - it was that delicious, we couldn’t wait! Belinda and Adrian deserve all the success here, with the merge of Belinda’s homely hospitality and Adrian’s flair for elevated pub cuisine - you’re lucky if this is your local. Keep supporting it!",
+        "rating": 5,
+        "time": "8 months ago"
+      },
+      {
+        "text": "Wow! This place is a rare gem!\nFrom the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your needs. In love with the food, hearty fare full of love and care. Portion sizes are generous. So many gluten free options all home made. The pie has a reputation, and doesn't disappoint. Will come back again and can't recommend enough. Thank you chef Gemma and Andy and Sally for a joyful and fulfilling evening.",
+        "rating": 5,
+        "time": "4 months ago"
+      },
+      {
+        "text": "Really enjoyed our bank holiday lunch here Portion sizes were so generous we had to take some home but that in no way affected the quality, everything from starter through to desert was absolutely delicious! Staff were attentive and friendly throughout, and there are a couple of cracking pints on draught. I wouldn't hesitate to recommend this great pub to anyone in the area.",
+        "rating": 5,
+        "time": "8 years ago"
+      },
+      {
+        "text": "Reasonable amount of parking space. Great welcome and very friendly staff. Good British pub atmosphere. Varied tables and seating either in the main area or quieter off to one side. Good selection of dishes and drinks. Super local food well prepared and presented. Sensible prices and no pressure. A really great place and I hope you enjoy your visit as much as I did.",
+        "rating": 5,
+        "time": "5 months ago"
+      }
+    ]
+  },
+  "503282": {
+    "gpid": "ChIJGZz0dG3DcEgRNJ-NsIIOmOc",
+    "gr": 4.5,
+    "grc": 1988,
+    "gpl": 2,
+    "gty": [
+      "pub",
+      "beer_garden",
+      "hotel",
+      "bar",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "goh": [
+      "Monday: 10:30 AM – 11:00 PM",
+      "Tuesday: 10:30 AM – 11:00 PM",
+      "Wednesday: 10:30 AM – 11:00 PM",
+      "Thursday: 10:30 AM – 11:00 PM",
+      "Friday: 10:30 AM – 11:00 PM",
+      "Saturday: 10:30 AM – 11:00 PM",
+      "Sunday: 10:30 AM – 10:30 PM"
+    ],
+    "g_reviews": [
+      {
+        "text": "Attended yesterday Sunday 15th February 2026, for an impromptu birthday lunch for my friend. We did not have a booking, and it was packed. However, the server was extremely polite and without hesitation, explained a table would be ready in ten minutes, which was wonderful news. The staff were all VERTY friendly and helpful. We ordered fish and chips and a pudding. The price was very reasonable and service was excellent. the staff would check up regularly to see if we needed anything. Food was great. Atmosphere was great. I remarked to my friend it was unpretentious. Will definitely go back. Great find!",
+        "rating": 5,
+        "time": "a month ago"
+      },
+      {
+        "text": "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it was only her forth shift excellent member of the team. Food was delicious  restaurant exceptionally clean and tidy. All members of the team I've every come into contact at Arrow Mill and I've been countless times are outstanding   well done to all.",
+        "rating": 5,
+        "time": "a month ago"
+      },
+      {
+        "text": "Hi, would just like to say what a lovely meal we had with you this afternoon. Our first meal with yourselves and definitely not the last! The food was absolutely fantastic.\nWe would also like to make a special mention to Jessica, who looked after us. What a polite, confident and knowledgeable young lady who is a credit to your team.\nWell done Jessica and thank you for making our afternoon so enjoyable.",
+        "rating": 5,
+        "time": "a month ago"
+      },
+      {
+        "text": "We visited for my birthday meal. The staff were all very welcoming and friendly and we had quick service. The food was absolutely delicious, we ate from the Sunday menu and had an array of different meals - the drinks selection is brilliant. Prices were comparable to other restaurants, not overly priced in my opinion given the quality of the food. Can’t fault it, looking forward to our next visit. Thank you for providing such a wonderful evening ☺️",
+        "rating": 5,
+        "time": "2 months ago"
+      },
+      {
+        "text": "We had an absolutely amazing meal at Arrow Mill. From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after.\nThe food was exceptional – beautifully presented, full of flavour, and cooked to perfection. Every course felt thoughtfully prepared, and it really made the whole experience special.\nA stunning location, great service, and incredible food — Arrow Mill is a place we’ll definitely be returning to. Highly recommended!",
+        "rating": 5,
+        "time": "a month ago"
+      }
+    ]
+  },
   "503480": {
     "gpid": "ChIJM4d8OjLOcEgRtipI76ULZ6E",
     "gr": 4.6,
@@ -5190,60 +5271,6 @@
         "text": "We always have great food from Simla!  Definitely our favourite Indian takeaway in Stratford-on-Avon! The drivers are very professional and very friendly! Great value for money too.",
         "rating": 5,
         "time": "11 months ago"
-      }
-    ]
-  },
-  "503282": {
-    "gpid": "ChIJGZz0dG3DcEgRNJ-NsIIOmOc",
-    "gr": 4.5,
-    "grc": 1988,
-    "gpl": 2,
-    "gty": [
-      "pub",
-      "beer_garden",
-      "hotel",
-      "lodging",
-      "restaurant",
-      "food",
-      "bar",
-      "point_of_interest",
-      "establishment"
-    ],
-    "gpc": 10,
-    "goh": [
-      "Monday: 10:30 AM – 11:00 PM",
-      "Tuesday: 10:30 AM – 11:00 PM",
-      "Wednesday: 10:30 AM – 11:00 PM",
-      "Thursday: 10:30 AM – 11:00 PM",
-      "Friday: 10:30 AM – 11:00 PM",
-      "Saturday: 10:30 AM – 11:00 PM",
-      "Sunday: 10:30 AM – 10:30 PM"
-    ],
-    "g_reviews": [
-      {
-        "text": "Attended yesterday Sunday 15th February 2026, for an impromptu birthday lunch for my friend. We did not have a booking, and it was packed. However, the server was extremely polite and without hesitation, explained a table would be ready in ten minutes, which was wonderful news. The staff were all VERTY friendly and helpful. We ordered fish and chips and a pudding. The price was very reasonable and service was excellent. the staff would check up regularly to see if we needed anything. Food was great. Atmosphere was great. I remarked to my friend it was unpretentious. Will definitely go back. Great find!",
-        "rating": 5,
-        "time": "a month ago"
-      },
-      {
-        "text": "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it was only her forth shift excellent member of the team. Food was delicious  restaurant exceptionally clean and tidy. All members of the team I've every come into contact at Arrow Mill and I've been countless times are outstanding   well done to all.",
-        "rating": 5,
-        "time": "a month ago"
-      },
-      {
-        "text": "Hi, would just like to say what a lovely meal we had with you this afternoon. Our first meal with yourselves and definitely not the last! The food was absolutely fantastic.\nWe would also like to make a special mention to Jessica, who looked after us. What a polite, confident and knowledgeable young lady who is a credit to your team.\nWell done Jessica and thank you for making our afternoon so enjoyable.",
-        "rating": 5,
-        "time": "a month ago"
-      },
-      {
-        "text": "We visited for my birthday meal. The staff were all very welcoming and friendly and we had quick service. The food was absolutely delicious, we ate from the Sunday menu and had an array of different meals - the drinks selection is brilliant. Prices were comparable to other restaurants, not overly priced in my opinion given the quality of the food. Can’t fault it, looking forward to our next visit. Thank you for providing such a wonderful evening ☺️",
-        "rating": 5,
-        "time": "2 months ago"
-      },
-      {
-        "text": "We had an absolutely amazing meal at Arrow Mill. From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after.\nThe food was exceptional – beautifully presented, full of flavour, and cooked to perfection. Every course felt thoughtfully prepared, and it really made the whole experience special.\nA stunning location, great service, and incredible food — Arrow Mill is a place we’ll definitely be returning to. Highly recommended!",
-        "rating": 5,
-        "time": "a month ago"
       }
     ]
   }

@@ -1,0 +1,75 @@
+{
+  "has_narrative": true,
+  "reviews_analyzed": 5,
+  "praise_themes": [
+    {
+      "aspect": "service",
+      "label": "Service & Hospitality",
+      "mentions": 6,
+      "quotes": [
+        "We had a wonderful Sunday roast at The Fox in Loxley. We arrived just after 12 and were seated at a table by the fireplace.",
+        "Wow! This place is a rare gem!\nFrom the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your nee"
+      ]
+    },
+    {
+      "aspect": "food_quality",
+      "label": "Food Quality",
+      "mentions": 2,
+      "quotes": [
+        "Not local to the area, we had asked for recommendations for dining and The Fox lived delightfully up to them."
+      ]
+    },
+    {
+      "aspect": "ambience",
+      "label": "Atmosphere & Setting",
+      "mentions": 2,
+      "quotes": []
+    },
+    {
+      "aspect": "speed",
+      "label": "Speed & Efficiency",
+      "mentions": 1,
+      "quotes": []
+    },
+    {
+      "aspect": "value",
+      "label": "Value for Money",
+      "mentions": 1,
+      "quotes": []
+    }
+  ],
+  "criticism_themes": [],
+  "strongest_positive_quotes": [
+    "We had a wonderful Sunday roast at The Fox in Loxley. We arrived just after 12 and were seated at a table by the fireplace.",
+    "Not local to the area, we had asked for recommendations for dining and The Fox lived delightfully up to them.",
+    "Wow! This place is a rare gem!\nFrom the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your nee"
+  ],
+  "strongest_constructive_quotes": [],
+  "aspect_scores": {
+    "service": {
+      "positive": 6,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "speed": {
+      "positive": 1,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "food_quality": {
+      "positive": 2,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "ambience": {
+      "positive": 2,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "value": {
+      "positive": 1,
+      "negative": 0,
+      "sentiment": 10.0
+    }
+  }
+}
