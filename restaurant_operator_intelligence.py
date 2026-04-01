@@ -104,8 +104,8 @@ def run_monthly_venue(venue_key, venue_rec, data, all_cards, month_str):
     # Conditional intelligence
     cond_blocks = generate_conditional_blocks(venue_rec, card, benchmarks)
 
-    # Generate markdown report
-    report_md = generate_monthly_report(
+    # Generate markdown report + QA artifact
+    report_md, qa = generate_monthly_report(
         venue_name, month_str, card, deltas,
         benchmarks, review_intel, rev_delta,
         recs, cond_blocks,
@@ -126,11 +126,20 @@ def run_monthly_venue(venue_key, venue_rec, data, all_cards, month_str):
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(summary_json, f, indent=2, ensure_ascii=False)
 
+    qa_path = f"outputs/monthly/{safe_name}_{month_str}_qa.json"
+    with open(qa_path, "w", encoding="utf-8") as f:
+        json.dump(qa, f, indent=2, ensure_ascii=False)
+
     csv_path = f"outputs/monthly/scores_{month_str}.csv"
     write_monthly_csv_row(venue_name, month_str, card, csv_path)
 
+    qa_status = "PASS" if qa["validation_passed"] else "FAIL"
+    qa_warns = len(qa["validation_warnings"])
     print(f"  {venue_name}: overall={card['overall']:.1f} "
+          f"| mode={qa['report_mode']} "
           f"| actions={len(recs['priority_actions'])} "
+          f"| QA={qa_status}"
+          f"{f' ({qa_warns} warnings)' if qa_warns else ''} "
           f"| report → {md_path}")
 
     return summary_json
