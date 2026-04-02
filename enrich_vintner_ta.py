@@ -158,7 +158,8 @@ def main():
     save_review_snapshot(venue_id, review_intel, month_str)
 
     # Recommendations
-    recs = generate_recommendations(venue, card, benchmarks, deltas, month_str)
+    recs = generate_recommendations(venue, card, benchmarks, deltas, month_str,
+                                    review_intel=review_intel)
 
     # Conditional blocks
     cond_blocks = generate_conditional_blocks(venue, card, benchmarks)

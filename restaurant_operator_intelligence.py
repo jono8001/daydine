@@ -115,7 +115,8 @@ def run_monthly_venue(venue_key, venue_rec, data, all_cards, month_str):
     save_review_snapshot(venue_id, review_intel, month_str)
 
     # Recommendations
-    recs = generate_recommendations(venue_rec, card, benchmarks, deltas, month_str)
+    recs = generate_recommendations(venue_rec, card, benchmarks, deltas, month_str,
+                                    review_intel=review_intel)
 
     # Conditional intelligence
     cond_blocks = generate_conditional_blocks(venue_rec, card, benchmarks)

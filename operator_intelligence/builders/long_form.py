@@ -18,56 +18,75 @@ DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
 # Management Priorities (not just actions — interpretation of what matters)
 # ---------------------------------------------------------------------------
 
+_REC_TYPE_LABELS = {
+    "fix": "FIX", "exploit": "EXPLOIT", "protect": "PROTECT",
+    "watch": "WATCH", "ignore": "IGNORE",
+    "action": "ACTION",  # backward compat
+}
+
+
 def build_management_priorities(w, scorecard, deltas, benchmarks, recs):
     w("## Management Priorities\n")
     actions = recs.get("priority_actions", [])
-    dims = {d: scorecard.get(d) for d in DIM_ORDER if scorecard.get(d) is not None}
     overall = scorecard.get("overall")
 
-    # Frame the management question
-    if overall and overall >= 8.0:
-        w("Your aggregate score places you in the top tier. The management question "
-          "is not *how to fix problems* but *how to sustain advantage and capture "
-          "upside you're currently leaving on the table*.\n")
+    # Frame the management question from the venue's actual situation
+    fix_count = sum(1 for a in actions if a.get("rec_type") == "fix")
+    exploit_count = sum(1 for a in actions if a.get("rec_type") == "exploit")
+
+    if fix_count >= 2:
+        w("Multiple operational issues need attention. The management question "
+          "is *which fix prevents the most commercial damage this month* — "
+          "sequence matters more than ambition.\n")
+    elif exploit_count >= 2 and overall and overall >= 7.0:
+        w("The fundamentals are sound. The management question is not "
+          "*what to fix* but *what untapped strength to lean into* — "
+          "and which opportunity has the highest return for effort.\n")
+    elif overall and overall >= 8.0:
+        w("You're operating in the top tier. The management question is "
+          "*how to sustain this and capture the upside you're currently "
+          "leaving on the table*.\n")
     elif overall and overall >= 6.5:
-        w("Your score is solid but not dominant. The management question is "
-          "*which specific dimension, if improved, would most change your "
+        w("The score is solid but not dominant. The management question is "
+          "*which specific lever, if pulled, would most change your "
           "commercial trajectory* — and which can you realistically move?\n")
     else:
-        w("Your score indicates material operational gaps. The management question "
-          "is *which issues are most commercially urgent* and which can be "
+        w("Material operational gaps exist. The management question is "
+          "*which issues are most commercially urgent* and which can be "
           "addressed within the next 30 days.\n")
 
-    # Top 3 priorities with management framing
+    # Top 3 priorities — use rec_type and management_implication from rec itself
     for i, a in enumerate(actions[:3], 1):
         status = a.get("status", "new").upper()
-        w(f"### Priority {i}: {a['title']} [{status}]\n")
+        rt = _REC_TYPE_LABELS.get(a.get("rec_type", "action"), "ACTION")
+        w(f"### Priority {i}: {a['title']} [{rt} | {status}]\n")
         w(f"{a['description']}\n")
 
-        # Management implication
-        dim = a.get("dimension", "")
-        if dim == "conversion":
-            w("**Management implication:** This is a demand-capture problem. You are "
-              "generating interest (experience and visibility are strong) but losing "
-              "potential customers at the point they try to act on that interest. "
-              "Every day this remains unresolved represents lost covers.\n")
-        elif dim == "trust":
-            w("**Management implication:** Trust is a foundational score. Low trust "
-              "creates a ceiling on your overall position regardless of how strong "
-              "other dimensions become. This should be treated as a compliance "
-              "project, not a marketing initiative.\n")
-        elif dim == "visibility":
-            w("**Management implication:** Visibility directly drives discovery. "
-              "A venue that isn't found can't convert. This is a marketing and "
-              "digital operations issue that can typically be moved within 60 days.\n")
-        elif dim == "experience":
-            w("**Management implication:** Experience is the most commercially "
-              "sensitive dimension — it drives reviews, return visits, and word-of-mouth. "
-              "Improvements here compound faster than any other dimension.\n")
-        elif dim == "prestige":
-            w("**Management implication:** Prestige is a long-cycle investment. "
-              "It doesn't drive footfall directly but supports premium pricing, "
-              "media coverage, and talent recruitment.\n")
+        # Use recommendation's own management implication if it has one,
+        # otherwise fall back to dimension-based framing
+        mgmt_impl = a.get("management_implication")
+        if mgmt_impl:
+            w(f"**Management implication:** {mgmt_impl}\n")
+        else:
+            dim = a.get("dimension", "")
+            _DIM_IMPLICATIONS = {
+                "conversion": ("This is a demand-capture problem. Interest is being "
+                               "generated but lost at the point customers try to act. "
+                               "Every day unresolved represents lost covers."),
+                "trust": ("Trust is foundational. Low trust creates a ceiling on "
+                          "overall position regardless of other strengths. Treat as "
+                          "a compliance project, not a marketing initiative."),
+                "visibility": ("Visibility drives discovery. A venue that isn't "
+                               "found can't convert. Typically moveable within 60 days."),
+                "experience": ("Experience is the most commercially sensitive dimension "
+                               "— it drives reviews, return visits, and word-of-mouth. "
+                               "Improvements here compound faster than any other."),
+                "prestige": ("Long-cycle investment. Doesn't drive footfall directly "
+                             "but supports premium pricing and talent recruitment."),
+            }
+            impl = _DIM_IMPLICATIONS.get(dim)
+            if impl:
+                w(f"**Management implication:** {impl}\n")
 
         w(f"- **Owner:** {a.get('owner', '—')} | **Confidence:** {a.get('confidence', 0):.0%}")
         w(f"- **Expected upside:** {a.get('expected_upside', '—')}")
