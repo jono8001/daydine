@@ -1,5 +1,5 @@
 # Arrow Mill — Operator Intelligence Report
-*2026-04 | Generated 01 April 2026 | DayDine Premium*
+*2026-04 | Generated 02 April 2026 | DayDine Premium*
 
 ---
 
@@ -11,12 +11,12 @@
 **Strongest dimension:** Trust (9.7). **Weakest:** Prestige (1.5). Internal gap: 8.2 points.
 
 **Competitive position:** Local Peers (5mi): #1 of 6 (P100.0) — peer avg 6.19, top 7.44
-  Catchment (15mi): #1 of 15 (P100.0) — peer avg 6.79, top 7.69
-  UK Category Cohort: #1 of 19 (P100.0) — peer avg 6.79, top 7.69
+  Catchment (15mi): #1 of 15 (P100.0) — peer avg 6.81, top 7.69
+  UK Category Cohort: #1 of 19 (P100.0) — peer avg 6.8, top 7.69
 
-**Top priority this month:** Fix the digital shopfront — you're losing walk-ins (Conversion, expected upside: Capture demand you're currently losing).
+**Top priority this month:** Fix the digital shopfront — you're losing walk-ins [FIX] — Capture demand you're currently losing.
 
-*This report includes narrative analysis from 5 customer reviews.*
+*This report includes narrative analysis from 5 customer reviews (5 Google).*
 
 ## What This Venue Is Becoming Known For
 
@@ -30,37 +30,38 @@ The public proof (ratings, compliance) aligns with what guests actually experien
 
 ## Management Priorities
 
-Your score is solid but not dominant. The management question is *which specific dimension, if improved, would most change your commercial trajectory* — and which can you realistically move?
+The score is solid but not dominant. The management question is *which specific lever, if pulled, would most change your commercial trajectory* — and which can you realistically move?
 
-### Priority 1: Fix the digital shopfront — you're losing walk-ins [NEW]
+### Priority 1: Fix the digital shopfront — you're losing walk-ins [FIX | ONGOING]
 
-You deliver a strong experience but your online presence doesn't make it easy to act on. Check: can a new customer confirm your hours, see your menu, and book or walk in — all within 60 seconds on their phone? If not, that's your fix list.
+You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
-**Management implication:** This is a demand-capture problem. You are generating interest (experience and visibility are strong) but losing potential customers at the point they try to act on that interest. Every day this remains unresolved represents lost covers.
+**Management implication:** Interest without conversion is vanity traffic.
 
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=9.42, conversion=5.5`
+- *This recommendation has appeared 2 consecutive months.*
 
-### Priority 2: Pursue editorial recognition [NEW]
+### Priority 2: Lean into service & hospitality — it's what guests are buying [EXPLOIT | NEW]
 
-Your operational scores support a credible submission to the AA Restaurant Guide or local food awards. Editorial recognition would differentiate you from peers and justify premium positioning.
+Guests consistently praise service & hospitality (18 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
 
-**Management implication:** Prestige is a long-cycle investment. It doesn't drive footfall directly but supports premium pricing, media coverage, and talent recruitment.
+**Management implication:** Your guests are telling you your proposition. Use it.
 
-- **Owner:** management | **Confidence:** 50%
-- **Expected upside:** +2.0 Prestige, brand differentiation
-- **Evidence:** `overall=7.94`
+- **Owner:** management | **Confidence:** 70%
+- **Expected upside:** Sharpen proposition → attract the right guests
+- **Evidence:** `review_praise: Service & Hospitality=18`
 
-### Priority 3: Turn strong guest warmth into fresh public proof [NEW]
+### Priority 3: Protect the 4.5/5 rating — it took years to build [PROTECT | NEW]
 
-Respond to every Google review within 48 hours — positive and negative. For satisfied tables, a brief 'we'd love your feedback on Google' at bill presentation converts private goodwill into public evidence. This compounds monthly.
+With 1988 reviews at 4.5/5, your discovery advantage is substantial. Protect it by responding to every review within 48 hours and prompting satisfied tables for feedback.
 
-**Management implication:** Visibility directly drives discovery. A venue that isn't found can't convert. This is a marketing and digital operations issue that can typically be moved within 60 days.
+**Management implication:** Visibility drives discovery. A venue that isn't found can't convert. Typically moveable within 60 days.
 
-- **Owner:** front-of-house | **Confidence:** 80%
-- **Expected upside:** Review velocity → discovery ranking
-- **Evidence:** `standing_best_practice`
+- **Owner:** front-of-house | **Confidence:** 85%
+- **Expected upside:** Sustain discovery advantage
+- **Evidence:** `gr=4.5, grc=1988`
 
 ## Protect / Improve / Ignore
 
@@ -79,89 +80,58 @@ Respond to every Google review within 48 hours — positive and negative. For sa
 
 ## Commercial Diagnosis
 
-### Main Bottleneck
+### Primary Constraint
 
-**Under-recognition.** The venue operates at a level that justifies premium positioning but carries none of the formal recognition that would support premium pricing, press attention, or talent recruitment. The bottleneck is not quality — it's credentialing.
+**Under-recognition.** The venue operates at a level that justifies premium positioning but carries none of the formal recognition to support premium pricing or press attention. The constraint is credentialing, not quality.
+
+### Secondary Drag
+
+Conversion friction exists — missing hours, menu, or booking options — but it's secondary to other issues. Fix the primary constraint first, then address the digital shopfront.
+
+### Hidden Risk
+
+This assessment rests on only 5 review texts. The scores look reasonable but could shift materially with more data. Don't over-invest based on the current picture — collect TripAdvisor data and more review text before making strategic commitments.
+
+### What May Be Misleading
+
+- **The overall score (7.9) rests on thin evidence.** Only 5 review texts inform this assessment. More data could shift the picture significantly — treat the score as provisional.
+- **All analysed reviews are positive.** This may reflect genuine quality or Google's algorithm surfacing popular reviews. Check recent 1-2 star reviews directly on Google Maps to validate.
 
 ### Positioning
 
-The venue leads its local peer set. Early review signals point toward service & hospitality as a differentiator, though the evidence base is limited (5 review texts). Commercially, this position supports premium pricing and extension opportunities. The risk is complacency.
+Category leader in the local market, with service & hospitality as the emerging differentiator. This position supports premium pricing and extension opportunities. The risk is complacency — leadership must be actively maintained.
 
 ### Revenue Left on the Table
 
-- **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier. This is measurable lost footfall.
-- **No formal credentialing.** Quality supports premium pricing but without editorial recognition (AA, Michelin Plate, local awards), the venue cannot justify the price point that its experience quality would support.
-- **Potential proposition signal.** Early review data (from a limited sample) suggests service & hospitality resonates with guests. If confirmed by broader evidence, this could become a marketable differentiator.
+- **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier.
+- **No formal credentialing.** Quality supports premium pricing but without editorial recognition, the venue cannot justify the price point its experience would support.
+- **Potential proposition signal.** Early review data (from a limited sample) suggests service & hospitality resonates. If confirmed, this could become a marketable differentiator.
 
 ## Review & Reputation Intelligence
 
-**Based on 5 customer reviews with full text analysis.**
-**Evidence tier: Anecdotal** — from a limited sample.
+### What Guests Value Most
 
-### Rating & Volume Context
+Service & Hospitality is a dominant theme (consistent praise). Guests describe attentive, personal care — naming individual staff in several cases. This suggests the venue's competitive advantage is human rather than purely operational: it depends on who is working, not just what systems are in place. As one reviewer put it: *"The staff were all VERTY friendly and helpful"* Food Quality draws consistent praise across reviews. Guests highlight specific dishes and ingredients rather than generic praise, which indicates the kitchen is delivering memorable experiences, not just adequate meals. As one reviewer put it: *"Hi, would just like to say what a lovely meal we had with you this afternoon"* Speed & Efficiency shows consistent praise across available reviews. As one reviewer put it: *"The staff were all VERTY friendly and helpful"*
 
-- 1,988 reviews — statistically robust rating. Individual reviews have negligible impact.
-- 4.5/5 places you in the top tier of Google search results. This drives discovery.
-- **Sample vs aggregate:** Analysed reviews average 5.0★ vs overall 4.5/5. Recent/prominent reviews skew higher than the lifetime average — may indicate improvement or selection bias in Google's 'most relevant' algorithm.
+### What Management May Be Missing
 
-### Sentiment Distribution
+No negative themes were detected in the analysed reviews. While encouraging, note that review platforms surface popular reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on the relevant platforms — these may reveal issues not captured in this sample.
 
-Of 5 reviews analysed: **5 positive**, **0 negative**, **0 mixed**.
+### Evidence Quality
 
-All sampled reviews are positive. This is encouraging but note that Google's 'most relevant' algorithm tends to surface popular reviews. Negative signals may exist deeper in the review corpus.
+**Confidence: Anecdotal** (5 from Google).
+ This analysis draws on a very small sample. Themes are observed impressions, not confirmed patterns. Management should treat these findings as hypotheses to investigate, not conclusions to act on.
+ Note: Google's API surfaces only its 'most relevant' reviews (max 5 per venue) from 1,988 total — this sample likely skews toward popular positive reviews.
 
-### Sentiment by Topic
+### Topic Summary
 
-| Topic | Score | Positive | Negative | Total | Read |
-|-------|------:|---------:|---------:|------:|------|
-| Service & Hospitality | 10.0/10 | 18 | 0 | 18 | Strength |
-| Food Quality | 10.0/10 | 7 | 0 | 7 | Strength |
-| Speed & Efficiency | 10.0/10 | 3 | 0 | 3 | Strength |
-| Atmosphere & Setting | 10.0/10 | 3 | 0 | 3 | Strength |
-| Value for Money | 10.0/10 | 1 | 0 | 1 | Strength |
-
-### What Customers Praise
-
-**Service & Hospitality** (18 positive mentions)
-> *"The staff were all VERTY friendly and helpful"*
-> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
-
-**Food Quality** (7 positive mentions)
-> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
-> *"Hi, would just like to say what a lovely meal we had with you this afternoon"*
-
-**Speed & Efficiency** (3 positive mentions)
-> *"The staff were all VERTY friendly and helpful"*
-> *"The staff were all very welcoming and friendly and we had quick service"*
-
-**Atmosphere & Setting** (3 positive mentions)
-> *"Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"*
-> *"From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after"*
-
-**Value for Money** (1 positive mentions)
-> *"The staff were all VERTY friendly and helpful"*
-
-### Criticism Assessment
-
-No negative themes detected across 5 analysed reviews. While positive, note that Google surfaces its 'most relevant' reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on Google Maps — these may reveal issues not captured here.
-
-### Rating Trajectory
-
-Rating across the sample is stable — no significant upward or downward trajectory detected.
-
-### Review-by-Review Summary
-
-| # | Rating | Sentiment | Topics | Snippet |
-|--:|-------:|-----------|--------|---------|
-| 1 | 5★ | positive | Service & Hospitality, Value for Money, Speed & Efficiency | The staff were all VERTY friendly and helpful |
-| 2 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was... |
-| 3 | 5★ | positive | Food Quality, Service & Hospitality | Hi, would just like to say what a lovely meal we had with you this afternoon |
-| 4 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency | The staff were all very welcoming and friendly and we had quick service |
-| 5 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | From the moment we arrived, the atmosphere was welcoming and relaxed, and the st... |
-
-### Analysis Limitations
-
-**Evidence tier: Anecdotal.** This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm out of 1,988 total. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution. Claims above are calibrated to this evidence level — themes are observed, not confirmed as settled reputation patterns.
+| Topic | Signal | Mentions |
+|-------|--------|--------:|
+| Service & Hospitality | consistent praise | 18 |
+| Food Quality | consistent praise | 7 |
+| Speed & Efficiency | consistent praise | 3 |
+| Atmosphere & Setting | consistent praise | 3 |
+| Value for Money | positive signal, limited evidence | 1 |
 
 ## Market Position
 
@@ -171,7 +141,7 @@ Rating across the sample is stable — no significant upward or downward traject
 
 **Position:** #1 of 6 (Percentile 100.0)
 
-You are in the top quintile of this peer set. Your overall score of 7.9 exceeds the peer average of 6.2 by 1.8 points. The competitive risk here is complacency — the nearest competitor scores 7.4.
+You are in the top quintile of this peer set. Your overall score of 7.9 exceeds the peer average of 6.2 by 1.7 points. The competitive risk here is complacency — the nearest competitor scores 7.4.
 
 **Dimension gaps vs peers:**
 
@@ -192,12 +162,12 @@ You are in the top quintile of this peer set. Your overall score of 7.9 exceeds 
 
 **Position:** #1 of 15 (Percentile 100.0)
 
-You are in the top quintile of this peer set. Your overall score of 7.9 exceeds the peer average of 6.8 by 1.2 points. The competitive risk here is complacency — the nearest competitor scores 7.7.
+You are in the top quintile of this peer set. Your overall score of 7.9 exceeds the peer average of 6.8 by 1.1 points. The competitive risk here is complacency — the nearest competitor scores 7.7.
 
 **Dimension gaps vs peers:**
 
 - Trust: 9.7 (+1.7 above peer avg 8.1)
-- Visibility: 8.5 (+1.3 above peer avg 7.2)
+- Visibility: 8.5 (+1.2 above peer avg 7.3)
 - Prestige: 1.5 (+0.8 above peer avg 0.8)
 - Experience: 9.4 (+0.6 above peer avg 8.8)
 - Conversion: 5.5 (+0.5 above peer avg 5.0)
@@ -214,12 +184,12 @@ You are in the top quintile of this peer set. Your overall score of 7.9 exceeds 
 
 **Position:** #1 of 19 (Percentile 100.0)
 
-You are in the top quintile of this peer set. Your overall score of 7.9 exceeds the peer average of 6.8 by 1.2 points. The competitive risk here is complacency — the nearest competitor scores 7.7.
+You are in the top quintile of this peer set. Your overall score of 7.9 exceeds the peer average of 6.8 by 1.1 points. The competitive risk here is complacency — the nearest competitor scores 7.7.
 
 **Dimension gaps vs peers:**
 
-- Trust: 9.7 (+1.8 above peer avg 8.0)
-- Visibility: 8.5 (+1.3 above peer avg 7.2)
+- Trust: 9.7 (+1.8 above peer avg 7.9)
+- Visibility: 8.5 (+1.2 above peer avg 7.3)
 - Prestige: 1.5 (+0.8 above peer avg 0.8)
 - Experience: 9.4 (+0.7 above peer avg 8.8)
 
@@ -341,26 +311,30 @@ This section identifies specific barriers between customer interest and a comple
 
 ## Watch List
 
+**Solid score rests on thin evidence — more data could shift it** [NEW]
+
+The overall score looks good but it's based on very limited review text. Collect TripAdvisor data and more Google reviews to confirm whether the position is real or artefact.
+
 **Monitor local competitor openings and closures** [NEW]
 
-New entrants or closures in your category within 5 miles can shift your competitive position. Stay aware of planning applications and social media announcements.
-
-**Track Google rating trend month-over-month** [NEW]
-
-A sustained 0.1-point drop over 3 months can indicate systemic issues before they become obvious. Monitor monthly.
+New entrants or closures within 5 miles can shift your position. Stay aware of planning applications and social media.
 
 ## What Not to Do This Month
 
-**Don't chase prestige before fixing fundamentals**
+**Your quality supports a credible awards submission**
 
-Avoid spending time on awards submissions, PR, or premium positioning until Experience, Trust, and Visibility scores are all above 7.0. The fundamentals compound into commercial value; prestige without substance doesn't.
+Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Recommendation Tracker
 
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
-| 1 | Fix the digital shopfront — you're losing walk-ins | new | 2026-04 | 1 | operations | conversion |
-| 2 | Pursue editorial recognition | new | 2026-04 | 1 | management | prestige |
+| 1 | Fix the digital shopfront — you're losing walk-ins | ongoing | 2026-04 | 2 | operations | conversion |
+| 2 | Lean into service & hospitality — it's what guests | new | 2026-04 | 1 | management | experience |
+| 3 | Protect the 4.5/5 rating — it took years to build | new | 2026-04 | 1 | front-of-house | visibility |
+| 4 | Pursue editorial recognition | new | 2026-04 | 1 | management | prestige |
+| 5 | Solid score rests on thin evidence — more data cou | new | 2026-04 | 1 | management | overall |
+| 6 | Your quality supports a credible awards submission | new | 2026-04 | 1 | management | prestige |
 
 ## Next-Month Monitoring Plan
 
@@ -371,8 +345,8 @@ Track these specific metrics before the next report to measure progress:
 | Google rating | 4.5/5 | Maintain or improve | Front-of-house |
 | Google review count | 1988 | 1998+ | Marketing |
 | Fix the digital shopfront — you're losin | Action raised | Complete | operations |
-| Pursue editorial recognition | Action raised | Complete | management |
-| Monitor local competitor openings and cl | Watch raised | Monitor | management |
+| Lean into service & hospitality — it's w | Action raised | Complete | management |
+| Solid score rests on thin evidence — mor | Watch raised | Monitor | management |
 
 **Review date:** First week of next month. Compare these baselines against updated data to measure whether actions had impact.
 
@@ -393,6 +367,7 @@ Track these specific metrics before the next report to measure progress:
 **What additional collection would unlock:**
 
 - **TripAdvisor enrichment** → cross-platform validation, convergence scoring
+
 
 ## Evidence Appendix
 

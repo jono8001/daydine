@@ -19,7 +19,7 @@
     },
     "management_priorities": {
       "present": true,
-      "lines": 17,
+      "lines": 19,
       "meets_minimum": true
     },
     "watch_list": {
@@ -49,7 +49,7 @@
     },
     "commercial_diagnosis": {
       "present": true,
-      "lines": 4,
+      "lines": 8,
       "meets_minimum": true
     },
     "public_vs_reality": {
@@ -59,7 +59,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 68,
+      "lines": 48,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -69,7 +69,7 @@
     },
     "recommendation_tracker": {
       "present": true,
-      "lines": 6,
+      "lines": 11,
       "meets_minimum": true
     },
     "market_intelligence": {
@@ -102,5 +102,5 @@
   "validation_errors": [],
   "validation_warnings": [],
   "confidence_level": "high",
-  "report_lines": 277
+  "report_lines": 269
 }

@@ -1,6 +1,8 @@
 {
   "has_narrative": true,
   "reviews_analyzed": 5,
+  "review_count_ta": null,
+  "ta_rating": null,
   "praise_themes": [
     {
       "aspect": "service",

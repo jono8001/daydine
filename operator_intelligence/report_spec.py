@@ -347,8 +347,11 @@ def validate_report(report_text, mode, recs, review_intel):
     # Check diagnosis has layered analysis (primary + secondary)
     if "## Commercial Diagnosis" in report_text:
         diag_section = report_text.split("## Commercial Diagnosis")[1]
-        if "## " in diag_section:
-            diag_section = diag_section.split("## ")[0]
+        # Find the next H2 section (not H3)
+        import re
+        next_h2 = re.search(r'\n## [^#]', diag_section)
+        if next_h2:
+            diag_section = diag_section[:next_h2.start()]
         if "### Primary Constraint" not in diag_section and "### Main Bottleneck" not in diag_section:
             result.warnings.append("FLAT_DIAGNOSIS: Commercial diagnosis lacks structured constraint analysis")
 

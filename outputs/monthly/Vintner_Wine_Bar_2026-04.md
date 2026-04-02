@@ -14,9 +14,9 @@
   Catchment (15mi): #7 of 19 (P66.7) — peer avg 6.83, top 7.93
   UK Category Cohort: #7 of 19 (P66.7) — peer avg 6.83, top 7.93
 
-**Top priority this month:** Fix the digital shopfront — you're losing walk-ins (Conversion, expected upside: Capture demand you're currently losing).
+**Top priority this month:** Fix the digital shopfront — you're losing walk-ins [FIX] — Capture demand you're currently losing.
 
-*This report includes narrative analysis from 25 customer reviews.*
+*This report includes narrative analysis from 25 customer reviews (5 Google + 20 TripAdvisor).*
 
 ## What This Venue Is Becoming Known For
 
@@ -28,38 +28,40 @@ In the local market, the venue sits above the median but hasn't established itse
 
 ## Management Priorities
 
-Your score is solid but not dominant. The management question is *which specific dimension, if improved, would most change your commercial trajectory* — and which can you realistically move?
+Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Fix the digital shopfront — you're losing walk-ins [ESCALATED]
+### Priority 1: Fix the digital shopfront — you're losing walk-ins [FIX | ESCALATED]
 
-You deliver a strong experience but your online presence doesn't make it easy to act on. Check: can a new customer confirm your hours, see your menu, and book or walk in — all within 60 seconds on their phone? If not, that's your fix list.
+You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
-**Management implication:** This is a demand-capture problem. You are generating interest (experience and visibility are strong) but losing potential customers at the point they try to act on that interest. Every day this remains unresolved represents lost covers.
+**Management implication:** Interest without conversion is vanity traffic.
 
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.73, conversion=5.5`
-- *This recommendation has appeared 3 consecutive months.*
+- *This recommendation has appeared 5 consecutive months.*
 
-### Priority 2: Turn strong guest warmth into fresh public proof [NEW]
+### Priority 2: Address recurring food quality complaints from guests [FIX | ONGOING]
 
-Respond to every Google review within 48 hours — positive and negative. For satisfied tables, a brief 'we'd love your feedback on Google' at bill presentation converts private goodwill into public evidence. This compounds monthly.
+Food Quality draws recurring criticism across reviews (3 negative mentions). One guest wrote: "I ordered a prawn cocktail which came with bread and butter..." Investigate whether this reflects a systemic issue or isolated incidents.
 
-**Management implication:** Visibility directly drives discovery. A venue that isn't found can't convert. This is a marketing and digital operations issue that can typically be moved within 60 days.
+**Management implication:** Guests are telling you what's wrong. Listen.
 
-- **Owner:** front-of-house | **Confidence:** 80%
-- **Expected upside:** Review velocity → discovery ranking
-- **Evidence:** `standing_best_practice`
+- **Owner:** operations | **Confidence:** 70%
+- **Expected upside:** Reduce food quality complaints, protect rating
+- **Evidence:** `review_criticism: Food Quality=3 negative`
+- *This recommendation has appeared 2 consecutive months.*
 
-### Priority 3: Tighten compliance documentation before next inspection [NEW]
+### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ONGOING]
 
-Even with a clean record, walk the floor with an inspector's eye. Check HACCP logs are current, allergen matrices are posted, cleaning schedules are signed off. The next visit is unannounced — preparation is the only lever you control.
+Guests consistently praise service & hospitality (18 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
 
-**Management implication:** Trust is a foundational score. Low trust creates a ceiling on your overall position regardless of how strong other dimensions become. This should be treated as a compliance project, not a marketing initiative.
+**Management implication:** Your guests are telling you your proposition. Use it.
 
-- **Owner:** compliance | **Confidence:** 85%
-- **Expected upside:** Protect compliance record
-- **Evidence:** `standing_best_practice`
+- **Owner:** management | **Confidence:** 70%
+- **Expected upside:** Sharpen proposition → attract the right guests
+- **Evidence:** `review_praise: Service & Hospitality=18`
+- *This recommendation has appeared 2 consecutive months.*
 
 ## Protect / Improve / Ignore
 
@@ -77,85 +79,71 @@ Even with a clean record, walk the floor with an inspector's eye. Check HACCP lo
 
 ## Commercial Diagnosis
 
-### Main Bottleneck
+### Primary Constraint
 
-**No single binding constraint identified.** The venue is operationally balanced. The commercial focus should be on marginal gains across the proposition rather than fixing a single bottleneck.
+**No single binding constraint.** The venue is operationally balanced. The commercial focus should be on marginal gains and protecting the strongest dimensions rather than crisis management.
+
+### Secondary Drag
+
+Compliance scores are adequate but not strong. While not the primary issue, a stale or borderline trust record creates cumulative drag on the overall score and limits upward movement.
+
+### Hidden Risk
+
+No hidden risks identified from current data. Continue monitoring for emerging signals.
+
+### What May Be Misleading
+
+- **Guest experience scores well but trust hasn't kept pace.** The gap between what guests experience and what the formal record shows creates exposure. One inspection or public complaint could make the gap visible.
 
 ### Positioning
 
-The venue sits above the local median but hasn't established a distinctive market position. Commercially, this is the 'good but forgettable' zone — adequate for steady trade but not generating the word-of-mouth or destination appeal that drives growth.
+Above the local median but without a distinctive market position. This is the 'good but not destination' zone — adequate for steady trade but not generating the word-of-mouth or destination appeal that drives growth.
 
 ### Revenue Left on the Table
 
-- **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier. This is measurable lost footfall.
-- **Potential proposition signal.** Early review data (supported by moderate evidence) suggests service & hospitality resonates with guests. If confirmed by broader evidence, this could become a marketable differentiator.
+- **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier.
+- **Potential proposition signal.** Early review data (supported by moderate evidence) suggests service & hospitality resonates. If confirmed, this could become a marketable differentiator.
+- **Operational leakage via food quality.** Recurring complaints (3 mentions) about food quality suggest a specific operational gap that affects both immediate revenue (table turns, repeat visits) and long-term rating trajectory.
 
 ## Review & Reputation Intelligence
 
-**Based on 25 customer reviews with full text analysis.**
-**Evidence tier: Directional** — supported by moderate evidence.
+### What Guests Value Most
 
-### Rating & Volume Context
+Service & Hospitality is a dominant theme (consistent praise). Guests describe attentive, personal care — naming individual staff in several cases. This suggests the venue's competitive advantage is human rather than purely operational: it depends on who is working, not just what systems are in place. As one reviewer put it: *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"* Food Quality draws strong positive signal across reviews. Guests highlight specific dishes and ingredients rather than generic praise, which indicates the kitchen is delivering memorable experiences, not just adequate meals. As one reviewer put it: *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"* Atmosphere & Setting registers as strong positive signal. The physical environment is contributing positively to the guest experience and may be a factor in repeat visits and social media visibility. As one reviewer put it: *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
 
-- 887 reviews — strong base. Rating is stable but a sustained negative pattern could shift it.
-- 4.6/5 places you in the top tier of Google search results. This drives discovery.
-- **Sample vs aggregate:** The 25 analysed reviews average 4.5★, consistent with the overall 4.6/5. No divergence detected.
+### What Management May Be Missing
 
-### Sentiment Distribution
-
-Of 25 reviews analysed: **21 positive**, **2 negative**, **2 mixed**.
-
-### Sentiment by Topic
-
-| Topic | Score | Positive | Negative | Total | Read |
-|-------|------:|---------:|---------:|------:|------|
-| Service & Hospitality | 10.0/10 | 18 | 0 | 18 | Strength |
-| Food Quality | 8.0/10 | 12 | 3 | 15 | Strength |
-| Atmosphere & Setting | 8.0/10 | 8 | 2 | 10 | Strength |
-| Value for Money | 10.0/10 | 3 | 0 | 3 | Strength |
-| Speed & Efficiency | 10.0/10 | 3 | 0 | 3 | Strength |
-| Booking & Accessibility | 10.0/10 | 1 | 0 | 1 | Strength |
-
-### What Customers Praise
-
-**Service & Hospitality** (18 positive mentions)
-> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
-> *"The staff were attentive throughout, checking in at the right moments"*
-
-**Food Quality** (12 positive mentions)
-> *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
-> *"The food was delicious as always - special mention for the cheese soufflé as it was divine"*
-
-**Atmosphere & Setting** (8 positive mentions)
-> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
-> *"Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford."*
-
-**Value for Money** (3 positive mentions)
-> *"The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service"*
-> *"The service is superb , our waitress was attentive, friendly and efficient"*
-
-**Speed & Efficiency** (3 positive mentions)
-> *"Service here was friendly and efficient"*
-> *"Generous portion of smoked salmon and eggs cooked to perfection"*
-
-**Booking & Accessibility** (1 positive mentions)
-> *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
-
-### What Needs Attention
-
-**Food Quality** (3 negative mentions)
+**Food Quality** (recurring note, 3 mentions).
 > *"I ordered a prawn cocktail which came with bread and butter"*
-> *"Lovely food generally with a good choice and reasonable value"*
+This warrants investigation to determine whether it reflects a systemic issue or isolated incidents.
 
-**Atmosphere & Setting** (2 negative mentions)
+**Atmosphere & Setting** (recurring note, 2 mentions).
 > *"We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning"*
-> *"I ordered a prawn cocktail which came with bread and butter"*
+This warrants investigation to determine whether it reflects a systemic issue or isolated incidents.
 
-### Rating Trajectory
+### Evidence Quality
 
-Rating across the sample is stable — no significant upward or downward trajectory detected.
+**Confidence: Directional** (5 from Google and 20 from TripAdvisor).
+ Moderate sample from a single platform. Findings are directionally sound but would benefit from cross-platform validation.
 
-### Review-by-Review Summary
+---
+
+### Detailed Review Data
+
+*The tables below provide the underlying data for the analysis above.*
+
+#### Sentiment by Topic
+
+| Topic | Signal | Positive | Negative | Mentions |
+|-------|--------|--------:|---------:|---------:|
+| Service & Hospitality | consistent praise | 18 | 0 | 18 |
+| Food Quality | strong positive signal | 12 | 3 | 15 |
+| Atmosphere & Setting | strong positive signal | 8 | 2 | 10 |
+| Value for Money | consistent praise | 3 | 0 | 3 |
+| Speed & Efficiency | consistent praise | 3 | 0 | 3 |
+| Booking & Accessibility | positive signal, limited evidence | 1 | 0 | 1 |
+
+#### Review-by-Review Summary
 
 | # | Rating | Sentiment | Topics | Snippet |
 |--:|-------:|-----------|--------|---------|
@@ -186,10 +174,6 @@ will be returning |
 | 23 | 5★ | positive | Service & Hospitality, Atmosphere & Setting, Value for Money | The service is superb , our waitress was attentive, friendly and efficient |
 | 24 | 4★ | positive | Food Quality | The salmon fish cakes with sorrel sauce were delicious, Cajun chicken sauce a li... |
 | 25 | 5★ | positive | Food Quality, Value for Money | Lovely food generally with a good choice and reasonable value |
-
-### Analysis Limitations
-
-**Evidence tier: Directional.** This analysis is based on 25 reviews from Google (5) and TripAdvisor (20). Google reviews are limited to 5 per venue via the API; TripAdvisor reviews were collected via Apify scraper. Claims above are calibrated to this evidence level — themes are observed across two independent platforms, strengthening confidence.
 
 ## Market Position
 
@@ -348,28 +332,33 @@ This section identifies specific barriers between customer interest and a comple
 
 ## Watch List
 
-**Guest experience trailing local competitors** [ESCALATED]
+**Compliance record weakest in peer set — creates inspection exposure** [ONGOING]
 
-Peers are delivering a more consistent or higher-quality guest experience. Identify what they do differently — is it menu depth, service style, or ambience? — and decide whether to match or differentiate.
+You trail peers by 1.1 points on trust. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
-**Compliance record trailing local standards** [ESCALATED]
+**Monitor local competitor openings and closures** [NEW]
 
-Most local peers carry stronger formal compliance signals. This may not affect daily footfall yet but creates exposure if an inspection goes poorly or a customer complaint escalates.
+New entrants or closures within 5 miles can shift your position. Stay aware of planning applications and social media.
 
 ## What Not to Do This Month
 
-**Don't chase prestige before fixing fundamentals**
+**Protect the 4.6/5 rating — it took years to build**
 
-Avoid spending time on awards submissions, PR, or premium positioning until Experience, Trust, and Visibility scores are all above 7.0. The fundamentals compound into commercial value; prestige without substance doesn't.
+Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Recommendation Tracker
 
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 3 | operations | conversion |
-| 3 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
-| 4 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 5 | operations | conversion |
+| 3 | Address recurring food quality complaints from gue | ongoing | 2026-04 | 2 | operations | experience |
+| 4 | Lean into service & hospitality — it's what guests | ongoing | 2026-04 | 2 | management | experience |
+| 5 | Protect the 4.6/5 rating — it took years to build | ongoing | 2026-04 | 2 | front-of-house | visibility |
+| 6 | Compliance record weakest in peer set — creates in | ongoing | 2026-04 | 2 | management | trust |
+| 7 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
+| 8 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
+| 9 | Address repeated atmosphere & setting complaints f | ongoing | 2026-04 | 2 | operations | experience |
 
 ## Next-Month Monitoring Plan
 
@@ -380,8 +369,8 @@ Track these specific metrics before the next report to measure progress:
 | Google rating | 4.6/5 | Maintain or improve | Front-of-house |
 | Google review count | 887 | 897+ | Marketing |
 | Fix the digital shopfront — you're losin | Action raised | Complete | operations |
-| Turn strong guest warmth into fresh publ | Action raised | Complete | front-of-house |
-| Guest experience trailing local competit | Watch raised | Monitor | management |
+| Address recurring food quality complaint | Action raised | Complete | operations |
+| Compliance record weakest in peer set —  | Watch raised | Monitor | management |
 
 **Review date:** First week of next month. Compare these baselines against updated data to measure whether actions had impact.
 

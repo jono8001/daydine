@@ -14,31 +14,31 @@
     {
       "title": "Fix the digital shopfront — you're losing walk-ins",
       "status": "escalated",
-      "priority": 6.0,
+      "priority": 7.0,
       "dimension": "conversion"
     },
     {
-      "title": "Turn strong guest warmth into fresh public proof",
-      "status": "new",
-      "priority": 4.0,
-      "dimension": "visibility"
+      "title": "Address recurring food quality complaints from guests",
+      "status": "ongoing",
+      "priority": 7.0,
+      "dimension": "experience"
     },
     {
-      "title": "Tighten compliance documentation before next inspection",
-      "status": "new",
-      "priority": 3.5,
-      "dimension": "trust"
+      "title": "Lean into service & hospitality — it's what guests are buying",
+      "status": "ongoing",
+      "priority": 7.0,
+      "dimension": "experience"
     }
   ],
   "watch_items": [
     {
-      "title": "Guest experience trailing local competitors",
-      "status": "escalated"
+      "title": "Compliance record weakest in peer set — creates inspection exposure",
+      "status": "ongoing"
     },
     {
-      "title": "Compliance record trailing local standards",
-      "status": "escalated"
+      "title": "Monitor local competitor openings and closures",
+      "status": "new"
     }
   ],
-  "active_recommendations": 4
+  "active_recommendations": 9
 }
