@@ -1,11 +1,13 @@
 {
   "has_narrative": true,
-  "reviews_analyzed": 5,
+  "reviews_analyzed": 25,
+  "review_count_ta": 20,
+  "ta_rating": 4.4,
   "praise_themes": [
     {
       "aspect": "service",
       "label": "Service & Hospitality",
-      "mentions": 7,
+      "mentions": 15,
       "quotes": [
         "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly!",
         "Vintner provided great pre-theatre service helped us get to our showing on time.\n\nI had the vegan risotto, which was solid and what I was looking for."
@@ -14,130 +16,161 @@
     {
       "aspect": "food_quality",
       "label": "Food Quality",
-      "mentions": 3,
+      "mentions": 10,
       "quotes": [
-        "This was our second visit to The Vinter, & it didn’t disappoint! We come to Stratford several times a year to visit the RSC."
+        "This was our second visit to The Vinter, & it didn’t disappoint! We come to Stratford several times a year to visit the RSC.",
+        "My husband and I had a superb meal at the Vintner on Feb 14. The food was delicious as always - special mention for the cheese soufflé as it was divin"
       ]
     },
     {
       "aspect": "ambience",
       "label": "Atmosphere & Setting",
+      "mentions": 5,
+      "quotes": []
+    },
+    {
+      "aspect": "speed",
+      "label": "Speed & Efficiency",
       "mentions": 3,
       "quotes": []
     },
     {
       "aspect": "value",
       "label": "Value for Money",
-      "mentions": 1,
-      "quotes": []
-    },
-    {
-      "aspect": "speed",
-      "label": "Speed & Efficiency",
-      "mentions": 1,
+      "mentions": 2,
       "quotes": []
     }
   ],
-  "criticism_themes": [],
+  "criticism_themes": [
+    {
+      "aspect": "food_quality",
+      "label": "Food Quality",
+      "mentions": 1,
+      "quotes": [
+        "I ordered a prawn cocktail which came with bread and butter. It was served to me with the handles of the cutlery resting in the butter on the bread, t"
+      ]
+    }
+  ],
   "strongest_positive_quotes": [
     "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly!",
     "Vintner provided great pre-theatre service helped us get to our showing on time.\n\nI had the vegan risotto, which was solid and what I was looking for.",
     "Great little joint, had the Beef Rump and a Sticky Toffee Pudding and both were fantastic and good for the price."
   ],
-  "strongest_constructive_quotes": [],
+  "strongest_constructive_quotes": [
+    "I went for lunch with a disabled lady who used a walker to get around, and they told us that if we wanted to eat or drink there she had to sit on a hi",
+    "I ordered a prawn cocktail which came with bread and butter. It was served to me with the handles of the cutlery resting in the butter on the bread, t"
+  ],
   "aspect_scores": {
     "food_quality": {
-      "positive": 3,
-      "negative": 0,
-      "sentiment": 10.0
+      "positive": 10,
+      "negative": 1,
+      "sentiment": 9.1
     },
     "service": {
-      "positive": 7,
+      "positive": 15,
       "negative": 0,
       "sentiment": 10.0
     },
     "ambience": {
-      "positive": 3,
+      "positive": 5,
       "negative": 0,
       "sentiment": 10.0
     },
     "value": {
-      "positive": 1,
+      "positive": 2,
       "negative": 0,
       "sentiment": 10.0
     },
     "speed": {
-      "positive": 1,
+      "positive": 3,
       "negative": 0,
       "sentiment": 10.0
     }
   },
   "analysis": {
-    "reviews_analyzed": 5,
+    "reviews_analyzed": 25,
     "aspect_scores": {
       "service": {
         "score": 10.0,
-        "positive": 7,
+        "positive": 18,
         "negative": 0,
-        "mentions": 7
+        "mentions": 18
       },
       "ambience": {
-        "score": 10.0,
-        "positive": 3,
-        "negative": 0,
-        "mentions": 3
+        "score": 8.0,
+        "positive": 8,
+        "negative": 2,
+        "mentions": 10
       },
       "value": {
         "score": 10.0,
-        "positive": 1,
-        "negative": 0,
-        "mentions": 1
-      },
-      "food_quality": {
-        "score": 10.0,
         "positive": 3,
         "negative": 0,
         "mentions": 3
+      },
+      "food_quality": {
+        "score": 8.0,
+        "positive": 12,
+        "negative": 3,
+        "mentions": 15
       },
       "booking": {
         "score": 10.0,
         "positive": 1,
         "negative": 0,
         "mentions": 1
+      },
+      "speed": {
+        "score": 10.0,
+        "positive": 3,
+        "negative": 0,
+        "mentions": 3
       }
     },
     "praise_themes": [
       {
         "aspect": "service",
         "label": "Service & Hospitality",
-        "mentions": 7,
+        "mentions": 18,
         "quotes": [
           "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly",
           "The staff were attentive throughout, checking in at the right moments"
         ]
       },
       {
-        "aspect": "ambience",
-        "label": "Atmosphere & Setting",
-        "mentions": 3,
+        "aspect": "food_quality",
+        "label": "Food Quality",
+        "mentions": 12,
         "quotes": [
-          "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"
+          "We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND",
+          "The food was delicious as always - special mention for the cheese soufflé as it was divine"
         ]
       },
       {
-        "aspect": "food_quality",
-        "label": "Food Quality",
-        "mentions": 3,
+        "aspect": "ambience",
+        "label": "Atmosphere & Setting",
+        "mentions": 8,
         "quotes": [
-          "We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"
+          "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly",
+          "Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford."
         ]
       },
       {
         "aspect": "value",
         "label": "Value for Money",
-        "mentions": 1,
+        "mentions": 3,
         "quotes": [
-          "The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service"
+          "The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service",
+          "The service is superb , our waitress was attentive, friendly and efficient"
+        ]
+      },
+      {
+        "aspect": "speed",
+        "label": "Speed & Efficiency",
+        "mentions": 3,
+        "quotes": [
+          "Service here was friendly and efficient",
+          "Generous portion of smoked salmon and eggs cooked to perfection"
         ]
       },
       {
@@ -149,17 +182,41 @@
         ]
       }
     ],
-    "criticism_themes": [],
+    "criticism_themes": [
+      {
+        "aspect": "food_quality",
+        "label": "Food Quality",
+        "mentions": 3,
+        "quotes": [
+          "I ordered a prawn cocktail which came with bread and butter",
+          "Lovely food generally with a good choice and reasonable value"
+        ]
+      },
+      {
+        "aspect": "ambience",
+        "label": "Atmosphere & Setting",
+        "mentions": 2,
+        "quotes": [
+          "We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning",
+          "I ordered a prawn cocktail which came with bread and butter"
+        ]
+      }
+    ],
     "rating_distribution": {
-      "5": 4,
-      "4": 1
+      "5": 19,
+      "4": 2,
+      "3": 2,
+      "1": 1,
+      "2": 1
     },
-    "average_sample_rating": 4.8,
+    "average_sample_rating": 4.48,
     "sentiment_distribution": {
-      "positive": 5
+      "positive": 21,
+      "mixed": 2,
+      "negative": 2
     },
     "risk_flags": [],
-    "trajectory": "improving",
+    "trajectory": "stable",
     "per_review": [
       {
         "rating": 5,
@@ -206,6 +263,192 @@
         "snippet": "Great choice of \"Sharable\" starters with very friendly staff especially Charlie.",
         "aspects": [
           "service"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "The food was delicious as always - special mention for the cheese soufflé as it was divine",
+        "aspects": [
+          "food_quality"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Service was slick and discreet, food was delicious, and the ambiance proved what a popular venue this is",
+        "aspects": [
+          "food_quality"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford.",
+        "aspects": [
+          "food_quality",
+          "ambience"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 3,
+        "sentiment": "mixed",
+        "snippet": "We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning",
+        "aspects": [
+          "ambience"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Great food, great atmosphere, great drinks and impeccable service",
+        "aspects": [
+          "food_quality",
+          "service",
+          "ambience"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 1,
+        "sentiment": "negative",
+        "snippet": "We went further up the road and found a restaurant who were most welcoming.",
+        "aspects": [
+          "service"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "This latest meal was outstanding despite its simplicity",
+        "aspects": [
+          "service"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 3,
+        "sentiment": "mixed",
+        "snippet": "The fish crepes were very good and friends who had steak and fish were very satisfied",
+        "aspects": [],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "The restaurant area has a pleasant interior and well spaced out tables",
+        "aspects": [
+          "service"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 2,
+        "sentiment": "negative",
+        "snippet": "I ordered a prawn cocktail which came with bread and butter",
+        "aspects": [
+          "food_quality",
+          "ambience"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "We were recently married in Stratford Upon Avon, and decided to book the Vinter on recommendation and having visited it ourselves, for our wedding meal",
+        "aspects": [],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Went to The Vintner for our wedding anniversary meal, staff are really friendly and the atmosphere is great, we had our small dog with us so were seated downstairs in the window which was absolutely f",
+        "aspects": [
+          "service"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "We didn't have a booking but they happily seated us upstairs by a window with a lovely setting",
+        "aspects": [
+          "ambience"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Service here was friendly and efficient",
+        "aspects": [
+          "food_quality",
+          "service",
+          "speed"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Generous portion of smoked salmon and eggs cooked to perfection",
+        "aspects": [
+          "food_quality",
+          "speed"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Great service and a dedicated gluten-free menu servicing delicious fishcakes and wonderful vegetarian risotto",
+        "aspects": [
+          "food_quality",
+          "service"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Excellent\nFood, Service and ambience \nwill be returning",
+        "aspects": [],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "The service is superb , our waitress was attentive, friendly and efficient",
+        "aspects": [
+          "service",
+          "ambience",
+          "value",
+          "speed"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 4,
+        "sentiment": "positive",
+        "snippet": "The salmon fish cakes with sorrel sauce were delicious, Cajun chicken sauce a little bit sweet but over all lovely",
+        "aspects": [
+          "food_quality"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Lovely food generally with a good choice and reasonable value",
+        "aspects": [
+          "food_quality",
+          "value"
         ],
         "risk_count": 0
       }

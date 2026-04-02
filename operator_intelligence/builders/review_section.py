@@ -191,11 +191,20 @@ def _narrative(w, ri, rd):
 
     # --- Data Limitation Note ---
     review_count = ri.get('volume_signals', {}).get('review_count', 0)
+    ta_count = ri.get("review_count_ta") or 0
     w("### Analysis Limitations\n")
-    w(f"**Evidence tier: {rc.tier.title()}.** This analysis is based on {n} reviews "
-      f"surfaced by Google's 'most relevant' algorithm out of {review_count:,} total. "
-      "The Google Places API limits retrieval to 5 reviews per venue with no pagination "
-      "or sort control. This sample is likely skewed toward popular positive reviews "
-      "and may not represent the full sentiment distribution. "
-      "Claims above are calibrated to this evidence level — themes are observed, "
-      "not confirmed as settled reputation patterns.\n")
+    if ta_count > 0:
+        w(f"**Evidence tier: {rc.tier.title()}.** This analysis is based on {n} reviews "
+          f"from Google ({n - ta_count}) and TripAdvisor ({ta_count}). "
+          f"Google reviews are limited to 5 per venue via the API; TripAdvisor reviews "
+          f"were collected via Apify scraper. "
+          "Claims above are calibrated to this evidence level — themes are observed "
+          "across two independent platforms, strengthening confidence.\n")
+    else:
+        w(f"**Evidence tier: {rc.tier.title()}.** This analysis is based on {n} reviews "
+          f"surfaced by Google's 'most relevant' algorithm out of {review_count:,} total. "
+          "The Google Places API limits retrieval to 5 reviews per venue with no pagination "
+          "or sort control. This sample is likely skewed toward popular positive reviews "
+          "and may not represent the full sentiment distribution. "
+          "Claims above are calibrated to this evidence level — themes are observed, "
+          "not confirmed as settled reputation patterns.\n")

@@ -72,7 +72,9 @@ def build_data_coverage(w, scorecard, review_intel):
         ("Google Review Text",
          f"{review_intel.get('reviews_analyzed', 0)} reviews analyzed" if has_narr else "Not collected",
          has_narr),
-        ("TripAdvisor", "Not collected", False),
+        ("TripAdvisor",
+         f"{review_intel.get('review_count_ta', 0)} reviews analysed" if review_intel and review_intel.get("review_count_ta") else "Not collected",
+         bool(review_intel and review_intel.get("review_count_ta"))),
         ("Companies House", "Not checked", False),
     ]
     w("| Source | Status | Available |")
@@ -90,8 +92,12 @@ def build_data_coverage(w, scorecard, review_intel):
     unlocks = []
     if not has_narr:
         unlocks.append("**Google review text** → sentiment-by-topic, complaint clustering, quoted evidence")
-    unlocks.append("**TripAdvisor enrichment** → cross-platform validation, convergence scoring")
-    w("**What additional collection would unlock:**\n")
-    for u in unlocks:
-        w(f"- {u}")
+    has_ta = bool(review_intel and review_intel.get("review_count_ta"))
+    if not has_ta:
+        unlocks.append("**TripAdvisor enrichment** → cross-platform validation, convergence scoring")
+    if unlocks:
+        w("**What additional collection would unlock:**\n")
+        for u in unlocks:
+            w(f"- {u}")
+    w("")
     w("")

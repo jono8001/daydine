@@ -2,42 +2,42 @@
   "venue": "Vintner Wine Bar",
   "month": "2026-04",
   "scorecard": {
-    "experience": 8.7,
-    "visibility": 8.23,
+    "experience": 8.73,
+    "visibility": 9.73,
     "trust": 7.21,
     "conversion": 5.5,
     "prestige": 1.5,
-    "overall": 7.03
+    "overall": 7.34
   },
   "deltas": null,
   "priority_actions": [
     {
       "title": "Fix the digital shopfront — you're losing walk-ins",
-      "status": "new",
+      "status": "escalated",
       "priority": 6.0,
       "dimension": "conversion"
     },
     {
-      "title": "Compliance record trailing local standards",
+      "title": "Turn strong guest warmth into fresh public proof",
       "status": "new",
-      "priority": 5.5,
-      "dimension": "trust"
+      "priority": 4.0,
+      "dimension": "visibility"
     },
     {
-      "title": "Guest experience trailing local competitors",
+      "title": "Tighten compliance documentation before next inspection",
       "status": "new",
-      "priority": 5.5,
-      "dimension": "experience"
+      "priority": 3.5,
+      "dimension": "trust"
     }
   ],
   "watch_items": [
     {
-      "title": "Below local median — competitive risk",
-      "status": "new"
+      "title": "Guest experience trailing local competitors",
+      "status": "escalated"
     },
     {
-      "title": "Monitor local competitor openings and closures",
-      "status": "new"
+      "title": "Compliance record trailing local standards",
+      "status": "escalated"
     }
   ],
   "active_recommendations": 4

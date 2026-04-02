@@ -1,36 +1,36 @@
 # Vintner Wine Bar — Operator Intelligence Report
-*2026-04 | Generated 01 April 2026 | DayDine Premium*
+*2026-04 | Generated 02 April 2026 | DayDine Premium*
 
 ---
 
 ## Executive Summary
 
-**Overall Operator Score: 7.0 / 10**
+**Overall Operator Score: 7.3 / 10**
 *Baseline month — no prior period for comparison*
 
-**Strongest dimension:** Experience (8.7). **Weakest:** Prestige (1.5). Internal gap: 7.2 points.
+**Strongest dimension:** Visibility (9.7). **Weakest:** Prestige (1.5). Internal gap: 8.2 points.
 
-**Competitive position:** Local Peers (5mi): #6 of 9 (P37.5) — peer avg 7.08, top 7.69
-  Catchment (15mi): #11 of 19 (P44.4) — peer avg 6.84, top 7.94
-  UK Category Cohort: #11 of 19 (P44.4) — peer avg 6.84, top 7.94
+**Competitive position:** Local Peers (5mi): #4 of 9 (P62.5) — peer avg 7.08, top 7.69
+  Catchment (15mi): #7 of 19 (P66.7) — peer avg 6.83, top 7.93
+  UK Category Cohort: #7 of 19 (P66.7) — peer avg 6.83, top 7.93
 
 **Top priority this month:** Fix the digital shopfront — you're losing walk-ins (Conversion, expected upside: Capture demand you're currently losing).
 
-*This report includes narrative analysis from 5 customer reviews.*
+*This report includes narrative analysis from 25 customer reviews.*
 
 ## What This Venue Is Becoming Known For
 
 Vintner Wine Bar is a well-established pub dining venue with a strong public reputation — 4.6/5 across 887 Google reviews. That volume means the reputation is earned, not manufactured.
 
-Based on a limited sample of 5 reviews (Google's 'most relevant' selection), **service & hospitality** (7 mentions) and **atmosphere & setting** (3 mentions) are the most frequent themes. Whether these represent settled guest perception or sampling artefact cannot be determined from this evidence base alone.
+Across 25 reviews from 1 sources, **service & hospitality** (18 mentions) and **food quality** (12 mentions) are the most frequent themes. Whether these represent settled guest perception or sampling artefact cannot be determined from this evidence base alone.
 
-The venue currently sits below the local median. Guests have demonstrably higher-rated alternatives nearby, which constrains the venue's ability to define its own market identity.
+In the local market, the venue sits above the median but hasn't established itself as the clear category leader. The identity is 'reliably good' rather than 'destination'.
 
 ## Management Priorities
 
 Your score is solid but not dominant. The management question is *which specific dimension, if improved, would most change your commercial trajectory* — and which can you realistically move?
 
-### Priority 1: Fix the digital shopfront — you're losing walk-ins [NEW]
+### Priority 1: Fix the digital shopfront — you're losing walk-ins [ESCALATED]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Check: can a new customer confirm your hours, see your menu, and book or walk in — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -38,27 +38,28 @@ You deliver a strong experience but your online presence doesn't make it easy to
 
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
-- **Evidence:** `experience=8.7, conversion=5.5`
+- **Evidence:** `experience=8.73, conversion=5.5`
+- *This recommendation has appeared 3 consecutive months.*
 
-### Priority 2: Compliance record trailing local standards [NEW]
+### Priority 2: Turn strong guest warmth into fresh public proof [NEW]
 
-Most local peers carry stronger formal compliance signals. This may not affect daily footfall yet but creates exposure if an inspection goes poorly or a customer complaint escalates.
+Respond to every Google review within 48 hours — positive and negative. For satisfied tables, a brief 'we'd love your feedback on Google' at bill presentation converts private goodwill into public evidence. This compounds monthly.
+
+**Management implication:** Visibility directly drives discovery. A venue that isn't found can't convert. This is a marketing and digital operations issue that can typically be moved within 60 days.
+
+- **Owner:** front-of-house | **Confidence:** 80%
+- **Expected upside:** Review velocity → discovery ranking
+- **Evidence:** `standing_best_practice`
+
+### Priority 3: Tighten compliance documentation before next inspection [NEW]
+
+Even with a clean record, walk the floor with an inspector's eye. Check HACCP logs are current, allergen matrices are posted, cleaning schedules are signed off. The next visit is unannounced — preparation is the only lever you control.
 
 **Management implication:** Trust is a foundational score. Low trust creates a ceiling on your overall position regardless of how strong other dimensions become. This should be treated as a compliance project, not a marketing initiative.
 
-- **Owner:** management | **Confidence:** 65%
-- **Expected upside:** Closing 1.1-point gap to peer average
-- **Evidence:** `trust: 7.2 vs peer avg 8.3`
-
-### Priority 3: Guest experience trailing local competitors [NEW]
-
-Peers are delivering a more consistent or higher-quality guest experience. Identify what they do differently — is it menu depth, service style, or ambience? — and decide whether to match or differentiate.
-
-**Management implication:** Experience is the most commercially sensitive dimension — it drives reviews, return visits, and word-of-mouth. Improvements here compound faster than any other dimension.
-
-- **Owner:** management | **Confidence:** 65%
-- **Expected upside:** Closing 0.3-point gap to peer average
-- **Evidence:** `experience: 8.7 vs peer avg 9.0`
+- **Owner:** compliance | **Confidence:** 85%
+- **Expected upside:** Protect compliance record
+- **Evidence:** `standing_best_practice`
 
 ## Protect / Improve / Ignore
 
@@ -82,65 +83,77 @@ Peers are delivering a more consistent or higher-quality guest experience. Ident
 
 ### Positioning
 
-Below the local median. Customers in this area have demonstrably better-rated alternatives available. The commercial implication is direct: without a distinctive proposition or significant improvement, the venue competes primarily on convenience and price.
+The venue sits above the local median but hasn't established a distinctive market position. Commercially, this is the 'good but forgettable' zone — adequate for steady trade but not generating the word-of-mouth or destination appeal that drives growth.
 
 ### Revenue Left on the Table
 
 - **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier. This is measurable lost footfall.
-- **Potential proposition signal.** Early review data (from a limited sample) suggests service & hospitality resonates with guests. If confirmed by broader evidence, this could become a marketable differentiator.
+- **Potential proposition signal.** Early review data (supported by moderate evidence) suggests service & hospitality resonates with guests. If confirmed by broader evidence, this could become a marketable differentiator.
 
 ## Review & Reputation Intelligence
 
-**Based on 5 customer reviews with full text analysis.**
-**Evidence tier: Anecdotal** — from a limited sample.
+**Based on 25 customer reviews with full text analysis.**
+**Evidence tier: Directional** — supported by moderate evidence.
 
 ### Rating & Volume Context
 
 - 887 reviews — strong base. Rating is stable but a sustained negative pattern could shift it.
 - 4.6/5 places you in the top tier of Google search results. This drives discovery.
-- **Sample vs aggregate:** Analysed reviews average 4.8★ vs overall 4.6/5. Recent/prominent reviews skew higher than the lifetime average — may indicate improvement or selection bias in Google's 'most relevant' algorithm.
+- **Sample vs aggregate:** The 25 analysed reviews average 4.5★, consistent with the overall 4.6/5. No divergence detected.
 
 ### Sentiment Distribution
 
-Of 5 reviews analysed: **5 positive**, **0 negative**, **0 mixed**.
-
-All sampled reviews are positive. This is encouraging but note that Google's 'most relevant' algorithm tends to surface popular reviews. Negative signals may exist deeper in the review corpus.
+Of 25 reviews analysed: **21 positive**, **2 negative**, **2 mixed**.
 
 ### Sentiment by Topic
 
 | Topic | Score | Positive | Negative | Total | Read |
 |-------|------:|---------:|---------:|------:|------|
-| Service & Hospitality | 10.0/10 | 7 | 0 | 7 | Strength |
-| Atmosphere & Setting | 10.0/10 | 3 | 0 | 3 | Strength |
-| Food Quality | 10.0/10 | 3 | 0 | 3 | Strength |
-| Value for Money | 10.0/10 | 1 | 0 | 1 | Strength |
+| Service & Hospitality | 10.0/10 | 18 | 0 | 18 | Strength |
+| Food Quality | 8.0/10 | 12 | 3 | 15 | Strength |
+| Atmosphere & Setting | 8.0/10 | 8 | 2 | 10 | Strength |
+| Value for Money | 10.0/10 | 3 | 0 | 3 | Strength |
+| Speed & Efficiency | 10.0/10 | 3 | 0 | 3 | Strength |
 | Booking & Accessibility | 10.0/10 | 1 | 0 | 1 | Strength |
 
 ### What Customers Praise
 
-**Service & Hospitality** (7 positive mentions)
+**Service & Hospitality** (18 positive mentions)
 > *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
 > *"The staff were attentive throughout, checking in at the right moments"*
 
-**Atmosphere & Setting** (3 positive mentions)
-> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
-
-**Food Quality** (3 positive mentions)
+**Food Quality** (12 positive mentions)
 > *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
+> *"The food was delicious as always - special mention for the cheese soufflé as it was divine"*
 
-**Value for Money** (1 positive mentions)
+**Atmosphere & Setting** (8 positive mentions)
+> *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
+> *"Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford."*
+
+**Value for Money** (3 positive mentions)
 > *"The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service"*
+> *"The service is superb , our waitress was attentive, friendly and efficient"*
+
+**Speed & Efficiency** (3 positive mentions)
+> *"Service here was friendly and efficient"*
+> *"Generous portion of smoked salmon and eggs cooked to perfection"*
 
 **Booking & Accessibility** (1 positive mentions)
 > *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
 
-### Criticism Assessment
+### What Needs Attention
 
-No negative themes detected across 5 analysed reviews. While positive, note that Google surfaces its 'most relevant' reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on Google Maps — these may reveal issues not captured here.
+**Food Quality** (3 negative mentions)
+> *"I ordered a prawn cocktail which came with bread and butter"*
+> *"Lovely food generally with a good choice and reasonable value"*
+
+**Atmosphere & Setting** (2 negative mentions)
+> *"We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning"*
+> *"I ordered a prawn cocktail which came with bread and butter"*
 
 ### Rating Trajectory
 
-Recent reviews trend higher than earlier ones in the sample. This may indicate recent operational improvements landing with customers.
+Rating across the sample is stable — no significant upward or downward trajectory detected.
 
 ### Review-by-Review Summary
 
@@ -151,10 +164,32 @@ Recent reviews trend higher than earlier ones in the sample. This may indicate r
 | 3 | 5★ | positive | Service & Hospitality, Value for Money | The service was exceptional, the waitress was very friendly and polite and very ... |
 | 4 | 5★ | positive | Food Quality, Booking & Accessibility | We pre-booked online (would recommend pre booking, especially weekends) & advise... |
 | 5 | 5★ | positive | Service & Hospitality | Great choice of "Sharable" starters with very friendly staff especially Charlie. |
+| 6 | 5★ | positive | Food Quality | The food was delicious as always - special mention for the cheese soufflé as it ... |
+| 7 | 5★ | positive | Food Quality | Service was slick and discreet, food was delicious, and the ambiance proved what... |
+| 8 | 5★ | positive | Food Quality, Atmosphere & Setting | Cannot recommend enough, excellent food, amazing service and a lovely atmosphere... |
+| 9 | 3★ | mixed | Atmosphere & Setting | We waited 40 minutes to eat and only after our protests they brought us the bask... |
+| 10 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Great food, great atmosphere, great drinks and impeccable service |
+| 11 | 1★ | negative | Service & Hospitality | We went further up the road and found a restaurant who were most welcoming. |
+| 12 | 5★ | positive | Service & Hospitality | This latest meal was outstanding despite its simplicity |
+| 13 | 3★ | mixed | — | The fish crepes were very good and friends who had steak and fish were very sati... |
+| 14 | 5★ | positive | Service & Hospitality | The restaurant area has a pleasant interior and well spaced out tables |
+| 15 | 2★ | negative | Food Quality, Atmosphere & Setting | I ordered a prawn cocktail which came with bread and butter |
+| 16 | 5★ | positive | — | We were recently married in Stratford Upon Avon, and decided to book the Vinter ... |
+| 17 | 5★ | positive | Service & Hospitality | Went to The Vintner for our wedding anniversary meal, staff are really friendly ... |
+| 18 | 5★ | positive | Atmosphere & Setting | We didn't have a booking but they happily seated us upstairs by a window with a ... |
+| 19 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency | Service here was friendly and efficient |
+| 20 | 5★ | positive | Food Quality, Speed & Efficiency | Generous portion of smoked salmon and eggs cooked to perfection |
+| 21 | 5★ | positive | Food Quality, Service & Hospitality | Great service and a dedicated gluten-free menu servicing delicious fishcakes and... |
+| 22 | 5★ | positive | — | Excellent
+Food, Service and ambience 
+will be returning |
+| 23 | 5★ | positive | Service & Hospitality, Atmosphere & Setting, Value for Money | The service is superb , our waitress was attentive, friendly and efficient |
+| 24 | 4★ | positive | Food Quality | The salmon fish cakes with sorrel sauce were delicious, Cajun chicken sauce a li... |
+| 25 | 5★ | positive | Food Quality, Value for Money | Lovely food generally with a good choice and reasonable value |
 
 ### Analysis Limitations
 
-**Evidence tier: Anecdotal.** This analysis is based on 5 reviews surfaced by Google's 'most relevant' algorithm out of 887 total. The Google Places API limits retrieval to 5 reviews per venue with no pagination or sort control. This sample is likely skewed toward popular positive reviews and may not represent the full sentiment distribution. Claims above are calibrated to this evidence level — themes are observed, not confirmed as settled reputation patterns.
+**Evidence tier: Directional.** This analysis is based on 25 reviews from Google (5) and TripAdvisor (20). Google reviews are limited to 5 per venue via the API; TripAdvisor reviews were collected via Apify scraper. Claims above are calibrated to this evidence level — themes are observed across two independent platforms, strengthening confidence.
 
 ## Market Position
 
@@ -162,44 +197,44 @@ Recent reviews trend higher than earlier ones in the sample. This may indicate r
 
 ### Local Competitive Set (8 peers within 5 miles)
 
-**Position:** #6 of 9 (Percentile 37.5)
+**Position:** #4 of 9 (Percentile 62.5)
 
-You are below the median of your peer set. At 7.0 vs peer average 7.1, competitors are outperforming you. The top performer scores 7.7. Customers in this area have demonstrably better-rated alternatives.
+You sit above the median but below the top tier. Your 7.3 compares to a peer average of 7.1. The gap to the top (7.7) is 0.4 points — closeable with focused improvement on your weakest dimension.
 
 **Dimension gaps vs peers:**
 
+- Visibility: 9.7 (+2.2 above peer avg 7.5)
 - Prestige: 1.5 (+0.8 above peer avg 0.8)
-- Visibility: 8.2 (+0.7 above peer avg 7.5)
 - Conversion: 5.5 (+0.7 above peer avg 4.8)
 - Trust: 7.2 (-1.1 below peer avg 8.3)
 
 **Closest competitors:**
 
-- The Fox Inn (7.7) — leads you by 0.7
-- The Red Lion (7.6) — leads you by 0.5
-- The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5) — leads you by 0.5
-- Snitterfield Arms (7.2) — leads you by 0.2
-- The Bell Inn (7.2) — leads you by 0.1
+- The Fox Inn (7.7) — leads you by 0.4
+- The Red Lion (7.6) — leads you by 0.2
+- The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5) — leads you by 0.2
+- Snitterfield Arms (7.2) — you lead by 0.1
+- The Bell Inn (7.2) — you lead by 0.2
 
 ### Extended Catchment (18 peers within 15 miles)
 
-**Position:** #11 of 19 (Percentile 44.4)
+**Position:** #7 of 19 (Percentile 66.7)
 
-You are below the median of your peer set. At 7.0 vs peer average 6.8, competitors are outperforming you. The top performer scores 7.9. Customers in this area have demonstrably better-rated alternatives.
+You sit above the median but below the top tier. Your 7.3 compares to a peer average of 6.8. The gap to the top (7.9) is 0.6 points — closeable with focused improvement on your weakest dimension.
 
 **Dimension gaps vs peers:**
 
-- Visibility: 8.2 (+1.0 above peer avg 7.2)
+- Visibility: 9.7 (+2.5 above peer avg 7.2)
 - Prestige: 1.5 (+0.8 above peer avg 0.8)
 - Trust: 7.2 (-0.9 below peer avg 8.1)
 
 **Closest competitors:**
 
-- Arrow Mill (7.9) — leads you by 0.9
-- The Fox Inn (7.7) — leads you by 0.7
-- The Red Lion (7.6) — leads you by 0.5
-- The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5) — leads you by 0.5
-- The Bull's Head (7.5) — leads you by 0.5
+- Arrow Mill (7.9) — leads you by 0.6
+- The Fox Inn (7.7) — leads you by 0.4
+- The Red Lion (7.6) — leads you by 0.2
+- The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5) — leads you by 0.2
+- The Bull's Head (7.5) — leads you by 0.2
 
 ### UK Category Cohort
 
@@ -213,7 +248,7 @@ This section compares what customers see (public signals) against what the data 
 |--------|-------------|---------------------|
 | Customer Rating | 4.6/5 Google (Strong) | Experience 8.7/10 (Strong) — Aligned |
 | Hygiene Rating | FSA 5/5 (Top mark) | Trust 7.2/10 (Adequate) |
-| Review Volume | 887 reviews (High) | Visibility 8.2/10 (Strong) |
+| Review Volume | 887 reviews (High) | Visibility 9.7/10 (Strong) |
 | Booking/Ordering | What customers can find | Conversion 5.5/10 (Partial) |
 
 ## Conversion Friction Analysis
@@ -233,11 +268,11 @@ This section identifies specific barriers between customer interest and a comple
 | Dimension | Score | Δ | Peer Avg | Gap | Read |
 |-----------|------:|--:|---------:|----:|------|
 | Experience | 8.7 | — | 9.0 | -0.3 | Below peers |
-| Visibility | 8.2 | — | 7.5 | +0.7 | Above peers |
+| Visibility | 9.7 | — | 7.5 | +2.2 | Clear strength |
 | Trust | 7.2 | — | 8.3 | -1.1 | Below peers |
 | Conversion | 5.5 | — | 4.8 | +0.7 | Above peers |
 | Prestige | 1.5 | — | 0.8 | +0.8 | Above peers |
-| **Overall** | **7.0** | **—** | | | |
+| **Overall** | **7.3** | **—** | | | |
 
 ## Dimension-by-Dimension Diagnosis
 
@@ -255,16 +290,18 @@ This section identifies specific barriers between customer interest and a comple
 **Management note:** Strong experience but peers are close. Monitor your most recent reviews for early signs of drift — the last 10 reviews matter more than the aggregate.
 
 
-### Visibility — 8.2/10
+### Visibility — 9.7/10
 
 *How easily customers can discover you online*
 
-**Assessment: Strong.** This is a genuine competitive strength at 8.2.
- Slightly above peer average (7.5).
+**Assessment: Strong.** This is a genuine competitive strength at 9.7.
+ You lead peers by 2.2 points (peer avg 7.5).
 
 **Why it matters:** No visibility = no new customers. Controls top-of-funnel demand generation.
 
 **Driven by:** Google review count, photo count, GBP completeness, web/social presence, TripAdvisor presence
+
+**Management note:** Your visibility lead is a competitive moat. Maintain it by continuing to respond to reviews and keeping your profile current. Competitors will eventually invest here.
 
 
 ### Trust — 7.2/10
@@ -311,13 +348,13 @@ This section identifies specific barriers between customer interest and a comple
 
 ## Watch List
 
-**Below local median — competitive risk** [NEW]
+**Guest experience trailing local competitors** [ESCALATED]
 
-Ranked #6 of 9 locally (P37.5). Peers are outperforming you on aggregate.
+Peers are delivering a more consistent or higher-quality guest experience. Identify what they do differently — is it menu depth, service style, or ambience? — and decide whether to match or differentiate.
 
-**Monitor local competitor openings and closures** [NEW]
+**Compliance record trailing local standards** [ESCALATED]
 
-New entrants or closures in your category within 5 miles can shift your competitive position. Stay aware of planning applications and social media announcements.
+Most local peers carry stronger formal compliance signals. This may not affect daily footfall yet but creates exposure if an inspection goes poorly or a customer complaint escalates.
 
 ## What Not to Do This Month
 
@@ -330,9 +367,9 @@ Avoid spending time on awards submissions, PR, or premium positioning until Expe
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | new | 2026-04 | 1 | operations | conversion |
-| 3 | Guest experience trailing local competitors | new | 2026-04 | 1 | management | experience |
-| 4 | Compliance record trailing local standards | new | 2026-04 | 1 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 3 | operations | conversion |
+| 3 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
+| 4 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
 
 ## Next-Month Monitoring Plan
 
@@ -343,8 +380,8 @@ Track these specific metrics before the next report to measure progress:
 | Google rating | 4.6/5 | Maintain or improve | Front-of-house |
 | Google review count | 887 | 897+ | Marketing |
 | Fix the digital shopfront — you're losin | Action raised | Complete | operations |
-| Compliance record trailing local standar | Action raised | Complete | management |
-| Below local median — competitive risk | Watch raised | Monitor | management |
+| Turn strong guest warmth into fresh publ | Action raised | Complete | front-of-house |
+| Guest experience trailing local competit | Watch raised | Monitor | management |
 
 **Review date:** First week of next month. Compare these baselines against updated data to measure whether actions had impact.
 
@@ -356,15 +393,13 @@ Track these specific metrics before the next report to measure progress:
 |--------|--------|:---------:|
 | FSA Hygiene Rating | Rating 5/5 | ✓ |
 | Google Business Profile | 4.6★ (887 reviews) | ✓ |
-| Google Review Text | 5 reviews analyzed | ✓ |
-| TripAdvisor | Not collected | — |
+| Google Review Text | 25 reviews analyzed | ✓ |
+| TripAdvisor | 20 reviews analysed | ✓ |
 | Companies House | Not checked | — |
 
-**Report confidence: Medium** — Core signals available, some dimensions limited.
+**Report confidence: High** — Multiple independent sources.
 
-**What additional collection would unlock:**
 
-- **TripAdvisor enrichment** → cross-platform validation, convergence scoring
 
 ## Evidence Appendix
 
@@ -382,6 +417,8 @@ Raw signal values used to compute this report.
 | Google Photos | 10 | Google Places API |
 | Price Level | ££ (2/4) | Google Places API |
 | GBP Completeness | 10.0/10 | Computed |
+| TripAdvisor Rating | 4.4/5 | TripAdvisor (Apify) |
+| TripAdvisor Reviews | 20 | TripAdvisor (Apify) |
 | Website | Yes | Inferred |
 | Facebook | Yes | Inferred |
 | Instagram | Yes | Inferred |

@@ -557,6 +557,13 @@ def build_evidence_appendix(w, scorecard, venue_rec):
     if gbp is not None:
         w(f"| GBP Completeness | {gbp}/10 | Computed |")
 
+    ta = venue_rec.get("ta")
+    trc = venue_rec.get("trc")
+    if ta is not None:
+        w(f"| TripAdvisor Rating | {ta}/5 | TripAdvisor (Apify) |")
+    if trc is not None:
+        w(f"| TripAdvisor Reviews | {trc} | TripAdvisor (Apify) |")
+
     w(f"| Website | {'Yes' if venue_rec.get('web') else 'No'} | Inferred |")
     w(f"| Facebook | {'Yes' if venue_rec.get('fb') else 'No'} | Inferred |")
     w(f"| Instagram | {'Yes' if venue_rec.get('ig') else 'No'} | Inferred |")

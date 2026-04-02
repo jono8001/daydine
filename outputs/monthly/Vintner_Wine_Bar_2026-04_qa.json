@@ -7,8 +7,8 @@
     "google_rating": true,
     "google_reviews": 887,
     "review_text_available": true,
-    "reviews_analyzed": 5,
-    "tripadvisor": false,
+    "reviews_analyzed": 25,
+    "tripadvisor": true,
     "companies_house": false
   },
   "section_completeness": {
@@ -19,7 +19,7 @@
     },
     "management_priorities": {
       "present": true,
-      "lines": 16,
+      "lines": 17,
       "meets_minimum": true
     },
     "watch_list": {
@@ -44,7 +44,7 @@
     },
     "dimension_diagnosis": {
       "present": true,
-      "lines": 29,
+      "lines": 30,
       "meets_minimum": true
     },
     "commercial_diagnosis": {
@@ -59,7 +59,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 35,
+      "lines": 68,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -84,12 +84,12 @@
     },
     "data_coverage": {
       "present": true,
-      "lines": 10,
+      "lines": 8,
       "meets_minimum": true
     },
     "evidence_appendix": {
       "present": true,
-      "lines": 19,
+      "lines": 21,
       "meets_minimum": true
     }
   },
@@ -101,6 +101,6 @@
   "validation_passed": true,
   "validation_errors": [],
   "validation_warnings": [],
-  "confidence_level": "medium",
-  "report_lines": 242
+  "confidence_level": "high",
+  "report_lines": 277
 }

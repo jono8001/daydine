@@ -30,9 +30,9 @@
     "rec_type": "watch",
     "rec_id": "84abd7b5e537",
     "venue_id": "503480",
-    "status": "new",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "356f5b88fba0": {
@@ -48,9 +48,9 @@
     "rec_type": "watch",
     "rec_id": "356f5b88fba0",
     "venue_id": "503480",
-    "status": "new",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "a5bde007590a": {
@@ -58,7 +58,7 @@
     "dimension": "conversion",
     "title": "Fix the digital shopfront — you're losing walk-ins",
     "description": "You deliver a strong experience but your online presence doesn't make it easy to act on. Check: can a new customer confirm your hours, see your menu, and book or walk in — all within 60 seconds on their phone? If not, that's your fix list.",
-    "evidence": "experience=8.7, conversion=5.5",
+    "evidence": "experience=8.73, conversion=5.5",
     "owner": "operations",
     "priority_score": 6.0,
     "expected_upside": "Capture demand you're currently losing",
@@ -66,9 +66,9 @@
     "rec_type": "action",
     "rec_id": "a5bde007590a",
     "venue_id": "503480",
-    "status": "new",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 3,
     "last_seen": "2026-04"
   }
 }
