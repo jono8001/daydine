@@ -553,14 +553,52 @@ def generate_qa_artifact(venue_name, month_str, mode, report_text, validation,
             if has_d:
                 dates_by_source[src]["dated"] += 1
 
+    # Compute valid-filtered view (excluding future-dated reviews)
+    valid_dated_reviews = []
+    valid_date_range = None
+    if analysis and month_str:
+        try:
+            from datetime import datetime as _dt2, timedelta as _td
+            _c = _dt2.strptime(month_str, "%Y-%m")
+            if _c.month == 12:
+                _c = _c.replace(year=_c.year + 1, month=1)
+            else:
+                _c = _c.replace(month=_c.month + 1)
+            _cs = _c.strftime("%Y-%m-%d")
+            valid_dated_reviews = [
+                r for r in analysis.get("per_review", [])
+                if r.get("date") and r["date"][:10] < _cs
+            ]
+            if valid_dated_reviews:
+                vdates = sorted(r["date"][:10] for r in valid_dated_reviews)
+                valid_date_range = {"earliest": vdates[0], "latest": vdates[-1]}
+                # Valid recent window: 30 days back from latest valid date
+                _lat = _dt2.strptime(vdates[-1], "%Y-%m-%d")
+                _cut = (_lat - _td(days=30)).strftime("%Y-%m-%d")
+                valid_recent = [r for r in valid_dated_reviews if r["date"][:10] >= _cut]
+                valid_recent_count = len(valid_recent)
+                valid_recent_sources = list(set(r.get("source") or "unknown" for r in valid_recent))
+            else:
+                valid_recent_count = 0
+                valid_recent_sources = []
+        except (ValueError, TypeError):
+            valid_recent_count = 0
+            valid_recent_sources = []
+    else:
+        valid_recent_count = 0
+        valid_recent_sources = []
+
     review_dates_qa = {
         "has_dated_reviews": has_dated,
         "date_range": date_range,
+        "valid_date_range": valid_date_range,
         "dates_by_source": dates_by_source,
         "future_dated_excluded": future_excluded,
         "recent_window_available": bool(recent_window and recent_window.get("count", 0) > 0),
         "recent_window_count": recent_window.get("count", 0) if recent_window else 0,
         "recent_window_sources": recent_window.get("sources", []) if recent_window else [],
+        "recent_window_valid_count": valid_recent_count,
+        "recent_window_valid_sources": valid_recent_sources,
         "dated_trajectory_supported": (
             has_dated and future_excluded == 0
             and sum(1 for r in (analysis or {}).get("per_review", []) if r.get("date")) >= 4

@@ -247,7 +247,27 @@ def _narrative(w, ri, rd, month_str=None):
     if google_text > 0:
         scope_parts.append(f"{google_text} Google (undated)")
     if ta_count > 0:
-        if date_range:
+        if date_range and month_str:
+            # Show valid-only date range (exclude future-dated reviews)
+            try:
+                _ceil = datetime.strptime(month_str, "%Y-%m")
+                if _ceil.month == 12:
+                    _ceil = _ceil.replace(year=_ceil.year + 1, month=1)
+                else:
+                    _ceil = _ceil.replace(month=_ceil.month + 1)
+                _ceil_str = _ceil.strftime("%Y-%m-%d")
+                valid_dates = sorted(
+                    r["date"][:10] for r in analysis.get("per_review", [])
+                    if r.get("date") and r.get("source") == "tripadvisor"
+                    and r["date"][:10] < _ceil_str
+                )
+                if valid_dates:
+                    scope_parts.append(f"{ta_count} TripAdvisor ({valid_dates[0]} to {valid_dates[-1]})")
+                else:
+                    scope_parts.append(f"{ta_count} TripAdvisor (no valid dates within report period)")
+            except (ValueError, TypeError):
+                scope_parts.append(f"{ta_count} TripAdvisor ({date_range['earliest']} to {date_range['latest']})")
+        elif date_range:
             scope_parts.append(f"{ta_count} TripAdvisor ({date_range['earliest']} to {date_range['latest']})")
         else:
             scope_parts.append(f"{ta_count} TripAdvisor")

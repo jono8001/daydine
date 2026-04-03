@@ -124,6 +124,10 @@
       "earliest": "2026-01-20",
       "latest": "2026-12-20"
     },
+    "valid_date_range": {
+      "earliest": "2026-01-20",
+      "latest": "2026-02-20"
+    },
     "dates_by_source": {
       "google": {
         "total": 5,
@@ -138,6 +142,10 @@
     "recent_window_available": true,
     "recent_window_count": 7,
     "recent_window_sources": [
+      "tripadvisor"
+    ],
+    "recent_window_valid_count": 1,
+    "recent_window_valid_sources": [
       "tripadvisor"
     ],
     "dated_trajectory_supported": false
