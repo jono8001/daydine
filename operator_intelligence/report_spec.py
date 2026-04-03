@@ -296,6 +296,57 @@ CONSEQUENCE_NOT_ESTIMABLE = (
 
 
 # ---------------------------------------------------------------------------
+# Competitor Strategy Framework
+# ---------------------------------------------------------------------------
+# For the top 2–3 most relevant local peers, the report should produce a
+# compact strategic read — not just scores, but what the peer appears to
+# do differently and what the operator should learn from it.
+#
+# This is based on external/public evidence only. The report must never
+# claim knowledge of a competitor's internal operations, staffing,
+# sourcing, revenue, or costs.
+#
+# Selection: top 2–3 peers from ring1 (local, 5mi) that are ahead of or
+# close to the venue (within +0.5 above or -0.3 below on overall score).
+# If ring1 has fewer than 2, extend to ring2.
+
+@dataclass
+class CompetitorRead:
+    """Structured strategic read for one peer competitor."""
+    peer_name: str
+    what_they_win_on: str       # Top 1-2 dimensions where peer leads, with signal
+    why_it_matters: str         # 1 sentence: commercial meaning of the gap
+    what_to_copy: str           # Specific observable action to consider
+    what_to_defend: str         # Where you lead this peer — protect it
+    confidence: str             # "signal-backed", "partial", "limited"
+    basis: str                  # 1-line: what evidence supports the read
+
+
+# Confidence levels for competitor reads
+COMPETITOR_CONFIDENCE_LEVELS = [
+    "signal-backed",  # Multiple observable signals support the read
+    "partial",        # Some signals available; gaps in peer data
+    "limited",        # Peer has sparse external data; read is tentative
+]
+
+# Honest fallback when peer evidence is too thin for a strategic read
+COMPETITOR_READ_NOT_ASSESSABLE = (
+    "Insufficient external data for a meaningful strategic comparison with this competitor."
+)
+
+# Observable signals that can support competitor reads (never internal data):
+#   - Dimension scores (experience, visibility, trust, conversion)
+#   - Google rating + review count (reputation volume)
+#   - FSA rating + inspection recency (compliance strength)
+#   - Price level (positioning)
+#   - Operational completeness (hours, menu, delivery, web/social)
+#   - Photo count (listing quality)
+#   - GBP completeness (digital presence depth)
+#
+# NOT usable for competitor reads:
+#   - Review sentiment themes (only the subject venue has deep analysis)
+#   - Internal operations, staffing, margins, covers
+#   - Anything requiring POS or management data
 # Anti-Generic Rules — phrases that indicate shallow output
 # ---------------------------------------------------------------------------
 
