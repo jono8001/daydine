@@ -628,6 +628,45 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
                     f"ESTIMATE_WITHOUT_BASIS: Commercial consequence block {i} "
                     f"has no basis/assumptions note")
 
+    # --- Competitor strategy honesty ---
+    if "### Competitor Strategy" in report_text:
+        cs_section = report_text.split("### Competitor Strategy")[1]
+        cs_end = cs_section.find("\n### ")
+        if cs_end != -1:
+            cs_section = cs_section[:cs_end]
+        cs_lower = cs_section.lower()
+
+        # Check 1: peer entries without confidence labels
+        # Each peer block should have "(signal-backed)", "(partial)", or "(limited)"
+        _peer_headers = [l for l in cs_section.split("\n")
+                         if l.startswith("**") and "(" in l and l.endswith(")")]
+        _conf_labels = {"signal-backed", "partial", "limited"}
+        for hdr in _peer_headers:
+            paren = hdr.split("(")[-1].rstrip(")")
+            if paren.lower().strip("*").strip() not in _conf_labels:
+                result.warnings.append(
+                    f"COMPETITOR_MISSING_CONFIDENCE: Peer entry '{hdr[:50]}' "
+                    f"has no recognised confidence label")
+
+        # Check 2: basis line present for each peer
+        peer_blocks = cs_section.split("**")[1:]  # split by bold markers
+        # Each peer should have a "Based on" or basis line
+        basis_count = cs_lower.count("based on")
+        peer_count = len(_peer_headers)
+        if peer_count > 0 and basis_count < peer_count:
+            result.warnings.append(
+                f"COMPETITOR_MISSING_BASIS: {peer_count} peer entries but "
+                f"only {basis_count} basis notes found")
+
+        # Check 3: boilerplate repetition — detect if "Why it matters" lines
+        # are identical across peers
+        why_lines = [l.strip() for l in cs_section.split("\n")
+                     if l.strip().startswith("- **Why it matters:**")]
+        if len(why_lines) >= 2 and len(set(why_lines)) == 1:
+            result.warnings.append(
+                "COMPETITOR_BOILERPLATE: All peer 'Why it matters' lines are "
+                "identical — consider differentiating per-peer framing")
+
     # --- Evidence provenance presence ---
     if "## Evidence Appendix" in report_text:
         appendix = report_text.split("## Evidence Appendix")[1]

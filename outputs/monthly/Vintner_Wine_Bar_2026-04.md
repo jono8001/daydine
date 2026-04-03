@@ -47,7 +47,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.73, conversion=5.5`
-- *This recommendation has appeared 22 consecutive months.*
+- *This recommendation has appeared 23 consecutive months.*
 
   **Commercial consequence** (directional):
   Value at stake: £180–£3,600/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
@@ -62,7 +62,7 @@ Food Quality draws recurring criticism across reviews (3 negative mentions). One
 - **Owner:** operations | **Confidence:** 70%
 - **Expected upside:** Reduce food quality complaints, protect rating
 - **Evidence:** `review_criticism: Food Quality=3 negative`
-- *This recommendation has appeared 19 consecutive months.*
+- *This recommendation has appeared 20 consecutive months.*
 
   **Commercial consequence** (directional):
   Value at stake: £270–£4,500/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
@@ -77,7 +77,7 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
 - **Evidence:** `review_praise: Service & Hospitality=18`
-- *This recommendation has appeared 19 consecutive months.*
+- *This recommendation has appeared 20 consecutive months.*
 
   **Commercial consequence** (indicative):
   Value at stake: Upside, not loss prevention — magnitude depends on execution | Cost to fix: Low (< 1 hour, no spend) | Payback: 1–3 months
@@ -375,14 +375,14 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 22 | operations | conversion |
-| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 19 | operations | experience |
-| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 19 | management | experience |
-| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 19 | front-of-house | visibility |
-| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 19 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 23 | operations | conversion |
+| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 20 | operations | experience |
+| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 20 | management | experience |
+| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 20 | front-of-house | visibility |
+| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 20 | management | trust |
 | 7 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
 | 8 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
-| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 19 | operations | experience |
+| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 20 | operations | experience |
 
 ## Next-Month Monitoring Plan
 
