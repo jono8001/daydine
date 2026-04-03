@@ -536,6 +536,47 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
                 "RECENT_MOVEMENT_WITHOUT_DATES: Recent Movement section has "
                 "content but review_intel.has_dated_reviews is False")
 
+    # --- Commercial consequence honesty ---
+    import re as _re
+
+    # Check 1: £ estimates without a confidence label nearby
+    # Look for "£X" patterns not accompanied by a confidence word within 300 chars
+    _conf_words = {"bounded", "directional", "indicative", "not estimable",
+                   "not robustly estimable"}
+    for match in _re.finditer(r'£[\d,]+', report_text):
+        pos = match.start()
+        # Check surrounding context (200 chars before + 200 chars after)
+        context = report_text[max(0, pos - 200):pos + 200].lower()
+        if not any(cw in context for cw in _conf_words):
+            # Skip Evidence Appendix (raw data, no confidence needed)
+            before = report_text[:pos]
+            if "## Evidence Appendix" in before:
+                last_h2 = before.rindex("## ")
+                if before[last_h2:last_h2 + 22] == "## Evidence Appendix":
+                    continue
+            result.warnings.append(
+                f"ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position {pos} "
+                f"has no confidence label within 200 characters")
+
+    # Check 2: Fake single-point precision (£ followed by exact number, no range)
+    # Pattern: "£1,234/month" without a "–" range nearby
+    for match in _re.finditer(r'£[\d,]+/mo', report_text):
+        context = report_text[max(0, match.start() - 5):match.end()]
+        if '–' not in context and '-' not in context:
+            result.warnings.append(
+                f"SINGLE_POINT_ESTIMATE: '{match.group()}' looks like a single-point "
+                f"estimate — ranges are preferred for external-data products")
+
+    # Check 3: "basis" or "based on" should appear near commercial consequence blocks
+    if "commercial consequence" in text_lower:
+        sections = text_lower.split("commercial consequence")
+        for i, section in enumerate(sections[1:], 1):
+            block = section[:300]
+            if "basis:" not in block and "based on" not in block:
+                result.warnings.append(
+                    f"ESTIMATE_WITHOUT_BASIS: Commercial consequence block {i} "
+                    f"has no basis/assumptions note")
+
     # --- Evidence provenance presence ---
     if "## Evidence Appendix" in report_text:
         appendix = report_text.split("## Evidence Appendix")[1]
