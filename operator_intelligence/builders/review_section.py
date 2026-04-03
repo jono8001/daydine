@@ -738,11 +738,13 @@ def _appendix_tables(w, analysis, aspects, sorted_aspects):
     per_review = analysis.get("per_review", [])
     if per_review:
         w("#### Review-by-Review Summary\n")
-        w("| # | Rating | Sentiment | Topics | Snippet |")
-        w("|--:|-------:|-----------|--------|---------|")
+        w("| # | Source | Date | Rating | Sentiment | Topics | Snippet |")
+        w("|--:|--------|------|-------:|-----------|--------|---------|")
         for i, rev in enumerate(per_review, 1):
             topics = ", ".join(ASPECT_LABELS.get(a, a) for a in rev.get("aspects", [])[:3])
-            snippet = rev.get("snippet", "")[:80]
-            w(f"| {i} | {rev.get('rating', '—')}\u2605 | {rev.get('sentiment', '—')} | "
-              f"{topics or '—'} | {snippet}{'...' if len(rev.get('snippet', '')) > 80 else ''} |")
+            snippet = rev.get("snippet", "")[:60]
+            source = (rev.get("source") or "—").title()
+            date_str = (rev.get("date") or "")[:10] or "Undated"
+            w(f"| {i} | {source} | {date_str} | {rev.get('rating', '—')}\u2605 | {rev.get('sentiment', '—')} | "
+              f"{topics or '—'} | {snippet}{'...' if len(rev.get('snippet', '')) > 60 else ''} |")
         w("")

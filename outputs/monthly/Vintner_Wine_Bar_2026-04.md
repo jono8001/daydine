@@ -47,7 +47,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.73, conversion=5.5`
-- *This recommendation has appeared 11 consecutive months.*
+- *This recommendation has appeared 12 consecutive months.*
 
 ### Priority 2: Address recurring food quality complaints from guests [FIX | ESCALATED]
 
@@ -58,7 +58,7 @@ Food Quality draws recurring criticism across reviews (3 negative mentions). One
 - **Owner:** operations | **Confidence:** 70%
 - **Expected upside:** Reduce food quality complaints, protect rating
 - **Evidence:** `review_criticism: Food Quality=3 negative`
-- *This recommendation has appeared 8 consecutive months.*
+- *This recommendation has appeared 9 consecutive months.*
 
 ### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ESCALATED]
 
@@ -69,7 +69,7 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
 - **Evidence:** `review_praise: Service & Hospitality=18`
-- *This recommendation has appeared 8 consecutive months.*
+- *This recommendation has appeared 9 consecutive months.*
 
 ## Protect / Improve / Ignore
 
@@ -186,35 +186,35 @@ Most mentioned in recent window: Food Quality (1).
 
 #### Review-by-Review Summary
 
-| # | Rating | Sentiment | Topics | Snippet |
-|--:|-------:|-----------|--------|---------|
-| 1 | 5★ | positive | Service & Hospitality, Atmosphere & Setting | We went with our dog and were seated in the cozy, pet-friendly section by the do... |
-| 2 | 4★ | positive | Service & Hospitality | The staff were attentive throughout, checking in at the right moments |
-| 3 | 5★ | positive | Service & Hospitality, Value for Money | The service was exceptional, the waitress was very friendly and polite and very ... |
-| 4 | 5★ | positive | Food Quality, Booking & Accessibility | We pre-booked online (would recommend pre booking, especially weekends) & advise... |
-| 5 | 5★ | positive | Service & Hospitality | Great choice of "Sharable" starters with very friendly staff especially Charlie. |
-| 6 | 5★ | positive | Food Quality | The food was delicious as always - special mention for the cheese soufflé as it ... |
-| 7 | 5★ | positive | Food Quality | Service was slick and discreet, food was delicious, and the ambiance proved what... |
-| 8 | 5★ | positive | Food Quality, Atmosphere & Setting | Cannot recommend enough, excellent food, amazing service and a lovely atmosphere... |
-| 9 | 3★ | mixed | Atmosphere & Setting | We waited 40 minutes to eat and only after our protests they brought us the bask... |
-| 10 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Great food, great atmosphere, great drinks and impeccable service |
-| 11 | 1★ | negative | Service & Hospitality | We went further up the road and found a restaurant who were most welcoming. |
-| 12 | 5★ | positive | Service & Hospitality | This latest meal was outstanding despite its simplicity |
-| 13 | 3★ | mixed | — | The fish crepes were very good and friends who had steak and fish were very sati... |
-| 14 | 5★ | positive | Service & Hospitality | The restaurant area has a pleasant interior and well spaced out tables |
-| 15 | 2★ | negative | Food Quality, Atmosphere & Setting | I ordered a prawn cocktail which came with bread and butter |
-| 16 | 5★ | positive | — | We were recently married in Stratford Upon Avon, and decided to book the Vinter ... |
-| 17 | 5★ | positive | Service & Hospitality | Went to The Vintner for our wedding anniversary meal, staff are really friendly ... |
-| 18 | 5★ | positive | Atmosphere & Setting | We didn't have a booking but they happily seated us upstairs by a window with a ... |
-| 19 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency | Service here was friendly and efficient |
-| 20 | 5★ | positive | Food Quality, Speed & Efficiency | Generous portion of smoked salmon and eggs cooked to perfection |
-| 21 | 5★ | positive | Food Quality, Service & Hospitality | Great service and a dedicated gluten-free menu servicing delicious fishcakes and... |
-| 22 | 5★ | positive | — | Excellent
+| # | Source | Date | Rating | Sentiment | Topics | Snippet |
+|--:|--------|------|-------:|-----------|--------|---------|
+| 1 | Google | Undated | 5★ | positive | Service & Hospitality, Atmosphere & Setting | We went with our dog and were seated in the cozy, pet-friend... |
+| 2 | Google | Undated | 4★ | positive | Service & Hospitality | The staff were attentive throughout, checking in at the righ... |
+| 3 | Google | Undated | 5★ | positive | Service & Hospitality, Value for Money | The service was exceptional, the waitress was very friendly ... |
+| 4 | Google | Undated | 5★ | positive | Food Quality, Booking & Accessibility | We pre-booked online (would recommend pre booking, especiall... |
+| 5 | Google | Undated | 5★ | positive | Service & Hospitality | Great choice of "Sharable" starters with very friendly staff... |
+| 6 | Tripadvisor | 2026-02-20 | 5★ | positive | Food Quality | The food was delicious as always - special mention for the c... |
+| 7 | Tripadvisor | 2026-01-20 | 5★ | positive | Food Quality | Service was slick and discreet, food was delicious, and the ... |
+| 8 | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Atmosphere & Setting | Cannot recommend enough, excellent food, amazing service and... |
+| 9 | Tripadvisor | 2026-12-20 | 3★ | mixed | Atmosphere & Setting | We waited 40 minutes to eat and only after our protests they... |
+| 10 | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Great food, great atmosphere, great drinks and impeccable se... |
+| 11 | Tripadvisor | 2026-12-20 | 1★ | negative | Service & Hospitality | We went further up the road and found a restaurant who were ... |
+| 12 | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality | This latest meal was outstanding despite its simplicity |
+| 13 | Tripadvisor | 2026-11-20 | 3★ | mixed | — | The fish crepes were very good and friends who had steak and... |
+| 14 | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality | The restaurant area has a pleasant interior and well spaced ... |
+| 15 | Tripadvisor | 2026-10-20 | 2★ | negative | Food Quality, Atmosphere & Setting | I ordered a prawn cocktail which came with bread and butter |
+| 16 | Tripadvisor | 2026-10-20 | 5★ | positive | — | We were recently married in Stratford Upon Avon, and decided... |
+| 17 | Tripadvisor | 2026-09-20 | 5★ | positive | Service & Hospitality | Went to The Vintner for our wedding anniversary meal, staff ... |
+| 18 | Tripadvisor | 2026-09-20 | 5★ | positive | Atmosphere & Setting | We didn't have a booking but they happily seated us upstairs... |
+| 19 | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency | Service here was friendly and efficient |
+| 20 | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Speed & Efficiency | Generous portion of smoked salmon and eggs cooked to perfect... |
+| 21 | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Service & Hospitality | Great service and a dedicated gluten-free menu servicing del... |
+| 22 | Tripadvisor | 2026-08-20 | 5★ | positive | — | Excellent
 Food, Service and ambience 
 will be returning |
-| 23 | 5★ | positive | Service & Hospitality, Atmosphere & Setting, Value for Money | The service is superb , our waitress was attentive, friendly and efficient |
-| 24 | 4★ | positive | Food Quality | The salmon fish cakes with sorrel sauce were delicious, Cajun chicken sauce a li... |
-| 25 | 5★ | positive | Food Quality, Value for Money | Lovely food generally with a good choice and reasonable value |
+| 23 | Tripadvisor | 2026-08-20 | 5★ | positive | Service & Hospitality, Atmosphere & Setting, Value for Money | The service is superb , our waitress was attentive, friendly... |
+| 24 | Tripadvisor | 2026-07-20 | 4★ | positive | Food Quality | The salmon fish cakes with sorrel sauce were delicious, Caju... |
+| 25 | Tripadvisor | 2026-07-20 | 5★ | positive | Food Quality, Value for Money | Lovely food generally with a good choice and reasonable valu... |
 
 ## Public Proof vs Operational Reality
 
@@ -380,14 +380,14 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 11 | operations | conversion |
-| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 8 | operations | experience |
-| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 8 | management | experience |
-| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 8 | front-of-house | visibility |
-| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 8 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 12 | operations | conversion |
+| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 9 | operations | experience |
+| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 9 | management | experience |
+| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 9 | front-of-house | visibility |
+| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 9 | management | trust |
 | 7 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
 | 8 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
-| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 8 | operations | experience |
+| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 9 | operations | experience |
 
 ## Next-Month Monitoring Plan
 
