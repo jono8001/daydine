@@ -12,6 +12,7 @@ from operator_intelligence.builders.diagnosis import (
     build_commercial as build_commercial_diagnosis,
 )
 from operator_intelligence.builders.review_section import build as build_review_intelligence
+from operator_intelligence.builders.review_section import build_review_appendices
 from operator_intelligence.builders.actions_tracker import (
     build_priority_actions,
     build_watch_list,

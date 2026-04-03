@@ -47,7 +47,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.73, conversion=5.5`
-- *This recommendation has appeared 14 consecutive months.*
+- *This recommendation has appeared 15 consecutive months.*
 
 ### Priority 2: Address recurring food quality complaints from guests [FIX | ESCALATED]
 
@@ -58,7 +58,7 @@ Food Quality draws recurring criticism across reviews (3 negative mentions). One
 - **Owner:** operations | **Confidence:** 70%
 - **Expected upside:** Reduce food quality complaints, protect rating
 - **Evidence:** `review_criticism: Food Quality=3 negative`
-- *This recommendation has appeared 11 consecutive months.*
+- *This recommendation has appeared 12 consecutive months.*
 
 ### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ESCALATED]
 
@@ -69,7 +69,7 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
 - **Evidence:** `review_praise: Service & Hospitality=18`
-- *This recommendation has appeared 11 consecutive months.*
+- *This recommendation has appeared 12 consecutive months.*
 
 ## Protect / Improve / Ignore
 
@@ -166,156 +166,6 @@ This warrants investigation to determine whether it reflects a systemic issue or
 Recent window average rating: **5.0/5** (1 rated review).
 
 Most mentioned in recent window: Food Quality (1).
-
----
-
-### Detailed Review Data
-
-*The tables below provide the underlying data for the analysis above.*
-
-#### Sentiment by Topic
-
-| Topic | Signal | Positive | Negative | Mentions |
-|-------|--------|--------:|---------:|---------:|
-| Service & Hospitality | consistent praise | 18 | 0 | 18 |
-| Food Quality | strong positive signal | 12 | 3 | 15 |
-| Atmosphere & Setting | strong positive signal | 8 | 2 | 10 |
-| Value for Money | consistent praise | 3 | 0 | 3 |
-| Speed & Efficiency | consistent praise | 3 | 0 | 3 |
-| Booking & Accessibility | positive signal, limited evidence | 1 | 0 | 1 |
-
-#### Review-by-Review Summary
-
-| # | Source | Date | Rating | Sentiment | Topics | Snippet |
-|--:|--------|------|-------:|-----------|--------|---------|
-| 1 | Google | Undated | 5★ | positive | Service & Hospitality, Atmosphere & Setting | We went with our dog and were seated in the cozy, pet-friend... |
-| 2 | Google | Undated | 4★ | positive | Service & Hospitality | The staff were attentive throughout, checking in at the righ... |
-| 3 | Google | Undated | 5★ | positive | Service & Hospitality, Value for Money | The service was exceptional, the waitress was very friendly ... |
-| 4 | Google | Undated | 5★ | positive | Food Quality, Booking & Accessibility | We pre-booked online (would recommend pre booking, especiall... |
-| 5 | Google | Undated | 5★ | positive | Service & Hospitality | Great choice of "Sharable" starters with very friendly staff... |
-| 6 | Tripadvisor | 2026-02-20 | 5★ | positive | Food Quality | The food was delicious as always - special mention for the c... |
-| 7 | Tripadvisor | 2026-01-20 | 5★ | positive | Food Quality | Service was slick and discreet, food was delicious, and the ... |
-| 8 | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Atmosphere & Setting | Cannot recommend enough, excellent food, amazing service and... |
-| 9 | Tripadvisor | 2026-12-20 | 3★ | mixed | Atmosphere & Setting | We waited 40 minutes to eat and only after our protests they... |
-| 10 | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Great food, great atmosphere, great drinks and impeccable se... |
-| 11 | Tripadvisor | 2026-12-20 | 1★ | negative | Service & Hospitality | We went further up the road and found a restaurant who were ... |
-| 12 | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality | This latest meal was outstanding despite its simplicity |
-| 13 | Tripadvisor | 2026-11-20 | 3★ | mixed | — | The fish crepes were very good and friends who had steak and... |
-| 14 | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality | The restaurant area has a pleasant interior and well spaced ... |
-| 15 | Tripadvisor | 2026-10-20 | 2★ | negative | Food Quality, Atmosphere & Setting | I ordered a prawn cocktail which came with bread and butter |
-| 16 | Tripadvisor | 2026-10-20 | 5★ | positive | — | We were recently married in Stratford Upon Avon, and decided... |
-| 17 | Tripadvisor | 2026-09-20 | 5★ | positive | Service & Hospitality | Went to The Vintner for our wedding anniversary meal, staff ... |
-| 18 | Tripadvisor | 2026-09-20 | 5★ | positive | Atmosphere & Setting | We didn't have a booking but they happily seated us upstairs... |
-| 19 | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency | Service here was friendly and efficient |
-| 20 | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Speed & Efficiency | Generous portion of smoked salmon and eggs cooked to perfect... |
-| 21 | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Service & Hospitality | Great service and a dedicated gluten-free menu servicing del... |
-| 22 | Tripadvisor | 2026-08-20 | 5★ | positive | — | Excellent
-Food, Service and ambience 
-will be returning |
-| 23 | Tripadvisor | 2026-08-20 | 5★ | positive | Service & Hospitality, Atmosphere & Setting, Value for Money | The service is superb , our waitress was attentive, friendly... |
-| 24 | Tripadvisor | 2026-07-20 | 4★ | positive | Food Quality | The salmon fish cakes with sorrel sauce were delicious, Caju... |
-| 25 | Tripadvisor | 2026-07-20 | 5★ | positive | Food Quality, Value for Money | Lovely food generally with a good choice and reasonable valu... |
-
----
-
-### Full Review Text Appendix
-
-*Complete text of each analysed review. Provided for transparency and audit — the summary table above is the primary reference.*
-
-**Review 1** | Google | Undated | 5★ | positive | Service & Hospitality, Atmosphere & Setting
-> We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly! 🐾
-The staff were super attentive, and the food? Absolutely bursting with flavor.
-Highly recommend the crispy pork & mango salad — sweet, tangy, crunchy perfection.
-
-**Review 2** | Google | Undated | 4★ | positive | Service & Hospitality
-> Vintner provided great pre-theatre service helped us get to our showing on time.
-
-I had the vegan risotto, which was solid and what I was looking for. There was a set menu which offered a good selection, but we opted for fewer courses.
-
-The staff were attentive throughout, checking in at the right moments. Everything moved smoothly, which made the visit easy and enjoyable.
-
-Vintner works well as a place to eat before a show, and I would return.
-
-**Review 3** | Google | Undated | 5★ | positive | Service & Hospitality, Value for Money
-> Great little joint, had the Beef Rump and a Sticky Toffee Pudding and both were fantastic and good for the price. Just the rump was a little cheap but cooked perfectly, 4.5 for food. The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service. The atmosphere was also fantastic, very cute and quiet, no gross music, 5 for atmosphere
-
-**Review 4** | Google | Undated | 5★ | positive | Food Quality, Booking & Accessibility
-> This was our second visit to The Vinter, & it didn’t disappoint! We come to Stratford several times a year to visit the RSC. The Vintner does a set menu, which is excellent for pre-theatre dining. You can choose either two or three courses, available at certain times. The Vintner is an independent, family run restaurant, which is very popular & always seems busy, situated on Sheep Street. We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND. When we arrived we, they were very busy. They sat us at a table that was near a staircase. It made me feel very uncomfortable, as I felt it was an area of high ‘people traffic’. Hubs asked if there was an alternate table. We were then moved to a different table, & then moved again as they realised the second table was booked by someone else in forty minutes. Our final table was lovely, & by a window, which helps me as it gives me a focus to distract me when I get anxious. Our server was very apologetic & kept asking if we were okay. We reassured her we were. I’m not sure if the notes had transferred from the OpenTable booking app or not, or whether they hadn’t been checked initially. We then ordered our food. I chose Cauliflower & Gruyère Cheese Mousse & hubs ordered Lamb Koftas with Giant Couscous & Tzatziki to start. We both thoroughly enjoyed them! My cheese mousse was delicious! We both ordered the same main course; Breast of Chicken, marinated in Lemon & Tarragon with tenderstem broccoli, mashed potatoes & white wine sauce. The chicken was still on the bone, the skin crispy & the meat, moist & juicy. It was scrumptious! We both ordered the Cherry & Almond tart with custard for dessert. It was a generous portion, & again, gorgeous. The last meal we had here was in January & the menu was different, so it looks like it’s updated regularly. (We had a cottage pie previously) The restaurant is lovely & the food, perfect. Apart from the slight glitch at the start, which was more than made up for after with the level of service throughout our visit, we would highly recommend The Vintner if you’re in Stratford! (We did forget photos as we were so engrossed in the meal, so the ones on the review may have a few bites taken already!)
-
-**Review 5** | Google | Undated | 5★ | positive | Service & Hospitality
-> What a lovely delightful restaurant.  Great choice of "Sharable" starters with very friendly staff especially Charlie.
-
-**Review 6** | Tripadvisor | 2026-02-20 | 5★ | positive | Food Quality
-> My husband and I had a superb meal at the Vintner on Feb 14. The food was delicious as always - special mention for the cheese soufflé as it was divine! The fish and chips and moules frites were also fabulous. We were too full to have a dessert as well unfortunately. The menu is really varied and well put together. The service was impeccable, thanks to Jason and his amazing team. Overall a wonderful evening in one of our favourite restaurants!
-
-**Review 7** | Tripadvisor | 2026-01-20 | 5★ | positive | Food Quality
-> Lunched on 14th from the set menu. Service was slick and discreet, food was delicious, and the ambiance proved what a popular venue this is. Thoroughly recommended
-
-**Review 8** | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Atmosphere & Setting
-> Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford.
-
-**Review 9** | Tripadvisor | 2026-12-20 | 3★ | mixed | Atmosphere & Setting
-> Nice but cold place. We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning. Good food.
-
-**Review 10** | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting
-> Great food, great atmosphere, great drinks and impeccable service. All 15 of us all agreed our food was superb and we visited during a very very busy festive period (last Saturday evening before Christmas). The team were very attentive and did a great job, especially Charlie who looked after us from start to finish. Thanks to everyone for making a very special 80th. Everyone talked about how nice the evening was from the kids to the adults.
-
-**Review 11** | Tripadvisor | 2026-12-20 | 1★ | negative | Service & Hospitality
-> I went for lunch with a disabled lady who used a walker to get around, and they told us that if we wanted to eat or drink there she had to sit on a high stool at the bar and could not have a table. She clearly could not.  I was appalled. We went further up the road and found a restaurant who were most welcoming.
-
-**Review 12** | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality
-> We've been going there for ages - Stratford is convenient for all of us, usually meeting up for a light lunch 4-5 times a year.
-This latest meal was outstanding despite its simplicity. The two girl had the Vintner's French Onion Soup  which is always a safe choice, but somehow even better than ever this time - my Wife added a side order of chips. My own lunch was literally the best Moules Frites I have ever had - and that includes seaside cafes on the Brittany coast - even the Frites were exceptional.
-Service was just right - as usual - attentive without being overwhelming. Cost - as expected for the quality of the venue, food and service - i.e. spot on.
-
-**Review 13** | Tripadvisor | 2026-11-20 | 3★ | mixed
-> Good food as usual.  The fish crepes were very good and friends who had steak and fish were very satisfied.  One problem - DONT go if you are disabled as there is no accessible loo.  The only facilities are up a very twisty old staircase.  They did offer me the alternative of walking down the road to another restaurant (how embarrassing would that be!) so I might have stayed longer, and had a sweet but couldn't (for obvious reasons).  The excuse is the age of the building, which I understand,  but I wish I had known before and will not be going again.
-
-**Review 14** | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality
-> We visited for dinner on a Thursday night around 7 pm, we hadn't booked, but we were lucky to get a table. 
-The restaurant area has a pleasant interior and well spaced out tables. We were not particularly hungry as we had met friends for lunch. However, we made an excellent combination of a 'small plates meal' from the starter menu.
-The food was excellent, and the staff were very obliging.
-
-**Review 15** | Tripadvisor | 2026-10-20 | 2★ | negative | Food Quality, Atmosphere & Setting
-> I ordered a prawn cocktail which came with bread and butter. It was served to me with the handles of the cutlery resting in the butter on the bread, the bread was stale. We also ordered a fish cake, supposedly haddock, but it was more like a potato cake, very difficult to find any fish. The fish cake was served with a poached egg, the egg was cold. Very disappointing.
-
-**Review 16** | Tripadvisor | 2026-10-20 | 5★ | positive
-> We were recently married in Stratford Upon Avon, and decided to book the Vinter on recommendation and having visited it ourselves, for our wedding meal. 
-From first visiting, to the actual meal itself, Charlotte and the team were brilliant. 
-Special thanks to Emma who was our primary server on the day. The food was excellent and everyone really enjoyed themselves and commented on the location. 
-Thank you all for making our special day simply perfect.
-
-**Review 17** | Tripadvisor | 2026-09-20 | 5★ | positive | Service & Hospitality
-> Went to The Vintner for our wedding anniversary meal, staff are really friendly and the atmosphere is great, we had our small dog with us so were seated downstairs in the window which was absolutely fin. The food was of good quality and plenty of choice. definitely recommend a visit here, we will be returning.
-
-**Review 18** | Tripadvisor | 2026-09-20 | 5★ | positive | Atmosphere & Setting
-> Great meal and service from staff excellent so thank you all. We didn't have a booking but they happily seated us upstairs by a window with a lovely setting. Food was very good as we had a starter and dessert. Not cheap but quality should not be.
-
-**Review 19** | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency
-> We called here because our hotel food was well below par. Service here was friendly and efficient. The meal was superb, and well worth waiting for - evidence that it was freshly cooked.  On our next trip, we will take all our meals at the Vintner.  It's a short walk to the theatre.
-
-**Review 20** | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Speed & Efficiency
-> Fantastic breakfast. Generous portion of smoked salmon and eggs cooked to perfection. My foreign colleague had his first ever full English!
-
-**Review 21** | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Service & Hospitality
-> Great service and a dedicated gluten-free menu servicing delicious fishcakes and wonderful vegetarian risotto. Really enjoyed it.
-
-**Review 22** | Tripadvisor | 2026-08-20 | 5★ | positive
-> Excellent
-Food, Service and ambience 
-will be returning.
-The staff knew what they were doing and we enjoyed the ambience too.
-
-**Review 23** | Tripadvisor | 2026-08-20 | 5★ | positive | Service & Hospitality, Atmosphere & Setting, Value for Money
-> Just perfect ..the Vinter is a massive favourite for Stratfordians and deservedly so . Beautiful old building gives a natural cosy ambience . The service is superb , our waitress was attentive, friendly and efficient .
-We were a party of four , everyone enjoyed their food and remarked how generous the desserts were .My Rib eye steak lived up to expectations and the affordable Rose was perfect for a summers evening . Fabulous restaurant sensibly priced . 
-Big thank you 😊
-
-**Review 24** | Tripadvisor | 2026-07-20 | 4★ | positive | Food Quality
-> Slightly disappointed that despite booking, we were initially showed to a dark table for two although the restaurant was almost empty. I asked if we could sit somewhere a bit brighter as it was a sunny evening and the front of the  restaurant was unoccupied. After an audible sigh from the waitress (!!)  we were seated at a lovely table at the front area which we had entirely to ourselves for the whole meal.  Great menu - spoilt for choice . The salmon fish cakes with sorrel sauce were delicious, Cajun chicken sauce a little bit sweet but over all lovely.  Great wine list too .
-
-**Review 25** | Tripadvisor | 2026-07-20 | 5★ | positive | Food Quality, Value for Money
-> A quality eaterie, with good atmosphere. Roomy and comfortable upstairs. Lovely food generally with a good choice and reasonable value. One meal not quite up to standard (sea bass with a limp Thai red sauce and tough Pak Choi, which didn't match the rest), but everything else excellent. Particularly the service which was first class. All upstairs tables occupied, on a Monday lunchtime which says a lot.
 
 ## Public Proof vs Operational Reality
 
@@ -481,14 +331,14 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 14 | operations | conversion |
-| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 11 | operations | experience |
-| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 11 | management | experience |
-| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 11 | front-of-house | visibility |
-| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 11 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 15 | operations | conversion |
+| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 12 | operations | experience |
+| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 12 | management | experience |
+| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 12 | front-of-house | visibility |
+| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 12 | management | trust |
 | 7 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
 | 8 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
-| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 11 | operations | experience |
+| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 12 | operations | experience |
 
 ## Next-Month Monitoring Plan
 
@@ -543,6 +393,156 @@ Raw signal values used to compute this report. Provenance: **observed** = direct
 | Category | Pub / Bar | google_types | derived |
 | Postcode | CV37 6EF | FSA | observed |
 | Companies House | — | Not checked | not_assessed |
+
+---
+
+### Detailed Review Data
+
+*The tables below provide the underlying data for the analysis above.*
+
+#### Sentiment by Topic
+
+| Topic | Signal | Positive | Negative | Mentions |
+|-------|--------|--------:|---------:|---------:|
+| Service & Hospitality | consistent praise | 18 | 0 | 18 |
+| Food Quality | strong positive signal | 12 | 3 | 15 |
+| Atmosphere & Setting | strong positive signal | 8 | 2 | 10 |
+| Value for Money | consistent praise | 3 | 0 | 3 |
+| Speed & Efficiency | consistent praise | 3 | 0 | 3 |
+| Booking & Accessibility | positive signal, limited evidence | 1 | 0 | 1 |
+
+#### Review-by-Review Summary
+
+| # | Source | Date | Rating | Sentiment | Topics | Snippet |
+|--:|--------|------|-------:|-----------|--------|---------|
+| 1 | Google | Undated | 5★ | positive | Service & Hospitality, Atmosphere & Setting | We went with our dog and were seated in the cozy, pet-friend... |
+| 2 | Google | Undated | 4★ | positive | Service & Hospitality | The staff were attentive throughout, checking in at the righ... |
+| 3 | Google | Undated | 5★ | positive | Service & Hospitality, Value for Money | The service was exceptional, the waitress was very friendly ... |
+| 4 | Google | Undated | 5★ | positive | Food Quality, Booking & Accessibility | We pre-booked online (would recommend pre booking, especiall... |
+| 5 | Google | Undated | 5★ | positive | Service & Hospitality | Great choice of "Sharable" starters with very friendly staff... |
+| 6 | Tripadvisor | 2026-02-20 | 5★ | positive | Food Quality | The food was delicious as always - special mention for the c... |
+| 7 | Tripadvisor | 2026-01-20 | 5★ | positive | Food Quality | Service was slick and discreet, food was delicious, and the ... |
+| 8 | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Atmosphere & Setting | Cannot recommend enough, excellent food, amazing service and... |
+| 9 | Tripadvisor | 2026-12-20 | 3★ | mixed | Atmosphere & Setting | We waited 40 minutes to eat and only after our protests they... |
+| 10 | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Great food, great atmosphere, great drinks and impeccable se... |
+| 11 | Tripadvisor | 2026-12-20 | 1★ | negative | Service & Hospitality | We went further up the road and found a restaurant who were ... |
+| 12 | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality | This latest meal was outstanding despite its simplicity |
+| 13 | Tripadvisor | 2026-11-20 | 3★ | mixed | — | The fish crepes were very good and friends who had steak and... |
+| 14 | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality | The restaurant area has a pleasant interior and well spaced ... |
+| 15 | Tripadvisor | 2026-10-20 | 2★ | negative | Food Quality, Atmosphere & Setting | I ordered a prawn cocktail which came with bread and butter |
+| 16 | Tripadvisor | 2026-10-20 | 5★ | positive | — | We were recently married in Stratford Upon Avon, and decided... |
+| 17 | Tripadvisor | 2026-09-20 | 5★ | positive | Service & Hospitality | Went to The Vintner for our wedding anniversary meal, staff ... |
+| 18 | Tripadvisor | 2026-09-20 | 5★ | positive | Atmosphere & Setting | We didn't have a booking but they happily seated us upstairs... |
+| 19 | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency | Service here was friendly and efficient |
+| 20 | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Speed & Efficiency | Generous portion of smoked salmon and eggs cooked to perfect... |
+| 21 | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Service & Hospitality | Great service and a dedicated gluten-free menu servicing del... |
+| 22 | Tripadvisor | 2026-08-20 | 5★ | positive | — | Excellent
+Food, Service and ambience 
+will be returning |
+| 23 | Tripadvisor | 2026-08-20 | 5★ | positive | Service & Hospitality, Atmosphere & Setting, Value for Money | The service is superb , our waitress was attentive, friendly... |
+| 24 | Tripadvisor | 2026-07-20 | 4★ | positive | Food Quality | The salmon fish cakes with sorrel sauce were delicious, Caju... |
+| 25 | Tripadvisor | 2026-07-20 | 5★ | positive | Food Quality, Value for Money | Lovely food generally with a good choice and reasonable valu... |
+
+---
+
+### Full Review Text Appendix
+
+*Complete text of each analysed review. Provided for transparency and audit — the summary table above is the primary reference.*
+
+**Review 1** | Google | Undated | 5★ | positive | Service & Hospitality, Atmosphere & Setting
+> We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly! 🐾
+The staff were super attentive, and the food? Absolutely bursting with flavor.
+Highly recommend the crispy pork & mango salad — sweet, tangy, crunchy perfection.
+
+**Review 2** | Google | Undated | 4★ | positive | Service & Hospitality
+> Vintner provided great pre-theatre service helped us get to our showing on time.
+
+I had the vegan risotto, which was solid and what I was looking for. There was a set menu which offered a good selection, but we opted for fewer courses.
+
+The staff were attentive throughout, checking in at the right moments. Everything moved smoothly, which made the visit easy and enjoyable.
+
+Vintner works well as a place to eat before a show, and I would return.
+
+**Review 3** | Google | Undated | 5★ | positive | Service & Hospitality, Value for Money
+> Great little joint, had the Beef Rump and a Sticky Toffee Pudding and both were fantastic and good for the price. Just the rump was a little cheap but cooked perfectly, 4.5 for food. The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service. The atmosphere was also fantastic, very cute and quiet, no gross music, 5 for atmosphere
+
+**Review 4** | Google | Undated | 5★ | positive | Food Quality, Booking & Accessibility
+> This was our second visit to The Vinter, & it didn’t disappoint! We come to Stratford several times a year to visit the RSC. The Vintner does a set menu, which is excellent for pre-theatre dining. You can choose either two or three courses, available at certain times. The Vintner is an independent, family run restaurant, which is very popular & always seems busy, situated on Sheep Street. We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND. When we arrived we, they were very busy. They sat us at a table that was near a staircase. It made me feel very uncomfortable, as I felt it was an area of high ‘people traffic’. Hubs asked if there was an alternate table. We were then moved to a different table, & then moved again as they realised the second table was booked by someone else in forty minutes. Our final table was lovely, & by a window, which helps me as it gives me a focus to distract me when I get anxious. Our server was very apologetic & kept asking if we were okay. We reassured her we were. I’m not sure if the notes had transferred from the OpenTable booking app or not, or whether they hadn’t been checked initially. We then ordered our food. I chose Cauliflower & Gruyère Cheese Mousse & hubs ordered Lamb Koftas with Giant Couscous & Tzatziki to start. We both thoroughly enjoyed them! My cheese mousse was delicious! We both ordered the same main course; Breast of Chicken, marinated in Lemon & Tarragon with tenderstem broccoli, mashed potatoes & white wine sauce. The chicken was still on the bone, the skin crispy & the meat, moist & juicy. It was scrumptious! We both ordered the Cherry & Almond tart with custard for dessert. It was a generous portion, & again, gorgeous. The last meal we had here was in January & the menu was different, so it looks like it’s updated regularly. (We had a cottage pie previously) The restaurant is lovely & the food, perfect. Apart from the slight glitch at the start, which was more than made up for after with the level of service throughout our visit, we would highly recommend The Vintner if you’re in Stratford! (We did forget photos as we were so engrossed in the meal, so the ones on the review may have a few bites taken already!)
+
+**Review 5** | Google | Undated | 5★ | positive | Service & Hospitality
+> What a lovely delightful restaurant.  Great choice of "Sharable" starters with very friendly staff especially Charlie.
+
+**Review 6** | Tripadvisor | 2026-02-20 | 5★ | positive | Food Quality
+> My husband and I had a superb meal at the Vintner on Feb 14. The food was delicious as always - special mention for the cheese soufflé as it was divine! The fish and chips and moules frites were also fabulous. We were too full to have a dessert as well unfortunately. The menu is really varied and well put together. The service was impeccable, thanks to Jason and his amazing team. Overall a wonderful evening in one of our favourite restaurants!
+
+**Review 7** | Tripadvisor | 2026-01-20 | 5★ | positive | Food Quality
+> Lunched on 14th from the set menu. Service was slick and discreet, food was delicious, and the ambiance proved what a popular venue this is. Thoroughly recommended
+
+**Review 8** | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Atmosphere & Setting
+> Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford.
+
+**Review 9** | Tripadvisor | 2026-12-20 | 3★ | mixed | Atmosphere & Setting
+> Nice but cold place. We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning. Good food.
+
+**Review 10** | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting
+> Great food, great atmosphere, great drinks and impeccable service. All 15 of us all agreed our food was superb and we visited during a very very busy festive period (last Saturday evening before Christmas). The team were very attentive and did a great job, especially Charlie who looked after us from start to finish. Thanks to everyone for making a very special 80th. Everyone talked about how nice the evening was from the kids to the adults.
+
+**Review 11** | Tripadvisor | 2026-12-20 | 1★ | negative | Service & Hospitality
+> I went for lunch with a disabled lady who used a walker to get around, and they told us that if we wanted to eat or drink there she had to sit on a high stool at the bar and could not have a table. She clearly could not.  I was appalled. We went further up the road and found a restaurant who were most welcoming.
+
+**Review 12** | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality
+> We've been going there for ages - Stratford is convenient for all of us, usually meeting up for a light lunch 4-5 times a year.
+This latest meal was outstanding despite its simplicity. The two girl had the Vintner's French Onion Soup  which is always a safe choice, but somehow even better than ever this time - my Wife added a side order of chips. My own lunch was literally the best Moules Frites I have ever had - and that includes seaside cafes on the Brittany coast - even the Frites were exceptional.
+Service was just right - as usual - attentive without being overwhelming. Cost - as expected for the quality of the venue, food and service - i.e. spot on.
+
+**Review 13** | Tripadvisor | 2026-11-20 | 3★ | mixed
+> Good food as usual.  The fish crepes were very good and friends who had steak and fish were very satisfied.  One problem - DONT go if you are disabled as there is no accessible loo.  The only facilities are up a very twisty old staircase.  They did offer me the alternative of walking down the road to another restaurant (how embarrassing would that be!) so I might have stayed longer, and had a sweet but couldn't (for obvious reasons).  The excuse is the age of the building, which I understand,  but I wish I had known before and will not be going again.
+
+**Review 14** | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality
+> We visited for dinner on a Thursday night around 7 pm, we hadn't booked, but we were lucky to get a table. 
+The restaurant area has a pleasant interior and well spaced out tables. We were not particularly hungry as we had met friends for lunch. However, we made an excellent combination of a 'small plates meal' from the starter menu.
+The food was excellent, and the staff were very obliging.
+
+**Review 15** | Tripadvisor | 2026-10-20 | 2★ | negative | Food Quality, Atmosphere & Setting
+> I ordered a prawn cocktail which came with bread and butter. It was served to me with the handles of the cutlery resting in the butter on the bread, the bread was stale. We also ordered a fish cake, supposedly haddock, but it was more like a potato cake, very difficult to find any fish. The fish cake was served with a poached egg, the egg was cold. Very disappointing.
+
+**Review 16** | Tripadvisor | 2026-10-20 | 5★ | positive
+> We were recently married in Stratford Upon Avon, and decided to book the Vinter on recommendation and having visited it ourselves, for our wedding meal. 
+From first visiting, to the actual meal itself, Charlotte and the team were brilliant. 
+Special thanks to Emma who was our primary server on the day. The food was excellent and everyone really enjoyed themselves and commented on the location. 
+Thank you all for making our special day simply perfect.
+
+**Review 17** | Tripadvisor | 2026-09-20 | 5★ | positive | Service & Hospitality
+> Went to The Vintner for our wedding anniversary meal, staff are really friendly and the atmosphere is great, we had our small dog with us so were seated downstairs in the window which was absolutely fin. The food was of good quality and plenty of choice. definitely recommend a visit here, we will be returning.
+
+**Review 18** | Tripadvisor | 2026-09-20 | 5★ | positive | Atmosphere & Setting
+> Great meal and service from staff excellent so thank you all. We didn't have a booking but they happily seated us upstairs by a window with a lovely setting. Food was very good as we had a starter and dessert. Not cheap but quality should not be.
+
+**Review 19** | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Service & Hospitality, Speed & Efficiency
+> We called here because our hotel food was well below par. Service here was friendly and efficient. The meal was superb, and well worth waiting for - evidence that it was freshly cooked.  On our next trip, we will take all our meals at the Vintner.  It's a short walk to the theatre.
+
+**Review 20** | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Speed & Efficiency
+> Fantastic breakfast. Generous portion of smoked salmon and eggs cooked to perfection. My foreign colleague had his first ever full English!
+
+**Review 21** | Tripadvisor | 2026-08-20 | 5★ | positive | Food Quality, Service & Hospitality
+> Great service and a dedicated gluten-free menu servicing delicious fishcakes and wonderful vegetarian risotto. Really enjoyed it.
+
+**Review 22** | Tripadvisor | 2026-08-20 | 5★ | positive
+> Excellent
+Food, Service and ambience 
+will be returning.
+The staff knew what they were doing and we enjoyed the ambience too.
+
+**Review 23** | Tripadvisor | 2026-08-20 | 5★ | positive | Service & Hospitality, Atmosphere & Setting, Value for Money
+> Just perfect ..the Vinter is a massive favourite for Stratfordians and deservedly so . Beautiful old building gives a natural cosy ambience . The service is superb , our waitress was attentive, friendly and efficient .
+We were a party of four , everyone enjoyed their food and remarked how generous the desserts were .My Rib eye steak lived up to expectations and the affordable Rose was perfect for a summers evening . Fabulous restaurant sensibly priced . 
+Big thank you 😊
+
+**Review 24** | Tripadvisor | 2026-07-20 | 4★ | positive | Food Quality
+> Slightly disappointed that despite booking, we were initially showed to a dark table for two although the restaurant was almost empty. I asked if we could sit somewhere a bit brighter as it was a sunny evening and the front of the  restaurant was unoccupied. After an audible sigh from the waitress (!!)  we were seated at a lovely table at the front area which we had entirely to ourselves for the whole meal.  Great menu - spoilt for choice . The salmon fish cakes with sorrel sauce were delicious, Cajun chicken sauce a little bit sweet but over all lovely.  Great wine list too .
+
+**Review 25** | Tripadvisor | 2026-07-20 | 5★ | positive | Food Quality, Value for Money
+> A quality eaterie, with good atmosphere. Roomy and comfortable upstairs. Lovely food generally with a good choice and reasonable value. One meal not quite up to standard (sea bass with a limp Thai red sauce and tough Pak Choi, which didn't match the rest), but everything else excellent. Particularly the service which was first class. All upstairs tables occupied, on a Monday lunchtime which says a lot.
 
 
 *Report generated by DayDine v3.3 — 2026-04*

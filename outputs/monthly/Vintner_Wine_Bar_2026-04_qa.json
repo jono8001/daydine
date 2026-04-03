@@ -74,7 +74,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 126,
+      "lines": 18,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -104,7 +104,7 @@
     },
     "evidence_appendix": {
       "present": true,
-      "lines": 22,
+      "lines": 130,
       "meets_minimum": true
     }
   },

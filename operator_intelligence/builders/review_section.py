@@ -186,6 +186,32 @@ def build(w, mode, review_intel, review_delta, month_str=None):
         _narrative(w, review_intel, review_delta, month_str=month_str)
 
 
+def build_review_appendices(w, review_intel):
+    """Render review evidence appendices (summary table + full text).
+
+    Called separately at the end of the report, after Data Coverage
+    and Evidence Appendix, so the main narrative is not interrupted.
+    """
+    if not review_intel or not review_intel.get("has_narrative"):
+        return
+    analysis = review_intel.get("analysis")
+    if not analysis:
+        return
+
+    n = analysis.get("reviews_analyzed", 0)
+    aspects = analysis.get("aspect_scores", {})
+    sorted_aspects = sorted(aspects.items(), key=lambda x: -x[1].get("mentions", 0))
+
+    if n >= 15:
+        _appendix_tables(w, analysis, aspects, sorted_aspects)
+    elif aspects and n >= 5:
+        _compact_aspect_summary(w, sorted_aspects)
+
+    per_review = analysis.get("per_review", [])
+    if per_review and any(r.get("full_text") for r in per_review):
+        _full_text_appendix(w, per_review)
+
+
 # ---------------------------------------------------------------------------
 # Structured mode (no review text available)
 # ---------------------------------------------------------------------------
@@ -688,21 +714,8 @@ def _narrative(w, ri, rd, month_str=None):
                 labels = [ASPECT_LABELS.get(a, a) for a in items]
                 w(f"**{label_text}:** {', '.join(labels)}\n")
 
-    # -----------------------------------------------------------------------
-    # Appendix: Detailed Review Data (only for 15+ reviews)
-    # -----------------------------------------------------------------------
-    if n >= 15:
-        _appendix_tables(w, analysis, aspects, sorted_aspects)
-    elif aspects and n >= 5:
-        # For moderate samples, include a compact summary table only
-        _compact_aspect_summary(w, sorted_aspects)
-
-    # -----------------------------------------------------------------------
-    # Full Review Text Appendix
-    # -----------------------------------------------------------------------
-    per_review = analysis.get("per_review", [])
-    if per_review and any(r.get("full_text") for r in per_review):
-        _full_text_appendix(w, per_review)
+    # Review appendix tables are rendered separately at report end
+    # via build_review_appendices()
 
 
 # ---------------------------------------------------------------------------
