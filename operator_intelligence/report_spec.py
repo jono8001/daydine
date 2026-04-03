@@ -434,6 +434,41 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
                         f"CONFIDENCE_WORDING_MISMATCH: '{phrase}' used at "
                         f"'{rc.tier}' confidence tier — wording overstates evidence")
 
+    # --- Review date honesty ---
+    has_dated = review_intel.get("has_dated_reviews", False) if review_intel else False
+    date_range = review_intel.get("date_range") if review_intel else None
+    recent_window = review_intel.get("recent_window") if review_intel else None
+
+    # Check: report says "based on review dates" but no valid dated reviews
+    if not has_dated and "based on review dates" in text_lower:
+        result.warnings.append(
+            "TRAJECTORY_DATE_OVERCLAIM: Report says 'based on review dates' "
+            "but review_intel.has_dated_reviews is False")
+
+    # Check: report contains "30-day window" language but recent_window is None or empty
+    if "30-day window" in text_lower:
+        rw_count = recent_window.get("count", 0) if recent_window else 0
+        if rw_count == 0:
+            result.warnings.append(
+                "RECENT_WINDOW_OVERCLAIM: Report references a '30-day window' "
+                "but no dated reviews fall within that window")
+
+    # Check: report has Recent Movement section with content but no dated reviews
+    if "### Recent Movement" in report_text and not has_dated:
+        # Extract the section
+        rm_section = report_text.split("### Recent Movement")[1]
+        rm_end = rm_section.find("\n### ")
+        if rm_end == -1:
+            rm_end = rm_section.find("\n## ")
+        if rm_end != -1:
+            rm_section = rm_section[:rm_end]
+        # If it has substantive content (not just the degradation message)
+        rm_lower = rm_section.lower()
+        if "dated review" not in rm_lower and "cannot be" not in rm_lower:
+            result.warnings.append(
+                "RECENT_MOVEMENT_WITHOUT_DATES: Recent Movement section has "
+                "content but review_intel.has_dated_reviews is False")
+
     # --- Evidence provenance presence ---
     if "## Evidence Appendix" in report_text:
         appendix = report_text.split("## Evidence Appendix")[1]
@@ -482,6 +517,56 @@ def generate_qa_artifact(venue_name, month_str, mode, report_text, validation,
     has_provenance = ("| Provenance |" in report_text
                       if "## Evidence Appendix" in report_text else False)
 
+    # Review date metadata
+    has_dated = review_intel.get("has_dated_reviews", False) if review_intel else False
+    date_range = review_intel.get("date_range") if review_intel else None
+    recent_window = review_intel.get("recent_window") if review_intel else None
+    analysis = review_intel.get("analysis") if review_intel else None
+
+    # Count future-dated reviews (dates after report month)
+    future_excluded = 0
+    if analysis and month_str:
+        try:
+            from datetime import datetime as _dt
+            ceil = _dt.strptime(month_str, "%Y-%m")
+            if ceil.month == 12:
+                ceil = ceil.replace(year=ceil.year + 1, month=1)
+            else:
+                ceil = ceil.replace(month=ceil.month + 1)
+            ceiling_str = ceil.strftime("%Y-%m-%d")
+            for r in analysis.get("per_review", []):
+                d = (r.get("date") or "")[:10]
+                if d and d >= ceiling_str:
+                    future_excluded += 1
+        except (ValueError, TypeError):
+            pass
+
+    # Which sources have usable dates?
+    dates_by_source = {}
+    if analysis:
+        for r in analysis.get("per_review", []):
+            src = r.get("source") or "unknown"
+            has_d = bool(r.get("date"))
+            if src not in dates_by_source:
+                dates_by_source[src] = {"total": 0, "dated": 0}
+            dates_by_source[src]["total"] += 1
+            if has_d:
+                dates_by_source[src]["dated"] += 1
+
+    review_dates_qa = {
+        "has_dated_reviews": has_dated,
+        "date_range": date_range,
+        "dates_by_source": dates_by_source,
+        "future_dated_excluded": future_excluded,
+        "recent_window_available": bool(recent_window and recent_window.get("count", 0) > 0),
+        "recent_window_count": recent_window.get("count", 0) if recent_window else 0,
+        "recent_window_sources": recent_window.get("sources", []) if recent_window else [],
+        "dated_trajectory_supported": (
+            has_dated and future_excluded == 0
+            and sum(1 for r in (analysis or {}).get("per_review", []) if r.get("date")) >= 4
+        ),
+    }
+
     return {
         "venue": venue_name,
         "month": month_str,
@@ -517,6 +602,7 @@ def generate_qa_artifact(venue_name, month_str, mode, report_text, validation,
         "validation_warnings": validation.warnings,
         "confidence_level": confidence_level,
         "evidence_provenance_present": has_provenance,
+        "review_dates": review_dates_qa,
         "report_lines": len([l for l in report_text.split("\n") if l.strip()]),
     }
 

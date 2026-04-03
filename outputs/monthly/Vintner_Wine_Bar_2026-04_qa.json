@@ -118,5 +118,29 @@
   "validation_warnings": [],
   "confidence_level": "high",
   "evidence_provenance_present": true,
+  "review_dates": {
+    "has_dated_reviews": true,
+    "date_range": {
+      "earliest": "2026-01-20",
+      "latest": "2026-12-20"
+    },
+    "dates_by_source": {
+      "google": {
+        "total": 5,
+        "dated": 0
+      },
+      "tripadvisor": {
+        "total": 20,
+        "dated": 20
+      }
+    },
+    "future_dated_excluded": 18,
+    "recent_window_available": true,
+    "recent_window_count": 7,
+    "recent_window_sources": [
+      "tripadvisor"
+    ],
+    "dated_trajectory_supported": false
+  },
   "report_lines": 285
 }
