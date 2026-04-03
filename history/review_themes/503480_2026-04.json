@@ -235,6 +235,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly",
+        "full_text": "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly! 🐾\nThe staff were super attentive, and the food? Absolutely bursting with flavor.\nHighly recommend the crispy pork & mango salad — sweet, tangy, crunchy perfection.",
         "aspects": [
           "service",
           "ambience"
@@ -247,6 +248,7 @@
         "rating": 4,
         "sentiment": "positive",
         "snippet": "The staff were attentive throughout, checking in at the right moments",
+        "full_text": "Vintner provided great pre-theatre service helped us get to our showing on time.\n\nI had the vegan risotto, which was solid and what I was looking for. There was a set menu which offered a good selection, but we opted for fewer courses.\n\nThe staff were attentive throughout, checking in at the right moments. Everything moved smoothly, which made the visit easy and enjoyable.\n\nVintner works well as a place to eat before a show, and I would return.",
         "aspects": [
           "service"
         ],
@@ -258,6 +260,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service",
+        "full_text": "Great little joint, had the Beef Rump and a Sticky Toffee Pudding and both were fantastic and good for the price. Just the rump was a little cheap but cooked perfectly, 4.5 for food. The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service. The atmosphere was also fantastic, very cute and quiet, no gross music, 5 for atmosphere",
         "aspects": [
           "service",
           "value"
@@ -270,6 +273,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND",
+        "full_text": "This was our second visit to The Vinter, & it didn’t disappoint! We come to Stratford several times a year to visit the RSC. The Vintner does a set menu, which is excellent for pre-theatre dining. You can choose either two or three courses, available at certain times. The Vintner is an independent, family run restaurant, which is very popular & always seems busy, situated on Sheep Street. We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND. When we arrived we, they were very busy. They sat us at a table that was near a staircase. It made me feel very uncomfortable, as I felt it was an area of high ‘people traffic’. Hubs asked if there was an alternate table. We were then moved to a different table, & then moved again as they realised the second table was booked by someone else in forty minutes. Our final table was lovely, & by a window, which helps me as it gives me a focus to distract me when I get anxious. Our server was very apologetic & kept asking if we were okay. We reassured her we were. I’m not sure if the notes had transferred from the OpenTable booking app or not, or whether they hadn’t been checked initially. We then ordered our food. I chose Cauliflower & Gruyère Cheese Mousse & hubs ordered Lamb Koftas with Giant Couscous & Tzatziki to start. We both thoroughly enjoyed them! My cheese mousse was delicious! We both ordered the same main course; Breast of Chicken, marinated in Lemon & Tarragon with tenderstem broccoli, mashed potatoes & white wine sauce. The chicken was still on the bone, the skin crispy & the meat, moist & juicy. It was scrumptious! We both ordered the Cherry & Almond tart with custard for dessert. It was a generous portion, & again, gorgeous. The last meal we had here was in January & the menu was different, so it looks like it’s updated regularly. (We had a cottage pie previously) The restaurant is lovely & the food, perfect. Apart from the slight glitch at the start, which was more than made up for after with the level of service throughout our visit, we would highly recommend The Vintner if you’re in Stratford! (We did forget photos as we were so engrossed in the meal, so the ones on the review may have a few bites taken already!)",
         "aspects": [
           "food_quality",
           "booking"
@@ -282,6 +286,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Great choice of \"Sharable\" starters with very friendly staff especially Charlie.",
+        "full_text": "What a lovely delightful restaurant.  Great choice of \"Sharable\" starters with very friendly staff especially Charlie.",
         "aspects": [
           "service"
         ],
@@ -293,6 +298,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "The food was delicious as always - special mention for the cheese soufflé as it was divine",
+        "full_text": "My husband and I had a superb meal at the Vintner on Feb 14. The food was delicious as always - special mention for the cheese soufflé as it was divine! The fish and chips and moules frites were also fabulous. We were too full to have a dessert as well unfortunately. The menu is really varied and well put together. The service was impeccable, thanks to Jason and his amazing team. Overall a wonderful evening in one of our favourite restaurants!",
         "aspects": [
           "food_quality"
         ],
@@ -304,6 +310,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Service was slick and discreet, food was delicious, and the ambiance proved what a popular venue this is",
+        "full_text": "Lunched on 14th from the set menu. Service was slick and discreet, food was delicious, and the ambiance proved what a popular venue this is. Thoroughly recommended",
         "aspects": [
           "food_quality"
         ],
@@ -315,6 +322,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford.",
+        "full_text": "Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford.",
         "aspects": [
           "food_quality",
           "ambience"
@@ -327,6 +335,7 @@
         "rating": 3,
         "sentiment": "mixed",
         "snippet": "We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning",
+        "full_text": "Nice but cold place. We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning. Good food.",
         "aspects": [
           "ambience"
         ],
@@ -338,6 +347,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Great food, great atmosphere, great drinks and impeccable service",
+        "full_text": "Great food, great atmosphere, great drinks and impeccable service. All 15 of us all agreed our food was superb and we visited during a very very busy festive period (last Saturday evening before Christmas). The team were very attentive and did a great job, especially Charlie who looked after us from start to finish. Thanks to everyone for making a very special 80th. Everyone talked about how nice the evening was from the kids to the adults.",
         "aspects": [
           "food_quality",
           "service",
@@ -351,6 +361,7 @@
         "rating": 1,
         "sentiment": "negative",
         "snippet": "We went further up the road and found a restaurant who were most welcoming.",
+        "full_text": "I went for lunch with a disabled lady who used a walker to get around, and they told us that if we wanted to eat or drink there she had to sit on a high stool at the bar and could not have a table. She clearly could not.  I was appalled. We went further up the road and found a restaurant who were most welcoming.",
         "aspects": [
           "service"
         ],
@@ -362,6 +373,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "This latest meal was outstanding despite its simplicity",
+        "full_text": "We've been going there for ages - Stratford is convenient for all of us, usually meeting up for a light lunch 4-5 times a year.\nThis latest meal was outstanding despite its simplicity. The two girl had the Vintner's French Onion Soup  which is always a safe choice, but somehow even better than ever this time - my Wife added a side order of chips. My own lunch was literally the best Moules Frites I have ever had - and that includes seaside cafes on the Brittany coast - even the Frites were exceptional.\nService was just right - as usual - attentive without being overwhelming. Cost - as expected for the quality of the venue, food and service - i.e. spot on.",
         "aspects": [
           "service"
         ],
@@ -373,6 +385,7 @@
         "rating": 3,
         "sentiment": "mixed",
         "snippet": "The fish crepes were very good and friends who had steak and fish were very satisfied",
+        "full_text": "Good food as usual.  The fish crepes were very good and friends who had steak and fish were very satisfied.  One problem - DONT go if you are disabled as there is no accessible loo.  The only facilities are up a very twisty old staircase.  They did offer me the alternative of walking down the road to another restaurant (how embarrassing would that be!) so I might have stayed longer, and had a sweet but couldn't (for obvious reasons).  The excuse is the age of the building, which I understand,  but I wish I had known before and will not be going again.",
         "aspects": [],
         "risk_count": 0,
         "date": "2026-11-20T00:00:00.000Z",
@@ -382,6 +395,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "The restaurant area has a pleasant interior and well spaced out tables",
+        "full_text": "We visited for dinner on a Thursday night around 7 pm, we hadn't booked, but we were lucky to get a table. \nThe restaurant area has a pleasant interior and well spaced out tables. We were not particularly hungry as we had met friends for lunch. However, we made an excellent combination of a 'small plates meal' from the starter menu.\nThe food was excellent, and the staff were very obliging.",
         "aspects": [
           "service"
         ],
@@ -393,6 +407,7 @@
         "rating": 2,
         "sentiment": "negative",
         "snippet": "I ordered a prawn cocktail which came with bread and butter",
+        "full_text": "I ordered a prawn cocktail which came with bread and butter. It was served to me with the handles of the cutlery resting in the butter on the bread, the bread was stale. We also ordered a fish cake, supposedly haddock, but it was more like a potato cake, very difficult to find any fish. The fish cake was served with a poached egg, the egg was cold. Very disappointing.",
         "aspects": [
           "food_quality",
           "ambience"
@@ -405,6 +420,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "We were recently married in Stratford Upon Avon, and decided to book the Vinter on recommendation and having visited it ourselves, for our wedding meal",
+        "full_text": "We were recently married in Stratford Upon Avon, and decided to book the Vinter on recommendation and having visited it ourselves, for our wedding meal. \nFrom first visiting, to the actual meal itself, Charlotte and the team were brilliant. \nSpecial thanks to Emma who was our primary server on the day. The food was excellent and everyone really enjoyed themselves and commented on the location. \nThank you all for making our special day simply perfect.",
         "aspects": [],
         "risk_count": 0,
         "date": "2026-10-20T00:00:00.000Z",
@@ -414,6 +430,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Went to The Vintner for our wedding anniversary meal, staff are really friendly and the atmosphere is great, we had our small dog with us so were seated downstairs in the window which was absolutely f",
+        "full_text": "Went to The Vintner for our wedding anniversary meal, staff are really friendly and the atmosphere is great, we had our small dog with us so were seated downstairs in the window which was absolutely fin. The food was of good quality and plenty of choice. definitely recommend a visit here, we will be returning.",
         "aspects": [
           "service"
         ],
@@ -425,6 +442,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "We didn't have a booking but they happily seated us upstairs by a window with a lovely setting",
+        "full_text": "Great meal and service from staff excellent so thank you all. We didn't have a booking but they happily seated us upstairs by a window with a lovely setting. Food was very good as we had a starter and dessert. Not cheap but quality should not be.",
         "aspects": [
           "ambience"
         ],
@@ -436,6 +454,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Service here was friendly and efficient",
+        "full_text": "We called here because our hotel food was well below par. Service here was friendly and efficient. The meal was superb, and well worth waiting for - evidence that it was freshly cooked.  On our next trip, we will take all our meals at the Vintner.  It's a short walk to the theatre.",
         "aspects": [
           "food_quality",
           "service",
@@ -449,6 +468,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Generous portion of smoked salmon and eggs cooked to perfection",
+        "full_text": "Fantastic breakfast. Generous portion of smoked salmon and eggs cooked to perfection. My foreign colleague had his first ever full English!",
         "aspects": [
           "food_quality",
           "speed"
@@ -461,6 +481,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Great service and a dedicated gluten-free menu servicing delicious fishcakes and wonderful vegetarian risotto",
+        "full_text": "Great service and a dedicated gluten-free menu servicing delicious fishcakes and wonderful vegetarian risotto. Really enjoyed it.",
         "aspects": [
           "food_quality",
           "service"
@@ -473,6 +494,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Excellent\nFood, Service and ambience \nwill be returning",
+        "full_text": "Excellent\nFood, Service and ambience \nwill be returning.\nThe staff knew what they were doing and we enjoyed the ambience too.",
         "aspects": [],
         "risk_count": 0,
         "date": "2026-08-20T00:00:00.000Z",
@@ -482,6 +504,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "The service is superb , our waitress was attentive, friendly and efficient",
+        "full_text": "Just perfect ..the Vinter is a massive favourite for Stratfordians and deservedly so . Beautiful old building gives a natural cosy ambience . The service is superb , our waitress was attentive, friendly and efficient .\nWe were a party of four , everyone enjoyed their food and remarked how generous the desserts were .My Rib eye steak lived up to expectations and the affordable Rose was perfect for a summers evening . Fabulous restaurant sensibly priced . \nBig thank you 😊",
         "aspects": [
           "service",
           "ambience",
@@ -496,6 +519,7 @@
         "rating": 4,
         "sentiment": "positive",
         "snippet": "The salmon fish cakes with sorrel sauce were delicious, Cajun chicken sauce a little bit sweet but over all lovely",
+        "full_text": "Slightly disappointed that despite booking, we were initially showed to a dark table for two although the restaurant was almost empty. I asked if we could sit somewhere a bit brighter as it was a sunny evening and the front of the  restaurant was unoccupied. After an audible sigh from the waitress (!!)  we were seated at a lovely table at the front area which we had entirely to ourselves for the whole meal.  Great menu - spoilt for choice . The salmon fish cakes with sorrel sauce were delicious, Cajun chicken sauce a little bit sweet but over all lovely.  Great wine list too .",
         "aspects": [
           "food_quality"
         ],
@@ -507,6 +531,7 @@
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Lovely food generally with a good choice and reasonable value",
+        "full_text": "A quality eaterie, with good atmosphere. Roomy and comfortable upstairs. Lovely food generally with a good choice and reasonable value. One meal not quite up to standard (sea bass with a limp Thai red sauce and tough Pak Choi, which didn't match the rest), but everything else excellent. Particularly the service which was first class. All upstairs tables occupied, on a Monday lunchtime which says a lot.",
         "aspects": [
           "food_quality",
           "value"

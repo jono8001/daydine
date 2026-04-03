@@ -697,6 +697,13 @@ def _narrative(w, ri, rd, month_str=None):
         # For moderate samples, include a compact summary table only
         _compact_aspect_summary(w, sorted_aspects)
 
+    # -----------------------------------------------------------------------
+    # Full Review Text Appendix
+    # -----------------------------------------------------------------------
+    per_review = analysis.get("per_review", [])
+    if per_review and any(r.get("full_text") for r in per_review):
+        _full_text_appendix(w, per_review)
+
 
 # ---------------------------------------------------------------------------
 # Appendix helpers
@@ -748,3 +755,23 @@ def _appendix_tables(w, analysis, aspects, sorted_aspects):
             w(f"| {i} | {source} | {date_str} | {rev.get('rating', '—')}\u2605 | {rev.get('sentiment', '—')} | "
               f"{topics or '—'} | {snippet}{'...' if len(rev.get('snippet', '')) > 60 else ''} |")
         w("")
+
+
+def _full_text_appendix(w, per_review):
+    """Full untruncated review text for transparency."""
+    w("---\n")
+    w("### Full Review Text Appendix\n")
+    w("*Complete text of each analysed review. Provided for transparency "
+      "and audit — the summary table above is the primary reference.*\n")
+
+    for i, rev in enumerate(per_review, 1):
+        source = (rev.get("source") or "Unknown").title()
+        date_str = (rev.get("date") or "")[:10] or "Undated"
+        rating = rev.get("rating", "—")
+        sentiment = rev.get("sentiment", "—")
+        topics = ", ".join(ASPECT_LABELS.get(a, a) for a in rev.get("aspects", [])[:3])
+        full_text = rev.get("full_text", rev.get("snippet", ""))
+
+        w(f"**Review {i}** | {source} | {date_str} | {rating}\u2605 | {sentiment}"
+          + (f" | {topics}" if topics else ""))
+        w(f"> {full_text}\n")

@@ -202,6 +202,7 @@ def analyse_reviews(reviews):
         analysis = _analyse_single_review(text, rating)
         analysis["date"] = date_str
         analysis["source"] = source
+        analysis["full_text"] = text
         per_review.append(analysis)
 
     # Aggregate aspects
@@ -310,6 +311,7 @@ def analyse_reviews(reviews):
         "per_review": [
             {"rating": r["rating"], "sentiment": r["sentiment"],
              "snippet": r["snippet"],
+             "full_text": r.get("full_text", r["snippet"]),
              "aspects": list(r["aspects"].keys()),
              "risk_count": len(r["risks"]),
              "date": r.get("date"),
