@@ -74,7 +74,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 58,
+      "lines": 57,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -118,5 +118,5 @@
   "validation_warnings": [],
   "confidence_level": "high",
   "evidence_provenance_present": true,
-  "report_lines": 287
+  "report_lines": 285
 }

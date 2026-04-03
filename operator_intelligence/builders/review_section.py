@@ -104,6 +104,54 @@ def _strength_read(score, mentions):
     return "significant concern"
 
 
+def _validated_trajectory(per_review, month_str, orig_trajectory, orig_method):
+    """Recompute trajectory using only reviews with dates within the report period.
+
+    If the analysis used date_sorted but included future-dated reviews,
+    recompute from valid-only dates, or fall back to positional.
+    """
+    try:
+        ceil = datetime.strptime(month_str, "%Y-%m")
+        if ceil.month == 12:
+            ceil = ceil.replace(year=ceil.year + 1, month=1)
+        else:
+            ceil = ceil.replace(month=ceil.month + 1)
+        ceiling_str = ceil.strftime("%Y-%m-%d")
+    except (ValueError, TypeError):
+        return orig_trajectory, orig_method
+
+    valid_dated = [(r, r["date"][:10]) for r in per_review
+                   if r.get("date") and r["date"][:10] < ceiling_str]
+    total_dated = sum(1 for r in per_review if r.get("date"))
+    future_count = total_dated - len(valid_dated)
+
+    if future_count == 0:
+        # No future dates — the original date_sorted trajectory is clean
+        return orig_trajectory, orig_method
+
+    # Future dates present — recompute from valid dates only
+    if len(valid_dated) >= 4:
+        sorted_valid = sorted(valid_dated, key=lambda x: x[1])
+        mid = len(sorted_valid) // 2
+        older = [r["rating"] for r, _ in sorted_valid[:mid] if r.get("rating")]
+        newer = [r["rating"] for r, _ in sorted_valid[mid:] if r.get("rating")]
+        if older and newer:
+            diff = (sum(newer) / len(newer)) - (sum(older) / len(older))
+            traj = "improving" if diff > 0.3 else "declining" if diff < -0.3 else "stable"
+            return traj, "date_sorted"
+
+    # Not enough valid dated reviews — fall back to positional
+    all_ratings = [r["rating"] for r in per_review if r.get("rating")]
+    if len(all_ratings) >= 4:
+        first = all_ratings[:len(all_ratings) // 2]
+        second = all_ratings[len(all_ratings) // 2:]
+        diff = (sum(second) / len(second)) - (sum(first) / len(first))
+        traj = "improving" if diff > 0.3 else "declining" if diff < -0.3 else "stable"
+        return traj, "positional"
+
+    return None, None
+
+
 def _confidence_language(rc):
     """Return (adjective, hedge) appropriate to the confidence tier."""
     mapping = {
@@ -215,6 +263,14 @@ def _narrative(w, ri, rd, month_str=None):
     trajectory = analysis.get("trajectory")
     trajectory_method = analysis.get("trajectory_method")
     sent_dist = analysis.get("sentiment_distribution", {})
+
+    # --- Validate trajectory against report-period date sanity ---
+    # If the analysis claims date_sorted trajectory but the dated reviews
+    # include dates outside the report period, recompute from valid dates
+    # or downgrade to positional.
+    if trajectory_method == "date_sorted" and month_str:
+        trajectory, trajectory_method = _validated_trajectory(
+            analysis.get("per_review", []), month_str, trajectory, trajectory_method)
 
     # Sort aspects by mention volume
     sorted_aspects = sorted(aspects.items(), key=lambda x: -x[1].get("mentions", 0))

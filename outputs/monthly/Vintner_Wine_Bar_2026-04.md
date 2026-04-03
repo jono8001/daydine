@@ -47,7 +47,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.73, conversion=5.5`
-- *This recommendation has appeared 8 consecutive months.*
+- *This recommendation has appeared 9 consecutive months.*
 
 ### Priority 2: Address recurring food quality complaints from guests [FIX | ESCALATED]
 
@@ -58,7 +58,7 @@ Food Quality draws recurring criticism across reviews (3 negative mentions). One
 - **Owner:** operations | **Confidence:** 70%
 - **Expected upside:** Reduce food quality complaints, protect rating
 - **Evidence:** `review_criticism: Food Quality=3 negative`
-- *This recommendation has appeared 5 consecutive months.*
+- *This recommendation has appeared 6 consecutive months.*
 
 ### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ESCALATED]
 
@@ -69,7 +69,7 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
 - **Evidence:** `review_praise: Service & Hospitality=18`
-- *This recommendation has appeared 5 consecutive months.*
+- *This recommendation has appeared 6 consecutive months.*
 
 ## Protect / Improve / Ignore
 
@@ -151,10 +151,6 @@ This warrants investigation to determine whether it reflects a systemic issue or
 **Atmosphere & Setting** (recurring note, 2 mentions).
 > *"We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning"*
 This warrants investigation to determine whether it reflects a systemic issue or isolated incidents.
-
-### Reputation Risk Assessment
-
-**Trajectory warning:** Later reviews trend lower than earlier ones (based on review dates). A declining trajectory, if sustained, will erode the aggregate rating over time. This is an early warning — the operational cause should be identified before it becomes visible in headline ratings.
 
 ### Evidence Quality
 
@@ -384,14 +380,14 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 8 | operations | conversion |
-| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 5 | operations | experience |
-| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 5 | management | experience |
-| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 5 | front-of-house | visibility |
-| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 5 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 9 | operations | conversion |
+| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 6 | operations | experience |
+| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 6 | management | experience |
+| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 6 | front-of-house | visibility |
+| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 6 | management | trust |
 | 7 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
 | 8 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
-| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 5 | operations | experience |
+| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 6 | operations | experience |
 
 ## Next-Month Monitoring Plan
 
