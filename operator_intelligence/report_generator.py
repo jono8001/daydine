@@ -68,7 +68,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # 6. Commercial Diagnosis (bottleneck, positioning, revenue leakage)
     build_commercial_diagnosis(w, scorecard, deltas, benchmarks, review_intel)
     # 7. Review & Reputation Intelligence
-    build_review_intelligence(w, mode, review_intel, review_delta)
+    build_review_intelligence(w, mode, review_intel, review_delta, month_str=month_str)
 
     # --- Lens 3: Trust & Public Risk ---
     # 8. Public Proof vs Operational Reality

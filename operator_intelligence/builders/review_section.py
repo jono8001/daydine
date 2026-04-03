@@ -1,7 +1,82 @@
 """Review & reputation intelligence section builder — business intelligence focus."""
 
+from datetime import datetime, timedelta
 from operator_intelligence.report_spec import MODE_NARRATIVE, assess_review_confidence
 from operator_intelligence.review_analysis import ASPECT_LABELS
+
+
+def _valid_recent_window(ri, month_str):
+    """Compute a valid recent-movement window, filtering out future dates.
+
+    Returns dict with keys: available, count, sources, cutoff, note
+    or {available: False, note: reason}.
+    """
+    if not ri.get("has_dated_reviews"):
+        return {"available": False,
+                "note": "No dated reviews available — recent movement cannot be isolated."}
+
+    date_range = ri.get("date_range") or {}
+    latest = date_range.get("latest", "")
+
+    # Determine report ceiling: end of the report month
+    try:
+        report_ceiling = datetime.strptime(month_str, "%Y-%m")
+        # End of that month (approx)
+        if report_ceiling.month == 12:
+            report_ceiling = report_ceiling.replace(year=report_ceiling.year + 1, month=1)
+        else:
+            report_ceiling = report_ceiling.replace(month=report_ceiling.month + 1)
+        ceiling_str = report_ceiling.strftime("%Y-%m-%d")
+    except (ValueError, TypeError):
+        ceiling_str = None
+
+    # Filter: reject dates after report month
+    analysis = ri.get("analysis") or {}
+    per_review = analysis.get("per_review", [])
+    dated_valid = []
+    future_count = 0
+    for rev in per_review:
+        d = (rev.get("date") or "")[:10]
+        if not d:
+            continue
+        if ceiling_str and d >= ceiling_str:
+            future_count += 1
+            continue
+        dated_valid.append(rev)
+
+    if not dated_valid:
+        note = "All dated reviews fall outside the report period"
+        if future_count > 0:
+            note += f" ({future_count} have dates after {month_str})"
+        note += " — recent movement cannot be assessed."
+        return {"available": False, "note": note}
+
+    # Compute 30-day window from latest valid date
+    valid_dates = sorted(r["date"][:10] for r in dated_valid)
+    latest_valid = valid_dates[-1]
+    try:
+        latest_dt = datetime.strptime(latest_valid, "%Y-%m-%d")
+        cutoff_dt = latest_dt - timedelta(days=30)
+        cutoff_str = cutoff_dt.strftime("%Y-%m-%d")
+    except (ValueError, TypeError):
+        return {"available": False,
+                "note": "Could not parse review dates for recent-movement analysis."}
+
+    recent = [r for r in dated_valid if r["date"][:10] >= cutoff_str]
+    if not recent:
+        return {"available": False,
+                "note": f"No dated reviews in the 30 days before {latest_valid}."}
+
+    sources = list(set(r.get("source") or "unknown" for r in recent))
+    return {
+        "available": True,
+        "count": len(recent),
+        "total_valid": len(dated_valid),
+        "sources": sources,
+        "cutoff": cutoff_str,
+        "latest": latest_valid,
+        "future_excluded": future_count,
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -55,12 +130,12 @@ def _pick_best_quote(quotes, max_len=120):
 # Public entry point
 # ---------------------------------------------------------------------------
 
-def build(w, mode, review_intel, review_delta):
+def build(w, mode, review_intel, review_delta, month_str=None):
     w("## Review & Reputation Intelligence\n")
     if mode != MODE_NARRATIVE:
         _structured(w, review_intel)
     else:
-        _narrative(w, review_intel, review_delta)
+        _narrative(w, review_intel, review_delta, month_str=month_str)
 
 
 # ---------------------------------------------------------------------------
@@ -103,7 +178,7 @@ def _structured(w, ri):
 # Narrative mode (full review text available)
 # ---------------------------------------------------------------------------
 
-def _narrative(w, ri, rd):
+def _narrative(w, ri, rd, month_str=None):
     """Full business intelligence from review text."""
     analysis = ri.get("analysis")
     vol = ri.get("volume_signals")
@@ -116,12 +191,29 @@ def _narrative(w, ri, rd):
     rc = assess_review_confidence(ri)
     adj, _ = _confidence_language(rc)
 
+    # --- Sample scope statement (temporal honesty) ---
+    ta_count = ri.get("review_count_ta") or 0
+    google_text = n - ta_count
+    date_range = ri.get("date_range")
+    scope_parts = []
+    if google_text > 0:
+        scope_parts.append(f"{google_text} Google (undated)")
+    if ta_count > 0:
+        if date_range:
+            scope_parts.append(f"{ta_count} TripAdvisor ({date_range['earliest']} to {date_range['latest']})")
+        else:
+            scope_parts.append(f"{ta_count} TripAdvisor")
+    scope_str = " + ".join(scope_parts) if scope_parts else f"{n} reviews"
+    w(f"*Reputation baseline: {n} reviews analysed ({scope_str}). "
+      f"This is the full available sample, not limited to the current month.*\n")
+
     # Gather core data structures
     aspects = analysis.get("aspect_scores", {})
     praise = analysis.get("praise_themes", [])
     criticism = analysis.get("criticism_themes", [])
     risks = analysis.get("risk_flags", [])
     trajectory = analysis.get("trajectory")
+    trajectory_method = analysis.get("trajectory_method")
     sent_dist = analysis.get("sentiment_distribution", {})
 
     # Sort aspects by mention volume
@@ -361,15 +453,18 @@ def _narrative(w, ri, rd):
                   "and suppress return visits.")
                 w("")
 
+        _traj_caveat = (" (based on review dates)" if trajectory_method == "date_sorted"
+                        else " (based on sample order — not date-confirmed)")
         if has_declining:
-            w("**Trajectory warning:** Recent reviews trend lower than earlier ones "
-              "in the sample. A declining trajectory, if sustained, will erode the "
+            w(f"**Trajectory warning:** Later reviews trend lower than earlier ones"
+              f"{_traj_caveat}. A declining trajectory, if sustained, will erode the "
               "aggregate rating over time. This is an early warning — the operational "
               "cause should be identified before it becomes visible in headline "
               "ratings.")
             w("")
         elif trajectory == "improving":
-            w("**Positive trajectory:** Recent reviews trend higher than earlier ones, "
+            w(f"**Positive trajectory:** Later reviews trend higher than earlier ones"
+              f"{_traj_caveat}, "
               "suggesting operational improvements are landing with guests. "
               "Continued monitoring will confirm whether this is a sustained shift.")
             w("")
@@ -385,10 +480,12 @@ def _narrative(w, ri, rd):
 
     elif trajectory == "improving":
         # No risk, but worth noting positive trajectory
+        _traj_note = ("by date" if trajectory_method == "date_sorted"
+                      else "by sample order — not date-confirmed")
         w("### Reputation Trajectory\n")
-        w("Recent reviews trend higher than earlier ones, suggesting operational "
-          "improvements are being recognised by guests. No significant reputation "
-          "risks were identified in this sample.\n")
+        w(f"Later reviews trend higher than earlier ones ({_traj_note}), suggesting "
+          "operational improvements are being recognised by guests. No significant "
+          "reputation risks were identified in this sample.\n")
 
     # -----------------------------------------------------------------------
     # 5. Evidence Quality
@@ -434,7 +531,77 @@ def _narrative(w, ri, rd):
     w("")
 
     # -----------------------------------------------------------------------
-    # 6. Delta vs Prior Month (if available)
+    # 6. Recent Movement (date-filtered layer)
+    # -----------------------------------------------------------------------
+    w("### Recent Movement\n")
+    recent = _valid_recent_window(ri, month_str)
+
+    if not recent["available"]:
+        w(f"*{recent['note']}*\n")
+        w("The analysis above reflects the full reputation baseline. "
+          "A dated recent-movement layer will become available when "
+          "reviews with reliable dates fall within the report period.\n")
+    else:
+        rc_count = recent["count"]
+        rc_total = recent["total_valid"]
+        rc_sources = ", ".join(s.title() for s in recent["sources"])
+        rc_cutoff = recent["cutoff"]
+        rc_latest = recent["latest"]
+        future_note = ""
+        if recent.get("future_excluded", 0) > 0:
+            future_note = (f" ({recent['future_excluded']} review(s) with dates "
+                           f"after the report period were excluded.)")
+
+        w(f"**{rc_count} of {rc_total} dated reviews** fall within the 30-day "
+          f"window ({rc_cutoff} to {rc_latest}), from {rc_sources}.{future_note}\n")
+
+        # Check if Google is baseline-only
+        if "google" not in recent["sources"]:
+            google_text = n - (ri.get("review_count_ta") or 0)
+            if google_text > 0:
+                w(f"*Google reviews ({google_text}) contribute to the reputation "
+                  f"baseline only — Google does not provide reliable review dates.*\n")
+
+        # Quick sentiment summary of recent reviews
+        recent_per_review = [r for r in analysis.get("per_review", [])
+                             if r.get("date") and r["date"][:10] >= rc_cutoff
+                             and (not month_str or r["date"][:10] < recent.get("_ceiling", "9999"))]
+        # Filter out future dates using same ceiling logic
+        try:
+            from datetime import datetime as _dt
+            _ceil = _dt.strptime(month_str, "%Y-%m")
+            if _ceil.month == 12:
+                _ceil = _ceil.replace(year=_ceil.year + 1, month=1)
+            else:
+                _ceil = _ceil.replace(month=_ceil.month + 1)
+            _ceil_str = _ceil.strftime("%Y-%m-%d")
+            recent_per_review = [r for r in recent_per_review if r["date"][:10] < _ceil_str]
+        except (ValueError, TypeError):
+            pass
+
+        if recent_per_review:
+            recent_ratings = [r["rating"] for r in recent_per_review if r.get("rating")]
+            if recent_ratings:
+                avg = sum(recent_ratings) / len(recent_ratings)
+                w(f"Recent window average rating: **{avg:.1f}/5** "
+                  f"({len(recent_ratings)} rated review{'s' if len(recent_ratings) != 1 else ''}).\n")
+
+            # Check for new/intensifying themes in recent window
+            from collections import Counter
+            recent_aspects = Counter()
+            for r in recent_per_review:
+                for asp in r.get("aspects", []):
+                    recent_aspects[asp] += 1
+            if recent_aspects:
+                top_recent = recent_aspects.most_common(3)
+                labels = [f"{ASPECT_LABELS.get(a, a)} ({c})" for a, c in top_recent]
+                w(f"Most mentioned in recent window: {', '.join(labels)}.\n")
+        else:
+            w("No reviews with valid dates fell within the recent window "
+              "after filtering.\n")
+
+    # -----------------------------------------------------------------------
+    # 7. Delta vs Prior Month (if available)
     # -----------------------------------------------------------------------
     if rd and rd.get("has_delta"):
         w("### Narrative Shifts vs Prior Period\n")
