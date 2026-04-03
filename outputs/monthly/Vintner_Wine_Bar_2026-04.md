@@ -1,28 +1,36 @@
-# Vintner Wine Bar — Operator Intelligence Report
-*2026-04 | Generated 02 April 2026 | DayDine Premium*
+# Vintner Wine Bar — External Blind-Spot Report
+*2026-04 | Generated 03 April 2026 | DayDine Premium*
 
 ---
 
 ## Executive Summary
 
-**Overall Operator Score: 7.3 / 10**
-*Baseline month — no prior period for comparison*
+**What needs attention now:**
 
-**Strongest dimension:** Visibility (9.7). **Weakest:** Prestige (1.5). Internal gap: 8.2 points.
+1. **Fix the digital shopfront — you're losing walk-ins** [FIX] — Capture demand you're currently losing
+2. **Address recurring food quality complaints from guests** [FIX] — Reduce food quality complaints, protect rating
+3. **Lean into service & hospitality — it's what guests are buying** [EXPLOIT] — Sharpen proposition → attract the right guests
+
+**Watch this month:**
+- Compliance record weakest in peer set — creates inspection exposure
+- Monitor local competitor openings and closures
+
+**Do not prioritise:** Protect the 4.6/5 rating — it took years to build
+
+**Overall score: 7.3/10** (baseline month — no prior comparison)
+ | Strongest: Visibility (9.7) | Weakest: Conversion (5.5)
 
 **Competitive position:** Local Peers (5mi): #4 of 9 (P62.5) — peer avg 7.08, top 7.69
   Catchment (15mi): #7 of 19 (P66.7) — peer avg 6.83, top 7.93
   UK Category Cohort: #7 of 19 (P66.7) — peer avg 6.83, top 7.93
 
-**Top priority this month:** Fix the digital shopfront — you're losing walk-ins [FIX] — Capture demand you're currently losing.
-
-*This report includes narrative analysis from 25 customer reviews (5 Google + 20 TripAdvisor).*
+*This report uses publicly observable data only — no internal systems required. Narrative analysis from 25 customer reviews (5 Google + 20 TripAdvisor).*
 
 ## What This Venue Is Becoming Known For
 
 Vintner Wine Bar is a well-established pub dining venue with a strong public reputation — 4.6/5 across 887 Google reviews. That volume means the reputation is earned, not manufactured.
 
-Across 25 reviews from 1 sources, **service & hospitality** (18 mentions) and **food quality** (12 mentions) are the most frequent themes. Whether these represent settled guest perception or sampling artefact cannot be determined from this evidence base alone.
+Guest feedback supported by moderate evidence centres on **service & hospitality** (18 mentions) and **food quality** (12 mentions). Review evidence consistently points to these are becoming defining elements of the proposition as guests perceive it.
 
 In the local market, the venue sits above the median but hasn't established itself as the clear category leader. The identity is 'reliably good' rather than 'destination'.
 
@@ -39,9 +47,9 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.73, conversion=5.5`
-- *This recommendation has appeared 5 consecutive months.*
+- *This recommendation has appeared 6 consecutive months.*
 
-### Priority 2: Address recurring food quality complaints from guests [FIX | ONGOING]
+### Priority 2: Address recurring food quality complaints from guests [FIX | ESCALATED]
 
 Food Quality draws recurring criticism across reviews (3 negative mentions). One guest wrote: "I ordered a prawn cocktail which came with bread and butter..." Investigate whether this reflects a systemic issue or isolated incidents.
 
@@ -50,9 +58,9 @@ Food Quality draws recurring criticism across reviews (3 negative mentions). One
 - **Owner:** operations | **Confidence:** 70%
 - **Expected upside:** Reduce food quality complaints, protect rating
 - **Evidence:** `review_criticism: Food Quality=3 negative`
-- *This recommendation has appeared 2 consecutive months.*
+- *This recommendation has appeared 3 consecutive months.*
 
-### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ONGOING]
+### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ESCALATED]
 
 Guests consistently praise service & hospitality (18 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
 
@@ -61,7 +69,7 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
 - **Evidence:** `review_praise: Service & Hospitality=18`
-- *This recommendation has appeared 2 consecutive months.*
+- *This recommendation has appeared 3 consecutive months.*
 
 ## Protect / Improve / Ignore
 
@@ -76,6 +84,18 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 ### Ignore
 
 - **Awards and editorial pursuit.** Your fundamentals need strengthening before prestige investment makes sense. Awards don't fix a weak proposition; they amplify a strong one.
+
+## Conversion Friction Analysis
+
+This section identifies specific barriers between customer interest and a completed visit or order.
+
+| Friction Point | Impact | Fix |
+|---------------|--------|-----|
+| No delivery/takeaway signal | Google Maps filters for 'delivery' and 'takeaway'. If you offer these services but haven't flagged them, you're invisible to that search intent. | Update Google Business Profile service attributes. |
+
+**1 friction point(s) identified.** Each one represents a leak in your conversion funnel where interested customers drop off before reaching you.
+
+**Overall conversion readiness: Partial.** Some signals are present but gaps remain. Each missing element is a percentage of potential customers who never reach you.
 
 ## Commercial Diagnosis
 
@@ -102,7 +122,7 @@ Above the local median but without a distinctive market position. This is the 'g
 ### Revenue Left on the Table
 
 - **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier.
-- **Potential proposition signal.** Early review data (supported by moderate evidence) suggests service & hospitality resonates. If confirmed, this could become a marketable differentiator.
+- **Proposition not explicitly marketed.** Guests praise service & hospitality, but this isn't visibly communicated online. Making it the headline would sharpen expectations and attract the right customers.
 - **Operational leakage via food quality.** Recurring complaints (3 mentions) about food quality suggest a specific operational gap that affects both immediate revenue (table turns, repeat visits) and long-term rating trajectory.
 
 ## Review & Reputation Intelligence
@@ -110,6 +130,11 @@ Above the local median but without a distinctive market position. This is the 'g
 ### What Guests Value Most
 
 Service & Hospitality is a dominant theme (consistent praise). Guests describe attentive, personal care — naming individual staff in several cases. This suggests the venue's competitive advantage is human rather than purely operational: it depends on who is working, not just what systems are in place. As one reviewer put it: *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"* Food Quality draws strong positive signal across reviews. Guests highlight specific dishes and ingredients rather than generic praise, which indicates the kitchen is delivering memorable experiences, not just adequate meals. As one reviewer put it: *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"* Atmosphere & Setting registers as strong positive signal. The physical environment is contributing positively to the guest experience and may be a factor in repeat visits and social media visibility. As one reviewer put it: *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
+
+### What This Means for the Proposition
+
+The review evidence suggests this venue's real proposition is built on **Service & Hospitality and Food Quality**. 
+When both service and food quality dominate guest feedback, the venue is selling an experience, not just a meal. Pricing power, loyalty, and resilience to competition are typically stronger for experience-led venues.
 
 ### What Management May Be Missing
 
@@ -124,7 +149,7 @@ This warrants investigation to determine whether it reflects a systemic issue or
 ### Evidence Quality
 
 **Confidence: Directional** (5 from Google and 20 from TripAdvisor).
- Moderate sample from a single platform. Findings are directionally sound but would benefit from cross-platform validation.
+ Cross-platform evidence strengthens confidence. Themes corroborated across Google and TripAdvisor are more reliable than single-source findings.
 
 ---
 
@@ -175,6 +200,26 @@ will be returning |
 | 24 | 4★ | positive | Food Quality | The salmon fish cakes with sorrel sauce were delicious, Cajun chicken sauce a li... |
 | 25 | 5★ | positive | Food Quality, Value for Money | Lovely food generally with a good choice and reasonable value |
 
+## Public Proof vs Operational Reality
+
+This section compares what customers see (public signals) against what the data reveals about operational depth.
+
+| Aspect | Public Signal | Operational Reality |
+|--------|-------------|---------------------|
+| Customer Rating | 4.6/5 Google (Strong) | Experience 8.7/10 (Strong) — Aligned |
+| Hygiene Rating | FSA 5/5 (Top mark) | Trust 7.2/10 (Adequate) |
+| Review Volume | 887 reviews (High) | Visibility 9.7/10 (Strong) |
+| Booking/Ordering | What customers can find | Conversion 5.5/10 (Partial) |
+
+## Competitive Market Intelligence
+
+**Local market:** 8 direct competitors identified.
+
+Above the median (P62) but not leading. Peer average is 7.1; the top performer scores 7.7. The gap to the top is closeable.
+
+**Where you lead:** Visibility (+2.2), Conversion (+0.7)
+**Where peers beat you:** Trust (-1.1)
+
 ## Market Position
 
 **Category:** Pub / Bar
@@ -198,7 +243,7 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 - The Red Lion (7.6) — leads you by 0.2
 - The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5) — leads you by 0.2
 - Snitterfield Arms (7.2) — you lead by 0.1
-- The Bell Inn (7.2) — you lead by 0.2
+- The Bell Inn (7.1) — you lead by 0.2
 
 ### Extended Catchment (18 peers within 15 miles)
 
@@ -224,29 +269,6 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 
 *Same competitive set as above (18 peers). In this market, the catchment and category cohort overlap completely.*
 
-## Public Proof vs Operational Reality
-
-This section compares what customers see (public signals) against what the data reveals about operational depth.
-
-| Aspect | Public Signal | Operational Reality |
-|--------|-------------|---------------------|
-| Customer Rating | 4.6/5 Google (Strong) | Experience 8.7/10 (Strong) — Aligned |
-| Hygiene Rating | FSA 5/5 (Top mark) | Trust 7.2/10 (Adequate) |
-| Review Volume | 887 reviews (High) | Visibility 9.7/10 (Strong) |
-| Booking/Ordering | What customers can find | Conversion 5.5/10 (Partial) |
-
-## Conversion Friction Analysis
-
-This section identifies specific barriers between customer interest and a completed visit or order.
-
-| Friction Point | Impact | Fix |
-|---------------|--------|-----|
-| No delivery/takeaway signal | Google Maps filters for 'delivery' and 'takeaway'. If you offer these services but haven't flagged them, you're invisible to that search intent. | Update Google Business Profile service attributes. |
-
-**1 friction point(s) identified.** Each one represents a leak in your conversion funnel where interested customers drop off before reaching you.
-
-**Overall conversion readiness: Partial.** Some signals are present but gaps remain. Each missing element is a percentage of potential customers who never reach you.
-
 ## Dimension Scorecard
 
 | Dimension | Score | Δ | Peer Avg | Gap | Read |
@@ -255,8 +277,9 @@ This section identifies specific barriers between customer interest and a comple
 | Visibility | 9.7 | — | 7.5 | +2.2 | Clear strength |
 | Trust | 7.2 | — | 8.3 | -1.1 | Below peers |
 | Conversion | 5.5 | — | 4.8 | +0.7 | Above peers |
-| Prestige | 1.5 | — | 0.8 | +0.8 | Above peers |
 | **Overall** | **7.3** | **—** | | | |
+
+*Prestige (editorial recognition): 1.5/10 (peer avg 0.8) — tracked but not a headline operational lever for most independents.*
 
 ## Dimension-by-Dimension Diagnosis
 
@@ -316,23 +339,15 @@ This section identifies specific barriers between customer interest and a comple
 **Management note:** Some operational signals present, but gaps remain. Each missing element is a percentage of potential customers who never complete their intent.
 
 
-### Prestige — 1.5/10
+### Prestige (Editorial Recognition)
 
-*Editorial recognition and premium positioning*
+*Score: 1.5/10 | Peer avg: 0.8*
 
-**Assessment: Critical.** At 1.5, this represents a material operational gap.
- Slightly above peer average (0.8).
-
-**Why it matters:** Supports premium pricing and differentiation. Long-cycle investment, not urgent for most.
-
-**Driven by:** Michelin mentions, AA rating, local awards, price positioning
-
-**Management note:** Low prestige is normal for most operators and not commercially urgent. Focus on Experience and Trust first — prestige follows quality.
-
+Low prestige is normal for most independents and does not affect footfall, discovery, or day-to-day revenue. Not commercially urgent.
 
 ## Watch List
 
-**Compliance record weakest in peer set — creates inspection exposure** [ONGOING]
+**Compliance record weakest in peer set — creates inspection exposure** [ESCALATED]
 
 You trail peers by 1.1 points on trust. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
@@ -351,68 +366,68 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 5 | operations | conversion |
-| 3 | Address recurring food quality complaints from gue | ongoing | 2026-04 | 2 | operations | experience |
-| 4 | Lean into service & hospitality — it's what guests | ongoing | 2026-04 | 2 | management | experience |
-| 5 | Protect the 4.6/5 rating — it took years to build | ongoing | 2026-04 | 2 | front-of-house | visibility |
-| 6 | Compliance record weakest in peer set — creates in | ongoing | 2026-04 | 2 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 6 | operations | conversion |
+| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 3 | operations | experience |
+| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 3 | management | experience |
+| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 3 | front-of-house | visibility |
+| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 3 | management | trust |
 | 7 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
 | 8 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
-| 9 | Address repeated atmosphere & setting complaints f | ongoing | 2026-04 | 2 | operations | experience |
+| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 3 | operations | experience |
 
 ## Next-Month Monitoring Plan
 
-Track these specific metrics before the next report to measure progress:
+These are **externally observable leading indicators** — all trackable without internal systems. Changes here signal whether actions are landing.
 
-| What to Monitor | Current Baseline | Target | Owner |
-|----------------|-----------------|--------|-------|
-| Google rating | 4.6/5 | Maintain or improve | Front-of-house |
-| Google review count | 887 | 897+ | Marketing |
-| Fix the digital shopfront — you're losin | Action raised | Complete | operations |
-| Address recurring food quality complaint | Action raised | Complete | operations |
-| Compliance record weakest in peer set —  | Watch raised | Monitor | management |
+| Indicator | Current | What Movement Means | Source |
+|-----------|---------|---------------------|--------|
+| Google star rating | 4.6/5 | Drop below 4.6 = experience drift; rise = guest improvements landing | Google Maps |
+| Google review count | 887 | 10+ new reviews/month = healthy momentum | Google Maps |
+| Latest 5 Google reviews | Check manually | 2+ negative in latest 5 = early warning of rating decline | Google Maps |
+| Nearest competitor rating | Check top 3 | Competitor improvement narrows your lead | Google Maps |
 
-**Review date:** First week of next month. Compare these baselines against updated data to measure whether actions had impact.
+**Review date:** First week of next month. All indicators are publicly observable — no operator login or internal data required.
 
 ---
 
 ## Data Coverage & Confidence
 
-| Source | Status | Available |
-|--------|--------|:---------:|
-| FSA Hygiene Rating | Rating 5/5 | ✓ |
-| Google Business Profile | 4.6★ (887 reviews) | ✓ |
-| Google Review Text | 25 reviews analyzed | ✓ |
-| TripAdvisor | 20 reviews analysed | ✓ |
-| Companies House | Not checked | — |
+| Source | Status | Provenance | Available |
+|--------|--------|------------|:---------:|
+| FSA Hygiene Rating | Rating 5/5 | observed | ✓ |
+| Google Business Profile | 4.6★ (887 reviews) | observed | ✓ |
+| Google Review Text | 25 reviews analyzed | observed | ✓ |
+| TripAdvisor | 20 reviews analysed | observed | ✓ |
+| Companies House | Not checked | not_assessed | — |
 
-**Report confidence: High** — Multiple independent sources.
+**Report confidence: High** — 3 independent sources (FSA, Google, TripAdvisor).
 
 
 
 ## Evidence Appendix
 
-Raw signal values used to compute this report.
+Raw signal values used to compute this report. Provenance: **observed** = directly from source API; **derived** = computed from observed data; **inferred** = estimated from indirect evidence; **not_assessed** = not yet collected.
 
-| Signal | Value | Source |
-|--------|-------|--------|
-| FSA Hygiene Rating | 5/5 | FSA API via Firebase |
-| Food Hygiene Sub-score | 8.0/10 | FSA |
-| Structural Compliance | 8.0/10 | FSA |
-| Management Confidence | 7.5/10 | FSA |
-| Last Inspection | 2024-05-09 | FSA |
-| Google Rating | 4.6/5 | Google Places API |
-| Google Reviews | 887 | Google Places API |
-| Google Photos | 10 | Google Places API |
-| Price Level | ££ (2/4) | Google Places API |
-| GBP Completeness | 10.0/10 | Computed |
-| TripAdvisor Rating | 4.4/5 | TripAdvisor (Apify) |
-| TripAdvisor Reviews | 20 | TripAdvisor (Apify) |
-| Website | Yes | Inferred |
-| Facebook | Yes | Inferred |
-| Instagram | Yes | Inferred |
-| Category | Pub / Bar | google_types |
-| Postcode | CV37 6EF | FSA |
+| Signal | Value | Source | Provenance |
+|--------|-------|--------|------------|
+| FSA Hygiene Rating | 5/5 | FSA API via Firebase | observed |
+| Food Hygiene Sub-score | 8.0/10 | FSA | observed |
+| Structural Compliance | 8.0/10 | FSA | observed |
+| Management Confidence | 7.5/10 | FSA | observed |
+| Last Inspection | 2024-05-09 | FSA | observed |
+| Google Rating | 4.6/5 | Google Places API | observed |
+| Google Reviews | 887 | Google Places API | observed |
+| Google Photos | 10 | Google Places API | observed |
+| Price Level | ££ (2/4) | Google Places API | observed |
+| GBP Completeness | 10.0/10 | Computed | derived |
+| TripAdvisor Rating | 4.4/5 | TripAdvisor (Apify) | observed |
+| TripAdvisor Reviews | 20 | TripAdvisor (Apify) | observed |
+| Website | Yes | Google inference | inferred |
+| Facebook | Yes | Google inference | inferred |
+| Instagram | Yes | Google inference | inferred |
+| Category | Pub / Bar | google_types | derived |
+| Postcode | CV37 6EF | FSA | observed |
+| Companies House | — | Not checked | not_assessed |
 
 
 *Report generated by DayDine Operator Intelligence v3.0 — 2026-04*

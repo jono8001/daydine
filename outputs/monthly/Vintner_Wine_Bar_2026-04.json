@@ -19,13 +19,13 @@
     },
     {
       "title": "Address recurring food quality complaints from guests",
-      "status": "ongoing",
+      "status": "escalated",
       "priority": 7.0,
       "dimension": "experience"
     },
     {
       "title": "Lean into service & hospitality — it's what guests are buying",
-      "status": "ongoing",
+      "status": "escalated",
       "priority": 7.0,
       "dimension": "experience"
     }
@@ -33,7 +33,7 @@
   "watch_items": [
     {
       "title": "Compliance record weakest in peer set — creates inspection exposure",
-      "status": "ongoing"
+      "status": "escalated"
     },
     {
       "title": "Monitor local competitor openings and closures",

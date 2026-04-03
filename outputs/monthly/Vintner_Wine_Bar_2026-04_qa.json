@@ -11,10 +11,25 @@
     "tripadvisor": true,
     "companies_house": false
   },
+  "independent_sources": {
+    "count": 3,
+    "platforms": [
+      "FSA",
+      "Google",
+      "TripAdvisor"
+    ]
+  },
+  "review_confidence": {
+    "tier": "directional",
+    "review_text_count": 25,
+    "source_count": 2,
+    "can_claim_themes": true,
+    "can_claim_proposition": true
+  },
   "section_completeness": {
     "executive_summary": {
       "present": true,
-      "lines": 8,
+      "lines": 14,
       "meets_minimum": true
     },
     "management_priorities": {
@@ -44,7 +59,7 @@
     },
     "dimension_diagnosis": {
       "present": true,
-      "lines": 30,
+      "lines": 26,
       "meets_minimum": true
     },
     "commercial_diagnosis": {
@@ -59,7 +74,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 48,
+      "lines": 50,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -73,13 +88,13 @@
       "meets_minimum": true
     },
     "market_intelligence": {
-      "present": false,
-      "lines": 0,
-      "meets_minimum": false
+      "present": true,
+      "lines": 4,
+      "meets_minimum": true
     },
     "monitoring_plan": {
       "present": true,
-      "lines": 10,
+      "lines": 9,
       "meets_minimum": true
     },
     "data_coverage": {
@@ -89,7 +104,7 @@
     },
     "evidence_appendix": {
       "present": true,
-      "lines": 21,
+      "lines": 22,
       "meets_minimum": true
     }
   },
@@ -102,5 +117,6 @@
   "validation_errors": [],
   "validation_warnings": [],
   "confidence_level": "high",
-  "report_lines": 269
+  "evidence_provenance_present": true,
+  "report_lines": 279
 }
