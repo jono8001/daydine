@@ -150,7 +150,16 @@ def compute_peer_benchmarks(venue_card, all_cards):
         )
         ring_result["top_peers"] = [
             {"name": p["name"], "overall": p["overall"],
-             "category": p["category"]}
+             "category": p["category"], "fhrsid": str(p.get("fhrsid", "")),
+             "experience": p.get("experience"),
+             "visibility": p.get("visibility"),
+             "trust": p.get("trust"),
+             "conversion": p.get("conversion"),
+             "prestige": p.get("prestige"),
+             "google_rating": p.get("google_rating"),
+             "google_reviews": p.get("google_reviews"),
+             "fsa_rating": p.get("fsa_rating"),
+             "price_level": p.get("price_level")}
             for p in sorted_peers[:5]
         ]
 
