@@ -1,33 +1,56 @@
-# UK Restaurant Tracker — Methodology Specification V3.2 (Corrective)
+# UK Restaurant Tracker — Methodology Specification V3.3
 
-*DayDine RCS (Restaurant Confidence Score) — Version 3.2*
-*Last updated: 31 March 2026*
+*DayDine RCS (Restaurant Confidence Score)*
+*Last updated: 3 April 2026*
 
 ---
 
-## 1. Overview
+## 1. What This Product Is
 
-The Restaurant Confidence Score (RCS) is a composite 0.000–10.000 score that ranks UK restaurants by combining **40 signals** across **8 weighted tiers**. The methodology is transparent, auditable, and designed to surface inconsistencies between data sources while rewarding convergence.
+DayDine produces **external blind-spot reports** for premium independent restaurants and small multi-site operators. Every signal is publicly observable — no POS integration, no internal data feeds, no operator-side instrumentation.
+
+The report answers: *what can a well-informed outsider see about your business that you may be missing?*
+
+### What the report is not
+
+- Not a full internal operating dashboard. It cannot see covers, labour cost, or GP%.
+- Not a replacement for mystery dining, internal audits, or management accounts.
+- Not a compliance tool — it surfaces public compliance signals, not inspection detail.
 
 ### Design Principles
 
-1. **Multi-source**: No single data source dominates. Google reviews are capped at 30% effective weight.
-2. **Verifiable**: Every signal traces to a public data source (FSA, Google Places, TripAdvisor, Companies House).
-3. **Penalise risk**: Critical food safety or business viability issues trigger hard score caps.
-4. **Reward completeness**: Establishments with more data get higher confidence ratings.
-5. **Unique rankings**: Every restaurant gets a numerically distinct score — no ties.
+1. **Multi-source.** No single data source dominates. Google reviews are capped at 30% effective weight.
+2. **Verifiable.** Every signal traces to a public data source (FSA, Google Places, TripAdvisor, Companies House).
+3. **Penalise risk.** Critical food safety or business viability issues trigger hard score caps.
+4. **Confidence from coverage.** Establishments with more signals and more independent sources get higher confidence ratings.
+5. **Diagnosis over score.** The RCS score exists to power structured diagnosis. The report leads with actions and commercial lenses, not the number.
 
-### Score Scale
+---
+
+## 2. Commercial Lenses
+
+The report is organised around four commercial lenses. Each lens maps to underlying scoring dimensions and signals, but the report itself is framed in operator language, not data-science labels.
+
+| Commercial Lens | What It Answers | Primary Dimensions | Key Signals |
+|---|---|---|---|
+| **Demand Capture** | Are you converting interest into visits? | Visibility, Conversion | Google review count, GBP completeness, opening hours, menu online, delivery/takeaway, booking signal |
+| **Proposition & Guest Signal** | What are guests actually buying — and is it what you think you sell? | Experience | Google rating, TripAdvisor rating, aspect sentiment, review themes, FSA food hygiene sub-score |
+| **Trust & Public Risk** | What does the public compliance record say about risk? | Trust | FSA hygiene rating, structural compliance, management confidence, inspection recency |
+| **Competitive Market Intelligence** | How do you sit relative to your local and category peers? | All (peer-relative) | Peer percentile, dimension gaps, competitor scores, market density |
+
+**Prestige** (editorial recognition: Michelin, AA, local awards) is tracked as a signal within Reputation & Awards but is **not** a headline lens. Most premium independents have zero editorial recognition; prestige is a long-cycle outcome, not an operational lever.
+
+---
+
+## 3. Score Scale
 
 | Property | Value |
 |---|---|
 | Range | 0.000 – 10.000 |
 | Precision | 3 decimal places |
-| Uniqueness | Guaranteed — tiebreaker system ensures no two restaurants share a score |
+| Uniqueness | Guaranteed — tiebreaker system ensures no two restaurants share a rank |
 
----
-
-## 2. Rating Bands
+### Rating Bands
 
 | Band | RCS Range | Description |
 |---|---|---|
@@ -38,201 +61,141 @@ The Restaurant Confidence Score (RCS) is a composite 0.000–10.000 score that r
 | Major Improvement | 2.000 – 3.499 | Critical issues; enforcement actions or consistently poor ratings |
 | Urgent Improvement | 0.000 – 1.999 | Severe safety or viability concerns |
 
+The score supports diagnosis but does not headline the report. Reports lead with the top commercial leaks and recommended actions; the score provides the structural backbone.
+
 ---
 
-## 3. Tier Structure (8 Tiers, 40 Signals)
+## 4. Signal Architecture
 
-### 3.1 Tier 1: Food Safety Authority (FSA) — Weight 20%
+### 4.1 Provenance Classification
 
-**Source**: FSA Ratings API + Firebase RTDB
-**SCP**: 0.92 (statutory data, high reliability)
+Every signal is tagged with one of four provenance levels:
 
-| Signal | Normalisation | Weight within tier |
+| Provenance | Definition | Example |
 |---|---|---|
-| Hygiene rating (0-5) | `rating / 5` → 0-1 | 40% |
-| Structural compliance (0-25, inverted) | `(25 - raw) / 25` → 0-1 | 20% |
-| Confidence in management (0-20, inverted) | `(20 - raw) / 20` → 0-1 | 20% |
-| Food hygiene sub-score (0-25, inverted) | `(25 - raw) / 25` → 0-1 | 20% |
-| Inspection recency | Days since last inspection | Penalty modifier |
+| **observed** | Directly collected from an authoritative API or public source | FSA hygiene rating, Google star rating, TripAdvisor review count |
+| **derived** | Computed from observed signals using a defined formula | GBP completeness score (10-attribute check), aspect sentiment scores (NLP on review text) |
+| **inferred** | Estimated from indirect evidence; lower confidence | Website/Facebook/Instagram presence inferred from Google review volume and business type |
+| **not_assessed** | Signal defined in the methodology but not yet collected for this establishment | Companies House status (when API key unavailable) |
 
-**Recency penalties:**
-- \>365 days: -5% of tier score
-- \>730 days: -10% of tier score
+Provenance affects **confidence grading** (see §6) but does not discount the score itself. Inferred signals carry full weight in scoring; the confidence band communicates how much trust to place in the overall result.
 
-**FSA data augmentation:**
-- Primary source: Firebase RTDB (`la = "Stratford-on-Avon"`)
-- Augmented via FSA API (LA ID: 320) for business types 1, 7, 14, 7843
-- Known-restaurants safety net ensures critical venues are never missed
-- Enforcement actions checked per FHRSID via FSA API
+### 4.2 Tier Structure (6 Active Tiers + 1 Penalty-Only)
 
-### 3.2 Tier 2: Google Signals — Weight 25% (capped at 30% effective)
+| Tier | Weight | Source | Provenance | Signals |
+|---|---|---|---|---|
+| 1. FSA | 23% | FSA Ratings API / Firebase | observed | 5 |
+| 2. Google | 24% | Google Places API (New) | observed + derived | 11 |
+| 3. Online Presence (TripAdvisor) | 13% | Apify TripAdvisor Scraper | observed (when collected) / not_assessed (when pending) | 4–7 |
+| 4. Operational | 15% | Google Places API (types + hours) | observed + inferred | 6 |
+| 5. Menu & Offering | 10% | Google Places / website scrape | observed + inferred | 4 |
+| 6. Reputation & Awards | 8% | Michelin Guide, AA, local press | observed | 3 |
+| 7. Companies House | penalty-only | Companies House API | observed (when available) / not_assessed | 5 |
 
-**Source**: Google Places API (New) — Text Search
-**SCP**: 0.72 (large corpus, but susceptible to review manipulation)
+**Removed tiers:** Community & Engagement (former Tier 7) was removed in V3.2. It was entirely computed from proxy signals already present in Tiers 1–3 and had no directly observed data. Its weight was redistributed to FSA (+2%) and Reputation (+3%).
 
-| Signal | Normalisation | Weight within tier |
-|---|---|---|
-| Star rating (1-5) | `rating / 5` → 0-1 | 20% |
-| Food Quality aspect score | Keyword NLP, 0-1 | 5% |
-| Service Quality aspect score | Keyword NLP, 0-1 | 5% |
-| Ambience aspect score | Keyword NLP, 0-1 | 5% |
-| Value Perception aspect score | Keyword NLP, 0-1 | 5% |
-| Wait Time aspect score | Keyword NLP, 0-1 | 5% |
-| Overall review sentiment | Keyword analysis, 0-1 | 10% |
-| Review count | `log10(count) / log10(1000)`, cap 1.0 | 20% |
-| Price level (1-4) | `level / 4` → 0-1 | 5% |
-| Photos count | `min(count, 10) / 10` → 0-1 | 5% |
-| Place types | Binary presence = 1.0 | 5% |
+---
 
-**Google weight cap:**
-When re-normalisation (due to missing tiers) would push Google's effective weight above 30%, the excess is redistributed proportionally to other active tiers. This prevents Google from dominating when tiers like Online Presence have sparse data.
+### 4.3 Tier Detail
 
-**Aspect-based NLP sentiment (5 sub-scores):**
-Each aspect is scored by counting positive and negative keyword matches in combined Google + TripAdvisor review text:
+#### Tier 1: Food Safety Authority (FSA) — 23%
 
-| Aspect | Positive keywords (sample) | Negative keywords (sample) | SCP |
+| Signal | Normalisation | Weight within tier | Provenance |
 |---|---|---|---|
-| Food Quality | delicious, tasty, fresh, perfectly cooked, authentic | bland, tasteless, stale, undercooked, burnt, inedible | 0.60 |
-| Service Quality | friendly, attentive, professional, great service | rude, unfriendly, ignored, slow service, unprofessional | 0.58 |
-| Ambience | great atmosphere, cosy, charming, clean, spotless | noisy, cramped, dirty, dingy, run down | 0.55 |
-| Value Perception | good value, worth every penny, generous portions | overpriced, rip off, small portions, extortionate | 0.57 |
-| Wait Time | quick, prompt, efficient, seated immediately | long wait, waited an hour, took ages, forgot our order | 0.62 |
+| Hygiene rating (0–5) | `rating / 5` → 0–1 | 40% | observed |
+| Structural compliance (0–25, inverted) | `(25 - raw) / 25` → 0–1 | 20% | observed |
+| Confidence in management (0–20, inverted) | `(20 - raw) / 20` → 0–1 | 20% | observed |
+| Food hygiene sub-score (0–25, inverted) | `(25 - raw) / 25` → 0–1 | 20% | observed |
+| Inspection recency | Days since last inspection → penalty modifier | — | observed |
 
-Formula per aspect: `score = positive_matches / (positive_matches + negative_matches)`
-Score is 0-1 where 0 = all negative, 1 = all positive, None = no mentions.
+Inspection recency penalties: >365 days: −5% of tier score. >730 days: −10%.
 
-**Overall sentiment scoring:**
-```
-base = 0.5
-+ 0.05 per positive phrase (e.g. "amazing", "highly recommend")
-- 0.08 per moderate negative (e.g. "disappointing", "bland")
-- 0.15 per red flag (e.g. "food poisoning", "cockroach", "health hazard")
-Clamped to [0.0, 1.0]
-```
+#### Tier 2: Google Signals — 24% (capped at 30% effective)
 
-**Red flag system:**
-32 critical phrases trigger red flags. 2+ red flags on a single establishment generate a WARNING in the report. Red flag phrases include: "food poisoning", "cockroach", "hair in food", "disgusting", "never again", "health hazard", "rude staff", "avoid at all costs".
+| Signal | Normalisation | Weight within tier | Provenance |
+|---|---|---|---|
+| Star rating (1–5) | `rating / 5` → 0–1 | 20% | observed |
+| Food Quality aspect score | Keyword NLP, 0–1 | 5% | derived |
+| Service Quality aspect score | Keyword NLP, 0–1 | 5% | derived |
+| Ambience aspect score | Keyword NLP, 0–1 | 5% | derived |
+| Value Perception aspect score | Keyword NLP, 0–1 | 5% | derived |
+| Wait Time aspect score | Keyword NLP, 0–1 | 5% | derived |
+| Overall review sentiment | Keyword analysis, 0–1 | 10% | derived |
+| Review count | `log10(count) / log10(1000)`, cap 1.0 | 20% | observed |
+| Price level (1–4) | `level / 4` → 0–1 | 5% | observed |
+| Photos count | `min(count, 10) / 10` → 0–1 | 5% | observed |
+| Place types | Binary presence = 1.0 | 5% | observed |
 
-### 3.3 Tier 3: Online Presence — Weight 20%
+**Google weight cap:** When re-normalisation (due to missing tiers) would push Google's effective weight above 30%, the excess is redistributed proportionally to other active tiers.
 
-**Sources**: Google Places (inferred), TripAdvisor (Apify API)
-**SCP**: 0.55–0.68
+**Cross-tier dependency cap:** Tiers 2, 3, 4, and 5 all derive some signals from Google data. Combined Google-derived influence is capped at 45% effective weight with an explicit audit trail.
 
-| Signal | Normalisation | Weight within tier |
+**Red flag system:** 32 critical phrases trigger red flags in review text. 2+ red flags generate a WARNING.
+
+#### Tier 3: Online Presence — 13% (TripAdvisor-primary)
+
+| Signal | Normalisation | Weight within tier | Provenance |
+|---|---|---|---|
+| TripAdvisor presence | Boolean | 15% | observed (when collected) |
+| TripAdvisor rating (1–5) | `rating / 5` → 0–1 | 30% | observed (when collected) |
+| TripAdvisor review count | `log10(count) / log10(1000)`, cap 1.0 | 25% | observed (when collected) |
+| TripAdvisor review recency | Fraction of reviews < 6 months old | 15% | observed (when collected) |
+| Has website | Boolean (inferred from Google data) | — | inferred (confidence layer only) |
+| Has Facebook | Boolean (inferred) | — | inferred (confidence layer only) |
+| Has Instagram | Boolean (inferred) | — | inferred (confidence layer only) |
+
+Website/Facebook/Instagram presence contributes to the **confidence grade** but not the headline RCS score. These are inferred signals with no direct validation.
+
+#### Tier 4: Operational Signals — 15%
+
+| Signal | Normalisation | Weight within tier | Provenance |
+|---|---|---|---|
+| Accepts reservations | Boolean | 16.7% | inferred |
+| Offers delivery | Boolean | 16.7% | observed (from Google type) or inferred |
+| Offers takeaway | Boolean | 16.7% | observed (from Google type) or inferred |
+| Wheelchair accessible | Boolean | 16.7% | observed (when available) |
+| Has parking | Boolean | 16.7% | inferred |
+| Opening hours completeness | `len(hours) / 7` → 0–1 | 16.7% | observed |
+
+#### Tier 5: Menu & Offering — 10%
+
+| Signal | Normalisation | Weight within tier | Provenance |
+|---|---|---|---|
+| Has menu online | Boolean | 30% | observed (when scraped) or inferred |
+| Dietary options count | `min(count, 5) / 5` → 0–1 | 20% | observed (when scraped) |
+| Cuisine tags count | `min(count, 3) / 3` → 0–1 | 20% | derived (from Google types) |
+| GBP completeness score | 10-attribute check / 10 → 0–1 | 30% | derived |
+
+#### Tier 6: Reputation & Awards — 8%
+
+| Signal | Normalisation | Weight within tier | Provenance |
+|---|---|---|---|
+| Michelin mention (star/bib/plate) | Boolean | 40% | observed |
+| AA Rosette rating | Boolean | 35% | observed |
+| Local awards count | `min(count, 3) / 3` → 0–1 | 25% | observed |
+
+#### Tier 7: Companies House — Penalty-Only
+
+Companies House signals operate as **penalty multipliers** on the final score, not as a weighted tier component.
+
+| Signal | Penalty | Provenance |
 |---|---|---|
-| Has website | Boolean (inferred from Google) | 15% |
-| Has Facebook | Boolean (inferred from review volume + type) | 10% |
-| Has Instagram | Boolean (inferred from type + review volume) | 10% |
-| TripAdvisor presence | Boolean (from Apify scrape) | 15% |
-| TripAdvisor rating (1-5) | `rating / 5` → 0-1 | 20% |
-| TripAdvisor review count | `log10(count) / log10(1000)`, cap 1.0 | 15% |
-| TripAdvisor review recency | Fraction of reviews < 6 months old | 15% |
+| Company dissolved | Cap at 3.0 | observed (when available) |
+| Company in liquidation | Cap at 5.0 | observed (when available) |
+| Accounts overdue | −0.5 absolute | observed (when available) |
+| 3+ director changes in 12 months | −12% | observed (when available) |
 
-**TripAdvisor data collection:**
-- Primary: Apify TripAdvisor Scraper (`automation-lab/tripadvisor-scraper`)
-- Cost: ~$0.003/review, ~$0.50 per full run
-- Fallback: Direct scraper (blocked by TA, kept as backup)
-- Fuzzy name matching (difflib, threshold 0.5) confirms correct restaurant
-- Up to 5 review texts extracted per establishment for sentiment analysis
-
-**Web presence inference:**
-Website, Facebook, and Instagram presence are inferred from Google Places data rather than actively scraped:
-- Chains (Costa, Starbucks, etc.) → assumed all three
-- Restaurants with 100+ Google reviews → assumed website + Facebook
-- Cafes/bakeries with 50+ reviews → assumed Instagram
-
-### 3.4 Tier 4: Operational Signals — Weight 15%
-
-**Source**: Google Places API (types + opening hours)
-**SCP**: 0.65
-
-| Signal | Normalisation | Weight within tier |
-|---|---|---|
-| Accepts reservations | Boolean | 16.7% |
-| Offers delivery | Boolean (or inferred from `food_delivery` type) | 16.7% |
-| Offers takeaway | Boolean (or inferred from `meal_takeaway` type) | 16.7% |
-| Wheelchair accessible | Boolean | 16.7% |
-| Has parking | Boolean | 16.7% |
-| Opening hours completeness | `len(goh) / 7` → 0-1 (7 days = complete) | 16.7% |
-
-### 3.5 Tier 5: Menu & Offering — Weight 10%
-
-**Sources**: Google Places types, website scraping, GBP profile
-**SCP**: 0.58–0.62
-
-| Signal | Normalisation | Weight within tier |
-|---|---|---|
-| Has menu online | Boolean (inferred or scraped) | 30% |
-| Dietary options count | `min(count, 5) / 5` → 0-1 | 20% |
-| Cuisine tags count | `min(count, 3) / 3` → 0-1 (from Google types) | 20% |
-| GBP completeness score | 10-attribute check / 10 → 0-1 (SCP 0.62) | 30% |
-
-**GBP Completeness attributes (10 checks):**
-1. Has rating
-2. Has reviews (count > 0)
-3. Has photos (count > 0)
-4. Has opening hours
-5. Has price level
-6. Has place types
-7. Has Google Place ID
-8. Review count ≥ 10
-9. Review count ≥ 100
-10. Has website
-
-### 3.6 Tier 6: Reputation & Awards — Weight 5%
-
-**Sources**: Michelin Guide (web search), AA Restaurant Guide, local press
-**SCP**: 0.85–0.93
-
-| Signal | Normalisation | Weight within tier |
-|---|---|---|
-| Michelin mention (star/bib/plate) | Boolean | 33.3% |
-| AA Rosette rating | Boolean | 33.3% |
-| Local awards count | `min(count, 3) / 3` → 0-1 | 33.3% |
-
-### 3.7 Tier 7: Community & Engagement — Weight 5%
-
-**Sources**: Computed from existing data (recency, review volume, presence breadth)
-**SCP**: 0.55
-
-| Signal | Normalisation | Weight within tier |
-|---|---|---|
-| Responds to reviews | Boolean | 25% |
-| Average response time | <1 day=1.0, <3d=0.7, <7d=0.4, else 0.1 | 25% |
-| Community events | Boolean | 25% |
-| Loyalty program | Boolean | 25% |
-
-**Computed fallback** (when no explicit fields available):
-- Inspection recency: <180d=1.0, <365d=0.8, <730d=0.5, else 0.2
-- Review volume: `log10(google + TA reviews) / log10(2000)`
-- Presence breadth: `count(gr, ta, web, fb, ig present) / 4`
-
-### 3.8 Tier 8: Business Viability (Companies House) — Penalty Rules
-
-**Source**: Companies House API (free, `api.company-information.service.gov.uk`)
-**SCP**: 0.94 (statutory company data)
-
-This tier operates as **penalty multipliers** on the final score, not as a weighted tier component. Business viability issues are binary risks that should override quality signals.
-
-| Signal | Penalty | Effect |
-|---|---|---|
-| Company dissolved | Score → 0.0 | Hard floor — dissolved company cannot operate |
-| Company in liquidation | Score × 0.50 | Severe — business winding down |
-| Insolvency history | Score × 0.50 | Major risk indicator |
-| Accounts overdue | Score × 0.82 | Financial stress signal |
-| 3+ director changes in 12 months | Score × 0.88 | Governance instability |
-
-**Matching**: Fuzzy name matching (difflib, threshold 0.5) with postcode area bonus. SIC codes 56101/56102/56103 confirm food service registration.
+**Launch status:** Companies House data requires a `COMPANIES_HOUSE_API_KEY`. When the key is unavailable, all Companies House signals are `not_assessed` and no penalties are applied. The report's Data Coverage section will state this explicitly. This does not affect the RCS score but does affect the confidence grade.
 
 ---
 
-## 4. Scoring Pipeline
+## 5. Scoring Pipeline
 
-### 4.1 Stage 1: Signal Collection
+### Stage 1: Signal Collection
 
 ```
-Firebase RTDB → FSA data (208 establishments)
-FSA API (LA 320) → Augment with pubs/bars/takeaways
+Firebase RTDB → FSA data
+FSA API (LA-specific) → Augment with pubs/bars/takeaways
 Google Places API → Rating, reviews, photos, types, review text
 Apify API → TripAdvisor rating, reviews, cuisine, ranking
 Web inference → Website, Facebook, Instagram presence
@@ -240,303 +203,172 @@ GBP check → Profile completeness score
 Menu scrape → Cuisine tags, dietary options
 Editorial check → Michelin, AA, local awards
 FSA enforcement → Enforcement actions
-Companies House → Business status, accounts, directors
+Companies House → Business status, accounts, directors (when key available)
 ```
 
-### 4.2 Stage 2: Normalisation
+### Stage 2: Normalisation
 
-All signals normalised to 0-1 scale within their tier. Missing signals are skipped, and the tier is re-weighted across available signals only.
+All signals normalised to 0–1 within their tier. Missing signals are skipped; the tier is re-weighted across available signals only.
 
-### 4.3 Stage 3: Weighted Aggregation
+### Stage 3: Weighted Aggregation
 
 ```
 For each tier with data:
     tier_score = Σ(signal_weight × signal_value) / Σ(signal_weight)
-    (re-weighted across available signals)
 
 effective_weights = normalise(TIER_WEIGHTS for active tiers)
 if effective_weights["google"] > 0.30:
     redistribute excess to other tiers
+if combined_google_derived > 0.45:
+    redistribute excess to non-Google tiers
 
 rcs_raw = Σ(effective_weight[tier] × tier_score[tier]) × 10
 ```
 
-### 4.4 Stage 4: Penalty Application
+### Stage 4: Penalty Application
 
-```
-Apply in order:
-    FSA 0-1:        cap at 2.0
-    FSA 2:          cap at 4.0
-    No inspection 3yr: -15%
-    Google < 2.0:   -10%
-    Zero reviews:   -5%
-    No online:      -10%
-    CH dissolved:   → 0.0
-    CH liquidation: × 0.50
-    CH insolvency:  × 0.50
-    CH overdue:     × 0.82
-    CH director churn: × 0.88
+Applied in order:
 
-rcs_final = clamp(penalised_score, 0, 10)
-```
+| Condition | Effect |
+|---|---|
+| FSA rating 0–1 | Cap at 2.0 |
+| FSA rating 2 | Cap at 4.0 |
+| FSA rating 3 + stale inspection (>2yr) | Cap at 7.0 |
+| No inspection in 3+ years | −15% |
+| Google rating < 2.0 | −10% |
+| Google rating 2.0–2.9 | −5% |
+| Zero Google reviews | −5% |
+| Very few reviews (<5 combined) | −3% |
+| No photos | −3% |
+| No online presence | −10% |
+| TripAdvisor rating < 2.5 | −5% |
+| No opening hours (with Google data) | −3% |
+| 3+ red flags | −15% |
+| Google and TA diverge by >2 stars | −5% |
+| Company dissolved | Cap at 3.0 |
+| Company in liquidation | Cap at 5.0 |
+| Accounts overdue | −0.5 absolute |
+| 3+ director changes in 12 months | −12% |
 
-### 4.5 Stage 5: Tiebreaker & Ranking
+`rcs_final = clamp(penalised_score, 0, 10)`
 
-After scoring all establishments, ensure unique rankings:
+### Stage 5: Tiebreaker & Ranking
 
 1. Sort by `rcs_final` descending
-2. Break ties using (in order):
-   a. Higher FSA hygiene rating
-   b. More recent inspection date
-   c. Higher structural compliance score
-   d. Higher confidence in management score
-   e. Alphabetical by business name
-3. Walk-down algorithm: each score must be strictly less than the one above (offset 0.001)
-4. Zero-floor re-spacing for bottom records
-5. Assign sequential ranks 1..N
+2. Break ties using (in order): signal count → FSA hygiene rating → inspection recency → structural compliance → management confidence → alphabetical
+3. Assign sequential ranks 1..N
 
-### 4.6 Stage 6: Confidence Assessment
+Scores are raw (ties allowed in `rcs_final`). Rank breaks ties; scores are not walk-down adjusted.
 
-| Level | Criteria | Margin |
-|---|---|---|
-| High | 20+ signals, 5+ tiers active | ±0.3 |
-| Medium | 14+ signals, 4+ tiers active | ±0.5 |
-| Low | 8+ signals | ±0.8 |
-| Insufficient | <8 signals | Not ranked |
+### Stage 6: Temporal Decay
 
----
+Exponential decay `e^(−λt)` applied to time-sensitive signals:
 
-## 5. Non-Food Exclusion Filter
+- **FSA inspection age:** λ = 0.0023 (~300-day half-life). Blended: 80% raw + 20% decay-adjusted.
+- **Google review recency:** λ = 0.0046 (~150-day half-life) applied to review volume signal when latest review date is available.
 
-Establishments verified as non-food businesses are excluded from rankings:
+### Stage 7: Cross-Source Convergence
 
-**Exclusion logic (priority order):**
-1. Name blacklist: Slimming World, football clubs, Aston Martin, golf clubs, churches, horse sanctuaries
-2. Google food types present → **include** (overrides all below)
-3. FSA rating 3+ → **include** (overrides Google misclassification)
-4. Food keywords in name (cafe, restaurant, kitchen, etc.) → **include**
-5. Google non-food types (gym, insurance, real estate) → **exclude**
-6. Sports clubs with no food evidence → **exclude**
+Compares normalised ratings from independent sources (FSA, Google, TripAdvisor) pairwise:
 
-Excluded establishments are marked "Not Ranked" in the CSV output.
-
----
-
-## 6. Category Classification (3-Tier)
-
-### Tier 1: Google Place Types (primary)
-Maps Google `*_restaurant` types to 21 categories (Indian, Italian, Chinese, Pub/Bar, Cafe, etc.)
-
-### Tier 2: Name-Based Keyword Matching (fallback)
-32 keyword groups with pub name pattern matching (word-boundary safe).
-
-### Tier 3: Web Lookup (stub)
-External script for remaining "Other" classifications.
-
----
-
-## 7. Data Sources & Collection
-
-| Source | Method | Cost | Rate Limit |
-|---|---|---|---|
-| Firebase RTDB | REST API (public read) | Free | None |
-| FSA API | REST API (public) | Free | ~10 req/sec |
-| Google Places API (New) | Text Search | Per-request billing | 10 req/sec |
-| Apify TripAdvisor | Actor API | ~$0.003/review | Account limits |
-| Companies House API | REST API | Free | 600 req/5min |
-| Michelin Guide | Web scrape | Free | Throttled 2-3s |
-
----
-
-## 8. Current Coverage (Stratford-upon-Avon Trial)
-
-| Metric | Value |
+| Condition | Adjustment |
 |---|---|
-| Establishments | 209 |
-| Ranked (food service) | 197 |
-| Excluded (non-food) | 12 |
-| Signals per record (avg) | 19.0 / 40 (47.5%) |
-| Tiers active | 7 / 8 |
-| Tiers with full coverage | FSA, Google, Online (inferred), Reputation, Community |
-| Tiers with partial coverage | Operational (83%), Menu (76%) |
-| Tiers pending | Companies House (needs API key) |
+| Converged (avg divergence ≤ 0.10) | +3% bonus |
+| Neutral (0.10–0.20) | No change |
+| Mild divergence (0.20–0.30) | −3% |
+| Strong divergence (> 0.30) | −5% |
 
-### Tier-by-Tier Coverage
+Requires ≥ 2 sources. Single-source establishments get no adjustment.
 
-| Tier | Weight | Coverage | Source Status |
+---
+
+## 6. Confidence & Coverage
+
+### Report Confidence
+
+Confidence grades reflect how much data underlies the assessment. They govern the margin of uncertainty communicated to the operator.
+
+| Level | Criteria | Margin | Meaning |
 |---|---|---|---|
-| FSA (Tier 1) | 20% | 98% (205/209) | Live |
-| Google (Tier 2) | 25% | 99% (208/209) | Live |
-| Online Presence (Tier 3) | 20% | 100% (inferred) | Live (web) + Pending (TA via Apify) |
-| Operational (Tier 4) | 15% | 83% (173/209) | Inferred from Google |
-| Menu & Offering (Tier 5) | 10% | 76% (158/209) | Live |
-| Reputation (Tier 6) | 5% | 100% (209/209) | Live |
-| Community (Tier 7) | 5% | 100% (209/209) | Computed |
-| Business Viability (Tier 8) | Penalties | 0% | Needs COMPANIES_HOUSE_API_KEY |
+| High | 20+ signals available, 5+ tiers active, 2+ independent observed sources | ±0.3 | Score is well-supported; diagnosis is reliable |
+| Medium | 14+ signals, 4+ tiers active | ±0.5 | Core dimensions covered; some lenses limited |
+| Low | 8+ signals | ±0.8 | Directional only; material gaps remain |
+| Insufficient | < 8 signals | Not ranked | Cannot produce a meaningful score |
 
----
+**Source independence matters.** FSA + Google + TripAdvisor are independent. Google + Google-inferred operational signals are not independent — they count as one source for confidence purposes.
 
-## 9. Environment Variables
+### Coverage Penalty
 
-| Variable | Purpose | Where to set |
-|---|---|---|
-| `GOOGLE_PLACES_API_KEY` | Google Places API enrichment + sanity check | GitHub repo secret |
-| `APIFY_TOKEN` | TripAdvisor data via Apify scraper | GitHub repo secret |
-| `COMPANIES_HOUSE_API_KEY` | Companies House business viability check | GitHub repo secret |
-
----
-
-## 10. Pipeline Execution
-
-### GitHub Actions Workflow: `full_pipeline.yml`
-
-```
-1. Fetch FSA data from Firebase RTDB
-2. Augment with FSA API (types 1, 7, 14, 7843)
-3. Enrich with Google Places API (rating, reviews, photos, types, review text)
-4. Check web presence (website/FB/IG inference)
-5. Score GBP completeness
-6. Collect TripAdvisor data (Apify) [continue-on-error]
-7. Merge TripAdvisor data + compute review recency
-8. Collect menu data (cuisine tags, dietary options)
-9. Collect editorial data (Michelin, AA, awards)
-10. Check FSA enforcement actions
-11. Check Companies House business viability [continue-on-error]
-12. Run aspect-based sentiment analysis
-13. Run V3 RCS scoring engine
-14. Run sanity check (coverage validation)
-15. Commit all results
-```
-
-### Output Files
-
-| File | Description |
+| Condition | Effect |
 |---|---|
-| `stratford_rcs_scores.csv` | Full ranked results with per-tier scores |
-| `stratford_rcs_summary.json` | Summary statistics, band distribution, category rankings |
-| `stratford_rcs_report.md` | Human-readable report with all sections |
-| `stratford_establishments.json` | Enriched establishment data |
-| `stratford_google_enrichment.json` | Raw Google Places API results |
-| `stratford_tripadvisor.json` | TripAdvisor scrape results |
-| `stratford_sentiment.json` | Aspect-based sentiment analysis |
-| `stratford_sanity_report.json` | Data quality validation report |
+| Missing both FSA and Google | ×0.85 |
+| Missing FSA only | ×0.92 |
+| Missing Google only | ×0.95 |
+
+No upward bonus for high coverage. Confidence grade communicates completeness; the score is not inflated for data richness.
 
 ---
 
-## 11. V3.1 Enhancements
+## 7. Non-Food Exclusion Filter
 
-### 11.1 Coverage Bonus/Penalty
+Establishments verified as non-food businesses are excluded from rankings.
 
-A coverage multiplier adjusts the raw score based on signal density:
+**Priority order:**
+1. Name blacklist (Slimming World, football clubs, etc.) → exclude
+2. Google food types present → include (overrides all below)
+3. FSA rating 3+ → include (overrides Google misclassification)
+4. Food keywords in name → include
+5. Google non-food types (gym, insurance, etc.) → exclude
+6. Sports clubs with no food evidence → exclude
 
-```
-coverage = signals_available / signals_in_active_tiers
-
-If coverage < 40%: raw_score × 0.90 (sparse data penalty)
-If coverage > 70%: raw_score × 1.05 (rich data bonus, capped at 10.0)
-```
-
-This rewards establishments with comprehensive data and penalises those scored from very few signals.
-
-### 11.2 Signal Provenance Weighting
-
-Every signal is tagged as either **observed** (directly from API/scrape) or **inferred** (derived from other data). Inferred signals carry **70% of their nominal weight**.
-
-Currently inferred tiers:
-- **Tier 3 (Online Presence)**: web, Facebook, Instagram presence are inferred from Google data
-- **Tier 7 (Community)**: entirely computed from inspection recency + review volume + presence breadth
-
-Effect: Inferred tiers contribute less to the final score until they are populated with directly observed data (e.g. actual TripAdvisor scrape results replace inferred presence).
-
-### 11.3 Google Cross-Tier Dependency Cap
-
-Tiers 2 (Google), 3 (Online — partially Google-inferred), 4 (Operational — Google types), and 5 (Menu — Google types + GBP) all derive some signals from Google data.
-
-**Two-stage cap:**
-1. Tier 2 (Google) alone: max **30%** effective weight
-2. All Google-derived tiers combined: max **45%** effective weight
-
-If re-normalisation pushes the combined Google-derived influence above 45%, excess is redistributed to non-Google tiers (FSA, Reputation, Community).
-
-### 11.4 FSA Data Reconciliation
-
-After FSA augmentation, our establishment count is compared against the FSA API total for LA 320 (Stratford-on-Avon). If the difference exceeds 5%, a `DATA_GAP` warning is flagged in the sanity report.
-
-### 11.5 Non-Food Classification Confidence
-
-Each keep/exclude decision now carries a confidence score (0-1):
-- **0.9**: Name blacklist match (e.g. "Football Club")
-- **0.8**: Google non-food type with no food types
-- **Reduced by 0.6×** if FSA rating ≥ 3 (may actually serve food)
-- **Reduced by 0.5×** if food keywords in name
-
-Decisions with confidence < 0.6 are flagged for manual review in the sanity report.
-
-### 11.6 Band Calibration Curve
-
-Target band distribution: Excellent ≤40%, Good 25-35%, Generally Satisfactory 15-25%.
-
-If Excellent exceeds 50% of ranked establishments, a gentle curve compression is applied:
-```
-For scores above 8.0:
-    score' = 8.0 + (score - 8.0) × 0.85
-```
-
-This compresses the top of the distribution without changing the relative ordering, improving score spread across bands.
+Excluded establishments are marked "Not Ranked" in output.
 
 ---
 
-## 12. V3.2 Corrective Changes
+## 8. Category Classification (3-Tier)
 
-The following changes were made in V3.2 based on external methodology review:
+1. **Google Place Types** (primary): maps `*_restaurant` types to 21 categories
+2. **Name-Based Keywords** (fallback): 32 keyword groups with word-boundary matching
+3. **Web Lookup** (stub): external script for remaining "Other" classifications
 
-### Removed from active scoring
-- **Community tier (Tier 7)**: entirely computed from proxy signals with no observed data. Its 5% weight redistributed to FSA (+2%) and Reputation (+3%).
-- **SCP (Source Credibility Priors)**: removed from active weighting logic. SCP values remain documented for reference but do not multiply tier weights.
-- **Inferred signal discount**: removed from score computation. Provenance now affects confidence grade only, not the RCS score itself.
-- **Band calibration curve**: removed. Scores reflect raw methodology output without artificial compression.
-- **Upward coverage bonus**: removed. Only downward penalties remain (for missing FSA or Google).
+---
 
-### Changed in active scoring
-- **Tier 3 (Online Presence)**: now **TripAdvisor-only** at 12% weight. Website/Facebook/Instagram moved to profile-completeness confidence layer (not part of headline RCS).
-- **Tier 6 (Reputation)**: weight increased 5%→8%. Internal weights rebalanced: Michelin 40%, AA 35%, local awards 25% (was equal thirds).
-- **Tier 1 (FSA)**: weight increased 20%→23% (from Tier 7 redistribution).
-- **Coverage penalty**: narrowed to FSA/Google gaps only. Missing both = 0.85x, missing FSA = 0.92x, missing Google = 0.95x. No upward bonus.
-- **Google 45% cross-tier cap**: now produces an explicit audit trail showing before/after weights and redistribution amounts.
-- **Tie-breaking**: scores are raw (ties allowed). Rank breaks ties by signal count, then FSA rating, then alphabetical. No walk-down score manipulation.
-- **Companies House penalties**: dissolved = cap 3.0, liquidation = cap 5.0, overdue accounts = -0.5 flat.
+## 9. Data Sources
 
-### V3.2 Tier Weights (sum = 0.93, normalised at runtime)
+| Source | Method | Cost | Provenance |
+|---|---|---|---|
+| Firebase RTDB | REST API (public read) | Free | observed |
+| FSA API | REST API (public) | Free | observed |
+| Google Places API (New) | Text Search | Per-request billing | observed |
+| Apify TripAdvisor | Actor API | ~$0.003/review | observed |
+| Companies House API | REST API | Free (when key available) | observed / not_assessed |
+| Michelin Guide | Web search | Free | observed |
 
-| Tier | Weight | Change from V3.1 |
+---
+
+## 10. Environment Variables
+
+| Variable | Purpose | Launch Status |
 |---|---|---|
-| FSA (Tier 1) | 23% | +3% |
-| Google (Tier 2) | 25% | — |
-| Online/TripAdvisor (Tier 3) | 12% | -8% (TA-only) |
-| Operational (Tier 4) | 15% | — |
-| Menu & Offering (Tier 5) | 10% | — |
-| Reputation (Tier 6) | 8% | +3% |
-| Community (Tier 7) | — | REMOVED |
-
-### Impact on Stratford trial
-- Excellent: 42.6% → **15.7%** (honest without community tier inflation)
-- Good: 42.9% → **71.6%** (majority band, as expected with partial data)
-- Score range: 2.000 – 8.932
+| `GOOGLE_PLACES_API_KEY` | Google Places API enrichment | Required |
+| `APIFY_TOKEN` | TripAdvisor data via Apify scraper | Required for Tier 3 |
+| `COMPANIES_HOUSE_API_KEY` | Companies House business viability | Optional — gracefully degraded when absent |
 
 ---
 
-## 13. Version History
+## 11. Version History
 
 | Version | Date | Changes |
 |---|---|---|
 | V1.0 | Feb 2026 | Initial 5-source scoring engine |
-| V2.0 | Mar 2026 | 35 signals, 7 tiers, 0-10 scale, unique rankings |
+| V2.0 | Mar 2026 | 35 signals, 7 tiers, 0–10 scale, unique rankings |
 | V2.1 | Mar 2026 | FSA 30%→20%, Google capped 30%, confidence bands |
 | V3.0 | Mar 2026 | 40 signals, 8 tiers, aspect NLP, GBP, TA recency, Companies House |
 | V3.1 | Mar 2026 | Coverage bonus/penalty, provenance weighting, cross-tier 45% cap, band calibration |
-| V3.2 | Mar 2026 | **Corrective**: remove Tier 7, SCP, inferred discount, band calibration, upward bonus. Tier 3 TripAdvisor-only. Tier 6 reweighted. Explicit audit trail. Raw scores (ties allowed). |
+| V3.2 | Mar 2026 | Corrective: removed Community tier, SCP, inferred discount, band calibration, upward bonus. Tier 3 TripAdvisor-only. Tier 6 reweighted. Raw scores (ties allowed). |
+| V3.3 | Apr 2026 | Repositioned as zero-integration external blind-spot product. 4 commercial lenses (Demand Capture, Proposition & Guest Signal, Trust & Public Risk, Competitive Market Intelligence). Prestige demoted from headline dimension. Provenance classification added (observed/derived/inferred/not_assessed). Confidence logic tightened to require source independence. Companies House described as gracefully degraded when unavailable. Removed legacy corrective notes and contradictory statements. |
 
 ---
 
-*This specification is maintained in the DayDine repository at `UK-Restaurant-Tracker-Methodology-Spec-V3.md`.*
+*This specification is maintained at `UK-Restaurant-Tracker-Methodology-Spec-V3.md`.*
 *The scoring engine implementation is in `rcs_scoring_stratford.py`.*
