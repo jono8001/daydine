@@ -17,7 +17,7 @@ from operator_intelligence.builders.actions_tracker import (
     build_watch_list,
     build_what_not_to_do,
     build_recommendation_tracker,
-    build_conditional_intelligence,
+    build_competitive_market_intelligence,
     build_data_coverage,
 )
 from operator_intelligence.builders.long_form import (

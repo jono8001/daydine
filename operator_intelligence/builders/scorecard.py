@@ -1,6 +1,7 @@
 """Dimension scorecard table builder."""
 
 DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
+HEADLINE_DIMS = ["experience", "visibility", "trust", "conversion"]
 
 
 def _fmt(val):
@@ -34,7 +35,7 @@ def build(w, scorecard, deltas, benchmarks):
         ring1 = benchmarks.get("ring1_local") or benchmarks.get("ring2_catchment") or {}
         ring1_dims = ring1.get("dimensions", {})
 
-    for dim in DIM_ORDER:
+    for dim in HEADLINE_DIMS:
         score = scorecard.get(dim)
         delta = deltas.get(dim) if deltas else None
         peer_avg = ring1_dims.get(dim, {}).get("peer_mean")
@@ -48,3 +49,13 @@ def build(w, scorecard, deltas, benchmarks):
     od = deltas.get("overall") if deltas else None
     w(f"| **Overall** | **{_fmt(overall)}** | **{_fmt_delta(od)}** | | | |")
     w("")
+
+    # Prestige as footnote — tracked but not a headline lever
+    prest = scorecard.get("prestige")
+    if prest is not None:
+        prest_peer = ring1_dims.get("prestige", {}).get("peer_mean")
+        note = f"{_fmt(prest)}/10"
+        if prest_peer is not None:
+            note += f" (peer avg {_fmt(prest_peer)})"
+        w(f"*Prestige (editorial recognition): {note} — tracked but not a headline "
+          f"operational lever for most independents.*\n")

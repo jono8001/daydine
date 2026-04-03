@@ -22,28 +22,50 @@ def build(w, venue_name, month_str, mode, scorecard, deltas,
     now = datetime.utcnow().strftime("%d %B %Y")
     overall = scorecard.get("overall")
 
-    w(f"# {venue_name} — Operator Intelligence Report")
+    w(f"# {venue_name} — External Blind-Spot Report")
     w(f"*{month_str} | Generated {now} | DayDine Premium*\n")
     w("---\n")
     w("## Executive Summary\n")
 
+    # --- Lead with top leaks / actions / risk ---
+    actions = recs.get("priority_actions", [])
+    watches = recs.get("watch_items", [])
+    dont = recs.get("what_not_to_do")
+
+    if actions:
+        w("**What needs attention now:**\n")
+        for i, a in enumerate(actions[:3], 1):
+            rt = a.get("rec_type", "action").upper()
+            w(f"{i}. **{a['title']}** [{rt}] — {a.get('expected_upside', '')}")
+        w("")
+
+    if watches:
+        w("**Watch this month:**")
+        for wa in watches[:2]:
+            w(f"- {wa['title']}")
+        w("")
+
+    if dont:
+        w(f"**Do not prioritise:** {dont['title']}\n")
+
+    # --- Score as context, not hero ---
     od = deltas.get("overall") if deltas else None
     if overall is not None:
-        w(f"**Overall Operator Score: {overall:.1f} / 10**{_arrow(od)}")
         if od is not None:
             direction = "up" if od > 0 else "down" if od < 0 else "unchanged"
-            w(f"*{_fmt_delta(od)} vs prior month ({direction})*\n")
+            w(f"**Overall score: {overall:.1f}/10** ({_fmt_delta(od)} vs prior month, {direction})")
         else:
-            w("*Baseline month — no prior period for comparison*\n")
+            w(f"**Overall score: {overall:.1f}/10** (baseline month — no prior comparison)")
 
-    dims = {d: scorecard.get(d) for d in DIM_ORDER if scorecard.get(d) is not None}
+    # Headline dimension — strongest and weakest (excluding prestige)
+    headline_dims = [d for d in DIM_ORDER if d != "prestige"]
+    dims = {d: scorecard.get(d) for d in headline_dims if scorecard.get(d) is not None}
     if dims:
         strongest = max(dims, key=dims.get)
         weakest = min(dims, key=dims.get)
-        gap = dims[strongest] - dims[weakest]
-        w(f"**Strongest dimension:** {strongest.title()} ({dims[strongest]:.1f}). "
-          f"**Weakest:** {weakest.title()} ({dims[weakest]:.1f}). "
-          f"Internal gap: {gap:.1f} points.\n")
+        w(f" | Strongest: {strongest.title()} ({dims[strongest]:.1f})"
+          f" | Weakest: {weakest.title()} ({dims[weakest]:.1f})")
+    w("")
 
     peer_lines = format_peer_summary(benchmarks) if benchmarks else []
     if peer_lines:
@@ -51,13 +73,6 @@ def build(w, venue_name, month_str, mode, scorecard, deltas,
         for pl in peer_lines[1:]:
             w(f"  {pl}")
         w("")
-
-    actions = recs.get("priority_actions", [])
-    if actions:
-        top = actions[0]
-        rt = top.get("rec_type", "action").upper()
-        w(f"**Top priority this month:** {top['title']} "
-          f"[{rt}] — {top.get('expected_upside', '')}.\n")
 
     has_narrative = review_intel.get("has_narrative", False) if review_intel else False
     grc = scorecard.get("google_reviews") or 0
@@ -70,8 +85,9 @@ def build(w, venue_name, month_str, mode, scorecard, deltas,
         if ta_count > 0:
             sources.append(f"{ta_count} TripAdvisor")
         source_str = " + ".join(sources) if sources else f"{n}"
-        w(f"*This report includes narrative analysis from {n} customer reviews ({source_str}).*\n")
+        w(f"*This report uses publicly observable data only — no internal systems required. "
+          f"Narrative analysis from {n} customer reviews ({source_str}).*\n")
     else:
-        w(f"*Based on structured signals ({grc} Google reviews aggregated, "
-          f"no individual review text collected yet). "
-          f"Narrative depth will increase with review text enrichment.*\n")
+        w(f"*This report uses publicly observable data only — no internal systems required. "
+          f"Based on structured signals ({grc} Google reviews aggregated, "
+          f"no individual review text collected yet).*\n")

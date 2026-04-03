@@ -50,13 +50,76 @@ def build_recommendation_tracker(w, recs):
         w(f"*{len(resolved)} recommendation(s) resolved/completed.*\n")
 
 
-def build_conditional_intelligence(w, blocks):
-    if not blocks:
-        return
-    w("## Market Intelligence\n")
-    for b in blocks:
-        w(f"### {b['title']}\n")
-        w(f"{b['content']}\n")
+def build_competitive_market_intelligence(w, scorecard, benchmarks, blocks):
+    """Mandatory Competitive Market Intelligence section — lens 4.
+
+    Always produces output. Uses peer benchmarks as the primary source,
+    conditional blocks as supplementary alerts.
+    """
+    w("## Competitive Market Intelligence\n")
+
+    ring1 = (benchmarks or {}).get("ring1_local") or {}
+    ring2 = (benchmarks or {}).get("ring2_catchment") or {}
+    ring = ring1 or ring2
+
+    overall = scorecard.get("overall")
+
+    if ring and ring.get("peer_count", 0) > 0:
+        peer_count = ring["peer_count"]
+        dims = ring.get("dimensions", {})
+        ov = dims.get("overall", {})
+        pct = ov.get("percentile")
+        peer_avg = ov.get("peer_mean")
+        peer_top = ov.get("peer_top")
+
+        w(f"**Local market:** {peer_count} direct competitors identified.\n")
+
+        if pct is not None and peer_avg is not None:
+            if pct >= 80:
+                w(f"You are in the top quintile (P{pct:.0f}). The competitive risk "
+                  f"is complacency — the nearest competitor scores {peer_top:.1f}.\n")
+            elif pct >= 50:
+                w(f"Above the median (P{pct:.0f}) but not leading. Peer average is "
+                  f"{peer_avg:.1f}; the top performer scores {peer_top:.1f}. "
+                  f"The gap to the top is closeable.\n")
+            else:
+                w(f"Below the median (P{pct:.0f}). Customers have higher-rated "
+                  f"alternatives nearby (peer avg {peer_avg:.1f}, top {peer_top:.1f}).\n")
+
+        # Dimension-level competitive gaps
+        dim_gaps = []
+        for dim in ["experience", "visibility", "trust", "conversion"]:
+            d = dims.get(dim, {})
+            if d.get("peer_mean") is not None and d.get("score") is not None:
+                gap = d["score"] - d["peer_mean"]
+                if abs(gap) >= 0.5:
+                    dim_gaps.append((dim, gap))
+
+        if dim_gaps:
+            leads = [(d, g) for d, g in dim_gaps if g > 0]
+            lags = [(d, g) for d, g in dim_gaps if g < 0]
+            if leads:
+                lead_str = ", ".join(f"{d.title()} (+{g:.1f})" for d, g in sorted(leads, key=lambda x: -x[1]))
+                w(f"**Where you lead:** {lead_str}")
+            if lags:
+                lag_str = ", ".join(f"{d.title()} ({g:+.1f})" for d, g in sorted(lags, key=lambda x: x[1]))
+                w(f"**Where peers beat you:** {lag_str}")
+            w("")
+
+        # Density assessment
+        if peer_count >= 10:
+            w(f"**Density alert:** {peer_count} competitors within range. "
+              f"Differentiation is critical — competing on fundamentals alone "
+              f"is insufficient in a dense market.\n")
+    else:
+        w("*Insufficient peer data for competitive analysis. "
+          "Market intelligence will strengthen as more establishments are scored.*\n")
+
+    # Supplementary conditional blocks (compliance risk, visibility gap, etc.)
+    if blocks:
+        for b in blocks:
+            w(f"### {b['title']}\n")
+            w(f"{b['content']}\n")
 
 
 def build_data_coverage(w, scorecard, review_intel):

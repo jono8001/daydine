@@ -19,7 +19,7 @@ from operator_intelligence.builders import (
     build_performance_diagnosis, build_commercial_diagnosis,
     build_review_intelligence,
     build_watch_list, build_what_not_to_do,
-    build_recommendation_tracker, build_conditional_intelligence,
+    build_recommendation_tracker, build_competitive_market_intelligence,
     build_data_coverage,
     build_management_priorities, build_market_position,
     build_dimension_diagnosis, build_public_vs_reality,
@@ -38,14 +38,19 @@ DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
 def generate_monthly_report(venue_name, month_str, scorecard, deltas,
                             benchmarks, review_intel, review_delta,
                             recs, conditional_blocks=None, venue_rec=None):
-    """Assemble full monthly report from builders. Returns (report_text, qa_dict)."""
+    """Assemble full monthly report from builders. Returns (report_text, qa_dict).
+
+    Report structure: leads with leaks/actions/risk, then covers 4 commercial
+    lenses (Demand Capture, Proposition & Guest Signal, Trust & Public Risk,
+    Competitive Market Intelligence), then supporting score detail, then tracking.
+    """
     mode = detect_report_mode(review_intel)
     venue_rec = venue_rec or {}
     L = []
     w = L.append
 
-    # --- Proposition-first sections ---
-    # 1. Executive Summary
+    # --- Lead: leaks / actions / risk / what not to do ---
+    # 1. Executive Summary (actions-led, score secondary)
     build_executive_summary(w, venue_name, month_str, mode, scorecard,
                             deltas, benchmarks, review_intel, recs)
     # 2. What This Venue Is Becoming Known For
@@ -54,39 +59,45 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     build_management_priorities(w, scorecard, deltas, benchmarks, recs)
     # 4. Protect / Improve / Ignore
     build_protect_improve_ignore(w, scorecard, deltas, benchmarks, review_intel, recs)
-    # 5. Commercial Diagnosis (bottleneck, positioning, revenue leakage)
-    build_commercial_diagnosis(w, scorecard, deltas, benchmarks, review_intel)
 
-    # --- Evidence and analysis sections ---
-    # 6. Review & Reputation Intelligence
-    build_review_intelligence(w, mode, review_intel, review_delta)
-    # 7. Market Position (3-ring peer analysis)
-    build_market_position(w, scorecard, benchmarks)
-    # 8. Public Proof vs Operational Reality
-    build_public_vs_reality(w, scorecard)
-    # 9. Conversion Friction Analysis
+    # --- Lens 1: Demand Capture ---
+    # 5. Conversion Friction Analysis
     build_conversion_analysis(w, scorecard, venue_rec)
 
+    # --- Lens 2: Proposition & Guest Signal ---
+    # 6. Commercial Diagnosis (bottleneck, positioning, revenue leakage)
+    build_commercial_diagnosis(w, scorecard, deltas, benchmarks, review_intel)
+    # 7. Review & Reputation Intelligence
+    build_review_intelligence(w, mode, review_intel, review_delta)
+
+    # --- Lens 3: Trust & Public Risk ---
+    # 8. Public Proof vs Operational Reality
+    build_public_vs_reality(w, scorecard)
+
+    # --- Lens 4: Competitive Market Intelligence (mandatory) ---
+    # 9. Competitive Market Intelligence
+    build_competitive_market_intelligence(w, scorecard, benchmarks, conditional_blocks)
+    # 10. Market Position (detailed 3-ring peer analysis)
+    build_market_position(w, scorecard, benchmarks)
+
     # --- Score detail (supporting, not driving) ---
-    # 10. Dimension Scorecard (compact table)
+    # 11. Dimension Scorecard (compact table, prestige demoted)
     build_scorecard(w, scorecard, deltas, benchmarks)
-    # 11. Dimension-by-Dimension Diagnosis
+    # 12. Dimension-by-Dimension Diagnosis
     build_dimension_diagnosis(w, scorecard, deltas, benchmarks)
 
     # --- Tracking and monitoring ---
-    # 12. Watch List
+    # 13. Watch List
     build_watch_list(w, recs)
-    # 13. What Not to Do
+    # 14. What Not to Do
     build_what_not_to_do(w, recs)
-    # 14. Recommendation Tracker
+    # 15. Recommendation Tracker
     build_recommendation_tracker(w, recs)
-    # 13. Conditional Intelligence
-    build_conditional_intelligence(w, conditional_blocks)
-    # 14. Next-Month Monitoring Plan
+    # 16. Next-Month Monitoring Plan (external leading indicators)
     build_monitoring_plan(w, scorecard, recs)
-    # 15. Data Coverage & Confidence
+    # 17. Data Coverage & Confidence
     build_data_coverage(w, scorecard, review_intel)
-    # 16. Evidence Appendix
+    # 18. Evidence Appendix
     build_evidence_appendix(w, scorecard, venue_rec)
 
     w("")

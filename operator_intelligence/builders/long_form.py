@@ -303,13 +303,16 @@ def _dim_management_action(dim, score, peer_avg, scorecard):
     return None
 
 
+HEADLINE_DIMS = ["experience", "visibility", "trust", "conversion"]
+
+
 def build_dimension_diagnosis(w, scorecard, deltas, benchmarks):
     w("## Dimension-by-Dimension Diagnosis\n")
 
     ring1 = (benchmarks or {}).get("ring1_local") or (benchmarks or {}).get("ring2_catchment") or {}
     ring1_dims = ring1.get("dimensions", {})
 
-    for dim in DIM_ORDER:
+    for dim in HEADLINE_DIMS:
         score = scorecard.get(dim)
         if score is None:
             continue
@@ -363,6 +366,25 @@ def build_dimension_diagnosis(w, scorecard, deltas, benchmarks):
         if _action:
             w(f"**Management note:** {_action}\n")
         w("")
+
+    # Prestige — compact note, not full diagnosis
+    prest = scorecard.get("prestige")
+    if prest is not None:
+        peer_prest = ring1_dims.get("prestige", {}).get("peer_mean")
+        w("### Prestige (Editorial Recognition)\n")
+        w(f"*Score: {prest:.1f}/10"
+          + (f" | Peer avg: {peer_prest:.1f}" if peer_prest is not None else "")
+          + "*\n")
+        if prest < 2.0 and (scorecard.get("overall") or 0) >= 7.5:
+            w("Your operational quality would support a credible awards submission, "
+              "but this is a long-cycle play — not an operational priority. "
+              "Focus on the four headline dimensions first.\n")
+        elif prest < 2.0:
+            w("Low prestige is normal for most independents and does not affect "
+              "footfall, discovery, or day-to-day revenue. Not commercially urgent.\n")
+        else:
+            w("Editorial recognition present. This supports premium positioning "
+              "but is not an operational lever — protect it through quality consistency.\n")
 
 
 # ---------------------------------------------------------------------------
@@ -501,36 +523,47 @@ def build_conversion_analysis(w, scorecard, venue_rec):
 
 def build_monitoring_plan(w, scorecard, recs):
     w("## Next-Month Monitoring Plan\n")
-    w("Track these specific metrics before the next report to measure progress:\n")
+    w("These are **externally observable leading indicators** — all trackable "
+      "without internal systems. Changes here signal whether actions are landing.\n")
 
-    actions = recs.get("priority_actions", [])
-    watches = recs.get("watch_items", [])
-
-    w("| What to Monitor | Current Baseline | Target | Owner |")
-    w("|----------------|-----------------|--------|-------|")
+    w("| Indicator | Current | What Movement Means | Source |")
+    w("|-----------|---------|---------------------|--------|")
 
     gr = scorecard.get("google_rating")
     if gr:
-        w(f"| Google rating | {gr}/5 | Maintain or improve | Front-of-house |")
+        w(f"| Google star rating | {gr}/5 | Drop below {float(gr):.1f} = experience drift; "
+          f"rise = guest improvements landing | Google Maps |")
 
     grc = scorecard.get("google_reviews")
     if grc:
-        target = int(grc) + 10
-        w(f"| Google review count | {grc} | {target}+ | Marketing |")
+        velocity = "10+ new reviews/month = healthy momentum"
+        w(f"| Google review count | {grc} | {velocity} | Google Maps |")
 
     fsa = scorecard.get("fsa_rating")
-    if fsa and int(fsa) < 5:
-        w(f"| FSA hygiene rating | {fsa} | Request re-inspection | Compliance |")
+    if fsa is not None:
+        from rcs_scoring_stratford import days_since
+        rd = scorecard.get("_rd") or ""
+        age = days_since(rd)
+        if int(fsa) < 5:
+            w(f"| FSA hygiene rating | {fsa}/5 | Re-inspection result = immediate score impact | FSA website |")
+        elif age and age > 365:
+            months = round(age / 30)
+            w(f"| FSA inspection age | {months} months | Next unannounced visit = score-sensitive event | FSA website |")
 
-    for a in actions[:2]:
-        w(f"| {a['title'][:40]} | Action raised | Complete | {a.get('owner', '—')} |")
+    ta = scorecard.get("_ta_rating")
+    if ta is not None:
+        w(f"| TripAdvisor rating | {ta}/5 | Divergence from Google = cross-source risk flag | TripAdvisor |")
 
-    for wa in watches[:1]:
-        w(f"| {wa['title'][:40]} | Watch raised | Monitor | {wa.get('owner', '—')} |")
+    # Review sentiment trajectory — external leading indicator
+    if gr and float(gr) >= 4.0:
+        w(f"| Latest 5 Google reviews | Check manually | 2+ negative in latest 5 = early warning of rating decline | Google Maps |")
+
+    # Competitive movement
+    w("| Nearest competitor rating | Check top 3 | Competitor improvement narrows your lead | Google Maps |")
 
     w("")
-    w("**Review date:** First week of next month. Compare these baselines "
-      "against updated data to measure whether actions had impact.\n")
+    w("**Review date:** First week of next month. All indicators are publicly "
+      "observable — no operator login or internal data required.\n")
 
 
 # ---------------------------------------------------------------------------
