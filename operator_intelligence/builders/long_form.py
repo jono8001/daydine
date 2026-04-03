@@ -122,7 +122,7 @@ def _render_consequence(w, action, scorecard, venue_rec):
 # Market Position — the full 3-ring analysis with interpretation
 # ---------------------------------------------------------------------------
 
-def build_market_position(w, scorecard, benchmarks):
+def build_market_position(w, scorecard, benchmarks, venue_rec=None):
     w("## Market Position\n")
 
     if not benchmarks:
@@ -220,6 +220,63 @@ def build_market_position(w, scorecard, benchmarks):
                 w(f"- {tp['name']} ({tp['overall']:.1f}) — "
                   f"{'you lead by' if gap > 0 else 'leads you by'} {abs(gap):.1f}")
             w("")
+
+        # Competitor strategy (ring1 only)
+        if ring_key == "ring1_local" and benchmarks:
+            _render_competitor_strategy(w, scorecard, benchmarks, venue_rec)
+
+
+def _render_competitor_strategy(w, scorecard, benchmarks, venue_rec):
+    """Render compact strategic reads for the top 2–3 relevant peers."""
+    from operator_intelligence.competitor_strategy import generate_competitor_reads
+    reads = generate_competitor_reads(scorecard, venue_rec or {}, benchmarks)
+    if not reads:
+        return
+
+    w("### Competitor Strategy\n")
+
+    # Detect shared pattern: if all peers lead on the same dimension, surface once
+    lead_dims = []
+    for r in reads:
+        if "Not assessable" not in r.what_they_win_on and r.what_they_win_on != "—":
+            # Extract the first dimension name from "Trust (+2.3): ..."
+            first_word = r.what_they_win_on.split("(")[0].strip().rstrip(":").strip()
+            lead_dims.append(first_word.lower())
+
+    from collections import Counter
+    dim_counts = Counter(lead_dims)
+    shared_dim = None
+    if dim_counts and dim_counts.most_common(1)[0][1] >= 2 and len(reads) >= 2:
+        shared_dim = dim_counts.most_common(1)[0][0]
+        w(f"**Common pattern:** Multiple local competitors lead you on "
+          f"**{shared_dim}**. This is your most consistent competitive gap "
+          f"— addressing it would improve your position against the field, "
+          f"not just one rival.\n")
+
+    for r in reads:
+        w(f"**{r.peer_name}** ({r.confidence})\n")
+
+        if "Not assessable" in r.what_they_win_on or "Insufficient" in r.what_they_win_on:
+            w(f"*{r.what_they_win_on}*\n")
+            continue
+
+        # Skip repeating the shared-pattern dimension in detail if already surfaced
+        win_text = r.what_they_win_on
+        if shared_dim and win_text.lower().startswith(shared_dim):
+            # Show secondary wins if any, otherwise abbreviate
+            parts = win_text.split("; ")
+            if len(parts) > 1:
+                w(f"- **Also wins on:** {'; '.join(parts[1:])}")
+            else:
+                w(f"- **Wins on:** {shared_dim.title()} (see pattern above)")
+        else:
+            w(f"- **Wins on:** {win_text}")
+
+        w(f"- **Why it matters:** {r.why_it_matters}")
+        w(f"- **Copy / test:** {r.what_to_copy}")
+        w(f"- **Defend:** {r.what_to_defend}")
+        w(f"- *{r.basis}*")
+        w("")
 
 
 # ---------------------------------------------------------------------------

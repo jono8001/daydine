@@ -47,7 +47,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.73, conversion=5.5`
-- *This recommendation has appeared 20 consecutive months.*
+- *This recommendation has appeared 21 consecutive months.*
 
   **Commercial consequence** (directional):
   Value at stake: £180–£3,600/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
@@ -62,7 +62,7 @@ Food Quality draws recurring criticism across reviews (3 negative mentions). One
 - **Owner:** operations | **Confidence:** 70%
 - **Expected upside:** Reduce food quality complaints, protect rating
 - **Evidence:** `review_criticism: Food Quality=3 negative`
-- *This recommendation has appeared 17 consecutive months.*
+- *This recommendation has appeared 18 consecutive months.*
 
   **Commercial consequence** (directional):
   Value at stake: £270–£4,500/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
@@ -77,7 +77,7 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
 - **Evidence:** `review_praise: Service & Hospitality=18`
-- *This recommendation has appeared 17 consecutive months.*
+- *This recommendation has appeared 18 consecutive months.*
 
   **Commercial consequence** (indicative):
   Value at stake: Upside, not loss prevention — magnitude depends on execution | Cost to fix: Low (< 1 hour, no spend) | Payback: 1–3 months
@@ -227,6 +227,34 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 - Snitterfield Arms (7.2) — you lead by 0.1
 - The Bell Inn (7.1) — you lead by 0.2
 
+### Competitor Strategy
+
+**Common pattern:** Multiple local competitors lead you on **trust**. This is your most consistent competitive gap — addressing it would improve your position against the field, not just one rival.
+
+**The Fox Inn** (signal-backed)
+
+- **Wins on:** Trust (see pattern above)
+- **Why it matters:** Their trust lead means their compliance record is stronger — this creates a ceiling you hit and they don't.
+- **Copy / test:** Review inspection documentation and sub-score gaps.
+- **Defend:** Your 887-review volume advantage — this took years to build and is your discovery moat.
+- *Based on Google rating/reviews, FSA record, 4 dimension scores*
+
+**The Red Lion** (signal-backed)
+
+- **Also wins on:** Experience (+0.9): Google 4.7/5 vs your 4.6/5
+- **Why it matters:** Their trust lead means their compliance record is stronger — this creates a ceiling you hit and they don't.
+- **Copy / test:** Review inspection documentation and sub-score gaps.
+- **Defend:** Your 887-review volume advantage — this took years to build and is your discovery moat.
+- *Based on Google rating/reviews, FSA record, 4 dimension scores*
+
+**The Townhouse Also Trading As JR Hotel And Restaurants LTD** (signal-backed)
+
+- **Also wins on:** Experience (+0.6): higher composite experience score from rating + compliance signals
+- **Why it matters:** Their trust lead means their compliance record is stronger — this creates a ceiling you hit and they don't.
+- **Copy / test:** Review inspection documentation and sub-score gaps.
+- **Defend:** Your 887-review volume advantage — this took years to build and is your discovery moat.
+- *Based on Google rating/reviews, FSA record, 4 dimension scores*
+
 ### Extended Catchment (18 peers within 15 miles)
 
 **Position:** #7 of 19 (Percentile 66.7)
@@ -347,14 +375,14 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 20 | operations | conversion |
-| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 17 | operations | experience |
-| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 17 | management | experience |
-| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 17 | front-of-house | visibility |
-| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 17 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 21 | operations | conversion |
+| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 18 | operations | experience |
+| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 18 | management | experience |
+| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 18 | front-of-house | visibility |
+| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 18 | management | trust |
 | 7 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
 | 8 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
-| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 17 | operations | experience |
+| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 18 | operations | experience |
 
 ## Next-Month Monitoring Plan
 

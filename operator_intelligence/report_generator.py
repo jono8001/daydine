@@ -78,7 +78,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # 9. Competitive Market Intelligence
     build_competitive_market_intelligence(w, scorecard, benchmarks, conditional_blocks)
     # 10. Market Position (detailed 3-ring peer analysis)
-    build_market_position(w, scorecard, benchmarks)
+    build_market_position(w, scorecard, benchmarks, venue_rec=venue_rec)
 
     # --- Score detail (supporting, not driving) ---
     # 11. Dimension Scorecard (compact table, prestige demoted)
