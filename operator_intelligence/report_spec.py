@@ -47,7 +47,12 @@ class ReviewConfidence:
 
 
 def assess_review_confidence(review_intel):
-    """Determine review confidence tier from available data."""
+    """Determine review confidence tier from available data.
+
+    Source counting: Google and TripAdvisor are independent platforms.
+    Google review text is NOT a separate source from Google ratings —
+    it's the same platform. Each platform counts once.
+    """
     if not review_intel:
         return ReviewConfidence(
             tier="none", review_text_count=0, source_count=0, rating_volume=0,
@@ -60,8 +65,14 @@ def assess_review_confidence(review_intel):
     if analysis:
         text_count = analysis.get("reviews_analyzed", 0)
 
-    if review_intel.get("has_narrative"):
-        sources += 1
+    # Count independent review platforms (not data fields)
+    ta_count = review_intel.get("review_count_ta") or 0
+    google_text = text_count - ta_count  # Google review texts
+    if google_text > 0 or review_intel.get("has_narrative"):
+        sources += 1  # Google (one platform, regardless of text + rating)
+    if ta_count > 0:
+        sources += 1  # TripAdvisor (independent platform)
+
     vol_signals = review_intel.get("volume_signals", {})
     rating_volume = vol_signals.get("review_count", 0)
 
@@ -448,17 +459,24 @@ def _check_section_completeness(report_text):
 
 
 def _compute_confidence(scorecard, review_intel):
-    """Report confidence level based on data availability."""
+    """Report confidence level based on independent source count.
+
+    Independent sources (each counted at most once):
+      - FSA (statutory — independent of all others)
+      - Google (one platform: rating + reviews + text all count as one)
+      - TripAdvisor (independent platform)
+    Google review text is NOT a separate source from Google rating.
+    """
     sources = 0
     if scorecard.get("fsa_rating") is not None:
         sources += 1
     if scorecard.get("google_rating") is not None:
-        sources += 1
-    if review_intel and review_intel.get("has_narrative"):
-        sources += 1
+        sources += 1  # Google counts once — rating, text, photos all same platform
     if review_intel and review_intel.get("review_count_ta"):
-        sources += 1
-    if sources >= 4:
+        sources += 1  # TripAdvisor — independent
+    # has_narrative is NOT an additional source — it's Google review text
+
+    if sources >= 3:
         return "high"
     if sources >= 2:
         return "medium"

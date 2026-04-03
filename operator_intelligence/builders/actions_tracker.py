@@ -129,33 +129,55 @@ def build_data_coverage(w, scorecard, review_intel):
     fsa = scorecard.get("fsa_rating")
     gr = scorecard.get("google_rating")
     grc = scorecard.get("google_reviews")
-    sources = [
-        ("FSA Hygiene Rating", f"Rating {fsa}/5" if fsa else "Not available", fsa is not None),
-        ("Google Business Profile", f"{gr}★ ({grc} reviews)" if gr else "Not available", gr is not None),
+    has_ta = bool(review_intel and review_intel.get("review_count_ta"))
+
+    # Source inventory with provenance
+    rows = [
+        ("FSA Hygiene Rating", f"Rating {fsa}/5" if fsa else "Not available",
+         fsa is not None, "observed" if fsa is not None else "not_assessed"),
+        ("Google Business Profile", f"{gr}★ ({grc} reviews)" if gr else "Not available",
+         gr is not None, "observed" if gr is not None else "not_assessed"),
         ("Google Review Text",
          f"{review_intel.get('reviews_analyzed', 0)} reviews analyzed" if has_narr else "Not collected",
-         has_narr),
+         has_narr, "observed" if has_narr else "not_assessed"),
         ("TripAdvisor",
-         f"{review_intel.get('review_count_ta', 0)} reviews analysed" if review_intel and review_intel.get("review_count_ta") else "Not collected",
-         bool(review_intel and review_intel.get("review_count_ta"))),
-        ("Companies House", "Not checked", False),
+         f"{review_intel.get('review_count_ta', 0)} reviews analysed" if has_ta else "Not collected",
+         has_ta, "observed" if has_ta else "not_assessed"),
+        ("Companies House", "Not checked", False, "not_assessed"),
     ]
-    w("| Source | Status | Available |")
-    w("|--------|--------|:---------:|")
-    for name, status, avail in sources:
-        w(f"| {name} | {status} | {'✓' if avail else '—'} |")
+    w("| Source | Status | Provenance | Available |")
+    w("|--------|--------|------------|:---------:|")
+    for name, status, avail, prov in rows:
+        w(f"| {name} | {status} | {prov} | {'✓' if avail else '—'} |")
     w("")
-    n = sum(1 for _, _, a in sources if a)
-    if n >= 4:
-        w("**Report confidence: High** — Multiple independent sources.\n")
-    elif n >= 2:
-        w("**Report confidence: Medium** — Core signals available, some dimensions limited.\n")
+
+    # Confidence based on INDEPENDENT sources, not data fields
+    # FSA, Google (one platform), TripAdvisor = 3 possible independent sources
+    independent = 0
+    if fsa is not None:
+        independent += 1
+    if gr is not None:
+        independent += 1  # Google counts once (rating + text = same platform)
+    if has_ta:
+        independent += 1
+
+    if independent >= 3:
+        w(f"**Report confidence: High** — {independent} independent sources (FSA, Google, TripAdvisor).\n")
+    elif independent >= 2:
+        sources_named = []
+        if fsa is not None: sources_named.append("FSA")
+        if gr is not None: sources_named.append("Google")
+        if has_ta: sources_named.append("TripAdvisor")
+        w(f"**Report confidence: Medium** — {independent} independent sources "
+          f"({', '.join(sources_named)}). "
+          f"Additional platforms would strengthen cross-validation.\n")
     else:
-        w("**Report confidence: Low** — Sparse data constrains depth.\n")
+        w("**Report confidence: Low** — Single source or sparse data. "
+          "Findings are directional only.\n")
+
     unlocks = []
     if not has_narr:
         unlocks.append("**Google review text** → sentiment-by-topic, complaint clustering, quoted evidence")
-    has_ta = bool(review_intel and review_intel.get("review_count_ta"))
     if not has_ta:
         unlocks.append("**TripAdvisor enrichment** → cross-platform validation, convergence scoring")
     if unlocks:

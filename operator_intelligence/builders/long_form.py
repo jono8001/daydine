@@ -572,54 +572,59 @@ def build_monitoring_plan(w, scorecard, recs):
 
 def build_evidence_appendix(w, scorecard, venue_rec):
     w("## Evidence Appendix\n")
-    w("Raw signal values used to compute this report.\n")
+    w("Raw signal values used to compute this report. "
+      "Provenance: **observed** = directly from source API; "
+      "**derived** = computed from observed data; "
+      "**inferred** = estimated from indirect evidence; "
+      "**not_assessed** = not yet collected.\n")
 
-    w("| Signal | Value | Source |")
-    w("|--------|-------|--------|")
+    w("| Signal | Value | Source | Provenance |")
+    w("|--------|-------|--------|------------|")
 
     fsa = scorecard.get("fsa_rating")
     if fsa:
-        w(f"| FSA Hygiene Rating | {fsa}/5 | FSA API via Firebase |")
+        w(f"| FSA Hygiene Rating | {fsa}/5 | FSA API via Firebase | observed |")
     sh = venue_rec.get("sh")
     if sh is not None:
-        w(f"| Food Hygiene Sub-score | {sh}/10 | FSA |")
+        w(f"| Food Hygiene Sub-score | {sh}/10 | FSA | observed |")
     ss = venue_rec.get("ss")
     if ss is not None:
-        w(f"| Structural Compliance | {ss}/10 | FSA |")
+        w(f"| Structural Compliance | {ss}/10 | FSA | observed |")
     sm = venue_rec.get("sm")
     if sm is not None:
-        w(f"| Management Confidence | {sm}/10 | FSA |")
+        w(f"| Management Confidence | {sm}/10 | FSA | observed |")
     rd = venue_rec.get("rd")
     if rd:
-        w(f"| Last Inspection | {rd[:10]} | FSA |")
+        w(f"| Last Inspection | {rd[:10]} | FSA | observed |")
 
     gr = scorecard.get("google_rating")
     if gr:
-        w(f"| Google Rating | {gr}/5 | Google Places API |")
+        w(f"| Google Rating | {gr}/5 | Google Places API | observed |")
     grc = scorecard.get("google_reviews")
     if grc:
-        w(f"| Google Reviews | {grc} | Google Places API |")
+        w(f"| Google Reviews | {grc} | Google Places API | observed |")
     gpc = venue_rec.get("gpc")
     if gpc is not None:
-        w(f"| Google Photos | {gpc} | Google Places API |")
+        w(f"| Google Photos | {gpc} | Google Places API | observed |")
     gpl = venue_rec.get("gpl")
     if gpl is not None:
-        w(f"| Price Level | {'£' * int(gpl)} ({gpl}/4) | Google Places API |")
+        w(f"| Price Level | {'£' * int(gpl)} ({gpl}/4) | Google Places API | observed |")
     gbp = venue_rec.get("gbp_completeness")
     if gbp is not None:
-        w(f"| GBP Completeness | {gbp}/10 | Computed |")
+        w(f"| GBP Completeness | {gbp}/10 | Computed | derived |")
 
     ta = venue_rec.get("ta")
     trc = venue_rec.get("trc")
     if ta is not None:
-        w(f"| TripAdvisor Rating | {ta}/5 | TripAdvisor (Apify) |")
+        w(f"| TripAdvisor Rating | {ta}/5 | TripAdvisor (Apify) | observed |")
     if trc is not None:
-        w(f"| TripAdvisor Reviews | {trc} | TripAdvisor (Apify) |")
+        w(f"| TripAdvisor Reviews | {trc} | TripAdvisor (Apify) | observed |")
 
-    w(f"| Website | {'Yes' if venue_rec.get('web') else 'No'} | Inferred |")
-    w(f"| Facebook | {'Yes' if venue_rec.get('fb') else 'No'} | Inferred |")
-    w(f"| Instagram | {'Yes' if venue_rec.get('ig') else 'No'} | Inferred |")
+    w(f"| Website | {'Yes' if venue_rec.get('web') else 'No'} | Google inference | inferred |")
+    w(f"| Facebook | {'Yes' if venue_rec.get('fb') else 'No'} | Google inference | inferred |")
+    w(f"| Instagram | {'Yes' if venue_rec.get('ig') else 'No'} | Google inference | inferred |")
 
-    w(f"| Category | {scorecard.get('category', '—')} | {scorecard.get('category_source', '—')} |")
-    w(f"| Postcode | {scorecard.get('postcode', '—')} | FSA |")
+    w(f"| Category | {scorecard.get('category', '—')} | {scorecard.get('category_source', '—')} | derived |")
+    w(f"| Postcode | {scorecard.get('postcode', '—')} | FSA | observed |")
+    w(f"| Companies House | — | Not checked | not_assessed |")
     w("")
