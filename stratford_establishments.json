@@ -9039,7 +9039,172 @@
     "gbp_completeness": 10.0,
     "has_menu_online": true,
     "price_range": "££",
-    "local_awards_count": 0
+    "local_awards_count": 0,
+    "ta": 4.4,
+    "trc": 20,
+    "ta_present": true,
+    "ta_reviews": [
+      {
+        "text": "My husband and I had a superb meal at the Vintner on Feb 14. The food was delicious as always - special mention for the cheese soufflé as it was divine! The fish and chips and moules frites were also fabulous. We were too full to have a dessert as well unfortunately. The menu is really varied and well put together. The service was impeccable, thanks to Jason and his amazing team. Overall a wonderful evening in one of our favourite restaurants!",
+        "rating": 5,
+        "title": "Fantastic food, service and atmosphere",
+        "date": "2026-02-20T00:00:00.000Z",
+        "username": "Kate G",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Lunched on 14th from the set menu. Service was slick and discreet, food was delicious, and the ambiance proved what a popular venue this is. Thoroughly recommended",
+        "rating": 5,
+        "title": "Totally satisfied",
+        "date": "2026-01-20T00:00:00.000Z",
+        "username": "Frankie",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford.",
+        "rating": 5,
+        "title": "Cannot recommend enough",
+        "date": "2026-12-20T00:00:00.000Z",
+        "username": "andreacG4833CN",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Nice but cold place. We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning. Good food.",
+        "rating": 3,
+        "title": "Only if you have time to waste",
+        "date": "2026-12-20T00:00:00.000Z",
+        "username": "Valerio",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Great food, great atmosphere, great drinks and impeccable service. All 15 of us all agreed our food was superb and we visited during a very very busy festive period (last Saturday evening before Christmas). The team were very attentive and did a great job, especially Charlie who looked after us from start to finish. Thanks to everyone for making a very special 80th. Everyone talked about how nice the evening was from the kids to the adults.",
+        "rating": 5,
+        "title": "Great food, great atmosphere and great service.",
+        "date": "2026-12-20T00:00:00.000Z",
+        "username": "WoHorsey!",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "I went for lunch with a disabled lady who used a walker to get around, and they told us that if we wanted to eat or drink there she had to sit on a high stool at the bar and could not have a table. She clearly could not.  I was appalled. We went further up the road and found a restaurant who were most welcoming.",
+        "rating": 1,
+        "title": "Not disabled friendly.",
+        "date": "2026-12-20T00:00:00.000Z",
+        "username": "Royston H",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "We've been going there for ages - Stratford is convenient for all of us, usually meeting up for a light lunch 4-5 times a year.\nThis latest meal was outstanding despite its simplicity. The two girl had the Vintner's French Onion Soup  which is always a safe choice, but somehow even better than ever this time - my Wife added a side order of chips. My own lunch was literally the best Moules Frites I have ever had - and that includes seaside cafes on the Brittany coast - even the Frites were exceptional.\nService was just right - as usual - attentive without being overwhelming. Cost - as expected for the quality of the venue, food and service - i.e. spot on.",
+        "rating": 5,
+        "title": "The sum of its parts is why, when we're in Stratford-upon-Avon the Vintner is our first ( and only ) choice for lunch.",
+        "date": "2026-11-20T00:00:00.000Z",
+        "username": "Gurth S",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Good food as usual.  The fish crepes were very good and friends who had steak and fish were very satisfied.  One problem - DONT go if you are disabled as there is no accessible loo.  The only facilities are up a very twisty old staircase.  They did offer me the alternative of walking down the road to another restaurant (how embarrassing would that be!) so I might have stayed longer, and had a sweet but couldn't (for obvious reasons).  The excuse is the age of the building, which I understand,  but I wish I had known before and will not be going again.",
+        "rating": 3,
+        "title": "No accessible loo.",
+        "date": "2026-11-20T00:00:00.000Z",
+        "username": "Hilary C",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "We visited for dinner on a Thursday night around 7 pm, we hadn't booked, but we were lucky to get a table. \nThe restaurant area has a pleasant interior and well spaced out tables. We were not particularly hungry as we had met friends for lunch. However, we made an excellent combination of a 'small plates meal' from the starter menu.\nThe food was excellent, and the staff were very obliging.",
+        "rating": 5,
+        "title": "Excellent Restaurant",
+        "date": "2026-11-20T00:00:00.000Z",
+        "username": "LauraDaveJames",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "I ordered a prawn cocktail which came with bread and butter. It was served to me with the handles of the cutlery resting in the butter on the bread, the bread was stale. We also ordered a fish cake, supposedly haddock, but it was more like a potato cake, very difficult to find any fish. The fish cake was served with a poached egg, the egg was cold. Very disappointing.",
+        "rating": 2,
+        "title": "Very disappointing",
+        "date": "2026-10-20T00:00:00.000Z",
+        "username": "Bbpeg",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "We were recently married in Stratford Upon Avon, and decided to book the Vinter on recommendation and having visited it ourselves, for our wedding meal. \nFrom first visiting, to the actual meal itself, Charlotte and the team were brilliant. \nSpecial thanks to Emma who was our primary server on the day. The food was excellent and everyone really enjoyed themselves and commented on the location. \nThank you all for making our special day simply perfect.",
+        "rating": 5,
+        "title": "Wedding Meal",
+        "date": "2026-10-20T00:00:00.000Z",
+        "username": "Felicity T",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Went to The Vintner for our wedding anniversary meal, staff are really friendly and the atmosphere is great, we had our small dog with us so were seated downstairs in the window which was absolutely fin. The food was of good quality and plenty of choice. definitely recommend a visit here, we will be returning.",
+        "rating": 5,
+        "title": "Lovely Friendly Restaurant",
+        "date": "2026-09-20T00:00:00.000Z",
+        "username": "Hayley W",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Great meal and service from staff excellent so thank you all. We didn't have a booking but they happily seated us upstairs by a window with a lovely setting. Food was very good as we had a starter and dessert. Not cheap but quality should not be.",
+        "rating": 5,
+        "title": "Great service and food",
+        "date": "2026-09-20T00:00:00.000Z",
+        "username": "nigruk",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "We called here because our hotel food was well below par. Service here was friendly and efficient. The meal was superb, and well worth waiting for - evidence that it was freshly cooked.  On our next trip, we will take all our meals at the Vintner.  It's a short walk to the theatre.",
+        "rating": 5,
+        "title": "Eat here if you're going to the RSC.",
+        "date": "2026-08-20T00:00:00.000Z",
+        "username": "Albert H",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Fantastic breakfast. Generous portion of smoked salmon and eggs cooked to perfection. My foreign colleague had his first ever full English!",
+        "rating": 5,
+        "title": "Brilliant breakfast",
+        "date": "2026-08-20T00:00:00.000Z",
+        "username": "Midlands Foodie",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Great service and a dedicated gluten-free menu servicing delicious fishcakes and wonderful vegetarian risotto. Really enjoyed it.",
+        "rating": 5,
+        "title": "Wonderful lunchtime experience.",
+        "date": "2026-08-20T00:00:00.000Z",
+        "username": "Matthew Simpson",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Excellent\nFood, Service and ambience \nwill be returning.\nThe staff knew what they were doing and we enjoyed the ambience too.",
+        "rating": 5,
+        "title": "Sheer Excellence",
+        "date": "2026-08-20T00:00:00.000Z",
+        "username": "Hercules T",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Just perfect ..the Vinter is a massive favourite for Stratfordians and deservedly so . Beautiful old building gives a natural cosy ambience . The service is superb , our waitress was attentive, friendly and efficient .\nWe were a party of four , everyone enjoyed their food and remarked how generous the desserts were .My Rib eye steak lived up to expectations and the affordable Rose was perfect for a summers evening . Fabulous restaurant sensibly priced . \nBig thank you 😊",
+        "rating": 5,
+        "title": "Saturday evening summer supper",
+        "date": "2026-08-20T00:00:00.000Z",
+        "username": "chelseachelsea2015",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "Slightly disappointed that despite booking, we were initially showed to a dark table for two although the restaurant was almost empty. I asked if we could sit somewhere a bit brighter as it was a sunny evening and the front of the  restaurant was unoccupied. After an audible sigh from the waitress (!!)  we were seated at a lovely table at the front area which we had entirely to ourselves for the whole meal.  Great menu - spoilt for choice . The salmon fish cakes with sorrel sauce were delicious, Cajun chicken sauce a little bit sweet but over all lovely.  Great wine list too .",
+        "rating": 4,
+        "title": "Very good",
+        "date": "2026-07-20T00:00:00.000Z",
+        "username": "Fiona H",
+        "source": "tripadvisor"
+      },
+      {
+        "text": "A quality eaterie, with good atmosphere. Roomy and comfortable upstairs. Lovely food generally with a good choice and reasonable value. One meal not quite up to standard (sea bass with a limp Thai red sauce and tough Pak Choi, which didn't match the rest), but everything else excellent. Particularly the service which was first class. All upstairs tables occupied, on a Monday lunchtime which says a lot.",
+        "rating": 5,
+        "title": "Quality…..",
+        "date": "2026-07-20T00:00:00.000Z",
+        "username": "Tim P",
+        "source": "tripadvisor"
+      }
+    ]
   },
   "503104": {
     "n": "Simla Takeaway",

@@ -55,14 +55,22 @@ def build(w, venue_name, month_str, mode, scorecard, deltas,
     actions = recs.get("priority_actions", [])
     if actions:
         top = actions[0]
+        rt = top.get("rec_type", "action").upper()
         w(f"**Top priority this month:** {top['title']} "
-          f"({top['dimension'].title()}, expected upside: {top['expected_upside']}).\n")
+          f"[{rt}] — {top.get('expected_upside', '')}.\n")
 
     has_narrative = review_intel.get("has_narrative", False) if review_intel else False
     grc = scorecard.get("google_reviews") or 0
+    ta_count = review_intel.get("review_count_ta") or 0 if review_intel else 0
     if has_narrative:
         n = review_intel.get("reviews_analyzed", 0)
-        w(f"*This report includes narrative analysis from {n} customer reviews.*\n")
+        sources = []
+        if n - ta_count > 0:
+            sources.append(f"{n - ta_count} Google")
+        if ta_count > 0:
+            sources.append(f"{ta_count} TripAdvisor")
+        source_str = " + ".join(sources) if sources else f"{n}"
+        w(f"*This report includes narrative analysis from {n} customer reviews ({source_str}).*\n")
     else:
         w(f"*Based on structured signals ({grc} Google reviews aggregated, "
           f"no individual review text collected yet). "

@@ -236,6 +236,9 @@ BANNED_PHRASES = [
     "maintain current trajectory",  # acceptable in watch, not in actions
     "no specific watch items",
     "no deprioritised actions",
+    "continue to perform well",
+    "on the right track",
+    "strong performance across all dimensions",
 ]
 
 # Phrases allowed in watch items but not in actions/diagnosis
@@ -247,6 +250,14 @@ WATCH_ONLY_PHRASES = [
 # Phrases that indicate fabricated review intelligence
 FABRICATED_REVIEW_PHRASES = [
     "mentions)",  # "(3 mentions)" without review text
+]
+
+# Phrases that indicate score-led rather than proposition-led thinking
+SCORE_LED_PHRASES = [
+    "trust below peer average",
+    "experience below peer average",
+    "visibility below peer average",
+    "conversion readiness gap vs peers",
 ]
 
 
@@ -304,6 +315,11 @@ def validate_report(report_text, mode, recs, review_intel):
             result.errors.append(f"BANNED_PHRASE: '{phrase}'")
             result.passed = False
 
+    # --- Score-led phrase detection (warnings, not errors) ---
+    for phrase in SCORE_LED_PHRASES:
+        if phrase in text_lower:
+            result.warnings.append(f"SCORE_LED_PHRASE: '{phrase}' — consider more proposition-led language")
+
     # --- Fabricated review intelligence ---
     if mode == MODE_STRUCTURED:
         has_narrative = review_intel.get("has_narrative", False) if review_intel else False
@@ -317,6 +333,40 @@ def validate_report(report_text, mode, recs, review_intel):
                         review_section = review_section.split("## ")[0]
                     if phrase in review_section.lower() and "reviews)" not in review_section.lower():
                         result.warnings.append(f"POSSIBLE_FABRICATION: '{phrase}' in review section without review text")
+
+    # --- Strategic sharpness checks ---
+    # Check recommendation titles are not just dimension labels
+    for i, action in enumerate(actions):
+        title_lower = action.get("title", "").lower()
+        for dim in ["trust", "experience", "visibility", "conversion", "prestige"]:
+            if title_lower == f"{dim} below peer average" or title_lower == f"{dim} gap":
+                result.warnings.append(
+                    f"GENERIC_REC_TITLE: Action {i+1} title '{action['title']}' "
+                    f"reads like a dimension label, not a management recommendation")
+
+    # Check diagnosis has layered analysis (primary + secondary)
+    if "## Commercial Diagnosis" in report_text:
+        diag_section = report_text.split("## Commercial Diagnosis")[1]
+        # Find the next H2 section (not H3)
+        import re
+        next_h2 = re.search(r'\n## [^#]', diag_section)
+        if next_h2:
+            diag_section = diag_section[:next_h2.start()]
+        if "### Primary Constraint" not in diag_section and "### Main Bottleneck" not in diag_section:
+            result.warnings.append("FLAT_DIAGNOSIS: Commercial diagnosis lacks structured constraint analysis")
+
+    # Check for overclaiming on anecdotal evidence
+    rc = assess_review_confidence(review_intel) if review_intel else None
+    if rc and rc.tier == "anecdotal":
+        strong_claim_phrases = [
+            "consistently value", "known for", "well-established strength",
+            "defining elements", "settled guest perception",
+        ]
+        for phrase in strong_claim_phrases:
+            if phrase in text_lower:
+                result.warnings.append(
+                    f"OVERCLAIM_ON_ANECDOTAL: '{phrase}' used with only "
+                    f"{rc.review_text_count} review texts (anecdotal tier)")
 
     # --- Report length ---
     content_lines = [l for l in lines if l.strip() and not l.startswith("#") and not l.startswith("|") and not l.startswith("---")]

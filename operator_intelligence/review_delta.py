@@ -95,11 +95,15 @@ def extract_review_intelligence(record, sentiment_data=None):
     """
     reviews = _collect_review_texts(record)
 
+    ta_reviews_list = record.get("ta_reviews", [])
+    ta_review_count = len(ta_reviews_list) if ta_reviews_list else record.get("trc")
+
     if not reviews:
         return {
             "has_narrative": False,
             "review_count_google": record.get("grc"),
-            "review_count_ta": record.get("trc"),
+            "review_count_ta": ta_review_count,
+            "ta_rating": record.get("ta"),
             "aspects": _load_external_sentiment(record, sentiment_data),
         }
 
@@ -165,6 +169,8 @@ def extract_review_intelligence(record, sentiment_data=None):
     return {
         "has_narrative": True,
         "reviews_analyzed": len(reviews),
+        "review_count_ta": ta_review_count,
+        "ta_rating": record.get("ta"),
         "praise_themes": praise,
         "criticism_themes": criticism,
         "strongest_positive_quotes": all_quotes_pos[:3],

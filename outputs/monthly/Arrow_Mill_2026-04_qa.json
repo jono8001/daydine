@@ -19,7 +19,7 @@
     },
     "management_priorities": {
       "present": true,
-      "lines": 16,
+      "lines": 17,
       "meets_minimum": true
     },
     "watch_list": {
@@ -49,7 +49,7 @@
     },
     "commercial_diagnosis": {
       "present": true,
-      "lines": 5,
+      "lines": 9,
       "meets_minimum": true
     },
     "public_vs_reality": {
@@ -59,7 +59,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 38,
+      "lines": 12,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -69,7 +69,7 @@
     },
     "recommendation_tracker": {
       "present": true,
-      "lines": 4,
+      "lines": 8,
       "meets_minimum": true
     },
     "market_intelligence": {
@@ -100,7 +100,10 @@
   },
   "validation_passed": true,
   "validation_errors": [],
-  "validation_warnings": [],
+  "validation_warnings": [
+    "OVERCLAIM_ON_ANECDOTAL: 'known for' used with only 5 review texts (anecdotal tier)",
+    "OVERCLAIM_ON_ANECDOTAL: 'settled guest perception' used with only 5 review texts (anecdotal tier)"
+  ],
   "confidence_level": "medium",
-  "report_lines": 262
+  "report_lines": 244
 }
