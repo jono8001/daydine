@@ -25,10 +25,11 @@ _REC_TYPE_LABELS = {
 }
 
 
-def build_management_priorities(w, scorecard, deltas, benchmarks, recs):
+def build_management_priorities(w, scorecard, deltas, benchmarks, recs, venue_rec=None):
     w("## Management Priorities\n")
     actions = recs.get("priority_actions", [])
     overall = scorecard.get("overall")
+    venue_rec = venue_rec or {}
 
     # Frame the management question from the venue's actual situation
     fix_count = sum(1 for a in actions if a.get("rec_type") == "fix")
@@ -94,7 +95,27 @@ def build_management_priorities(w, scorecard, deltas, benchmarks, recs):
             w(f"- **Evidence:** `{a['evidence']}`")
         if a.get("times_seen", 1) > 1:
             w(f"- *This recommendation has appeared {a['times_seen']} consecutive months.*")
+
+        # Commercial consequence estimate
+        _render_consequence(w, a, scorecard, venue_rec)
         w("")
+
+
+def _render_consequence(w, action, scorecard, venue_rec):
+    """Render a compact commercial consequence block for an action."""
+    from operator_intelligence.commercial_estimates import estimate_for_action
+    cc = estimate_for_action(action, scorecard, venue_rec)
+    if cc is None:
+        return
+    if cc.confidence == "not_estimable":
+        w(f"- *{cc.value_at_stake}*")
+        return
+    w("")
+    w(f"  **Commercial consequence** ({cc.confidence}):")
+    w(f"  Value at stake: {cc.value_at_stake}"
+      f" | Cost to fix: {cc.implementation_cost}"
+      f" | Payback: {cc.payback}")
+    w(f"  *Basis: {cc.basis}*")
 
 
 # ---------------------------------------------------------------------------

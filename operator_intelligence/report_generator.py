@@ -56,7 +56,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # 2. What This Venue Is Becoming Known For
     build_known_for(w, venue_name, scorecard, benchmarks, review_intel)
     # 3. Management Priorities
-    build_management_priorities(w, scorecard, deltas, benchmarks, recs)
+    build_management_priorities(w, scorecard, deltas, benchmarks, recs, venue_rec=venue_rec)
     # 4. Protect / Improve / Ignore
     build_protect_improve_ignore(w, scorecard, deltas, benchmarks, review_intel, recs)
 
