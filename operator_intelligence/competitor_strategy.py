@@ -119,6 +119,59 @@ def _select_strategy_peers(venue_card, benchmarks, max_peers=3):
     return selected[:max_peers]
 
 
+def _copy_advice(peer_leads, peer, venue_card, has_fsa):
+    """Generate peer-specific copy/test advice from the dimension lead."""
+    if not peer_leads:
+        return "No clear action to copy — maintain current standards."
+
+    advices = []
+    for dim, gap, expl in peer_leads[:2]:
+        if dim == "trust" and has_fsa:
+            pfsa = peer.get("fsa_rating")
+            vfsa = venue_card.get("fsa_rating")
+            if pfsa and vfsa and int(pfsa) > int(vfsa):
+                advices.append(f"Target FSA re-inspection to match their {pfsa}/5 rating")
+            else:
+                advices.append("Review inspection documentation and sub-score gaps")
+        elif dim == "visibility":
+            prc = peer.get("google_reviews") or 0
+            vrc = venue_card.get("google_reviews") or 0
+            if prc > vrc:
+                advices.append(f"Build review volume — they have {prc} to your {vrc}")
+            else:
+                advices.append("Improve profile completeness (photos, GBP attributes)")
+        elif dim == "conversion":
+            advices.append("Audit your Google profile vs theirs: hours, menu, booking, delivery")
+        elif dim == "experience":
+            pgr = peer.get("google_rating")
+            if pgr:
+                advices.append(f"Read their recent positive reviews ({pgr}/5) for operational clues")
+            else:
+                advices.append("Investigate their experience advantage")
+    return ". ".join(advices) + "." if advices else "No clear action to copy."
+
+
+def _defend_advice(venue_leads, venue_card, peer):
+    """Generate peer-specific defend advice from the venue's lead dimensions."""
+    if not venue_leads:
+        return "No clear defensive advantage — you are closely matched across dimensions."
+
+    venue_leads_sorted = sorted(venue_leads, key=lambda x: -x[1])
+    defends = []
+    for dim, gap, expl in venue_leads_sorted[:2]:
+        vrc = venue_card.get("google_reviews") or 0
+        prc = peer.get("google_reviews") or 0
+        if dim == "visibility" and vrc > prc:
+            defends.append(f"your {vrc}-review advantage vs their {prc} (discovery moat)")
+        elif dim == "experience":
+            defends.append(f"your experience lead (+{gap:.1f}) — drives repeats and word-of-mouth")
+        elif dim == "conversion":
+            defends.append(f"your conversion readiness (+{gap:.1f}) — you are easier to book/find")
+        else:
+            defends.append(f"your {dim} advantage (+{gap:.1f})")
+    return "Defend " + " and ".join(defends) + "."
+
+
 # ---------------------------------------------------------------------------
 # Strategic read generation
 # ---------------------------------------------------------------------------
@@ -174,56 +227,29 @@ def _generate_one_read(venue_card, peer, venue_rec, all_data):
     else:
         what_they_win_on = f"No significant dimension lead — scores within 0.5 of yours across the board"
 
-    # Why it matters
-    if peer_leads:
+    # Why it matters — prefer the most commercially distinctive lead for this peer
+    # If there are multiple leads, frame around the combination
+    if len(peer_leads) >= 2:
+        dims_str = " and ".join(d.title() for d, _, _ in peer_leads[:2])
+        what_matters = (f"They lead on both {dims_str} — "
+                        f"a combined advantage that is harder to close than a single-dimension gap.")
+    elif peer_leads:
         top_dim = peer_leads[0][0]
+        top_gap = peer_leads[0][1]
         why = _DIM_COMMERCIAL_MEANING.get(top_dim, "this affects competitive position")
-        what_matters = f"Their {top_dim} lead means {why}."
+        # Add specificity using the gap magnitude
+        if top_gap >= 1.5:
+            what_matters = f"A large {top_dim} gap ({top_gap:+.1f}) — {why}. This is a structural disadvantage, not a rounding error."
+        else:
+            what_matters = f"Their {top_dim} lead means {why}."
     else:
         what_matters = "You are closely matched — small improvements on either side shift the balance."
 
-    # What to copy
-    if peer_leads:
-        top_dim, top_gap, top_expl = peer_leads[0]
-        if top_dim == "trust" and has_fsa:
-            pfsa = peer.get("fsa_rating")
-            vfsa = venue_card.get("fsa_rating")
-            if pfsa and vfsa and int(pfsa) > int(vfsa):
-                copy = f"Target FSA re-inspection to match their {pfsa}/5 rating."
-            else:
-                copy = "Review inspection documentation and sub-score gaps."
-        elif top_dim == "visibility":
-            prc = peer.get("google_reviews") or 0
-            vrc = venue_card.get("google_reviews") or 0
-            if prc > vrc:
-                copy = f"Systematic review generation — they have {prc} reviews to your {vrc}."
-            else:
-                copy = "Improve profile completeness (photos, GBP attributes)."
-        elif top_dim == "conversion":
-            copy = "Audit your Google profile vs theirs: check hours, menu, booking, delivery signals."
-        elif top_dim == "experience":
-            pgr = peer.get("google_rating")
-            copy = f"Investigate what drives their {pgr}/5 — read their recent positive reviews for clues."
-        else:
-            copy = f"Investigate their {top_dim} advantage — observable signals suggest a lead."
-    else:
-        copy = "No clear action to copy — maintain current standards."
+    # What to copy — use peer-specific signals for differentiation
+    copy = _copy_advice(peer_leads, peer, venue_card, has_fsa)
 
-    # What to defend
-    if venue_leads:
-        venue_leads.sort(key=lambda x: -x[1])
-        top_def = venue_leads[0]
-        dim, gap, expl = top_def
-        vrc = venue_card.get("google_reviews") or 0
-        prc = peer.get("google_reviews") or 0
-        if dim == "visibility" and vrc > prc:
-            defend = f"Your {vrc}-review volume advantage — this took years to build and is your discovery moat."
-        elif dim == "experience":
-            defend = f"Your experience lead (+{gap:.1f}) — this drives repeat visits and is hard to replicate quickly."
-        else:
-            defend = f"Your {dim.title()} advantage (+{gap:.1f}) — protect it through consistency."
-    else:
-        defend = "No clear defensive advantage identified — you are closely matched across dimensions."
+    # What to defend — use the strongest venue lead against this specific peer
+    defend = _defend_advice(venue_leads, venue_card, peer)
 
     # Confidence
     if signal_count >= 4 and has_google and has_fsa:
