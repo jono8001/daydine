@@ -87,6 +87,18 @@
       "sentiment": 10.0
     }
   },
+  "has_dated_reviews": true,
+  "date_range": {
+    "earliest": "2026-01-20",
+    "latest": "2026-12-20"
+  },
+  "recent_window": {
+    "cutoff": "2026-11-20",
+    "count": 7,
+    "sources": [
+      "tripadvisor"
+    ]
+  },
   "analysis": {
     "reviews_analyzed": 25,
     "aspect_scores": {
@@ -216,7 +228,8 @@
       "negative": 2
     },
     "risk_flags": [],
-    "trajectory": "stable",
+    "trajectory": "declining",
+    "trajectory_method": "date_sorted",
     "per_review": [
       {
         "rating": 5,
@@ -226,7 +239,9 @@
           "service",
           "ambience"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": null,
+        "source": "google"
       },
       {
         "rating": 4,
@@ -235,7 +250,9 @@
         "aspects": [
           "service"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": null,
+        "source": "google"
       },
       {
         "rating": 5,
@@ -245,7 +262,9 @@
           "service",
           "value"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": null,
+        "source": "google"
       },
       {
         "rating": 5,
@@ -255,7 +274,9 @@
           "food_quality",
           "booking"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": null,
+        "source": "google"
       },
       {
         "rating": 5,
@@ -264,7 +285,9 @@
         "aspects": [
           "service"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": null,
+        "source": "google"
       },
       {
         "rating": 5,
@@ -273,7 +296,9 @@
         "aspects": [
           "food_quality"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-02-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -282,7 +307,9 @@
         "aspects": [
           "food_quality"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-01-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -292,7 +319,9 @@
           "food_quality",
           "ambience"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-12-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 3,
@@ -301,7 +330,9 @@
         "aspects": [
           "ambience"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-12-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -312,7 +343,9 @@
           "service",
           "ambience"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-12-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 1,
@@ -321,7 +354,9 @@
         "aspects": [
           "service"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-12-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -330,14 +365,18 @@
         "aspects": [
           "service"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-11-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 3,
         "sentiment": "mixed",
         "snippet": "The fish crepes were very good and friends who had steak and fish were very satisfied",
         "aspects": [],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-11-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -346,7 +385,9 @@
         "aspects": [
           "service"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-11-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 2,
@@ -356,14 +397,18 @@
           "food_quality",
           "ambience"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-10-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
         "sentiment": "positive",
         "snippet": "We were recently married in Stratford Upon Avon, and decided to book the Vinter on recommendation and having visited it ourselves, for our wedding meal",
         "aspects": [],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-10-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -372,7 +417,9 @@
         "aspects": [
           "service"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-09-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -381,7 +428,9 @@
         "aspects": [
           "ambience"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-09-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -392,7 +441,9 @@
           "service",
           "speed"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-08-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -402,7 +453,9 @@
           "food_quality",
           "speed"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-08-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -412,14 +465,18 @@
           "food_quality",
           "service"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-08-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Excellent\nFood, Service and ambience \nwill be returning",
         "aspects": [],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-08-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -431,7 +488,9 @@
           "value",
           "speed"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-08-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 4,
@@ -440,7 +499,9 @@
         "aspects": [
           "food_quality"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-07-20T00:00:00.000Z",
+        "source": "tripadvisor"
       },
       {
         "rating": 5,
@@ -450,7 +511,9 @@
           "food_quality",
           "value"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": "2026-07-20T00:00:00.000Z",
+        "source": "tripadvisor"
       }
     ]
   },
