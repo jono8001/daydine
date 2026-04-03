@@ -73,17 +73,33 @@ ASPECT_LABELS = {
 
 
 def _collect_review_texts(record):
-    """Gather all actual review texts from a record. Returns list of (text, rating) tuples."""
+    """Gather all actual review texts from a record.
+
+    Returns list of dicts with keys: text, rating, date, source.
+    Date is ISO string or None. Source is 'google' or 'tripadvisor'.
+    """
     reviews = []
+    source_map = {"g_reviews": "google", "ta_reviews": "tripadvisor"}
     for field in ["g_reviews", "ta_reviews"]:
         raw = record.get(field, [])
         if not isinstance(raw, list):
             continue
+        source = source_map[field]
         for rev in raw:
             text = (rev.get("text") or "").strip()
             if text:
                 rating = rev.get("rating") or rev.get("stars")
-                reviews.append((text, int(rating) if rating else None))
+                # Date: TA has 'date' or 'publishedDate' (ISO). Google has 'time' (relative, unreliable).
+                date_str = rev.get("date") or rev.get("publishedDate") or None
+                # Google 'time' is relative ("6 months ago") — not usable as a date
+                if source == "google" and date_str is None:
+                    date_str = None  # explicitly: do not use rev.get("time")
+                reviews.append({
+                    "text": text,
+                    "rating": int(rating) if rating else None,
+                    "date": date_str,
+                    "source": source,
+                })
     return reviews
 
 
@@ -105,14 +121,42 @@ def extract_review_intelligence(record, sentiment_data=None):
             "review_count_ta": ta_review_count,
             "ta_rating": record.get("ta"),
             "aspects": _load_external_sentiment(record, sentiment_data),
+            "has_dated_reviews": False,
+            "date_range": None,
+            "recent_window": None,
         }
+
+    # Compute date metadata before analysis
+    dated_reviews = [r for r in reviews if r.get("date")]
+    has_dated = len(dated_reviews) > 0
+    date_range = None
+    recent_window = None
+    if has_dated:
+        dates_sorted = sorted(d["date"][:10] for d in dated_reviews)
+        date_range = {"earliest": dates_sorted[0], "latest": dates_sorted[-1]}
+        # Recent window: reviews within last 30 days of the latest dated review
+        # (not "today" — the report is generated from collected data, not live)
+        from datetime import datetime, timedelta
+        try:
+            latest_dt = datetime.strptime(dates_sorted[-1], "%Y-%m-%d")
+            cutoff = (latest_dt - timedelta(days=30)).strftime("%Y-%m-%d")
+            recent = [r for r in dated_reviews if r["date"][:10] >= cutoff]
+            recent_window = {
+                "cutoff": cutoff,
+                "count": len(recent),
+                "sources": list(set(r["source"] for r in recent)),
+            }
+        except (ValueError, TypeError):
+            pass  # Malformed dates — degrade gracefully
 
     # Narrative-rich mode — real review text available
     aspect_scores = {}  # aspect → {"pos": count, "neg": count, "quotes_pos": [], "quotes_neg": []}
     all_quotes_pos = []
     all_quotes_neg = []
 
-    for text, rating in reviews:
+    for rev in reviews:
+        text = rev["text"]
+        rating = rev["rating"]
         text_lower = text.lower()
 
         # Keyword theme extraction
@@ -180,6 +224,9 @@ def extract_review_intelligence(record, sentiment_data=None):
                   "sentiment": round(c["pos"] / max(1, c["pos"] + c["neg"]) * 10, 1)}
             for asp, c in aspect_scores.items()
         },
+        "has_dated_reviews": has_dated,
+        "date_range": date_range,
+        "recent_window": recent_window,
     }
 
 

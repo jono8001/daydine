@@ -174,7 +174,12 @@ def _extract_best_snippet(text, aspects):
 # ---------------------------------------------------------------------------
 
 def analyse_reviews(reviews):
-    """Full review intelligence from a list of (text, rating) tuples.
+    """Full review intelligence from a list of review items.
+
+    Each item can be:
+      - (text, rating) tuple — backward compatible, no date
+      - (text, rating, date_str) tuple — with optional ISO date
+      - (text, rating, date_str, source) tuple — with date and source
 
     Returns a rich analysis dict or None if no reviews.
     """
@@ -182,8 +187,21 @@ def analyse_reviews(reviews):
         return None
 
     per_review = []
-    for text, rating in reviews:
+    for item in reviews:
+        if isinstance(item, dict):
+            text, rating = item.get("text", ""), item.get("rating")
+            date_str, source = item.get("date"), item.get("source")
+        elif len(item) >= 4:
+            text, rating, date_str, source = item[0], item[1], item[2], item[3]
+        elif len(item) >= 3:
+            text, rating, date_str = item[0], item[1], item[2]
+            source = None
+        else:
+            text, rating = item[0], item[1]
+            date_str, source = None, None
         analysis = _analyse_single_review(text, rating)
+        analysis["date"] = date_str
+        analysis["source"] = source
         per_review.append(analysis)
 
     # Aggregate aspects
@@ -248,10 +266,23 @@ def analyse_reviews(reviews):
         all_risks.extend(rev["risks"])
     risk_flags = list(set(all_risks))
 
-    # Rating trajectory — compare first half vs second half of reviews
-    # (reviews are typically ordered by relevance/recency)
+    # Rating trajectory — prefer date-sorted if dates available,
+    # fall back to positional split with honest labelling
     trajectory = None
-    if len(ratings) >= 4:
+    trajectory_method = None
+    dated_reviews = [(r, r.get("date")) for r in per_review if r.get("date")]
+    if len(dated_reviews) >= 4:
+        # Date-sorted trajectory: compare older half vs newer half by date
+        dated_sorted = sorted(dated_reviews, key=lambda x: x[1])
+        mid = len(dated_sorted) // 2
+        older_ratings = [r["rating"] for r, _ in dated_sorted[:mid] if r["rating"] is not None]
+        newer_ratings = [r["rating"] for r, _ in dated_sorted[mid:] if r["rating"] is not None]
+        if older_ratings and newer_ratings:
+            diff = (sum(newer_ratings) / len(newer_ratings)) - (sum(older_ratings) / len(older_ratings))
+            trajectory = "improving" if diff > 0.3 else "declining" if diff < -0.3 else "stable"
+            trajectory_method = "date_sorted"
+    if trajectory is None and len(ratings) >= 4:
+        # Positional fallback — not temporal evidence
         first_half = ratings[:len(ratings)//2]
         second_half = ratings[len(ratings)//2:]
         first_avg = sum(first_half) / len(first_half)
@@ -263,6 +294,7 @@ def analyse_reviews(reviews):
             trajectory = "declining"
         else:
             trajectory = "stable"
+        trajectory_method = "positional"
 
     return {
         "reviews_analyzed": len(per_review),
@@ -274,11 +306,14 @@ def analyse_reviews(reviews):
         "sentiment_distribution": dict(sentiments),
         "risk_flags": risk_flags,
         "trajectory": trajectory,
+        "trajectory_method": trajectory_method,
         "per_review": [
             {"rating": r["rating"], "sentiment": r["sentiment"],
              "snippet": r["snippet"],
              "aspects": list(r["aspects"].keys()),
-             "risk_count": len(r["risks"])}
+             "risk_count": len(r["risks"]),
+             "date": r.get("date"),
+             "source": r.get("source")}
             for r in per_review
         ],
     }

@@ -140,11 +140,14 @@ def main():
     # Deep review analysis with TA text
     if review_intel.get("has_narrative"):
         reviews_raw = []
+        source_map = {"g_reviews": "google", "ta_reviews": "tripadvisor"}
         for field in ["g_reviews", "ta_reviews"]:
+            source = source_map[field]
             for rev in venue.get(field, []):
                 text = (rev.get("text") or "").strip()
                 if text:
-                    reviews_raw.append((text, rev.get("rating")))
+                    date_str = rev.get("date") or rev.get("publishedDate") or None
+                    reviews_raw.append((text, rev.get("rating"), date_str, source))
         review_intel["analysis"] = analyse_reviews(reviews_raw)
         print(f"Deep analysis: {review_intel['analysis']['reviews_analyzed']} reviews analysed "
               f"(Google + TripAdvisor)")
