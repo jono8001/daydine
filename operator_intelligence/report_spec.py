@@ -229,6 +229,73 @@ DONT_COUNT = 1
 
 
 # ---------------------------------------------------------------------------
+# Commercial Consequence Framework
+# ---------------------------------------------------------------------------
+# Major findings and actions should carry a brief commercial consequence
+# block where external data supports an estimate. This makes the report
+# actionable — operators can weigh cost-of-inaction against cost-to-fix.
+#
+# Rules:
+#   1. Prefer ranges over single-point estimates.
+#   2. Label confidence honestly — never imply precision that isn't there.
+#   3. If evidence is too weak, use the honest fallback wording.
+#   4. All estimates are from external/public data only.
+#   5. Keep blocks compact (2-4 lines max per finding).
+
+@dataclass
+class CommercialConsequence:
+    """Structured commercial impact estimate for a finding or action."""
+    value_at_stake: str          # e.g. "£200–£600/month" or "Not estimable"
+    implementation_cost: str     # e.g. "Low (< 1 hour)", "Medium (1–2 days)"
+    payback: str                 # e.g. "Immediate", "< 1 month", "1–3 months"
+    confidence: str              # One of CONSEQUENCE_CONFIDENCE_LEVELS
+    basis: str                   # 1-line note: what the estimate rests on
+
+
+# Confidence levels for commercial estimates (strongest → weakest)
+CONSEQUENCE_CONFIDENCE_LEVELS = [
+    "bounded",       # Range derived from observable data with stated assumptions
+    "directional",   # Direction is clear, magnitude is approximate
+    "indicative",    # Rough order-of-magnitude from category averages
+    "not_estimable", # Cannot estimate from external data
+]
+
+# Implementation cost bands
+COST_BANDS = {
+    "zero":   "Zero cost (profile update)",
+    "low":    "Low (< 1 hour, no spend)",
+    "medium": "Medium (1–2 days or < £200)",
+    "high":   "High (multi-week project or £500+)",
+}
+
+# Payback bands
+PAYBACK_BANDS = {
+    "immediate":  "Immediate (same week)",
+    "short":      "< 1 month",
+    "medium":     "1–3 months",
+    "long":       "3–12 months",
+    "long_cycle":  "Long-cycle (12+ months)",
+}
+
+# Honest fallback — use when evidence is insufficient for any estimate
+CONSEQUENCE_NOT_ESTIMABLE = (
+    "Commercial impact not robustly estimable from current external evidence."
+)
+
+# Sections where commercial consequence blocks should appear when feasible:
+#   - Management Priorities (per action)
+#   - Conversion Friction Analysis (per friction point)
+#   - Revenue Left on the Table (per leakage item)
+#   - Competitive Market Intelligence (market-level consequence)
+#
+# Sections where consequence is NOT expected:
+#   - Dimension Scorecard (pure data)
+#   - Evidence Appendix (raw signals)
+#   - Watch List (not yet actionable)
+#   - Data Coverage (meta-information)
+
+
+# ---------------------------------------------------------------------------
 # Anti-Generic Rules — phrases that indicate shallow output
 # ---------------------------------------------------------------------------
 
