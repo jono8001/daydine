@@ -387,6 +387,12 @@ def build_commercial(w, scorecard, deltas, benchmarks, review_intel):
         for item in money[:4]:
             w(f"- {item}")
         w("")
+        # Aggregate commercial framing
+        leak_count = len(money[:4])
+        if leak_count >= 2:
+            w(f"*{leak_count} revenue leaks identified. Most are fixable at low cost "
+              f"(profile updates, messaging changes). Combined value at stake is "
+              f"likely directional — exact figures require internal cover/spend data.*\n")
     else:
         w("No significant revenue leakage identified from available "
           "signals. Additional data would enable deeper analysis.\n")

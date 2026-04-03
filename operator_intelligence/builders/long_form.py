@@ -464,6 +464,9 @@ def build_public_vs_reality(w, scorecard):
               "Your Google rating looks good, but compliance scores suggest underlying "
               "risks that could surface in the next inspection or incident. "
               "Address Trust before it becomes a public problem.\n")
+            w("*Downside avoided: a single public compliance failure could cost "
+              "0.3–0.5 rating points and suppress discovery for months. "
+              "Cost to mitigate: low (documentation review, pre-inspection prep).*\n")
         elif gr_f < 4.0 and trust >= 8.0:
             w("**Interpretation:** Operational reality is stronger than public perception. "
               "Your compliance is solid but customers aren't seeing it reflected in their "
@@ -512,15 +515,23 @@ def build_conversion_analysis(w, scorecard, venue_rec):
             "Set price level on Google Business Profile."))
 
     if friction_points:
-        w("| Friction Point | Impact | Fix |")
-        w("|---------------|--------|-----|")
+        w("| Friction Point | Impact | Fix | Value at Stake |")
+        w("|---------------|--------|-----|---------------|")
+        from operator_intelligence.commercial_estimates import _spend_range, _MONTHLY_COVERS
+        spend_lo, spend_hi = _spend_range(gpl)
+        covers = _MONTHLY_COVERS.get(gpl, _MONTHLY_COVERS[2])
         for title, impact, fix in friction_points:
-            w(f"| {title} | {impact} | {fix} |")
+            # Each missing signal leaks ~2-8% of potential demand
+            val_lo = round(covers[0] * spend_lo * 0.02, -1)
+            val_hi = round(covers[1] * spend_hi * 0.08, -1)
+            w(f"| {title} | {impact} | {fix} | £{val_lo:,.0f}–£{val_hi:,.0f}/mo (directional) |")
         w("")
 
+        total_lo = round(covers[0] * spend_lo * 0.02 * len(friction_points), -1)
+        total_hi = round(covers[1] * spend_hi * 0.08 * len(friction_points), -1)
         w(f"**{len(friction_points)} friction point(s) identified.** "
-          f"Each one represents a leak in your conversion funnel where "
-          f"interested customers drop off before reaching you.\n")
+          f"Combined value at stake: £{total_lo:,.0f}–£{total_hi:,.0f}/month (directional). "
+          f"Each point represents a leak where interested customers drop off.\n")
     else:
         w("No major conversion friction points detected. Your operational "
           "signals (hours, menu, ordering options) are well-configured.\n")

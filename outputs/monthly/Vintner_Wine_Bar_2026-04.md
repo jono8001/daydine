@@ -47,7 +47,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.73, conversion=5.5`
-- *This recommendation has appeared 16 consecutive months.*
+- *This recommendation has appeared 17 consecutive months.*
 
   **Commercial consequence** (directional):
   Value at stake: £180–£3,600/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
@@ -62,7 +62,7 @@ Food Quality draws recurring criticism across reviews (3 negative mentions). One
 - **Owner:** operations | **Confidence:** 70%
 - **Expected upside:** Reduce food quality complaints, protect rating
 - **Evidence:** `review_criticism: Food Quality=3 negative`
-- *This recommendation has appeared 13 consecutive months.*
+- *This recommendation has appeared 14 consecutive months.*
 
   **Commercial consequence** (directional):
   Value at stake: £270–£4,500/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
@@ -77,7 +77,7 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
 - **Evidence:** `review_praise: Service & Hospitality=18`
-- *This recommendation has appeared 13 consecutive months.*
+- *This recommendation has appeared 14 consecutive months.*
 
   **Commercial consequence** (indicative):
   Value at stake: Upside, not loss prevention — magnitude depends on execution | Cost to fix: Low (< 1 hour, no spend) | Payback: 1–3 months
@@ -101,11 +101,11 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 
 This section identifies specific barriers between customer interest and a completed visit or order.
 
-| Friction Point | Impact | Fix |
-|---------------|--------|-----|
-| No delivery/takeaway signal | Google Maps filters for 'delivery' and 'takeaway'. If you offer these services but haven't flagged them, you're invisible to that search intent. | Update Google Business Profile service attributes. |
+| Friction Point | Impact | Fix | Value at Stake |
+|---------------|--------|-----|---------------|
+| No delivery/takeaway signal | Google Maps filters for 'delivery' and 'takeaway'. If you offer these services but haven't flagged them, you're invisible to that search intent. | Update Google Business Profile service attributes. | £180–£3,600/mo (directional) |
 
-**1 friction point(s) identified.** Each one represents a leak in your conversion funnel where interested customers drop off before reaching you.
+**1 friction point(s) identified.** Combined value at stake: £180–£3,600/month (directional). Each point represents a leak where interested customers drop off.
 
 **Overall conversion readiness: Partial.** Some signals are present but gaps remain. Each missing element is a percentage of potential customers who never reach you.
 
@@ -136,6 +136,8 @@ Above the local median but without a distinctive market position. This is the 'g
 - **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier.
 - **Proposition not explicitly marketed.** Guests praise service & hospitality, but this isn't visibly communicated online. Making it the headline would sharpen expectations and attract the right customers.
 - **Operational leakage via food quality.** Recurring complaints (3 mentions) about food quality suggest a specific operational gap that affects both immediate revenue (table turns, repeat visits) and long-term rating trajectory.
+
+*3 revenue leaks identified. Most are fixable at low cost (profile updates, messaging changes). Combined value at stake is likely directional — exact figures require internal cover/spend data.*
 
 ## Review & Reputation Intelligence
 
@@ -198,6 +200,8 @@ Above the median (P62) but not leading. Peer average is 7.1; the top performer s
 
 **Where you lead:** Visibility (+2.2), Conversion (+0.7)
 **Where peers beat you:** Trust (-1.1)
+
+*Commercial implication: you capture an adequate share of a 9-venue market, but the gap to the top (7.7) represents demand you could win. Closing the gap typically requires 1–2 targeted dimension improvements (indicative).*
 
 ## Market Position
 
@@ -343,14 +347,14 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 16 | operations | conversion |
-| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 13 | operations | experience |
-| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 13 | management | experience |
-| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 13 | front-of-house | visibility |
-| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 13 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 17 | operations | conversion |
+| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 14 | operations | experience |
+| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 14 | management | experience |
+| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 14 | front-of-house | visibility |
+| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 14 | management | trust |
 | 7 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
 | 8 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
-| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 13 | operations | experience |
+| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 14 | operations | experience |
 
 ## Next-Month Monitoring Plan
 

@@ -106,6 +106,22 @@ def build_competitive_market_intelligence(w, scorecard, benchmarks, blocks):
                 w(f"**Where peers beat you:** {lag_str}")
             w("")
 
+        # Commercial consequence of competitive position
+        if pct is not None and peer_count > 0:
+            share_pct = round(100 / (peer_count + 1))
+            if pct < 50:
+                w(f"*Commercial implication: in a {peer_count + 1}-venue market, "
+                  f"a below-median position means demand is flowing to competitors. "
+                  f"Each percentile point gained recaptures a share of local search traffic. "
+                  f"Estimated fair share: ~{share_pct}% of local demand — "
+                  f"you are likely underindexed (directional).*\n")
+            elif pct < 80:
+                w(f"*Commercial implication: you capture an adequate share of "
+                  f"a {peer_count + 1}-venue market, but the gap to the top "
+                  f"({peer_top:.1f}) represents demand you could win. "
+                  f"Closing the gap typically requires 1–2 targeted dimension "
+                  f"improvements (indicative).*\n")
+
         # Density assessment
         if peer_count >= 10:
             w(f"**Density alert:** {peer_count} competitors within range. "
