@@ -65,6 +65,35 @@ The score supports diagnosis but does not headline the report. Reports lead with
 
 ---
 
+## 3a. Review Intelligence — Temporal Honesty
+
+The monthly report is generated on a calendar cadence, but the review data it analyses is **not** filtered to the last 30 days by default. The report must never imply otherwise.
+
+### Two-layer model
+
+Review intelligence is conceptually split into two layers:
+
+| Layer | What it covers | Date requirement | Fallback if dates unavailable |
+|---|---|---|---|
+| **Reputation Baseline** | What the venue is generally known for across the full available review sample | None — uses all collected reviews regardless of age | Always available when review text exists |
+| **Recent Movement** | What changed in the last 30 days (or a stated recent window) | Requires reliable date stamps on individual reviews | Degrade honestly: state that recent movement could not be isolated |
+
+### Source date availability
+
+| Source | Date field | Reliability | Usable for monthly filtering? |
+|---|---|---|---|
+| TripAdvisor (Apify) | `publishedDate` (ISO datetime) | High — set by TripAdvisor | Yes |
+| Google Places API | `time` (relative string, e.g. "6 months ago") | Low — relative to scrape time, month-level precision at best | No — approximate only |
+
+### Rules for report wording
+
+1. **The Reputation Baseline layer must always state the sample scope.** Example: "Based on 25 reviews collected across [date range or 'the available sample']." Never imply these are this month's reviews.
+2. **The Recent Movement layer must only appear when date-filtered reviews exist.** If no reviews have reliable dates within the reporting window, the report must state: *"Recent review movement could not be isolated from current source data."*
+3. **Trajectory claims ("improving", "declining") must be date-grounded.** Splitting reviews by list position is not temporal evidence. If reviews are not date-sorted, trajectory claims must be labelled as positional, not temporal.
+4. **Google review dates are unreliable** and must not be used for precise monthly filtering. They may be used for approximate windowing (±1 month) with an explicit caveat.
+
+---
+
 ## 4. Signal Architecture
 
 ### 4.1 Provenance Classification

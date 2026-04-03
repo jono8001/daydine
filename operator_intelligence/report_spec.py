@@ -192,7 +192,9 @@ MONTHLY_SECTIONS = [
     SectionSpec("public_vs_reality", "Public Proof vs Operational Reality", mandatory=True, min_lines=4,
                 description="Alignment analysis between public signals and operational depth"),
     SectionSpec("review_intelligence", "Review & Reputation Intelligence", mandatory=True, min_lines=3,
-                description="Narrative-rich: aspect sentiment, quotes, themes. Structured: volume analysis"),
+                description="Two-layer model: Reputation Baseline (full sample with stated scope) "
+                            "and Recent Movement (date-filtered if dates available, honest fallback if not). "
+                            "Must not imply all reviews are from the current month."),
     SectionSpec("conversion_friction", "Conversion Friction Analysis", mandatory=True, min_lines=3,
                 description="Specific barriers between customer interest and completed visit"),
     SectionSpec("recommendation_tracker", "Recommendation Tracker", mandatory=True, min_lines=2,
@@ -271,6 +273,18 @@ SCORE_LED_PHRASES = [
     "conversion readiness gap vs peers",
 ]
 
+# Phrases that imply temporal freshness without date evidence
+# These should trigger warnings, not hard failures, because they may be
+# valid once date filtering is implemented.
+TEMPORAL_OVERCLAIM_PHRASES = [
+    "this month's reviews",
+    "reviews from this month",
+    "reviews received this month",
+    "in the last 30 days",       # only valid if date filtering is active
+    "recent reviews show",       # only valid if reviews are date-sorted
+    "recent reviews suggest",
+]
+
 
 # ---------------------------------------------------------------------------
 # Validation
@@ -338,6 +352,13 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
     for phrase in SCORE_LED_PHRASES:
         if phrase in text_lower:
             result.warnings.append(f"SCORE_LED_PHRASE: '{phrase}' — consider more proposition-led language")
+
+    # --- Temporal overclaim detection ---
+    for phrase in TEMPORAL_OVERCLAIM_PHRASES:
+        if phrase in text_lower:
+            result.warnings.append(
+                f"TEMPORAL_OVERCLAIM: '{phrase}' implies date-filtered freshness — "
+                f"only valid if review dates are available and filtering is active")
 
     # --- Fabricated review intelligence ---
     if mode == MODE_STRUCTURED:
