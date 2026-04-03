@@ -1,0 +1,222 @@
+{
+  "has_narrative": true,
+  "reviews_analyzed": 5,
+  "praise_themes": [
+    {
+      "aspect": "service",
+      "label": "Service & Hospitality",
+      "mentions": 7,
+      "quotes": [
+        "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly!",
+        "Vintner provided great pre-theatre service helped us get to our showing on time.\n\nI had the vegan risotto, which was solid and what I was looking for."
+      ]
+    },
+    {
+      "aspect": "food_quality",
+      "label": "Food Quality",
+      "mentions": 3,
+      "quotes": [
+        "This was our second visit to The Vinter, & it didn’t disappoint! We come to Stratford several times a year to visit the RSC."
+      ]
+    },
+    {
+      "aspect": "ambience",
+      "label": "Atmosphere & Setting",
+      "mentions": 3,
+      "quotes": []
+    },
+    {
+      "aspect": "value",
+      "label": "Value for Money",
+      "mentions": 1,
+      "quotes": []
+    },
+    {
+      "aspect": "speed",
+      "label": "Speed & Efficiency",
+      "mentions": 1,
+      "quotes": []
+    }
+  ],
+  "criticism_themes": [],
+  "strongest_positive_quotes": [
+    "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly!",
+    "Vintner provided great pre-theatre service helped us get to our showing on time.\n\nI had the vegan risotto, which was solid and what I was looking for.",
+    "Great little joint, had the Beef Rump and a Sticky Toffee Pudding and both were fantastic and good for the price."
+  ],
+  "strongest_constructive_quotes": [],
+  "aspect_scores": {
+    "food_quality": {
+      "positive": 3,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "service": {
+      "positive": 7,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "ambience": {
+      "positive": 3,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "value": {
+      "positive": 1,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "speed": {
+      "positive": 1,
+      "negative": 0,
+      "sentiment": 10.0
+    }
+  },
+  "analysis": {
+    "reviews_analyzed": 5,
+    "aspect_scores": {
+      "service": {
+        "score": 10.0,
+        "positive": 7,
+        "negative": 0,
+        "mentions": 7
+      },
+      "ambience": {
+        "score": 10.0,
+        "positive": 3,
+        "negative": 0,
+        "mentions": 3
+      },
+      "value": {
+        "score": 10.0,
+        "positive": 1,
+        "negative": 0,
+        "mentions": 1
+      },
+      "food_quality": {
+        "score": 10.0,
+        "positive": 3,
+        "negative": 0,
+        "mentions": 3
+      },
+      "booking": {
+        "score": 10.0,
+        "positive": 1,
+        "negative": 0,
+        "mentions": 1
+      }
+    },
+    "praise_themes": [
+      {
+        "aspect": "service",
+        "label": "Service & Hospitality",
+        "mentions": 7,
+        "quotes": [
+          "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly",
+          "The staff were attentive throughout, checking in at the right moments"
+        ]
+      },
+      {
+        "aspect": "ambience",
+        "label": "Atmosphere & Setting",
+        "mentions": 3,
+        "quotes": [
+          "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"
+        ]
+      },
+      {
+        "aspect": "food_quality",
+        "label": "Food Quality",
+        "mentions": 3,
+        "quotes": [
+          "We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"
+        ]
+      },
+      {
+        "aspect": "value",
+        "label": "Value for Money",
+        "mentions": 1,
+        "quotes": [
+          "The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service"
+        ]
+      },
+      {
+        "aspect": "booking",
+        "label": "Booking & Accessibility",
+        "mentions": 1,
+        "quotes": [
+          "We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"
+        ]
+      }
+    ],
+    "criticism_themes": [],
+    "rating_distribution": {
+      "5": 4,
+      "4": 1
+    },
+    "average_sample_rating": 4.8,
+    "sentiment_distribution": {
+      "positive": 5
+    },
+    "risk_flags": [],
+    "trajectory": "improving",
+    "per_review": [
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly",
+        "aspects": [
+          "service",
+          "ambience"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 4,
+        "sentiment": "positive",
+        "snippet": "The staff were attentive throughout, checking in at the right moments",
+        "aspects": [
+          "service"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service",
+        "aspects": [
+          "service",
+          "value"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND",
+        "aspects": [
+          "food_quality",
+          "booking"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Great choice of \"Sharable\" starters with very friendly staff especially Charlie.",
+        "aspects": [
+          "service"
+        ],
+        "risk_count": 0
+      }
+    ]
+  },
+  "volume_signals": {
+    "volume_tier": "strong",
+    "volume_note": "887 reviews — strong base. Rating is stable but a sustained negative pattern could shift it.",
+    "rating_position": "premium",
+    "rating_note": "4.6/5 places you in the top tier of Google search results. This drives discovery.",
+    "aggregate_rating": 4.6,
+    "review_count": 887
+  }
+}

@@ -1,37 +1,37 @@
 {
   "count": 210,
-  "ranked": 197,
+  "ranked": 195,
   "not_ranked": 12,
-  "insufficient_data": 1,
-  "mean": 7.32,
-  "median": 7.65,
-  "min": 2.0,
-  "max": 8.93,
-  "stdev": 1.05,
+  "insufficient_data": 3,
+  "mean": 7.15,
+  "median": 7.38,
+  "min": 1.94,
+  "max": 8.56,
+  "stdev": 1.02,
   "band_distribution": {
     "Excellent": {
-      "count": 31,
-      "pct": 14.8
+      "count": 20,
+      "pct": 9.5
     },
     "Good": {
-      "count": 141,
-      "pct": 67.1
+      "count": 142,
+      "pct": 67.6
     },
     "Generally Satisfactory": {
-      "count": 17,
-      "pct": 8.1
+      "count": 25,
+      "pct": 11.9
     },
     "Improvement Necessary": {
-      "count": 4,
-      "pct": 1.9
+      "count": 5,
+      "pct": 2.4
     },
     "Major Improvement": {
-      "count": 4,
-      "pct": 1.9
+      "count": 1,
+      "pct": 0.5
     },
     "Urgent Improvement": {
-      "count": 0,
-      "pct": 0.0
+      "count": 2,
+      "pct": 1.0
     }
   },
   "rankings_by_category": {
@@ -39,33 +39,33 @@
       "count": 9,
       "top_5": [
         {
-          "rank": 23,
+          "rank": 39,
           "name": "Miller And Carter",
-          "rcs": 8.05,
-          "band": "Excellent"
+          "rcs": 7.845,
+          "band": "Good"
         },
         {
-          "rank": 37,
+          "rank": 41,
           "name": "Beleza Rodizio",
-          "rcs": 7.971,
+          "rcs": 7.832,
           "band": "Good"
         },
         {
-          "rank": 54,
+          "rank": 82,
           "name": "McDonald's",
-          "rcs": 7.881,
+          "rcs": 7.51,
           "band": "Good"
         },
         {
-          "rank": 90,
-          "name": "McDonald's",
-          "rcs": 7.687,
-          "band": "Good"
-        },
-        {
-          "rank": 110,
+          "rank": 128,
           "name": "KFC - Southbound",
-          "rcs": 7.559,
+          "rcs": 7.058,
+          "band": "Good"
+        },
+        {
+          "rank": 131,
+          "name": "McDonald's",
+          "rcs": 7.044,
           "band": "Good"
         }
       ]
@@ -74,16 +74,16 @@
       "count": 2,
       "top_5": [
         {
-          "rank": 147,
+          "rank": 145,
           "name": "Four Seasons Pho Limited",
-          "rcs": 7.082,
+          "rcs": 6.86,
           "band": "Good"
         },
         {
-          "rank": 149,
+          "rank": 165,
           "name": "Chopstix South",
-          "rcs": 7.04,
-          "band": "Good"
+          "rcs": 6.431,
+          "band": "Generally Satisfactory"
         }
       ]
     },
@@ -91,21 +91,21 @@
       "count": 3,
       "top_5": [
         {
-          "rank": 24,
-          "name": "Mor",
-          "rcs": 8.049,
-          "band": "Excellent"
-        },
-        {
-          "rank": 48,
+          "rank": 35,
           "name": "International Circus Churros 2",
-          "rcs": 7.916,
+          "rcs": 7.879,
           "band": "Good"
         },
         {
-          "rank": 71,
+          "rank": 36,
+          "name": "Mor",
+          "rcs": 7.878,
+          "band": "Good"
+        },
+        {
+          "rank": 106,
           "name": "Greggs PLC",
-          "rcs": 7.784,
+          "rcs": 7.315,
           "band": "Good"
         }
       ]
@@ -114,68 +114,68 @@
       "count": 7,
       "top_5": [
         {
-          "rank": 29,
-          "name": "The Kings Head",
-          "rcs": 8.011,
+          "rank": 15,
+          "name": "Deli Cafe",
+          "rcs": 8.13,
           "band": "Excellent"
         },
         {
-          "rank": 42,
-          "name": "Prospero Lounge",
-          "rcs": 7.947,
-          "band": "Good"
-        },
-        {
-          "rank": 45,
-          "name": "Deli Cafe",
-          "rcs": 7.931,
-          "band": "Good"
-        },
-        {
-          "rank": 56,
+          "rank": 23,
           "name": "Lambs",
-          "rcs": 7.871,
+          "rcs": 7.983,
           "band": "Good"
         },
         {
-          "rank": 73,
+          "rank": 34,
+          "name": "Loxleys Restaurant And Wine Bar",
+          "rcs": 7.884,
+          "band": "Good"
+        },
+        {
+          "rank": 52,
+          "name": "The Kings Head",
+          "rcs": 7.715,
+          "band": "Good"
+        },
+        {
+          "rank": 53,
           "name": "Barnabys",
-          "rcs": 7.759,
+          "rcs": 7.713,
           "band": "Good"
         }
       ]
     },
     "Cafe / Coffee Shop": {
-      "count": 53,
+      "count": 52,
       "top_5": [
         {
-          "rank": 2,
+          "rank": 3,
           "name": "Gilks' Garage Cafe",
-          "rcs": 8.44,
+          "rcs": 8.435,
           "band": "Excellent"
         },
         {
-          "rank": 4,
+          "rank": 5,
           "name": "Shakespaw Cat Cafe",
-          "rcs": 8.319,
+          "rcs": 8.379,
           "band": "Excellent"
         },
         {
           "rank": 8,
-          "name": "Costa",
-          "rcs": 8.265,
-          "band": "Excellent"
-        },
-        {
-          "rank": 10,
-          "name": "Espresso Barn",
-          "rcs": 8.22,
-          "band": "Excellent"
-        },
-        {
-          "rank": 15,
           "name": "Nel's At The Pavilion",
-          "rcs": 8.136,
+          "rcs": 8.32,
+          "band": "Excellent"
+        },
+        {
+          "rank": 12,
+          "name": "Espresso Barn",
+          "rcs": 8.16,
+          "band": "Excellent"
+        },
+        {
+          "rank": 13,
+          "name": "Costa",
+          "rcs": 8.158,
           "band": "Excellent"
         }
       ]
@@ -184,22 +184,22 @@
       "count": 3,
       "top_5": [
         {
-          "rank": 100,
+          "rank": 69,
           "name": "Kitty's Kitchen Catering Ltd",
-          "rcs": 7.649,
+          "rcs": 7.606,
           "band": "Good"
         },
         {
-          "rank": 168,
+          "rank": 174,
           "name": "Earlswood Lunch Club",
-          "rcs": 6.604,
-          "band": "Good"
+          "rcs": 6.098,
+          "band": "Generally Satisfactory"
         },
         {
           "rank": 188,
           "name": "CAMEO Lunch Club",
-          "rcs": 5.307,
-          "band": "Generally Satisfactory"
+          "rcs": 4.801,
+          "band": "Improvement Necessary"
         }
       ]
     },
@@ -207,19 +207,19 @@
       "count": 3,
       "top_5": [
         {
-          "rank": 117,
+          "rank": 56,
           "name": "Sans Oriental Restaurant",
-          "rcs": 7.507,
+          "rcs": 7.697,
           "band": "Good"
         },
         {
-          "rank": 186,
+          "rank": 185,
           "name": "New Summer Palace Restaurant",
-          "rcs": 6.104,
+          "rcs": 5.735,
           "band": "Generally Satisfactory"
         },
         {
-          "rank": 190,
+          "rank": 189,
           "name": "China Garden",
           "rcs": 4.0,
           "band": "Improvement Necessary"
@@ -230,33 +230,33 @@
       "count": 11,
       "top_5": [
         {
-          "rank": 11,
+          "rank": 27,
           "name": "Starbucks",
-          "rcs": 8.218,
-          "band": "Excellent"
-        },
-        {
-          "rank": 13,
-          "name": "Starbucks Drive Thru",
-          "rcs": 8.162,
-          "band": "Excellent"
-        },
-        {
-          "rank": 41,
-          "name": "GAIL's Stratford-Upon-Avon",
-          "rcs": 7.955,
+          "rcs": 7.95,
           "band": "Good"
         },
         {
-          "rank": 64,
+          "rank": 46,
           "name": "The Kingfisher FishBar",
-          "rcs": 7.842,
+          "rcs": 7.777,
           "band": "Good"
         },
         {
-          "rank": 69,
-          "name": "The Food Of Love",
-          "rcs": 7.796,
+          "rank": 55,
+          "name": "Starbucks Drive Thru",
+          "rcs": 7.702,
+          "band": "Good"
+        },
+        {
+          "rank": 73,
+          "name": "GAIL's Stratford-Upon-Avon",
+          "rcs": 7.587,
+          "band": "Good"
+        },
+        {
+          "rank": 75,
+          "name": "Bruno's Bakery",
+          "rcs": 7.567,
           "band": "Good"
         }
       ]
@@ -265,21 +265,21 @@
       "count": 3,
       "top_5": [
         {
-          "rank": 30,
+          "rank": 14,
           "name": "The Garden Cafe",
-          "rcs": 8.01,
+          "rcs": 8.146,
           "band": "Excellent"
         },
         {
-          "rank": 84,
+          "rank": 109,
           "name": "Costa",
-          "rcs": 7.716,
+          "rcs": 7.289,
           "band": "Good"
         },
         {
-          "rank": 155,
+          "rank": 161,
           "name": "Paul's Catering",
-          "rcs": 6.935,
+          "rcs": 6.596,
           "band": "Good"
         }
       ]
@@ -288,15 +288,15 @@
       "count": 2,
       "top_5": [
         {
-          "rank": 12,
+          "rank": 18,
           "name": "Bistrot Pierre",
-          "rcs": 8.179,
+          "rcs": 8.046,
           "band": "Excellent"
         },
         {
-          "rank": 39,
+          "rank": 37,
           "name": "The Opposition",
-          "rcs": 7.967,
+          "rcs": 7.855,
           "band": "Good"
         }
       ]
@@ -305,33 +305,33 @@
       "count": 17,
       "top_5": [
         {
-          "rank": 6,
+          "rank": 9,
           "name": "Stratford Manor Hotel",
-          "rcs": 8.312,
+          "rcs": 8.194,
           "band": "Excellent"
         },
         {
-          "rank": 21,
+          "rank": 20,
           "name": "Ettington Park Hotel",
-          "rcs": 8.084,
+          "rcs": 8.017,
           "band": "Excellent"
         },
         {
-          "rank": 33,
+          "rank": 62,
           "name": "Premier Inn",
-          "rcs": 7.982,
+          "rcs": 7.664,
           "band": "Good"
         },
         {
-          "rank": 59,
-          "name": "Premier Inn",
-          "rcs": 7.859,
+          "rank": 90,
+          "name": "Hotel Indigo And The Woodsman",
+          "rcs": 7.452,
           "band": "Good"
         },
         {
-          "rank": 68,
-          "name": "Alveston Manor Hotel",
-          "rcs": 7.798,
+          "rank": 107,
+          "name": "Studley Castle",
+          "rcs": 7.308,
           "band": "Good"
         }
       ]
@@ -340,33 +340,33 @@
       "count": 17,
       "top_5": [
         {
-          "rank": 49,
+          "rank": 33,
           "name": "Kolshi Restaurant",
-          "rcs": 7.915,
+          "rcs": 7.893,
           "band": "Good"
         },
         {
-          "rank": 61,
-          "name": "The Spice Room",
-          "rcs": 7.855,
+          "rank": 38,
+          "name": "Avon Spice",
+          "rcs": 7.846,
           "band": "Good"
         },
         {
-          "rank": 63,
-          "name": "Hussains",
-          "rcs": 7.842,
-          "band": "Good"
-        },
-        {
-          "rank": 65,
+          "rank": 42,
           "name": "Shah's",
-          "rcs": 7.829,
+          "rcs": 7.795,
           "band": "Good"
         },
         {
-          "rank": 82,
+          "rank": 43,
           "name": "Cardamom",
-          "rcs": 7.731,
+          "rcs": 7.79,
+          "band": "Good"
+        },
+        {
+          "rank": 60,
+          "name": "The Spice Room",
+          "rcs": 7.673,
           "band": "Good"
         }
       ]
@@ -375,33 +375,33 @@
       "count": 13,
       "top_5": [
         {
-          "rank": 38,
-          "name": "Pizza Hut Restaurants - Dine In",
-          "rcs": 7.968,
-          "band": "Good"
-        },
-        {
-          "rank": 47,
-          "name": "Carluccio's",
-          "rcs": 7.918,
-          "band": "Good"
-        },
-        {
-          "rank": 51,
-          "name": "Pizza Junction Kineton Ltd",
-          "rcs": 7.896,
-          "band": "Good"
-        },
-        {
-          "rank": 55,
+          "rank": 48,
           "name": "Bumbles",
-          "rcs": 7.872,
+          "rcs": 7.767,
+          "band": "Good"
+        },
+        {
+          "rank": 49,
+          "name": "Soma",
+          "rcs": 7.738,
           "band": "Good"
         },
         {
           "rank": 58,
-          "name": "Soma",
-          "rcs": 7.865,
+          "name": "Pizza Junction Kineton Ltd",
+          "rcs": 7.68,
+          "band": "Good"
+        },
+        {
+          "rank": 67,
+          "name": "The Phoenix",
+          "rcs": 7.617,
+          "band": "Good"
+        },
+        {
+          "rank": 77,
+          "name": "Carluccio's",
+          "rcs": 7.557,
           "band": "Good"
         }
       ]
@@ -410,9 +410,9 @@
       "count": 1,
       "top_5": [
         {
-          "rank": 135,
+          "rank": 118,
           "name": "Sushi Land",
-          "rcs": 7.287,
+          "rcs": 7.201,
           "band": "Good"
         }
       ]
@@ -421,50 +421,50 @@
       "count": 2,
       "top_5": [
         {
-          "rank": 159,
+          "rank": 160,
           "name": "Turkish Stonebakers",
-          "rcs": 6.912,
+          "rcs": 6.603,
           "band": "Good"
         },
         {
-          "rank": 166,
+          "rank": 163,
           "name": "Tzatziki34",
-          "rcs": 6.638,
-          "band": "Good"
+          "rcs": 6.478,
+          "band": "Generally Satisfactory"
         }
       ]
     },
     "Other": {
-      "count": 10,
+      "count": 9,
       "top_5": [
         {
-          "rank": 17,
-          "name": "The Pavillion",
-          "rcs": 8.104,
-          "band": "Excellent"
-        },
-        {
-          "rank": 20,
+          "rank": 22,
           "name": "The Lime Tree Restaurant",
-          "rcs": 8.087,
-          "band": "Excellent"
-        },
-        {
-          "rank": 46,
-          "name": "Stratford Adventure Golf",
-          "rcs": 7.93,
+          "rcs": 7.986,
           "band": "Good"
         },
         {
-          "rank": 60,
+          "rank": 31,
+          "name": "The Pavillion",
+          "rcs": 7.905,
+          "band": "Good"
+        },
+        {
+          "rank": 65,
           "name": "Ashorne Hill Management College",
-          "rcs": 7.858,
+          "rcs": 7.637,
           "band": "Good"
         },
         {
-          "rank": 106,
-          "name": "Good Breakfast",
-          "rcs": 7.591,
+          "rank": 84,
+          "name": "Stratford Adventure Golf",
+          "rcs": 7.501,
+          "band": "Good"
+        },
+        {
+          "rank": 105,
+          "name": "Shakespeare's",
+          "rcs": 7.317,
           "band": "Good"
         }
       ]
@@ -473,34 +473,34 @@
       "count": 18,
       "top_5": [
         {
-          "rank": 3,
+          "rank": 1,
           "name": "Arrow Mill",
-          "rcs": 8.4,
+          "rcs": 8.564,
           "band": "Excellent"
         },
         {
-          "rank": 5,
-          "name": "The Red Lion",
-          "rcs": 8.318,
-          "band": "Excellent"
-        },
-        {
-          "rank": 9,
+          "rank": 4,
           "name": "The Fox Inn",
-          "rcs": 8.265,
+          "rcs": 8.415,
           "band": "Excellent"
         },
         {
-          "rank": 16,
-          "name": "The Townhouse Also Trading As JR Hotel And Restaurants LTD",
-          "rcs": 8.116,
+          "rank": 7,
+          "name": "The Red Lion",
+          "rcs": 8.324,
           "band": "Excellent"
         },
         {
-          "rank": 19,
+          "rank": 21,
           "name": "The Alcester Inn",
-          "rcs": 8.087,
-          "band": "Excellent"
+          "rcs": 7.99,
+          "band": "Good"
+        },
+        {
+          "rank": 24,
+          "name": "The Townhouse Also Trading As JR Hotel And Restaurants LTD",
+          "rcs": 7.983,
+          "band": "Good"
         }
       ]
     },
@@ -508,34 +508,34 @@
       "count": 15,
       "top_5": [
         {
-          "rank": 1,
+          "rank": 2,
           "name": "11/17 Salt Beef Bar",
-          "rcs": 8.932,
+          "rcs": 8.546,
           "band": "Excellent"
         },
         {
-          "rank": 7,
-          "name": "Red Hot Mamma Pizzeria",
-          "rcs": 8.283,
-          "band": "Excellent"
-        },
-        {
-          "rank": 14,
+          "rank": 6,
           "name": "Lithos Restaurant",
-          "rcs": 8.153,
+          "rcs": 8.358,
           "band": "Excellent"
         },
         {
-          "rank": 35,
+          "rank": 10,
           "name": "Oxheart",
-          "rcs": 7.977,
-          "band": "Good"
+          "rcs": 8.186,
+          "band": "Excellent"
         },
         {
-          "rank": 44,
-          "name": "Bannatyne Health Club And Spa Wildmoor",
-          "rcs": 7.932,
-          "band": "Good"
+          "rank": 11,
+          "name": "Red Hot Mamma Pizzeria",
+          "rcs": 8.166,
+          "band": "Excellent"
+        },
+        {
+          "rank": 16,
+          "name": "The Bluebell",
+          "rcs": 8.126,
+          "band": "Excellent"
         }
       ]
     },
@@ -543,33 +543,33 @@
       "count": 6,
       "top_5": [
         {
-          "rank": 27,
+          "rank": 28,
           "name": "The Pickled Crab Deli",
-          "rcs": 8.018,
-          "band": "Excellent"
+          "rcs": 7.942,
+          "band": "Good"
         },
         {
-          "rank": 52,
+          "rank": 85,
           "name": "The Bishops Fryer",
-          "rcs": 7.894,
+          "rcs": 7.5,
           "band": "Good"
         },
         {
-          "rank": 96,
-          "name": "Chrissie's Kitchen",
-          "rcs": 7.665,
-          "band": "Good"
-        },
-        {
-          "rank": 108,
+          "rank": 95,
           "name": "Pickled & Tipsy's Cafe",
-          "rcs": 7.586,
+          "rcs": 7.403,
           "band": "Good"
         },
         {
-          "rank": 137,
+          "rank": 97,
+          "name": "Chrissie's Kitchen",
+          "rcs": 7.391,
+          "band": "Good"
+        },
+        {
+          "rank": 135,
           "name": "The Margin",
-          "rcs": 7.246,
+          "rcs": 7.022,
           "band": "Good"
         }
       ]
@@ -578,9 +578,9 @@
       "count": 1,
       "top_5": [
         {
-          "rank": 120,
+          "rank": 63,
           "name": "Pick Thai Ltd",
-          "rcs": 7.489,
+          "rcs": 7.658,
           "band": "Good"
         }
       ]
@@ -589,18 +589,26 @@
       "count": 1,
       "top_5": [
         {
-          "rank": 81,
+          "rank": 79,
           "name": "Plantarium",
-          "rcs": 7.732,
+          "rcs": 7.547,
           "band": "Good"
         }
       ]
     }
   },
   "signals_coverage": {
-    "available_per_record_avg": 16.2,
+    "available_per_record_avg": 13.3,
     "total_possible": 40
   },
   "sentiment_warnings": [],
-  "generated_at": "2026-03-31T22:12:35.245244+00:00"
+  "convergence": {
+    "converged": 107,
+    "neutral": 47,
+    "mild_divergence": 19,
+    "diverged": 17,
+    "insufficient_sources": 5
+  },
+  "methodology": "RCS V3.4",
+  "generated_at": "2026-04-01T10:14:44.236913+00:00"
 }

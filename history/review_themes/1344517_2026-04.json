@@ -1,0 +1,225 @@
+{
+  "has_narrative": true,
+  "reviews_analyzed": 5,
+  "praise_themes": [
+    {
+      "aspect": "service",
+      "label": "Service & Hospitality",
+      "mentions": 6,
+      "quotes": [
+        "We had a wonderful Sunday roast at The Fox in Loxley. We arrived just after 12 and were seated at a table by the fireplace.",
+        "Wow! This place is a rare gem!\nFrom the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your nee"
+      ]
+    },
+    {
+      "aspect": "food_quality",
+      "label": "Food Quality",
+      "mentions": 2,
+      "quotes": [
+        "Not local to the area, we had asked for recommendations for dining and The Fox lived delightfully up to them."
+      ]
+    },
+    {
+      "aspect": "ambience",
+      "label": "Atmosphere & Setting",
+      "mentions": 2,
+      "quotes": []
+    },
+    {
+      "aspect": "speed",
+      "label": "Speed & Efficiency",
+      "mentions": 1,
+      "quotes": []
+    },
+    {
+      "aspect": "value",
+      "label": "Value for Money",
+      "mentions": 1,
+      "quotes": []
+    }
+  ],
+  "criticism_themes": [],
+  "strongest_positive_quotes": [
+    "We had a wonderful Sunday roast at The Fox in Loxley. We arrived just after 12 and were seated at a table by the fireplace.",
+    "Not local to the area, we had asked for recommendations for dining and The Fox lived delightfully up to them.",
+    "Wow! This place is a rare gem!\nFrom the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your nee"
+  ],
+  "strongest_constructive_quotes": [],
+  "aspect_scores": {
+    "service": {
+      "positive": 6,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "speed": {
+      "positive": 1,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "food_quality": {
+      "positive": 2,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "ambience": {
+      "positive": 2,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "value": {
+      "positive": 1,
+      "negative": 0,
+      "sentiment": 10.0
+    }
+  },
+  "analysis": {
+    "reviews_analyzed": 5,
+    "aspect_scores": {
+      "service": {
+        "score": 10.0,
+        "positive": 6,
+        "negative": 0,
+        "mentions": 6
+      },
+      "speed": {
+        "score": 10.0,
+        "positive": 1,
+        "negative": 0,
+        "mentions": 1
+      },
+      "food_quality": {
+        "score": 10.0,
+        "positive": 3,
+        "negative": 0,
+        "mentions": 3
+      },
+      "ambience": {
+        "score": 10.0,
+        "positive": 3,
+        "negative": 0,
+        "mentions": 3
+      },
+      "value": {
+        "score": 10.0,
+        "positive": 1,
+        "negative": 0,
+        "mentions": 1
+      }
+    },
+    "praise_themes": [
+      {
+        "aspect": "service",
+        "label": "Service & Hospitality",
+        "mentions": 6,
+        "quotes": [
+          "The service was incredible, James, our waiter was friendly, chatty and very efficient",
+          "From the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your needs"
+        ]
+      },
+      {
+        "aspect": "food_quality",
+        "label": "Food Quality",
+        "mentions": 3,
+        "quotes": [
+          "Beautifully decorated with a charming modern food menu",
+          "Really enjoyed our bank holiday lunch here Portion sizes were so generous we had to take some home but that in no way affected the quality, everything from starter through to desert was absolutely del"
+        ]
+      },
+      {
+        "aspect": "ambience",
+        "label": "Atmosphere & Setting",
+        "mentions": 3,
+        "quotes": [
+          "Beautifully decorated with a charming modern food menu",
+          "From the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your needs"
+        ]
+      },
+      {
+        "aspect": "speed",
+        "label": "Speed & Efficiency",
+        "mentions": 1,
+        "quotes": [
+          "The service was incredible, James, our waiter was friendly, chatty and very efficient"
+        ]
+      },
+      {
+        "aspect": "value",
+        "label": "Value for Money",
+        "mentions": 1,
+        "quotes": [
+          "Reasonable amount of parking space"
+        ]
+      }
+    ],
+    "criticism_themes": [],
+    "rating_distribution": {
+      "5": 5
+    },
+    "average_sample_rating": 5.0,
+    "sentiment_distribution": {
+      "positive": 5
+    },
+    "risk_flags": [],
+    "trajectory": "stable",
+    "per_review": [
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "The service was incredible, James, our waiter was friendly, chatty and very efficient",
+        "aspects": [
+          "service",
+          "speed"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Beautifully decorated with a charming modern food menu",
+        "aspects": [
+          "food_quality",
+          "ambience"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "From the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your needs",
+        "aspects": [
+          "service",
+          "ambience"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Really enjoyed our bank holiday lunch here Portion sizes were so generous we had to take some home but that in no way affected the quality, everything from starter through to desert was absolutely del",
+        "aspects": [
+          "food_quality",
+          "service"
+        ],
+        "risk_count": 0
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Reasonable amount of parking space",
+        "aspects": [
+          "service",
+          "value"
+        ],
+        "risk_count": 0
+      }
+    ]
+  },
+  "volume_signals": {
+    "volume_tier": "adequate",
+    "volume_note": "271 reviews — adequate but not dominant. 5 consecutive low ratings could drop average by ~0.1.",
+    "rating_position": "premium",
+    "rating_note": "4.6/5 places you in the top tier of Google search results. This drives discovery.",
+    "aggregate_rating": 4.6,
+    "review_count": 271
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "venue": "Arrow Mill",
+  "month": "2026-04",
+  "scorecard": {
+    "experience": 9.42,
+    "visibility": 8.5,
+    "trust": 9.74,
+    "conversion": 5.5,
+    "prestige": 1.5,
+    "overall": 7.94
+  },
+  "deltas": null,
+  "priority_actions": [
+    {
+      "title": "Fix the digital shopfront — you're losing walk-ins",
+      "status": "new",
+      "priority": 6.0,
+      "dimension": "conversion"
+    },
+    {
+      "title": "Pursue editorial recognition",
+      "status": "new",
+      "priority": 3.5,
+      "dimension": "prestige"
+    },
+    {
+      "title": "Turn strong guest warmth into fresh public proof",
+      "status": "new",
+      "priority": 4.0,
+      "dimension": "visibility"
+    }
+  ],
+  "watch_items": [
+    {
+      "title": "Monitor local competitor openings and closures",
+      "status": "new"
+    },
+    {
+      "title": "Track Google rating trend month-over-month",
+      "status": "new"
+    }
+  ],
+  "active_recommendations": 2
+}

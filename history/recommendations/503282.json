@@ -1,0 +1,38 @@
+{
+  "ce2c9bc72ab0": {
+    "theme": "prestige",
+    "dimension": "prestige",
+    "title": "Pursue editorial recognition",
+    "description": "Your operational scores support a credible submission to the AA Restaurant Guide or local food awards. Editorial recognition would differentiate you from peers and justify premium positioning.",
+    "evidence": "overall=7.94",
+    "owner": "management",
+    "priority_score": 3.5,
+    "expected_upside": "+2.0 Prestige, brand differentiation",
+    "confidence": 0.5,
+    "rec_type": "action",
+    "rec_id": "ce2c9bc72ab0",
+    "venue_id": "503282",
+    "status": "new",
+    "first_seen": "2026-04",
+    "times_seen": 1,
+    "last_seen": "2026-04"
+  },
+  "485d036dd057": {
+    "theme": "conversion",
+    "dimension": "conversion",
+    "title": "Fix the digital shopfront — you're losing walk-ins",
+    "description": "You deliver a strong experience but your online presence doesn't make it easy to act on. Check: can a new customer confirm your hours, see your menu, and book or walk in — all within 60 seconds on their phone? If not, that's your fix list.",
+    "evidence": "experience=9.42, conversion=5.5",
+    "owner": "operations",
+    "priority_score": 6.0,
+    "expected_upside": "Capture demand you're currently losing",
+    "confidence": 0.8,
+    "rec_type": "action",
+    "rec_id": "485d036dd057",
+    "venue_id": "503282",
+    "status": "new",
+    "first_seen": "2026-04",
+    "times_seen": 1,
+    "last_seen": "2026-04"
+  }
+}

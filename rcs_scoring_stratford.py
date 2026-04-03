@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
 """
-rcs_scoring_stratford.py — V2 RCS Scoring Engine
+rcs_scoring_stratford.py — V3.4 RCS Scoring Engine
 
-Implements the V2 methodology: 35 signals across 7 weighted tiers,
-6 rating bands, penalty rules, and re-weighting for missing data.
+Implements the V3.4 methodology: 40 signals across 8 weighted tiers,
+6 rating bands, temporal decay, cross-source convergence scoring,
+expanded penalty rules, and re-weighting for missing data.
+
+V3.4 changes vs V3.2:
+  - Temporal decay: e^(-λt) applied to FSA inspection age and review recency
+  - Cross-source convergence: bonus/penalty when Google, TA, and FSA agree/diverge
+  - Expanded penalties: 18 rules (was 10)
+  - Community tier permanently removed (double-counts Tiers 1-3)
+  - Tier weights rebalanced: 6 active tiers + Companies House penalties
 
 Usage:
     python rcs_scoring_stratford.py --from-cache
@@ -42,19 +50,37 @@ NOW = datetime.now(timezone.utc)
 
 TOTAL_SIGNALS = 40
 
+# ---------------------------------------------------------------------------
+# V3.4: Temporal decay parameters
+# ---------------------------------------------------------------------------
+# Exponential decay: multiplier = e^(-λ * t_days)
+# λ = 0.0023 gives ~300-day half-life (suitable for inspection/review freshness)
+TEMPORAL_LAMBDA = 0.0023
+TEMPORAL_LAMBDA_FAST = 0.0046  # ~150-day half-life for fast-decaying signals
+
+
+def temporal_decay(days_elapsed, lam=TEMPORAL_LAMBDA):
+    """Compute exponential decay factor for a time-sensitive signal.
+    Returns a multiplier in (0, 1] where 1 = perfectly fresh."""
+    if days_elapsed is None or days_elapsed <= 0:
+        return 1.0
+    return math.exp(-lam * days_elapsed)
+
 
 # ---------------------------------------------------------------------------
 # Tier definitions: name, base weight, and signal scorers
 # ---------------------------------------------------------------------------
 
 TIER_WEIGHTS = {
-    "fsa":        0.23,   # V3.2: was 0.20, +2% from Tier 7 redistribution
-    "google":     0.25,
-    "online":     0.12,   # V3.2: TripAdvisor-only, was 0.20 (web/FB/IG moved to confidence layer)
+    "fsa":        0.23,   # V3.4: +1% from community removal (was 0.22)
+    "google":     0.24,
+    "online":     0.13,   # V3.4: TripAdvisor-only, +1% from community removal (was 0.12)
     "ops":        0.15,
     "menu":       0.10,
-    "reputation": 0.08,   # V3.2: was 0.05, +3% from Tier 7 redistribution
-    # community tier REMOVED from active scoring in V3.2
+    "reputation": 0.08,
+    # V3.4: Community tier REMOVED — double-counts signals from Tiers 1-3,
+    # no directly observed data. Its 2% redistributed to FSA and Online.
+    # V3.4: convergence applied as post-hoc adjustment, not a tier
 }
 
 
@@ -148,14 +174,14 @@ def score_tier_fsa(record):
     total_w = sum(w for _, w in components.values())
     score = sum(v * (w / total_w) for v, w in components.values())
 
-    # Inspection recency penalty
+    # V3.4: Temporal decay for inspection age (replaces step penalties)
     age = days_since(record.get("rd"))
     if age is not None:
         signals_used += 1
-        if age > 730:
-            score *= 0.90  # -10%
-        elif age > 365:
-            score *= 0.95  # -5%
+        decay = temporal_decay(age)
+        # Blend: 80% raw score + 20% decay-adjusted score
+        # This means very old inspections lose up to 20% of their tier score
+        score = score * (0.80 + 0.20 * decay)
 
     return clamp(score), signals_used, signals_total
 
@@ -354,9 +380,14 @@ def score_tier_google(record):
             record["_red_flags"] = red_flags
 
     # google_review_count: log10 scale, cap 1000  (weight 0.20)
+    # V3.4: Apply temporal decay to review volume if we know review age
     grc = safe_int(record.get("grc"))
     if grc is not None:
         vol = clamp(math.log10(max(1, grc)) / math.log10(1000))
+        # If we have a latest review date, decay the volume signal
+        review_age = days_since(record.get("g_latest_review_date"))
+        if review_age is not None:
+            vol *= temporal_decay(review_age, TEMPORAL_LAMBDA_FAST)
         components["google_reviews"] = (vol, 0.20)
         signals_used += 1
 
@@ -641,13 +672,75 @@ def score_tier_community(record):
 
 
 # ---------------------------------------------------------------------------
+# V3.4: Cross-source convergence scoring
+# ---------------------------------------------------------------------------
+
+def compute_convergence(record):
+    """
+    Measure agreement between independent rating sources.
+    Returns (adjustment_factor, details_str).
+
+    Convergence means multiple sources agree → higher confidence → score bonus.
+    Divergence means sources disagree → lower confidence → score penalty.
+
+    All ratings normalised to 0-1 scale before comparison.
+    """
+    sources = {}
+
+    # FSA rating (1-5 → 0-1)
+    r = safe_float(record.get("r"))
+    if r is not None:
+        sources["fsa"] = clamp(r / 5.0)
+
+    # Google rating (1-5 → 0-1)
+    gr = safe_float(record.get("gr"))
+    if gr is not None:
+        sources["google"] = clamp(gr / 5.0)
+
+    # TripAdvisor rating (1-5 → 0-1)
+    ta = safe_float(record.get("ta"))
+    if ta is not None:
+        sources["ta"] = clamp(ta / 5.0)
+
+    if len(sources) < 2:
+        return 1.0, "insufficient_sources"
+
+    # Compute pairwise divergence
+    keys = list(sources.keys())
+    divergences = []
+    for i in range(len(keys)):
+        for j in range(i + 1, len(keys)):
+            diff = abs(sources[keys[i]] - sources[keys[j]])
+            divergences.append((f"{keys[i]}_vs_{keys[j]}", diff))
+
+    avg_divergence = sum(d for _, d in divergences) / len(divergences)
+
+    # Convergence thresholds (on 0-1 normalised scale)
+    # 0.10 on 0-1 = 0.5 on 1-5 star scale
+    if avg_divergence <= 0.10:
+        # Strong convergence: sources agree within ~0.5 stars
+        return 1.03, f"converged(avg_div={avg_divergence:.3f})"
+    elif avg_divergence <= 0.20:
+        # Moderate agreement: no adjustment
+        return 1.0, f"neutral(avg_div={avg_divergence:.3f})"
+    elif avg_divergence <= 0.30:
+        # Mild divergence: small penalty
+        return 0.97, f"mild_divergence(avg_div={avg_divergence:.3f})"
+    else:
+        # Strong divergence: notable penalty
+        return 0.95, f"diverged(avg_div={avg_divergence:.3f})"
+
+
+# ---------------------------------------------------------------------------
 # Penalty rules
 # ---------------------------------------------------------------------------
 
 def apply_penalties(raw_score, record):
     """
     Apply penalty rules. Returns (final_score, list of applied penalties).
-    raw_score is 0-100.
+    raw_score is on 0-10 scale.
+
+    V3.4: 18 rules (was 10 in V3.2). New rules marked with V3.4.
     """
     score = raw_score
     applied = []
@@ -655,37 +748,74 @@ def apply_penalties(raw_score, record):
     r = safe_int(record.get("r"))
     gr = safe_float(record.get("gr"))
     grc = safe_int(record.get("grc"))
+    ta = safe_float(record.get("ta"))
+    trc = safe_int(record.get("trc"))
     age = days_since(record.get("rd"))
 
-    # FSA rating caps (0-10 scale)
+    # --- FSA-based caps ---
+
+    # P1: FSA rating 0-1 → hard cap at 2.0
     if r is not None and r <= 1:
         if score > 2.0:
             applied.append(("fsa_rating_0_1_cap_2", score, 2.0))
             score = 2.0
+
+    # P2: FSA rating 2 → hard cap at 4.0
     if r is not None and r == 2:
         if score > 4.0:
             applied.append(("fsa_rating_2_cap_4", score, 4.0))
             score = 4.0
 
-    # No inspection in 3+ years
+    # P3 (V3.4): FSA rating 3 with stale inspection (>2yr) → cap at 7.0
+    if r is not None and r == 3 and age is not None and age > 730:
+        if score > 7.0:
+            applied.append(("fsa_3_stale_cap_7", score, 7.0))
+            score = 7.0
+
+    # P4: No inspection in 3+ years
     if age is not None and age > 1095:
         penalty = score * 0.15
         applied.append(("no_inspection_3yr", score, score - penalty))
         score -= penalty
 
-    # Google rating < 2.0
+    # --- Google-based penalties ---
+
+    # P5: Google rating < 2.0 → -10%
     if gr is not None and gr < 2.0:
         penalty = score * 0.10
         applied.append(("google_rating_below_2", score, score - penalty))
         score -= penalty
 
-    # Zero Google reviews
+    # P6 (V3.4): Google rating < 3.0 (but >= 2.0) → -5%
+    elif gr is not None and gr < 3.0:
+        penalty = score * 0.05
+        applied.append(("google_rating_below_3", score, score - penalty))
+        score -= penalty
+
+    # P7: Zero Google reviews → -5%
     if grc is not None and grc == 0:
         penalty = score * 0.05
         applied.append(("zero_google_reviews", score, score - penalty))
         score -= penalty
 
-    # No online presence at all (no Google, no TA, no website)
+    # P8 (V3.4): Very few reviews (<5 combined Google+TA) → -3%
+    elif grc is not None:
+        combined_reviews = grc + (trc or 0)
+        if 0 < combined_reviews < 5:
+            penalty = score * 0.03
+            applied.append(("sparse_reviews", score, score - penalty))
+            score -= penalty
+
+    # P9 (V3.4): No photos at all → -3%
+    gpc = safe_int(record.get("gpc"))
+    if gpc is not None and gpc == 0:
+        penalty = score * 0.03
+        applied.append(("no_photos", score, score - penalty))
+        score -= penalty
+
+    # --- Online presence penalties ---
+
+    # P10: No online presence at all (no Google, no TA, no website)
     has_any_online = (
         record.get("gr") is not None
         or record.get("ta") is not None
@@ -696,19 +826,62 @@ def apply_penalties(raw_score, record):
         applied.append(("no_online_presence", score, score - penalty))
         score -= penalty
 
-    # Companies House penalties (business viability)
+    # P11 (V3.4): TripAdvisor rating < 2.5 → -5%
+    if ta is not None and ta < 2.5:
+        penalty = score * 0.05
+        applied.append(("ta_rating_below_2_5", score, score - penalty))
+        score -= penalty
+
+    # P12 (V3.4): No opening hours listed → -3%
+    goh = record.get("goh")
+    ohc = safe_float(record.get("opening_hours_completeness"))
+    has_hours = (isinstance(goh, list) and len(goh) > 0) or (ohc is not None and ohc > 0)
+    if record.get("gr") is not None and not has_hours:
+        # Only penalise if we have Google data (so we'd expect hours)
+        penalty = score * 0.03
+        applied.append(("no_opening_hours", score, score - penalty))
+        score -= penalty
+
+    # --- Sentiment penalties ---
+
+    # P13 (V3.4): Multiple red flags (3+) → -15%
+    red_count = record.get("_red_flag_count", 0)
+    if red_count >= 3:
+        penalty = score * 0.15
+        applied.append(("multiple_red_flags", score, score - penalty))
+        score -= penalty
+
+    # --- Rating inconsistency ---
+
+    # P14 (V3.4): Google and TA diverge by >2 stars → -5%
+    if gr is not None and ta is not None:
+        if abs(gr - ta) > 2.0:
+            penalty = score * 0.05
+            applied.append(("google_ta_inconsistent", score, score - penalty))
+            score -= penalty
+
+    # --- Companies House penalties (business viability) ---
+
     ch_status = record.get("company_status")
+
+    # P15: CH dissolved → cap at 3.0
     if ch_status == "dissolved":
         if score > 3.0:
             applied.append(("ch_dissolved_cap_3", score, 3.0))
             score = 3.0
+
+    # P16: CH liquidation → cap at 5.0
     elif ch_status == "liquidation":
         if score > 5.0:
             applied.append(("ch_liquidation_cap_5", score, 5.0))
             score = 5.0
+
+    # P17: CH accounts overdue → -0.5 absolute
     if record.get("accounts_overdue"):
         applied.append(("ch_accounts_overdue", score, score - 0.5))
         score -= 0.5
+
+    # P18: CH director churn (3+ changes in 12mo) → -12%
     dir_changes = safe_int(record.get("director_changes_12m"))
     if dir_changes is not None and dir_changes >= 3:
         penalty = score * 0.12
@@ -739,37 +912,36 @@ def assign_band(score):
 
 
 # ---------------------------------------------------------------------------
-# Full V3.1 RCS pipeline
+# Full V3.4 RCS pipeline
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
-# V3.2 Weight caps and tier configuration
+# V3.4 Weight caps and tier configuration
 # ---------------------------------------------------------------------------
 
 # Tiers that derive signals from Google data (for cross-tier cap)
-GOOGLE_DERIVED_TIERS = {"google", "ops", "menu"}  # V3.2: online removed (now TA-only)
+GOOGLE_DERIVED_TIERS = {"google", "ops", "menu"}
 GOOGLE_CROSS_TIER_CAP = 0.45
 GOOGLE_SINGLE_CAP = 0.30
 
-# V3.2: Community tier REMOVED from active scoring
-# V3.2: SCP removed from active weighting
-# V3.2: Inferred discount removed from tier weighting (provenance
-#        now affects confidence grade only, not the score itself)
+# V3.4: Community tier REMOVED — double-counts Tiers 1-3, no directly observed data
+# V3.4: Convergence scoring applied as post-hoc multiplier
+# V3.4: Temporal decay replaces step-function recency penalties
 
 TIER_SCORERS = {
     "fsa":        score_tier_fsa,
     "google":     score_tier_google,
-    "online":     score_tier_online,   # V3.2: TripAdvisor-only
+    "online":     score_tier_online,
     "ops":        score_tier_ops,
     "menu":       score_tier_menu,
     "reputation": score_tier_reputation,
-    # "community" removed from active scoring in V3.2
+    # community removed in V3.4 — function retained for legacy reporting only
 }
 
 def _apply_weight_caps(eff_weights):
     """
     Apply Google caps. Returns modified weights and audit trail.
-    V3.2: Redistribution is explicit and auditable.
+    Redistribution is explicit and auditable.
     """
     audit = {"google_single_before": eff_weights.get("google", 0),
              "google_derived_before": sum(eff_weights.get(t, 0) for t in GOOGLE_DERIVED_TIERS),
@@ -810,41 +982,34 @@ def _apply_weight_caps(eff_weights):
 
 def compute_rcs_v2(record):
     """
-    Run V3.2 RCS pipeline on a single establishment.
+    Run V3.4 RCS pipeline on a single establishment.
 
-    V3.2 changes vs V3.1:
-    - Community tier removed from scoring
-    - No SCP weighting, no inferred discount on scores
-    - No upward coverage bonus; narrowed downward penalty (FSA/Google gaps only)
-    - No band calibration curve
-    - 45% Google-derived cap with audit trail
+    V3.4 changes vs V3.2:
+    - Community tier removed (double-counts Tiers 1-3, no observed data)
+    - Temporal decay on FSA inspection age and review recency
+    - Cross-source convergence bonus/penalty
+    - Expanded penalty rules (18 total)
+    - 45% Google-derived cap with audit trail (unchanged)
     """
     tier_scores = {}
     signals_available = 0
-    signals_in_active_tiers = 0
 
     for tier_name, scorer in TIER_SCORERS.items():
         score, used, total = scorer(record)
         if score is not None:
             tier_scores[tier_name] = score
-            signals_in_active_tiers += total
         signals_available += used
-
-    # Also count community signals for provenance tracking (but don't score)
-    comm_score, comm_used, _ = score_tier_community(record)
-    signals_available += comm_used
 
     if not tier_scores:
         return {
             "fsa_tier": None, "google_tier": None, "online_tier": None,
             "ops_tier": None, "menu_tier": None, "reputation_tier": None,
-            "community_tier": comm_score * 10 if comm_score else None,
             "rcs_final": 0.0, "rcs_band": "Urgent Improvement",
             "signals_available": 0, "signals_total": TOTAL_SIGNALS,
-            "penalties": [],
+            "penalties": [], "convergence": "no_data",
         }
 
-    # V3.2: Direct tier weights, no SCP, no inferred discount
+    # V3.4: Direct tier weights, normalised for active tiers
     raw_weights = {t: TIER_WEIGHTS[t] for t in tier_scores}
     total_raw = sum(raw_weights.values())
     eff_weights = {t: w / total_raw for t, w in raw_weights.items()}
@@ -860,7 +1025,7 @@ def compute_rcs_v2(record):
     # Scale to 0-10
     raw_score = weighted_sum * 10
 
-    # V3.2: Narrowed downward penalty — only for FSA or Google gaps
+    # Downward penalty for missing core tiers
     has_fsa = "fsa" in tier_scores
     has_google = "google" in tier_scores
     if not has_fsa and not has_google:
@@ -870,7 +1035,11 @@ def compute_rcs_v2(record):
     elif not has_google:
         raw_score *= 0.95  # Missing Google
 
-    # Apply penalties (Companies House, FSA caps, etc.)
+    # V3.4: Cross-source convergence adjustment
+    conv_factor, conv_detail = compute_convergence(record)
+    raw_score *= conv_factor
+
+    # Apply penalties (expanded in V3.4)
     final_score, penalties = apply_penalties(raw_score, record)
     final_score = round(clamp(final_score, 0, 10), 3)
 
@@ -883,12 +1052,12 @@ def compute_rcs_v2(record):
         "ops_tier": round(tier_scores.get("ops", 0) * 10, 3) if "ops" in tier_scores else None,
         "menu_tier": round(tier_scores.get("menu", 0) * 10, 3) if "menu" in tier_scores else None,
         "reputation_tier": round(tier_scores.get("reputation", 0) * 10, 3) if "reputation" in tier_scores else None,
-        "community_tier": round(comm_score * 10, 3) if comm_score else None,
         "rcs_final": final_score,
         "rcs_band": band,
         "signals_available": signals_available,
         "signals_total": TOTAL_SIGNALS,
         "penalties": penalties,
+        "convergence": conv_detail,
     }
 
 
@@ -1203,8 +1372,8 @@ CSV_FIELDS = [
     "is_food", "confidence", "confidence_margin",
     "fsa_tier_score", "google_tier_score", "online_tier_score",
     "ops_tier_score", "menu_tier_score", "reputation_tier_score",
-    "community_tier_score",
-    "rcs_final", "rcs_band", "quality_score", "digital_presence_score",
+    "rcs_final", "rcs_band", "convergence",
+    "quality_score", "digital_presence_score",
     "signals_available", "signals_total",
     "observed_signals", "inferred_signals", "provenance_ratio",
     "sentiment_score", "red_flag_count", "red_flags",
@@ -1282,8 +1451,7 @@ def run_pipeline(data):
         food_ok, food_reason = is_food_establishment(record)
 
         n_tiers = sum(1 for t in ["fsa_tier", "google_tier", "online_tier",
-                                   "ops_tier", "menu_tier", "reputation_tier",
-                                   "community_tier"]
+                                   "ops_tier", "menu_tier", "reputation_tier"]
                       if result.get(t) is not None)
 
         # Signal provenance
@@ -1319,9 +1487,9 @@ def run_pipeline(data):
             "ops_tier_score": result["ops_tier"],
             "menu_tier_score": result["menu_tier"],
             "reputation_tier_score": result["reputation_tier"],
-            "community_tier_score": result["community_tier"],
             "rcs_final": result["rcs_final"],
             "rcs_band": result["rcs_band"],
+            "convergence": result.get("convergence", ""),
             "quality_score": quality,
             "digital_presence_score": digital,
             "signals_available": total_sig,
@@ -1470,6 +1638,14 @@ def build_summary(scored):
              "red_flags": r["red_flags"]}
             for r in scored if r.get("red_flag_count", 0) >= 2
         ],
+        "convergence": {
+            "converged": sum(1 for r in ranked if "converged" in str(r.get("convergence", ""))),
+            "neutral": sum(1 for r in ranked if "neutral" in str(r.get("convergence", ""))),
+            "mild_divergence": sum(1 for r in ranked if "mild_divergence" in str(r.get("convergence", ""))),
+            "diverged": sum(1 for r in ranked if "diverged" in str(r.get("convergence", ""))),
+            "insufficient_sources": sum(1 for r in ranked if "insufficient" in str(r.get("convergence", ""))),
+        },
+        "methodology": "RCS V3.4",
         "generated_at": NOW.isoformat(),
     }
 
@@ -1552,7 +1728,7 @@ def print_results(scored):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="V2 RCS Scoring Engine — 35 signals, 7 tiers, 6 rating bands"
+        description="V3.4 RCS Scoring Engine — 40 signals, 7 tiers, 6 rating bands"
     )
     parser.add_argument("--la", default="Stratford-on-Avon",
                         help="Local authority name")
@@ -1575,8 +1751,8 @@ def main():
         with open(JSON_CACHE, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print(f"\nRunning V2 RCS pipeline on {len(data)} establishments...")
-    print(f"  7 tiers | 35 signals | 6 rating bands\n")
+    print(f"\nRunning V3.4 RCS pipeline on {len(data)} establishments...")
+    print(f"  7 tiers | 40 signals | 6 rating bands | temporal decay | convergence\n")
 
     # Score
     scored = run_pipeline(data)
@@ -1584,7 +1760,7 @@ def main():
     # Apply tiebreakers for unique rankings
     scored = apply_tiebreakers(scored)
 
-    # V3.2: Band calibration curve REMOVED — scores reflect raw methodology output
+    # Band calibration curve not applied — scores reflect raw methodology output
 
     # Save CSV
     save_scores_csv(scored, CSV_OUTPUT)
@@ -1628,10 +1804,9 @@ def generate_report(scored, summary):
     avg_sig = sum(r["signals_available"] for r in scored) / len(scored) if scored else 0
 
     tier_info = [
-        ("fsa", "FSA (Tier 1)", "20%"), ("google", "Google (Tier 2)", "25%"),
-        ("online", "Online (Tier 3)", "20%"), ("ops", "Operational (Tier 4)", "15%"),
-        ("menu", "Menu (Tier 5)", "10%"), ("reputation", "Reputation (Tier 6)", "5%"),
-        ("community", "Community (Tier 7)", "5%"),
+        ("fsa", "FSA (Tier 1)", "23%"), ("google", "Google (Tier 2)", "24%"),
+        ("online", "Online (Tier 3)", "13%"), ("ops", "Operational (Tier 4)", "15%"),
+        ("menu", "Menu (Tier 5)", "10%"), ("reputation", "Reputation (Tier 6)", "8%"),
     ]
     tier_pop = {}
     for t, *_ in tier_info:
@@ -1653,7 +1828,7 @@ def generate_report(scored, summary):
     L = []
     w = L.append
     w("# DayDine RCS Report - Stratford-upon-Avon")
-    w(f"\n*Generated: {NOW.strftime('%d %B %Y')} | Methodology: RCS V3.2 (corrective) | Scale: 0.000-10.000*")
+    w(f"\n*Generated: {NOW.strftime('%d %B %Y')} | Methodology: RCS V3.4 | Scale: 0.000-10.000*")
     w("\n---\n")
     w("## 1. Executive Summary\n")
     w("| Metric | Value |\n|---|---|")
@@ -1661,7 +1836,7 @@ def generate_report(scored, summary):
     w(f"| Ranked (food service) | **{len(ranked)}** |")
     w(f"| Excluded (non-food) | {len(not_ranked)} |")
     w(f"| Insufficient data | {len(insufficient)} |")
-    w(f"| Methodology | RCS V3.2 (corrective) - 40 signals, 8 tiers |")
+    w(f"| Methodology | RCS V3.4 — 40 signals, 7 tiers, temporal decay, convergence |")
     w(f"| Mean RCS | {statistics.mean(ranked_scores):.2f} |")
     w(f"| Median RCS | {statistics.median(ranked_scores):.2f} |")
     w(f"| Signals avg | {avg_sig:.1f} / {TOTAL_SIGNALS} ({avg_sig/TOTAL_SIGNALS*100:.0f}%) |")
@@ -1716,13 +1891,29 @@ def generate_report(scored, summary):
         for r in not_ranked:
             w(f"| {r['business_name']} | {r['postcode']} | {r['category']} |")
     w("")
+    # V3.4: Convergence summary
+    conv_counts = Counter(r.get("convergence", "") for r in ranked)
+    conv_converged = sum(1 for r in ranked if "converged" in str(r.get("convergence", "")))
+    conv_diverged = sum(1 for r in ranked if "diverged" in str(r.get("convergence", "")))
+    conv_mild = sum(1 for r in ranked if "mild_divergence" in str(r.get("convergence", "")))
+    conv_neutral = sum(1 for r in ranked if "neutral" in str(r.get("convergence", "")))
+    conv_insuf = sum(1 for r in ranked if "insufficient" in str(r.get("convergence", "")))
+    w("## 9. Cross-Source Convergence (V3.4)\n")
+    w("| Status | Count | % |\n|---|---:|---:|")
+    for label, cnt in [("Converged (+3%)", conv_converged), ("Neutral (0%)", conv_neutral),
+                        ("Mild divergence (-3%)", conv_mild), ("Diverged (-5%)", conv_diverged),
+                        ("Insufficient sources", conv_insuf)]:
+        pct = cnt / len(ranked) * 100 if ranked else 0
+        w(f"| {label} | {cnt} | {pct:.1f}% |")
+    w("")
+
     if missing:
-        w(f"## 9. Sanity Check ({len(missing)} missing)\n")
+        w(f"## 10. Sanity Check ({len(missing)} missing)\n")
         w("| Name | Rating | Reviews |\n|---|---:|---:|")
         for m in missing:
             w(f"| {m['name']} | {m.get('rating', '-')} | {m.get('reviews', '-')} |")
     w("\n---\n")
-    w(f"*Generated by rcs_scoring_stratford.py V3.1 ({len(scored)} records, {len(ranked)} ranked)*")
+    w(f"*Generated by rcs_scoring_stratford.py V3.4 ({len(scored)} records, {len(ranked)} ranked)*")
 
     with open(REPORT_PATH, "w", encoding="utf-8") as f:
         f.write("\n".join(L))
