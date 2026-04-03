@@ -283,7 +283,7 @@ class ValidationResult:
     warnings: List[str] = field(default_factory=list)
 
 
-def validate_report(report_text, mode, recs, review_intel):
+def validate_report(report_text, mode, recs, review_intel, scorecard=None):
     """Validate a generated report against quality rules.
     Returns ValidationResult."""
     result = ValidationResult()
@@ -298,6 +298,14 @@ def validate_report(report_text, mode, recs, review_intel):
         if f"## {spec.title}" not in report_text:
             result.errors.append(f"MISSING_SECTION: '{spec.title}' not found in report")
             result.passed = False
+
+    # --- Launch-critical section: Competitive Market Intelligence ---
+    # This is the new mandatory section — flag clearly if missing
+    if "## Competitive Market Intelligence" not in report_text:
+        result.errors.append(
+            "MISSING_LAUNCH_SECTION: 'Competitive Market Intelligence' is mandatory "
+            "for the zero-integration launch product")
+        result.passed = False
 
     # --- Action counts ---
     actions = recs.get("priority_actions", [])
@@ -366,18 +374,54 @@ def validate_report(report_text, mode, recs, review_intel):
         if "### Primary Constraint" not in diag_section and "### Main Bottleneck" not in diag_section:
             result.warnings.append("FLAT_DIAGNOSIS: Commercial diagnosis lacks structured constraint analysis")
 
-    # Check for overclaiming on anecdotal evidence
+    # --- Source-count consistency ---
     rc = assess_review_confidence(review_intel) if review_intel else None
-    if rc and rc.tier == "anecdotal":
-        strong_claim_phrases = [
-            "consistently value", "known for", "well-established strength",
-            "defining elements", "settled guest perception",
-        ]
-        for phrase in strong_claim_phrases:
-            if phrase in text_lower:
-                result.warnings.append(
-                    f"OVERCLAIM_ON_ANECDOTAL: '{phrase}' used with only "
-                    f"{rc.review_text_count} review texts (anecdotal tier)")
+    if rc:
+        # Check: report claims "from N sources" but actual source count differs
+        ta_count = review_intel.get("review_count_ta") or 0 if review_intel else 0
+        actual_platforms = 0
+        if rc.review_text_count - ta_count > 0:
+            actual_platforms += 1
+        if ta_count > 0:
+            actual_platforms += 1
+        if rc.source_count != actual_platforms:
+            result.warnings.append(
+                f"SOURCE_COUNT_MISMATCH: ReviewConfidence reports {rc.source_count} sources "
+                f"but {actual_platforms} platforms contributed review text")
+
+        # Check for overclaiming on anecdotal evidence
+        if rc.tier == "anecdotal":
+            strong_claim_phrases = [
+                "consistently value", "known for", "well-established strength",
+                "defining elements", "settled guest perception",
+            ]
+            for phrase in strong_claim_phrases:
+                if phrase in text_lower:
+                    result.warnings.append(
+                        f"OVERCLAIM_ON_ANECDOTAL: '{phrase}' used with only "
+                        f"{rc.review_text_count} review texts (anecdotal tier)")
+
+        # Lightweight claim-without-evidence check:
+        # If report says "consistently" or "dominant theme" but confidence is
+        # anecdotal or none, that's a mismatch
+        if rc.tier in ("none", "anecdotal"):
+            overconfident_phrases = ["dominant theme", "consistently praise",
+                                     "consistently mentioned", "clear evidence"]
+            for phrase in overconfident_phrases:
+                if phrase in text_lower:
+                    result.warnings.append(
+                        f"CONFIDENCE_WORDING_MISMATCH: '{phrase}' used at "
+                        f"'{rc.tier}' confidence tier — wording overstates evidence")
+
+    # --- Evidence provenance presence ---
+    if "## Evidence Appendix" in report_text:
+        appendix = report_text.split("## Evidence Appendix")[1]
+        next_h2 = appendix.find("\n## ")
+        if next_h2 != -1:
+            appendix = appendix[:next_h2]
+        if "| Provenance |" not in appendix and "provenance" not in appendix.lower()[:200]:
+            result.warnings.append(
+                "MISSING_PROVENANCE: Evidence Appendix does not include provenance column")
 
     # --- Report length ---
     content_lines = [l for l in lines if l.strip() and not l.startswith("#") and not l.startswith("|") and not l.startswith("---")]
@@ -401,6 +445,22 @@ def validate_report(report_text, mode, recs, review_intel):
 def generate_qa_artifact(venue_name, month_str, mode, report_text, validation,
                          review_intel, recs, scorecard):
     """Generate QA companion artifact for a report."""
+    rc = assess_review_confidence(review_intel) if review_intel else None
+    confidence_level = _compute_confidence(scorecard, review_intel)
+
+    # Count independent sources for the QA record
+    independent_sources = []
+    if scorecard.get("fsa_rating") is not None:
+        independent_sources.append("FSA")
+    if scorecard.get("google_rating") is not None:
+        independent_sources.append("Google")
+    if review_intel and review_intel.get("review_count_ta"):
+        independent_sources.append("TripAdvisor")
+
+    # Check provenance presence in evidence appendix
+    has_provenance = ("| Provenance |" in report_text
+                      if "## Evidence Appendix" in report_text else False)
+
     return {
         "venue": venue_name,
         "month": month_str,
@@ -414,6 +474,17 @@ def generate_qa_artifact(venue_name, month_str, mode, report_text, validation,
             "tripadvisor": (review_intel.get("review_count_ta") or 0) > 0 if review_intel else False,
             "companies_house": False,
         },
+        "independent_sources": {
+            "count": len(independent_sources),
+            "platforms": independent_sources,
+        },
+        "review_confidence": {
+            "tier": rc.tier if rc else "none",
+            "review_text_count": rc.review_text_count if rc else 0,
+            "source_count": rc.source_count if rc else 0,
+            "can_claim_themes": rc.can_claim_themes if rc else False,
+            "can_claim_proposition": rc.can_claim_proposition if rc else False,
+        } if rc else {"tier": "none"},
         "section_completeness": _check_section_completeness(report_text),
         "action_counts": {
             "priority_actions": len(recs.get("priority_actions", [])),
@@ -423,7 +494,8 @@ def generate_qa_artifact(venue_name, month_str, mode, report_text, validation,
         "validation_passed": validation.passed,
         "validation_errors": validation.errors,
         "validation_warnings": validation.warnings,
-        "confidence_level": _compute_confidence(scorecard, review_intel),
+        "confidence_level": confidence_level,
+        "evidence_provenance_present": has_provenance,
         "report_lines": len([l for l in report_text.split("\n") if l.strip()]),
     }
 

@@ -106,7 +106,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     report_text = "\n".join(L)
 
     # Validate
-    validation = validate_report(report_text, mode, recs, review_intel)
+    validation = validate_report(report_text, mode, recs, review_intel, scorecard)
 
     # QA artifact
     qa = generate_qa_artifact(venue_name, month_str, mode, report_text,
