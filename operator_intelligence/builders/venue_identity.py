@@ -87,7 +87,7 @@ def build_known_for(w, venue_name, scorecard, benchmarks, review_intel):
         lines.append(f"Guest feedback {rc.qualifier} centres on "
                      f"**{top_theme['label'].lower()}** ({top_theme['mentions']} mentions) "
                      f"and **{second_theme['label'].lower()}** ({second_theme['mentions']} "
-                     f"mentions). {lang['strong']}these are becoming defining elements "
+                     f"mentions). {lang['strong']}these as defining elements "
                      f"of the proposition as guests perceive it.")
     elif top_theme and second_theme:
         # Anecdotal tier — can observe themes but not claim proposition

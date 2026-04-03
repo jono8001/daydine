@@ -206,7 +206,8 @@ def _narrative(w, ri, rd):
                 interpretation += f' As one reviewer put it: *"{quote}"*'
             paragraphs.append(interpretation)
 
-        w(" ".join(paragraphs) + "\n")
+        for p in paragraphs:
+            w(p + "\n")
 
     # -----------------------------------------------------------------------
     # 2. What This Means for the Proposition

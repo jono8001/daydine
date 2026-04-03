@@ -30,7 +30,7 @@
 
 Vintner Wine Bar is a well-established pub dining venue with a strong public reputation — 4.6/5 across 887 Google reviews. That volume means the reputation is earned, not manufactured.
 
-Guest feedback supported by moderate evidence centres on **service & hospitality** (18 mentions) and **food quality** (12 mentions). Review evidence consistently points to these are becoming defining elements of the proposition as guests perceive it.
+Guest feedback supported by moderate evidence centres on **service & hospitality** (18 mentions) and **food quality** (12 mentions). Review evidence consistently points to these as defining elements of the proposition as guests perceive it.
 
 In the local market, the venue sits above the median but hasn't established itself as the clear category leader. The identity is 'reliably good' rather than 'destination'.
 
@@ -47,7 +47,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.73, conversion=5.5`
-- *This recommendation has appeared 6 consecutive months.*
+- *This recommendation has appeared 7 consecutive months.*
 
 ### Priority 2: Address recurring food quality complaints from guests [FIX | ESCALATED]
 
@@ -58,7 +58,7 @@ Food Quality draws recurring criticism across reviews (3 negative mentions). One
 - **Owner:** operations | **Confidence:** 70%
 - **Expected upside:** Reduce food quality complaints, protect rating
 - **Evidence:** `review_criticism: Food Quality=3 negative`
-- *This recommendation has appeared 3 consecutive months.*
+- *This recommendation has appeared 4 consecutive months.*
 
 ### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ESCALATED]
 
@@ -69,7 +69,7 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
 - **Evidence:** `review_praise: Service & Hospitality=18`
-- *This recommendation has appeared 3 consecutive months.*
+- *This recommendation has appeared 4 consecutive months.*
 
 ## Protect / Improve / Ignore
 
@@ -129,7 +129,11 @@ Above the local median but without a distinctive market position. This is the 'g
 
 ### What Guests Value Most
 
-Service & Hospitality is a dominant theme (consistent praise). Guests describe attentive, personal care — naming individual staff in several cases. This suggests the venue's competitive advantage is human rather than purely operational: it depends on who is working, not just what systems are in place. As one reviewer put it: *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"* Food Quality draws strong positive signal across reviews. Guests highlight specific dishes and ingredients rather than generic praise, which indicates the kitchen is delivering memorable experiences, not just adequate meals. As one reviewer put it: *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"* Atmosphere & Setting registers as strong positive signal. The physical environment is contributing positively to the guest experience and may be a factor in repeat visits and social media visibility. As one reviewer put it: *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
+Service & Hospitality is a dominant theme (consistent praise). Guests describe attentive, personal care — naming individual staff in several cases. This suggests the venue's competitive advantage is human rather than purely operational: it depends on who is working, not just what systems are in place. As one reviewer put it: *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
+
+Food Quality draws strong positive signal across reviews. Guests highlight specific dishes and ingredients rather than generic praise, which indicates the kitchen is delivering memorable experiences, not just adequate meals. As one reviewer put it: *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
+
+Atmosphere & Setting registers as strong positive signal. The physical environment is contributing positively to the guest experience and may be a factor in repeat visits and social media visibility. As one reviewer put it: *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
 
 ### What This Means for the Proposition
 
@@ -233,7 +237,6 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 **Dimension gaps vs peers:**
 
 - Visibility: 9.7 (+2.2 above peer avg 7.5)
-- Prestige: 1.5 (+0.8 above peer avg 0.8)
 - Conversion: 5.5 (+0.7 above peer avg 4.8)
 - Trust: 7.2 (-1.1 below peer avg 8.3)
 
@@ -254,7 +257,6 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 **Dimension gaps vs peers:**
 
 - Visibility: 9.7 (+2.5 above peer avg 7.2)
-- Prestige: 1.5 (+0.8 above peer avg 0.8)
 - Trust: 7.2 (-0.9 below peer avg 8.1)
 
 **Closest competitors:**
@@ -366,14 +368,14 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 6 | operations | conversion |
-| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 3 | operations | experience |
-| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 3 | management | experience |
-| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 3 | front-of-house | visibility |
-| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 3 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 7 | operations | conversion |
+| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 4 | operations | experience |
+| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 4 | management | experience |
+| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 4 | front-of-house | visibility |
+| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 4 | management | trust |
 | 7 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
 | 8 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
-| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 3 | operations | experience |
+| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 4 | operations | experience |
 
 ## Next-Month Monitoring Plan
 
@@ -430,4 +432,4 @@ Raw signal values used to compute this report. Provenance: **observed** = direct
 | Companies House | — | Not checked | not_assessed |
 
 
-*Report generated by DayDine Operator Intelligence v3.0 — 2026-04*
+*Report generated by DayDine v3.3 — 2026-04*

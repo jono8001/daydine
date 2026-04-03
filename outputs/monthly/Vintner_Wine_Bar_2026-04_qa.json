@@ -49,7 +49,7 @@
     },
     "market_position": {
       "present": true,
-      "lines": 27,
+      "lines": 25,
       "meets_minimum": true
     },
     "scorecard": {
@@ -74,7 +74,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 50,
+      "lines": 52,
       "meets_minimum": true
     },
     "conversion_friction": {

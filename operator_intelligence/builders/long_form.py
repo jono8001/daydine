@@ -176,7 +176,7 @@ def build_market_position(w, scorecard, benchmarks):
 
         # Dimension comparison — only the noteworthy gaps
         notable = []
-        for dim in DIM_ORDER:
+        for dim in HEADLINE_DIMS:
             d = dims.get(dim)
             if d and d.get("peer_mean") is not None:
                 gap = d["score"] - d["peer_mean"]
