@@ -126,6 +126,7 @@ def run_monthly_venue(venue_key, venue_rec, data, all_cards, month_str):
         venue_name, month_str, card, deltas,
         benchmarks, review_intel, rev_delta,
         recs, cond_blocks, venue_rec=venue_rec,
+        all_cards=all_cards, all_data=data,
     )
 
     # Generate JSON summary
