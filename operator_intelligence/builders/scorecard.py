@@ -12,9 +12,24 @@ def _fmt_delta(d):
     return f"{d:+.1f}" if d is not None else "—"
 
 
-def _read(score, gap):
+def _read(score, gap, delta=None):
+    """Interpret score position, incorporating direction of change when available."""
     if score is None:
         return "No data"
+    above = gap is not None and gap >= 0.3
+    below = gap is not None and gap <= -0.3
+    moving_up = delta is not None and delta >= 0.2
+    moving_down = delta is not None and delta <= -0.2
+    stable = delta is not None and abs(delta) < 0.2
+
+    if moving_up and above: return "Strengthening lead"
+    if moving_up and below: return "Closing gap"
+    if moving_down and above: return "Lead narrowing"
+    if moving_down and below: return "Falling further behind"
+    if stable and above: return "Stable strength"
+    if stable and below: return "Persistent gap"
+
+    # Fallback: no delta or no peer data
     if gap is not None:
         if gap >= 1.5: return "Clear strength"
         if gap >= 0.3: return "Above peers"
@@ -43,7 +58,7 @@ def build(w, scorecard, deltas, benchmarks):
         gap_str = f"{gap:+.1f}" if gap is not None else "—"
 
         w(f"| {dim.title()} | {_fmt(score)} | {_fmt_delta(delta)} "
-          f"| {_fmt(peer_avg)} | {gap_str} | {_read(score, gap)} |")
+          f"| {_fmt(peer_avg)} | {gap_str} | {_read(score, gap, delta)} |")
 
     overall = scorecard.get("overall")
     od = deltas.get("overall") if deltas else None

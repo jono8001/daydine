@@ -94,7 +94,43 @@ Review intelligence is conceptually split into two layers:
 
 ---
 
-## 3b. Demand Capture Audit
+## 3b. Temporal Layer — Month-over-Month Tracking
+
+Each monthly report stores a complete snapshot of all scoreable dimensions, raw signals, competitive position, demand capture verdicts, and review sentiment. When a prior month's snapshot exists, the report computes deltas and presents a Monthly Movement Summary.
+
+### Snapshot Schema
+
+The monthly JSON stores: dimension scores (5 + overall), raw signals (Google rating/count/photos, TA rating/count, FSA rating/inspection date, price level, GBP completeness), competitive position (local rank/count, catchment rank), demand capture audit verdicts (7 dimensions), review sentiment by topic, and implementation framework state.
+
+### Delta Computation
+
+| Field Type | Delta Method | Significance Thresholds |
+|---|---|---|
+| Dimension scores | `current - prior` | < 0.2 = negligible, 0.2–0.5 = notable, > 0.5 = significant |
+| Google review count | `current - prior` | Absolute count of new reviews |
+| Peer position | `prior_rank - current_rank` | Positive = improved |
+| Demand capture | Per-dimension verdict comparison | Improved / Unchanged / Worsened |
+
+### Monthly Movement Summary
+
+Appears after the Executive Summary. For baseline months (no prior data): states "first report — all metrics baselined." For subsequent months: What Changed, What Is Stable, What Is Worsening — each with specific numbers.
+
+### Scorecard Delta Reads
+
+When deltas are available, the Dimension Scorecard "Read" column uses directional interpretation:
+
+| Delta | Peer Position | Read |
+|---|---|---|
+| Up | Above peers | Strengthening lead |
+| Up | Below peers | Closing gap |
+| Down | Above peers | Lead narrowing |
+| Down | Below peers | Falling further behind |
+| Stable | Above peers | Stable strength |
+| Stable | Below peers | Persistent gap |
+
+---
+
+## 3b2. Demand Capture Audit
 
 The Demand Capture lens produces a structured outside-in audit of the venue's public digital presence. Rather than reporting a composite conversion score, it walks through 7 named dimensions of the customer journey from discovery to commitment — using only publicly observable data.
 

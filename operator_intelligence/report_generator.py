@@ -20,7 +20,7 @@ from operator_intelligence.builders import (
     build_review_intelligence, build_review_appendices,
     build_watch_list, build_what_not_to_do,
     build_recommendation_tracker, build_competitive_market_intelligence,
-    build_data_coverage,
+    build_data_coverage, build_monthly_movement,
     build_management_priorities, build_category_validation,
     build_market_position,
     build_dimension_diagnosis, build_public_vs_reality,
@@ -39,7 +39,8 @@ DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
 def generate_monthly_report(venue_name, month_str, scorecard, deltas,
                             benchmarks, review_intel, review_delta,
                             recs, conditional_blocks=None, venue_rec=None,
-                            all_cards=None, all_data=None):
+                            all_cards=None, all_data=None,
+                            prior_snapshot=None):
     """Assemble full monthly report from builders. Returns (report_text, qa_dict).
 
     Report structure: leads with leaks/actions/risk, then covers 4 commercial
@@ -51,10 +52,30 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     L = []
     w = L.append
 
+    # Compute snapshot deltas if prior month exists
+    # Build a temporary current snapshot for delta computation
+    _cur_snap = {
+        "scorecard": {k: scorecard.get(k) for k in DIM_ORDER + ["overall"]},
+        "signals": {
+            "google_review_count": scorecard.get("google_reviews"),
+            "google_rating": scorecard.get("google_rating"),
+        },
+        "peer_position": {},
+        "demand_capture": {},
+    }
+    ring1 = (benchmarks or {}).get("ring1_local", {})
+    ring1_ov = ring1.get("dimensions", {}).get("overall", {})
+    _cur_snap["peer_position"]["local_rank"] = ring1_ov.get("rank")
+    _cur_snap["peer_position"]["local_of"] = ring1_ov.get("of")
+    snapshot_deltas = compute_snapshot_deltas(_cur_snap, prior_snapshot)
+
     # --- Lead: leaks / actions / risk / what not to do ---
     # 1. Executive Summary (actions-led, score secondary)
     build_executive_summary(w, venue_name, month_str, mode, scorecard,
                             deltas, benchmarks, review_intel, recs)
+    # 1b. Monthly Movement Summary
+    build_monthly_movement(w, scorecard, benchmarks, venue_rec,
+                           prior_snapshot, snapshot_deltas, month_str)
     # 2. What This Venue Is Becoming Known For
     build_known_for(w, venue_name, scorecard, benchmarks, review_intel)
     # 3. Management Priorities
@@ -128,15 +149,69 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
 # JSON / CSV
 # ---------------------------------------------------------------------------
 
-def generate_monthly_json(venue_name, month_str, scorecard, deltas, recs):
+def generate_monthly_json(venue_name, month_str, scorecard, deltas, recs,
+                          benchmarks=None, venue_rec=None, review_intel=None,
+                          demand_audit=None):
+    """Generate comprehensive monthly snapshot for month-over-month tracking."""
     from operator_intelligence.implementation_framework import generate_action_cards
 
     cards = generate_action_cards(recs, month_str)
+    venue_rec = venue_rec or {}
+
+    # Peer position from ring1
+    ring1 = (benchmarks or {}).get("ring1_local", {})
+    ring1_ov = ring1.get("dimensions", {}).get("overall", {})
+    ring2 = (benchmarks or {}).get("ring2_catchment", {})
+    ring2_ov = ring2.get("dimensions", {}).get("overall", {})
+
+    # Review summary
+    analysis = (review_intel or {}).get("analysis") or {}
+    aspect_scores = analysis.get("aspect_scores", {})
+    review_summary = {}
+    for asp, data in aspect_scores.items():
+        review_summary[asp] = {
+            "positive": data.get("positive", 0),
+            "negative": data.get("negative", 0),
+        }
 
     return {
-        "venue": venue_name, "month": month_str,
+        "venue": venue_name,
+        "month": month_str,
+        "report_date": datetime.utcnow().strftime("%Y-%m-%d"),
+        # Dimension scores
         "scorecard": {k: scorecard.get(k) for k in DIM_ORDER + ["overall"]},
         "deltas": deltas,
+        # Raw signals
+        "signals": {
+            "google_rating": scorecard.get("google_rating"),
+            "google_review_count": scorecard.get("google_reviews"),
+            "google_photo_count": venue_rec.get("gpc"),
+            "ta_rating": venue_rec.get("ta"),
+            "ta_review_count": venue_rec.get("trc"),
+            "fsa_rating": scorecard.get("fsa_rating"),
+            "last_inspection_date": venue_rec.get("rd"),
+            "price_level": venue_rec.get("gpl"),
+            "gbp_completeness": venue_rec.get("gbp_completeness"),
+        },
+        # Competitive position
+        "peer_position": {
+            "local_rank": ring1_ov.get("rank"),
+            "local_of": ring1_ov.get("of"),
+            "local_peer_avg": ring1_ov.get("peer_mean"),
+            "local_peer_top": ring1_ov.get("peer_top"),
+            "local_peer_count": ring1.get("peer_count"),
+            "catchment_rank": ring2_ov.get("rank"),
+            "catchment_of": ring2_ov.get("of"),
+        },
+        # Demand capture verdicts
+        "demand_capture": {
+            d["dimension"]: d["verdict"]
+            for d in (demand_audit or {}).get("dimensions", [])
+        } if demand_audit else {},
+        # Review sentiment summary
+        "review_sentiment": review_summary,
+        "reviews_analyzed": analysis.get("reviews_analyzed", 0),
+        # Actions
         "priority_actions": [
             {"title": a["title"], "status": a["status"],
              "priority": a["priority_score"], "dimension": a["dimension"]}
@@ -167,6 +242,87 @@ def generate_monthly_json(venue_name, month_str, scorecard, deltas, recs):
             for c in cards
         ],
     }
+
+
+def load_prior_month_json(venue_name, month_str, output_dir="outputs/monthly"):
+    """Load the previous month's JSON snapshot for delta computation.
+    Returns the parsed dict or None if no prior month exists."""
+    # Compute prior month
+    try:
+        dt = datetime.strptime(month_str, "%Y-%m")
+        if dt.month == 1:
+            prior = dt.replace(year=dt.year - 1, month=12)
+        else:
+            prior = dt.replace(month=dt.month - 1)
+        prior_str = prior.strftime("%Y-%m")
+    except (ValueError, TypeError):
+        return None
+
+    safe_name = venue_name.replace(" ", "_").replace("/", "-")
+    path = os.path.join(output_dir, f"{safe_name}_{prior_str}.json")
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, IOError):
+        return None
+
+
+def compute_snapshot_deltas(current, prior):
+    """Compute deltas between two monthly snapshots.
+    Returns a dict of field-level changes, or None if prior is missing."""
+    if not prior:
+        return None
+
+    deltas = {}
+
+    # Dimension deltas
+    cur_sc = current.get("scorecard", {})
+    pri_sc = prior.get("scorecard", {})
+    for dim in DIM_ORDER + ["overall"]:
+        c = cur_sc.get(dim)
+        p = pri_sc.get(dim)
+        if c is not None and p is not None:
+            deltas[f"score_{dim}"] = round(c - p, 2)
+
+    # Signal deltas
+    cur_sig = current.get("signals", {})
+    pri_sig = prior.get("signals", {})
+    for key in ["google_rating", "google_review_count", "google_photo_count",
+                "ta_rating", "ta_review_count", "gbp_completeness"]:
+        c = cur_sig.get(key)
+        p = pri_sig.get(key)
+        if c is not None and p is not None:
+            try:
+                deltas[f"signal_{key}"] = round(float(c) - float(p), 2)
+            except (ValueError, TypeError):
+                pass
+
+    # Peer position delta
+    cur_pp = current.get("peer_position", {})
+    pri_pp = prior.get("peer_position", {})
+    if cur_pp.get("local_rank") and pri_pp.get("local_rank"):
+        deltas["local_rank_change"] = pri_pp["local_rank"] - cur_pp["local_rank"]  # positive = improved
+
+    # Demand capture delta
+    cur_dc = current.get("demand_capture", {})
+    pri_dc = prior.get("demand_capture", {})
+    dc_improved = []
+    dc_worsened = []
+    for dim_name in cur_dc:
+        cur_v = cur_dc.get(dim_name)
+        pri_v = pri_dc.get(dim_name)
+        if cur_v and pri_v and cur_v != pri_v:
+            verdict_order = {"Clear": 0, "Partial": 1, "Missing": 2, "Broken": 3, "Gap": 2}
+            if verdict_order.get(cur_v, 9) < verdict_order.get(pri_v, 9):
+                dc_improved.append(f"{dim_name}: {pri_v} → {cur_v}")
+            else:
+                dc_worsened.append(f"{dim_name}: {pri_v} → {cur_v}")
+    deltas["demand_capture_improved"] = dc_improved
+    deltas["demand_capture_worsened"] = dc_worsened
+
+    return deltas
 
 
 def write_monthly_csv_row(venue_name, month_str, scorecard, csv_path):

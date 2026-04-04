@@ -32,6 +32,11 @@
       "lines": 14,
       "meets_minimum": true
     },
+    "monthly_movement": {
+      "present": true,
+      "lines": 1,
+      "meets_minimum": false
+    },
     "management_priorities": {
       "present": true,
       "lines": 25,
@@ -155,5 +160,5 @@
     ],
     "dated_trajectory_supported": false
   },
-  "report_lines": 468
+  "report_lines": 470
 }

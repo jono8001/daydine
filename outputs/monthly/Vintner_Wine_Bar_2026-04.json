@@ -1,6 +1,7 @@
 {
   "venue": "Vintner Wine Bar",
   "month": "2026-04",
+  "report_date": "2026-04-04",
   "scorecard": {
     "experience": 8.73,
     "visibility": 9.73,
@@ -10,6 +11,62 @@
     "overall": 7.34
   },
   "deltas": null,
+  "signals": {
+    "google_rating": 4.6,
+    "google_review_count": 887,
+    "google_photo_count": 10,
+    "ta_rating": 4.4,
+    "ta_review_count": 20,
+    "fsa_rating": 5,
+    "last_inspection_date": "2024-05-09T00:00:00",
+    "price_level": 2,
+    "gbp_completeness": 10.0
+  },
+  "peer_position": {
+    "local_rank": 4,
+    "local_of": 9,
+    "local_peer_avg": 7.08,
+    "local_peer_top": 7.69,
+    "local_peer_count": 8,
+    "catchment_rank": 7,
+    "catchment_of": 19
+  },
+  "demand_capture": {
+    "Booking Friction": "Partial",
+    "Menu Visibility": "Partial",
+    "CTA Clarity": "Clear",
+    "Photo Mix & Quality": "Partial",
+    "Proposition Clarity": "Clear",
+    "Mobile Usability": "Clear",
+    "Promise vs Path": "Broken"
+  },
+  "review_sentiment": {
+    "service": {
+      "positive": 18,
+      "negative": 0
+    },
+    "ambience": {
+      "positive": 8,
+      "negative": 2
+    },
+    "value": {
+      "positive": 3,
+      "negative": 0
+    },
+    "food_quality": {
+      "positive": 12,
+      "negative": 3
+    },
+    "booking": {
+      "positive": 1,
+      "negative": 0
+    },
+    "speed": {
+      "positive": 3,
+      "negative": 0
+    }
+  },
+  "reviews_analyzed": 25,
   "priority_actions": [
     {
       "title": "Fix the digital shopfront — you're losing walk-ins",
@@ -59,56 +116,56 @@
     {
       "title": "Fix the digital shopfront — you're losing walk-ins",
       "dimension": "conversion",
-      "status_label": "Chronic (39 months)",
+      "status_label": "Chronic (41 months)",
       "target_date": "08 April 2026",
       "cost_band": "zero",
       "expected_upside": "Capture demand you're currently losing",
       "success_measure": "GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)",
       "next_milestone": "Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com",
       "owner_guidance": "operations — whoever holds Google Business Profile admin access",
-      "times_seen": 39,
+      "times_seen": 41,
       "barrier_category": "disagreement",
       "evidence": "experience=8.73, conversion=5.5"
     },
     {
       "title": "Address recurring food quality complaints from guests",
       "dimension": "experience",
-      "status_label": "Chronic (35 months)",
+      "status_label": "Chronic (37 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Reduce food quality complaints, protect rating",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
       "owner_guidance": "operations — head chef + FOH manager to review together",
-      "times_seen": 35,
+      "times_seen": 37,
       "barrier_category": "disagreement",
       "evidence": "review_criticism: Food Quality=3 negative"
     },
     {
       "title": "Lean into service & hospitality — it's what guests are buying",
       "dimension": "experience",
-      "status_label": "Chronic (35 months)",
+      "status_label": "Chronic (37 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Sharpen proposition → attract the right guests",
       "success_measure": "Service-related praise maintained in next review sample (verifiable via sentiment)",
       "next_milestone": "Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality",
       "owner_guidance": "management — FOH lead or general manager",
-      "times_seen": 35,
+      "times_seen": 37,
       "barrier_category": "disagreement",
       "evidence": "review_praise: Service & Hospitality=18"
     },
     {
       "title": "Protect the 4.6/5 rating — it took years to build",
       "dimension": "visibility",
-      "status_label": "Chronic (36 months)",
+      "status_label": "Chronic (38 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Sustain discovery advantage",
       "success_measure": "Google rating maintained or improved vs current baseline (verifiable via gr field)",
       "next_milestone": "Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine",
       "owner_guidance": "front-of-house — whoever currently responds to online reviews",
-      "times_seen": 36,
+      "times_seen": 38,
       "barrier_category": "disagreement",
       "evidence": "gr=4.6, grc=887"
     },
@@ -129,14 +186,14 @@
     {
       "title": "Compliance record weakest in peer set — creates inspection exposure",
       "dimension": "trust",
-      "status_label": "Chronic (36 months)",
+      "status_label": "Chronic (38 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Close the 1.1-point gap",
       "success_measure": "FSA rating maintained or improved on next inspection (verifiable via FSA API)",
       "next_milestone": "Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority",
       "owner_guidance": "management — compliance/food safety lead",
-      "times_seen": 36,
+      "times_seen": 38,
       "barrier_category": "disagreement",
       "evidence": "trust: 7.2 vs peer avg 8.3"
     },
@@ -171,14 +228,14 @@
     {
       "title": "Address repeated atmosphere & setting complaints from guests",
       "dimension": "experience",
-      "status_label": "Chronic (35 months)",
+      "status_label": "Chronic (37 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Reduce atmosphere & setting complaints, protect rating",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
       "owner_guidance": "operations — head chef + FOH manager to review together",
-      "times_seen": 35,
+      "times_seen": 37,
       "barrier_category": "disagreement",
       "evidence": "review_criticism: Atmosphere & Setting=2 negative"
     },

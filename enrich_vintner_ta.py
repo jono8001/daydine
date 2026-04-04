@@ -97,7 +97,7 @@ def main():
     from operator_intelligence.review_analysis import analyse_reviews, analyse_volume_signals
     from operator_intelligence.report_generator import (
         generate_monthly_report, generate_monthly_json, write_monthly_csv_row,
-        generate_conditional_blocks,
+        generate_conditional_blocks, load_prior_month_json,
     )
 
     month_str = "2026-04"
@@ -167,16 +167,27 @@ def main():
     # Conditional blocks
     cond_blocks = generate_conditional_blocks(venue, card, benchmarks)
 
+    # Load prior month snapshot for temporal layer
+    prior_snapshot = load_prior_month_json(venue_name, month_str)
+
     # Generate report
     report_md, qa = generate_monthly_report(
         venue_name, month_str, card, deltas,
         benchmarks, review_intel, rev_delta,
         recs, cond_blocks, venue_rec=venue,
         all_cards=all_cards, all_data=data,
+        prior_snapshot=prior_snapshot,
     )
 
     # Generate JSON
-    summary_json = generate_monthly_json(venue_name, month_str, card, deltas, recs)
+    # Run demand capture audit for snapshot storage
+    from operator_intelligence.demand_capture_audit import run_demand_capture_audit
+    demand_audit = run_demand_capture_audit(venue, card, benchmarks, review_intel)
+
+    summary_json = generate_monthly_json(
+        venue_name, month_str, card, deltas, recs,
+        benchmarks=benchmarks, venue_rec=venue, review_intel=review_intel,
+        demand_audit=demand_audit)
 
     # Write outputs
     os.makedirs("outputs/monthly", exist_ok=True)
