@@ -24,7 +24,21 @@
   Catchment (15mi): #7 of 19 (P66.7) — peer avg 6.83, top 7.93
   UK Category Cohort: #7 of 19 (P66.7) — peer avg 6.83, top 7.93
 
-*This report uses publicly observable data only — no internal systems required. Narrative analysis from 25 customer reviews (5 Google + 20 TripAdvisor).*
+*This report uses publicly observable data only — no internal systems required. See Data Basis below for full evidence breakdown.*
+
+## Data Basis
+
+This report draws on three layers of evidence:
+
+| Layer | What | Count | Confidence |
+|---|---|---|---|
+| Deep analysis | Text reviewed, themes extracted, segments identified | 25 reviews (5 Google, 20 TripAdvisor) | High for recent themes, moderate for long-term patterns |
+| Aggregate signals | Rating and volume from all platforms | 887 Google (4.6★), 20 TripAdvisor (4.4★) | High for reputation baseline, cannot identify specific themes |
+| Structural data | FSA record, Google Business Profile, web presence | 3 sources | High — factual data, not subjective |
+
+**What this means:** The narrative insights (themes, complaints, praise, segment reads) are based on 25 deeply-analysed recent reviews — a detailed sample, not a census. The aggregate 4.6 rating across 887 Google reviews is the reputation bedrock and is factored into scoring separately.
+
+**Platform note:** Google (4.6) and TripAdvisor (4.4) ratings diverge by 0.2 points. TripAdvisor's smaller, more tourist-weighted sample (20 reviews) may explain the lower average. Tourist expectations can differ from local regulars.
 
 ## Monthly Movement Summary
 
@@ -38,6 +52,10 @@
 ## What This Venue Is Becoming Known For
 
 Vintner Wine Bar is a well-established pub dining venue with a strong public reputation — 4.6/5 across 887 Google reviews. That volume means the reputation is earned, not manufactured.
+
+TripAdvisor shows 4.4/5 across 20 reviews — slightly lower than Google, possibly reflecting a more tourist-weighted sample.
+
+**From deep analysis of 25 recent reviews:**
 
 Guest feedback supported by moderate evidence centres on **service & hospitality** (18 mentions) and **food quality** (12 mentions). Review evidence consistently points to these as defining elements of the proposition as guests perceive it.
 
@@ -562,46 +580,46 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Chronic (51 months) | **Priority:** High
+**Status:** Chronic (52 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 51 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 52 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 3: Address recurring food quality complaints from guests
-**Status:** Chronic (47 months) | **Priority:** High
+**Status:** Chronic (48 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 47 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 48 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 4: Lean into service & hospitality — it's what guests are buying
-**Status:** Chronic (47 months) | **Priority:** High
+**Status:** Chronic (48 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 47 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 48 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 5: Protect the 4.6/5 rating — it took years to build
-**Status:** Chronic (48 months) | **Priority:** High
+**Status:** Chronic (49 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
 **Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 48 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 49 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Additional Active Recommendations
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
 | 6 | Strong rating masks weak competitive position | New | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Compliance record weakest in peer set — creat | Chronic (48 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Compliance record weakest in peer set — creat | Chronic (49 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 8 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 9 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 10 | Address repeated atmosphere & setting complai | Chronic (47 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 10 | Address repeated atmosphere & setting complai | Chronic (48 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 11 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
@@ -807,6 +825,24 @@ Big thank you 😊
 
 **Review 25** | Tripadvisor | 2026-07-20 | 5★ | positive | Food Quality, Value for Money
 > A quality eaterie, with good atmosphere. Roomy and comfortable upstairs. Lovely food generally with a good choice and reasonable value. One meal not quite up to standard (sea bass with a limp Thai red sauce and tough Pak Choi, which didn't match the rest), but everything else excellent. Particularly the service which was first class. All upstairs tables occupied, on a Monday lunchtime which says a lot.
+
+## Appendix: How Scores Work
+
+The overall score is a weighted composite of four headline dimensions plus a tracked prestige signal:
+
+| Dimension | Weight | What It Measures |
+|---|---|---|
+| Experience | ~30% | Food quality, service, ambience — from ratings, reviews, and FSA food hygiene |
+| Trust | ~25% | FSA compliance record, inspection recency, management confidence |
+| Visibility | ~20% | Online discoverability — review volume, photos, profile completeness |
+| Conversion | ~15% | Operational readiness — hours, menu, reservations, delivery/takeaway |
+| Prestige | ~10% | Awards, editorial recognition (tracked, not a headline lever) |
+
+**How scores move:** Scores change when underlying data changes (new reviews, new inspection, profile updates). The biggest levers are Experience (~30%) and Trust (~25%). Some factors decay over time (e.g., inspection recency) even without new data. Peer averages shift as competitors improve or decline.
+
+**What scores don't capture:** Internal operational data, financial performance, staff quality beyond what's visible in reviews. This is an outside-in view only.
+
+*Methodology: DayDine Premium v3.3. Full methodology available on request.*
 
 
 *Report generated by DayDine v3.3 — 2026-04*

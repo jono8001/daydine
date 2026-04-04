@@ -175,6 +175,9 @@ class SectionSpec:
 MONTHLY_SECTIONS = [
     SectionSpec("executive_summary", "Executive Summary", mandatory=True, min_lines=5,
                 description="Top leaks, upside, risk, and what not to do — then score as context"),
+    SectionSpec("data_basis", "Data Basis", mandatory=True, min_lines=3,
+                description="Three-tier evidence overview: deep analysis, aggregate signals, structural data. "
+                            "Platform divergence noted if present."),
     SectionSpec("monthly_movement", "Monthly Movement Summary", mandatory=True, min_lines=1,
                 description="What changed, what is stable, what is worsening — specific numbers. "
                             "Baseline month: states 'first report — all metrics baselined.'"),

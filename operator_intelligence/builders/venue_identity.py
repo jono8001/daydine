@@ -79,9 +79,20 @@ def build_known_for(w, venue_name, scorecard, benchmarks, review_intel):
         lines.append(f"{venue_name} operates in the {prop} category with a public "
                      f"rating of {gr}/5 that is currently limiting discovery.")
 
-    # What guests value — calibrated by review confidence
+    # Aggregate context — TripAdvisor if available
+    ta = review_intel.get("ta_rating") if review_intel else None
+    trc = review_intel.get("review_count_ta") or 0
+    if ta and trc:
+        lines.append(f"TripAdvisor shows {ta}/5 across {trc} reviews"
+                     + (f" — slightly lower than Google, possibly reflecting a more tourist-weighted sample."
+                        if gr and float(ta) < float(gr) - 0.1 else "."))
+
+    # What guests value — from deep analysis of recent reviews
     rc = assess_review_confidence(review_intel)
     lang = CONFIDENCE_LANGUAGE.get(rc.tier, CONFIDENCE_LANGUAGE["none"])
+    deep_count = rc.review_text_count if rc else 0
+    if deep_count > 0:
+        lines.append(f"**From deep analysis of {deep_count} recent reviews:**")
 
     if top_theme and second_theme and rc.can_claim_proposition:
         lines.append(f"Guest feedback {rc.qualifier} centres on "

@@ -32,6 +32,11 @@
       "lines": 14,
       "meets_minimum": true
     },
+    "data_basis": {
+      "present": true,
+      "lines": 8,
+      "meets_minimum": true
+    },
     "monthly_movement": {
       "present": true,
       "lines": 3,
@@ -119,7 +124,7 @@
     },
     "evidence_appendix": {
       "present": true,
-      "lines": 130,
+      "lines": 129,
       "meets_minimum": true
     }
   },
@@ -173,5 +178,5 @@
     "tension_flagged": true,
     "unattributed_handled": true
   },
-  "report_lines": 520
+  "report_lines": 543
 }
