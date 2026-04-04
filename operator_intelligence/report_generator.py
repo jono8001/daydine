@@ -123,6 +123,10 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
 # ---------------------------------------------------------------------------
 
 def generate_monthly_json(venue_name, month_str, scorecard, deltas, recs):
+    from operator_intelligence.implementation_framework import generate_action_cards
+
+    cards = generate_action_cards(recs, month_str)
+
     return {
         "venue": venue_name, "month": month_str,
         "scorecard": {k: scorecard.get(k) for k in DIM_ORDER + ["overall"]},
@@ -139,6 +143,23 @@ def generate_monthly_json(venue_name, month_str, scorecard, deltas, recs):
         "active_recommendations": sum(
             1 for r in recs.get("all_recs", [])
             if r.get("status") not in ("resolved", "dropped", "completed")),
+        "implementation_framework": [
+            {
+                "title": c["title"],
+                "dimension": c["dimension"],
+                "status_label": c["status_label"],
+                "target_date": c["target_date"],
+                "cost_band": c["cost_band"],
+                "expected_upside": c["expected_upside"],
+                "success_measure": c["success_measure"],
+                "next_milestone": c["next_milestone"],
+                "owner_guidance": c["owner_guidance"],
+                "times_seen": c["times_seen"],
+                "barrier_category": c["barrier"][0] if c["barrier"] else None,
+                "evidence": c["evidence"],
+            }
+            for c in cards
+        ],
     }
 
 
