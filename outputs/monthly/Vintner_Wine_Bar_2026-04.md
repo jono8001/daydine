@@ -1,5 +1,5 @@
 # Vintner Wine Bar — External Blind-Spot Report
-*2026-04 | Generated 03 April 2026 | DayDine Premium*
+*2026-04 | Generated 04 April 2026 | DayDine Premium*
 
 ---
 
@@ -47,7 +47,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Owner:** operations | **Confidence:** 80%
 - **Expected upside:** Capture demand you're currently losing
 - **Evidence:** `experience=8.73, conversion=5.5`
-- *This recommendation has appeared 25 consecutive months.*
+- *This recommendation has appeared 27 consecutive months.*
 
   **Commercial consequence** (directional):
   Value at stake: £180–£3,600/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
@@ -62,7 +62,7 @@ Food Quality draws recurring criticism across reviews (3 negative mentions). One
 - **Owner:** operations | **Confidence:** 70%
 - **Expected upside:** Reduce food quality complaints, protect rating
 - **Evidence:** `review_criticism: Food Quality=3 negative`
-- *This recommendation has appeared 22 consecutive months.*
+- *This recommendation has appeared 24 consecutive months.*
 
   **Commercial consequence** (directional):
   Value at stake: £270–£4,500/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
@@ -77,7 +77,7 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
 - **Evidence:** `review_praise: Service & Hospitality=18`
-- *This recommendation has appeared 22 consecutive months.*
+- *This recommendation has appeared 24 consecutive months.*
 
   **Commercial consequence** (indicative):
   Value at stake: Upside, not loss prevention — magnitude depends on execution | Cost to fix: Low (< 1 hour, no spend) | Payback: 1–3 months
@@ -97,17 +97,74 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
 
 - **Awards and editorial pursuit.** Your fundamentals need strengthening before prestige investment makes sense. Awards don't fix a weak proposition; they amplify a strong one.
 
-## Conversion Friction Analysis
+## Demand Capture Audit
 
-This section identifies specific barriers between customer interest and a completed visit or order.
+**3 of 7** demand capture dimensions are clear. **4** have friction. **0** are missing.
 
-| Friction Point | Impact | Fix | Value at Stake |
-|---------------|--------|-----|---------------|
-| No delivery/takeaway signal | Google Maps filters for 'delivery' and 'takeaway'. If you offer these services but haven't flagged them, you're invisible to that search intent. | Update Google Business Profile service attributes. | £180–£3,600/mo (directional) |
+*Conversion dimension score: 5.5/10 — this audit explains what is behind that number.*
 
-**1 friction point(s) identified.** Combined value at stake: £180–£3,600/month (directional). Each point represents a leak where interested customers drop off.
+### Booking Friction [PARTIAL]
 
-**Overall conversion readiness: Partial.** Some signals are present but gaps remain. Each missing element is a percentage of potential customers who never reach you.
+Booking is likely available via website, but no direct booking link is confirmed in Google Maps. A customer must leave Maps → find the website → locate the booking page. Each click loses ~20% of intent.
+
+**Commercial consequence:** Customers searching 'restaurant near me' expect 1-click booking. Without it, you lose to competitors with Reserve with Google or a visible booking button.
+
+*Signals: GBP type includes 'restaurant' (reservation expected); Website present (may host booking); TripAdvisor listing present*
+> *"This was our second visit to The Vinter, & it didn’t disappoint! We come to Stratford several times a year to visit the..."*
+
+### Menu Visibility [PARTIAL]
+
+Menu exists online (inferred) but we cannot confirm it is linked from Google Maps or that it is scannable on mobile. 77% of diners check the menu before visiting — if it is buried on a sub-page or a PDF, it may as well be missing.
+
+**Commercial consequence:** A menu that exists but isn't in the discovery path loses most of its conversion value.
+
+*Signals: Menu online: detected (inferred from web presence); Website present (menu may be hosted there); 7 review(s) mention the menu*
+> *"Vintner provided great pre-theatre service helped us get to our showing on time.
+
+I had the vegan risotto, which was sol..."*
+
+### CTA Clarity [CLEAR]
+
+GBP profile is 10/10 complete. All critical action paths (call, directions, website) are populated.
+
+**Commercial consequence:** No CTA friction detected.
+
+*Signals: GBP completeness: 10/10; All 10 GBP attributes present*
+
+### Photo Mix & Quality [PARTIAL]
+
+10 photos present — matching peer average. However, we cannot verify from external data whether photos match the experience guests praise. Reviews highlight **service & hospitality** — if your photos don't showcase this, there is a proposition mismatch in the listing.
+
+**Commercial consequence:** Photos that don't match the praised experience waste the strongest conversion signal your listing has.
+
+*Signals: Photo count: 10; Peer average: ~10 photos; Top review theme: Service & Hospitality*
+
+### Proposition Clarity [CLEAR]
+
+Google types (wine_bar, bar, restaurant) are broadly consistent with what guests praise (Service & Hospitality, Food Quality).
+
+**Commercial consequence:** No major proposition mismatch detected.
+
+*Signals: Google types: wine_bar, bar, restaurant; Top review themes: Service & Hospitality, Food Quality, Atmosphere & Setting*
+
+### Mobile Usability [CLEAR]
+
+Opening hours complete (7/7 days), website present, Place ID active. A mobile user can confirm hours and navigate without leaving Maps.
+
+**Commercial consequence:** No mobile usability friction detected.
+
+*Signals: Opening hours: 7/7 days; Website: Yes; Google Place ID: Yes*
+
+### Promise vs Path [BROKEN]
+
+Reviews mention pre-theatre dining but hours don't clearly show early evening availability
+
+**Commercial consequence:** Contradictory signals between listing and reality erode trust. A customer who acts on the listing and hits a wall won't come back.
+
+*Signals: No delivery/takeaway in Google types; 2 review(s) mention pre-theatre/early dining*
+> *"Vintner provided great pre-theatre service helped us get to our showing on time.
+
+I had the vegan risotto, which was sol..."*
 
 ## Commercial Diagnosis
 
@@ -375,14 +432,14 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Since | Months | Owner | Dimension |
 |--:|---------------|--------|-------|-------:|-------|-----------|
 | 1 | Below local median — competitive risk | new | 2026-04 | 1 | management | overall |
-| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 25 | operations | conversion |
-| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 22 | operations | experience |
-| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 22 | management | experience |
-| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 22 | front-of-house | visibility |
-| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 22 | management | trust |
+| 2 | Fix the digital shopfront — you're losing walk-ins | escalated | 2026-04 | 27 | operations | conversion |
+| 3 | Address recurring food quality complaints from gue | escalated | 2026-04 | 24 | operations | experience |
+| 4 | Lean into service & hospitality — it's what guests | escalated | 2026-04 | 24 | management | experience |
+| 5 | Protect the 4.6/5 rating — it took years to build | escalated | 2026-04 | 24 | front-of-house | visibility |
+| 6 | Compliance record weakest in peer set — creates in | escalated | 2026-04 | 24 | management | trust |
 | 7 | Guest experience trailing local competitors | escalated | 2026-04 | 3 | management | experience |
 | 8 | Compliance record trailing local standards | escalated | 2026-04 | 3 | management | trust |
-| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 22 | operations | experience |
+| 9 | Address repeated atmosphere & setting complaints f | escalated | 2026-04 | 24 | operations | experience |
 
 ## Next-Month Monitoring Plan
 

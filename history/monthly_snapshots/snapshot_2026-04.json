@@ -154,7 +154,7 @@
   "1299513": {
     "experience": 10,
     "visibility": 3.97,
-    "trust": 9.9,
+    "trust": 9.89,
     "conversion": 4.5,
     "prestige": 1.5,
     "overall": 7.09,
@@ -173,7 +173,7 @@
   "1826837": {
     "experience": 6.98,
     "visibility": 7.87,
-    "trust": 6.11,
+    "trust": 6.1,
     "conversion": 5.5,
     "prestige": 0.0,
     "overall": 6.02,
@@ -192,7 +192,7 @@
   "1563336": {
     "experience": 6.62,
     "visibility": 3.8,
-    "trust": 7.95,
+    "trust": 7.94,
     "conversion": 4.5,
     "prestige": 0.0,
     "overall": 5.41,
@@ -287,10 +287,10 @@
   "1500965": {
     "experience": 9.42,
     "visibility": 7.75,
-    "trust": 8.34,
+    "trust": 8.33,
     "conversion": 5.5,
     "prestige": 1.5,
-    "overall": 7.44,
+    "overall": 7.43,
     "fhrsid": 1500965,
     "name": "Cafe Des Fleurs",
     "postcode": "B49 5AE",
@@ -344,7 +344,7 @@
   "1799218": {
     "experience": 8.72,
     "visibility": 6.71,
-    "trust": 8.58,
+    "trust": 8.57,
     "conversion": 4.5,
     "prestige": 1.5,
     "overall": 6.93,
@@ -363,7 +363,7 @@
   "503972": {
     "experience": 8.38,
     "visibility": 8.28,
-    "trust": 8.35,
+    "trust": 8.34,
     "conversion": 5.5,
     "prestige": 1.5,
     "overall": 7.23,
@@ -401,7 +401,7 @@
   "1291215": {
     "experience": 7.21,
     "visibility": 2.97,
-    "trust": 8.79,
+    "trust": 8.78,
     "conversion": 4.5,
     "prestige": 0.0,
     "overall": 5.63,
@@ -439,7 +439,7 @@
   "503032": {
     "experience": 8.49,
     "visibility": 6.69,
-    "trust": 8.69,
+    "trust": 8.68,
     "conversion": 6.0,
     "prestige": 1.5,
     "overall": 7.11,
@@ -477,10 +477,10 @@
   "1800190": {
     "experience": 8.03,
     "visibility": 3.09,
-    "trust": 5.59,
+    "trust": 5.58,
     "conversion": null,
     "prestige": 0.0,
-    "overall": 5.21,
+    "overall": 5.2,
     "fhrsid": 1800190,
     "name": "CAMEO Lunch Club",
     "postcode": "",
@@ -553,7 +553,7 @@
   "503481": {
     "experience": 8.72,
     "visibility": 8.07,
-    "trust": 8.46,
+    "trust": 8.45,
     "conversion": 5.5,
     "prestige": 1.5,
     "overall": 7.32,
@@ -591,7 +591,7 @@
   "503820": {
     "experience": 8.61,
     "visibility": 7.77,
-    "trust": 8.67,
+    "trust": 8.66,
     "conversion": 5.5,
     "prestige": 1.5,
     "overall": 7.28,
@@ -705,10 +705,10 @@
   "503345": {
     "experience": 6.97,
     "visibility": 7.95,
-    "trust": 9.18,
+    "trust": 9.17,
     "conversion": 7.0,
     "prestige": 0.0,
-    "overall": 7.03,
+    "overall": 7.02,
     "fhrsid": 503345,
     "name": "KFC - Southbound",
     "postcode": "CV35 0AA",
@@ -781,7 +781,7 @@
   "1672985": {
     "experience": 9.77,
     "visibility": 7.49,
-    "trust": 7.95,
+    "trust": 7.94,
     "conversion": 4.5,
     "prestige": 1.5,
     "overall": 7.24,
@@ -800,10 +800,10 @@
   "503054": {
     "experience": 8.83,
     "visibility": 8.13,
-    "trust": 9.63,
+    "trust": 9.62,
     "conversion": 2.5,
     "prestige": 0.0,
-    "overall": 7.06,
+    "overall": 7.05,
     "fhrsid": 503054,
     "name": "Stratford Manor Hotel",
     "postcode": "CV37 0PY",
@@ -914,7 +914,7 @@
   "1210746": {
     "experience": 7.91,
     "visibility": 7.85,
-    "trust": 9.68,
+    "trust": 9.67,
     "conversion": 4.5,
     "prestige": 0.0,
     "overall": 7.04,
@@ -933,7 +933,7 @@
   "503216": {
     "experience": 5.71,
     "visibility": 8.18,
-    "trust": 5.54,
+    "trust": 5.53,
     "conversion": 4.5,
     "prestige": 0.0,
     "overall": 5.41,
@@ -971,7 +971,7 @@
   "1421980": {
     "experience": 7.91,
     "visibility": 7.48,
-    "trust": 7.29,
+    "trust": 7.28,
     "conversion": 2.0,
     "prestige": 0.0,
     "overall": 5.99,
@@ -1066,10 +1066,10 @@
   "1896717": {
     "experience": 10,
     "visibility": 5.51,
-    "trust": 9.8,
+    "trust": 9.79,
     "conversion": 4.5,
     "prestige": 1.5,
-    "overall": 7.38,
+    "overall": 7.37,
     "fhrsid": 1896717,
     "name": "Lithos Restaurant",
     "postcode": "B95 5BX",
@@ -1085,7 +1085,7 @@
   "1622082": {
     "experience": 7.5,
     "visibility": 0.4,
-    "trust": 7.98,
+    "trust": 7.97,
     "conversion": null,
     "prestige": 0.0,
     "overall": 5.09,
@@ -1237,7 +1237,7 @@
   "503376": {
     "experience": 9.53,
     "visibility": 5.43,
-    "trust": 8.77,
+    "trust": 8.76,
     "conversion": 4.5,
     "prestige": 1.5,
     "overall": 6.96,
@@ -1256,7 +1256,7 @@
   "1016715": {
     "experience": 9.53,
     "visibility": 5.56,
-    "trust": 9.43,
+    "trust": 9.42,
     "conversion": 3.5,
     "prestige": 1.5,
     "overall": 7.0,
@@ -1275,10 +1275,10 @@
   "504026": {
     "experience": 9.53,
     "visibility": 5.28,
-    "trust": 7.87,
+    "trust": 7.86,
     "conversion": null,
     "prestige": 1.5,
-    "overall": 7.1,
+    "overall": 7.09,
     "fhrsid": 504026,
     "name": "Ragley Hall Catering",
     "postcode": "B49 5NJ",
@@ -1313,7 +1313,7 @@
   "503114": {
     "experience": 7.33,
     "visibility": 7.87,
-    "trust": 3.8,
+    "trust": 3.79,
     "conversion": 5.5,
     "prestige": 1.5,
     "overall": 5.7,
@@ -1427,7 +1427,7 @@
   "1800192": {
     "experience": 5.59,
     "visibility": 7.45,
-    "trust": 2.42,
+    "trust": 2.41,
     "conversion": 2.0,
     "prestige": 0.0,
     "overall": 4.07,
@@ -1522,7 +1522,7 @@
   "1896714": {
     "experience": 9.3,
     "visibility": 8.09,
-    "trust": 9.19,
+    "trust": 9.18,
     "conversion": 5.5,
     "prestige": 0.0,
     "overall": 7.53,
@@ -1541,7 +1541,7 @@
   "1291217": {
     "experience": 7.68,
     "visibility": 3.38,
-    "trust": 7.06,
+    "trust": 7.05,
     "conversion": 4.5,
     "prestige": 0.0,
     "overall": 5.42,
@@ -1617,10 +1617,10 @@
   "1790270": {
     "experience": 8.49,
     "visibility": 7.78,
-    "trust": 5.07,
+    "trust": 5.06,
     "conversion": 4.5,
     "prestige": 1.5,
-    "overall": 6.2,
+    "overall": 6.19,
     "fhrsid": 1790270,
     "name": "Bardia's",
     "postcode": "CV37 6EE",
@@ -1750,7 +1750,7 @@
   "503715": {
     "experience": 6.98,
     "visibility": 8.42,
-    "trust": 5.54,
+    "trust": 5.53,
     "conversion": 5.5,
     "prestige": 0.0,
     "overall": 5.99,
@@ -1769,10 +1769,10 @@
   "1622072": {
     "experience": 8.26,
     "visibility": 7.41,
-    "trust": 5.81,
+    "trust": 5.8,
     "conversion": 4.5,
     "prestige": 0.0,
-    "overall": 6.09,
+    "overall": 6.08,
     "fhrsid": 1622072,
     "name": "Hudson's",
     "postcode": "CV37 9ST",
@@ -1788,10 +1788,10 @@
   "1266894": {
     "experience": 8.83,
     "visibility": 8.33,
-    "trust": 8.96,
+    "trust": 8.95,
     "conversion": 7.0,
     "prestige": 0.0,
-    "overall": 7.61,
+    "overall": 7.6,
     "fhrsid": 1266894,
     "name": "Barnabys",
     "postcode": "CV37 6BA",
@@ -1940,10 +1940,10 @@
   "1552333": {
     "experience": 8.48,
     "visibility": 4.57,
-    "trust": 8.81,
+    "trust": 8.8,
     "conversion": 5.5,
     "prestige": 0.0,
-    "overall": 6.49,
+    "overall": 6.48,
     "fhrsid": 1552333,
     "name": "Costa Coffee",
     "postcode": "CV37 8LU",
@@ -1997,7 +1997,7 @@
   "503240": {
     "experience": 9.65,
     "visibility": 8.32,
-    "trust": 7.44,
+    "trust": 7.43,
     "conversion": 5.5,
     "prestige": 1.5,
     "overall": 7.39,
@@ -2092,7 +2092,7 @@
   "1344517": {
     "experience": 9.2,
     "visibility": 7.84,
-    "trust": 9.54,
+    "trust": 9.53,
     "conversion": 5.5,
     "prestige": 1.5,
     "overall": 7.69,
@@ -2130,7 +2130,7 @@
   "503854": {
     "experience": 9.3,
     "visibility": 5.57,
-    "trust": 9.29,
+    "trust": 9.28,
     "conversion": 2.5,
     "prestige": 0.0,
     "overall": 6.6,
@@ -2149,7 +2149,7 @@
   "979161": {
     "experience": 7.57,
     "visibility": 6.64,
-    "trust": 2.88,
+    "trust": 2.87,
     "conversion": 3.0,
     "prestige": 1.5,
     "overall": 4.92,
@@ -2187,7 +2187,7 @@
   "1747702": {
     "experience": 9.88,
     "visibility": 8.06,
-    "trust": 7.69,
+    "trust": 7.68,
     "conversion": 4.5,
     "prestige": 1.5,
     "overall": 7.32,
@@ -2206,7 +2206,7 @@
   "1397584": {
     "experience": 8.38,
     "visibility": 7.9,
-    "trust": 9.54,
+    "trust": 9.53,
     "conversion": 5.5,
     "prestige": 3.0,
     "overall": 7.6,
@@ -2225,7 +2225,7 @@
   "1838726": {
     "experience": 8.03,
     "visibility": 7.95,
-    "trust": 5.36,
+    "trust": 5.35,
     "conversion": 5.5,
     "prestige": 0.0,
     "overall": 6.16,
@@ -2377,7 +2377,7 @@
   "1854461": {
     "experience": 9.65,
     "visibility": 7.65,
-    "trust": 9.27,
+    "trust": 9.26,
     "conversion": 4.5,
     "prestige": 1.5,
     "overall": 7.57,
@@ -2396,7 +2396,7 @@
   "503926": {
     "experience": 8.96,
     "visibility": 3.97,
-    "trust": 8.53,
+    "trust": 8.52,
     "conversion": 4.5,
     "prestige": 1.5,
     "overall": 6.44,
@@ -2529,7 +2529,7 @@
   "1556368": {
     "experience": 9.3,
     "visibility": 8.16,
-    "trust": 7.9,
+    "trust": 7.89,
     "conversion": 5.5,
     "prestige": 0.0,
     "overall": 7.22,
@@ -2624,7 +2624,7 @@
   "502877": {
     "experience": 8.14,
     "visibility": 7.96,
-    "trust": 7.34,
+    "trust": 7.33,
     "conversion": null,
     "prestige": 0.0,
     "overall": 6.9,
@@ -2700,7 +2700,7 @@
   "1796553": {
     "experience": 8.96,
     "visibility": 6.28,
-    "trust": 7.82,
+    "trust": 7.81,
     "conversion": 4.5,
     "prestige": 1.5,
     "overall": 6.72,
@@ -2833,7 +2833,7 @@
   "559158": {
     "experience": 9.18,
     "visibility": 7.99,
-    "trust": 9.54,
+    "trust": 9.53,
     "conversion": 5.5,
     "prestige": 0.0,
     "overall": 7.56,
@@ -2947,10 +2947,10 @@
   "1754519": {
     "experience": 10,
     "visibility": 0.6,
-    "trust": 8.21,
+    "trust": 8.2,
     "conversion": 2.5,
     "prestige": 0.0,
-    "overall": 5.55,
+    "overall": 5.54,
     "fhrsid": 1754519,
     "name": "Nanas Caff",
     "postcode": "CV37 9NQ",
@@ -2985,7 +2985,7 @@
   "1699665": {
     "experience": 9.65,
     "visibility": 8.01,
-    "trust": 9.43,
+    "trust": 9.42,
     "conversion": 5.5,
     "prestige": 1.5,
     "overall": 7.83,
@@ -3023,7 +3023,7 @@
   "503282": {
     "experience": 9.42,
     "visibility": 8.5,
-    "trust": 9.73,
+    "trust": 9.72,
     "conversion": 5.5,
     "prestige": 1.5,
     "overall": 7.93,
@@ -3137,7 +3137,7 @@
   "1756585": {
     "experience": 9.42,
     "visibility": 4.39,
-    "trust": 8.18,
+    "trust": 8.17,
     "conversion": 2.5,
     "prestige": 1.5,
     "overall": 6.27,
@@ -3270,7 +3270,7 @@
   "1056848": {
     "experience": 9.42,
     "visibility": 5.14,
-    "trust": 9.08,
+    "trust": 9.07,
     "conversion": 2.5,
     "prestige": 1.5,
     "overall": 6.65,
@@ -3289,7 +3289,7 @@
   "502863": {
     "experience": 8.61,
     "visibility": 7.81,
-    "trust": 8.42,
+    "trust": 8.41,
     "conversion": null,
     "prestige": 1.5,
     "overall": 7.53,
@@ -3346,7 +3346,7 @@
   "503102": {
     "experience": 9.42,
     "visibility": 4.94,
-    "trust": 9.34,
+    "trust": 9.33,
     "conversion": null,
     "prestige": 1.5,
     "overall": 7.41,
@@ -3384,7 +3384,7 @@
   "1176874": {
     "experience": 7.45,
     "visibility": 8.04,
-    "trust": 7.4,
+    "trust": 7.39,
     "conversion": 5.5,
     "prestige": 1.5,
     "overall": 6.67,
@@ -3403,7 +3403,7 @@
   "1838728": {
     "experience": 8.72,
     "visibility": 2.37,
-    "trust": 7.95,
+    "trust": 7.94,
     "conversion": 2.5,
     "prestige": 1.5,
     "overall": 5.6,
@@ -3441,10 +3441,10 @@
   "503711": {
     "experience": 8.49,
     "visibility": 7.04,
-    "trust": 7.7,
+    "trust": 7.69,
     "conversion": 5.5,
     "prestige": 1.5,
-    "overall": 6.86,
+    "overall": 6.85,
     "fhrsid": 503711,
     "name": "Arden Tandoori",
     "postcode": "B95 5AU",
@@ -3688,10 +3688,10 @@
   "1317981": {
     "experience": 8.72,
     "visibility": 7.98,
-    "trust": 8.76,
+    "trust": 8.75,
     "conversion": 4.5,
     "prestige": 1.5,
-    "overall": 7.23,
+    "overall": 7.22,
     "fhrsid": 1317981,
     "name": "Kolshi Restaurant",
     "postcode": "CV35 9ND",
@@ -3707,7 +3707,7 @@
   "502816": {
     "experience": 8.61,
     "visibility": 8.44,
-    "trust": 9.07,
+    "trust": 9.06,
     "conversion": 5.5,
     "prestige": 1.5,
     "overall": 7.51,

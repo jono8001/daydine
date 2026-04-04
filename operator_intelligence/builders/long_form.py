@@ -531,79 +531,53 @@ def build_public_vs_reality(w, scorecard):
 
 
 # ---------------------------------------------------------------------------
-# Conversion Friction Analysis
+# Demand Capture Audit (replaces Conversion Friction Analysis)
 # ---------------------------------------------------------------------------
 
-def build_conversion_analysis(w, scorecard, venue_rec):
-    w("## Conversion Friction Analysis\n")
-    w("This section identifies specific barriers between customer interest and a completed visit or order.\n")
+def build_conversion_analysis(w, scorecard, venue_rec, benchmarks=None, review_intel=None):
+    """7-dimension demand capture audit — structured outside-in walkthrough."""
+    from operator_intelligence.demand_capture_audit import run_demand_capture_audit
+
+    audit = run_demand_capture_audit(venue_rec, scorecard, benchmarks, review_intel)
+    summary = audit["summary"]
+    dims = audit["dimensions"]
+
+    w("## Demand Capture Audit\n")
+
+    # Summary line
+    clear = summary["clear"]
+    friction = summary["partial"] + summary["broken"] + summary["gap"]
+    missing = summary["missing"]
+    w(f"**{clear} of 7** demand capture dimensions are clear. "
+      f"**{friction}** have friction. "
+      f"**{missing}** are missing.\n")
 
     conv = scorecard.get("conversion")
-    goh = venue_rec.get("goh")
-    has_menu = venue_rec.get("has_menu_online")
-    gty = venue_rec.get("gty", [])
-    has_delivery = "food_delivery" in gty or "meal_takeaway" in gty if isinstance(gty, list) else False
-    gpl = venue_rec.get("gpl")
-
-    friction_points = []
-
-    if not goh or (isinstance(goh, list) and len(goh) < 7):
-        days = len(goh) if isinstance(goh, list) else 0
-        friction_points.append(("Opening hours incomplete",
-            f"Only {days}/7 days listed. Customers filtering 'open now' may not find you.",
-            "Publish full 7-day hours on Google Business Profile."))
-
-    if not has_menu:
-        friction_points.append(("No online menu",
-            "77% of diners check the menu before visiting. Without one, you lose "
-            "consideration at the research stage.",
-            "Upload menu to Google Business Profile or link to your website menu."))
-
-    if not has_delivery:
-        friction_points.append(("No delivery/takeaway signal",
-            "Google Maps filters for 'delivery' and 'takeaway'. If you offer these "
-            "services but haven't flagged them, you're invisible to that search intent.",
-            "Update Google Business Profile service attributes."))
-
-    if gpl is None:
-        friction_points.append(("No price level set",
-            "Price level helps customers self-select. Without it, price-sensitive "
-            "and premium-seeking customers alike may skip you.",
-            "Set price level on Google Business Profile."))
-
-    if friction_points:
-        w("| Friction Point | Impact | Fix | Value at Stake |")
-        w("|---------------|--------|-----|---------------|")
-        from operator_intelligence.commercial_estimates import _spend_range, _MONTHLY_COVERS
-        spend_lo, spend_hi = _spend_range(gpl)
-        covers = _MONTHLY_COVERS.get(gpl, _MONTHLY_COVERS[2])
-        for title, impact, fix in friction_points:
-            # Each missing signal leaks ~2-8% of potential demand
-            val_lo = round(covers[0] * spend_lo * 0.02, -1)
-            val_hi = round(covers[1] * spend_hi * 0.08, -1)
-            w(f"| {title} | {impact} | {fix} | £{val_lo:,.0f}–£{val_hi:,.0f}/mo (directional) |")
-        w("")
-
-        total_lo = round(covers[0] * spend_lo * 0.02 * len(friction_points), -1)
-        total_hi = round(covers[1] * spend_hi * 0.08 * len(friction_points), -1)
-        w(f"**{len(friction_points)} friction point(s) identified.** "
-          f"Combined value at stake: £{total_lo:,.0f}–£{total_hi:,.0f}/month (directional). "
-          f"Each point represents a leak where interested customers drop off.\n")
-    else:
-        w("No major conversion friction points detected. Your operational "
-          "signals (hours, menu, ordering options) are well-configured.\n")
-
     if conv is not None:
-        if conv >= 7.0:
-            w("**Overall conversion readiness: Good.** Your operational profile "
-              "supports customer discovery and action.\n")
-        elif conv >= 5.0:
-            w("**Overall conversion readiness: Partial.** Some signals are present "
-              "but gaps remain. Each missing element is a percentage of potential "
-              "customers who never reach you.\n")
-        else:
-            w("**Overall conversion readiness: Poor.** Multiple operational signals "
-              "are missing. This is likely costing you measurable footfall.\n")
+        w(f"*Conversion dimension score: {conv:.1f}/10 — "
+          f"this audit explains what is behind that number.*\n")
+
+    # Each dimension
+    _verdict_icon = {"Clear": "CLEAR", "Partial": "PARTIAL",
+                     "Missing": "MISSING", "Broken": "BROKEN", "Gap": "GAP"}
+
+    for d in dims:
+        icon = _verdict_icon.get(d["verdict"], d["verdict"].upper())
+        w(f"### {d['dimension']} [{icon}]\n")
+        w(f"{d['finding']}\n")
+
+        if d["consequence"] and d["consequence"] != "No friction detected.":
+            w(f"**Commercial consequence:** {d['consequence']}\n")
+
+        # Signal citations
+        if d["signals"]:
+            w(f"*Signals: {'; '.join(d['signals'])}*")
+
+        # Review evidence
+        if d.get("review_evidence"):
+            for rev in d["review_evidence"][:1]:
+                w(f'> *"{rev}"*')
+        w("")
 
 
 # ---------------------------------------------------------------------------

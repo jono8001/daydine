@@ -33,7 +33,7 @@ The report is organised around four commercial lenses. Each lens maps to underly
 
 | Commercial Lens | What It Answers | Primary Dimensions | Key Signals |
 |---|---|---|---|
-| **Demand Capture** | Are you converting interest into visits? | Visibility, Conversion | Google review count, GBP completeness, opening hours, menu online, delivery/takeaway, booking signal |
+| **Demand Capture** | Are you converting interest into visits? | Visibility, Conversion | 7-dimension audit: Booking Friction, Menu Visibility, CTA Clarity, Photo Mix & Quality, Proposition Clarity, Mobile Usability, Promise vs Path Consistency |
 | **Proposition & Guest Signal** | What are guests actually buying — and is it what you think you sell? | Experience | Google rating, TripAdvisor rating, aspect sentiment, review themes, FSA food hygiene sub-score |
 | **Trust & Public Risk** | What does the public compliance record say about risk? | Trust | FSA hygiene rating, structural compliance, management confidence, inspection recency |
 | **Competitive Market Intelligence** | How do you sit relative to your local and category peers? | All (peer-relative) | Peer percentile, dimension gaps, competitor scores, market density |
@@ -91,6 +91,42 @@ Review intelligence is conceptually split into two layers:
 2. **The Recent Movement layer must only appear when date-filtered reviews exist.** If no reviews have reliable dates within the reporting window, the report must state: *"Recent review movement could not be isolated from current source data."*
 3. **Trajectory claims ("improving", "declining") must be date-grounded.** Splitting reviews by list position is not temporal evidence. If reviews are not date-sorted, trajectory claims must be labelled as positional, not temporal.
 4. **Google review dates are unreliable** and must not be used for precise monthly filtering. They may be used for approximate windowing (±1 month) with an explicit caveat.
+
+---
+
+## 3b. Demand Capture Audit
+
+The Demand Capture lens produces a structured outside-in audit of the venue's public digital presence. Rather than reporting a composite conversion score, it walks through 7 named dimensions of the customer journey from discovery to commitment — using only publicly observable data.
+
+### Audit Dimensions
+
+| # | Dimension | What It Assesses | Key Signals | Verdicts |
+|---|---|---|---|---|
+| 1 | **Booking Friction** | Can a customer book within 2 clicks from Google Maps? | `restaurant` type (reservation proxy), GBP attributes, TA presence, review text mentioning booking | Clear / Partial / Missing / Broken |
+| 2 | **Menu Visibility** | Can a customer see the current menu before deciding? | `has_menu_online`, GBP completeness, review text mentioning menu | Clear / Partial / Missing |
+| 3 | **CTA Clarity** | Does the GBP profile present a clear action path? | GBP completeness breakdown (10 attributes), website, phone inferred | Clear / Partial / Missing |
+| 4 | **Photo Mix & Quality** | Do the photos sell the experience guests praise? | `gpc` (photo count), peer average comparison, cross-ref vs top review sentiment topics | Clear / Partial / Missing |
+| 5 | **Proposition Clarity** | Does the public identity match what guests buy? | Google types vs dominant review themes, category vs praise topics | Clear / Partial / Gap |
+| 6 | **Mobile Usability** | Can a mobile user confirm hours, see menu, and book without leaving Maps? | Opening hours completeness (7/7), phone presence, website presence | Clear / Partial / Missing |
+| 7 | **Promise vs Path** | Is there a gap between what the listing promises and what the path delivers? | Cross-reference GBP attributes vs review evidence and hours data | Clear / Partial / Broken |
+
+### Verdict Definitions
+
+| Verdict | Meaning |
+|---|---|
+| **Clear** | No friction detected — signal is present, complete, and consistent |
+| **Partial** | Signal is present but incomplete, buried, or not surfaced in the primary discovery path |
+| **Missing** | Signal is not available in any public channel |
+| **Broken** | Contradictory signals — listing promises something the path doesn't deliver |
+| **Gap** | Public identity does not match guest evidence (proposition-specific) |
+
+### Summary Format
+
+The section opens with: *"X of 7 demand capture dimensions are clear. Y have friction. Z are missing."*
+
+Each dimension cites the specific signals evaluated (not just the composite score). Where review text corroborates or contradicts structured signals, it is cross-referenced.
+
+Where a dimension cannot be fully assessed from current data, the report states what is missing and what additional signal would resolve it.
 
 ---
 

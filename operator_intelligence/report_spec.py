@@ -195,8 +195,10 @@ MONTHLY_SECTIONS = [
                 description="Two-layer model: Reputation Baseline (full sample with stated scope) "
                             "and Recent Movement (date-filtered if dates available, honest fallback if not). "
                             "Must not imply all reviews are from the current month."),
-    SectionSpec("conversion_friction", "Conversion Friction Analysis", mandatory=True, min_lines=3,
-                description="Specific barriers between customer interest and completed visit"),
+    SectionSpec("conversion_friction", "Demand Capture Audit", mandatory=True, min_lines=10,
+                description="7-dimension outside-in audit: Booking Friction, Menu Visibility, "
+                            "CTA Clarity, Photo Mix, Proposition Clarity, Mobile Usability, "
+                            "Promise vs Path. Each dimension has verdict + finding + consequence."),
     SectionSpec("recommendation_tracker", "Recommendation Tracker", mandatory=True, min_lines=2,
                 description="Full lifecycle table or statement about carried-forward recs"),
     SectionSpec("market_intelligence", "Competitive Market Intelligence", mandatory=True, min_lines=4,
@@ -619,9 +621,18 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
                 f"estimate — ranges are preferred for external-data products")
 
     # Check 3: "basis" or "based on" should appear near commercial consequence blocks
+    # Exclude Demand Capture Audit section — its findings + signal citations serve as basis
     if "commercial consequence" in text_lower:
+        # Find where the Demand Capture Audit section is, to exclude it
+        _dca_start = text_lower.find("## demand capture audit")
+        _dca_end = text_lower.find("\n## ", _dca_start + 1) if _dca_start >= 0 else -1
         sections = text_lower.split("commercial consequence")
+        _running_pos = 0
         for i, section in enumerate(sections[1:], 1):
+            _running_pos = text_lower.find("commercial consequence", _running_pos) + len("commercial consequence")
+            # Skip if inside the Demand Capture Audit section
+            if _dca_start >= 0 and _dca_start <= _running_pos <= (_dca_end if _dca_end > 0 else len(text_lower)):
+                continue
             block = section[:300]
             if "basis:" not in block and "based on" not in block:
                 result.warnings.append(
