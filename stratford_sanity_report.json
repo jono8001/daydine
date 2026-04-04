@@ -121,6 +121,13 @@
       "best_match_score": 0.53
     },
     {
+      "name": "Clopton Catch",
+      "address": "124 Clopton Rd, Stratford-upon-Avon CV37 6SW",
+      "rating": 4.4,
+      "reviews": 717,
+      "best_match_score": 0.56
+    },
+    {
       "name": "Tavola Italian Restaurant Leamington Spa",
       "address": "44 Clarendon St, Royal Leamington Spa, Leamington Spa CV32 4PE",
       "rating": 4.5,
@@ -191,13 +198,6 @@
       "best_match_score": 0.48
     },
     {
-      "name": "Take-Away Tiffin",
-      "address": "2 Brookside Rd, Stratford-upon-Avon CV37 9PH",
-      "rating": 4.3,
-      "reviews": 340,
-      "best_match_score": 0.55
-    },
-    {
       "name": "M&S Foodhall",
       "address": "Butcher Row, Maybird Retail Park, 25-31 Birmingham Rd, Stratford-upon-Avon CV37 0HZ",
       "rating": 4.5,
@@ -254,18 +254,18 @@
       "best_match_score": 0.43
     },
     {
-      "name": "The Barge and Quarterdeck",
-      "address": "Waterside, Stratford-upon-Avon CV37 6AT",
-      "rating": 4.6,
-      "reviews": 183,
-      "best_match_score": 0.57
-    },
-    {
       "name": "Wok Express",
       "address": "98 Justins Ave, Stratford-upon-Avon CV37 0DE",
       "rating": 4.2,
       "reviews": 174,
       "best_match_score": 0.52
+    },
+    {
+      "name": "Marco: Italian Delicatessen",
+      "address": "20 Church St, Stratford-upon-Avon CV37 6HB",
+      "rating": 4.9,
+      "reviews": 114,
+      "best_match_score": 0.43
     },
     {
       "name": "Sip 'n' Swig",
@@ -311,10 +311,10 @@
       "reason": "name_match: football club (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
         "establishment",
         "point_of_interest",
-        "sports_club"
+        "sports_club",
+        "association_or_organization"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -340,11 +340,11 @@
       "reason": "name_match: horse sanctuary (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
-        "pet_care",
-        "tourist_information_center",
+        "visitor_center",
         "tour_agency",
-        "travel_agency"
+        "pet_care",
+        "establishment",
+        "point_of_interest"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -356,8 +356,8 @@
       "reason": "name_match: nfu mutual (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "insurance_agency",
         "establishment",
+        "insurance_agency",
         "point_of_interest",
         "service"
       ],
@@ -371,11 +371,11 @@
       "reason": "google_types: {'gym'} (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "sports_activity_location",
-        "event_venue",
-        "service",
+        "hotel",
         "wedding_venue",
-        "lodging"
+        "establishment",
+        "point_of_interest",
+        "gym"
       ],
       "classification_confidence": 0.48,
       "needs_manual_review": true
@@ -387,11 +387,11 @@
       "reason": "name_match: golf club (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "sports_activity_location",
-        "association_or_organization",
-        "golf_course",
         "athletic_field",
-        "store"
+        "store",
+        "sporting_goods_store",
+        "point_of_interest",
+        "establishment"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -403,10 +403,10 @@
       "reason": "name_match: slimming world",
       "fsa_rating": null,
       "google_types": [
-        "association_or_organization",
         "establishment",
         "point_of_interest",
-        "sports_club"
+        "sports_club",
+        "association_or_organization"
       ],
       "classification_confidence": 0.9,
       "needs_manual_review": false
@@ -418,10 +418,10 @@
       "reason": "name_match: football club (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
         "establishment",
         "point_of_interest",
-        "sports_club"
+        "sports_club",
+        "association_or_organization"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -433,11 +433,11 @@
       "reason": "google_types: {'gym'} (but FSA 3+ — may serve food) (food keyword in name)",
       "fsa_rating": 5,
       "google_types": [
-        "sports_activity_location",
         "sports_complex",
-        "sports_school",
-        "health",
-        "gym"
+        "establishment",
+        "point_of_interest",
+        "gym",
+        "sports_activity_location"
       ],
       "classification_confidence": 0.24,
       "needs_manual_review": true
@@ -449,11 +449,11 @@
       "reason": "name_match: baptist church (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
-        "place_of_worship",
-        "church",
         "establishment",
-        "point_of_interest"
+        "point_of_interest",
+        "place_of_worship",
+        "association_or_organization",
+        "church"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -465,8 +465,8 @@
       "reason": "name_match: aston martin (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "establishment",
         "manufacturer",
+        "establishment",
         "point_of_interest"
       ],
       "classification_confidence": 0.54,
@@ -480,8 +480,8 @@
       "fsa_rating": 5,
       "google_types": [
         "establishment",
-        "real_estate_agency",
         "point_of_interest",
+        "real_estate_agency",
         "service"
       ],
       "classification_confidence": 0.24,
@@ -494,10 +494,10 @@
       "reason": "google_types: {'sports_club'} (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
         "establishment",
         "point_of_interest",
-        "sports_club"
+        "sports_club",
+        "association_or_organization"
       ],
       "classification_confidence": 0.48,
       "needs_manual_review": true
@@ -509,10 +509,10 @@
       "reason": "google_types: {'sports_club'} (but FSA 3+ — may serve food) (food keyword in name)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
         "establishment",
         "point_of_interest",
-        "sports_club"
+        "sports_club",
+        "association_or_organization"
       ],
       "classification_confidence": 0.24,
       "needs_manual_review": true
@@ -524,10 +524,10 @@
       "reason": "google_types: {'sports_club'} (but FSA 3+ — may serve food) (food keyword in name)",
       "fsa_rating": 3,
       "google_types": [
-        "association_or_organization",
         "establishment",
         "point_of_interest",
-        "sports_club"
+        "sports_club",
+        "association_or_organization"
       ],
       "classification_confidence": 0.24,
       "needs_manual_review": true
@@ -539,10 +539,10 @@
       "reason": "google_types: {'sports_club'} (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
         "establishment",
         "point_of_interest",
-        "sports_club"
+        "sports_club",
+        "association_or_organization"
       ],
       "classification_confidence": 0.48,
       "needs_manual_review": true
