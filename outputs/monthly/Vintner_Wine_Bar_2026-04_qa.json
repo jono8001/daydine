@@ -178,5 +178,14 @@
     "tension_flagged": true,
     "unattributed_handled": true
   },
-  "report_lines": 543
+  "report_lines": 544,
+  "consistency_check": {
+    "run": true,
+    "contradictions_found": 0,
+    "contradictions_auto_resolved": 0,
+    "contradictions_remaining": 0,
+    "warnings": 0,
+    "clean": true,
+    "details": []
+  }
 }

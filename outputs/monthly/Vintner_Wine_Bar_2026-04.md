@@ -580,47 +580,51 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Chronic (52 months) | **Priority:** High
+**Status:** Chronic (57 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 52 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 57 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 3: Address recurring food quality complaints from guests
-**Status:** Chronic (48 months) | **Priority:** High
+**Status:** Chronic (52 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 48 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 52 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 4: Lean into service & hospitality — it's what guests are buying
-**Status:** Chronic (48 months) | **Priority:** High
+**Status:** Chronic (52 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 48 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 52 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
-### Action 5: Protect the 4.6/5 rating — it took years to build
-**Status:** Chronic (49 months) | **Priority:** High
-**Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
-**Owner:** front-of-house — whoever currently responds to online reviews
-**Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
-**Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 49 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+### Action 5: Strong rating masks weak competitive position
+**Status:** New | **Priority:** High
+**Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Realistic competitive awareness
+**Owner:** management — whoever currently responds to online reviews
+**Next milestone:** Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week
+**Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
+
+### Maintenance Items (deprioritised this month)
+
+*These items are designated 'do not prioritise' in the Executive Summary. They are ongoing postures, not active action items.*
+
+- **Protect the 4.6/5 rating — it took years to build** — Sustain discovery advantage. Maintain current approach; no active effort required.
 
 ### Additional Active Recommendations
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Strong rating masks weak competitive position | New | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Compliance record weakest in peer set — creat | Chronic (49 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 8 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 9 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 10 | Address repeated atmosphere & setting complai | Chronic (48 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 11 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Compliance record weakest in peer set — creat | Chronic (54 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 8 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 9 | Address repeated atmosphere & setting complai | Chronic (52 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 10 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

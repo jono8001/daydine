@@ -153,12 +153,36 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
 
     report_text = "\n".join(L)
 
+    # Consistency check
+    from operator_intelligence.consistency_checker import check_consistency
+    consistency = check_consistency(report_text, recs, scorecard)
+
     # Validate
     validation = validate_report(report_text, mode, recs, review_intel, scorecard)
+
+    # Add consistency results to validation
+    for c in consistency.get("contradictions_found", []):
+        if c.get("severity") == "high":
+            validation.warnings.append(
+                f"CONSISTENCY_{c['type'].upper()}: {c.get('item', c.get('detail', ''))}")
+    for w_item in consistency.get("warnings", []):
+        validation.warnings.append(
+            f"CONSISTENCY_{w_item['type'].upper()}: {w_item.get('detail', '')}")
 
     # QA artifact
     qa = generate_qa_artifact(venue_name, month_str, mode, report_text,
                               validation, review_intel, recs, scorecard)
+
+    # Add consistency to QA
+    qa["consistency_check"] = {
+        "run": True,
+        "contradictions_found": consistency["contradiction_count"],
+        "contradictions_auto_resolved": 0,  # auto-resolution handled at data layer
+        "contradictions_remaining": consistency["contradiction_count"],
+        "warnings": consistency["warning_count"],
+        "clean": consistency["clean"],
+        "details": consistency["contradictions_found"] + consistency["warnings"],
+    }
 
     return report_text, qa
 

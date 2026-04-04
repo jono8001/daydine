@@ -61,8 +61,12 @@ def build_recommendation_tracker(w, recs, month_str=None):
         summary_parts.append(f"**{new_count} new/recent**")
     w(f"{len(cards)} active items: {', '.join(summary_parts)}.\n")
 
+    # Separate action items from maintenance/deprioritised items
+    action_cards = [c for c in cards if not c.get("is_deprioritised")]
+    maintenance_cards = [c for c in cards if c.get("is_deprioritised")]
+
     # Action cards — top priority first, limit to top 5 for readability
-    for i, card in enumerate(cards[:5], 1):
+    for i, card in enumerate(action_cards[:5], 1):
         w(f"### Action {i}: {card['title']}")
         w(f"**Status:** {card['status_label']} | **Priority:** "
           f"{'High' if card['priority_score'] >= 7 else 'Medium' if card['priority_score'] >= 4 else 'Standard'}")
@@ -80,12 +84,22 @@ def build_recommendation_tracker(w, recs, month_str=None):
 
         w("")
 
-    # Compact index for remaining items
-    if len(cards) > 5:
+    # Maintenance items (deprioritised — consistent with Executive Summary)
+    if maintenance_cards:
+        w("### Maintenance Items (deprioritised this month)\n")
+        w("*These items are designated 'do not prioritise' in the Executive Summary. "
+          "They are ongoing postures, not active action items.*\n")
+        for card in maintenance_cards:
+            w(f"- **{card['title']}** — {card['expected_upside']}. "
+              f"Maintain current approach; no active effort required.")
+        w("")
+
+    # Compact index for remaining action items
+    if len(action_cards) > 5:
         w("### Additional Active Recommendations\n")
         w("| # | Recommendation | Status | Target | Cost |")
         w("|--:|---------------|--------|--------|------|")
-        for i, card in enumerate(cards[5:], 6):
+        for i, card in enumerate(action_cards[5:], 6):
             w(f"| {i} | {card['title'][:45]} | {card['status_label']} "
               f"| {card['target_date']} | {card['cost_label']} |")
         w("")

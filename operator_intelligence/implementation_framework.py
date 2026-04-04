@@ -254,21 +254,30 @@ def generate_action_cards(recs, month_str, scorecard=None, venue_rec=None):
     """Generate structured action cards for all active recommendations.
 
     Returns list of action card dicts, sorted by priority.
+    Items designated as 'what not to do' are downgraded to maintenance.
     """
     all_recs = recs.get("all_recs", [])
     active = [r for r in all_recs
               if r.get("status") not in ("resolved", "dropped", "completed")]
     active.sort(key=lambda x: -x.get("priority_score", 0))
 
+    # Build the do-not-prioritise set from the what_not_to_do designation
+    dont = recs.get("what_not_to_do")
+    do_not_prioritise_titles = set()
+    if dont:
+        do_not_prioritise_titles.add(dont.get("title", "").lower().strip())
+
     # Parse report date for target date calculation
     try:
         report_date = datetime.strptime(month_str, "%Y-%m")
-        # Use 1st of the month as base
     except (ValueError, TypeError):
         report_date = datetime.utcnow()
 
     cards = []
     for rec in active:
+        # Check if this item is designated "do not prioritise"
+        is_deprioritised = rec.get("title", "").lower().strip() in do_not_prioritise_titles
+
         cost_band = _infer_cost_band(rec)
         window_days = _COST_WINDOWS.get(cost_band, 30)
         target_date = report_date + timedelta(days=window_days)
@@ -288,12 +297,18 @@ def generate_action_cards(recs, month_str, scorecard=None, venue_rec=None):
         else:
             status_label = "New"
 
+        # Downgrade deprioritised items
+        if is_deprioritised:
+            status_label = "Maintenance (deprioritised)"
+            barrier = None  # no barrier diagnosis for maintenance items
+
         card = {
             "title": rec["title"],
-            "rec_type": rec.get("rec_type", "fix"),
+            "rec_type": "maintain" if is_deprioritised else rec.get("rec_type", "fix"),
             "dimension": rec.get("dimension", "—"),
             "status_label": status_label,
-            "priority_score": rec.get("priority_score", 0),
+            "priority_score": 1.0 if is_deprioritised else rec.get("priority_score", 0),
+            "is_deprioritised": is_deprioritised,
             "target_date": target_date.strftime("%d %B %Y"),
             "cost_band": cost_band,
             "cost_label": _COST_LABELS.get(cost_band, cost_band),
