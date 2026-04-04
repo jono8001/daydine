@@ -84,7 +84,7 @@
     },
     "conversion_friction": {
       "present": true,
-      "lines": 28,
+      "lines": 29,
       "meets_minimum": true
     },
     "recommendation_tracker": {
@@ -160,5 +160,5 @@
     ],
     "dated_trajectory_supported": false
   },
-  "report_lines": 470
+  "report_lines": 471
 }

@@ -93,7 +93,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # --- Lens 1: Demand Capture ---
     # 5. Demand Capture Audit
     build_demand_capture_audit(w, scorecard, venue_rec, benchmarks=benchmarks,
-                              review_intel=review_intel)
+                              review_intel=review_intel, prior_snapshot=prior_snapshot)
 
     # --- Lens 2: Proposition & Guest Signal ---
     # 6. Commercial Diagnosis (bottleneck, positioning, revenue leakage)
@@ -111,7 +111,8 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
                               all_cards=all_cards, all_data=all_data,
                               review_intel=review_intel)
     # 10. Competitive Market Intelligence
-    build_competitive_market_intelligence(w, scorecard, benchmarks, conditional_blocks)
+    build_competitive_market_intelligence(w, scorecard, benchmarks, conditional_blocks,
+                                         prior_snapshot=prior_snapshot)
     # 10. Market Position (detailed 3-ring peer analysis)
     build_market_position(w, scorecard, benchmarks, venue_rec=venue_rec)
 
@@ -119,7 +120,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # 11. Dimension Scorecard (compact table, prestige demoted)
     build_scorecard(w, scorecard, deltas, benchmarks)
     # 12. Dimension-by-Dimension Diagnosis
-    build_dimension_diagnosis(w, scorecard, deltas, benchmarks)
+    build_dimension_diagnosis(w, scorecard, deltas, benchmarks, venue_rec=venue_rec)
 
     # --- Tracking and monitoring ---
     # 13. Watch List

@@ -402,7 +402,7 @@ _DIM_CONTEXT = {
 }
 
 
-def _dim_management_action(dim, score, peer_avg, scorecard):
+def _dim_management_action(dim, score, peer_avg, scorecard, venue_rec=None):
     """Return dimension-specific management guidance. Never generic."""
     gap = score - peer_avg if peer_avg is not None else 0
 
@@ -438,14 +438,26 @@ def _dim_management_action(dim, score, peer_avg, scorecard):
 
     if dim == "trust":
         fsa = scorecard.get("fsa_rating")
+        rd = (venue_rec or {}).get("rd") or scorecard.get("_rd") or ""
+        from rcs_scoring_stratford import days_since
+        age_days = days_since(rd)
+        age_months = round(age_days / 30) if age_days else None
+        age_note = ""
+        if age_months and age_months >= 18:
+            age_note = (f" Last inspection: {rd[:10]} ({age_months} months ago). "
+                        f"The typical re-inspection cycle for a {fsa or '?'}-rated "
+                        f"premises is 18–24 months — "
+                        f"{'a new inspection may be imminent' if age_months >= 18 else 'within normal range'}. "
+                        f"This score will continue to decay without a new inspection.")
         if score >= 8.0:
             return ("Strong trust position. Maintain documentation rigour — the next "
-                    "unannounced inspection should confirm, not surprise.")
+                    "unannounced inspection should confirm, not surprise." + age_note)
         if fsa and int(fsa) < 5:
             return (f"FSA {fsa} is the binding constraint. Request a re-inspection once "
                     "you've addressed the specific points from the last report. A move "
-                    "to 5 unlocks material score improvement.")
-        return "Inspection age may be dragging this down. Recent compliance is not reflected in the score yet."
+                    "to 5 unlocks material score improvement." + age_note)
+        return ("Inspection age may be dragging this down. Recent compliance is "
+                "not reflected in the score yet." + age_note)
 
     if dim == "conversion":
         if score < 5.0:
@@ -474,7 +486,7 @@ def _dim_management_action(dim, score, peer_avg, scorecard):
 HEADLINE_DIMS = ["experience", "visibility", "trust", "conversion"]
 
 
-def build_dimension_diagnosis(w, scorecard, deltas, benchmarks):
+def build_dimension_diagnosis(w, scorecard, deltas, benchmarks, venue_rec=None):
     w("## Dimension-by-Dimension Diagnosis\n")
 
     ring1 = (benchmarks or {}).get("ring1_local") or (benchmarks or {}).get("ring2_catchment") or {}
@@ -530,7 +542,7 @@ def build_dimension_diagnosis(w, scorecard, deltas, benchmarks):
         w(f"**Driven by:** {ctx.get('signals', '')}\n")
 
         # Management action — varied per dimension, never generic
-        _action = _dim_management_action(dim, score, peer_avg, scorecard)
+        _action = _dim_management_action(dim, score, peer_avg, scorecard, venue_rec=venue_rec)
         if _action:
             w(f"**Management note:** {_action}\n")
         w("")
@@ -624,7 +636,8 @@ def build_public_vs_reality(w, scorecard):
 # Demand Capture Audit (replaces Conversion Friction Analysis)
 # ---------------------------------------------------------------------------
 
-def build_demand_capture_audit(w, scorecard, venue_rec, benchmarks=None, review_intel=None):
+def build_demand_capture_audit(w, scorecard, venue_rec, benchmarks=None,
+                               review_intel=None, prior_snapshot=None):
     """7-dimension demand capture audit — structured outside-in walkthrough."""
     from operator_intelligence.demand_capture_audit import run_demand_capture_audit
 
@@ -641,6 +654,34 @@ def build_demand_capture_audit(w, scorecard, venue_rec, benchmarks=None, review_
     w(f"**{clear} of 7** demand capture dimensions are clear. "
       f"**{friction}** have friction. "
       f"**{missing}** are missing.\n")
+
+    # Temporal context
+    prior_dc = (prior_snapshot or {}).get("demand_capture", {})
+    if prior_dc:
+        improved = []
+        worsened = []
+        unchanged = 0
+        verdict_order = {"Clear": 0, "Partial": 1, "Missing": 2, "Broken": 3, "Gap": 2}
+        for d in dims:
+            cur_v = d["verdict"]
+            pri_v = prior_dc.get(d["dimension"])
+            if pri_v and cur_v != pri_v:
+                if verdict_order.get(cur_v, 9) < verdict_order.get(pri_v, 9):
+                    improved.append(f"{d['dimension']}: {pri_v} → {cur_v}")
+                else:
+                    worsened.append(f"{d['dimension']}: {pri_v} → {cur_v}")
+            else:
+                unchanged += 1
+        parts = []
+        if improved:
+            parts.append(f"{len(improved)} improved ({', '.join(improved)})")
+        if worsened:
+            parts.append(f"{len(worsened)} worsened ({', '.join(worsened)})")
+        if unchanged:
+            parts.append(f"{unchanged} unchanged")
+        w(f"*Change from last month: {'; '.join(parts)}.*\n")
+    else:
+        w("*First audit — all dimensions baselined for next month's comparison.*\n")
 
     conv = scorecard.get("conversion")
     if conv is not None:

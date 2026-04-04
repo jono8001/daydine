@@ -161,3 +161,23 @@ def build_monthly_movement(w, scorecard, benchmarks, venue_rec,
     else:
         w("- None detected this month")
     w("")
+
+    # --- Seasonal Context ---
+    from operator_intelligence.seasonal_context import get_seasonal_context
+    location = venue_rec.get("la", "").lower()
+    if "stratford" in location:
+        location = "stratford-upon-avon"
+    ctx = get_seasonal_context(month_str, location)
+    if ctx and ctx.get("season") != "unknown":
+        w("### What May Be Seasonal Rather Than Structural\n")
+        w(f"- **{ctx['location']} — {ctx['season']} season.** {ctx['note']}.")
+        if ctx.get("review_velocity_factor", 1.0) > 1.1:
+            w(f"- Review volume typically runs ~{int((ctx['review_velocity_factor'] - 1) * 100)}% "
+              f"above annual average in this month — treat volume gains as seasonal "
+              f"until confirmed over 3+ months.")
+        elif ctx.get("review_velocity_factor", 1.0) < 0.8:
+            w(f"- Review volume typically runs ~{int((1 - ctx['review_velocity_factor']) * 100)}% "
+              f"below annual average in this month — a volume dip is expected, not alarming.")
+        if ctx.get("rsc"):
+            w("- RSC theatre season is active — pre-theatre dining demand is elevated.")
+        w("")

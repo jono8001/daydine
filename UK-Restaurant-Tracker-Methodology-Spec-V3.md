@@ -128,6 +128,33 @@ When deltas are available, the Dimension Scorecard "Read" column uses directiona
 | Stable | Above peers | Stable strength |
 | Stable | Below peers | Persistent gap |
 
+### Per-Section Temporal Context
+
+Major sections carry inline temporal context when prior data exists:
+
+| Section | Temporal Context Added |
+|---|---|
+| Demand Capture Audit | "X dimensions improved, Y unchanged, Z worsened" after summary count |
+| Trust Dimension | Inspection date, age in months, re-inspection likelihood note |
+| Competitive Market Intelligence | Position movement vs prior month ("Improved from #5 to #4") |
+| Implementation Framework | Barrier diagnosis escalation based on recommendation age |
+| Review Intelligence | Sample scope + dated recent movement layer (from §3a) |
+
+### Seasonal Pattern Recognition
+
+V1 covers Stratford-upon-Avon with hardcoded seasonality:
+- RSC theatre season: Mar–Oct (pre-theatre dining demand elevated)
+- Peak tourism: Jun–Sep (review volume ~50% above annual average)
+- Quiet period: Nov–Feb (review volume ~40% below average)
+
+The Monthly Movement Summary includes a "What May Be Seasonal Rather Than Structural" subsection that flags when metric changes align with known seasonal patterns.
+
+Metric changes are classified as:
+- **Structural** — consistent across 3+ months
+- **Seasonal** — matches known seasonal pattern for this location/month
+- **Anomaly** — single-month deviation, too early to act on
+- **Insufficient data** — fewer than 3 months of history
+
 ---
 
 ## 3b2. Demand Capture Audit

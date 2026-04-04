@@ -97,7 +97,8 @@ def build_recommendation_tracker(w, recs, month_str=None):
         w(f"*{len(resolved)} recommendation(s) resolved/completed.*\n")
 
 
-def build_competitive_market_intelligence(w, scorecard, benchmarks, blocks):
+def build_competitive_market_intelligence(w, scorecard, benchmarks, blocks,
+                                          prior_snapshot=None):
     """Mandatory Competitive Market Intelligence section — lens 4.
 
     Always produces output. Uses peer benchmarks as the primary source,
@@ -132,6 +133,25 @@ def build_competitive_market_intelligence(w, scorecard, benchmarks, blocks):
             else:
                 w(f"Below the median (P{pct:.0f}). Customers have higher-rated "
                   f"alternatives nearby (peer avg {peer_avg:.1f}, top {peer_top:.1f}).\n")
+
+        # Position movement vs prior month
+        prior_pp = (prior_snapshot or {}).get("peer_position", {})
+        prior_rank = prior_pp.get("local_rank")
+        prior_of = prior_pp.get("local_of")
+        cur_rank = ov.get("rank")
+        if prior_rank and cur_rank:
+            if cur_rank == prior_rank:
+                w(f"**Movement:** Unchanged from last month (#{cur_rank}).\n")
+            elif cur_rank < prior_rank:
+                w(f"**Movement:** Improved from #{prior_rank} to #{cur_rank} "
+                  f"since last month.\n")
+            else:
+                w(f"**Movement:** Dropped from #{prior_rank} to #{cur_rank} "
+                  f"since last month.\n")
+        elif not prior_snapshot:
+            pass  # baseline month, no movement to report
+        else:
+            w("**Movement:** Prior month position data unavailable.\n")
 
         # Dimension-level competitive gaps
         dim_gaps = []
