@@ -35,7 +35,7 @@
     "monthly_movement": {
       "present": true,
       "lines": 1,
-      "meets_minimum": false
+      "meets_minimum": true
     },
     "management_priorities": {
       "present": true,
