@@ -116,56 +116,56 @@
     {
       "title": "Fix the digital shopfront — you're losing walk-ins",
       "dimension": "conversion",
-      "status_label": "Chronic (47 months)",
+      "status_label": "Chronic (48 months)",
       "target_date": "08 April 2026",
       "cost_band": "zero",
       "expected_upside": "Capture demand you're currently losing",
       "success_measure": "GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)",
       "next_milestone": "Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com",
       "owner_guidance": "operations — whoever holds Google Business Profile admin access",
-      "times_seen": 47,
+      "times_seen": 48,
       "barrier_category": "disagreement",
       "evidence": "experience=8.73, conversion=5.5"
     },
     {
       "title": "Address recurring food quality complaints from guests",
       "dimension": "experience",
-      "status_label": "Chronic (43 months)",
+      "status_label": "Chronic (44 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Reduce food quality complaints, protect rating",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
       "owner_guidance": "operations — head chef + FOH manager to review together",
-      "times_seen": 43,
+      "times_seen": 44,
       "barrier_category": "disagreement",
       "evidence": "review_criticism: Food Quality=3 negative"
     },
     {
       "title": "Lean into service & hospitality — it's what guests are buying",
       "dimension": "experience",
-      "status_label": "Chronic (43 months)",
+      "status_label": "Chronic (44 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Sharpen proposition → attract the right guests",
       "success_measure": "Service-related praise maintained in next review sample (verifiable via sentiment)",
       "next_milestone": "Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality",
       "owner_guidance": "management — FOH lead or general manager",
-      "times_seen": 43,
+      "times_seen": 44,
       "barrier_category": "disagreement",
       "evidence": "review_praise: Service & Hospitality=18"
     },
     {
       "title": "Protect the 4.6/5 rating — it took years to build",
       "dimension": "visibility",
-      "status_label": "Chronic (44 months)",
+      "status_label": "Chronic (45 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Sustain discovery advantage",
       "success_measure": "Google rating maintained or improved vs current baseline (verifiable via gr field)",
       "next_milestone": "Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine",
       "owner_guidance": "front-of-house — whoever currently responds to online reviews",
-      "times_seen": 44,
+      "times_seen": 45,
       "barrier_category": "disagreement",
       "evidence": "gr=4.6, grc=887"
     },
@@ -186,14 +186,14 @@
     {
       "title": "Compliance record weakest in peer set — creates inspection exposure",
       "dimension": "trust",
-      "status_label": "Chronic (44 months)",
+      "status_label": "Chronic (45 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Close the 1.1-point gap",
       "success_measure": "FSA rating maintained or improved on next inspection (verifiable via FSA API)",
       "next_milestone": "Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority",
       "owner_guidance": "management — compliance/food safety lead",
-      "times_seen": 44,
+      "times_seen": 45,
       "barrier_category": "disagreement",
       "evidence": "trust: 7.2 vs peer avg 8.3"
     },
@@ -228,14 +228,14 @@
     {
       "title": "Address repeated atmosphere & setting complaints from guests",
       "dimension": "experience",
-      "status_label": "Chronic (43 months)",
+      "status_label": "Chronic (44 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Reduce atmosphere & setting complaints, protect rating",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
       "owner_guidance": "operations — head chef + FOH manager to review together",
-      "times_seen": 43,
+      "times_seen": 44,
       "barrier_category": "disagreement",
       "evidence": "review_criticism: Atmosphere & Setting=2 negative"
     },
@@ -253,5 +253,114 @@
       "barrier_category": null,
       "evidence": "local_percentile=37.5"
     }
-  ]
+  ],
+  "segment_intelligence": {
+    "segment_distribution": {
+      "theatre_goers": 4,
+      "locals": 4,
+      "couples": 4,
+      "tourists": 2,
+      "family": 1
+    },
+    "unattributed_count": 14,
+    "total_reviews": 25,
+    "segment_insights": {
+      "theatre_goers": {
+        "label": "Theatre-Goers / Event Visitors",
+        "review_count": 4,
+        "top_praise": [
+          {
+            "aspect": "Food Quality",
+            "count": 3,
+            "example_quote": "This was our second visit to The Vinter, & it didn’t disappoint"
+          },
+          {
+            "aspect": "Service & Hospitality",
+            "count": 2,
+            "example_quote": "Vintner provided great pre-theatre service helped us get to our showing on time"
+          },
+          {
+            "aspect": "Booking & Accessibility",
+            "count": 1,
+            "example_quote": "This was our second visit to The Vinter, & it didn’t disappoint"
+          }
+        ],
+        "top_criticism": [],
+        "commercial_note": "This segment values speed and predictability — they have a hard deadline. Late service or unclear pre-theatre options lose them entirely."
+      },
+      "couples": {
+        "label": "Couples & Occasion Diners",
+        "review_count": 4,
+        "top_praise": [
+          {
+            "aspect": "Service & Hospitality",
+            "count": 2,
+            "example_quote": "This latest meal was outstanding despite its simplicity"
+          },
+          {
+            "aspect": "Food Quality",
+            "count": 1,
+            "example_quote": "My husband and I had a superb meal at the Vintner on Feb 14"
+          }
+        ],
+        "top_criticism": [],
+        "commercial_note": "Occasion diners have high expectations and long memories. A great experience generates word-of-mouth; a disappointing one generates damaging reviews."
+      },
+      "tourists": {
+        "label": "Tourists & Visitors",
+        "review_count": 2,
+        "top_praise": [
+          {
+            "aspect": "Food Quality",
+            "count": 1,
+            "example_quote": "Cannot recommend enough, excellent food, amazing service and a lovely atmosphere"
+          },
+          {
+            "aspect": "Atmosphere & Setting",
+            "count": 1,
+            "example_quote": "Cannot recommend enough, excellent food, amazing service and a lovely atmosphere"
+          }
+        ],
+        "top_criticism": [],
+        "commercial_note": "Tourists discover you online with no prior loyalty. Your listing, photos, and first 3 reviews are the entire decision basis."
+      },
+      "locals": {
+        "label": "Locals & Regulars",
+        "review_count": 4,
+        "top_praise": [
+          {
+            "aspect": "Food Quality",
+            "count": 2,
+            "example_quote": "This was our second visit to The Vinter, & it didn’t disappoint"
+          },
+          {
+            "aspect": "Booking & Accessibility",
+            "count": 1,
+            "example_quote": "This was our second visit to The Vinter, & it didn’t disappoint"
+          },
+          {
+            "aspect": "Service & Hospitality",
+            "count": 1,
+            "example_quote": "This latest meal was outstanding despite its simplicity"
+          }
+        ],
+        "top_criticism": [],
+        "commercial_note": "Regulars are your revenue baseline. They tolerate minor issues but notice declining consistency. Losing a regular costs 50+ future visits."
+      }
+    },
+    "tensions": [
+      {
+        "tension": "Discovery vs Loyalty",
+        "segments": [
+          "Tourists & Visitors",
+          "Locals & Regulars"
+        ],
+        "note": "Tourists & Visitors need online proof to choose you. Locals & Regulars need consistency to stay. Investing in digital presence serves discovery; investing in consistency serves retention. Both matter."
+      }
+    ],
+    "data_quality": {
+      "attributed_pct": 44.0,
+      "note": "Honest segment attribution from keyword evidence. Reviews without clear guest-type signals are unattributed."
+    }
+  }
 }

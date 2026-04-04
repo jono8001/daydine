@@ -702,6 +702,30 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
                 "COMPETITOR_BOILERPLATE: All peer 'Why it matters' lines are "
                 "identical — consider differentiating per-peer framing")
 
+    # --- Segment intelligence honesty ---
+    if "## Who's Telling You What" in report_text:
+        seg_section = report_text.split("## Who's Telling You What")[1]
+        seg_end = seg_section.find("\n## ")
+        if seg_end != -1:
+            seg_section = seg_section[:seg_end]
+
+        # Check: no segment blocks with fewer than 2 reviews
+        import re as _re2
+        seg_headers = _re2.findall(r'###\s+.+?\((\d+)\s+review', seg_section)
+        for count_str in seg_headers:
+            if count_str.isdigit() and int(count_str) < 2:
+                # Allow watch list items (they say "1 review suggests")
+                if "Watch List" not in seg_section.split(count_str)[0][-200:]:
+                    result.warnings.append(
+                        f"SEGMENT_FABRICATION: Segment block with only {count_str} "
+                        f"review(s) — minimum is 2 for a pattern")
+
+        # Check: unattributed section present
+        if "Unattributed" not in seg_section:
+            result.warnings.append(
+                "SEGMENT_MISSING_UNATTRIBUTED: Segment section has no "
+                "unattributed reviews handling")
+
     # --- Evidence provenance presence ---
     if "## Evidence Appendix" in report_text:
         appendix = report_text.split("## Evidence Appendix")[1]
@@ -874,7 +898,41 @@ def generate_qa_artifact(venue_name, month_str, mode, report_text, validation,
         "confidence_level": confidence_level,
         "evidence_provenance_present": has_provenance,
         "review_dates": review_dates_qa,
+        "segment_qa": _compute_segment_qa(report_text),
         "report_lines": len([l for l in report_text.split("\n") if l.strip()]),
+    }
+
+
+def _compute_segment_qa(report_text):
+    """Compute segment intelligence QA fields."""
+    import re
+    if "## Who's Telling You What" not in report_text:
+        return {"present": False}
+
+    seg_section = report_text.split("## Who's Telling You What")[1]
+    seg_end = seg_section.find("\n## ")
+    if seg_end != -1:
+        seg_section = seg_section[:seg_end]
+
+    # Extract segment review counts
+    headers = re.findall(r'###\s+(.+?)\s+\((\d+)\s+review', seg_section)
+    segments_used = [(name.strip(), int(count)) for name, count in headers]
+    smallest = min((c for _, c in segments_used), default=0) if segments_used else 0
+
+    # Check for fabrication (any segment with <2 reviews getting a full block,
+    # excluding watch list items)
+    fabrication = False
+    for name, count in segments_used:
+        if count < 2 and "Watch List" not in name:
+            fabrication = True
+
+    return {
+        "present": True,
+        "segments_surfaced": len(segments_used),
+        "smallest_segment_used": smallest,
+        "fabrication_check": fabrication,
+        "tension_flagged": "Segment Tensions" in seg_section,
+        "unattributed_handled": "Unattributed" in seg_section,
     }
 
 

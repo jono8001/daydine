@@ -39,7 +39,7 @@
     },
     "management_priorities": {
       "present": true,
-      "lines": 25,
+      "lines": 28,
       "meets_minimum": true
     },
     "watch_list": {
@@ -160,5 +160,13 @@
     ],
     "dated_trajectory_supported": false
   },
-  "report_lines": 474
+  "segment_qa": {
+    "present": true,
+    "segments_surfaced": 4,
+    "smallest_segment_used": 2,
+    "fabrication_check": false,
+    "tension_flagged": true,
+    "unattributed_handled": true
+  },
+  "report_lines": 504
 }

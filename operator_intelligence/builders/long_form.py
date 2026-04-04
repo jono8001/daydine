@@ -96,7 +96,39 @@ def build_management_priorities(w, scorecard, deltas, benchmarks, recs, venue_re
 
         # Commercial consequence estimate
         _render_consequence(w, a, scorecard, venue_rec)
+
+        # Segment impact
+        seg_impact = _infer_segment_impact(a)
+        if seg_impact:
+            w(f"- **Segment impact:** {seg_impact}")
         w("")
+
+
+def _infer_segment_impact(action):
+    """Infer which guest segments a recommendation most affects."""
+    dim = action.get("dimension", "")
+    title_lower = action.get("title", "").lower()
+
+    if dim == "conversion":
+        if any(w in title_lower for w in ["shopfront", "digital", "menu", "hour", "booking"]):
+            return ("Tourists and theatre-goers are most likely to discover you online "
+                    "with a hard time constraint; this fix disproportionately captures "
+                    "those two groups.")
+        return "Affects all segments — conversion friction loses customers regardless of type."
+    if dim == "experience" and "food quality" in title_lower:
+        return ("Couples and occasion diners have the highest expectations and write "
+                "the most detailed negative reviews. Fixing food complaints protects "
+                "your rating with the segment that amplifies problems fastest.")
+    if dim == "experience" and "service" in title_lower:
+        return ("Service quality matters most to locals (who notice changes) and "
+                "couples (who expect occasion-grade attention). Leaning into this "
+                "strength retains your highest-value segments.")
+    if dim == "visibility":
+        return ("Tourists and first-time visitors depend entirely on your online "
+                "presence. Protecting visibility protects your discovery pipeline.")
+    if dim == "trust":
+        return "Affects all segments equally — compliance is a universal baseline."
+    return None
 
 
 def _render_consequence(w, action, scorecard, venue_rec):

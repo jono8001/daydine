@@ -20,7 +20,7 @@ from operator_intelligence.builders import (
     build_review_intelligence, build_review_appendices,
     build_watch_list, build_what_not_to_do,
     build_recommendation_tracker, build_competitive_market_intelligence,
-    build_data_coverage, build_monthly_movement,
+    build_data_coverage, build_monthly_movement, build_segment_intelligence,
     build_management_priorities, build_category_validation,
     build_market_position,
     build_dimension_diagnosis, build_public_vs_reality,
@@ -85,6 +85,8 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
                            prior_snapshot, snapshot_deltas, month_str)
     # 2. What This Venue Is Becoming Known For
     build_known_for(w, venue_name, scorecard, benchmarks, review_intel)
+    # 2b. Guest Segment Intelligence
+    build_segment_intelligence(w, venue_rec, review_intel)
     # 3. Management Priorities
     build_management_priorities(w, scorecard, deltas, benchmarks, recs, venue_rec=venue_rec)
     # 4. Protect / Improve / Ignore
@@ -159,7 +161,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
 
 def generate_monthly_json(venue_name, month_str, scorecard, deltas, recs,
                           benchmarks=None, venue_rec=None, review_intel=None,
-                          demand_audit=None):
+                          demand_audit=None, segment_intel=None):
     """Generate comprehensive monthly snapshot for month-over-month tracking."""
     from operator_intelligence.implementation_framework import generate_action_cards
 
@@ -249,6 +251,38 @@ def generate_monthly_json(venue_name, month_str, scorecard, deltas, recs,
             }
             for c in cards
         ],
+        "segment_intelligence": _build_segment_json(segment_intel),
+    }
+
+
+def _build_segment_json(segment_intel):
+    """Format segment intelligence for JSON storage."""
+    if not segment_intel:
+        return None
+    seg_data = segment_intel.get("segment_data", {})
+    insights_data = segment_intel.get("insights", {})
+    return {
+        "segment_distribution": seg_data.get("segment_distribution", {}),
+        "unattributed_count": seg_data.get("unattributed_count", 0),
+        "total_reviews": seg_data.get("total_reviews", 0),
+        "segment_insights": {
+            k: {
+                "label": v["label"],
+                "review_count": v["review_count"],
+                "top_praise": v["top_praise"],
+                "top_criticism": v["top_criticism"],
+                "commercial_note": v["commercial_note"],
+            }
+            for k, v in insights_data.get("segment_insights", {}).items()
+        },
+        "tensions": insights_data.get("tensions", []),
+        "data_quality": {
+            "attributed_pct": round(
+                (1 - seg_data.get("unattributed_count", 0) /
+                 max(1, seg_data.get("total_reviews", 1))) * 100, 1),
+            "note": ("Honest segment attribution from keyword evidence. "
+                     "Reviews without clear guest-type signals are unattributed."),
+        },
     }
 
 

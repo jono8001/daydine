@@ -43,6 +43,60 @@ Guest feedback supported by moderate evidence centres on **service & hospitality
 
 In the local market, the venue sits above the median but hasn't established itself as the clear category leader. The identity is 'reliably good' rather than 'destination'.
 
+## Who's Telling You What — Guest Segment Intelligence
+
+*Different guests experience your venue differently. Here's what each group is telling you.*
+
+**Data basis:** 11 of 25 reviews (44%) contained enough context to identify the guest type. Segments below require ≥2 reviews to surface a pattern.
+
+### Theatre-Goers / Event Visitors (4 reviews)
+
+**What they value:** Food Quality (3x) — *"This was our second visit to The Vinter, & it didn’t disappo"*; Service & Hospitality (2x) — *"Vintner provided great pre-theatre service helped us get to "*; Booking & Accessibility (1x) — *"This was our second visit to The Vinter, & it didn’t disappo"*
+
+**Where you lose them:** No recurring complaints from this segment.
+
+**Commercial read:** This segment values speed and predictability — they have a hard deadline. Late service or unclear pre-theatre options lose them entirely.
+
+### Couples & Occasion Diners (4 reviews)
+
+**What they value:** Service & Hospitality (2x) — *"This latest meal was outstanding despite its simplicity"*; Food Quality (1x) — *"My husband and I had a superb meal at the Vintner on Feb 14"*
+
+**Where you lose them:** No recurring complaints from this segment.
+
+**Commercial read:** Occasion diners have high expectations and long memories. A great experience generates word-of-mouth; a disappointing one generates damaging reviews.
+
+### Tourists & Visitors (2 reviews)
+
+**What they value:** Food Quality (1x) — *"Cannot recommend enough, excellent food, amazing service and"*; Atmosphere & Setting (1x) — *"Cannot recommend enough, excellent food, amazing service and"*
+
+**Where you lose them:** No recurring complaints from this segment.
+
+**Commercial read:** Tourists discover you online with no prior loyalty. Your listing, photos, and first 3 reviews are the entire decision basis.
+
+### Locals & Regulars (4 reviews)
+
+**What they value:** Food Quality (2x) — *"This was our second visit to The Vinter, & it didn’t disappo"*; Booking & Accessibility (1x) — *"This was our second visit to The Vinter, & it didn’t disappo"*; Service & Hospitality (1x) — *"This latest meal was outstanding despite its simplicity"*
+
+**Where you lose them:** No recurring complaints from this segment.
+
+**Commercial read:** Regulars are your revenue baseline. They tolerate minor issues but notice declining consistency. Losing a regular costs 50+ future visits.
+
+### Segment Tensions
+
+*These segments have conflicting needs. Managing the tension is more valuable than ignoring it.*
+
+**Discovery vs Loyalty:** Tourists & Visitors need online proof to choose you. Locals & Regulars need consistency to stay. Investing in digital presence serves discovery; investing in consistency serves retention. Both matter.
+
+### Watch List (single-review signals — not yet patterns)
+
+- 1 review suggests **Family Diners** may be present — *"Great food, great atmosphere, great drinks and impeccable se"*
+
+### Unattributed Reviews (14)
+
+Top themes across unattributed reviews: Service & Hospitality (7x), Atmosphere & Setting (5x), Food Quality (5x), Value for Money (3x), Speed & Efficiency (2x).
+
+*As review volume grows, more segments will become readable.*
+
 ## Management Priorities
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
@@ -60,6 +114,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
   **Commercial consequence** (directional):
   Value at stake: £180–£3,600/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
   *Basis: Composite: missing hours/menu/booking each leak 2–8% of demand*
+- **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
 ### Priority 2: Address recurring food quality complaints from guests [FIX | ESCALATED]
 
@@ -74,6 +129,7 @@ Food Quality draws recurring criticism across reviews (3 negative mentions). One
   **Commercial consequence** (directional):
   Value at stake: £270–£4,500/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
   *Basis: Recurring complaints reduce repeat visits and suppress rating trajectory*
+- **Segment impact:** Couples and occasion diners have the highest expectations and write the most detailed negative reviews. Fixing food complaints protects your rating with the segment that amplifies problems fastest.
 
 ### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ESCALATED]
 
@@ -88,6 +144,7 @@ Guests consistently praise service & hospitality (18 positive mentions). This ap
   **Commercial consequence** (indicative):
   Value at stake: Upside, not loss prevention — magnitude depends on execution | Cost to fix: Low (< 1 hour, no spend) | Payback: 1–3 months
   *Basis: Aligning online messaging to guest-validated strengths sharpens conversion*
+- **Segment impact:** Service quality matters most to locals (who notice changes) and couples (who expect occasion-grade attention). Leaning into this strength retains your highest-value segments.
 
 ## Protect / Improve / Ignore
 
@@ -480,46 +537,46 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Chronic (47 months) | **Priority:** High
+**Status:** Chronic (48 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 47 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 48 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 3: Address recurring food quality complaints from guests
-**Status:** Chronic (43 months) | **Priority:** High
+**Status:** Chronic (44 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 43 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 44 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 4: Lean into service & hospitality — it's what guests are buying
-**Status:** Chronic (43 months) | **Priority:** High
+**Status:** Chronic (44 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 43 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 44 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 5: Protect the 4.6/5 rating — it took years to build
-**Status:** Chronic (44 months) | **Priority:** High
+**Status:** Chronic (45 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
 **Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 44 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 45 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Additional Active Recommendations
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
 | 6 | Strong rating masks weak competitive position | New | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Compliance record weakest in peer set — creat | Chronic (44 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Compliance record weakest in peer set — creat | Chronic (45 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 8 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 9 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 10 | Address repeated atmosphere & setting complai | Chronic (43 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 10 | Address repeated atmosphere & setting complai | Chronic (44 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 11 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
