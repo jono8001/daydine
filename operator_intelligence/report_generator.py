@@ -52,21 +52,28 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     L = []
     w = L.append
 
+    # Run demand capture audit early so it's available for delta computation
+    from operator_intelligence.demand_capture_audit import run_demand_capture_audit
+    _demand_audit = run_demand_capture_audit(venue_rec, scorecard, benchmarks, review_intel)
+
     # Compute snapshot deltas if prior month exists
-    # Build a temporary current snapshot for delta computation
+    ring1 = (benchmarks or {}).get("ring1_local", {})
+    ring1_ov = ring1.get("dimensions", {}).get("overall", {})
     _cur_snap = {
         "scorecard": {k: scorecard.get(k) for k in DIM_ORDER + ["overall"]},
         "signals": {
             "google_review_count": scorecard.get("google_reviews"),
             "google_rating": scorecard.get("google_rating"),
         },
-        "peer_position": {},
-        "demand_capture": {},
+        "peer_position": {
+            "local_rank": ring1_ov.get("rank"),
+            "local_of": ring1_ov.get("of"),
+        },
+        "demand_capture": {
+            d["dimension"]: d["verdict"]
+            for d in _demand_audit.get("dimensions", [])
+        },
     }
-    ring1 = (benchmarks or {}).get("ring1_local", {})
-    ring1_ov = ring1.get("dimensions", {}).get("overall", {})
-    _cur_snap["peer_position"]["local_rank"] = ring1_ov.get("rank")
-    _cur_snap["peer_position"]["local_of"] = ring1_ov.get("of")
     snapshot_deltas = compute_snapshot_deltas(_cur_snap, prior_snapshot)
 
     # --- Lead: leaks / actions / risk / what not to do ---
