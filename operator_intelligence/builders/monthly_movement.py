@@ -32,10 +32,36 @@ def _delta_read(dim, delta, score, peer_avg):
         return "Falling further behind"
 
 
+def _render_seasonal_context(w, venue_rec, month_str):
+    """Render seasonal context subsection. Works even on baseline month."""
+    from operator_intelligence.seasonal_context import get_seasonal_context
+    location = (venue_rec or {}).get("la", "").lower()
+    if "stratford" in location:
+        location = "stratford-upon-avon"
+    ctx = get_seasonal_context(month_str, location)
+    if ctx and ctx.get("season") != "unknown":
+        w("### Seasonal Context\n")
+        w(f"- **{ctx['location']} — {ctx['season']} season.** {ctx['note']}.")
+        if ctx.get("review_velocity_factor", 1.0) > 1.1:
+            w(f"- Review volume typically runs ~{int((ctx['review_velocity_factor'] - 1) * 100)}% "
+              f"above annual average in this month — treat volume gains as seasonal "
+              f"until confirmed over 3+ months.")
+        elif ctx.get("review_velocity_factor", 1.0) < 0.8:
+            w(f"- Review volume typically runs ~{int((1 - ctx['review_velocity_factor']) * 100)}% "
+              f"below annual average in this month — a volume dip is expected, not alarming.")
+        if ctx.get("rsc"):
+            w("- RSC theatre season is active — pre-theatre dining demand is elevated.")
+        w("")
+
+
 def build_monthly_movement(w, scorecard, benchmarks, venue_rec,
                            prior_snapshot, snapshot_deltas, month_str):
     """Render the Monthly Movement Summary section."""
     w("## Monthly Movement Summary\n")
+
+    # Seasonal context — always render when location data is available,
+    # even on baseline month (useful context regardless of prior data)
+    _render_seasonal_context(w, venue_rec, month_str)
 
     if not prior_snapshot:
         w("*This is the first report with month-over-month tracking. "
@@ -162,22 +188,5 @@ def build_monthly_movement(w, scorecard, benchmarks, venue_rec,
         w("- None detected this month")
     w("")
 
-    # --- Seasonal Context ---
-    from operator_intelligence.seasonal_context import get_seasonal_context
-    location = venue_rec.get("la", "").lower()
-    if "stratford" in location:
-        location = "stratford-upon-avon"
-    ctx = get_seasonal_context(month_str, location)
-    if ctx and ctx.get("season") != "unknown":
-        w("### What May Be Seasonal Rather Than Structural\n")
-        w(f"- **{ctx['location']} — {ctx['season']} season.** {ctx['note']}.")
-        if ctx.get("review_velocity_factor", 1.0) > 1.1:
-            w(f"- Review volume typically runs ~{int((ctx['review_velocity_factor'] - 1) * 100)}% "
-              f"above annual average in this month — treat volume gains as seasonal "
-              f"until confirmed over 3+ months.")
-        elif ctx.get("review_velocity_factor", 1.0) < 0.8:
-            w(f"- Review volume typically runs ~{int((1 - ctx['review_velocity_factor']) * 100)}% "
-              f"below annual average in this month — a volume dip is expected, not alarming.")
-        if ctx.get("rsc"):
-            w("- RSC theatre season is active — pre-theatre dining demand is elevated.")
-        w("")
+    # Seasonal context is rendered at the top of the function
+    # (before the early-return gate) so it appears on all months.
