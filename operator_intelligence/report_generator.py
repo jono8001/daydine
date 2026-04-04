@@ -92,8 +92,8 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     build_watch_list(w, recs)
     # 14. What Not to Do
     build_what_not_to_do(w, recs)
-    # 15. Recommendation Tracker
-    build_recommendation_tracker(w, recs)
+    # 15. Implementation Framework (replaces Recommendation Tracker)
+    build_recommendation_tracker(w, recs, month_str=month_str)
     # 16. Next-Month Monitoring Plan (external leading indicators)
     build_monitoring_plan(w, scorecard, recs)
     # 17. Data Coverage & Confidence

@@ -69,7 +69,7 @@
     "venue_id": "503480",
     "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 27,
+    "times_seen": 31,
     "last_seen": "2026-04"
   },
   "aea7b90c03a5": {
@@ -88,7 +88,7 @@
     "venue_id": "503480",
     "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 24,
+    "times_seen": 27,
     "last_seen": "2026-04"
   },
   "84416e2245d6": {
@@ -107,7 +107,7 @@
     "venue_id": "503480",
     "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 24,
+    "times_seen": 27,
     "last_seen": "2026-04"
   },
   "64f68aaa1b94": {
@@ -126,7 +126,7 @@
     "venue_id": "503480",
     "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 24,
+    "times_seen": 27,
     "last_seen": "2026-04"
   },
   "502d70031501": {
@@ -144,7 +144,7 @@
     "venue_id": "503480",
     "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 24,
+    "times_seen": 28,
     "last_seen": "2026-04"
   },
   "2413e82c158a": {
@@ -162,7 +162,44 @@
     "venue_id": "503480",
     "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 24,
+    "times_seen": 28,
+    "last_seen": "2026-04"
+  },
+  "d5b1c96d26a0": {
+    "rec_type": "watch",
+    "theme": "overall",
+    "dimension": "overall",
+    "title": "Strong rating masks weak competitive position",
+    "description": "Your 4.6/5 Google rating feels dominant but you sit below the local median (P37.5). Peer venues achieve similar or better ratings — in this market, 4.5 is table stakes, not a differentiator. Don't mistake the number for an advantage.",
+    "evidence": "gr=4.6, local_percentile=37.5",
+    "owner": "management",
+    "priority_score": 7.0,
+    "expected_upside": "Realistic competitive awareness",
+    "confidence": 0.7,
+    "management_implication": "The rating looks good in isolation but not in context.",
+    "rec_id": "d5b1c96d26a0",
+    "venue_id": "503480",
+    "status": "new",
+    "first_seen": "2026-04",
+    "times_seen": 1,
+    "last_seen": "2026-04"
+  },
+  "7385e7daa24d": {
+    "rec_type": "watch",
+    "theme": "overall",
+    "dimension": "overall",
+    "title": "Ranked #6 of 9 locally — peers are ahead",
+    "description": "At percentile 37.5, customers in this area have higher-rated alternatives. This isn't a crisis but it means you're competing on convenience rather than reputation.",
+    "evidence": "local_percentile=37.5",
+    "owner": "management",
+    "priority_score": 5.0,
+    "expected_upside": "Competitive awareness",
+    "confidence": 0.7,
+    "rec_id": "7385e7daa24d",
+    "venue_id": "503480",
+    "status": "new",
+    "first_seen": "2026-04",
+    "times_seen": 1,
     "last_seen": "2026-04"
   }
 }

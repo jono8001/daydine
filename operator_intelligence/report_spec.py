@@ -199,8 +199,10 @@ MONTHLY_SECTIONS = [
                 description="7-dimension outside-in audit: Booking Friction, Menu Visibility, "
                             "CTA Clarity, Photo Mix, Proposition Clarity, Mobile Usability, "
                             "Promise vs Path. Each dimension has verdict + finding + consequence."),
-    SectionSpec("recommendation_tracker", "Recommendation Tracker", mandatory=True, min_lines=2,
-                description="Full lifecycle table or statement about carried-forward recs"),
+    SectionSpec("recommendation_tracker", "Implementation Framework", mandatory=True, min_lines=5,
+                description="Structured action cards with target dates, success measures, "
+                            "next milestones, cost bands, owner guidance, and barrier diagnosis "
+                            "for stale recommendations (3+ months)"),
     SectionSpec("market_intelligence", "Competitive Market Intelligence", mandatory=True, min_lines=4,
                 description="Peer position, competitor movement, dimension gaps vs local market, density and share-leakage signals, commercial implications of market context"),
     SectionSpec("monitoring_plan", "Next-Month Monitoring Plan", mandatory=True, min_lines=3,
@@ -601,12 +603,30 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
         # Check surrounding context (200 chars before + 200 chars after)
         context = report_text[max(0, pos - 200):pos + 200].lower()
         if not any(cw in context for cw in _conf_words):
-            # Skip Evidence Appendix (raw data, no confidence needed)
+            # Skip sections where £ figures are carried from elsewhere:
+            # - Evidence Appendix (raw data)
+            # - Implementation Framework (upside values from priority recs)
+            # - Demand Capture Audit (consequence in findings)
             before = report_text[:pos]
-            if "## Evidence Appendix" in before:
-                last_h2 = before.rindex("## ")
-                if before[last_h2:last_h2 + 22] == "## Evidence Appendix":
-                    continue
+            _skip_sections = ["## Evidence Appendix", "## Implementation Framework",
+                              "## Demand Capture Audit"]
+            in_skip = False
+            for _ss in _skip_sections:
+                ss_pos = before.rfind(_ss)
+                if ss_pos >= 0:
+                    # Check no other H2 section started after this one
+                    after_ss = before[ss_pos + len(_ss):]
+                    # Look for "\n## " (H2 only, not H3)
+                    next_h2 = after_ss.find("\n## ")
+                    if next_h2 >= 0:
+                        # Check it's actually H2 not H3
+                        h2_text = after_ss[next_h2 + 1:next_h2 + 5]
+                        if h2_text.startswith("## ") and not h2_text.startswith("### "):
+                            continue  # Another H2 started — we're past the skip section
+                    in_skip = True
+                    break
+            if in_skip:
+                continue
             result.warnings.append(
                 f"ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position {pos} "
                 f"has no confidence label within 200 characters")

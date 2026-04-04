@@ -130,6 +130,45 @@ Where a dimension cannot be fully assessed from current data, the report states 
 
 ---
 
+## 3c. Implementation Framework
+
+Each active recommendation is presented as a structured action card, not a flat table row. The framework turns intelligence into management instruments with clear deadlines, costs, success measures, and barrier diagnosis.
+
+### Action Card Fields
+
+| Field | What It Shows | How It's Derived |
+|---|---|---|
+| **Target Date** | Specific calendar date by when this should be done | Report date + cost-band window: Zero/Low = +7 days, Medium = +30 days, High = +90 days |
+| **Success Measure** | Externally observable signal DayDine can verify next month | Mapped from dimension + fix type to specific API-verifiable fields |
+| **Next Milestone** | Single concrete action completable in one sitting | Specific step (not "update GBP" but "log in → Info → Menu URL → paste link") |
+| **Owner** | Role + guidance on who specifically should act | Role (operations/management) + context ("whoever holds GBP admin access") |
+| **Cost Band** | Implementation cost | Zero / Low (< £200) / Medium (£200–£1,000) / High (£1,000+) |
+| **Expected £ Upside** | Value at stake range with basis | From commercial consequence estimates, carried forward with logic breakdown |
+| **Barrier Diagnosis** | Why this hasn't been done yet (for recs aged 3+ months) | Algorithmic: age × cost band × dimension → barrier category |
+
+### Barrier Categories
+
+| Category | When It Applies | Typical Pattern |
+|---|---|---|
+| **Access barrier** | Low-cost digital fix outstanding 3+ months | GBP admin access lost, no one has the login |
+| **Awareness barrier** | Report not reaching the person who can act | Owner ≠ the person managing the specific system |
+| **Prioritisation barrier** | Low-cost fix outstanding 6+ months | Never assigned to a specific person with a deadline |
+| **Capability barrier** | Experience/quality fix outstanding 3+ months | Requires process changes or training that don't exist yet |
+| **Disagreement barrier** | Any fix outstanding 12+ months | Operator may believe the recommendation doesn't apply |
+
+### Escalation Rules
+
+- Month 1–2: Set target date and next milestone. No barrier diagnosis.
+- Month 3–5: Add barrier diagnosis. Identify most likely blocker.
+- Month 6–11: Escalate barrier language. Note cost of inaction at this duration.
+- Month 12+: Flag as chronic. Suggest the operator explicitly accept or reject the recommendation.
+
+### Progress Detection
+
+The report tracks whether the underlying signal has changed since the recommendation was first raised. Partial progress is noted (e.g. "hours now 5/7 days, previously 0/7").
+
+---
+
 ## 4. Signal Architecture
 
 ### 4.1 Provenance Classification

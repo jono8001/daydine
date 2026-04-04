@@ -32,20 +32,67 @@ def build_what_not_to_do(w, recs):
         w(f"{dont.get('_reason', dont.get('description', ''))}\n")
 
 
-def build_recommendation_tracker(w, recs):
-    w("## Recommendation Tracker\n")
-    all_recs = recs.get("all_recs", [])
-    active = [r for r in all_recs if r.get("status") not in ("resolved", "dropped", "completed")]
-    resolved = [r for r in all_recs if r.get("status") in ("resolved", "completed")]
-    if active:
-        w("| # | Recommendation | Status | Since | Months | Owner | Dimension |")
-        w("|--:|---------------|--------|-------|-------:|-------|-----------|")
-        for i, r in enumerate(sorted(active, key=lambda x: -x.get("priority_score", 0)), 1):
-            w(f"| {i} | {r['title'][:50]} | {r['status']} | {r.get('first_seen', '—')} "
-              f"| {r.get('times_seen', 1)} | {r.get('owner', '—')} | {r.get('dimension', '—')} |")
+def build_recommendation_tracker(w, recs, month_str=None):
+    """Implementation Framework — structured action cards replacing the flat tracker."""
+    from operator_intelligence.implementation_framework import generate_action_cards
+
+    cards = generate_action_cards(recs, month_str or "2026-04")
+
+    w("## Implementation Framework\n")
+
+    if not cards:
+        w("First reporting month — all recommendations are new in the priorities above.\n")
+        return
+
+    # Summary
+    chronic = sum(1 for c in cards if c["times_seen"] >= 12)
+    overdue = sum(1 for c in cards if 6 <= c["times_seen"] < 12)
+    stale = sum(1 for c in cards if 3 <= c["times_seen"] < 6)
+    new_count = sum(1 for c in cards if c["times_seen"] < 3)
+
+    summary_parts = []
+    if chronic:
+        summary_parts.append(f"**{chronic} chronic** (12+ months)")
+    if overdue:
+        summary_parts.append(f"**{overdue} overdue** (6–11 months)")
+    if stale:
+        summary_parts.append(f"**{stale} stale** (3–5 months)")
+    if new_count:
+        summary_parts.append(f"**{new_count} new/recent**")
+    w(f"{len(cards)} active items: {', '.join(summary_parts)}.\n")
+
+    # Action cards — top priority first, limit to top 5 for readability
+    for i, card in enumerate(cards[:5], 1):
+        w(f"### Action {i}: {card['title']}")
+        w(f"**Status:** {card['status_label']} | **Priority:** "
+          f"{'High' if card['priority_score'] >= 7 else 'Medium' if card['priority_score'] >= 4 else 'Standard'}")
+        w(f"**Target date:** {card['target_date']} | "
+          f"**Cost:** {card['cost_label']} | "
+          f"**Expected upside:** {card['expected_upside']}")
+        w(f"**Owner:** {card['owner_guidance']}")
+        w(f"**Next milestone:** {card['next_milestone']}")
+        w(f"**Success measure:** {card['success_measure']}")
+
+        # Barrier diagnosis (3+ months only)
+        if card["barrier"]:
+            cat, label, explanation = card["barrier"]
+            w(f"**Barrier diagnosis ({label}):** {explanation}")
+
         w("")
-    else:
-        w("First reporting month — all recommendations are new above.\n")
+
+    # Compact index for remaining items
+    if len(cards) > 5:
+        w("### Additional Active Recommendations\n")
+        w("| # | Recommendation | Status | Target | Cost |")
+        w("|--:|---------------|--------|--------|------|")
+        for i, card in enumerate(cards[5:], 6):
+            w(f"| {i} | {card['title'][:45]} | {card['status_label']} "
+              f"| {card['target_date']} | {card['cost_label']} |")
+        w("")
+
+    # Resolved count
+    all_recs = recs.get("all_recs", [])
+    resolved = [r for r in all_recs if r.get("status") in ("resolved", "completed")]
     if resolved:
         w(f"*{len(resolved)} recommendation(s) resolved/completed.*\n")
 
