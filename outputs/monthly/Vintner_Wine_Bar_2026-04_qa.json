@@ -87,6 +87,11 @@
       "lines": 38,
       "meets_minimum": true
     },
+    "category_validation": {
+      "present": true,
+      "lines": 18,
+      "meets_minimum": true
+    },
     "market_intelligence": {
       "present": true,
       "lines": 5,
@@ -150,5 +155,5 @@
     ],
     "dated_trajectory_supported": false
   },
-  "report_lines": 445
+  "report_lines": 468
 }

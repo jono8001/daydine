@@ -429,11 +429,39 @@ Excluded establishments are marked "Not Ranked" in output.
 
 ---
 
-## 8. Category Classification (3-Tier)
+## 8. Category Classification (Multi-Signal Resolution)
 
-1. **Google Place Types** (primary): maps `*_restaurant` types to 21 categories
-2. **Name-Based Keywords** (fallback): 32 keyword groups with word-boundary matching
-3. **Web Lookup** (stub): external script for remaining "Other" classifications
+Category is resolved by triangulating across multiple public signals, not relying solely on Google Place Types. The resolution engine produces a primary category with confidence level, evidence summary, and alternatives considered.
+
+### Signal Sources (in order of weight)
+
+| # | Signal | What It Provides | Weight |
+|---|---|---|---|
+| 1 | Google Place Types | What Google calls this venue | Primary |
+| 2 | Review Language Analysis | What guests call it (scan for "restaurant", "pub", "café", etc.) | Strong (5+ matches) |
+| 3 | Service Model Indicators | Table service, reservations, set menu, named staff (from reviews) | Supportive |
+| 4 | TripAdvisor Cuisine/Type | How TA categorises the food and venue | Corroborating |
+| 5 | Price Level | Positioning signal (budget → fine dining) | Supportive |
+| 6 | Venue Name | Name contains category terms ("Wine Bar", "Bistro") | Supportive |
+
+### Confidence Levels
+
+| Level | When Applied |
+|---|---|
+| **High** | 3+ signals agree on the same category |
+| **Medium** | Primary signal (Google) partially conflicts with review language or service model |
+| **Low** | Signals conflict significantly or insufficient data for resolution |
+
+### Peer Set Transparency
+
+The report includes a Category & Peer Validation section that explains:
+- Why this venue is in this cohort (resolved category + evidence)
+- Peer justification (for each peer: distance, type, price band, validity)
+- Sensitivity analysis (what changes if categorisation changes — peer set delta and position shift)
+
+### Sensitivity Analysis
+
+Runs the peer comparison under the primary and alternative categories. If competitive position barely changes, conclusions are robust. If it swings materially, the report flags that competitive analysis is category-dependent.
 
 ---
 

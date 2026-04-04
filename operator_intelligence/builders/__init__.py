@@ -23,6 +23,7 @@ from operator_intelligence.builders.actions_tracker import (
 )
 from operator_intelligence.builders.long_form import (
     build_management_priorities,
+    build_category_validation,
     build_market_position,
     build_dimension_diagnosis,
     build_public_vs_reality,

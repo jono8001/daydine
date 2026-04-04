@@ -246,6 +246,39 @@ This section compares what customers see (public signals) against what the data 
 | Review Volume | 887 reviews (High) | Visibility 9.7/10 (Strong) |
 | Booking/Ordering | What customers can find | Conversion 5.5/10 (Partial) |
 
+## Category & Peer Validation
+
+### Why This Venue Is In This Cohort
+
+Vintner Wine Bar is classified as **Wine-led Dining / Restaurant-Bar** (confidence: medium). Google's raw category is "Pub / Bar" but the resolved category triangulates across 5 signal sources.
+
+### Category Evidence
+
+| Signal Source | Category Signal | Weight |
+|---|---|---|
+| Google Place Types | wine_bar, bar, restaurant | Primary |
+| Review Language | "restaurant" (8x), "bar" (3x), "cafe" (1x), "wine_bar" (1x) | Strong |
+| Service Model | set menu (3x), table service (7x), reservation (4x), named staff (4x) | Supportive |
+| Price Level | ££ (2/4) — Casual dining | Supportive |
+| Name | "Vintner Wine Bar" contains "wine bar" | Supportive |
+
+**Resolved category:** Wine-led Dining / Restaurant-Bar (confidence: medium)
+**Alternative considered:** Pub / Bar — rejected because Google types include 'bar'/'wine_bar', but review language overwhelmingly says 'restaurant' (8x) and service model is restaurant-grade (table service, reservations).
+
+### Peer Justification
+
+- **The Fox Inn** (7.7): Pub Dining with similar price band; 3.6 miles away
+- **The Red Lion** (7.6): Pub Dining with comparable price band; 0.2 miles away
+- **The Townhouse Also Trading As JR Hotel And Restaurants LTD** (7.5): Hotel restaurant — different occasion type, may not compete for walk-in trade; 0.1 miles away *(marginal comparator)*
+- **Snitterfield Arms** (7.2): Pub Dining with comparable price band; 3.3 miles away
+- **The Bell Inn** (7.1): Pub Dining with similar price band; 3.7 miles away
+
+### Sensitivity: What Changes If Categorisation Changes
+
+**If reclassified as "Pub / Bar":** Peer set changes from 8 to 8 local competitors. Position shifts from #4/9 to #4/9.
+New peer set would include: The Fox Inn, The Red Lion, The Townhouse Also Trading As JR Hotel And Restaurants LTD.
+*Competitive conclusions are robust — position barely changes regardless of category.*
+
 ## Competitive Market Intelligence
 
 **Local market:** 8 direct competitors identified.
@@ -436,46 +469,46 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Chronic (34 months) | **Priority:** High
+**Status:** Chronic (38 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 34 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 38 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 3: Address recurring food quality complaints from guests
-**Status:** Chronic (30 months) | **Priority:** High
+**Status:** Chronic (34 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 30 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 34 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 4: Lean into service & hospitality — it's what guests are buying
-**Status:** Chronic (30 months) | **Priority:** High
+**Status:** Chronic (34 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 30 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 34 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 5: Protect the 4.6/5 rating — it took years to build
-**Status:** Chronic (31 months) | **Priority:** High
+**Status:** Chronic (35 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
 **Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 31 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 35 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Additional Active Recommendations
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
 | 6 | Strong rating masks weak competitive position | New | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Compliance record weakest in peer set — creat | Chronic (31 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Compliance record weakest in peer set — creat | Chronic (35 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 8 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 9 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 10 | Address repeated atmosphere & setting complai | Chronic (30 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 10 | Address repeated atmosphere & setting complai | Chronic (34 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 11 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan

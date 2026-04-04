@@ -203,6 +203,9 @@ MONTHLY_SECTIONS = [
                 description="Structured action cards with target dates, success measures, "
                             "next milestones, cost bands, owner guidance, and barrier diagnosis "
                             "for stale recommendations (3+ months)"),
+    SectionSpec("category_validation", "Category & Peer Validation", mandatory=True, min_lines=5,
+                description="Multi-signal category resolution with evidence table, peer justification, "
+                            "and sensitivity analysis showing robustness of competitive conclusions"),
     SectionSpec("market_intelligence", "Competitive Market Intelligence", mandatory=True, min_lines=4,
                 description="Peer position, competitor movement, dimension gaps vs local market, density and share-leakage signals, commercial implications of market context"),
     SectionSpec("monitoring_plan", "Next-Month Monitoring Plan", mandatory=True, min_lines=3,

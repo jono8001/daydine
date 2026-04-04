@@ -172,6 +172,7 @@ def main():
         venue_name, month_str, card, deltas,
         benchmarks, review_intel, rev_delta,
         recs, cond_blocks, venue_rec=venue,
+        all_cards=all_cards, all_data=data,
     )
 
     # Generate JSON

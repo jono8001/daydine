@@ -117,6 +117,98 @@ def _render_consequence(w, action, scorecard, venue_rec):
 
 
 # ---------------------------------------------------------------------------
+# Category & Peer Validation
+# ---------------------------------------------------------------------------
+
+def build_category_validation(w, scorecard, benchmarks, venue_rec, all_cards=None,
+                              all_data=None, review_intel=None):
+    """Category validation and peer set transparency section."""
+    from operator_intelligence.category_validation import (
+        resolve_category, generate_peer_justifications, run_sensitivity_analysis,
+    )
+
+    resolution = resolve_category(venue_rec, review_intel)
+    current_google_cat = scorecard.get("category", "Unknown")
+
+    w("## Category & Peer Validation\n")
+
+    # --- Why This Venue Is In This Cohort ---
+    w("### Why This Venue Is In This Cohort\n")
+    name = venue_rec.get("n", "This venue")
+    w(f"{name} is classified as **{resolution['primary']}** "
+      f"(confidence: {resolution['confidence']}). "
+      f"Google's raw category is \"{current_google_cat}\" but the resolved "
+      f"category triangulates across {len(resolution['evidence'])} signal sources.\n")
+
+    # --- Category Evidence Table ---
+    w("### Category Evidence\n")
+    w("| Signal Source | Category Signal | Weight |")
+    w("|---|---|---|")
+    for ev in resolution["evidence"]:
+        w(f"| {ev['source']} | {ev['signal']} | {ev['weight']} |")
+    w("")
+
+    w(f"**Resolved category:** {resolution['primary']} "
+      f"(confidence: {resolution['confidence']})")
+
+    if resolution["alternatives"]:
+        for alt in resolution["alternatives"]:
+            w(f"**Alternative considered:** {alt['category']} — "
+              f"rejected because {alt['reason']}")
+    w("")
+
+    # --- Peer Justification ---
+    ring1 = (benchmarks or {}).get("ring1_local", {})
+    top_peers = ring1.get("top_peers", [])
+    if top_peers:
+        w("### Peer Justification\n")
+        justifications = generate_peer_justifications(
+            scorecard, venue_rec, top_peers, all_data or {})
+        for j in justifications:
+            validity_tag = ""
+            if j["validity"] == "marginal comparator":
+                validity_tag = " *(marginal comparator)*"
+            elif j["validity"] == "weak comparator":
+                validity_tag = " *(weak comparator)*"
+            w(f"- **{j['name']}** ({j['overall']:.1f}): "
+              f"{j['notes']}{validity_tag}")
+        w("")
+
+    # --- Sensitivity Analysis ---
+    if all_cards and resolution["alternatives"]:
+        w("### Sensitivity: What Changes If Categorisation Changes\n")
+        for alt in resolution["alternatives"]:
+            alt_cat = alt["category"]
+            sensitivity = run_sensitivity_analysis(
+                scorecard, all_cards, current_google_cat, alt_cat)
+            cur = sensitivity["current_position"]
+            alt_pos = sensitivity["alternative_position"]
+
+            if cur["rank"] and alt_pos["rank"]:
+                w(f"**If reclassified as \"{alt_cat}\":** Peer set changes from "
+                  f"{cur['count']} to {alt_pos['count']} local competitors. "
+                  f"Position shifts from #{cur['rank']}/{cur['of']} to "
+                  f"#{alt_pos['rank']}/{alt_pos['of']}.")
+                if alt_pos.get("peer_names"):
+                    w(f"New peer set would include: {', '.join(alt_pos['peer_names'][:3])}.")
+                # Robustness assessment
+                rank_diff = abs((cur["rank"] or 0) - (alt_pos["rank"] or 0))
+                if rank_diff <= 1:
+                    w("*Competitive conclusions are robust — position barely changes "
+                      "regardless of category.*\n")
+                else:
+                    w(f"*Competitive conclusions are category-dependent — position shifts "
+                      f"by {rank_diff} places. Read competitive analysis with this in mind.*\n")
+            elif alt_pos["count"] == 0:
+                w(f"**If reclassified as \"{alt_cat}\":** No local peers in that "
+                  f"category within 5 miles. Current categorisation produces a "
+                  f"more useful competitive analysis.\n")
+            else:
+                w(f"**If reclassified as \"{alt_cat}\":** {alt_pos['count']} local peers. "
+                  f"Insufficient data for position comparison.\n")
+
+
+# ---------------------------------------------------------------------------
 # Market Position — the full 3-ring analysis with interpretation
 # ---------------------------------------------------------------------------
 

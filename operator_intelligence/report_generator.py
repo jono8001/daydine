@@ -21,7 +21,8 @@ from operator_intelligence.builders import (
     build_watch_list, build_what_not_to_do,
     build_recommendation_tracker, build_competitive_market_intelligence,
     build_data_coverage,
-    build_management_priorities, build_market_position,
+    build_management_priorities, build_category_validation,
+    build_market_position,
     build_dimension_diagnosis, build_public_vs_reality,
     build_demand_capture_audit, build_monitoring_plan,
     build_evidence_appendix,
@@ -37,7 +38,8 @@ DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
 
 def generate_monthly_report(venue_name, month_str, scorecard, deltas,
                             benchmarks, review_intel, review_delta,
-                            recs, conditional_blocks=None, venue_rec=None):
+                            recs, conditional_blocks=None, venue_rec=None,
+                            all_cards=None, all_data=None):
     """Assemble full monthly report from builders. Returns (report_text, qa_dict).
 
     Report structure: leads with leaks/actions/risk, then covers 4 commercial
@@ -76,7 +78,11 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     build_public_vs_reality(w, scorecard)
 
     # --- Lens 4: Competitive Market Intelligence (mandatory) ---
-    # 9. Competitive Market Intelligence
+    # 9. Category & Peer Validation
+    build_category_validation(w, scorecard, benchmarks, venue_rec or {},
+                              all_cards=all_cards, all_data=all_data,
+                              review_intel=review_intel)
+    # 10. Competitive Market Intelligence
     build_competitive_market_intelligence(w, scorecard, benchmarks, conditional_blocks)
     # 10. Market Position (detailed 3-ring peer analysis)
     build_market_position(w, scorecard, benchmarks, venue_rec=venue_rec)
