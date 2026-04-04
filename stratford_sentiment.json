@@ -1,4 +1,76 @@
 {
+  "1344517": {
+    "sentiment_score": 0.75,
+    "positive_count": 5,
+    "negative_count": 0,
+    "red_flag_count": 0,
+    "red_flags": [],
+    "warning": false,
+    "reviews_analyzed": 5,
+    "aspects": {
+      "food_quality": {
+        "score": 10.0,
+        "positive_mentions": 3,
+        "negative_mentions": 0
+      },
+      "service_quality": {
+        "score": 10.0,
+        "positive_mentions": 6,
+        "negative_mentions": 0
+      },
+      "ambience": {
+        "score": 10.0,
+        "positive_mentions": 2,
+        "negative_mentions": 0
+      },
+      "value": {
+        "score": 10.0,
+        "positive_mentions": 2,
+        "negative_mentions": 0
+      },
+      "wait_time": {
+        "score": 10.0,
+        "positive_mentions": 1,
+        "negative_mentions": 0
+      }
+    }
+  },
+  "503282": {
+    "sentiment_score": 1.0,
+    "positive_count": 16,
+    "negative_count": 0,
+    "red_flag_count": 0,
+    "red_flags": [],
+    "warning": false,
+    "reviews_analyzed": 5,
+    "aspects": {
+      "food_quality": {
+        "score": 10.0,
+        "positive_mentions": 4,
+        "negative_mentions": 0
+      },
+      "service_quality": {
+        "score": 10.0,
+        "positive_mentions": 13,
+        "negative_mentions": 0
+      },
+      "ambience": {
+        "score": 10.0,
+        "positive_mentions": 1,
+        "negative_mentions": 0
+      },
+      "value": {
+        "score": 10.0,
+        "positive_mentions": 1,
+        "negative_mentions": 0
+      },
+      "wait_time": {
+        "score": 10.0,
+        "positive_mentions": 2,
+        "negative_mentions": 0
+      }
+    }
+  },
   "503480": {
     "sentiment_score": 1.0,
     "positive_count": 13,
