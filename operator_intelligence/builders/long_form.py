@@ -469,27 +469,7 @@ def _dim_management_action(dim, score, peer_avg, scorecard, venue_rec=None):
         return None
 
     if dim == "trust":
-        fsa = scorecard.get("fsa_rating")
-        rd = (venue_rec or {}).get("rd") or scorecard.get("_rd") or ""
-        from rcs_scoring_stratford import days_since
-        age_days = days_since(rd)
-        age_months = round(age_days / 30) if age_days else None
-        age_note = ""
-        if age_months and age_months >= 18:
-            age_note = (f" Last inspection: {rd[:10]} ({age_months} months ago). "
-                        f"The typical re-inspection cycle for a {fsa or '?'}-rated "
-                        f"premises is 18–24 months — "
-                        f"{'a new inspection may be imminent' if age_months >= 18 else 'within normal range'}. "
-                        f"This score will continue to decay without a new inspection.")
-        if score >= 8.0:
-            return ("Strong trust position. Maintain documentation rigour — the next "
-                    "unannounced inspection should confirm, not surprise." + age_note)
-        if fsa and int(fsa) < 5:
-            return (f"FSA {fsa} is the binding constraint. Request a re-inspection once "
-                    "you've addressed the specific points from the last report. A move "
-                    "to 5 unlocks material score improvement." + age_note)
-        return ("Inspection age may be dragging this down. Recent compliance is "
-                "not reflected in the score yet." + age_note)
+        return "See *Trust — Behind the Headline* below for full decomposition, peer comparison, and action options."
 
     if dim == "conversion":
         if score < 5.0:
