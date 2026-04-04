@@ -532,7 +532,7 @@ def build_public_vs_reality(w, scorecard):
 # Demand Capture Audit (replaces Conversion Friction Analysis)
 # ---------------------------------------------------------------------------
 
-def build_conversion_analysis(w, scorecard, venue_rec, benchmarks=None, review_intel=None):
+def build_demand_capture_audit(w, scorecard, venue_rec, benchmarks=None, review_intel=None):
     """7-dimension demand capture audit — structured outside-in walkthrough."""
     from operator_intelligence.demand_capture_audit import run_demand_capture_audit
 

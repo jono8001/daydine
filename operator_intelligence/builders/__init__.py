@@ -26,7 +26,7 @@ from operator_intelligence.builders.long_form import (
     build_market_position,
     build_dimension_diagnosis,
     build_public_vs_reality,
-    build_conversion_analysis,
+    build_demand_capture_audit,
     build_monitoring_plan,
     build_evidence_appendix,
 )

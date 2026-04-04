@@ -23,7 +23,7 @@ from operator_intelligence.builders import (
     build_data_coverage,
     build_management_priorities, build_market_position,
     build_dimension_diagnosis, build_public_vs_reality,
-    build_conversion_analysis, build_monitoring_plan,
+    build_demand_capture_audit, build_monitoring_plan,
     build_evidence_appendix,
     build_known_for, build_protect_improve_ignore,
 )
@@ -62,7 +62,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
 
     # --- Lens 1: Demand Capture ---
     # 5. Demand Capture Audit
-    build_conversion_analysis(w, scorecard, venue_rec, benchmarks=benchmarks,
+    build_demand_capture_audit(w, scorecard, venue_rec, benchmarks=benchmarks,
                               review_intel=review_intel)
 
     # --- Lens 2: Proposition & Guest Signal ---
