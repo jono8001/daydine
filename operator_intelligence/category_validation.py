@@ -9,6 +9,7 @@ Also provides peer set transparency: justification for each peer and
 sensitivity analysis showing what changes if category changes.
 """
 
+import re
 from collections import Counter
 
 
@@ -24,7 +25,7 @@ _REVIEW_CATEGORY_TERMS = {
     "bistro": ["bistro", "brasserie"],
     "gastropub": ["gastropub", "gastro pub", "gastro-pub"],
     "fine_dining": ["fine dining", "tasting menu", "michelin"],
-    "bar": ["bar", "cocktail"],
+    "bar": ["cocktail"],  # "bar" handled separately to avoid "wine bar" double-count
 }
 
 # Service model indicators
@@ -55,6 +56,11 @@ def _scan_review_language(venue_rec):
                     if term in text:
                         cat_counts[cat] += 1
                         break  # one match per category per review
+            # Handle "bar" separately: match standalone "bar" but not
+            # "wine bar", "snack bar", "minibar" etc.
+            if re.search(r'(?<!wine )(?<!snack )(?<!mini)\bbar\b', text):
+                if "wine bar" not in text and "snack bar" not in text:
+                    cat_counts["bar"] = cat_counts.get("bar", 0) + 1
             for indicator, terms in _SERVICE_INDICATORS.items():
                 for term in terms:
                     if term in text:
