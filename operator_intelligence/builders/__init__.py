@@ -33,6 +33,7 @@ from operator_intelligence.builders.long_form import (
 )
 from operator_intelligence.builders.monthly_movement import build_monthly_movement
 from operator_intelligence.builders.segment_section import build_segment_intelligence
+from operator_intelligence.builders.trust_detail import build_trust_detail
 from operator_intelligence.builders.venue_identity import (
     build_known_for,
     build_protect_improve_ignore,

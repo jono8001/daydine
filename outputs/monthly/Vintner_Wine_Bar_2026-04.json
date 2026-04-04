@@ -116,56 +116,56 @@
     {
       "title": "Fix the digital shopfront — you're losing walk-ins",
       "dimension": "conversion",
-      "status_label": "Chronic (49 months)",
+      "status_label": "Chronic (50 months)",
       "target_date": "08 April 2026",
       "cost_band": "zero",
       "expected_upside": "Capture demand you're currently losing",
       "success_measure": "GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)",
       "next_milestone": "Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com",
       "owner_guidance": "operations — whoever holds Google Business Profile admin access",
-      "times_seen": 49,
+      "times_seen": 50,
       "barrier_category": "disagreement",
       "evidence": "experience=8.73, conversion=5.5"
     },
     {
       "title": "Address recurring food quality complaints from guests",
       "dimension": "experience",
-      "status_label": "Chronic (45 months)",
+      "status_label": "Chronic (46 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Reduce food quality complaints, protect rating",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
       "owner_guidance": "operations — head chef + FOH manager to review together",
-      "times_seen": 45,
+      "times_seen": 46,
       "barrier_category": "disagreement",
       "evidence": "review_criticism: Food Quality=3 negative"
     },
     {
       "title": "Lean into service & hospitality — it's what guests are buying",
       "dimension": "experience",
-      "status_label": "Chronic (45 months)",
+      "status_label": "Chronic (46 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Sharpen proposition → attract the right guests",
       "success_measure": "Service-related praise maintained in next review sample (verifiable via sentiment)",
       "next_milestone": "Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality",
       "owner_guidance": "management — FOH lead or general manager",
-      "times_seen": 45,
+      "times_seen": 46,
       "barrier_category": "disagreement",
       "evidence": "review_praise: Service & Hospitality=18"
     },
     {
       "title": "Protect the 4.6/5 rating — it took years to build",
       "dimension": "visibility",
-      "status_label": "Chronic (46 months)",
+      "status_label": "Chronic (47 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Sustain discovery advantage",
       "success_measure": "Google rating maintained or improved vs current baseline (verifiable via gr field)",
       "next_milestone": "Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine",
       "owner_guidance": "front-of-house — whoever currently responds to online reviews",
-      "times_seen": 46,
+      "times_seen": 47,
       "barrier_category": "disagreement",
       "evidence": "gr=4.6, grc=887"
     },
@@ -186,14 +186,14 @@
     {
       "title": "Compliance record weakest in peer set — creates inspection exposure",
       "dimension": "trust",
-      "status_label": "Chronic (46 months)",
+      "status_label": "Chronic (47 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Close the 1.1-point gap",
       "success_measure": "FSA rating maintained or improved on next inspection (verifiable via FSA API)",
       "next_milestone": "Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority",
       "owner_guidance": "management — compliance/food safety lead",
-      "times_seen": 46,
+      "times_seen": 47,
       "barrier_category": "disagreement",
       "evidence": "trust: 7.2 vs peer avg 8.3"
     },
@@ -228,14 +228,14 @@
     {
       "title": "Address repeated atmosphere & setting complaints from guests",
       "dimension": "experience",
-      "status_label": "Chronic (45 months)",
+      "status_label": "Chronic (46 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Reduce atmosphere & setting complaints, protect rating",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
       "owner_guidance": "operations — head chef + FOH manager to review together",
-      "times_seen": 45,
+      "times_seen": 46,
       "barrier_category": "disagreement",
       "evidence": "review_criticism: Atmosphere & Setting=2 negative"
     },
@@ -361,6 +361,139 @@
     "data_quality": {
       "attributed_pct": 44.0,
       "note": "Honest segment attribution from keyword evidence. Reviews without clear guest-type signals are unattributed."
+    }
+  },
+  "fsa_intelligence": {
+    "decomposition": {
+      "subcomponents": [
+        {
+          "component": "headline_rating",
+          "label": "FSA Headline Rating",
+          "raw_value": "5/5",
+          "score_contribution": 10.0,
+          "weight": 0.4,
+          "weighted_impact": 4.0,
+          "drag_on_trust": 0.0,
+          "interpretation": "Top mark — no action needed",
+          "actionable": false
+        },
+        {
+          "component": "inspection_recency",
+          "label": "Inspection Recency",
+          "raw_value": "2024-05-09",
+          "age_days": 695,
+          "age_months": 23,
+          "staleness_tier": "stale",
+          "score_contribution": 2.02,
+          "weight": 0.25,
+          "weighted_impact": 0.51,
+          "drag_on_trust": -2.0,
+          "interpretation": "Last inspected 2024-05-09 (23 months ago). Meaningful score drag. Consider proactive action. The system discounts older inspections because they carry less certainty.",
+          "actionable": true
+        },
+        {
+          "component": "structural_compliance",
+          "label": "Structural Compliance",
+          "raw_value": "8.0/10",
+          "score_contribution": 8.0,
+          "weight": 0.15,
+          "weighted_impact": 1.2,
+          "drag_on_trust": -0.3,
+          "interpretation": "Strong — premises, facilities, equipment all adequate.",
+          "actionable": false
+        },
+        {
+          "component": "management_confidence",
+          "label": "Confidence in Management",
+          "raw_value": "7.5/10",
+          "score_contribution": 7.5,
+          "weight": 0.2,
+          "weighted_impact": 1.5,
+          "drag_on_trust": -0.5,
+          "interpretation": "Adequate but with room to strengthen systems/training.",
+          "actionable": true
+        }
+      ],
+      "biggest_drag": {
+        "component": "inspection_recency",
+        "label": "Inspection Recency",
+        "raw_value": "2024-05-09",
+        "age_days": 695,
+        "age_months": 23,
+        "staleness_tier": "stale",
+        "score_contribution": 2.02,
+        "weight": 0.25,
+        "weighted_impact": 0.51,
+        "drag_on_trust": -2.0,
+        "interpretation": "Last inspected 2024-05-09 (23 months ago). Meaningful score drag. Consider proactive action. The system discounts older inspections because they carry less certainty.",
+        "actionable": true
+      },
+      "headline_gap": {
+        "customer_sees": "5/5",
+        "system_scores": "7.2/10",
+        "gap_explanation": "Customers see 5/5 — the top mark. But the system scores trust at 7.2/10 because it also weighs inspection freshness, structural compliance, and management confidence. The gap is mostly driven by inspection recency."
+      },
+      "peer_comparison": {
+        "venue_trust": 7.21,
+        "peer_avg": 8.3,
+        "peer_top": 9.53,
+        "gap_to_avg": -1.09,
+        "gap_to_leader": -2.32
+      },
+      "trust_score": 7.21
+    },
+    "reinspection": {
+      "reinspection_recommended": true,
+      "urgency": "medium",
+      "staleness_tier": "stale",
+      "age_months": 23,
+      "reasoning": "Your inspection is 23 months old (stale tier). The recency decay is costing you ~2.0 points on trust. A fresh 5/5 result would recover this immediately and put you ahead of 3 local peers on trust.",
+      "score_recovery_estimate": 1.99,
+      "overall_score_impact": 0.5,
+      "estimated_trust_after": 9.2,
+      "peers_overtaken": 3,
+      "cost_context": "Voluntary reinspection is free via local authority request. Typical wait: 4–8 weeks.",
+      "risk_note": "Only request reinspection if confident of maintaining 5/5. A drop to 4 would be worse than the staleness drag.",
+      "trust_building_actions": [
+        {
+          "action": "Display 5/5 sticker prominently (entrance + digital)",
+          "effort": "zero",
+          "impact": "visibility"
+        },
+        {
+          "action": "Add FSA rating to Google Business Profile",
+          "effort": "zero",
+          "impact": "digital trust signal"
+        },
+        {
+          "action": "Mention compliance in review responses where relevant",
+          "effort": "low",
+          "impact": "signals confidence"
+        }
+      ]
+    },
+    "commercial": {
+      "trust_gap_to_peer_leader": 2.3,
+      "trust_gap_to_peer_avg": 1.1,
+      "commercial_exposure": {
+        "scenario": "If a customer is choosing between you and a competitor with a fresher inspection record, the competitor's recency is a tiebreaker — especially for risk-averse bookers (families, corporate groups, tourists checking hygiene ratings).",
+        "segments_most_affected": [
+          "families",
+          "corporate_groups",
+          "tourists"
+        ],
+        "value_at_stake": "£0–£500/month",
+        "basis": "Trust gap unlikely to drive direct revenue loss at 5/5 headline, but creates competitive vulnerability. Value is defensive — preventing loss if headline drops or competitor highlights their fresher record."
+      },
+      "upside_if_fixed": {
+        "action": "Request voluntary reinspection",
+        "trust_score_after": 9.2,
+        "overall_score_after": 7.84,
+        "competitive_shift": "Would overtake 3 peers on trust",
+        "cost": "Free (local authority request)",
+        "time_to_effect": "4–8 weeks",
+        "risk": "Only request reinspection if confident of maintaining 5/5. A drop to 4 would be worse than the staleness drag."
+      }
     }
   }
 }

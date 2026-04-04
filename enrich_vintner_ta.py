@@ -182,15 +182,18 @@ def main():
     # Generate JSON
     from operator_intelligence.demand_capture_audit import run_demand_capture_audit
     from operator_intelligence.segment_analysis import classify_all_reviews, generate_segment_insights
+    from operator_intelligence.fsa_intelligence import generate_fsa_intelligence
     demand_audit = run_demand_capture_audit(venue, card, benchmarks, review_intel)
     seg_data = classify_all_reviews(venue)
     seg_insights = generate_segment_insights(seg_data, review_intel.get("analysis"))
     segment_intel = {"segment_data": seg_data, "insights": seg_insights}
+    fsa_intel = generate_fsa_intelligence(venue, card, benchmarks)
 
     summary_json = generate_monthly_json(
         venue_name, month_str, card, deltas, recs,
         benchmarks=benchmarks, venue_rec=venue, review_intel=review_intel,
-        demand_audit=demand_audit, segment_intel=segment_intel)
+        demand_audit=demand_audit, segment_intel=segment_intel,
+        fsa_intel=fsa_intel)
 
     # Write outputs
     os.makedirs("outputs/monthly", exist_ok=True)

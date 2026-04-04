@@ -69,7 +69,7 @@
     },
     "dimension_diagnosis": {
       "present": true,
-      "lines": 26,
+      "lines": 41,
       "meets_minimum": true
     },
     "commercial_diagnosis": {
@@ -173,5 +173,5 @@
     "tension_flagged": true,
     "unattributed_handled": true
   },
-  "report_lines": 504
+  "report_lines": 520
 }

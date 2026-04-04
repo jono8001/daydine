@@ -706,6 +706,25 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
                 "COMPETITOR_BOILERPLATE: All peer 'Why it matters' lines are "
                 "identical — consider differentiating per-peer framing")
 
+    # --- FSA / Trust intelligence honesty ---
+    if "### Trust Dimension — Behind the Headline" in report_text:
+        trust_section = report_text.split("### Trust Dimension — Behind the Headline")[1]
+        trust_end = trust_section.find("\n## ")
+        if trust_end != -1:
+            trust_section = trust_section[:trust_end]
+        trust_lower = trust_section.lower()
+
+        # For 5/5 venues: check tone is proportionate
+        if "5/5" in trust_section and "top hygiene mark" in trust_lower:
+            if "crisis" in trust_lower:
+                result.warnings.append(
+                    "FSA_TONE_INAPPROPRIATE: Word 'crisis' used for a 5/5 venue — "
+                    "tone should be 'operator intelligence' not 'alarm'")
+            if "do nothing" not in trust_lower and "viable" not in trust_lower:
+                result.warnings.append(
+                    "FSA_MISSING_DO_NOTHING: 5/5 venue trust section should present "
+                    "'do nothing' as a legitimate option")
+
     # --- Segment intelligence honesty ---
     if "## Who's Telling You What" in report_text:
         seg_section = report_text.split("## Who's Telling You What")[1]

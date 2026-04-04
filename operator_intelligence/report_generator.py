@@ -21,6 +21,7 @@ from operator_intelligence.builders import (
     build_watch_list, build_what_not_to_do,
     build_recommendation_tracker, build_competitive_market_intelligence,
     build_data_coverage, build_monthly_movement, build_segment_intelligence,
+    build_trust_detail,
     build_management_priorities, build_category_validation,
     build_market_position,
     build_dimension_diagnosis, build_public_vs_reality,
@@ -123,6 +124,8 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     build_scorecard(w, scorecard, deltas, benchmarks)
     # 12. Dimension-by-Dimension Diagnosis
     build_dimension_diagnosis(w, scorecard, deltas, benchmarks, venue_rec=venue_rec)
+    # 12b. Trust — Behind the Headline
+    build_trust_detail(w, venue_rec, scorecard, benchmarks)
 
     # --- Tracking and monitoring ---
     # 13. Watch List
@@ -161,7 +164,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
 
 def generate_monthly_json(venue_name, month_str, scorecard, deltas, recs,
                           benchmarks=None, venue_rec=None, review_intel=None,
-                          demand_audit=None, segment_intel=None):
+                          demand_audit=None, segment_intel=None, fsa_intel=None):
     """Generate comprehensive monthly snapshot for month-over-month tracking."""
     from operator_intelligence.implementation_framework import generate_action_cards
 
@@ -252,6 +255,7 @@ def generate_monthly_json(venue_name, month_str, scorecard, deltas, recs,
             for c in cards
         ],
         "segment_intelligence": _build_segment_json(segment_intel),
+        "fsa_intelligence": fsa_intel,
     }
 
 
