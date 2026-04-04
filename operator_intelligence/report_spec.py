@@ -178,6 +178,10 @@ MONTHLY_SECTIONS = [
     SectionSpec("monthly_movement", "Monthly Movement Summary", mandatory=True, min_lines=1,
                 description="What changed, what is stable, what is worsening — specific numbers. "
                             "Baseline month: states 'first report — all metrics baselined.'"),
+    SectionSpec("segment_intelligence", "Who's Telling You What — Guest Segment Intelligence",
+                mandatory=True, min_lines=3,
+                description="Per-segment praise/criticism/commercial read for segments with ≥2 reviews. "
+                            "Watch list for single-review signals. Unattributed reviews handled honestly."),
     SectionSpec("management_priorities", "Management Priorities", mandatory=True, min_lines=9,
                 description="Top 3 priorities with management implications, owner, evidence, upside"),
     SectionSpec("watch_list", "Watch List", mandatory=True, min_lines=2,

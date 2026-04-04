@@ -136,11 +136,15 @@ def run_monthly_venue(venue_key, venue_rec, data, all_cards, month_str):
 
     # Generate JSON summary
     from operator_intelligence.demand_capture_audit import run_demand_capture_audit
+    from operator_intelligence.segment_analysis import classify_all_reviews, generate_segment_insights
     demand_audit = run_demand_capture_audit(venue_rec, card, benchmarks, review_intel)
+    seg_data = classify_all_reviews(venue_rec)
+    seg_insights = generate_segment_insights(seg_data, review_intel.get("analysis"))
+    segment_intel = {"segment_data": seg_data, "insights": seg_insights}
     summary_json = generate_monthly_json(
         venue_name, month_str, card, deltas, recs,
         benchmarks=benchmarks, venue_rec=venue_rec, review_intel=review_intel,
-        demand_audit=demand_audit)
+        demand_audit=demand_audit, segment_intel=segment_intel)
 
     # Write outputs
     os.makedirs("outputs/monthly", exist_ok=True)

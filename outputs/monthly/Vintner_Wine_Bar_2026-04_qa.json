@@ -37,6 +37,11 @@
       "lines": 3,
       "meets_minimum": true
     },
+    "segment_intelligence": {
+      "present": true,
+      "lines": 19,
+      "meets_minimum": true
+    },
     "management_priorities": {
       "present": true,
       "lines": 28,
