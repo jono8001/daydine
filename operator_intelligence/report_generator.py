@@ -61,7 +61,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     build_protect_improve_ignore(w, scorecard, deltas, benchmarks, review_intel, recs)
 
     # --- Lens 1: Demand Capture ---
-    # 5. Conversion Friction Analysis
+    # 5. Demand Capture Audit
     build_conversion_analysis(w, scorecard, venue_rec, benchmarks=benchmarks,
                               review_intel=review_intel)
 

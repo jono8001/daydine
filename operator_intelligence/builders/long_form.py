@@ -93,8 +93,6 @@ def build_management_priorities(w, scorecard, deltas, benchmarks, recs, venue_re
         w(f"- **Expected upside:** {a.get('expected_upside', '—')}")
         if a.get("evidence"):
             w(f"- **Evidence:** `{a['evidence']}`")
-        if a.get("times_seen", 1) > 1:
-            w(f"- *This recommendation has appeared {a['times_seen']} consecutive months.*")
 
         # Commercial consequence estimate
         _render_consequence(w, a, scorecard, venue_rec)

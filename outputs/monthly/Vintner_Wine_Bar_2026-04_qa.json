@@ -34,7 +34,7 @@
     },
     "management_priorities": {
       "present": true,
-      "lines": 28,
+      "lines": 25,
       "meets_minimum": true
     },
     "watch_list": {
@@ -150,5 +150,5 @@
     ],
     "dated_trajectory_supported": false
   },
-  "report_lines": 448
+  "report_lines": 445
 }

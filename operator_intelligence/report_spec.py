@@ -288,7 +288,7 @@ CONSEQUENCE_NOT_ESTIMABLE = (
 
 # Sections where commercial consequence blocks should appear when feasible:
 #   - Management Priorities (per action)
-#   - Conversion Friction Analysis (per friction point)
+#   - Demand Capture Audit (per audit dimension)
 #   - Revenue Left on the Table (per leakage item)
 #   - Competitive Market Intelligence (market-level consequence)
 #
