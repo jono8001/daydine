@@ -606,10 +606,8 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
             # Skip sections where £ figures are carried from elsewhere:
             # - Evidence Appendix (raw data)
             # - Implementation Framework (upside values from priority recs)
-            # - Demand Capture Audit (consequence in findings)
             before = report_text[:pos]
-            _skip_sections = ["## Evidence Appendix", "## Implementation Framework",
-                              "## Demand Capture Audit"]
+            _skip_sections = ["## Evidence Appendix", "## Implementation Framework"]
             in_skip = False
             for _ss in _skip_sections:
                 ss_pos = before.rfind(_ss)
