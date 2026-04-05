@@ -40,7 +40,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add stratford_establishments.json stratford_google_enrichment.json stratford_rcs_scores.csv stratford_rcs_summary.json
-          git diff --cached --quiet || git commit -m "Enrich Stratford with Google Places data and re-score RCS"
-          git pull --rebase origin main
-          git push
+          git add stratford_establishments.json stratford_google_enrichment.json stratford_rcs_scores.csv stratford_rcs_summary.json stratford_rcs_report.md
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Enrich Stratford with Google Places data and re-score RCS"
+          git fetch origin main
+          git rebase origin/main || (git rebase --abort && git pull --no-rebase origin main --no-edit)
+          git push origin main
