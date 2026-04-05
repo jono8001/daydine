@@ -33,6 +33,36 @@ from operator_intelligence.builders import (
 DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
 
 
+def _add_data_confidence_warning(w, review_intel):
+    """Emit a top-level data confidence warning when review data is sparse."""
+    analysis = (review_intel or {}).get("analysis") or {}
+    total = analysis.get("reviews_analyzed", 0)
+    sources = set()
+    if analysis.get("google_count", 0) > 0:
+        sources.add("Google")
+    if analysis.get("tripadvisor_count", 0) > 0:
+        sources.add("TripAdvisor")
+    # Also check the raw review lists
+    reviews = (review_intel or {}).get("reviews") or []
+    for r in reviews:
+        src = r.get("source", "")
+        if "google" in src.lower():
+            sources.add("Google")
+        elif "tripadvisor" in src.lower() or "ta" in src.lower():
+            sources.add("TripAdvisor")
+    num_sources = len(sources)
+    if total >= 50:
+        return  # Sufficient data, no warning needed
+    missing_note = ""
+    if num_sources < 2:
+        missing_note = (" Cross-source validation is not possible with a "
+                        "single data source.")
+    w(f"\n> **Data Confidence Note:** This report is based on "
+      f"{total} reviews from {num_sources} source(s), which is below "
+      f"our recommended minimum of 50. Findings should be treated as "
+      f"indicative rather than conclusive.{missing_note}\n")
+
+
 # ---------------------------------------------------------------------------
 # Monthly Report Assembly — proposition-led, business-language-first
 # ---------------------------------------------------------------------------
@@ -88,6 +118,8 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     _risk_result = build_risk_alerts(w, venue_rec)
     # 1d. Data Basis
     build_data_basis(w, venue_rec, review_intel)
+    # 1d+. Data confidence warning (top-level, when below threshold)
+    _add_data_confidence_warning(w, review_intel)
     # 1b. Monthly Movement Summary
     build_monthly_movement(w, scorecard, benchmarks, venue_rec,
                            prior_snapshot, snapshot_deltas, month_str)

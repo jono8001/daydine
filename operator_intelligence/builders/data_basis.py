@@ -38,3 +38,45 @@ def build_data_basis(w, venue_rec, review_intel):
           f"TripAdvisor ({divergence['tripadvisor_rating']}) ratings diverge by "
           f"{abs(divergence['difference']):.1f} points. "
           f"{divergence['hypothesis']}\n")
+
+    # --- Source breakdown table ---
+    sources = []
+    if t2['google_total_reviews'] > 0:
+        sources.append(("Google", t2['google_total_reviews'], t2['google_rating']))
+    if t2['tripadvisor_total_reviews'] > 0:
+        sources.append(("TripAdvisor", t2['tripadvisor_total_reviews'],
+                        t2['tripadvisor_rating']))
+    if len(sources) > 1:
+        w("**Source breakdown:**\n")
+        w("| Platform | Total Reviews | Rating |")
+        w("|---|---|---|")
+        for name, count, rating in sources:
+            w(f"| {name} | {count:,} | {rating} |")
+        w("")
+
+    # --- Data confidence tier ---
+    total_deep = t1['total']
+    num_sources = len(sources)
+    if total_deep >= 100 and num_sources >= 2:
+        conf_tier = "Robust"
+    elif total_deep >= 50:
+        conf_tier = "Reliable"
+    elif total_deep >= 25:
+        conf_tier = "Directional"
+    else:
+        conf_tier = "Indicative"
+    w(f"**Data confidence tier:** {conf_tier} ({total_deep} reviews "
+      f"deeply analysed, {num_sources} source(s))\n")
+
+    # --- Data confidence warning ---
+    if total_deep < 50:
+        missing_note = ""
+        if num_sources < 2:
+            active = sources[0][0] if sources else "unknown"
+            missing_note = (f" Only {active} data is available; "
+                           f"cross-source validation is not possible.")
+        w(f"> **Data Confidence Note:** This report is based on "
+          f"{total_deep} reviews from {num_sources} source(s), "
+          f"which is below our recommended minimum of 50. Findings "
+          f"should be treated as indicative rather than conclusive."
+          f"{missing_note}\n")

@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-04-05T21:57:19.334399+00:00",
+  "restaurants": {
+    "arrow_mill": {
+      "total_reviews": 5,
+      "by_source": {
+        "google": 5
+      },
+      "reviews_with_text": 5,
+      "avg_review_length_words": 82.4,
+      "date_range": {
+        "earliest": null,
+        "latest": null
+      },
+      "below_threshold": true,
+      "confidence_level": "Indicative",
+      "sources_count": 1
+    },
+    "the_fox_inn": {
+      "total_reviews": 5,
+      "by_source": {
+        "google": 5
+      },
+      "reviews_with_text": 5,
+      "avg_review_length_words": 98.6,
+      "date_range": {
+        "earliest": null,
+        "latest": null
+      },
+      "below_threshold": true,
+      "confidence_level": "Indicative",
+      "sources_count": 1
+    },
+    "unknown_venue_503104": {
+      "total_reviews": 5,
+      "by_source": {
+        "google": 5
+      },
+      "reviews_with_text": 5,
+      "avg_review_length_words": 41.4,
+      "date_range": {
+        "earliest": null,
+        "latest": null
+      },
+      "below_threshold": true,
+      "confidence_level": "Indicative",
+      "sources_count": 1
+    },
+    "vintner_wine_bar": {
+      "total_reviews": 25,
+      "by_source": {
+        "google": 5,
+        "tripadvisor": 20
+      },
+      "reviews_with_text": 25,
+      "avg_review_length_words": 73.1,
+      "date_range": {
+        "earliest": "2026-01-20T00:00:00.000Z",
+        "latest": "2026-12-20T00:00:00.000Z"
+      },
+      "below_threshold": true,
+      "confidence_level": "Directional",
+      "sources_count": 2
+    }
+  },
+  "summary": {
+    "total_restaurants": 4,
+    "below_threshold": 4,
+    "total_reviews": 40,
+    "sources_active": [
+      "google",
+      "tripadvisor"
+    ],
+    "sources_failed": [
+      "opentable"
+    ]
+  }
+}
