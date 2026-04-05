@@ -85,7 +85,7 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
                            benchmarks=benchmarks, review_intel=review_intel)
     # 1c. Operational & Risk Alerts
-    build_risk_alerts(w, venue_rec)
+    _risk_result = build_risk_alerts(w, venue_rec)
     # 1d. Data Basis
     build_data_basis(w, venue_rec, review_intel)
     # 1b. Monthly Movement Summary
@@ -109,7 +109,8 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # 6. Commercial Diagnosis (bottleneck, positioning, revenue leakage)
     build_commercial_diagnosis(w, scorecard, deltas, benchmarks, review_intel)
     # 7. Review & Reputation Intelligence
-    build_review_intelligence(w, mode, review_intel, review_delta, month_str=month_str)
+    build_review_intelligence(w, mode, review_intel, review_delta, month_str=month_str,
+                              risk_result=_risk_result)
 
     # --- Lens 3: Trust & Public Risk ---
     # 8. Public Proof vs Operational Reality

@@ -32,6 +32,11 @@
       "lines": 24,
       "meets_minimum": true
     },
+    "risk_alerts": {
+      "present": true,
+      "lines": 7,
+      "meets_minimum": true
+    },
     "data_basis": {
       "present": true,
       "lines": 8,
@@ -89,7 +94,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 24,
+      "lines": 25,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -205,7 +210,7 @@
       }
     ]
   },
-  "report_lines": 572,
+  "report_lines": 573,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

@@ -176,6 +176,10 @@ MONTHLY_SECTIONS = [
     SectionSpec("executive_summary", "Executive Summary", mandatory=True, min_lines=5,
                 description="Part 1: what to fix, what to watch, what not to prioritise, score as context. "
                             "Part 2: Financial Impact — money paragraph, £ table, recommended action."),
+    SectionSpec("risk_alerts", "Operational & Risk Alerts", mandatory=True, min_lines=2,
+                description="Dedicated risk detection: RED FLAG (legal, staff conduct, safety) and "
+                            "AMBER WARNING (staffing pattern, reputation, value). Always visible — "
+                            "shows 'No alerts' when clean so owners see it was checked."),
     SectionSpec("data_basis", "Data Basis", mandatory=True, min_lines=3,
                 description="Three-tier evidence overview: deep analysis, aggregate signals, structural data. "
                             "Platform divergence noted if present."),

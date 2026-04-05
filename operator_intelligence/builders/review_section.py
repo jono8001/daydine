@@ -178,8 +178,18 @@ def _pick_best_quote(quotes, max_len=120):
 # Public entry point
 # ---------------------------------------------------------------------------
 
-def build(w, mode, review_intel, review_delta, month_str=None):
+def build(w, mode, review_intel, review_delta, month_str=None, risk_result=None):
     w("## Review & Reputation Intelligence\n")
+
+    # Cross-reference: if risk alerts exist that relate to review themes, note them
+    if risk_result and not risk_result.get("clean", True):
+        for alert in risk_result.get("alerts", []):
+            if alert["severity"] == "red":
+                w(f"> ⚠️ **Note:** A {alert['label']} pattern has been flagged in the "
+                  f"Operational & Risk Alerts section above ({alert['review_count']} "
+                  f"review(s)). The theme analysis below should be read alongside "
+                  f"that alert.\n")
+
     if mode != MODE_NARRATIVE:
         _structured(w, review_intel)
     else:
