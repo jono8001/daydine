@@ -33,7 +33,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add stratford_establishments.json stratford_menus.json stratford_rcs_scores.csv stratford_rcs_summary.json
-          git diff --cached --quiet || git commit -m "Collect menu data and re-score RCS"
+          git add -A
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git stash
           git pull --rebase origin main
+          git stash pop || true
+          git add -A
+          git diff --cached --quiet && echo "No changes after pull" && exit 0
+          git commit -m "Collect menu data and re-score RCS"
           git push

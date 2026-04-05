@@ -45,8 +45,23 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add stratford_establishments.json stratford_google_enrichment.json stratford_rcs_scores.csv stratford_rcs_summary.json stratford_rcs_report.md
+
+          # Stage ALL changes (not just named files) — pipeline may produce
+          # extra files that would block rebase if left unstaged
+          git add -A
+
+          # Exit cleanly if nothing changed
           git diff --cached --quiet && echo "No changes to commit" && exit 0
+
+          # Pull latest main BEFORE committing to avoid rebase conflicts
+          # with unstaged changes (the root cause of exit code 128)
+          git stash
+          git pull --rebase origin main
+          git stash pop || true
+
+          # Re-stage after pull (stash pop may have introduced merge markers)
+          git add -A
+          git diff --cached --quiet && echo "No changes after pull" && exit 0
+
           git commit -m "Enrich Stratford with Google Places data and re-score RCS"
-          git pull --rebase origin main || true
           git push
