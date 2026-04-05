@@ -721,6 +721,12 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
                 "COMPETITOR_BOILERPLATE: All peer 'Why it matters' lines are "
                 "identical — consider differentiating per-peer framing")
 
+    # --- Risk alerts section presence ---
+    if "## Operational & Risk Alerts" not in report_text:
+        result.warnings.append(
+            "MISSING_RISK_SECTION: Operational & Risk Alerts section not found. "
+            "Owners should always see this section, even when clean.")
+
     # --- FSA / Trust intelligence honesty ---
     if "### Trust Dimension — Behind the Headline" in report_text:
         trust_section = report_text.split("### Trust Dimension — Behind the Headline")[1]

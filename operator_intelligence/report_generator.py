@@ -21,7 +21,7 @@ from operator_intelligence.builders import (
     build_watch_list, build_what_not_to_do,
     build_recommendation_tracker, build_competitive_market_intelligence,
     build_data_coverage, build_monthly_movement, build_segment_intelligence,
-    build_trust_detail, build_data_basis, build_financial_impact,
+    build_trust_detail, build_data_basis, build_financial_impact, build_risk_alerts,
     build_management_priorities, build_category_validation,
     build_market_position,
     build_dimension_diagnosis, build_public_vs_reality,
@@ -84,7 +84,9 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # 1b. Financial Impact (part 2 of the executive summary)
     build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
                            benchmarks=benchmarks, review_intel=review_intel)
-    # 1c. Data Basis
+    # 1c. Operational & Risk Alerts
+    build_risk_alerts(w, venue_rec)
+    # 1d. Data Basis
     build_data_basis(w, venue_rec, review_intel)
     # 1b. Monthly Movement Summary
     build_monthly_movement(w, scorecard, benchmarks, venue_rec,
@@ -313,6 +315,26 @@ def generate_monthly_json(venue_name, month_str, scorecard, deltas, recs,
         "segment_intelligence": _build_segment_json(segment_intel),
         "fsa_intelligence": fsa_intel,
         "evidence_base": _build_evidence_base_json(venue_rec),
+        "risk_alerts": _build_risk_json(venue_rec),
+    }
+
+
+def _build_risk_json(venue_rec):
+    """Run risk detection and return results for JSON storage."""
+    if not venue_rec:
+        return None
+    from operator_intelligence.risk_detection import scan_reviews_for_risks
+    result = scan_reviews_for_risks(venue_rec)
+    return {
+        "reviews_scanned": result["reviews_scanned"],
+        "clean": result["clean"],
+        "alert_count": len(result["alerts"]),
+        "alerts": [
+            {"category": a["category"], "label": a["label"],
+             "severity": a["severity"], "review_count": a["review_count"]}
+            for a in result["alerts"]
+        ],
+        "all_hits": result["all_hits"],
     }
 
 

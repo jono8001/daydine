@@ -116,14 +116,14 @@
     {
       "title": "Fix the digital shopfront — you're losing walk-ins",
       "dimension": "conversion",
-      "status_label": "Chronic (67 months)",
+      "status_label": "Chronic (68 months)",
       "target_date": "08 April 2026",
       "cost_band": "zero",
       "expected_upside": "Capture demand you're currently losing",
       "success_measure": "GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)",
       "next_milestone": "Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com",
       "owner_guidance": "operations — whoever holds Google Business Profile admin access",
-      "times_seen": 67,
+      "times_seen": 68,
       "barrier_category": "disagreement",
       "evidence": "experience=8.73, conversion=5.5"
     },
@@ -144,28 +144,28 @@
     {
       "title": "Lean into service & hospitality — it's what guests are buying",
       "dimension": "experience",
-      "status_label": "Chronic (62 months)",
+      "status_label": "Chronic (63 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Sharpen proposition → attract the right guests",
       "success_measure": "Service-related praise maintained in next review sample (verifiable via sentiment)",
       "next_milestone": "Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality",
       "owner_guidance": "management — FOH lead or general manager",
-      "times_seen": 62,
+      "times_seen": 63,
       "barrier_category": "disagreement",
       "evidence": "review_praise: Service & Hospitality=11"
     },
     {
       "title": "Protect the 4.6/5 rating — it took years to build",
       "dimension": "visibility",
-      "status_label": "Chronic (64 months)",
+      "status_label": "Chronic (65 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Sustain discovery advantage",
       "success_measure": "Google rating maintained or improved vs current baseline (verifiable via gr field)",
       "next_milestone": "Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine",
       "owner_guidance": "front-of-house — whoever currently responds to online reviews",
-      "times_seen": 64,
+      "times_seen": 65,
       "barrier_category": "disagreement",
       "evidence": "gr=4.6, grc=887"
     },
@@ -186,14 +186,14 @@
     {
       "title": "Compliance record weakest in peer set — creates inspection exposure",
       "dimension": "trust",
-      "status_label": "Chronic (64 months)",
+      "status_label": "Chronic (65 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Close the 1.1-point gap",
       "success_measure": "FSA rating maintained or improved on next inspection (verifiable via FSA API)",
       "next_milestone": "Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority",
       "owner_guidance": "management — compliance/food safety lead",
-      "times_seen": 64,
+      "times_seen": 65,
       "barrier_category": "disagreement",
       "evidence": "trust: 7.2 vs peer avg 8.3"
     },
@@ -249,7 +249,7 @@
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
       "owner_guidance": "operations — head chef + FOH manager to review together",
-      "times_seen": 2,
+      "times_seen": 3,
       "barrier_category": null,
       "evidence": "review_criticism: Food Quality=2 negative"
     },
@@ -270,14 +270,14 @@
     {
       "title": "Address isolated service & hospitality complaints from guests",
       "dimension": "experience",
-      "status_label": "New",
+      "status_label": "Ongoing (2 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Reduce service & hospitality complaints, protect rating",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
       "owner_guidance": "operations — head chef + FOH manager to review together",
-      "times_seen": 1,
+      "times_seen": 2,
       "barrier_category": null,
       "evidence": "review_criticism: Service & Hospitality=1 negative"
     }
@@ -569,5 +569,26 @@
     "coverage_ratio": 2.8,
     "deep_analysed": 25,
     "aggregate_total": 907
+  },
+  "risk_alerts": {
+    "reviews_scanned": 25,
+    "clean": false,
+    "alert_count": 1,
+    "alerts": [
+      {
+        "category": "staff_conduct",
+        "label": "Staff Conduct Risk",
+        "severity": "red",
+        "review_count": 2
+      }
+    ],
+    "all_hits": {
+      "legal_regulatory": 0,
+      "staff_conduct": 2,
+      "safety_premises": 0,
+      "staffing_pattern": 1,
+      "reputation_trajectory": 0,
+      "financial_value": 0
+    }
   }
 }
