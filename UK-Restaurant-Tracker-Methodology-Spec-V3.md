@@ -19,11 +19,32 @@ The report answers: *what can a well-informed outsider see about your business t
 
 ### Design Principles
 
-1. **Multi-source.** No single data source dominates. Google reviews are capped at 30% effective weight.
-2. **Verifiable.** Every signal traces to a public data source (FSA, Google Places, TripAdvisor, Companies House).
-3. **Penalise risk.** Critical food safety or business viability issues trigger hard score caps.
+1. **Lead with the money.** Every report opens with a Financial Impact Summary — covers at risk, £ revenue impact, recommended action. The owner knows what it costs them within 10 seconds.
+2. **Multi-source.** No single data source dominates. Google reviews are capped at 30% effective weight.
+3. **Verifiable.** Every signal traces to a public data source (FSA, Google Places, TripAdvisor, Companies House).
+4. **Penalise risk.** Critical food safety or business viability issues trigger hard score caps.
 4. **Confidence from coverage.** Establishments with more signals and more independent sources get higher confidence ratings.
 5. **Diagnosis over score.** The RCS score exists to power structured diagnosis. The report leads with actions and commercial lenses, not the number.
+6. **Commercial, not academic.** Write for a restaurant owner, not a consultant's peer review.
+
+### Report Tone & Style (mandatory for all reports)
+
+- Use "you" and "your venue" — never "the establishment" or "the subject property"
+- Replace "analysis suggests" → "your numbers show"
+- Replace "it is recommended" → "you should" or "we recommend"
+- Remove hedging: no "perhaps", "it might be worth considering"
+- Every section should connect back to the financial impact on the business
+- Currency in pounds sterling (£)
+- If exact figures aren't available, use ranges clearly marked as estimates
+
+### Report Structure (mandatory)
+
+Every report MUST open with:
+1. **Financial Impact Summary** — money paragraph + financial implications table + recommended action
+2. **Executive Summary** — what to fix, what to watch, what not to prioritise
+3. **Data Basis** — evidence tiers
+
+The owner should know what it costs them within 10 seconds of opening the report.
 
 ---
 

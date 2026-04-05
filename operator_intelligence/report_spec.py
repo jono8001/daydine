@@ -173,6 +173,9 @@ class SectionSpec:
 
 
 MONTHLY_SECTIONS = [
+    SectionSpec("financial_impact", "Financial Impact Summary", mandatory=True, min_lines=5,
+                description="Money paragraph + financial implications table + recommended action. "
+                            "First thing the owner reads. Covers at risk, £ revenue impact, payback."),
     SectionSpec("executive_summary", "Executive Summary", mandatory=True, min_lines=5,
                 description="Top leaks, upside, risk, and what not to do — then score as context"),
     SectionSpec("data_basis", "Data Basis", mandatory=True, min_lines=3,
@@ -620,7 +623,8 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
             # - Evidence Appendix (raw data)
             # - Implementation Framework (upside values from priority recs)
             before = report_text[:pos]
-            _skip_sections = ["## Evidence Appendix", "## Implementation Framework"]
+            _skip_sections = ["## Evidence Appendix", "## Implementation Framework",
+                              "## Financial Impact Summary"]
             in_skip = False
             for _ss in _skip_sections:
                 ss_pos = before.rfind(_ss)

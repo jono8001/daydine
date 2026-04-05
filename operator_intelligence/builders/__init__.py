@@ -35,6 +35,7 @@ from operator_intelligence.builders.monthly_movement import build_monthly_moveme
 from operator_intelligence.builders.segment_section import build_segment_intelligence
 from operator_intelligence.builders.trust_detail import build_trust_detail
 from operator_intelligence.builders.data_basis import build_data_basis
+from operator_intelligence.builders.financial_impact import build_financial_impact
 from operator_intelligence.builders.venue_identity import (
     build_known_for,
     build_protect_improve_ignore,

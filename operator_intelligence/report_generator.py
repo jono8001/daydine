@@ -21,7 +21,7 @@ from operator_intelligence.builders import (
     build_watch_list, build_what_not_to_do,
     build_recommendation_tracker, build_competitive_market_intelligence,
     build_data_coverage, build_monthly_movement, build_segment_intelligence,
-    build_trust_detail, build_data_basis,
+    build_trust_detail, build_data_basis, build_financial_impact,
     build_management_priorities, build_category_validation,
     build_market_position,
     build_dimension_diagnosis, build_public_vs_reality,
@@ -77,7 +77,10 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     }
     snapshot_deltas = compute_snapshot_deltas(_cur_snap, prior_snapshot)
 
-    # --- Lead: leaks / actions / risk / what not to do ---
+    # --- Lead with the money story ---
+    # 0. Financial Impact Summary (first thing the owner reads)
+    build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
+                           benchmarks=benchmarks, review_intel=review_intel)
     # 1. Executive Summary (actions-led, score secondary)
     build_executive_summary(w, venue_name, month_str, mode, scorecard,
                             deltas, benchmarks, review_intel, recs)

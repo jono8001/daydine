@@ -22,18 +22,18 @@ def build(w, venue_name, month_str, mode, scorecard, deltas,
     now = datetime.utcnow().strftime("%d %B %Y")
     overall = scorecard.get("overall")
 
-    w(f"# {venue_name} — External Blind-Spot Report")
+    w(f"# {venue_name} — Monthly Intelligence Report")
     w(f"*{month_str} | Generated {now} | DayDine Premium*\n")
     w("---\n")
     w("## Executive Summary\n")
 
-    # --- Lead with top leaks / actions / risk ---
+    # --- Lead with what you should do and why ---
     actions = recs.get("priority_actions", [])
     watches = recs.get("watch_items", [])
     dont = recs.get("what_not_to_do")
 
     if actions:
-        w("**What needs attention now:**\n")
+        w("**What you should fix now:**\n")
         for i, a in enumerate(actions[:3], 1):
             rt = a.get("rec_type", "action").upper()
             w(f"{i}. **{a['title']}** [{rt}] — {a.get('expected_upside', '')}")
