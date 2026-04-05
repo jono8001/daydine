@@ -67,7 +67,8 @@ ASPECT_KEYWORDS = {
                 "efficient", "food came quickly", "quick service", "didn't wait"],
         "neg": ["long wait", "waited over an hour", "waited ages",
                 "slow", "took ages", "forgot our order", "waited forever",
-                "took a long time"],
+                "took a long time", "waited 40 minutes", "waited 30 minutes",
+                "waited 20 minutes", "had to wait"],
     },
     "booking": {
         "pos": ["easy to book", "reservation", "booked online", "table ready"],
@@ -143,13 +144,11 @@ def _analyse_single_review(text, rating):
 
 
 def _extract_best_snippet(text, aspects):
-    """Extract the most informative sentence from a review."""
-    # Split into sentences
-    sentences = re.split(r'[.!?]\s+', text)
+    """Extract the most informative sentence from a review (overall best)."""
+    sentences = re.split(r'[.!?]+\s+', text)
     if not sentences:
         return text[:150]
 
-    # Score each sentence by keyword density
     best = None
     best_score = -1
     for sent in sentences:
@@ -167,6 +166,49 @@ def _extract_best_snippet(text, aspects):
             best_score = score
             best = sent
     return (best or text)[:200]
+
+
+def _extract_aspect_snippet(text, aspect_key):
+    """Extract the best sentence for a SPECIFIC aspect from a review.
+
+    Unlike _extract_best_snippet which picks the overall best sentence,
+    this finds the sentence most relevant to one specific aspect.
+    Returns None if no aspect-relevant sentence found.
+    """
+    sentences = re.split(r'[.!?]+\s+|\.{2,}', text)  # split on punctuation+space or ellipsis
+    if not sentences:
+        return None
+
+    keywords = ASPECT_KEYWORDS.get(aspect_key, {})
+    all_kws = keywords.get("pos", []) + keywords.get("neg", [])
+    if not all_kws:
+        return None
+
+    best = None
+    best_score = 0
+    for sent in sentences:
+        sent = sent.strip()
+        if len(sent) < 15:
+            continue
+        sent_lower = sent.lower()
+        score = sum(1 for kw in all_kws if kw in sent_lower)
+        if score > best_score:
+            best_score = score
+            best = sent
+
+    if not best:
+        return None
+    # If the keyword match is beyond 150 chars, extract around the keyword
+    if len(best) > 150:
+        keywords = ASPECT_KEYWORDS.get(aspect_key, {})
+        all_kws = keywords.get("pos", []) + keywords.get("neg", [])
+        for kw in all_kws:
+            pos = best.lower().find(kw)
+            if pos >= 0:
+                start = max(0, pos - 40)
+                end = min(len(best), pos + len(kw) + 60)
+                return ("..." if start > 0 else "") + best[start:end].strip()
+    return best[:150]
 
 
 # ---------------------------------------------------------------------------
@@ -225,26 +267,37 @@ def analyse_reviews(reviews):
                 "mentions": total,
             }
 
-    # Praise themes (sorted by mention count)
+    # Praise and criticism themes with ASPECT-SPECIFIC quotes
+    # Each quote must be about the specific aspect, not a general snippet
     praise = []
     criticism = []
+    used_quotes = set()  # prevent same quote appearing under multiple themes
+
     for aspect, scores in sorted(aspect_scores.items(), key=lambda x: -x[1]["mentions"]):
         label = ASPECT_LABELS.get(aspect, aspect.replace("_", " ").title())
-        # Find best quote for this aspect
-        quotes = []
+
+        # Find aspect-specific quotes (not the general review snippet)
+        pos_quotes = []
         for rev in per_review:
             if aspect in rev["aspects"] and rev["aspects"][aspect]["pos"] > 0:
-                quotes.append(rev["snippet"])
+                asp_quote = _extract_aspect_snippet(rev.get("full_text", rev["snippet"]), aspect)
+                if asp_quote and asp_quote not in used_quotes:
+                    pos_quotes.append(asp_quote)
+                    used_quotes.add(asp_quote)
+
         neg_quotes = []
         for rev in per_review:
             if aspect in rev["aspects"] and rev["aspects"][aspect]["neg"] > 0:
-                neg_quotes.append(rev["snippet"])
+                asp_quote = _extract_aspect_snippet(rev.get("full_text", rev["snippet"]), aspect)
+                if asp_quote and asp_quote not in used_quotes:
+                    neg_quotes.append(asp_quote)
+                    used_quotes.add(asp_quote)
 
         if scores["positive"] > 0:
             praise.append({
                 "aspect": aspect, "label": label,
                 "mentions": scores["positive"],
-                "quotes": quotes[:2],
+                "quotes": pos_quotes[:2],
             })
         if scores["negative"] > 0:
             criticism.append({

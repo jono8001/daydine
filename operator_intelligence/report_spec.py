@@ -937,7 +937,26 @@ def generate_qa_artifact(venue_name, month_str, mode, report_text, validation,
         "evidence_provenance_present": has_provenance,
         "review_dates": review_dates_qa,
         "segment_qa": _compute_segment_qa(report_text),
+        "integrity_checks": _run_integrity_qa(review_intel),
         "report_lines": len([l for l in report_text.split("\n") if l.strip()]),
+    }
+
+
+def _run_integrity_qa(review_intel):
+    """Run integrity checks on review analysis and return summary."""
+    if not review_intel or not review_intel.get("analysis"):
+        return {"run": False}
+    from operator_intelligence.integrity_checks import run_integrity_checks
+    result = run_integrity_checks(review_intel["analysis"])
+    return {
+        "run": True,
+        "passed": result["passed"],
+        "issues": result["issues"],
+        "checks": [
+            {"check": c["check"], "passed": c["passed"],
+             "error_count": len(c.get("errors", []))}
+            for c in result["checks"]
+        ],
     }
 
 

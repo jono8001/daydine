@@ -89,7 +89,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 18,
+      "lines": 21,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -178,7 +178,34 @@
     "tension_flagged": true,
     "unattributed_handled": true
   },
-  "report_lines": 555,
+  "integrity_checks": {
+    "run": true,
+    "passed": true,
+    "issues": 0,
+    "checks": [
+      {
+        "check": "sentiment_arithmetic",
+        "passed": true,
+        "error_count": 0
+      },
+      {
+        "check": "quote_theme_alignment",
+        "passed": true,
+        "error_count": 0
+      },
+      {
+        "check": "orphan_reviews",
+        "passed": true,
+        "error_count": 0
+      },
+      {
+        "check": "duplicate_quotes",
+        "passed": true,
+        "error_count": 0
+      }
+    ]
+  },
+  "report_lines": 558,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

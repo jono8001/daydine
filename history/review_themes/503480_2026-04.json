@@ -133,10 +133,10 @@
         "mentions": 1
       },
       "speed": {
-        "score": 10.0,
+        "score": 7.5,
         "positive": 3,
-        "negative": 0,
-        "mentions": 3
+        "negative": 1,
+        "mentions": 4
       }
     },
     "praise_themes": [
@@ -154,7 +154,7 @@
         "label": "Food Quality",
         "mentions": 12,
         "quotes": [
-          "We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND",
+          "My cheese mousse was delicious",
           "The food was delicious as always - special mention for the cheese soufflé as it was divine"
         ]
       },
@@ -163,17 +163,8 @@
         "label": "Atmosphere & Setting",
         "mentions": 8,
         "quotes": [
-          "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly",
-          "Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford."
-        ]
-      },
-      {
-        "aspect": "value",
-        "label": "Value for Money",
-        "mentions": 3,
-        "quotes": [
-          "The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service",
-          "The service is superb , our waitress was attentive, friendly and efficient"
+          "We didn't have a booking but they happily seated us upstairs by a window with a lovely setting",
+          "Beautiful old building gives a natural cosy ambience"
         ]
       },
       {
@@ -181,8 +172,16 @@
         "label": "Speed & Efficiency",
         "mentions": 3,
         "quotes": [
-          "Service here was friendly and efficient",
-          "Generous portion of smoked salmon and eggs cooked to perfection"
+          "Fantastic breakfast"
+        ]
+      },
+      {
+        "aspect": "value",
+        "label": "Value for Money",
+        "mentions": 3,
+        "quotes": [
+          "Great little joint, had the Beef Rump and a Sticky Toffee Pudding and both were fantastic and good for the price",
+          "...steak lived up to expectations and the affordable Rose was perfect for a summers evening"
         ]
       },
       {
@@ -200,8 +199,7 @@
         "label": "Food Quality",
         "mentions": 3,
         "quotes": [
-          "I ordered a prawn cocktail which came with bread and butter",
-          "Lovely food generally with a good choice and reasonable value"
+          "I ordered a prawn cocktail which came with bread and butter"
         ]
       },
       {
@@ -209,8 +207,16 @@
         "label": "Atmosphere & Setting",
         "mentions": 2,
         "quotes": [
-          "We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning",
-          "I ordered a prawn cocktail which came with bread and butter"
+          "Nice but cold place",
+          "The fish cake was served with a poached egg, the egg was cold"
+        ]
+      },
+      {
+        "aspect": "speed",
+        "label": "Speed & Efficiency",
+        "mentions": 1,
+        "quotes": [
+          "We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning"
         ]
       }
     ],
@@ -337,7 +343,8 @@
         "snippet": "We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning",
         "full_text": "Nice but cold place. We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning. Good food.",
         "aspects": [
-          "ambience"
+          "ambience",
+          "speed"
         ],
         "risk_count": 0,
         "date": "2026-12-20T00:00:00.000Z",

@@ -127,7 +127,7 @@ In the local market, the venue sits above the median but hasn't established itse
 
 ### Unattributed Reviews (14)
 
-Top themes across unattributed reviews: Service & Hospitality (7x), Atmosphere & Setting (5x), Food Quality (5x), Value for Money (3x), Speed & Efficiency (2x).
+Top themes across unattributed reviews: Service & Hospitality (7x), Atmosphere & Setting (5x), Food Quality (5x), Value for Money (3x), Speed & Efficiency (3x).
 
 *As review volume grows, more segments will become readable.*
 
@@ -303,9 +303,9 @@ Above the local median but without a distinctive market position. This is the 'g
 
 Service & Hospitality is a dominant theme (consistent praise). Guests describe attentive, personal care — naming individual staff in several cases. This suggests the venue's competitive advantage is human rather than purely operational: it depends on who is working, not just what systems are in place. As one reviewer put it: *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
 
-Food Quality draws strong positive signal across reviews. Guests highlight specific dishes and ingredients rather than generic praise, which indicates the kitchen is delivering memorable experiences, not just adequate meals. As one reviewer put it: *"We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND"*
+Food Quality draws strong positive signal across reviews. Guests highlight specific dishes and ingredients rather than generic praise, which indicates the kitchen is delivering memorable experiences, not just adequate meals. As one reviewer put it: *"My cheese mousse was delicious"*
 
-Atmosphere & Setting registers as strong positive signal. The physical environment is contributing positively to the guest experience and may be a factor in repeat visits and social media visibility. As one reviewer put it: *"We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly"*
+Atmosphere & Setting registers as strong positive signal. The physical environment is contributing positively to the guest experience and may be a factor in repeat visits and social media visibility. As one reviewer put it: *"We didn't have a booking but they happily seated us upstairs by a window with a lovely setting"*
 
 ### What This Means for the Proposition
 
@@ -319,8 +319,12 @@ When both service and food quality dominate guest feedback, the venue is selling
 This warrants investigation to determine whether it reflects a systemic issue or isolated incidents.
 
 **Atmosphere & Setting** (recurring note, 2 mentions).
-> *"We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning"*
+> *"The fish cake was served with a poached egg, the egg was cold"*
 This warrants investigation to determine whether it reflects a systemic issue or isolated incidents.
+
+**Speed & Efficiency** (recurring note, 1 mention).
+> *"We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning"*
+Long waits are among the most common triggers for negative online reviews and disproportionately affect overall ratings. Even guests who enjoy the food will penalise the experience for timing failures.
 
 ### Evidence Quality
 
@@ -596,28 +600,28 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Chronic (60 months) | **Priority:** High
+**Status:** Chronic (65 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 60 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 65 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 3: Address recurring food quality complaints from guests
-**Status:** Chronic (55 months) | **Priority:** High
+**Status:** Chronic (60 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 55 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 60 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 4: Lean into service & hospitality — it's what guests are buying
-**Status:** Chronic (55 months) | **Priority:** High
+**Status:** Chronic (60 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 55 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 60 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 5: Strong rating masks weak competitive position
 **Status:** New | **Priority:** High
@@ -636,10 +640,10 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Compliance record weakest in peer set — creat | Chronic (57 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Compliance record weakest in peer set — creat | Chronic (62 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 7 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 8 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 9 | Address repeated atmosphere & setting complai | Chronic (55 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 9 | Address repeated atmosphere & setting complai | Chronic (60 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 10 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
@@ -709,8 +713,8 @@ Raw signal values used to compute this report. Provenance: **observed** = direct
 | Service & Hospitality | consistent praise | 18 | 0 | 18 |
 | Food Quality | strong positive signal | 12 | 3 | 15 |
 | Atmosphere & Setting | strong positive signal | 8 | 2 | 10 |
+| Speed & Efficiency | strong positive signal | 3 | 1 | 4 |
 | Value for Money | consistent praise | 3 | 0 | 3 |
-| Speed & Efficiency | consistent praise | 3 | 0 | 3 |
 | Booking & Accessibility | positive signal, limited evidence | 1 | 0 | 1 |
 
 #### Review-by-Review Summary
@@ -725,7 +729,7 @@ Raw signal values used to compute this report. Provenance: **observed** = direct
 | 6 | Tripadvisor | 2026-02-20 | 5★ | positive | Food Quality | The food was delicious as always - special mention for the c... |
 | 7 | Tripadvisor | 2026-01-20 | 5★ | positive | Food Quality | Service was slick and discreet, food was delicious, and the ... |
 | 8 | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Atmosphere & Setting | Cannot recommend enough, excellent food, amazing service and... |
-| 9 | Tripadvisor | 2026-12-20 | 3★ | mixed | Atmosphere & Setting | We waited 40 minutes to eat and only after our protests they... |
+| 9 | Tripadvisor | 2026-12-20 | 3★ | mixed | Atmosphere & Setting, Speed & Efficiency | We waited 40 minutes to eat and only after our protests they... |
 | 10 | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Great food, great atmosphere, great drinks and impeccable se... |
 | 11 | Tripadvisor | 2026-12-20 | 1★ | negative | Service & Hospitality | We went further up the road and found a restaurant who were ... |
 | 12 | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality | This latest meal was outstanding despite its simplicity |
@@ -783,7 +787,7 @@ Vintner works well as a place to eat before a show, and I would return.
 **Review 8** | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Atmosphere & Setting
 > Cannot recommend enough, excellent food, amazing service and a lovely atmosphere, cannot wait to return on our next trip to Stratford.
 
-**Review 9** | Tripadvisor | 2026-12-20 | 3★ | mixed | Atmosphere & Setting
+**Review 9** | Tripadvisor | 2026-12-20 | 3★ | mixed | Atmosphere & Setting, Speed & Efficiency
 > Nice but cold place. We waited 40 minutes to eat and only after our protests they brought us the basket of bread ordered from the beginning. Good food.
 
 **Review 10** | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting
