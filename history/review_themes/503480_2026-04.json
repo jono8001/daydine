@@ -103,9 +103,9 @@
     "reviews_analyzed": 25,
     "aspect_scores": {
       "service": {
-        "score": 10.0,
-        "positive": 12,
-        "negative": 0,
+        "score": 9.2,
+        "positive": 11,
+        "negative": 1,
         "mentions": 12
       },
       "ambience": {
@@ -143,7 +143,7 @@
       {
         "aspect": "service",
         "label": "Service & Hospitality",
-        "mentions": 12,
+        "mentions": 11,
         "quotes": [
           "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly",
           "The staff were attentive throughout, checking in at the right moments"
@@ -194,6 +194,14 @@
       }
     ],
     "criticism_themes": [
+      {
+        "aspect": "service",
+        "label": "Service & Hospitality",
+        "mentions": 1,
+        "quotes": [
+          "...d to sit on a high stool at the bar and could not have a table"
+        ]
+      },
       {
         "aspect": "food_quality",
         "label": "Food Quality",
@@ -367,7 +375,7 @@
       {
         "rating": 1,
         "sentiment": "negative",
-        "snippet": "We went further up the road and found a restaurant who were most welcoming.",
+        "snippet": "I went for lunch with a disabled lady who used a walker to get around, and they told us that if we wanted to eat or drink there she had to sit on a high stool at the bar and could not have a table",
         "full_text": "I went for lunch with a disabled lady who used a walker to get around, and they told us that if we wanted to eat or drink there she had to sit on a high stool at the bar and could not have a table. She clearly could not.  I was appalled. We went further up the road and found a restaurant who were most welcoming.",
         "aspects": [
           "service"

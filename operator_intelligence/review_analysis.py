@@ -45,7 +45,9 @@ ASPECT_KEYWORDS = {
                 "lovely staff", "wonderful staff", "brilliant staff"],
         "neg": ["rude", "unfriendly", "unhelpful", "ignored", "poor service",
                 "bad service", "terrible service", "slow service", "inattentive",
-                "unprofessional", "couldn't care less", "dismissive"],
+                "unprofessional", "couldn't care less", "dismissive",
+                "appalled", "turned away", "refused", "would not let",
+                "could not have a table", "not welcome", "discriminat"],
     },
     "ambience": {
         "pos": ["great atmosphere", "lovely atmosphere", "cosy", "cozy",
@@ -119,10 +121,26 @@ def _analyse_single_review(text, rating):
                 aspects_found[aspect]["keywords"].append(f"-{kw}")
                 neg_matched = True
         # Count as 1 review mentioning this aspect (positive and/or negative)
-        if pos_matched:
-            aspects_found[aspect]["pos"] = 1
-        if neg_matched:
-            aspects_found[aspect]["neg"] = 1
+        # Rating override: a 1-2 star review should not count as positive —
+        # positive keywords in negative reviews often reference other venues
+        # ("we went elsewhere and found welcoming service") or are sarcastic.
+        if rating is not None and rating <= 2:
+            if pos_matched and not neg_matched:
+                # Reclassify: this review is negative overall, positive keywords
+                # are likely about another venue or contradicted by the rating
+                aspects_found[aspect]["neg"] = 1
+                aspects_found[aspect]["pos"] = 0
+            elif pos_matched and neg_matched:
+                # Both matched — keep negative, suppress positive
+                aspects_found[aspect]["neg"] = 1
+                aspects_found[aspect]["pos"] = 0
+            elif neg_matched:
+                aspects_found[aspect]["neg"] = 1
+        else:
+            if pos_matched:
+                aspects_found[aspect]["pos"] = 1
+            if neg_matched:
+                aspects_found[aspect]["neg"] = 1
 
     # Risk detection
     risks = [phrase for phrase in RISK_PHRASES if phrase in text_lower]

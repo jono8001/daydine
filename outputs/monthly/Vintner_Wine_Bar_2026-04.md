@@ -73,7 +73,7 @@ TripAdvisor shows 4.4/5 across 20 reviews — slightly lower than Google, possib
 
 **From deep analysis of 25 recent reviews:**
 
-Guest feedback supported by moderate evidence centres on **service & hospitality** (12 mentions) and **food quality** (10 mentions). Review evidence consistently points to these as defining elements of the proposition as guests perceive it.
+Guest feedback supported by moderate evidence centres on **service & hospitality** (11 mentions) and **food quality** (10 mentions). Review evidence consistently points to these as defining elements of the proposition as guests perceive it.
 
 In the local market, the venue sits above the median but hasn't established itself as the clear category leader. The identity is 'reliably good' rather than 'destination'.
 
@@ -152,13 +152,13 @@ You deliver a strong experience but your online presence doesn't make it easy to
 
 ### Priority 2: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ESCALATED]
 
-Guests consistently praise service & hospitality (12 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
+Guests consistently praise service & hospitality (11 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
 
 **Management implication:** Your guests are telling you your proposition. Use it.
 
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
-- **Evidence:** `review_praise: Service & Hospitality=12`
+- **Evidence:** `review_praise: Service & Hospitality=11`
 
   **Commercial consequence** (indicative):
   Value at stake: Upside, not loss prevention — magnitude depends on execution | Cost to fix: Low (< 1 hour, no spend) | Payback: 1–3 months
@@ -312,6 +312,10 @@ The review evidence suggests this venue's real proposition is built on **Service
 When both service and food quality dominate guest feedback, the venue is selling an experience, not just a meal. Pricing power, loyalty, and resilience to competition are typically stronger for experience-led venues.
 
 ### What Management May Be Missing
+
+**Service & Hospitality** (recurring note, 1 mention).
+> *"...d to sit on a high stool at the bar and could not have a table"*
+This warrants investigation to determine whether it reflects a systemic issue or isolated incidents.
 
 **Food Quality** (recurring note, 2 mentions).
 > *"I ordered a prawn cocktail which came with bread and butter"*
@@ -589,7 +593,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-12 active items: **6 chronic** (12+ months), **2 stale** (3–5 months), **4 new/recent**.
+13 active items: **6 chronic** (12+ months), **2 stale** (3–5 months), **5 new/recent**.
 
 ### Action 1: Below local median — competitive risk
 **Status:** New | **Priority:** High
@@ -599,12 +603,12 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Chronic (66 months) | **Priority:** High
+**Status:** Chronic (67 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 66 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 67 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 3: Address recurring food quality complaints from guests
 **Status:** Chronic (60 months) | **Priority:** High
@@ -615,20 +619,20 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Disagreement barrier):** This has been flagged for 60 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 4: Lean into service & hospitality — it's what guests are buying
-**Status:** Chronic (61 months) | **Priority:** High
+**Status:** Chronic (62 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 61 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 62 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 5: Protect the 4.6/5 rating — it took years to build
-**Status:** Chronic (63 months) | **Priority:** High
+**Status:** Chronic (64 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
 **Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 63 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 64 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Maintenance Items (deprioritised this month)
 
@@ -641,11 +645,12 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
 | 6 | Strong rating masks weak competitive position | New | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Compliance record weakest in peer set — creat | Chronic (63 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Compliance record weakest in peer set — creat | Chronic (64 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 8 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 9 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 10 | Address repeated atmosphere & setting complai | Chronic (61 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 11 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
+| 12 | Address isolated service & hospitality compla | New | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 
@@ -711,7 +716,7 @@ Raw signal values used to compute this report. Provenance: **observed** = direct
 
 | Topic | Signal | Positive | Negative | Mentions |
 |-------|--------|--------:|---------:|---------:|
-| Service & Hospitality | consistent praise | 12 | 0 | 12 |
+| Service & Hospitality | consistent praise | 11 | 1 | 12 |
 | Food Quality | strong positive signal | 10 | 2 | 12 |
 | Atmosphere & Setting | strong positive signal | 5 | 2 | 7 |
 | Speed & Efficiency | strong positive signal | 3 | 1 | 4 |
@@ -732,7 +737,7 @@ Raw signal values used to compute this report. Provenance: **observed** = direct
 | 8 | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Atmosphere & Setting | Cannot recommend enough, excellent food, amazing service and... |
 | 9 | Tripadvisor | 2026-12-20 | 3★ | mixed | Atmosphere & Setting, Speed & Efficiency | We waited 40 minutes to eat and only after our protests they... |
 | 10 | Tripadvisor | 2026-12-20 | 5★ | positive | Food Quality, Service & Hospitality, Atmosphere & Setting | Great food, great atmosphere, great drinks and impeccable se... |
-| 11 | Tripadvisor | 2026-12-20 | 1★ | negative | Service & Hospitality | We went further up the road and found a restaurant who were ... |
+| 11 | Tripadvisor | 2026-12-20 | 1★ | negative | Service & Hospitality | I went for lunch with a disabled lady who used a walker to g... |
 | 12 | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality | This latest meal was outstanding despite its simplicity |
 | 13 | Tripadvisor | 2026-11-20 | 3★ | mixed | — | The fish crepes were very good and friends who had steak and... |
 | 14 | Tripadvisor | 2026-11-20 | 5★ | positive | Service & Hospitality | The restaurant area has a pleasant interior and well spaced ... |
