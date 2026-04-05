@@ -618,9 +618,9 @@ def build_public_vs_reality(w, scorecard):
         vis_read = "Strong" if vis and vis >= 8.0 else "Adequate" if vis and vis >= 6.0 else "Weak"
         w(f"| Review Volume | {grc} reviews ({vol_read}) | Visibility {vis:.1f}/10 ({vis_read}) |")
 
-    # Operational accessibility
-    conv_read = "Ready" if conv and conv >= 7.0 else "Partial" if conv and conv >= 5.0 else "Gaps"
-    w(f"| Booking/Ordering | What customers can find | Conversion {conv:.1f}/10 ({conv_read}) |")
+    if conv is not None:
+        conv_read = "Ready" if conv >= 7.0 else "Partial" if conv >= 5.0 else "Gaps"
+        w(f"| Booking/Ordering | What customers can find | Conversion {conv:.1f}/10 ({conv_read}) |")
 
     w("")
 

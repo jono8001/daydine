@@ -20,9 +20,9 @@
 **Overall score: 7.3/10** (baseline month — no prior comparison)
  | Strongest: Visibility (9.7) | Weakest: Conversion (5.5)
 
-**Competitive position:** Local Peers (5mi): #4 of 9 (P62.5) — peer avg 7.08, top 7.68
-  Catchment (15mi): #7 of 19 (P66.7) — peer avg 6.83, top 7.93
-  UK Category Cohort: #7 of 19 (P66.7) — peer avg 6.83, top 7.93
+**Competitive position:** Local Peers (5mi): #1 of 9 (P100.0) — peer avg 5.96, top 6.48
+  Catchment (15mi): #1 of 19 (P100.0) — peer avg 5.84, top 6.73
+  UK Category Cohort: #1 of 19 (P100.0) — peer avg 5.84, top 6.73
 
 *This report uses publicly observable data only — no internal systems required. See Data Basis below for full evidence breakdown.*
 
@@ -48,7 +48,7 @@ Based on publicly observable data for Vintner Wine Bar, your current operational
 
 ### 🔴 Staff Conduct Risk
 
-**What we found:** 2 review(s) in this period contain language indicating staff conduct risk. Keywords detected: could not have a table, walker, appalled, disabled.
+**What we found:** 2 review(s) in this period contain language indicating staff conduct risk. Keywords detected: walker, disabled, could not have a table, appalled.
 
 **Evidence:**
 - *"...a table. She clearly could not.  I was appalled. We went further up the road and found a restaurant who were most welcoming."*
@@ -91,7 +91,7 @@ TripAdvisor shows 4.4/5 across 20 reviews — slightly lower than Google, possib
 
 Guest feedback supported by moderate evidence centres on **service & hospitality** (11 mentions) and **food quality** (10 mentions). Review evidence consistently points to these as defining elements of the proposition as guests perceive it.
 
-In the local market, the venue sits above the median but hasn't established itself as the clear category leader. The identity is 'reliably good' rather than 'destination'.
+Within the local pub dining market (8 peers), this venue leads the field. The identity is that of a category leader — the venue others are compared against.
 
 ## Who's Telling You What — Guest Segment Intelligence
 
@@ -285,7 +285,7 @@ I had the vegan risotto, which was sol..."*
 
 ### Primary Constraint
 
-**No single binding constraint.** The venue is operationally balanced. The commercial focus should be on marginal gains and protecting the strongest dimensions rather than crisis management.
+**Under-recognition.** The venue operates at a level that justifies premium positioning but carries none of the formal recognition to support premium pricing or press attention. The constraint is credentialing, not quality.
 
 ### Secondary Drag
 
@@ -301,7 +301,7 @@ No hidden risks identified from current data. Continue monitoring for emerging s
 
 ### Positioning
 
-Above the local median but without a distinctive market position. This is the 'good but not destination' zone — adequate for steady trade but not generating the word-of-mouth or destination appeal that drives growth.
+Category leader in the local market, with service & hospitality as the emerging differentiator. This position supports premium pricing and extension opportunities. The risk is complacency — leadership must be actively maintained.
 
 ### Revenue Left on the Table
 
@@ -394,15 +394,15 @@ Vintner Wine Bar is classified as **Wine-led Dining / Restaurant-Bar** (confiden
 
 ### Peer Justification
 
-- **The Fox Inn** (7.7): Pub Dining with similar price band; 3.6 miles away
-- **The Red Lion** (7.6): Pub Dining with comparable price band; 0.2 miles away
-- **The Townhouse Also Trading As JR Hotel And Restaurants LTD** (7.5): Hotel restaurant — different occasion type, may not compete for walk-in trade; 0.1 miles away *(marginal comparator)*
-- **Snitterfield Arms** (7.2): Pub Dining with comparable price band; 3.3 miles away
-- **The Bell Inn** (7.1): Pub Dining with similar price band; 3.7 miles away
+- **The Fox Inn** (6.5): Pub Dining with similar price band; 3.6 miles away
+- **The Red Lion** (6.4): Pub Dining with comparable price band; 0.2 miles away
+- **The Townhouse Also Trading As JR Hotel And Restaurants LTD** (6.3): Hotel restaurant — different occasion type, may not compete for walk-in trade; 0.1 miles away *(marginal comparator)*
+- **Snitterfield Arms** (6.2): Pub Dining with comparable price band; 3.3 miles away
+- **The Bell Inn** (5.9): Pub Dining with similar price band; 3.7 miles away
 
 ### Sensitivity: What Changes If Categorisation Changes
 
-**If reclassified as "Pub / Bar":** Peer set changes from 8 to 8 local competitors. Position shifts from #4/9 to #4/9.
+**If reclassified as "Pub / Bar":** Peer set changes from 8 to 8 local competitors. Position shifts from #1/9 to #1/9.
 New peer set would include: The Fox Inn, The Red Lion, The Townhouse Also Trading As JR Hotel And Restaurants LTD.
 *Competitive conclusions are robust — position barely changes regardless of category.*
 
@@ -410,12 +410,10 @@ New peer set would include: The Fox Inn, The Red Lion, The Townhouse Also Tradin
 
 **Local market:** 8 direct competitors identified.
 
-Above the median (P62) but not leading. Peer average is 7.1; the top performer scores 7.7. The gap to the top is closeable.
+You are in the top quintile (P100). The competitive risk is complacency — the nearest competitor scores 6.5.
 
-**Where you lead:** Visibility (+2.2), Conversion (+0.7)
+**Where you lead:** Visibility (+6.3), Conversion (+2.7)
 **Where peers beat you:** Trust (-1.1)
-
-*Commercial implication: you capture an adequate share of a 9-venue market, but the gap to the top (7.7) represents demand you could win. Closing the gap typically requires 1–2 targeted dimension improvements (indicative).*
 
 ## Market Position
 
@@ -423,23 +421,23 @@ Above the median (P62) but not leading. Peer average is 7.1; the top performer s
 
 ### Local Competitive Set (8 peers within 5 miles)
 
-**Position:** #4 of 9 (Percentile 62.5)
+**Position:** #1 of 9 (Percentile 100.0)
 
-You sit above the median but below the top tier. Your 7.3 compares to a peer average of 7.1. The gap to the top (7.7) is 0.3 points — closeable with focused improvement on your weakest dimension.
+You are in the top quintile of this peer set. Your overall score of 7.3 exceeds the peer average of 6.0 by 1.4 points. The competitive risk here is complacency — the nearest competitor scores 6.5.
 
 **Dimension gaps vs peers:**
 
-- Visibility: 9.7 (+2.2 above peer avg 7.5)
-- Conversion: 5.5 (+0.7 above peer avg 4.8)
+- Visibility: 9.7 (+6.3 above peer avg 3.4)
+- Conversion: 5.5 (+2.7 above peer avg 2.8)
 - Trust: 7.2 (-1.1 below peer avg 8.3)
 
 **Closest competitors:**
 
-- The Fox Inn (7.7) — leads you by 0.3
-- The Red Lion (7.6) — leads you by 0.2
-- The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5) — leads you by 0.2
-- Snitterfield Arms (7.2) — you lead by 0.1
-- The Bell Inn (7.1) — you lead by 0.2
+- The Fox Inn (6.5) — you lead by 0.9
+- The Red Lion (6.4) — you lead by 0.9
+- The Townhouse Also Trading As JR Hotel And Restaurants LTD (6.3) — you lead by 1.0
+- Snitterfield Arms (6.2) — you lead by 1.1
+- The Bell Inn (5.9) — you lead by 1.4
 
 ### Competitor Strategy
 
@@ -450,7 +448,7 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 - **Wins on:** Trust (see pattern above)
 - **Why it matters:** A large trust gap (+2.3) — their compliance record is stronger — this creates a ceiling you hit and they don't. This is a structural disadvantage, not a rounding error.
 - **Copy / test:** Review inspection documentation and sub-score gaps.
-- **Defend:** Defend your 887-review advantage vs their 271 (discovery moat).
+- **Defend:** Defend your 887-review advantage vs their 271 (discovery moat) and your conversion readiness (+2.0) — you are easier to book/find.
 - *Based on Google rating/reviews, FSA record, 4 dimension scores*
 
 **The Red Lion** (signal-backed)
@@ -458,7 +456,7 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 - **Also wins on:** Experience (+0.9): Google 4.7/5 vs your 4.6/5
 - **Why it matters:** They lead on both Trust and Experience — a combined advantage that is harder to close than a single-dimension gap.
 - **Copy / test:** Review inspection documentation and sub-score gaps. Read their recent positive reviews (4.7/5) for operational clues.
-- **Defend:** Defend your 887-review advantage vs their 277 (discovery moat) and your conversion readiness (+1.0) — you are easier to book/find.
+- **Defend:** Defend your 887-review advantage vs their 277 (discovery moat) and your conversion readiness (+3.0) — you are easier to book/find.
 - *Based on Google rating/reviews, FSA record, 4 dimension scores*
 
 **The Townhouse Also Trading As JR Hotel And Restaurants LTD** (signal-backed)
@@ -466,27 +464,28 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 - **Also wins on:** Experience (+0.6): higher composite experience score from rating + compliance signals
 - **Why it matters:** They lead on both Trust and Experience — a combined advantage that is harder to close than a single-dimension gap.
 - **Copy / test:** Review inspection documentation and sub-score gaps. Read their recent positive reviews (4.4/5) for operational clues.
-- **Defend:** Defend your 887-review advantage vs their 576 (discovery moat).
+- **Defend:** Defend your 887-review advantage vs their 576 (discovery moat) and your conversion readiness (+2.0) — you are easier to book/find.
 - *Based on Google rating/reviews, FSA record, 4 dimension scores*
 
 ### Extended Catchment (18 peers within 15 miles)
 
-**Position:** #7 of 19 (Percentile 66.7)
+**Position:** #1 of 19 (Percentile 100.0)
 
-You sit above the median but below the top tier. Your 7.3 compares to a peer average of 6.8. The gap to the top (7.9) is 0.6 points — closeable with focused improvement on your weakest dimension.
+You are in the top quintile of this peer set. Your overall score of 7.3 exceeds the peer average of 5.8 by 1.5 points. The competitive risk here is complacency — the nearest competitor scores 6.7.
 
 **Dimension gaps vs peers:**
 
-- Visibility: 9.7 (+2.5 above peer avg 7.2)
+- Visibility: 9.7 (+6.3 above peer avg 3.4)
+- Conversion: 5.5 (+2.4 above peer avg 3.1)
 - Trust: 7.2 (-0.9 below peer avg 8.1)
 
 **Closest competitors:**
 
-- Arrow Mill (7.9) — leads you by 0.6
-- The Fox Inn (7.7) — leads you by 0.3
-- The Red Lion (7.6) — leads you by 0.2
-- The Townhouse Also Trading As JR Hotel And Restaurants LTD (7.5) — leads you by 0.2
-- The Bull's Head (7.5) — leads you by 0.2
+- Arrow Mill (6.7) — you lead by 0.6
+- The Fox Inn (6.5) — you lead by 0.9
+- The Red Lion (6.4) — you lead by 0.9
+- The Townhouse Also Trading As JR Hotel And Restaurants LTD (6.3) — you lead by 1.0
+- The Bull's Head (6.3) — you lead by 1.0
 
 ### UK Category Cohort
 
@@ -497,9 +496,9 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 | Dimension | Score | Δ | Peer Avg | Gap | Read |
 |-----------|------:|--:|---------:|----:|------|
 | Experience | 8.7 | — | 9.0 | -0.3 | Below peers |
-| Visibility | 9.7 | — | 7.5 | +2.2 | Clear strength |
+| Visibility | 9.7 | — | 3.4 | +6.3 | Clear strength |
 | Trust | 7.2 | — | 8.3 | -1.1 | Below peers |
-| Conversion | 5.5 | — | 4.8 | +0.7 | Above peers |
+| Conversion | 5.5 | — | 2.8 | +2.7 | Clear strength |
 | **Overall** | **7.3** | **—** | | | |
 
 *Prestige (editorial recognition): 1.5/10 (peer avg 0.8) — tracked but not a headline operational lever for most independents.*
@@ -525,7 +524,7 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 *How easily customers can discover you online*
 
 **Assessment: Strong.** This is a genuine competitive strength at 9.7.
- You lead peers by 2.2 points (peer avg 7.5).
+ You lead peers by 6.3 points (peer avg 3.4).
 
 **Why it matters:** No visibility = no new customers. Controls top-of-funnel demand generation.
 
@@ -553,7 +552,7 @@ You sit above the median but below the top tier. Your 7.3 compares to a peer ave
 *Operational readiness to capture demand*
 
 **Assessment: Weak.** At 5.5, this dimension is actively limiting your overall position.
- Slightly above peer average (4.8).
+ You lead peers by 2.7 points (peer avg 2.8).
 
 **Why it matters:** Converts interest into visits. Missing hours/menu/ordering options cause drop-off at purchase intent.
 
@@ -611,7 +610,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-13 active items: **6 chronic** (12+ months), **4 stale** (3–5 months), **3 new/recent**.
+13 active items: **6 chronic** (12+ months), **1 overdue** (6–11 months), **3 stale** (3–5 months), **3 new/recent**.
 
 ### Action 1: Below local median — competitive risk
 **Status:** New | **Priority:** High
@@ -621,12 +620,12 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Chronic (70 months) | **Priority:** High
+**Status:** Chronic (71 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 70 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 71 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 3: Address recurring food quality complaints from guests
 **Status:** Chronic (60 months) | **Priority:** High
@@ -637,20 +636,20 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Disagreement barrier):** This has been flagged for 60 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 4: Lean into service & hospitality — it's what guests are buying
-**Status:** Chronic (65 months) | **Priority:** High
+**Status:** Chronic (66 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 65 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 66 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 5: Protect the 4.6/5 rating — it took years to build
-**Status:** Chronic (67 months) | **Priority:** High
+**Status:** Chronic (68 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
 **Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 67 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 68 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Maintenance Items (deprioritised this month)
 
@@ -663,12 +662,12 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
 | 6 | Strong rating masks weak competitive position | New | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Compliance record weakest in peer set — creat | Chronic (67 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Compliance record weakest in peer set — creat | Chronic (68 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 8 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 9 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 10 | Address repeated atmosphere & setting complai | Chronic (61 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 11 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
-| 12 | Address isolated service & hospitality compla | Stale (4 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 12 | Address isolated service & hospitality compla | Stale (5 months) | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

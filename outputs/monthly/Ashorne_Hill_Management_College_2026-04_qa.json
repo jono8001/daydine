@@ -1,30 +1,29 @@
 {
-  "venue": "Vintner Wine Bar",
+  "venue": "Ashorne Hill Management College",
   "month": "2026-04",
-  "report_mode": "narrative_rich",
+  "report_mode": "structured_signal",
   "data_sources": {
     "fsa": true,
     "google_rating": true,
-    "google_reviews": 887,
-    "review_text_available": true,
-    "reviews_analyzed": 25,
-    "tripadvisor": true,
+    "google_reviews": 489,
+    "review_text_available": false,
+    "reviews_analyzed": 0,
+    "tripadvisor": false,
     "companies_house": false
   },
   "independent_sources": {
-    "count": 3,
+    "count": 2,
     "platforms": [
       "FSA",
-      "Google",
-      "TripAdvisor"
+      "Google"
     ]
   },
   "review_confidence": {
-    "tier": "directional",
-    "review_text_count": 25,
-    "source_count": 2,
-    "can_claim_themes": true,
-    "can_claim_proposition": true
+    "tier": "none",
+    "review_text_count": 0,
+    "source_count": 0,
+    "can_claim_themes": false,
+    "can_claim_proposition": false
   },
   "section_completeness": {
     "executive_summary": {
@@ -34,12 +33,12 @@
     },
     "risk_alerts": {
       "present": true,
-      "lines": 7,
+      "lines": 2,
       "meets_minimum": true
     },
     "data_basis": {
       "present": true,
-      "lines": 8,
+      "lines": 7,
       "meets_minimum": true
     },
     "monthly_movement": {
@@ -49,8 +48,8 @@
     },
     "segment_intelligence": {
       "present": true,
-      "lines": 19,
-      "meets_minimum": true
+      "lines": 2,
+      "meets_minimum": false
     },
     "management_priorities": {
       "present": true,
@@ -69,7 +68,7 @@
     },
     "market_position": {
       "present": true,
-      "lines": 45,
+      "lines": 51,
       "meets_minimum": true
     },
     "scorecard": {
@@ -79,12 +78,12 @@
     },
     "dimension_diagnosis": {
       "present": true,
-      "lines": 41,
+      "lines": 34,
       "meets_minimum": true
     },
     "commercial_diagnosis": {
       "present": true,
-      "lines": 8,
+      "lines": 6,
       "meets_minimum": true
     },
     "public_vs_reality": {
@@ -94,22 +93,22 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 25,
+      "lines": 5,
       "meets_minimum": true
     },
     "conversion_friction": {
       "present": true,
-      "lines": 29,
+      "lines": 23,
       "meets_minimum": true
     },
     "recommendation_tracker": {
       "present": true,
-      "lines": 41,
+      "lines": 18,
       "meets_minimum": true
     },
     "category_validation": {
       "present": true,
-      "lines": 18,
+      "lines": 7,
       "meets_minimum": true
     },
     "market_intelligence": {
@@ -124,12 +123,12 @@
     },
     "data_coverage": {
       "present": true,
-      "lines": 8,
+      "lines": 11,
       "meets_minimum": true
     },
     "evidence_appendix": {
       "present": true,
-      "lines": 129,
+      "lines": 17,
       "meets_minimum": true
     }
   },
@@ -140,77 +139,37 @@
   },
   "validation_passed": true,
   "validation_errors": [],
-  "validation_warnings": [],
-  "confidence_level": "high",
+  "validation_warnings": [
+    "COMPETITOR_BOILERPLATE: All peer 'Why it matters' lines are identical — consider differentiating per-peer framing",
+    "SEGMENT_MISSING_UNATTRIBUTED: Segment section has no unattributed reviews handling"
+  ],
+  "confidence_level": "medium",
   "evidence_provenance_present": true,
   "review_dates": {
-    "has_dated_reviews": true,
-    "date_range": {
-      "earliest": "2026-01-20",
-      "latest": "2026-12-20"
-    },
-    "valid_date_range": {
-      "earliest": "2026-01-20",
-      "latest": "2026-02-20"
-    },
-    "dates_by_source": {
-      "google": {
-        "total": 5,
-        "dated": 0
-      },
-      "tripadvisor": {
-        "total": 20,
-        "dated": 20
-      }
-    },
-    "future_dated_excluded": 18,
-    "recent_window_available": true,
-    "recent_window_count": 7,
-    "recent_window_sources": [
-      "tripadvisor"
-    ],
-    "recent_window_valid_count": 1,
-    "recent_window_valid_sources": [
-      "tripadvisor"
-    ],
+    "has_dated_reviews": false,
+    "date_range": null,
+    "valid_date_range": null,
+    "dates_by_source": {},
+    "future_dated_excluded": 0,
+    "recent_window_available": false,
+    "recent_window_count": 0,
+    "recent_window_sources": [],
+    "recent_window_valid_count": 0,
+    "recent_window_valid_sources": [],
     "dated_trajectory_supported": false
   },
   "segment_qa": {
     "present": true,
-    "segments_surfaced": 4,
-    "smallest_segment_used": 2,
+    "segments_surfaced": 0,
+    "smallest_segment_used": 0,
     "fabrication_check": false,
-    "tension_flagged": true,
-    "unattributed_handled": true
+    "tension_flagged": false,
+    "unattributed_handled": false
   },
   "integrity_checks": {
-    "run": true,
-    "passed": true,
-    "issues": 0,
-    "checks": [
-      {
-        "check": "sentiment_arithmetic",
-        "passed": true,
-        "error_count": 0
-      },
-      {
-        "check": "quote_theme_alignment",
-        "passed": true,
-        "error_count": 0
-      },
-      {
-        "check": "orphan_reviews",
-        "passed": true,
-        "error_count": 0
-      },
-      {
-        "check": "duplicate_quotes",
-        "passed": true,
-        "error_count": 0
-      }
-    ]
+    "run": false
   },
-  "report_lines": 573,
+  "report_lines": 359,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,
