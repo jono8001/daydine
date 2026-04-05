@@ -61,7 +61,7 @@ def build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
     covers_at_risk_lo = round(covers_lo * 0.02 / 4)  # weekly
     covers_at_risk_hi = round(covers_hi * 0.08 / 4)
 
-    w("## Financial Impact Summary\n")
+    w("### Financial Impact\n")
 
     # --- Money paragraph ---
     top_action = actions[0] if actions else None

@@ -27,14 +27,9 @@
     "can_claim_proposition": true
   },
   "section_completeness": {
-    "financial_impact": {
-      "present": true,
-      "lines": 12,
-      "meets_minimum": true
-    },
     "executive_summary": {
       "present": true,
-      "lines": 14,
+      "lines": 24,
       "meets_minimum": true
     },
     "data_basis": {

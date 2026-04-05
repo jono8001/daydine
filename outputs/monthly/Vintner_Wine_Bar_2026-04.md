@@ -1,19 +1,3 @@
-## Financial Impact Summary
-
-Based on publicly observable data for Vintner Wine Bar, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£450–£8,100 per month** in lost or leaked revenue. The main drivers are: Fix the digital shopfront — you're losing walk-ins (£180–£3,600/mo); Address recurring food quality complaints from guests (£270–£4,500/mo); Lean into service & hospitality — it's what guests are buying (upside opportunity). Taking action on **Fix the digital shopfront — you're losing walk-ins** could begin recovering this within weeks at low cost (< £200).
-
-| Metric | Current | At Risk | Potential Recovery |
-|---|---|---|---|
-| Covers per week | ~262 | 3–30 at risk | Recoverable with profile fixes |
-| Average spend per head | ~£22 | — | — |
-| Weekly revenue impact | — | £110–£2,020 | £110–£2,020 recoverable |
-| Monthly revenue impact | — | £450–£8,100 | £450–£8,100 recoverable |
-| Annual projection | — | £5,400–£97,200 | £5,400–£97,200 recoverable |
-
-*Estimates based on UK hospitality benchmarks for price level ££ venues. Ranges are directional — exact figures require your internal cover and spend data.*
-
-**Recommended Action:** Fix the digital shopfront — you're losing walk-ins. Estimated cost: Zero cost (profile update). Expected payback: within 1 month.
-
 # Vintner Wine Bar — Monthly Intelligence Report
 *2026-04 | Generated 05 April 2026 | DayDine Premium*
 
@@ -41,6 +25,22 @@ Based on publicly observable data for Vintner Wine Bar, your current operational
   UK Category Cohort: #7 of 19 (P66.7) — peer avg 6.83, top 7.93
 
 *This report uses publicly observable data only — no internal systems required. See Data Basis below for full evidence breakdown.*
+
+### Financial Impact
+
+Based on publicly observable data for Vintner Wine Bar, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£450–£8,100 per month** in lost or leaked revenue. The main drivers are: Fix the digital shopfront — you're losing walk-ins (£180–£3,600/mo); Address recurring food quality complaints from guests (£270–£4,500/mo); Lean into service & hospitality — it's what guests are buying (upside opportunity). Taking action on **Fix the digital shopfront — you're losing walk-ins** could begin recovering this within weeks at low cost (< £200).
+
+| Metric | Current | At Risk | Potential Recovery |
+|---|---|---|---|
+| Covers per week | ~262 | 3–30 at risk | Recoverable with profile fixes |
+| Average spend per head | ~£22 | — | — |
+| Weekly revenue impact | — | £110–£2,020 | £110–£2,020 recoverable |
+| Monthly revenue impact | — | £450–£8,100 | £450–£8,100 recoverable |
+| Annual projection | — | £5,400–£97,200 | £5,400–£97,200 recoverable |
+
+*Estimates based on UK hospitality benchmarks for price level ££ venues. Ranges are directional — exact figures require your internal cover and spend data.*
+
+**Recommended Action:** Fix the digital shopfront — you're losing walk-ins. Estimated cost: Zero cost (profile update). Expected payback: within 1 month.
 
 ## Data Basis
 
@@ -596,28 +596,28 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Chronic (59 months) | **Priority:** High
+**Status:** Chronic (60 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 59 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 60 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 3: Address recurring food quality complaints from guests
-**Status:** Chronic (54 months) | **Priority:** High
+**Status:** Chronic (55 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 54 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 55 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 4: Lean into service & hospitality — it's what guests are buying
-**Status:** Chronic (54 months) | **Priority:** High
+**Status:** Chronic (55 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 54 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 55 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 5: Strong rating masks weak competitive position
 **Status:** New | **Priority:** High
@@ -636,10 +636,10 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Compliance record weakest in peer set — creat | Chronic (56 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Compliance record weakest in peer set — creat | Chronic (57 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 7 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 8 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 9 | Address repeated atmosphere & setting complai | Chronic (54 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 9 | Address repeated atmosphere & setting complai | Chronic (55 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 10 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan

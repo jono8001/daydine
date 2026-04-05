@@ -77,14 +77,14 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     }
     snapshot_deltas = compute_snapshot_deltas(_cur_snap, prior_snapshot)
 
-    # --- Lead with the money story ---
-    # 0. Financial Impact Summary (first thing the owner reads)
-    build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
-                           benchmarks=benchmarks, review_intel=review_intel)
+    # --- Lead: executive summary then financial impact ---
     # 1. Executive Summary (actions-led, score secondary)
     build_executive_summary(w, venue_name, month_str, mode, scorecard,
                             deltas, benchmarks, review_intel, recs)
-    # 1a. Data Basis
+    # 1b. Financial Impact (part 2 of the executive summary)
+    build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
+                           benchmarks=benchmarks, review_intel=review_intel)
+    # 1c. Data Basis
     build_data_basis(w, venue_rec, review_intel)
     # 1b. Monthly Movement Summary
     build_monthly_movement(w, scorecard, benchmarks, venue_rec,

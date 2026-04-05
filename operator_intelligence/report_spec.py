@@ -173,11 +173,9 @@ class SectionSpec:
 
 
 MONTHLY_SECTIONS = [
-    SectionSpec("financial_impact", "Financial Impact Summary", mandatory=True, min_lines=5,
-                description="Money paragraph + financial implications table + recommended action. "
-                            "First thing the owner reads. Covers at risk, £ revenue impact, payback."),
     SectionSpec("executive_summary", "Executive Summary", mandatory=True, min_lines=5,
-                description="Top leaks, upside, risk, and what not to do — then score as context"),
+                description="Part 1: what to fix, what to watch, what not to prioritise, score as context. "
+                            "Part 2: Financial Impact — money paragraph, £ table, recommended action."),
     SectionSpec("data_basis", "Data Basis", mandatory=True, min_lines=3,
                 description="Three-tier evidence overview: deep analysis, aggregate signals, structural data. "
                             "Platform divergence noted if present."),
@@ -451,6 +449,11 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
             result.errors.append(f"MISSING_SECTION: '{spec.title}' not found in report")
             result.passed = False
 
+    # Financial Impact subsection (part of Executive Summary, rendered as H3)
+    if "### Financial Impact" not in report_text:
+        result.errors.append("MISSING_SECTION: 'Financial Impact' subsection not found in report")
+        result.passed = False
+
     # --- Launch-critical section: Competitive Market Intelligence ---
     # This is the new mandatory section — flag clearly if missing
     if "## Competitive Market Intelligence" not in report_text:
@@ -623,9 +626,14 @@ def validate_report(report_text, mode, recs, review_intel, scorecard=None):
             # - Evidence Appendix (raw data)
             # - Implementation Framework (upside values from priority recs)
             before = report_text[:pos]
-            _skip_sections = ["## Evidence Appendix", "## Implementation Framework",
-                              "## Financial Impact Summary"]
+            _skip_sections = ["## Evidence Appendix", "## Implementation Framework"]
             in_skip = False
+            # Skip Financial Impact subsection (H3 within Executive Summary)
+            _fi_start = before.rfind("### Financial Impact")
+            if _fi_start >= 0:
+                after_fi = before[_fi_start + 20:]
+                if "\n## " not in after_fi:
+                    in_skip = True
             for _ss in _skip_sections:
                 ss_pos = before.rfind(_ss)
                 if ss_pos >= 0:
