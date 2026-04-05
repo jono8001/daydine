@@ -8,14 +8,14 @@
 **What you should fix now:**
 
 1. **Fix the digital shopfront — you're losing walk-ins** [FIX] — Capture demand you're currently losing
-2. **Address recurring food quality complaints from guests** [FIX] — Reduce food quality complaints, protect rating
-3. **Lean into service & hospitality — it's what guests are buying** [EXPLOIT] — Sharpen proposition → attract the right guests
+2. **Lean into service & hospitality — it's what guests are buying** [EXPLOIT] — Sharpen proposition → attract the right guests
+3. **Protect the 4.6/5 rating — it took years to build** [PROTECT] — Sustain discovery advantage
 
 **Watch this month:**
 - Compliance record weakest in peer set — creates inspection exposure
 - Monitor local competitor openings and closures
 
-**Do not prioritise:** Protect the 4.6/5 rating — it took years to build
+**Do not prioritise:** Address repeated food quality complaints from guests
 
 **Overall score: 7.3/10** (baseline month — no prior comparison)
  | Strongest: Visibility (9.7) | Weakest: Conversion (5.5)
@@ -28,15 +28,15 @@
 
 ### Financial Impact
 
-Based on publicly observable data for Vintner Wine Bar, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£450–£8,100 per month** in lost or leaked revenue. The main drivers are: Fix the digital shopfront — you're losing walk-ins (£180–£3,600/mo); Address recurring food quality complaints from guests (£270–£4,500/mo); Lean into service & hospitality — it's what guests are buying (upside opportunity). Taking action on **Fix the digital shopfront — you're losing walk-ins** could begin recovering this within weeks at low cost (< £200).
+Based on publicly observable data for Vintner Wine Bar, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£180–£3,600 per month** in lost or leaked revenue. The main drivers are: Fix the digital shopfront — you're losing walk-ins (£180–£3,600/mo); Lean into service & hospitality — it's what guests are buying (upside opportunity); Protect the 4.6/5 rating — it took years to build (discovery protection). Taking action on **Fix the digital shopfront — you're losing walk-ins** could begin recovering this within weeks at low cost (< £200).
 
 | Metric | Current | At Risk | Potential Recovery |
 |---|---|---|---|
 | Covers per week | ~262 | 3–30 at risk | Recoverable with profile fixes |
 | Average spend per head | ~£22 | — | — |
-| Weekly revenue impact | — | £110–£2,020 | £110–£2,020 recoverable |
-| Monthly revenue impact | — | £450–£8,100 | £450–£8,100 recoverable |
-| Annual projection | — | £5,400–£97,200 | £5,400–£97,200 recoverable |
+| Weekly revenue impact | — | £40–£900 | £40–£900 recoverable |
+| Monthly revenue impact | — | £180–£3,600 | £180–£3,600 recoverable |
+| Annual projection | — | £2,160–£43,200 | £2,160–£43,200 recoverable |
 
 *Estimates based on UK hospitality benchmarks for price level ££ venues. Ranges are directional — exact figures require your internal cover and spend data.*
 
@@ -73,7 +73,7 @@ TripAdvisor shows 4.4/5 across 20 reviews — slightly lower than Google, possib
 
 **From deep analysis of 25 recent reviews:**
 
-Guest feedback supported by moderate evidence centres on **service & hospitality** (18 mentions) and **food quality** (12 mentions). Review evidence consistently points to these as defining elements of the proposition as guests perceive it.
+Guest feedback supported by moderate evidence centres on **service & hospitality** (12 mentions) and **food quality** (10 mentions). Review evidence consistently points to these as defining elements of the proposition as guests perceive it.
 
 In the local market, the venue sits above the median but hasn't established itself as the clear category leader. The identity is 'reliably good' rather than 'destination'.
 
@@ -133,7 +133,7 @@ Top themes across unattributed reviews: Service & Hospitality (7x), Atmosphere &
 
 ## Management Priorities
 
-Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
+The score is solid but not dominant. The management question is *which specific lever, if pulled, would most change your commercial trajectory* — and which can you realistically move?
 
 ### Priority 1: Fix the digital shopfront — you're losing walk-ins [FIX | ESCALATED]
 
@@ -150,35 +150,35 @@ You deliver a strong experience but your online presence doesn't make it easy to
   *Basis: Composite: missing hours/menu/booking each leak 2–8% of demand*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Address recurring food quality complaints from guests [FIX | ESCALATED]
+### Priority 2: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ESCALATED]
 
-Food Quality draws recurring criticism across reviews (3 negative mentions). One guest wrote: "I ordered a prawn cocktail which came with bread and butter..." Investigate whether this reflects a systemic issue or isolated incidents.
-
-**Management implication:** Guests are telling you what's wrong. Listen.
-
-- **Owner:** operations | **Confidence:** 70%
-- **Expected upside:** Reduce food quality complaints, protect rating
-- **Evidence:** `review_criticism: Food Quality=3 negative`
-
-  **Commercial consequence** (directional):
-  Value at stake: £270–£4,500/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
-  *Basis: Recurring complaints reduce repeat visits and suppress rating trajectory*
-- **Segment impact:** Couples and occasion diners have the highest expectations and write the most detailed negative reviews. Fixing food complaints protects your rating with the segment that amplifies problems fastest.
-
-### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ESCALATED]
-
-Guests consistently praise service & hospitality (18 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
+Guests consistently praise service & hospitality (12 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
 
 **Management implication:** Your guests are telling you your proposition. Use it.
 
 - **Owner:** management | **Confidence:** 70%
 - **Expected upside:** Sharpen proposition → attract the right guests
-- **Evidence:** `review_praise: Service & Hospitality=18`
+- **Evidence:** `review_praise: Service & Hospitality=12`
 
   **Commercial consequence** (indicative):
   Value at stake: Upside, not loss prevention — magnitude depends on execution | Cost to fix: Low (< 1 hour, no spend) | Payback: 1–3 months
   *Basis: Aligning online messaging to guest-validated strengths sharpens conversion*
 - **Segment impact:** Service quality matters most to locals (who notice changes) and couples (who expect occasion-grade attention). Leaning into this strength retains your highest-value segments.
+
+### Priority 3: Protect the 4.6/5 rating — it took years to build [PROTECT | ESCALATED]
+
+With 887 reviews at 4.6/5, your discovery advantage is substantial. Protect it by responding to every review within 48 hours and prompting satisfied tables for feedback.
+
+**Management implication:** Visibility drives discovery. A venue that isn't found can't convert. Typically moveable within 60 days.
+
+- **Owner:** front-of-house | **Confidence:** 85%
+- **Expected upside:** Sustain discovery advantage
+- **Evidence:** `gr=4.6, grc=887`
+
+  **Commercial consequence** (indicative):
+  Value at stake: Commercial impact not robustly estimable from current external evidence. | Cost to fix: Low (< 1 hour, no spend) | Payback: 1–3 months
+  *Basis: Visibility improvements compound over weeks, not days.*
+- **Segment impact:** Tourists and first-time visitors depend entirely on your online presence. Protecting visibility protects your discovery pipeline.
 
 ## Protect / Improve / Ignore
 
@@ -291,9 +291,8 @@ Above the local median but without a distinctive market position. This is the 'g
 
 - **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier.
 - **Proposition not explicitly marketed.** Guests praise service & hospitality, but this isn't visibly communicated online. Making it the headline would sharpen expectations and attract the right customers.
-- **Operational leakage via food quality.** Recurring complaints (3 mentions) about food quality suggest a specific operational gap that affects both immediate revenue (table turns, repeat visits) and long-term rating trajectory.
 
-*3 revenue leaks identified. Most are fixable at low cost (profile updates, messaging changes). Combined value at stake is likely directional — exact figures require internal cover/spend data.*
+*2 revenue leaks identified. Most are fixable at low cost (profile updates, messaging changes). Combined value at stake is likely directional — exact figures require internal cover/spend data.*
 
 ## Review & Reputation Intelligence
 
@@ -314,7 +313,7 @@ When both service and food quality dominate guest feedback, the venue is selling
 
 ### What Management May Be Missing
 
-**Food Quality** (recurring note, 3 mentions).
+**Food Quality** (recurring note, 2 mentions).
 > *"I ordered a prawn cocktail which came with bread and butter"*
 This warrants investigation to determine whether it reflects a systemic issue or isolated incidents.
 
@@ -584,13 +583,13 @@ New entrants or closures within 5 miles can shift your position. Stay aware of p
 
 ## What Not to Do This Month
 
-**Protect the 4.6/5 rating — it took years to build**
+**Address repeated food quality complaints from guests**
 
 Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-11 active items: **6 chronic** (12+ months), **2 stale** (3–5 months), **3 new/recent**.
+12 active items: **6 chronic** (12+ months), **2 stale** (3–5 months), **4 new/recent**.
 
 ### Action 1: Below local median — competitive risk
 **Status:** New | **Priority:** High
@@ -600,12 +599,12 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Chronic (65 months) | **Priority:** High
+**Status:** Chronic (66 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 65 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 66 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 3: Address recurring food quality complaints from guests
 **Status:** Chronic (60 months) | **Priority:** High
@@ -616,35 +615,37 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Disagreement barrier):** This has been flagged for 60 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 4: Lean into service & hospitality — it's what guests are buying
-**Status:** Chronic (60 months) | **Priority:** High
+**Status:** Chronic (61 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 60 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 61 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
-### Action 5: Strong rating masks weak competitive position
-**Status:** New | **Priority:** High
-**Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Realistic competitive awareness
-**Owner:** management — whoever currently responds to online reviews
-**Next milestone:** Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week
-**Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
+### Action 5: Protect the 4.6/5 rating — it took years to build
+**Status:** Chronic (63 months) | **Priority:** High
+**Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
+**Owner:** front-of-house — whoever currently responds to online reviews
+**Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
+**Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 63 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Maintenance Items (deprioritised this month)
 
 *These items are designated 'do not prioritise' in the Executive Summary. They are ongoing postures, not active action items.*
 
-- **Protect the 4.6/5 rating — it took years to build** — Sustain discovery advantage. Maintain current approach; no active effort required.
+- **Address repeated food quality complaints from guests** — Reduce food quality complaints, protect rating. Maintain current approach; no active effort required.
 
 ### Additional Active Recommendations
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Compliance record weakest in peer set — creat | Chronic (62 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 8 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 9 | Address repeated atmosphere & setting complai | Chronic (60 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 10 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Strong rating masks weak competitive position | New | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Compliance record weakest in peer set — creat | Chronic (63 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 8 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 9 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 10 | Address repeated atmosphere & setting complai | Chronic (61 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 11 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 
@@ -710,9 +711,9 @@ Raw signal values used to compute this report. Provenance: **observed** = direct
 
 | Topic | Signal | Positive | Negative | Mentions |
 |-------|--------|--------:|---------:|---------:|
-| Service & Hospitality | consistent praise | 18 | 0 | 18 |
-| Food Quality | strong positive signal | 12 | 3 | 15 |
-| Atmosphere & Setting | strong positive signal | 8 | 2 | 10 |
+| Service & Hospitality | consistent praise | 12 | 0 | 12 |
+| Food Quality | strong positive signal | 10 | 2 | 12 |
+| Atmosphere & Setting | strong positive signal | 5 | 2 | 7 |
 | Speed & Efficiency | strong positive signal | 3 | 1 | 4 |
 | Value for Money | consistent praise | 3 | 0 | 3 |
 | Booking & Accessibility | positive signal, limited evidence | 1 | 0 | 1 |

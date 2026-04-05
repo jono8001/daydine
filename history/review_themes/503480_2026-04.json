@@ -104,15 +104,15 @@
     "aspect_scores": {
       "service": {
         "score": 10.0,
-        "positive": 18,
+        "positive": 12,
         "negative": 0,
-        "mentions": 18
+        "mentions": 12
       },
       "ambience": {
-        "score": 8.0,
-        "positive": 8,
+        "score": 7.1,
+        "positive": 5,
         "negative": 2,
-        "mentions": 10
+        "mentions": 7
       },
       "value": {
         "score": 10.0,
@@ -121,10 +121,10 @@
         "mentions": 3
       },
       "food_quality": {
-        "score": 8.0,
-        "positive": 12,
-        "negative": 3,
-        "mentions": 15
+        "score": 8.3,
+        "positive": 10,
+        "negative": 2,
+        "mentions": 12
       },
       "booking": {
         "score": 10.0,
@@ -143,7 +143,7 @@
       {
         "aspect": "service",
         "label": "Service & Hospitality",
-        "mentions": 18,
+        "mentions": 12,
         "quotes": [
           "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly",
           "The staff were attentive throughout, checking in at the right moments"
@@ -152,7 +152,7 @@
       {
         "aspect": "food_quality",
         "label": "Food Quality",
-        "mentions": 12,
+        "mentions": 10,
         "quotes": [
           "My cheese mousse was delicious",
           "The food was delicious as always - special mention for the cheese soufflé as it was divine"
@@ -161,7 +161,7 @@
       {
         "aspect": "ambience",
         "label": "Atmosphere & Setting",
-        "mentions": 8,
+        "mentions": 5,
         "quotes": [
           "We didn't have a booking but they happily seated us upstairs by a window with a lovely setting",
           "Beautiful old building gives a natural cosy ambience"
@@ -197,7 +197,7 @@
       {
         "aspect": "food_quality",
         "label": "Food Quality",
-        "mentions": 3,
+        "mentions": 2,
         "quotes": [
           "I ordered a prawn cocktail which came with bread and butter"
         ]

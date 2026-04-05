@@ -98,19 +98,31 @@ RISK_PHRASES = [
 # ---------------------------------------------------------------------------
 
 def _analyse_single_review(text, rating):
-    """Analyse one review. Returns dict with aspects, sentiment, risk flags."""
+    """Analyse one review. Returns dict with aspects, sentiment, risk flags.
+
+    Per-aspect counts are BINARY per review: 1 if any positive keyword matched,
+    1 if any negative keyword matched. This ensures "mentions" = unique reviews,
+    not keyword hits.
+    """
     text_lower = text.lower()
     aspects_found = defaultdict(lambda: {"pos": 0, "neg": 0, "keywords": []})
 
     for aspect, keywords in ASPECT_KEYWORDS.items():
+        pos_matched = False
+        neg_matched = False
         for kw in keywords["pos"]:
             if kw in text_lower:
-                aspects_found[aspect]["pos"] += 1
                 aspects_found[aspect]["keywords"].append(f"+{kw}")
+                pos_matched = True
         for kw in keywords["neg"]:
             if kw in text_lower:
-                aspects_found[aspect]["neg"] += 1
                 aspects_found[aspect]["keywords"].append(f"-{kw}")
+                neg_matched = True
+        # Count as 1 review mentioning this aspect (positive and/or negative)
+        if pos_matched:
+            aspects_found[aspect]["pos"] = 1
+        if neg_matched:
+            aspects_found[aspect]["neg"] = 1
 
     # Risk detection
     risks = [phrase for phrase in RISK_PHRASES if phrase in text_lower]
