@@ -1,5 +1,36 @@
 {
-  "excluded": [],
+  "excluded": [
+    {
+      "text": "Thanks for your 5 star review Lisa.",
+      "rating": 5,
+      "date": "2026-03-07",
+      "date_raw": "\ue838\ue838\ue838\ue838\ue838a month ago",
+      "reviewer_name": "",
+      "reviewer_reviews": null,
+      "is_local_guide": false,
+      "owner_response": "Response from the owner a month agoThanks for your 5 star review Lisa.",
+      "owner_response_date": null,
+      "helpful_count": 0,
+      "source": "google",
+      "_source_file": "shakespeare_s_2026-04-06.json",
+      "quality": "EXCLUDE"
+    },
+    {
+      "text": "Thank you for your review Tony.",
+      "rating": 4,
+      "date": "2026-01-06",
+      "date_raw": "\ue838\ue838\ue838\ue838\ue8383 months ago",
+      "reviewer_name": "",
+      "reviewer_reviews": null,
+      "is_local_guide": false,
+      "owner_response": "Response from the owner 3 months agoThank you for your review Tony.",
+      "owner_response_date": null,
+      "helpful_count": 0,
+      "source": "google",
+      "_source_file": "shakespeare_s_2026-04-06.json",
+      "quality": "EXCLUDE"
+    }
+  ],
   "duplicates": [
     {
       "text": "Being able to take your dog inside, instead of having to secluded in an area usually outside with the smokers and vapers is a great touch.Meal typeBrunchPrice per person\u00a310\u201320Food: 4Service: 5Atmosphere: 3Noise levelQuiet, easy to talkParking spacePlenty of parkingParking optionsFree parking lot",

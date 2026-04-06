@@ -247,6 +247,21 @@ async def collect_reviews_for_venue(page, venue, max_reviews):
                     pass
 
                 if text or rating:
+                    # Filter: skip owner responses mistakenly extracted as reviews
+                    text_lower = text.lower().strip()
+                    owner_response_patterns = [
+                        "thanks for your", "thank you for your review",
+                        "thank you for your 5", "thank you for your 4",
+                        "thank you for visiting", "thank you for dining",
+                        "we appreciate your", "glad you enjoyed",
+                    ]
+                    if any(text_lower.startswith(p) for p in owner_response_patterns):
+                        continue
+
+                    # Filter: skip exact duplicates already collected
+                    if any(r["text"] == text for r in reviews):
+                        continue
+
                     reviews.append({
                         "text": text,
                         "rating": rating,

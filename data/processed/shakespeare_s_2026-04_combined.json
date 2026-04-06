@@ -2,17 +2,18 @@
   "fhrsid": "1584577",
   "name": "Shakespeare's",
   "period": "2026-04",
-  "generated_at": "2026-04-06T15:35:49Z",
+  "generated_at": "2026-04-06T16:59:50Z",
   "summary": {
-    "total_reviews": 5,
+    "total_reviews": 3,
     "by_source": {
-      "google": 5
+      "google": 3
     },
     "by_quality": {
-      "MEDIUM": 5
+      "MEDIUM": 3,
+      "EXCLUDE": 2
     },
-    "reviews_with_text": 5,
-    "avg_review_length_words": 22,
+    "reviews_with_text": 3,
+    "avg_review_length_words": 33,
     "date_range": {
       "earliest": "2025-12-07",
       "latest": "2026-03-16"
@@ -36,21 +37,6 @@
       "quality": "MEDIUM"
     },
     {
-      "text": "Thanks for your 5 star review Lisa.",
-      "rating": 5,
-      "date": "2026-03-07",
-      "date_raw": "a month ago",
-      "reviewer_name": "",
-      "reviewer_reviews": null,
-      "is_local_guide": false,
-      "owner_response": "Response from the owner a month agoThanks for your 5 star review Lisa.",
-      "owner_response_date": null,
-      "helpful_count": 0,
-      "source": "google",
-      "_source_file": "shakespeare_s_2026-04-06.json",
-      "quality": "MEDIUM"
-    },
-    {
       "text": "Lovely coffee but flapjack was dry and hard  I wonder how long ago it was made.Meal typeBrunchFood: 2Service: 4Atmosphere: 4",
       "rating": 3,
       "date": "2026-03-07",
@@ -59,21 +45,6 @@
       "reviewer_reviews": null,
       "is_local_guide": false,
       "owner_response": null,
-      "owner_response_date": null,
-      "helpful_count": 0,
-      "source": "google",
-      "_source_file": "shakespeare_s_2026-04-06.json",
-      "quality": "MEDIUM"
-    },
-    {
-      "text": "Thank you for your review Tony.",
-      "rating": 4,
-      "date": "2026-01-06",
-      "date_raw": "3 months ago",
-      "reviewer_name": "",
-      "reviewer_reviews": null,
-      "is_local_guide": false,
-      "owner_response": "Response from the owner 3 months agoThank you for your review Tony.",
       "owner_response_date": null,
       "helpful_count": 0,
       "source": "google",

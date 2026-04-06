@@ -28,6 +28,19 @@ ASPECT_KEYWORDS = {
 }
 
 
+def _is_owner_response(text):
+    """Check if text looks like an owner response, not a customer review."""
+    lower = text.lower().strip()
+    patterns = [
+        "thanks for your", "thank you for your review",
+        "thank you for your 5", "thank you for your 4",
+        "thank you for visiting", "thank you for dining",
+        "we appreciate your", "glad you enjoyed",
+        "thanks for the review", "thank you for the review",
+    ]
+    return any(lower.startswith(p) for p in patterns)
+
+
 def quality_tag(review):
     """Tag a review with quality: HIGH, MEDIUM, LOW, or EXCLUDE."""
     text = (review.get("text") or "").strip()
@@ -35,6 +48,10 @@ def quality_tag(review):
     word_count = len(words)
 
     if word_count < 5:
+        return "EXCLUDE"
+
+    # Owner responses are not customer reviews
+    if _is_owner_response(text):
         return "EXCLUDE"
 
     # Spam detection
