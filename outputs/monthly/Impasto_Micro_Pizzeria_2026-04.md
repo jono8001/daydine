@@ -9,13 +9,13 @@
 
 1. **Get your menu online — 77% of diners check before visiting** [FIX] — Reduce decision-stage drop-off
 2. **Fix the digital shopfront — you're losing walk-ins** [FIX] — Capture demand you're currently losing
-3. **Lean into food quality — it's what guests are buying** [EXPLOIT] — Sharpen proposition → attract the right guests
+3. **Establish basic web presence — you don't exist online beyond Google** [FIX] — Basic discoverability beyond Google Maps
 
 **Watch this month:**
 - Monitor local competitor openings and closures
 - Track Google rating trend month-over-month
 
-**Do not prioritise:** Establish basic web presence — you don't exist online beyond Google
+**Do not prioritise:** Accelerate review volume — you're credible but not dominant
 
 **Overall score: 5.8/10** (baseline month — no prior comparison)
  | Strongest: Experience (9.0) | Weakest: Conversion (2.5)
@@ -28,7 +28,7 @@
 
 ### Financial Impact
 
-Based on publicly observable data for Impasto Micro-Pizzeria, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£360–£7,200 per month** in lost or leaked revenue. The main drivers are: Get your menu online — 77% of diners check before visiting (£180–£3,600/mo); Fix the digital shopfront — you're losing walk-ins (£180–£3,600/mo); Lean into food quality — it's what guests are buying (upside opportunity). Taking action on **Get your menu online — 77% of diners check before visiting** could begin recovering this within weeks at low cost (< £200).
+Based on publicly observable data for Impasto Micro-Pizzeria, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£360–£7,200 per month** in lost or leaked revenue. The main drivers are: Get your menu online — 77% of diners check before visiting (£180–£3,600/mo); Fix the digital shopfront — you're losing walk-ins (£180–£3,600/mo); Establish basic web presence — you don't exist online beyond Google (discovery protection). Taking action on **Get your menu online — 77% of diners check before visiting** could begin recovering this within weeks at low cost (< £200).
 
 | Metric | Current | At Risk | Potential Recovery |
 |---|---|---|---|
@@ -48,7 +48,7 @@ Based on publicly observable data for Impasto Micro-Pizzeria, your current opera
 
 ### No Operational or Risk Alerts This Period
 
-No review patterns in the 6 reviews scanned indicate legal, safety, staffing, or operational risks above normal levels. This is a positive signal. Standard theme analysis follows below.
+No review patterns in the 3 reviews scanned indicate legal, safety, staffing, or operational risks above normal levels. This is a positive signal. Standard theme analysis follows below.
 
 ## Data Basis
 
@@ -56,18 +56,18 @@ This report draws on three layers of evidence:
 
 | Layer | What | Count | Confidence |
 |---|---|---|---|
-| Deep analysis | Text reviewed, themes extracted, segments identified | 6 reviews (6 Google, 0 TripAdvisor) | High for recent themes, moderate for long-term patterns |
+| Deep analysis | Text reviewed, themes extracted, segments identified | 3 reviews (3 Google, 0 TripAdvisor) | High for recent themes, moderate for long-term patterns |
 | Aggregate signals | Rating and volume from all platforms | 121 Google (5★), 0 TripAdvisor (None★) | High for reputation baseline, cannot identify specific themes |
 | Structural data | FSA record, Google Business Profile, web presence | 2 sources | High — factual data, not subjective |
 
-**What this means:** The narrative insights (themes, complaints, praise, segment reads) are based on 6 deeply-analysed recent reviews — a detailed sample, not a census. The aggregate 5 rating across 121 Google reviews is the reputation bedrock and is factored into scoring separately.
+**What this means:** The narrative insights (themes, complaints, praise, segment reads) are based on 3 deeply-analysed recent reviews — a detailed sample, not a census. The aggregate 5 rating across 121 Google reviews is the reputation bedrock and is factored into scoring separately.
 
-⚠️ **Data Confidence: Indicative.** This report is based on 6 reviews from 1 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive.
+⚠️ **Data Confidence: Indicative.** This report is based on 3 reviews from 1 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive.
 
 ℹ️ Reviews are from a single source (Google). Cross-platform validation is not possible.
 
 
-> **Data Confidence Note:** This report is based on 6 reviews from 0 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive. Cross-source validation is not possible with a single data source.
+> **Data Confidence Note:** This report is based on 3 reviews from 0 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive. Cross-source validation is not possible with a single data source.
 
 ## Monthly Movement Summary
 
@@ -82,9 +82,9 @@ This report draws on three layers of evidence:
 
 Impasto Micro-Pizzeria operates as a credible Italian dining venue with a 5.0/5 Google rating across 121 reviews — solid but not yet commanding.
 
-**From deep analysis of 6 recent reviews:**
+**From deep analysis of 3 recent reviews:**
 
-Across 6 reviews, **food quality** (4 mentions) is consistently mentioned.
+Based on a limited sample of 3 reviews (Google's 'most relevant' selection), **food quality** (2 mentions) appears in the limited sample.
 
 In the local market, the venue sits above the median but hasn't established itself as the clear category leader. The identity is 'reliably good' rather than 'destination'.
 
@@ -94,16 +94,15 @@ The venue appears to be underexploiting its experience quality commercially — 
 
 *Different guests experience your venue differently. Here's what each group is telling you.*
 
-**Data basis:** 2 of 6 reviews (33%) contained enough context to identify the guest type. Segments below require ≥2 reviews to surface a pattern.
+**Data basis:** 1 of 3 reviews (33%) contained enough context to identify the guest type. Segments below require ≥2 reviews to surface a pattern.
 
 ### Watch List (single-review signals — not yet patterns)
 
 - 1 review suggests **Theatre-Goers / Event Visitors** may be present — *"Best Pizzas full stop"*
-- 1 review suggests **Locals & Regulars** may be present — *"Seemed expensive per pizza but they are not usual UK sizes"*
 
-### Unattributed Reviews (4)
+### Unattributed Reviews (2)
 
-Top themes across unattributed reviews: Food Quality (3x).
+Top themes across unattributed reviews: Food Quality (1x).
 
 *As review volume grows, more segments will become readable.*
 
@@ -111,7 +110,7 @@ Top themes across unattributed reviews: Food Quality (3x).
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
+### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | ESCALATED]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -126,7 +125,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Fix the digital shopfront — you're losing walk-ins [FIX | ONGOING]
+### Priority 2: Fix the digital shopfront — you're losing walk-ins [FIX | ESCALATED]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -141,20 +140,20 @@ You deliver a strong experience but your online presence doesn't make it easy to
   *Basis: Composite: missing hours/menu/booking each leak 2–8% of demand*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Lean into food quality — it's what guests are buying [EXPLOIT | ONGOING]
+### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | ESCALATED]
 
-Guests consistently praise food quality (4 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
+No website, Facebook, or Instagram detected. Even a basic page improves discoverability and gives customers a reason to trust you before visiting.
 
-**Management implication:** Your guests are telling you your proposition. Use it.
+**Management implication:** Visibility drives discovery. A venue that isn't found can't convert. Typically moveable within 60 days.
 
-- **Owner:** management | **Confidence:** 70%
-- **Expected upside:** Sharpen proposition → attract the right guests
-- **Evidence:** `review_praise: Food Quality=4`
+- **Owner:** marketing | **Confidence:** 80%
+- **Expected upside:** Basic discoverability beyond Google Maps
+- **Evidence:** `web=false, fb=false, ig=false`
 
   **Commercial consequence** (indicative):
-  Value at stake: Upside, not loss prevention — magnitude depends on execution | Cost to fix: Low (< 1 hour, no spend) | Payback: 1–3 months
-  *Basis: Aligning online messaging to guest-validated strengths sharpens conversion*
-- **Segment impact:** Couples and occasion diners have the highest expectations and write the most detailed negative reviews. Fixing food complaints protects your rating with the segment that amplifies problems fastest.
+  Value at stake: Commercial impact not robustly estimable from current external evidence. | Cost to fix: Low (< 1 hour, no spend) | Payback: 1–3 months
+  *Basis: Visibility improvements compound over weeks, not days.*
+- **Segment impact:** Tourists and first-time visitors depend entirely on your online presence. Protecting visibility protects your discovery pipeline.
 
 ## Protect / Improve / Ignore
 
@@ -247,11 +246,11 @@ Online visibility (3.1) hasn't kept pace with guest experience quality (9.0). Go
 
 ### Hidden Risk
 
-No hidden risks identified from current data. Continue monitoring for emerging signals.
+This assessment rests on only 3 review texts. The scores look reasonable but could shift materially with more data. Don't over-invest based on the current picture — collect TripAdvisor data and more review text before making strategic commitments.
 
 ### What May Be Misleading
 
-- **All analysed reviews are positive.** This may reflect genuine quality or Google's algorithm surfacing popular reviews. Check recent 1-2 star reviews directly on Google Maps to validate.
+No significant false-comfort signals detected. The data picture appears consistent.
 
 ### Positioning
 
@@ -261,35 +260,26 @@ Above the local median but without a distinctive market position. This is the 'g
 
 - **Incomplete digital shopfront.** Interested customers who can't confirm hours, see a menu, or book online will choose a competitor who makes it easier.
 - **Unrealised review authority.** At 121 reviews, you lack the volume to dominate local search. 500+ reviews at similar ratings rank measurably higher in Google Maps.
-- **Proposition not explicitly marketed.** Guests praise food quality, but this isn't visibly communicated online. Making it the headline would sharpen expectations and attract the right customers.
+- **Potential proposition signal.** Early review data (from a limited sample) suggests food quality resonates. If confirmed, this could become a marketable differentiator.
 
 *3 revenue leaks identified. Most are fixable at low cost (profile updates, messaging changes). Combined value at stake is likely directional — exact figures require internal cover/spend data.*
 
 ## Review & Reputation Intelligence
 
-*Reputation baseline: 6 reviews analysed (6 Google (undated)). This is the full available sample, not limited to the current month.*
+*Reputation baseline: 3 reviews analysed (3 Google (undated)). This is the full available sample, not limited to the current month.*
 
 ### What Guests Value Most
 
-Food Quality draws consistent praise across reviews. Guests highlight specific dishes and ingredients rather than generic praise, which indicates the kitchen is delivering memorable experiences, not just adequate meals. As one reviewer put it: *"Lovely guy, lovely food, splendido 😊👍🏼Price per person£10–20Food: 5Service: 5Atmosp"*
-
-Value for Money is frequently mentioned but registers as emerging concern, limited evidence. High mention volume combined with low sentiment suggests this is an area guests care about but feel let down by.
-
-### What This Means for the Proposition
-
-The review evidence suggests this venue's real proposition is built on **Food Quality**. 
-Food-led without strong service signals suggests the kitchen carries the reputation. This creates concentration risk — guest satisfaction is tied to culinary consistency, and any chef turnover could impact the proposition quickly.
+Food Quality draws positive signal, limited evidence across reviews. Guests highlight specific dishes and ingredients rather than generic praise, which indicates the kitchen is delivering memorable experiences, not just adequate meals. As one reviewer put it: *"Lovely guy, lovely food, splendido 😊👍🏼Price per person£10–20Food: 5Service: 5Atmosp"*
 
 ### What Management May Be Missing
 
-**Value for Money** (recurring note, 1 mention).
-> *"Seemed expensive per pizza but they are not usual UK sizes"*
-Price complaints may indicate a gap between perceived and delivered value. This is worth monitoring alongside the venue's positioning — are expectations being set correctly?
+No negative themes were detected in the analysed reviews. While encouraging, note that review platforms surface popular reviews first, which skew positive for well-rated venues. To validate, check the most recent 1-2 star reviews directly on the relevant platforms — these may reveal issues not captured in this sample.
 
 ### Evidence Quality
 
-**Confidence: Indicative** (6 from Google).
- The sample provides early directional signals. Themes that appear across multiple reviews carry more weight, but any single finding could shift with additional data.
+**Confidence: Anecdotal** (3 from Google).
+ This analysis draws on a very small sample. Themes are observed impressions, not confirmed patterns. Management should treat these findings as hypotheses to investigate, not conclusions to act on.
  Note: Google's API surfaces only its 'most relevant' reviews (max 5 per venue) from 121 total — this sample likely skews toward popular positive reviews.
 
 ### Recent Movement
@@ -530,27 +520,29 @@ A sustained 0.1-point drop over 3 months indicates systemic issues before they b
 
 ## What Not to Do This Month
 
-**Establish basic web presence — you don't exist online beyond Google**
+**Accelerate review volume — you're credible but not dominant**
 
 Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-6 active items: **6 new/recent**.
+6 active items: **4 stale** (3–5 months), **2 new/recent**.
 
 ### Action 1: Get your menu online — 77% of diners check before visiting
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Lean into food quality — it's what guests are buying
 **Status:** Ongoing (2 months) | **Priority:** High
@@ -559,12 +551,13 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
 
-### Action 4: Accelerate review volume — you're credible but not dominant
-**Status:** Ongoing (2 months) | **Priority:** Medium
-**Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Improved Google Maps ranking
-**Owner:** front-of-house — whoever currently responds to online reviews
+### Action 4: Establish basic web presence — you don't exist online beyond Google
+**Status:** Stale (3 months) | **Priority:** Medium
+**Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
+**Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
 **Success measure:** Google review count increased by 10+ (verifiable via grc field)
+**Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Action 5: Address isolated value for money complaints from guests
 **Status:** Ongoing (2 months) | **Priority:** Standard
@@ -577,7 +570,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 *These items are designated 'do not prioritise' in the Executive Summary. They are ongoing postures, not active action items.*
 
-- **Establish basic web presence — you don't exist online beyond Google** — Basic discoverability beyond Google Maps. Maintain current approach; no active effort required.
+- **Accelerate review volume — you're credible but not dominant** — Improved Google Maps ranking. Maintain current approach; no active effort required.
 
 ## Next-Month Monitoring Plan
 
@@ -600,7 +593,7 @@ These are **externally observable leading indicators** — all trackable without
 |--------|--------|------------|:---------:|
 | FSA Hygiene Rating | Rating 5/5 | observed | ✓ |
 | Google Business Profile | 5.0★ (121 reviews) | observed | ✓ |
-| Google Review Text | 6 reviews analyzed | observed | ✓ |
+| Google Review Text | 3 reviews analyzed | observed | ✓ |
 | TripAdvisor | Not collected | not_assessed | — |
 | Companies House | Not checked | not_assessed | — |
 
@@ -632,13 +625,6 @@ Raw signal values used to compute this report. Provenance: **observed** = direct
 | Postcode | CV37 6QY | FSA | observed |
 | Companies House | — | Not checked | not_assessed |
 
-### Topic Summary
-
-| Topic | Signal | Mentions |
-|-------|--------|--------:|
-| Food Quality | consistent praise | 4 |
-| Value for Money | emerging concern, limited evidence | 1 |
-
 ---
 
 ### Full Review Text Appendix
@@ -657,15 +643,6 @@ Highly recommend.Food: 5Service: 5Atmosphere: 5
 
 **Review 3** | Google | Undated | 5★ | positive | Food Quality
 > Best Pizzas full stop! Tom knows what he’s doing, he’s passionate about what he does and this shows throughout! Lovely guy, lovely food, splendido 😊👍🏼Price per person£10–20Food: 5Service: 5Atmosphere: 5Noise levelLoud, but you can still talkSeating typeIndoor dining area, Bar area, Outdoor patio / terrace
-
-**Review 4** | Google | Undated | 5★ | positive | Food Quality
-> The best pizza I’ve ever tried! Definitely worth the trip after my mate, who’s been three times now, recommended me Impasto. Absolutely delicious and I can’t wait to go back in a few weeks. And Tom, the head chef/owner, is such a sound guy who’s really passionate about what he does. Can’t recommend this place enough! 10/10Food: 5Service: 5Atmosphere: 5
-
-**Review 5** | Google | Undated | 5★ | positive | Value for Money
-> Seemed expensive per pizza but they are not usual UK sizes. We ordered 2 and had to take a whole one home because of how gigantic they were. Perfectly baked NY style dough base and good toppings.
-
-**Review 6** | Google | Undated | 5★ | positive | Food Quality
-> Words honestly can’t do this New York–style pizza justice. The dough is cooked to absolute perfection, and you can taste how carefully chosen the ingredients are in every bite. The sides deserve their own shoutout too — the chicken tenders were tender, crispy, and absolutely drenched in the chef’s house sauce (in the best way possible). 10/10 experience, would recommend without hesitationMeal typeDinnerPrice per person£20–30Food: 5Service: 5Atmosphere: 5
 
 ## Appendix: How Scores Work
 

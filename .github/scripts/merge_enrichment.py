@@ -69,9 +69,23 @@ def merge_processed_reviews(establishments):
         g_reviews = []
         ta_reviews = []
         for rev in reviews:
+            text = rev.get("text", "").strip()
+
+            # Skip owner responses — these are not customer reviews
+            text_lower = text.lower()
+            if any(text_lower.startswith(p) for p in [
+                "thanks for your", "thank you for your review",
+                "thank you for your 5", "thank you for your 4",
+                "thank you for your 3", "thank you for visiting",
+                "thank you for dining", "we appreciate your",
+                "glad you enjoyed", "thanks for the review",
+                "thank you for the review",
+            ]):
+                continue
+
             source = rev.get("source", "")
             review_rec = {
-                "text": rev.get("text", ""),
+                "text": text,
                 "rating": rev.get("rating"),
             }
             if source == "google":
@@ -84,14 +98,11 @@ def merge_processed_reviews(establishments):
                 review_rec["source"] = "tripadvisor"
                 ta_reviews.append(review_rec)
 
-        # Only update if we have more reviews than currently stored
-        existing_g = len(rec.get("g_reviews", []))
-        existing_ta = len(rec.get("ta_reviews", []))
-
-        if len(g_reviews) > existing_g:
+        # Always update with cleaned reviews (owner responses filtered above)
+        if g_reviews:
             rec["g_reviews"] = g_reviews
 
-        if len(ta_reviews) > existing_ta:
+        if ta_reviews:
             rec["ta_reviews"] = ta_reviews
             # Also update TA metadata
             rec["ta_present"] = True

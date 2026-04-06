@@ -46,23 +46,23 @@
       "negative": 1
     }
   },
-  "reviews_analyzed": 5,
+  "reviews_analyzed": 2,
   "priority_actions": [
     {
-      "title": "Close the hygiene gap — 4 to 5",
-      "status": "ongoing",
+      "title": "Close the hygiene gap \u2014 4 to 5",
+      "status": "escalated",
       "priority": 8.5,
       "dimension": "trust"
     },
     {
-      "title": "Get your menu online — 77% of diners check before visiting",
-      "status": "ongoing",
+      "title": "Get your menu online \u2014 77% of diners check before visiting",
+      "status": "escalated",
       "priority": 7.0,
       "dimension": "conversion"
     },
     {
-      "title": "Fix the digital shopfront — you're losing walk-ins",
-      "status": "ongoing",
+      "title": "Fix the digital shopfront \u2014 you're losing walk-ins",
+      "status": "escalated",
       "priority": 7.0,
       "dimension": "conversion"
     }
@@ -80,49 +80,49 @@
   "active_recommendations": 6,
   "implementation_framework": [
     {
-      "title": "Close the hygiene gap — 4 to 5",
+      "title": "Close the hygiene gap \u2014 4 to 5",
       "dimension": "trust",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Remove the trust ceiling on your overall score",
       "success_measure": "FSA rating maintained or improved on next inspection (verifiable via FSA API)",
       "next_milestone": "Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority",
-      "owner_guidance": "compliance — compliance/food safety lead",
-      "times_seen": 2,
-      "barrier_category": null,
+      "owner_guidance": "compliance \u2014 compliance/food safety lead",
+      "times_seen": 3,
+      "barrier_category": "capability",
       "evidence": "r=4"
     },
     {
-      "title": "Get your menu online — 77% of diners check before visiting",
+      "title": "Get your menu online \u2014 77% of diners check before visiting",
       "dimension": "conversion",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "zero",
       "expected_upside": "Reduce decision-stage drop-off",
       "success_measure": "Menu URL present in GBP profile (verifiable via Google Places API)",
-      "next_milestone": "Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website",
-      "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
-      "times_seen": 2,
-      "barrier_category": null,
+      "next_milestone": "Log into business.google.com \u2192 select venue \u2192 Info \u2192 Menu URL \u2192 paste link to your current menu page on your website",
+      "owner_guidance": "marketing \u2014 whoever holds Google Business Profile admin access",
+      "times_seen": 3,
+      "barrier_category": "access",
       "evidence": "has_menu_online=false"
     },
     {
-      "title": "Fix the digital shopfront — you're losing walk-ins",
+      "title": "Fix the digital shopfront \u2014 you're losing walk-ins",
       "dimension": "conversion",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "zero",
       "expected_upside": "Capture demand you're currently losing",
-      "success_measure": "GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)",
+      "success_measure": "GBP completeness \u2265 9/10 with menu and hours complete (verifiable via API)",
       "next_milestone": "Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com",
-      "owner_guidance": "operations — whoever holds Google Business Profile admin access",
-      "times_seen": 2,
-      "barrier_category": null,
+      "owner_guidance": "operations \u2014 whoever holds Google Business Profile admin access",
+      "times_seen": 3,
+      "barrier_category": "access",
       "evidence": "experience=8.38, conversion=2.5"
     },
     {
-      "title": "Protect the 4.5/5 rating — it took years to build",
+      "title": "Protect the 4.5/5 rating \u2014 it took years to build",
       "dimension": "visibility",
       "status_label": "Maintenance (deprioritised)",
       "target_date": "08 April 2026",
@@ -130,37 +130,37 @@
       "expected_upside": "Sustain discovery advantage",
       "success_measure": "Google rating maintained or improved vs current baseline (verifiable via gr field)",
       "next_milestone": "Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine",
-      "owner_guidance": "front-of-house — whoever currently responds to online reviews",
-      "times_seen": 2,
+      "owner_guidance": "front-of-house \u2014 whoever currently responds to online reviews",
+      "times_seen": 3,
       "barrier_category": null,
       "evidence": "gr=4.5, grc=1375"
     },
     {
-      "title": "Establish basic web presence — you don't exist online beyond Google",
+      "title": "Establish basic web presence \u2014 you don't exist online beyond Google",
       "dimension": "visibility",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Basic discoverability beyond Google Maps",
       "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
       "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
-      "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
-      "times_seen": 2,
-      "barrier_category": null,
+      "owner_guidance": "marketing \u2014 whoever holds Google Business Profile admin access",
+      "times_seen": 3,
+      "barrier_category": "awareness",
       "evidence": "web=false, fb=false, ig=false"
     },
     {
       "title": "Address isolated food quality complaints from guests",
       "dimension": "experience",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Reduce food quality complaints, protect rating",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
-      "owner_guidance": "operations — head chef + FOH manager to review together",
-      "times_seen": 2,
-      "barrier_category": null,
+      "owner_guidance": "operations \u2014 head chef + FOH manager to review together",
+      "times_seen": 3,
+      "barrier_category": "capability",
       "evidence": "review_criticism: Food Quality=1 negative"
     }
   ],
@@ -168,12 +168,12 @@
     "segment_distribution": {
       "locals": 1
     },
-    "unattributed_count": 4,
-    "total_reviews": 5,
+    "unattributed_count": 1,
+    "total_reviews": 2,
     "segment_insights": {},
     "tensions": [],
     "data_quality": {
-      "attributed_pct": 20.0,
+      "attributed_pct": 50.0,
       "note": "Honest segment attribution from keyword evidence. Reviews without clear guest-type signals are unattributed."
     }
   },
@@ -242,7 +242,7 @@
       "headline_gap": {
         "customer_sees": "4/5",
         "system_scores": "7.7/10",
-        "gap_explanation": "Customers see 4/5 — below top mark. This is visible and actively affects customer decisions."
+        "gap_explanation": "Customers see 4/5 \u2014 below top mark. This is visible and actively affects customer decisions."
       },
       "peer_comparison": null,
       "trust_score": 7.66
@@ -257,7 +257,7 @@
       "overall_score_impact": 0.07,
       "estimated_trust_after": 7.95,
       "peers_overtaken": 0,
-      "cost_context": "Voluntary reinspection is free via local authority request. Typical wait: 4–8 weeks.",
+      "cost_context": "Voluntary reinspection is free via local authority request. Typical wait: 4\u20138 weeks.",
       "risk_note": "Only request reinspection if confident of maintaining 4/5. A drop to 3 would be worse than the staleness drag.",
       "trust_building_actions": [
         {
@@ -272,44 +272,44 @@
   "evidence_base": {
     "evidence_tiers": {
       "tier_1_deep_analysis": {
-        "description": "Full text analysed — aspect tagging, sentiment, segment classification",
-        "google_count": 5,
+        "description": "Full text analysed \u2014 aspect tagging, sentiment, segment classification",
+        "google_count": 2,
         "tripadvisor_count": 0,
-        "total": 5,
-        "coverage_of_total": "0.4%",
+        "total": 2,
+        "coverage_of_total": "0.1%",
         "selection_method": "Most recent available via API",
         "what_this_tells_you": "Detailed theme and sentiment patterns from recent guests. Strong for identifying specific issues and praise points. Not a census.",
         "confidence": "High for recent themes, moderate for long-term patterns"
       },
       "tier_2_aggregate_signals": {
-        "description": "Rating and volume statistics — no text analysis",
+        "description": "Rating and volume statistics \u2014 no text analysis",
         "google_total_reviews": 1375,
         "google_rating": 4.5,
         "tripadvisor_total_reviews": 0,
         "tripadvisor_rating": null,
         "total_known_reviews": 1375,
-        "rating_stability": "A 4.5/5 across 1,375 reviews is extremely stable — individual reviews have negligible impact on the aggregate.",
-        "what_this_tells_you": "Overall reputation trajectory. A 4.5/5 across 1,375 reviews is extremely stable — individual reviews have negligible impact on the aggregate. ",
+        "rating_stability": "A 4.5/5 across 1,375 reviews is extremely stable \u2014 individual reviews have negligible impact on the aggregate.",
+        "what_this_tells_you": "Overall reputation trajectory. A 4.5/5 across 1,375 reviews is extremely stable \u2014 individual reviews have negligible impact on the aggregate. ",
         "confidence": "High for reputation baseline, cannot identify specific themes"
       },
       "tier_3_structural_signals": {
-        "description": "Non-review data — FSA, GBP completeness, operational signals",
+        "description": "Non-review data \u2014 FSA, GBP completeness, operational signals",
         "sources": [
           "FSA inspection record",
           "Google Business Profile"
         ],
         "source_count": 2,
         "what_this_tells_you": "Compliance, discoverability, and operational readiness. Independent of guest opinion.",
-        "confidence": "High — factual data, not subjective"
+        "confidence": "High \u2014 factual data, not subjective"
       }
     },
     "platform_divergence": null,
-    "coverage_ratio": 0.4,
-    "deep_analysed": 5,
+    "coverage_ratio": 0.1,
+    "deep_analysed": 2,
     "aggregate_total": 1375
   },
   "risk_alerts": {
-    "reviews_scanned": 5,
+    "reviews_scanned": 2,
     "clean": true,
     "alert_count": 0,
     "alerts": [],

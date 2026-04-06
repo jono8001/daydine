@@ -7,7 +7,7 @@
     "google_rating": true,
     "google_reviews": 121,
     "review_text_available": true,
-    "reviews_analyzed": 6,
+    "reviews_analyzed": 3,
     "tripadvisor": false,
     "companies_house": false
   },
@@ -19,11 +19,11 @@
     ]
   },
   "review_confidence": {
-    "tier": "indicative",
-    "review_text_count": 6,
+    "tier": "anecdotal",
+    "review_text_count": 3,
     "source_count": 1,
     "can_claim_themes": true,
-    "can_claim_proposition": true
+    "can_claim_proposition": false
   },
   "section_completeness": {
     "executive_summary": {
@@ -48,7 +48,7 @@
     },
     "segment_intelligence": {
       "present": true,
-      "lines": 6,
+      "lines": 5,
       "meets_minimum": true
     },
     "management_priorities": {
@@ -58,7 +58,7 @@
     },
     "watch_list": {
       "present": true,
-      "lines": 5,
+      "lines": 4,
       "meets_minimum": true
     },
     "what_not_to_do": {
@@ -93,7 +93,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 13,
+      "lines": 8,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -103,7 +103,7 @@
     },
     "recommendation_tracker": {
       "present": true,
-      "lines": 28,
+      "lines": 31,
       "meets_minimum": true
     },
     "category_validation": {
@@ -128,7 +128,7 @@
     },
     "evidence_appendix": {
       "present": true,
-      "lines": 39,
+      "lines": 29,
       "meets_minimum": true
     }
   },
@@ -140,7 +140,8 @@
   "validation_passed": true,
   "validation_errors": [],
   "validation_warnings": [
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15169 has no confidence label within 200 characters"
+    "OVERCLAIM_ON_ANECDOTAL: 'known for' used with only 3 review texts (anecdotal tier)",
+    "ESTIMATE_WITHOUT_CONFIDENCE: \u00a3 figure near position 15095 has no confidence label within 200 characters"
   ],
   "confidence_level": "medium",
   "evidence_provenance_present": true,
@@ -150,7 +151,7 @@
     "valid_date_range": null,
     "dates_by_source": {
       "google": {
-        "total": 6,
+        "total": 3,
         "dated": 0
       }
     },
@@ -197,7 +198,7 @@
       }
     ]
   },
-  "report_lines": 424,
+  "report_lines": 409,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

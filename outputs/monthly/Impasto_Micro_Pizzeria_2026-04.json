@@ -42,33 +42,29 @@
   },
   "review_sentiment": {
     "food_quality": {
-      "positive": 4,
+      "positive": 2,
       "negative": 0
-    },
-    "value": {
-      "positive": 0,
-      "negative": 1
     }
   },
-  "reviews_analyzed": 6,
+  "reviews_analyzed": 3,
   "priority_actions": [
     {
-      "title": "Get your menu online — 77% of diners check before visiting",
-      "status": "ongoing",
+      "title": "Get your menu online \u2014 77% of diners check before visiting",
+      "status": "escalated",
       "priority": 7.0,
       "dimension": "conversion"
     },
     {
-      "title": "Fix the digital shopfront — you're losing walk-ins",
-      "status": "ongoing",
+      "title": "Fix the digital shopfront \u2014 you're losing walk-ins",
+      "status": "escalated",
       "priority": 7.0,
       "dimension": "conversion"
     },
     {
-      "title": "Lean into food quality — it's what guests are buying",
-      "status": "ongoing",
-      "priority": 7.0,
-      "dimension": "experience"
+      "title": "Establish basic web presence \u2014 you don't exist online beyond Google",
+      "status": "escalated",
+      "priority": 5.0,
+      "dimension": "visibility"
     }
   ],
   "watch_items": [
@@ -84,72 +80,72 @@
   "active_recommendations": 6,
   "implementation_framework": [
     {
-      "title": "Get your menu online — 77% of diners check before visiting",
+      "title": "Get your menu online \u2014 77% of diners check before visiting",
       "dimension": "conversion",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "zero",
       "expected_upside": "Reduce decision-stage drop-off",
       "success_measure": "Menu URL present in GBP profile (verifiable via Google Places API)",
-      "next_milestone": "Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website",
-      "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
-      "times_seen": 2,
-      "barrier_category": null,
+      "next_milestone": "Log into business.google.com \u2192 select venue \u2192 Info \u2192 Menu URL \u2192 paste link to your current menu page on your website",
+      "owner_guidance": "marketing \u2014 whoever holds Google Business Profile admin access",
+      "times_seen": 3,
+      "barrier_category": "access",
       "evidence": "has_menu_online=false"
     },
     {
-      "title": "Fix the digital shopfront — you're losing walk-ins",
+      "title": "Fix the digital shopfront \u2014 you're losing walk-ins",
       "dimension": "conversion",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "zero",
       "expected_upside": "Capture demand you're currently losing",
-      "success_measure": "GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)",
+      "success_measure": "GBP completeness \u2265 9/10 with menu and hours complete (verifiable via API)",
       "next_milestone": "Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com",
-      "owner_guidance": "operations — whoever holds Google Business Profile admin access",
-      "times_seen": 2,
-      "barrier_category": null,
+      "owner_guidance": "operations \u2014 whoever holds Google Business Profile admin access",
+      "times_seen": 3,
+      "barrier_category": "access",
       "evidence": "experience=8.96, conversion=2.5"
     },
     {
-      "title": "Lean into food quality — it's what guests are buying",
+      "title": "Lean into food quality \u2014 it's what guests are buying",
       "dimension": "experience",
       "status_label": "Ongoing (2 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
-      "expected_upside": "Sharpen proposition → attract the right guests",
+      "expected_upside": "Sharpen proposition \u2192 attract the right guests",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
-      "owner_guidance": "management — head chef + FOH manager to review together",
+      "owner_guidance": "management \u2014 head chef + FOH manager to review together",
       "times_seen": 2,
       "barrier_category": null,
       "evidence": "review_praise: Food Quality=4"
     },
     {
-      "title": "Establish basic web presence — you don't exist online beyond Google",
+      "title": "Establish basic web presence \u2014 you don't exist online beyond Google",
       "dimension": "visibility",
-      "status_label": "Maintenance (deprioritised)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Basic discoverability beyond Google Maps",
       "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
       "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
-      "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
-      "times_seen": 2,
-      "barrier_category": null,
+      "owner_guidance": "marketing \u2014 whoever holds Google Business Profile admin access",
+      "times_seen": 3,
+      "barrier_category": "awareness",
       "evidence": "web=false, fb=false, ig=false"
     },
     {
-      "title": "Accelerate review volume — you're credible but not dominant",
+      "title": "Accelerate review volume \u2014 you're credible but not dominant",
       "dimension": "visibility",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Maintenance (deprioritised)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Improved Google Maps ranking",
       "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
       "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
-      "owner_guidance": "front-of-house — whoever currently responds to online reviews",
-      "times_seen": 2,
+      "owner_guidance": "front-of-house \u2014 whoever currently responds to online reviews",
+      "times_seen": 3,
       "barrier_category": null,
       "evidence": "grc=121"
     },
@@ -162,7 +158,7 @@
       "expected_upside": "Reduce value for money complaints, protect rating",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
-      "owner_guidance": "operations — head chef + FOH manager to review together",
+      "owner_guidance": "operations \u2014 head chef + FOH manager to review together",
       "times_seen": 2,
       "barrier_category": null,
       "evidence": "review_criticism: Value for Money=1 negative"
@@ -170,11 +166,10 @@
   ],
   "segment_intelligence": {
     "segment_distribution": {
-      "theatre_goers": 1,
-      "locals": 1
+      "theatre_goers": 1
     },
-    "unattributed_count": 4,
-    "total_reviews": 6,
+    "unattributed_count": 2,
+    "total_reviews": 3,
     "segment_insights": {},
     "tensions": [],
     "data_quality": {
@@ -193,7 +188,7 @@
           "weight": 0.4,
           "weighted_impact": 4.0,
           "drag_on_trust": 0.0,
-          "interpretation": "Top mark — no action needed",
+          "interpretation": "Top mark \u2014 no action needed",
           "actionable": false
         },
         {
@@ -218,7 +213,7 @@
           "weight": 0.15,
           "weighted_impact": 1.5,
           "drag_on_trust": 0.0,
-          "interpretation": "Strong — premises, facilities, equipment all adequate.",
+          "interpretation": "Strong \u2014 premises, facilities, equipment all adequate.",
           "actionable": false
         },
         {
@@ -250,7 +245,7 @@
       "headline_gap": {
         "customer_sees": "5/5",
         "system_scores": "7.8/10",
-        "gap_explanation": "Customers see 5/5 — the top mark. But the system scores trust at 7.8/10 because it also weighs inspection freshness, structural compliance, and management confidence. The gap is mostly driven by inspection recency."
+        "gap_explanation": "Customers see 5/5 \u2014 the top mark. But the system scores trust at 7.8/10 because it also weighs inspection freshness, structural compliance, and management confidence. The gap is mostly driven by inspection recency."
       },
       "peer_comparison": {
         "venue_trust": 7.78,
@@ -271,7 +266,7 @@
       "overall_score_impact": 0.43,
       "estimated_trust_after": 9.5,
       "peers_overtaken": 2,
-      "cost_context": "Voluntary reinspection is free via local authority request. Typical wait: 4–8 weeks.",
+      "cost_context": "Voluntary reinspection is free via local authority request. Typical wait: 4\u20138 weeks.",
       "risk_note": "Only request reinspection if confident of maintaining 5/5. A drop to 4 would be worse than the staleness drag.",
       "trust_building_actions": [
         {
@@ -295,14 +290,14 @@
       "trust_gap_to_peer_leader": 0.7,
       "trust_gap_to_peer_avg": 0.3,
       "commercial_exposure": {
-        "scenario": "If a customer is choosing between you and a competitor with a fresher inspection record, the competitor's recency is a tiebreaker — especially for risk-averse bookers (families, corporate groups, tourists checking hygiene ratings).",
+        "scenario": "If a customer is choosing between you and a competitor with a fresher inspection record, the competitor's recency is a tiebreaker \u2014 especially for risk-averse bookers (families, corporate groups, tourists checking hygiene ratings).",
         "segments_most_affected": [
           "families",
           "corporate_groups",
           "tourists"
         ],
-        "value_at_stake": "£0–£500/month",
-        "basis": "Trust gap unlikely to drive direct revenue loss at 5/5 headline, but creates competitive vulnerability. Value is defensive — preventing loss if headline drops or competitor highlights their fresher record."
+        "value_at_stake": "\u00a30\u2013\u00a3500/month",
+        "basis": "Trust gap unlikely to drive direct revenue loss at 5/5 headline, but creates competitive vulnerability. Value is defensive \u2014 preventing loss if headline drops or competitor highlights their fresher record."
       },
       "upside_if_fixed": {
         "action": "Request voluntary reinspection",
@@ -310,7 +305,7 @@
         "overall_score_after": 6.2,
         "competitive_shift": "Would overtake 2 peers on trust",
         "cost": "Free (local authority request)",
-        "time_to_effect": "4–8 weeks",
+        "time_to_effect": "4\u20138 weeks",
         "risk": "Only request reinspection if confident of maintaining 5/5. A drop to 4 would be worse than the staleness drag."
       }
     }
@@ -318,44 +313,44 @@
   "evidence_base": {
     "evidence_tiers": {
       "tier_1_deep_analysis": {
-        "description": "Full text analysed — aspect tagging, sentiment, segment classification",
-        "google_count": 6,
+        "description": "Full text analysed \u2014 aspect tagging, sentiment, segment classification",
+        "google_count": 3,
         "tripadvisor_count": 0,
-        "total": 6,
-        "coverage_of_total": "5.0%",
+        "total": 3,
+        "coverage_of_total": "2.5%",
         "selection_method": "Most recent available via API",
         "what_this_tells_you": "Detailed theme and sentiment patterns from recent guests. Strong for identifying specific issues and praise points. Not a census.",
         "confidence": "High for recent themes, moderate for long-term patterns"
       },
       "tier_2_aggregate_signals": {
-        "description": "Rating and volume statistics — no text analysis",
+        "description": "Rating and volume statistics \u2014 no text analysis",
         "google_total_reviews": 121,
         "google_rating": 5,
         "tripadvisor_total_reviews": 0,
         "tripadvisor_rating": null,
         "total_known_reviews": 121,
-        "rating_stability": "A 5/5 across 121 reviews is stable — sustained patterns needed to shift the average.",
-        "what_this_tells_you": "Overall reputation trajectory. A 5/5 across 121 reviews is stable — sustained patterns needed to shift the average. ",
+        "rating_stability": "A 5/5 across 121 reviews is stable \u2014 sustained patterns needed to shift the average.",
+        "what_this_tells_you": "Overall reputation trajectory. A 5/5 across 121 reviews is stable \u2014 sustained patterns needed to shift the average. ",
         "confidence": "High for reputation baseline, cannot identify specific themes"
       },
       "tier_3_structural_signals": {
-        "description": "Non-review data — FSA, GBP completeness, operational signals",
+        "description": "Non-review data \u2014 FSA, GBP completeness, operational signals",
         "sources": [
           "FSA inspection record",
           "Google Business Profile"
         ],
         "source_count": 2,
         "what_this_tells_you": "Compliance, discoverability, and operational readiness. Independent of guest opinion.",
-        "confidence": "High — factual data, not subjective"
+        "confidence": "High \u2014 factual data, not subjective"
       }
     },
     "platform_divergence": null,
-    "coverage_ratio": 5.0,
-    "deep_analysed": 6,
+    "coverage_ratio": 2.5,
+    "deep_analysed": 3,
     "aggregate_total": 121
   },
   "risk_alerts": {
-    "reviews_scanned": 6,
+    "reviews_scanned": 3,
     "clean": true,
     "alert_count": 0,
     "alerts": [],

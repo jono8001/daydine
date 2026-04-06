@@ -47,7 +47,7 @@ Based on publicly observable data for Shakespeare's, your current operational ga
 
 ### No Operational or Risk Alerts This Period
 
-No review patterns in the 5 reviews scanned indicate legal, safety, staffing, or operational risks above normal levels. This is a positive signal. Standard theme analysis follows below.
+No review patterns in the 2 reviews scanned indicate legal, safety, staffing, or operational risks above normal levels. This is a positive signal. Standard theme analysis follows below.
 
 ## Data Basis
 
@@ -55,18 +55,18 @@ This report draws on three layers of evidence:
 
 | Layer | What | Count | Confidence |
 |---|---|---|---|
-| Deep analysis | Text reviewed, themes extracted, segments identified | 5 reviews (5 Google, 0 TripAdvisor) | High for recent themes, moderate for long-term patterns |
+| Deep analysis | Text reviewed, themes extracted, segments identified | 2 reviews (2 Google, 0 TripAdvisor) | High for recent themes, moderate for long-term patterns |
 | Aggregate signals | Rating and volume from all platforms | 1,375 Google (4.5★), 0 TripAdvisor (None★) | High for reputation baseline, cannot identify specific themes |
 | Structural data | FSA record, Google Business Profile, web presence | 2 sources | High — factual data, not subjective |
 
-**What this means:** The narrative insights (themes, complaints, praise, segment reads) are based on 5 deeply-analysed recent reviews — a detailed sample, not a census. The aggregate 4.5 rating across 1,375 Google reviews is the reputation bedrock and is factored into scoring separately.
+**What this means:** The narrative insights (themes, complaints, praise, segment reads) are based on 2 deeply-analysed recent reviews — a detailed sample, not a census. The aggregate 4.5 rating across 1,375 Google reviews is the reputation bedrock and is factored into scoring separately.
 
-⚠️ **Data Confidence: Indicative.** This report is based on 5 reviews from 1 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive.
+⚠️ **Data Confidence: Indicative.** This report is based on 2 reviews from 1 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive.
 
 ℹ️ Reviews are from a single source (Google). Cross-platform validation is not possible.
 
 
-> **Data Confidence Note:** This report is based on 5 reviews from 0 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive. Cross-source validation is not possible with a single data source.
+> **Data Confidence Note:** This report is based on 2 reviews from 0 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive. Cross-source validation is not possible with a single data source.
 
 ## Monthly Movement Summary
 
@@ -81,7 +81,7 @@ This report draws on three layers of evidence:
 
 Shakespeare's is a well-established other venue with a strong public reputation — 4.5/5 across 1,375 Google reviews. That volume means the reputation is earned, not manufactured.
 
-**From deep analysis of 5 recent reviews:**
+**From deep analysis of 2 recent reviews:**
 
 No individual review text is available for narrative analysis. The aggregate experience score (based on rating and compliance) is directionally positive but cannot confirm what specifically guests value.
 
@@ -91,13 +91,13 @@ The venue appears to be underexploiting its experience quality commercially — 
 
 *Different guests experience your venue differently. Here's what each group is telling you.*
 
-**Data basis:** 1 of 5 reviews (20%) contained enough context to identify the guest type. Segments below require ≥2 reviews to surface a pattern.
+**Data basis:** 1 of 2 reviews (50%) contained enough context to identify the guest type. Segments below require ≥2 reviews to surface a pattern.
 
 ### Watch List (single-review signals — not yet patterns)
 
 - 1 review suggests **Locals & Regulars** may be present — *"Being able to take your dog inside, instead of having to sec"*
 
-### Unattributed Reviews (4)
+### Unattributed Reviews (1)
 
 Top themes across unattributed reviews: Food Quality (1x).
 
@@ -107,7 +107,7 @@ Top themes across unattributed reviews: Food Quality (1x).
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Close the hygiene gap — 4 to 5 [FIX | ONGOING]
+### Priority 1: Close the hygiene gap — 4 to 5 [FIX | ESCALATED]
 
 An FSA rating of 4 is visible on your Google listing and the FSA website. Customers see it before they see your menu. Address the inspector's specific findings.
 
@@ -122,7 +122,7 @@ An FSA rating of 4 is visible on your Google listing and the FSA website. Custom
   *Basis: FSA 4/5 caps the Trust dimension; re-inspection to 5 removes the cap*
 - **Segment impact:** Affects all segments equally — compliance is a universal baseline.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ESCALATED]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -137,7 +137,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Fix the digital shopfront — you're losing walk-ins [FIX | ONGOING]
+### Priority 3: Fix the digital shopfront — you're losing walk-ins [FIX | ESCALATED]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -243,11 +243,11 @@ Online visibility (3.9) hasn't kept pace with guest experience quality (8.4). Go
 
 ### Hidden Risk
 
-This assessment rests on only 5 review texts. The scores look reasonable but could shift materially with more data. Don't over-invest based on the current picture — collect TripAdvisor data and more review text before making strategic commitments.
+This assessment rests on only 2 review texts. The scores look reasonable but could shift materially with more data. Don't over-invest based on the current picture — collect TripAdvisor data and more review text before making strategic commitments.
 
 ### What May Be Misleading
 
-- **All analysed reviews are positive.** This may reflect genuine quality or Google's algorithm surfacing popular reviews. Check recent 1-2 star reviews directly on Google Maps to validate.
+No significant false-comfort signals detected. The data picture appears consistent.
 
 ### Positioning
 
@@ -257,7 +257,7 @@ This assessment rests on only 5 review texts. The scores look reasonable but cou
 
 ## Review & Reputation Intelligence
 
-*Reputation baseline: 5 reviews analysed (5 Google (undated)). This is the full available sample, not limited to the current month.*
+*Reputation baseline: 2 reviews analysed (2 Google (undated)). This is the full available sample, not limited to the current month.*
 
 ### What Guests Value Most
 
@@ -269,13 +269,9 @@ Food Quality is frequently mentioned but registers as emerging concern, limited 
 > *"Lovely coffee but flapjack was dry and hard  I wonder how long ago it was made.Meal typeBrunchFood: 2Service: 4Atmospher..."*
 This warrants investigation to determine whether it reflects a systemic issue or isolated incidents.
 
-### Reputation Risk Assessment
-
-**Trajectory warning:** Later reviews trend lower than earlier ones (based on sample order — not date-confirmed). A declining trajectory, if sustained, will erode the aggregate rating over time. This is an early warning — the operational cause should be identified before it becomes visible in headline ratings.
-
 ### Evidence Quality
 
-**Confidence: Anecdotal** (5 from Google).
+**Confidence: Anecdotal** (2 from Google).
  This analysis draws on a very small sample. Themes are observed impressions, not confirmed patterns. Management should treat these findings as hypotheses to investigate, not conclusions to act on.
  Note: Google's API surfaces only its 'most relevant' reviews (max 5 per venue) from 1,375 total — this sample likely skews toward popular positive reviews.
 
@@ -300,14 +296,13 @@ This section compares what customers see (public signals) against what the data 
 
 ### Why This Venue Is In This Cohort
 
-Shakespeare's is classified as **Garden Center** (confidence: low). Google's raw category is "Other" but the resolved category triangulates across 2 signal sources.
+Shakespeare's is classified as **Garden Center** (confidence: low). Google's raw category is "Other" but the resolved category triangulates across 1 signal sources.
 
 ### Category Evidence
 
 | Signal Source | Category Signal | Weight |
 |---|---|---|
 | Google Place Types | garden_center, hardware_store, garden, building_materials_store, supplier, general_contractor, service, store | Primary |
-| Review Language | "restaurant" (1x), "cafe" (1x) | Supportive |
 
 **Resolved category:** Garden Center (confidence: low)
 
@@ -469,42 +464,47 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-6 active items: **6 new/recent**.
+6 active items: **6 stale** (3–5 months).
 
 ### Action 1: Close the hygiene gap — 4 to 5
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Fix the digital shopfront — you're losing walk-ins
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 4: Establish basic web presence — you don't exist online beyond Google
-**Status:** Ongoing (2 months) | **Priority:** Medium
+**Status:** Stale (3 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
 **Success measure:** Google review count increased by 10+ (verifiable via grc field)
+**Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Action 5: Address isolated food quality complaints from guests
-**Status:** Ongoing (2 months) | **Priority:** Standard
+**Status:** Stale (3 months) | **Priority:** Standard
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Maintenance Items (deprioritised this month)
 
@@ -534,7 +534,7 @@ These are **externally observable leading indicators** — all trackable without
 |--------|--------|------------|:---------:|
 | FSA Hygiene Rating | Rating 4/5 | observed | ✓ |
 | Google Business Profile | 4.5★ (1375 reviews) | observed | ✓ |
-| Google Review Text | 5 reviews analyzed | observed | ✓ |
+| Google Review Text | 2 reviews analyzed | observed | ✓ |
 | TripAdvisor | Not collected | not_assessed | — |
 | Companies House | Not checked | not_assessed | — |
 
@@ -566,12 +566,6 @@ Raw signal values used to compute this report. Provenance: **observed** = direct
 | Postcode | B94 5JU | FSA | observed |
 | Companies House | — | Not checked | not_assessed |
 
-### Topic Summary
-
-| Topic | Signal | Mentions |
-|-------|--------|--------:|
-| Food Quality | emerging concern, limited evidence | 1 |
-
 ---
 
 ### Full Review Text Appendix
@@ -581,17 +575,8 @@ Raw signal values used to compute this report. Provenance: **observed** = direct
 **Review 1** | Google | Undated | 4★ | positive
 > Being able to take your dog inside, instead of having to secluded in an area usually outside with the smokers and vapers is a great touch.Meal typeBrunchPrice per person£10–20Food: 4Service: 5Atmosphere: 3Noise levelQuiet, easy to talkParking spacePlenty of parkingParking optionsFree parking lot
 
-**Review 2** | Google | Undated | 5★ | positive
-> Thanks for your 5 star review Lisa.
-
-**Review 3** | Google | Undated | 3★ | mixed | Food Quality
+**Review 2** | Google | Undated | 3★ | mixed | Food Quality
 > Lovely coffee but flapjack was dry and hard  I wonder how long ago it was made.Meal typeBrunchFood: 2Service: 4Atmosphere: 4
-
-**Review 4** | Google | Undated | 4★ | positive
-> Thank you for your review Tony.
-
-**Review 5** | Google | Undated | 5★ | positive
-> Food here is excellent for a Garden Centre Cafe. Good prices, and portions.Price per person£10–20Food: 5Service: 5Atmosphere: 5Group size2 peopleWait time10-30 minSeating typeIndoor dining area, Outdoor patio / terraceParking spacePlenty of parkingParking optionsFree parking lotWheelchair accessibilityYes.
 
 ## Appendix: How Scores Work
 

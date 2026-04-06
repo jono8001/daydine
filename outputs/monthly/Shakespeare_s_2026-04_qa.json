@@ -7,7 +7,7 @@
     "google_rating": true,
     "google_reviews": 1375,
     "review_text_available": true,
-    "reviews_analyzed": 5,
+    "reviews_analyzed": 2,
     "tripadvisor": false,
     "companies_house": false
   },
@@ -20,7 +20,7 @@
   },
   "review_confidence": {
     "tier": "anecdotal",
-    "review_text_count": 5,
+    "review_text_count": 2,
     "source_count": 1,
     "can_claim_themes": true,
     "can_claim_proposition": false
@@ -93,7 +93,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 11,
+      "lines": 10,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -103,12 +103,12 @@
     },
     "recommendation_tracker": {
       "present": true,
-      "lines": 28,
+      "lines": 33,
       "meets_minimum": true
     },
     "category_validation": {
       "present": true,
-      "lines": 6,
+      "lines": 5,
       "meets_minimum": true
     },
     "market_intelligence": {
@@ -128,7 +128,7 @@
     },
     "evidence_appendix": {
       "present": true,
-      "lines": 32,
+      "lines": 23,
       "meets_minimum": true
     }
   },
@@ -140,7 +140,7 @@
   "validation_passed": true,
   "validation_errors": [],
   "validation_warnings": [
-    "OVERCLAIM_ON_ANECDOTAL: 'known for' used with only 5 review texts (anecdotal tier)"
+    "OVERCLAIM_ON_ANECDOTAL: 'known for' used with only 2 review texts (anecdotal tier)"
   ],
   "confidence_level": "medium",
   "evidence_provenance_present": true,
@@ -150,7 +150,7 @@
     "valid_date_range": null,
     "dates_by_source": {
       "google": {
-        "total": 5,
+        "total": 2,
         "dated": 0
       }
     },
@@ -188,7 +188,7 @@
       {
         "check": "orphan_reviews",
         "passed": true,
-        "error_count": 1
+        "error_count": 0
       },
       {
         "check": "duplicate_quotes",
@@ -197,7 +197,7 @@
       }
     ]
   },
-  "report_lines": 370,
+  "report_lines": 362,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,
