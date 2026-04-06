@@ -1,38 +1,13 @@
 {
-  "generated_at": "2026-04-06T15:35:49Z",
+  "generated_at": "2026-04-06T17:14:36Z",
   "raw_files": {
     "google": 7,
     "tripadvisor": 1
   },
-  "venues_with_data": 7,
-  "total_reviews": 51,
-  "below_minimum_threshold": 7,
+  "venues_with_data": 6,
+  "total_reviews": 45,
+  "below_minimum_threshold": 6,
   "venues": {
-    "unknown_venue_503104_2026-04_combined.json": {
-      "name": null,
-      "total_reviews": 0,
-      "by_source": {},
-      "reviews_with_text": 0,
-      "avg_length": 0,
-      "date_range": null,
-      "confidence": "Indicative",
-      "below_minimum": true
-    },
-    "1695937": {
-      "name": "Impasto Micro-Pizzeria",
-      "total_reviews": 6,
-      "by_source": {
-        "google": 6
-      },
-      "reviews_with_text": 6,
-      "avg_length": 58,
-      "date_range": {
-        "earliest": "2026-03-07",
-        "latest": "2026-04-05"
-      },
-      "confidence": "Indicative",
-      "below_minimum": true
-    },
     "503104": {
       "name": "Simla Takeaway",
       "total_reviews": 5,
@@ -42,6 +17,21 @@
       "reviews_with_text": 5,
       "avg_length": 41,
       "date_range": null,
+      "confidence": "Indicative",
+      "below_minimum": true
+    },
+    "1695937": {
+      "name": "Impasto Micro-Pizzeria",
+      "total_reviews": 3,
+      "by_source": {
+        "google": 3
+      },
+      "reviews_with_text": 3,
+      "avg_length": 61,
+      "date_range": {
+        "earliest": "2026-04-05",
+        "latest": "2026-04-05"
+      },
       "confidence": "Indicative",
       "below_minimum": true
     },
@@ -87,14 +77,14 @@
     },
     "1584577": {
       "name": "Shakespeare's",
-      "total_reviews": 5,
+      "total_reviews": 2,
       "by_source": {
-        "google": 5
+        "google": 2
       },
-      "reviews_with_text": 5,
-      "avg_length": 22,
+      "reviews_with_text": 2,
+      "avg_length": 31,
       "date_range": {
-        "earliest": "2025-12-07",
+        "earliest": "2026-03-07",
         "latest": "2026-03-16"
       },
       "confidence": "Indicative",

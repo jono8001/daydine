@@ -11,3 +11,10 @@
 [2026-04-06 15:35] Arrow Mill: 5 reviews (google:5) — Indicative
 [2026-04-06 15:35] Shakespeare's: 5 reviews (google:5) — Indicative
 [2026-04-06 15:35] SUMMARY: 7 restaurants, 51 total reviews, 7 below threshold
+[2026-04-06 17:14] Simla Takeaway: 5 reviews (google:5) — Indicative
+[2026-04-06 17:14] Impasto Micro-Pizzeria: 3 reviews (google:3) — Indicative
+[2026-04-06 17:14] The Fox Inn: 5 reviews (google:5) — Indicative
+[2026-04-06 17:14] Vintner Wine Bar: 25 reviews (google:5, tripadvisor:20) — Directional
+[2026-04-06 17:14] Arrow Mill: 5 reviews (google:5) — Indicative
+[2026-04-06 17:14] Shakespeare's: 2 reviews (google:2) — Indicative
+[2026-04-06 17:14] SUMMARY: 6 restaurants, 45 total reviews, 6 below threshold
