@@ -140,7 +140,7 @@
   "validation_passed": true,
   "validation_errors": [],
   "validation_warnings": [
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15157 has no confidence label within 200 characters"
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15169 has no confidence label within 200 characters"
   ],
   "confidence_level": "medium",
   "evidence_provenance_present": true,

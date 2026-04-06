@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "bf6f2b4a1dbd",
     "venue_id": "1584577",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "ff5437f46716": {
@@ -31,9 +31,9 @@
     "confidence": 0.9,
     "rec_id": "ff5437f46716",
     "venue_id": "1584577",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "e127d9e11533": {
@@ -49,9 +49,9 @@
     "confidence": 0.8,
     "rec_id": "e127d9e11533",
     "venue_id": "1584577",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "0866d7a6b4b2": {
@@ -68,9 +68,9 @@
     "management_implication": "Interest without conversion is vanity traffic.",
     "rec_id": "0866d7a6b4b2",
     "venue_id": "1584577",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "9da0967e9ee1": {
@@ -87,9 +87,9 @@
     "management_implication": "Guests are telling you what's wrong. Listen.",
     "rec_id": "9da0967e9ee1",
     "venue_id": "1584577",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "9ffe9af2959f": {
@@ -105,9 +105,9 @@
     "confidence": 0.85,
     "rec_id": "9ffe9af2959f",
     "venue_id": "1584577",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

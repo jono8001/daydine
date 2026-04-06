@@ -107,7 +107,7 @@ Top themes across unattributed reviews: Food Quality (1x).
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Close the hygiene gap — 4 to 5 [FIX | NEW]
+### Priority 1: Close the hygiene gap — 4 to 5 [FIX | ONGOING]
 
 An FSA rating of 4 is visible on your Google listing and the FSA website. Customers see it before they see your menu. Address the inspector's specific findings.
 
@@ -122,7 +122,7 @@ An FSA rating of 4 is visible on your Google listing and the FSA website. Custom
   *Basis: FSA 4/5 caps the Trust dimension; re-inspection to 5 removes the cap*
 - **Segment impact:** Affects all segments equally — compliance is a universal baseline.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -137,7 +137,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Fix the digital shopfront — you're losing walk-ins [FIX | NEW]
+### Priority 3: Fix the digital shopfront — you're losing walk-ins [FIX | ONGOING]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -472,35 +472,35 @@ Low impact relative to effort this month. Focus on the three priorities above.
 6 active items: **6 new/recent**.
 
 ### Action 1: Close the hygiene gap — 4 to 5
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 3: Fix the digital shopfront — you're losing walk-ins
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
 
 ### Action 4: Establish basic web presence — you don't exist online beyond Google
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
 **Success measure:** Google review count increased by 10+ (verifiable via grc field)
 
 ### Action 5: Address isolated food quality complaints from guests
-**Status:** New | **Priority:** Standard
+**Status:** Ongoing (2 months) | **Priority:** Standard
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
