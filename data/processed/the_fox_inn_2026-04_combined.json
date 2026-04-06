@@ -1,0 +1,96 @@
+{
+  "fhrsid": "1344517",
+  "name": "The Fox Inn",
+  "period": "2026-04",
+  "generated_at": "2026-04-06T15:12:44Z",
+  "summary": {
+    "total_reviews": 5,
+    "by_source": {
+      "google": 5
+    },
+    "by_quality": {
+      "HIGH": 5
+    },
+    "reviews_with_text": 5,
+    "avg_review_length_words": 99,
+    "date_range": null,
+    "duplicates_removed": 0
+  },
+  "reviews": [
+    {
+      "text": "We had a wonderful Sunday roast at The Fox in Loxley. We arrived just after 12 and were seated at a table by the fireplace. The service was incredible, James, our waiter was friendly, chatty and very efficient. The food was great and it was nice to be able to see the chef serving up the meals at the pass and the smooth transition from the pass to the tables. The atmosphere was bubbly and light and the pub was full by 13.30. Would definitely recommend booking before you go to guarantee a table. We hadn't booked but the staff were incredibly kind and squeezed us in and we are really happy they did! It was honestly one of the best Sunday roasts we had eaten out and really reasonably priced as well. There were the options to have a small or large portion and even the small had plenty on it (I was enjoying it so much I forgot to take a photo.)\n\nSet in the middle of the village you can tell that the pub is popular and the heart of the local community. Would definitely visit again!",
+      "rating": 5,
+      "date": null,
+      "date_raw": "5 months ago",
+      "reviewer_name": "",
+      "reviewer_reviews": null,
+      "is_local_guide": false,
+      "owner_response": null,
+      "owner_response_date": null,
+      "helpful_count": 0,
+      "source": "google",
+      "_source_file": "the_fox_inn_2026-04-01.json",
+      "quality": "HIGH"
+    },
+    {
+      "text": "Not local to the area, we had asked for recommendations for dining and The Fox lived delightfully up to them. You can feel the love from the community which flows in to the pub. Beautifully decorated with a charming modern food menu. Do excuse the bite out of the cheesecake/lemon meringue photo - it was that delicious, we couldn’t wait! Belinda and Adrian deserve all the success here, with the merge of Belinda’s homely hospitality and Adrian’s flair for elevated pub cuisine - you’re lucky if this is your local. Keep supporting it!",
+      "rating": 5,
+      "date": null,
+      "date_raw": "8 months ago",
+      "reviewer_name": "",
+      "reviewer_reviews": null,
+      "is_local_guide": false,
+      "owner_response": null,
+      "owner_response_date": null,
+      "helpful_count": 0,
+      "source": "google",
+      "_source_file": "the_fox_inn_2026-04-01.json",
+      "quality": "HIGH"
+    },
+    {
+      "text": "Wow! This place is a rare gem!\nFrom the cosy atmosphere, with locals and tourists alike, to the kind and welcoming staff who are attentive to your needs. In love with the food, hearty fare full of love and care. Portion sizes are generous. So many gluten free options all home made. The pie has a reputation, and doesn't disappoint. Will come back again and can't recommend enough. Thank you chef Gemma and Andy and Sally for a joyful and fulfilling evening.",
+      "rating": 5,
+      "date": null,
+      "date_raw": "4 months ago",
+      "reviewer_name": "",
+      "reviewer_reviews": null,
+      "is_local_guide": false,
+      "owner_response": null,
+      "owner_response_date": null,
+      "helpful_count": 0,
+      "source": "google",
+      "_source_file": "the_fox_inn_2026-04-01.json",
+      "quality": "HIGH"
+    },
+    {
+      "text": "Really enjoyed our bank holiday lunch here Portion sizes were so generous we had to take some home but that in no way affected the quality, everything from starter through to desert was absolutely delicious! Staff were attentive and friendly throughout, and there are a couple of cracking pints on draught. I wouldn't hesitate to recommend this great pub to anyone in the area.",
+      "rating": 5,
+      "date": null,
+      "date_raw": "8 years ago",
+      "reviewer_name": "",
+      "reviewer_reviews": null,
+      "is_local_guide": false,
+      "owner_response": null,
+      "owner_response_date": null,
+      "helpful_count": 0,
+      "source": "google",
+      "_source_file": "the_fox_inn_2026-04-01.json",
+      "quality": "HIGH"
+    },
+    {
+      "text": "Reasonable amount of parking space. Great welcome and very friendly staff. Good British pub atmosphere. Varied tables and seating either in the main area or quieter off to one side. Good selection of dishes and drinks. Super local food well prepared and presented. Sensible prices and no pressure. A really great place and I hope you enjoy your visit as much as I did.",
+      "rating": 5,
+      "date": null,
+      "date_raw": "5 months ago",
+      "reviewer_name": "",
+      "reviewer_reviews": null,
+      "is_local_guide": false,
+      "owner_response": null,
+      "owner_response_date": null,
+      "helpful_count": 0,
+      "source": "google",
+      "_source_file": "the_fox_inn_2026-04-01.json",
+      "quality": "HIGH"
+    }
+  ]
+}

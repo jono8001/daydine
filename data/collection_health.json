@@ -1,0 +1,64 @@
+{
+  "generated_at": "2026-04-06T15:12:49Z",
+  "raw_files": {
+    "google": 4,
+    "tripadvisor": 1
+  },
+  "venues_with_data": 4,
+  "total_reviews": 40,
+  "below_minimum_threshold": 4,
+  "venues": {
+    "1344517": {
+      "name": "The Fox Inn",
+      "total_reviews": 5,
+      "by_source": {
+        "google": 5
+      },
+      "reviews_with_text": 5,
+      "avg_length": 99,
+      "date_range": null,
+      "confidence": "Indicative",
+      "below_minimum": true
+    },
+    "503480": {
+      "name": "Vintner Wine Bar",
+      "total_reviews": 25,
+      "by_source": {
+        "google": 5,
+        "tripadvisor": 20
+      },
+      "reviews_with_text": 25,
+      "avg_length": 73,
+      "date_range": {
+        "earliest": "2026-01-20",
+        "latest": "2026-12-20"
+      },
+      "confidence": "Directional",
+      "below_minimum": true
+    },
+    "503104": {
+      "name": "Simla Takeaway",
+      "total_reviews": 5,
+      "by_source": {
+        "google": 5
+      },
+      "reviews_with_text": 5,
+      "avg_length": 41,
+      "date_range": null,
+      "confidence": "Indicative",
+      "below_minimum": true
+    },
+    "503282": {
+      "name": "Arrow Mill",
+      "total_reviews": 5,
+      "by_source": {
+        "google": 5
+      },
+      "reviews_with_text": 5,
+      "avg_length": 82,
+      "date_range": null,
+      "confidence": "Indicative",
+      "below_minimum": true
+    }
+  }
+}

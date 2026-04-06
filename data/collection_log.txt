@@ -1,0 +1,5 @@
+[2026-04-06 15:12] The Fox Inn: 5 reviews (google:5) — Indicative
+[2026-04-06 15:12] Vintner Wine Bar: 25 reviews (google:5, tripadvisor:20) — Directional
+[2026-04-06 15:12] Simla Takeaway: 5 reviews (google:5) — Indicative
+[2026-04-06 15:12] Arrow Mill: 5 reviews (google:5) — Indicative
+[2026-04-06 15:12] SUMMARY: 4 restaurants, 40 total reviews, 4 below threshold

@@ -38,3 +38,18 @@ def build_data_basis(w, venue_rec, review_intel):
           f"TripAdvisor ({divergence['tripadvisor_rating']}) ratings diverge by "
           f"{abs(divergence['difference']):.1f} points. "
           f"{divergence['hypothesis']}\n")
+
+    # Confidence warnings for thin data
+    total_deep = t1["total"]
+    source_count = sum(1 for s in [t1["google_count"], t1["tripadvisor_count"]] if s > 0)
+
+    if total_deep < 50:
+        tier = "Indicative" if total_deep < 25 else "Directional"
+        w(f"⚠️ **Data Confidence: {tier}.** This report is based on {total_deep} "
+          f"reviews from {source_count} source(s), which is below our recommended "
+          f"minimum of 50. Findings should be treated as indicative rather than conclusive.\n")
+
+    if source_count <= 1:
+        source_name = "Google" if t1["google_count"] > 0 else "TripAdvisor" if t1["tripadvisor_count"] > 0 else "unknown"
+        w(f"ℹ️ Reviews are from a single source ({source_name}). "
+          f"Cross-platform validation is not possible.\n")
