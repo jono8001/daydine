@@ -86,41 +86,86 @@ async def accept_ta_cookies(page):
 
 
 async def find_restaurant_on_ta(page, name, postcode):
-    """Search TripAdvisor and find the correct restaurant page."""
+    """Search TripAdvisor and find the correct restaurant page.
+
+    Strategy: Use Google to find the TripAdvisor page (more reliable than
+    TripAdvisor's own search which is heavily JS-rendered).
+    Fallback: Direct TripAdvisor search.
+    """
+    # Strategy 1: Google search for the TripAdvisor page
+    google_query = f"{name} {postcode} site:tripadvisor.co.uk"
+    await page.goto(f"https://www.google.com/search?q={google_query.replace(' ', '+')}")
+    await page.wait_for_timeout(random.randint(3000, 5000))
+
+    # Accept Google cookies if needed
+    try:
+        for selector in ['button:has-text("Accept all")', '[aria-label="Accept all"]']:
+            btn = page.locator(selector).first
+            if await btn.is_visible(timeout=2000):
+                await btn.click()
+                await page.wait_for_timeout(1000)
+                break
+    except Exception:
+        pass
+
+    # Find TripAdvisor restaurant link in Google results
+    ta_links = page.locator('a[href*="tripadvisor.co.uk/Restaurant_Review"]')
+    count = await ta_links.count()
+
+    for i in range(min(count, 5)):
+        try:
+            link = ta_links.nth(i)
+            href = await link.get_attribute("href") or ""
+            if "Restaurant_Review" in href:
+                # Navigate directly to the TA page
+                await page.goto(href)
+                await page.wait_for_timeout(random.randint(3000, 5000))
+
+                if not await handle_cloudflare(page):
+                    return None
+
+                await accept_ta_cookies(page)
+                return page.url
+        except Exception:
+            continue
+
+    # Strategy 2: Direct TripAdvisor search (fallback)
     search_url = f"https://www.tripadvisor.co.uk/Search?q={name.replace(' ', '+')}+{postcode.replace(' ', '+')}"
     await page.goto(search_url)
-    await page.wait_for_timeout(random.randint(3000, 5000))
+    await page.wait_for_timeout(random.randint(4000, 7000))
 
     if not await handle_cloudflare(page):
         return None
 
     await accept_ta_cookies(page)
 
-    # Wait for search results
-    try:
-        await page.wait_for_selector('[data-test-target="search-result"], .result-title, .search-result',
-                                      timeout=10000)
-    except Exception:
-        # Try alternative: direct URL construction
-        return None
-
-    # Click first restaurant result that mentions Stratford
-    results = page.locator('[data-test-target="search-result"] a, .result-title a, a[href*="Restaurant_Review"]')
-    count = await results.count()
-
-    for i in range(min(count, 5)):
+    # Try multiple selector patterns for search results
+    for selector in [
+        'a[href*="Restaurant_Review"]',
+        '[data-test-target="search-result"] a',
+        '.result-title a',
+        '.search-result a',
+        'div[data-widget-type] a[href*="Review"]',
+    ]:
         try:
-            link = results.nth(i)
-            href = await link.get_attribute("href") or ""
-            text = (await link.text_content() or "").lower()
+            results = page.locator(selector)
+            count = await results.count()
+            if count == 0:
+                continue
 
-            if "restaurant_review" in href.lower() or "restaurant" in href.lower():
-                # Check name similarity
+            for i in range(min(count, 5)):
+                link = results.nth(i)
+                href = await link.get_attribute("href") or ""
+                text = (await link.text_content() or "").lower()
                 name_lower = name.lower()
-                if any(word in text for word in name_lower.split()[:2]):
-                    await link.click()
-                    await page.wait_for_timeout(random.randint(3000, 5000))
-                    return page.url
+
+                # Match: href contains Restaurant_Review, or text contains venue name words
+                if "restaurant_review" in href.lower():
+                    if any(word in text for word in name_lower.split()[:2]) or len(name_lower.split()) <= 1:
+                        full_url = href if href.startswith("http") else f"https://www.tripadvisor.co.uk{href}"
+                        await page.goto(full_url)
+                        await page.wait_for_timeout(random.randint(3000, 5000))
+                        return page.url
         except Exception:
             continue
 
@@ -427,6 +472,7 @@ async def main():
         await setup_stealth(page)
 
         collected = 0
+        not_found = 0
         consecutive_blocks = 0
         today = datetime.utcnow().strftime("%Y-%m-%d")
 
@@ -443,11 +489,20 @@ async def main():
                         json.dump(result, f, indent=2, ensure_ascii=False)
                     collected += 1
                     consecutive_blocks = 0
+                    not_found += 1  # track but don't stop
                 elif result is None:
-                    consecutive_blocks += 1
-                    if consecutive_blocks >= 3:
-                        print("STOPPING: 3 consecutive failures — likely blocked")
-                        break
+                    not_found += 1
+                    # Only count as block if we suspect anti-bot (not just "not found")
+                    # Check if the page has Cloudflare or error indicators
+                    page_text = await page.content()
+                    if "cloudflare" in page_text.lower() or "unusual traffic" in page_text.lower():
+                        consecutive_blocks += 1
+                        print(f"  (appears blocked, {3 - consecutive_blocks} attempts remaining)")
+                        if consecutive_blocks >= 3:
+                            print("STOPPING: 3 consecutive blocks detected")
+                            break
+                    else:
+                        print(f"  (not on TripAdvisor — continuing)")
 
             except Exception as e:
                 print(f"  ERROR: {name} — {e}")
@@ -463,7 +518,8 @@ async def main():
 
         await browser.close()
 
-    print(f"\nSummary: {collected} venues collected, {len(venues) - collected} skipped/failed")
+    print(f"\nSummary: {collected} venues collected, {not_found} not found on TripAdvisor, "
+          f"{consecutive_blocks} blocked")
 
 
 if __name__ == "__main__":
