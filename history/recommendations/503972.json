@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "cdd906225059",
     "venue_id": "503972",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "b556f6f04267": {
@@ -31,9 +31,9 @@
     "confidence": 0.8,
     "rec_id": "b556f6f04267",
     "venue_id": "503972",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "8f3cdb088eb1": {
@@ -50,9 +50,9 @@
     "management_implication": "Interest without conversion is vanity traffic.",
     "rec_id": "8f3cdb088eb1",
     "venue_id": "503972",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "2a3d317c5823": {
@@ -68,9 +68,9 @@
     "confidence": 0.85,
     "rec_id": "2a3d317c5823",
     "venue_id": "503972",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   }
 }

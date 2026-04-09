@@ -131,7 +131,7 @@ Top themes across unattributed reviews: Food Quality (3x), Service & Hospitality
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -161,7 +161,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
   *Basis: Composite: missing hours/menu/booking each leak 2–8% of demand*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ONGOING]
+### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ESCALATED]
 
 Guests consistently praise service & hospitality (5 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
 
@@ -380,6 +380,10 @@ You are in the top quintile (P100). The competitive risk is complacency — the 
 
 **Where you lead:** Trust (+1.9), Experience (+1.2)
 
+### Competitive Position
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Score comparison above.*
+
 ## Market Position
 
 **Category:** Pub / Bar
@@ -589,10 +593,10 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-8 active items: **1 stale** (3–5 months), **7 new/recent**.
+8 active items: **3 stale** (3–5 months), **5 new/recent**.
 
 ### Action 1: Fix the digital shopfront — you're losing walk-ins
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
@@ -600,21 +604,22 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 2: Lean into service & hospitality — it's what guests are buying
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 3: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 4: Establish basic web presence — you don't exist online beyond Google
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

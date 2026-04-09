@@ -33,7 +33,7 @@
     "venue_id": "503282",
     "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 3,
+    "times_seen": 4,
     "last_seen": "2026-04"
   },
   "22d02d2d3fc2": {
@@ -50,9 +50,9 @@
     "management_implication": "Your guests are telling you your proposition. Use it.",
     "rec_id": "22d02d2d3fc2",
     "venue_id": "503282",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "11f70b962a56": {
@@ -104,9 +104,9 @@
     "confidence": 0.85,
     "rec_id": "f58774d7c2ad",
     "venue_id": "503282",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "a4e7214b9acf": {
@@ -123,9 +123,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "a4e7214b9acf",
     "venue_id": "503282",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "d14fef06089e": {
@@ -141,9 +141,9 @@
     "confidence": 0.8,
     "rec_id": "d14fef06089e",
     "venue_id": "503282",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

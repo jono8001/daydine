@@ -107,7 +107,7 @@ The venue currently sits below the local median. Guests have demonstrably higher
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | NEW]
+### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | ONGOING]
 
 No opening hours listed. Every customer filtering by 'open now' on Google Maps will never see you. This takes 2 minutes to fix.
 
@@ -122,7 +122,7 @@ No opening hours listed. Every customer filtering by 'open now' on Google Maps w
   *Basis: 2–8% of potential customers filter by 'open now' and won't find you*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -137,7 +137,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | NEW]
+### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | ONGOING]
 
 No website, Facebook, or Instagram detected. Even a basic page improves discoverability and gives customers a reason to trust you before visiting.
 
@@ -324,6 +324,10 @@ Below the median (P22). Customers have higher-rated alternatives nearby (peer av
 
 *Commercial implication: in a 10-venue market, a below-median position means demand is flowing to competitors. Each percentile point gained recaptures a share of local search traffic. Estimated fair share: ~10% of local demand — you are likely underindexed (directional).*
 
+### Competitive Position
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Score comparison above.*
+
 ### Visibility Gap
 
 Online visibility significantly below average. Prioritise GBP and reviews.
@@ -498,7 +502,7 @@ Low prestige is normal for most independents and does not affect footfall, disco
 
 ## Watch List
 
-**Ranked #8 of 10 locally — peers are ahead** [NEW]
+**Ranked #8 of 10 locally — peers are ahead** [ONGOING]
 
 At percentile 22.2, customers in this area have higher-rated alternatives. This isn't a crisis but it means you're competing on convenience rather than reputation.
 
@@ -517,28 +521,28 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 4 active items: **4 new/recent**.
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
 **Success measure:** Opening hours complete for 7/7 days (verifiable via goh field)
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 3: Establish basic web presence — you don't exist online beyond Google
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
 **Success measure:** Google review count increased by 10+ (verifiable via grc field)
 
 ### Action 4: Ranked #8 of 10 locally — peers are ahead
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Competitive awareness
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

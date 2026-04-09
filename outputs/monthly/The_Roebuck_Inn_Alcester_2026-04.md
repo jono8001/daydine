@@ -105,7 +105,7 @@ The venue currently sits below the local median. Guests have demonstrably higher
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | NEW]
+### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | ONGOING]
 
 No opening hours listed. Every customer filtering by 'open now' on Google Maps will never see you. This takes 2 minutes to fix.
 
@@ -120,7 +120,7 @@ No opening hours listed. Every customer filtering by 'open now' on Google Maps w
   *Basis: 2–8% of potential customers filter by 'open now' and won't find you*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Close the hygiene gap — 4 to 5 [FIX | NEW]
+### Priority 2: Close the hygiene gap — 4 to 5 [FIX | ONGOING]
 
 An FSA rating of 4 is visible on your Google listing and the FSA website. Customers see it before they see your menu. Address the inspector's specific findings.
 
@@ -135,7 +135,7 @@ An FSA rating of 4 is visible on your Google listing and the FSA website. Custom
   *Basis: FSA 4/5 caps the Trust dimension; re-inspection to 5 removes the cap*
 - **Segment impact:** Affects all segments equally — compliance is a universal baseline.
 
-### Priority 3: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 3: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -319,6 +319,15 @@ Below the median (P0). Customers have higher-rated alternatives nearby (peer avg
 
 *Commercial implication: in a 5-venue market, a below-median position means demand is flowing to competitors. Each percentile point gained recaptures a share of local search traffic. Estimated fair share: ~20% of local demand — you are likely underindexed (directional).*
 
+### What Your Competitors' Guests Are Saying
+
+| Competitor | Score | Their top praise | Their main complaint | Your edge |
+|---|---|---|---|---|
+| Arrow Mill | 6.7 | Service & Hospitality (5x) | — | — |
+| Cafe Des Fleurs | 6.2 | *No review data* | *No review data* | — |
+| The Alcester Inn | 5.9 | *No review data* | *No review data* | — |
+| The Cottage Of Content | 5.2 | *No review data* | *No review data* | — |
+
 ## Market Position
 
 **Category:** Pub / Bar
@@ -466,11 +475,11 @@ Low prestige is normal for most independents and does not affect footfall, disco
 
 ## Watch List
 
-**Compliance record weakest in peer set — creates inspection exposure** [NEW]
+**Compliance record weakest in peer set — creates inspection exposure** [ONGOING]
 
 You trail peers by 2.6 points on trust. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
-**Ranked #5 of 5 locally — peers are ahead** [NEW]
+**Ranked #5 of 5 locally — peers are ahead** [ONGOING]
 
 At percentile 0.0, customers in this area have higher-rated alternatives. This isn't a crisis but it means you're competing on convenience rather than reputation.
 
@@ -485,35 +494,35 @@ Low impact relative to effort this month. Focus on the three priorities above.
 6 active items: **6 new/recent**.
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
 **Success measure:** Opening hours complete for 7/7 days (verifiable via goh field)
 
 ### Action 2: Close the hygiene gap — 4 to 5
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
 
 ### Action 3: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 4: Compliance record weakest in peer set — creates inspection exposure
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 2.6-point gap
 **Owner:** management — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
 
 ### Action 5: Ranked #5 of 5 locally — peers are ahead
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Competitive awareness
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

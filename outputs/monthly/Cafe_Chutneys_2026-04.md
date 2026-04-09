@@ -107,7 +107,7 @@ The venue currently sits below the local median. Guests have demonstrably higher
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Close the hygiene gap — 3 to 5 [FIX | ONGOING]
+### Priority 1: Close the hygiene gap — 3 to 5 [FIX | ESCALATED]
 
 An FSA rating of 3 is visible on your Google listing and the FSA website. Customers see it before they see your menu. Address the inspector's specific findings.
 
@@ -122,7 +122,7 @@ An FSA rating of 3 is visible on your Google listing and the FSA website. Custom
   *Basis: FSA 3/5 caps the Trust dimension; re-inspection to 5 removes the cap*
 - **Segment impact:** Affects all segments equally — compliance is a universal baseline.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ESCALATED]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -137,7 +137,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | ONGOING]
+### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | ESCALATED]
 
 No website, Facebook, or Instagram detected. Even a basic page improves discoverability and gives customers a reason to trust you before visiting.
 
@@ -333,6 +333,15 @@ Below the median (P0). Customers have higher-rated alternatives nearby (peer avg
 **Where peers beat you:** Trust (-2.0), Experience (-1.8), Conversion (-1.0)
 
 *Commercial implication: in a 5-venue market, a below-median position means demand is flowing to competitors. Each percentile point gained recaptures a share of local search traffic. Estimated fair share: ~20% of local demand — you are likely underindexed (directional).*
+
+### What Your Competitors' Guests Are Saying
+
+| Competitor | Score | Their top praise | Their main complaint | Your edge |
+|---|---|---|---|---|
+| Simla Takeaway | 6.6 | Food Quality (3x) | Food Quality (1x) | — |
+| Avon Spice | 6.4 | *No review data* | *No review data* | — |
+| Hussains | 6.2 | *No review data* | *No review data* | — |
+| Thespians Indian Restaurant | 5.4 | *No review data* | *No review data* | — |
 
 ### Compliance Risk
 
@@ -533,11 +542,11 @@ Low prestige is normal for most independents and does not affect footfall, disco
 
 ## Watch List
 
-**Guest experience trailing — investigate what peers do differently** [ONGOING]
+**Guest experience trailing — investigate what peers do differently** [ESCALATED]
 
 You trail peers by 1.8 points on experience. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
-**Compliance record weakest in peer set — creates inspection exposure** [ONGOING]
+**Compliance record weakest in peer set — creates inspection exposure** [ESCALATED]
 
 You trail peers by 2.0 points on trust. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
@@ -549,48 +558,53 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 
 ## Implementation Framework
 
-6 active items: **6 new/recent**.
+6 active items: **6 stale** (3–5 months).
 
 ### Action 1: Close the hygiene gap — 3 to 5
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Guest experience trailing — investigate what peers do differently
-**Status:** Ongoing (2 months) | **Priority:** Medium
+**Status:** Stale (3 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 1.8-point gap
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
 **Success measure:** Signal improvement detectable in next month's data collection
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 4: Compliance record weakest in peer set — creates inspection exposure
-**Status:** Ongoing (2 months) | **Priority:** Medium
+**Status:** Stale (3 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 2.0-point gap
 **Owner:** management — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 5: Establish basic web presence — you don't exist online beyond Google
-**Status:** Ongoing (2 months) | **Priority:** Medium
+**Status:** Stale (3 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
 **Success measure:** Google review count increased by 10+ (verifiable via grc field)
+**Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Additional Active Recommendations
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Ranked #5 of 5 locally — peers are ahead | Ongoing (2 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Ranked #5 of 5 locally — peers are ahead | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

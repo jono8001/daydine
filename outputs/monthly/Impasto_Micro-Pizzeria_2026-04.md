@@ -357,6 +357,10 @@ Above the median (P56) but not leading. Peer average is 5.8; the top performer s
 
 *Commercial implication: you capture an adequate share of a 10-venue market, but the gap to the top (6.4) represents demand you could win. Closing the gap typically requires 1–2 targeted dimension improvements (indicative).*
 
+### Competitive Position
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Score comparison above.*
+
 ### Visibility Gap
 
 Online visibility significantly below average. Prioritise GBP and reviews.
@@ -560,7 +564,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 6 active items: **4 overdue** (6–11 months), **2 new/recent**.
 
 ### Action 1: Get your menu online — 77% of diners check before visiting
-**Status:** Overdue (6 months) | **Priority:** High
+**Status:** Overdue (7 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
@@ -568,7 +572,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Overdue (6 months) | **Priority:** High
+**Status:** Overdue (7 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
@@ -583,7 +587,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
 
 ### Action 4: Establish basic web presence — you don't exist online beyond Google
-**Status:** Overdue (6 months) | **Priority:** Medium
+**Status:** Overdue (7 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

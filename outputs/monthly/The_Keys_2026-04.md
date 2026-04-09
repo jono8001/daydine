@@ -113,7 +113,7 @@ The venue appears to be underexploiting its experience quality commercially — 
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | NEW]
+### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | ONGOING]
 
 No opening hours listed. Every customer filtering by 'open now' on Google Maps will never see you. This takes 2 minutes to fix.
 
@@ -128,7 +128,7 @@ No opening hours listed. Every customer filtering by 'open now' on Google Maps w
   *Basis: 2–8% of potential customers filter by 'open now' and won't find you*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Close the hygiene gap — 4 to 5 [FIX | NEW]
+### Priority 2: Close the hygiene gap — 4 to 5 [FIX | ONGOING]
 
 An FSA rating of 4 is visible on your Google listing and the FSA website. Customers see it before they see your menu. Address the inspector's specific findings.
 
@@ -143,7 +143,7 @@ An FSA rating of 4 is visible on your Google listing and the FSA website. Custom
   *Basis: FSA 4/5 caps the Trust dimension; re-inspection to 5 removes the cap*
 - **Segment impact:** Affects all segments equally — compliance is a universal baseline.
 
-### Priority 3: Renew formal trust proof before it becomes a visible drag [FIX | NEW]
+### Priority 3: Renew formal trust proof before it becomes a visible drag [FIX | ONGOING]
 
 Last inspected 2.1 years ago. A stale inspection date erodes trust scoring and signals to customers that compliance isn't actively managed. Request a voluntary re-inspection once you're confident of a strong result.
 
@@ -339,6 +339,16 @@ Below the median (P0). Customers have higher-rated alternatives nearby (peer avg
 
 *Commercial implication: in a 9-venue market, a below-median position means demand is flowing to competitors. Each percentile point gained recaptures a share of local search traffic. Estimated fair share: ~11% of local demand — you are likely underindexed (directional).*
 
+### What Your Competitors' Guests Are Saying
+
+| Competitor | Score | Their top praise | Their main complaint | Your edge |
+|---|---|---|---|---|
+| Vintner Wine Bar | 7.3 | Service & Hospitality (11x) | Service & Hospitality (1x) | — |
+| The Fox Inn | 6.5 | Service & Hospitality (4x) | — | — |
+| The Red Lion | 6.4 | *No review data* | *No review data* | — |
+| The Townhouse Also Trading As JR Hotel And Restaurants LTD | 6.3 | *No review data* | *No review data* | — |
+| Snitterfield Arms | 6.2 | *No review data* | *No review data* | — |
+
 ### Visibility Gap
 
 Online visibility significantly below average. Prioritise GBP and reviews.
@@ -526,11 +536,11 @@ Low prestige is normal for most independents and does not affect footfall, disco
 
 ## Watch List
 
-**Guest experience outpaces formal trust record** [NEW]
+**Guest experience outpaces formal trust record** [ONGOING]
 
 Guests enjoy the venue but the compliance record hasn't kept up. One poor inspection would make a private gap public. The fix is proactive compliance work, not more marketing.
 
-**Compliance record weakest in peer set — creates inspection exposure** [NEW]
+**Compliance record weakest in peer set — creates inspection exposure** [ONGOING]
 
 You trail peers by 2.0 points on trust. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
@@ -545,35 +555,35 @@ Low impact relative to effort this month. Focus on the three priorities above.
 10 active items: **10 new/recent**.
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
 **Success measure:** Opening hours complete for 7/7 days (verifiable via goh field)
 
 ### Action 2: Close the hygiene gap — 4 to 5
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
 
 ### Action 3: Renew formal trust proof before it becomes a visible drag
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Fresh compliance proof, trust signal renewal
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
 
 ### Action 4: Fix the digital shopfront — you're losing walk-ins
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
 
 ### Action 5: Guest experience outpaces formal trust record
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the gap before it becomes visible
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -589,10 +599,10 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Compliance record weakest in peer set — creat | New | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Harder to book/find than competitors — fricti | New | 08 April 2026 | Low (< £200) |
-| 8 | Establish basic web presence — you don't exis | New | 08 April 2026 | Low (< £200) |
-| 9 | Ranked #9 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Compliance record weakest in peer set — creat | Ongoing (2 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Harder to book/find than competitors — fricti | Ongoing (2 months) | 08 April 2026 | Low (< £200) |
+| 8 | Establish basic web presence — you don't exis | Ongoing (2 months) | 08 April 2026 | Low (< £200) |
+| 9 | Ranked #9 of 9 locally — peers are ahead | Ongoing (2 months) | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

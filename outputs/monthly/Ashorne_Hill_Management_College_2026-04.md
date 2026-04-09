@@ -109,7 +109,7 @@ The public proof (ratings, compliance) aligns with what guests actually experien
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | ONGOING]
+### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | ESCALATED]
 
 No opening hours listed. Every customer filtering by 'open now' on Google Maps will never see you. This takes 2 minutes to fix.
 
@@ -124,7 +124,7 @@ No opening hours listed. Every customer filtering by 'open now' on Google Maps w
   *Basis: 2–8% of potential customers filter by 'open now' and won't find you*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ESCALATED]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -139,7 +139,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Protect the 4.5/5 rating — it took years to build [PROTECT | ONGOING]
+### Priority 3: Protect the 4.5/5 rating — it took years to build [PROTECT | ESCALATED]
 
 With 489 reviews at 4.5/5, your discovery advantage is substantial. Protect it by responding to every review within 48 hours and prompting satisfied tables for feedback.
 
@@ -323,6 +323,10 @@ Ashorne Hill Management College is classified as **Event Venue** (confidence: lo
 You are in the top quintile (P100). The competitive risk is complacency — the nearest competitor scores 6.0.
 
 **Where you lead:** Trust (+1.4), Experience (+1.0), Visibility (+0.5)
+
+### Competitive Position
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Score comparison above.*
 
 ### Visibility Gap
 
@@ -523,28 +527,31 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-4 active items: **4 new/recent**.
+4 active items: **4 stale** (3–5 months).
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
 **Success measure:** Opening hours complete for 7/7 days (verifiable via goh field)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Protect the 4.5/5 rating — it took years to build
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
 **Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
+**Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Maintenance Items (deprioritised this month)
 

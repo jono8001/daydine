@@ -13,9 +13,9 @@
     "management_implication": "Guests are telling you what's wrong. Listen.",
     "rec_id": "593f9d83579d",
     "venue_id": "503104",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "03b8b2c85a09": {
@@ -32,9 +32,9 @@
     "management_implication": "Your guests are telling you your proposition. Use it.",
     "rec_id": "03b8b2c85a09",
     "venue_id": "503104",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "30bd92f6dc4d": {
@@ -50,9 +50,9 @@
     "confidence": 0.75,
     "rec_id": "30bd92f6dc4d",
     "venue_id": "503104",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "22c86f758100",
     "venue_id": "1589295",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "8f0f71e4e963": {
@@ -31,9 +31,9 @@
     "confidence": 0.9,
     "rec_id": "8f0f71e4e963",
     "venue_id": "1589295",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "37c24fa2404f": {
@@ -49,9 +49,9 @@
     "confidence": 0.8,
     "rec_id": "37c24fa2404f",
     "venue_id": "1589295",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "5be8864100d3": {
@@ -68,9 +68,9 @@
     "management_implication": "Interest without conversion is vanity traffic.",
     "rec_id": "5be8864100d3",
     "venue_id": "1589295",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "10ad30e3b970": {
@@ -87,9 +87,9 @@
     "management_implication": "The rating looks good in isolation but not in context.",
     "rec_id": "10ad30e3b970",
     "venue_id": "1589295",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "c45e2ee536ae": {
@@ -105,9 +105,9 @@
     "confidence": 0.7,
     "rec_id": "c45e2ee536ae",
     "venue_id": "1589295",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "3726ad9344a2": {
@@ -123,9 +123,9 @@
     "confidence": 0.65,
     "rec_id": "3726ad9344a2",
     "venue_id": "1589295",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "d30887668371": {
@@ -141,9 +141,9 @@
     "confidence": 0.75,
     "rec_id": "d30887668371",
     "venue_id": "1589295",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

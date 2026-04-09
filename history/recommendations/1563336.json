@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "85ce4ba3981e",
     "venue_id": "1563336",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "265d455c5052": {
@@ -32,9 +32,9 @@
     "management_implication": "Below 4.0, Google actively suppresses your venue in search results.",
     "rec_id": "265d455c5052",
     "venue_id": "1563336",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "ab690ff73b40": {
@@ -50,9 +50,9 @@
     "confidence": 0.8,
     "rec_id": "ab690ff73b40",
     "venue_id": "1563336",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "70ed0ece8cc3": {
@@ -68,9 +68,9 @@
     "confidence": 0.75,
     "rec_id": "70ed0ece8cc3",
     "venue_id": "1563336",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   }
 }

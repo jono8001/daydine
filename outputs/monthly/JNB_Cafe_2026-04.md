@@ -111,7 +111,7 @@ The venue appears to be underexploiting its experience quality commercially — 
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Renew formal trust proof before it becomes a visible drag [FIX | NEW]
+### Priority 1: Renew formal trust proof before it becomes a visible drag [FIX | ONGOING]
 
 Last inspected 2.9 years ago. A stale inspection date erodes trust scoring and signals to customers that compliance isn't actively managed. Request a voluntary re-inspection once you're confident of a strong result.
 
@@ -126,7 +126,7 @@ Last inspected 2.9 years ago. A stale inspection date erodes trust scoring and s
   *Basis: Maintaining compliance documentation reduces inspection risk*
 - **Segment impact:** Affects all segments equally — compliance is a universal baseline.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -141,7 +141,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Fix the digital shopfront — you're losing walk-ins [FIX | NEW]
+### Priority 3: Fix the digital shopfront — you're losing walk-ins [FIX | ONGOING]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -335,6 +335,10 @@ Above the median (P56) but not leading. Peer average is 5.5; the top performer s
 *Commercial implication: you capture an adequate share of a 19-venue market, but the gap to the top (6.6) represents demand you could win. Closing the gap typically requires 1–2 targeted dimension improvements (indicative).*
 
 **Density alert:** 18 competitors within range. Differentiation is critical — competing on fundamentals alone is insufficient in a dense market.
+
+### Competitive Position
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Score comparison above.*
 
 ### Competitive Density Alert
 
@@ -546,28 +550,28 @@ Low impact relative to effort this month. Focus on the three priorities above.
 5 active items: **5 new/recent**.
 
 ### Action 1: Renew formal trust proof before it becomes a visible drag
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Fresh compliance proof, trust signal renewal
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 3: Fix the digital shopfront — you're losing walk-ins
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
 
 ### Action 4: Accelerate review volume — you're credible but not dominant
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Improved Google Maps ranking
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

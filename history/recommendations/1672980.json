@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "fe943c77c92b",
     "venue_id": "1672980",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "3085a6685fe7": {
@@ -32,9 +32,9 @@
     "management_implication": "Below 4.0, Google actively suppresses your venue in search results.",
     "rec_id": "3085a6685fe7",
     "venue_id": "1672980",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "6bb83a8789c4": {
@@ -50,9 +50,9 @@
     "confidence": 0.8,
     "rec_id": "6bb83a8789c4",
     "venue_id": "1672980",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "2a8a6142c130": {
@@ -69,9 +69,9 @@
     "management_implication": "Interest without conversion is vanity traffic.",
     "rec_id": "2a8a6142c130",
     "venue_id": "1672980",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "9cf5c606b760": {
@@ -87,9 +87,9 @@
     "confidence": 0.75,
     "rec_id": "9cf5c606b760",
     "venue_id": "1672980",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

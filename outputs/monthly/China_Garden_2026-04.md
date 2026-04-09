@@ -104,7 +104,7 @@ China Garden operates in the Chinese dining category with a public rating of 3.3
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Close the hygiene gap — 2 to 5 [FIX | NEW]
+### Priority 1: Close the hygiene gap — 2 to 5 [FIX | ONGOING]
 
 An FSA rating of 2 is visible on your Google listing and the FSA website. Customers see it before they see your menu. Address the inspector's specific findings.
 
@@ -119,7 +119,7 @@ An FSA rating of 2 is visible on your Google listing and the FSA website. Custom
   *Basis: FSA 2/5 caps the Trust dimension; re-inspection to 5 removes the cap*
 - **Segment impact:** Affects all segments equally — compliance is a universal baseline.
 
-### Priority 2: Identify and fix the recurring guest complaint [FIX | NEW]
+### Priority 2: Identify and fix the recurring guest complaint [FIX | ONGOING]
 
 At 3.3/5 on Google, something specific is landing badly. Read the 5 most recent negative reviews, identify the common thread, and fix it at source. The rating won't move until the root cause does.
 
@@ -133,7 +133,7 @@ At 3.3/5 on Google, something specific is landing badly. Read the 5 most recent 
   Value at stake: £270–£4,500/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
   *Basis: Recurring complaints reduce repeat visits and suppress rating trajectory*
 
-### Priority 3: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 3: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -459,28 +459,28 @@ Low impact relative to effort this month. Focus on the three priorities above.
 5 active items: **5 new/recent**.
 
 ### Action 1: Close the hygiene gap — 2 to 5
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
 
 ### Action 2: Identify and fix the recurring guest complaint
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Rating recovery → discovery recovery
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
 
 ### Action 3: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 4: Accelerate review volume — you're credible but not dominant
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Improved Google Maps ranking
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

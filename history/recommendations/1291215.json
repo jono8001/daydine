@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "b237c158380e",
     "venue_id": "1291215",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "787cb02f4061": {
@@ -32,9 +32,9 @@
     "management_implication": "Below 4.0, Google actively suppresses your venue in search results.",
     "rec_id": "787cb02f4061",
     "venue_id": "1291215",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "64a4084a8026": {
@@ -50,9 +50,9 @@
     "confidence": 0.85,
     "rec_id": "64a4084a8026",
     "venue_id": "1291215",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "cf32e185bf51": {
@@ -68,9 +68,9 @@
     "confidence": 0.8,
     "rec_id": "cf32e185bf51",
     "venue_id": "1291215",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "0f5af5645e12": {
@@ -87,9 +87,9 @@
     "management_implication": "Interest without conversion is vanity traffic.",
     "rec_id": "0f5af5645e12",
     "venue_id": "1291215",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "b86ba1fcdc5b": {
@@ -105,9 +105,9 @@
     "confidence": 0.7,
     "rec_id": "b86ba1fcdc5b",
     "venue_id": "1291215",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "9a19a1a3a503": {
@@ -123,9 +123,9 @@
     "confidence": 0.65,
     "rec_id": "9a19a1a3a503",
     "venue_id": "1291215",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   }
 }

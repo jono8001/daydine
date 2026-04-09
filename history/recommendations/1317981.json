@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "8834c44b45e5",
     "venue_id": "1317981",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "475edb51efe5": {
@@ -31,9 +31,9 @@
     "confidence": 0.8,
     "rec_id": "475edb51efe5",
     "venue_id": "1317981",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "6402fc9d9d30": {
@@ -50,9 +50,9 @@
     "management_implication": "Interest without conversion is vanity traffic.",
     "rec_id": "6402fc9d9d30",
     "venue_id": "1317981",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "0540886b40d8": {
@@ -69,9 +69,9 @@
     "management_implication": "The rating looks good in isolation but not in context.",
     "rec_id": "0540886b40d8",
     "venue_id": "1317981",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "fee1f56f5a24": {
@@ -87,9 +87,9 @@
     "confidence": 0.7,
     "rec_id": "fee1f56f5a24",
     "venue_id": "1317981",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "bcaf8322c4c6": {
@@ -105,9 +105,9 @@
     "confidence": 0.65,
     "rec_id": "bcaf8322c4c6",
     "venue_id": "1317981",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "985887aeb827": {
@@ -123,9 +123,9 @@
     "confidence": 0.85,
     "rec_id": "985887aeb827",
     "venue_id": "1317981",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

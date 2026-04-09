@@ -135,7 +135,7 @@ The venue appears to be underexploiting its experience quality commercially — 
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -150,7 +150,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Fix the digital shopfront — you're losing walk-ins [FIX | NEW]
+### Priority 2: Fix the digital shopfront — you're losing walk-ins [FIX | ONGOING]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -165,7 +165,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
   *Basis: Composite: missing hours/menu/booking each leak 2–8% of demand*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | NEW]
+### Priority 3: Lean into service & hospitality — it's what guests are buying [EXPLOIT | ONGOING]
 
 Guests consistently praise service & hospitality (4 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
 
@@ -380,6 +380,20 @@ You are in the top quintile (P83). The competitive risk is complacency — the n
 **Where you lead:** Trust (+1.6)
 **Where peers beat you:** Visibility (-1.1)
 
+### What Your Competitors' Guests Are Saying
+
+| Competitor | Score | Their top praise | Their main complaint | Your edge |
+|---|---|---|---|---|
+| Vintner Wine Bar | 7.3 | Service & Hospitality (11x) | Service & Hospitality (1x) | Stronger service & hospitality (10.0/10) |
+| The Red Lion | 6.4 | *No review data* | *No review data* | — |
+| The Townhouse Also Trading As JR Hotel And Restaurants LTD | 6.3 | *No review data* | *No review data* | — |
+| The Coach House | 5.6 | *No review data* | *No review data* | — |
+| The Avon Lounge | 5.5 | *No review data* | *No review data* | — |
+
+**Strategic reads:**
+
+- Vintner Wine Bar guests frequently complain about food quality (2x). Your food quality scores 10.0/10. This is an exploitable gap — highlight this strength in your listing and review responses.
+
 ### Visibility Gap
 
 Online visibility significantly below average. Prioritise GBP and reviews.
@@ -578,28 +592,28 @@ Low impact relative to effort this month. Focus on the three priorities above.
 5 active items: **5 new/recent**.
 
 ### Action 1: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
 
 ### Action 3: Lean into service & hospitality — it's what guests are buying
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
 
 ### Action 4: Establish basic web presence — you don't exist online beyond Google
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

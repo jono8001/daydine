@@ -13,9 +13,9 @@
     "management_implication": "This is a zero-effort, high-impact fix.",
     "rec_id": "80f04c331074",
     "venue_id": "503732",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "9d3100783dae": {
@@ -32,9 +32,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "9d3100783dae",
     "venue_id": "503732",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "cd953dfd970a": {
@@ -51,9 +51,9 @@
     "management_implication": "Stale trust is a hidden ceiling on your overall position.",
     "rec_id": "cd953dfd970a",
     "venue_id": "503732",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "82b2dae38532": {
@@ -69,9 +69,9 @@
     "confidence": 0.8,
     "rec_id": "82b2dae38532",
     "venue_id": "503732",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "32908a8f8189": {
@@ -88,9 +88,9 @@
     "management_implication": "Interest without conversion is vanity traffic.",
     "rec_id": "32908a8f8189",
     "venue_id": "503732",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "14d4509c2d18": {
@@ -106,9 +106,9 @@
     "confidence": 0.85,
     "rec_id": "14d4509c2d18",
     "venue_id": "503732",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

@@ -111,7 +111,7 @@ The venue appears to be underexploiting its experience quality commercially — 
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -126,7 +126,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Fix the digital shopfront — you're losing walk-ins [FIX | NEW]
+### Priority 2: Fix the digital shopfront — you're losing walk-ins [FIX | ONGOING]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -141,7 +141,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
   *Basis: Composite: missing hours/menu/booking each leak 2–8% of demand*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | NEW]
+### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | ONGOING]
 
 No website, Facebook, or Instagram detected. Even a basic page improves discoverability and gives customers a reason to trust you before visiting.
 
@@ -333,6 +333,16 @@ Below the median (P25). Customers have higher-rated alternatives nearby (peer av
 
 *Commercial implication: in a 9-venue market, a below-median position means demand is flowing to competitors. Each percentile point gained recaptures a share of local search traffic. Estimated fair share: ~11% of local demand — you are likely underindexed (directional).*
 
+### What Your Competitors' Guests Are Saying
+
+| Competitor | Score | Their top praise | Their main complaint | Your edge |
+|---|---|---|---|---|
+| Vintner Wine Bar | 7.3 | Service & Hospitality (11x) | Service & Hospitality (1x) | — |
+| The Fox Inn | 6.5 | Service & Hospitality (4x) | — | — |
+| The Red Lion | 6.4 | *No review data* | *No review data* | — |
+| The Townhouse Also Trading As JR Hotel And Restaurants LTD | 6.3 | *No review data* | *No review data* | — |
+| Snitterfield Arms | 6.2 | *No review data* | *No review data* | — |
+
 ### Visibility Gap
 
 Online visibility significantly below average. Prioritise GBP and reviews.
@@ -514,11 +524,11 @@ Low prestige is normal for most independents and does not affect footfall, disco
 
 ## Watch List
 
-**Guest experience trailing — investigate what peers do differently** [NEW]
+**Guest experience trailing — investigate what peers do differently** [ONGOING]
 
 You trail peers by 1.1 points on experience. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
-**Ranked #7 of 9 locally — peers are ahead** [NEW]
+**Ranked #7 of 9 locally — peers are ahead** [ONGOING]
 
 At percentile 25.0, customers in this area have higher-rated alternatives. This isn't a crisis but it means you're competing on convenience rather than reputation.
 
@@ -533,35 +543,35 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 5 active items: **5 new/recent**.
 
 ### Action 1: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
 
 ### Action 3: Guest experience trailing — investigate what peers do differently
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 1.1-point gap
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
 **Success measure:** Signal improvement detectable in next month's data collection
 
 ### Action 4: Establish basic web presence — you don't exist online beyond Google
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
 **Success measure:** Google review count increased by 10+ (verifiable via grc field)
 
 ### Action 5: Ranked #7 of 9 locally — peers are ahead
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Competitive awareness
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

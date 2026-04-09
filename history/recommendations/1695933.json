@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "0d6606ff7609",
     "venue_id": "1695933",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "804dabe669bc": {
@@ -31,9 +31,9 @@
     "confidence": 0.9,
     "rec_id": "804dabe669bc",
     "venue_id": "1695933",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "5a56de5cd885": {
@@ -49,9 +49,9 @@
     "confidence": 0.8,
     "rec_id": "5a56de5cd885",
     "venue_id": "1695933",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "db42f55c2687": {
@@ -68,9 +68,9 @@
     "management_implication": "Interest without conversion is vanity traffic.",
     "rec_id": "db42f55c2687",
     "venue_id": "1695933",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "bff3fa18b335": {
@@ -86,9 +86,9 @@
     "confidence": 0.7,
     "rec_id": "bff3fa18b335",
     "venue_id": "1695933",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "35a24e345e3f": {
@@ -104,9 +104,9 @@
     "confidence": 0.65,
     "rec_id": "35a24e345e3f",
     "venue_id": "1695933",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "c342b2599bd6": {
@@ -122,9 +122,9 @@
     "confidence": 0.65,
     "rec_id": "c342b2599bd6",
     "venue_id": "1695933",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

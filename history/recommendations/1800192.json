@@ -13,9 +13,9 @@
     "management_implication": "This is a zero-effort, high-impact fix.",
     "rec_id": "df27c86b4dc0",
     "venue_id": "1800192",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "9a7fb6632f60": {
@@ -32,9 +32,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "9a7fb6632f60",
     "venue_id": "1800192",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "f524f6aba894": {
@@ -51,9 +51,9 @@
     "management_implication": "Below 4.0, Google actively suppresses your venue in search results.",
     "rec_id": "f524f6aba894",
     "venue_id": "1800192",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "7be197931f08": {
@@ -69,9 +69,9 @@
     "confidence": 0.9,
     "rec_id": "7be197931f08",
     "venue_id": "1800192",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "be992822fcf7": {
@@ -87,9 +87,9 @@
     "confidence": 0.8,
     "rec_id": "be992822fcf7",
     "venue_id": "1800192",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "a0ed582cf652": {
@@ -105,9 +105,9 @@
     "confidence": 0.7,
     "rec_id": "a0ed582cf652",
     "venue_id": "1800192",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "206838bd0f9e": {
@@ -123,9 +123,9 @@
     "confidence": 0.65,
     "rec_id": "206838bd0f9e",
     "venue_id": "1800192",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "b323736b4f70": {
@@ -141,9 +141,9 @@
     "confidence": 0.65,
     "rec_id": "b323736b4f70",
     "venue_id": "1800192",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

@@ -13,9 +13,9 @@
     "management_implication": "This is a zero-effort, high-impact fix.",
     "rec_id": "156ab26a7d8c",
     "venue_id": "1911092",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "7de8a16c78d1": {
@@ -32,9 +32,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "7de8a16c78d1",
     "venue_id": "1911092",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "6e4dd6d50c6c": {
@@ -50,9 +50,9 @@
     "confidence": 0.85,
     "rec_id": "6e4dd6d50c6c",
     "venue_id": "1911092",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "d238fa5b2467": {
@@ -69,9 +69,9 @@
     "management_implication": "Stale trust is a hidden ceiling on your overall position.",
     "rec_id": "d238fa5b2467",
     "venue_id": "1911092",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "627e52e4d7dd": {
@@ -87,9 +87,9 @@
     "confidence": 0.8,
     "rec_id": "627e52e4d7dd",
     "venue_id": "1911092",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "31b51d43e315": {
@@ -106,9 +106,9 @@
     "management_implication": "The rating looks good in isolation but not in context.",
     "rec_id": "31b51d43e315",
     "venue_id": "1911092",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "b62f4b1112ee": {
@@ -124,9 +124,9 @@
     "confidence": 0.7,
     "rec_id": "b62f4b1112ee",
     "venue_id": "1911092",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   }
 }

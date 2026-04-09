@@ -105,7 +105,7 @@ The venue currently sits below the local median. Guests have demonstrably higher
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Close the hygiene gap — 3 to 5 [FIX | NEW]
+### Priority 1: Close the hygiene gap — 3 to 5 [FIX | ONGOING]
 
 An FSA rating of 3 is visible on your Google listing and the FSA website. Customers see it before they see your menu. Address the inspector's specific findings.
 
@@ -120,7 +120,7 @@ An FSA rating of 3 is visible on your Google listing and the FSA website. Custom
   *Basis: FSA 3/5 caps the Trust dimension; re-inspection to 5 removes the cap*
 - **Segment impact:** Affects all segments equally — compliance is a universal baseline.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -135,7 +135,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | NEW]
+### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | ONGOING]
 
 No website, Facebook, or Instagram detected. Even a basic page improves discoverability and gives customers a reason to trust you before visiting.
 
@@ -329,6 +329,10 @@ Below the median (P0). Customers have higher-rated alternatives nearby (peer avg
 
 *Commercial implication: in a 2-venue market, a below-median position means demand is flowing to competitors. Each percentile point gained recaptures a share of local search traffic. Estimated fair share: ~50% of local demand — you are likely underindexed (directional).*
 
+### Competitive Position
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Score comparison above.*
+
 ### Compliance Risk
 
 FSA 3 caps Trust score and may suppress Google visibility.
@@ -499,11 +503,11 @@ Low prestige is normal for most independents and does not affect footfall, disco
 
 ## Watch List
 
-**Guest experience trailing — investigate what peers do differently** [NEW]
+**Guest experience trailing — investigate what peers do differently** [ONGOING]
 
 You trail peers by 1.7 points on experience. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
-**Compliance record weakest in peer set — creates inspection exposure** [NEW]
+**Compliance record weakest in peer set — creates inspection exposure** [ONGOING]
 
 You trail peers by 4.0 points on trust. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
@@ -518,35 +522,35 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 7 active items: **7 new/recent**.
 
 ### Action 1: Close the hygiene gap — 3 to 5
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 3: Guest experience trailing — investigate what peers do differently
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 1.7-point gap
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
 **Success measure:** Signal improvement detectable in next month's data collection
 
 ### Action 4: Compliance record weakest in peer set — creates inspection exposure
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 4.0-point gap
 **Owner:** management — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
 
 ### Action 5: Harder to book/find than competitors — friction losing customers
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Close the 1.5-point gap
 **Owner:** management
 **Next milestone:** Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week
@@ -556,8 +560,8 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Establish basic web presence — you don't exis | New | 08 April 2026 | Low (< £200) |
-| 7 | Ranked #2 of 2 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Establish basic web presence — you don't exis | Ongoing (2 months) | 08 April 2026 | Low (< £200) |
+| 7 | Ranked #2 of 2 locally — peers are ahead | Ongoing (2 months) | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

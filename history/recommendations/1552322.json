@@ -13,9 +13,9 @@
     "management_implication": "This is a zero-effort, high-impact fix.",
     "rec_id": "496f0303d899",
     "venue_id": "1552322",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "561847f03d8b": {
@@ -32,9 +32,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "561847f03d8b",
     "venue_id": "1552322",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "3b36809194c0": {
@@ -51,9 +51,9 @@
     "management_implication": "Below 4.0, Google actively suppresses your venue in search results.",
     "rec_id": "3b36809194c0",
     "venue_id": "1552322",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "67fca4401c76": {
@@ -69,9 +69,9 @@
     "confidence": 0.8,
     "rec_id": "67fca4401c76",
     "venue_id": "1552322",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "23a60a8a27f9": {
@@ -88,9 +88,9 @@
     "management_implication": "Interest without conversion is vanity traffic.",
     "rec_id": "23a60a8a27f9",
     "venue_id": "1552322",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "30cff3064f0c": {
@@ -106,9 +106,9 @@
     "confidence": 0.7,
     "rec_id": "30cff3064f0c",
     "venue_id": "1552322",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "eae2ae474e5c": {
@@ -124,9 +124,9 @@
     "confidence": 0.65,
     "rec_id": "eae2ae474e5c",
     "venue_id": "1552322",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   },
   "436bf572509c": {
@@ -142,9 +142,9 @@
     "confidence": 0.75,
     "rec_id": "436bf572509c",
     "venue_id": "1552322",
-    "status": "new",
+    "status": "ongoing",
     "first_seen": "2026-04",
-    "times_seen": 1,
+    "times_seen": 2,
     "last_seen": "2026-04"
   }
 }

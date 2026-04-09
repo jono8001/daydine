@@ -112,7 +112,7 @@
     },
     "market_intelligence": {
       "present": true,
-      "lines": 4,
+      "lines": 10,
       "meets_minimum": true
     },
     "monitoring_plan": {
@@ -167,7 +167,7 @@
   "integrity_checks": {
     "run": false
   },
-  "report_lines": 362,
+  "report_lines": 369,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

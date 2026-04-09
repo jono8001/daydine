@@ -161,7 +161,10 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
                               review_intel=review_intel)
     # 10. Competitive Market Intelligence
     build_competitive_market_intelligence(w, scorecard, benchmarks, conditional_blocks,
-                                         prior_snapshot=prior_snapshot)
+                                         prior_snapshot=prior_snapshot,
+                                         venue_rec=venue_rec,
+                                         review_intel=review_intel,
+                                         all_data=all_data)
     # 10. Market Position (detailed 3-ring peer analysis)
     build_market_position(w, scorecard, benchmarks, venue_rec=venue_rec)
 
