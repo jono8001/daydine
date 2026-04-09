@@ -1,0 +1,18 @@
+{
+  "has_narrative": false,
+  "review_count_google": 20,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "thin",
+    "volume_note": "Only 20 reviews — rating is volatile. A single 1-star review moves the average measurably.",
+    "rating_position": "competitive",
+    "rating_note": "4.2/5 is competitive but not dominant. The gap to 4.5 is meaningful for Google ranking.",
+    "aggregate_rating": 4.2,
+    "review_count": 20
+  }
+}

@@ -52,14 +52,17 @@
       "sentiment": 10.0
     }
   },
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
   "analysis": {
     "reviews_analyzed": 5,
     "aspect_scores": {
       "service": {
         "score": 10.0,
-        "positive": 18,
+        "positive": 5,
         "negative": 0,
-        "mentions": 18
+        "mentions": 5
       },
       "value": {
         "score": 10.0,
@@ -69,66 +72,62 @@
       },
       "speed": {
         "score": 10.0,
-        "positive": 3,
+        "positive": 2,
         "negative": 0,
-        "mentions": 3
+        "mentions": 2
       },
       "food_quality": {
         "score": 10.0,
-        "positive": 7,
+        "positive": 4,
         "negative": 0,
-        "mentions": 7
+        "mentions": 4
       },
       "ambience": {
         "score": 10.0,
-        "positive": 3,
+        "positive": 2,
         "negative": 0,
-        "mentions": 3
+        "mentions": 2
       }
     },
     "praise_themes": [
       {
         "aspect": "service",
         "label": "Service & Hospitality",
-        "mentions": 18,
+        "mentions": 5,
         "quotes": [
           "The staff were all VERTY friendly and helpful",
-          "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa"
+          "...eorga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a g"
         ]
       },
       {
         "aspect": "food_quality",
         "label": "Food Quality",
-        "mentions": 7,
+        "mentions": 4,
         "quotes": [
-          "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa",
+          "Food was delicious  restaurant exceptionally clean and tidy",
           "Hi, would just like to say what a lovely meal we had with you this afternoon"
         ]
       },
       {
         "aspect": "speed",
         "label": "Speed & Efficiency",
-        "mentions": 3,
+        "mentions": 2,
         "quotes": [
-          "The staff were all VERTY friendly and helpful",
-          "The staff were all very welcoming and friendly and we had quick service"
+          "Attended yesterday Sunday 15th February 2026, for an impromptu birthday lunch for my friend"
         ]
       },
       {
         "aspect": "ambience",
         "label": "Atmosphere & Setting",
-        "mentions": 3,
-        "quotes": [
-          "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa",
-          "From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after"
-        ]
+        "mentions": 2,
+        "quotes": []
       },
       {
         "aspect": "value",
         "label": "Value for Money",
         "mentions": 1,
         "quotes": [
-          "The staff were all VERTY friendly and helpful"
+          "The price was very reasonable and service was excellent"
         ]
       }
     ],
@@ -142,60 +141,76 @@
     },
     "risk_flags": [],
     "trajectory": "stable",
+    "trajectory_method": "positional",
     "per_review": [
       {
         "rating": 5,
         "sentiment": "positive",
         "snippet": "The staff were all VERTY friendly and helpful",
+        "full_text": "Attended yesterday Sunday 15th February 2026, for an impromptu birthday lunch for my friend. We did not have a booking, and it was packed. However, the server was extremely polite and without hesitation, explained a table would be ready in ten minutes, which was wonderful news. The staff were all VERTY friendly and helpful. We ordered fish and chips and a pudding. The price was very reasonable and service was excellent. the staff would check up regularly to see if we needed anything. Food was great. Atmosphere was great. I remarked to my friend it was unpretentious. Will definitely go back. Great find!",
         "aspects": [
           "service",
           "value",
           "speed"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it wa",
+        "full_text": "Friend and I had lunch yesterday at Arrow Mill Alcester served by Georga she was outstanding very pleasant attentive polite and gave the impression she was concerned we had a good experience and it was only her forth shift excellent member of the team. Food was delicious  restaurant exceptionally clean and tidy. All members of the team I've every come into contact at Arrow Mill and I've been countless times are outstanding   well done to all.",
         "aspects": [
           "food_quality",
           "service",
           "ambience"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
         "sentiment": "positive",
         "snippet": "Hi, would just like to say what a lovely meal we had with you this afternoon",
+        "full_text": "Hi, would just like to say what a lovely meal we had with you this afternoon. Our first meal with yourselves and definitely not the last! The food was absolutely fantastic.\nWe would also like to make a special mention to Jessica, who looked after us. What a polite, confident and knowledgeable young lady who is a credit to your team.\nWell done Jessica and thank you for making our afternoon so enjoyable.",
         "aspects": [
           "food_quality",
           "service"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
         "sentiment": "positive",
         "snippet": "The staff were all very welcoming and friendly and we had quick service",
+        "full_text": "We visited for my birthday meal. The staff were all very welcoming and friendly and we had quick service. The food was absolutely delicious, we ate from the Sunday menu and had an array of different meals - the drinks selection is brilliant. Prices were comparable to other restaurants, not overly priced in my opinion given the quality of the food. Can’t fault it, looking forward to our next visit. Thank you for providing such a wonderful evening ☺️",
         "aspects": [
           "food_quality",
           "service",
           "speed"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
         "sentiment": "positive",
         "snippet": "From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after",
+        "full_text": "We had an absolutely amazing meal at Arrow Mill. From the moment we arrived, the atmosphere was welcoming and relaxed, and the staff were friendly, attentive and genuinely made us feel looked after.\nThe food was exceptional – beautifully presented, full of flavour, and cooked to perfection. Every course felt thoughtfully prepared, and it really made the whole experience special.\nA stunning location, great service, and incredible food — Arrow Mill is a place we’ll definitely be returning to. Highly recommended!",
         "aspects": [
           "food_quality",
           "service",
           "ambience"
         ],
-        "risk_count": 0
+        "risk_count": 0,
+        "date": null,
+        "source": null
       }
     ]
   },

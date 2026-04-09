@@ -29,7 +29,7 @@
   "section_completeness": {
     "executive_summary": {
       "present": true,
-      "lines": 24,
+      "lines": 14,
       "meets_minimum": true
     },
     "risk_alerts": {
@@ -79,7 +79,7 @@
     },
     "dimension_diagnosis": {
       "present": true,
-      "lines": 41,
+      "lines": 43,
       "meets_minimum": true
     },
     "commercial_diagnosis": {
@@ -94,7 +94,7 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 25,
+      "lines": 23,
       "meets_minimum": true
     },
     "conversion_friction": {
@@ -149,30 +149,21 @@
       "earliest": "2026-01-20",
       "latest": "2026-12-20"
     },
-    "valid_date_range": {
-      "earliest": "2026-01-20",
-      "latest": "2026-02-20"
-    },
+    "valid_date_range": null,
     "dates_by_source": {
-      "google": {
-        "total": 5,
+      "unknown": {
+        "total": 25,
         "dated": 0
-      },
-      "tripadvisor": {
-        "total": 20,
-        "dated": 20
       }
     },
-    "future_dated_excluded": 18,
+    "future_dated_excluded": 0,
     "recent_window_available": true,
     "recent_window_count": 7,
     "recent_window_sources": [
       "tripadvisor"
     ],
-    "recent_window_valid_count": 1,
-    "recent_window_valid_sources": [
-      "tripadvisor"
-    ],
+    "recent_window_valid_count": 0,
+    "recent_window_valid_sources": [],
     "dated_trajectory_supported": false
   },
   "segment_qa": {
@@ -210,7 +201,7 @@
       }
     ]
   },
-  "report_lines": 575,
+  "report_lines": 600,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

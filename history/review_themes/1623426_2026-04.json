@@ -1,0 +1,18 @@
+{
+  "has_narrative": false,
+  "review_count_google": 912,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "strong",
+    "volume_note": "912 reviews — strong base. Rating is stable but a sustained negative pattern could shift it.",
+    "rating_position": "premium",
+    "rating_note": "4.8/5 places you in the top tier of Google search results. This drives discovery.",
+    "aggregate_rating": 4.8,
+    "review_count": 912
+  }
+}

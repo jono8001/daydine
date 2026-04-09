@@ -28,6 +28,8 @@ from operator_intelligence.builders import (
     build_demand_capture_audit, build_monitoring_plan,
     build_evidence_appendix,
     build_known_for, build_protect_improve_ignore,
+    build_menu_intelligence,
+    build_event_forecast,
 )
 
 DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
@@ -111,6 +113,8 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # 1. Executive Summary (actions-led, score secondary)
     build_executive_summary(w, venue_name, month_str, mode, scorecard,
                             deltas, benchmarks, review_intel, recs)
+    # 1a. Event & Demand Forecast (next 30 days)
+    build_event_forecast(w, venue_rec, month_str)
     # 1b. Financial Impact (part 2 of the executive summary)
     build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
                            benchmarks=benchmarks, review_intel=review_intel)
@@ -143,6 +147,8 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # 7. Review & Reputation Intelligence
     build_review_intelligence(w, mode, review_intel, review_delta, month_str=month_str,
                               risk_result=_risk_result)
+    # 7b. Menu & Dish Intelligence
+    build_menu_intelligence(w, venue_rec, review_intel, benchmarks)
 
     # --- Lens 3: Trust & Public Risk ---
     # 8. Public Proof vs Operational Reality

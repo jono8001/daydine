@@ -1,0 +1,185 @@
+{
+  "venue": "Sushi Land",
+  "month": "2026-04",
+  "report_mode": "structured_signal",
+  "data_sources": {
+    "fsa": true,
+    "google_rating": true,
+    "google_reviews": 141,
+    "review_text_available": false,
+    "reviews_analyzed": 0,
+    "tripadvisor": false,
+    "companies_house": false
+  },
+  "independent_sources": {
+    "count": 2,
+    "platforms": [
+      "FSA",
+      "Google"
+    ]
+  },
+  "review_confidence": {
+    "tier": "none",
+    "review_text_count": 0,
+    "source_count": 0,
+    "can_claim_themes": false,
+    "can_claim_proposition": false
+  },
+  "section_completeness": {
+    "executive_summary": {
+      "present": true,
+      "lines": 11,
+      "meets_minimum": true
+    },
+    "risk_alerts": {
+      "present": true,
+      "lines": 2,
+      "meets_minimum": true
+    },
+    "data_basis": {
+      "present": true,
+      "lines": 10,
+      "meets_minimum": true
+    },
+    "monthly_movement": {
+      "present": true,
+      "lines": 3,
+      "meets_minimum": true
+    },
+    "segment_intelligence": {
+      "present": true,
+      "lines": 2,
+      "meets_minimum": false
+    },
+    "management_priorities": {
+      "present": true,
+      "lines": 28,
+      "meets_minimum": true
+    },
+    "watch_list": {
+      "present": true,
+      "lines": 4,
+      "meets_minimum": true
+    },
+    "what_not_to_do": {
+      "present": true,
+      "lines": 2,
+      "meets_minimum": true
+    },
+    "market_position": {
+      "present": true,
+      "lines": 1,
+      "meets_minimum": false
+    },
+    "scorecard": {
+      "present": true,
+      "lines": 8,
+      "meets_minimum": true
+    },
+    "dimension_diagnosis": {
+      "present": true,
+      "lines": 35,
+      "meets_minimum": true
+    },
+    "commercial_diagnosis": {
+      "present": true,
+      "lines": 7,
+      "meets_minimum": true
+    },
+    "public_vs_reality": {
+      "present": true,
+      "lines": 7,
+      "meets_minimum": true
+    },
+    "review_intelligence": {
+      "present": true,
+      "lines": 5,
+      "meets_minimum": true
+    },
+    "conversion_friction": {
+      "present": true,
+      "lines": 24,
+      "meets_minimum": true
+    },
+    "recommendation_tracker": {
+      "present": true,
+      "lines": 18,
+      "meets_minimum": true
+    },
+    "category_validation": {
+      "present": true,
+      "lines": 5,
+      "meets_minimum": true
+    },
+    "market_intelligence": {
+      "present": true,
+      "lines": 2,
+      "meets_minimum": false
+    },
+    "monitoring_plan": {
+      "present": true,
+      "lines": 9,
+      "meets_minimum": true
+    },
+    "data_coverage": {
+      "present": true,
+      "lines": 11,
+      "meets_minimum": true
+    },
+    "evidence_appendix": {
+      "present": true,
+      "lines": 17,
+      "meets_minimum": true
+    }
+  },
+  "action_counts": {
+    "priority_actions": 3,
+    "watch_items": 2,
+    "what_not_to_do": true
+  },
+  "validation_passed": true,
+  "validation_errors": [],
+  "validation_warnings": [
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15043 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15062 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15410 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15429 has no confidence label within 200 characters",
+    "SEGMENT_MISSING_UNATTRIBUTED: Segment section has no unattributed reviews handling"
+  ],
+  "confidence_level": "medium",
+  "evidence_provenance_present": true,
+  "review_dates": {
+    "has_dated_reviews": false,
+    "date_range": null,
+    "valid_date_range": null,
+    "dates_by_source": {},
+    "future_dated_excluded": 0,
+    "recent_window_available": false,
+    "recent_window_count": 0,
+    "recent_window_sources": [],
+    "recent_window_valid_count": 0,
+    "recent_window_valid_sources": [],
+    "dated_trajectory_supported": false
+  },
+  "segment_qa": {
+    "present": true,
+    "segments_surfaced": 0,
+    "smallest_segment_used": 0,
+    "fabrication_check": false,
+    "tension_flagged": false,
+    "unattributed_handled": false
+  },
+  "integrity_checks": {
+    "run": false
+  },
+  "report_lines": 323,
+  "consistency_check": {
+    "run": true,
+    "contradictions_found": 0,
+    "contradictions_auto_resolved": 0,
+    "contradictions_remaining": 0,
+    "warnings": 0,
+    "clean": true,
+    "details": []
+  }
+}

@@ -1,5 +1,5 @@
 # 11/17 Salt Beef Bar — Monthly Intelligence Report
-*2026-04 | Generated 05 April 2026 | DayDine Premium*
+*2026-04 | Generated 09 April 2026 | DayDine Premium*
 
 ---
 
@@ -20,11 +20,24 @@
 **Overall score: 6.9/10** (baseline month — no prior comparison)
  | Strongest: Experience (9.8) | Weakest: Visibility (3.0)
 
-**Competitive position:** Local Peers (5mi): #1 of 8 (P100.0) — peer avg 5.62, top 6.32
-  Catchment (15mi): #1 of 14 (P100.0) — peer avg 5.59, top 6.55
-  UK Category Cohort: #1 of 15 (P100.0) — peer avg 5.65, top 6.55
+**Competitive position:** Local Peers (5mi): #1 of 8 (P100.0) — peer avg 5.61, top 6.32
+  Catchment (15mi): #1 of 14 (P100.0) — peer avg 5.58, top 6.54
+  UK Category Cohort: #1 of 15 (P100.0) — peer avg 5.65, top 6.54
 
 *This report uses publicly observable data only — no internal systems required. See Data Basis below for full evidence breakdown.*
+
+## Next 30 Days — Demand Forecast
+
+| Period | Signal | Driver | Recommended Action |
+|---|---|---|---|
+| 2–4 Apr | 🔴 PEAK | Bank holiday: Good Friday | Ensure full opening hours are correct on Google for Good Friday |
+| 4–19 Apr | 🟡 HIGH | School: Easter holidays | Family-friendly offer visible — check kids menu and highchair mention on Google |
+| 6–7 Apr | 🔴 PEAK | Bank holiday: Easter Monday | Ensure full opening hours are correct on Google for Easter Monday |
+| 15–21 Apr | 🔴 PEAK | RSC: Hamlet opens | Confirm pre-theatre menu is live on Google before 15 Apr |
+| 20–30 Apr | 🟢 STEADY | School: Summer term (term time) | — |
+| 22–30 Apr | 🟡 HIGH | RSC: Hamlet in performance | Pre-theatre covers likely elevated — staff accordingly for 5:30–7pm service |
+
+**Biggest opportunity this month:** Bank holiday: Good Friday (2–4 Apr) is your biggest demand opportunity this month. Your Tourists & Visitors, Locals segment converts on atmosphere and food quality — ensure your Google photos and menu are updated before the period starts.
 
 ### Financial Impact
 
@@ -62,6 +75,13 @@ This report draws on three layers of evidence:
 
 **What this means:** The narrative insights (themes, complaints, praise, segment reads) are based on 0 deeply-analysed recent reviews — a detailed sample, not a census. The aggregate 4.8 rating across 83 Google reviews is the reputation bedrock and is factored into scoring separately.
 
+⚠️ **Data Confidence: Indicative.** This report is based on 0 reviews from 0 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive.
+
+ℹ️ Reviews are from a single source (unknown). Cross-platform validation is not possible.
+
+
+> **Data Confidence Note:** This report is based on 0 reviews from 0 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive. Cross-source validation is not possible with a single data source.
+
 ## Monthly Movement Summary
 
 ### Seasonal Context
@@ -91,7 +111,7 @@ The public proof (ratings, compliance) aligns with what guests actually experien
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | NEW]
+### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | ONGOING]
 
 No opening hours listed. Every customer filtering by 'open now' on Google Maps will never see you. This takes 2 minutes to fix.
 
@@ -106,7 +126,7 @@ No opening hours listed. Every customer filtering by 'open now' on Google Maps w
   *Basis: 2–8% of potential customers filter by 'open now' and won't find you*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -121,7 +141,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | NEW]
+### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | ONGOING]
 
 No website, Facebook, or Instagram detected. Even a basic page improves discoverability and gives customers a reason to trust you before visiting.
 
@@ -251,6 +271,21 @@ Strong market position — leads the local peer set. The commercial opportunity 
 - **TripAdvisor:** No presence detected.
 
 *Run Google Places review text enrichment to unlock full narrative analysis.*
+
+## Menu & Dish Intelligence
+
+### What Guests Are Ordering and Mentioning
+
+No specific dish mentions detected in current review sample.
+
+### What's Trending in Your Category (Casual Dining, UK, 2026)
+
+- Quality-led menus outperforming novelty: guests reward consistency and ingredient quality
+- Customisation growing: guided personalisation (hero base + controlled swaps) preferred over unlimited choice
+- Experiential elements (limited-time menus, collaborations) increasingly drive visit decisions among under-40s
+- 72% of UK diners say they will pay more for fresh and seasonal produce
+
+**Opportunity gap:** Category trend — seasonal: 72% of UK diners say they will pay more for fresh and seasonal produce. No guest mentions detected in current reviews. Worth exploring if this aligns with your offering.
 
 ## Public Proof vs Operational Reality
 
@@ -471,6 +506,10 @@ Low prestige is normal for most independents and does not affect footfall, disco
 
 **Commercial read:** This is not a revenue problem today. It's a competitive vulnerability — and an easy win if you want it. Estimated score recovery: +1.2 on trust, +0.3 on overall (6.9 → 7.2).
 
+### Business Health Signals
+
+*Companies House data not yet matched for this venue. This will populate once the collection script is run with a valid API key. If you know your Companies House registration number, contact us to link it manually.*
+
 ## Watch List
 
 **Monitor local competitor openings and closures** [NEW]
@@ -492,21 +531,21 @@ Low impact relative to effort this month. Focus on the three priorities above.
 4 active items: **4 new/recent**.
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
 **Success measure:** Opening hours complete for 7/7 days (verifiable via goh field)
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 3: Establish basic web presence — you don't exist online beyond Google
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

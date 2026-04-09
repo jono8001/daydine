@@ -28,7 +28,7 @@
   "section_completeness": {
     "executive_summary": {
       "present": true,
-      "lines": 24,
+      "lines": 14,
       "meets_minimum": true
     },
     "risk_alerts": {
@@ -38,7 +38,7 @@
     },
     "data_basis": {
       "present": true,
-      "lines": 7,
+      "lines": 10,
       "meets_minimum": true
     },
     "monthly_movement": {
@@ -78,7 +78,7 @@
     },
     "dimension_diagnosis": {
       "present": true,
-      "lines": 33,
+      "lines": 34,
       "meets_minimum": true
     },
     "commercial_diagnosis": {
@@ -169,7 +169,7 @@
   "integrity_checks": {
     "run": false
   },
-  "report_lines": 362,
+  "report_lines": 383,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

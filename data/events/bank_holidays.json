@@ -1,0 +1,9 @@
+{
+  "fetched_at": "2026-04-09T00:00:00",
+  "bank_holidays": [
+    {"title": "Good Friday", "date": "2026-04-03", "bunting": false},
+    {"title": "Easter Monday", "date": "2026-04-06", "bunting": true},
+    {"title": "Early May bank holiday", "date": "2026-05-04", "bunting": true},
+    {"title": "Spring bank holiday", "date": "2026-05-25", "bunting": true}
+  ]
+}

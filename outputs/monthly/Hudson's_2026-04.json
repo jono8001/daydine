@@ -1,0 +1,374 @@
+{
+  "venue": "Hudson's",
+  "month": "2026-04",
+  "report_date": "2026-04-09",
+  "scorecard": {
+    "experience": 8.26,
+    "visibility": 3.11,
+    "trust": 5.78,
+    "conversion": 2.5,
+    "prestige": 0.0,
+    "overall": 4.92
+  },
+  "deltas": null,
+  "signals": {
+    "google_rating": 4.4,
+    "google_review_count": 132,
+    "google_photo_count": 10,
+    "ta_rating": null,
+    "ta_review_count": null,
+    "fsa_rating": 3,
+    "last_inspection_date": "2025-10-06T00:00:00",
+    "price_level": null,
+    "gbp_completeness": null
+  },
+  "peer_position": {
+    "local_rank": 15,
+    "local_of": 18,
+    "local_peer_avg": 5.53,
+    "local_peer_top": 6.64,
+    "local_peer_count": 17,
+    "catchment_rank": 37,
+    "catchment_of": 43
+  },
+  "demand_capture": {
+    "Booking Friction": "Missing",
+    "Menu Visibility": "Missing",
+    "CTA Clarity": "Partial",
+    "Photo Mix & Quality": "Clear",
+    "Proposition Clarity": "Partial",
+    "Mobile Usability": "Partial",
+    "Promise vs Path": "Partial"
+  },
+  "review_sentiment": {},
+  "reviews_analyzed": 0,
+  "priority_actions": [
+    {
+      "title": "Close the hygiene gap — 3 to 5",
+      "status": "new",
+      "priority": 10.0,
+      "dimension": "trust"
+    },
+    {
+      "title": "Get your menu online — 77% of diners check before visiting",
+      "status": "new",
+      "priority": 7.0,
+      "dimension": "conversion"
+    },
+    {
+      "title": "Fix the digital shopfront — you're losing walk-ins",
+      "status": "new",
+      "priority": 7.0,
+      "dimension": "conversion"
+    }
+  ],
+  "watch_items": [
+    {
+      "title": "Guest experience outpaces formal trust record",
+      "status": "new"
+    },
+    {
+      "title": "Compliance record weakest in peer set — creates inspection exposure",
+      "status": "new"
+    }
+  ],
+  "active_recommendations": 8,
+  "implementation_framework": [
+    {
+      "title": "Close the hygiene gap — 3 to 5",
+      "dimension": "trust",
+      "status_label": "New",
+      "target_date": "01 May 2026",
+      "cost_band": "medium",
+      "expected_upside": "Remove the trust ceiling on your overall score",
+      "success_measure": "FSA rating maintained or improved on next inspection (verifiable via FSA API)",
+      "next_milestone": "Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority",
+      "owner_guidance": "compliance — compliance/food safety lead",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "r=3"
+    },
+    {
+      "title": "Get your menu online — 77% of diners check before visiting",
+      "dimension": "conversion",
+      "status_label": "New",
+      "target_date": "08 April 2026",
+      "cost_band": "zero",
+      "expected_upside": "Reduce decision-stage drop-off",
+      "success_measure": "Menu URL present in GBP profile (verifiable via Google Places API)",
+      "next_milestone": "Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website",
+      "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "has_menu_online=false"
+    },
+    {
+      "title": "Fix the digital shopfront — you're losing walk-ins",
+      "dimension": "conversion",
+      "status_label": "New",
+      "target_date": "08 April 2026",
+      "cost_band": "zero",
+      "expected_upside": "Capture demand you're currently losing",
+      "success_measure": "GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)",
+      "next_milestone": "Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com",
+      "owner_guidance": "operations — whoever holds Google Business Profile admin access",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "experience=8.26, conversion=2.5"
+    },
+    {
+      "title": "Guest experience outpaces formal trust record",
+      "dimension": "trust",
+      "status_label": "New",
+      "target_date": "01 May 2026",
+      "cost_band": "medium",
+      "expected_upside": "Close the gap before it becomes visible",
+      "success_measure": "FSA rating maintained or improved on next inspection (verifiable via FSA API)",
+      "next_milestone": "Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority",
+      "owner_guidance": "compliance — compliance/food safety lead",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "experience=8.26, trust=5.78"
+    },
+    {
+      "title": "Compliance record weakest in peer set — creates inspection exposure",
+      "dimension": "trust",
+      "status_label": "New",
+      "target_date": "01 May 2026",
+      "cost_band": "medium",
+      "expected_upside": "Close the 1.7-point gap",
+      "success_measure": "FSA rating maintained or improved on next inspection (verifiable via FSA API)",
+      "next_milestone": "Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority",
+      "owner_guidance": "management — compliance/food safety lead",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "trust: 5.8 vs peer avg 7.5"
+    },
+    {
+      "title": "Establish basic web presence — you don't exist online beyond Google",
+      "dimension": "visibility",
+      "status_label": "Maintenance (deprioritised)",
+      "target_date": "08 April 2026",
+      "cost_band": "low",
+      "expected_upside": "Basic discoverability beyond Google Maps",
+      "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
+      "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
+      "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "web=false, fb=false, ig=false"
+    },
+    {
+      "title": "Ranked #15 of 18 locally — peers are ahead",
+      "dimension": "overall",
+      "status_label": "New",
+      "target_date": "01 May 2026",
+      "cost_band": "medium",
+      "expected_upside": "Competitive awareness",
+      "success_measure": "Signal improvement detectable in next month's data collection",
+      "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
+      "owner_guidance": "management",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "local_percentile=17.6"
+    },
+    {
+      "title": "Accelerate review volume — you're credible but not dominant",
+      "dimension": "visibility",
+      "status_label": "New",
+      "target_date": "08 April 2026",
+      "cost_band": "low",
+      "expected_upside": "Improved Google Maps ranking",
+      "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
+      "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
+      "owner_guidance": "front-of-house — whoever currently responds to online reviews",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "grc=132"
+    }
+  ],
+  "segment_intelligence": {
+    "segment_distribution": {},
+    "unattributed_count": 0,
+    "total_reviews": 0,
+    "segment_insights": {},
+    "tensions": [],
+    "data_quality": {
+      "attributed_pct": 100.0,
+      "note": "Honest segment attribution from keyword evidence. Reviews without clear guest-type signals are unattributed."
+    }
+  },
+  "fsa_intelligence": {
+    "decomposition": {
+      "subcomponents": [
+        {
+          "component": "headline_rating",
+          "label": "FSA Headline Rating",
+          "raw_value": "3/5",
+          "score_contribution": 6.0,
+          "weight": 0.4,
+          "weighted_impact": 2.4,
+          "drag_on_trust": -1.6,
+          "interpretation": "Below maximum (3/5). Visible to customers.",
+          "actionable": true
+        },
+        {
+          "component": "inspection_recency",
+          "label": "Inspection Recency",
+          "raw_value": "2025-10-06",
+          "age_days": 185,
+          "age_months": 6,
+          "staleness_tier": "fresh",
+          "score_contribution": 6.53,
+          "weight": 0.25,
+          "weighted_impact": 1.63,
+          "drag_on_trust": -0.87,
+          "interpretation": "Last inspected 2025-10-06 (6 months ago). Full confidence. No action needed. ",
+          "actionable": false
+        },
+        {
+          "component": "structural_compliance",
+          "label": "Structural Compliance",
+          "raw_value": "5.0/10",
+          "score_contribution": 5.0,
+          "weight": 0.15,
+          "weighted_impact": 0.75,
+          "drag_on_trust": -0.75,
+          "interpretation": "Significant structural concerns.",
+          "actionable": true
+        },
+        {
+          "component": "management_confidence",
+          "label": "Confidence in Management",
+          "raw_value": "5.0/10",
+          "score_contribution": 5.0,
+          "weight": 0.2,
+          "weighted_impact": 1.0,
+          "drag_on_trust": -1.0,
+          "interpretation": "Management confidence is a concern.",
+          "actionable": true
+        }
+      ],
+      "biggest_drag": {
+        "component": "headline_rating",
+        "label": "FSA Headline Rating",
+        "raw_value": "3/5",
+        "score_contribution": 6.0,
+        "weight": 0.4,
+        "weighted_impact": 2.4,
+        "drag_on_trust": -1.6,
+        "interpretation": "Below maximum (3/5). Visible to customers.",
+        "actionable": true
+      },
+      "headline_gap": {
+        "customer_sees": "3/5",
+        "system_scores": "5.8/10",
+        "gap_explanation": "Customers see 3/5 — below top mark. This is visible and actively affects customer decisions."
+      },
+      "peer_comparison": {
+        "venue_trust": 5.78,
+        "peer_avg": 7.46,
+        "peer_top": 9.63,
+        "gap_to_avg": -1.68,
+        "gap_to_leader": -3.85
+      },
+      "trust_score": 5.78
+    },
+    "reinspection": {
+      "reinspection_recommended": false,
+      "urgency": "low",
+      "staleness_tier": "fresh",
+      "age_months": 6,
+      "reasoning": "Your inspection is 6 months old (fresh tier). The recency decay is costing you ~0.9 points on trust. ",
+      "score_recovery_estimate": 0.87,
+      "overall_score_impact": 0.22,
+      "estimated_trust_after": 6.65,
+      "peers_overtaken": 0,
+      "cost_context": "Voluntary reinspection is free via local authority request. Typical wait: 4–8 weeks.",
+      "risk_note": "A reinspection targeting 4/5 would materially improve your score and customer visibility.",
+      "trust_building_actions": [
+        {
+          "action": "Address specific inspection points before requesting re-inspection",
+          "effort": "medium",
+          "impact": "rating improvement"
+        }
+      ]
+    },
+    "commercial": {
+      "trust_gap_to_peer_leader": 3.9,
+      "trust_gap_to_peer_avg": 1.7,
+      "commercial_exposure": {
+        "scenario": "An FSA rating of 3/5 is visible to customers and actively suppresses trust. This is a direct revenue factor.",
+        "segments_most_affected": [
+          "families",
+          "corporate_groups",
+          "tourists"
+        ],
+        "value_at_stake": "£500–£3,000/month",
+        "basis": "Sub-5 ratings are visible on FSA website and Google, affecting booking decisions."
+      },
+      "upside_if_fixed": {
+        "action": "Request voluntary reinspection",
+        "trust_score_after": 6.65,
+        "overall_score_after": 5.14,
+        "competitive_shift": "Would overtake 0 peers on trust",
+        "cost": "Free (local authority request)",
+        "time_to_effect": "4–8 weeks",
+        "risk": "A reinspection targeting 4/5 would materially improve your score and customer visibility."
+      }
+    }
+  },
+  "evidence_base": {
+    "evidence_tiers": {
+      "tier_1_deep_analysis": {
+        "description": "Full text analysed — aspect tagging, sentiment, segment classification",
+        "google_count": 0,
+        "tripadvisor_count": 0,
+        "total": 0,
+        "coverage_of_total": "0.0%",
+        "selection_method": "Most recent available via API",
+        "what_this_tells_you": "Detailed theme and sentiment patterns from recent guests. Strong for identifying specific issues and praise points. Not a census.",
+        "confidence": "High for recent themes, moderate for long-term patterns"
+      },
+      "tier_2_aggregate_signals": {
+        "description": "Rating and volume statistics — no text analysis",
+        "google_total_reviews": 132,
+        "google_rating": 4.4,
+        "tripadvisor_total_reviews": 0,
+        "tripadvisor_rating": null,
+        "total_known_reviews": 132,
+        "rating_stability": "A 4.4/5 across 132 reviews is stable — sustained patterns needed to shift the average.",
+        "what_this_tells_you": "Overall reputation trajectory. A 4.4/5 across 132 reviews is stable — sustained patterns needed to shift the average. ",
+        "confidence": "High for reputation baseline, cannot identify specific themes"
+      },
+      "tier_3_structural_signals": {
+        "description": "Non-review data — FSA, GBP completeness, operational signals",
+        "sources": [
+          "FSA inspection record",
+          "Google Business Profile"
+        ],
+        "source_count": 2,
+        "what_this_tells_you": "Compliance, discoverability, and operational readiness. Independent of guest opinion.",
+        "confidence": "High — factual data, not subjective"
+      }
+    },
+    "platform_divergence": null,
+    "coverage_ratio": 0.0,
+    "deep_analysed": 0,
+    "aggregate_total": 132
+  },
+  "risk_alerts": {
+    "reviews_scanned": 0,
+    "clean": true,
+    "alert_count": 0,
+    "alerts": [],
+    "all_hits": {
+      "legal_regulatory": 0,
+      "staff_conduct": 0,
+      "safety_premises": 0,
+      "staffing_pattern": 0,
+      "reputation_trajectory": 0,
+      "financial_value": 0
+    }
+  }
+}

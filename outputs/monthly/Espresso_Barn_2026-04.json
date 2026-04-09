@@ -1,0 +1,331 @@
+{
+  "venue": "Espresso Barn",
+  "month": "2026-04",
+  "report_date": "2026-04-09",
+  "scorecard": {
+    "experience": 9.42,
+    "visibility": 3.54,
+    "trust": 9.06,
+    "conversion": 2.5,
+    "prestige": 1.5,
+    "overall": 6.32
+  },
+  "deltas": null,
+  "signals": {
+    "google_rating": 4.5,
+    "google_review_count": 501,
+    "google_photo_count": 10,
+    "ta_rating": null,
+    "ta_review_count": null,
+    "fsa_rating": 5,
+    "last_inspection_date": "2025-09-15T00:00:00",
+    "price_level": null,
+    "gbp_completeness": null
+  },
+  "peer_position": {
+    "local_rank": 3,
+    "local_of": 15,
+    "local_peer_avg": 5.43,
+    "local_peer_top": 6.64,
+    "local_peer_count": 14,
+    "catchment_rank": 10,
+    "catchment_of": 43
+  },
+  "demand_capture": {
+    "Booking Friction": "Missing",
+    "Menu Visibility": "Missing",
+    "CTA Clarity": "Partial",
+    "Photo Mix & Quality": "Clear",
+    "Proposition Clarity": "Partial",
+    "Mobile Usability": "Partial",
+    "Promise vs Path": "Partial"
+  },
+  "review_sentiment": {},
+  "reviews_analyzed": 0,
+  "priority_actions": [
+    {
+      "title": "Get your menu online — 77% of diners check before visiting",
+      "status": "new",
+      "priority": 7.0,
+      "dimension": "conversion"
+    },
+    {
+      "title": "Fix the digital shopfront — you're losing walk-ins",
+      "status": "new",
+      "priority": 7.0,
+      "dimension": "conversion"
+    },
+    {
+      "title": "Protect the 4.5/5 rating — it took years to build",
+      "status": "new",
+      "priority": 7.0,
+      "dimension": "visibility"
+    }
+  ],
+  "watch_items": [
+    {
+      "title": "Monitor local competitor openings and closures",
+      "status": "new"
+    },
+    {
+      "title": "Track Google rating trend month-over-month",
+      "status": "new"
+    }
+  ],
+  "active_recommendations": 4,
+  "implementation_framework": [
+    {
+      "title": "Get your menu online — 77% of diners check before visiting",
+      "dimension": "conversion",
+      "status_label": "New",
+      "target_date": "08 April 2026",
+      "cost_band": "zero",
+      "expected_upside": "Reduce decision-stage drop-off",
+      "success_measure": "Menu URL present in GBP profile (verifiable via Google Places API)",
+      "next_milestone": "Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website",
+      "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "has_menu_online=false"
+    },
+    {
+      "title": "Fix the digital shopfront — you're losing walk-ins",
+      "dimension": "conversion",
+      "status_label": "New",
+      "target_date": "08 April 2026",
+      "cost_band": "zero",
+      "expected_upside": "Capture demand you're currently losing",
+      "success_measure": "GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)",
+      "next_milestone": "Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com",
+      "owner_guidance": "operations — whoever holds Google Business Profile admin access",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "experience=9.42, conversion=2.5"
+    },
+    {
+      "title": "Protect the 4.5/5 rating — it took years to build",
+      "dimension": "visibility",
+      "status_label": "New",
+      "target_date": "08 April 2026",
+      "cost_band": "low",
+      "expected_upside": "Sustain discovery advantage",
+      "success_measure": "Google rating maintained or improved vs current baseline (verifiable via gr field)",
+      "next_milestone": "Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine",
+      "owner_guidance": "front-of-house — whoever currently responds to online reviews",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "gr=4.5, grc=501"
+    },
+    {
+      "title": "Establish basic web presence — you don't exist online beyond Google",
+      "dimension": "visibility",
+      "status_label": "Maintenance (deprioritised)",
+      "target_date": "08 April 2026",
+      "cost_band": "low",
+      "expected_upside": "Basic discoverability beyond Google Maps",
+      "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
+      "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
+      "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "web=false, fb=false, ig=false"
+    }
+  ],
+  "segment_intelligence": {
+    "segment_distribution": {},
+    "unattributed_count": 0,
+    "total_reviews": 0,
+    "segment_insights": {},
+    "tensions": [],
+    "data_quality": {
+      "attributed_pct": 100.0,
+      "note": "Honest segment attribution from keyword evidence. Reviews without clear guest-type signals are unattributed."
+    }
+  },
+  "fsa_intelligence": {
+    "decomposition": {
+      "subcomponents": [
+        {
+          "component": "headline_rating",
+          "label": "FSA Headline Rating",
+          "raw_value": "5/5",
+          "score_contribution": 10.0,
+          "weight": 0.4,
+          "weighted_impact": 4.0,
+          "drag_on_trust": 0.0,
+          "interpretation": "Top mark — no action needed",
+          "actionable": false
+        },
+        {
+          "component": "inspection_recency",
+          "label": "Inspection Recency",
+          "raw_value": "2025-09-15",
+          "age_days": 206,
+          "age_months": 7,
+          "staleness_tier": "fresh",
+          "score_contribution": 6.23,
+          "weight": 0.25,
+          "weighted_impact": 1.56,
+          "drag_on_trust": -0.94,
+          "interpretation": "Last inspected 2025-09-15 (7 months ago). Full confidence. No action needed. ",
+          "actionable": false
+        },
+        {
+          "component": "structural_compliance",
+          "label": "Structural Compliance",
+          "raw_value": "10.0/10",
+          "score_contribution": 10.0,
+          "weight": 0.15,
+          "weighted_impact": 1.5,
+          "drag_on_trust": 0.0,
+          "interpretation": "Strong — premises, facilities, equipment all adequate.",
+          "actionable": false
+        },
+        {
+          "component": "management_confidence",
+          "label": "Confidence in Management",
+          "raw_value": "10.0/10",
+          "score_contribution": 10.0,
+          "weight": 0.2,
+          "weighted_impact": 2.0,
+          "drag_on_trust": 0.0,
+          "interpretation": "Strong management systems and training record.",
+          "actionable": false
+        }
+      ],
+      "biggest_drag": {
+        "component": "inspection_recency",
+        "label": "Inspection Recency",
+        "raw_value": "2025-09-15",
+        "age_days": 206,
+        "age_months": 7,
+        "staleness_tier": "fresh",
+        "score_contribution": 6.23,
+        "weight": 0.25,
+        "weighted_impact": 1.56,
+        "drag_on_trust": -0.94,
+        "interpretation": "Last inspected 2025-09-15 (7 months ago). Full confidence. No action needed. ",
+        "actionable": false
+      },
+      "headline_gap": {
+        "customer_sees": "5/5",
+        "system_scores": "9.1/10",
+        "gap_explanation": "Headline and trust score are well-aligned."
+      },
+      "peer_comparison": {
+        "venue_trust": 9.06,
+        "peer_avg": 7.22,
+        "peer_top": 9.51,
+        "gap_to_avg": 1.84,
+        "gap_to_leader": -0.45
+      },
+      "trust_score": 9.06
+    },
+    "reinspection": {
+      "reinspection_recommended": false,
+      "urgency": "low",
+      "staleness_tier": "fresh",
+      "age_months": 7,
+      "reasoning": "Your inspection is 7 months old (fresh tier). The recency decay is costing you ~0.9 points on trust. ",
+      "score_recovery_estimate": 0.94,
+      "overall_score_impact": 0.23,
+      "estimated_trust_after": 10.0,
+      "peers_overtaken": 2,
+      "cost_context": "Voluntary reinspection is free via local authority request. Typical wait: 4–8 weeks.",
+      "risk_note": "Only request reinspection if confident of maintaining 5/5. A drop to 4 would be worse than the staleness drag.",
+      "trust_building_actions": [
+        {
+          "action": "Display 5/5 sticker prominently (entrance + digital)",
+          "effort": "zero",
+          "impact": "visibility"
+        },
+        {
+          "action": "Add FSA rating to Google Business Profile",
+          "effort": "zero",
+          "impact": "digital trust signal"
+        },
+        {
+          "action": "Mention compliance in review responses where relevant",
+          "effort": "low",
+          "impact": "signals confidence"
+        }
+      ]
+    },
+    "commercial": {
+      "trust_gap_to_peer_leader": 0.5,
+      "trust_gap_to_peer_avg": 1.8,
+      "commercial_exposure": {
+        "scenario": "If a customer is choosing between you and a competitor with a fresher inspection record, the competitor's recency is a tiebreaker — especially for risk-averse bookers (families, corporate groups, tourists checking hygiene ratings).",
+        "segments_most_affected": [
+          "families",
+          "corporate_groups",
+          "tourists"
+        ],
+        "value_at_stake": "£0–£500/month",
+        "basis": "Trust gap unlikely to drive direct revenue loss at 5/5 headline, but creates competitive vulnerability. Value is defensive — preventing loss if headline drops or competitor highlights their fresher record."
+      },
+      "upside_if_fixed": {
+        "action": "Request voluntary reinspection",
+        "trust_score_after": 10.0,
+        "overall_score_after": 6.55,
+        "competitive_shift": "Would overtake 2 peers on trust",
+        "cost": "Free (local authority request)",
+        "time_to_effect": "4–8 weeks",
+        "risk": "Only request reinspection if confident of maintaining 5/5. A drop to 4 would be worse than the staleness drag."
+      }
+    }
+  },
+  "evidence_base": {
+    "evidence_tiers": {
+      "tier_1_deep_analysis": {
+        "description": "Full text analysed — aspect tagging, sentiment, segment classification",
+        "google_count": 0,
+        "tripadvisor_count": 0,
+        "total": 0,
+        "coverage_of_total": "0.0%",
+        "selection_method": "Most recent available via API",
+        "what_this_tells_you": "Detailed theme and sentiment patterns from recent guests. Strong for identifying specific issues and praise points. Not a census.",
+        "confidence": "High for recent themes, moderate for long-term patterns"
+      },
+      "tier_2_aggregate_signals": {
+        "description": "Rating and volume statistics — no text analysis",
+        "google_total_reviews": 501,
+        "google_rating": 4.5,
+        "tripadvisor_total_reviews": 0,
+        "tripadvisor_rating": null,
+        "total_known_reviews": 501,
+        "rating_stability": "A 4.5/5 across 501 reviews is extremely stable — individual reviews have negligible impact on the aggregate.",
+        "what_this_tells_you": "Overall reputation trajectory. A 4.5/5 across 501 reviews is extremely stable — individual reviews have negligible impact on the aggregate. ",
+        "confidence": "High for reputation baseline, cannot identify specific themes"
+      },
+      "tier_3_structural_signals": {
+        "description": "Non-review data — FSA, GBP completeness, operational signals",
+        "sources": [
+          "FSA inspection record",
+          "Google Business Profile"
+        ],
+        "source_count": 2,
+        "what_this_tells_you": "Compliance, discoverability, and operational readiness. Independent of guest opinion.",
+        "confidence": "High — factual data, not subjective"
+      }
+    },
+    "platform_divergence": null,
+    "coverage_ratio": 0.0,
+    "deep_analysed": 0,
+    "aggregate_total": 501
+  },
+  "risk_alerts": {
+    "reviews_scanned": 0,
+    "clean": true,
+    "alert_count": 0,
+    "alerts": [],
+    "all_hits": {
+      "legal_regulatory": 0,
+      "staff_conduct": 0,
+      "safety_premises": 0,
+      "staffing_pattern": 0,
+      "reputation_trajectory": 0,
+      "financial_value": 0
+    }
+  }
+}

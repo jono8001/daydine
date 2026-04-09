@@ -1,0 +1,18 @@
+{
+  "has_narrative": false,
+  "review_count_google": 1372,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "dominant",
+    "volume_note": "1,372 reviews — statistically robust rating. Individual reviews have negligible impact.",
+    "rating_position": "premium",
+    "rating_note": "4.7/5 places you in the top tier of Google search results. This drives discovery.",
+    "aggregate_rating": 4.7,
+    "review_count": 1372
+  }
+}

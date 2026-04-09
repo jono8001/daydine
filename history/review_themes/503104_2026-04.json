@@ -1,0 +1,210 @@
+{
+  "has_narrative": true,
+  "reviews_analyzed": 5,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "praise_themes": [
+    {
+      "aspect": "food_quality",
+      "label": "Food Quality",
+      "mentions": 6,
+      "quotes": [
+        "Takeaway only, no dine in option.\n\nFood is excellent, fresh produce (fresh salad/sides, etc), well spiced and served piping hot.",
+        "The BEST takeaway in Stratford, absolutely gorgeous food and happy smiling staff. No need to order from anywhere else. Thank you. The Real Ron 👍🙏"
+      ]
+    },
+    {
+      "aspect": "service",
+      "label": "Service & Hospitality",
+      "mentions": 4,
+      "quotes": [
+        "Honestly the best Indian in Stratford! Never had a bad meal. A lot of places are hit and miss but not this place.",
+        "We always have great food from Simla!  Definitely our favourite Indian takeaway in Stratford-on-Avon!"
+      ]
+    },
+    {
+      "aspect": "value",
+      "label": "Value for Money",
+      "mentions": 1,
+      "quotes": []
+    }
+  ],
+  "criticism_themes": [
+    {
+      "aspect": "food_quality",
+      "label": "Food Quality",
+      "mentions": 1,
+      "quotes": []
+    }
+  ],
+  "strongest_positive_quotes": [
+    "Takeaway only, no dine in option.\n\nFood is excellent, fresh produce (fresh salad/sides, etc), well spiced and served piping hot.",
+    "Honestly the best Indian in Stratford! Never had a bad meal. A lot of places are hit and miss but not this place.",
+    "The BEST takeaway in Stratford, absolutely gorgeous food and happy smiling staff. No need to order from anywhere else. Thank you. The Real Ron 👍🙏"
+  ],
+  "strongest_constructive_quotes": [
+    "Ordered through just eat and found glass in my food, ordered before and has always been amazing however really not happy about this and when I tried t"
+  ],
+  "aspect_scores": {
+    "food_quality": {
+      "positive": 6,
+      "negative": 1,
+      "sentiment": 8.6
+    },
+    "value": {
+      "positive": 1,
+      "negative": 0,
+      "sentiment": 10.0
+    },
+    "service": {
+      "positive": 4,
+      "negative": 0,
+      "sentiment": 10.0
+    }
+  },
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "analysis": {
+    "reviews_analyzed": 5,
+    "aspect_scores": {
+      "food_quality": {
+        "score": 7.5,
+        "positive": 3,
+        "negative": 1,
+        "mentions": 4
+      },
+      "service": {
+        "score": 10.0,
+        "positive": 2,
+        "negative": 0,
+        "mentions": 2
+      },
+      "value": {
+        "score": 10.0,
+        "positive": 1,
+        "negative": 0,
+        "mentions": 1
+      }
+    },
+    "praise_themes": [
+      {
+        "aspect": "food_quality",
+        "label": "Food Quality",
+        "mentions": 3,
+        "quotes": [
+          "Food is excellent, fresh produce (fresh salad/sides, etc), well spiced and served piping hot",
+          "The BEST takeaway in Stratford, absolutely gorgeous food and happy smiling staff"
+        ]
+      },
+      {
+        "aspect": "service",
+        "label": "Service & Hospitality",
+        "mentions": 2,
+        "quotes": [
+          "Curries nice and thick sauce and the delivery guys are super friendly and always bring up to my flat for me",
+          "The drivers are very professional and very friendly"
+        ]
+      },
+      {
+        "aspect": "value",
+        "label": "Value for Money",
+        "mentions": 1,
+        "quotes": [
+          "Great value for money too."
+        ]
+      }
+    ],
+    "criticism_themes": [
+      {
+        "aspect": "food_quality",
+        "label": "Food Quality",
+        "mentions": 1,
+        "quotes": []
+      }
+    ],
+    "rating_distribution": {
+      "4": 1,
+      "5": 3,
+      "1": 1
+    },
+    "average_sample_rating": 4.0,
+    "sentiment_distribution": {
+      "positive": 4,
+      "negative": 1
+    },
+    "risk_flags": [],
+    "trajectory": "declining",
+    "trajectory_method": "positional",
+    "per_review": [
+      {
+        "rating": 4,
+        "sentiment": "positive",
+        "snippet": "Food is excellent, fresh produce (fresh salad/sides, etc), well spiced and served piping hot",
+        "full_text": "Takeaway only, no dine in option.\n\nFood is excellent, fresh produce (fresh salad/sides, etc), well spiced and served piping hot.     Extensive menu and above all, everything tasted great.\n\nI was staying in a nearby hotel overnight and brought the food back to my room, so if staying in Stratford and don't want to use the bland hotel menus, then this is worth a visit.",
+        "aspects": [
+          "food_quality"
+        ],
+        "risk_count": 0,
+        "date": null,
+        "source": null
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Curries nice and thick sauce and the delivery guys are super friendly and always bring up to my flat for me",
+        "full_text": "Honestly the best Indian in Stratford! Never had a bad meal. A lot of places are hit and miss but not this place. Curries nice and thick sauce and the delivery guys are super friendly and always bring up to my flat for me. Lamb tikka makhani is amazing!",
+        "aspects": [
+          "service"
+        ],
+        "risk_count": 0,
+        "date": null,
+        "source": null
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "The BEST takeaway in Stratford, absolutely gorgeous food and happy smiling staff",
+        "full_text": "The BEST takeaway in Stratford, absolutely gorgeous food and happy smiling staff. No need to order from anywhere else. Thank you. The Real Ron 👍🙏",
+        "aspects": [
+          "food_quality"
+        ],
+        "risk_count": 0,
+        "date": null,
+        "source": null
+      },
+      {
+        "rating": 1,
+        "sentiment": "negative",
+        "snippet": "Ordered through just eat and found glass in my food, ordered before and has always been amazing however really not happy about this and when I tried to contacting them they said there was nothing they",
+        "full_text": "Ordered through just eat and found glass in my food, ordered before and has always been amazing however really not happy about this and when I tried to contacting them they said there was nothing they could do (contacted through just eat)",
+        "aspects": [],
+        "risk_count": 0,
+        "date": null,
+        "source": null
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "The drivers are very professional and very friendly",
+        "full_text": "We always have great food from Simla!  Definitely our favourite Indian takeaway in Stratford-on-Avon! The drivers are very professional and very friendly! Great value for money too.",
+        "aspects": [
+          "food_quality",
+          "service",
+          "value"
+        ],
+        "risk_count": 0,
+        "date": null,
+        "source": null
+      }
+    ]
+  },
+  "volume_signals": {
+    "volume_tier": "thin",
+    "volume_note": "Only 73 reviews — rating is volatile. A single 1-star review moves the average measurably.",
+    "rating_position": "competitive",
+    "rating_note": "4/5 is competitive but not dominant. The gap to 4.5 is meaningful for Google ranking.",
+    "aggregate_rating": 4,
+    "review_count": 73
+  }
+}

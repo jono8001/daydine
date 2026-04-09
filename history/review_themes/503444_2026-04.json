@@ -1,0 +1,18 @@
+{
+  "has_narrative": false,
+  "review_count_google": 3165,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "dominant",
+    "volume_note": "3,165 reviews — statistically robust rating. Individual reviews have negligible impact.",
+    "rating_position": "competitive",
+    "rating_note": "4.3/5 is competitive but not dominant. The gap to 4.5 is meaningful for Google ranking.",
+    "aggregate_rating": 4.3,
+    "review_count": 3165
+  }
+}
