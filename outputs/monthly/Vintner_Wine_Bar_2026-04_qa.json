@@ -29,7 +29,7 @@
   "section_completeness": {
     "executive_summary": {
       "present": true,
-      "lines": 24,
+      "lines": 14,
       "meets_minimum": true
     },
     "risk_alerts": {
@@ -201,7 +201,7 @@
       }
     ]
   },
-  "report_lines": 590,
+  "report_lines": 600,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

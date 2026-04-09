@@ -1,0 +1,37 @@
+{
+  "authority": "Warwickshire",
+  "fetched_at": "2026-04-09T14:42:17.070148",
+  "source": "static_2026",
+  "periods": [
+    {
+      "name": "Easter holidays",
+      "start": "2026-04-04",
+      "end": "2026-04-19",
+      "type": "holiday"
+    },
+    {
+      "name": "Summer term",
+      "start": "2026-04-20",
+      "end": "2026-05-22",
+      "type": "term"
+    },
+    {
+      "name": "May half-term",
+      "start": "2026-05-23",
+      "end": "2026-06-01",
+      "type": "holiday"
+    },
+    {
+      "name": "Summer term 2",
+      "start": "2026-06-02",
+      "end": "2026-07-17",
+      "type": "term"
+    },
+    {
+      "name": "Summer holidays",
+      "start": "2026-07-18",
+      "end": "2026-09-02",
+      "type": "holiday"
+    }
+  ]
+}
