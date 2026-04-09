@@ -28,7 +28,7 @@
   "section_completeness": {
     "executive_summary": {
       "present": true,
-      "lines": 13,
+      "lines": 14,
       "meets_minimum": true
     },
     "risk_alerts": {
@@ -140,10 +140,11 @@
   "validation_passed": true,
   "validation_errors": [],
   "validation_warnings": [
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 14856 has no confidence label within 200 characters",
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 14875 has no confidence label within 200 characters",
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15223 has no confidence label within 200 characters",
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15242 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 663 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15054 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15073 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15421 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15440 has no confidence label within 200 characters",
     "SEGMENT_MISSING_UNATTRIBUTED: Segment section has no unattributed reviews handling"
   ],
   "confidence_level": "medium",
@@ -172,7 +173,7 @@
   "integrity_checks": {
     "run": false
   },
-  "report_lines": 343,
+  "report_lines": 344,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

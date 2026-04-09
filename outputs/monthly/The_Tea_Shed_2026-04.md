@@ -11,6 +11,8 @@
 2. **Get your menu online — 77% of diners check before visiting** [FIX] — Reduce decision-stage drop-off
 3. **Build review volume — you lack statistical credibility** [FIX] — Rating stability + discovery ranking
 
+> **If you do one thing this month:** Open [business.google.com](https://business.google.com) → Info → check that your booking link, menu link, and opening hours are all complete. ⏱ 20 mins · 💰 £0
+
 **Watch this month:**
 - Strong rating masks weak competitive position
 - Ranked #4 of 5 locally — peers are ahead
@@ -528,26 +530,26 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-6 active items: **6 stale** (3–5 months).
+6 active items: **6 overdue** (6–11 months).
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** Stale (5 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
 **Success measure:** Opening hours complete for 7/7 days (verifiable via goh field)
-**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
+**Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (5 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
-**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
+**Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 3: Build review volume — you lack statistical credibility
-**Status:** Stale (5 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Rating stability + discovery ranking
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
@@ -555,7 +557,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Action 4: Strong rating masks weak competitive position
-**Status:** Stale (5 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Realistic competitive awareness
 **Owner:** management — whoever currently responds to online reviews
 **Next milestone:** Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week
@@ -563,7 +565,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 5: Ranked #4 of 5 locally — peers are ahead
-**Status:** Stale (5 months) | **Priority:** Medium
+**Status:** Overdue (6 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Competitive awareness
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

@@ -11,6 +11,8 @@
 2. **Publish opening hours — you're invisible to 'open now' searches** [FIX] — Appear in 'open now' searches immediately
 3. **Get your menu online — 77% of diners check before visiting** [FIX] — Reduce decision-stage drop-off
 
+> **If you do one thing this month:** Contact your local Environmental Health Officer to request a re-inspection (your current FSA rating is 1/5 — one level below maximum). ⏱ 15 mins to call · 💰 £0
+
 **Watch this month:**
 - Strong rating masks weak competitive position
 - Guest experience trailing — investigate what peers do differently
@@ -572,7 +574,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 11 active items: **11 stale** (3–5 months).
 
 ### Action 1: Close the hygiene gap — 1 to 5
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -580,7 +582,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Publish opening hours — you're invisible to 'open now' searches
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
@@ -588,7 +590,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
@@ -596,7 +598,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 4: Strong rating masks weak competitive position
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Realistic competitive awareness
 **Owner:** management — whoever currently responds to online reviews
 **Next milestone:** Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week
@@ -604,7 +606,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 5: Guest experience trailing — investigate what peers do differently
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Stale (5 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 1.7-point gap
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
@@ -621,11 +623,11 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Compliance record weakest in peer set — creat | Stale (4 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Harder to book/find than competitors — fricti | Stale (4 months) | 08 April 2026 | Low (< £200) |
-| 8 | Establish basic web presence — you don't exis | Stale (4 months) | 08 April 2026 | Low (< £200) |
-| 9 | Ranked #6 of 6 locally — peers are ahead | Stale (4 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 10 | Accelerate review volume — you're credible bu | Stale (4 months) | 08 April 2026 | Low (< £200) |
+| 6 | Compliance record weakest in peer set — creat | Stale (5 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Harder to book/find than competitors — fricti | Stale (5 months) | 08 April 2026 | Low (< £200) |
+| 8 | Establish basic web presence — you don't exis | Stale (5 months) | 08 April 2026 | Low (< £200) |
+| 9 | Ranked #6 of 6 locally — peers are ahead | Stale (5 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 10 | Accelerate review volume — you're credible bu | Stale (5 months) | 08 April 2026 | Low (< £200) |
 
 ## Next-Month Monitoring Plan
 

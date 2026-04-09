@@ -17,8 +17,41 @@ def _arrow(d):
     return " →" if d != 0 else " ―"
 
 
+def _one_thing_instruction(top_action, venue_rec):
+    """Generate a specific, executable one-sentence instruction."""
+    dim = top_action.get("dimension", "")
+    title = top_action.get("title", "")
+    venue_rec = venue_rec or {}
+
+    if dim == "conversion":
+        return (
+            "Open [business.google.com](https://business.google.com) \u2192 Info \u2192 "
+            "check that your booking link, menu link, and opening hours are all complete."
+        ), "20 mins", "\u00a30"
+    elif dim == "trust" and "hygiene" in title.lower():
+        r = venue_rec.get("r", 5)
+        return (
+            f"Contact your local Environmental Health Officer to request a re-inspection "
+            f"(your current FSA rating is {r}/5 \u2014 one level below maximum)."
+        ), "15 mins to call", "\u00a30"
+    elif dim == "visibility":
+        return (
+            "After your next 10 satisfied tables: ask guests directly for a Google review. "
+            "A personal ask converts at 3\u20134x a QR code."
+        ), "Ongoing \u2014 10 seconds per table", "\u00a30"
+    elif dim == "experience":
+        return (
+            "Respond to your most recent negative review today \u2014 "
+            "89% of diners read owner responses before booking."
+        ), "15 mins", "\u00a30"
+    else:
+        return (
+            top_action.get("expected_upside", "See management priorities below.")
+        ), "30 mins", "\u00a30"
+
+
 def build(w, venue_name, month_str, mode, scorecard, deltas,
-          benchmarks, review_intel, recs):
+          benchmarks, review_intel, recs, venue_rec=None):
     now = datetime.utcnow().strftime("%d %B %Y")
     overall = scorecard.get("overall")
 
@@ -38,6 +71,11 @@ def build(w, venue_name, month_str, mode, scorecard, deltas,
             rt = a.get("rec_type", "action").upper()
             w(f"{i}. **{a['title']}** [{rt}] — {a.get('expected_upside', '')}")
         w("")
+
+        # "One thing" callout — top priority distilled to a single instruction
+        instruction, time_est, cost = _one_thing_instruction(actions[0], venue_rec)
+        w(f"> **If you do one thing this month:** {instruction} "
+          f"\u23f1 {time_est} \u00b7 \U0001f4b0 {cost}\n")
 
     if watches:
         w("**Watch this month:**")

@@ -28,7 +28,7 @@
   "section_completeness": {
     "executive_summary": {
       "present": true,
-      "lines": 14,
+      "lines": 15,
       "meets_minimum": true
     },
     "risk_alerts": {
@@ -141,7 +141,8 @@
   "validation_errors": [],
   "validation_warnings": [
     "OVERCLAIM_ON_ANECDOTAL: 'known for' used with only 3 review texts (anecdotal tier)",
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 16258 has no confidence label within 200 characters"
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 696 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 16456 has no confidence label within 200 characters"
   ],
   "confidence_level": "medium",
   "evidence_provenance_present": true,
@@ -198,7 +199,7 @@
       }
     ]
   },
-  "report_lines": 439,
+  "report_lines": 440,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

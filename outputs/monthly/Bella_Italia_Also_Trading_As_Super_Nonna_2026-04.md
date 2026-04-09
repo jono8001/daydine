@@ -11,6 +11,8 @@
 2. **Get your menu online — 77% of diners check before visiting** [FIX] — Reduce decision-stage drop-off
 3. **Fix the digital shopfront — you're losing walk-ins** [FIX] — Capture demand you're currently losing
 
+> **If you do one thing this month:** Open [business.google.com](https://business.google.com) → Info → check that your booking link, menu link, and opening hours are all complete. ⏱ 20 mins · 💰 £0
+
 **Watch this month:**
 - Harder to book/find than competitors — friction losing customers
 - Ranked #8 of 10 locally — peers are ahead
@@ -562,7 +564,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 6 active items: **6 stale** (3–5 months).
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
@@ -570,7 +572,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
@@ -578,7 +580,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Fix the digital shopfront — you're losing walk-ins
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
@@ -586,7 +588,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 4: Harder to book/find than competitors — friction losing customers
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Stale (5 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Close the 2.1-point gap
 **Owner:** management
 **Next milestone:** Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week
@@ -594,7 +596,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 5: Ranked #8 of 10 locally — peers are ahead
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Stale (5 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Competitive awareness
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

@@ -11,6 +11,8 @@
 2. **Accelerate review volume — you're credible but not dominant** [EXPLOIT] — Improved Google Maps ranking
 3. **Address isolated food quality complaints from guests** [FIX] — Reduce food quality complaints, protect rating
 
+> **If you do one thing this month:** Respond to your most recent negative review today — 89% of diners read owner responses before booking. ⏱ 15 mins · 💰 £0
+
 **Watch this month:**
 - Monitor local competitor openings and closures
 - Track Google rating trend month-over-month
@@ -595,7 +597,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 3 active items: **3 stale** (3–5 months).
 
 ### Action 1: Lean into food quality — it's what guests are buying
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
@@ -603,7 +605,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Accelerate review volume — you're credible but not dominant
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Stale (5 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Improved Google Maps ranking
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
@@ -611,7 +613,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Action 3: Address isolated food quality complaints from guests
-**Status:** Stale (4 months) | **Priority:** Standard
+**Status:** Stale (5 months) | **Priority:** Standard
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week

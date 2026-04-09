@@ -112,7 +112,8 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # --- Lead: executive summary then financial impact ---
     # 1. Executive Summary (actions-led, score secondary)
     build_executive_summary(w, venue_name, month_str, mode, scorecard,
-                            deltas, benchmarks, review_intel, recs)
+                            deltas, benchmarks, review_intel, recs,
+                            venue_rec=venue_rec)
     # 1a. Event & Demand Forecast (next 30 days)
     build_event_forecast(w, venue_rec, month_str)
     # 1b. Financial Impact (part 2 of the executive summary)

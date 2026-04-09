@@ -11,6 +11,8 @@
 2. **Close the hygiene gap — 4 to 5** [FIX] — Remove the trust ceiling on your overall score
 3. **Renew formal trust proof before it becomes a visible drag** [FIX] — Fresh compliance proof, trust signal renewal
 
+> **If you do one thing this month:** Open [business.google.com](https://business.google.com) → Info → check that your booking link, menu link, and opening hours are all complete. ⏱ 20 mins · 💰 £0
+
 **Watch this month:**
 - Guest experience outpaces formal trust record
 - Compliance record weakest in peer set — creates inspection exposure
@@ -556,7 +558,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 10 active items: **10 stale** (3–5 months).
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
@@ -564,7 +566,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 2: Close the hygiene gap — 4 to 5
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -572,7 +574,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 3: Renew formal trust proof before it becomes a visible drag
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Fresh compliance proof, trust signal renewal
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -580,7 +582,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 4: Fix the digital shopfront — you're losing walk-ins
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
@@ -588,7 +590,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 5: Guest experience outpaces formal trust record
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the gap before it becomes visible
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -605,10 +607,10 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Compliance record weakest in peer set — creat | Stale (4 months) | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Harder to book/find than competitors — fricti | Stale (4 months) | 08 April 2026 | Low (< £200) |
-| 8 | Establish basic web presence — you don't exis | Stale (4 months) | 08 April 2026 | Low (< £200) |
-| 9 | Ranked #9 of 9 locally — peers are ahead | Stale (4 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Compliance record weakest in peer set — creat | Stale (5 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Harder to book/find than competitors — fricti | Stale (5 months) | 08 April 2026 | Low (< £200) |
+| 8 | Establish basic web presence — you don't exis | Stale (5 months) | 08 April 2026 | Low (< £200) |
+| 9 | Ranked #9 of 9 locally — peers are ahead | Stale (5 months) | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

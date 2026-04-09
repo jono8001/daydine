@@ -11,6 +11,8 @@
 2. **Fix the digital shopfront — you're losing walk-ins** [FIX] — Capture demand you're currently losing
 3. **Establish basic web presence — you don't exist online beyond Google** [FIX] — Basic discoverability beyond Google Maps
 
+> **If you do one thing this month:** Open [business.google.com](https://business.google.com) → Info → check that your booking link, menu link, and opening hours are all complete. ⏱ 20 mins · 💰 £0
+
 **Watch this month:**
 - Monitor local competitor openings and closures
 - Track Google rating trend month-over-month
@@ -459,26 +461,26 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-4 active items: **4 stale** (3–5 months).
+4 active items: **4 overdue** (6–11 months).
 
 ### Action 1: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (5 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
-**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
+**Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Stale (5 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
+**Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 3: Establish basic web presence — you don't exist online beyond Google
-**Status:** Stale (5 months) | **Priority:** Medium
+**Status:** Overdue (6 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

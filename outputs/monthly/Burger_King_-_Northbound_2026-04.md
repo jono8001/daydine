@@ -11,6 +11,8 @@
 2. **Get your menu online — 77% of diners check before visiting** [FIX] — Reduce decision-stage drop-off
 3. **Establish basic web presence — you don't exist online beyond Google** [FIX] — Basic discoverability beyond Google Maps
 
+> **If you do one thing this month:** Respond to your most recent negative review today — 89% of diners read owner responses before booking. ⏱ 15 mins · 💰 £0
+
 **Watch this month:**
 - Harder to book/find than competitors — friction losing customers
 - Ranked #2 of 2 locally — peers are ahead
@@ -532,7 +534,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 6 active items: **6 stale** (3–5 months).
 
 ### Action 1: Identify and fix the recurring guest complaint
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Rating recovery → discovery recovery
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
@@ -540,7 +542,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
@@ -548,7 +550,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Harder to book/find than competitors — friction losing customers
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Stale (5 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Close the 1.5-point gap
 **Owner:** management
 **Next milestone:** Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week
@@ -556,7 +558,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 4: Establish basic web presence — you don't exist online beyond Google
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Stale (5 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
@@ -564,7 +566,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Action 5: Ranked #2 of 2 locally — peers are ahead
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Stale (5 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Competitive awareness
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

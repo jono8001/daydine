@@ -11,6 +11,8 @@
 2. **Renew formal trust proof before it becomes a visible drag** [FIX] — Fresh compliance proof, trust signal renewal
 3. **Get your menu online — 77% of diners check before visiting** [FIX] — Reduce decision-stage drop-off
 
+> **If you do one thing this month:** Respond to your most recent negative review today — 89% of diners read owner responses before booking. ⏱ 15 mins · 💰 £0
+
 **Watch this month:**
 - Compliance record weakest in peer set — creates inspection exposure
 - Ranked #7 of 8 locally — peers are ahead
@@ -562,7 +564,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 8 active items: **8 stale** (3–5 months).
 
 ### Action 1: Identify and fix the recurring guest complaint
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Rating recovery → discovery recovery
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
@@ -570,7 +572,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Renew formal trust proof before it becomes a visible drag
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Fresh compliance proof, trust signal renewal
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -578,7 +580,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 3: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
@@ -586,7 +588,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 4: Fix the digital shopfront — you're losing walk-ins
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
@@ -594,7 +596,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 5: Compliance record weakest in peer set — creates inspection exposure
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Stale (5 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 1.1-point gap
 **Owner:** management — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -611,8 +613,8 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Establish basic web presence — you don't exis | Stale (4 months) | 08 April 2026 | Low (< £200) |
-| 7 | Ranked #7 of 8 locally — peers are ahead | Stale (4 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Establish basic web presence — you don't exis | Stale (5 months) | 08 April 2026 | Low (< £200) |
+| 7 | Ranked #7 of 8 locally — peers are ahead | Stale (5 months) | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

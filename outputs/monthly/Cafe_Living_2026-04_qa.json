@@ -28,7 +28,7 @@
   "section_completeness": {
     "executive_summary": {
       "present": true,
-      "lines": 14,
+      "lines": 15,
       "meets_minimum": true
     },
     "risk_alerts": {
@@ -140,6 +140,7 @@
   "validation_passed": true,
   "validation_errors": [],
   "validation_warnings": [
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 674 has no confidence label within 200 characters",
     "COMPETITOR_BOILERPLATE: All peer 'Why it matters' lines are identical — consider differentiating per-peer framing",
     "SEGMENT_MISSING_UNATTRIBUTED: Segment section has no unattributed reviews handling"
   ],
@@ -169,7 +170,7 @@
   "integrity_checks": {
     "run": false
   },
-  "report_lines": 440,
+  "report_lines": 441,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

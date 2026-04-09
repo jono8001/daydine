@@ -28,7 +28,7 @@
   "section_completeness": {
     "executive_summary": {
       "present": true,
-      "lines": 14,
+      "lines": 15,
       "meets_minimum": true
     },
     "risk_alerts": {
@@ -140,10 +140,11 @@
   "validation_passed": true,
   "validation_errors": [],
   "validation_warnings": [
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15612 has no confidence label within 200 characters",
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15631 has no confidence label within 200 characters",
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15979 has no confidence label within 200 characters",
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15998 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 732 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15810 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15829 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 16177 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 16196 has no confidence label within 200 characters",
     "COMPETITOR_BOILERPLATE: All peer 'Why it matters' lines are identical — consider differentiating per-peer framing",
     "SEGMENT_MISSING_UNATTRIBUTED: Segment section has no unattributed reviews handling"
   ],
@@ -173,7 +174,7 @@
   "integrity_checks": {
     "run": false
   },
-  "report_lines": 400,
+  "report_lines": 401,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

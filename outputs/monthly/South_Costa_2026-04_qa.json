@@ -28,7 +28,7 @@
   "section_completeness": {
     "executive_summary": {
       "present": true,
-      "lines": 14,
+      "lines": 15,
       "meets_minimum": true
     },
     "risk_alerts": {
@@ -140,6 +140,7 @@
   "validation_passed": true,
   "validation_errors": [],
   "validation_warnings": [
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 674 has no confidence label within 200 characters",
     "SEGMENT_MISSING_UNATTRIBUTED: Segment section has no unattributed reviews handling"
   ],
   "confidence_level": "medium",
@@ -168,7 +169,7 @@
   "integrity_checks": {
     "run": false
   },
-  "report_lines": 398,
+  "report_lines": 399,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

@@ -11,6 +11,8 @@
 2. **Get your menu online — 77% of diners check before visiting** [FIX] — Reduce decision-stage drop-off
 3. **Establish basic web presence — you don't exist online beyond Google** [FIX] — Basic discoverability beyond Google Maps
 
+> **If you do one thing this month:** Respond to your most recent negative review today — 89% of diners read owner responses before booking. ⏱ 15 mins · 💰 £0
+
 **Watch this month:**
 - Monitor local competitor openings and closures
 - Track Google rating trend month-over-month
@@ -529,7 +531,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 3 active items: **3 stale** (3–5 months).
 
 ### Action 1: Identify and fix the recurring guest complaint
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Rating recovery → discovery recovery
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
@@ -537,7 +539,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
@@ -545,7 +547,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Establish basic web presence — you don't exist online beyond Google
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Stale (5 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
