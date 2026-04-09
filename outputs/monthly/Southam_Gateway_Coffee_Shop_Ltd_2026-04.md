@@ -334,7 +334,15 @@ You are in the top quintile (P80). The competitive risk is complacency — the n
 
 ### Competitive Position
 
-*Competitor guest intelligence will populate as review data is collected for local peers. Score comparison above.*
+| Competitor | Score | Google Rating | Reviews |
+|---|---|---|---|
+| Puddleduck Cafe Ltd | 6.9 | 4.9★ | 75 |
+| Cafe 16 | 6.1 | 4.7★ | 215 |
+| Harbury Library Cafe | 5.8 | 5.0★ | 26 |
+| The Tea Shed | 5.7 | 4.8★ | 13 |
+| Bishops Bowls Lake Cafe | 4.8 | 4.6★ | 144 |
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Run the review collection workflow to enable theme comparison.*
 
 ### Visibility Gap
 
@@ -549,7 +557,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 4 active items: **4 stale** (3–5 months).
 
 ### Action 1: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
@@ -557,7 +565,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
@@ -565,7 +573,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Establish basic web presence — you don't exist online beyond Google
-**Status:** Stale (3 months) | **Priority:** Medium
+**Status:** Stale (4 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

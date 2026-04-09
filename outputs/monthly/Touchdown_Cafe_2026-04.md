@@ -111,7 +111,7 @@ The venue appears to be underexploiting its experience quality commercially — 
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Close the hygiene gap — 4 to 5 [FIX | ONGOING]
+### Priority 1: Close the hygiene gap — 4 to 5 [FIX | ESCALATED]
 
 An FSA rating of 4 is visible on your Google listing and the FSA website. Customers see it before they see your menu. Address the inspector's specific findings.
 
@@ -126,7 +126,7 @@ An FSA rating of 4 is visible on your Google listing and the FSA website. Custom
   *Basis: FSA 4/5 caps the Trust dimension; re-inspection to 5 removes the cap*
 - **Segment impact:** Affects all segments equally — compliance is a universal baseline.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ESCALATED]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -141,7 +141,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Fix the digital shopfront — you're losing walk-ins [FIX | ONGOING]
+### Priority 3: Fix the digital shopfront — you're losing walk-ins [FIX | ESCALATED]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -342,7 +342,15 @@ Above the median (P65) but not leading. Peer average is 5.6; the top performer s
 
 ### Competitive Position
 
-*Competitor guest intelligence will populate as review data is collected for local peers. Score comparison above.*
+| Competitor | Score | Google Rating | Reviews |
+|---|---|---|---|
+| Shakespaw Cat Cafe | 6.6 | 4.6★ | 952 |
+| Nel's At The Pavilion | 6.6 | 4.7★ | 453 |
+| No 37 Cafe | 6.3 | 4.3★ | 430 |
+| Costa | 6.3 | 4.1★ | 541 |
+| Ettington Garden Cafe | 6.2 | 4.7★ | 73 |
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Run the review collection workflow to enable theme comparison.*
 
 ### Competitive Density Alert
 
@@ -552,11 +560,11 @@ Low prestige is normal for most independents and does not affect footfall, disco
 
 ## Watch List
 
-**Guest experience outpaces formal trust record** [ONGOING]
+**Guest experience outpaces formal trust record** [ESCALATED]
 
 Guests enjoy the venue but the compliance record hasn't kept up. One poor inspection would make a private gap public. The fix is proactive compliance work, not more marketing.
 
-**Compliance record weakest in peer set — creates inspection exposure** [ONGOING]
+**Compliance record weakest in peer set — creates inspection exposure** [ESCALATED]
 
 You trail peers by 1.6 points on trust. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
@@ -568,42 +576,47 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-7 active items: **7 new/recent**.
+7 active items: **7 stale** (3–5 months).
 
 ### Action 1: Close the hygiene gap — 4 to 5
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Fix the digital shopfront — you're losing walk-ins
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 4: Guest experience outpaces formal trust record
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the gap before it becomes visible
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 5: Compliance record weakest in peer set — creates inspection exposure
-**Status:** Ongoing (2 months) | **Priority:** Medium
+**Status:** Stale (3 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 1.6-point gap
 **Owner:** management — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
 **Success measure:** FSA rating maintained or improved on next inspection (verifiable via FSA API)
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Maintenance Items (deprioritised this month)
 
@@ -615,7 +628,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Establish basic web presence — you don't exis | Ongoing (2 months) | 08 April 2026 | Low (< £200) |
+| 6 | Establish basic web presence — you don't exis | Stale (3 months) | 08 April 2026 | Low (< £200) |
 
 ## Next-Month Monitoring Plan
 

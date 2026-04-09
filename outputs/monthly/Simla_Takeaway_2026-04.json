@@ -58,19 +58,19 @@
   "priority_actions": [
     {
       "title": "Lean into food quality — it's what guests are buying",
-      "status": "ongoing",
+      "status": "escalated",
       "priority": 7.0,
       "dimension": "experience"
     },
     {
       "title": "Accelerate review volume — you're credible but not dominant",
-      "status": "ongoing",
+      "status": "escalated",
       "priority": 5.0,
       "dimension": "visibility"
     },
     {
       "title": "Address isolated food quality complaints from guests",
-      "status": "ongoing",
+      "status": "escalated",
       "priority": 3.5,
       "dimension": "experience"
     }
@@ -90,43 +90,43 @@
     {
       "title": "Lean into food quality — it's what guests are buying",
       "dimension": "experience",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Sharpen proposition → attract the right guests",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
       "owner_guidance": "management — head chef + FOH manager to review together",
-      "times_seen": 2,
-      "barrier_category": null,
+      "times_seen": 3,
+      "barrier_category": "capability",
       "evidence": "review_praise: Food Quality=3"
     },
     {
       "title": "Accelerate review volume — you're credible but not dominant",
       "dimension": "visibility",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Improved Google Maps ranking",
       "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
       "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
       "owner_guidance": "front-of-house — whoever currently responds to online reviews",
-      "times_seen": 2,
-      "barrier_category": null,
+      "times_seen": 3,
+      "barrier_category": "awareness",
       "evidence": "grc=73"
     },
     {
       "title": "Address isolated food quality complaints from guests",
       "dimension": "experience",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Reduce food quality complaints, protect rating",
       "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
       "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
       "owner_guidance": "operations — head chef + FOH manager to review together",
-      "times_seen": 2,
-      "barrier_category": null,
+      "times_seen": 3,
+      "barrier_category": "capability",
       "evidence": "review_criticism: Food Quality=1 negative"
     }
   ],

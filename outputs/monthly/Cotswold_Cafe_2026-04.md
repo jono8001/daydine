@@ -111,7 +111,7 @@ The venue appears to be underexploiting its experience quality commercially — 
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
+### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | ESCALATED]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -126,7 +126,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Fix the digital shopfront — you're losing walk-ins [FIX | ONGOING]
+### Priority 2: Fix the digital shopfront — you're losing walk-ins [FIX | ESCALATED]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -141,7 +141,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
   *Basis: Composite: missing hours/menu/booking each leak 2–8% of demand*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Protect the 4.7/5 rating — it took years to build [PROTECT | ONGOING]
+### Priority 3: Protect the 4.7/5 rating — it took years to build [PROTECT | ESCALATED]
 
 With 258 reviews at 4.7/5, your discovery advantage is substantial. Protect it by responding to every review within 48 hours and prompting satisfied tables for feedback.
 
@@ -335,7 +335,15 @@ You are in the top quintile (P100). The competitive risk is complacency — the 
 
 ### Competitive Position
 
-*Competitor guest intelligence will populate as review data is collected for local peers. Score comparison above.*
+| Competitor | Score | Google Rating | Reviews |
+|---|---|---|---|
+| Cotswold Distillery Cafe | 6.2 | 4.9★ | 1,239 |
+| The Straw Kitchen | 6.1 | 4.9★ | 250 |
+| Revs Automobilia | 5.8 | 4.7★ | 118 |
+| Ferment And Flour (Bastardos) | 5.8 | 4.1★ | 18 |
+| Blue Bean Coffee Shop | 5.7 | 4.7★ | 200 |
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Run the review collection workflow to enable theme comparison.*
 
 ### Visibility Gap
 
@@ -552,28 +560,31 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-4 active items: **4 new/recent**.
+4 active items: **4 stale** (3–5 months).
 
 ### Action 1: Get your menu online — 77% of diners check before visiting
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Protect the 4.7/5 rating — it took years to build
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
 **Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
+**Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Maintenance Items (deprioritised this month)
 

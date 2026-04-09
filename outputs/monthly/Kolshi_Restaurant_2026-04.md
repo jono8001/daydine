@@ -111,7 +111,7 @@ The venue appears to be underexploiting its experience quality commercially — 
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
+### Priority 1: Get your menu online — 77% of diners check before visiting [FIX | ESCALATED]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -126,7 +126,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Fix the digital shopfront — you're losing walk-ins [FIX | ONGOING]
+### Priority 2: Fix the digital shopfront — you're losing walk-ins [FIX | ESCALATED]
 
 You deliver a strong experience but your online presence doesn't make it easy to act on. Can a new customer confirm your hours, see your menu, and book — all within 60 seconds on their phone? If not, that's your fix list.
 
@@ -141,7 +141,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
   *Basis: Composite: missing hours/menu/booking each leak 2–8% of demand*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Protect the 4.8/5 rating — it took years to build [PROTECT | ONGOING]
+### Priority 3: Protect the 4.8/5 rating — it took years to build [PROTECT | ESCALATED]
 
 With 763 reviews at 4.8/5, your discovery advantage is substantial. Protect it by responding to every review within 48 hours and prompting satisfied tables for feedback.
 
@@ -336,15 +336,17 @@ Below the median (P33). Customers have higher-rated alternatives nearby (peer av
 
 *Commercial implication: in a 7-venue market, a below-median position means demand is flowing to competitors. Each percentile point gained recaptures a share of local search traffic. Estimated fair share: ~14% of local demand — you are likely underindexed (directional).*
 
-### What Your Competitors' Guests Are Saying
+### Competitive Position
 
-| Competitor | Score | Their top praise | Their main complaint | Your edge |
-|---|---|---|---|---|
-| Simla Takeaway | 6.6 | Food Quality (3x) | Food Quality (1x) | — |
-| Avon Spice | 6.4 | *No review data* | *No review data* | — |
-| Shah's | 6.3 | *No review data* | *No review data* | — |
-| Hussains | 6.2 | *No review data* | *No review data* | — |
-| Shukurs | 5.6 | *No review data* | *No review data* | — |
+| Competitor | Score | Google Rating | Reviews |
+|---|---|---|---|
+| Simla Takeaway | 6.6 | 4.0★ | 73 |
+| Avon Spice | 6.4 | 4.5★ | 312 |
+| Shah's | 6.3 | 4.7★ | 331 |
+| Hussains | 6.2 | 4.3★ | 331 |
+| Shukurs | 5.6 | 4.7★ | 526 |
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Run the review collection workflow to enable theme comparison.*
 
 ### Visibility Gap
 
@@ -543,11 +545,11 @@ Low prestige is normal for most independents and does not affect footfall, disco
 
 ## Watch List
 
-**Strong rating masks weak competitive position** [ONGOING]
+**Strong rating masks weak competitive position** [ESCALATED]
 
 Your 4.8/5 Google rating feels dominant but you sit below the local median (P33.3). Peer venues achieve similar or better ratings — in this market, 4.5 is table stakes, not a differentiator. Don't mistake the number for an advantage.
 
-**Harder to book/find than competitors — friction losing customers** [ONGOING]
+**Harder to book/find than competitors — friction losing customers** [ESCALATED]
 
 You trail peers by 1.7 points on conversion. This isn't a label problem — it means customers are getting a measurably better experience on this dimension from your competitors.
 
@@ -559,42 +561,47 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-7 active items: **7 new/recent**.
+7 active items: **7 stale** (3–5 months).
 
 ### Action 1: Get your menu online — 77% of diners check before visiting
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Strong rating masks weak competitive position
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Realistic competitive awareness
 **Owner:** management — whoever currently responds to online reviews
 **Next milestone:** Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
+**Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 4: Protect the 4.8/5 rating — it took years to build
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
 **Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
+**Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Action 5: Harder to book/find than competitors — friction losing customers
-**Status:** Ongoing (2 months) | **Priority:** Medium
+**Status:** Stale (3 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Close the 1.7-point gap
 **Owner:** management
 **Next milestone:** Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
+**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Maintenance Items (deprioritised this month)
 
@@ -606,7 +613,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Ranked #5 of 7 locally — peers are ahead | Ongoing (2 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Ranked #5 of 7 locally — peers are ahead | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

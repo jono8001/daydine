@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "09cf03e13c41",
     "venue_id": "503216",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "719922ab9770": {
@@ -31,9 +31,9 @@
     "confidence": 0.9,
     "rec_id": "719922ab9770",
     "venue_id": "503216",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "3afbfbd17327": {
@@ -49,9 +49,9 @@
     "confidence": 0.8,
     "rec_id": "3afbfbd17327",
     "venue_id": "503216",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "6413c068b9c2": {
@@ -67,9 +67,9 @@
     "confidence": 0.7,
     "rec_id": "6413c068b9c2",
     "venue_id": "503216",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "cf32acf38d3a": {
@@ -85,9 +85,9 @@
     "confidence": 0.65,
     "rec_id": "cf32acf38d3a",
     "venue_id": "503216",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "a609d0b8d7d2": {
@@ -103,9 +103,9 @@
     "confidence": 0.65,
     "rec_id": "a609d0b8d7d2",
     "venue_id": "503216",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   }
 }

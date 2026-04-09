@@ -103,7 +103,7 @@
     },
     "recommendation_tracker": {
       "present": true,
-      "lines": 34,
+      "lines": 36,
       "meets_minimum": true
     },
     "category_validation": {
@@ -113,7 +113,7 @@
     },
     "market_intelligence": {
       "present": true,
-      "lines": 4,
+      "lines": 11,
       "meets_minimum": true
     },
     "monitoring_plan": {
@@ -144,8 +144,8 @@
     "OVERCLAIM_ON_ANECDOTAL: 'settled guest perception' used with only 5 review texts (anecdotal tier)",
     "CONFIDENCE_WORDING_MISMATCH: 'dominant theme' used at 'anecdotal' confidence tier — wording overstates evidence",
     "CONFIDENCE_WORDING_MISMATCH: 'consistently praise' used at 'anecdotal' confidence tier — wording overstates evidence",
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 19780 has no confidence label within 200 characters",
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 19799 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 19782 has no confidence label within 200 characters",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 19801 has no confidence label within 200 characters",
     "COMPETITOR_BOILERPLATE: All peer 'Why it matters' lines are identical — consider differentiating per-peer framing"
   ],
   "confidence_level": "medium",
@@ -203,7 +203,7 @@
       }
     ]
   },
-  "report_lines": 468,
+  "report_lines": 477,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

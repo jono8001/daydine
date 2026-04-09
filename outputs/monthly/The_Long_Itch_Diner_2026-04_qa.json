@@ -103,7 +103,7 @@
     },
     "recommendation_tracker": {
       "present": true,
-      "lines": 23,
+      "lines": 27,
       "meets_minimum": true
     },
     "category_validation": {
@@ -168,7 +168,7 @@
   "integrity_checks": {
     "run": false
   },
-  "report_lines": 359,
+  "report_lines": 363,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

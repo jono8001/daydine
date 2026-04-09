@@ -103,7 +103,7 @@
     },
     "recommendation_tracker": {
       "present": true,
-      "lines": 18,
+      "lines": 21,
       "meets_minimum": true
     },
     "category_validation": {
@@ -113,7 +113,7 @@
     },
     "market_intelligence": {
       "present": true,
-      "lines": 5,
+      "lines": 12,
       "meets_minimum": true
     },
     "monitoring_plan": {
@@ -168,7 +168,7 @@
   "integrity_checks": {
     "run": false
   },
-  "report_lines": 401,
+  "report_lines": 411,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

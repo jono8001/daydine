@@ -376,10 +376,25 @@ def _render_competitor_guest_intel(w, ring, review_intel):
             peer_themes[name] = themes
             has_any_themes = True
 
-    if not has_any_themes:
+    peers_with_themes = sum(1 for v in peer_themes.values() if v)
+    if peers_with_themes < 2:
+        # Not enough peer review data — show score-only comparison
         w("### Competitive Position\n")
+        w("| Competitor | Score | Google Rating | Reviews |")
+        w("|---|---|---|---|")
+        for peer in top_peers[:5]:
+            name = peer.get("name", "")
+            overall = peer.get("overall")
+            gr = peer.get("google_rating")
+            grc = peer.get("google_reviews")
+            score_str = f"{overall:.1f}" if overall is not None else "\u2014"
+            gr_str = f"{gr}\u2605" if gr else "\u2014"
+            grc_str = f"{grc:,}" if grc else "\u2014"
+            w(f"| {name} | {score_str} | {gr_str} | {grc_str} |")
+        w("")
         w("*Competitor guest intelligence will populate as review data is "
-          "collected for local peers. Score comparison above.*\n")
+          "collected for local peers. Run the review collection workflow to "
+          "enable theme comparison.*\n")
         return
 
     w("### What Your Competitors' Guests Are Saying\n")

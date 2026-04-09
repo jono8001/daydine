@@ -45,19 +45,19 @@
   "priority_actions": [
     {
       "title": "Get your menu online — 77% of diners check before visiting",
-      "status": "ongoing",
+      "status": "escalated",
       "priority": 7.0,
       "dimension": "conversion"
     },
     {
       "title": "Fix the digital shopfront — you're losing walk-ins",
-      "status": "ongoing",
+      "status": "escalated",
       "priority": 7.0,
       "dimension": "conversion"
     },
     {
       "title": "Establish basic web presence — you don't exist online beyond Google",
-      "status": "ongoing",
+      "status": "escalated",
       "priority": 5.0,
       "dimension": "visibility"
     }
@@ -65,11 +65,11 @@
   "watch_items": [
     {
       "title": "Compliance record weakest in peer set — creates inspection exposure",
-      "status": "ongoing"
+      "status": "escalated"
     },
     {
       "title": "Ranked #6 of 6 locally — peers are ahead",
-      "status": "ongoing"
+      "status": "escalated"
     }
   ],
   "active_recommendations": 5,
@@ -77,71 +77,71 @@
     {
       "title": "Get your menu online — 77% of diners check before visiting",
       "dimension": "conversion",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "zero",
       "expected_upside": "Reduce decision-stage drop-off",
       "success_measure": "Menu URL present in GBP profile (verifiable via Google Places API)",
       "next_milestone": "Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website",
       "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
-      "times_seen": 2,
-      "barrier_category": null,
+      "times_seen": 3,
+      "barrier_category": "access",
       "evidence": "has_menu_online=false"
     },
     {
       "title": "Fix the digital shopfront — you're losing walk-ins",
       "dimension": "conversion",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "zero",
       "expected_upside": "Capture demand you're currently losing",
       "success_measure": "GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)",
       "next_milestone": "Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com",
       "owner_guidance": "operations — whoever holds Google Business Profile admin access",
-      "times_seen": 2,
-      "barrier_category": null,
+      "times_seen": 3,
+      "barrier_category": "access",
       "evidence": "experience=9.3, conversion=3.5"
     },
     {
       "title": "Compliance record weakest in peer set — creates inspection exposure",
       "dimension": "trust",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Close the 1.0-point gap",
       "success_measure": "FSA rating maintained or improved on next inspection (verifiable via FSA API)",
       "next_milestone": "Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority",
       "owner_guidance": "management — compliance/food safety lead",
-      "times_seen": 2,
-      "barrier_category": null,
+      "times_seen": 3,
+      "barrier_category": "capability",
       "evidence": "trust: 7.9 vs peer avg 8.9"
     },
     {
       "title": "Establish basic web presence — you don't exist online beyond Google",
       "dimension": "visibility",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "08 April 2026",
       "cost_band": "low",
       "expected_upside": "Basic discoverability beyond Google Maps",
       "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
       "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
       "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
-      "times_seen": 2,
-      "barrier_category": null,
+      "times_seen": 3,
+      "barrier_category": "awareness",
       "evidence": "web=false, fb=false, ig=false"
     },
     {
       "title": "Ranked #6 of 6 locally — peers are ahead",
       "dimension": "overall",
-      "status_label": "Ongoing (2 months)",
+      "status_label": "Stale (3 months)",
       "target_date": "01 May 2026",
       "cost_band": "medium",
       "expected_upside": "Competitive awareness",
       "success_measure": "Signal improvement detectable in next month's data collection",
       "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
       "owner_guidance": "management",
-      "times_seen": 2,
-      "barrier_category": null,
+      "times_seen": 3,
+      "barrier_category": "prioritisation",
       "evidence": "local_percentile=0.0"
     }
   ],

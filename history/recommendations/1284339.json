@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "fc3fff284c9f",
     "venue_id": "1284339",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "71f7713987ff": {
@@ -31,9 +31,9 @@
     "confidence": 0.9,
     "rec_id": "71f7713987ff",
     "venue_id": "1284339",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "63b1d5dce7e9": {
@@ -49,9 +49,9 @@
     "confidence": 0.8,
     "rec_id": "63b1d5dce7e9",
     "venue_id": "1284339",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "e3b2a4d34c6f": {
@@ -68,9 +68,9 @@
     "management_implication": "Interest without conversion is vanity traffic.",
     "rec_id": "e3b2a4d34c6f",
     "venue_id": "1284339",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "f394ce2e8d60": {
@@ -87,9 +87,9 @@
     "management_implication": "The rating looks good in isolation but not in context.",
     "rec_id": "f394ce2e8d60",
     "venue_id": "1284339",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "d7eff39e0259": {
@@ -105,9 +105,9 @@
     "confidence": 0.75,
     "rec_id": "d7eff39e0259",
     "venue_id": "1284339",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "dbcbe1b08438": {
@@ -123,9 +123,9 @@
     "confidence": 0.7,
     "rec_id": "dbcbe1b08438",
     "venue_id": "1284339",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "16d380f0da32": {
@@ -141,9 +141,9 @@
     "confidence": 0.65,
     "rec_id": "16d380f0da32",
     "venue_id": "1284339",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "a6332c9c3de9": {
@@ -159,9 +159,9 @@
     "confidence": 0.85,
     "rec_id": "a6332c9c3de9",
     "venue_id": "1284339",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   }
 }

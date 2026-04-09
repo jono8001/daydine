@@ -123,7 +123,7 @@ Top themes across unattributed reviews: Food Quality (2x), Service & Hospitality
 
 The score is solid but not dominant. The management question is *which specific lever, if pulled, would most change your commercial trajectory* — and which can you realistically move?
 
-### Priority 1: Lean into food quality — it's what guests are buying [EXPLOIT | ONGOING]
+### Priority 1: Lean into food quality — it's what guests are buying [EXPLOIT | ESCALATED]
 
 Guests consistently praise food quality (3 positive mentions). This appears to be what the venue actually sells, whether or not it's what you think you sell. Make it the headline of your online presence.
 
@@ -138,7 +138,7 @@ Guests consistently praise food quality (3 positive mentions). This appears to b
   *Basis: Aligning online messaging to guest-validated strengths sharpens conversion*
 - **Segment impact:** Couples and occasion diners have the highest expectations and write the most detailed negative reviews. Fixing food complaints protects your rating with the segment that amplifies problems fastest.
 
-### Priority 2: Accelerate review volume — you're credible but not dominant [EXPLOIT | ONGOING]
+### Priority 2: Accelerate review volume — you're credible but not dominant [EXPLOIT | ESCALATED]
 
 At 73 reviews, your rating is stable but not commanding. Venues with 200+ reviews rank higher in Maps. A post-visit review prompt would compound monthly.
 
@@ -153,7 +153,7 @@ At 73 reviews, your rating is stable but not commanding. Venues with 200+ review
   *Basis: Visibility improvements compound over weeks, not days.*
 - **Segment impact:** Tourists and first-time visitors depend entirely on your online presence. Protecting visibility protects your discovery pipeline.
 
-### Priority 3: Address isolated food quality complaints from guests [FIX | ONGOING]
+### Priority 3: Address isolated food quality complaints from guests [FIX | ESCALATED]
 
 Food Quality draws isolated criticism across reviews (1 negative mentions). Investigate whether this reflects a systemic issue or isolated incidents.
 
@@ -370,7 +370,15 @@ You are in the top quintile (P100). The competitive risk is complacency — the 
 
 ### Competitive Position
 
-*Competitor guest intelligence will populate as review data is collected for local peers. Score comparison above.*
+| Competitor | Score | Google Rating | Reviews |
+|---|---|---|---|
+| Avon Spice | 6.4 | 4.5★ | 312 |
+| Shah's | 6.3 | 4.7★ | 331 |
+| Hussains | 6.2 | 4.3★ | 331 |
+| Kolshi Restaurant | 6.1 | 4.8★ | 763 |
+| Thespians Indian Restaurant | 5.4 | 4.0★ | 581 |
+
+*Competitor guest intelligence will populate as review data is collected for local peers. Run the review collection workflow to enable theme comparison.*
 
 ## Market Position
 
@@ -583,28 +591,31 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 
 ## Implementation Framework
 
-3 active items: **3 new/recent**.
+3 active items: **3 stale** (3–5 months).
 
 ### Action 1: Lean into food quality — it's what guests are buying
-**Status:** Ongoing (2 months) | **Priority:** High
+**Status:** Stale (3 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Accelerate review volume — you're credible but not dominant
-**Status:** Ongoing (2 months) | **Priority:** Medium
+**Status:** Stale (3 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Improved Google Maps ranking
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
 **Success measure:** Google review count increased by 10+ (verifiable via grc field)
+**Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Action 3: Address isolated food quality complaints from guests
-**Status:** Ongoing (2 months) | **Priority:** Standard
+**Status:** Stale (3 months) | **Priority:** Standard
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
+**Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ## Next-Month Monitoring Plan
 

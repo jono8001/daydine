@@ -13,9 +13,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "bdc7c4975a4d",
     "venue_id": "650308",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "97b956510fd3": {
@@ -31,9 +31,9 @@
     "confidence": 0.9,
     "rec_id": "97b956510fd3",
     "venue_id": "650308",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "5efeda3c8606": {
@@ -49,9 +49,9 @@
     "confidence": 0.8,
     "rec_id": "5efeda3c8606",
     "venue_id": "650308",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "d54645dd84ea": {
@@ -67,9 +67,9 @@
     "confidence": 0.7,
     "rec_id": "d54645dd84ea",
     "venue_id": "650308",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "d6bb31ca9b90": {
@@ -85,9 +85,9 @@
     "confidence": 0.65,
     "rec_id": "d6bb31ca9b90",
     "venue_id": "650308",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "883e0d93def2": {
@@ -103,9 +103,9 @@
     "confidence": 0.65,
     "rec_id": "883e0d93def2",
     "venue_id": "650308",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "de09b6869806": {
@@ -121,9 +121,9 @@
     "confidence": 0.65,
     "rec_id": "de09b6869806",
     "venue_id": "650308",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   }
 }

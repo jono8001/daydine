@@ -13,9 +13,9 @@
     "management_implication": "This is a zero-effort, high-impact fix.",
     "rec_id": "c9fcb60d37a0",
     "venue_id": "1622082",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "e1b7c42040d9": {
@@ -32,9 +32,9 @@
     "management_implication": "Every day without a menu is a percentage of potential customers lost.",
     "rec_id": "e1b7c42040d9",
     "venue_id": "1622082",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "0839c2e84266": {
@@ -50,9 +50,9 @@
     "confidence": 0.8,
     "rec_id": "0839c2e84266",
     "venue_id": "1622082",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   },
   "fcb6b90d36ec": {
@@ -68,9 +68,9 @@
     "confidence": 0.65,
     "rec_id": "fcb6b90d36ec",
     "venue_id": "1622082",
-    "status": "ongoing",
+    "status": "escalated",
     "first_seen": "2026-04",
-    "times_seen": 2,
+    "times_seen": 3,
     "last_seen": "2026-04"
   }
 }
