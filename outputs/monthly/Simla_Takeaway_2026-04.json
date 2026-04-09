@@ -1,0 +1,333 @@
+{
+  "venue": "Simla Takeaway",
+  "month": "2026-04",
+  "report_date": "2026-04-09",
+  "scorecard": {
+    "experience": 8.83,
+    "visibility": 5.06,
+    "trust": 8.12,
+    "conversion": 6.0,
+    "prestige": 0.0,
+    "overall": 6.59
+  },
+  "deltas": null,
+  "signals": {
+    "google_rating": 4.0,
+    "google_review_count": 73,
+    "google_photo_count": 7,
+    "ta_rating": null,
+    "ta_review_count": null,
+    "fsa_rating": 5,
+    "last_inspection_date": "2025-01-30T00:00:00",
+    "price_level": null,
+    "gbp_completeness": 8.0
+  },
+  "peer_position": {
+    "local_rank": 1,
+    "local_of": 7,
+    "local_peer_avg": 5.86,
+    "local_peer_top": 6.42,
+    "local_peer_count": 6,
+    "catchment_rank": 1,
+    "catchment_of": 16
+  },
+  "demand_capture": {
+    "Booking Friction": "Partial",
+    "Menu Visibility": "Partial",
+    "CTA Clarity": "Partial",
+    "Photo Mix & Quality": "Partial",
+    "Proposition Clarity": "Clear",
+    "Mobile Usability": "Clear",
+    "Promise vs Path": "Clear"
+  },
+  "review_sentiment": {
+    "food_quality": {
+      "positive": 3,
+      "negative": 1
+    },
+    "service": {
+      "positive": 2,
+      "negative": 0
+    },
+    "value": {
+      "positive": 1,
+      "negative": 0
+    }
+  },
+  "reviews_analyzed": 5,
+  "priority_actions": [
+    {
+      "title": "Lean into food quality — it's what guests are buying",
+      "status": "new",
+      "priority": 7.0,
+      "dimension": "experience"
+    },
+    {
+      "title": "Accelerate review volume — you're credible but not dominant",
+      "status": "new",
+      "priority": 5.0,
+      "dimension": "visibility"
+    },
+    {
+      "title": "Address isolated food quality complaints from guests",
+      "status": "new",
+      "priority": 3.5,
+      "dimension": "experience"
+    }
+  ],
+  "watch_items": [
+    {
+      "title": "Monitor local competitor openings and closures",
+      "status": "new"
+    },
+    {
+      "title": "Track Google rating trend month-over-month",
+      "status": "new"
+    }
+  ],
+  "active_recommendations": 3,
+  "implementation_framework": [
+    {
+      "title": "Lean into food quality — it's what guests are buying",
+      "dimension": "experience",
+      "status_label": "New",
+      "target_date": "08 April 2026",
+      "cost_band": "low",
+      "expected_upside": "Sharpen proposition → attract the right guests",
+      "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
+      "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
+      "owner_guidance": "management — head chef + FOH manager to review together",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "review_praise: Food Quality=3"
+    },
+    {
+      "title": "Accelerate review volume — you're credible but not dominant",
+      "dimension": "visibility",
+      "status_label": "New",
+      "target_date": "08 April 2026",
+      "cost_band": "low",
+      "expected_upside": "Improved Google Maps ranking",
+      "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
+      "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
+      "owner_guidance": "front-of-house — whoever currently responds to online reviews",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "grc=73"
+    },
+    {
+      "title": "Address isolated food quality complaints from guests",
+      "dimension": "experience",
+      "status_label": "New",
+      "target_date": "01 May 2026",
+      "cost_band": "medium",
+      "expected_upside": "Reduce food quality complaints, protect rating",
+      "success_measure": "No food quality complaints in next 10 reviews (verifiable via sentiment analysis)",
+      "next_milestone": "Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week",
+      "owner_guidance": "operations — head chef + FOH manager to review together",
+      "times_seen": 1,
+      "barrier_category": null,
+      "evidence": "review_criticism: Food Quality=1 negative"
+    }
+  ],
+  "segment_intelligence": {
+    "segment_distribution": {
+      "locals": 1
+    },
+    "unattributed_count": 4,
+    "total_reviews": 5,
+    "segment_insights": {},
+    "tensions": [],
+    "data_quality": {
+      "attributed_pct": 20.0,
+      "note": "Honest segment attribution from keyword evidence. Reviews without clear guest-type signals are unattributed."
+    }
+  },
+  "fsa_intelligence": {
+    "decomposition": {
+      "subcomponents": [
+        {
+          "component": "headline_rating",
+          "label": "FSA Headline Rating",
+          "raw_value": "5/5",
+          "score_contribution": 10.0,
+          "weight": 0.4,
+          "weighted_impact": 4.0,
+          "drag_on_trust": 0.0,
+          "interpretation": "Top mark — no action needed",
+          "actionable": false
+        },
+        {
+          "component": "inspection_recency",
+          "label": "Inspection Recency",
+          "raw_value": "2025-01-30",
+          "age_days": 434,
+          "age_months": 14,
+          "staleness_tier": "ageing",
+          "score_contribution": 3.69,
+          "weight": 0.25,
+          "weighted_impact": 0.92,
+          "drag_on_trust": -1.58,
+          "interpretation": "Last inspected 2025-01-30 (14 months ago). Score starting to decay. Note it but don't escalate. ",
+          "actionable": false
+        },
+        {
+          "component": "structural_compliance",
+          "label": "Structural Compliance",
+          "raw_value": "8.0/10",
+          "score_contribution": 8.0,
+          "weight": 0.15,
+          "weighted_impact": 1.2,
+          "drag_on_trust": -0.3,
+          "interpretation": "Strong — premises, facilities, equipment all adequate.",
+          "actionable": false
+        },
+        {
+          "component": "management_confidence",
+          "label": "Confidence in Management",
+          "raw_value": "10.0/10",
+          "score_contribution": 10.0,
+          "weight": 0.2,
+          "weighted_impact": 2.0,
+          "drag_on_trust": 0.0,
+          "interpretation": "Strong management systems and training record.",
+          "actionable": false
+        }
+      ],
+      "biggest_drag": {
+        "component": "inspection_recency",
+        "label": "Inspection Recency",
+        "raw_value": "2025-01-30",
+        "age_days": 434,
+        "age_months": 14,
+        "staleness_tier": "ageing",
+        "score_contribution": 3.69,
+        "weight": 0.25,
+        "weighted_impact": 0.92,
+        "drag_on_trust": -1.58,
+        "interpretation": "Last inspected 2025-01-30 (14 months ago). Score starting to decay. Note it but don't escalate. ",
+        "actionable": false
+      },
+      "headline_gap": {
+        "customer_sees": "5/5",
+        "system_scores": "8.1/10",
+        "gap_explanation": "Customers see 5/5 — the top mark. But the system scores trust at 8.1/10 because it also weighs inspection freshness, structural compliance, and management confidence. The gap is mostly driven by inspection recency."
+      },
+      "peer_comparison": {
+        "venue_trust": 8.12,
+        "peer_avg": 7.86,
+        "peer_top": 8.96,
+        "gap_to_avg": 0.26,
+        "gap_to_leader": -0.84
+      },
+      "trust_score": 8.12
+    },
+    "reinspection": {
+      "reinspection_recommended": false,
+      "urgency": "low",
+      "staleness_tier": "ageing",
+      "age_months": 14,
+      "reasoning": "Your inspection is 14 months old (ageing tier). The recency decay is costing you ~1.6 points on trust. ",
+      "score_recovery_estimate": 1.58,
+      "overall_score_impact": 0.4,
+      "estimated_trust_after": 9.7,
+      "peers_overtaken": 3,
+      "cost_context": "Voluntary reinspection is free via local authority request. Typical wait: 4–8 weeks.",
+      "risk_note": "Only request reinspection if confident of maintaining 5/5. A drop to 4 would be worse than the staleness drag.",
+      "trust_building_actions": [
+        {
+          "action": "Display 5/5 sticker prominently (entrance + digital)",
+          "effort": "zero",
+          "impact": "visibility"
+        },
+        {
+          "action": "Add FSA rating to Google Business Profile",
+          "effort": "zero",
+          "impact": "digital trust signal"
+        },
+        {
+          "action": "Mention compliance in review responses where relevant",
+          "effort": "low",
+          "impact": "signals confidence"
+        }
+      ]
+    },
+    "commercial": {
+      "trust_gap_to_peer_leader": 0.8,
+      "trust_gap_to_peer_avg": 0.3,
+      "commercial_exposure": {
+        "scenario": "If a customer is choosing between you and a competitor with a fresher inspection record, the competitor's recency is a tiebreaker — especially for risk-averse bookers (families, corporate groups, tourists checking hygiene ratings).",
+        "segments_most_affected": [
+          "families",
+          "corporate_groups",
+          "tourists"
+        ],
+        "value_at_stake": "£0–£500/month",
+        "basis": "Trust gap unlikely to drive direct revenue loss at 5/5 headline, but creates competitive vulnerability. Value is defensive — preventing loss if headline drops or competitor highlights their fresher record."
+      },
+      "upside_if_fixed": {
+        "action": "Request voluntary reinspection",
+        "trust_score_after": 9.7,
+        "overall_score_after": 6.99,
+        "competitive_shift": "Would overtake 3 peers on trust",
+        "cost": "Free (local authority request)",
+        "time_to_effect": "4–8 weeks",
+        "risk": "Only request reinspection if confident of maintaining 5/5. A drop to 4 would be worse than the staleness drag."
+      }
+    }
+  },
+  "evidence_base": {
+    "evidence_tiers": {
+      "tier_1_deep_analysis": {
+        "description": "Full text analysed — aspect tagging, sentiment, segment classification",
+        "google_count": 5,
+        "tripadvisor_count": 0,
+        "total": 5,
+        "coverage_of_total": "6.8%",
+        "selection_method": "Most recent available via API",
+        "what_this_tells_you": "Detailed theme and sentiment patterns from recent guests. Strong for identifying specific issues and praise points. Not a census.",
+        "confidence": "High for recent themes, moderate for long-term patterns"
+      },
+      "tier_2_aggregate_signals": {
+        "description": "Rating and volume statistics — no text analysis",
+        "google_total_reviews": 73,
+        "google_rating": 4,
+        "tripadvisor_total_reviews": 0,
+        "tripadvisor_rating": null,
+        "total_known_reviews": 73,
+        "rating_stability": "At 73 reviews, the rating is moderately stable but can shift.",
+        "what_this_tells_you": "Overall reputation trajectory. At 73 reviews, the rating is moderately stable but can shift. ",
+        "confidence": "High for reputation baseline, cannot identify specific themes"
+      },
+      "tier_3_structural_signals": {
+        "description": "Non-review data — FSA, GBP completeness, operational signals",
+        "sources": [
+          "FSA inspection record",
+          "Google Business Profile",
+          "Web presence checks"
+        ],
+        "source_count": 3,
+        "what_this_tells_you": "Compliance, discoverability, and operational readiness. Independent of guest opinion.",
+        "confidence": "High — factual data, not subjective"
+      }
+    },
+    "platform_divergence": null,
+    "coverage_ratio": 6.8,
+    "deep_analysed": 5,
+    "aggregate_total": 73
+  },
+  "risk_alerts": {
+    "reviews_scanned": 5,
+    "clean": true,
+    "alert_count": 0,
+    "alerts": [],
+    "all_hits": {
+      "legal_regulatory": 0,
+      "staff_conduct": 0,
+      "safety_premises": 0,
+      "staffing_pattern": 0,
+      "reputation_trajectory": 0,
+      "financial_value": 0
+    }
+  }
+}

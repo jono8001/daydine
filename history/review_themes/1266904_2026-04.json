@@ -1,0 +1,18 @@
+{
+  "has_narrative": false,
+  "review_count_google": 9507,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "dominant",
+    "volume_note": "9,507 reviews — statistically robust rating. Individual reviews have negligible impact.",
+    "rating_position": "vulnerable",
+    "rating_note": "3.9/5 is below the threshold where most customers filter. You're losing discovery.",
+    "aggregate_rating": 3.9,
+    "review_count": 9507
+  }
+}

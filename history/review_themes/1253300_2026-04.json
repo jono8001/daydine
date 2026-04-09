@@ -1,0 +1,18 @@
+{
+  "has_narrative": false,
+  "review_count_google": 387,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "adequate",
+    "volume_note": "387 reviews — adequate but not dominant. 5 consecutive low ratings could drop average by ~0.1.",
+    "rating_position": "competitive",
+    "rating_note": "4.2/5 is competitive but not dominant. The gap to 4.5 is meaningful for Google ranking.",
+    "aggregate_rating": 4.2,
+    "review_count": 387
+  }
+}

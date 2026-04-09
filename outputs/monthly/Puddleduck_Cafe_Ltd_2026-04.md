@@ -1,5 +1,5 @@
 # Puddleduck Cafe Ltd — Monthly Intelligence Report
-*2026-04 | Generated 05 April 2026 | DayDine Premium*
+*2026-04 | Generated 09 April 2026 | DayDine Premium*
 
 ---
 
@@ -20,11 +20,22 @@
 **Overall score: 6.9/10** (baseline month — no prior comparison)
  | Strongest: Experience (9.9) | Weakest: Visibility (2.9)
 
-**Competitive position:** Local Peers (5mi): #1 of 5 (P100.0) — peer avg 5.68, top 6.08
-  Catchment (15mi): #1 of 15 (P100.0) — peer avg 6.07, top 6.79
-  UK Category Cohort: #1 of 53 (P100.0) — peer avg 5.77, top 6.79
+**Competitive position:** Local Peers (5mi): #1 of 5 (P100.0) — peer avg 5.67, top 6.08
+  Catchment (15mi): #1 of 15 (P100.0) — peer avg 6.07, top 6.78
+  UK Category Cohort: #1 of 53 (P100.0) — peer avg 5.76, top 6.78
 
 *This report uses publicly observable data only — no internal systems required. See Data Basis below for full evidence breakdown.*
+
+## Next 30 Days — Demand Forecast
+
+| Period | Signal | Driver | Recommended Action |
+|---|---|---|---|
+| 2–4 Apr | 🔴 PEAK | Bank holiday: Good Friday | Ensure full opening hours are correct on Google for Good Friday |
+| 4–19 Apr | 🟡 HIGH | School: Easter holidays | Family-friendly offer visible — check kids menu and highchair mention on Google |
+| 6–7 Apr | 🔴 PEAK | Bank holiday: Easter Monday | Ensure full opening hours are correct on Google for Easter Monday |
+| 20–30 Apr | 🟢 STEADY | School: Summer term (term time) | — |
+
+**Biggest opportunity this month:** Bank holiday: Good Friday (2–4 Apr) is your biggest demand opportunity this month. Your Tourists & Visitors, Locals segment converts on atmosphere and food quality — ensure your Google photos and menu are updated before the period starts.
 
 ### Financial Impact
 
@@ -62,6 +73,13 @@ This report draws on three layers of evidence:
 
 **What this means:** The narrative insights (themes, complaints, praise, segment reads) are based on 0 deeply-analysed recent reviews — a detailed sample, not a census. The aggregate 4.9 rating across 75 Google reviews is the reputation bedrock and is factored into scoring separately.
 
+⚠️ **Data Confidence: Indicative.** This report is based on 0 reviews from 0 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive.
+
+ℹ️ Reviews are from a single source (unknown). Cross-platform validation is not possible.
+
+
+> **Data Confidence Note:** This report is based on 0 reviews from 0 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive. Cross-source validation is not possible with a single data source.
+
 ## Monthly Movement Summary
 
 ### Seasonal Context
@@ -91,7 +109,7 @@ The public proof (ratings, compliance) aligns with what guests actually experien
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | NEW]
+### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | ONGOING]
 
 No opening hours listed. Every customer filtering by 'open now' on Google Maps will never see you. This takes 2 minutes to fix.
 
@@ -106,7 +124,7 @@ No opening hours listed. Every customer filtering by 'open now' on Google Maps w
   *Basis: 2–8% of potential customers filter by 'open now' and won't find you*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -121,7 +139,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | NEW]
+### Priority 3: Establish basic web presence — you don't exist online beyond Google [FIX | ONGOING]
 
 No website, Facebook, or Instagram detected. Even a basic page improves discoverability and gives customers a reason to trust you before visiting.
 
@@ -252,6 +270,20 @@ Strong market position — leads the local peer set. The commercial opportunity 
 
 *Run Google Places review text enrichment to unlock full narrative analysis.*
 
+## Menu & Dish Intelligence
+
+### What Guests Are Ordering and Mentioning
+
+No specific dish mentions detected in current review sample.
+
+### What's Trending in Your Category (Cafes, UK, 2026)
+
+- Specialty coffee knowledge is a positive review driver — guests notice and mention it
+- Brunch menus with dietary flexibility (vegan, GF options clearly labelled) reduce decision friction
+- Dog-friendly outdoor seating is among the most commonly praised attributes in UK cafe reviews
+
+**Opportunity gap:** Category trend — specialty coffee: Specialty coffee knowledge is a positive review driver — guests notice and mention it. No guest mentions detected in current reviews. Worth exploring if this aligns with your offering.
+
 ## Public Proof vs Operational Reality
 
 This section compares what customers see (public signals) against what the data reveals about operational depth.
@@ -352,7 +384,7 @@ You are in the top quintile of this peer set. Your overall score of 6.9 exceeds 
 
 **Position:** #1 of 15 (Percentile 100.0)
 
-You are in the top quintile of this peer set. Your overall score of 6.9 exceeds the peer average of 6.1 by 0.9 points. The competitive risk here is complacency — the nearest competitor scores 6.8.
+You are in the top quintile of this peer set. Your overall score of 6.9 exceeds the peer average of 6.1 by 0.8 points. The competitive risk here is complacency — the nearest competitor scores 6.8.
 
 **Dimension gaps vs peers:**
 
@@ -363,7 +395,7 @@ You are in the top quintile of this peer set. Your overall score of 6.9 exceeds 
 
 - South Costa (6.8) — you lead by 0.1
 - Building 523 Costa And Kitchen (6.8) — you lead by 0.1
-- Dec X Canteen (6.7) — you lead by 0.3
+- Dec X Canteen (6.7) — you lead by 0.2
 - Gilks' Garage Cafe (6.7) — you lead by 0.3
 - Nel's At The Pavilion (6.6) — you lead by 0.3
 
@@ -381,9 +413,9 @@ You are in the top quintile of this peer set. Your overall score of 6.9 exceeds 
 **Closest competitors:**
 
 - South Costa (6.8) — you lead by 0.1
-- Building 523 Costa And Kitchen (6.8) — you lead by 0.1
 - Nanas Caff (6.8) — you lead by 0.1
-- Dec X Canteen (6.7) — you lead by 0.3
+- Building 523 Costa And Kitchen (6.8) — you lead by 0.1
+- Dec X Canteen (6.7) — you lead by 0.2
 - Gilks' Garage Cafe (6.7) — you lead by 0.3
 
 ## Dimension Scorecard
@@ -457,7 +489,7 @@ Low prestige is normal for most independents and does not affect footfall, disco
 | Subcomponent | Score | Status | Note |
 |---|---|---|---|
 | FSA Headline Rating | 10.0/10 | ✅ Strong | Top mark — no action needed |
-| Inspection Recency | 5.1/10 | ⚠️ Room to improve | Last inspected 2025-06-13 (10 months ago). Full confidence. No action needed.  |
+| Inspection Recency | 5.0/10 | ⚠️ Room to improve | Last inspected 2025-06-13 (10 months ago). Full confidence. No action needed.  |
 | Structural Compliance | 10.0/10 | ✅ Strong | Strong — premises, facilities, equipment all adequate. |
 | Confidence in Management | 10.0/10 | ✅ Strong | Strong management systems and training record. |
 
@@ -469,6 +501,10 @@ Low prestige is normal for most independents and does not affect footfall, disco
 3. **Do nothing** — viable. The 5/5 headline protects you with customers. The gap is competitive, not critical.
 
 **Commercial read:** This is not a revenue problem today. It's a competitive vulnerability — and an easy win if you want it. Estimated score recovery: +1.2 on trust, +0.3 on overall (6.9 → 7.2).
+
+### Business Health Signals
+
+*Companies House data not yet matched for this venue. This will populate once the collection script is run with a valid API key. If you know your Companies House registration number, contact us to link it manually.*
 
 ## Watch List
 
@@ -491,21 +527,21 @@ Low impact relative to effort this month. Focus on the three priorities above.
 4 active items: **4 new/recent**.
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
 **Success measure:** Opening hours complete for 7/7 days (verifiable via goh field)
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 3: Establish basic web presence — you don't exist online beyond Google
-**Status:** New | **Priority:** Medium
+**Status:** Ongoing (2 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

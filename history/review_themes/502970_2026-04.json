@@ -1,7 +1,18 @@
 {
-  "themes": {
-    "cleanliness_neg": 1
-  },
-  "quotes_positive": [],
-  "quotes_constructive": []
+  "has_narrative": false,
+  "review_count_google": 148,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "adequate",
+    "volume_note": "148 reviews — adequate but not dominant. 5 consecutive low ratings could drop average by ~0.1.",
+    "rating_position": "critical",
+    "rating_note": "3.3/5 actively suppresses discovery. Google deprioritises sub-3.5 venues.",
+    "aggregate_rating": 3.3,
+    "review_count": 148
+  }
 }

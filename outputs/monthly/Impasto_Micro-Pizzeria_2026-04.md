@@ -26,6 +26,19 @@
 
 *This report uses publicly observable data only — no internal systems required. See Data Basis below for full evidence breakdown.*
 
+## Next 30 Days — Demand Forecast
+
+| Period | Signal | Driver | Recommended Action |
+|---|---|---|---|
+| 2–4 Apr | 🔴 PEAK | Bank holiday: Good Friday | Ensure full opening hours are correct on Google for Good Friday |
+| 4–19 Apr | 🟡 HIGH | School: Easter holidays | Family-friendly offer visible — check kids menu and highchair mention on Google |
+| 6–7 Apr | 🔴 PEAK | Bank holiday: Easter Monday | Ensure full opening hours are correct on Google for Easter Monday |
+| 15–21 Apr | 🔴 PEAK | RSC: Hamlet opens | Confirm pre-theatre menu is live on Google before 15 Apr |
+| 20–30 Apr | 🟢 STEADY | School: Summer term (term time) | — |
+| 22–30 Apr | 🟡 HIGH | RSC: Hamlet in performance | Pre-theatre covers likely elevated — staff accordingly for 5:30–7pm service |
+
+**Biggest opportunity this month:** Bank holiday: Good Friday (2–4 Apr) is your biggest demand opportunity this month. Your Tourists & Visitors, Locals segment converts on atmosphere and food quality — ensure your Google photos and menu are updated before the period starts.
+
 ### Financial Impact
 
 Based on publicly observable data for Impasto Micro-Pizzeria, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£360–£7,200 per month** in lost or leaked revenue. The main drivers are: Get your menu online — 77% of diners check before visiting (£180–£3,600/mo); Fix the digital shopfront — you're losing walk-ins (£180–£3,600/mo); Establish basic web presence — you don't exist online beyond Google (discovery protection). Taking action on **Get your menu online — 77% of diners check before visiting** could begin recovering this within weeks at low cost (< £200).
@@ -522,6 +535,10 @@ Low prestige is normal for most independents and does not affect footfall, disco
 
 **Commercial read:** This is not a revenue problem today. It's a competitive vulnerability — and an easy win if you want it. Estimated score recovery: +1.7 on trust, +0.4 on overall (5.8 → 6.2).
 
+### Business Health Signals
+
+*Companies House data not yet matched for this venue. This will populate once the collection script is run with a valid API key. If you know your Companies House registration number, contact us to link it manually.*
+
 ## Watch List
 
 **Monitor local competitor openings and closures** [NEW]
@@ -540,23 +557,23 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-6 active items: **4 stale** (3–5 months), **2 new/recent**.
+6 active items: **4 overdue** (6–11 months), **2 new/recent**.
 
 ### Action 1: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
-**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
+**Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
+**Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 3: Lean into food quality — it's what guests are buying
 **Status:** Ongoing (2 months) | **Priority:** High
@@ -566,7 +583,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** No food quality complaints in next 10 reviews (verifiable via sentiment analysis)
 
 ### Action 4: Establish basic web presence — you don't exist online beyond Google
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Overdue (6 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

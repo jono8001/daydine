@@ -25,6 +25,17 @@
 
 *This report uses publicly observable data only — no internal systems required. See Data Basis below for full evidence breakdown.*
 
+## Next 30 Days — Demand Forecast
+
+| Period | Signal | Driver | Recommended Action |
+|---|---|---|---|
+| 2–4 Apr | 🔴 PEAK | Bank holiday: Good Friday | Ensure full opening hours are correct on Google for Good Friday |
+| 4–19 Apr | 🟡 HIGH | School: Easter holidays | Family-friendly offer visible — check kids menu and highchair mention on Google |
+| 6–7 Apr | 🔴 PEAK | Bank holiday: Easter Monday | Ensure full opening hours are correct on Google for Easter Monday |
+| 20–30 Apr | 🟢 STEADY | School: Summer term (term time) | — |
+
+**Biggest opportunity this month:** Bank holiday: Good Friday (2–4 Apr) is your biggest demand opportunity this month. Your Tourists & Visitors, Locals segment converts on atmosphere and food quality — ensure your Google photos and menu are updated before the period starts.
+
 ### Financial Impact
 
 Based on publicly observable data for Shakespeare's, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£360–£7,700 per month** in lost or leaked revenue. The main drivers are: Close the hygiene gap — 4 to 5 (£0–£500/mo (defensive)); Get your menu online — 77% of diners check before visiting (£180–£3,600/mo); Fix the digital shopfront — you're losing walk-ins (£180–£3,600/mo). Taking action on **Close the hygiene gap — 4 to 5** could begin recovering this within weeks at low cost (< £200).
@@ -461,6 +472,10 @@ Low prestige is normal for most independents and does not affect footfall, disco
 1. **Address specific inspection points** — review the last report and fix each item. A move to 5/5 unlocks material score improvement.
 2. **Request re-inspection** once fixes are complete. Voluntary reinspection is free via local authority request. Typical wait: 4–8 weeks.
 
+### Business Health Signals
+
+*Companies House data not yet matched for this venue. This will populate once the collection script is run with a valid API key. If you know your Companies House registration number, contact us to link it manually.*
+
 ## Watch List
 
 **Monitor local competitor openings and closures** [NEW]
@@ -479,10 +494,10 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-6 active items: **6 stale** (3–5 months).
+6 active items: **6 overdue** (6–11 months).
 
 ### Action 1: Close the hygiene gap — 4 to 5
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -490,23 +505,23 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
-**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
+**Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 3: Fix the digital shopfront — you're losing walk-ins
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
+**Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 4: Establish basic web presence — you don't exist online beyond Google
-**Status:** Stale (4 months) | **Priority:** Medium
+**Status:** Overdue (6 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
@@ -514,7 +529,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Action 5: Address isolated food quality complaints from guests
-**Status:** Stale (4 months) | **Priority:** Standard
+**Status:** Overdue (6 months) | **Priority:** Standard
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week

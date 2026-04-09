@@ -1,0 +1,18 @@
+{
+  "has_narrative": false,
+  "review_count_google": 860,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "strong",
+    "volume_note": "860 reviews — strong base. Rating is stable but a sustained negative pattern could shift it.",
+    "rating_position": "competitive",
+    "rating_note": "4.1/5 is competitive but not dominant. The gap to 4.5 is meaningful for Google ranking.",
+    "aggregate_rating": 4.1,
+    "review_count": 860
+  }
+}

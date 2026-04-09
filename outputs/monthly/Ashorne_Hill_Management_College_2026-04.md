@@ -1,5 +1,5 @@
 # Ashorne Hill Management College — Monthly Intelligence Report
-*2026-04 | Generated 05 April 2026 | DayDine Premium*
+*2026-04 | Generated 09 April 2026 | DayDine Premium*
 
 ---
 
@@ -20,11 +20,22 @@
 **Overall score: 7.1/10** (baseline month — no prior comparison)
  | Strongest: Experience (9.4) | Weakest: Visibility (3.5)
 
-**Competitive position:** Local Peers (5mi): #1 of 3 (P100.0) — peer avg 5.77, top 6.02
+**Competitive position:** Local Peers (5mi): #1 of 3 (P100.0) — peer avg 5.76, top 6.02
   Catchment (15mi): #1 of 8 (P100.0) — peer avg 5.81, top 6.31
-  UK Category Cohort: #2 of 10 (P88.9) — peer avg 6.03, top 7.85
+  UK Category Cohort: #2 of 10 (P88.9) — peer avg 6.02, top 7.85
 
 *This report uses publicly observable data only — no internal systems required. See Data Basis below for full evidence breakdown.*
+
+## Next 30 Days — Demand Forecast
+
+| Period | Signal | Driver | Recommended Action |
+|---|---|---|---|
+| 2–4 Apr | 🔴 PEAK | Bank holiday: Good Friday | Ensure full opening hours are correct on Google for Good Friday |
+| 4–19 Apr | 🟡 HIGH | School: Easter holidays | Family-friendly offer visible — check kids menu and highchair mention on Google |
+| 6–7 Apr | 🔴 PEAK | Bank holiday: Easter Monday | Ensure full opening hours are correct on Google for Easter Monday |
+| 20–30 Apr | 🟢 STEADY | School: Summer term (term time) | — |
+
+**Biggest opportunity this month:** Bank holiday: Good Friday (2–4 Apr) is your biggest demand opportunity this month. Your Tourists & Visitors, Locals segment converts on atmosphere and food quality — ensure your Google photos and menu are updated before the period starts.
 
 ### Financial Impact
 
@@ -62,6 +73,13 @@ This report draws on three layers of evidence:
 
 **What this means:** The narrative insights (themes, complaints, praise, segment reads) are based on 0 deeply-analysed recent reviews — a detailed sample, not a census. The aggregate 4.5 rating across 489 Google reviews is the reputation bedrock and is factored into scoring separately.
 
+⚠️ **Data Confidence: Indicative.** This report is based on 0 reviews from 0 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive.
+
+ℹ️ Reviews are from a single source (unknown). Cross-platform validation is not possible.
+
+
+> **Data Confidence Note:** This report is based on 0 reviews from 0 source(s), which is below our recommended minimum of 50. Findings should be treated as indicative rather than conclusive. Cross-source validation is not possible with a single data source.
+
 ## Monthly Movement Summary
 
 ### Seasonal Context
@@ -91,7 +109,7 @@ The public proof (ratings, compliance) aligns with what guests actually experien
 
 Multiple operational issues need attention. The management question is *which fix prevents the most commercial damage this month* — sequence matters more than ambition.
 
-### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | NEW]
+### Priority 1: Publish opening hours — you're invisible to 'open now' searches [FIX | ONGOING]
 
 No opening hours listed. Every customer filtering by 'open now' on Google Maps will never see you. This takes 2 minutes to fix.
 
@@ -106,7 +124,7 @@ No opening hours listed. Every customer filtering by 'open now' on Google Maps w
   *Basis: 2–8% of potential customers filter by 'open now' and won't find you*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | NEW]
+### Priority 2: Get your menu online — 77% of diners check before visiting [FIX | ONGOING]
 
 No online menu found. Most diners check the menu before committing. Without one, you lose the customer at the decision point.
 
@@ -121,7 +139,7 @@ No online menu found. Most diners check the menu before committing. Without one,
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
-### Priority 3: Protect the 4.5/5 rating — it took years to build [PROTECT | NEW]
+### Priority 3: Protect the 4.5/5 rating — it took years to build [PROTECT | ONGOING]
 
 With 489 reviews at 4.5/5, your discovery advantage is substantial. Protect it by responding to every review within 48 hours and prompting satisfied tables for feedback.
 
@@ -252,6 +270,21 @@ No significant revenue leakage identified from available signals. Additional dat
 
 *Run Google Places review text enrichment to unlock full narrative analysis.*
 
+## Menu & Dish Intelligence
+
+### What Guests Are Ordering and Mentioning
+
+No specific dish mentions detected in current review sample.
+
+### What's Trending in Your Category (Casual Dining, UK, 2026)
+
+- Quality-led menus outperforming novelty: guests reward consistency and ingredient quality
+- Customisation growing: guided personalisation (hero base + controlled swaps) preferred over unlimited choice
+- Experiential elements (limited-time menus, collaborations) increasingly drive visit decisions among under-40s
+- 72% of UK diners say they will pay more for fresh and seasonal produce
+
+**Opportunity gap:** Category trend — seasonal: 72% of UK diners say they will pay more for fresh and seasonal produce. No guest mentions detected in current reviews. Worth exploring if this aligns with your offering.
+
 ## Public Proof vs Operational Reality
 
 This section compares what customers see (public signals) against what the data reveals about operational depth.
@@ -352,7 +385,7 @@ You are in the top quintile of this peer set. Your overall score of 7.1 exceeds 
 
 **Dimension gaps vs peers:**
 
-- Trust: 9.3 (+1.3 above peer avg 8.1)
+- Trust: 9.3 (+1.3 above peer avg 8.0)
 - Visibility: 3.5 (+0.9 above peer avg 2.7)
 
 **Closest competitors:**
@@ -367,7 +400,7 @@ You are in the top quintile of this peer set. Your overall score of 7.1 exceeds 
 
 **Position:** #2 of 10 (Percentile 88.9)
 
-You are in the top quintile of this peer set. Your overall score of 7.1 exceeds the peer average of 6.0 by 1.0 points. The competitive risk here is complacency — the nearest competitor scores 7.8.
+You are in the top quintile of this peer set. Your overall score of 7.1 exceeds the peer average of 6.0 by 1.1 points. The competitive risk here is complacency — the nearest competitor scores 7.8.
 
 **Dimension gaps vs peers:**
 
@@ -453,7 +486,7 @@ Low prestige is normal for most independents and does not affect footfall, disco
 | Subcomponent | Score | Status | Note |
 |---|---|---|---|
 | FSA Headline Rating | 10.0/10 | ✅ Strong | Top mark — no action needed |
-| Inspection Recency | 7.3/10 | ✅ Adequate | Last inspected 2025-11-20 (5 months ago). Full confidence. No action needed.  |
+| Inspection Recency | 7.2/10 | ✅ Adequate | Last inspected 2025-11-20 (5 months ago). Full confidence. No action needed.  |
 | Structural Compliance | 10.0/10 | ✅ Strong | Strong — premises, facilities, equipment all adequate. |
 | Confidence in Management | 10.0/10 | ✅ Strong | Strong management systems and training record. |
 
@@ -467,6 +500,10 @@ Low prestige is normal for most independents and does not affect footfall, disco
 3. **Do nothing** — viable. The 5/5 headline protects you with customers. The gap is competitive, not critical.
 
 **Commercial read:** This is not a revenue problem today. It's a competitive vulnerability — and an easy win if you want it. Estimated score recovery: +0.7 on trust, +0.2 on overall (7.1 → 7.2).
+
+### Business Health Signals
+
+*Companies House data not yet matched for this venue. This will populate once the collection script is run with a valid API key. If you know your Companies House registration number, contact us to link it manually.*
 
 ## Watch List
 
@@ -489,21 +526,21 @@ Low impact relative to effort this month. Focus on the three priorities above.
 4 active items: **4 new/recent**.
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
 **Success measure:** Opening hours complete for 7/7 days (verifiable via goh field)
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
 **Success measure:** Menu URL present in GBP profile (verifiable via Google Places API)
 
 ### Action 3: Protect the 4.5/5 rating — it took years to build
-**Status:** New | **Priority:** High
+**Status:** Ongoing (2 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine

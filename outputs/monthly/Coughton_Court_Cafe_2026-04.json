@@ -1,0 +1,281 @@
+{
+  "venue": "Coughton Court Cafe",
+  "month": "2026-04",
+  "report_date": "2026-04-09",
+  "scorecard": {
+    "experience": 9.0,
+    "visibility": 2.34,
+    "trust": 0.0,
+    "conversion": null,
+    "prestige": 1.5,
+    "overall": 3.9
+  },
+  "deltas": null,
+  "signals": {
+    "google_rating": 4.5,
+    "google_review_count": 13,
+    "google_photo_count": 10,
+    "ta_rating": null,
+    "ta_review_count": null,
+    "fsa_rating": null,
+    "last_inspection_date": "1901-01-01T00:00:00",
+    "price_level": null,
+    "gbp_completeness": null
+  },
+  "peer_position": {
+    "local_rank": 5,
+    "local_of": 6,
+    "local_peer_avg": 5.43,
+    "local_peer_top": 6.18,
+    "local_peer_count": 5,
+    "catchment_rank": 28,
+    "catchment_of": 30
+  },
+  "demand_capture": {
+    "Booking Friction": "Missing",
+    "Menu Visibility": "Missing",
+    "CTA Clarity": "Missing",
+    "Photo Mix & Quality": "Clear",
+    "Proposition Clarity": "Partial",
+    "Mobile Usability": "Partial",
+    "Promise vs Path": "Partial"
+  },
+  "review_sentiment": {},
+  "reviews_analyzed": 0,
+  "priority_actions": [
+    {
+      "title": "Publish opening hours — you're invisible to 'open now' searches",
+      "status": "ongoing",
+      "priority": 8.5,
+      "dimension": "conversion"
+    },
+    {
+      "title": "Renew formal trust proof before it becomes a visible drag",
+      "status": "ongoing",
+      "priority": 7.5,
+      "dimension": "trust"
+    },
+    {
+      "title": "Get your menu online — 77% of diners check before visiting",
+      "status": "ongoing",
+      "priority": 7.0,
+      "dimension": "conversion"
+    }
+  ],
+  "watch_items": [
+    {
+      "title": "Strong rating masks weak competitive position",
+      "status": "ongoing"
+    },
+    {
+      "title": "Ranked #5 of 6 locally — peers are ahead",
+      "status": "ongoing"
+    }
+  ],
+  "active_recommendations": 7,
+  "implementation_framework": [
+    {
+      "title": "Publish opening hours — you're invisible to 'open now' searches",
+      "dimension": "conversion",
+      "status_label": "Ongoing (2 months)",
+      "target_date": "08 April 2026",
+      "cost_band": "zero",
+      "expected_upside": "Appear in 'open now' searches immediately",
+      "success_measure": "Opening hours complete for 7/7 days (verifiable via goh field)",
+      "next_milestone": "Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours",
+      "owner_guidance": "operations — whoever holds Google Business Profile admin access",
+      "times_seen": 2,
+      "barrier_category": null,
+      "evidence": "goh missing"
+    },
+    {
+      "title": "Renew formal trust proof before it becomes a visible drag",
+      "dimension": "trust",
+      "status_label": "Ongoing (2 months)",
+      "target_date": "01 May 2026",
+      "cost_band": "medium",
+      "expected_upside": "Fresh compliance proof, trust signal renewal",
+      "success_measure": "FSA rating maintained or improved on next inspection (verifiable via FSA API)",
+      "next_milestone": "Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority",
+      "owner_guidance": "compliance — compliance/food safety lead",
+      "times_seen": 2,
+      "barrier_category": null,
+      "evidence": "inspection_age=45754d"
+    },
+    {
+      "title": "Get your menu online — 77% of diners check before visiting",
+      "dimension": "conversion",
+      "status_label": "Ongoing (2 months)",
+      "target_date": "08 April 2026",
+      "cost_band": "zero",
+      "expected_upside": "Reduce decision-stage drop-off",
+      "success_measure": "Menu URL present in GBP profile (verifiable via Google Places API)",
+      "next_milestone": "Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website",
+      "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
+      "times_seen": 2,
+      "barrier_category": null,
+      "evidence": "has_menu_online=false"
+    },
+    {
+      "title": "Build review volume — you lack statistical credibility",
+      "dimension": "visibility",
+      "status_label": "Maintenance (deprioritised)",
+      "target_date": "08 April 2026",
+      "cost_band": "low",
+      "expected_upside": "Rating stability + discovery ranking",
+      "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
+      "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
+      "owner_guidance": "front-of-house — whoever currently responds to online reviews",
+      "times_seen": 2,
+      "barrier_category": null,
+      "evidence": "grc=13"
+    },
+    {
+      "title": "Strong rating masks weak competitive position",
+      "dimension": "overall",
+      "status_label": "Ongoing (2 months)",
+      "target_date": "01 May 2026",
+      "cost_band": "medium",
+      "expected_upside": "Realistic competitive awareness",
+      "success_measure": "Overall score percentile improved vs local peers (verifiable via next scoring run)",
+      "next_milestone": "Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week",
+      "owner_guidance": "management — whoever currently responds to online reviews",
+      "times_seen": 2,
+      "barrier_category": null,
+      "evidence": "gr=4.5, local_percentile=20.0"
+    },
+    {
+      "title": "Establish basic web presence — you don't exist online beyond Google",
+      "dimension": "visibility",
+      "status_label": "Ongoing (2 months)",
+      "target_date": "08 April 2026",
+      "cost_band": "low",
+      "expected_upside": "Basic discoverability beyond Google Maps",
+      "success_measure": "Google review count increased by 10+ (verifiable via grc field)",
+      "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
+      "owner_guidance": "marketing — whoever holds Google Business Profile admin access",
+      "times_seen": 2,
+      "barrier_category": null,
+      "evidence": "web=false, fb=false, ig=false"
+    },
+    {
+      "title": "Ranked #5 of 6 locally — peers are ahead",
+      "dimension": "overall",
+      "status_label": "Ongoing (2 months)",
+      "target_date": "01 May 2026",
+      "cost_band": "medium",
+      "expected_upside": "Competitive awareness",
+      "success_measure": "Signal improvement detectable in next month's data collection",
+      "next_milestone": "Identify the single most actionable sub-task and assign it to a named person with a deadline",
+      "owner_guidance": "management",
+      "times_seen": 2,
+      "barrier_category": null,
+      "evidence": "local_percentile=20.0"
+    }
+  ],
+  "segment_intelligence": {
+    "segment_distribution": {},
+    "unattributed_count": 0,
+    "total_reviews": 0,
+    "segment_insights": {},
+    "tensions": [],
+    "data_quality": {
+      "attributed_pct": 100.0,
+      "note": "Honest segment attribution from keyword evidence. Reviews without clear guest-type signals are unattributed."
+    }
+  },
+  "fsa_intelligence": {
+    "decomposition": {
+      "subcomponents": [
+        {
+          "component": "inspection_recency",
+          "label": "Inspection Recency",
+          "raw_value": "1901-01-01",
+          "age_days": 45754,
+          "age_months": 1525,
+          "staleness_tier": "overdue",
+          "score_contribution": 0.0,
+          "weight": 0.25,
+          "weighted_impact": 0.0,
+          "drag_on_trust": -2.5,
+          "interpretation": "Last inspected 1901-01-01 (1525 months ago). Maximum decay applied. The system discounts older inspections because they carry less certainty.",
+          "actionable": true
+        }
+      ],
+      "biggest_drag": {
+        "component": "inspection_recency",
+        "label": "Inspection Recency",
+        "raw_value": "1901-01-01",
+        "age_days": 45754,
+        "age_months": 1525,
+        "staleness_tier": "overdue",
+        "score_contribution": 0.0,
+        "weight": 0.25,
+        "weighted_impact": 0.0,
+        "drag_on_trust": -2.5,
+        "interpretation": "Last inspected 1901-01-01 (1525 months ago). Maximum decay applied. The system discounts older inspections because they carry less certainty.",
+        "actionable": true
+      },
+      "headline_gap": null,
+      "peer_comparison": null,
+      "trust_score": 0.0
+    },
+    "reinspection": {
+      "reinspection_recommended": false,
+      "reasoning": "Insufficient data."
+    },
+    "commercial": null
+  },
+  "evidence_base": {
+    "evidence_tiers": {
+      "tier_1_deep_analysis": {
+        "description": "Full text analysed — aspect tagging, sentiment, segment classification",
+        "google_count": 0,
+        "tripadvisor_count": 0,
+        "total": 0,
+        "coverage_of_total": "0.0%",
+        "selection_method": "Most recent available via API",
+        "what_this_tells_you": "Detailed theme and sentiment patterns from recent guests. Strong for identifying specific issues and praise points. Not a census.",
+        "confidence": "High for recent themes, moderate for long-term patterns"
+      },
+      "tier_2_aggregate_signals": {
+        "description": "Rating and volume statistics — no text analysis",
+        "google_total_reviews": 13,
+        "google_rating": 4.5,
+        "tripadvisor_total_reviews": 0,
+        "tripadvisor_rating": null,
+        "total_known_reviews": 13,
+        "rating_stability": "At 13 reviews, the rating is volatile.",
+        "what_this_tells_you": "Overall reputation trajectory. At 13 reviews, the rating is volatile. ",
+        "confidence": "High for reputation baseline, cannot identify specific themes"
+      },
+      "tier_3_structural_signals": {
+        "description": "Non-review data — FSA, GBP completeness, operational signals",
+        "sources": [
+          "Google Business Profile"
+        ],
+        "source_count": 1,
+        "what_this_tells_you": "Compliance, discoverability, and operational readiness. Independent of guest opinion.",
+        "confidence": "High — factual data, not subjective"
+      }
+    },
+    "platform_divergence": null,
+    "coverage_ratio": 0.0,
+    "deep_analysed": 0,
+    "aggregate_total": 13
+  },
+  "risk_alerts": {
+    "reviews_scanned": 0,
+    "clean": true,
+    "alert_count": 0,
+    "alerts": [],
+    "all_hits": {
+      "legal_regulatory": 0,
+      "staff_conduct": 0,
+      "safety_premises": 0,
+      "staffing_pattern": 0,
+      "reputation_trajectory": 0,
+      "financial_value": 0
+    }
+  }
+}

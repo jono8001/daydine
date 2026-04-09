@@ -1,0 +1,16 @@
+{
+  "has_narrative": false,
+  "review_count_google": null,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "critical",
+    "volume_note": "Only 0 reviews — insufficient for reliable assessment. Priority: build review count.",
+    "aggregate_rating": null,
+    "review_count": 0
+  }
+}

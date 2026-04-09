@@ -1,0 +1,18 @@
+{
+  "has_narrative": false,
+  "review_count_google": 35,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "thin",
+    "volume_note": "Only 35 reviews — rating is volatile. A single 1-star review moves the average measurably.",
+    "rating_position": "vulnerable",
+    "rating_note": "3.7/5 is below the threshold where most customers filter. You're losing discovery.",
+    "aggregate_rating": 3.7,
+    "review_count": 35
+  }
+}

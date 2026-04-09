@@ -1,0 +1,18 @@
+{
+  "has_narrative": false,
+  "review_count_google": 587,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "aspects": null,
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "volume_signals": {
+    "volume_tier": "strong",
+    "volume_note": "587 reviews — strong base. Rating is stable but a sustained negative pattern could shift it.",
+    "rating_position": "critical",
+    "rating_note": "3.4/5 actively suppresses discovery. Google deprioritises sub-3.5 venues.",
+    "aggregate_rating": 3.4,
+    "review_count": 587
+  }
+}
