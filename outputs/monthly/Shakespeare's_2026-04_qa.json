@@ -197,7 +197,7 @@
       }
     ]
   },
-  "report_lines": 381,
+  "report_lines": 382,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

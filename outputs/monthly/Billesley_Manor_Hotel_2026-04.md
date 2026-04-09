@@ -39,17 +39,18 @@
 
 ### Financial Impact
 
-Based on publicly observable data for Billesley Manor Hotel, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£360–£7,200 per month** in lost or leaked revenue. The main drivers are: Publish opening hours — you're invisible to 'open now' searches (£180–£3,600/mo); Get your menu online — 77% of diners check before visiting (£180–£3,600/mo); Establish basic web presence — you don't exist online beyond Google (discovery protection). Taking action on **Publish opening hours — you're invisible to 'open now' searches** could begin recovering this within weeks at low cost (< £200).
+Based on publicly observable data for Billesley Manor Hotel, your current operational gaps are putting an estimated **10–35 covers per week** at risk — representing approximately **£1,160–£8,400 per month** in lost or leaked revenue. The main drivers are: Publish opening hours — you're invisible to 'open now' searches (£580–£4,200/mo); Get your menu online — 77% of diners check before visiting (£580–£4,200/mo); Establish basic web presence — you don't exist online beyond Google (discovery protection). Taking action on **Publish opening hours — you're invisible to 'open now' searches** could begin recovering this within weeks at low cost (< £200).
 
-| Metric | Current | At Risk | Potential Recovery |
-|---|---|---|---|
-| Covers per week | ~262 | 3–30 at risk | Recoverable with profile fixes |
-| Average spend per head | ~£22 | — | — |
-| Weekly revenue impact | — | £90–£1,800 | £90–£1,800 recoverable |
-| Monthly revenue impact | — | £360–£7,200 | £360–£7,200 recoverable |
-| Annual projection | — | £4,320–£86,400 | £4,320–£86,400 recoverable |
+| Metric | Estimate | Basis |
+|---|---|---|
+| Estimated weekly covers | ~320–500 | Derived from 1,208 Google reviews (high-traffic venue indicator), price level ££ |
+| Average spend per head | ~£22 | UK hospitality benchmark for price level ££ |
+| Covers at risk per week | 10–35 | Default 3–7% leakage (no conversion score) |
+| Weekly revenue at risk | £290–£2,100 | Recoverable with priority action fixes |
+| Monthly revenue at risk | £1,160–£8,400 | Aggregate across top 3 priorities |
+| Annual projection | £13,920–£100,800 | If current gaps persist 12 months |
 
-*Estimates based on UK hospitality benchmarks for price level ££ venues. Ranges are directional — exact figures require your internal cover and spend data.*
+*All estimates are directional ranges derived from external data only. Exact figures require your internal cover and spend data.*
 
 **Recommended Action:** Publish opening hours — you're invisible to 'open now' searches. Estimated cost: Zero cost (profile update). Expected payback: within 1 month.
 
@@ -118,7 +119,7 @@ No opening hours listed. Every customer filtering by 'open now' on Google Maps w
 - **Evidence:** `goh missing`
 
   **Commercial consequence** (directional):
-  Value at stake: £180–£3,600/month | Cost to fix: Zero cost (profile update) | Payback: Immediate (same week)
+  Value at stake: £380–£4,800/month | Cost to fix: Zero cost (profile update) | Payback: Immediate (same week)
   *Basis: 2–8% of potential customers filter by 'open now' and won't find you*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
@@ -133,7 +134,7 @@ No online menu found. Most diners check the menu before committing. Without one,
 - **Evidence:** `has_menu_online=false`
 
   **Commercial consequence** (directional):
-  Value at stake: £180–£3,600/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
+  Value at stake: £380–£4,800/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
@@ -529,7 +530,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 4 active items: **4 stale** (3–5 months).
 
 ### Action 1: Publish opening hours — you're invisible to 'open now' searches
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
@@ -537,7 +538,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
@@ -545,7 +546,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Establish basic web presence — you don't exist online beyond Google
-**Status:** Stale (3 months) | **Priority:** Medium
+**Status:** Stale (4 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
@@ -553,7 +554,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Action 4: Ranked #8 of 10 locally — peers are ahead
-**Status:** Stale (3 months) | **Priority:** Medium
+**Status:** Stale (4 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Competitive awareness
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

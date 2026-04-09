@@ -39,17 +39,18 @@
 
 ### Financial Impact
 
-Based on publicly observable data for Arrow Mill, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£360–£7,200 per month** in lost or leaked revenue. The main drivers are: Get your menu online — 77% of diners check before visiting (£180–£3,600/mo); Fix the digital shopfront — you're losing walk-ins (£180–£3,600/mo); Lean into service & hospitality — it's what guests are buying (upside opportunity). Taking action on **Get your menu online — 77% of diners check before visiting** could begin recovering this within weeks at low cost (< £200).
+Based on publicly observable data for Arrow Mill, your current operational gaps are putting an estimated **16–50 covers per week** at risk — representing approximately **£1,920–£12,000 per month** in lost or leaked revenue. The main drivers are: Get your menu online — 77% of diners check before visiting (£960–£6,000/mo); Fix the digital shopfront — you're losing walk-ins (£960–£6,000/mo); Lean into service & hospitality — it's what guests are buying (upside opportunity). Taking action on **Get your menu online — 77% of diners check before visiting** could begin recovering this within weeks at low cost (< £200).
 
-| Metric | Current | At Risk | Potential Recovery |
-|---|---|---|---|
-| Covers per week | ~262 | 3–30 at risk | Recoverable with profile fixes |
-| Average spend per head | ~£22 | — | — |
-| Weekly revenue impact | — | £90–£1,800 | £90–£1,800 recoverable |
-| Monthly revenue impact | — | £360–£7,200 | £360–£7,200 recoverable |
-| Annual projection | — | £4,320–£86,400 | £4,320–£86,400 recoverable |
+| Metric | Estimate | Basis |
+|---|---|---|
+| Estimated weekly covers | ~320–500 | Derived from 1,988 Google reviews (high-traffic venue indicator), price level ££ |
+| Average spend per head | ~£22 | UK hospitality benchmark for price level ££ |
+| Covers at risk per week | 16–50 | Conversion score 3.5/10 → 5%–10% leakage |
+| Weekly revenue at risk | £480–£3,000 | Recoverable with priority action fixes |
+| Monthly revenue at risk | £1,920–£12,000 | Aggregate across top 3 priorities |
+| Annual projection | £23,040–£144,000 | If current gaps persist 12 months |
 
-*Estimates based on UK hospitality benchmarks for price level ££ venues. Ranges are directional — exact figures require your internal cover and spend data.*
+*All estimates are directional ranges derived from external data only. Exact figures require your internal cover and spend data.*
 
 **Recommended Action:** Get your menu online — 77% of diners check before visiting. Estimated cost: Zero cost (profile update). Expected payback: within 1 month.
 
@@ -142,7 +143,7 @@ No online menu found. Most diners check the menu before committing. Without one,
 - **Evidence:** `has_menu_online=false`
 
   **Commercial consequence** (directional):
-  Value at stake: £180–£3,600/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
+  Value at stake: £380–£4,800/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
@@ -157,7 +158,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Evidence:** `experience=9.42, conversion=3.5`
 
   **Commercial consequence** (directional):
-  Value at stake: £180–£3,600/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
+  Value at stake: £380–£4,800/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
   *Basis: Composite: missing hours/menu/booking each leak 2–8% of demand*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
@@ -601,18 +602,18 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 ## Implementation Framework
 
-8 active items: **5 stale** (3–5 months), **3 new/recent**.
+8 active items: **1 overdue** (6–11 months), **4 stale** (3–5 months), **3 new/recent**.
 
 ### Action 1: Fix the digital shopfront — you're losing walk-ins
-**Status:** Stale (5 months) | **Priority:** High
+**Status:** Overdue (6 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
+**Barrier diagnosis (Prioritisation barrier):** The most common reason a low-cost fix goes undone this long is that it was never assigned to a specific person with a specific deadline.
 
 ### Action 2: Lean into service & hospitality — it's what guests are buying
-**Status:** Stale (4 months) | **Priority:** High
+**Status:** Stale (5 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
@@ -620,7 +621,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 3: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
@@ -628,7 +629,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 4: Establish basic web presence — you don't exist online beyond Google
-**Status:** Stale (3 months) | **Priority:** Medium
+**Status:** Stale (4 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Basic discoverability beyond Google Maps
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline

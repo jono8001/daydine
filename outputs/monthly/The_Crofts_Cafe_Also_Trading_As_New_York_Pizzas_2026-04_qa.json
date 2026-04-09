@@ -167,7 +167,7 @@
   "integrity_checks": {
     "run": false
   },
-  "report_lines": 370,
+  "report_lines": 371,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

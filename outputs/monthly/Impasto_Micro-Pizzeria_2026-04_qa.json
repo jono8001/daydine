@@ -141,7 +141,7 @@
   "validation_errors": [],
   "validation_warnings": [
     "OVERCLAIM_ON_ANECDOTAL: 'known for' used with only 3 review texts (anecdotal tier)",
-    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 16134 has no confidence label within 200 characters"
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 16258 has no confidence label within 200 characters"
   ],
   "confidence_level": "medium",
   "evidence_provenance_present": true,
@@ -198,7 +198,7 @@
       }
     ]
   },
-  "report_lines": 438,
+  "report_lines": 439,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

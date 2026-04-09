@@ -39,17 +39,18 @@
 
 ### Financial Impact
 
-Based on publicly observable data for New Summer Palace Restaurant, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£180–£4,100 per month** in lost or leaked revenue. The main drivers are: Close the hygiene gap — 3 to 5 (£0–£500/mo (defensive)); Get your menu online — 77% of diners check before visiting (£180–£3,600/mo); Establish basic web presence — you don't exist online beyond Google (discovery protection). Taking action on **Close the hygiene gap — 3 to 5** could begin recovering this within weeks at low cost (< £200).
+Based on publicly observable data for New Summer Palace Restaurant, your current operational gaps are putting an estimated **11–35 covers per week** at risk — representing approximately **£660–£4,700 per month** in lost or leaked revenue. The main drivers are: Close the hygiene gap — 3 to 5 (£0–£500/mo (defensive)); Get your menu online — 77% of diners check before visiting (£660–£4,200/mo); Establish basic web presence — you don't exist online beyond Google (discovery protection). Taking action on **Close the hygiene gap — 3 to 5** could begin recovering this within weeks at low cost (< £200).
 
-| Metric | Current | At Risk | Potential Recovery |
-|---|---|---|---|
-| Covers per week | ~262 | 3–30 at risk | Recoverable with profile fixes |
-| Average spend per head | ~£22 | — | — |
-| Weekly revenue impact | — | £40–£1,020 | £40–£1,020 recoverable |
-| Monthly revenue impact | — | £180–£4,100 | £180–£4,100 recoverable |
-| Annual projection | — | £2,160–£49,200 | £2,160–£49,200 recoverable |
+| Metric | Estimate | Basis |
+|---|---|---|
+| Estimated weekly covers | ~220–350 | Derived from 522 Google reviews (large venue indicator), price level ££ |
+| Average spend per head | ~£22 | UK hospitality benchmark for price level ££ |
+| Covers at risk per week | 11–35 | Conversion score 3.5/10 → 5%–10% leakage |
+| Weekly revenue at risk | £160–£1,180 | Recoverable with priority action fixes |
+| Monthly revenue at risk | £660–£4,700 | Aggregate across top 3 priorities |
+| Annual projection | £7,920–£56,400 | If current gaps persist 12 months |
 
-*Estimates based on UK hospitality benchmarks for price level ££ venues. Ranges are directional — exact figures require your internal cover and spend data.*
+*All estimates are directional ranges derived from external data only. Exact figures require your internal cover and spend data.*
 
 **Recommended Action:** Close the hygiene gap — 3 to 5. Estimated cost: Medium (£200–£1,000). Expected payback: within 1 month.
 
@@ -131,7 +132,7 @@ No online menu found. Most diners check the menu before committing. Without one,
 - **Evidence:** `has_menu_online=false`
 
   **Commercial consequence** (directional):
-  Value at stake: £180–£3,600/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
+  Value at stake: £260–£3,360/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
   *Basis: Industry data: 77% of diners check menu before visiting*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
@@ -526,7 +527,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 7 active items: **7 stale** (3–5 months).
 
 ### Action 1: Close the hygiene gap — 3 to 5
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -534,7 +535,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Get your menu online — 77% of diners check before visiting
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Reduce decision-stage drop-off
 **Owner:** marketing — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Menu URL → paste link to your current menu page on your website
@@ -542,7 +543,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 3: Guest experience trailing — investigate what peers do differently
-**Status:** Stale (3 months) | **Priority:** Medium
+**Status:** Stale (4 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 1.7-point gap
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
@@ -550,7 +551,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 4: Compliance record weakest in peer set — creates inspection exposure
-**Status:** Stale (3 months) | **Priority:** Medium
+**Status:** Stale (4 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 4.0-point gap
 **Owner:** management — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -558,7 +559,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 5: Harder to book/find than competitors — friction losing customers
-**Status:** Stale (3 months) | **Priority:** Medium
+**Status:** Stale (4 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Close the 1.5-point gap
 **Owner:** management
 **Next milestone:** Review the 3 competitor profiles listed in this report. Note what they do on Google that you don't. Pick one gap to close this week
@@ -569,8 +570,8 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Establish basic web presence — you don't exis | Stale (3 months) | 08 April 2026 | Low (< £200) |
-| 7 | Ranked #2 of 2 locally — peers are ahead | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Establish basic web presence — you don't exis | Stale (4 months) | 08 April 2026 | Low (< £200) |
+| 7 | Ranked #2 of 2 locally — peers are ahead | Stale (4 months) | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

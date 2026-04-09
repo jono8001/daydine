@@ -41,17 +41,18 @@
 
 ### Financial Impact
 
-Based on publicly observable data for Vintner Wine Bar, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£180–£3,600 per month** in lost or leaked revenue. The main drivers are: Fix the digital shopfront — you're losing walk-ins (£180–£3,600/mo); Lean into service & hospitality — it's what guests are buying (upside opportunity); Protect the 4.6/5 rating — it took years to build (discovery protection). Taking action on **Fix the digital shopfront — you're losing walk-ins** could begin recovering this within weeks at low cost (< £200).
+Based on publicly observable data for Vintner Wine Bar, your current operational gaps are putting an estimated **6–25 covers per week** at risk — representing approximately **£380–£3,000 per month** in lost or leaked revenue. The main drivers are: Fix the digital shopfront — you're losing walk-ins (£380–£3,000/mo); Lean into service & hospitality — it's what guests are buying (upside opportunity); Protect the 4.6/5 rating — it took years to build (discovery protection). Taking action on **Fix the digital shopfront — you're losing walk-ins** could begin recovering this within weeks at low cost (< £200).
 
-| Metric | Current | At Risk | Potential Recovery |
-|---|---|---|---|
-| Covers per week | ~262 | 3–30 at risk | Recoverable with profile fixes |
-| Average spend per head | ~£22 | — | — |
-| Weekly revenue impact | — | £40–£900 | £40–£900 recoverable |
-| Monthly revenue impact | — | £180–£3,600 | £180–£3,600 recoverable |
-| Annual projection | — | £2,160–£43,200 | £2,160–£43,200 recoverable |
+| Metric | Estimate | Basis |
+|---|---|---|
+| Estimated weekly covers | ~320–500 | Derived from 887 Google reviews (high-traffic venue indicator), price level ££ |
+| Average spend per head | ~£22 | UK hospitality benchmark for price level ££ |
+| Covers at risk per week | 6–25 | Conversion score 5.5/10 → 2%–5% leakage |
+| Weekly revenue at risk | £100–£750 | Recoverable with priority action fixes |
+| Monthly revenue at risk | £380–£3,000 | Aggregate across top 3 priorities |
+| Annual projection | £4,560–£36,000 | If current gaps persist 12 months |
 
-*Estimates based on UK hospitality benchmarks for price level ££ venues. Ranges are directional — exact figures require your internal cover and spend data.*
+*All estimates are directional ranges derived from external data only. Exact figures require your internal cover and spend data.*
 
 **Recommended Action:** Fix the digital shopfront — you're losing walk-ins. Estimated cost: Zero cost (profile update). Expected payback: within 1 month.
 
@@ -61,7 +62,7 @@ Based on publicly observable data for Vintner Wine Bar, your current operational
 
 ### 🔴 Staff Conduct Risk
 
-**What we found:** 2 review(s) in this period contain language indicating staff conduct risk. Keywords detected: walker, appalled, disabled, could not have a table.
+**What we found:** 2 review(s) in this period contain language indicating staff conduct risk. Keywords detected: walker, disabled, appalled, could not have a table.
 
 **Evidence:**
 - *"...a table. She clearly could not.  I was appalled. We went further up the road and found a restaurant who were most welcoming."*
@@ -180,7 +181,7 @@ You deliver a strong experience but your online presence doesn't make it easy to
 - **Evidence:** `experience=8.73, conversion=5.5`
 
   **Commercial consequence** (directional):
-  Value at stake: £180–£3,600/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
+  Value at stake: £380–£4,800/month | Cost to fix: Low (< 1 hour, no spend) | Payback: < 1 month
   *Basis: Composite: missing hours/menu/booking each leak 2–8% of demand*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
@@ -673,12 +674,12 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Success measure:** Overall score percentile improved vs local peers (verifiable via next scoring run)
 
 ### Action 2: Fix the digital shopfront — you're losing walk-ins
-**Status:** Chronic (81 months) | **Priority:** High
+**Status:** Chronic (83 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Capture demand you're currently losing
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Open your Google Maps listing on your phone. Check: (1) hours for all 7 days, (2) menu link works, (3) phone number dials correctly, (4) website loads. Fix any gaps via business.google.com
 **Success measure:** GBP completeness ≥ 9/10 with menu and hours complete (verifiable via API)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 81 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 83 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 3: Address recurring food quality complaints from guests
 **Status:** Chronic (60 months) | **Priority:** High
@@ -689,20 +690,20 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Disagreement barrier):** This has been flagged for 60 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 4: Lean into service & hospitality — it's what guests are buying
-**Status:** Chronic (76 months) | **Priority:** High
+**Status:** Chronic (78 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — FOH lead or general manager
 **Next milestone:** Update your GBP description and website homepage to lead with what guests actually praise: service quality and hospitality
 **Success measure:** Service-related praise maintained in next review sample (verifiable via sentiment)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 76 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 78 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Action 5: Protect the 4.6/5 rating — it took years to build
-**Status:** Chronic (78 months) | **Priority:** High
+**Status:** Chronic (80 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sustain discovery advantage
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Respond to the 3 most recent Google reviews (positive and negative) this week. Set a weekly review-response routine
 **Success measure:** Google rating maintained or improved vs current baseline (verifiable via gr field)
-**Barrier diagnosis (Disagreement barrier):** This has been flagged for 78 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
+**Barrier diagnosis (Disagreement barrier):** This has been flagged for 80 months. At this duration, the issue is no longer the fix — it's why the fix hasn't happened. If this recommendation doesn't apply to your situation, tell us. Persistent irrelevant recommendations erode trust in the report. We'd rather remove it than repeat it.
 
 ### Maintenance Items (deprioritised this month)
 
@@ -715,12 +716,12 @@ Low impact relative to effort this month. Focus on the three priorities above.
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
 | 6 | Strong rating masks weak competitive position | New | 01 May 2026 | Medium (£200–£1,000) |
-| 7 | Compliance record weakest in peer set — creat | Chronic (78 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 7 | Compliance record weakest in peer set — creat | Chronic (80 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 8 | Guest experience trailing local competitors | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 9 | Compliance record trailing local standards | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 10 | Address repeated atmosphere & setting complai | Chronic (61 months) | 01 May 2026 | Medium (£200–£1,000) |
 | 11 | Ranked #6 of 9 locally — peers are ahead | New | 01 May 2026 | Medium (£200–£1,000) |
-| 12 | Address isolated service & hospitality compla | Chronic (15 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 12 | Address isolated service & hospitality compla | Chronic (17 months) | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

@@ -41,17 +41,18 @@
 
 ### Financial Impact
 
-Based on publicly observable data for Havilands Tea Room And Restaurant, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£450–£8,600 per month** in lost or leaked revenue. The main drivers are: Close the hygiene gap — 1 to 5 (£0–£500/mo (defensive)); Identify and fix the recurring guest complaint (£270–£4,500/mo); Publish opening hours — you're invisible to 'open now' searches (£180–£3,600/mo). Taking action on **Close the hygiene gap — 1 to 5** could begin recovering this within weeks at low cost (< £200).
+Based on publicly observable data for Havilands Tea Room And Restaurant, your current operational gaps are putting an estimated **4–15 covers per week** at risk — representing approximately **£500–£4,990 per month** in lost or leaked revenue. The main drivers are: Close the hygiene gap — 1 to 5 (£0–£500/mo (defensive)); Identify and fix the recurring guest complaint (£250–£2,640/mo); Publish opening hours — you're invisible to 'open now' searches (£250–£1,850/mo). Taking action on **Close the hygiene gap — 1 to 5** could begin recovering this within weeks at low cost (< £200).
 
-| Metric | Current | At Risk | Potential Recovery |
-|---|---|---|---|
-| Covers per week | ~262 | 3–30 at risk | Recoverable with profile fixes |
-| Average spend per head | ~£22 | — | — |
-| Weekly revenue impact | — | £110–£2,150 | £110–£2,150 recoverable |
-| Monthly revenue impact | — | £450–£8,600 | £450–£8,600 recoverable |
-| Annual projection | — | £5,400–£103,200 | £5,400–£103,200 recoverable |
+| Metric | Estimate | Basis |
+|---|---|---|
+| Estimated weekly covers | ~140–220 | Derived from 277 Google reviews (mid venue indicator), price level ££ |
+| Average spend per head | ~£22 | UK hospitality benchmark for price level ££ |
+| Covers at risk per week | 4–15 | Default 3–7% leakage (no conversion score) |
+| Weekly revenue at risk | £120–£1,250 | Recoverable with priority action fixes |
+| Monthly revenue at risk | £500–£4,990 | Aggregate across top 3 priorities |
+| Annual projection | £6,000–£59,880 | If current gaps persist 12 months |
 
-*Estimates based on UK hospitality benchmarks for price level ££ venues. Ranges are directional — exact figures require your internal cover and spend data.*
+*All estimates are directional ranges derived from external data only. Exact figures require your internal cover and spend data.*
 
 **Recommended Action:** Close the hygiene gap — 1 to 5. Estimated cost: Medium (£200–£1,000). Expected payback: within 1 month.
 
@@ -133,7 +134,7 @@ At 3.9/5 on Google, something specific is landing badly. Read the 5 most recent 
 - **Evidence:** `gr=3.9`
 
   **Commercial consequence** (directional):
-  Value at stake: £270–£4,500/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
+  Value at stake: £250–£2,640/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
   *Basis: Recurring complaints reduce repeat visits and suppress rating trajectory*
 
 ### Priority 3: Publish opening hours — you're invisible to 'open now' searches [FIX | ESCALATED]
@@ -147,7 +148,7 @@ No opening hours listed. Every customer filtering by 'open now' on Google Maps w
 - **Evidence:** `goh missing`
 
   **Commercial consequence** (directional):
-  Value at stake: £180–£3,600/month | Cost to fix: Zero cost (profile update) | Payback: Immediate (same week)
+  Value at stake: £170–£2,110/month | Cost to fix: Zero cost (profile update) | Payback: Immediate (same week)
   *Basis: 2–8% of potential customers filter by 'open now' and won't find you*
 - **Segment impact:** Tourists and theatre-goers are most likely to discover you online with a hard time constraint; this fix disproportionately captures those two groups.
 
@@ -549,7 +550,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 8 active items: **8 stale** (3–5 months).
 
 ### Action 1: Close the hygiene gap — 1 to 5
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Remove the trust ceiling on your overall score
 **Owner:** compliance — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -557,7 +558,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Identify and fix the recurring guest complaint
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Rating recovery → discovery recovery
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
@@ -565,7 +566,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 3: Publish opening hours — you're invisible to 'open now' searches
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Zero cost (profile update) | **Expected upside:** Appear in 'open now' searches immediately
 **Owner:** operations — whoever holds Google Business Profile admin access
 **Next milestone:** Log into business.google.com → select venue → Info → Hours → add hours for all 7 days including any special hours
@@ -573,7 +574,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Access barrier):** This likely requires system access (e.g. Google Business Profile admin) that may have been lost or never set up. If the original account holder has left, Google's ownership recovery process takes 7–14 days.
 
 ### Action 4: Guest experience trailing — investigate what peers do differently
-**Status:** Stale (3 months) | **Priority:** Medium
+**Status:** Stale (4 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 2.9-point gap
 **Owner:** management
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
@@ -581,7 +582,7 @@ Low impact relative to effort this month. Focus on the three priorities above.
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 5: Compliance record weakest in peer set — creates inspection exposure
-**Status:** Stale (3 months) | **Priority:** Medium
+**Status:** Stale (4 months) | **Priority:** Medium
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Close the 5.1-point gap
 **Owner:** management — compliance/food safety lead
 **Next milestone:** Review the last FSA inspection report. Address each specific point. When ready, request a re-inspection via your local authority
@@ -598,8 +599,8 @@ Low impact relative to effort this month. Focus on the three priorities above.
 
 | # | Recommendation | Status | Target | Cost |
 |--:|---------------|--------|--------|------|
-| 6 | Establish basic web presence — you don't exis | Stale (3 months) | 08 April 2026 | Low (< £200) |
-| 7 | Ranked #18 of 18 locally — peers are ahead | Stale (3 months) | 01 May 2026 | Medium (£200–£1,000) |
+| 6 | Establish basic web presence — you don't exis | Stale (4 months) | 08 April 2026 | Low (< £200) |
+| 7 | Ranked #18 of 18 locally — peers are ahead | Stale (4 months) | 01 May 2026 | Medium (£200–£1,000) |
 
 ## Next-Month Monitoring Plan
 

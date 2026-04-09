@@ -41,17 +41,18 @@
 
 ### Financial Impact
 
-Based on publicly observable data for Simla Takeaway, your current operational gaps are putting an estimated **3–30 covers per week** at risk — representing approximately **£270–£4,500 per month** in lost or leaked revenue. The main drivers are: Lean into food quality — it's what guests are buying (upside opportunity); Accelerate review volume — you're credible but not dominant (discovery protection); Address isolated food quality complaints from guests (£270–£4,500/mo). Taking action on **Lean into food quality — it's what guests are buying** could begin recovering this within weeks at minimal effort.
+Based on publicly observable data for Simla Takeaway, your current operational gaps are putting an estimated **2–7 covers per week** at risk — representing approximately **£140–£1,680 per month** in lost or leaked revenue. The main drivers are: Lean into food quality — it's what guests are buying (upside opportunity); Accelerate review volume — you're credible but not dominant (discovery protection); Address isolated food quality complaints from guests (£140–£1,680/mo). Taking action on **Lean into food quality — it's what guests are buying** could begin recovering this within weeks at minimal effort.
 
-| Metric | Current | At Risk | Potential Recovery |
-|---|---|---|---|
-| Covers per week | ~262 | 3–30 at risk | Recoverable with profile fixes |
-| Average spend per head | ~£22 | — | — |
-| Weekly revenue impact | — | £70–£1,120 | £70–£1,120 recoverable |
-| Monthly revenue impact | — | £270–£4,500 | £270–£4,500 recoverable |
-| Annual projection | — | £3,240–£54,000 | £3,240–£54,000 recoverable |
+| Metric | Estimate | Basis |
+|---|---|---|
+| Estimated weekly covers | ~80–140 | Derived from 73 Google reviews (small venue indicator), price level ££ |
+| Average spend per head | ~£22 | UK hospitality benchmark for price level ££ |
+| Covers at risk per week | 2–7 | Conversion score 6.0/10 → 2%–5% leakage |
+| Weekly revenue at risk | £40–£420 | Recoverable with priority action fixes |
+| Monthly revenue at risk | £140–£1,680 | Aggregate across top 3 priorities |
+| Annual projection | £1,680–£20,160 | If current gaps persist 12 months |
 
-*Estimates based on UK hospitality benchmarks for price level ££ venues. Ranges are directional — exact figures require your internal cover and spend data.*
+*All estimates are directional ranges derived from external data only. Exact figures require your internal cover and spend data.*
 
 **Recommended Action:** Lean into food quality — it's what guests are buying. Estimated cost: Low (< £200). Expected payback: within 1 month.
 
@@ -164,7 +165,7 @@ Food Quality draws isolated criticism across reviews (1 negative mentions). Inve
 - **Evidence:** `review_criticism: Food Quality=1 negative`
 
   **Commercial consequence** (directional):
-  Value at stake: £270–£4,500/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
+  Value at stake: £140–£1,680/month | Cost to fix: Medium (1–2 days or < £200) | Payback: 1–3 months
   *Basis: Recurring complaints reduce repeat visits and suppress rating trajectory*
 - **Segment impact:** Couples and occasion diners have the highest expectations and write the most detailed negative reviews. Fixing food complaints protects your rating with the segment that amplifies problems fastest.
 
@@ -594,7 +595,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 3 active items: **3 stale** (3–5 months).
 
 ### Action 1: Lean into food quality — it's what guests are buying
-**Status:** Stale (3 months) | **Priority:** High
+**Status:** Stale (4 months) | **Priority:** High
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Sharpen proposition → attract the right guests
 **Owner:** management — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
@@ -602,7 +603,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Capability barrier):** This may require structured processes, training, or operational changes that don't currently exist. It's not a quick fix — it's a project.
 
 ### Action 2: Accelerate review volume — you're credible but not dominant
-**Status:** Stale (3 months) | **Priority:** Medium
+**Status:** Stale (4 months) | **Priority:** Medium
 **Target date:** 08 April 2026 | **Cost:** Low (< £200) | **Expected upside:** Improved Google Maps ranking
 **Owner:** front-of-house — whoever currently responds to online reviews
 **Next milestone:** Identify the single most actionable sub-task and assign it to a named person with a deadline
@@ -610,7 +611,7 @@ Awards don't fix a weak proposition — they amplify a strong one. Get Experienc
 **Barrier diagnosis (Awareness barrier):** This recommendation may not have reached the person who can act on it. If this report goes to the owner but the system is managed by someone else (or a marketing agency), the fix needs forwarding.
 
 ### Action 3: Address isolated food quality complaints from guests
-**Status:** Stale (3 months) | **Priority:** Standard
+**Status:** Stale (4 months) | **Priority:** Standard
 **Target date:** 01 May 2026 | **Cost:** Medium (£200–£1,000) | **Expected upside:** Reduce food quality complaints, protect rating
 **Owner:** operations — head chef + FOH manager to review together
 **Next milestone:** Pull up the 3 most recent negative reviews. Identify the common theme. Brief the head chef and FOH manager together on the pattern this week
