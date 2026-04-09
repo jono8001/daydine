@@ -67,7 +67,9 @@ jobs:
         continue-on-error: true
         env:
           COMPANIES_HOUSE_API_KEY: ${{ secrets.COMPANIES_HOUSE_API_KEY }}
-        run: python .github/scripts/collect_companies_house.py
+        run: |
+          python .github/scripts/collect_companies_house.py
+          python .github/scripts/merge_companies_house.py
 
       - name: "Sentiment: Aspect-based review analysis"
         run: python .github/scripts/sentiment_analysis.py

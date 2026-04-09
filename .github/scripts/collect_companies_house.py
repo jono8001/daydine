@@ -5,6 +5,11 @@ collect_companies_house.py — Check business viability via Companies House API.
 Searches for each restaurant as a registered company, extracting
 company status, accounts status, director changes, and insolvency.
 
+3-try matching strategy:
+  1. Search by venue name
+  2. Strip common suffixes and retry
+  3. Search by postcode and fuzzy-match name
+
 Free API: https://developer.company-information.service.gov.uk/
 SIC codes: 56101 (restaurants), 56102 (takeaway), 56103 (pubs)
 
@@ -35,21 +40,35 @@ CH_COMPANY_URL = "https://api.company-information.service.gov.uk/company"
 FOOD_SIC_CODES = {"56101", "56102", "56103", "56210", "56301", "56302"}
 NOW = datetime.now(timezone.utc)
 
+# Suffixes to strip for fuzzy matching
+STRIP_SUFFIXES = re.compile(
+    r'\b(ltd|limited|plc|llp|inc|& co|the|restaurant|cafe|bar|pub|bistro|grill)\b',
+    re.IGNORECASE,
+)
+
 
 def normalise(name):
+    """Normalise a name for comparison."""
     name = name.lower().strip()
-    name = re.sub(r"\b(ltd|limited|plc|llp|inc)\b", "", name)
     name = re.sub(r"[^\w\s]", "", name)
     return re.sub(r"\s+", " ", name).strip()
 
 
+def strip_suffixes(name):
+    """Strip common business suffixes for looser matching."""
+    stripped = STRIP_SUFFIXES.sub("", name)
+    stripped = re.sub(r"[^\w\s]", "", stripped)
+    return re.sub(r"\s+", " ", stripped).strip().lower()
+
+
 def fuzzy(a, b):
+    """Fuzzy match ratio between two names."""
     return difflib.SequenceMatcher(None, normalise(a), normalise(b)).ratio()
 
 
-def search_company(name, postcode=""):
-    """Search Companies House for a company by name."""
-    params = {"q": name, "items_per_page": 5}
+def _api_search(query):
+    """Run a Companies House search query. Returns list of result items."""
+    params = {"q": query, "items_per_page": 10}
     try:
         resp = requests.get(CH_SEARCH_URL, params=params,
                             auth=(API_KEY, ""), timeout=15)
@@ -62,6 +81,85 @@ def search_company(name, postcode=""):
     except requests.RequestException as e:
         print(f"    CH search error: {e}")
         return []
+
+
+def _pick_best(results, venue_name, postcode="", threshold=0.5):
+    """Pick the best match from search results. Returns (item, score) or (None, 0)."""
+    best = None
+    best_score = 0
+
+    for item in results:
+        title = item.get("title", "")
+        score = fuzzy(venue_name, title)
+
+        # Bonus if postcode area matches
+        addr = item.get("address_snippet", "").upper()
+        pc_prefix = postcode[:4].strip().upper() if postcode else ""
+        if pc_prefix and pc_prefix in addr:
+            score += 0.15
+
+        # Bonus for food-related SIC codes in snippet
+        snippet = (item.get("snippet") or "").lower()
+        if any(word in snippet for word in ["restaurant", "cafe", "food", "catering", "pub"]):
+            score += 0.05
+
+        if score > best_score:
+            best_score = score
+            best = item
+
+    if not best or best_score < threshold:
+        return None, 0
+    return best, best_score
+
+
+def search_company(name, postcode=""):
+    """3-try matching strategy for Companies House lookup.
+
+    Try 1: Search by venue name directly.
+    Try 2: Strip common suffixes from name and retry.
+    Try 3: Search by postcode, then fuzzy-match name from results.
+
+    Returns (best_match_item, score) or (None, 0).
+    """
+    # Try 1: Direct name search
+    results = _api_search(name)
+    best, score = _pick_best(results, name, postcode)
+    if best:
+        return best, score
+    time.sleep(0.3)
+
+    # Try 2: Strip suffixes and retry
+    stripped = strip_suffixes(name)
+    if stripped and stripped != normalise(name):
+        results = _api_search(stripped)
+        # Match using stripped versions of both
+        best_item = None
+        best_score = 0
+        for item in results:
+            title = item.get("title", "")
+            s = difflib.SequenceMatcher(
+                None, stripped, strip_suffixes(title)
+            ).ratio()
+            addr = item.get("address_snippet", "").upper()
+            pc_prefix = postcode[:4].strip().upper() if postcode else ""
+            if pc_prefix and pc_prefix in addr:
+                s += 0.15
+            if s > best_score:
+                best_score = s
+                best_item = item
+        if best_item and best_score >= 0.45:
+            return best_item, best_score
+        time.sleep(0.3)
+
+    # Try 3: Search by postcode and fuzzy-match name
+    if postcode and len(postcode) >= 5:
+        results = _api_search(postcode)
+        best, score = _pick_best(results, name, postcode, threshold=0.35)
+        if best:
+            return best, score
+        time.sleep(0.3)
+
+    return None, 0
 
 
 def get_company_details(company_number):
@@ -87,54 +185,39 @@ def get_officers(company_number):
 
 
 def process_company(name, postcode):
-    """Search and extract Companies House data for a restaurant."""
-    results = search_company(name)
-    if not results:
-        return None
+    """Search and extract Companies House data for a restaurant.
 
-    # Find best match by name + optional postcode
-    best = None
-    best_score = 0
-    for item in results:
-        title = item.get("title", "")
-        score = fuzzy(name, title)
-        # Bonus if postcode area matches
-        addr = item.get("address_snippet", "").upper()
-        pc_prefix = postcode[:4].strip().upper() if postcode else ""
-        if pc_prefix and pc_prefix in addr:
-            score += 0.1
-        if score > best_score:
-            best_score = score
-            best = item
-
-    if not best or best_score < 0.5:
+    Returns a dict with ch_* fields, or None if no match found.
+    """
+    best, match_score = search_company(name, postcode)
+    if not best:
         return None
 
     company_number = best.get("company_number", "")
     details = get_company_details(company_number) if company_number else None
 
     entry = {
-        "ch_name": best.get("title", ""),
-        "company_number": company_number,
-        "match_score": round(best_score, 2),
-        "company_status": best.get("company_status", "unknown"),
+        "ch_company_number": company_number,
+        "ch_company_name": best.get("title", ""),
+        "ch_status": best.get("company_status", "unknown"),
+        "match_score": round(match_score, 2),
     }
 
     if details:
-        # Accounts overdue
-        accounts = details.get("accounts", {})
-        if accounts.get("overdue"):
-            entry["accounts_overdue"] = True
-
-        # Company age
+        # Incorporation date
         created = details.get("date_of_creation")
         if created:
-            try:
-                dt = datetime.fromisoformat(created)
-                age_days = (NOW.replace(tzinfo=None) - dt).days
-                entry["company_age_years"] = round(age_days / 365.25, 1)
-            except (ValueError, TypeError):
-                pass
+            entry["ch_incorporated"] = created
+
+        # Accounts
+        accounts = details.get("accounts", {})
+        next_due = accounts.get("next_due")
+        last_made = accounts.get("last_accounts", {}).get("made_up_to")
+        if next_due:
+            entry["ch_accounts_due"] = next_due
+        if last_made:
+            entry["ch_last_accounts_filed"] = last_made
+        entry["ch_accounts_overdue"] = bool(accounts.get("overdue"))
 
         # SIC codes
         sic = details.get("sic_codes", [])
@@ -142,12 +225,18 @@ def process_company(name, postcode):
         entry["is_food_sic"] = bool(set(sic) & FOOD_SIC_CODES)
 
         # Insolvency
-        if details.get("has_insolvency_history"):
-            entry["insolvency"] = True
+        entry["ch_insolvency"] = bool(details.get("has_insolvency_history"))
 
-    # Director changes in last 12 months
+    # Director count and recent changes
     if company_number:
         officers = get_officers(company_number)
+        active_directors = [
+            o for o in officers
+            if o.get("officer_role") in ("director", "corporate-director")
+            and not o.get("resigned_on")
+        ]
+        entry["ch_directors"] = len(active_directors)
+
         recent_changes = 0
         cutoff = NOW.replace(tzinfo=None).replace(year=NOW.year - 1)
         for officer in officers:
@@ -180,31 +269,41 @@ def main():
     if os.path.exists(OUTPUT_PATH):
         with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
             existing = json.load(f)
-        ch_data = {k: v for k, v in existing.items() if v.get("company_number")}
+        # Keep existing successful matches (resume support)
+        ch_data = {k: v for k, v in existing.items()
+                   if v.get("ch_company_number")}
         print(f"Loaded {len(ch_data)} existing CH records (resuming)")
 
     matched = 0
+    no_match = 0
     total = len(establishments)
     for i, (key, record) in enumerate(establishments.items(), 1):
         if key in ch_data:
+            matched += 1
             continue
         name = record.get("n", "")
         postcode = record.get("pc", "")
         if not name:
-            ch_data[key] = {"_skipped": True}
+            ch_data[key] = {"ch_status": "no_match", "_reason": "no_name"}
             continue
 
         result = process_company(name, postcode)
-        time.sleep(0.5)  # Rate limit
+        time.sleep(0.5)  # Rate limit between venues
 
         if result:
             ch_data[key] = result
             matched += 1
-            status = result.get("company_status", "?")
-            print(f"  [{i}/{total}] {name} -> {result['ch_name']} ({status})")
+            status = result.get("ch_status", "?")
+            score = result.get("match_score", 0)
+            print(f"  [{i}/{total}] {name} -> {result['ch_company_name']} "
+                  f"({status}, score={score})")
         else:
-            ch_data[key] = {"_no_match": True}
+            # Genuinely not found after 3 tries
+            ch_data[key] = {"ch_status": "no_match"}
+            no_match += 1
+            print(f"  [{i}/{total}] {name} -> no match")
 
+        # Periodic save
         if i % 25 == 0:
             with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
                 json.dump(ch_data, f, indent=2, ensure_ascii=False)
@@ -212,10 +311,15 @@ def main():
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(ch_data, f, indent=2, ensure_ascii=False)
 
-    print(f"\nDone. Matched: {matched}/{total}")
-    dissolved = sum(1 for v in ch_data.values() if v.get("company_status") == "dissolved")
-    overdue = sum(1 for v in ch_data.values() if v.get("accounts_overdue"))
-    print(f"  Dissolved: {dissolved}, Accounts overdue: {overdue}")
+    dissolved = sum(1 for v in ch_data.values()
+                    if v.get("ch_status") == "dissolved")
+    overdue = sum(1 for v in ch_data.values()
+                  if v.get("ch_accounts_overdue"))
+    insolvency = sum(1 for v in ch_data.values()
+                     if v.get("ch_insolvency"))
+    print(f"\nDone. Matched: {matched}/{total}, No match: {no_match}")
+    print(f"  Dissolved: {dissolved}, Accounts overdue: {overdue}, "
+          f"Insolvency history: {insolvency}")
 
 
 if __name__ == "__main__":
