@@ -1,0 +1,110 @@
+{
+  "has_narrative": true,
+  "reviews_analyzed": 3,
+  "review_count_ta": null,
+  "ta_rating": null,
+  "praise_themes": [
+    {
+      "aspect": "food_quality",
+      "label": "Food Quality",
+      "mentions": 1,
+      "quotes": [
+        "Took our teenage nephews here to play the games consoles and have a pizza as a means to occupy the afternoon.\nSo glad we did as wow this was the best"
+      ]
+    }
+  ],
+  "criticism_themes": [],
+  "strongest_positive_quotes": [
+    "Fantastic tasting pizza! My permanently underwhelmed teenage nephews said it was the best pizza they  ever had!Price per person£10–20Food: 5Service: 5",
+    "Took our teenage nephews here to play the games consoles and have a pizza as a means to occupy the afternoon.\nSo glad we did as wow this was the best",
+    "Best Pizzas full stop! Tom knows what he’s doing, he’s passionate about what he does and this shows throughout!"
+  ],
+  "strongest_constructive_quotes": [],
+  "aspect_scores": {
+    "food_quality": {
+      "positive": 1,
+      "negative": 0,
+      "sentiment": 10.0
+    }
+  },
+  "has_dated_reviews": false,
+  "date_range": null,
+  "recent_window": null,
+  "analysis": {
+    "reviews_analyzed": 3,
+    "aspect_scores": {
+      "food_quality": {
+        "score": 10.0,
+        "positive": 2,
+        "negative": 0,
+        "mentions": 2
+      }
+    },
+    "praise_themes": [
+      {
+        "aspect": "food_quality",
+        "label": "Food Quality",
+        "mentions": 2,
+        "quotes": [
+          "OMG the strips were delicious",
+          "Lovely guy, lovely food, splendido 😊👍🏼Price per person£10–20Food: 5Service: 5Atmosp"
+        ]
+      }
+    ],
+    "criticism_themes": [],
+    "rating_distribution": {
+      "5": 3
+    },
+    "average_sample_rating": 5.0,
+    "sentiment_distribution": {
+      "positive": 3
+    },
+    "risk_flags": [],
+    "trajectory": null,
+    "trajectory_method": null,
+    "per_review": [
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Fantastic tasting pizza",
+        "full_text": "Fantastic tasting pizza! My permanently underwhelmed teenage nephews said it was the best pizza they  ever had!Price per person£10–20Food: 5Service: 5Atmosphere: 5Recommended dishesPizza Margherita, Vodka Pie, Sardenara, Pepperoni Pizza, Cheese BallsNoise levelModerate noiseSeating typeIndoor dining area, Bar area, Outdoor patio / terrace, Booth seating",
+        "aspects": [],
+        "risk_count": 0,
+        "date": null,
+        "source": null
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "OMG the strips were delicious",
+        "full_text": "Took our teenage nephews here to play the games consoles and have a pizza as a means to occupy the afternoon.\nSo glad we did as wow this was the best pizza! Genuinely fabulous. We had the phoenix pie and all of us were very happy with it. One of the best pizzas I've ever had. Both nephews said repeatedly was the best pizza they've ever had.\nWe also had potato tots, Mac and cheese bites as well as chicken strips. OMG the strips were delicious.\nEverything really good.\nHighly recommend.Food: 5Service: 5Atmosphere: 5",
+        "aspects": [
+          "food_quality"
+        ],
+        "risk_count": 0,
+        "date": null,
+        "source": null
+      },
+      {
+        "rating": 5,
+        "sentiment": "positive",
+        "snippet": "Lovely guy, lovely food, splendido 😊👍🏼Price per person£10–20Food: 5Service: 5Atmosphere: 5Noise levelLoud, but you can still talkSeating typeIndoor dining area, Bar area, Outdoor patio / terrace",
+        "full_text": "Best Pizzas full stop! Tom knows what he’s doing, he’s passionate about what he does and this shows throughout! Lovely guy, lovely food, splendido 😊👍🏼Price per person£10–20Food: 5Service: 5Atmosphere: 5Noise levelLoud, but you can still talkSeating typeIndoor dining area, Bar area, Outdoor patio / terrace",
+        "aspects": [
+          "food_quality"
+        ],
+        "risk_count": 0,
+        "date": null,
+        "source": null
+      }
+    ]
+  },
+  "volume_signals": {
+    "volume_tier": "adequate",
+    "volume_note": "121 reviews — adequate but not dominant. 5 consecutive low ratings could drop average by ~0.1.",
+    "rating_position": "premium",
+    "rating_note": "5/5 places you in the top tier of Google search results. This drives discovery.",
+    "aggregate_rating": 5,
+    "review_count": 121
+  }
+}

@@ -1,30 +1,29 @@
 {
-  "venue": "Vintner Wine Bar",
+  "venue": "Impasto Micro-Pizzeria",
   "month": "2026-04",
   "report_mode": "narrative_rich",
   "data_sources": {
     "fsa": true,
     "google_rating": true,
-    "google_reviews": 887,
+    "google_reviews": 121,
     "review_text_available": true,
-    "reviews_analyzed": 25,
-    "tripadvisor": true,
+    "reviews_analyzed": 3,
+    "tripadvisor": false,
     "companies_house": false
   },
   "independent_sources": {
-    "count": 3,
+    "count": 2,
     "platforms": [
       "FSA",
-      "Google",
-      "TripAdvisor"
+      "Google"
     ]
   },
   "review_confidence": {
-    "tier": "directional",
-    "review_text_count": 25,
-    "source_count": 2,
+    "tier": "anecdotal",
+    "review_text_count": 3,
+    "source_count": 1,
     "can_claim_themes": true,
-    "can_claim_proposition": true
+    "can_claim_proposition": false
   },
   "section_completeness": {
     "executive_summary": {
@@ -34,7 +33,7 @@
     },
     "risk_alerts": {
       "present": true,
-      "lines": 7,
+      "lines": 2,
       "meets_minimum": true
     },
     "data_basis": {
@@ -49,7 +48,7 @@
     },
     "segment_intelligence": {
       "present": true,
-      "lines": 19,
+      "lines": 5,
       "meets_minimum": true
     },
     "management_priorities": {
@@ -79,12 +78,12 @@
     },
     "dimension_diagnosis": {
       "present": true,
-      "lines": 41,
+      "lines": 39,
       "meets_minimum": true
     },
     "commercial_diagnosis": {
       "present": true,
-      "lines": 8,
+      "lines": 9,
       "meets_minimum": true
     },
     "public_vs_reality": {
@@ -94,22 +93,22 @@
     },
     "review_intelligence": {
       "present": true,
-      "lines": 23,
+      "lines": 8,
       "meets_minimum": true
     },
     "conversion_friction": {
       "present": true,
-      "lines": 29,
+      "lines": 24,
       "meets_minimum": true
     },
     "recommendation_tracker": {
       "present": true,
-      "lines": 41,
+      "lines": 31,
       "meets_minimum": true
     },
     "category_validation": {
       "present": true,
-      "lines": 18,
+      "lines": 11,
       "meets_minimum": true
     },
     "market_intelligence": {
@@ -124,12 +123,12 @@
     },
     "data_coverage": {
       "present": true,
-      "lines": 8,
+      "lines": 10,
       "meets_minimum": true
     },
     "evidence_appendix": {
       "present": true,
-      "lines": 129,
+      "lines": 29,
       "meets_minimum": true
     }
   },
@@ -140,38 +139,36 @@
   },
   "validation_passed": true,
   "validation_errors": [],
-  "validation_warnings": [],
-  "confidence_level": "high",
+  "validation_warnings": [
+    "OVERCLAIM_ON_ANECDOTAL: 'known for' used with only 3 review texts (anecdotal tier)",
+    "ESTIMATE_WITHOUT_CONFIDENCE: £ figure near position 15095 has no confidence label within 200 characters"
+  ],
+  "confidence_level": "medium",
   "evidence_provenance_present": true,
   "review_dates": {
-    "has_dated_reviews": true,
-    "date_range": {
-      "earliest": "2026-01-20",
-      "latest": "2026-12-20"
-    },
+    "has_dated_reviews": false,
+    "date_range": null,
     "valid_date_range": null,
     "dates_by_source": {
       "unknown": {
-        "total": 25,
+        "total": 3,
         "dated": 0
       }
     },
     "future_dated_excluded": 0,
-    "recent_window_available": true,
-    "recent_window_count": 7,
-    "recent_window_sources": [
-      "tripadvisor"
-    ],
+    "recent_window_available": false,
+    "recent_window_count": 0,
+    "recent_window_sources": [],
     "recent_window_valid_count": 0,
     "recent_window_valid_sources": [],
     "dated_trajectory_supported": false
   },
   "segment_qa": {
     "present": true,
-    "segments_surfaced": 4,
-    "smallest_segment_used": 2,
+    "segments_surfaced": 0,
+    "smallest_segment_used": 0,
     "fabrication_check": false,
-    "tension_flagged": true,
+    "tension_flagged": false,
     "unattributed_handled": true
   },
   "integrity_checks": {
@@ -201,7 +198,7 @@
       }
     ]
   },
-  "report_lines": 587,
+  "report_lines": 417,
   "consistency_check": {
     "run": true,
     "contradictions_found": 0,

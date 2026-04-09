@@ -41,3 +41,4 @@ from operator_intelligence.builders.venue_identity import (
     build_known_for,
     build_protect_improve_ignore,
 )
+from operator_intelligence.builders.menu_intelligence import build_menu_intelligence

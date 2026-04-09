@@ -242,8 +242,8 @@
       "negative": 2
     },
     "risk_flags": [],
-    "trajectory": "declining",
-    "trajectory_method": "date_sorted",
+    "trajectory": "stable",
+    "trajectory_method": "positional",
     "per_review": [
       {
         "rating": 5,
@@ -256,7 +256,7 @@
         ],
         "risk_count": 0,
         "date": null,
-        "source": "google"
+        "source": null
       },
       {
         "rating": 4,
@@ -268,7 +268,7 @@
         ],
         "risk_count": 0,
         "date": null,
-        "source": "google"
+        "source": null
       },
       {
         "rating": 5,
@@ -281,7 +281,7 @@
         ],
         "risk_count": 0,
         "date": null,
-        "source": "google"
+        "source": null
       },
       {
         "rating": 5,
@@ -294,7 +294,7 @@
         ],
         "risk_count": 0,
         "date": null,
-        "source": "google"
+        "source": null
       },
       {
         "rating": 5,
@@ -306,7 +306,7 @@
         ],
         "risk_count": 0,
         "date": null,
-        "source": "google"
+        "source": null
       },
       {
         "rating": 5,
@@ -317,8 +317,8 @@
           "food_quality"
         ],
         "risk_count": 0,
-        "date": "2026-02-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -329,8 +329,8 @@
           "food_quality"
         ],
         "risk_count": 0,
-        "date": "2026-01-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -342,8 +342,8 @@
           "ambience"
         ],
         "risk_count": 0,
-        "date": "2026-12-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 3,
@@ -355,8 +355,8 @@
           "speed"
         ],
         "risk_count": 0,
-        "date": "2026-12-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -369,8 +369,8 @@
           "ambience"
         ],
         "risk_count": 0,
-        "date": "2026-12-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 1,
@@ -381,8 +381,8 @@
           "service"
         ],
         "risk_count": 0,
-        "date": "2026-12-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -393,8 +393,8 @@
           "service"
         ],
         "risk_count": 0,
-        "date": "2026-11-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 3,
@@ -403,8 +403,8 @@
         "full_text": "Good food as usual.  The fish crepes were very good and friends who had steak and fish were very satisfied.  One problem - DONT go if you are disabled as there is no accessible loo.  The only facilities are up a very twisty old staircase.  They did offer me the alternative of walking down the road to another restaurant (how embarrassing would that be!) so I might have stayed longer, and had a sweet but couldn't (for obvious reasons).  The excuse is the age of the building, which I understand,  but I wish I had known before and will not be going again.",
         "aspects": [],
         "risk_count": 0,
-        "date": "2026-11-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -415,8 +415,8 @@
           "service"
         ],
         "risk_count": 0,
-        "date": "2026-11-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 2,
@@ -428,8 +428,8 @@
           "ambience"
         ],
         "risk_count": 0,
-        "date": "2026-10-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -438,8 +438,8 @@
         "full_text": "We were recently married in Stratford Upon Avon, and decided to book the Vinter on recommendation and having visited it ourselves, for our wedding meal. \nFrom first visiting, to the actual meal itself, Charlotte and the team were brilliant. \nSpecial thanks to Emma who was our primary server on the day. The food was excellent and everyone really enjoyed themselves and commented on the location. \nThank you all for making our special day simply perfect.",
         "aspects": [],
         "risk_count": 0,
-        "date": "2026-10-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -450,8 +450,8 @@
           "service"
         ],
         "risk_count": 0,
-        "date": "2026-09-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -462,8 +462,8 @@
           "ambience"
         ],
         "risk_count": 0,
-        "date": "2026-09-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -476,8 +476,8 @@
           "speed"
         ],
         "risk_count": 0,
-        "date": "2026-08-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -489,8 +489,8 @@
           "speed"
         ],
         "risk_count": 0,
-        "date": "2026-08-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -502,8 +502,8 @@
           "service"
         ],
         "risk_count": 0,
-        "date": "2026-08-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -512,8 +512,8 @@
         "full_text": "Excellent\nFood, Service and ambience \nwill be returning.\nThe staff knew what they were doing and we enjoyed the ambience too.",
         "aspects": [],
         "risk_count": 0,
-        "date": "2026-08-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -527,8 +527,8 @@
           "speed"
         ],
         "risk_count": 0,
-        "date": "2026-08-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 4,
@@ -539,8 +539,8 @@
           "food_quality"
         ],
         "risk_count": 0,
-        "date": "2026-07-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       },
       {
         "rating": 5,
@@ -552,8 +552,8 @@
           "value"
         ],
         "risk_count": 0,
-        "date": "2026-07-20T00:00:00.000Z",
-        "source": "tripadvisor"
+        "date": null,
+        "source": null
       }
     ]
   },

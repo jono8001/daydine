@@ -28,6 +28,7 @@ from operator_intelligence.builders import (
     build_demand_capture_audit, build_monitoring_plan,
     build_evidence_appendix,
     build_known_for, build_protect_improve_ignore,
+    build_menu_intelligence,
 )
 
 DIM_ORDER = ["experience", "visibility", "trust", "conversion", "prestige"]
@@ -143,6 +144,8 @@ def generate_monthly_report(venue_name, month_str, scorecard, deltas,
     # 7. Review & Reputation Intelligence
     build_review_intelligence(w, mode, review_intel, review_delta, month_str=month_str,
                               risk_result=_risk_result)
+    # 7b. Menu & Dish Intelligence
+    build_menu_intelligence(w, venue_rec, review_intel, benchmarks)
 
     # --- Lens 3: Trust & Public Risk ---
     # 8. Public Proof vs Operational Reality
