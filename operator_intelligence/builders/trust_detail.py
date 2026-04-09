@@ -83,7 +83,7 @@ def build_trust_detail(w, venue_rec, scorecard, benchmarks):
           "add to Google Business Profile, mention in review responses. Costs nothing.")
         w("3. **Do nothing** — viable. The 5/5 headline protects you with customers. "
           "The gap is competitive, not critical.")
-    else:
+    elif r is not None:
         # Below 5: more urgent
         w(f"1. **Address specific inspection points** — review the last report and "
           f"fix each item. A move to {int(r)+1}/5 unlocks material score improvement.")
