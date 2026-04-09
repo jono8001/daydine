@@ -1,6 +1,8 @@
 """Financial Impact Summary — the money story that opens every report."""
 
-from operator_intelligence.commercial_estimates import _spend_range, _MONTHLY_COVERS
+from operator_intelligence.commercial_estimates import (
+    _spend_range, estimate_weekly_covers, _conversion_leak_pct,
+)
 
 
 def build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
@@ -15,11 +17,18 @@ def build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
 
     actions = recs.get("priority_actions", [])
 
-    # Estimate covers and spend from price level
+    # Estimate covers and spend from price level + review count
     spend_lo, spend_hi = _spend_range(gpl)
-    covers_lo, covers_hi = _MONTHLY_COVERS.get(gpl, _MONTHLY_COVERS[2])
+    covers_lo, covers_hi, covers_note = estimate_weekly_covers(gpl, grc)
     avg_spend = round((spend_lo + spend_hi) / 2)
-    avg_covers_weekly = round((covers_lo + covers_hi) / 2 / 4)
+    avg_covers_weekly = round((covers_lo + covers_hi) / 2)
+
+    # Monthly covers from weekly
+    monthly_covers_lo = covers_lo * 4
+    monthly_covers_hi = covers_hi * 4
+
+    # Conversion-score-driven leak percentage
+    leak_pct_lo, leak_pct_hi = _conversion_leak_pct(conv)
 
     # Aggregate value at risk from top priorities
     total_risk_lo = 0
@@ -30,19 +39,18 @@ def build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
         dim = a.get("dimension", "")
         title = a.get("title", "")
 
-        # Pull from commercial estimates logic
         if dim == "conversion":
-            leak_lo = round(covers_lo * spend_lo * 0.02, -1)
-            leak_hi = round(covers_hi * spend_hi * 0.08, -1)
-            total_risk_lo += leak_lo
-            total_risk_hi += leak_hi
-            top_issues.append((title, f"£{leak_lo:,.0f}–£{leak_hi:,.0f}/mo"))
+            val_lo = round(monthly_covers_lo * spend_lo * leak_pct_lo, -1)
+            val_hi = round(monthly_covers_hi * spend_hi * leak_pct_hi, -1)
+            total_risk_lo += val_lo
+            total_risk_hi += val_hi
+            top_issues.append((title, f"£{val_lo:,.0f}–£{val_hi:,.0f}/mo"))
         elif dim == "experience" and a.get("rec_type") == "fix":
-            leak_lo = round(covers_lo * spend_lo * 0.03, -1)
-            leak_hi = round(covers_hi * spend_hi * 0.10, -1)
-            total_risk_lo += leak_lo
-            total_risk_hi += leak_hi
-            top_issues.append((title, f"£{leak_lo:,.0f}–£{leak_hi:,.0f}/mo"))
+            val_lo = round(monthly_covers_lo * spend_lo * 0.03, -1)
+            val_hi = round(monthly_covers_hi * spend_hi * 0.10, -1)
+            total_risk_lo += val_lo
+            total_risk_hi += val_hi
+            top_issues.append((title, f"£{val_lo:,.0f}–£{val_hi:,.0f}/mo"))
         elif dim == "experience" and a.get("rec_type") == "exploit":
             top_issues.append((title, "upside opportunity"))
         elif dim == "trust":
@@ -57,9 +65,9 @@ def build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
     annual_risk_lo = total_risk_lo * 12
     annual_risk_hi = total_risk_hi * 12
 
-    # Estimate covers at risk (from conversion leakage)
-    covers_at_risk_lo = round(covers_lo * 0.02 / 4)  # weekly
-    covers_at_risk_hi = round(covers_hi * 0.08 / 4)
+    # Covers at risk (weekly, from conversion leakage)
+    covers_at_risk_lo = round(covers_lo * leak_pct_lo)
+    covers_at_risk_hi = round(covers_hi * leak_pct_hi)
 
     w("### Financial Impact\n")
 
@@ -84,29 +92,28 @@ def build_financial_impact(w, venue_name, scorecard, recs, venue_rec,
           f"closing competitive gaps.\n")
 
     # --- Financial Implications Table ---
-    w("| Metric | Current | At Risk | Potential Recovery |")
-    w("|---|---|---|---|")
-    w(f"| Covers per week | ~{avg_covers_weekly} | "
-      f"{covers_at_risk_lo}–{covers_at_risk_hi} at risk | "
-      f"Recoverable with profile fixes |")
-    w(f"| Average spend per head | ~£{avg_spend} | — | — |")
+    w("| Metric | Estimate | Basis |")
+    w("|---|---|---|")
+    w(f"| Estimated weekly covers | ~{covers_lo}–{covers_hi} | {covers_note} |")
+    w(f"| Average spend per head | ~£{avg_spend} | UK hospitality benchmark for price level {'£' * int(gpl) if gpl else '££'} |")
+    w(f"| Covers at risk per week | {covers_at_risk_lo}–{covers_at_risk_hi} | "
+      f"Conversion score {conv:.1f}/10 → {leak_pct_lo:.0%}–{leak_pct_hi:.0%} leakage |"
+      if conv is not None else
+      f"| Covers at risk per week | {covers_at_risk_lo}–{covers_at_risk_hi} | "
+      f"Default 3–7% leakage (no conversion score) |")
     if total_risk_lo > 0:
-        w(f"| Weekly revenue impact | — | "
-          f"£{weekly_risk_lo:,.0f}–£{weekly_risk_hi:,.0f} | "
-          f"£{weekly_risk_lo:,.0f}–£{weekly_risk_hi:,.0f} recoverable |")
-        w(f"| Monthly revenue impact | — | "
-          f"£{total_risk_lo:,.0f}–£{total_risk_hi:,.0f} | "
-          f"£{total_risk_lo:,.0f}–£{total_risk_hi:,.0f} recoverable |")
-        w(f"| Annual projection | — | "
-          f"£{annual_risk_lo:,.0f}–£{annual_risk_hi:,.0f} | "
-          f"£{annual_risk_lo:,.0f}–£{annual_risk_hi:,.0f} recoverable |")
+        w(f"| Weekly revenue at risk | £{weekly_risk_lo:,.0f}–£{weekly_risk_hi:,.0f} | "
+          f"Recoverable with priority action fixes |")
+        w(f"| Monthly revenue at risk | £{total_risk_lo:,.0f}–£{total_risk_hi:,.0f} | "
+          f"Aggregate across top 3 priorities |")
+        w(f"| Annual projection | £{annual_risk_lo:,.0f}–£{annual_risk_hi:,.0f} | "
+          f"If current gaps persist 12 months |")
     else:
-        w("| Revenue impact | — | Minimal | Protect current position |")
+        w("| Revenue impact | Minimal | Protect current position |")
     w("")
 
-    w(f"*Estimates based on UK hospitality benchmarks for price level "
-      f"{'£' * int(gpl) if gpl else '££'} venues. Ranges are directional — "
-      f"exact figures require your internal cover and spend data.*\n")
+    w(f"*All estimates are directional ranges derived from external data only. "
+      f"Exact figures require your internal cover and spend data.*\n")
 
     # --- Recommended Action ---
     if top_action:

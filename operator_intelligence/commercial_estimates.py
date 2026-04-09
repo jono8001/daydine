@@ -36,6 +36,65 @@ _MONTHLY_COVERS = {1: (800, 2000), 2: (600, 1500), 3: (400, 1000), 4: (200, 600)
 _REVIEW_RATIO = (50, 200)
 
 
+def estimate_weekly_covers(gpl, grc):
+    """Estimate weekly covers using price level and review count as a size proxy.
+
+    Review count correlates with footfall volume — a venue with 887 reviews
+    is materially larger or longer-established than one with 121 reviews.
+
+    Returns (covers_low, covers_high, basis_note)
+    """
+    grc = grc or 0
+    gpl = gpl or 2
+
+    # Size tier from review count
+    if grc < 50:
+        size = "micro"
+    elif grc < 150:
+        size = "small"
+    elif grc < 400:
+        size = "mid"
+    elif grc < 800:
+        size = "large"
+    else:
+        size = "high_traffic"
+
+    SIZE_BASE = {
+        "micro":        (40,  80),
+        "small":        (80,  140),
+        "mid":          (140, 220),
+        "large":        (220, 350),
+        "high_traffic": (320, 500),
+    }
+
+    # Price level modifier: cheaper venues turn more covers
+    GPL_MODIFIER = {1: 1.3, 2: 1.0, 3: 0.75, 4: 0.5}
+    mod = GPL_MODIFIER.get(gpl, 1.0)
+
+    base_lo, base_hi = SIZE_BASE[size]
+    lo = round(base_lo * mod / 10) * 10
+    hi = round(base_hi * mod / 10) * 10
+
+    note = (f"Derived from {grc:,} Google reviews "
+            f"({size.replace('_', '-')} venue indicator), "
+            f"price level {'£' * gpl}")
+    return lo, hi, note
+
+
+def _conversion_leak_pct(conversion_score):
+    """Return (lo_pct, hi_pct) of weekly covers at risk based on conversion score."""
+    if conversion_score is None:
+        return 0.03, 0.07
+    if conversion_score < 3.0:
+        return 0.08, 0.15
+    elif conversion_score < 5.0:
+        return 0.05, 0.10
+    elif conversion_score < 7.0:
+        return 0.02, 0.05
+    else:
+        return 0.01, 0.03
+
+
 def _spend_range(gpl):
     """Return (low, high) average spend per head from price level."""
     return _AVG_SPEND.get(gpl, _AVG_SPEND[2])  # default to mid-range
@@ -46,8 +105,8 @@ def _monthly_visit_estimate(grc, gpl):
     Returns (low, high) or None if insufficient data."""
     if not grc or grc < 10:
         return None
-    # Use cover ranges as primary, review count as sanity check
-    return _MONTHLY_COVERS.get(gpl, _MONTHLY_COVERS[2])
+    wk_lo, wk_hi, _ = estimate_weekly_covers(gpl, grc)
+    return (wk_lo * 4, wk_hi * 4)
 
 
 # ---------------------------------------------------------------------------
@@ -100,12 +159,13 @@ def _estimate_conversion_fix(gpl, grc, gr, title_lower):
     """Conversion fixes: hours, menu, delivery signal, booking."""
     spend_lo, spend_hi = _spend_range(gpl)
 
-    # Conservative: a missing signal costs 2-8% of potential monthly covers
-    leak_pct_lo, leak_pct_hi = 0.02, 0.08
-    covers = _MONTHLY_COVERS.get(gpl, _MONTHLY_COVERS[2])
+    # Use review-count-aware cover estimates (monthly = weekly * 4)
+    wk_lo, wk_hi, _ = estimate_weekly_covers(gpl, grc)
+    covers_lo, covers_hi = wk_lo * 4, wk_hi * 4
 
-    val_lo = round(covers[0] * spend_lo * leak_pct_lo, -1)  # round to £10
-    val_hi = round(covers[1] * spend_hi * leak_pct_hi, -1)
+    leak_pct_lo, leak_pct_hi = 0.02, 0.08
+    val_lo = round(covers_lo * spend_lo * leak_pct_lo, -1)
+    val_hi = round(covers_hi * spend_hi * leak_pct_hi, -1)
 
     if "hour" in title_lower:
         basis = "2–8% of potential customers filter by 'open now' and won't find you"
@@ -140,14 +200,15 @@ def _estimate_conversion_fix(gpl, grc, gr, title_lower):
 def _estimate_visibility_fix(gpl, grc, gr, title_lower):
     """Visibility fixes: photos, review count, GBP completeness."""
     spend_lo, spend_hi = _spend_range(gpl)
-    covers = _MONTHLY_COVERS.get(gpl, _MONTHLY_COVERS[2])
+    wk_lo, wk_hi, _ = estimate_weekly_covers(gpl, grc)
+    covers_lo, covers_hi = wk_lo * 4, wk_hi * 4
 
     if "photo" in title_lower:
         # Venues with photos get ~35% more clicks (Google data)
         # Estimate 5-15% uplift on discovery → visits
         uplift_lo, uplift_hi = 0.05, 0.15
-        val_lo = round(covers[0] * spend_lo * uplift_lo, -1)
-        val_hi = round(covers[1] * spend_hi * uplift_hi, -1)
+        val_lo = round(covers_lo * spend_lo * uplift_lo, -1)
+        val_hi = round(covers_hi * spend_hi * uplift_hi, -1)
         return CommercialConsequence(
             value_at_stake=f"£{val_lo:,.0f}–£{val_hi:,.0f}/month",
             implementation_cost="Low (< 1 hour, no spend)",
@@ -169,12 +230,13 @@ def _estimate_visibility_fix(gpl, grc, gr, title_lower):
 def _estimate_experience_fix(gpl, grc, gr, title_lower, scorecard):
     """Experience fixes: complaint-driven, food quality issues."""
     spend_lo, spend_hi = _spend_range(gpl)
-    covers = _MONTHLY_COVERS.get(gpl, _MONTHLY_COVERS[2])
+    wk_lo, wk_hi, _ = estimate_weekly_covers(gpl, grc)
+    covers_lo, covers_hi = wk_lo * 4, wk_hi * 4
 
     # Recurring complaints → estimate 3-10% repeat-visit loss
     leak_pct_lo, leak_pct_hi = 0.03, 0.10
-    val_lo = round(covers[0] * spend_lo * leak_pct_lo, -1)
-    val_hi = round(covers[1] * spend_hi * leak_pct_hi, -1)
+    val_lo = round(covers_lo * spend_lo * leak_pct_lo, -1)
+    val_hi = round(covers_hi * spend_hi * leak_pct_hi, -1)
 
     return CommercialConsequence(
         value_at_stake=f"£{val_lo:,.0f}–£{val_hi:,.0f}/month",
