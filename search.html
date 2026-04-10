@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Restaurant Search — DayDine</title>
+  <meta name="description" content="Search 264,791 UK restaurants by town, city or postcode. See FSA hygiene ratings and Google scores on an interactive map.">
+  <link rel="canonical" href="https://daydine.vercel.app/search">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Restaurant Search — DayDine">
+  <meta property="og:description" content="Search 264,791 UK restaurants by town, city or postcode. See FSA hygiene ratings and Google scores on an interactive map.">
+  <meta property="og:url" content="https://daydine.vercel.app/search">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/daydine.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #F5F0E8;
+      --bg-card: #ffffff;
+      --bg-row-hover: #FBF8F3;
+      --bg-expanded: #FAF7F1;
+      --border: #E5DFD3;
+      --text: #2D2D2D;
+      --text-muted: #7A7265;
+      --accent: #D4942A;
+      --accent-hover: #B87D1E;
+      --accent-light: #FDF5E9;
+      --green: #2E7D32;
+      --green-bg: #E8F5E9;
+      --yellow: #C27A00;
+      --yellow-bg: #FFF8E1;
+      --orange: #D84315;
+      --orange-bg: #FBE9E7;
+      --red: #C62828;
+      --red-bg: #FFEBEE;
+      --radius: 10px;
+      --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 12px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* ---- Header ---- */
+    header {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 1.1rem 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -.02em;
+    }
+    /* Amber dot on the "i" — we split into Day + D + i + ne with the i styled */
+    .logo-day { color: var(--text); }
+    .logo-d { color: var(--text); }
+    .logo-i { position: relative; color: var(--text); }
+    .logo-i::after {
+      content: '';
+      position: absolute;
+      top: -.02em;
+      left: 50%;
+      transform: translateX(-50%);
+      width: .32em;
+      height: .32em;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    /* Hide the natural dot on the i by making it transparent and overlaying */
+    .logo-i { font-style: normal; }
+    .logo-ne { color: var(--text); }
+    .tagline { font-size: .85rem; color: var(--text-muted); }
+
+    /* ---- Filters ---- */
+    .filters {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+    }
+    .filters-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      align-items: end;
+    }
+    .fld { display: flex; flex-direction: column; gap: .25rem; }
+    .fld label {
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--text-muted);
+    }
+    .fld input, .fld select {
+      padding: .5rem .75rem;
+      font-size: .85rem;
+      font-family: inherit;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      outline: none;
+      min-width: 160px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .fld input:focus, .fld select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(212,148,42,.15);
+    }
+    .fld select option { background: var(--bg-card); }
+    .btn {
+      padding: .5rem 1.4rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: .85rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .15s, box-shadow .15s;
+      align-self: end;
+      box-shadow: var(--shadow);
+    }
+    .btn:hover { background: var(--accent-hover); box-shadow: var(--shadow-md); }
+    .btn:disabled { opacity: .45; cursor: not-allowed; }
+
+    /* ---- Main ---- */
+    main { max-width: 1200px; margin: 1.5rem auto; padding: 0 1.5rem; }
+    .status {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--text-muted);
+      font-size: .95rem;
+    }
+    .meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: .75rem;
+      font-size: .82rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    /* ---- Table ---- */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+    }
+    table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+    thead { background: #FAF7F2; }
+    th {
+      text-align: left;
+      padding: .65rem .85rem;
+      font-size: .72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--text-muted);
+      border-bottom: 2px solid var(--border);
+      user-select: none;
+      white-space: nowrap;
+    }
+    th.sortable { cursor: pointer; }
+    th.sortable:hover { color: var(--accent); }
+    th .arrow { margin-left: .3rem; font-size: .65rem; }
+    td {
+      padding: .6rem .85rem;
+      border-bottom: 1px solid #EDE8DF;
+      vertical-align: middle;
+    }
+    tbody tr { background: var(--bg-card); transition: background .1s; }
+    tbody tr:hover { background: var(--bg-row-hover); }
+    tbody tr.expanded-parent { background: var(--accent-light); }
+    .name-cell {
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--accent);
+    }
+    .name-cell:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* ---- Rating badges ---- */
+    .rating {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2rem;
+      padding: .2rem .55rem;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: .82rem;
+      text-align: center;
+    }
+    .r5 { background: var(--green-bg); color: var(--green); }
+    .r4 { background: var(--green-bg); color: var(--green); }
+    .r3 { background: var(--yellow-bg); color: var(--yellow); }
+    .r2 { background: var(--orange-bg); color: var(--orange); }
+    .r1 { background: var(--red-bg); color: var(--red); }
+    .r0 { background: var(--red-bg); color: var(--red); }
+    .r-exempt { background: #F0EDE6; color: var(--text-muted); font-size: .72rem; }
+
+    /* ---- Tier badges ---- */
+    .tier-badge {
+      display: inline-block;
+      padding: .15rem .5rem;
+      border-radius: 4px;
+      font-size: .68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      margin-top: .2rem;
+      white-space: nowrap;
+    }
+    .tier-5 { background: #1B5E20; color: #fff; }
+    .tier-4 { background: #00796B; color: #fff; }
+    .tier-3 { background: #F9A825; color: #333; }
+    .tier-2 { background: #E65100; color: #fff; }
+    .tier-1 { background: #C62828; color: #fff; }
+    .tier-0 { background: #4A0000; color: #fff; }
+
+    /* ---- Google rating inline ---- */
+    .google-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .google-star { color: #FBBC04; font-size: .9rem; }
+    .google-score { font-weight: 600; color: var(--text); }
+    .google-count { font-size: .72rem; }
+
+    /* ---- Row expand chevron ---- */
+    .expand-chevron {
+      display: inline-block;
+      width: .6em;
+      margin-right: .35rem;
+      transition: transform .15s;
+      font-size: .7rem;
+      color: var(--text-muted);
+    }
+    .expanded-parent .expand-chevron { transform: rotate(90deg); }
+
+    /* ---- Expanded detail row ---- */
+    .detail-row td { padding: 0; border-bottom: 1px solid var(--border); }
+    .detail-inner {
+      padding: 1rem 1.2rem 1rem 2.5rem;
+      background: var(--bg-expanded);
+      font-size: .82rem;
+    }
+    .detail-section {
+      margin-bottom: .8rem;
+    }
+    .detail-section:last-child { margin-bottom: 0; }
+    .detail-section-title {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--accent);
+      margin-bottom: .45rem;
+      padding-bottom: .25rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: .5rem 2rem;
+    }
+    .detail-inner .dl-label {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--text-muted);
+      margin-bottom: .15rem;
+    }
+    .detail-inner .dl-val { color: var(--text); font-weight: 500; }
+    .detail-inner a { color: var(--accent); text-decoration: none; font-weight: 600; }
+    .detail-inner a:hover { text-decoration: underline; }
+    .score-bar-wrap { display: flex; align-items: center; gap: .5rem; margin-top: .2rem; }
+    .score-bar {
+      flex: 1;
+      height: 7px;
+      border-radius: 4px;
+      background: var(--border);
+      max-width: 120px;
+    }
+    .score-bar-fill { height: 100%; border-radius: 4px; }
+    .score-val { font-size: .78rem; font-weight: 600; min-width: 1.5rem; }
+
+    /* ---- Pagination ---- */
+    .pagination { display: flex; justify-content: center; gap: .4rem; margin-top: 1.25rem; flex-wrap: wrap; }
+    .pg-btn {
+      padding: .38rem .8rem;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      background: var(--bg-card);
+      color: var(--text);
+      font-family: inherit;
+      font-size: .82rem;
+      cursor: pointer;
+      transition: all .15s;
+      box-shadow: var(--shadow);
+    }
+    .pg-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .pg-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .pg-btn:disabled { opacity: .3; cursor: not-allowed; box-shadow: none; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+      font-size: .78rem;
+    }
+
+    /* ---- Mobile: card layout ---- */
+    @media (max-width: 768px) {
+      .header-inner { flex-direction: column; gap: .3rem; }
+      .tagline { font-size: .78rem; }
+      .filters-inner { flex-direction: column; gap: .5rem; }
+      .fld { width: 100%; }
+      .fld input, .fld select { min-width: 0; width: 100%; }
+      .btn { width: 100%; text-align: center; }
+      .btn-nearme { width: 100%; text-align: center; }
+      #mapContainer { height: 400px; }
+      main { padding: 0 .75rem; margin-top: 1rem; }
+
+      /* Hide table header, make rows into cards */
+      .table-wrap { border: none; box-shadow: none; background: transparent; }
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tbody tr {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        margin-bottom: .6rem;
+        padding: .75rem;
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+      tbody tr.expanded-parent { border-color: var(--accent); }
+      td { padding: .15rem 0; border-bottom: none; }
+      td:before {
+        content: attr(data-label);
+        display: inline-block;
+        width: 7rem;
+        font-size: .68rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        color: var(--text-muted);
+        flex-shrink: 0;
+      }
+      td { display: flex; align-items: center; }
+      td.mobile-hidden { display: none; }
+      .detail-row td { padding: 0; }
+      .detail-row td:before { display: none; }
+      .detail-inner { padding: .8rem .5rem; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .pagination { margin-bottom: 1.5rem; }
+    }
+
+    /* ---- Near Me button ---- */
+    .btn-nearme {
+      padding: .5rem 1rem;
+      background: #fff;
+      color: var(--accent);
+      font-family: inherit;
+      font-weight: 600;
+      font-size: .85rem;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+      align-self: end;
+      white-space: nowrap;
+    }
+    .btn-nearme:hover { background: var(--accent); color: #fff; }
+    .btn-nearme:disabled { opacity: .45; cursor: not-allowed; }
+
+    /* ---- Location Autocomplete ---- */
+    .loc-wrap { position: relative; }
+    .loc-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      max-height: 220px;
+      overflow-y: auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-top: none;
+      border-radius: 0 0 8px 8px;
+      box-shadow: var(--shadow-md);
+    }
+    .loc-dropdown.open { display: block; }
+    .loc-option {
+      padding: .45rem .75rem;
+      font-size: .85rem;
+      cursor: pointer;
+      transition: background .1s;
+    }
+    .loc-option:hover, .loc-option.active { background: var(--accent-light); color: var(--accent); }
+
+    /* ---- Distance column ---- */
+    .dist-val { font-size: .82rem; color: var(--text-muted); white-space: nowrap; }
+
+    /* ---- View toggle ---- */
+    .view-toggle {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .view-btn {
+      padding: .35rem .9rem;
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: none;
+      font-family: inherit;
+      font-size: .78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .view-btn + .view-btn { border-left: 1px solid var(--border); }
+    .view-btn:hover { color: var(--accent); }
+    .view-btn.active { background: var(--accent); color: #fff; }
+
+    /* ---- Map ---- */
+    #mapContainer {
+      display: none;
+      height: 550px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    #mapContainer.visible { display: block; }
+
+    @media (max-width: 400px) {
+      .logo { font-size: 1.3rem; }
+      td:before { width: 5.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">
+      <div class="nav-brand-mark">D</div>
+      <span class="nav-brand-word">DayDine</span>
+      <span class="nav-brand-beta">Beta</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/rankings">Rankings</a>
+      <a class="nav-link" href="/reports">Reports</a>
+      <a class="nav-link" href="/methodology">Methodology</a>
+      <a class="nav-link active" href="/search">Search</a>
+      <a class="btn btn-primary nav-cta" href="/reports">Get Your Report</a>
+    </div>
+  </div>
+</nav>
+
+<div style="max-width: 1200px; margin: 24px auto 8px; padding: 0 24px;">
+  <div class="kicker mb-1">Restaurant Search</div>
+  <h1 class="h-display h-display-md" style="margin-bottom: 8px;">Search 264,791 UK restaurants</h1>
+  <p class="body-md">Enter a town, city or UK postcode to find nearby restaurants with FSA hygiene ratings, Google scores, and detailed inspection data.</p>
+</div>
+
+<div class="filters">
+  <div class="filters-inner">
+    <div class="fld">
+      <label for="fName">Name</label>
+      <input type="text" id="fName" placeholder="Search name…">
+    </div>
+    <div class="fld loc-wrap">
+      <label for="fLocation">Location</label>
+      <input type="text" id="fLocation" placeholder="Town, city or postcode…" autocomplete="off">
+      <div class="loc-dropdown" id="locDropdown"></div>
+    </div>
+    <button class="btn-nearme" id="btnNearMe" title="Use my location">&#9673; Near Me</button>
+    <div class="fld">
+      <label for="fDist">Distance</label>
+      <select id="fDist">
+        <option value="1">1 mile</option>
+        <option value="3">3 miles</option>
+        <option value="5" selected>5 miles</option>
+        <option value="10">10 miles</option>
+        <option value="25">25 miles</option>
+      </select>
+    </div>
+    <div class="fld">
+      <label for="fRating">Rating</label>
+      <select id="fRating">
+        <option value="">Any</option>
+        <option value="5">5 — Very good</option>
+        <option value="4">4 — Good</option>
+        <option value="3">3 — Generally satisfactory</option>
+        <option value="2">2 — Improvement necessary</option>
+        <option value="1">1 — Major improvement necessary</option>
+        <option value="0">0 — Urgent improvement necessary</option>
+      </select>
+    </div>
+    <button class="btn" id="btnSearch">Search</button>
+  </div>
+</div>
+
+<main>
+  <div id="status" class="status">Enter a town, city or postcode and press Search to find nearby restaurants.</div>
+  <div id="resultsWrap" style="display:none;">
+    <div class="meta-bar">
+      <span id="metaCount"></span>
+      <div style="display:flex;align-items:center;gap:.75rem;">
+        <div class="view-toggle">
+          <button class="view-btn active" id="btnTableView">Table</button>
+          <button class="view-btn" id="btnMapView">Map</button>
+        </div>
+        <span id="metaSort"></span>
+      </div>
+    </div>
+    <div id="mapContainer"></div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="sortable" data-key="n">Name <span class="arrow"></span></th>
+            <th>Postcode</th>
+            <th>Local Authority</th>
+            <th class="sortable" data-key="_dist">Distance <span class="arrow"></span></th>
+            <th class="sortable" data-key="r">FSA Rating <span class="arrow"></span></th>
+            <th>Tier</th>
+            <th class="sortable" data-key="gr">Google <span class="arrow"></span></th>
+            <th class="sortable" data-key="rd">Last Inspected <span class="arrow"></span></th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="pagination" id="pagination"></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-mark">D</div>
+      <span class="footer-brand-word">DayDine</span>
+    </div>
+    <p class="footer-copy">© 2026 DayDine. Data sourced from the UK Food Standards Agency.</p>
+  </div>
+</footer>
+
+<script src="/assets/daydine.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+<script>
+  // ============================================================
+  //  FIREBASE CONFIG — replace placeholders with your real values
+  // ============================================================
+  const firebaseConfig = {
+    apiKey:            "AIzaSyBiFeN9DeiNnDFdu3O4uVTILnQANYsLdkA",
+    authDomain:        "recursive-research-eu.firebaseapp.com",
+    databaseURL:       "https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId:         "recursive-research-eu",
+    storageBucket:     "recursive-research-eu.firebasestorage.app",
+    messagingSenderId: "205357382117",
+    appId:             "1:205357382117:web:5b01c86ed33572abce170c"
+  };
+  // ============================================================
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+  const REF = db.ref("daydine/establishments");
+
+  // Field mapping: compact DB keys → display names
+  // n=name, a=address, la=local authority, pc=postcode,
+  // rd=last inspection date, t=business type (numeric), r=rating, id=FSA ID, lat/lon
+
+  const PAGE_SIZE = 50;
+  let results = [];
+  let page = 0;
+  let sortKey = "n";
+  let sortAsc = true;
+  let expandedId = null;
+  let currentView = "table"; // "table" or "map"
+  let leafletMap = null;
+  let markerLayer = null;
+
+  // Friendly sort-key labels for the meta bar
+  const SORT_LABELS = { n: "name", r: "FSA rating", gr: "Google rating", rd: "last inspected", _dist: "distance" };
+
+  // Search centre coordinates (set by geocoding)
+  let searchLat = null;
+  let searchLon = null;
+
+  // Map marker colours by rating
+  const MARKER_COLORS = { 5: "#22c55e", 4: "#14b8a6", 3: "#f59e0b", 2: "#f97316", 1: "#ef4444", 0: "#991b1b" };
+
+  // DOM
+  const fName     = document.getElementById("fName");
+  const fLocation = document.getElementById("fLocation");
+  const fDist     = document.getElementById("fDist");
+  const fRating   = document.getElementById("fRating");
+  const btnSearch   = document.getElementById("btnSearch");
+  const btnNearMe   = document.getElementById("btnNearMe");
+  const statusEl    = document.getElementById("status");
+  const resultsWrap = document.getElementById("resultsWrap");
+  const tbody       = document.getElementById("tbody");
+  const metaCount   = document.getElementById("metaCount");
+  const metaSort    = document.getElementById("metaSort");
+  const pagEl       = document.getElementById("pagination");
+  const mapContainer = document.getElementById("mapContainer");
+  const locDropdown  = document.getElementById("locDropdown");
+  const btnTableView = document.getElementById("btnTableView");
+  const btnMapView   = document.getElementById("btnMapView");
+
+  // ---- Haversine distance (miles) ----
+  function haversine(lat1, lon1, lat2, lon2) {
+    const R = 3958.8; // Earth radius in miles
+    const toRad = d => d * Math.PI / 180;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  // ---- Geocode location via postcodes.io ----
+  async function geocodeLocation(query) {
+    query = query.trim();
+    if (!query) return null;
+    // Detect postcode pattern (UK postcodes)
+    const pcPattern = /^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i;
+    if (pcPattern.test(query)) {
+      const pc = encodeURIComponent(query.replace(/\s+/g, ""));
+      const resp = await fetch("https://api.postcodes.io/postcodes/" + pc);
+      const data = await resp.json();
+      if (data.status === 200 && data.result) {
+        return { lat: data.result.latitude, lon: data.result.longitude, la: data.result.admin_district };
+      }
+      return null;
+    }
+    // Place name search
+    const resp = await fetch("https://api.postcodes.io/places?q=" + encodeURIComponent(query) + "&limit=5");
+    const data = await resp.json();
+    if (data.result && data.result.length > 0) {
+      const place = data.result[0];
+      const lat = place.latitude;
+      const lon = place.longitude;
+      // /places doesn't return admin_district — reverse-geocode via nearest postcode lookup
+      const revResp = await fetch("https://api.postcodes.io/postcodes?lon=" + lon + "&lat=" + lat + "&limit=1");
+      const revData = await revResp.json();
+      const la = (revData.result && revData.result.length > 0) ? revData.result[0].admin_district : null;
+      return { lat, lon, la, suggestions: data.result };
+    }
+    return null;
+  }
+
+  // ---- Location autocomplete (debounced place search) ----
+  let locDropdownIdx = -1;
+  let locDebounce = null;
+
+  fLocation.addEventListener("input", () => {
+    clearTimeout(locDebounce);
+    const val = fLocation.value.trim();
+    if (val.length < 2) { closeLocDropdown(); return; }
+    // Don't autocomplete if it looks like a postcode
+    const pcPattern = /^[A-Z]{1,2}\d/i;
+    if (pcPattern.test(val)) { closeLocDropdown(); return; }
+    locDebounce = setTimeout(async () => {
+      try {
+        const resp = await fetch("https://api.postcodes.io/places?q=" + encodeURIComponent(val) + "&limit=6");
+        const data = await resp.json();
+        if (!data.result || data.result.length === 0) { closeLocDropdown(); return; }
+        locDropdown.innerHTML = "";
+        locDropdownIdx = -1;
+        data.result.forEach(place => {
+          const div = document.createElement("div");
+          div.className = "loc-option";
+          const label = place.name_1 + (place.county_unitary ? ", " + place.county_unitary : "");
+          div.textContent = label;
+          div.dataset.name = place.name_1;
+          div.addEventListener("mousedown", e => { e.preventDefault(); selectLocation(place.name_1); });
+          locDropdown.appendChild(div);
+        });
+        locDropdown.classList.add("open");
+      } catch (e) { closeLocDropdown(); }
+    }, 250);
+  });
+
+  fLocation.addEventListener("keydown", e => {
+    const opts = locDropdown.querySelectorAll(".loc-option");
+    if (!locDropdown.classList.contains("open") || opts.length === 0) return;
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      locDropdownIdx = Math.min(locDropdownIdx + 1, opts.length - 1);
+      highlightLocOption(opts);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      locDropdownIdx = Math.max(locDropdownIdx - 1, 0);
+      highlightLocOption(opts);
+    } else if (e.key === "Enter" && locDropdownIdx >= 0) {
+      e.preventDefault();
+      selectLocation(opts[locDropdownIdx].dataset.name);
+    } else if (e.key === "Escape") {
+      closeLocDropdown();
+    }
+  });
+
+  fLocation.addEventListener("blur", () => { setTimeout(closeLocDropdown, 150); });
+
+  function highlightLocOption(opts) {
+    opts.forEach((o, i) => o.classList.toggle("active", i === locDropdownIdx));
+    if (opts[locDropdownIdx]) opts[locDropdownIdx].scrollIntoView({ block: "nearest" });
+  }
+
+  function selectLocation(name) {
+    fLocation.value = name;
+    closeLocDropdown();
+  }
+
+  function closeLocDropdown() {
+    locDropdown.classList.remove("open");
+    locDropdownIdx = -1;
+  }
+
+  // ---- Near Me ----
+  btnNearMe.addEventListener("click", async () => {
+    if (!navigator.geolocation) {
+      alert("Geolocation is not supported by your browser.");
+      return;
+    }
+    btnNearMe.disabled = true;
+    btnNearMe.textContent = "Locating…";
+    try {
+      const pos = await new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject, { timeout: 10000 });
+      });
+      const { latitude, longitude } = pos.coords;
+      searchLat = latitude;
+      searchLon = longitude;
+      // Reverse-geocode to get LA
+      const resp = await fetch("https://api.postcodes.io/postcodes?lon=" + longitude + "&lat=" + latitude + "&limit=1");
+      const data = await resp.json();
+      if (data.result && data.result.length > 0) {
+        const la = data.result[0].admin_district;
+        if (la) {
+          fLocation.value = data.result[0].admin_district;
+          search(la);
+        } else {
+          alert("Could not determine your location.");
+        }
+      } else {
+        alert("No results found near your location.");
+      }
+    } catch (err) {
+      if (err.code === 1) alert("Location access denied. Please allow location access and try again.");
+      else alert("Could not determine location: " + err.message);
+    } finally {
+      btnNearMe.disabled = false;
+      btnNearMe.innerHTML = "&#9673; Near Me";
+    }
+  });
+
+  // ---- View toggle ----
+  btnTableView.addEventListener("click", () => switchView("table"));
+  btnMapView.addEventListener("click", () => switchView("map"));
+
+  function switchView(view) {
+    currentView = view;
+    btnTableView.classList.toggle("active", view === "table");
+    btnMapView.classList.toggle("active", view === "map");
+    document.querySelector(".table-wrap").style.display = view === "table" ? "" : "none";
+    pagEl.style.display = view === "table" ? "" : "none";
+    if (view === "map") {
+      mapContainer.classList.add("visible");
+      renderMap();
+    } else {
+      mapContainer.classList.remove("visible");
+    }
+  }
+
+  // ---- Events ----
+  btnSearch.addEventListener("click", () => search());
+  document.querySelectorAll(".fld input, .fld select").forEach(el => {
+    el.addEventListener("keydown", e => { if (e.key === "Enter") { closeLocDropdown(); search(); } });
+  });
+
+  // ---- Auto-run from ?q= URL parameter (arrived from homepage hero) ----
+  (function initFromQuery() {
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get("q");
+    if (q) {
+      fLocation.value = q;
+      // Defer slightly so Firebase has a moment to init
+      setTimeout(() => search(), 100);
+    }
+  })();
+
+  document.querySelectorAll("th.sortable").forEach(th => {
+    th.addEventListener("click", () => {
+      const key = th.dataset.key;
+      if (sortKey === key) { sortAsc = !sortAsc; } else { sortKey = key; sortAsc = true; }
+      applySort();
+      page = 0;
+      render();
+      updateSortArrows();
+    });
+  });
+
+  // ---- Search ----
+  async function search(overrideLA) {
+    const location = fLocation.value.trim();
+    const name     = fName.value.trim().toLowerCase();
+    const rating   = fRating.value;
+    const maxDist  = parseFloat(fDist.value);
+
+    if (!location && !overrideLA) {
+      showStatus("Please enter a town, city or postcode to search.");
+      return;
+    }
+
+    showStatus("Geocoding…");
+    btnSearch.disabled = true;
+
+    try {
+      let la = overrideLA || null;
+
+      // Geocode if not already set by Near Me
+      if (!overrideLA) {
+        const geo = await geocodeLocation(location);
+        if (!geo) {
+          showStatus("Could not find that location. Try a town name or full UK postcode (e.g. SW1A 1AA).");
+          btnSearch.disabled = false;
+          return;
+        }
+        searchLat = geo.lat;
+        searchLon = geo.lon;
+        la = geo.la;
+      }
+
+      if (!la) {
+        showStatus("Could not determine the local authority for this location.");
+        btnSearch.disabled = false;
+        return;
+      }
+
+      showStatus("Querying…");
+      const snap = await REF.orderByChild("la").equalTo(la).once("value");
+      const data = snap.val();
+
+      if (!data) { results = []; }
+      else {
+        let entries = Object.entries(data).map(([id, d]) => ({ _id: id, ...d }));
+
+        // Compute distance and filter
+        if (searchLat != null && searchLon != null) {
+          entries = entries.filter(d => {
+            if (d.lat == null || d.lon == null) return false;
+            d._dist = haversine(searchLat, searchLon, parseFloat(d.lat), parseFloat(d.lon));
+            return d._dist <= maxDist;
+          });
+        }
+
+        // Client-side filters
+        if (name)        entries = entries.filter(d => d.n && d.n.toLowerCase().includes(name));
+        if (rating !== "") entries = entries.filter(d => d.r !== undefined && d.r === parseInt(rating, 10));
+
+        results = entries;
+      }
+
+      sortKey = "_dist"; sortAsc = true;
+      applySort();
+      updateSortArrows();
+      page = 0;
+      expandedId = null;
+      render();
+    } catch (err) {
+      console.error(err);
+      showStatus("Error: " + err.message);
+    } finally {
+      btnSearch.disabled = false;
+    }
+  }
+
+  // ---- Sort ----
+  function applySort() {
+    results.sort((a, b) => {
+      let va = a[sortKey], vb = b[sortKey];
+      if (sortKey === "_dist" || sortKey === "r" || sortKey === "gr") {
+        va = (typeof va === "number") ? va : 9999;
+        vb = (typeof vb === "number") ? vb : 9999;
+        return sortAsc ? va - vb : vb - va;
+      }
+      if (sortKey === "rd") {
+        va = va ? new Date(va).getTime() : 0;
+        vb = vb ? new Date(vb).getTime() : 0;
+        return sortAsc ? va - vb : vb - va;
+      }
+      va = (va || "").toString().toLowerCase();
+      vb = (vb || "").toString().toLowerCase();
+      return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va);
+    });
+  }
+
+  function updateSortArrows() {
+    document.querySelectorAll("th.sortable").forEach(th => {
+      const arrow = th.querySelector(".arrow");
+      if (th.dataset.key === sortKey) {
+        arrow.textContent = sortAsc ? "▲" : "▼";
+      } else {
+        arrow.textContent = "";
+      }
+    });
+    metaSort.textContent = "Sorted by " + (SORT_LABELS[sortKey] || sortKey) + (sortAsc ? " ↑" : " ↓");
+  }
+
+  // ---- Format helpers ----
+  function formatDate(rd) {
+    if (!rd) return "—";
+    const d = new Date(rd);
+    if (isNaN(d.getTime())) return esc(rd);
+    return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+  }
+
+  // ---- Render ----
+  function render() {
+    if (results.length === 0) {
+      showStatus("No establishments found within the selected distance. Try increasing the radius or adjusting filters.");
+      return;
+    }
+    statusEl.style.display = "none";
+    resultsWrap.style.display = "";
+    document.querySelector(".table-wrap").style.display = currentView === "table" ? "" : "none";
+    pagEl.style.display = currentView === "table" ? "" : "none";
+    if (currentView === "map") mapContainer.classList.add("visible");
+    else mapContainer.classList.remove("visible");
+
+    const totalPages = Math.ceil(results.length / PAGE_SIZE);
+    const start = page * PAGE_SIZE;
+    const slice = results.slice(start, start + PAGE_SIZE);
+
+    metaCount.textContent = results.length.toLocaleString() + " result" + (results.length !== 1 ? "s" : "")
+      + " — page " + (page + 1) + " of " + totalPages;
+
+    tbody.innerHTML = "";
+    slice.forEach(d => {
+      // Main row
+      const tr = document.createElement("tr");
+      if (d._id === expandedId) tr.classList.add("expanded-parent");
+      const isExpanded = d._id === expandedId;
+      const chevron = '<span class="expand-chevron">&#9654;</span>';
+      const distStr = (typeof d._dist === "number") ? d._dist.toFixed(1) + ' mi' : '—';
+      tr.innerHTML =
+        '<td class="name-cell" data-label="Name">' + chevron + esc(d.n || "—") + '</td>' +
+        '<td data-label="Postcode">' + esc(d.pc || "—") + '</td>' +
+        '<td data-label="Authority" class="mobile-hidden">' + esc(d.la || "—") + '</td>' +
+        '<td data-label="Distance" class="dist-val">' + distStr + '</td>' +
+        '<td data-label="FSA Rating">' + ratingHTML(d.r) + '</td>' +
+        '<td data-label="Tier">' + tierHTML(d.r) + '</td>' +
+        '<td data-label="Google">' + googleRatingHTML(d.gr, d.grc) + '</td>' +
+        '<td data-label="Inspected">' + formatDate(d.rd) + '</td>';
+      tr.querySelector(".name-cell").addEventListener("click", () => toggleExpand(d._id));
+      tbody.appendChild(tr);
+
+      // Detail row
+      if (isExpanded) {
+        const dr = document.createElement("tr");
+        dr.className = "detail-row";
+        const td = document.createElement("td");
+        td.colSpan = 8;
+        td.innerHTML = buildDetail(d);
+        dr.appendChild(td);
+        tbody.appendChild(dr);
+      }
+    });
+
+    // Refresh map if in map view
+    if (currentView === "map") { renderMap(); }
+
+    // Pagination
+    pagEl.innerHTML = "";
+    if (totalPages > 1) {
+      pgBtn("« Prev", page > 0, () => { page--; render(); scrollTop(); });
+      let s = Math.max(0, page - 3), e = Math.min(totalPages, s + 7);
+      if (e - s < 7) s = Math.max(0, e - 7);
+      for (let i = s; i < e; i++) {
+        pgBtn(i + 1, true, () => { page = i; render(); scrollTop(); }, i === page);
+      }
+      pgBtn("Next »", page < totalPages - 1, () => { page++; render(); scrollTop(); });
+    }
+  }
+
+  function toggleExpand(id) {
+    expandedId = (expandedId === id) ? null : id;
+    render();
+  }
+
+  function buildDetail(d) {
+    // Google Maps link
+    let mapsLink = "";
+    if (d.lat && d.lon) {
+      const q = encodeURIComponent((d.n || "") + ", " + (d.a || "") + ", " + (d.pc || ""));
+      mapsLink = "https://www.google.com/maps/search/?api=1&query=" + d.lat + "," + d.lon + "&query_place_id=" + (d.gid || "");
+    }
+
+    let html = '<div class="detail-inner">';
+
+    // --- Location section ---
+    html += '<div class="detail-section"><div class="detail-section-title">Location</div><div class="detail-grid">' +
+      dlBlock("Full Address", (d.a || "") + (d.pc ? ", " + d.pc : "")) +
+      dlBlock("Local Authority", d.la) +
+      dlBlock("Business Type", BUSINESS_TYPES[d.t] || (d.t !== undefined ? String(d.t) : "—")) +
+      dlBlock("FSA ID", d.id);
+    if (mapsLink) {
+      html += '<div><div class="dl-label">Map</div><div class="dl-val"><a href="' + esc(mapsLink) + '" target="_blank" rel="noopener">View on Google Maps &#8599;</a></div></div>';
+    }
+    html += '</div></div>';
+
+    // --- FSA section ---
+    html += '<div class="detail-section"><div class="detail-section-title">FSA Hygiene</div><div class="detail-grid">' +
+      dlBlock("Overall Rating", d.r !== undefined && d.r !== null ? d.r + " / 5" : "—") +
+      dlBlock("Tier", TIER_LABELS[d.r] || "—") +
+      dlBlock("Last Inspection", formatDate(d.rd)) +
+      '</div></div>';
+
+    // --- Google section (if enriched) ---
+    if (d.gid) {
+      html += '<div class="detail-section"><div class="detail-section-title">Google Places</div><div class="detail-grid">';
+      if (d.gr !== undefined) html += dlBlock("Google Rating", d.gr + " / 5.0");
+      if (d.grc !== undefined) html += dlBlock("Review Count", Number(d.grc).toLocaleString());
+      if (d.gpl) html += dlBlock("Price Level", formatPriceLevel(d.gpl));
+      if (d.gt && d.gt.length) html += dlBlock("Types", d.gt.map(t => t.replace(/_/g, " ")).join(", "));
+      html += '</div>';
+      if (d.goh && d.goh.length) {
+        html += '<div style="margin-top:.5rem;">' + dlBlock("Opening Hours", d.goh.join(" | ")) + '</div>';
+      }
+      html += '</div>';
+    }
+
+    // --- RCS score if available ---
+    if (d.rcs !== undefined) {
+      html += '<div class="detail-section"><div class="detail-section-title">Confidence Score</div><div class="detail-grid">' +
+        dlBlock("RCS", Number(d.rcs).toFixed(1) + " / 10.0") +
+        '</div></div>';
+    }
+
+    html += '</div>';
+    return html;
+  }
+
+  function dlBlock(label, val) {
+    return '<div><div class="dl-label">' + esc(label) + '</div><div class="dl-val">' + esc(val || "—") + '</div></div>';
+  }
+
+  function googleRatingHTML(gr, grc) {
+    if (gr === undefined || gr === null) return '<span style="color:var(--text-muted);font-size:.78rem">—</span>';
+    const count = (grc !== undefined && grc !== null) ? '&nbsp;<span class="google-count">(' + Number(grc).toLocaleString() + ')</span>' : '';
+    return '<span class="google-rating"><span class="google-star">&#9733;</span><span class="google-score">' + Number(gr).toFixed(1) + '</span>' + count + '</span>';
+  }
+
+  const TIER_LABELS = {
+    5: "Excellent",
+    4: "Good",
+    3: "Generally Satisfactory",
+    2: "Improvement Necessary",
+    1: "Major Improvement Necessary",
+    0: "Urgent Improvement Necessary"
+  };
+
+  const BUSINESS_TYPES = {
+    1: "Restaurant/Cafe/Canteen",
+    7: "Retailers — other",
+    14: "Takeaway/Sandwich shop",
+    4: "Pub/Bar/Nightclub",
+    5: "School/College/University",
+    6: "Mobile caterer",
+    8: "Hotel/Guest house",
+    10: "Hospital/Childcare/Caring",
+    11: "Manufacturers/Packers",
+    12: "Importers/Exporters",
+    13: "Distributors/Transporters"
+  };
+
+  function formatPriceLevel(pl) {
+    if (!pl) return "—";
+    const map = {
+      "PRICE_LEVEL_FREE": "Free",
+      "PRICE_LEVEL_INEXPENSIVE": "Inexpensive",
+      "PRICE_LEVEL_MODERATE": "Moderate",
+      "PRICE_LEVEL_EXPENSIVE": "Expensive",
+      "PRICE_LEVEL_VERY_EXPENSIVE": "Very Expensive"
+    };
+    return map[pl] || pl.replace("PRICE_LEVEL_", "");
+  }
+
+  function tierHTML(r) {
+    if (r === null || r === undefined || r === "Exempt") return '<span style="color:var(--text-muted);font-size:.72rem">—</span>';
+    const n = parseInt(r, 10);
+    if (isNaN(n) || !TIER_LABELS[n]) return '<span style="color:var(--text-muted);font-size:.72rem">—</span>';
+    return '<span class="tier-badge tier-' + n + '">' + esc(TIER_LABELS[n]) + '</span>';
+  }
+
+  function ratingHTML(r) {
+    if (r === null || r === undefined || r === "Exempt")
+      return '<span class="rating r-exempt">Exempt</span>';
+    const n = parseInt(r, 10);
+    if (isNaN(n)) return '<span class="rating r-exempt">' + esc(String(r)) + '</span>';
+    return '<span class="rating r' + n + '">' + n + '</span>';
+  }
+
+  function pgBtn(label, enabled, fn, active) {
+    const b = document.createElement("button");
+    b.className = "pg-btn" + (active ? " active" : "");
+    b.textContent = label;
+    b.disabled = !enabled;
+    if (enabled) b.addEventListener("click", fn);
+    pagEl.appendChild(b);
+  }
+
+  function showStatus(msg) {
+    resultsWrap.style.display = "none";
+    statusEl.style.display = "";
+    statusEl.textContent = msg;
+  }
+
+  function scrollTop() { window.scrollTo({ top: 0, behavior: "smooth" }); }
+
+  function esc(s) {
+    const el = document.createElement("span");
+    el.textContent = s;
+    return el.innerHTML;
+  }
+
+  // ---- Leaflet Map ----
+  function renderMap() {
+    if (!leafletMap) {
+      leafletMap = L.map("mapContainer").setView([54.5, -2], 6);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+      }).addTo(leafletMap);
+    }
+
+    if (markerLayer) { leafletMap.removeLayer(markerLayer); }
+    markerLayer = L.layerGroup().addTo(leafletMap);
+
+    const bounds = [];
+    results.forEach(d => {
+      if (d.lat == null || d.lon == null) return;
+      const lat = parseFloat(d.lat);
+      const lng = parseFloat(d.lon);
+      if (isNaN(lat) || isNaN(lng) || (lat === 0 && lng === 0)) return;
+
+      const r = (d.r !== undefined && d.r !== null) ? parseInt(d.r, 10) : -1;
+      const color = MARKER_COLORS[r] || "#9ca3af";
+      const tier = TIER_LABELS[r] || "N/A";
+
+      const marker = L.circleMarker([lat, lng], {
+        radius: 7,
+        fillColor: color,
+        color: "#fff",
+        weight: 1.5,
+        fillOpacity: 0.85
+      });
+
+      const popupHTML =
+        '<div style="font-family:Inter,sans-serif;font-size:.85rem;line-height:1.4;">' +
+        '<strong>' + esc(d.n || "Unknown") + '</strong><br>' +
+        '<span style="font-size:.78rem;color:#666;">' + esc(d.a || "") + '</span><br>' +
+        'FSA: ' + ratingHTML(d.r) + '<br>' +
+        'Tier: <span class="tier-badge tier-' + (r >= 0 ? r : '') + '" style="font-size:.65rem;">' + esc(tier) + '</span>' +
+        (d.gr !== undefined ? '<br>Google: <span class="google-star">&#9733;</span> ' + Number(d.gr).toFixed(1) : '') +
+        '</div>';
+
+      marker.bindPopup(popupHTML);
+      marker.addTo(markerLayer);
+      bounds.push([lat, lng]);
+    });
+
+    if (bounds.length > 0) {
+      leafletMap.fitBounds(bounds, { padding: [30, 30], maxZoom: 14 });
+    }
+    // Invalidate size after display change
+    setTimeout(() => leafletMap.invalidateSize(), 100);
+  }
+</script>
+</body>
+</html>
