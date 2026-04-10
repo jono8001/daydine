@@ -71,7 +71,12 @@ def _strip_frontmatter(md_src: str) -> str:
 
 
 def _render_markdown_body(md_src: str) -> str:
-    """Convert the narrative markdown to HTML with tables, fenced code, etc."""
+    """Convert the narrative markdown to HTML with tables, fenced code, etc.
+
+    The ``toc`` extension attaches stable ``id`` attributes to every heading
+    (h1–h6), which lets the template's contents page link to each ``h2`` via
+    ``#id`` and WeasyPrint resolve the page number via ``target-counter()``.
+    """
     md_src = _strip_frontmatter(md_src)
     html = md_lib.markdown(
         md_src,
@@ -79,10 +84,51 @@ def _render_markdown_body(md_src: str) -> str:
             "extra",       # tables, fenced code, abbr, footnotes, attr_list
             "sane_lists",
             "nl2br",
+            "toc",         # auto-assigns id="…" to every heading
         ],
+        extension_configs={
+            "toc": {
+                "title": "",
+                "anchorlink": False,
+                "permalink": False,
+            },
+        },
         output_format="html5",
     )
     return html
+
+
+# Capture ``<h2 id="slug">Title</h2>`` — python-markdown's toc extension emits
+# exactly this shape with autoslug ids.
+_H2_RE = re.compile(
+    r'<h2\b[^>]*\bid="([^"]+)"[^>]*>(.*?)</h2>',
+    re.DOTALL,
+)
+
+_TAG_RE = re.compile(r"<[^>]+>")
+
+
+def _extract_toc(body_html: str) -> list[dict]:
+    """Pull every ``h2`` (id + plain-text title) from the rendered body HTML.
+
+    Used to build the contents page. Only h2 is included — matches the
+    "main sections only" requirement.
+    """
+    entries: list[dict] = []
+    for m in _H2_RE.finditer(body_html):
+        anchor_id = m.group(1)
+        # Strip inline tags from the title and unescape basic entities.
+        title = _TAG_RE.sub("", m.group(2))
+        title = (
+            title.replace("&amp;", "&")
+            .replace("&lt;", "<")
+            .replace("&gt;", ">")
+            .replace("&quot;", '"')
+            .replace("&#39;", "'")
+            .strip()
+        )
+        entries.append({"id": anchor_id, "title": title})
+    return entries
 
 
 # ---------------------------------------------------------------------------
@@ -217,12 +263,14 @@ def render_pdf_report(
     with open(md_path, "r", encoding="utf-8") as f:
         md_src = f.read()
     body_html = _render_markdown_body(md_src)
+    toc = _extract_toc(body_html)
 
     cover = _build_cover_context(md_path, _load_json(json_path))
 
     context = {
         **cover,
         "body_html": body_html,
+        "toc": toc,
     }
 
     env = _build_env()

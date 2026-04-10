@@ -64,6 +64,21 @@
   </div>
 </section>
 
+{# ----- Contents page (main sections only — h2 from the markdown narrative) ----- #}
+{% if toc %}
+<section class="toc">
+  <div class="toc-kicker">Contents</div>
+  <h2 class="toc-heading">What's in this report</h2>
+  <ol class="toc-list">
+    {% for entry in toc %}
+    <li class="toc-entry">
+      <a class="toc-link" href="#{{ entry.id }}"><span class="toc-text">{{ entry.title }}</span></a>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
+
 {# ----- Running-header string setter. Populates @top-right on every interior page. ----- #}
 <div class="venue-name" aria-hidden="true">{{ venue }}</div>
 
