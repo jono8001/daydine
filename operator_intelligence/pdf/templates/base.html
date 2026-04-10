@@ -7,19 +7,70 @@
 </head>
 <body>
 
-{% include "_cover.html" %}
+{# ----- Cover page (page 1, no running header/footer) ----- #}
+<section class="cover">
+  <div class="cover-accent-bar"></div>
 
-{# Every interior page carries the venue name in its running header via string-set. #}
-<div class="venue-name" style="position: absolute; visibility: hidden; height: 0;">{{ venue }}</div>
+  <div class="cover-inner">
+    <img src="logo.svg" alt="DayDine" class="cover-logo">
+    <div class="cover-kicker">Monthly Intelligence Report</div>
+    <h1 class="cover-title">{{ venue }}</h1>
+    <p class="cover-sub">
+      {{ month | format_month }}
+      {%- if report_date %} &middot; Generated {{ report_date | format_date }}{% endif %}
+      &middot; DayDine Premium
+    </p>
 
-{% include "_exec_summary.html" %}
-{% include "_scorecard.html" %}
-{% include "_position.html" %}
-{% include "_priorities.html" %}
-{% include "_demand_capture.html" %}
-{% include "_review_intel.html" %}
-{% include "_financial_impact.html" %}
-{% include "_appendix.html" %}
+    <div class="cover-stats">
+      {% if local_rank %}
+      <div class="stat-block">
+        <div class="stat-label">Local Rank</div>
+        <div class="stat-value">#{{ local_rank }}</div>
+        <div class="stat-sub">{% if local_of %}of {{ local_of }} local venues{% endif %}</div>
+      </div>
+      {% endif %}
+
+      {% if overall_score is not none %}
+      <div class="stat-block">
+        <div class="stat-label">Overall Score</div>
+        <div class="stat-value">{{ overall_score | score_fmt(2) }}</div>
+        <div class="stat-sub">
+          <span class="band-pill {{ overall_score | rcs_band }}">{{ overall_score | rcs_band_label }}</span>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if strongest %}
+      <div class="stat-block">
+        <div class="stat-label">Strongest</div>
+        <div class="stat-value-sm">{{ strongest[0] }}</div>
+        <div class="stat-sub">{{ strongest[1] | score_fmt(1) }} / 10</div>
+      </div>
+      {% endif %}
+
+      {% if weakest %}
+      <div class="stat-block">
+        <div class="stat-label">Weakest</div>
+        <div class="stat-value-sm">{{ weakest[0] }}</div>
+        <div class="stat-sub">{{ weakest[1] | score_fmt(1) }} / 10</div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span>Prepared for {{ venue }}</span>
+    <span>daydine.com &middot; Operator Intelligence</span>
+  </div>
+</section>
+
+{# ----- Running-header string setter. Populates @top-right on every interior page. ----- #}
+<div class="venue-name" aria-hidden="true">{{ venue }}</div>
+
+{# ----- Full narrative body: every word of the generated markdown. ----- #}
+<main class="markdown-body">
+{{ body_html | safe }}
+</main>
 
 </body>
 </html>
