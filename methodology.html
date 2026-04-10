@@ -5,75 +5,277 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
   <title>Methodology — DayDine</title>
-  <meta name="description" content="How DayDine ranks UK restaurants: the Restaurant Confidence Score methodology, 40 signals across 7 tiers, temporal decay, and cross-source convergence.">
+  <meta name="description" content="How DayDine ranks restaurants in your town. A considered, principled read of local market confidence — built for diners and operators alike.">
   <link rel="canonical" href="https://daydine.vercel.app/methodology">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Methodology — DayDine">
-  <meta property="og:description" content="The Restaurant Confidence Score: 40 signals across 7 weighted tiers, temporal decay, and cross-source convergence.">
+  <meta property="og:description" content="A considered, principled read of local market confidence — built for diners and operators alike.">
   <meta property="og:url" content="https://daydine.vercel.app/methodology">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/daydine.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
-    .tier-row {
-      display: grid;
-      grid-template-columns: 72px 1fr 180px;
-      gap: 20px;
-      padding: 20px 28px;
-      border-bottom: 1px solid var(--border-soft);
-      align-items: center;
+    /* ---- Methodology page-specific ---- */
+    .method-body p { margin-bottom: 18px; color: var(--text-muted); font-size: 17px; line-height: 1.75; }
+    .method-body p:last-child { margin-bottom: 0; }
+    .method-body strong { color: var(--text); font-weight: 600; }
+
+    .method-rule {
+      height: 1px;
+      width: 64px;
+      background: var(--accent);
+      border: 0;
+      margin: 0 0 36px;
+      opacity: 0.75;
     }
-    .tier-row:last-child { border-bottom: none; }
-    .tier-weight {
+    .method-rule-center { margin-left: auto; margin-right: auto; }
+
+    /* Principle blocks (section 4) */
+    .principle {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 20px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .principle:last-of-type { border-bottom: none; }
+    .principle-num {
       font-family: var(--mono);
       font-size: 22px;
       font-weight: 600;
       color: var(--accent);
+      line-height: 1.2;
     }
-    .tier-name {
+    .principle-title {
       font-family: var(--serif);
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
       color: var(--text);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      line-height: 1.2;
     }
-    .tier-desc { font-size: 14px; color: var(--text-muted); line-height: 1.55; }
-    .tier-signals {
+    .principle-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Technical notes accordion */
+    .tech-notes {
+      margin-top: 32px;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 24px;
+    }
+    .tech-notes summary {
+      cursor: pointer;
       font-family: var(--mono);
       font-size: 11px;
-      color: var(--text-subtle);
-      text-align: right;
-    }
-    @media (max-width: 760px) {
-      .tier-row { grid-template-columns: 64px 1fr; padding: 16px 20px; }
-      .tier-signals { display: none; }
-    }
-    .methodology-body h2 {
-      font-family: var(--serif);
-      font-size: 28px;
-      font-weight: 600;
-      margin: 48px 0 20px;
-      color: var(--text);
-    }
-    .methodology-body p { margin-bottom: 18px; color: var(--text-muted); font-size: 15px; line-height: 1.75; }
-    .methodology-body ul { margin: 18px 0; padding-left: 22px; color: var(--text-muted); line-height: 1.75; }
-    .methodology-body strong { color: var(--text); }
-    .callout {
-      background: var(--surface-2);
-      border-left: 3px solid var(--accent);
-      padding: 22px 28px;
-      border-radius: 0 var(--radius) var(--radius) 0;
-      margin: 24px 0;
-    }
-    .callout-label {
-      font-family: var(--mono);
-      font-size: 10px;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
+      color: var(--text-subtle);
+      list-style: none;
+      padding: 4px 0;
+      transition: color 0.15s;
+    }
+    .tech-notes summary::-webkit-details-marker { display: none; }
+    .tech-notes summary:hover { color: var(--accent); }
+    .tech-notes summary::before {
+      content: '+ ';
       color: var(--accent);
-      margin-bottom: 8px;
+      margin-right: 4px;
+    }
+    .tech-notes[open] summary::before { content: '− '; }
+    .tech-notes-body {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+    .tech-notes-body p { margin-bottom: 10px; }
+    .tech-notes-body p:last-child { margin-bottom: 0; }
+
+    /* Confidence aside */
+    .confidence-aside {
+      background: linear-gradient(135deg, var(--accent-light) 0%, var(--surface-1) 100%);
+      border: 1px solid rgba(212, 148, 42, 0.28);
+      border-radius: var(--radius-lg);
+      padding: 40px 44px;
+    }
+    .confidence-kicker {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .confidence-title {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+    .confidence-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(212, 148, 42, 0.2);
+    }
+    .confidence-bar-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .confidence-bar-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .confidence-bar-track {
+      height: 6px;
+      background: rgba(212, 148, 42, 0.12);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .confidence-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 3px;
+    }
+    .confidence-bar-row.insufficient .confidence-bar-track {
+      background: transparent;
+      border: 1px dashed var(--border);
+    }
+    .confidence-bar-row.insufficient .confidence-bar-label {
+      color: var(--text-subtle);
+      font-style: italic;
+    }
+
+    /* Operator section */
+    .operator-band {
+      background: var(--surface-3);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 96px 0;
+    }
+    .operator-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .operator-card {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+    }
+    .operator-card-kicker {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      margin-bottom: 18px;
+    }
+    .operator-card-row {
+      display: flex;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border-soft);
+      align-items: flex-start;
+    }
+    .operator-card-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .operator-card-row:first-child { padding-top: 0; }
+    .operator-card-dot {
+      flex-shrink: 0;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-top: 7px;
+    }
+    .operator-card-label {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .operator-card-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* Proprietary logic callout */
+    .proprietary {
+      background: var(--surface-2);
+      border-left: 3px solid var(--accent);
+      padding: 32px 36px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .proprietary-kicker {
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .proprietary-title {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    /* CTA band closing line */
+    .cta-closing {
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(212, 148, 42, 0.22);
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-closing-text {
+      font-size: 14px;
+      color: var(--text-subtle);
+      font-style: italic;
+      line-height: 1.6;
+    }
+    .cta-closing-link {
+      color: var(--accent);
+      font-weight: 600;
+      font-style: normal;
+    }
+    .cta-closing-link:hover { color: var(--accent-hover); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .operator-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 760px) {
+      .method-body p { font-size: 16px; }
+      .operator-band { padding: 64px 0; }
+      .confidence-aside { padding: 28px 24px; }
+      .proprietary { padding: 26px 24px; }
+      .principle { grid-template-columns: 56px 1fr; gap: 14px; padding: 22px 0; }
+      .principle-title { font-size: 19px; }
     }
   </style>
 </head>
@@ -95,127 +297,385 @@
   </div>
 </nav>
 
-<section class="section" style="padding-top: 80px;">
+<!-- ================ 1. HERO ================ -->
+<section class="hero">
   <div class="container container-narrow">
-    <div class="kicker mb-1">Methodology</div>
-    <h1 class="h-display h-display-lg mb-3">How We Rank</h1>
-    <p class="body-lg mb-4">
-      DayDine rankings are driven by the <strong style="color: var(--text);">Restaurant Confidence Score</strong> (RCS) — a composite 0&ndash;10 metric that synthesises 40 public signals across 7 weighted tiers. The methodology is designed to reflect how a venue is actually performing in its local competitive landscape, not just how popular it is in isolation.
+    <div class="hero-inner">
+      <div class="kicker kicker-accent mb-2">Methodology</div>
+      <h1 class="h-display h-display-lg mb-3">
+        How we rank the restaurants<br>around you.
+      </h1>
+      <p class="body-lg mb-3" style="max-width: 640px;">
+        DayDine is a local restaurant ranking built from the signals the whole market can see.
+        It is designed to give diners a confident starting point for a good evening —
+        and to give operators a credible, competitive read on where their venue stands in its own town.
+      </p>
+      <a class="btn btn-ghost" href="/rankings" style="padding-left: 0;">
+        See your local rankings →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 2. WHAT WE MEASURE ================ -->
+<section class="section" style="padding-top: 56px;">
+  <div class="container container-narrow">
+    <hr class="method-rule">
+    <h2 class="h-display h-display-md mb-3">Local market confidence,<br>not just popularity.</h2>
+    <div class="method-body">
+      <p>
+        A restaurant's standing in its town isn't the same as its follower count,
+        or its busiest Saturday night. DayDine is built to reflect something quieter
+        and more durable: the <strong>local market confidence</strong> around a venue —
+        the composite view the public, the regulators, and the independent reviewers
+        steadily form over time.
+      </p>
+      <p>
+        We reward restaurants that hold together under scrutiny. Clean inspections.
+        Consistent reviews across different sources. A clear offer. The operational
+        basics done well. Popularity, on its own, is not enough.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 3. HOW THE RANKING IS BUILT ================ -->
+<section class="section" style="background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container">
+    <div class="center mb-5">
+      <div class="kicker mb-1">How it works</div>
+      <h2 class="h-display h-display-md mb-2">How the ranking is built.</h2>
+      <p class="body-md" style="max-width: 620px; margin: 0 auto;">
+        A handful of broad areas of evidence, drawn from independent public sources.
+        Each area contributes to the overall score. No single signal can carry a venue on its own.
+      </p>
+    </div>
+
+    <div class="grid-3">
+      <div class="signal-card">
+        <div class="signal-card-icon">★</div>
+        <div>
+          <div class="signal-card-title">Trust &amp; Food Safety</div>
+          <div class="signal-card-desc">Official inspection records and hygiene performance, including confidence in how the kitchen is being managed.</div>
+        </div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-card-icon">◉</div>
+        <div>
+          <div class="signal-card-title">Reputation &amp; Reviews</div>
+          <div class="signal-card-desc">How the public experience of a venue is reflected across the major review platforms.</div>
+        </div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-card-icon">⟳</div>
+        <div>
+          <div class="signal-card-title">Discoverability</div>
+          <div class="signal-card-desc">How findable and well-presented a restaurant is at the moment a guest goes looking for it.</div>
+        </div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-card-icon">✓</div>
+        <div>
+          <div class="signal-card-title">Operational Readiness</div>
+          <div class="signal-card-desc">Reservations, service options, accessibility, opening hours — the practical signs of a well-run room.</div>
+        </div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-card-icon">⬡</div>
+        <div>
+          <div class="signal-card-title">Menu &amp; Offer Clarity</div>
+          <div class="signal-card-desc">Whether the offer is current, coherent, and communicated in a way a guest can act on.</div>
+        </div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-card-icon">↗</div>
+        <div>
+          <div class="signal-card-title">Recognition &amp; Wider Confidence</div>
+          <div class="signal-card-desc">Editorial coverage, guide mentions, awards, and independent endorsements.</div>
+        </div>
+      </div>
+      <div class="signal-card">
+        <div class="signal-card-icon">▣</div>
+        <div>
+          <div class="signal-card-title">Business Stability</div>
+          <div class="signal-card-desc">Public records that flag when a business is in difficulty, so rankings don't flatter venues that are quietly coming apart.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 4. WHAT MAKES IT ROBUST ================ -->
+<section class="section">
+  <div class="container container-narrow">
+    <hr class="method-rule">
+    <h2 class="h-display h-display-md mb-2">What makes the ranking robust.</h2>
+    <p class="body-md mb-4">Five principles we apply to every score.</p>
+
+    <div class="principle">
+      <div class="principle-num">01</div>
+      <div>
+        <div class="principle-title">Multiple independent sources</div>
+        <div class="principle-desc">
+          No single source decides a position. A score is built from the agreement —
+          or disagreement — of several unrelated data streams.
+        </div>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-num">02</div>
+      <div>
+        <div class="principle-title">Freshness is weighted</div>
+        <div class="principle-desc">
+          A review or inspection from last month tells us more than one from two years ago.
+          Older signals fade gracefully. They are never simply discarded.
+        </div>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-num">03</div>
+      <div>
+        <div class="principle-title">Consistency across sources counts</div>
+        <div class="principle-desc">
+          When independent sources agree about a venue, confidence in the score rises.
+          When they diverge, the score is adjusted to reflect that tension honestly.
+        </div>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-num">04</div>
+      <div>
+        <div class="principle-title">Thin data is not overclaimed</div>
+        <div class="principle-desc">
+          A venue with little public information does not get to inherit a flattering
+          score by default. We would rather say we don't know enough than flatter a ranking.
+        </div>
+      </div>
+    </div>
+
+    <div class="principle">
+      <div class="principle-num">05</div>
+      <div>
+        <div class="principle-title">Ongoing calibration</div>
+        <div class="principle-desc">
+          The scoring model is reviewed and refined as new evidence arrives and
+          real-world outcomes accumulate. A ranking that stops learning is a ranking
+          that starts to lie.
+        </div>
+      </div>
+    </div>
+
+    <details class="tech-notes">
+      <summary>Technical notes</summary>
+      <div class="tech-notes-body">
+        <p>
+          DayDine applies time-based weighting so recent signals matter more than old ones;
+          pairwise cross-source comparison so independent ratings check each other;
+          confidence bands so thinly-evidenced venues are surfaced responsibly;
+          and tiebreaker logic so no two venues share a position.
+        </p>
+        <p>
+          The specific constants, thresholds, and weightings behind these mechanisms
+          are intentionally not published. See the note on proprietary logic below.
+        </p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ================ 5. CONFIDENCE & FAIRNESS ================ -->
+<section class="section" style="padding-top: 0;">
+  <div class="container container-narrow">
+    <div class="confidence-aside">
+      <div class="confidence-kicker">On confidence</div>
+      <h3 class="confidence-title">Different venues, different amounts of evidence.</h3>
+      <div class="method-body">
+        <p>
+          Some restaurants have years of reviews, clear inspection history, and a
+          well-kept public profile. Others — a new café, a family pub without a website,
+          an established room that has never chased coverage — have less of a paper trail.
+        </p>
+        <p>
+          DayDine reflects that honestly. Every ranked venue carries a
+          <strong>confidence indicator</strong> alongside its position. Venues with
+          limited public evidence are shown as such, not quietly downgraded. And where
+          the evidence is simply too thin to rank responsibly, we say so rather than guess.
+        </p>
+        <p style="font-style: italic;">
+          Fairness here means one thing: a restaurant's score should never pretend
+          to know more than it does.
+        </p>
+      </div>
+
+      <div class="confidence-bars">
+        <div class="confidence-bar-row">
+          <div class="confidence-bar-label">High confidence</div>
+          <div class="confidence-bar-track"><div class="confidence-bar-fill" style="width: 100%;"></div></div>
+        </div>
+        <div class="confidence-bar-row">
+          <div class="confidence-bar-label">Medium</div>
+          <div class="confidence-bar-track"><div class="confidence-bar-fill" style="width: 66%;"></div></div>
+        </div>
+        <div class="confidence-bar-row">
+          <div class="confidence-bar-label">Low</div>
+          <div class="confidence-bar-track"><div class="confidence-bar-fill" style="width: 38%;"></div></div>
+        </div>
+        <div class="confidence-bar-row insufficient">
+          <div class="confidence-bar-label">Insufficient</div>
+          <div class="confidence-bar-track"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 6. WHAT IT DOES NOT CLAIM ================ -->
+<section class="section">
+  <div class="container container-narrow">
+    <hr class="method-rule">
+    <h2 class="h-display h-display-md mb-3">What the ranking does not claim.</h2>
+    <div class="method-body">
+      <p>
+        DayDine is not the final word on food quality, hospitality, or the experience
+        of sitting at a particular table on a particular night. No ranking is, and no
+        ranking should claim to be. The craft of a kitchen and the warmth of a room are
+        things only a guest can judge.
+      </p>
+      <p>
+        What DayDine reflects is something more specific — and, we think, more useful.
+        It is a read on the <strong>public market confidence</strong> around a restaurant:
+        the signals the wider world can see, the records it leaves behind, and the
+        coherence of the picture those signals form together.
+      </p>
+      <p>
+        Used well, that is a strong starting point for a diner and a serious benchmark
+        for an operator. Used alone, it is not a substitute for going and seeing for yourself.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 7. OPERATOR SECTION ================ -->
+<section class="operator-band">
+  <div class="container">
+    <div class="operator-grid">
+      <div>
+        <div class="kicker kicker-accent mb-1">For operators</div>
+        <h2 class="h-display h-display-md mb-3">
+          Built to be useful to the people running the kitchens, too.
+        </h2>
+        <div class="method-body">
+          <p>
+            The DayDine leaderboard is the same leaderboard a prospective guest sees
+            when they search your town. That makes it more than a curiosity for an
+            operator. It is the view that exists of your venue — whether you choose
+            to engage with it or not.
+          </p>
+          <p>
+            We have designed it to be worth engaging with. It respects the operational
+            work behind a well-run restaurant. It notices the things industry veterans
+            already know matter: hygiene, clarity of offer, operational readiness,
+            public presence, coherence across sources. And it sits your venue honestly
+            against the ones you actually compete with — the restaurants within a
+            short walk of your own front door.
+          </p>
+          <p>
+            If you find yourself looking at your position and asking <em>why</em> —
+            why you sit where you sit, which venues are ahead of you and on which
+            signals, and what a realistic path upward looks like — that is the
+            question the Position &amp; Competitor Report was built to answer.
+          </p>
+        </div>
+        <a class="btn btn-ghost mt-3" href="/reports" style="padding-left: 0;">
+          Request your Position &amp; Competitor Report →
+        </a>
+      </div>
+
+      <aside class="operator-card">
+        <div class="operator-card-kicker">Your private view</div>
+        <div class="operator-card-row">
+          <div class="operator-card-dot"></div>
+          <div>
+            <div class="operator-card-label">Your position in your town</div>
+            <div class="operator-card-sub">Where you currently rank among the venues guests see first.</div>
+          </div>
+        </div>
+        <div class="operator-card-row">
+          <div class="operator-card-dot"></div>
+          <div>
+            <div class="operator-card-label">Your five closest competitors</div>
+            <div class="operator-card-sub">The venues you actually compete with, not the broader market.</div>
+          </div>
+        </div>
+        <div class="operator-card-row">
+          <div class="operator-card-dot"></div>
+          <div>
+            <div class="operator-card-label">The signals moving them ahead</div>
+            <div class="operator-card-sub">Where competitors are currently outperforming you, and by how much.</div>
+          </div>
+        </div>
+        <div class="operator-card-row">
+          <div class="operator-card-dot"></div>
+          <div>
+            <div class="operator-card-label">The realistic path upward</div>
+            <div class="operator-card-sub">Ranked actions, weighted by expected impact on your position.</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 8. PROPRIETARY LOGIC ================ -->
+<section class="section">
+  <div class="container container-narrow">
+    <div class="proprietary">
+      <div class="proprietary-kicker">A note on integrity</div>
+      <h3 class="proprietary-title">Why we don't publish the full formula.</h3>
+      <div class="method-body">
+        <p>
+          The broad principles behind the DayDine ranking are public, and they are
+          explained above. The precise weightings, thresholds, and processing logic
+          behind the score are not.
+        </p>
+        <p>
+          This is deliberate. A ranking that publishes its exact formula is a ranking
+          that can be gamed — and a gamed ranking is useful to nobody: not diners,
+          not the operators who play fair, and not the industry it exists to measure.
+          Keeping the specifics private is how we keep the result honest.
+        </p>
+        <p>
+          We will always explain <em>what</em> the ranking considers. We will not
+          explain it in a way that tells anyone how to manufacture an unearned position.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ 9. CTA BAND ================ -->
+<section class="cta-band">
+  <div class="container container-narrow">
+    <h2 class="cta-band-title">
+      Understand your position.<br>Then improve it.
+    </h2>
+    <p class="body-lg mb-4" style="max-width: 620px; margin-left: auto; margin-right: auto;">
+      A Position &amp; Competitor Report is a private, venue-specific read of your
+      local standing: where you currently rank, your five closest competitors, the
+      signals where they are outperforming you, and the realistic moves that will
+      close the gap.
     </p>
+    <a class="btn btn-primary btn-lg" href="/reports">Request your Position &amp; Competitor Report</a>
+    <p class="body-sm mt-2" style="color: var(--text-subtle);">Delivered privately within 48 hours.</p>
 
-    <div class="callout">
-      <div class="callout-label">V3.4 · Last updated April 2026</div>
-      <p style="margin: 0; color: var(--text-muted);">The RCS is calculated to 3 decimal places on a 0–10 scale. Every ranked venue gets a unique position — a tiebreaker system guarantees no two restaurants share the same rank.</p>
-    </div>
-
-    <h2 class="h-display h-display-sm mt-4 mb-2">The Seven Tiers</h2>
-    <p class="body-md mb-3">Each tier contributes a weighted portion of the final score. Weights were calibrated on 210 trial venues in Stratford-upon-Avon.</p>
-
-    <div class="card" style="padding: 0;">
-      <div class="tier-row">
-        <div class="tier-weight">23%</div>
-        <div>
-          <div class="tier-name">Food Safety</div>
-          <div class="tier-desc">FSA hygiene rating, structural compliance, confidence in management, food hygiene sub-score, inspection recency.</div>
-        </div>
-        <div class="tier-signals">5 signals</div>
-      </div>
-      <div class="tier-row">
-        <div class="tier-weight">24%</div>
-        <div>
-          <div class="tier-name">Google Signals</div>
-          <div class="tier-desc">Overall rating, five aspect sub-scores, sentiment, review volume, price level, photo count, business types.</div>
-        </div>
-        <div class="tier-signals">11 signals</div>
-      </div>
-      <div class="tier-row">
-        <div class="tier-weight">13%</div>
-        <div>
-          <div class="tier-name">Online Presence</div>
-          <div class="tier-desc">TripAdvisor presence, rating, review count and recency — with web and social presence as a confidence layer.</div>
-        </div>
-        <div class="tier-signals">4 signals</div>
-      </div>
-      <div class="tier-row">
-        <div class="tier-weight">15%</div>
-        <div>
-          <div class="tier-name">Operational</div>
-          <div class="tier-desc">Reservations, delivery, takeaway, wheelchair accessibility, parking, opening-hours completeness.</div>
-        </div>
-        <div class="tier-signals">6 signals</div>
-      </div>
-      <div class="tier-row">
-        <div class="tier-weight">10%</div>
-        <div>
-          <div class="tier-name">Menu &amp; Offering</div>
-          <div class="tier-desc">Online menu availability, dietary options, cuisine tags, Google Business Profile completeness.</div>
-        </div>
-        <div class="tier-signals">4 signals</div>
-      </div>
-      <div class="tier-row">
-        <div class="tier-weight">8%</div>
-        <div>
-          <div class="tier-name">Reputation &amp; Awards</div>
-          <div class="tier-desc">Michelin mentions, AA rosettes, local editorial recognition and tourism-board awards.</div>
-        </div>
-        <div class="tier-signals">3 signals</div>
-      </div>
-      <div class="tier-row">
-        <div class="tier-weight" style="color: var(--negative);">P</div>
-        <div>
-          <div class="tier-name">Companies House</div>
-          <div class="tier-desc">Business viability. Dissolution caps at 3.0. Liquidation caps at 5.0. Overdue accounts and director churn trigger deductions. Penalty-only tier — no positive contribution.</div>
-        </div>
-        <div class="tier-signals">3 signals</div>
-      </div>
-    </div>
-
-    <div class="methodology-body">
-      <h2>Temporal Decay</h2>
-      <p>Signals are not all created equal across time. A 2023 inspection tells you less than a 2026 inspection. DayDine applies an exponential decay of the form <code>e<sup>-λt</sup></code> to time-sensitive signals:</p>
-      <ul>
-        <li><strong>FSA inspection age</strong>: λ = 0.0023, a half-life of roughly 300 days. The final FSA tier score is an 80/20 blend of raw and decay-adjusted values.</li>
-        <li><strong>Google review recency</strong>: λ = 0.0046, a half-life of roughly 150 days. Applied to the review volume signal when the latest review date is available.</li>
-      </ul>
-      <p>Recent inspections and reviews carry full weight; two-year-old data loses 10–20% of its signal contribution. This prevents stale positive signals from propping up a venue that has drifted.</p>
-
-      <h2>Cross-Source Convergence</h2>
-      <p>When independent sources agree, confidence goes up. When they disagree, something needs explaining. DayDine compares normalised ratings pairwise across the FSA, Google, and TripAdvisor:</p>
-      <ul>
-        <li><strong>Converged</strong> (average divergence ≤ 0.10 on a 0–1 scale): +3% bonus to the final score.</li>
-        <li><strong>Neutral</strong> (0.10–0.20): no adjustment.</li>
-        <li><strong>Mild divergence</strong> (0.20–0.30): −3% penalty.</li>
-        <li><strong>Strong divergence</strong> (&gt; 0.30): −5% penalty.</li>
-      </ul>
-      <p>A venue needs at least two independent sources for convergence scoring; single-source establishments receive no adjustment. This rewards consistency and flags data points that look off.</p>
-
-      <h2>The Six Rating Bands</h2>
-      <p>Final scores map to six rating bands on the 0–10 scale:</p>
-      <ul>
-        <li><strong>Excellent</strong> — 8.000 – 10.000</li>
-        <li><strong>Good</strong> — 6.500 – 7.999</li>
-        <li><strong>Generally Satisfactory</strong> — 5.000 – 6.499</li>
-        <li><strong>Improvement Necessary</strong> — 3.500 – 4.999</li>
-        <li><strong>Major Improvement</strong> — 2.000 – 3.499</li>
-        <li><strong>Urgent Improvement</strong> — 0.000 – 1.999</li>
-      </ul>
-
-      <h2>Confidence Bands</h2>
-      <p>Every ranked restaurant gets a confidence label based on how much data we were able to gather:</p>
-      <ul>
-        <li><strong>High confidence</strong> (±0.3): 20+ signals, 5+ active tiers.</li>
-        <li><strong>Medium confidence</strong> (±0.5): 14+ signals, 4+ active tiers.</li>
-        <li><strong>Low confidence</strong> (±0.8): at least 8 signals.</li>
-        <li><strong>Insufficient data</strong> (not ranked): fewer than 8 signals — the venue is listed but excluded from rankings.</li>
-      </ul>
-
-      <h2>What We Don't Reveal</h2>
-      <p>Our exact weighting model, signal processing algorithms, penalty rule constants, and competitive normalisation logic are proprietary. This preserves the integrity of the rankings and prevents the score from being gamed. The full breakdown of your specific per-tier scores, confidence margin, and gap analysis is available exclusively in your Position &amp; Competitor Report.</p>
-    </div>
-
-    <div class="card card-tinted center mt-4">
-      <p class="body-md mb-3">Want to see exactly how your venue scores across each signal?</p>
-      <a class="btn btn-primary btn-lg" href="/reports">Get Your Full Report</a>
+    <div class="cta-closing">
+      <p class="cta-closing-text">
+        Or — if you're simply looking for somewhere good to eat tonight —
+        <a class="cta-closing-link" href="/rankings">see the leaderboard near you →</a>
+      </p>
     </div>
   </div>
 </section>
@@ -225,7 +685,7 @@
     <div class="footer-brand">
       <img class="footer-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
     </div>
-    <p class="footer-copy">© 2026 DayDine. Restaurant Confidence Score V3.4.</p>
+    <p class="footer-copy">© 2026 DayDine. Local market intelligence for hospitality operators.</p>
   </div>
 </footer>
 
