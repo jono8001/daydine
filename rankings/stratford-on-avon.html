@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Top 10 Restaurants in Stratford-upon-Avon — DayDine</title>
+  <meta name="description" content="The top 10 ranked restaurants in Stratford-upon-Avon, measured by the Restaurant Confidence Score. Updated quarterly from public market signals.">
+  <link rel="canonical" href="https://daydine.vercel.app/rankings/stratford-on-avon">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Top 10 Restaurants in Stratford-upon-Avon — DayDine">
+  <meta property="og:description" content="The top 10 ranked restaurants in Stratford-upon-Avon, measured by the Restaurant Confidence Score.">
+  <meta property="og:url" content="https://daydine.vercel.app/rankings/stratford-on-avon">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/daydine.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">
+      <div class="nav-brand-mark">D</div>
+      <span class="nav-brand-word">DayDine</span>
+      <span class="nav-brand-beta">Beta</span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link active" href="/rankings">Rankings</a>
+      <a class="nav-link" href="/reports">Reports</a>
+      <a class="nav-link" href="/methodology">Methodology</a>
+      <a class="nav-link" href="/search">Search</a>
+      <a class="btn btn-primary nav-cta" href="/reports">Get Your Report</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section" style="padding-top: 80px;">
+  <div class="container container-narrow">
+    <a class="kicker" href="/rankings" style="display:inline-block; margin-bottom: 12px;">← All Rankings</a>
+    <div class="kicker kicker-accent mb-1">Local Rankings</div>
+    <h1 class="h-display h-display-lg mb-2" id="pageTitle">Top 10 in Stratford-upon-Avon</h1>
+    <p class="body-md mb-4" id="pageMeta">Loading…</p>
+
+    <div class="rank-table">
+      <div class="rank-head">
+        <div>Rank</div>
+        <div>Venue</div>
+        <div>Category</div>
+        <div style="text-align:center;">Score</div>
+        <div style="text-align:center;">Movement</div>
+      </div>
+      <div id="rankingsBody"></div>
+    </div>
+
+    <div id="othersNote" class="mt-3 center body-md" style="display:none;"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 20px;">
+  <div class="container container-narrow">
+    <div class="card card-tinted center">
+      <div class="kicker kicker-accent mb-1">For Restaurant Operators</div>
+      <h2 class="h-display h-display-md mb-2">Is your venue ranked outside the top 10?</h2>
+      <p class="body-lg mb-3" style="max-width: 580px; margin: 0 auto;">
+        Order a Position Report to discover exactly where you stand,
+        who's directly ahead of you, and what to do about it. One-off, £149,
+        delivered within 48 hours.
+      </p>
+      <div class="row" style="justify-content: center;">
+        <a class="btn btn-primary btn-lg" href="/reports">Get My Position Report</a>
+        <a class="btn btn-secondary btn-lg" href="/sample">View Sample Report</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-mark">D</div>
+      <span class="footer-brand-word">DayDine</span>
+    </div>
+    <p class="footer-copy">© 2026 DayDine. Rankings powered by the Restaurant Confidence Score (V3.4).</p>
+  </div>
+</footer>
+
+<script src="/assets/daydine.js"></script>
+<script>
+  (async function renderLeaderboard() {
+    try {
+      const resp = await fetch('/assets/rankings/stratford-on-avon.json');
+      if (!resp.ok) throw new Error('fetch failed');
+      const data = await resp.json();
+
+      document.getElementById('pageTitle').textContent =
+        `Top ${data.top_n} in ${data.display_name}`;
+      document.getElementById('pageMeta').innerHTML =
+        `<span class="kicker">Last updated ${formatDate(data.last_updated)}</span> · Rankings refreshed quarterly · ${data.total_venues} venues in the ranked set`;
+
+      const body = document.getElementById('rankingsBody');
+      body.innerHTML = data.venues.map(venue => {
+        const bandClass = 'score-badge-' + (venue.band_class || 'good');
+        const rankClass = venue.rank <= 3 ? 'rank-num rank-num-top' : 'rank-num';
+        return `
+          <div class="rank-row">
+            <div class="${rankClass}">#${venue.rank}</div>
+            <div>
+              <div class="rank-name">${esc(venue.name)}</div>
+              <div class="rank-sub">${esc(venue.postcode)}</div>
+            </div>
+            <div class="rank-category">${esc(venue.category)}</div>
+            <div class="rank-score">
+              <span class="score-badge ${bandClass}">
+                <span class="score-badge-num">${Number(venue.rcs_final).toFixed(1)}</span>
+                <span class="score-badge-max">/ 10</span>
+              </span>
+            </div>
+            <div class="rank-change"><span class="movement movement-new">NEW</span></div>
+          </div>
+        `;
+      }).join('');
+
+      // "and X other ranked restaurants" teaser — NO names, count only
+      if (data.others_count > 0) {
+        const note = document.getElementById('othersNote');
+        note.style.display = '';
+        note.innerHTML = `
+          <span class="kicker">And <strong style="font-size: 14px; color: var(--text);">${data.others_count}</strong> other ranked restaurants in ${esc(data.display_name)}</span>
+        `;
+      }
+    } catch (err) {
+      document.getElementById('pageMeta').textContent =
+        'Unable to load rankings. Please refresh the page.';
+      console.error(err);
+    }
+  })();
+
+  function esc(s) {
+    const el = document.createElement('span');
+    el.textContent = s == null ? '' : String(s);
+    return el.innerHTML;
+  }
+  function formatDate(iso) {
+    if (!iso) return '—';
+    const d = new Date(iso);
+    if (isNaN(d)) return iso;
+    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+  }
+</script>
+</body>
+</html>
