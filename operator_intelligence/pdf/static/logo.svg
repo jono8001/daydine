@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" role="img" aria-label="DayDine">
+  <title>DayDine</title>
+  <circle cx="340" cy="24" r="28" fill="#FFB850" opacity="0.12"/>
+  <circle cx="340" cy="24" r="20" fill="#FFC878" opacity="0.25"/>
+  <circle cx="340" cy="24" r="13" fill="#FFD694" opacity="0.5"/>
+  <circle cx="340" cy="24" r="8" fill="#D4942A"/>
+  <text x="4" y="140"
+        font-family="'Nunito','Helvetica','Arial',sans-serif"
+        font-weight="900"
+        font-size="140"
+        letter-spacing="-4"
+        fill="#2D2D2D">DayD&#305;ne</text>
+</svg>

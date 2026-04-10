@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ venue }} — DayDine Monthly Intelligence</title>
+  <link rel="stylesheet" href="print.css">
+</head>
+<body>
+
+{# ----- Cover page (page 1, no running header/footer) ----- #}
+<section class="cover">
+  <div class="cover-accent-bar"></div>
+
+  <div class="cover-inner">
+    <img src="logo.svg" alt="DayDine" class="cover-logo">
+    <div class="cover-kicker">Monthly Intelligence Report</div>
+    <h1 class="cover-title">{{ venue }}</h1>
+    <p class="cover-sub">
+      {{ month | format_month }}
+      {%- if report_date %} &middot; Generated {{ report_date | format_date }}{% endif %}
+      &middot; DayDine Premium
+    </p>
+
+    <div class="cover-stats">
+      {% if local_rank %}
+      <div class="stat-block">
+        <div class="stat-label">Local Rank</div>
+        <div class="stat-value">#{{ local_rank }}</div>
+        <div class="stat-sub">{% if local_of %}of {{ local_of }} local venues{% endif %}</div>
+      </div>
+      {% endif %}
+
+      {% if overall_score is not none %}
+      <div class="stat-block">
+        <div class="stat-label">Overall Score</div>
+        <div class="stat-value">{{ overall_score | score_fmt(2) }}</div>
+        <div class="stat-sub">
+          <span class="band-pill {{ overall_score | rcs_band }}">{{ overall_score | rcs_band_label }}</span>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if strongest %}
+      <div class="stat-block">
+        <div class="stat-label">Strongest</div>
+        <div class="stat-value-sm">{{ strongest[0] }}</div>
+        <div class="stat-sub">{{ strongest[1] | score_fmt(1) }} / 10</div>
+      </div>
+      {% endif %}
+
+      {% if weakest %}
+      <div class="stat-block">
+        <div class="stat-label">Weakest</div>
+        <div class="stat-value-sm">{{ weakest[0] }}</div>
+        <div class="stat-sub">{{ weakest[1] | score_fmt(1) }} / 10</div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span>Prepared for {{ venue }}</span>
+    <span>daydine.com &middot; Operator Intelligence</span>
+  </div>
+</section>
+
+{# ----- Contents page (main sections only — h2 from the markdown narrative) ----- #}
+{% if toc %}
+<section class="toc">
+  <div class="toc-kicker">Contents</div>
+  <h2 class="toc-heading">What's in this report</h2>
+  <ol class="toc-list">
+    {% for entry in toc %}
+    <li class="toc-entry">
+      <a class="toc-link" href="#{{ entry.id }}"><span class="toc-text">{{ entry.title }}</span></a>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+{% endif %}
+
+{# ----- Running-header string setter. Populates @top-right on every interior page. ----- #}
+<div class="venue-name" aria-hidden="true">{{ venue }}</div>
+
+{# ----- Full narrative body: every word of the generated markdown. ----- #}
+<main class="markdown-body">
+{{ body_html | safe }}
+</main>
+
+</body>
+</html>
