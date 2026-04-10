@@ -1,0 +1,60 @@
+<section class="section">
+  <div class="section-head">
+    <h2>Executive Summary</h2>
+    <span class="kicker">Page 2</span>
+  </div>
+
+  <div class="callout">
+    <div class="kicker" style="margin-bottom: 2mm;">Headline</div>
+    <p>
+      {% if scorecard and scorecard.overall is not none %}
+      Overall score <strong>{{ scorecard.overall | score_fmt(2) }}/10</strong>
+      <span class="band-pill {{ scorecard.overall | rcs_band }}" style="margin-left: 3pt;">{{ scorecard.overall | rcs_band_label }}</span>.
+      {% endif %}
+      {% if peer_position and peer_position.local_rank %}
+        Ranked <strong>#{{ peer_position.local_rank }}</strong> of
+        {{ peer_position.local_of }} locally
+        {% if peer_position.local_peer_avg %}(peer average {{ peer_position.local_peer_avg | score_fmt(2) }}){% endif %}.
+      {% endif %}
+      {% if strongest and weakest %}
+        Strongest dimension: <strong>{{ strongest.label }}</strong> ({{ strongest.score | score_fmt(1) }}).
+        Weakest: <strong>{{ weakest.label }}</strong> ({{ weakest.score | score_fmt(1) }}).
+      {% endif %}
+    </p>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <h3>Dimension Scores</h3>
+      {% for dim in dimensions %}
+      <div class="signal-block">
+        <div class="signal-row">
+          <span class="label">{{ dim.label }}</span>
+          <span class="val">{{ dim.score | score_fmt(2) }}</span>
+        </div>
+        <div class="prog">
+          <div class="prog-fill {{ dim.fill_class }}" style="width: {{ dim.score | pct }}%;"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div>
+      <h3>Top Priorities</h3>
+      {% if top_priorities %}
+        {% for action in top_priorities %}
+        <div class="action-row">
+          <span class="priority {{ action.priority | priority_class }}">{{ action.priority | priority_label }}</span>
+          <div class="action-body">
+            <div class="action-title">{{ action.title }}</div>
+            {% if action.dimension %}<div class="action-meta">Dimension: {{ action.dimension | title }}</div>{% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="empty">No priority actions flagged this period.</div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<div class="page-break"></div>

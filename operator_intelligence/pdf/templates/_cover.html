@@ -1,0 +1,39 @@
+{# Cover page — page 1, no running header/footer (see @page cover in print.css). #}
+<section class="cover">
+  <div class="cover-accent-bar"></div>
+
+  <div>
+    <img src="logo.svg" alt="DayDine" class="cover-logo">
+    <div class="cover-kicker">Monthly Intelligence Report</div>
+    <h1>{{ venue }}</h1>
+    <p class="cover-sub">
+      {{ month | format_month }}
+      {%- if report_date %} &middot; Generated {{ report_date | format_date }}{% endif %}
+    </p>
+
+    <div class="cover-stats">
+      {% if peer_position and peer_position.local_rank %}
+      <div class="stat-block">
+        <div class="stat-label">Local Rank</div>
+        <div class="stat-value">#{{ peer_position.local_rank }}</div>
+        <div class="stat-sub">of {{ peer_position.local_of }} local venues</div>
+      </div>
+      {% endif %}
+
+      {% if scorecard and scorecard.overall is not none %}
+      <div class="stat-block">
+        <div class="stat-label">Overall Score</div>
+        <div class="stat-value">{{ scorecard.overall | score_fmt(2) }}</div>
+        <div class="stat-sub">
+          <span class="band-pill {{ scorecard.overall | rcs_band }}">{{ scorecard.overall | rcs_band_label }}</span>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span>Prepared for {{ venue }}</span>
+    <span>daydine.com &middot; Operator Intelligence</span>
+  </div>
+</section>

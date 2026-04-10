@@ -165,6 +165,19 @@ def run_monthly_venue(venue_key, venue_rec, data, all_cards, month_str):
     with open(qa_path, "w", encoding="utf-8") as f:
         json.dump(qa, f, indent=2, ensure_ascii=False)
 
+    # Render the branded PDF version of the monthly report. Kept outside
+    # generate_monthly_report() so PDF failures never break the upstream
+    # markdown/JSON pipeline; re-runnable via
+    #   python -m operator_intelligence.pdf.renderer outputs/monthly/
+    pdf_path = f"outputs/monthly/pdf/{safe_name}_{month_str}.pdf"
+    try:
+        from operator_intelligence.pdf.renderer import render_pdf_report
+        os.makedirs("outputs/monthly/pdf", exist_ok=True)
+        render_pdf_report(json_path, pdf_path)
+    except Exception as e:
+        pdf_path = None
+        print(f"  WARN: PDF render failed for {venue_name}: {e}")
+
     csv_path = f"outputs/monthly/scores_{month_str}.csv"
     write_monthly_csv_row(venue_name, month_str, card, csv_path)
 

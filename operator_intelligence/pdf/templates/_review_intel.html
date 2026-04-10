@@ -1,0 +1,37 @@
+<section class="section" style="margin-top: 8mm;">
+  <div class="section-head">
+    <h2>Review Intelligence</h2>
+    <span class="kicker">
+      {% if reviews_analyzed %}{{ reviews_analyzed }} reviews analysed{% else %}Aspect sentiment{% endif %}
+    </span>
+  </div>
+
+  {% if review_sentiment %}
+  <div class="grid-2">
+    {% for aspect, counts in review_sentiment.items() %}
+    {% set bar = sentiment_bar(counts.positive, counts.negative) %}
+    <div class="aspect">
+      <div class="aspect-head">
+        <span>{{ aspect | replace('_', ' ') | title }}</span>
+        <span class="mono">
+          <span style="color: #2E7D32; font-weight: 700;">+{{ bar.positive }}</span>
+          <span class="subtle"> / </span>
+          <span style="color: #C62828; font-weight: 700;">-{{ bar.negative }}</span>
+        </span>
+      </div>
+      {% if bar.total > 0 %}
+      <div class="aspect-bar">
+        <div class="aspect-pos" style="width: {{ bar.pos_pct }}%;"></div>
+        <div class="aspect-neg" style="width: {{ bar.neg_pct }}%;"></div>
+      </div>
+      {% else %}
+      <div class="aspect-bar"><div class="aspect-pos" style="width: 0%;"></div></div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="empty">No review sentiment analysis available this period. Insufficient review volume.</div>
+  {% endif %}
+</section>
+<div class="page-break"></div>

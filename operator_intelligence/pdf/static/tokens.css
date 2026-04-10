@@ -1,0 +1,71 @@
+/* ==========================================================================
+   DayDine print tokens — hand-curated subset of assets/daydine.css.
+   Do NOT @import the full web stylesheet into WeasyPrint; this file is the
+   single source of truth for colours + fonts used in the PDF renderer.
+   Keep values in sync with assets/daydine.css :root block when the brand
+   changes.
+   ========================================================================== */
+
+:root {
+  /* Surfaces */
+  --bg:           #F5F0E8;
+  --surface-1:    #FFFFFF;
+  --surface-2:    #FBF8F3;
+  --surface-3:    #FAF7F1;
+  --border:       #E5DFD3;
+  --border-soft:  #EEE8DC;
+
+  /* Text */
+  --text:         #2D2D2D;
+  --text-muted:   #6B6357;
+  --text-subtle:  #9B9285;
+
+  /* Brand accent */
+  --accent:       #D4942A;
+  --accent-hover: #B87D1E;
+  --accent-light: #FDF5E9;
+  --accent-dark:  #8B6314;
+
+  /* Semantic */
+  --positive:     #2E7D32;
+  --negative:     #C62828;
+  --info:         #1565C0;
+
+  /* RCS band palette (from assets/daydine.css) */
+  --band-excellent-bg:       #E6F2E8;
+  --band-excellent-fg:       #1B5E20;
+  --band-excellent-border:   #BEDDC1;
+
+  --band-good-bg:            #EEF5E5;
+  --band-good-fg:            #33691E;
+  --band-good-border:        #D4E4BE;
+
+  --band-satisfactory-bg:    #FFF6E0;
+  --band-satisfactory-fg:    #8A5A00;
+  --band-satisfactory-border:#F0DFA8;
+
+  --band-improvement-bg:     #FFEDD6;
+  --band-improvement-fg:     #9C4400;
+  --band-improvement-border: #F3CFA3;
+
+  --band-major-bg:           #FDE1D6;
+  --band-major-fg:           #B3340B;
+  --band-major-border:       #F1B49B;
+
+  --band-urgent-bg:          #FADBD8;
+  --band-urgent-fg:          #A01818;
+  --band-urgent-border:      #ECB4B0;
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius:    10px;
+  --radius-lg: 16px;
+
+  /* Type stacks — WeasyPrint resolves via system fonts. Nunito is used for
+     the logo glyph only; Inter / Georgia / DM Mono cover body/head/mono.
+     If a downstream environment needs bundled woff2 fonts (CI), drop them
+     under static/fonts/ and add @font-face rules in print.css. */
+  --serif: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  --sans:  'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+  --mono:  'DM Mono', 'Menlo', 'Courier New', monospace;
+}

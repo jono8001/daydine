@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ venue }} — DayDine Monthly Intelligence</title>
+  <link rel="stylesheet" href="print.css">
+</head>
+<body>
+
+{% include "_cover.html" %}
+
+{# Every interior page carries the venue name in its running header via string-set. #}
+<div class="venue-name" style="position: absolute; visibility: hidden; height: 0;">{{ venue }}</div>
+
+{% include "_exec_summary.html" %}
+{% include "_scorecard.html" %}
+{% include "_position.html" %}
+{% include "_priorities.html" %}
+{% include "_demand_capture.html" %}
+{% include "_review_intel.html" %}
+{% include "_financial_impact.html" %}
+{% include "_appendix.html" %}
+
+</body>
+</html>
