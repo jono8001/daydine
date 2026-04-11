@@ -5,116 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
   <title>Sample Position Report — DayDine</title>
-  <meta name="description" content="A sample DayDine Position & Competitor Report showing what you'll receive: local rank, signal breakdown, closest competitors, and priority actions.">
+  <meta name="description" content="Download a full sample DayDine Position & Competitor Report. See exactly what you'll receive — cover, contents, executive summary, segment intelligence, demand-capture audit and prioritised actions.">
   <link rel="canonical" href="https://daydine.vercel.app/sample">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Sample Position Report — DayDine">
-  <meta property="og:description" content="See what you'll receive in your Position & Competitor Report before you order.">
+  <meta property="og:description" content="Download a full sample DayDine Position & Competitor Report — see what you'll receive before you order.">
   <meta property="og:url" content="https://daydine.vercel.app/sample">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/daydine.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
-    .report-shell {
-      background: var(--surface-1);
+    .sample-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin: 24px 0 8px;
+    }
+    .sample-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-family: var(--mono);
+    }
+    .sample-disclaimer {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 24px 0 32px;
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .sample-disclaimer strong { color: var(--accent-dark); }
+    .pdf-preview-frame {
+      width: 100%;
+      height: 820px;
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      overflow: hidden;
+      background: var(--surface-2);
       box-shadow: var(--shadow-md);
     }
-    .report-section {
-      padding: 32px 40px;
-      border-bottom: 1px solid var(--border);
-    }
-    .report-section:last-child { border-bottom: none; }
-    .report-hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .rank-big {
-      font-family: var(--mono);
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--accent);
-      line-height: 1;
-    }
-    .report-sub-title {
-      font-family: var(--sans);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 18px;
-    }
-    .signal-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      font-size: 13px;
-    }
-    .signal-row .label { color: var(--text-muted); }
-    .signal-row .val { font-family: var(--mono); color: var(--text); font-weight: 600; }
-    .signal-block + .signal-block { margin-top: 16px; }
-    .comp-row, .action-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 18px;
+    .pdf-preview-fallback {
+      padding: 28px;
       background: var(--surface-2);
-      border-radius: 8px;
-      margin-bottom: 10px;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .comp-row:last-child, .action-row:last-child { margin-bottom: 0; }
-    .comp-row .l {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .comp-row .rank-tag {
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--text-subtle);
-    }
-    .comp-row .name-tag {
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-lg);
+      text-align: center;
       font-size: 14px;
-      color: var(--text);
-      font-weight: 500;
-    }
-    .comp-row .r {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .comp-row .reason {
-      font-size: 12px;
       color: var(--text-muted);
     }
-    .comp-row .gap-pos {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--positive);
-      font-weight: 600;
-    }
-    .comp-row .gap-neg {
-      font-family: var(--mono);
-      font-size: 12px;
-      color: var(--negative);
-      font-weight: 600;
-    }
-    .signals-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
     @media (max-width: 760px) {
-      .report-section { padding: 24px 22px; }
-      .signals-grid { grid-template-columns: 1fr; }
-      .rank-big { font-size: 40px; }
+      .pdf-preview-frame { height: 540px; }
     }
   </style>
 </head>
@@ -139,114 +83,37 @@
 <section class="section" style="padding-top: 80px;">
   <div class="container container-narrow">
     <div class="kicker mb-1">Sample Report</div>
-    <h1 class="h-display h-display-lg mb-3">What You'll Receive</h1>
-    <p class="body-lg mb-4">
-      Below is a redacted sample from an actual Position &amp; Competitor Report. Your report will include specific data, scores, and recommendations for your own venue.
+    <h1 class="h-display h-display-lg mb-3">See exactly what you'll receive</h1>
+    <p class="body-lg mb-3">
+      Download a full sample DayDine Position &amp; Competitor Report — the same format, structure and depth as the report you'll receive for your own venue. Twenty-plus pages: cover, contents, executive summary, demand forecast, guest segment intelligence, demand-capture audit, prioritised actions and competitive position.
     </p>
 
-    <div class="report-shell">
-
-      <div class="report-section report-hero">
-        <div>
-          <div class="kicker mb-1">Position Report For</div>
-          <h2 class="h-display h-display-sm">[Sample Venue]</h2>
-          <p class="body-sm" style="margin-top: 4px;">Stratford-upon-Avon · Restaurant (General)</p>
-        </div>
-        <div style="text-align: right;">
-          <div class="kicker mb-1">Local Rank</div>
-          <div class="rank-big">#14</div>
-          <div class="body-sm">of 190 ranked venues</div>
-        </div>
-      </div>
-
-      <div class="report-section">
-        <div class="report-sub-title">Signal Breakdown</div>
-        <div class="signals-grid">
-          <div class="signal-block">
-            <div class="signal-row"><span class="label">Food Safety</span><span class="val">7.8</span></div>
-            <div class="prog"><div class="prog-fill prog-fill-high" style="width: 78%;"></div></div>
-          </div>
-          <div class="signal-block">
-            <div class="signal-row"><span class="label">Google Signals</span><span class="val">6.5</span></div>
-            <div class="prog"><div class="prog-fill prog-fill-mid" style="width: 65%;"></div></div>
-          </div>
-          <div class="signal-block">
-            <div class="signal-row"><span class="label">Online Presence</span><span class="val">8.2</span></div>
-            <div class="prog"><div class="prog-fill prog-fill-high" style="width: 82%;"></div></div>
-          </div>
-          <div class="signal-block">
-            <div class="signal-row"><span class="label">Operational</span><span class="val">7.1</span></div>
-            <div class="prog"><div class="prog-fill prog-fill-mid" style="width: 71%;"></div></div>
-          </div>
-          <div class="signal-block">
-            <div class="signal-row"><span class="label">Menu &amp; Offering</span><span class="val">5.8</span></div>
-            <div class="prog"><div class="prog-fill prog-fill-low" style="width: 58%;"></div></div>
-          </div>
-          <div class="signal-block">
-            <div class="signal-row"><span class="label">Reputation</span><span class="val">7.4</span></div>
-            <div class="prog"><div class="prog-fill prog-fill-mid" style="width: 74%;"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="report-section">
-        <div class="report-sub-title">Your Closest Competitors</div>
-        <div class="comp-row">
-          <div class="l">
-            <span class="rank-tag">#12</span>
-            <span class="name-tag">[Competitor A]</span>
-          </div>
-          <div class="r">
-            <span class="reason">Higher Google review volume</span>
-            <span class="gap-pos">+4 pts</span>
-          </div>
-        </div>
-        <div class="comp-row">
-          <div class="l">
-            <span class="rank-tag">#13</span>
-            <span class="name-tag">[Competitor B]</span>
-          </div>
-          <div class="r">
-            <span class="reason">Stronger operational signals</span>
-            <span class="gap-pos">+2 pts</span>
-          </div>
-        </div>
-        <div class="comp-row">
-          <div class="l">
-            <span class="rank-tag">#15</span>
-            <span class="name-tag">[Competitor C]</span>
-          </div>
-          <div class="r">
-            <span class="reason">Lower online presence</span>
-            <span class="gap-neg">−1 pt</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="report-section">
-        <div class="report-sub-title">Priority Actions</div>
-        <div class="action-row">
-          <span class="priority priority-high">High</span>
-          <span style="flex:1; font-size: 14px; color: var(--text);">Claim and complete your Google Business Profile — 4 fields currently missing</span>
-        </div>
-        <div class="action-row">
-          <span class="priority priority-high">High</span>
-          <span style="flex:1; font-size: 14px; color: var(--text);">Address recent negative review themes (slow service, mentioned 6 times in last 90 days)</span>
-        </div>
-        <div class="action-row">
-          <span class="priority priority-medium">Medium</span>
-          <span style="flex:1; font-size: 14px; color: var(--text);">Publish a machine-readable menu to improve Menu tier coverage</span>
-        </div>
-        <div class="action-row">
-          <span class="priority priority-low">Low</span>
-          <span style="flex:1; font-size: 14px; color: var(--text);">Add photos showing interior ambience (currently 12, top-10 average is 28)</span>
-        </div>
-      </div>
-
+    <div class="sample-actions">
+      <a class="btn btn-primary btn-lg"
+         href="/assets/reports/daydine-sample-report.pdf"
+         download="daydine-sample-report.pdf">
+        Download Sample PDF
+      </a>
+      <a class="btn btn-secondary btn-lg" href="/reports">Get Your Real Report — &pound;149</a>
+      <span class="sample-meta">PDF &middot; ~120&nbsp;KB &middot; A4</span>
     </div>
 
+    <div class="sample-disclaimer">
+      <strong>This sample describes a fictional venue.</strong> "The Harvest Table" and every score, review excerpt, competitor name and finding in the document are invented and exist only to illustrate the report format. Your real DayDine report will contain externally-verifiable data for your own venue, drawn from FSA, Google, Tripadvisor and Companies House.
+    </div>
+
+    <object class="pdf-preview-frame"
+            data="/assets/reports/daydine-sample-report.pdf#view=FitH"
+            type="application/pdf">
+      <div class="pdf-preview-fallback">
+        Inline PDF preview isn't supported in this browser.
+        <br><br>
+        <a class="btn btn-primary" href="/assets/reports/daydine-sample-report.pdf" download="daydine-sample-report.pdf">Download the sample PDF instead</a>
+      </div>
+    </object>
+
     <div class="center mt-4">
-      <a class="btn btn-primary btn-lg" href="/reports">Get Your Report — £149</a>
+      <a class="btn btn-primary btn-lg" href="/reports">Get Your Report — &pound;149</a>
     </div>
   </div>
 </section>
@@ -256,7 +123,7 @@
     <div class="footer-brand">
       <img class="footer-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
     </div>
-    <p class="footer-copy">© 2026 DayDine. Sample report shown for illustration; real reports include named venues and specific data.</p>
+    <p class="footer-copy">&copy; 2026 DayDine. The downloadable sample report describes a fictional venue and is provided for illustration only.</p>
   </div>
 </footer>
 

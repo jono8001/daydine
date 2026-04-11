@@ -1,0 +1,24 @@
+{
+  "venue": "The Harvest Table (Sample)",
+  "month": "2026-04",
+  "report_date": "2026-04-11",
+  "scorecard": {
+    "experience": 7.8,
+    "visibility": 6.2,
+    "trust": 7.4,
+    "conversion": 5.9,
+    "prestige": 3.1,
+    "overall": 6.8
+  },
+  "deltas": null,
+  "peer_position": {
+    "local_rank": 14,
+    "local_of": 48,
+    "local_peer_avg": 6.1,
+    "local_peer_top": 8.2,
+    "local_peer_count": 47,
+    "catchment_rank": 22,
+    "catchment_of": 95
+  },
+  "_notice": "This fixture is a fictional sample used to render the public download PDF at assets/reports/daydine-sample-report.pdf. Every score, review, competitor name and finding in the sibling .md file is invented. Do not treat any value here as observational data."
+}
