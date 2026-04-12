@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>Local Rankings — DayDine</title>
+  <title>Best Restaurants in Stratford-upon-Avon | DayDine Rankings</title>
   <meta name="description" content="Find the best restaurants in your local area. DayDine ranks UK hospitality venues using public market signals synthesised into the Restaurant Confidence Score.">
   <link rel="canonical" href="https://daydine.vercel.app/rankings">
   <meta property="og:type" content="website">
@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
-<body>
+<body data-page-type="diner">
 
 <nav class="nav">
   <div class="nav-inner">
@@ -29,7 +29,7 @@
       <a class="nav-link" href="/reports">Reports</a>
       <a class="nav-link" href="/methodology">Methodology</a>
       <a class="nav-link" href="/search">Search</a>
-      <a class="btn btn-primary nav-cta" href="/reports">Get Your Report</a>
+      <a class="btn btn-primary nav-cta" href="/reports">Get My Report — £49</a>
     </div>
   </div>
 </nav>
@@ -37,8 +37,8 @@
 <section class="section" style="padding-top: 80px;">
   <div class="container container-narrow">
     <div class="kicker mb-1">Local Rankings</div>
-    <h1 class="h-display h-display-lg mb-2">Find the best restaurants in your area</h1>
-    <p class="body-lg mb-4">Enter a town, city or UK postcode to see the top-ranked venues where you live or work. Rankings are based on the Restaurant Confidence Score — a 0–10 metric synthesised from 40 public market signals.</p>
+    <h1 class="h-display h-display-lg mb-2">Find the best restaurants in Stratford-upon-Avon</h1>
+    <p class="body-lg mb-4">190 venues ranked by 40 live signals — kitchen confidence, delivery performance, review trajectory, and more.</p>
 
     <form id="rankingsSearchForm" class="area-search mb-4" autocomplete="off">
       <input type="text" id="rankingsSearchInput" class="area-search-input"
@@ -47,9 +47,16 @@
       <div id="rankingsSearchDropdown" class="area-search-dropdown" role="listbox"></div>
     </form>
 
-    <div class="kicker mb-1">Currently Covering</div>
-    <div class="row mb-4" id="coveredChips">
+    <div class="kicker mb-1">Now Ranked</div>
+    <div class="row mb-2" id="coveredChips">
       <span class="chip-soon chip" style="opacity:0.6;">Loading…</span>
+    </div>
+    <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 24px;">
+      More towns coming soon — <a style="color: var(--accent); font-weight: 500;" href="mailto:hello@daydine.com?subject=Waitlist%20—%20new%20area">join the waitlist →</a>
+    </p>
+
+    <div style="text-align: center; padding: 12px 0 24px; font-family: var(--sans); font-size: 13px; color: var(--text-subtle); letter-spacing: 0.02em;">
+      190 restaurants — Stratford-upon-Avon · 40 signals tracked · Updated weekly
     </div>
 
     <div id="waitlistCard" class="waitlist-card" style="display:none;">
@@ -58,6 +65,63 @@
       <p class="body-md mb-3">We haven't ranked this area yet. Want to know when it's live?</p>
       <a id="waitlistCta" class="btn btn-primary" href="#">Notify me when it's ready</a>
     </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container container-narrow">
+    <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; color: var(--text); margin-bottom: 24px;">Top-ranked in Stratford right now</h3>
+    <div style="display: grid; gap: 16px;">
+
+      <a href="/rankings/stratford-on-avon" class="card card-hover" style="display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 16px; padding: 20px 24px; text-decoration: none;">
+        <div style="font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--accent); text-align: center;">#1</div>
+        <div>
+          <div style="font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Arrow Mill</div>
+          <div style="font-size: 13px; color: var(--text-muted);">B49 5NL</div>
+        </div>
+        <div style="text-align: right;">
+          <span class="score-badge score-badge-excellent" style="font-size: 14px; padding: 4px 12px;">
+            <span class="score-badge-num">10.0</span>
+            <span class="score-badge-max">/ 10</span>
+          </span>
+          <div style="font-size: 11px; color: var(--text-subtle); margin-top: 4px;">Score updated this week</div>
+        </div>
+      </a>
+
+      <a href="/rankings/stratford-on-avon" class="card card-hover" style="display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 16px; padding: 20px 24px; text-decoration: none;">
+        <div style="font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--accent); text-align: center;">#2</div>
+        <div>
+          <div style="font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 2px;">The Fox Inn</div>
+          <div style="font-size: 13px; color: var(--text-muted);">CV35 9JS</div>
+        </div>
+        <div style="text-align: right;">
+          <span class="score-badge score-badge-excellent" style="font-size: 14px; padding: 4px 12px;">
+            <span class="score-badge-num">9.9</span>
+            <span class="score-badge-max">/ 10</span>
+          </span>
+          <div style="font-size: 11px; color: var(--text-subtle); margin-top: 4px;">Score updated this week</div>
+        </div>
+      </a>
+
+      <a href="/rankings/stratford-on-avon" class="card card-hover" style="display: grid; grid-template-columns: 56px 1fr auto; align-items: center; gap: 16px; padding: 20px 24px; text-decoration: none;">
+        <div style="font-family: var(--mono); font-size: 22px; font-weight: 700; color: var(--accent); text-align: center;">#3</div>
+        <div>
+          <div style="font-size: 16px; font-weight: 600; color: var(--text); margin-bottom: 2px;">Shakespaw Cat Cafe</div>
+          <div style="font-size: 13px; color: var(--text-muted);">CV37 6QT</div>
+        </div>
+        <div style="text-align: right;">
+          <span class="score-badge score-badge-excellent" style="font-size: 14px; padding: 4px 12px;">
+            <span class="score-badge-num">9.8</span>
+            <span class="score-badge-max">/ 10</span>
+          </span>
+          <div style="font-size: 11px; color: var(--text-subtle); margin-top: 4px;">Score updated this week</div>
+        </div>
+      </a>
+
+    </div>
+    <p class="center mt-3">
+      <a class="btn btn-ghost" href="/rankings/stratford-on-avon">See the full board →</a>
+    </p>
   </div>
 </section>
 
@@ -109,10 +173,9 @@
     }
     container.innerHTML = entries.map(entry => `
       <a class="chip" href="/rankings/${entry.slug}">
-        ${esc(entry.display_name)}
-        <span class="chip-count">${entry.total_venues}</span>
+        ${esc(entry.display_name)} · ${entry.total_venues} restaurants →
       </a>
-    `).join('') + '<span class="chip chip-soon">more coming soon</span>';
+    `).join('');
   }
 
   function esc(s) {

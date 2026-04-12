@@ -4,19 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>Position &amp; Competitor Reports — DayDine</title>
-  <meta name="description" content="Get your DayDine Position & Competitor Report. Know exactly where you stand, who is ahead, and the specific actions that will move you up. £149, 48-hour delivery.">
+  <title>Restaurant Position Report — Stratford-upon-Avon | DayDine</title>
+  <meta name="description" content="Get your DayDine Position & Competitor Report. Know exactly where you stand, who is ahead, and the specific actions that will move you up. £49 one-time or £39/month.">
   <link rel="canonical" href="https://daydine.vercel.app/reports">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Position &amp; Competitor Reports — DayDine">
-  <meta property="og:description" content="A comprehensive analysis of your local market position and closest competitors — £149, delivered within 48 hours.">
+  <meta property="og:description" content="A comprehensive analysis of your local market position and closest competitors — from £49 one-time or £39/month.">
   <meta property="og:url" content="https://daydine.vercel.app/reports">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/daydine.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary span:last-child { transform: rotate(45deg); }
+    @media (max-width: 600px) {
+      .pricing-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
 </head>
-<body>
+<body data-page-type="operator">
 
 <nav class="nav">
   <div class="nav-inner">
@@ -29,7 +36,7 @@
       <a class="nav-link active" href="/reports">Reports</a>
       <a class="nav-link" href="/methodology">Methodology</a>
       <a class="nav-link" href="/search">Search</a>
-      <a class="btn btn-primary nav-cta" href="#pricing">Get Your Report</a>
+      <a class="btn btn-primary nav-cta" href="#pricing">Get My Report — £49</a>
     </div>
   </div>
 </nav>
@@ -38,95 +45,141 @@
   <div class="container container-narrow center">
     <div class="kicker kicker-accent mb-1">Position &amp; Competitor Report</div>
     <h1 class="h-display h-display-lg mb-3">
-      Know exactly where you stand —<br>
+      Know exactly where your Stratford venue stands —<br>
       and what to do about it
     </h1>
     <p class="body-lg mb-4" style="max-width: 640px; margin: 0 auto;">
-      A comprehensive analysis of your local market position, your closest competitors, and the specific actions that will move you up the board.
+      A 48-hour analysis of your local market position, your top 5 competitors, and the specific actions that will move you up the rankings.
     </p>
   </div>
 </section>
 
 <section class="section" style="padding-top: 0;">
   <div class="container container-narrow">
-    <div class="grid-2">
-      <div class="feature-card">
-        <div class="feature-num">1</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Your Local Position</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Exact ranking among all venues in your area with historical movement and confidence margin.</p>
-        </div>
+    <div style="display: grid; gap: 40px;">
+
+      <div>
+        <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; color: var(--text); margin-bottom: 16px;">Know exactly where you stand in Stratford</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>Your confidence score and local market position</li>
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>How you rank against the full peer set of Stratford venues</li>
+        </ul>
       </div>
-      <div class="feature-card">
-        <div class="feature-num">2</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Peer-Set Analysis</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">How you compare within your category and price segment — not just the broader market.</p>
-        </div>
+
+      <div>
+        <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; color: var(--text); margin-bottom: 16px;">See who you're losing tables to — and why</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>Your top 5 competitor breakdown by signal</li>
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>The specific gaps letting rivals outrank you</li>
+        </ul>
       </div>
-      <div class="feature-card">
-        <div class="feature-num">3</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Top 5 Competitors</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Who is directly competing for your customers and exactly why they are ranked ahead.</p>
-        </div>
+
+      <div>
+        <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; color: var(--text); margin-bottom: 16px;">Get a clear action list for this week</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>Live market signals moving scores right now</li>
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>Prioritised next moves, ranked by impact</li>
+        </ul>
       </div>
-      <div class="feature-card">
-        <div class="feature-num">4</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Gap Analysis</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Specific factors and signals where competitors outperform you, broken down by RCS tier.</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">5</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Market Signals</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Local review themes, seasonal patterns, and emerging trends across your competitive set.</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">6</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Action Priorities</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Ranked recommendations, scored by expected position impact and effort required.</p>
-        </div>
-      </div>
+
+    </div>
+  </div>
+</section>
+
+<div style="text-align: center; padding: 20px 16px; font-family: var(--sans); font-size: 13px; color: var(--text-subtle); letter-spacing: 0.02em;">
+  Full Stratford-upon-Avon coverage · every venue in the area · 40 signals tracked
+</div>
+
+<section class="section" style="padding-top: 24px; padding-bottom: 24px;">
+  <div class="container container-narrow">
+    <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px 24px; font-family: var(--sans); font-size: 14px; color: var(--text-muted);">
+      <span><span id="delivery-date"></span></span>
+      <span style="color: var(--border);">·</span>
+      <span>7-day refund if it's not useful</span>
+      <span style="color: var(--border);">·</span>
+      <span>Based on 40 live market signals</span>
     </div>
   </div>
 </section>
 
 <section class="section" id="pricing" style="padding-top: 40px;">
-  <div class="container container-narrow">
-    <div class="pricing-card">
-      <div class="kicker kicker-accent mb-1">One-Time Report</div>
-      <div class="pricing-amount">£149</div>
-      <p class="body-md mb-3">Complete position analysis · Delivered within 48 hours</p>
+  <div class="container container-narrow center">
+    <h3 class="h-display h-display-sm mb-4">Simple, transparent pricing</h3>
+
+    <div class="pricing-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 680px; margin: 0 auto;">
+      <div class="card" style="padding: 32px 24px; text-align: center;">
+        <div class="kicker kicker-accent mb-1">One-Time Report</div>
+        <div style="font-family: var(--serif); font-size: clamp(40px, 5vw, 52px); font-weight: 700; color: var(--text); line-height: 1.1; margin-bottom: 12px;">£49</div>
+        <p class="body-sm" style="color: var(--text-muted); line-height: 1.6;">Your full position and competitor breakdown, delivered once.</p>
+      </div>
+      <div class="card" style="padding: 32px 24px; text-align: center;">
+        <div class="kicker kicker-accent mb-1">Stay Ahead</div>
+        <div style="font-family: var(--serif); font-size: clamp(40px, 5vw, 52px); font-weight: 700; color: var(--text); line-height: 1.1; margin-bottom: 12px;">£39<span style="font-size: 18px; font-weight: 400; color: var(--text-muted);">/month</span></div>
+        <p class="body-sm" style="color: var(--text-muted); line-height: 1.6;">Monthly competitor movement alerts. Cancel anytime.</p>
+      </div>
+    </div>
+
+    <p class="body-sm mt-2" style="color: var(--text-subtle);">Pay annually — £32.50/month, billed as £390/year. Save two months.</p>
+
+    <div class="mt-4">
       <a class="btn btn-primary btn-lg"
          href="mailto:hello@daydine.com?subject=Position%20Report%20Request&body=Please%20send%20me%20a%20DayDine%20Position%20%26%20Competitor%20Report.%0A%0AVenue%20name%3A%0AVenue%20address%20or%20postcode%3A%0ABest%20contact%20email%3A">
-        Request Your Report
+        Get My Report — £49 →
       </a>
-      <p class="body-sm mt-2">
-        See what you'll receive: <a style="color: var(--accent); font-weight: 600;" href="/sample">view sample</a>
-        &middot;
-        <a style="color: var(--accent); font-weight: 600;"
-           href="/assets/reports/daydine-sample-report.pdf"
-           download="daydine-sample-report.pdf">download sample PDF</a>
+      <p class="mt-2">
+        <a style="color: var(--accent); font-weight: 500; font-size: 15px;"
+           href="mailto:hello@daydine.com?subject=Stay%20Ahead%20Subscription&body=I'm%20interested%20in%20the%20Stay%20Ahead%20monthly%20subscription%20(%C2%A339%2Fmonth).%0A%0AVenue%20name%3A%0AVenue%20address%20or%20postcode%3A%0ABest%20contact%20email%3A">
+          Or stay ahead for £39/month →
+        </a>
       </p>
     </div>
+
+    <p class="body-sm mt-3">
+      See what you'll receive: <a style="color: var(--accent); font-weight: 600;" href="/sample">view sample</a>
+      &middot;
+      <a style="color: var(--accent); font-weight: 600;"
+         href="/assets/reports/daydine-sample-report.pdf"
+         download="daydine-sample-report.pdf">download sample PDF</a>
+    </p>
   </div>
 </section>
 
-<section class="section" style="padding-top: 0;">
+<section class="section">
   <div class="container container-narrow">
-    <div class="card" style="display:flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
-      <div style="max-width: 520px;">
-        <div class="kicker" style="color: var(--info);">Coming Soon</div>
-        <h4 style="font-size: 17px; font-weight: 600; color: var(--text); margin: 6px 0;">Competitor Watch Subscription</h4>
-        <p class="body-sm">Monthly monitoring, ranking-change alerts, and quarterly market-trend reports. Stay ahead between Position Reports.</p>
-      </div>
-      <a class="btn btn-secondary" href="mailto:hello@daydine.com?subject=Waitlist%3A%20Competitor%20Watch">Join Waitlist</a>
+    <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; color: var(--text); margin-bottom: 24px; text-align: center;">Frequently asked questions</h3>
+
+    <div style="display: grid; gap: 0; border-top: 1px solid var(--border);">
+      <details style="border-bottom: 1px solid var(--border); padding: 20px 0;">
+        <summary style="font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">How is the report delivered?<span style="color: var(--text-subtle); font-size: 18px; margin-left: 16px; flex-shrink: 0;">+</span></summary>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-top: 12px; padding-right: 32px;">As a clear PDF within 48 hours of purchase — no login, no dashboard, no follow-up call required. It lands directly in your inbox.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--border); padding: 20px 0;">
+        <summary style="font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">Will my competitors know I've ordered a report?<span style="color: var(--text-subtle); font-size: 18px; margin-left: 16px; flex-shrink: 0;">+</span></summary>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-top: 12px; padding-right: 32px;">No. Every signal we use is already public. No venue is contacted or notified.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--border); padding: 20px 0;">
+        <summary style="font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">What if my town isn't listed yet?<span style="color: var(--text-subtle); font-size: 18px; margin-left: 16px; flex-shrink: 0;">+</span></summary>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-top: 12px; padding-right: 32px;">Leave your email below and we'll notify you the day your area goes live — no commitment.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--border); padding: 20px 0;">
+        <summary style="font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">Why should I trust DayDine's data?<span style="color: var(--text-subtle); font-size: 18px; margin-left: 16px; flex-shrink: 0;">+</span></summary>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-top: 12px; padding-right: 32px;">All 40 signals are verified public sources — review platforms, social channels, booking data. <a style="color: var(--accent); font-weight: 600;" href="/methodology">See exactly how we calculate scores →</a></p>
+      </details>
     </div>
+
+    <p class="body-sm mt-3 center" style="color: var(--text-muted);">All scores derived from 40 verified public signals. <a style="color: var(--accent); font-weight: 600;" href="/methodology">See exactly how →</a></p>
+  </div>
+</section>
+
+<section class="section" style="background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container container-narrow center">
+    <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; color: var(--text); margin-bottom: 8px;">Not ready yet? Show me where my gaps are.</h3>
+    <p class="body-md mb-3" style="color: var(--text-muted); max-width: 520px; margin: 0 auto 24px;">We'll send your restaurant's current public confidence score — no purchase needed.</p>
+    <form style="display: flex; gap: 12px; max-width: 480px; margin: 0 auto; flex-wrap: wrap; justify-content: center;" action="mailto:hello@daydine.com" method="get">
+      <input type="email" name="subject" placeholder="Your email address" required
+             style="flex: 1; min-width: 240px; padding: 12px 16px; border: 1px solid var(--border); border-radius: var(--radius); font-family: var(--sans); font-size: 15px; background: var(--surface-1); color: var(--text);">
+      <button type="submit" class="btn btn-primary">Show me where my gaps are →</button>
+    </form>
   </div>
 </section>
 
@@ -140,5 +193,17 @@
 </footer>
 
 <script src="/assets/daydine.js"></script>
+<script>
+(function () {
+  var d = new Date();
+  var days = 2;
+  while (days > 0) {
+    d.setDate(d.getDate() + 1);
+    if (d.getDay() !== 0 && d.getDay() !== 6) days--;
+  }
+  var el = document.getElementById('delivery-date');
+  if (el) el.textContent = 'In your inbox by ' + d.toLocaleDateString('en-GB', {weekday: 'long', day: 'numeric', month: 'long'});
+})();
+</script>
 </body>
 </html>

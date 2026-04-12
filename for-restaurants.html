@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <meta name="robots" content="noindex, follow">
+  <title>What Your Nearest Stratford Competitor Is Doing Better | DayDine</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/daydine.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body data-page-type="operator">
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">
+      <img class="nav-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="/" style="font-size: 14px; color: var(--text-muted);">&larr; Back to DayDine</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" style="padding-bottom: 64px;">
+  <div class="container container-narrow">
+    <div class="hero-inner">
+      <h1 class="h-display h-display-lg mb-3">
+        3 things your nearest competitor in Stratford is doing better than you
+      </h1>
+      <p class="body-lg mb-4" style="max-width: 620px;">
+        DayDine tracks 40 live market signals across every restaurant in Stratford-upon-Avon.
+        Your Position and Competitor Report tells you exactly where you're losing ground — and what to do about it.
+      </p>
+
+      <ul style="list-style: none; padding: 0; margin: 0 0 32px; display: grid; gap: 14px; max-width: 600px;">
+        <li style="font-size: 16px; color: var(--text); line-height: 1.6; padding-left: 28px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--accent); font-weight: 700;">1.</span>
+          Which of your 5 closest competitors is outranking you — and by how much
+        </li>
+        <li style="font-size: 16px; color: var(--text); line-height: 1.6; padding-left: 28px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--accent); font-weight: 700;">2.</span>
+          The specific signals pulling their score up while yours stays flat
+        </li>
+        <li style="font-size: 16px; color: var(--text); line-height: 1.6; padding-left: 28px; position: relative;">
+          <span style="position: absolute; left: 0; color: var(--accent); font-weight: 700;">3.</span>
+          A prioritised action list for closing the gap this month
+        </li>
+      </ul>
+
+      <div style="font-family: var(--sans); font-size: 14px; color: var(--text-muted); margin-bottom: 32px;">
+        <span id="delivery-date"></span>
+        <span style="color: var(--border); margin: 0 8px;">&middot;</span>
+        &pound;49 one-time
+        <span style="color: var(--border); margin: 0 8px;">&middot;</span>
+        7-day refund if it's not useful
+      </div>
+
+      <div>
+        <a class="btn btn-primary btn-lg"
+           href="mailto:hello@daydine.com?subject=Competitor%20Report%20Request&body=Please%20send%20me%20a%20DayDine%20Position%20%26%20Competitor%20Report.%0A%0AVenue%20name%3A%0AVenue%20address%20or%20postcode%3A%0ABest%20contact%20email%3A">
+          Get My Competitor Report — &pound;49 &rarr;
+        </a>
+        <p style="margin-top: 14px; font-size: 14px;">
+          <a style="color: var(--accent); font-weight: 500;"
+             href="mailto:hello@daydine.com?subject=Stay%20Ahead%20Subscription&body=I'm%20interested%20in%20the%20Stay%20Ahead%20monthly%20subscription%20(%C2%A339%2Fmonth).%0A%0AVenue%20name%3A%0AVenue%20address%20or%20postcode%3A%0ABest%20contact%20email%3A">
+            Or monitor monthly for &pound;39/month &rarr;
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img class="footer-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
+    </div>
+    <p class="footer-copy">&copy; 2026 DayDine. Local market intelligence for hospitality operators.</p>
+  </div>
+</footer>
+
+<script src="/assets/daydine.js"></script>
+<script>
+(function () {
+  var d = new Date();
+  var days = 2;
+  while (days > 0) {
+    d.setDate(d.getDate() + 1);
+    if (d.getDay() !== 0 && d.getDay() !== 6) days--;
+  }
+  var el = document.getElementById('delivery-date');
+  if (el) el.textContent = 'In your inbox by ' + d.toLocaleDateString('en-GB', {weekday: 'long', day: 'numeric', month: 'long'});
+})();
+</script>
+</body>
+</html>
