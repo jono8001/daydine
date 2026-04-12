@@ -63,7 +63,7 @@
         <div>Venue</div>
         <div>Category</div>
         <div style="text-align:center;">Score</div>
-        <div style="text-align:center;">Convergence</div>
+        <div style="text-align:center;">Movement</div>
       </div>
       <div id="rankingsBody"></div>
     </div>
@@ -178,13 +178,19 @@
     }
   })();
 
+  function movementHtml(venue) {
+    var m = venue.movement, d = venue.movement_delta || 0;
+    if (m === 'up') return '<span class="movement-delta movement-delta-up">&#9650; ' + d + '</span>';
+    if (m === 'down') return '<span class="movement-delta movement-delta-down">&#9660; ' + Math.abs(d) + '</span>';
+    if (m === 'same') return '<span class="movement-delta movement-delta-same">&#8212;</span>';
+    return '<span class="movement movement-new">NEW</span>';
+  }
+
   function render() {
     const filtered = activeCat === 'all' ? allVenues : allVenues.filter(v => v.category === activeCat);
     document.getElementById('rankingsBody').innerHTML = filtered.map(venue => {
       const bandClass = 'score-badge-' + (venue.band_class || 'good');
       const rankClass = venue.rank <= 3 ? 'rank-num rank-num-top' : 'rank-num';
-      const conv = venue.convergence || 'neutral';
-      const convLabel = conv === 'converged' ? 'Converged' : conv === 'neutral' ? 'Neutral' : conv === 'mild_divergence' ? 'Mild div.' : 'Diverged';
       return `
         <div class="rank-row">
           <div class="${rankClass}">#${venue.rank}</div>
@@ -199,11 +205,7 @@
               <span class="score-badge-max">/ 10</span>
             </span>
           </div>
-          <div class="rank-change">
-            <span class="convergence convergence-${conv}">
-              <span class="convergence-dot"></span> ${convLabel}
-            </span>
-          </div>
+          <div class="rank-change">${movementHtml(venue)}</div>
         </div>
       `;
     }).join('');

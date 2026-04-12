@@ -68,19 +68,41 @@ def safe_float(value: str) -> float | None:
         return None
 
 
-def build_venue(row: dict[str, str]) -> dict[str, Any]:
+def build_venue(row: dict[str, str], prior_ranks: dict[str, int] | None = None) -> dict[str, Any]:
     rcs = safe_float(row.get("rcs_final", ""))
     band = row.get("rcs_band", "").strip() or "Unknown"
+    rank = int(row["rank"])
+    name = row["business_name"].strip()
+
+    # Compute monthly movement delta from prior snapshot
+    movement = "new"
+    movement_delta = 0
+    if prior_ranks is not None:
+        prior_rank = prior_ranks.get(name)
+        if prior_rank is not None:
+            delta = prior_rank - rank  # positive = improved (moved up)
+            movement_delta = delta
+            if delta > 0:
+                movement = "up"
+            elif delta < 0:
+                movement = "down"
+            else:
+                movement = "same"
+        else:
+            movement = "new"
+            movement_delta = 0
+
     return {
-        "rank": int(row["rank"]),
-        "name": row["business_name"].strip(),
+        "rank": rank,
+        "name": name,
         "postcode": row.get("postcode", "").strip(),
         "category": row.get("category", "").strip(),
         "rcs_final": rcs,
         "rcs_band": band,
         "band_class": BAND_CLASS.get(band, "good"),
         "convergence": parse_convergence(row.get("convergence", "")),
-        "movement": "new",  # first deploy — no historical comparison
+        "movement": movement,
+        "movement_delta": movement_delta,
     }
 
 
@@ -102,6 +124,25 @@ def count_ranked(rows: list[dict[str, str]]) -> int:
     return ranked
 
 
+def load_prior_ranks(slug: str) -> dict[str, int] | None:
+    """Load the previous rankings JSON and return a name→rank map, or None."""
+    prior_path = RANKINGS_DIR / f"{slug}.json"
+    if not prior_path.exists():
+        return None
+    try:
+        with prior_path.open(encoding="utf-8") as handle:
+            prior = json.load(handle)
+        # Build lookup from ALL ranked venues, not just the top N that were exported.
+        # Since we only export top N, we store them plus a synthetic rank for
+        # venues previously in top N but now outside it.
+        ranks: dict[str, int] = {}
+        for venue in prior.get("venues", []):
+            ranks[venue["name"]] = venue["rank"]
+        return ranks if ranks else None
+    except (json.JSONDecodeError, KeyError):
+        return None
+
+
 def build_area_json(
     rows: list[dict[str, str]],
     la_name: str,
@@ -118,6 +159,9 @@ def build_area_json(
     total_venues = len(ranked_rows)
     others_count = max(0, total_venues - len(top))
 
+    # Load prior month's rankings for delta computation
+    prior_ranks = load_prior_ranks(slug)
+
     return {
         "la_name": la_name,
         "display_name": display_name,
@@ -126,7 +170,7 @@ def build_area_json(
         "top_n": len(top),
         "others_count": others_count,
         "last_updated": date.today().isoformat(),
-        "venues": [build_venue(row) for row in top],
+        "venues": [build_venue(row, prior_ranks) for row in top],
     }
 
 
@@ -147,6 +191,8 @@ def update_index(area_data: dict[str, Any]) -> dict[str, Any]:
         "slug": area_data["slug"],
         "la_name": area_data["la_name"],
         "display_name": area_data["display_name"],
+        "region": area_data.get("region", ""),
+        "status": "live",
         "total_venues": area_data["total_venues"],
         "top_score": top_score,
     })

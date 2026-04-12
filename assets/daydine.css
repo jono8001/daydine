@@ -459,6 +459,17 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   font-weight: 600;
   letter-spacing: 0.04em;
 }
+.movement-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 600;
+}
+.movement-delta-up { color: var(--positive); }
+.movement-delta-down { color: var(--negative); }
+.movement-delta-same { color: var(--text-subtle); }
 
 /* ---- Area search box ---- */
 .area-search {

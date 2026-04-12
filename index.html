@@ -286,7 +286,7 @@
                 <span class="score-badge-max">/ 10</span>
               </span>
             </div>
-            <div class="rank-change"><span class="movement movement-new">NEW</span></div>
+            <div class="rank-change">${movementHtml(venue)}</div>
           </div>
         `;
       }).join('');
@@ -308,6 +308,13 @@
       const d = new Date(iso);
       if (isNaN(d)) return iso;
       return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    }
+    function movementHtml(venue) {
+      var m = venue.movement, d = venue.movement_delta || 0;
+      if (m === 'up') return '<span class="movement-delta movement-delta-up">&#9650; ' + d + '</span>';
+      if (m === 'down') return '<span class="movement-delta movement-delta-down">&#9660; ' + Math.abs(d) + '</span>';
+      if (m === 'same') return '<span class="movement-delta movement-delta-same">&#8212;</span>';
+      return '<span class="movement movement-new">NEW</span>';
     }
   })();
 
