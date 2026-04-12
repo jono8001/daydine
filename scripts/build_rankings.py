@@ -180,7 +180,7 @@ def update_index(area_data: dict[str, Any]) -> dict[str, Any]:
         with INDEX_FILE.open(encoding="utf-8") as handle:
             index = json.load(handle)
     else:
-        index = {"last_updated": None, "available": []}
+        index = {"last_updated": None, "available": [], "pipeline": []}
 
     available = [
         entry for entry in index.get("available", [])

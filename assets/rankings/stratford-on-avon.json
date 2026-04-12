@@ -5,7 +5,7 @@
   "total_venues": 190,
   "top_n": 10,
   "others_count": 180,
-  "last_updated": "2026-04-10",
+  "last_updated": "2026-04-12",
   "venues": [
     {
       "rank": 1,
@@ -16,106 +16,116 @@
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "converged",
-      "movement": "new"
+      "movement": "same",
+      "movement_delta": 0
     },
     {
       "rank": 2,
       "name": "The Fox Inn",
       "postcode": "CV35 9JS",
       "category": "Pub / Bar",
-      "rcs_final": 9.893,
+      "rcs_final": 9.879,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "converged",
-      "movement": "new"
+      "movement": "same",
+      "movement_delta": 0
     },
     {
       "rank": 3,
       "name": "Shakespaw Cat Cafe",
       "postcode": "CV37 6QT",
       "category": "Cafe / Coffee Shop",
-      "rcs_final": 9.849,
+      "rcs_final": 9.837,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "converged",
-      "movement": "new"
+      "movement": "same",
+      "movement_delta": 0
     },
     {
       "rank": 4,
       "name": "Gilks' Garage Cafe",
       "postcode": "CV35 0JZ",
       "category": "Cafe / Coffee Shop",
-      "rcs_final": 9.789,
+      "rcs_final": 9.778,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "converged",
-      "movement": "new"
+      "movement": "same",
+      "movement_delta": 0
     },
     {
       "rank": 5,
       "name": "Oxheart",
       "postcode": "CV36 5JJ",
       "category": "Restaurant (General)",
-      "rcs_final": 9.737,
+      "rcs_final": 9.722,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "converged",
-      "movement": "new"
+      "movement": "same",
+      "movement_delta": 0
     },
     {
       "rank": 6,
       "name": "The Red Lion",
       "postcode": "CV37 6YW",
       "category": "Pub / Bar",
-      "rcs_final": 9.725,
+      "rcs_final": 9.714,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "converged",
-      "movement": "new"
+      "movement": "same",
+      "movement_delta": 0
     },
     {
       "rank": 7,
       "name": "Espresso Barn",
       "postcode": "CV37 8RB",
       "category": "Cafe / Coffee Shop",
-      "rcs_final": 9.684,
+      "rcs_final": 9.675,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "converged",
-      "movement": "new"
+      "movement": "same",
+      "movement_delta": 0
     },
     {
       "rank": 8,
       "name": "Nel's At The Pavilion",
       "postcode": "CV35 0AD",
       "category": "Cafe / Coffee Shop",
-      "rcs_final": 9.662,
+      "rcs_final": 9.648,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "converged",
-      "movement": "new"
+      "movement": "same",
+      "movement_delta": 0
     },
     {
       "rank": 9,
       "name": "Stratford Manor Hotel",
       "postcode": "CV37 0PY",
       "category": "Hotel / Accommodation",
-      "rcs_final": 9.643,
+      "rcs_final": 9.63,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "neutral",
-      "movement": "new"
+      "movement": "same",
+      "movement_delta": 0
     },
     {
       "rank": 10,
       "name": "Costa",
       "postcode": "CV37 0HZ",
       "category": "Cafe / Coffee Shop",
-      "rcs_final": 9.51,
+      "rcs_final": 9.497,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "neutral",
-      "movement": "new"
+      "movement": "same",
+      "movement_delta": 0
     }
   ]
 }
