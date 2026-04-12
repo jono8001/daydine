@@ -15,6 +15,13 @@
   <link rel="stylesheet" href="/assets/daydine.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    details summary::-webkit-details-marker { display: none; }
+    details[open] summary span:last-child { transform: rotate(45deg); }
+    @media (max-width: 600px) {
+      .pricing-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
 </head>
 <body>
 
@@ -38,60 +45,43 @@
   <div class="container container-narrow center">
     <div class="kicker kicker-accent mb-1">Position &amp; Competitor Report</div>
     <h1 class="h-display h-display-lg mb-3">
-      Know exactly where you stand —<br>
+      Know exactly where your Stratford venue stands —<br>
       and what to do about it
     </h1>
     <p class="body-lg mb-4" style="max-width: 640px; margin: 0 auto;">
-      A comprehensive analysis of your local market position, your closest competitors, and the specific actions that will move you up the board.
+      A 48-hour analysis of your local market position, your top 5 competitors, and the specific actions that will move you up the rankings.
     </p>
   </div>
 </section>
 
 <section class="section" style="padding-top: 0;">
   <div class="container container-narrow">
-    <div class="grid-2">
-      <div class="feature-card">
-        <div class="feature-num">1</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Your Local Position</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Exact ranking among all venues in your area with historical movement and confidence margin.</p>
-        </div>
+    <div style="display: grid; gap: 40px;">
+
+      <div>
+        <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; color: var(--text); margin-bottom: 16px;">Know exactly where you stand in Stratford</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>Your confidence score and local market position</li>
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>How you rank against the full peer set of Stratford venues</li>
+        </ul>
       </div>
-      <div class="feature-card">
-        <div class="feature-num">2</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Peer-Set Analysis</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">How you compare within your category and price segment — not just the broader market.</p>
-        </div>
+
+      <div>
+        <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; color: var(--text); margin-bottom: 16px;">See who you're losing tables to — and why</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>Your top 5 competitor breakdown by signal</li>
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>The specific gaps letting rivals outrank you</li>
+        </ul>
       </div>
-      <div class="feature-card">
-        <div class="feature-num">3</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Top 5 Competitors</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Who is directly competing for your customers and exactly why they are ranked ahead.</p>
-        </div>
+
+      <div>
+        <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; color: var(--text); margin-bottom: 16px;">Get a clear action list for this week</h3>
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>Live market signals moving scores right now</li>
+          <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--accent);">&#10003;</span>Prioritised next moves, ranked by impact</li>
+        </ul>
       </div>
-      <div class="feature-card">
-        <div class="feature-num">4</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Gap Analysis</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Specific factors and signals where competitors outperform you, broken down by RCS tier.</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">5</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Market Signals</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Local review themes, seasonal patterns, and emerging trends across your competitive set.</p>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-num">6</div>
-        <div>
-          <h4 style="font-size:15px; font-weight: 600; color: var(--text); margin-bottom: 6px;">Action Priorities</h4>
-          <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">Ranked recommendations, scored by expected position impact and effort required.</p>
-        </div>
-      </div>
+
     </div>
   </div>
 </section>
@@ -147,6 +137,45 @@
          href="/assets/reports/daydine-sample-report.pdf"
          download="daydine-sample-report.pdf">download sample PDF</a>
     </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow">
+    <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; color: var(--text); margin-bottom: 24px; text-align: center;">Frequently asked questions</h3>
+
+    <div style="display: grid; gap: 0; border-top: 1px solid var(--border);">
+      <details style="border-bottom: 1px solid var(--border); padding: 20px 0;">
+        <summary style="font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">How is the report delivered?<span style="color: var(--text-subtle); font-size: 18px; margin-left: 16px; flex-shrink: 0;">+</span></summary>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-top: 12px; padding-right: 32px;">As a clear PDF within 48 hours of purchase — no login, no dashboard, no follow-up call required. It lands directly in your inbox.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--border); padding: 20px 0;">
+        <summary style="font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">Will my competitors know I've ordered a report?<span style="color: var(--text-subtle); font-size: 18px; margin-left: 16px; flex-shrink: 0;">+</span></summary>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-top: 12px; padding-right: 32px;">No. Every signal we use is already public. No venue is contacted or notified.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--border); padding: 20px 0;">
+        <summary style="font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">What if my town isn't listed yet?<span style="color: var(--text-subtle); font-size: 18px; margin-left: 16px; flex-shrink: 0;">+</span></summary>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-top: 12px; padding-right: 32px;">Leave your email below and we'll notify you the day your area goes live — no commitment.</p>
+      </details>
+      <details style="border-bottom: 1px solid var(--border); padding: 20px 0;">
+        <summary style="font-size: 15px; font-weight: 600; color: var(--text); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center;">Why should I trust DayDine's data?<span style="color: var(--text-subtle); font-size: 18px; margin-left: 16px; flex-shrink: 0;">+</span></summary>
+        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.7; margin-top: 12px; padding-right: 32px;">All 40 signals are verified public sources — review platforms, social channels, booking data. <a style="color: var(--accent); font-weight: 600;" href="/methodology">See exactly how we calculate scores →</a></p>
+      </details>
+    </div>
+
+    <p class="body-sm mt-3 center" style="color: var(--text-muted);">All scores derived from 40 verified public signals. <a style="color: var(--accent); font-weight: 600;" href="/methodology">See exactly how →</a></p>
+  </div>
+</section>
+
+<section class="section" style="background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container container-narrow center">
+    <h3 style="font-family: var(--serif); font-size: clamp(20px, 2.5vw, 24px); font-weight: 700; color: var(--text); margin-bottom: 8px;">Not ready yet? Show me where my gaps are.</h3>
+    <p class="body-md mb-3" style="color: var(--text-muted); max-width: 520px; margin: 0 auto 24px;">We'll send your restaurant's current public confidence score — no purchase needed.</p>
+    <form style="display: flex; gap: 12px; max-width: 480px; margin: 0 auto; flex-wrap: wrap; justify-content: center;" action="mailto:hello@daydine.com" method="get">
+      <input type="email" name="subject" placeholder="Your email address" required
+             style="flex: 1; min-width: 240px; padding: 12px 16px; border: 1px solid var(--border); border-radius: var(--radius); font-family: var(--sans); font-size: 15px; background: var(--surface-1); color: var(--text);">
+      <button type="submit" class="btn btn-primary">Show me where my gaps are →</button>
+    </form>
   </div>
 </section>
 
