@@ -217,7 +217,8 @@ body {
 
 .btn-primary {
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-  color: #fff;
+  color: #1C1208;
+  border: 1px solid #9B7420;
   box-shadow: var(--shadow);
 }
 .btn-primary:hover {
