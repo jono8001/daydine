@@ -21,7 +21,7 @@
   var pt = document.body.dataset.pageType;
   var btn = document.querySelector('.nav-cta');
   if (pt === 'diner' && btn) {
-    btn.textContent = 'Explore Rankings \u2192';
+    btn.textContent = 'Explore Rankings';
     btn.href = '/rankings';
   }
 })();
