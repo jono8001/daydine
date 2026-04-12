@@ -15,6 +15,46 @@
   <link rel="stylesheet" href="/assets/daydine.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does DayDine calculate the Restaurant Confidence Score?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DayDine synthesises 40 public market signals across seven categories — food safety, reviews, discoverability, operational readiness, menu clarity, editorial recognition, and business stability — into a single 0–10 Restaurant Confidence Score. No single signal can carry a venue on its own; the score reflects the composite view regulators, reviewers, and the public form over time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the 40 signals used to rank restaurants?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 40 signals span seven categories: Trust & Food Safety (hygiene ratings, structural compliance, management confidence), Reputation & Reviews (multi-platform ratings and sentiment), Discoverability (online presence and presentation), Operational Readiness (reservations, accessibility, hours), Menu & Offer Clarity (online menus, dietary options), Recognition (Michelin, AA, local awards), and Business Stability (Companies House records)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why is your score different from TripAdvisor or Google ratings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "TripAdvisor and Google each reflect a single source of opinion. DayDine draws from multiple independent sources and checks them against each other. When sources agree, confidence rises. When they diverge, the score reflects that tension. Recent signals are weighted more heavily, and thin data is never overclaimed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often are restaurant scores updated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Scores are recalculated weekly as new data arrives from public sources. FSA inspections, Google reviews, TripAdvisor ratings, and business filings are monitored continuously, and changes flow into the next scoring cycle. Temporal decay ensures recent signals always carry more weight than older ones."
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     /* ---- Methodology page-specific ---- */
     .method-body p { margin-bottom: 18px; color: var(--text-muted); font-size: 17px; line-height: 1.75; }
@@ -265,12 +305,53 @@
     }
     .cta-closing-link:hover { color: var(--accent-hover); }
 
+    /* Two-column layout with sticky sidebar */
+    .method-layout {
+      display: flex;
+      gap: 48px;
+      max-width: var(--page-max);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      align-items: flex-start;
+    }
+    .method-main { flex: 1; min-width: 0; }
+    .method-sidebar { width: 260px; flex-shrink: 0; }
+    .method-sidebar-inner {
+      position: sticky;
+      top: 96px;
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .method-sidebar-inner h4 {
+      font-family: var(--serif);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .method-sidebar-inner .body-sm {
+      margin-bottom: 20px;
+    }
+
+    /* Content section spacing within layout */
+    .method-section { padding: 48px 0; }
+    .method-section + .method-section { border-top: 1px solid var(--border-soft); }
+
     /* Responsive */
+    @media (max-width: 1024px) {
+      .method-sidebar { display: none; }
+    }
     @media (max-width: 900px) {
       .operator-grid { grid-template-columns: 1fr; gap: 40px; }
     }
     @media (max-width: 760px) {
       .method-body p { font-size: 16px; }
+      .method-layout { padding: 0 20px; }
       .operator-band { padding: 64px 0; }
       .confidence-aside { padding: 28px 24px; }
       .proprietary { padding: 26px 24px; }
@@ -303,7 +384,7 @@
     <div class="hero-inner">
       <div class="kicker kicker-accent mb-2">Methodology</div>
       <h1 class="h-display h-display-lg mb-3">
-        How we rank the restaurants<br>around you.
+        How Stratford-upon-Avon restaurants are ranked —<br>and what moves the score
       </h1>
       <p class="body-lg mb-3" style="max-width: 640px;">
         DayDine is a local restaurant ranking built from the signals the whole market can see.
@@ -317,246 +398,249 @@
   </div>
 </section>
 
-<!-- ================ 2. WHAT WE MEASURE ================ -->
-<section class="section" style="padding-top: 56px;">
-  <div class="container container-narrow">
-    <hr class="method-rule">
-    <h2 class="h-display h-display-md mb-3">Local market confidence,<br>not just popularity.</h2>
-    <div class="method-body">
-      <p>
-        A restaurant's standing in its town isn't the same as its follower count,
-        or its busiest Saturday night. DayDine is built to reflect something quieter
-        and more durable: the <strong>local market confidence</strong> around a venue —
-        the composite view the public, the regulators, and the independent reviewers
-        steadily form over time.
-      </p>
-      <p>
-        We reward restaurants that hold together under scrutiny. Clean inspections.
-        Consistent reviews across different sources. A clear offer. The operational
-        basics done well. Popularity, on its own, is not enough.
-      </p>
-    </div>
-  </div>
-</section>
+<!-- ================ MAIN CONTENT WITH SIDEBAR ================ -->
+<div class="method-layout" style="padding-top: 56px;">
+  <div class="method-main">
 
-<!-- ================ 3. HOW THE RANKING IS BUILT ================ -->
-<section class="section" style="background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-  <div class="container">
-    <div class="center mb-5">
-      <div class="kicker mb-1">How it works</div>
-      <h2 class="h-display h-display-md mb-2">How the ranking is built.</h2>
-      <p class="body-md" style="max-width: 620px; margin: 0 auto;">
-        A handful of broad areas of evidence, drawn from independent public sources.
-        Each area contributes to the overall score. No single signal can carry a venue on its own.
-      </p>
-    </div>
-
-    <div class="grid-3">
-      <div class="signal-card">
-        <div class="signal-card-icon">★</div>
-        <div>
-          <div class="signal-card-title">Trust &amp; Food Safety</div>
-          <div class="signal-card-desc">Official inspection records and hygiene performance, including confidence in how the kitchen is being managed.</div>
-        </div>
-      </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">◉</div>
-        <div>
-          <div class="signal-card-title">Reputation &amp; Reviews</div>
-          <div class="signal-card-desc">How the public experience of a venue is reflected across the major review platforms.</div>
-        </div>
-      </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">⟳</div>
-        <div>
-          <div class="signal-card-title">Discoverability</div>
-          <div class="signal-card-desc">How findable and well-presented a restaurant is at the moment a guest goes looking for it.</div>
-        </div>
-      </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">✓</div>
-        <div>
-          <div class="signal-card-title">Operational Readiness</div>
-          <div class="signal-card-desc">Reservations, service options, accessibility, opening hours — the practical signs of a well-run room.</div>
-        </div>
-      </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">⬡</div>
-        <div>
-          <div class="signal-card-title">Menu &amp; Offer Clarity</div>
-          <div class="signal-card-desc">Whether the offer is current, coherent, and communicated in a way a guest can act on.</div>
-        </div>
-      </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">↗</div>
-        <div>
-          <div class="signal-card-title">Recognition &amp; Wider Confidence</div>
-          <div class="signal-card-desc">Editorial coverage, guide mentions, awards, and independent endorsements.</div>
-        </div>
-      </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">▣</div>
-        <div>
-          <div class="signal-card-title">Business Stability</div>
-          <div class="signal-card-desc">Public records that flag when a business is in difficulty, so rankings don't flatter venues that are quietly coming apart.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================ 4. WHAT MAKES IT ROBUST ================ -->
-<section class="section">
-  <div class="container container-narrow">
-    <hr class="method-rule">
-    <h2 class="h-display h-display-md mb-2">What makes the ranking robust.</h2>
-    <p class="body-md mb-4">Five principles we apply to every score.</p>
-
-    <div class="principle">
-      <div class="principle-num">01</div>
-      <div>
-        <div class="principle-title">Multiple independent sources</div>
-        <div class="principle-desc">
-          No single source decides a position. A score is built from the agreement —
-          or disagreement — of several unrelated data streams.
-        </div>
-      </div>
-    </div>
-
-    <div class="principle">
-      <div class="principle-num">02</div>
-      <div>
-        <div class="principle-title">Freshness is weighted</div>
-        <div class="principle-desc">
-          A review or inspection from last month tells us more than one from two years ago.
-          Older signals fade gracefully. They are never simply discarded.
-        </div>
-      </div>
-    </div>
-
-    <div class="principle">
-      <div class="principle-num">03</div>
-      <div>
-        <div class="principle-title">Consistency across sources counts</div>
-        <div class="principle-desc">
-          When independent sources agree about a venue, confidence in the score rises.
-          When they diverge, the score is adjusted to reflect that tension honestly.
-        </div>
-      </div>
-    </div>
-
-    <div class="principle">
-      <div class="principle-num">04</div>
-      <div>
-        <div class="principle-title">Thin data is not overclaimed</div>
-        <div class="principle-desc">
-          A venue with little public information does not get to inherit a flattering
-          score by default. We would rather say we don't know enough than flatter a ranking.
-        </div>
-      </div>
-    </div>
-
-    <div class="principle">
-      <div class="principle-num">05</div>
-      <div>
-        <div class="principle-title">Ongoing calibration</div>
-        <div class="principle-desc">
-          The scoring model is reviewed and refined as new evidence arrives and
-          real-world outcomes accumulate. A ranking that stops learning is a ranking
-          that starts to lie.
-        </div>
-      </div>
-    </div>
-
-    <details class="tech-notes">
-      <summary>Technical notes</summary>
-      <div class="tech-notes-body">
-        <p>
-          DayDine applies time-based weighting so recent signals matter more than old ones;
-          pairwise cross-source comparison so independent ratings check each other;
-          confidence bands so thinly-evidenced venues are surfaced responsibly;
-          and tiebreaker logic so no two venues share a position.
-        </p>
-        <p>
-          The specific constants, thresholds, and weightings behind these mechanisms
-          are intentionally not published. See the note on proprietary logic below.
-        </p>
-      </div>
-    </details>
-  </div>
-</section>
-
-<!-- ================ 5. CONFIDENCE & FAIRNESS ================ -->
-<section class="section" style="padding-top: 0;">
-  <div class="container container-narrow">
-    <div class="confidence-aside">
-      <div class="confidence-kicker">On confidence</div>
-      <h3 class="confidence-title">Different venues, different amounts of evidence.</h3>
+    <!-- ================ 2. HOW RCS IS CALCULATED ================ -->
+    <div class="method-section" style="padding-top: 0;">
+      <hr class="method-rule">
+      <h2 class="h-display h-display-md mb-3">How does DayDine calculate the Restaurant Confidence Score?</h2>
       <div class="method-body">
         <p>
-          Some restaurants have years of reviews, clear inspection history, and a
-          well-kept public profile. Others — a new café, a family pub without a website,
-          an established room that has never chased coverage — have less of a paper trail.
+          A restaurant's standing in its town isn't the same as its follower count,
+          or its busiest Saturday night. DayDine is built to reflect something quieter
+          and more durable: the <strong>local market confidence</strong> around a venue —
+          the composite view the public, the regulators, and the independent reviewers
+          steadily form over time.
         </p>
         <p>
-          DayDine reflects that honestly. Every ranked venue carries a
-          <strong>confidence indicator</strong> alongside its position. Venues with
-          limited public evidence are shown as such, not quietly downgraded. And where
-          the evidence is simply too thin to rank responsibly, we say so rather than guess.
+          We reward restaurants that hold together under scrutiny. Clean inspections.
+          Consistent reviews across different sources. A clear offer. The operational
+          basics done well. Popularity, on its own, is not enough.
         </p>
-        <p style="font-style: italic;">
-          Fairness here means one thing: a restaurant's score should never pretend
-          to know more than it does.
+      </div>
+    </div>
+
+    <!-- ================ 3. THE 40 SIGNALS ================ -->
+    <div class="method-section">
+      <div class="center mb-4">
+        <div class="kicker mb-1">How it works</div>
+        <h2 class="h-display h-display-md mb-2">What are the 40 signals used to rank restaurants?</h2>
+        <p class="body-md" style="max-width: 620px; margin: 0 auto;">
+          A handful of broad areas of evidence, drawn from independent public sources.
+          Each area contributes to the overall score. No single signal can carry a venue on its own.
         </p>
       </div>
 
-      <div class="confidence-bars">
-        <div class="confidence-bar-row">
-          <div class="confidence-bar-label">High confidence</div>
-          <div class="confidence-bar-track"><div class="confidence-bar-fill" style="width: 100%;"></div></div>
+      <div class="grid-3" style="gap: 16px;">
+        <div class="signal-card">
+          <div class="signal-card-icon">★</div>
+          <div>
+            <div class="signal-card-title">Trust &amp; Food Safety</div>
+            <div class="signal-card-desc">Official inspection records and hygiene performance, including confidence in how the kitchen is being managed.</div>
+          </div>
         </div>
-        <div class="confidence-bar-row">
-          <div class="confidence-bar-label">Medium</div>
-          <div class="confidence-bar-track"><div class="confidence-bar-fill" style="width: 66%;"></div></div>
+        <div class="signal-card">
+          <div class="signal-card-icon">◉</div>
+          <div>
+            <div class="signal-card-title">Reputation &amp; Reviews</div>
+            <div class="signal-card-desc">How the public experience of a venue is reflected across the major review platforms.</div>
+          </div>
         </div>
-        <div class="confidence-bar-row">
-          <div class="confidence-bar-label">Low</div>
-          <div class="confidence-bar-track"><div class="confidence-bar-fill" style="width: 38%;"></div></div>
+        <div class="signal-card">
+          <div class="signal-card-icon">⟳</div>
+          <div>
+            <div class="signal-card-title">Discoverability</div>
+            <div class="signal-card-desc">How findable and well-presented a restaurant is at the moment a guest goes looking for it.</div>
+          </div>
         </div>
-        <div class="confidence-bar-row insufficient">
-          <div class="confidence-bar-label">Insufficient</div>
-          <div class="confidence-bar-track"></div>
+        <div class="signal-card">
+          <div class="signal-card-icon">✓</div>
+          <div>
+            <div class="signal-card-title">Operational Readiness</div>
+            <div class="signal-card-desc">Reservations, service options, accessibility, opening hours — the practical signs of a well-run room.</div>
+          </div>
+        </div>
+        <div class="signal-card">
+          <div class="signal-card-icon">⬡</div>
+          <div>
+            <div class="signal-card-title">Menu &amp; Offer Clarity</div>
+            <div class="signal-card-desc">Whether the offer is current, coherent, and communicated in a way a guest can act on.</div>
+          </div>
+        </div>
+        <div class="signal-card">
+          <div class="signal-card-icon">↗</div>
+          <div>
+            <div class="signal-card-title">Recognition &amp; Wider Confidence</div>
+            <div class="signal-card-desc">Editorial coverage, guide mentions, awards, and independent endorsements.</div>
+          </div>
+        </div>
+        <div class="signal-card">
+          <div class="signal-card-icon">▣</div>
+          <div>
+            <div class="signal-card-title">Business Stability</div>
+            <div class="signal-card-desc">Public records that flag when a business is in difficulty, so rankings don't flatter venues that are quietly coming apart.</div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ================ 6. WHAT IT DOES NOT CLAIM ================ -->
-<section class="section">
-  <div class="container container-narrow">
-    <hr class="method-rule">
-    <h2 class="h-display h-display-md mb-3">What the ranking does not claim.</h2>
-    <div class="method-body">
-      <p>
-        DayDine is not the final word on food quality, hospitality, or the experience
-        of sitting at a particular table on a particular night. No ranking is, and no
-        ranking should claim to be. The craft of a kitchen and the warmth of a room are
-        things only a guest can judge.
-      </p>
-      <p>
-        What DayDine reflects is something more specific — and, we think, more useful.
-        It is a read on the <strong>public market confidence</strong> around a restaurant:
-        the signals the wider world can see, the records it leaves behind, and the
-        coherence of the picture those signals form together.
-      </p>
-      <p>
-        Used well, that is a strong starting point for a diner and a serious benchmark
-        for an operator. Used alone, it is not a substitute for going and seeing for yourself.
-      </p>
+    <!-- ================ 4. WHY DIFFERENT FROM TRIPADVISOR ================ -->
+    <div class="method-section">
+      <hr class="method-rule">
+      <h2 class="h-display h-display-md mb-2">Why is your score different from TripAdvisor or Google ratings?</h2>
+      <p class="body-md mb-4">Five principles we apply to every score.</p>
+
+      <div class="principle">
+        <div class="principle-num">01</div>
+        <div>
+          <div class="principle-title">Multiple independent sources</div>
+          <div class="principle-desc">
+            No single source decides a position. A score is built from the agreement —
+            or disagreement — of several unrelated data streams.
+          </div>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="principle-num">02</div>
+        <div>
+          <div class="principle-title">Freshness is weighted</div>
+          <div class="principle-desc">
+            A review or inspection from last month tells us more than one from two years ago.
+            Older signals fade gracefully. They are never simply discarded.
+          </div>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="principle-num">03</div>
+        <div>
+          <div class="principle-title">Consistency across sources counts</div>
+          <div class="principle-desc">
+            When independent sources agree about a venue, confidence in the score rises.
+            When they diverge, the score is adjusted to reflect that tension honestly.
+          </div>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="principle-num">04</div>
+        <div>
+          <div class="principle-title">Thin data is not overclaimed</div>
+          <div class="principle-desc">
+            A venue with little public information does not get to inherit a flattering
+            score by default. We would rather say we don't know enough than flatter a ranking.
+          </div>
+        </div>
+      </div>
+
+      <div class="principle">
+        <div class="principle-num">05</div>
+        <div>
+          <div class="principle-title">Ongoing calibration</div>
+          <div class="principle-desc">
+            The scoring model is reviewed and refined as new evidence arrives and
+            real-world outcomes accumulate. A ranking that stops learning is a ranking
+            that starts to lie.
+          </div>
+        </div>
+      </div>
+
+      <details class="tech-notes">
+        <summary>Technical notes</summary>
+        <div class="tech-notes-body">
+          <p>
+            DayDine applies time-based weighting so recent signals matter more than old ones;
+            pairwise cross-source comparison so independent ratings check each other;
+            confidence bands so thinly-evidenced venues are surfaced responsibly;
+            and tiebreaker logic so no two venues share a position.
+          </p>
+          <p>
+            The specific constants, thresholds, and weightings behind these mechanisms
+            are intentionally not published. See the note on proprietary logic below.
+          </p>
+        </div>
+      </details>
+
+      <div class="confidence-aside" style="margin-top: 48px;">
+        <div class="confidence-kicker">On confidence</div>
+        <h3 class="confidence-title">Different venues, different amounts of evidence.</h3>
+        <div class="method-body">
+          <p>
+            Some restaurants have years of reviews, clear inspection history, and a
+            well-kept public profile. Others — a new café, a family pub without a website,
+            an established room that has never chased coverage — have less of a paper trail.
+          </p>
+          <p>
+            DayDine reflects that honestly. Every ranked venue carries a
+            <strong>confidence indicator</strong> alongside its position. Venues with
+            limited public evidence are shown as such, not quietly downgraded. And where
+            the evidence is simply too thin to rank responsibly, we say so rather than guess.
+          </p>
+          <p style="font-style: italic;">
+            Fairness here means one thing: a restaurant's score should never pretend
+            to know more than it does.
+          </p>
+        </div>
+
+        <div class="confidence-bars">
+          <div class="confidence-bar-row">
+            <div class="confidence-bar-label">High confidence</div>
+            <div class="confidence-bar-track"><div class="confidence-bar-fill" style="width: 100%;"></div></div>
+          </div>
+          <div class="confidence-bar-row">
+            <div class="confidence-bar-label">Medium</div>
+            <div class="confidence-bar-track"><div class="confidence-bar-fill" style="width: 66%;"></div></div>
+          </div>
+          <div class="confidence-bar-row">
+            <div class="confidence-bar-label">Low</div>
+            <div class="confidence-bar-track"><div class="confidence-bar-fill" style="width: 38%;"></div></div>
+          </div>
+          <div class="confidence-bar-row insufficient">
+            <div class="confidence-bar-label">Insufficient</div>
+            <div class="confidence-bar-track"></div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+
+    <!-- ================ 5. HOW OFTEN UPDATED ================ -->
+    <div class="method-section">
+      <hr class="method-rule">
+      <h2 class="h-display h-display-md mb-3">How often are restaurant scores updated?</h2>
+      <div class="method-body">
+        <p>
+          Scores are <strong>recalculated weekly</strong> as new data arrives from public sources.
+          FSA inspections, Google reviews, TripAdvisor ratings, and business filings are
+          monitored continuously, and changes flow into the next scoring cycle.
+        </p>
+        <p>
+          Temporal decay is built in: a review or inspection from last month carries more weight
+          than one from two years ago. Older signals fade gracefully — they are never simply
+          discarded. This means a restaurant's score naturally responds to recent improvements
+          or recent decline, without being whipsawed by a single data point.
+        </p>
+        <p>
+          DayDine is not the final word on food quality or the experience of sitting at
+          a particular table on a particular night. It is a read on the
+          <strong>public market confidence</strong> around a restaurant — the signals
+          the wider world can see and the coherence of the picture those signals form together.
+        </p>
+      </div>
+    </div>
+
+  </div><!-- /.method-main -->
+
+  <aside class="method-sidebar">
+    <div class="method-sidebar-inner">
+      <h4>Curious where YOUR restaurant ranks?</h4>
+      <p class="body-sm" style="color: var(--text-muted);">Full competitor report — £49 · delivered in 48 hours</p>
+      <a class="btn btn-primary" href="/reports">Get My Position Report →</a>
+    </div>
+  </aside>
+</div><!-- /.method-layout -->
 
 <!-- ================ 7. OPERATOR SECTION ================ -->
 <section class="operator-band">
@@ -656,20 +740,18 @@
   </div>
 </section>
 
-<!-- ================ 9. CTA BAND ================ -->
+<!-- ================ BOTTOM CTA ================ -->
 <section class="cta-band">
   <div class="container container-narrow">
     <h2 class="cta-band-title">
-      Understand your position.<br>Then improve it.
+      See how your venue currently ranks.
     </h2>
     <p class="body-lg mb-4" style="max-width: 620px; margin-left: auto; margin-right: auto;">
-      A Position &amp; Competitor Report is a private, venue-specific read of your
-      local standing: where you currently rank, your five closest competitors, the
-      signals where they are outperforming you, and the realistic moves that will
-      close the gap.
+      Your Position &amp; Competitor Report shows exactly where you stand,
+      who is ahead, and the specific actions that will move you up.
     </p>
-    <a class="btn btn-primary btn-lg" href="/reports">Request your Position &amp; Competitor Report</a>
-    <p class="body-sm mt-2" style="color: var(--text-subtle);">Delivered privately within 48 hours.</p>
+    <a class="btn btn-primary btn-lg" href="/reports">Get your Position Report →</a>
+    <p class="body-sm mt-2" style="color: var(--text-subtle);">£49 · delivered privately within 48 hours.</p>
 
     <div class="cta-closing">
       <p class="cta-closing-text">
