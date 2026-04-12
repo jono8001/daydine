@@ -720,6 +720,139 @@ body {
   margin-top: 32px;
 }
 
+/* ---- Market card (rankings index) ---- */
+.market-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 32px;
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-xs);
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+.market-card:hover {
+  border-color: rgba(196, 154, 42, 0.35);
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+.market-card-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.market-card-meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.market-card-stat {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.market-card-stat strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.market-card-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--positive);
+  background: rgba(30, 122, 47, 0.08);
+  padding: 5px 12px;
+  border-radius: 4px;
+}
+
+/* ---- Filter bar ---- */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0;
+}
+.filter-btn {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn.active {
+  background: var(--text);
+  color: var(--surface-1);
+  border-color: var(--text);
+}
+.filter-count {
+  font-family: var(--mono);
+  font-size: 11px;
+  opacity: 0.7;
+  margin-left: 4px;
+}
+
+/* ---- Convergence indicator ---- */
+.convergence {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.convergence-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.convergence-converged .convergence-dot { background: var(--positive); }
+.convergence-converged { color: var(--positive); }
+.convergence-neutral .convergence-dot { background: var(--text-subtle); }
+.convergence-neutral { color: var(--text-subtle); }
+.convergence-mild .convergence-dot { background: #C27A00; }
+.convergence-mild { color: #C27A00; }
+.convergence-diverged .convergence-dot { background: var(--negative); }
+.convergence-diverged { color: var(--negative); }
+
+/* ---- Enhanced rank table for market pages ---- */
+.rank-table-enhanced .rank-head,
+.rank-table-enhanced .rank-row {
+  grid-template-columns: 56px 1.4fr 160px 100px 90px;
+}
+
+/* ---- Table meta bar ---- */
+.table-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 0;
+  font-size: 13px;
+  color: var(--text-subtle);
+  border-bottom: 1px solid var(--border-soft);
+}
+.table-meta-count { font-family: var(--mono); font-weight: 500; }
+
 /* ---- FAQ accordion ---- */
 .faq-list { border-top: 1px solid var(--border); }
 .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }

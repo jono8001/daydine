@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>Top 10 Restaurants in Stratford-upon-Avon — DayDine</title>
-  <meta name="description" content="The top 10 ranked restaurants in Stratford-upon-Avon, measured by the Restaurant Confidence Score. Updated quarterly from public market signals.">
+  <title>Stratford-upon-Avon Restaurant Rankings — DayDine Market Index</title>
+  <meta name="description" content="Stratford-upon-Avon restaurant rankings by the Restaurant Confidence Score. 190 venues scored weekly across 40 public market signals.">
   <link rel="canonical" href="https://daydine.vercel.app/rankings/stratford-on-avon">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Top 10 Restaurants in Stratford-upon-Avon — DayDine">
-  <meta property="og:description" content="The top 10 ranked restaurants in Stratford-upon-Avon, measured by the Restaurant Confidence Score.">
+  <meta property="og:title" content="Stratford-upon-Avon Rankings — DayDine">
+  <meta property="og:description" content="190 venues ranked by the Restaurant Confidence Score. Updated weekly from public market signals.">
   <meta property="og:url" content="https://daydine.vercel.app/rankings/stratford-on-avon">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/daydine.css">
@@ -36,20 +36,34 @@
   </div>
 </nav>
 
-<section class="section" style="padding-top: 80px;">
-  <div class="container container-narrow">
-    <a class="kicker" href="/rankings" style="display:inline-block; margin-bottom: 12px;">← All Rankings</a>
-    <div class="kicker kicker-accent mb-1">Local Rankings</div>
-    <h1 class="h-display h-display-lg mb-2" id="pageTitle">Top 10 in Stratford-upon-Avon</h1>
-    <p class="body-md mb-4" id="pageMeta">Loading…</p>
+<section class="section" style="padding-top: 80px; padding-bottom: 48px;">
+  <div class="container">
+    <a class="kicker" href="/rankings" style="display:inline-block; margin-bottom: 12px;">&larr; All Markets</a>
+    <div class="kicker kicker-accent mb-1">Market Index</div>
+    <h1 class="h-display h-display-lg mb-2" id="pageTitle">Stratford-upon-Avon</h1>
+    <p class="body-md" id="pageMeta">Loading…</p>
+  </div>
+</section>
 
-    <div class="rank-table">
+<section class="section" style="padding-top: 0; padding-bottom: 64px;">
+  <div class="container">
+    <!-- Category filters -->
+    <div id="categoryFilters" class="filter-bar" style="display:none;"></div>
+
+    <!-- Table meta -->
+    <div class="table-meta">
+      <span class="table-meta-count" id="tableCount"></span>
+      <span>Scored by 40 signals · <a href="/methodology" style="color: var(--accent); font-weight: 500;">How scores work &rarr;</a></span>
+    </div>
+
+    <!-- Rankings table -->
+    <div class="rank-table" id="rankingsTable">
       <div class="rank-head">
         <div>Rank</div>
         <div>Venue</div>
         <div>Category</div>
         <div style="text-align:center;">Score</div>
-        <div style="text-align:center;">Movement</div>
+        <div style="text-align:center;">Convergence</div>
       </div>
       <div id="rankingsBody"></div>
     </div>
@@ -58,20 +72,17 @@
   </div>
 </section>
 
-<section class="section" style="padding-top: 20px;">
-  <div class="container container-narrow">
-    <div class="card card-tinted center">
-      <div class="kicker kicker-accent mb-1">For Restaurant Operators</div>
-      <h2 class="h-display h-display-md mb-2">Is your venue ranked outside the top 10?</h2>
-      <p class="body-lg mb-3" style="max-width: 580px; margin: 0 auto;">
-        Order a Position Report to discover exactly where you stand,
-        who's directly ahead of you, and what to do about it. One-off, £49,
-        delivered within 48 hours.
-      </p>
-      <div class="row" style="justify-content: center;">
-        <a class="btn btn-primary btn-lg" href="/reports">Get My Position Report</a>
-        <a class="btn btn-secondary btn-lg" href="/sample">View Sample Report</a>
-      </div>
+<section class="section section-alt" style="padding-top: 64px; padding-bottom: 64px;">
+  <div class="container container-narrow center">
+    <div class="kicker kicker-accent mb-1">For Operators</div>
+    <h2 class="h-display h-display-md mb-2">See where you rank — and what to do about it</h2>
+    <p class="body-lg mb-3" style="max-width: 580px; margin: 0 auto;">
+      Your Position Report shows your exact rank, your five closest competitors,
+      and the specific actions that will move you up. £49, delivered within 48 hours.
+    </p>
+    <div class="row" style="justify-content: center;">
+      <a class="btn btn-primary btn-lg" href="/reports">Get a Market Report</a>
+      <a class="btn btn-secondary btn-lg" href="/sample">View Sample</a>
     </div>
   </div>
 </section>
@@ -111,54 +122,8 @@
 
 <script src="/assets/daydine.js"></script>
 <script>
-  (async function renderLeaderboard() {
-    try {
-      const resp = await fetch('/assets/rankings/stratford-on-avon.json');
-      if (!resp.ok) throw new Error('fetch failed');
-      const data = await resp.json();
-
-      document.getElementById('pageTitle').textContent =
-        `Top ${data.top_n} in ${data.display_name}`;
-      document.getElementById('pageMeta').innerHTML =
-        `<span class="kicker">Last updated ${formatDate(data.last_updated)}</span> · Rankings refreshed quarterly · ${data.total_venues} venues in the ranked set`;
-
-      const body = document.getElementById('rankingsBody');
-      body.innerHTML = data.venues.map(venue => {
-        const bandClass = 'score-badge-' + (venue.band_class || 'good');
-        const rankClass = venue.rank <= 3 ? 'rank-num rank-num-top' : 'rank-num';
-        return `
-          <div class="rank-row">
-            <div class="${rankClass}">#${venue.rank}</div>
-            <div>
-              <div class="rank-name">${esc(venue.name)}</div>
-              <div class="rank-sub">${esc(venue.postcode)}</div>
-            </div>
-            <div class="rank-category">${esc(venue.category)}</div>
-            <div class="rank-score">
-              <span class="score-badge ${bandClass}">
-                <span class="score-badge-num">${Number(venue.rcs_final).toFixed(1)}</span>
-                <span class="score-badge-max">/ 10</span>
-              </span>
-            </div>
-            <div class="rank-change"><span class="movement movement-new">NEW</span></div>
-          </div>
-        `;
-      }).join('');
-
-      // "and X other ranked restaurants" teaser — NO names, count only
-      if (data.others_count > 0) {
-        const note = document.getElementById('othersNote');
-        note.style.display = '';
-        note.innerHTML = `
-          <span class="kicker">And <strong style="font-size: 14px; color: var(--text);">${data.others_count}</strong> other ranked restaurants in ${esc(data.display_name)}</span>
-        `;
-      }
-    } catch (err) {
-      document.getElementById('pageMeta').textContent =
-        'Unable to load rankings. Please refresh the page.';
-      console.error(err);
-    }
-  })();
+  let allVenues = [];
+  let activeCat = 'all';
 
   function esc(s) {
     const el = document.createElement('span');
@@ -166,10 +131,81 @@
     return el.innerHTML;
   }
   function formatDate(iso) {
-    if (!iso) return '—';
+    if (!iso) return '';
     const d = new Date(iso);
-    if (isNaN(d)) return iso;
-    return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    return isNaN(d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+  }
+
+  (async function() {
+    try {
+      const resp = await fetch('/assets/rankings/stratford-on-avon.json');
+      if (!resp.ok) throw new Error('fetch failed');
+      const data = await resp.json();
+      allVenues = data.venues || [];
+
+      document.getElementById('pageTitle').textContent = data.display_name;
+      document.getElementById('pageMeta').innerHTML =
+        `${data.total_venues} venues ranked &middot; Last updated ${formatDate(data.last_updated)} &middot; Refreshed weekly`;
+
+      // Category filters
+      const cats = {};
+      allVenues.forEach(v => { cats[v.category] = (cats[v.category] || 0) + 1; });
+      const sorted = Object.entries(cats).sort((a, b) => b[1] - a[1]);
+      const bar = document.getElementById('categoryFilters');
+      bar.style.display = '';
+      bar.innerHTML = `<button class="filter-btn active" data-cat="all">All<span class="filter-count">${allVenues.length}</span></button>` +
+        sorted.map(([c, n]) => `<button class="filter-btn" data-cat="${esc(c)}">${esc(c)}<span class="filter-count">${n}</span></button>`).join('');
+      bar.addEventListener('click', e => {
+        const btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        activeCat = btn.dataset.cat;
+        bar.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
+        render();
+      });
+
+      document.getElementById('tableCount').textContent =
+        `Showing ${allVenues.length} of ${data.total_venues} venues`;
+      render();
+
+      if (data.others_count > 0) {
+        const note = document.getElementById('othersNote');
+        note.style.display = '';
+        note.innerHTML = `<span class="kicker">And <strong style="font-size:14px;color:var(--text);">${data.others_count}</strong> other ranked venues in ${esc(data.display_name)} &middot; <a style="color:var(--accent);font-weight:500;" href="/reports">See your full position &rarr;</a></span>`;
+      }
+    } catch (err) {
+      document.getElementById('pageMeta').textContent = 'Unable to load rankings.';
+    }
+  })();
+
+  function render() {
+    const filtered = activeCat === 'all' ? allVenues : allVenues.filter(v => v.category === activeCat);
+    document.getElementById('rankingsBody').innerHTML = filtered.map(venue => {
+      const bandClass = 'score-badge-' + (venue.band_class || 'good');
+      const rankClass = venue.rank <= 3 ? 'rank-num rank-num-top' : 'rank-num';
+      const conv = venue.convergence || 'neutral';
+      const convLabel = conv === 'converged' ? 'Converged' : conv === 'neutral' ? 'Neutral' : conv === 'mild_divergence' ? 'Mild div.' : 'Diverged';
+      return `
+        <div class="rank-row">
+          <div class="${rankClass}">#${venue.rank}</div>
+          <div>
+            <div class="rank-name">${esc(venue.name)}</div>
+            <div class="rank-sub">${esc(venue.postcode)}</div>
+          </div>
+          <div class="rank-category">${esc(venue.category)}</div>
+          <div class="rank-score">
+            <span class="score-badge ${bandClass}">
+              <span class="score-badge-num">${Number(venue.rcs_final).toFixed(1)}</span>
+              <span class="score-badge-max">/ 10</span>
+            </span>
+          </div>
+          <div class="rank-change">
+            <span class="convergence convergence-${conv}">
+              <span class="convergence-dot"></span> ${convLabel}
+            </span>
+          </div>
+        </div>
+      `;
+    }).join('');
   }
 </script>
 </body>
