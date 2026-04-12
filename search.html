@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>Restaurant Search — DayDine</title>
-  <meta name="description" content="Search 264,791 UK restaurants by town, city or postcode. See FSA hygiene ratings and Google scores on an interactive map.">
+  <title>UK Restaurant Database — Search 264,791 Establishments | DayDine</title>
+  <meta name="description" content="Search the full UK restaurant database. 264,791 establishments with FSA hygiene ratings, Google scores, inspection data, and sub-scores. Search by town, city, or postcode.">
   <link rel="canonical" href="https://daydine.vercel.app/search">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Restaurant Search — DayDine">
-  <meta property="og:description" content="Search 264,791 UK restaurants by town, city or postcode. See FSA hygiene ratings and Google scores on an interactive map.">
+  <meta property="og:title" content="UK Restaurant Database — DayDine">
+  <meta property="og:description" content="Search 264,791 UK restaurants. FSA hygiene ratings, Google scores, inspection histories, and sub-scores.">
   <meta property="og:url" content="https://daydine.vercel.app/search">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/daydine.css">
@@ -17,194 +17,122 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #F5F0E8;
-      --bg-card: #ffffff;
-      --bg-row-hover: #FBF8F3;
-      --bg-expanded: #FAF7F1;
-      --border: #E5DFD3;
-      --text: #2D2D2D;
-      --text-muted: #7A7265;
-      --accent: #D4942A;
-      --accent-hover: #B87D1E;
-      --accent-light: #FDF5E9;
-      --green: #2E7D32;
-      --green-bg: #E8F5E9;
-      --yellow: #C27A00;
-      --yellow-bg: #FFF8E1;
-      --orange: #D84315;
-      --orange-bg: #FBE9E7;
-      --red: #C62828;
-      --red-bg: #FFEBEE;
-      --radius: 10px;
-      --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
-      --shadow-md: 0 4px 12px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04);
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      min-height: 100vh;
-    }
-
-    /* ---- Header ---- */
-    header {
-      background: var(--bg-card);
-      border-bottom: 1px solid var(--border);
-      padding: 1.1rem 1.5rem;
-      box-shadow: var(--shadow);
-    }
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .logo {
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: -.02em;
-    }
-    /* Amber dot on the "i" — we split into Day + D + i + ne with the i styled */
-    .logo-day { color: var(--text); }
-    .logo-d { color: var(--text); }
-    .logo-i { position: relative; color: var(--text); }
-    .logo-i::after {
-      content: '';
-      position: absolute;
-      top: -.02em;
-      left: 50%;
-      transform: translateX(-50%);
-      width: .32em;
-      height: .32em;
-      background: var(--accent);
-      border-radius: 50%;
-    }
-    /* Hide the natural dot on the i by making it transparent and overlaying */
-    .logo-i { font-style: normal; }
-    .logo-ne { color: var(--text); }
-    .tagline { font-size: .85rem; color: var(--text-muted); }
+    /* ---- Search page overrides — aligned to shared design system ---- */
 
     /* ---- Filters ---- */
     .filters {
-      background: var(--bg-card);
+      background: var(--surface-1);
       border-bottom: 1px solid var(--border);
-      padding: 1rem 1.5rem;
+      padding: 20px 24px;
     }
     .filters-inner {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
-      gap: .6rem;
+      gap: 10px;
       flex-wrap: wrap;
       align-items: end;
     }
-    .fld { display: flex; flex-direction: column; gap: .25rem; }
+    .fld { display: flex; flex-direction: column; gap: 4px; }
     .fld label {
-      font-size: .7rem;
+      font-family: var(--mono);
+      font-size: 10px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: .05em;
-      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      color: var(--text-subtle);
     }
     .fld input, .fld select {
-      padding: .5rem .75rem;
-      font-size: .85rem;
-      font-family: inherit;
+      padding: 10px 14px;
+      font-size: 14px;
+      font-family: var(--sans);
       background: var(--bg);
       color: var(--text);
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: var(--radius);
       outline: none;
       min-width: 160px;
-      transition: border-color .15s, box-shadow .15s;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
     .fld input:focus, .fld select:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(212,148,42,.15);
+      box-shadow: 0 0 0 3px rgba(196, 154, 42, 0.15);
     }
-    .fld select option { background: var(--bg-card); }
-    .btn {
-      padding: .5rem 1.4rem;
-      background: var(--accent);
-      color: #fff;
-      font-family: inherit;
+    .fld select option { background: var(--surface-1); }
+    .search-btn {
+      padding: 10px 24px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+      color: var(--text);
+      font-family: var(--sans);
       font-weight: 600;
-      font-size: .85rem;
-      border: none;
-      border-radius: 8px;
+      font-size: 14px;
+      border: 1px solid var(--accent-dark);
+      border-radius: var(--radius);
       cursor: pointer;
-      transition: background .15s, box-shadow .15s;
+      transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
       align-self: end;
       box-shadow: var(--shadow);
+      white-space: nowrap;
     }
-    .btn:hover { background: var(--accent-hover); box-shadow: var(--shadow-md); }
-    .btn:disabled { opacity: .45; cursor: not-allowed; }
+    .search-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+    .search-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
 
     /* ---- Main ---- */
-    main { max-width: 1200px; margin: 1.5rem auto; padding: 0 1.5rem; }
+    main { max-width: 1200px; margin: 24px auto; padding: 0 24px; }
     .status {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 64px 24px;
       color: var(--text-muted);
-      font-size: .95rem;
+      font-size: 15px;
+      line-height: 1.6;
     }
     .meta-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: .75rem;
-      font-size: .82rem;
-      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-size: 13px;
+      color: var(--text-subtle);
       flex-wrap: wrap;
-      gap: .5rem;
+      gap: 8px;
     }
 
     /* ---- Table ---- */
     .table-wrap {
       overflow-x: auto;
-      background: var(--bg-card);
+      background: var(--surface-1);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow);
     }
-    table { width: 100%; border-collapse: collapse; font-size: .85rem; }
-    thead { background: #FAF7F2; }
+    table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    thead { background: var(--surface-3); }
     th {
       text-align: left;
-      padding: .65rem .85rem;
-      font-size: .72rem;
+      padding: 12px 14px;
+      font-family: var(--mono);
+      font-size: 10px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: .05em;
-      color: var(--text-muted);
-      border-bottom: 2px solid var(--border);
+      letter-spacing: 0.08em;
+      color: var(--text-subtle);
+      border-bottom: 1px solid var(--border);
       user-select: none;
       white-space: nowrap;
     }
     th.sortable { cursor: pointer; }
     th.sortable:hover { color: var(--accent); }
-    th .arrow { margin-left: .3rem; font-size: .65rem; }
+    th .arrow { margin-left: 4px; font-size: 10px; }
     td {
-      padding: .6rem .85rem;
-      border-bottom: 1px solid #EDE8DF;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-soft);
       vertical-align: middle;
     }
-    tbody tr { background: var(--bg-card); transition: background .1s; }
-    tbody tr:hover { background: var(--bg-row-hover); }
+    tbody tr { background: var(--surface-1); transition: background 0.1s; }
+    tbody tr:hover { background: var(--surface-2); }
+    tbody tr:last-child td { border-bottom: none; }
     tbody tr.expanded-parent { background: var(--accent-light); }
-    .name-cell {
-      font-weight: 600;
-      cursor: pointer;
-      color: var(--accent);
-    }
+    .name-cell { font-weight: 600; cursor: pointer; color: var(--accent); }
     .name-cell:hover { color: var(--accent-hover); text-decoration: underline; }
 
     /* ---- Rating badges ---- */
@@ -212,256 +140,191 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 2rem;
-      padding: .2rem .55rem;
-      border-radius: 6px;
+      min-width: 32px;
+      padding: 3px 10px;
+      border-radius: var(--radius-sm);
       font-weight: 700;
-      font-size: .82rem;
+      font-size: 13px;
       text-align: center;
+      font-family: var(--mono);
     }
-    .r5 { background: var(--green-bg); color: var(--green); }
-    .r4 { background: var(--green-bg); color: var(--green); }
-    .r3 { background: var(--yellow-bg); color: var(--yellow); }
-    .r2 { background: var(--orange-bg); color: var(--orange); }
-    .r1 { background: var(--red-bg); color: var(--red); }
-    .r0 { background: var(--red-bg); color: var(--red); }
-    .r-exempt { background: #F0EDE6; color: var(--text-muted); font-size: .72rem; }
+    .r5 { background: var(--band-excellent-bg); color: var(--band-excellent-fg); }
+    .r4 { background: var(--band-good-bg); color: var(--band-good-fg); }
+    .r3 { background: var(--band-satisfactory-bg); color: var(--band-satisfactory-fg); }
+    .r2 { background: var(--band-improvement-bg); color: var(--band-improvement-fg); }
+    .r1 { background: var(--band-major-bg); color: var(--band-major-fg); }
+    .r0 { background: var(--band-urgent-bg); color: var(--band-urgent-fg); }
+    .r-exempt { background: var(--surface-3); color: var(--text-subtle); font-size: 11px; }
 
     /* ---- Tier badges ---- */
     .tier-badge {
       display: inline-block;
-      padding: .15rem .5rem;
-      border-radius: 4px;
-      font-size: .68rem;
+      padding: 2px 8px;
+      border-radius: var(--radius-sm);
+      font-family: var(--mono);
+      font-size: 10px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: .03em;
-      margin-top: .2rem;
+      letter-spacing: 0.04em;
+      margin-top: 3px;
       white-space: nowrap;
     }
     .tier-5 { background: #1B5E20; color: #fff; }
     .tier-4 { background: #00796B; color: #fff; }
-    .tier-3 { background: #F9A825; color: #333; }
+    .tier-3 { background: #F9A825; color: #1A1A1A; }
     .tier-2 { background: #E65100; color: #fff; }
     .tier-1 { background: #C62828; color: #fff; }
     .tier-0 { background: #4A0000; color: #fff; }
 
-    /* ---- Google rating inline ---- */
+    /* ---- Google rating ---- */
     .google-rating {
       display: inline-flex;
       align-items: center;
-      gap: .3rem;
-      font-size: .8rem;
+      gap: 4px;
+      font-size: 13px;
       color: var(--text-muted);
       white-space: nowrap;
     }
-    .google-star { color: #FBBC04; font-size: .9rem; }
-    .google-score { font-weight: 600; color: var(--text); }
-    .google-count { font-size: .72rem; }
+    .google-star { color: #FBBC04; font-size: 14px; }
+    .google-score { font-weight: 600; color: var(--text); font-family: var(--mono); }
+    .google-count { font-size: 11px; }
 
-    /* ---- Row expand chevron ---- */
+    /* ---- Row expand ---- */
     .expand-chevron {
       display: inline-block;
-      width: .6em;
-      margin-right: .35rem;
-      transition: transform .15s;
-      font-size: .7rem;
-      color: var(--text-muted);
+      width: 0.6em;
+      margin-right: 5px;
+      transition: transform 0.15s;
+      font-size: 11px;
+      color: var(--text-subtle);
     }
     .expanded-parent .expand-chevron { transform: rotate(90deg); }
 
-    /* ---- Expanded detail row ---- */
+    /* ---- Expanded detail ---- */
     .detail-row td { padding: 0; border-bottom: 1px solid var(--border); }
     .detail-inner {
-      padding: 1rem 1.2rem 1rem 2.5rem;
-      background: var(--bg-expanded);
-      font-size: .82rem;
+      padding: 16px 20px 16px 40px;
+      background: var(--surface-2);
+      font-size: 13px;
     }
-    .detail-section {
-      margin-bottom: .8rem;
-    }
+    .detail-section { margin-bottom: 12px; }
     .detail-section:last-child { margin-bottom: 0; }
     .detail-section-title {
-      font-size: .7rem;
-      font-weight: 700;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: .06em;
+      letter-spacing: 0.08em;
       color: var(--accent);
-      margin-bottom: .45rem;
-      padding-bottom: .25rem;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border-soft);
     }
     .detail-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: .5rem 2rem;
+      gap: 8px 32px;
     }
     .detail-inner .dl-label {
-      font-size: .7rem;
+      font-family: var(--mono);
+      font-size: 10px;
       text-transform: uppercase;
-      letter-spacing: .04em;
-      color: var(--text-muted);
-      margin-bottom: .15rem;
+      letter-spacing: 0.06em;
+      color: var(--text-subtle);
+      margin-bottom: 2px;
     }
-    .detail-inner .dl-val { color: var(--text); font-weight: 500; }
+    .detail-inner .dl-val { color: var(--text); font-weight: 500; font-size: 14px; }
     .detail-inner a { color: var(--accent); text-decoration: none; font-weight: 600; }
     .detail-inner a:hover { text-decoration: underline; }
-    .score-bar-wrap { display: flex; align-items: center; gap: .5rem; margin-top: .2rem; }
-    .score-bar {
-      flex: 1;
-      height: 7px;
-      border-radius: 4px;
-      background: var(--border);
-      max-width: 120px;
-    }
-    .score-bar-fill { height: 100%; border-radius: 4px; }
-    .score-val { font-size: .78rem; font-weight: 600; min-width: 1.5rem; }
+    .score-bar-wrap { display: flex; align-items: center; gap: 8px; margin-top: 3px; }
+    .score-bar { flex: 1; height: 6px; border-radius: 3px; background: var(--border); max-width: 120px; }
+    .score-bar-fill { height: 100%; border-radius: 3px; }
+    .score-val { font-size: 13px; font-weight: 600; font-family: var(--mono); min-width: 24px; }
 
     /* ---- Pagination ---- */
-    .pagination { display: flex; justify-content: center; gap: .4rem; margin-top: 1.25rem; flex-wrap: wrap; }
+    .pagination { display: flex; justify-content: center; gap: 6px; margin-top: 20px; flex-wrap: wrap; }
     .pg-btn {
-      padding: .38rem .8rem;
+      padding: 6px 14px;
       border: 1px solid var(--border);
-      border-radius: 7px;
-      background: var(--bg-card);
+      border-radius: var(--radius);
+      background: var(--surface-1);
       color: var(--text);
-      font-family: inherit;
-      font-size: .82rem;
+      font-family: var(--sans);
+      font-size: 13px;
       cursor: pointer;
-      transition: all .15s;
-      box-shadow: var(--shadow);
+      transition: all 0.15s;
+      box-shadow: var(--shadow-xs);
     }
     .pg-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .pg-btn.active {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-    }
-    .pg-btn:disabled { opacity: .3; cursor: not-allowed; box-shadow: none; }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      color: var(--text-muted);
-      font-size: .78rem;
-    }
-
-    /* ---- Mobile: card layout ---- */
-    @media (max-width: 768px) {
-      .header-inner { flex-direction: column; gap: .3rem; }
-      .tagline { font-size: .78rem; }
-      .filters-inner { flex-direction: column; gap: .5rem; }
-      .fld { width: 100%; }
-      .fld input, .fld select { min-width: 0; width: 100%; }
-      .btn { width: 100%; text-align: center; }
-      .btn-nearme { width: 100%; text-align: center; }
-      #mapContainer { height: 400px; }
-      main { padding: 0 .75rem; margin-top: 1rem; }
-
-      /* Hide table header, make rows into cards */
-      .table-wrap { border: none; box-shadow: none; background: transparent; }
-      table, thead, tbody, th, td, tr { display: block; }
-      thead { display: none; }
-      tbody tr {
-        background: var(--bg-card);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        margin-bottom: .6rem;
-        padding: .75rem;
-        box-shadow: var(--shadow);
-        position: relative;
-      }
-      tbody tr.expanded-parent { border-color: var(--accent); }
-      td { padding: .15rem 0; border-bottom: none; }
-      td:before {
-        content: attr(data-label);
-        display: inline-block;
-        width: 7rem;
-        font-size: .68rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: .04em;
-        color: var(--text-muted);
-        flex-shrink: 0;
-      }
-      td { display: flex; align-items: center; }
-      td.mobile-hidden { display: none; }
-      .detail-row td { padding: 0; }
-      .detail-row td:before { display: none; }
-      .detail-inner { padding: .8rem .5rem; }
-      .detail-grid { grid-template-columns: 1fr; }
-      .pagination { margin-bottom: 1.5rem; }
-    }
+    .pg-btn.active { background: var(--text); color: var(--surface-1); border-color: var(--text); }
+    .pg-btn:disabled { opacity: 0.3; cursor: not-allowed; box-shadow: none; }
 
     /* ---- Near Me button ---- */
     .btn-nearme {
-      padding: .5rem 1rem;
-      background: #fff;
+      padding: 10px 16px;
+      background: var(--surface-1);
       color: var(--accent);
-      font-family: inherit;
+      font-family: var(--sans);
       font-weight: 600;
-      font-size: .85rem;
-      border: 2px solid var(--accent);
-      border-radius: 8px;
+      font-size: 14px;
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
       cursor: pointer;
-      transition: background .15s, color .15s;
+      transition: background 0.15s, color 0.15s;
       align-self: end;
       white-space: nowrap;
     }
-    .btn-nearme:hover { background: var(--accent); color: #fff; }
-    .btn-nearme:disabled { opacity: .45; cursor: not-allowed; }
+    .btn-nearme:hover { background: var(--accent); color: var(--surface-1); }
+    .btn-nearme:disabled { opacity: 0.45; cursor: not-allowed; }
 
-    /* ---- Location Autocomplete ---- */
+    /* ---- Location autocomplete ---- */
     .loc-wrap { position: relative; }
     .loc-dropdown {
       display: none;
       position: absolute;
       top: 100%;
-      left: 0;
-      right: 0;
+      left: 0; right: 0;
       z-index: 100;
       max-height: 220px;
       overflow-y: auto;
-      background: var(--bg-card);
+      background: var(--surface-1);
       border: 1px solid var(--border);
       border-top: none;
-      border-radius: 0 0 8px 8px;
+      border-radius: 0 0 var(--radius) var(--radius);
       box-shadow: var(--shadow-md);
     }
     .loc-dropdown.open { display: block; }
     .loc-option {
-      padding: .45rem .75rem;
-      font-size: .85rem;
+      padding: 8px 14px;
+      font-size: 14px;
       cursor: pointer;
-      transition: background .1s;
+      transition: background 0.1s;
     }
     .loc-option:hover, .loc-option.active { background: var(--accent-light); color: var(--accent); }
 
-    /* ---- Distance column ---- */
-    .dist-val { font-size: .82rem; color: var(--text-muted); white-space: nowrap; }
+    .dist-val { font-size: 13px; color: var(--text-muted); white-space: nowrap; font-family: var(--mono); }
 
     /* ---- View toggle ---- */
     .view-toggle {
       display: inline-flex;
       border: 1px solid var(--border);
-      border-radius: 7px;
+      border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: var(--shadow);
     }
     .view-btn {
-      padding: .35rem .9rem;
-      background: var(--bg-card);
+      padding: 6px 14px;
+      background: var(--surface-1);
       color: var(--text-muted);
       border: none;
-      font-family: inherit;
-      font-size: .78rem;
+      font-family: var(--sans);
+      font-size: 13px;
       font-weight: 600;
       cursor: pointer;
-      transition: all .15s;
+      transition: all 0.15s;
     }
     .view-btn + .view-btn { border-left: 1px solid var(--border); }
     .view-btn:hover { color: var(--accent); }
-    .view-btn.active { background: var(--accent); color: #fff; }
+    .view-btn.active { background: var(--text); color: var(--surface-1); }
 
     /* ---- Map ---- */
     #mapContainer {
@@ -469,40 +332,86 @@
       height: 550px;
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow);
       overflow: hidden;
-      margin-bottom: 1rem;
+      margin-bottom: 16px;
     }
     #mapContainer.visible { display: block; }
 
+    /* ---- Mobile ---- */
+    @media (max-width: 768px) {
+      .filters-inner { flex-direction: column; gap: 8px; }
+      .fld { width: 100%; }
+      .fld input, .fld select { min-width: 0; width: 100%; }
+      .search-btn { width: 100%; text-align: center; }
+      .btn-nearme { width: 100%; text-align: center; }
+      #mapContainer { height: 400px; }
+      main { padding: 0 12px; margin-top: 16px; }
+
+      .table-wrap { border: none; box-shadow: none; background: transparent; }
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tbody tr {
+        background: var(--surface-1);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        margin-bottom: 10px;
+        padding: 12px;
+        box-shadow: var(--shadow-xs);
+        position: relative;
+      }
+      tbody tr.expanded-parent { border-color: var(--accent); }
+      td { padding: 2px 0; border-bottom: none; }
+      td:before {
+        content: attr(data-label);
+        display: inline-block;
+        width: 110px;
+        font-family: var(--mono);
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--text-subtle);
+        flex-shrink: 0;
+      }
+      td { display: flex; align-items: center; }
+      td.mobile-hidden { display: none; }
+      .detail-row td { padding: 0; }
+      .detail-row td:before { display: none; }
+      .detail-inner { padding: 12px 8px; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .pagination { margin-bottom: 24px; }
+    }
+
     @media (max-width: 400px) {
-      .logo { font-size: 1.3rem; }
-      td:before { width: 5.5rem; }
+      td:before { width: 88px; }
     }
   </style>
 </head>
-<body>
+<body data-page-type="diner">
 
 <nav class="nav">
   <div class="nav-inner">
     <a class="nav-brand" href="/">
       <img class="nav-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-links">
-      <a class="nav-link" href="/">Home</a>
       <a class="nav-link" href="/rankings">Rankings</a>
+      <a class="nav-link active" href="/search">Search</a>
       <a class="nav-link" href="/reports">Reports</a>
       <a class="nav-link" href="/methodology">Methodology</a>
-      <a class="nav-link active" href="/search">Search</a>
-      <a class="btn btn-primary nav-cta" href="/reports">Get My Report — £49</a>
+      <a class="btn btn-primary nav-cta" href="/reports">Get a Market Report</a>
     </div>
   </div>
 </nav>
 
-<div style="max-width: 1200px; margin: 24px auto 8px; padding: 0 24px;">
-  <div class="kicker mb-1">Restaurant Search</div>
-  <h1 class="h-display h-display-md" style="margin-bottom: 8px;">Search 264,791 UK restaurants</h1>
-  <p class="body-md">Enter a town, city or UK postcode to find nearby restaurants with FSA hygiene ratings, Google scores, and detailed inspection data.</p>
+<div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px 16px;">
+  <div class="kicker kicker-accent mb-1">UK Restaurant Database</div>
+  <h1 class="h-display h-display-md" style="margin-bottom: 8px;">Search 264,791 establishments</h1>
+  <p class="body-md" style="max-width: 640px;">Search any UK town, city or postcode. View FSA hygiene ratings, Google scores, inspection histories, and sub-scores across the full national register.</p>
 </div>
 
 <div class="filters">
@@ -539,12 +448,17 @@
         <option value="0">0 — Urgent improvement necessary</option>
       </select>
     </div>
-    <button class="btn" id="btnSearch">Search</button>
+    <button class="search-btn" id="btnSearch">Search</button>
   </div>
 </div>
 
 <main>
-  <div id="status" class="status">Enter a town, city or postcode and press Search to find nearby restaurants.</div>
+  <div id="status" class="status">
+    Enter a town, city or postcode to search the UK restaurant database.<br>
+    <span style="font-size: 13px; color: var(--text-subtle); margin-top: 8px; display: inline-block;">
+      Looking for ranked markets? <a href="/rankings" style="color: var(--accent); font-weight: 500;">View market rankings &rarr;</a>
+    </span>
+  </div>
   <div id="resultsWrap" style="display:none;">
     <div class="meta-bar">
       <span id="metaCount"></span>
@@ -580,10 +494,34 @@
 
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <img class="footer-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img class="footer-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
+        </div>
+        <p class="footer-tagline">UK hospitality intelligence.<br>Public-signal market rankings.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Intelligence</div>
+        <a class="footer-link" href="/rankings">Market Rankings</a>
+        <a class="footer-link" href="/search">Restaurant Search</a>
+        <a class="footer-link" href="/methodology">Methodology</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Operator Tools</div>
+        <a class="footer-link" href="/reports">Position Reports</a>
+        <a class="footer-link" href="/sample">Sample Report</a>
+        <a class="footer-link" href="/pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Coverage</div>
+        <a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a>
+        <a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market</a>
+      </div>
     </div>
-    <p class="footer-copy">© 2026 DayDine. Data sourced from the UK Food Standards Agency.</p>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 DayDine. Data sourced from the Food Standards Agency, Google, TripAdvisor, and Companies House.</p>
+    </div>
   </div>
 </footer>
 
