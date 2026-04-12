@@ -92,6 +92,13 @@
     <div id="marketCardsLoading" style="padding: 24px; text-align: center;">
       <span class="body-sm">Loading markets…</span>
     </div>
+
+    <!-- Pipeline markets -->
+    <div id="pipelineSection" style="display: none; margin-top: 48px;">
+      <div class="kicker mb-2">Pipeline</div>
+      <div id="pipelineMarkets" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
+      <p class="body-sm mt-2" style="color: var(--text-subtle);">Markets are added once data pipelines are validated. <a style="color: var(--accent); font-weight: 500;" href="mailto:hello@daydine.com?subject=Area%20request">Request a market &rarr;</a></p>
+    </div>
   </div>
 </section>
 
@@ -188,7 +195,8 @@
       <div class="footer-col">
         <div class="footer-heading">Coverage</div>
         <a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a>
-        <a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market</a>
+        <span class="footer-link footer-link-muted">5 markets in pipeline</span>
+        <a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market &rarr;</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -215,13 +223,14 @@
     return isNaN(d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
   }
 
-  // ===== 1. Load market index → render market cards =====
+  // ===== 1. Load market index → render market cards + pipeline =====
   fetch('/assets/rankings/index.json')
     .then(r => r.json())
     .then(idx => {
       availableEntries = idx.available || [];
       availableSlugs = new Set(availableEntries.map(a => a.slug));
       renderMarketCards(availableEntries, idx.last_updated);
+      if (idx.pipeline && idx.pipeline.length) renderPipeline(idx.pipeline);
     })
     .catch(() => {
       document.getElementById('marketCards').innerHTML = '<p class="body-sm">Unable to load markets.</p>';
@@ -247,6 +256,19 @@
     // Update proof bar venue count
     let total = entries.reduce((s, e) => s + e.total_venues, 0);
     document.getElementById('proofVenues').textContent = total;
+  }
+
+  function renderPipeline(pipeline) {
+    document.getElementById('pipelineSection').style.display = '';
+    var container = document.getElementById('pipelineMarkets');
+    container.innerHTML = pipeline.map(function(m) {
+      var label = m.status === 'validating' ? 'Validating' : 'Requested';
+      var style = m.status === 'validating'
+        ? 'background: rgba(196,154,42,0.08); color: var(--accent); border-color: rgba(196,154,42,0.3);'
+        : 'background: transparent; border-style: dashed;';
+      return '<span class="chip" style="cursor: default; ' + style + '">' +
+        esc(m.display_name) + ' <span style="font-family:var(--mono);font-size:10px;opacity:0.7;margin-left:4px;">' + label + '</span></span>';
+    }).join('');
   }
 
   // ===== 2. Load featured market → render table with convergence + category filters =====

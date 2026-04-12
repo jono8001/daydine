@@ -5,8 +5,17 @@
       "slug": "stratford-on-avon",
       "la_name": "Stratford-on-Avon",
       "display_name": "Stratford-upon-Avon",
+      "region": "West Midlands",
+      "status": "live",
       "total_venues": 190,
       "top_score": 10.0
     }
+  ],
+  "pipeline": [
+    { "display_name": "Warwick", "region": "West Midlands", "status": "validating" },
+    { "display_name": "Birmingham", "region": "West Midlands", "status": "requested" },
+    { "display_name": "Oxford", "region": "South East", "status": "requested" },
+    { "display_name": "Bath", "region": "South West", "status": "requested" },
+    { "display_name": "Edinburgh", "region": "Scotland", "status": "requested" }
   ]
 }
