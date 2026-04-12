@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>How DayDine Ranks Restaurants in Stratford-upon-Avon | Methodology</title>
-  <meta name="description" content="How DayDine ranks restaurants in your town. A considered, principled read of local market confidence — built for diners and operators alike.">
+  <title>How DayDine Ranks UK Restaurants | Methodology &amp; Scoring Principles</title>
+  <meta name="description" content="How DayDine calculates the Restaurant Confidence Score. 40 public signals, 7 data tiers, confidence-aware methodology. What we measure, how freshness works, and why no exact formula is published.">
   <link rel="canonical" href="https://daydine.vercel.app/methodology">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Methodology — DayDine">
-  <meta property="og:description" content="A considered, principled read of local market confidence — built for diners and operators alike.">
+  <meta property="og:description" content="40 public signals, 7 data tiers, confidence-aware methodology. How we rank UK restaurants and what moves the score.">
   <meta property="og:url" content="https://daydine.vercel.app/methodology">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/daydine.css">
@@ -139,7 +139,7 @@
     /* Confidence aside */
     .confidence-aside {
       background: linear-gradient(135deg, var(--accent-light) 0%, var(--surface-1) 100%);
-      border: 1px solid rgba(212, 148, 42, 0.28);
+      border: 1px solid rgba(196, 154, 42, 0.28);
       border-radius: var(--radius-lg);
       padding: 40px 44px;
     }
@@ -166,7 +166,7 @@
       gap: 10px;
       margin-top: 24px;
       padding-top: 24px;
-      border-top: 1px solid rgba(212, 148, 42, 0.2);
+      border-top: 1px solid rgba(196, 154, 42, 0.2);
     }
     .confidence-bar-row {
       display: grid;
@@ -181,7 +181,7 @@
     }
     .confidence-bar-track {
       height: 6px;
-      background: rgba(212, 148, 42, 0.12);
+      background: rgba(196, 154, 42, 0.12);
       border-radius: 3px;
       overflow: hidden;
     }
@@ -287,7 +287,7 @@
     .cta-closing {
       margin-top: 36px;
       padding-top: 28px;
-      border-top: 1px solid rgba(212, 148, 42, 0.22);
+      border-top: 1px solid rgba(196, 154, 42, 0.22);
       max-width: 520px;
       margin-left: auto;
       margin-right: auto;
@@ -352,7 +352,6 @@
     @media (max-width: 760px) {
       .method-body p { font-size: 16px; }
       .method-layout { padding: 0 20px; }
-      .operator-band { padding: 64px 0; }
       .confidence-aside { padding: 28px 24px; }
       .proprietary { padding: 26px 24px; }
       .principle { grid-template-columns: 56px 1fr; gap: 14px; padding: 22px 0; }
@@ -386,16 +385,18 @@
     <div class="hero-inner">
       <div class="kicker kicker-accent mb-2">Methodology</div>
       <h1 class="h-display h-display-lg mb-3">
-        How Stratford-upon-Avon restaurants are ranked —<br>and what moves the score
+        How DayDine ranks UK restaurants &mdash;<br>and what moves the score
       </h1>
       <p class="body-lg mb-3" style="max-width: 640px;">
-        DayDine is a local restaurant ranking built from the signals the whole market can see.
-        It is designed to give diners a confident starting point for a good evening —
-        and to give operators a credible, competitive read on where their venue stands in its own town.
+        The Restaurant Confidence Score synthesises 40 public market signals into a single
+        0&ndash;10 metric for every ranked venue. This page explains what we measure, how
+        freshness and convergence work, how confidence is handled, and why the exact formula
+        is not published.
       </p>
-      <a class="btn btn-ghost" href="/rankings" style="padding-left: 0;">
-        See your local rankings →
-      </a>
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a class="btn btn-ghost" href="/rankings" style="padding-left: 0;">View market rankings &rarr;</a>
+        <a class="btn btn-ghost" href="/search" style="padding-left: 0;">Search the database &rarr;</a>
+      </div>
     </div>
   </div>
 </section>
@@ -421,6 +422,61 @@
           Consistent reviews across different sources. A clear offer. The operational
           basics done well. Popularity, on its own, is not enough.
         </p>
+      </div>
+    </div>
+
+    <!-- ================ WHAT IT IS / IS NOT ================ -->
+    <div class="method-section">
+      <hr class="method-rule">
+      <h2 class="h-display h-display-md mb-3">What the score is &mdash; and what it is not</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+        <div>
+          <div class="kicker kicker-accent mb-2">The score is</div>
+          <ul class="check-list">
+            <li class="check-item">A composite read on public market confidence</li>
+            <li class="check-item">Built from 40 independently verifiable signals</li>
+            <li class="check-item">Confidence-aware &mdash; thin data is disclosed, not hidden</li>
+            <li class="check-item">Updated weekly as new evidence arrives</li>
+            <li class="check-item">Designed for fair comparison within a local market</li>
+          </ul>
+        </div>
+        <div>
+          <div class="kicker mb-2" style="color: var(--text-subtle);">The score is not</div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 10px;">
+            <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--text-subtle);">&times;</span>A review of the food or the experience of a particular meal</li>
+            <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--text-subtle);">&times;</span>Based on mystery dining, self-reported data, or paid inclusion</li>
+            <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--text-subtle);">&times;</span>A prediction of future performance or financial viability</li>
+            <li style="font-size: 15px; color: var(--text-muted); line-height: 1.6; padding-left: 24px; position: relative;"><span style="position: absolute; left: 0; color: var(--text-subtle);">&times;</span>Influenced by advertising, sponsorship, or operator payment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================ DATA SOURCES ================ -->
+    <div class="method-section">
+      <hr class="method-rule">
+      <h2 class="h-display h-display-md mb-3">Data sources</h2>
+      <div class="method-body">
+        <p>
+          Every signal in the Restaurant Confidence Score is drawn from a <strong>publicly accessible, independently maintained source</strong>. No data is self-reported by venue operators. The primary sources are:
+        </p>
+      </div>
+      <div class="grid-3" style="gap: 16px; margin-top: 24px;">
+        <div class="card" style="padding: 24px;">
+          <div class="kicker kicker-accent mb-1">Regulatory</div>
+          <div style="font-weight: 600; color: var(--text); margin-bottom: 6px;">Food Standards Agency</div>
+          <div class="body-sm">Hygiene ratings, inspection dates, structural compliance, confidence in management.</div>
+        </div>
+        <div class="card" style="padding: 24px;">
+          <div class="kicker kicker-accent mb-1">Reviews</div>
+          <div style="font-weight: 600; color: var(--text); margin-bottom: 6px;">Google &amp; TripAdvisor</div>
+          <div class="body-sm">Ratings, review volume, review recency, aspect-level sentiment, photo presence.</div>
+        </div>
+        <div class="card" style="padding: 24px;">
+          <div class="kicker kicker-accent mb-1">Business</div>
+          <div style="font-weight: 600; color: var(--text); margin-bottom: 6px;">Companies House</div>
+          <div class="body-sm">Company status, accounts filings, director changes. Penalty-only tier &mdash; flags risk.</div>
+        </div>
       </div>
     </div>
 
@@ -637,80 +693,24 @@
 
   <aside class="method-sidebar">
     <div class="method-sidebar-inner">
-      <h4>Curious where YOUR restaurant ranks?</h4>
-      <p class="body-sm" style="color: var(--text-muted);">Full competitor report — £49 · delivered in 48 hours</p>
-      <a class="btn btn-primary" href="/reports">Get My Position Report →</a>
+      <h4>Benchmark your venue</h4>
+      <p class="body-sm" style="color: var(--text-muted);">See where you rank, who outperforms you, and what to do about it.</p>
+      <a class="btn btn-primary" href="/reports">Get a Market Report &rarr;</a>
     </div>
   </aside>
 </div><!-- /.method-layout -->
 
-<!-- ================ 7. OPERATOR SECTION ================ -->
-<section class="operator-band">
-  <div class="container">
-    <div class="operator-grid">
-      <div>
-        <div class="kicker kicker-accent mb-1">For operators</div>
-        <h2 class="h-display h-display-md mb-3">
-          Built to be useful to the people running the kitchens, too.
-        </h2>
-        <div class="method-body">
-          <p>
-            The DayDine leaderboard is the same leaderboard a prospective guest sees
-            when they search your town. That makes it more than a curiosity for an
-            operator. It is the view that exists of your venue — whether you choose
-            to engage with it or not.
-          </p>
-          <p>
-            We have designed it to be worth engaging with. It respects the operational
-            work behind a well-run restaurant. It notices the things industry veterans
-            already know matter: hygiene, clarity of offer, operational readiness,
-            public presence, coherence across sources. And it sits your venue honestly
-            against the ones you actually compete with — the restaurants within a
-            short walk of your own front door.
-          </p>
-          <p>
-            If you find yourself looking at your position and asking <em>why</em> —
-            why you sit where you sit, which venues are ahead of you and on which
-            signals, and what a realistic path upward looks like — that is the
-            question the Position &amp; Competitor Report was built to answer.
-          </p>
-        </div>
-        <a class="btn btn-ghost mt-3" href="/reports" style="padding-left: 0;">
-          Request your Position &amp; Competitor Report →
-        </a>
-      </div>
-
-      <aside class="operator-card">
-        <div class="operator-card-kicker">Your private view</div>
-        <div class="operator-card-row">
-          <div class="operator-card-dot"></div>
-          <div>
-            <div class="operator-card-label">Your position in your town</div>
-            <div class="operator-card-sub">Where you currently rank among the venues guests see first.</div>
-          </div>
-        </div>
-        <div class="operator-card-row">
-          <div class="operator-card-dot"></div>
-          <div>
-            <div class="operator-card-label">Your five closest competitors</div>
-            <div class="operator-card-sub">The venues you actually compete with, not the broader market.</div>
-          </div>
-        </div>
-        <div class="operator-card-row">
-          <div class="operator-card-dot"></div>
-          <div>
-            <div class="operator-card-label">The signals moving them ahead</div>
-            <div class="operator-card-sub">Where competitors are currently outperforming you, and by how much.</div>
-          </div>
-        </div>
-        <div class="operator-card-row">
-          <div class="operator-card-dot"></div>
-          <div>
-            <div class="operator-card-label">The realistic path upward</div>
-            <div class="operator-card-sub">Ranked actions, weighted by expected impact on your position.</div>
-          </div>
-        </div>
-      </aside>
+<!-- ================ OPERATOR SECTION ================ -->
+<section class="section section-alt">
+  <div class="container container-narrow center">
+    <div class="kicker kicker-accent mb-1">For Operators</div>
+    <h2 class="h-display h-display-md mb-2">The same data, turned into competitive advantage</h2>
+    <p class="body-lg mb-3" style="max-width: 600px; margin: 0 auto;">
+      The DayDine rankings are the same rankings a prospective guest sees. Your Position &amp; Competitor Report unpacks the signals behind your position &mdash; and tells you exactly what to do about it.
+    </p>
+    <div class="row" style="justify-content: center; gap: 16px;">
+      <a class="btn btn-primary btn-lg" href="/reports">Benchmark your venue &rarr;</a>
+      <a class="btn btn-secondary btn-lg" href="/sample">View sample report</a>
     </div>
   </div>
 </section>
@@ -743,23 +743,15 @@
 </section>
 
 <!-- ================ BOTTOM CTA ================ -->
-<section class="cta-band">
-  <div class="container container-narrow">
-    <h2 class="cta-band-title">
-      See how your venue currently ranks.
-    </h2>
-    <p class="body-lg mb-4" style="max-width: 620px; margin-left: auto; margin-right: auto;">
-      Your Position &amp; Competitor Report shows exactly where you stand,
-      who is ahead, and the specific actions that will move you up.
+<section class="section">
+  <div class="container container-narrow center">
+    <h2 class="h-display h-display-md mb-3">See the methodology in action</h2>
+    <p class="body-lg mb-4" style="max-width: 580px; margin: 0 auto;">
+      Explore the live rankings to see how the Restaurant Confidence Score surfaces market position, or search the full UK database.
     </p>
-    <a class="btn btn-primary btn-lg" href="/reports">Get your Position Report →</a>
-    <p class="body-sm mt-2" style="color: var(--text-subtle);">£49 · delivered privately within 48 hours.</p>
-
-    <div class="cta-closing">
-      <p class="cta-closing-text">
-        Or — if you're simply looking for somewhere good to eat tonight —
-        <a class="cta-closing-link" href="/rankings">see the leaderboard near you →</a>
-      </p>
+    <div class="row" style="justify-content: center; gap: 16px;">
+      <a class="btn btn-primary btn-lg" href="/rankings">Explore market rankings</a>
+      <a class="btn btn-secondary btn-lg" href="/search">Search 264,791 restaurants</a>
     </div>
   </div>
 </section>
