@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>DayDine — Stratford-upon-Avon Restaurant Rankings | 190 Venues Ranked</title>
-  <meta name="description" content="DayDine tracks public market signals across the UK to reveal where restaurants really stand. See your position, know your competitors, act with clarity.">
+  <title>DayDine — UK Hospitality Intelligence | Restaurant Rankings &amp; Market Data</title>
+  <meta name="description" content="DayDine ranks UK restaurants using 40 public market signals. Live local rankings, competitive benchmarking, and operator intelligence. Stratford-upon-Avon live now.">
   <link rel="canonical" href="https://daydine.vercel.app/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="DayDine — Local Restaurant Market Intelligence">
-  <meta property="og:description" content="Know exactly where your restaurant stands. DayDine ranks UK hospitality venues using public market signals synthesised into the Restaurant Confidence Score.">
+  <meta property="og:title" content="DayDine — UK Hospitality Intelligence">
+  <meta property="og:description" content="Restaurant rankings built on public market signals. 40 signals, 7 data tiers, confidence-aware methodology. Live in Stratford-upon-Avon.">
   <meta property="og:url" content="https://daydine.vercel.app/">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/daydine.css">
@@ -23,6 +23,9 @@
     <a class="nav-brand" href="/">
       <img class="nav-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
     <div class="nav-links">
       <a class="nav-link active" href="/">Home</a>
       <a class="nav-link" href="/rankings">Rankings</a>
@@ -37,45 +40,56 @@
 <!-- ================ HERO ================ -->
 <section class="hero">
   <div class="container">
-    <div class="hero-inner">
-      <div class="kicker kicker-accent mb-2">Stratford-upon-Avon</div>
+    <div class="hero-inner" style="text-align: center; max-width: 800px; margin: 0 auto;">
+      <div class="kicker kicker-accent mb-2">UK Hospitality Intelligence</div>
       <h1 class="h-display h-display-xl mb-3">
-        Stratford-upon-Avon's restaurants,<br>
-        ranked by what actually matters
+        Restaurant rankings built on<br>
+        what the market actually shows
       </h1>
-      <p class="body-lg mb-4" style="max-width: 620px;">
-        190 venues tracked by 40 live market signals — from kitchen confidence to delivery performance. Updated continuously.
+      <p class="body-lg mb-4" style="max-width: 640px; margin: 0 auto;">
+        DayDine synthesises 40 public signals — from food safety records to review
+        trajectories — into a single confidence-aware score for every ranked venue.
+        Transparent methodology. No pay-to-play.
       </p>
-
-      <form id="heroSearchForm" class="area-search mb-3" style="max-width: 560px;" autocomplete="off">
-        <input type="text" id="heroSearchInput" class="area-search-input"
-               placeholder="Enter your town, city or postcode to see your local rankings…"
-               aria-label="Search your area">
-        <div id="heroSearchDropdown" class="area-search-dropdown" role="listbox"></div>
-      </form>
-
-      <div>
-        <a class="btn btn-primary btn-lg" href="/rankings">
-          See the Rankings →
-        </a>
-        <p style="margin-top: 14px; font-size: 14px; color: var(--text-muted); line-height: 1.6;">
-          <a href="/reports" style="color: var(--accent); font-weight: 500;">Own a restaurant in Stratford? See your position and what competitors are doing better →</a>
-        </p>
+      <div class="row" style="justify-content: center; gap: 16px;">
+        <a class="btn btn-primary btn-lg" href="/rankings">Explore Rankings</a>
+        <a class="btn btn-secondary btn-lg" href="/reports">Operator Intelligence</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================ RANKINGS PREVIEW ================ -->
-<section class="section" style="background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<!-- ================ PROOF BAR ================ -->
+<div class="proof-bar">
+  <div class="proof-bar-inner">
+    <div class="proof-stat"><span class="proof-num">264,791</span><span class="proof-label">UK restaurants tracked</span></div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat"><span class="proof-num">40</span><span class="proof-label">public signals per venue</span></div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat"><span class="proof-num">7</span><span class="proof-label">independent data tiers</span></div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat"><span class="proof-num">1</span><span class="proof-label">live market &amp; expanding</span></div>
+  </div>
+</div>
+
+<!-- ================ LIVE MARKET — STRATFORD ================ -->
+<section class="section section-alt">
   <div class="container">
     <div class="row-end mb-4">
       <div>
-        <div class="kicker mb-1">Live Rankings</div>
-        <h2 class="h-display h-display-md">Top 5 in Stratford-upon-Avon</h2>
+        <div class="kicker kicker-accent mb-1">Live Market</div>
+        <h2 class="h-display h-display-md">Stratford-upon-Avon</h2>
+        <p class="body-md" style="margin-top: 8px;">190 venues ranked weekly by the Restaurant Confidence Score.</p>
       </div>
-      <a class="btn btn-ghost" href="/rankings/stratford-on-avon">View Full Board →</a>
+      <a class="btn btn-ghost" href="/rankings/stratford-on-avon">Full leaderboard →</a>
     </div>
+
+    <form id="heroSearchForm" class="area-search mb-4" style="max-width: 560px;" autocomplete="off">
+      <input type="text" id="heroSearchInput" class="area-search-input"
+             placeholder="Search by town, city or postcode…"
+             aria-label="Search your area">
+      <div id="heroSearchDropdown" class="area-search-dropdown" role="listbox"></div>
+    </form>
 
     <div id="rankingsPreview" class="rank-table">
       <div class="rank-head">
@@ -83,7 +97,7 @@
         <div>Venue</div>
         <div>Category</div>
         <div style="text-align:center;">Score</div>
-        <div style="text-align:center;">Change</div>
+        <div style="text-align:center;">Movement</div>
       </div>
       <div id="rankingsPreviewBody"></div>
     </div>
@@ -96,41 +110,45 @@
   <div class="container">
     <div class="center mb-5">
       <div class="kicker mb-1">How It Works</div>
-      <h2 class="h-display h-display-md">From Data to Decision</h2>
+      <h2 class="h-display h-display-md">From public signals to market position</h2>
     </div>
     <div class="grid-3">
       <div class="card card-hover">
         <div class="step-num">01</div>
-        <h3 class="step-title">We Track</h3>
-        <p class="step-desc">Continuous monitoring of public market signals across your local area — hygiene ratings, reviews, visibility, momentum, and competitive positioning.</p>
+        <h3 class="step-title">Collect</h3>
+        <p class="step-desc">We monitor public data continuously — food safety inspections, review platforms, business filings, operational signals — and normalise it into comparable metrics.</p>
       </div>
       <div class="card card-hover">
         <div class="step-num">02</div>
-        <h3 class="step-title">We Rank</h3>
-        <p class="step-desc">The Restaurant Confidence Score synthesises 40 signals across 7 tiers into a single 0–10 position metric, contextualised by category and local market dynamics.</p>
+        <h3 class="step-title">Score</h3>
+        <p class="step-desc">The Restaurant Confidence Score synthesises 40 signals across 7 independent tiers into a single 0–10 metric. Cross-source convergence is measured. Thin data is flagged, not hidden.</p>
       </div>
       <div class="card card-hover">
         <div class="step-num">03</div>
-        <h3 class="step-title">You Act</h3>
-        <p class="step-desc">Your Position Report reveals exactly where you stand, who is ahead, why, and what specific actions will move you up the board.</p>
+        <h3 class="step-title">Rank</h3>
+        <p class="step-desc">Every venue in a covered market gets a unique position relative to its local peers. Scores update weekly. The methodology is published. The formula is not.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================ VALUE PROP ================ -->
+<!-- ================ OPERATOR VALUE PROP ================ -->
 <section class="cta-band">
   <div class="container container-narrow">
+    <div class="kicker kicker-accent mb-2">For Operators</div>
     <h2 class="cta-band-title">
-      Stop guessing where you stand.<br>
-      Start knowing what to do about it.
+      Know where you stand.<br>
+      See what your competitors do better.
     </h2>
     <p class="body-lg mb-3" style="max-width: 640px; margin-left:auto; margin-right:auto;">
-      Your Position Report isn't a summary of your own Google profile. It's a clear-eyed
-      interpretation of the local competitive battlefield around you — who's winning,
-      who's slipping, and where the opportunities lie.
+      Your Position Report maps your exact local rank, your five closest competitors,
+      the signals pulling them ahead — and the specific actions that will move you up.
     </p>
-    <a class="btn btn-primary btn-lg" href="/reports">Get My Report — £49</a>
+    <div class="row" style="justify-content: center; gap: 16px;">
+      <a class="btn btn-primary btn-lg" href="/reports">Get Your Position Report — £49</a>
+      <a class="btn btn-secondary btn-lg" href="/sample">View Sample</a>
+    </div>
+    <p class="body-sm mt-2" style="color: var(--text-subtle);">Delivered as PDF within 48 hours · 7-day refund guarantee</p>
   </div>
 </section>
 
@@ -139,10 +157,10 @@
   <div class="container">
     <div class="row-end mb-4">
       <div>
-        <div class="kicker mb-1">Methodology</div>
-        <h2 class="h-display h-display-md">What We Measure</h2>
+        <div class="kicker mb-1">The Score</div>
+        <h2 class="h-display h-display-md">What moves the Restaurant Confidence Score</h2>
       </div>
-      <a class="btn btn-ghost" href="/methodology">Full Methodology →</a>
+      <a class="btn btn-ghost" href="/methodology">Full methodology →</a>
     </div>
     <div class="grid-3">
       <div class="signal-card">
@@ -191,27 +209,50 @@
   </div>
 </section>
 
-<!-- ================ FINAL CTA ================ -->
-<section class="section" style="background: var(--surface-2); border-top: 1px solid var(--border);">
+<!-- ================ COVERAGE ================ -->
+<section class="section section-alt">
   <div class="container container-narrow center">
-    <h2 class="h-display h-display-md mb-2">Ready to see your position?</h2>
-    <p class="body-lg mb-3">Get your full Position &amp; Competitor Report today.</p>
-    <div class="row" style="justify-content: center;">
-      <a class="btn btn-primary btn-lg" href="/reports">Request Your Report</a>
-      <a class="btn btn-secondary btn-lg" href="/sample">View Sample Report</a>
-      <a class="btn btn-secondary btn-lg"
-         href="/assets/reports/daydine-sample-report.pdf"
-         download="daydine-sample-report.pdf">Download Sample PDF</a>
-    </div>
+    <div class="kicker mb-1">Coverage</div>
+    <h2 class="h-display h-display-md mb-2">Expanding across the UK</h2>
+    <p class="body-lg mb-3" style="max-width: 580px; margin: 0 auto;">
+      Stratford-upon-Avon is our first fully ranked market.
+      New Local Authority areas are being added regularly.
+      Tell us where you operate and we'll prioritise your area.
+    </p>
+    <a class="btn btn-secondary btn-lg" href="mailto:hello@daydine.com?subject=Area%20request">Request Your Area</a>
   </div>
 </section>
 
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-brand">
-      <img class="footer-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <img class="footer-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
+        </div>
+        <p class="footer-tagline">UK hospitality intelligence.<br>Public-signal market rankings.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Platform</div>
+        <a class="footer-link" href="/rankings">Rankings</a>
+        <a class="footer-link" href="/search">Search</a>
+        <a class="footer-link" href="/methodology">Methodology</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">For Operators</div>
+        <a class="footer-link" href="/reports">Position Reports</a>
+        <a class="footer-link" href="/sample">Sample Report</a>
+        <a class="footer-link" href="/pricing">Pricing</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-heading">Live Markets</div>
+        <a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a>
+        <span class="footer-link footer-link-muted">More areas coming soon</span>
+      </div>
     </div>
-    <p class="footer-copy">© 2026 DayDine. Local market intelligence for hospitality operators. Data sourced from the UK Food Standards Agency and public signals.</p>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 DayDine. Data sourced from the Food Standards Agency, Google, TripAdvisor, and Companies House.</p>
+    </div>
   </div>
 </footer>
 
