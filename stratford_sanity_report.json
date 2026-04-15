@@ -5,70 +5,70 @@
       "name": "The Golden Bee - JD Wetherspoon",
       "address": "41-42 Sheep St, Stratford-upon-Avon CV37 6EE",
       "rating": 4,
-      "reviews": 4931,
+      "reviews": 4938,
       "best_match_score": 0.53
     },
     {
       "name": "Caffeine & Machine: The Hill",
       "address": "Caffeine and Machine Ltd, Ettington, Stratford-upon-Avon CV37 7NS",
       "rating": 4.7,
-      "reviews": 4579,
+      "reviews": 4602,
       "best_match_score": 0.55
     },
     {
       "name": "Boston Tea Party",
       "address": "St Gregory's Hall, Henley St, Stratford-upon-Avon CV37 6QW",
       "rating": 4.7,
-      "reviews": 3378,
+      "reviews": 3394,
       "best_match_score": 0.53
     },
     {
       "name": "Dirty Duck",
       "address": "Waterside, Stratford-upon-Avon CV37 6BA",
       "rating": 4.4,
-      "reviews": 3262,
+      "reviews": 3271,
       "best_match_score": 0.42
     },
     {
       "name": "Pen & Parchment",
       "address": "Bridge Foot, Stratford-upon-Avon CV37 6YY",
       "rating": 4.3,
-      "reviews": 2554,
+      "reviews": 2567,
       "best_match_score": 0.5
     },
     {
       "name": "Garrick",
       "address": "25 High St, Stratford-upon-Avon CV37 6AU",
       "rating": 4.4,
-      "reviews": 2510,
+      "reviews": 2522,
       "best_match_score": 0.5
     },
     {
       "name": "Rose & Crown",
       "address": "15 Sheep St, Stratford-upon-Avon CV37 6EF",
       "rating": 4.1,
-      "reviews": 2144,
+      "reviews": 2161,
       "best_match_score": 0.56
     },
     {
       "name": "El Greco",
       "address": "27 Rother St, Stratford-upon-Avon CV37 6NE",
       "rating": 4.7,
-      "reviews": 1764,
+      "reviews": 1769,
       "best_match_score": 0.52
     },
     {
       "name": "Premier Inn Stratford Upon Avon Waterways hotel",
       "address": "The Waterways, Birmingham Rd, Stratford-upon-Avon CV37 0AZ",
       "rating": 4.3,
-      "reviews": 1688,
+      "reviews": 1695,
       "best_match_score": 0.59
     },
     {
       "name": "The White Swan Hotel, Stratford",
       "address": "Rother St, Stratford-upon-Avon CV37 6NH",
       "rating": 4.5,
-      "reviews": 1688,
+      "reviews": 1694,
       "best_match_score": 0.55
     },
     {
@@ -82,84 +82,77 @@
       "name": "The Welcombe Hotel, BW Premier Collection",
       "address": "Warwick Rd, Stratford-upon-Avon CV37 0NR",
       "rating": 4,
-      "reviews": 1395,
+      "reviews": 1401,
       "best_match_score": 0.57
     },
     {
       "name": "Windmill",
       "address": "Church St, Stratford-upon-Avon CV37 6HB",
       "rating": 4.4,
-      "reviews": 1196,
+      "reviews": 1201,
       "best_match_score": 0.56
     },
     {
       "name": "Wildwood Stratford-upon-Avon Italian Restaurant | Pizza, Pasta & Grill",
       "address": "10-11 Sheep St, Stratford-upon-Avon CV37 6EF",
       "rating": 4.3,
-      "reviews": 1057,
+      "reviews": 1061,
       "best_match_score": 0.47
     },
     {
       "name": "The Baraset Barn",
       "address": "Pimlico Ln, Stratford-upon-Avon CV37 7RJ",
       "rating": 4.6,
-      "reviews": 1033,
+      "reviews": 1037,
       "best_match_score": 0.57
     },
     {
       "name": "Premier Inn Stratford Upon Avon Central hotel",
       "address": "Payton St, Stratford-upon-Avon CV37 6UQ",
       "rating": 4.1,
-      "reviews": 861,
+      "reviews": 863,
       "best_match_score": 0.58
     },
     {
       "name": "The Piston Club @ The Stag",
       "address": "Alcester Rd, Stratford-upon-Avon B49 6NQ",
       "rating": 4.7,
-      "reviews": 779,
+      "reviews": 789,
       "best_match_score": 0.53
     },
     {
       "name": "Tavola Italian Restaurant Leamington Spa",
       "address": "44 Clarendon St, Royal Leamington Spa, Leamington Spa CV32 4PE",
       "rating": 4.5,
-      "reviews": 696,
+      "reviews": 704,
       "best_match_score": 0.55
-    },
-    {
-      "name": "Zoo Sushi & Bubble Tea",
-      "address": "3-5 Cooks Aly, Wood St, Stratford-upon-Avon CV37 6QN",
-      "rating": 4.6,
-      "reviews": 667,
-      "best_match_score": 0.53
     },
     {
       "name": "The Fuzzy Duck",
       "address": "Ilmington Rd, Armscote, Stratford-upon-Avon CV37 8DD",
-      "rating": 4.6,
-      "reviews": 565,
+      "rating": 4.5,
+      "reviews": 567,
       "best_match_score": 0.5
     },
     {
       "name": "Papa Johns Pizza",
       "address": "39 Greenhill St, Stratford-upon-Avon CV37 6LE",
       "rating": 4.6,
-      "reviews": 530,
+      "reviews": 535,
       "best_match_score": 0.49
     },
     {
       "name": "The Rooftop Restaurant at the Royal Shakespeare Theatre",
       "address": "3rd Floor, Royal Shakespeare Theatre, Waterside, Stratford-upon-Avon CV37 6BB",
       "rating": 4.3,
-      "reviews": 511,
+      "reviews": 513,
       "best_match_score": 0.49
     },
     {
       "name": "Osteria Da Gino",
       "address": "7-9 Union St, Stratford-upon-Avon CV37 6QT",
       "rating": 4.5,
-      "reviews": 475,
+      "reviews": 481,
       "best_match_score": 0.48
     },
     {
@@ -173,7 +166,7 @@
       "name": "Yorks Cafe & Coffee Roasters (Stratford)",
       "address": "15 High St, Stratford-upon-Avon CV37 6AU",
       "rating": 4.3,
-      "reviews": 364,
+      "reviews": 367,
       "best_match_score": 0.49
     },
     {
@@ -187,15 +180,8 @@
       "name": "Mr Chan's Tiddington",
       "address": "3 Main St, Tiddington, Stratford-upon-Avon CV37 7AN",
       "rating": 4.3,
-      "reviews": 348,
+      "reviews": 349,
       "best_match_score": 0.48
-    },
-    {
-      "name": "Take-Away Tiffin",
-      "address": "2 Brookside Rd, Stratford-upon-Avon CV37 9PH",
-      "rating": 4.3,
-      "reviews": 340,
-      "best_match_score": 0.55
     },
     {
       "name": "M&S Foodhall",
@@ -215,28 +201,21 @@
       "name": "Café Cocktail",
       "address": "3, Windsor Court, Greenhill St, Stratford-upon-Avon CV37 6GG",
       "rating": 4.9,
-      "reviews": 273,
+      "reviews": 276,
       "best_match_score": 0.46
-    },
-    {
-      "name": "Quill & Cup",
-      "address": "Bridge Foot, Stratford-upon-Avon CV37 6YY",
-      "rating": 4.1,
-      "reviews": 267,
-      "best_match_score": 0.38
     },
     {
       "name": "Bobby's Café",
       "address": "The Stratford Greenway, Seven Meadows Rd, Stratford-upon-Avon CV37 9LE",
       "rating": 4.7,
-      "reviews": 259,
+      "reviews": 263,
       "best_match_score": 0.53
     },
     {
       "name": "Grace & Savour",
       "address": "Hampton Manor, Shadowbrook Ln, Hampton in Arden, Solihull B92 0EN",
       "rating": 4.8,
-      "reviews": 227,
+      "reviews": 228,
       "best_match_score": 0.58
     },
     {
@@ -250,57 +229,57 @@
       "name": "No. 1 Taj Bar & Grill",
       "address": "1 Shakespeare St, Stratford-upon-Avon CV37 6RN",
       "rating": 4.6,
-      "reviews": 187,
+      "reviews": 188,
       "best_match_score": 0.43
-    },
-    {
-      "name": "The Barge and Quarterdeck",
-      "address": "Waterside, Stratford-upon-Avon CV37 6AT",
-      "rating": 4.6,
-      "reviews": 183,
-      "best_match_score": 0.57
     },
     {
       "name": "Wok Express",
       "address": "98 Justins Ave, Stratford-upon-Avon CV37 0DE",
       "rating": 4.2,
-      "reviews": 174,
+      "reviews": 176,
       "best_match_score": 0.52
+    },
+    {
+      "name": "The Fresh Baguette Bar",
+      "address": "24 High St, Stratford-upon-Avon CV37 6AU",
+      "rating": 4.8,
+      "reviews": 152,
+      "best_match_score": 0.52
+    },
+    {
+      "name": "Marco: Italian Delicatessen",
+      "address": "20 Church St, Stratford-upon-Avon CV37 6HB",
+      "rating": 4.9,
+      "reviews": 115,
+      "best_match_score": 0.43
     },
     {
       "name": "Sip 'n' Swig",
       "address": "2 Alderminster Workshops, Alscot Estate, Stratford-upon-Avon CV37 8BN",
-      "rating": 4.9,
-      "reviews": 53,
+      "rating": 5,
+      "reviews": 52,
       "best_match_score": 0.44
     },
     {
       "name": "Golden Phoenix Chinese and Cantonese",
       "address": "22a Bell Ct, Stratford-upon-Avon CV37 6EX",
       "rating": 4.6,
-      "reviews": 28,
+      "reviews": 30,
       "best_match_score": 0.43
     },
     {
       "name": "Pink Sage Coffee House",
       "address": "39-40 Rother St, Stratford-upon-Avon CV37 6LP",
       "rating": 4.8,
-      "reviews": 17,
+      "reviews": 18,
       "best_match_score": 0.57
     },
     {
       "name": "Bastardo's Trattoria",
       "address": "6 Granville Ct, Shipston-on-Stour CV36 4PP",
       "rating": 5,
-      "reviews": 9,
+      "reviews": 10,
       "best_match_score": 0.55
-    },
-    {
-      "name": "Mr Tran's",
-      "address": "14-8 Main St, Stratford-upon-Avon CV37 7AX",
-      "rating": null,
-      "reviews": null,
-      "best_match_score": 0.59
     }
   ],
   "non_food_suspects": [
@@ -311,10 +290,10 @@
       "reason": "name_match: football club (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
-        "establishment",
+        "sports_club",
         "point_of_interest",
-        "sports_club"
+        "association_or_organization",
+        "establishment"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -326,9 +305,9 @@
       "reason": "google_types: {'miniature_golf_course'}",
       "fsa_rating": null,
       "google_types": [
-        "establishment",
+        "miniature_golf_course",
         "point_of_interest",
-        "miniature_golf_course"
+        "establishment"
       ],
       "classification_confidence": 0.8,
       "needs_manual_review": false
@@ -340,11 +319,11 @@
       "reason": "name_match: horse sanctuary (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
+        "tourist_attraction",
+        "point_of_interest",
         "association_or_organization",
-        "pet_care",
-        "tourist_information_center",
-        "tour_agency",
-        "travel_agency"
+        "service",
+        "visitor_center"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -357,9 +336,9 @@
       "fsa_rating": 5,
       "google_types": [
         "insurance_agency",
-        "establishment",
         "point_of_interest",
-        "service"
+        "service",
+        "establishment"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -372,10 +351,10 @@
       "fsa_rating": 5,
       "google_types": [
         "sports_activity_location",
-        "event_venue",
-        "service",
         "wedding_venue",
-        "lodging"
+        "lodging",
+        "point_of_interest",
+        "health"
       ],
       "classification_confidence": 0.48,
       "needs_manual_review": true
@@ -388,10 +367,10 @@
       "fsa_rating": 5,
       "google_types": [
         "sports_activity_location",
+        "sports_school",
+        "sports_club",
         "association_or_organization",
-        "golf_course",
-        "athletic_field",
-        "store"
+        "point_of_interest"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -403,10 +382,10 @@
       "reason": "name_match: slimming world",
       "fsa_rating": null,
       "google_types": [
-        "association_or_organization",
-        "establishment",
+        "sports_club",
         "point_of_interest",
-        "sports_club"
+        "association_or_organization",
+        "establishment"
       ],
       "classification_confidence": 0.9,
       "needs_manual_review": false
@@ -418,10 +397,10 @@
       "reason": "name_match: football club (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
-        "establishment",
+        "sports_club",
         "point_of_interest",
-        "sports_club"
+        "association_or_organization",
+        "establishment"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -434,10 +413,10 @@
       "fsa_rating": 5,
       "google_types": [
         "sports_activity_location",
-        "sports_complex",
         "sports_school",
-        "health",
-        "gym"
+        "point_of_interest",
+        "sports_complex",
+        "health"
       ],
       "classification_confidence": 0.24,
       "needs_manual_review": true
@@ -449,11 +428,11 @@
       "reason": "name_match: baptist church (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
+        "point_of_interest",
         "association_or_organization",
-        "place_of_worship",
         "church",
-        "establishment",
-        "point_of_interest"
+        "place_of_worship",
+        "establishment"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -465,9 +444,9 @@
       "reason": "name_match: aston martin (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "establishment",
         "manufacturer",
-        "point_of_interest"
+        "point_of_interest",
+        "establishment"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -481,8 +460,8 @@
       "google_types": [
         "establishment",
         "real_estate_agency",
-        "point_of_interest",
-        "service"
+        "service",
+        "point_of_interest"
       ],
       "classification_confidence": 0.24,
       "needs_manual_review": true
@@ -494,10 +473,10 @@
       "reason": "google_types: {'sports_club'} (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
-        "establishment",
+        "sports_club",
         "point_of_interest",
-        "sports_club"
+        "association_or_organization",
+        "establishment"
       ],
       "classification_confidence": 0.48,
       "needs_manual_review": true
@@ -509,10 +488,10 @@
       "reason": "google_types: {'sports_club'} (but FSA 3+ — may serve food) (food keyword in name)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
-        "establishment",
+        "sports_club",
         "point_of_interest",
-        "sports_club"
+        "association_or_organization",
+        "establishment"
       ],
       "classification_confidence": 0.24,
       "needs_manual_review": true
@@ -524,10 +503,10 @@
       "reason": "google_types: {'sports_club'} (but FSA 3+ — may serve food) (food keyword in name)",
       "fsa_rating": 3,
       "google_types": [
-        "association_or_organization",
-        "establishment",
+        "sports_club",
         "point_of_interest",
-        "sports_club"
+        "association_or_organization",
+        "establishment"
       ],
       "classification_confidence": 0.24,
       "needs_manual_review": true
@@ -539,10 +518,10 @@
       "reason": "google_types: {'sports_club'} (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
-        "establishment",
+        "sports_club",
         "point_of_interest",
-        "sports_club"
+        "association_or_organization",
+        "establishment"
       ],
       "classification_confidence": 0.48,
       "needs_manual_review": true
