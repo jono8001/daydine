@@ -72,9 +72,11 @@ jobs:
           python .github/scripts/merge_companies_house.py
 
       - name: "Events: Collect demand signals"
+        continue-on-error: true
         run: python .github/scripts/collect_event_data.py
 
       - name: "Sentiment: Aspect-based review analysis"
+        continue-on-error: true
         run: python .github/scripts/sentiment_analysis.py
 
       - name: "Score: Run V2 RCS pipeline (all tiers)"
