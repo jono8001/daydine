@@ -601,53 +601,50 @@
 | Diverged (-5%) | 17 | 8.7% |
 | Insufficient sources | 5 | 2.6% |
 
-## 10. Sanity Check (43 missing)
+## 10. Sanity Check (40 missing)
 
 | Name | Rating | Reviews |
 |---|---:|---:|
-| The Golden Bee - JD Wetherspoon | 4 | 4931 |
-| Caffeine & Machine: The Hill | 4.7 | 4579 |
-| Boston Tea Party | 4.7 | 3378 |
-| Dirty Duck | 4.4 | 3262 |
-| Pen & Parchment | 4.3 | 2554 |
-| Garrick | 4.4 | 2510 |
-| Rose & Crown | 4.1 | 2144 |
-| El Greco | 4.7 | 1764 |
-| Premier Inn Stratford Upon Avon Waterways hotel | 4.3 | 1688 |
-| The White Swan Hotel, Stratford | 4.5 | 1688 |
+| The Golden Bee - JD Wetherspoon | 4 | 4938 |
+| Caffeine & Machine: The Hill | 4.7 | 4602 |
+| Boston Tea Party | 4.7 | 3394 |
+| Dirty Duck | 4.4 | 3271 |
+| Pen & Parchment | 4.3 | 2567 |
+| Garrick | 4.4 | 2522 |
+| Rose & Crown | 4.1 | 2161 |
+| El Greco | 4.7 | 1769 |
+| Premier Inn Stratford Upon Avon Waterways hotel | 4.3 | 1695 |
+| The White Swan Hotel, Stratford | 4.5 | 1694 |
 | The Fourteas Tea-Room Brasserie | 4.4 | 1601 |
-| The Welcombe Hotel, BW Premier Collection | 4 | 1395 |
-| Windmill | 4.4 | 1196 |
-| Wildwood Stratford-upon-Avon Italian Restaurant | Pizza, Pasta & Grill | 4.3 | 1057 |
-| The Baraset Barn | 4.6 | 1033 |
-| Premier Inn Stratford Upon Avon Central hotel | 4.1 | 861 |
-| The Piston Club @ The Stag | 4.7 | 779 |
-| Tavola Italian Restaurant Leamington Spa | 4.5 | 696 |
-| Zoo Sushi & Bubble Tea | 4.6 | 667 |
-| The Fuzzy Duck | 4.6 | 565 |
-| Papa Johns Pizza | 4.6 | 530 |
-| The Rooftop Restaurant at the Royal Shakespeare Theatre | 4.3 | 511 |
-| Osteria Da Gino | 4.5 | 475 |
+| The Welcombe Hotel, BW Premier Collection | 4 | 1401 |
+| Windmill | 4.4 | 1201 |
+| Wildwood Stratford-upon-Avon Italian Restaurant | Pizza, Pasta & Grill | 4.3 | 1061 |
+| The Baraset Barn | 4.6 | 1037 |
+| Premier Inn Stratford Upon Avon Central hotel | 4.1 | 863 |
+| The Piston Club @ The Stag | 4.7 | 789 |
+| Tavola Italian Restaurant Leamington Spa | 4.5 | 704 |
+| The Fuzzy Duck | 4.5 | 567 |
+| Papa Johns Pizza | 4.6 | 535 |
+| The Rooftop Restaurant at the Royal Shakespeare Theatre | 4.3 | 513 |
+| Osteria Da Gino | 4.5 | 481 |
 | Aladdin's Indian Dining | 4.5 | 475 |
-| Yorks Cafe & Coffee Roasters (Stratford) | 4.3 | 364 |
+| Yorks Cafe & Coffee Roasters (Stratford) | 4.3 | 367 |
 | Usha Bangladeshi Cuisine | 4.3 | 352 |
-| Mr Chan's Tiddington | 4.3 | 348 |
-| Take-Away Tiffin | 4.3 | 340 |
+| Mr Chan's Tiddington | 4.3 | 349 |
 | M&S Foodhall | 4.5 | 290 |
 | Box Brownie Coffee | 4.7 | 288 |
-| Café Cocktail | 4.9 | 273 |
-| Quill & Cup | 4.1 | 267 |
-| Bobby's Café | 4.7 | 259 |
-| Grace & Savour | 4.8 | 227 |
+| Café Cocktail | 4.9 | 276 |
+| Bobby's Café | 4.7 | 263 |
+| Grace & Savour | 4.8 | 228 |
 | The Royal Oak | 4.8 | 207 |
-| No. 1 Taj Bar & Grill | 4.6 | 187 |
-| The Barge and Quarterdeck | 4.6 | 183 |
-| Wok Express | 4.2 | 174 |
-| Sip 'n' Swig | 4.9 | 53 |
-| Golden Phoenix Chinese and Cantonese | 4.6 | 28 |
-| Pink Sage Coffee House | 4.8 | 17 |
-| Bastardo's Trattoria | 5 | 9 |
-| Mr Tran's | None | None |
+| No. 1 Taj Bar & Grill | 4.6 | 188 |
+| Wok Express | 4.2 | 176 |
+| The Fresh Baguette Bar | 4.8 | 152 |
+| Marco: Italian Delicatessen | 4.9 | 115 |
+| Sip 'n' Swig | 5 | 52 |
+| Golden Phoenix Chinese and Cantonese | 4.6 | 30 |
+| Pink Sage Coffee House | 4.8 | 18 |
+| Bastardo's Trattoria | 5 | 10 |
 
 ---
 
