@@ -601,7 +601,7 @@
 | Diverged (-5%) | 17 | 8.7% |
 | Insufficient sources | 5 | 2.6% |
 
-## 10. Sanity Check (40 missing)
+## 10. Sanity Check (41 missing)
 
 | Name | Rating | Reviews |
 |---|---:|---:|
@@ -628,12 +628,14 @@
 | The Rooftop Restaurant at the Royal Shakespeare Theatre | 4.3 | 513 |
 | Osteria Da Gino | 4.5 | 481 |
 | Aladdin's Indian Dining | 4.5 | 475 |
+| Bellini Moreton-In-Marsh | 4.8 | 430 |
 | Yorks Cafe & Coffee Roasters (Stratford) | 4.3 | 367 |
 | Usha Bangladeshi Cuisine | 4.3 | 352 |
 | Mr Chan's Tiddington | 4.3 | 349 |
 | M&S Foodhall | 4.5 | 290 |
 | Box Brownie Coffee | 4.7 | 288 |
 | Café Cocktail | 4.9 | 276 |
+| Quill & Cup | 4 | 268 |
 | Bobby's Café | 4.7 | 263 |
 | Grace & Savour | 4.8 | 228 |
 | The Royal Oak | 4.8 | 207 |
@@ -641,7 +643,6 @@
 | Wok Express | 4.2 | 176 |
 | The Fresh Baguette Bar | 4.8 | 152 |
 | Marco: Italian Delicatessen | 4.9 | 115 |
-| Sip 'n' Swig | 5 | 52 |
 | Golden Phoenix Chinese and Cantonese | 4.6 | 30 |
 | Pink Sage Coffee House | 4.8 | 18 |
 | Bastardo's Trattoria | 5 | 10 |

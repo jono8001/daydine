@@ -163,13 +163,6 @@
       "best_match_score": 0.49
     },
     {
-      "name": "Bellini Moreton-In-Marsh",
-      "address": "High St, Moreton-in-Marsh GL56 0AD",
-      "rating": 4.8,
-      "reviews": 430,
-      "best_match_score": 0.46
-    },
-    {
       "name": "Yorks Cafe & Coffee Roasters (Stratford)",
       "address": "15 High St, Stratford-upon-Avon CV37 6AU",
       "rating": 4.3,
@@ -210,13 +203,6 @@
       "rating": 4.9,
       "reviews": 276,
       "best_match_score": 0.46
-    },
-    {
-      "name": "Quill & Cup",
-      "address": "Bridge Foot, Stratford-upon-Avon CV37 6YY",
-      "rating": 4,
-      "reviews": 268,
-      "best_match_score": 0.38
     },
     {
       "name": "Bobby's Café",
@@ -268,6 +254,13 @@
       "best_match_score": 0.43
     },
     {
+      "name": "Sip 'n' Swig",
+      "address": "2 Alderminster Workshops, Alscot Estate, Stratford-upon-Avon CV37 8BN",
+      "rating": 5,
+      "reviews": 52,
+      "best_match_score": 0.44
+    },
+    {
       "name": "Golden Phoenix Chinese and Cantonese",
       "address": "22a Bell Ct, Stratford-upon-Avon CV37 6EX",
       "rating": 4.6,
@@ -298,8 +291,8 @@
       "fsa_rating": 5,
       "google_types": [
         "association_or_organization",
-        "sports_club",
         "point_of_interest",
+        "sports_club",
         "establishment"
       ],
       "classification_confidence": 0.54,
@@ -326,9 +319,9 @@
       "reason": "name_match: horse sanctuary (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
+        "visitor_center",
+        "point_of_interest",
         "tourist_attraction",
-        "tourist_information_center",
         "establishment",
         "service"
       ],
@@ -342,8 +335,8 @@
       "reason": "name_match: nfu mutual (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "service",
         "point_of_interest",
+        "service",
         "insurance_agency",
         "establishment"
       ],
@@ -357,11 +350,11 @@
       "reason": "google_types: {'gym'} (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "gym",
-        "establishment",
-        "service",
+        "hotel",
         "point_of_interest",
-        "health"
+        "lodging",
+        "establishment",
+        "sports_activity_location"
       ],
       "classification_confidence": 0.48,
       "needs_manual_review": true
@@ -374,10 +367,10 @@
       "fsa_rating": 5,
       "google_types": [
         "sporting_goods_store",
-        "store",
-        "association_or_organization",
-        "establishment",
-        "point_of_interest"
+        "health",
+        "athletic_field",
+        "point_of_interest",
+        "sports_club"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -390,8 +383,8 @@
       "fsa_rating": null,
       "google_types": [
         "association_or_organization",
-        "sports_club",
         "point_of_interest",
+        "sports_club",
         "establishment"
       ],
       "classification_confidence": 0.9,
@@ -419,11 +412,11 @@
       "reason": "google_types: {'gym'} (but FSA 3+ — may serve food) (food keyword in name)",
       "fsa_rating": 5,
       "google_types": [
-        "gym",
+        "point_of_interest",
+        "sports_school",
         "establishment",
         "sports_complex",
-        "point_of_interest",
-        "health"
+        "sports_activity_location"
       ],
       "classification_confidence": 0.24,
       "needs_manual_review": true
@@ -435,11 +428,11 @@
       "reason": "name_match: baptist church (but FSA 3+ — may serve food)",
       "fsa_rating": 5,
       "google_types": [
-        "association_or_organization",
-        "establishment",
         "point_of_interest",
+        "church",
         "place_of_worship",
-        "church"
+        "establishment",
+        "association_or_organization"
       ],
       "classification_confidence": 0.54,
       "needs_manual_review": true
@@ -465,9 +458,9 @@
       "reason": "google_types: {'real_estate_agency'} (but FSA 3+ — may serve food) (food keyword in name)",
       "fsa_rating": 5,
       "google_types": [
-        "service",
-        "point_of_interest",
         "real_estate_agency",
+        "point_of_interest",
+        "service",
         "establishment"
       ],
       "classification_confidence": 0.24,
@@ -481,8 +474,8 @@
       "fsa_rating": 5,
       "google_types": [
         "association_or_organization",
-        "sports_club",
         "point_of_interest",
+        "sports_club",
         "establishment"
       ],
       "classification_confidence": 0.48,
@@ -496,8 +489,8 @@
       "fsa_rating": 5,
       "google_types": [
         "association_or_organization",
-        "sports_club",
         "point_of_interest",
+        "sports_club",
         "establishment"
       ],
       "classification_confidence": 0.24,
@@ -511,8 +504,8 @@
       "fsa_rating": 3,
       "google_types": [
         "association_or_organization",
-        "sports_club",
         "point_of_interest",
+        "sports_club",
         "establishment"
       ],
       "classification_confidence": 0.24,
@@ -526,8 +519,8 @@
       "fsa_rating": 5,
       "google_types": [
         "association_or_organization",
-        "sports_club",
         "point_of_interest",
+        "sports_club",
         "establishment"
       ],
       "classification_confidence": 0.48,

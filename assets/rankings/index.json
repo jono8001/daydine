@@ -1,0 +1,15 @@
+{
+  "last_updated": "2026-04-15",
+  "available": [
+    {
+      "slug": "stratford-on-avon",
+      "la_name": "Stratford-on-Avon",
+      "display_name": "Stratford-upon-Avon",
+      "region": "",
+      "status": "live",
+      "total_venues": 195,
+      "top_score": 8.619
+    }
+  ],
+  "pipeline": []
+}
