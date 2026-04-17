@@ -1,0 +1,74 @@
+{
+  "generated_by": "commercial_readiness_coverage.py",
+  "total_establishments": 210,
+  "signals": {
+    "web_any": {
+      "count": 144,
+      "pct": 68.6,
+      "observed_from_google": 0,
+      "inferred_from_heuristic": 144
+    },
+    "menu_online": {
+      "count": 158,
+      "pct": 75.2
+    },
+    "opening_hours": {
+      "count": 172,
+      "pct": 81.9
+    },
+    "phone": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "reservable": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "booking_url": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "any_contact_path": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "business_status": {
+      "count": 0,
+      "pct": 0.0
+    }
+  },
+  "commercial_readiness_distribution": {
+    "buckets": {
+      "0.00": 16,
+      "2.50": 36,
+      "5.00": 36,
+      "7.50": 122,
+      "10.00": 0,
+      "other": 0
+    },
+    "stats": {
+      "n": 210,
+      "mean": 5.643,
+      "median": 7.5,
+      "stdev": 2.489,
+      "min": 0.0,
+      "max": 7.5
+    },
+    "unavailable_count": 0
+  },
+  "baseline_before_enrichment": {
+    "source": "pre-enrichment baseline snapshot",
+    "web_pct": 1.0,
+    "menu_pct": 75.2,
+    "hours_pct": 81.9,
+    "phone_pct": 0.0,
+    "booking_contact_pct": 0.0,
+    "cr_stats": {
+      "mean": 5.0,
+      "median": 5.0,
+      "max": 7.5,
+      "stdev": 1.05
+    },
+    "note": "CR was structurally capped near 5.0 because only menu + hours landed for most venues; web/phone/reservable were all at 0-1% coverage."
+  }
+}

@@ -23,17 +23,51 @@ def merge_google_enrichment(establishments):
         enrichment = json.load(f)
 
     merged = 0
+    web_from_api = 0
+    phone_from_api = 0
+    reservable_from_api = 0
     for key, google_data in enrichment.items():
         if key not in establishments:
             continue
         if google_data.get("_no_match"):
             continue
-        for field in ["gr", "grc", "gpl", "gty", "gpc", "gpid", "goh", "g_reviews"]:
+        # Core fields
+        for field in ["gr", "grc", "gpl", "gty", "gpc", "gpid", "goh",
+                      "g_reviews"]:
             if field in google_data:
                 establishments[key][field] = google_data[field]
+
+        # Commercial Readiness customer-path fields (V4 spec §5)
+        est = establishments[key]
+        website_uri = google_data.get("websiteUri") or google_data.get("web_url")
+        if website_uri:
+            est["web"] = True
+            est["web_url"] = website_uri
+            web_from_api += 1
+        # phone (prefer national, fall back to international)
+        phone = (google_data.get("phone")
+                 or google_data.get("nationalPhoneNumber")
+                 or google_data.get("internationalPhoneNumber"))
+        if phone:
+            est["phone"] = phone
+            phone_from_api += 1
+        # reservable (boolean from Google)
+        if "reservable" in google_data:
+            est["reservable"] = bool(google_data["reservable"])
+            if est["reservable"]:
+                reservable_from_api += 1
+        # business_status (for V4 §7.4 closure handling)
+        if google_data.get("business_status"):
+            est["business_status"] = google_data["business_status"]
+
         merged += 1
 
-    print(f"Merged Google API data for {merged}/{len(establishments)} establishments")
+    print(f"Merged Google API data for {merged}/{len(establishments)} "
+          f"establishments")
+    if web_from_api or phone_from_api or reservable_from_api:
+        print(f"  Observed customer-path signals: "
+              f"web={web_from_api}, phone={phone_from_api}, "
+              f"reservable={reservable_from_api}")
     return merged
 
 

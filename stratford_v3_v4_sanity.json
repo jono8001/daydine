@@ -230,8 +230,8 @@
   "top_band_inflation": {
     "total": 210,
     "rankable": 191,
-    "rankable_with_final_ge_8": 82,
-    "pct_of_rankable_ge_8": 42.9
+    "rankable_with_final_ge_8": 105,
+    "pct_of_rankable_ge_8": 55.0
   },
   "high_profile_presence": [
     {
@@ -250,7 +250,7 @@
       "query": "Opposition",
       "match": "The Opposition",
       "v3_final": 9.021,
-      "v4_final": 8.52,
+      "v4_final": 8.895,
       "v4_class": "Rankable-B",
       "v4_rankable": true
     },
@@ -262,7 +262,7 @@
       "query": "Loxley",
       "match": "Loxleys Restaurant And Wine Bar",
       "v3_final": 8.59,
-      "v4_final": 8.397,
+      "v4_final": 8.772,
       "v4_class": "Rankable-B",
       "v4_rankable": true
     },
@@ -274,7 +274,7 @@
       "query": "Stratford Manor",
       "match": "Stratford Manor Hotel",
       "v3_final": 9.63,
-      "v4_final": 7.772,
+      "v4_final": 8.147,
       "v4_class": "Rankable-B",
       "v4_rankable": true
     },
@@ -282,7 +282,7 @@
       "query": "Arden",
       "match": "Ettington Garden Cafe",
       "v3_final": 9.278,
-      "v4_final": 8.482,
+      "v4_final": 8.857,
       "v4_class": "Rankable-B",
       "v4_rankable": true
     },
@@ -298,7 +298,7 @@
       "query": "Lambs",
       "match": "Lambs",
       "v3_final": 8.726,
-      "v4_final": 8.564,
+      "v4_final": 8.939,
       "v4_class": "Rankable-B",
       "v4_rankable": true
     },

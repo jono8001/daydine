@@ -516,13 +516,13 @@ def score_commercial_readiness(record: dict[str, Any],
     hc = _hours_completeness(record.get("goh"))
     hours_completeness = 0.0 if hc is None else _clamp(hc)
 
-    # Booking / contact: explicit booking URL, reservation widget, or phone.
-    # This repo does not currently collect phone or booking-URL data, so in
-    # practice this signal is False for most venues. Missing = no credit;
-    # it never defaults to True (spec principle 3).
+    # Booking / contact: explicit booking URL, reservation widget, phone, or
+    # Google's `reservable` attribute (Boolean true from Places API). Missing
+    # = no credit; it never defaults to True (spec principle 3).
     booking_or_contact = bool(
         record.get("booking_url")
         or record.get("reservation_url")
+        or record.get("reservable")
         or record.get("phone")
         or record.get("tel")
     )

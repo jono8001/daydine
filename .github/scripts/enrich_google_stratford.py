@@ -44,6 +44,13 @@ def search_place(name, address, postcode):
             "places.types,"
             "places.photos,"
             "places.reviews,"
+            # Commercial Readiness customer-path fields (V4 spec §5)
+            "places.websiteUri,"
+            "places.nationalPhoneNumber,"
+            "places.internationalPhoneNumber,"
+            "places.reservable,"
+            # Closure handling (V4 spec §7.4)
+            "places.businessStatus,"
             "places.regularOpeningHours.weekdayDescriptions,"
             "places.currentOpeningHours.weekdayDescriptions"
         ),
@@ -83,6 +90,32 @@ def search_place(name, address, postcode):
         result["gty"] = place["types"]
     if "photos" in place:
         result["gpc"] = len(place["photos"])  # photo count
+
+    # --- Commercial Readiness signals (V4 §5) ---
+    # Store the raw Google fields AND normalised short aliases so
+    # downstream merge/scoring can pick either up.
+    website_uri = place.get("websiteUri")
+    if website_uri:
+        result["websiteUri"] = website_uri
+        result["web_url"] = website_uri
+
+    nat_phone = place.get("nationalPhoneNumber")
+    intl_phone = place.get("internationalPhoneNumber")
+    if nat_phone:
+        result["nationalPhoneNumber"] = nat_phone
+    if intl_phone:
+        result["internationalPhoneNumber"] = intl_phone
+    if nat_phone or intl_phone:
+        result["phone"] = nat_phone or intl_phone
+
+    if "reservable" in place:
+        # Places API returns a real bool here
+        result["reservable"] = bool(place["reservable"])
+
+    # --- Closure flag (V4 §7.4) ---
+    if "businessStatus" in place:
+        # API enum: OPERATIONAL | CLOSED_TEMPORARILY | CLOSED_PERMANENTLY
+        result["business_status"] = place["businessStatus"]
 
     hours = place.get("regularOpeningHours") or place.get("currentOpeningHours")
     if hours and "weekdayDescriptions" in hours:
