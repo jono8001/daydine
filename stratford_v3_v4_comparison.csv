@@ -32,8 +32,8 @@ fhrsid,business_name,category,postcode,v3_rank,v3_final,v3_band,v3_confidence,v4
 503141,NFU Mutual,Other,CV37 7BJ,,9.079,Not Ranked,Low,7.735,Rankable-B,True,True,-1.344,9.041,8.319,2.5,google,98,,0,7.955,,,missing_source_discipline,missing_source_discipline
 1790270,Bardia's,Cafe / Coffee Shop,CV37 6EE,181,6.177,Generally Satisfactory,Low,7.476,Rankable-B,True,True,1.299,5.877,8.889,7.5,google,416,,0,9.172,,,missing_source_discipline,missing_source_discipline
 1299513,Oxheart,Restaurant (General),CV36 5JJ,5,9.722,Excellent,Low,8.438,Rankable-B,True,True,-1.284,9.965,8.228,5.0,google,26,,0,7.887,,,shrinkage_low_counts,missing_source_discipline|shrinkage_low_counts
-503343,Starbucks -  Southbound,Cafe / Coffee Shop,CV35 0AA,80,8.592,Excellent,Low,7.33,Rankable-B,True,True,-1.262,8.784,7.648,2.5,google,10079,,0,9.2,,,google_de_overweight,google_de_overweight|missing_source_discipline
-503218,Burger King - Southbound,Fast Food / Quick Service,CV35 0AA,83,8.567,Excellent,Low,7.325,Rankable-B,True,True,-1.242,8.772,7.648,2.5,google,10079,,0,9.2,,,google_de_overweight,google_de_overweight|missing_source_discipline
+503343,Starbucks -  Southbound,Cafe / Coffee Shop,CV35 0AA,80,8.592,Excellent,Low,7.33,Directional-C,False,False,-1.262,8.784,7.648,2.5,google,10079,,0,9.2,,,low_evidence_gating,google_de_overweight|low_evidence_gating|missing_source_discipline|entity_ambiguity
+503218,Burger King - Southbound,Fast Food / Quick Service,CV35 0AA,83,8.567,Excellent,Low,7.325,Directional-C,False,False,-1.242,8.772,7.648,2.5,google,10079,,0,9.2,,,low_evidence_gating,google_de_overweight|low_evidence_gating|missing_source_discipline|entity_ambiguity
 1705603,Escape Arts,Other,CV37 6EE,152,7.476,Good,Low,6.255,Directional-C,False,False,-1.221,7.0,6.844,2.5,google,1,,0,5.1,,STALE-2Y,low_evidence_gating,low_evidence_gating|penalty_logic|missing_source_discipline|shrinkage_low_counts
 1266904,Good Breakfast,Other,CV35 0AA,105,8.338,Excellent,Low,7.133,Rankable-B,True,True,-1.205,8.547,7.42,2.5,google,9507,,0,9.12,,,google_de_overweight,google_de_overweight|missing_source_discipline
 503732,Pizza Hut Restaurants - Dine In,Italian Restaurant,CV37 0HZ,70,8.697,Excellent,Low,7.5,Rankable-B,True,True,-1.197,7.0,8.778,5.0,google,1831,,0,9.182,,STALE-2Y,penalty_logic,penalty_logic|missing_source_discipline
@@ -65,7 +65,7 @@ fhrsid,business_name,category,postcode,v3_rank,v3_final,v3_band,v3_confidence,v4
 1826834,Ferment And Flour (Bastardos),Cafe / Coffee Shop,CV36 4PP,62,8.762,Excellent,Low,7.878,Rankable-B,True,True,-0.884,9.758,7.166,5.0,google,18,,0,6.954,,,shrinkage_low_counts,missing_source_discipline|shrinkage_low_counts
 1467814,Stratford Adventure Golf,Other,CV37 7LS,51,8.861,Excellent,Low,8.0,Rankable-B,True,True,-0.861,9.608,8.404,2.5,google,292,,0,8.807,,,missing_source_discipline,missing_source_discipline
 503734,Premier Inn,Hotel / Accommodation,CV37 6UQ,45,8.962,Excellent,Low,8.102,Rankable-B,True,True,-0.86,9.557,7.842,5.0,google,860,,0,9.193,,,google_de_overweight,google_de_overweight|missing_source_discipline
-1589295,The Tempest,Italian Restaurant,CV37 6EX,162,7.19,Good,Low,8.02,Rankable-B,True,True,0.83,7.376,8.765,7.5,google,120,,0,8.532,,,missing_source_discipline,missing_source_discipline
+1589295,The Tempest,Italian Restaurant,CV37 6EX,162,7.19,Good,Low,8.02,Directional-C,False,False,0.83,7.376,8.765,7.5,google,120,,0,8.532,,,low_evidence_gating,low_evidence_gating|missing_source_discipline|entity_ambiguity
 1453409,Bidford Juniors Football Club,Other,,,7.741,Not Ranked,Low,6.931,Directional-C,False,False,-0.81,9.49,6.968,0.0,google,6,,0,5.598,,,low_evidence_gating,low_evidence_gating|missing_source_discipline|shrinkage_low_counts
 1014807,McDonald's,American / Grill,CV37 0AH,47,8.924,Excellent,Low,8.118,Rankable-B,True,True,-0.806,9.395,7.188,7.5,google,2386,,0,8.445,,,missing_source_discipline,missing_source_discipline
 502838,Alveston Manor Hotel,Hotel / Accommodation,CV37 7HP,111,8.274,Excellent,Low,7.47,Rankable-B,True,True,-0.804,9.399,7.411,2.5,google,1938,,0,9.12,,,google_de_overweight,google_de_overweight|missing_source_discipline
@@ -80,8 +80,8 @@ fhrsid,business_name,category,postcode,v3_rank,v3_final,v3_band,v3_confidence,v4
 676561,The Embankment,Hotel / Accommodation,CV37 7LS,125,8.06,Excellent,Low,7.298,Rankable-B,True,True,-0.762,7.047,8.287,5.0,google,820,,0,9.325,,,missing_source_discipline,missing_source_discipline
 1584577,Shakespeare's,Other,B94 5JU,126,8.04,Excellent,Low,7.282,Rankable-B,True,True,-0.758,7.406,8.767,2.5,google,1375,0.55,0,7.643,,,sentiment_removal,sentiment_removal|missing_source_discipline
 1421981,Peppers,Indian Restaurant,B80 7HN,153,7.443,Good,Low,8.196,Rankable-B,True,True,0.753,8.381,8.263,7.5,google,148,,0,8.103,,,missing_source_discipline,missing_source_discipline
-1206081,South Costa,Cafe / Coffee Shop,CV35 0RR,69,8.712,Excellent,Low,7.962,Rankable-B,True,True,-0.75,9.599,9.16,0.0,google,600,,0,9.464,,,missing_source_discipline,missing_source_discipline
-1206079,Building 523 Costa And Kitchen,Cafe / Coffee Shop,CV35 0RR,68,8.712,Excellent,Low,7.962,Rankable-B,True,True,-0.75,9.599,9.16,0.0,google,600,,0,9.464,,,missing_source_discipline,missing_source_discipline
+1206079,Building 523 Costa And Kitchen,Cafe / Coffee Shop,CV35 0RR,68,8.712,Excellent,Low,7.962,Directional-C,False,False,-0.75,9.599,9.16,0.0,google,600,,0,9.464,,,low_evidence_gating,low_evidence_gating|missing_source_discipline|entity_ambiguity
+1206081,South Costa,Cafe / Coffee Shop,CV35 0RR,69,8.712,Excellent,Low,7.962,Directional-C,False,False,-0.75,9.599,9.16,0.0,google,600,,0,9.464,,,low_evidence_gating,low_evidence_gating|missing_source_discipline|entity_ambiguity
 1397584,The Bluebell,Restaurant (General),B95 5AT,14,9.393,Excellent,Low,8.647,Rankable-B,True,True,-0.746,9.093,8.633,7.5,google,323,,0,8.814,,,missing_source_discipline,missing_source_discipline
 1695937,Impasto Micro-Pizzeria,Italian Restaurant,CV37 6QY,123,8.094,Excellent,Medium,8.837,Rankable-B,True,True,0.743,8.778,9.336,7.5,google,121,0.75,0,8.769,,,structural_shift,structural_shift
 1228994,Mor,Bakery / Desserts,CV37 6EX,28,9.189,Excellent,Low,8.46,Rankable-B,True,True,-0.729,9.357,8.816,5.0,google,275,,0,8.932,,,missing_source_discipline,missing_source_discipline
@@ -94,7 +94,7 @@ fhrsid,business_name,category,postcode,v3_rank,v3_final,v3_band,v3_confidence,v4
 1804017,Cafe 86B,Cafe / Coffee Shop,B95 5BY,63,8.757,Excellent,Low,8.114,Rankable-B,True,True,-0.643,8.87,8.48,5.0,google,42,,0,8.084,,,missing_source_discipline,missing_source_discipline
 1826838,Mouchak,Indian Restaurant,B50 4BG,183,5.651,Generally Satisfactory,Low,6.29,Rankable-B,True,True,0.639,5.445,7.472,5.0,google,11,,0,7.229,,,shrinkage_low_counts,missing_source_discipline|shrinkage_low_counts
 503148,Nuthurst Grange Country House,Hotel / Accommodation,B94 5NL,171,6.845,Good,Low,7.453,Rankable-B,True,True,0.608,5.77,8.934,7.5,google,590,,0,9.374,,,missing_source_discipline,missing_source_discipline
-1206075,Dec X Canteen,Cafe / Coffee Shop,CV35 0RR,98,8.418,Excellent,Low,7.812,Rankable-B,True,True,-0.606,9.224,9.16,0.0,google,600,,0,9.464,,,missing_source_discipline,missing_source_discipline
+1206075,Dec X Canteen,Cafe / Coffee Shop,CV35 0RR,98,8.418,Excellent,Low,7.812,Directional-C,False,False,-0.606,9.224,9.16,0.0,google,600,,0,9.464,,,low_evidence_gating,low_evidence_gating|missing_source_discipline|entity_ambiguity
 1563336,Chopstix South,Asian Restaurant,CV35 0AA,147,7.568,Good,Low,6.968,Rankable-B,True,True,-0.6,8.808,5.987,5.0,google,39,,0,6.321,,,missing_source_discipline,missing_source_discipline
 1699665,Nel's At The Pavilion,Cafe / Coffee Shop,CV35 0AD,8,9.648,Excellent,Low,9.058,Rankable-B,True,True,-0.59,9.571,9.123,7.5,google,453,,0,8.91,,,missing_source_discipline,missing_source_discipline
 1739370,Corte Campana,Italian Restaurant,CV37 6EX,120,8.141,Excellent,Low,8.731,Rankable-B,True,True,0.59,8.743,9.132,7.5,google,481,,0,9.336,,,missing_source_discipline,missing_source_discipline
@@ -141,7 +141,7 @@ fhrsid,business_name,category,postcode,v3_rank,v3_final,v3_band,v3_confidence,v4
 1835033,The Cottage Of Content,Pub / Bar,B50 4NP,131,7.987,Good,Low,7.679,Rankable-B,True,True,-0.308,7.084,8.267,7.5,google,598,,0,8.766,,,missing_source_discipline,missing_source_discipline
 1799220,Burger King,Restaurant (General),CV37 0HZ,135,7.938,Good,Low,7.631,Rankable-B,True,True,-0.307,8.458,6.94,7.5,google,218,,0,8.078,,,missing_source_discipline,missing_source_discipline
 1908606,Bruno's Bakery,Fast Food / Quick Service,B80 7HJ,113,8.258,Excellent,Low,8.559,Rankable-B,True,True,0.301,8.655,8.827,7.5,google,290,,0,8.376,,,missing_source_discipline,missing_source_discipline
-1847445,Soma,Italian Restaurant,CV37 6EX,87,8.527,Excellent,Low,8.824,Rankable-B,True,True,0.297,9.388,8.765,7.5,google,120,,0,8.532,,,missing_source_discipline,missing_source_discipline
+1847445,Soma,Italian Restaurant,CV37 6EX,87,8.527,Excellent,Low,8.824,Directional-C,False,False,0.297,9.388,8.765,7.5,google,120,,0,8.532,,,low_evidence_gating,low_evidence_gating|missing_source_discipline|entity_ambiguity
 1284339,The Yew Tree,Pub / Bar,CV47 2AS,139,7.835,Good,Low,8.119,Rankable-B,True,True,0.284,7.25,9.099,7.5,google,391,,0,8.833,,,missing_source_discipline,missing_source_discipline
 504014,The Kings Head,British Restaurant,CV35 9LT,92,8.461,Excellent,Low,8.743,Rankable-B,True,True,0.282,9.686,8.32,7.5,google,1952,,0,9.036,,,missing_source_discipline,missing_source_discipline
 503555,Dog Lane Fishery Caravanning And Camping Site,Hotel / Accommodation,CV47 8LT,167,7.007,Good,Low,6.726,Rankable-B,True,False,-0.281,5.0,8.836,5.0,google,303,,0,8.989,,STALE-5Y,penalty_logic,penalty_logic|missing_source_discipline
@@ -180,7 +180,7 @@ fhrsid,business_name,category,postcode,v3_rank,v3_final,v3_band,v3_confidence,v4
 503081,Sans Oriental Restaurant,Chinese Restaurant,B95 5AT,99,8.409,Excellent,Low,8.58,Rankable-B,True,True,0.171,8.708,8.826,7.5,google,289,,0,8.601,,,missing_source_discipline,missing_source_discipline
 1796547,Feel Good Crystals,Cafe / Coffee Shop,CV36 5LE,24,9.247,Excellent,Low,9.081,Rankable-B,True,True,-0.166,9.68,9.074,7.5,google,105,,0,8.615,,,missing_source_discipline,missing_source_discipline
 503525,Shah's,Indian Restaurant,CV35 9LU,60,8.771,Excellent,Low,8.935,Rankable-B,True,True,0.164,9.324,9.068,7.5,google,331,,0,8.745,,,missing_source_discipline,missing_source_discipline
-1513917,The Water Margin @ The Hollybush,Takeaway,CV47 7RW,143,7.691,Good,Low,7.529,Rankable-B,True,True,-0.162,7.153,7.872,7.5,google,73,,0,7.924,,,missing_source_discipline,missing_source_discipline
+1513917,The Water Margin @ The Hollybush,Takeaway,CV47 7RW,143,7.691,Good,Low,7.529,Directional-C,False,False,-0.162,7.153,7.872,7.5,google,73,,0,7.924,,,low_evidence_gating,low_evidence_gating|missing_source_discipline|entity_ambiguity
 503319,Shipston Pizza And Kebab House,Fast Food / Quick Service,CV36 4AL,174,6.752,Good,Low,6.913,Rankable-B,True,True,0.161,5.882,7.634,7.5,google,110,,0,7.702,,,missing_source_discipline,missing_source_discipline
 1253300,The Keys,Pub / Bar,CV37 6LW,158,7.315,Good,Low,7.155,Rankable-B,True,True,-0.16,7.0,8.012,5.0,google,387,,0,8.464,,STALE-2Y,penalty_logic,penalty_logic|missing_source_discipline
 1495078,Four Seasons Pho Limited,Asian Restaurant,CV37 6LF,155,7.42,Good,Low,7.569,Rankable-B,True,True,0.149,7.0,8.097,7.5,google,167,,0,8.404,,STALE-2Y,penalty_logic,penalty_logic|missing_source_discipline
@@ -196,7 +196,7 @@ fhrsid,business_name,category,postcode,v3_rank,v3_final,v3_band,v3_confidence,v4
 503584,Cardamom,Indian Restaurant,B49 5DP,50,8.868,Excellent,Low,8.76,Rankable-B,True,True,-0.108,9.122,8.859,7.5,google,344,,0,8.693,,,missing_source_discipline,missing_source_discipline
 504050,Bishops Bowls Lake Cafe,Cafe / Coffee Shop,CV47 2SR,176,6.681,Good,Low,6.578,Rankable-B,True,True,-0.103,5.784,8.642,2.5,google,144,,0,8.558,,,missing_source_discipline,missing_source_discipline
 1774606,Bumbles,Italian Restaurant,B80 7AN,34,9.089,Excellent,Low,8.996,Rankable-B,True,True,-0.093,9.281,9.242,7.5,google,275,,0,9.092,,,missing_source_discipline,missing_source_discipline
-1339997,The Margin,Takeaway,CV47 9PZ,119,8.143,Excellent,Low,8.05,Rankable-B,True,True,-0.093,8.456,7.872,7.5,google,73,,0,7.924,,,missing_source_discipline,missing_source_discipline
+1339997,The Margin,Takeaway,CV47 9PZ,119,8.143,Excellent,Low,8.05,Directional-C,False,False,-0.093,8.456,7.872,7.5,google,73,,0,7.924,,,low_evidence_gating,low_evidence_gating|missing_source_discipline|entity_ambiguity
 1552322,Costa Coffee,Cafe / Coffee Shop,CV37 6PT,129,7.992,Good,Low,7.907,Rankable-B,True,True,-0.085,9.727,7.258,5.0,google,95,,0,7.506,,,missing_source_discipline,missing_source_discipline
 503286,George's Cafe,Cafe / Coffee Shop,B50 4JF,88,8.5,Excellent,Low,8.578,Rankable-B,True,True,0.078,8.755,8.779,7.5,google,124,,0,8.001,,,missing_source_discipline,missing_source_discipline
 1354963,The Tea Shed,Cafe / Coffee Shop,CV47 8LT,166,7.049,Good,Low,7.126,Rankable-B,True,True,0.077,8.366,7.565,2.5,google,13,,0,6.725,,,shrinkage_low_counts,missing_source_discipline|shrinkage_low_counts

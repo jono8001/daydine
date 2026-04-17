@@ -245,10 +245,10 @@
       "v3_final": 7.19,
       "v3_band": "Good",
       "v4_final": 8.02,
-      "v4_class": "Rankable-B",
+      "v4_class": "Directional-C",
       "delta": 0.83,
-      "primary_reason": "missing_source_discipline",
-      "reason_tags": "missing_source_discipline",
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|entity_ambiguity",
       "v4_reviews": 120,
       "v4_platforms": "google"
     },
@@ -579,6 +579,34 @@
       "v4_platforms": ""
     },
     {
+      "fhrsid": "503343",
+      "name": "Starbucks -  Southbound",
+      "category": "Cafe / Coffee Shop",
+      "v3_final": 8.592,
+      "v3_band": "Excellent",
+      "v4_final": 7.33,
+      "v4_class": "Directional-C",
+      "delta": -1.262,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "google_de_overweight|low_evidence_gating|missing_source_discipline|entity_ambiguity",
+      "v4_reviews": 10079,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "503218",
+      "name": "Burger King - Southbound",
+      "category": "Fast Food / Quick Service",
+      "v3_final": 8.567,
+      "v3_band": "Excellent",
+      "v4_final": 7.325,
+      "v4_class": "Directional-C",
+      "delta": -1.242,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "google_de_overweight|low_evidence_gating|missing_source_discipline|entity_ambiguity",
+      "v4_reviews": 10079,
+      "v4_platforms": "google"
+    },
+    {
       "fhrsid": "1705603",
       "name": "Escape Arts",
       "category": "Other",
@@ -621,6 +649,48 @@
       "v4_platforms": "google"
     },
     {
+      "fhrsid": "1589295",
+      "name": "The Tempest",
+      "category": "Italian Restaurant",
+      "v3_final": 7.19,
+      "v3_band": "Good",
+      "v4_final": 8.02,
+      "v4_class": "Directional-C",
+      "delta": 0.83,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|entity_ambiguity",
+      "v4_reviews": 120,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1206079",
+      "name": "Building 523 Costa And Kitchen",
+      "category": "Cafe / Coffee Shop",
+      "v3_final": 8.712,
+      "v3_band": "Excellent",
+      "v4_final": 7.962,
+      "v4_class": "Directional-C",
+      "delta": -0.75,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|entity_ambiguity",
+      "v4_reviews": 600,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1206081",
+      "name": "South Costa",
+      "category": "Cafe / Coffee Shop",
+      "v3_final": 8.712,
+      "v3_band": "Excellent",
+      "v4_final": 7.962,
+      "v4_class": "Directional-C",
+      "delta": -0.75,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|entity_ambiguity",
+      "v4_reviews": 600,
+      "v4_platforms": "google"
+    },
+    {
       "fhrsid": "1291217",
       "name": "Gardener's Retreat",
       "category": "Restaurant (General)",
@@ -632,6 +702,20 @@
       "primary_reason": "low_evidence_gating",
       "reason_tags": "low_evidence_gating|penalty_logic|missing_source_discipline|shrinkage_low_counts",
       "v4_reviews": 8,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1206075",
+      "name": "Dec X Canteen",
+      "category": "Cafe / Coffee Shop",
+      "v3_final": 8.418,
+      "v3_band": "Excellent",
+      "v4_final": 7.812,
+      "v4_class": "Directional-C",
+      "delta": -0.606,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|entity_ambiguity",
+      "v4_reviews": 600,
       "v4_platforms": "google"
     },
     {
@@ -674,6 +758,48 @@
       "primary_reason": "low_evidence_gating",
       "reason_tags": "low_evidence_gating|missing_source_discipline|shrinkage_low_counts",
       "v4_reviews": 3,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1847445",
+      "name": "Soma",
+      "category": "Italian Restaurant",
+      "v3_final": 8.527,
+      "v3_band": "Excellent",
+      "v4_final": 8.824,
+      "v4_class": "Directional-C",
+      "delta": 0.297,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|entity_ambiguity",
+      "v4_reviews": 120,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1513917",
+      "name": "The Water Margin @ The Hollybush",
+      "category": "Takeaway",
+      "v3_final": 7.691,
+      "v3_band": "Good",
+      "v4_final": 7.529,
+      "v4_class": "Directional-C",
+      "delta": -0.162,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|entity_ambiguity",
+      "v4_reviews": 73,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1339997",
+      "name": "The Margin",
+      "category": "Takeaway",
+      "v3_final": 8.143,
+      "v3_band": "Excellent",
+      "v4_final": 8.05,
+      "v4_class": "Directional-C",
+      "delta": -0.093,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|entity_ambiguity",
+      "v4_reviews": 73,
       "v4_platforms": "google"
     }
   ],
@@ -1001,20 +1127,6 @@
       "v4_platforms": "google"
     },
     {
-      "fhrsid": "1847445",
-      "name": "Soma",
-      "category": "Italian Restaurant",
-      "v3_final": 8.527,
-      "v3_band": "Excellent",
-      "v4_final": 8.824,
-      "v4_class": "Rankable-B",
-      "delta": 0.297,
-      "primary_reason": "missing_source_discipline",
-      "reason_tags": "missing_source_discipline",
-      "v4_reviews": 120,
-      "v4_platforms": "google"
-    },
-    {
       "fhrsid": "1297845",
       "name": "Lounge@26",
       "category": "Cafe / Coffee Shop",
@@ -1096,6 +1208,20 @@
       "primary_reason": "missing_source_discipline",
       "reason_tags": "missing_source_discipline",
       "v4_reviews": 576,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1796548",
+      "name": "The Kingfisher FishBar",
+      "category": "Fast Food / Quick Service",
+      "v3_final": 8.96,
+      "v3_band": "Excellent",
+      "v4_final": 8.744,
+      "v4_class": "Rankable-B",
+      "delta": -0.216,
+      "primary_reason": "missing_source_discipline",
+      "reason_tags": "missing_source_discipline",
+      "v4_reviews": 386,
       "v4_platforms": "google"
     }
   ]

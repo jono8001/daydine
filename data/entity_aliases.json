@@ -1,0 +1,185 @@
+{
+  "_schema": {
+    "version": "1.0",
+    "description": "Manual trading-name <-> FHRSID alias table for Stratford trial. Each entry anchors a legal-entity or composite FSA record to a consumer-facing trading name. The resolver applies these + attaches the consumer-facing name as `public_name` and any other known trading names as `trading_names` so name-based search reaches the right record.",
+    "scope": "Stratford trial. Reviewed manually against stratford_establishments.json (210 records)."
+  },
+  "aliases": [
+    {
+      "fhrsid": "1896714",
+      "public_name": "The Church Street Townhouse",
+      "legal_name": "JR Hotel And Restaurants LTD",
+      "trading_names": ["Church Street Townhouse", "The Townhouse"],
+      "postcode": "CV37 6HB",
+      "source": "FSA name field 'The Townhouse Also Trading As JR Hotel And Restaurants LTD'",
+      "confidence": "high"
+    },
+    {
+      "fhrsid": "1622082",
+      "public_name": "New York Pizzas",
+      "legal_name": "The Crofts Cafe",
+      "trading_names": ["The Crofts Cafe", "Briar Croft Cafe"],
+      "postcode": "CV37 6PH",
+      "source": "FSA 'The Crofts Cafe Also Trading As New York Pizzas'",
+      "confidence": "high"
+    },
+    {
+      "fhrsid": "503931",
+      "public_name": "Super Nonna",
+      "legal_name": "Bella Italia Restaurants Ltd",
+      "trading_names": ["Bella Italia", "Super Nonna"],
+      "postcode": "CV37 6JG",
+      "source": "FSA 'Bella Italia Also Trading As Super Nonna'",
+      "confidence": "high"
+    },
+    {
+      "fhrsid": "503480",
+      "public_name": "The Vintner Wine Bar",
+      "legal_name": null,
+      "trading_names": ["Vintner", "The Vintner", "Vintner Wine Bar"],
+      "postcode": "CV37 6EF",
+      "source": "Exact FSA name match (pre-existing Rankable-A venue)",
+      "confidence": "high"
+    },
+    {
+      "fhrsid": "502816",
+      "public_name": "Loxleys Restaurant and Wine Bar",
+      "legal_name": null,
+      "trading_names": ["Loxleys", "Loxley's"],
+      "postcode": "CV37 6EF",
+      "source": "Exact FSA name match",
+      "confidence": "high"
+    },
+    {
+      "fhrsid": "503316",
+      "public_name": "Lambs",
+      "legal_name": null,
+      "trading_names": ["Lambs Restaurant"],
+      "postcode": "CV37 6EF",
+      "source": "Exact FSA name match",
+      "confidence": "high"
+    },
+    {
+      "fhrsid": "503481",
+      "public_name": "The Opposition",
+      "legal_name": null,
+      "trading_names": ["Opposition Bistro", "The Opposition Bistro"],
+      "postcode": "CV37 6EF",
+      "source": "Exact FSA name match",
+      "confidence": "high"
+    },
+    {
+      "fhrsid": "1381156",
+      "public_name": "Pick Thai",
+      "legal_name": "Pick Thai Ltd",
+      "trading_names": ["Pick Thai 9 Church Street"],
+      "postcode": "CV37 6HB",
+      "source": "Address '9 Church Street'; supersedes the venue historically known as 'No.9 Church Street'",
+      "confidence": "high",
+      "note": "No.9 Church Street closed; Pick Thai now occupies 9 Church Street. Customer searches for 'No.9' should surface this record with the historical-occupancy caveat, not an absence."
+    },
+    {
+      "fhrsid": "502864",
+      "public_name": "Hussains Indian Cuisine",
+      "legal_name": null,
+      "trading_names": ["Hussains"],
+      "postcode": "CV37 6EP",
+      "source": "Exact FSA name match",
+      "confidence": "high"
+    }
+  ],
+  "ambiguous_gpids": [
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "fhrsids": ["503343", "503218"],
+      "names": ["Starbucks - Southbound", "Burger King - Southbound"],
+      "postcode": "CV35 0AA",
+      "note": "Two FSA records attached to the same Google Place (same service station unit). Mark both ambiguous."
+    },
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "fhrsids": ["1339997", "1513917"],
+      "names": ["The Margin", "The Water Margin @ The Hollybush"],
+      "postcode_primary": "CV47 9PZ",
+      "postcode_secondary": "CV47 7RW",
+      "note": "Two FSA records pointing at the same Google Place at different postcodes. Likely a rebrand or a Google matching error; mark both ambiguous until disambiguated."
+    },
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "fhrsids": ["1206081", "1206075", "1206079"],
+      "names": ["South Costa", "Dec X Canteen", "Building 523 Costa And Kitchen"],
+      "postcode": "CV35 0RR",
+      "note": "Three FSA records at a single MoD/industrial site sharing one Google Place. All ambiguous."
+    },
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "fhrsids": ["1847445", "1589295"],
+      "names": ["Soma", "The Tempest"],
+      "postcode": "CV37 6EX",
+      "note": "Two Bell Court units sharing one Google Place. Ambiguous."
+    }
+  ],
+  "known_unresolved": [
+    {
+      "query_name": "The Dirty Duck",
+      "aka": ["Black Swan", "The Dirty Duck / Black Swan", "Greene King Dirty Duck"],
+      "postcode_hint": "CV37 6BA",
+      "address_hint": "Waterside, Stratford-upon-Avon",
+      "cause": "not_in_fsa_trial_slice",
+      "note": "High-profile venue. Not in the 210-record trial FSA slice. Consumer search must not silently return nothing; surface as 'not yet in trial dataset' with a link to feedback.",
+      "unblock": "Re-run .github/scripts/augment_fsa_stratford.py to pull all food business types for LA 320, or expand the trial slice."
+    },
+    {
+      "query_name": "The Rooftop Restaurant",
+      "aka": ["RSC Rooftop", "Royal Shakespeare Company Rooftop Restaurant"],
+      "postcode_hint": "CV37 6BB",
+      "address_hint": "Royal Shakespeare Theatre, Waterside, Stratford-upon-Avon",
+      "cause": "not_in_fsa_trial_slice",
+      "note": "Operated by RSC Enterprises Ltd. Not in trial slice.",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "The Golden Bee",
+      "aka": [],
+      "postcode_hint": "CV37 6QW",
+      "cause": "not_in_fsa_trial_slice",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "Baraset Barn",
+      "aka": [],
+      "postcode_hint": "CV35 9AA",
+      "cause": "not_in_fsa_trial_slice",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "Boston Tea Party",
+      "aka": [],
+      "postcode_hint": "CV37 6HJ",
+      "cause": "not_in_fsa_trial_slice",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "Osteria Da Gino",
+      "aka": [],
+      "postcode_hint": "CV37 6HJ",
+      "cause": "not_in_fsa_trial_slice",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "Grace & Savour",
+      "aka": [],
+      "postcode_hint": "CV37 6BA",
+      "cause": "not_in_fsa_trial_slice",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "Oscar's",
+      "aka": ["Oscars", "Oscar's Stratford"],
+      "postcode_hint": null,
+      "cause": "not_found_in_any_dataset",
+      "note": "No FSA record plausibly maps to an 'Oscar's' trading name in Stratford. Either closed, never FSA-registered, or outside trial scope. Consumer search should return 'unknown venue'.",
+      "unblock": "Confirm existence via Google / TripAdvisor lookup; if still operational, add a manual FHRSID + expansion."
+    }
+  ]
+}

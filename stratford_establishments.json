@@ -398,7 +398,13 @@
     ],
     "web": true,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "public_name": "Lambs",
+    "trading_names": [
+      "Lambs Restaurant"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   },
   "1381156": {
     "a": "9 Church Street, Stratford-upon-Avon",
@@ -437,7 +443,14 @@
     ],
     "web": true,
     "fb": true,
-    "ig": false
+    "ig": false,
+    "public_name": "Pick Thai",
+    "trading_names": [
+      "Pick Thai 9 Church Street",
+      "Pick Thai Ltd"
+    ],
+    "alias_source": "Address '9 Church Street'; supersedes the venue historically known as 'No.9 Church Street'",
+    "alias_confidence": "high"
   },
   "1299513": {
     "a": "50 Main Street, Long Compton, Shipston-on-Stour",
@@ -627,7 +640,8 @@
     ],
     "web": false,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "entity_ambiguous": true
   },
   "1302779": {
     "a": "The Old Mint, Coventry Street, Southam",
@@ -1190,7 +1204,8 @@
       "Sunday: 4:30 – 10:00 PM"
     ],
     "web": true,
-    "ig": false
+    "ig": false,
+    "entity_ambiguous": true
   },
   "1747703": {
     "a": "6 - 7 High Street, Stratford-upon-Avon",
@@ -1319,7 +1334,14 @@
     ],
     "web": true,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "public_name": "The Opposition",
+    "trading_names": [
+      "Opposition Bistro",
+      "The Opposition Bistro"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   },
   "1808717": {
     "a": "Le Bistro Pierre, Swans Nest Hotel, Swans Nest Lane, Stratford-upon-Avon",
@@ -1472,7 +1494,8 @@
     "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
     "web": false,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "entity_ambiguous": true
   },
   "1705603": {
     "a": "Escape Community Arts, The Old Slaughterhouse, Sheep Street, Stratford-upon-Avon",
@@ -2308,7 +2331,8 @@
     ],
     "web": true,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "entity_ambiguous": true
   },
   "1774606": {
     "a": "Unit 3, Haydon House, 3 - 7 Alcester Road, Studley",
@@ -2456,7 +2480,14 @@
     "gpid": "ChIJxeB2YQDPcEgRtflbEEKlGN8",
     "web": false,
     "fb": false,
-    "ig": false
+    "ig": false,
+    "public_name": "New York Pizzas",
+    "trading_names": [
+      "The Crofts Cafe",
+      "Briar Croft Cafe"
+    ],
+    "alias_source": "FSA 'The Crofts Cafe Also Trading As New York Pizzas'",
+    "alias_confidence": "high"
   },
   "503732": {
     "a": "Pizza Hut, Unit P, Maybird Retail Park, Birmingham Road",
@@ -3360,7 +3391,8 @@
     "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
     "web": false,
     "fb": false,
-    "ig": false
+    "ig": false,
+    "entity_ambiguous": true
   },
   "503960": {
     "a": "The Bakery, 14 Sheep Street, Shipston-on-Stour",
@@ -3486,7 +3518,15 @@
     ],
     "web": true,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "public_name": "The Church Street Townhouse",
+    "trading_names": [
+      "Church Street Townhouse",
+      "The Townhouse",
+      "JR Hotel And Restaurants LTD"
+    ],
+    "alias_source": "FSA name field 'The Townhouse Also Trading As JR Hotel And Restaurants LTD'",
+    "alias_confidence": "high"
   },
   "1291217": {
     "a": "Charlecote Gardens, Charlecote, Warwick",
@@ -6059,7 +6099,8 @@
     ],
     "web": true,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "entity_ambiguous": true
   },
   "502864": {
     "a": "6A Chapel Street, Stratford-upon-Avon",
@@ -6104,7 +6145,13 @@
     ],
     "web": true,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "public_name": "Hussains Indian Cuisine",
+    "trading_names": [
+      "Hussains"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   },
   "1513917": {
     "a": "Hollybush Inn, Holly Bush Lane, Priors Marston, Southam",
@@ -6142,7 +6189,8 @@
       "Sunday: 4:30 – 10:00 PM"
     ],
     "web": true,
-    "ig": false
+    "ig": false,
+    "entity_ambiguous": true
   },
   "1672980": {
     "a": "Alcester Business Centre, 4 Kinwarton Farm Road, Kinwarton, Alcester",
@@ -6382,7 +6430,8 @@
     ],
     "web": false,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "entity_ambiguous": true
   },
   "1721314": {
     "a": "Banbury Road, Gaydon, Warwick",
@@ -7608,7 +7657,15 @@
     "gpid": "ChIJ8f1sqDPOcEgRqoINSjhvWdo",
     "web": true,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "public_name": "Super Nonna",
+    "trading_names": [
+      "Bella Italia",
+      "Super Nonna",
+      "Bella Italia Restaurants Ltd"
+    ],
+    "alias_source": "FSA 'Bella Italia Also Trading As Super Nonna'",
+    "alias_confidence": "high"
   },
   "1411434": {
     "a": "Earlswood Village Hall, Shutt Lane, Earlswood, Solihull",
@@ -7664,7 +7721,8 @@
     "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
     "web": false,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "entity_ambiguous": true
   },
   "502838": {
     "a": "Banbury Road, Stratford-upon-Avon",
@@ -8116,7 +8174,14 @@
     ],
     "web": true,
     "fb": true,
-    "ig": true
+    "ig": true,
+    "public_name": "Loxleys Restaurant and Wine Bar",
+    "trading_names": [
+      "Loxleys",
+      "Loxley's"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   },
   "503480": {
     "n": "Vintner Wine Bar",
@@ -8192,7 +8257,15 @@
     "ta": 4.4,
     "trc": 20,
     "ta_present": true,
-    "ta_url": "https://www.tripadvisor.co.uk/Restaurant_Review-g186460-d730193-Reviews-The_Vintner_Wine_Bar-Stratford_upon_Avon_Warwickshire_England.html"
+    "ta_url": "https://www.tripadvisor.co.uk/Restaurant_Review-g186460-d730193-Reviews-The_Vintner_Wine_Bar-Stratford_upon_Avon_Warwickshire_England.html",
+    "public_name": "The Vintner Wine Bar",
+    "trading_names": [
+      "Vintner",
+      "The Vintner",
+      "Vintner Wine Bar"
+    ],
+    "alias_source": "Exact FSA name match (pre-existing Rankable-A venue)",
+    "alias_confidence": "high"
   },
   "503104": {
     "n": "Simla Takeaway",

@@ -667,9 +667,20 @@ def check_closure(record: dict[str, Any]) -> Optional[str]:
 def assess_entity_match(record: dict[str, Any]) -> str:
     """Return one of: confirmed | probable | ambiguous | none.
 
-    Placeholder — a proper resolver will eventually compare FSA + Google +
-    Companies House + address strings. For now we use presence of identifiers
-    and an explicit override field.
+    Decision order (first hit wins):
+      1. An explicit `entity_match` override on the record (used by
+         resolve_entities.py and test fixtures).
+      2. `entity_ambiguous = true` — trumps identifiers, regardless of
+         how many of them are present. Written by resolve_entities.py
+         when two FHRS records share a Google Place ID, or on manual
+         review.
+      3. FHRSID + Google Place ID present -> `confirmed`. Optionally
+         strengthened by the presence of an alias-resolved `public_name`
+         (manually reviewed -> `alias_confidence == "high"`), but the
+         class stays `confirmed` either way; the confidence level is
+         reflected in the audit trace, not in the class.
+      4. Either FHRSID or Google Place ID alone -> `probable`.
+      5. Neither -> `none`.
     """
     override = record.get("entity_match")
     if isinstance(override, str) and override in {
@@ -677,11 +688,12 @@ def assess_entity_match(record: dict[str, Any]) -> str:
     }:
         return override
 
+    if record.get("entity_ambiguous"):
+        return "ambiguous"
+
     has_fhrs = record.get("id") is not None
     has_gpid = bool(record.get("gpid"))
 
-    if record.get("entity_ambiguous"):
-        return "ambiguous"
     if has_fhrs and has_gpid:
         return "confirmed"
     if has_fhrs or has_gpid:
@@ -900,6 +912,11 @@ def score_venue(
         trace.append(f"closure={closure}")
     if em_status != "confirmed":
         trace.append(f"entity_match={em_status}")
+    if record.get("public_name") and record.get("public_name") != record.get("n"):
+        trace.append(
+            f"alias public_name={record.get('public_name')!r} "
+            f"alias_confidence={record.get('alias_confidence', 'n/a')}"
+        )
 
     audit = {
         "engine_version": ENGINE_VERSION,
