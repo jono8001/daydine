@@ -1,0 +1,310 @@
+{
+  "suspiciously_high_with_thin_evidence": [
+    {
+      "fhrsid": "1299513",
+      "name": "Oxheart",
+      "category": "Restaurant (General)",
+      "v3_final": 9.722,
+      "v3_band": "Excellent",
+      "v4_final": 8.438,
+      "v4_class": "Rankable-B",
+      "delta": -1.284,
+      "primary_reason": "shrinkage_low_counts",
+      "reason_tags": "missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 26,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1854458",
+      "name": "Costa Coffee",
+      "category": "Cafe / Coffee Shop",
+      "v3_final": 9.054,
+      "v3_band": "Excellent",
+      "v4_final": 8.034,
+      "v4_class": "Directional-C",
+      "delta": -1.02,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 9,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1827674",
+      "name": "Pickled & Tipsy's Cafe",
+      "category": "Takeaway",
+      "v3_final": 8.265,
+      "v3_band": "Excellent",
+      "v4_final": 8.017,
+      "v4_class": "Rankable-B",
+      "delta": -0.248,
+      "primary_reason": "shrinkage_low_counts",
+      "reason_tags": "missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 23,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1808716",
+      "name": "Fast Flavour",
+      "category": "Restaurant (General)",
+      "v3_final": 8.907,
+      "v3_band": "Excellent",
+      "v4_final": 7.97,
+      "v4_class": "Rankable-B",
+      "delta": -0.937,
+      "primary_reason": "shrinkage_low_counts",
+      "reason_tags": "missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 27,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "503926",
+      "name": "Harbury Library Cafe",
+      "category": "Cafe / Coffee Shop",
+      "v3_final": 8.695,
+      "v3_band": "Excellent",
+      "v4_final": 7.9,
+      "v4_class": "Rankable-B",
+      "delta": -0.795,
+      "primary_reason": "shrinkage_low_counts",
+      "reason_tags": "missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 26,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1826834",
+      "name": "Ferment And Flour (Bastardos)",
+      "category": "Cafe / Coffee Shop",
+      "v3_final": 8.762,
+      "v3_band": "Excellent",
+      "v4_final": 7.878,
+      "v4_class": "Rankable-B",
+      "delta": -0.884,
+      "primary_reason": "shrinkage_low_counts",
+      "reason_tags": "missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 18,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1474392",
+      "name": "The Pavilion Coffee Shop And Community Space",
+      "category": "Cafe / Coffee Shop",
+      "v3_final": 8.584,
+      "v3_band": "Excellent",
+      "v4_final": 7.814,
+      "v4_class": "Rankable-B",
+      "delta": -0.77,
+      "primary_reason": "shrinkage_low_counts",
+      "reason_tags": "missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 20,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "503565",
+      "name": "A G D Equipment Ltd",
+      "category": "Other",
+      "v3_final": 8.801,
+      "v3_band": "Not Ranked",
+      "v4_final": 7.712,
+      "v4_class": "Rankable-B",
+      "delta": -1.089,
+      "primary_reason": "shrinkage_low_counts",
+      "reason_tags": "missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 16,
+      "v4_platforms": "google"
+    }
+  ],
+  "newly_excluded_from_ranking": [
+    {
+      "fhrsid": "1690228",
+      "name": "Compton Verney Cafe",
+      "category": "Restaurant (General)",
+      "v3_final": 7.494,
+      "v3_band": "Good",
+      "v4_final": 3.792,
+      "v4_class": "Directional-C",
+      "delta": -3.702,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline",
+      "v4_reviews": 0,
+      "v4_platforms": ""
+    },
+    {
+      "fhrsid": "1705603",
+      "name": "Escape Arts",
+      "category": "Other",
+      "v3_final": 7.476,
+      "v3_band": "Good",
+      "v4_final": 6.255,
+      "v4_class": "Directional-C",
+      "delta": -1.221,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|penalty_logic|missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 1,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1838728",
+      "name": "Elders Who Lunch (Hartley Locums)",
+      "category": "Other",
+      "v3_final": 8.121,
+      "v3_band": "Excellent",
+      "v4_final": 7.094,
+      "v4_class": "Directional-C",
+      "delta": -1.027,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 9,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1854458",
+      "name": "Costa Coffee",
+      "category": "Cafe / Coffee Shop",
+      "v3_final": 9.054,
+      "v3_band": "Excellent",
+      "v4_final": 8.034,
+      "v4_class": "Directional-C",
+      "delta": -1.02,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 9,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1291217",
+      "name": "Gardener's Retreat",
+      "category": "Restaurant (General)",
+      "v3_final": 7.311,
+      "v3_band": "Good",
+      "v4_final": 6.648,
+      "v4_class": "Directional-C",
+      "delta": -0.663,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|penalty_logic|missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 8,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1712197",
+      "name": "The Sandwich Shop",
+      "category": "Fast Food / Quick Service",
+      "v3_final": 8.006,
+      "v3_band": "Excellent",
+      "v4_final": 7.424,
+      "v4_class": "Directional-C",
+      "delta": -0.582,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 8,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1622074",
+      "name": "Lexi's Loving Spoonful",
+      "category": "Other",
+      "v3_final": 7.381,
+      "v3_band": "Good",
+      "v4_final": 6.854,
+      "v4_class": "Directional-C",
+      "delta": -0.527,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 6,
+      "v4_platforms": "google"
+    },
+    {
+      "fhrsid": "1739369",
+      "name": "Paul's Catering",
+      "category": "Food & Drink",
+      "v3_final": 7.863,
+      "v3_band": "Good",
+      "v4_final": 7.47,
+      "v4_class": "Directional-C",
+      "delta": -0.393,
+      "primary_reason": "low_evidence_gating",
+      "reason_tags": "low_evidence_gating|missing_source_discipline|shrinkage_low_counts",
+      "v4_reviews": 3,
+      "v4_platforms": "google"
+    }
+  ],
+  "top_band_inflation": {
+    "total": 210,
+    "rankable": 191,
+    "rankable_with_final_ge_8": 82,
+    "pct_of_rankable_ge_8": 42.9
+  },
+  "high_profile_presence": [
+    {
+      "query": "Vintner",
+      "match": "Vintner Wine Bar",
+      "v3_final": 7.943,
+      "v4_final": 8.496,
+      "v4_class": "Rankable-A",
+      "v4_rankable": true
+    },
+    {
+      "query": "Dirty Duck",
+      "match": null
+    },
+    {
+      "query": "Opposition",
+      "match": "The Opposition",
+      "v3_final": 9.021,
+      "v4_final": 8.52,
+      "v4_class": "Rankable-B",
+      "v4_rankable": true
+    },
+    {
+      "query": "Rooftop",
+      "match": null
+    },
+    {
+      "query": "Loxley",
+      "match": "Loxleys Restaurant And Wine Bar",
+      "v3_final": 8.59,
+      "v4_final": 8.397,
+      "v4_class": "Rankable-B",
+      "v4_rankable": true
+    },
+    {
+      "query": "Black Swan",
+      "match": null
+    },
+    {
+      "query": "Stratford Manor",
+      "match": "Stratford Manor Hotel",
+      "v3_final": 9.63,
+      "v4_final": 7.772,
+      "v4_class": "Rankable-B",
+      "v4_rankable": true
+    },
+    {
+      "query": "Arden",
+      "match": "Ettington Garden Cafe",
+      "v3_final": 9.278,
+      "v4_final": 8.482,
+      "v4_class": "Rankable-B",
+      "v4_rankable": true
+    },
+    {
+      "query": "Church Street Townhouse",
+      "match": null
+    },
+    {
+      "query": "No 9 Church Street",
+      "match": null
+    },
+    {
+      "query": "Lambs",
+      "match": "Lambs",
+      "v3_final": 8.726,
+      "v4_final": 8.564,
+      "v4_class": "Rankable-B",
+      "v4_rankable": true
+    },
+    {
+      "query": "Oscar's",
+      "match": null
+    }
+  ]
+}

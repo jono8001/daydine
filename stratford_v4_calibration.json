@@ -1,0 +1,1796 @@
+{
+  "baseline": {
+    "label": "V0_baseline",
+    "final_all": {
+      "n": 210,
+      "mean": 7.626,
+      "median": 7.926,
+      "stdev": 1.179,
+      "min": 0.0,
+      "max": 8.975,
+      "p25": 7.276,
+      "p75": 8.393
+    },
+    "final_rankable": {
+      "n": 191,
+      "mean": 7.854,
+      "median": 8.025,
+      "stdev": 0.724,
+      "min": 4.682,
+      "max": 8.975,
+      "p25": 7.378,
+      "p75": 8.417
+    },
+    "customer_component": {
+      "n": 204,
+      "mean": 8.628,
+      "median": 8.77,
+      "stdev": 0.655,
+      "min": 5.137,
+      "max": 9.748,
+      "p25": 8.205,
+      "p75": 9.098
+    },
+    "class_distribution": {
+      "Rankable-A": 1,
+      "Rankable-B": 190,
+      "Directional-C": 18,
+      "Profile-only-D": 1
+    },
+    "rankable_ge_8": 97,
+    "rankable_ge_8_pct": 50.8
+  },
+  "variants": [
+    {
+      "label": "V0_baseline",
+      "final_all": {
+        "n": 210,
+        "mean": 7.626,
+        "median": 7.926,
+        "stdev": 1.179,
+        "min": 0.0,
+        "max": 8.975,
+        "p25": 7.276,
+        "p75": 8.393
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.854,
+        "median": 8.025,
+        "stdev": 0.724,
+        "min": 4.682,
+        "max": 8.975,
+        "p25": 7.378,
+        "p75": 8.417
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.628,
+        "median": 8.77,
+        "stdev": 0.655,
+        "min": 5.137,
+        "max": 9.748,
+        "p25": 8.205,
+        "p75": 9.098
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 97,
+      "rankable_ge_8_pct": 50.8,
+      "google_prior": 3.8,
+      "google_pseudo": 30,
+      "google_ncap": 200,
+      "gamma": 1.0,
+      "top_deltas": [
+        {
+          "fhrsid": "1354963",
+          "name": "The Tea Shed",
+          "baseline": 7.413,
+          "variant": 7.413,
+          "delta": 0.0,
+          "customer_v4": 8.205,
+          "reviews": 13
+        },
+        {
+          "fhrsid": "1584577",
+          "name": "Shakespeare's",
+          "baseline": 7.374,
+          "variant": 7.374,
+          "delta": 0.0,
+          "customer_v4": 8.97,
+          "reviews": 1375
+        },
+        {
+          "fhrsid": "1695937",
+          "name": "Impasto Micro-Pizzeria",
+          "baseline": 8.547,
+          "variant": 8.547,
+          "delta": 0.0,
+          "customer_v4": 9.523,
+          "reviews": 121
+        },
+        {
+          "fhrsid": "1896718",
+          "name": "Birmingham City Football Club Ltd",
+          "baseline": 7.646,
+          "variant": 7.646,
+          "delta": 0.0,
+          "customer_v4": 8.19,
+          "reviews": 11
+        },
+        {
+          "fhrsid": "503081",
+          "name": "Sans Oriental Restaurant",
+          "baseline": 8.306,
+          "variant": 8.306,
+          "delta": 0.0,
+          "customer_v4": 9.05,
+          "reviews": 289
+        },
+        {
+          "fhrsid": "1927834",
+          "name": "Golden Putter Stratford Upon",
+          "baseline": 4.268,
+          "variant": 4.268,
+          "delta": 0.0,
+          "customer_v4": 8.65,
+          "reviews": 90
+        },
+        {
+          "fhrsid": "503585",
+          "name": "Redwings Horse Sanctuary",
+          "baseline": 6.989,
+          "variant": 6.989,
+          "delta": 0.0,
+          "customer_v4": 9.309,
+          "reviews": 566
+        },
+        {
+          "fhrsid": "1622070",
+          "name": "Carluccio's",
+          "baseline": 8.263,
+          "variant": 8.263,
+          "delta": 0.0,
+          "customer_v4": 8.356,
+          "reviews": 516
+        },
+        {
+          "fhrsid": "503554",
+          "name": "The Bridge",
+          "baseline": 8.283,
+          "variant": 8.283,
+          "delta": 0.0,
+          "customer_v4": 8.878,
+          "reviews": 315
+        },
+        {
+          "fhrsid": "503316",
+          "name": "Lambs",
+          "baseline": 8.624,
+          "variant": 8.624,
+          "delta": 0.0,
+          "customer_v4": 9.361,
+          "reviews": 1372
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.657,
+          "customer": 8.714
+        },
+        {
+          "name": "Pickled & Tipsy's Cafe",
+          "reviews": 23,
+          "final": 8.265,
+          "customer": 8.381
+        },
+        {
+          "name": "Fast Flavour",
+          "reviews": 27,
+          "final": 8.212,
+          "customer": 8.358
+        },
+        {
+          "name": "Ferment And Flour (Bastardos)",
+          "reviews": 18,
+          "final": 8.175,
+          "customer": 7.825
+        },
+        {
+          "name": "Harbury Library Cafe",
+          "reviews": 26,
+          "final": 8.119,
+          "customer": 8.714
+        },
+        {
+          "name": "The Pavilion Coffee Shop And Community Space",
+          "reviews": 20,
+          "final": 8.073,
+          "customer": 8.32
+        }
+      ]
+    },
+    {
+      "label": "V1_prior_3.6",
+      "final_all": {
+        "n": 210,
+        "mean": 7.594,
+        "median": 7.883,
+        "stdev": 1.182,
+        "min": 0.0,
+        "max": 8.97,
+        "p25": 7.26,
+        "p75": 8.366
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.827,
+        "median": 7.975,
+        "stdev": 0.727,
+        "min": 4.665,
+        "max": 8.97,
+        "p25": 7.349,
+        "p75": 8.391
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.554,
+        "median": 8.719,
+        "stdev": 0.693,
+        "min": 5.011,
+        "max": 9.739,
+        "p25": 8.145,
+        "p75": 9.065
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 94,
+      "rankable_ge_8_pct": 49.2,
+      "google_prior": 3.6,
+      "google_pseudo": 30,
+      "google_ncap": 200,
+      "gamma": 1.0,
+      "top_deltas": [
+        {
+          "fhrsid": "1705603",
+          "name": "Escape Arts",
+          "baseline": 6.63,
+          "variant": 6.456,
+          "delta": -0.174,
+          "customer_v4": 7.29,
+          "reviews": 1
+        },
+        {
+          "fhrsid": "1155879",
+          "name": "Mid-England Barrow Ltd",
+          "baseline": 5.863,
+          "variant": 5.694,
+          "delta": -0.169,
+          "customer_v4": 7.375,
+          "reviews": 2
+        },
+        {
+          "fhrsid": "1739369",
+          "name": "Paul's Catering",
+          "baseline": 7.825,
+          "variant": 7.662,
+          "delta": -0.163,
+          "customer_v4": 7.455,
+          "reviews": 3
+        },
+        {
+          "fhrsid": "1622074",
+          "name": "Lexi's Loving Spoonful",
+          "baseline": 7.196,
+          "variant": 7.046,
+          "delta": -0.15,
+          "customer_v4": 7.433,
+          "reviews": 6
+        },
+        {
+          "fhrsid": "1453409",
+          "name": "Bidford Juniors Football Club",
+          "baseline": 7.276,
+          "variant": 7.126,
+          "delta": -0.15,
+          "customer_v4": 7.4,
+          "reviews": 6
+        },
+        {
+          "fhrsid": "1712197",
+          "name": "The Sandwich Shop",
+          "baseline": 7.737,
+          "variant": 7.595,
+          "delta": -0.142,
+          "customer_v4": 7.789,
+          "reviews": 8
+        },
+        {
+          "fhrsid": "1291217",
+          "name": "Gardener's Retreat",
+          "baseline": 6.989,
+          "variant": 6.847,
+          "delta": -0.142,
+          "customer_v4": 7.326,
+          "reviews": 8
+        },
+        {
+          "fhrsid": "1854458",
+          "name": "Costa Coffee",
+          "baseline": 8.34,
+          "variant": 8.201,
+          "delta": -0.139,
+          "customer_v4": 7.846,
+          "reviews": 9
+        },
+        {
+          "fhrsid": "1838728",
+          "name": "Elders Who Lunch (Hartley Locums)",
+          "baseline": 7.405,
+          "variant": 7.267,
+          "delta": -0.138,
+          "customer_v4": 7.754,
+          "reviews": 9
+        },
+        {
+          "fhrsid": "1896718",
+          "name": "Birmingham City Football Club Ltd",
+          "baseline": 7.646,
+          "variant": 7.515,
+          "delta": -0.131,
+          "customer_v4": 7.898,
+          "reviews": 11
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.561,
+          "customer": 8.5
+        },
+        {
+          "name": "Pickled & Tipsy's Cafe",
+          "reviews": 23,
+          "final": 8.163,
+          "customer": 8.155
+        },
+        {
+          "name": "Fast Flavour",
+          "reviews": 27,
+          "final": 8.117,
+          "customer": 8.147
+        },
+        {
+          "name": "Ferment And Flour (Bastardos)",
+          "reviews": 18,
+          "final": 8.062,
+          "customer": 7.575
+        },
+        {
+          "name": "Harbury Library Cafe",
+          "reviews": 26,
+          "final": 8.022,
+          "customer": 8.5
+        }
+      ]
+    },
+    {
+      "label": "V2_prior_3.5",
+      "final_all": {
+        "n": 210,
+        "mean": 7.578,
+        "median": 7.869,
+        "stdev": 1.183,
+        "min": 0.0,
+        "max": 8.967,
+        "p25": 7.21,
+        "p75": 8.348
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.814,
+        "median": 7.942,
+        "stdev": 0.729,
+        "min": 4.656,
+        "max": 8.967,
+        "p25": 7.31,
+        "p75": 8.387
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.518,
+        "median": 8.662,
+        "stdev": 0.715,
+        "min": 4.947,
+        "max": 9.734,
+        "p25": 8.042,
+        "p75": 9.052
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 92,
+      "rankable_ge_8_pct": 48.2,
+      "google_prior": 3.5,
+      "google_pseudo": 30,
+      "google_ncap": 200,
+      "gamma": 1.0,
+      "top_deltas": [
+        {
+          "fhrsid": "1705603",
+          "name": "Escape Arts",
+          "baseline": 6.63,
+          "variant": 6.369,
+          "delta": -0.261,
+          "customer_v4": 7.097,
+          "reviews": 1
+        },
+        {
+          "fhrsid": "1155879",
+          "name": "Mid-England Barrow Ltd",
+          "baseline": 5.863,
+          "variant": 5.609,
+          "delta": -0.254,
+          "customer_v4": 7.188,
+          "reviews": 2
+        },
+        {
+          "fhrsid": "1739369",
+          "name": "Paul's Catering",
+          "baseline": 7.825,
+          "variant": 7.58,
+          "delta": -0.245,
+          "customer_v4": 7.273,
+          "reviews": 3
+        },
+        {
+          "fhrsid": "1622074",
+          "name": "Lexi's Loving Spoonful",
+          "baseline": 7.196,
+          "variant": 6.971,
+          "delta": -0.225,
+          "customer_v4": 7.267,
+          "reviews": 6
+        },
+        {
+          "fhrsid": "1453409",
+          "name": "Bidford Juniors Football Club",
+          "baseline": 7.276,
+          "variant": 7.051,
+          "delta": -0.225,
+          "customer_v4": 7.233,
+          "reviews": 6
+        },
+        {
+          "fhrsid": "1712197",
+          "name": "The Sandwich Shop",
+          "baseline": 7.737,
+          "variant": 7.524,
+          "delta": -0.213,
+          "customer_v4": 7.632,
+          "reviews": 8
+        },
+        {
+          "fhrsid": "1291217",
+          "name": "Gardener's Retreat",
+          "baseline": 6.989,
+          "variant": 6.776,
+          "delta": -0.213,
+          "customer_v4": 7.168,
+          "reviews": 8
+        },
+        {
+          "fhrsid": "1854458",
+          "name": "Costa Coffee",
+          "baseline": 8.34,
+          "variant": 8.132,
+          "delta": -0.208,
+          "customer_v4": 7.692,
+          "reviews": 9
+        },
+        {
+          "fhrsid": "1838728",
+          "name": "Elders Who Lunch (Hartley Locums)",
+          "baseline": 7.405,
+          "variant": 7.197,
+          "delta": -0.208,
+          "customer_v4": 7.6,
+          "reviews": 9
+        },
+        {
+          "fhrsid": "1896718",
+          "name": "Birmingham City Football Club Ltd",
+          "baseline": 7.646,
+          "variant": 7.449,
+          "delta": -0.197,
+          "customer_v4": 7.751,
+          "reviews": 11
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.513,
+          "customer": 8.393
+        },
+        {
+          "name": "Pickled & Tipsy's Cafe",
+          "reviews": 23,
+          "final": 8.112,
+          "customer": 8.042
+        },
+        {
+          "name": "Fast Flavour",
+          "reviews": 27,
+          "final": 8.07,
+          "customer": 8.042
+        },
+        {
+          "name": "Ferment And Flour (Bastardos)",
+          "reviews": 18,
+          "final": 8.006,
+          "customer": 7.45
+        }
+      ]
+    },
+    {
+      "label": "V3_ncap_250",
+      "final_all": {
+        "n": 210,
+        "mean": 7.626,
+        "median": 7.926,
+        "stdev": 1.179,
+        "min": 0.0,
+        "max": 8.975,
+        "p25": 7.276,
+        "p75": 8.393
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.854,
+        "median": 8.025,
+        "stdev": 0.724,
+        "min": 4.682,
+        "max": 8.975,
+        "p25": 7.378,
+        "p75": 8.417
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.628,
+        "median": 8.77,
+        "stdev": 0.655,
+        "min": 5.137,
+        "max": 9.748,
+        "p25": 8.205,
+        "p75": 9.098
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 97,
+      "rankable_ge_8_pct": 50.8,
+      "google_prior": 3.8,
+      "google_pseudo": 30,
+      "google_ncap": 250,
+      "gamma": 1.0,
+      "top_deltas": [
+        {
+          "fhrsid": "1354963",
+          "name": "The Tea Shed",
+          "baseline": 7.413,
+          "variant": 7.413,
+          "delta": 0.0,
+          "customer_v4": 8.205,
+          "reviews": 13
+        },
+        {
+          "fhrsid": "1584577",
+          "name": "Shakespeare's",
+          "baseline": 7.374,
+          "variant": 7.374,
+          "delta": 0.0,
+          "customer_v4": 8.97,
+          "reviews": 1375
+        },
+        {
+          "fhrsid": "1695937",
+          "name": "Impasto Micro-Pizzeria",
+          "baseline": 8.547,
+          "variant": 8.547,
+          "delta": 0.0,
+          "customer_v4": 9.523,
+          "reviews": 121
+        },
+        {
+          "fhrsid": "1896718",
+          "name": "Birmingham City Football Club Ltd",
+          "baseline": 7.646,
+          "variant": 7.646,
+          "delta": 0.0,
+          "customer_v4": 8.19,
+          "reviews": 11
+        },
+        {
+          "fhrsid": "503081",
+          "name": "Sans Oriental Restaurant",
+          "baseline": 8.306,
+          "variant": 8.306,
+          "delta": 0.0,
+          "customer_v4": 9.05,
+          "reviews": 289
+        },
+        {
+          "fhrsid": "1927834",
+          "name": "Golden Putter Stratford Upon",
+          "baseline": 4.268,
+          "variant": 4.268,
+          "delta": 0.0,
+          "customer_v4": 8.65,
+          "reviews": 90
+        },
+        {
+          "fhrsid": "503585",
+          "name": "Redwings Horse Sanctuary",
+          "baseline": 6.989,
+          "variant": 6.989,
+          "delta": 0.0,
+          "customer_v4": 9.309,
+          "reviews": 566
+        },
+        {
+          "fhrsid": "1622070",
+          "name": "Carluccio's",
+          "baseline": 8.263,
+          "variant": 8.263,
+          "delta": 0.0,
+          "customer_v4": 8.356,
+          "reviews": 516
+        },
+        {
+          "fhrsid": "503554",
+          "name": "The Bridge",
+          "baseline": 8.283,
+          "variant": 8.283,
+          "delta": 0.0,
+          "customer_v4": 8.878,
+          "reviews": 315
+        },
+        {
+          "fhrsid": "503316",
+          "name": "Lambs",
+          "baseline": 8.624,
+          "variant": 8.624,
+          "delta": 0.0,
+          "customer_v4": 9.361,
+          "reviews": 1372
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.657,
+          "customer": 8.714
+        },
+        {
+          "name": "Pickled & Tipsy's Cafe",
+          "reviews": 23,
+          "final": 8.265,
+          "customer": 8.381
+        },
+        {
+          "name": "Fast Flavour",
+          "reviews": 27,
+          "final": 8.212,
+          "customer": 8.358
+        },
+        {
+          "name": "Ferment And Flour (Bastardos)",
+          "reviews": 18,
+          "final": 8.175,
+          "customer": 7.825
+        },
+        {
+          "name": "Harbury Library Cafe",
+          "reviews": 26,
+          "final": 8.119,
+          "customer": 8.714
+        },
+        {
+          "name": "The Pavilion Coffee Shop And Community Space",
+          "reviews": 20,
+          "final": 8.073,
+          "customer": 8.32
+        }
+      ]
+    },
+    {
+      "label": "V4_ncap_300",
+      "final_all": {
+        "n": 210,
+        "mean": 7.626,
+        "median": 7.926,
+        "stdev": 1.179,
+        "min": 0.0,
+        "max": 8.975,
+        "p25": 7.276,
+        "p75": 8.393
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.854,
+        "median": 8.025,
+        "stdev": 0.724,
+        "min": 4.682,
+        "max": 8.975,
+        "p25": 7.378,
+        "p75": 8.417
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.628,
+        "median": 8.77,
+        "stdev": 0.655,
+        "min": 5.137,
+        "max": 9.748,
+        "p25": 8.205,
+        "p75": 9.098
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 97,
+      "rankable_ge_8_pct": 50.8,
+      "google_prior": 3.8,
+      "google_pseudo": 30,
+      "google_ncap": 300,
+      "gamma": 1.0,
+      "top_deltas": [
+        {
+          "fhrsid": "1354963",
+          "name": "The Tea Shed",
+          "baseline": 7.413,
+          "variant": 7.413,
+          "delta": 0.0,
+          "customer_v4": 8.205,
+          "reviews": 13
+        },
+        {
+          "fhrsid": "1584577",
+          "name": "Shakespeare's",
+          "baseline": 7.374,
+          "variant": 7.374,
+          "delta": 0.0,
+          "customer_v4": 8.97,
+          "reviews": 1375
+        },
+        {
+          "fhrsid": "1695937",
+          "name": "Impasto Micro-Pizzeria",
+          "baseline": 8.547,
+          "variant": 8.547,
+          "delta": 0.0,
+          "customer_v4": 9.523,
+          "reviews": 121
+        },
+        {
+          "fhrsid": "1896718",
+          "name": "Birmingham City Football Club Ltd",
+          "baseline": 7.646,
+          "variant": 7.646,
+          "delta": 0.0,
+          "customer_v4": 8.19,
+          "reviews": 11
+        },
+        {
+          "fhrsid": "503081",
+          "name": "Sans Oriental Restaurant",
+          "baseline": 8.306,
+          "variant": 8.306,
+          "delta": 0.0,
+          "customer_v4": 9.05,
+          "reviews": 289
+        },
+        {
+          "fhrsid": "1927834",
+          "name": "Golden Putter Stratford Upon",
+          "baseline": 4.268,
+          "variant": 4.268,
+          "delta": 0.0,
+          "customer_v4": 8.65,
+          "reviews": 90
+        },
+        {
+          "fhrsid": "503585",
+          "name": "Redwings Horse Sanctuary",
+          "baseline": 6.989,
+          "variant": 6.989,
+          "delta": 0.0,
+          "customer_v4": 9.309,
+          "reviews": 566
+        },
+        {
+          "fhrsid": "1622070",
+          "name": "Carluccio's",
+          "baseline": 8.263,
+          "variant": 8.263,
+          "delta": 0.0,
+          "customer_v4": 8.356,
+          "reviews": 516
+        },
+        {
+          "fhrsid": "503554",
+          "name": "The Bridge",
+          "baseline": 8.283,
+          "variant": 8.283,
+          "delta": 0.0,
+          "customer_v4": 8.878,
+          "reviews": 315
+        },
+        {
+          "fhrsid": "503316",
+          "name": "Lambs",
+          "baseline": 8.624,
+          "variant": 8.624,
+          "delta": 0.0,
+          "customer_v4": 9.361,
+          "reviews": 1372
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.657,
+          "customer": 8.714
+        },
+        {
+          "name": "Pickled & Tipsy's Cafe",
+          "reviews": 23,
+          "final": 8.265,
+          "customer": 8.381
+        },
+        {
+          "name": "Fast Flavour",
+          "reviews": 27,
+          "final": 8.212,
+          "customer": 8.358
+        },
+        {
+          "name": "Ferment And Flour (Bastardos)",
+          "reviews": 18,
+          "final": 8.175,
+          "customer": 7.825
+        },
+        {
+          "name": "Harbury Library Cafe",
+          "reviews": 26,
+          "final": 8.119,
+          "customer": 8.714
+        },
+        {
+          "name": "The Pavilion Coffee Shop And Community Space",
+          "reviews": 20,
+          "final": 8.073,
+          "customer": 8.32
+        }
+      ]
+    },
+    {
+      "label": "V5_gamma_1.25",
+      "final_all": {
+        "n": 210,
+        "mean": 7.493,
+        "median": 7.769,
+        "stdev": 1.182,
+        "min": 0.0,
+        "max": 8.925,
+        "p25": 7.092,
+        "p75": 8.267
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.721,
+        "median": 7.843,
+        "stdev": 0.75,
+        "min": 4.47,
+        "max": 8.925,
+        "p25": 7.235,
+        "p75": 8.295
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.323,
+        "median": 8.487,
+        "stdev": 0.778,
+        "min": 4.349,
+        "max": 9.686,
+        "p25": 7.809,
+        "p75": 8.886
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 83,
+      "rankable_ge_8_pct": 43.5,
+      "google_prior": 3.8,
+      "google_pseudo": 30,
+      "google_ncap": 200,
+      "gamma": 1.25,
+      "top_deltas": [
+        {
+          "fhrsid": "503342",
+          "name": "Burger King - Northbound",
+          "baseline": 6.966,
+          "variant": 6.611,
+          "delta": -0.355,
+          "customer_v4": 4.349,
+          "reviews": 65
+        },
+        {
+          "fhrsid": "503345",
+          "name": "KFC - Southbound",
+          "baseline": 7.362,
+          "variant": 7.074,
+          "delta": -0.288,
+          "customer_v4": 6.033,
+          "reviews": 373
+        },
+        {
+          "fhrsid": "1563336",
+          "name": "Chopstix South",
+          "baseline": 7.286,
+          "variant": 6.999,
+          "delta": -0.287,
+          "customer_v4": 6.057,
+          "reviews": 39
+        },
+        {
+          "fhrsid": "502970",
+          "name": "China Garden",
+          "baseline": 5.538,
+          "variant": 5.255,
+          "delta": -0.283,
+          "customer_v4": 6.139,
+          "reviews": 148
+        },
+        {
+          "fhrsid": "1024960",
+          "name": "Starbucks Drive Thru",
+          "baseline": 7.807,
+          "variant": 7.529,
+          "delta": -0.278,
+          "customer_v4": 6.219,
+          "reviews": 587
+        },
+        {
+          "fhrsid": "1672980",
+          "name": "Greggs PLC",
+          "baseline": 7.987,
+          "variant": 7.741,
+          "delta": -0.246,
+          "customer_v4": 6.79,
+          "reviews": 58
+        },
+        {
+          "fhrsid": "1452414",
+          "name": "Subway",
+          "baseline": 5.923,
+          "variant": 5.683,
+          "delta": -0.24,
+          "customer_v4": 6.888,
+          "reviews": 256
+        },
+        {
+          "fhrsid": "1799220",
+          "name": "Burger King",
+          "baseline": 7.474,
+          "variant": 7.234,
+          "delta": -0.24,
+          "customer_v4": 6.891,
+          "reviews": 218
+        },
+        {
+          "fhrsid": "1291215",
+          "name": "Gardener's Retreat",
+          "baseline": 7.671,
+          "variant": 7.432,
+          "delta": -0.239,
+          "customer_v4": 6.897,
+          "reviews": 12
+        },
+        {
+          "fhrsid": "1552333",
+          "name": "Costa Coffee",
+          "baseline": 7.902,
+          "variant": 7.667,
+          "delta": -0.235,
+          "customer_v4": 6.971,
+          "reviews": 35
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.525,
+          "customer": 8.42
+        },
+        {
+          "name": "Pickled & Tipsy's Cafe",
+          "reviews": 23,
+          "final": 8.102,
+          "customer": 8.019
+        },
+        {
+          "name": "Fast Flavour",
+          "reviews": 27,
+          "final": 8.047,
+          "customer": 7.991
+        }
+      ]
+    },
+    {
+      "label": "V6_gamma_1.5",
+      "final_all": {
+        "n": 210,
+        "mean": 7.366,
+        "median": 7.652,
+        "stdev": 1.187,
+        "min": 0.0,
+        "max": 8.875,
+        "p25": 6.942,
+        "p75": 8.126
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.593,
+        "median": 7.733,
+        "stdev": 0.777,
+        "min": 4.27,
+        "max": 8.875,
+        "p25": 7.065,
+        "p75": 8.197
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.032,
+        "median": 8.213,
+        "stdev": 0.889,
+        "min": 3.682,
+        "max": 9.624,
+        "p25": 7.432,
+        "p75": 8.678
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 75,
+      "rankable_ge_8_pct": 39.3,
+      "google_prior": 3.8,
+      "google_pseudo": 30,
+      "google_ncap": 200,
+      "gamma": 1.5,
+      "top_deltas": [
+        {
+          "fhrsid": "503342",
+          "name": "Burger King - Northbound",
+          "baseline": 6.966,
+          "variant": 6.311,
+          "delta": -0.655,
+          "customer_v4": 3.682,
+          "reviews": 65
+        },
+        {
+          "fhrsid": "503345",
+          "name": "KFC - Southbound",
+          "baseline": 7.362,
+          "variant": 6.813,
+          "delta": -0.549,
+          "customer_v4": 5.453,
+          "reviews": 373
+        },
+        {
+          "fhrsid": "1563336",
+          "name": "Chopstix South",
+          "baseline": 7.286,
+          "variant": 6.739,
+          "delta": -0.547,
+          "customer_v4": 5.479,
+          "reviews": 39
+        },
+        {
+          "fhrsid": "502970",
+          "name": "China Garden",
+          "baseline": 5.538,
+          "variant": 4.998,
+          "delta": -0.54,
+          "customer_v4": 5.569,
+          "reviews": 148
+        },
+        {
+          "fhrsid": "1024960",
+          "name": "Starbucks Drive Thru",
+          "baseline": 7.807,
+          "variant": 7.275,
+          "delta": -0.532,
+          "customer_v4": 5.656,
+          "reviews": 587
+        },
+        {
+          "fhrsid": "1672980",
+          "name": "Greggs PLC",
+          "baseline": 7.987,
+          "variant": 7.513,
+          "delta": -0.474,
+          "customer_v4": 6.284,
+          "reviews": 58
+        },
+        {
+          "fhrsid": "1452414",
+          "name": "Subway",
+          "baseline": 5.923,
+          "variant": 5.46,
+          "delta": -0.463,
+          "customer_v4": 6.393,
+          "reviews": 256
+        },
+        {
+          "fhrsid": "1799220",
+          "name": "Burger King",
+          "baseline": 7.474,
+          "variant": 7.012,
+          "delta": -0.462,
+          "customer_v4": 6.397,
+          "reviews": 218
+        },
+        {
+          "fhrsid": "1291215",
+          "name": "Gardener's Retreat",
+          "baseline": 7.671,
+          "variant": 7.21,
+          "delta": -0.461,
+          "customer_v4": 6.403,
+          "reviews": 12
+        },
+        {
+          "fhrsid": "1552333",
+          "name": "Costa Coffee",
+          "baseline": 7.902,
+          "variant": 7.449,
+          "delta": -0.453,
+          "customer_v4": 6.485,
+          "reviews": 35
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.396,
+          "customer": 8.135
+        }
+      ]
+    },
+    {
+      "label": "V7_mild_combo_3.6_250_g1.2",
+      "final_all": {
+        "n": 210,
+        "mean": 7.482,
+        "median": 7.761,
+        "stdev": 1.185,
+        "min": 0.0,
+        "max": 8.928,
+        "p25": 7.101,
+        "p75": 8.264
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.716,
+        "median": 7.853,
+        "stdev": 0.749,
+        "min": 4.491,
+        "max": 8.928,
+        "p25": 7.194,
+        "p75": 8.279
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.298,
+        "median": 8.482,
+        "stdev": 0.797,
+        "min": 4.364,
+        "max": 9.687,
+        "p25": 7.817,
+        "p75": 8.889
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 82,
+      "rankable_ge_8_pct": 42.9,
+      "google_prior": 3.6,
+      "google_pseudo": 30,
+      "google_ncap": 250,
+      "gamma": 1.2,
+      "top_deltas": [
+        {
+          "fhrsid": "1705603",
+          "name": "Escape Arts",
+          "baseline": 6.63,
+          "variant": 6.255,
+          "delta": -0.375,
+          "customer_v4": 6.844,
+          "reviews": 1
+        },
+        {
+          "fhrsid": "1155879",
+          "name": "Mid-England Barrow Ltd",
+          "baseline": 5.863,
+          "variant": 5.498,
+          "delta": -0.365,
+          "customer_v4": 6.939,
+          "reviews": 2
+        },
+        {
+          "fhrsid": "1739369",
+          "name": "Paul's Catering",
+          "baseline": 7.825,
+          "variant": 7.47,
+          "delta": -0.355,
+          "customer_v4": 7.029,
+          "reviews": 3
+        },
+        {
+          "fhrsid": "503342",
+          "name": "Burger King - Northbound",
+          "baseline": 6.966,
+          "variant": 6.618,
+          "delta": -0.348,
+          "customer_v4": 4.364,
+          "reviews": 65
+        },
+        {
+          "fhrsid": "1453409",
+          "name": "Bidford Juniors Football Club",
+          "baseline": 7.276,
+          "variant": 6.931,
+          "delta": -0.345,
+          "customer_v4": 6.968,
+          "reviews": 6
+        },
+        {
+          "fhrsid": "1622074",
+          "name": "Lexi's Loving Spoonful",
+          "baseline": 7.196,
+          "variant": 6.854,
+          "delta": -0.342,
+          "customer_v4": 7.005,
+          "reviews": 6
+        },
+        {
+          "fhrsid": "1291217",
+          "name": "Gardener's Retreat",
+          "baseline": 6.989,
+          "variant": 6.648,
+          "delta": -0.341,
+          "customer_v4": 6.884,
+          "reviews": 8
+        },
+        {
+          "fhrsid": "1291215",
+          "name": "Gardener's Retreat",
+          "baseline": 7.671,
+          "variant": 7.334,
+          "delta": -0.337,
+          "customer_v4": 6.678,
+          "reviews": 12
+        },
+        {
+          "fhrsid": "1563336",
+          "name": "Chopstix South",
+          "baseline": 7.286,
+          "variant": 6.968,
+          "delta": -0.318,
+          "customer_v4": 5.987,
+          "reviews": 39
+        },
+        {
+          "fhrsid": "1712197",
+          "name": "The Sandwich Shop",
+          "baseline": 7.737,
+          "variant": 7.424,
+          "delta": -0.313,
+          "customer_v4": 7.41,
+          "reviews": 8
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.438,
+          "customer": 8.228
+        },
+        {
+          "name": "Pickled & Tipsy's Cafe",
+          "reviews": 23,
+          "final": 8.017,
+          "customer": 7.829
+        }
+      ]
+    },
+    {
+      "label": "V8_strong_combo_3.5_300_g1.3",
+      "final_all": {
+        "n": 210,
+        "mean": 7.408,
+        "median": 7.701,
+        "stdev": 1.19,
+        "min": 0.0,
+        "max": 8.904,
+        "p25": 7.018,
+        "p75": 8.197
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.645,
+        "median": 7.776,
+        "stdev": 0.762,
+        "min": 4.397,
+        "max": 8.904,
+        "p25": 7.113,
+        "p75": 8.215
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.129,
+        "median": 8.297,
+        "stdev": 0.871,
+        "min": 4.006,
+        "max": 9.655,
+        "p25": 7.533,
+        "p75": 8.786
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 78,
+      "rankable_ge_8_pct": 40.8,
+      "google_prior": 3.5,
+      "google_pseudo": 30,
+      "google_ncap": 300,
+      "gamma": 1.3,
+      "top_deltas": [
+        {
+          "fhrsid": "1705603",
+          "name": "Escape Arts",
+          "baseline": 6.63,
+          "variant": 6.056,
+          "delta": -0.574,
+          "customer_v4": 6.403,
+          "reviews": 1
+        },
+        {
+          "fhrsid": "1155879",
+          "name": "Mid-England Barrow Ltd",
+          "baseline": 5.863,
+          "variant": 5.304,
+          "delta": -0.559,
+          "customer_v4": 6.51,
+          "reviews": 2
+        },
+        {
+          "fhrsid": "1739369",
+          "name": "Paul's Catering",
+          "baseline": 7.825,
+          "variant": 7.282,
+          "delta": -0.543,
+          "customer_v4": 6.61,
+          "reviews": 3
+        },
+        {
+          "fhrsid": "1453409",
+          "name": "Bidford Juniors Football Club",
+          "baseline": 7.276,
+          "variant": 6.75,
+          "delta": -0.526,
+          "customer_v4": 6.564,
+          "reviews": 6
+        },
+        {
+          "fhrsid": "1622074",
+          "name": "Lexi's Loving Spoonful",
+          "baseline": 7.196,
+          "variant": 6.673,
+          "delta": -0.523,
+          "customer_v4": 6.603,
+          "reviews": 6
+        },
+        {
+          "fhrsid": "1291217",
+          "name": "Gardener's Retreat",
+          "baseline": 6.989,
+          "variant": 6.469,
+          "delta": -0.52,
+          "customer_v4": 6.487,
+          "reviews": 8
+        },
+        {
+          "fhrsid": "1291215",
+          "name": "Gardener's Retreat",
+          "baseline": 7.671,
+          "variant": 7.159,
+          "delta": -0.512,
+          "customer_v4": 6.29,
+          "reviews": 12
+        },
+        {
+          "fhrsid": "503342",
+          "name": "Burger King - Northbound",
+          "baseline": 6.966,
+          "variant": 6.457,
+          "delta": -0.509,
+          "customer_v4": 4.006,
+          "reviews": 65
+        },
+        {
+          "fhrsid": "1712197",
+          "name": "The Sandwich Shop",
+          "baseline": 7.737,
+          "variant": 7.256,
+          "delta": -0.481,
+          "customer_v4": 7.037,
+          "reviews": 8
+        },
+        {
+          "fhrsid": "1838728",
+          "name": "Elders Who Lunch (Hartley Locums)",
+          "baseline": 7.405,
+          "variant": 6.927,
+          "delta": -0.478,
+          "customer_v4": 6.999,
+          "reviews": 9
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.319,
+          "customer": 7.963
+        }
+      ]
+    },
+    {
+      "label": "V9_pseudo_60",
+      "final_all": {
+        "n": 210,
+        "mean": 7.534,
+        "median": 7.832,
+        "stdev": 1.172,
+        "min": 0.0,
+        "max": 8.938,
+        "p25": 7.197,
+        "p75": 8.288
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.765,
+        "median": 7.912,
+        "stdev": 0.718,
+        "min": 4.643,
+        "max": 8.938,
+        "p25": 7.289,
+        "p75": 8.323
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.415,
+        "median": 8.546,
+        "stdev": 0.657,
+        "min": 5.536,
+        "max": 9.68,
+        "p25": 7.968,
+        "p75": 8.903
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 84,
+      "rankable_ge_8_pct": 44.0,
+      "google_prior": 3.6,
+      "google_pseudo": 60,
+      "google_ncap": 300,
+      "gamma": 1.0,
+      "top_deltas": [
+        {
+          "fhrsid": "503926",
+          "name": "Harbury Library Cafe",
+          "baseline": 8.119,
+          "variant": 7.818,
+          "delta": -0.301,
+          "customer_v4": 8.047,
+          "reviews": 26
+        },
+        {
+          "fhrsid": "1299513",
+          "name": "Oxheart",
+          "baseline": 8.657,
+          "variant": 8.357,
+          "delta": -0.3,
+          "customer_v4": 8.047,
+          "reviews": 26
+        },
+        {
+          "fhrsid": "503565",
+          "name": "A G D Equipment Ltd",
+          "baseline": 7.98,
+          "variant": 7.702,
+          "delta": -0.278,
+          "customer_v4": 7.747,
+          "reviews": 16
+        },
+        {
+          "fhrsid": "1804017",
+          "name": "Cafe 86B",
+          "baseline": 8.296,
+          "variant": 8.02,
+          "delta": -0.276,
+          "customer_v4": 8.271,
+          "reviews": 42
+        },
+        {
+          "fhrsid": "1854458",
+          "name": "Costa Coffee",
+          "baseline": 8.34,
+          "variant": 8.075,
+          "delta": -0.265,
+          "customer_v4": 7.565,
+          "reviews": 9
+        },
+        {
+          "fhrsid": "1896718",
+          "name": "Birmingham City Football Club Ltd",
+          "baseline": 7.646,
+          "variant": 7.382,
+          "delta": -0.264,
+          "customer_v4": 7.603,
+          "reviews": 11
+        },
+        {
+          "fhrsid": "1354963",
+          "name": "The Tea Shed",
+          "baseline": 7.413,
+          "variant": 7.154,
+          "delta": -0.259,
+          "customer_v4": 7.627,
+          "reviews": 13
+        },
+        {
+          "fhrsid": "1712197",
+          "name": "The Sandwich Shop",
+          "baseline": 7.737,
+          "variant": 7.478,
+          "delta": -0.259,
+          "customer_v4": 7.529,
+          "reviews": 8
+        },
+        {
+          "fhrsid": "1827674",
+          "name": "Pickled & Tipsy's Cafe",
+          "baseline": 8.265,
+          "variant": 8.008,
+          "delta": -0.257,
+          "customer_v4": 7.81,
+          "reviews": 23
+        },
+        {
+          "fhrsid": "1474392",
+          "name": "The Pavilion Coffee Shop And Community Space",
+          "baseline": 8.073,
+          "variant": 7.817,
+          "delta": -0.256,
+          "customer_v4": 7.75,
+          "reviews": 20
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.357,
+          "customer": 8.047
+        },
+        {
+          "name": "Pickled & Tipsy's Cafe",
+          "reviews": 23,
+          "final": 8.008,
+          "customer": 7.81
+        }
+      ]
+    },
+    {
+      "label": "V10_rec_candidate",
+      "final_all": {
+        "n": 210,
+        "mean": 7.443,
+        "median": 7.731,
+        "stdev": 1.179,
+        "min": 0.0,
+        "max": 8.909,
+        "p25": 7.071,
+        "p75": 8.185
+      },
+      "final_rankable": {
+        "n": 191,
+        "mean": 7.676,
+        "median": 7.813,
+        "stdev": 0.743,
+        "min": 4.478,
+        "max": 8.909,
+        "p25": 7.136,
+        "p75": 8.237
+      },
+      "customer_component": {
+        "n": 204,
+        "mean": 8.208,
+        "median": 8.316,
+        "stdev": 0.775,
+        "min": 4.678,
+        "max": 9.652,
+        "p25": 7.647,
+        "p75": 8.774
+      },
+      "class_distribution": {
+        "Rankable-A": 1,
+        "Rankable-B": 190,
+        "Directional-C": 18,
+        "Profile-only-D": 1
+      },
+      "rankable_ge_8": 79,
+      "rankable_ge_8_pct": 41.4,
+      "google_prior": 3.6,
+      "google_pseudo": 45,
+      "google_ncap": 300,
+      "gamma": 1.2,
+      "top_deltas": [
+        {
+          "fhrsid": "1712197",
+          "name": "The Sandwich Shop",
+          "baseline": 7.737,
+          "variant": 7.339,
+          "delta": -0.398,
+          "customer_v4": 7.22,
+          "reviews": 8
+        },
+        {
+          "fhrsid": "1854458",
+          "name": "Costa Coffee",
+          "baseline": 8.34,
+          "variant": 7.942,
+          "delta": -0.398,
+          "customer_v4": 7.27,
+          "reviews": 9
+        },
+        {
+          "fhrsid": "1739369",
+          "name": "Paul's Catering",
+          "baseline": 7.825,
+          "variant": 7.43,
+          "delta": -0.395,
+          "customer_v4": 6.939,
+          "reviews": 3
+        },
+        {
+          "fhrsid": "1155879",
+          "name": "Mid-England Barrow Ltd",
+          "baseline": 5.863,
+          "variant": 5.469,
+          "delta": -0.394,
+          "customer_v4": 6.876,
+          "reviews": 2
+        },
+        {
+          "fhrsid": "1896718",
+          "name": "Birmingham City Football Club Ltd",
+          "baseline": 7.646,
+          "variant": 7.255,
+          "delta": -0.391,
+          "customer_v4": 7.32,
+          "reviews": 11
+        },
+        {
+          "fhrsid": "1705603",
+          "name": "Escape Arts",
+          "baseline": 6.63,
+          "variant": 6.24,
+          "delta": -0.39,
+          "customer_v4": 6.811,
+          "reviews": 1
+        },
+        {
+          "fhrsid": "1838728",
+          "name": "Elders Who Lunch (Hartley Locums)",
+          "baseline": 7.405,
+          "variant": 7.015,
+          "delta": -0.39,
+          "customer_v4": 7.194,
+          "reviews": 9
+        },
+        {
+          "fhrsid": "1826838",
+          "name": "Mouchak",
+          "baseline": 6.589,
+          "variant": 6.202,
+          "delta": -0.387,
+          "customer_v4": 7.275,
+          "reviews": 11
+        },
+        {
+          "fhrsid": "1354963",
+          "name": "The Tea Shed",
+          "baseline": 7.413,
+          "variant": 7.029,
+          "delta": -0.384,
+          "customer_v4": 7.351,
+          "reviews": 13
+        },
+        {
+          "fhrsid": "503565",
+          "name": "A G D Equipment Ltd",
+          "baseline": 7.98,
+          "variant": 7.597,
+          "delta": -0.383,
+          "customer_v4": 7.516,
+          "reviews": 16
+        }
+      ],
+      "thin_evidence_high": [
+        {
+          "name": "Oxheart",
+          "reviews": 26,
+          "final": 8.295,
+          "customer": 7.91
+        }
+      ]
+    }
+  ]
+}

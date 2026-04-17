@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 """
-rcs_scoring_stratford.py — V3.4 RCS Scoring Engine
+rcs_scoring_stratford.py — V3.4 RCS Scoring Engine (LEGACY)
+
+NOTE: V4 (rcs_scoring_v4.py) is the current scoring framework. This V3.4
+engine is retained in the repository so it can run in parallel during the
+V4 migration and produce side-by-side comparison artifacts. Do not build
+new features on top of V3.4 — changes should go into the V4 module. See
+docs/DayDine-V4-Migration-Note.md.
 
 Implements the V3.4 methodology: 40 signals across 8 weighted tiers,
 6 rating bands, temporal decay, cross-source convergence scoring,
