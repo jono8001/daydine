@@ -62,6 +62,12 @@ TRUST_LAMBDA = 0.0023
 # Distinction modifier cap (spec 2.2, 7.1)
 DISTINCTION_CAP = 0.30
 
+# Customer Validation mapping calibration (spec 4.2 maps shrunk/5 linearly).
+# Gamma > 1 compresses the top of the 0-5 -> 0-10 mapping so that average
+# metadata ratings (4.2-4.6) don't all land in the "top tier" band. Chosen
+# 2026-04 from the calibration sweep in docs/DayDine-V4-Scoring-Comparison.md.
+MAPPING_GAMMA = 1.2
+
 # FHRS string-rating sentinels — component unavailable
 FSA_UNSCORED_RATINGS = {"AwaitingInspection", "Exempt", "Pass"}
 
@@ -99,7 +105,10 @@ class PlatformPrior:
 
 
 PLATFORM_PRIORS: dict[str, PlatformPrior] = {
-    "google":      PlatformPrior(mean=3.8, pseudo=30, n_cap=200),
+    # Google prior lowered 3.8 -> 3.6 and n_cap raised 200 -> 250 as part of
+    # the 2026-04 Customer Validation calibration. See
+    # docs/DayDine-V4-Scoring-Comparison.md "Calibration decision".
+    "google":      PlatformPrior(mean=3.6, pseudo=30, n_cap=250),
     "tripadvisor": PlatformPrior(mean=3.6, pseudo=25, n_cap=150),
     "opentable":   PlatformPrior(mean=4.0, pseudo=20, n_cap=100),
 }
@@ -439,6 +448,8 @@ def score_customer_validation(record: dict[str, Any],
         raw, count = pair
         shrunk = _shrink(raw, count, prior)
         shrunk_norm = _clamp(shrunk / 5.0)
+        if MAPPING_GAMMA != 1.0:
+            shrunk_norm = shrunk_norm ** MAPPING_GAMMA
         w = min(count, prior.n_cap) / prior.n_cap
         w = max(w, W_FLOOR)
         evidence.append(PlatformEvidence(

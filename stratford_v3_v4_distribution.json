@@ -47,19 +47,19 @@
     "league_eligible_pct": 90.5,
     "scores_all": {
       "n": 210,
-      "mean": 7.626,
-      "median": 7.926,
-      "stdev": 1.179,
+      "mean": 7.482,
+      "median": 7.761,
+      "stdev": 1.185,
       "min": 0.0,
-      "max": 8.975
+      "max": 8.928
     },
     "scores_rankable_only": {
       "n": 191,
-      "mean": 7.854,
-      "median": 8.025,
-      "stdev": 0.724,
-      "min": 4.682,
-      "max": 8.975
+      "mean": 7.716,
+      "median": 7.853,
+      "stdev": 0.749,
+      "min": 4.491,
+      "max": 8.928
     },
     "class_distribution": {
       "Rankable-A": {
