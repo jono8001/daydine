@@ -1,0 +1,129 @@
+{
+  "total_venues": 210,
+  "v3": {
+    "ranked": 190,
+    "ranked_pct": 90.5,
+    "scores": {
+      "n": 210,
+      "mean": 8.058,
+      "median": 8.405,
+      "stdev": 1.424,
+      "min": 1.612,
+      "max": 10.0
+    },
+    "band_distribution": {
+      "Excellent": {
+        "count": 128,
+        "pct": 61.0
+      },
+      "Good": {
+        "count": 49,
+        "pct": 23.3
+      },
+      "Generally Satisfactory": {
+        "count": 7,
+        "pct": 3.3
+      },
+      "Improvement Necessary": {
+        "count": 4,
+        "pct": 1.9
+      },
+      "Major Improvement": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "Urgent Improvement": {
+        "count": 2,
+        "pct": 1.0
+      }
+    },
+    "top_band_count": 128,
+    "top_band_pct": 61.0
+  },
+  "v4": {
+    "rankable": 191,
+    "rankable_pct": 91.0,
+    "league_eligible": 190,
+    "league_eligible_pct": 90.5,
+    "scores_all": {
+      "n": 210,
+      "mean": 7.626,
+      "median": 7.926,
+      "stdev": 1.179,
+      "min": 0.0,
+      "max": 8.975
+    },
+    "scores_rankable_only": {
+      "n": 191,
+      "mean": 7.854,
+      "median": 8.025,
+      "stdev": 0.724,
+      "min": 4.682,
+      "max": 8.975
+    },
+    "class_distribution": {
+      "Rankable-A": {
+        "count": 1,
+        "pct": 0.5
+      },
+      "Rankable-B": {
+        "count": 190,
+        "pct": 90.5
+      },
+      "Directional-C": {
+        "count": 18,
+        "pct": 8.6
+      },
+      "Profile-only-D": {
+        "count": 1,
+        "pct": 0.5
+      }
+    },
+    "top_class_count": 1,
+    "top_class_pct": 0.5
+  },
+  "cross_tab_v3_band_to_v4_class": {
+    "Excellent": {
+      "Rankable-A": 0,
+      "Rankable-B": 125,
+      "Directional-C": 3,
+      "Profile-only-D": 0
+    },
+    "Good": {
+      "Rankable-A": 1,
+      "Rankable-B": 43,
+      "Directional-C": 5,
+      "Profile-only-D": 0
+    },
+    "Generally Satisfactory": {
+      "Rankable-A": 0,
+      "Rankable-B": 7,
+      "Directional-C": 0,
+      "Profile-only-D": 0
+    },
+    "Improvement Necessary": {
+      "Rankable-A": 0,
+      "Rankable-B": 4,
+      "Directional-C": 0,
+      "Profile-only-D": 0
+    },
+    "Major Improvement": {
+      "Rankable-A": 0,
+      "Rankable-B": 0,
+      "Directional-C": 0,
+      "Profile-only-D": 0
+    },
+    "Urgent Improvement": {
+      "Rankable-A": 0,
+      "Rankable-B": 2,
+      "Directional-C": 0,
+      "Profile-only-D": 0
+    },
+    "(no_v3_band)": {
+      "Rankable-A": 0,
+      "Rankable-B": 0,
+      "Directional-C": 0,
+      "Profile-only-D": 0
+    }
+  }
+}
