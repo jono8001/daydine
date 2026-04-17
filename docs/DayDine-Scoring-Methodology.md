@@ -1,17 +1,26 @@
 # DayDine Scoring Methodology
 
-**Restaurant Confidence Score (RCS) — Version 3.4**
+**Restaurant Confidence Score (RCS) — V4 (current framework)**
 *Last updated: April 2026*
+
+> **Transition notice.** V4 is the current scoring framework. V3.4 remains in
+> the repository and is still computed in parallel on each run so V4's behaviour
+> can be audited venue-by-venue against the legacy output. Public leaderboards
+> will cut over to V4 once the calibration work documented in
+> `DayDine-V4-Scoring-Comparison.md` completes. Anything on this page that is
+> specific to the legacy model is labelled **V3.4 legacy**.
 
 ---
 
 ## 1. What This Document Covers
 
-This document explains how DayDine calculates the Restaurant Confidence Score — the 0–10 metric that powers every ranking, report, and competitive benchmark on the platform.
+How DayDine derives the 0–10 Restaurant Confidence Score, what the score is
+built from, what it is not, and which pieces of prior methodology have been
+removed in V4.
 
-The RCS is an **external blind-spot report**. It surfaces what a well-informed outsider can see about a restaurant from public data alone. It does not require POS integration, internal data feeds, or operator-side instrumentation.
-
-**The score answers one question:** *What does the publicly observable evidence say about this venue's market confidence?*
+The RCS is an **external public-evidence score**. It reflects what an
+informed outsider can infer from public and licensed third-party data. It is
+not a mystery-diner review and is not a prediction of financial performance.
 
 ---
 
@@ -21,389 +30,309 @@ The RCS is an **external blind-spot report**. It surfaces what a well-informed o
 |---|---|
 | Range | 0.000 – 10.000 |
 | Precision | 3 decimal places |
-| Uniqueness | Guaranteed — tiebreaker system ensures no two venues share a rank |
 | Update frequency | Weekly |
 
-### Rating Bands
+V4 no longer publishes a six-band verbal ranking as its primary surface. The
+score still produces a 0–10 number; the primary categorical output is the
+**confidence class** (see §5), which decides whether the venue appears in a
+league table at all.
 
-| Band | RCS Range | What It Means |
+> **V3.4 legacy.** The six verbal bands (Excellent / Good / Generally
+> Satisfactory / Improvement Necessary / Major Improvement / Urgent
+> Improvement) are retained in the legacy output for migration comparison
+> only. They are not authoritative under V4.
+
+---
+
+## 3. V4 Score Structure
+
+V4 is built from three components with **fixed weights**. When a component is
+missing, it contributes zero — the weights do not redistribute. Missing data
+feeds the confidence class instead of inflating the score.
+
+| Component | Weight | Source family | Frame |
+|---|---|---|---|
+| Trust & Compliance | 40% | FSA / FHRS | Compliance, not food quality |
+| Customer Validation | 45% | Google, TripAdvisor, OpenTable (when present) | Public rating metadata |
+| Commercial Readiness | 15% | Public customer-path signals | Can a guest find and book? |
+
+On top of the components V4 applies a capped distinction modifier, a small
+set of penalties and caps, and confidence-class gating.
+
+```
+base     = 0.40 * TrustCompliance + 0.45 * CustomerValidation + 0.15 * CommercialReadiness
+adjusted = base + DistinctionModifier   (hard cap +0.30)
+adjusted = apply_penalties_and_caps(adjusted)
+final    = gating(adjusted, confidence_class)
+```
+
+Full rules are in `docs/DayDine-V4-Scoring-Spec.md`. Implementation is in
+`rcs_scoring_v4.py`.
+
+### 3.1 Trust & Compliance (40%)
+
+FHRS is a **trust-and-compliance signal**, not a food-quality signal. A
+5-rated venue meets hygiene and management standards; it is not "better
+food".
+
+| Signal | Source | Sub-weight |
 |---|---|---|
-| **Excellent** | 8.000 – 10.000 | Outstanding across multiple dimensions; strong data convergence |
-| **Good** | 6.500 – 7.999 | Consistently positive; minor gaps in one area |
-| **Generally Satisfactory** | 5.000 – 6.499 | Adequate; notable gaps or mixed signals |
-| **Improvement Necessary** | 3.500 – 4.999 | Significant concerns; multiple penalties triggered |
-| **Major Improvement** | 2.000 – 3.499 | Critical issues; enforcement actions or consistently poor ratings |
-| **Urgent Improvement** | 0.000 – 1.999 | Severe safety or viability concerns |
+| FHRS headline rating (0–5) | FSA | 0.45 |
+| Food hygiene sub-score | FSA | 0.20 |
+| Structural compliance sub-score | FSA | 0.15 |
+| Confidence in management sub-score | FSA | 0.15 |
+| Inspection recency (decayed) | FSA | 0.05 |
 
----
+Recency uses exponential decay with λ = 0.0023 (~300-day half-life). Ratings
+`AwaitingInspection`, `Exempt`, or `Pass` (Scotland) make the whole component
+unavailable.
 
-## 3. The 40 Signals Across 7 Tiers
+### 3.2 Customer Validation (45%)
 
-The score is built from **40+ signals** organised into **7 independent tiers**. No single tier or signal can carry a venue on its own. When data is missing for a tier, the remaining tiers are re-weighted proportionally — the score is never inflated by absent evidence.
+**Platform rating and count metadata only. No review-text sentiment, no
+aspect scoring, no AI summaries.** Each platform is shrunk Bayesianly toward
+a platform-specific prior, then combined by coverage weight.
 
----
-
-### Tier 1: Food Safety Authority (FSA) — 23% weight
-
-**What it measures:** Official food safety compliance as assessed by local authority inspectors.
-
-| # | Signal | What It Is | How It's Scored |
+| Platform | Prior mean | Pseudo-count | "Full evidence" n_cap |
 |---|---|---|---|
-| 1 | **Hygiene rating** | The headline FSA rating (0–5) | Rating / 5 → 0–1 scale |
-| 2 | **Structural compliance** | Physical condition of premises (0–25 scale, lower is better) | Inverted and normalised to 0–1 |
-| 3 | **Confidence in management** | Inspector's assessment of management systems (0–20, lower is better) | Inverted and normalised to 0–1 |
-| 4 | **Food hygiene sub-score** | Hygienic handling, preparation, storage (0–25, lower is better) | Inverted and normalised to 0–1 |
-| 5 | **Inspection recency** | Days since last inspection | Penalty modifier: >1 year = −5%, >2 years = −10% of tier score |
+| Google | 3.8 | 30 | 200 |
+| TripAdvisor | 3.6 | 25 | 150 |
+| OpenTable | 4.0 | 20 | 100 |
 
-**Source:** Food Standards Agency API + Firebase RTDB
-**Provenance:** Observed (all signals directly from official records)
+Per-platform shrinkage: `shrunk = (n*rating + k*prior) / (n+k)`. Combination
+weight: `w = min(n, n_cap) / n_cap`, floored at 0.05. Very small counts still
+contribute but cannot dominate.
 
----
+When only one platform is present, the venue can reach Rankable-B at best
+(see §5). With all platforms below five reviews each, the venue cannot exceed
+Directional-C.
 
-### Tier 2: Google Signals — 24% weight (capped at 30% effective)
+### 3.3 Commercial Readiness (15%)
 
-**What it measures:** Public reputation, review sentiment, visual presence, and business profile completeness as seen through Google.
+Four equal public customer-path signals. This is a convenience component, not
+a quality component.
 
-| # | Signal | What It Is | How It's Scored |
-|---|---|---|---|
-| 6 | **Star rating** | Google Places rating (1–5) | Rating / 5 → 0–1 |
-| 7 | **Food quality sentiment** | NLP analysis of review text for food-related praise/complaints | Keyword sentiment score 0–1 |
-| 8 | **Service quality sentiment** | NLP analysis for service-related mentions | Keyword sentiment score 0–1 |
-| 9 | **Ambience sentiment** | NLP analysis for atmosphere/setting mentions | Keyword sentiment score 0–1 |
-| 10 | **Value perception sentiment** | NLP analysis for value-for-money mentions | Keyword sentiment score 0–1 |
-| 11 | **Wait time sentiment** | NLP analysis for wait/speed-of-service mentions | Keyword sentiment score 0–1 |
-| 12 | **Overall review sentiment** | Aggregate sentiment across all review text | Keyword analysis score 0–1 |
-| 13 | **Review count** | Total number of Google reviews | log₁₀(count) / log₁₀(1000), capped at 1.0 |
-| 14 | **Price level** | Google's price indicator (1–4) | Level / 4 → 0–1 |
-| 15 | **Photo count** | Number of photos on the listing | min(count, 10) / 10 → 0–1 |
-| 16 | **Place types** | Whether Google classifies as a food venue | Binary: food type present = 1.0 |
-
-**Caps:**
-- Google's effective weight is capped at 30% even when other tiers are missing
-- Combined Google-derived influence across all tiers is capped at 45%
-
-**Red flag system:** Dozens of critical phrases in review text trigger red flags. 2+ red flags generate a warning and a −15% penalty.
-
-**Source:** Google Places API
-**Provenance:** Signals 6, 13–16 are observed; signals 7–12 are derived (computed from review text via NLP)
-
----
-
-### Tier 3: Online Presence — 13% weight (TripAdvisor primary)
-
-**What it measures:** How the venue appears on independent review platforms and across the web.
-
-| # | Signal | What It Is | How It's Scored |
-|---|---|---|---|
-| 17 | **TripAdvisor presence** | Whether the venue has a TripAdvisor listing | Boolean: present = 1.0 |
-| 18 | **TripAdvisor rating** | TA rating (1–5) | Rating / 5 → 0–1 |
-| 19 | **TripAdvisor review count** | Number of TA reviews | log₁₀(count) / log₁₀(1000), capped at 1.0 |
-| 20 | **TripAdvisor review recency** | Fraction of reviews less than 6 months old | Ratio 0–1 |
-| 21 | **Has website** | Whether the venue has a website | Boolean (confidence layer only — does not affect score) |
-| 22 | **Has Facebook** | Whether the venue has a Facebook page | Boolean (confidence layer only) |
-| 23 | **Has Instagram** | Whether the venue has Instagram presence | Boolean (confidence layer only) |
-
-**Note:** Signals 21–23 are inferred from Google data and contribute to the confidence grade but not the headline RCS score.
-
-**Source:** TripAdvisor (via Apify scraper), web inference from Google data
-**Provenance:** Signals 17–20 are observed when collected; 21–23 are inferred
-
----
-
-### Tier 4: Operational Signals — 15% weight
-
-**What it measures:** The practical signs of a well-run venue — can a guest book, visit, and access the premises?
-
-| # | Signal | What It Is | How It's Scored |
-|---|---|---|---|
-| 24 | **Accepts reservations** | Whether the venue accepts bookings | Boolean |
-| 25 | **Offers delivery** | Whether delivery is available | Boolean |
-| 26 | **Offers takeaway** | Whether takeaway is available | Boolean |
-| 27 | **Wheelchair accessible** | Whether the venue is wheelchair accessible | Boolean |
-| 28 | **Has parking** | Whether parking is available nearby | Boolean |
-| 29 | **Opening hours completeness** | How many days per week have published hours | Days with hours / 7 → 0–1 |
-
-**Source:** Google Places API (types, attributes, hours)
-**Provenance:** Mix of observed (from Google attributes) and inferred
-
----
-
-### Tier 5: Menu & Offering — 10% weight
-
-**What it measures:** Whether the venue's offer is current, clear, and communicated in a way a guest can act on.
-
-| # | Signal | What It Is | How It's Scored |
-|---|---|---|---|
-| 30 | **Has menu online** | Whether a current menu is publicly accessible | Boolean |
-| 31 | **Dietary options count** | Number of dietary accommodations (vegan, GF, halal, etc.) | min(count, 5) / 5 → 0–1 |
-| 32 | **Cuisine tags count** | Number of cuisine classifications | min(count, 3) / 3 → 0–1 |
-| 33 | **GBP completeness score** | Google Business Profile completeness (10-attribute check) | Attributes present / 10 → 0–1 |
-
-**Source:** Google Places API, website scraping
-**Provenance:** Mix of observed and inferred
-
----
-
-### Tier 6: Reputation & Awards — 8% weight
-
-**What it measures:** Independent editorial recognition — guides, awards, and endorsements from outside the review ecosystem.
-
-| # | Signal | What It Is | How It's Scored |
-|---|---|---|---|
-| 34 | **Michelin mention** | Star, Bib Gourmand, or Plate listing | Boolean |
-| 35 | **AA Rosette rating** | AA restaurant guide rosette | Boolean |
-| 36 | **Local awards count** | Regional food awards, tourism board recognition | min(count, 3) / 3 → 0–1 |
-
-**Source:** Michelin Guide, AA Restaurant Guide, local press
-**Provenance:** Observed
-
----
-
-### Tier 7: Companies House — Penalty Only (no base weight)
-
-**What it measures:** Business viability risk signals from public company records. This tier does not contribute positively to the score — it only penalises.
-
-| # | Signal | What It Is | Penalty |
-|---|---|---|---|
-| 37 | **Company dissolved** | The registered company is dissolved | Hard cap at 3.0 |
-| 38 | **Company in liquidation** | The company is in liquidation proceedings | Hard cap at 5.0 |
-| 39 | **Accounts overdue** | Company accounts are overdue at Companies House | −0.5 absolute deduction |
-| 40 | **Director churn** | 3+ director changes in the past 12 months | −12% of score |
-
-**Source:** Companies House API
-**Provenance:** Observed when API key is available; gracefully degraded when absent
-
----
-
-## 4. Scoring Pipeline
-
-The score is computed in seven sequential stages:
-
-### Stage 1: Signal Collection
-
-Data is collected from all available sources for each establishment:
-- Firebase RTDB (FSA base data)
-- FSA API (augmented with pubs, bars, takeaways)
-- Google Places API (ratings, reviews, photos, types, review text)
-- TripAdvisor via Apify (ratings, reviews, cuisine, recency)
-- Web inference (website, Facebook, Instagram presence)
-- GBP completeness check (10-attribute audit)
-- Website scraping (menus, dietary options)
-- Editorial check (Michelin, AA, local awards)
-- FSA enforcement API (enforcement actions)
-- Companies House API (company status, accounts, directors)
-
-### Stage 2: Normalisation
-
-All signals are normalised to a 0–1 scale within their tier. Missing signals are skipped — the tier is re-weighted across available signals only. No signal is ever imputed or assumed.
-
-### Stage 3: Weighted Aggregation
-
-Each tier's score is the weighted average of its available signals. Tier scores are then combined using the tier weights (23%, 24%, 13%, 15%, 10%, 8%). When tiers are missing, weights are redistributed proportionally to active tiers — with the constraint that Google's effective weight never exceeds 30%, and combined Google-derived influence never exceeds 45%.
-
-### Stage 4: Penalty Application
-
-18 penalty rules are applied in order. Penalties either cap the score at a maximum value or reduce it by a percentage:
-
-| # | Condition | Effect |
-|---|---|---|
-| P1 | FSA rating 0–1 | Hard cap at 2.0 |
-| P2 | FSA rating 2 | Hard cap at 4.0 |
-| P3 | FSA rating 3 + stale inspection (>2 years) | Hard cap at 7.0 |
-| P4 | No inspection in 3+ years | −15% |
-| P5 | Google rating < 2.0 | −10% |
-| P6 | Google rating 2.0–2.9 | −5% |
-| P7 | Zero Google reviews | −5% |
-| P8 | Very few reviews (<5 combined) | −3% |
-| P9 | No photos at all | −3% |
-| P10 | No online presence at all | −10% |
-| P11 | TripAdvisor rating < 2.5 | −5% |
-| P12 | No opening hours listed (with Google data) | −3% |
-| P13 | Multiple red flags (3+) in review text | −15% |
-| P14 | Google and TripAdvisor ratings diverge by >2 stars | −5% |
-| P15 | Company dissolved | Hard cap at 3.0 |
-| P16 | Company in liquidation | Hard cap at 5.0 |
-| P17 | Accounts overdue | −0.5 absolute |
-| P18 | 3+ director changes in 12 months | −12% |
-
-### Stage 5: Tiebreaker & Ranking
-
-Venues are sorted by final score (descending). Ties are broken in order:
-1. More signals available
-2. Higher FSA hygiene rating
-3. More recent inspection date
-4. Higher structural compliance sub-score
-5. Higher confidence in management sub-score
-6. Alphabetical by business name
-
-Every venue gets a unique rank. No two venues share a position.
-
-### Stage 6: Temporal Decay
-
-Exponential decay is applied to time-sensitive signals so recent evidence carries more weight:
-
-- **FSA inspection age:** ~300-day half-life. Blended: 80% raw score + 20% decay-adjusted.
-- **Google review recency:** ~150-day half-life. Applied to the review volume signal when latest review dates are available.
-
-A review from last month carries more weight than one from two years ago. Older signals fade gracefully — they are never simply discarded.
-
-### Stage 7: Cross-Source Convergence
-
-Independent sources (FSA, Google, TripAdvisor) are compared pairwise to assess whether they agree about a venue:
-
-| Condition | Adjustment |
+| Signal | Weight |
 |---|---|
-| **Converged** — average divergence ≤ 0.10 | +3% bonus |
-| **Neutral** — divergence 0.10–0.20 | No change |
-| **Mild divergence** — divergence 0.20–0.30 | −3% penalty |
-| **Strong divergence** — divergence > 0.30 | −5% penalty |
+| Website present | 0.25 |
+| Menu online | 0.25 |
+| Opening hours completeness (days/7) | 0.25 |
+| Booking or contact path (phone / reservation / booking widget) | 0.25 |
 
-Requires at least 2 independent sources. Single-source venues get no convergence adjustment.
+Attributes like parking, wheelchair access, delivery, and takeaway are
+surfaced on venue profiles but do not feed the score.
 
----
+### 3.4 Distinction Modifier
 
-## 5. Confidence Grading
+Additive, capped at **+0.30** on the 0–10 scale.
 
-Every ranked venue carries a confidence grade that communicates how much data underlies its score.
-
-| Confidence Level | Criteria | Score Margin | What It Means |
-|---|---|---|---|
-| **High** | 20+ signals, 5+ tiers active, 2+ independent sources | ±0.3 | Score is well-supported; diagnosis is reliable |
-| **Medium** | 14+ signals, 4+ tiers active | ±0.5 | Core dimensions covered; some lenses limited |
-| **Low** | 8+ signals | ±0.8 | Directional only; material gaps remain |
-| **Insufficient** | < 8 signals | Not ranked | Cannot produce a meaningful score |
-
-Source independence matters. FSA + Google + TripAdvisor are independent. Google + Google-inferred operational signals are not independent — they count as one source for confidence purposes.
-
-### Signal Provenance
-
-Every signal is classified by how it was obtained:
-
-| Provenance | Definition | Example |
-|---|---|---|
-| **Observed** | Collected directly from an authoritative source | FSA hygiene rating, Google star rating |
-| **Derived** | Computed from observed signals | Aspect sentiment scores (NLP on review text), GBP completeness |
-| **Inferred** | Estimated from indirect evidence | Website/Facebook presence inferred from Google data |
-| **Not assessed** | Defined but not yet collected for this venue | Companies House when API key is unavailable |
-
-Provenance affects the confidence grade but not the score. Inferred signals carry full weight in scoring — the confidence band communicates the level of trust.
-
----
-
-## 6. Four Commercial Lenses
-
-The score powers four commercial lenses used in Position & Competitor Reports. Each lens maps to underlying scoring dimensions but is framed in operator language.
-
-### Lens 1: Demand Capture
-*Are you converting interest into visits?*
-
-A 7-dimension outside-in audit of the customer journey:
-
-| Dimension | What It Assesses |
+| Award | Modifier |
 |---|---|
-| Booking Friction | Can a customer book within 2 clicks from Google Maps? |
-| Menu Visibility | Can a customer see the current menu before deciding? |
-| CTA Clarity | Does the profile present a clear action path? |
-| Photo Mix & Quality | Do the photos sell the experience guests praise? |
-| Proposition Clarity | Does the public identity match what guests actually buy? |
-| Mobile Usability | Can a mobile user confirm hours, see menu, and book without leaving Maps? |
-| Promise vs Path | Is there a gap between what the listing promises and what the path delivers? |
+| Michelin 3 / 2 / 1 Star | +0.30 / +0.25 / +0.20 |
+| Michelin Bib Gourmand | +0.12 |
+| Michelin Green Star | +0.08 |
+| Michelin Guide listing (no award) | +0.05 |
+| AA 5 / 4 / 3 / 2 / 1 Rosette | +0.20 / +0.15 / +0.10 / +0.06 / +0.03 |
 
-Each dimension receives a verdict: **Clear** / **Partial** / **Missing** / **Broken**.
+No other awards feed the score.
 
-### Lens 2: Proposition & Guest Signal
-*What are guests actually experiencing?*
+### 3.5 Penalties and Caps
 
-Multi-platform review intelligence covering aspect-level sentiment (food quality, service, ambience, value, wait times), red-flag detection, cross-source convergence, and the split between reputation baseline and recent movement.
-
-### Lens 3: Trust & Public Risk
-*What does the compliance record reveal?*
-
-Official inspection records, structural compliance, management confidence, inspection recency, and business viability screening via Companies House.
-
-### Lens 4: Competitive Market Intelligence
-*Where do you sit versus your market?*
-
-Peer benchmarking, category classification (validated across multiple signals with confidence levels), sensitivity analysis, and month-over-month position tracking.
+- **Companies House risk.** Dissolved → cap 3.0. Liquidation/administration →
+  cap 5.0. Accounts overdue > 90 days → −0.30. Director churn ≥ 3 in 12 months
+  → ×0.92.
+- **Stale inspection.** > 2 years with FHRS ≥ 3 → Trust component soft cap 7.0.
+  > 3 years → Trust × 0.85. > 5 years → Trust hard cap 5.0.
+- **Closure.** FSA-closed or Google `CLOSED_PERMANENTLY` → removed from
+  rankings. `CLOSED_TEMPORARILY` → scored but excluded from league tables.
+- **No valid entity match.** Unranked; profile-only or dropped.
 
 ---
 
-## 7. Monthly Delta Tracking
+## 4. Source-Family Discipline
 
-Each scoring run is compared against the prior month's snapshot. The system computes:
+V4 treats data by source family, not by signal count:
 
-- **Rank movement:** Position change (e.g. up 3, down 2, same)
-- **Score movement:** RCS change with significance thresholds (<0.2 = negligible, 0.2–0.5 = notable, >0.5 = significant)
-- **Per-dimension deltas:** Which signal categories improved or worsened
-- **Seasonal classification:** Changes are classified as structural (consistent across 3+ months), seasonal (matches known local patterns), anomaly (single-month deviation), or insufficient data (<3 months history)
+| Family | Signals | Role |
+|---|---|---|
+| FSA / FHRS | rating, sub-scores, recency | Trust & Compliance |
+| Customer platforms | Google, TripAdvisor, OpenTable | Customer Validation |
+| Customer-path | web, menu, hours, booking | Commercial Readiness |
+| Companies House | status, accounts, directors | Penalty / risk only |
 
-Movement is displayed on the public leaderboard as:
-- **▲ N** (green) — moved up N positions
-- **▼ N** (red) — moved down N positions
-- **—** (grey) — no change
-- **NEW** (blue) — first appearance
+Google-derived sub-signals (photos, price level, place types, delivery,
+takeaway, wheelchair, parking) are **not** treated as independent evidence —
+they come from one family. They are not in the score.
+
+---
+
+## 5. Confidence Class and Rankability
+
+Every scored venue is assigned exactly one class. The class decides whether
+the venue enters league tables — it is not a "margin-of-error" badge.
+
+| Class | Primary families required | Signals | Review count | League table? |
+|---|---|---|---|---|
+| **Rankable-A** | All 3 | ≥ 10 | ≥ 50 combined or ≥ 30 on one platform | Yes — primary |
+| **Rankable-B** | ≥ 2 | ≥ 7 | ≥ 10 combined | Yes — secondary |
+| **Directional-C** | ≥ 1 | ≥ 4 | any | No — "Directional" list |
+| **Profile-only-D** | fails the above | — | — | No — profile page only, no score shown |
+
+Ambiguous entity matches cap the class at Directional-C. Single-platform
+customer validation caps at Rankable-B. Stale-inspection hard caps, closures,
+and dissolved-entity flags all prevent league-table eligibility even if the
+class is Rankable.
+
+---
+
+## 6. What V4 Does Not Use
+
+The following were in V3.4 and are **removed from V4 headline scoring**. Some
+still appear on profile pages; none affect the score.
+
+| Removed input | V3.4 role | V4 status |
+|---|---|---|
+| Review-text sentiment | Google tier + red flags | Report-only |
+| Aspect sentiment (food / service / ambience / value / cleanliness) | Google tier sub-signals | Report-only |
+| Google AI summaries | Ingested as sentiment | Excluded entirely |
+| Photo count | Google tier signal | Profile attribute |
+| Price level | Google tier signal | Profile attribute |
+| Place types (`gty`) | Google tier + operational inference | Used only for non-food exclusion and cuisine labelling |
+| Delivery / takeaway / parking / wheelchair | Operational tier positives | Profile attributes |
+| Social presence (Facebook, Instagram) | Online presence tier | Profile attributes |
+| Cross-source convergence bonus (±3–5%) | Post-hoc adjustment | Removed |
+| Community tier | Removed in V3.4 already | Still removed |
+
+---
+
+## 7. Handling Sparse Review Text and Small Samples
+
+- Low review counts trigger Bayesian shrinkage toward the platform prior.
+  They do **not** trigger text analysis to "recover more signal".
+- Review text is report-only in V4. It may inform narrative language on a
+  venue profile but never the score or the rank.
+- Google's 5-review text API is not used in headline scoring.
+- When text evidence is thin or contradictory, the confidence class or the
+  narrative is softened — the score stays put.
 
 ---
 
 ## 8. What the Score Is Not
 
-- Not a review of the food or the experience of a particular meal
-- Not based on mystery dining, self-reported data, or paid inclusion
-- Not a prediction of future performance or financial viability
-- Not influenced by advertising, sponsorship, or operator payment
-- Not a replacement for internal operating dashboards, management accounts, or compliance audits
+- Not a review of the food or any specific meal.
+- Not based on mystery dining, self-reporting, or paid inclusion.
+- Not a prediction of future performance or financial viability.
+- Not influenced by advertising, sponsorship, or operator payment.
+- Not a replacement for operating dashboards, management accounts, or
+  compliance audits.
 
 ---
 
-## 9. Why the Formula Is Not Published
+## 9. V4 Outputs
 
-The broad principles behind the ranking are public and explained in this document. The precise weightings, thresholds, penalty multipliers, and processing logic are not.
-
-This is deliberate. A ranking that publishes its exact formula is a ranking that can be gamed — and a gamed ranking is useful to nobody: not diners, not the operators who play fair, and not the industry it exists to measure.
-
-We will always explain *what* the ranking considers. We will not explain it in a way that tells anyone how to manufacture an unearned position.
+Every scored venue emits: per-component scores, distinction modifier value,
+penalties and caps applied, base and adjusted scores, final score, confidence
+class, rankability flag, league-table eligibility, source-family summary,
+entity-match status, and a decision trace. Exact schema in
+`DayDine-V4-Scoring-Spec.md` §10.
 
 ---
 
-## 10. Data Sources
+## 10. Migration and Deprecation
 
-| Source | What It Provides | Cost |
+### Deprecated from V3.4
+
+- 40-signal / 7-tier structure
+- Six verbal rating bands as the primary surface
+- Aspect sentiment and red-flag scoring
+- Google AI summary ingestion
+- Cross-source convergence bonus / penalty
+- Tier re-weighting when signals are missing (replaced by fixed weights +
+  confidence-class gating)
+- The 18-rule V3.4 penalty table (replaced by the V4 penalties in §3.5)
+
+### Retained for legacy comparison only
+
+- `rcs_scoring_stratford.py` — still runs during migration
+- `stratford_rcs_scores.csv`, `stratford_rcs_summary.json`, and
+  `stratford_rcs_report.md` — legacy outputs produced alongside V4
+- Sentiment, aspect, photo, types, and attribute fields on profiles — shown
+  to users but not scored
+
+### Work remaining before full cutover
+
+1. Collect TripAdvisor data across the trial set so Rankable-A is reachable.
+2. Calibrate Customer Validation spread (top-half compression currently
+   concentrates 50.8% of rankable venues above 8.0).
+3. Collect phone / booking URL data so Commercial Readiness is not capped at
+   0.75 for every venue.
+4. Build an entity-match resolver to handle trading-name vs legal-entity
+   mismatches (Dirty Duck, Church Street Townhouse, etc.).
+5. Regenerate the comparison artifacts after each calibration change.
+
+### Report layer
+
+Report and leaderboard restructuring happens after cutover, not before. The
+report currently rendered from V3.4 output (`stratford_rcs_report.md`,
+profile pages, rankings pages) will need to:
+
+- Show confidence class instead of confidence band.
+- Exclude Directional-C from the default league view and surface it as a
+  separate "Directional" list.
+- Render sentiment and aspect data as report-only context, clearly separated
+  from the score.
+- Replace the six verbal bands with the confidence classes and a small
+  number of score tiers within Rankable-A/B.
+
+---
+
+## 11. Data Sources
+
+| Source | What it provides | Cost |
 |---|---|---|
-| Food Standards Agency | Hygiene ratings, sub-scores, inspection dates, enforcement actions | Free (public API) |
-| Google Places API | Ratings, reviews, review text, photos, types, hours, attributes | Per-request billing |
-| TripAdvisor (via Apify) | Ratings, review counts, cuisine tags, review recency | ~£0.003/review |
-| Companies House | Company status, accounts filings, director changes | Free (public API) |
-| Michelin Guide | Star, Bib Gourmand, Plate listings | Free (web search) |
-| AA Restaurant Guide | Rosette ratings | Free (web search) |
-| Local press/tourism | Regional food awards | Free (web search) |
+| Food Standards Agency | Hygiene rating, sub-scores, inspection dates | Free (public API) |
+| Google Places | Rating, review count, place metadata (score-relevant: rating + count only) | Per-request billing |
+| TripAdvisor (Apify) | Rating, review count | Per-run |
+| OpenTable | Rating, review count | Schema reserved; not yet collected |
+| Companies House | Company status, accounts, director changes | Free (public API) |
+| Michelin Guide | Stars, Bib Gourmand, Green Star, listings | Web scrape |
+| AA Restaurant Guide | Rosette rating | Web scrape |
 
-All data is publicly accessible. No signal is self-reported by venue operators.
-
----
-
-## 11. Current Coverage
-
-**Live market:** Stratford-upon-Avon — 190 ranked venues, 210 total establishments assessed.
-
-New markets are added as data pipelines (FSA, Google, TripAdvisor, Companies House) are validated for each Local Authority area.
+All data is publicly accessible. No signal is self-reported by venue
+operators.
 
 ---
 
-## 12. Version History
+## 12. Current Coverage
 
-| Version | Date | Key Changes |
+**Live trial market:** Stratford-upon-Avon — 210 establishments scored under
+both V3.4 and V4. Under V4: 1 Rankable-A, 190 Rankable-B, 18 Directional-C,
+1 Profile-only-D. Mean score 7.85 across rankable venues.
+
+New markets are added as data pipelines (FSA, Google, TripAdvisor, Companies
+House) are validated per local authority.
+
+---
+
+## 13. Version History
+
+| Version | Date | Key changes |
 |---|---|---|
-| V1.0 | Feb 2026 | Initial 5-source scoring engine |
-| V2.0 | Mar 2026 | 35 signals, 7 tiers, 0–10 scale, unique rankings |
-| V2.1 | Mar 2026 | FSA reweighted, Google capped at 30%, confidence bands |
-| V3.0 | Mar 2026 | 40 signals, aspect NLP, GBP completeness, TripAdvisor recency, Companies House |
-| V3.1 | Mar 2026 | Coverage penalty, provenance classification, cross-tier 45% cap |
-| V3.2 | Mar 2026 | Community tier removed (double-counted), SCP removed, tier 3 TripAdvisor-only |
-| V3.3 | Apr 2026 | 4 commercial lenses, demand capture audit, implementation framework, barrier diagnosis |
-| V3.4 | Apr 2026 | Temporal decay, cross-source convergence, 18 penalty rules, monthly delta tracking |
+| V1.0 | Feb 2026 | Initial 5-source engine |
+| V2.0 | Mar 2026 | 35 signals, 7 tiers, 0–10 scale |
+| V2.1 | Mar 2026 | Google capped at 30%, confidence bands |
+| V3.0 | Mar 2026 | 40 signals, aspect NLP, Companies House |
+| V3.1 | Mar 2026 | Coverage penalty, provenance classification |
+| V3.2 | Mar 2026 | Community tier removed, SCP removed |
+| V3.3 | Apr 2026 | Commercial lenses introduced |
+| V3.4 | Apr 2026 | Temporal decay, convergence bonus, 18 penalty rules |
+| **V4** | **Apr 2026** | **3-component structure (40/45/15), Bayesian shrinkage on platform ratings, four-class confidence/rankability gating, sentiment and aspect scoring removed, convergence bonus removed, fixed weights (no renormalisation on missing data)** |
 
 ---
 
-*This document describes the DayDine Restaurant Confidence Score methodology as implemented in `rcs_scoring_stratford.py` (V3.4). The scoring engine implementation, data collection scripts, and front-end rendering are maintained in the DayDine repository.*
+*V4 methodology is implemented in `rcs_scoring_v4.py` and specified in
+`docs/DayDine-V4-Scoring-Spec.md`. V3.4 (`rcs_scoring_stratford.py`) runs in
+parallel during migration. Comparison diagnostics are in
+`docs/DayDine-V4-Scoring-Comparison.md`.*
 
 *© 2026 DayDine*
