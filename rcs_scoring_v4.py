@@ -197,7 +197,7 @@ class V4Score:
     caps_applied: list[PenaltyEntry]
     base_score: float
     adjusted_score: float
-    rcs_v4_final: float
+    rcs_v4_final: Optional[float]    # None = no score published (spec §7.4 permanent closure, §2.4 Profile-only-D optional)
     confidence_class: str            # Rankable-A | Rankable-B | Directional-C | Profile-only-D
     rankable: bool
     league_table_eligible: bool
@@ -651,7 +651,18 @@ def apply_companies_house(adjusted: float, ch: Optional[dict[str, Any]],
 
 
 def check_closure(record: dict[str, Any]) -> Optional[str]:
-    """Return closure status string or None. Spec 7.4."""
+    """Return closure status string or None. Spec §7.4.
+
+    Closure sources, any of which marks the venue permanently closed:
+      - Google `business_status == CLOSED_PERMANENTLY`
+      - FSA flag `fsa_closed = true` (set upstream when the FHRS record
+        is flagged closed / removed from the register).
+    `business_status == CLOSED_TEMPORARILY` is returned separately so
+    the caller can keep the score but exclude from league tables
+    (spec §7.4 row 2).
+    """
+    if record.get("fsa_closed") is True:
+        return "closed_permanently"
     status = str(record.get("business_status") or "").upper()
     if status == "CLOSED_PERMANENTLY":
         return "closed_permanently"
@@ -768,12 +779,15 @@ def classify_confidence(trust: TrustResult, customer: CustomerResult,
 
 
 def apply_low_review_cap(confidence: str, customer: CustomerResult) -> str:
-    """Spec 4.5 — venues with all platforms at N<5 cannot exceed Directional-C."""
+    """Spec 4.5 — if any platform has N<5 and no other platform has N>=30,
+    the venue cannot exceed Directional-C. The N<5 platform still contributes
+    (its weight is floored at W_FLOOR by score_customer_validation), but the
+    class is capped."""
     if not customer.available:
         return confidence
-    low_all = all(p.count < LOW_COUNT_FLOOR for p in customer.platforms)
+    low_any = any(p.count < LOW_COUNT_FLOOR for p in customer.platforms)
     big_other = any(p.count >= 30 for p in customer.platforms)
-    if low_all and not big_other:
+    if low_any and not big_other:
         # Degrade Rankable-* to Directional-C
         if confidence in {"Rankable-A", "Rankable-B"}:
             return "Directional-C"
@@ -783,11 +797,22 @@ def apply_low_review_cap(confidence: str, customer: CustomerResult) -> str:
 def rankable_flags(confidence: str, trust: TrustResult,
                     closure: Optional[str], entity_dissolved: bool,
                     customer: CustomerResult) -> tuple[bool, bool]:
-    """Return (rankable, league_table_eligible) per spec 8.3."""
+    """Return (rankable, league_table_eligible) per spec §8.3 / §7.4.
+
+    Permanent closure (Google CLOSED_PERMANENTLY or FSA-flagged closed)
+    forces rankable=False per spec §7.4 row 1: "Remove from rankings.
+    Profile marked 'Closed'. No score published." The caller additionally
+    suppresses rcs_v4_final to None in that case.
+
+    Temporary closure keeps rankable=True (the score is still valid; the
+    venue may reopen) but blocks league-table eligibility per §7.4 row 2.
+    """
     rankable = confidence in {"Rankable-A", "Rankable-B"}
     if not rankable:
         return False, False
-    if closure in {"closed_permanently", "closed_temporarily"}:
+    if closure == "closed_permanently":
+        return False, False
+    if closure == "closed_temporarily":
         return rankable, False
     if entity_dissolved:
         return rankable, False
@@ -867,9 +892,12 @@ def score_venue(
     rankable, league_eligible = rankable_flags(
         confidence, trust, closure, entity_dissolved, customer)
 
-    # Final: Profile-only-D venues get no published headline
+    # Final: Profile-only-D venues get no published headline (spec §2.4);
+    # permanently closed venues get no published score (spec §7.4 row 1).
     if confidence == "Profile-only-D":
-        final = 0.0
+        final: Optional[float] = 0.0
+    elif closure == "closed_permanently":
+        final = None
     else:
         final = adjusted
 
@@ -903,9 +931,10 @@ def score_venue(
         )
     else:
         trace.append("CommercialReadiness=None (no observability)")
+    final_str = f"{final:.3f}" if final is not None else "None (suppressed)"
     trace.append(
         f"base={base:.3f}; distinction+{distinction.value:.3f}; "
-        f"adjusted={adjusted:.3f}; final={final:.3f}"
+        f"adjusted={adjusted:.3f}; final={final_str}"
     )
     trace.append(f"class={confidence}; rankable={rankable}; league={league_eligible}")
     if closure:
