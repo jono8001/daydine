@@ -8,6 +8,10 @@
 
 ## Executive Summary
 
+**What you should fix now:**
+
+1. **Publish a reachable phone number or booking link** [FIX] — The booking / contact path sub-signal carries 25% of the Commercial Readiness component weight and is currently absent.
+
 **V4 Score:** 8.496 / 10 · Rankable-A.
 **Components:** Trust 8.52; Customer Validation 8.80; Commercial Readiness 7.50.
 **Local (5 mi) peer position:** #64 of 182 (peer pool scoped to league-eligible venues).
@@ -123,7 +127,15 @@ No operational or risk alerts above baseline this period.
 
 ## Management Priorities
 
-No ranked priorities this month.
+### Priority 1: Publish a reachable phone number or booking link [FIX | NEW]
+
+The booking / contact path sub-signal carries 25% of the Commercial Readiness component weight and is currently absent.
+
+**Evidence:** No phone / reservation_url / reservable observed.
+
+**Expected upside:** adds 25% of the Commercial Readiness component once a contact path publishes.
+
+*Targets component: Commercial Readiness. V4 components feed the headline — this priority is how the score moves in the direction the observable evidence supports. (No specific score-movement number is forecast.)*
 
 ## Watch List
 
@@ -131,7 +143,8 @@ No explicit watch items this month. Default monitoring: FHRS inspection recency,
 
 ## What Not to Do This Month
 
-- **Don't treat photos, price level, social presence, delivery, takeaway, parking, or wheelchair access as score levers.** In V4 they are profile attributes only — changing them does not move the headline.
+- **Don't prioritise:** Don't chase reviews purely to lift the score. Customer Validation Bayesian shrinkage dampens the per-review effect on the shrunk rating until volume clears the platform n_cap / 2 threshold; review-volume growth is a long-game watch item, not a fix.
+- **Don't prioritise:** Don't treat photos, price level, social, delivery, takeaway, parking, or wheelchair access as score levers. These are profile attributes only in V4; changing them does not move the headline.
 
 ## Profile Narrative & Reputation Signals
 
@@ -143,7 +156,11 @@ No explicit watch items this month. Default monitoring: FHRS inspection recency,
 
 ## Implementation Framework
 
-No active action cards this month.
+| Action | Targets component | Status | Target date | Cost band | Expected upside | Next milestone |
+|---|---|---|---|---|---|---|
+| Publish a reachable phone number or booking link | Commercial Readiness | New | 09 May 2026 | Low (< £200) | adds 25% of the Commercial Readiness component once a contact path publishes. | Log into business.google.com → select venue → Info → add a public phone number or booking link. |
+
+*Upside claims cite the observable path they depend on; they do not forecast a specific `rcs_v4_final` movement. See the Evidence column in the Management Priorities section above for the V4 fields each action targets.*
 
 ## Next-Month Monitoring Plan
 

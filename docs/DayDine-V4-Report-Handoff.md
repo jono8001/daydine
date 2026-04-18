@@ -147,25 +147,42 @@ Five things were rebuilt from the ground up on the V4 contract:
 
 ---
 
-## 4. What remains deferred (carried verbatim from the samples assessment)
+## 4. What remains deferred
 
-These items are **not fixed** by Stack B. They are listed exactly as
-recorded in `docs/DayDine-V4-Report-Samples-Assessment.md` §10.2. Do
-not treat any of them as resolved; re-open them explicitly when taking
-the work on.
+These items are tracked from the original samples-assessment
+deferred list (`docs/DayDine-V4-Report-Samples-Assessment.md`
+§10.2). The first two have been closed by the post-B6
+recommendation-layer migration; the remaining five are unchanged.
+
+> **Closed by the B6 recommendation-layer migration:**
+>
+> 1. ~~Wire full V3.4 recommendations engine into the sample runner~~
+>    — replaced by a V4-native generator
+>    (`operator_intelligence/v4_recommendations.py`) and action-card
+>    builder (`operator_intelligence/v4_action_cards.py`).
+>    Management Priorities / Watch List / What Not to Do This Month
+>    / Implementation Framework now populate with V4-evidence-anchored
+>    content for every Rankable / Directional-C / temp-closed venue.
+>    Profile-only-D and Closed correctly suppress these sections.
+> 2. ~~Remove `_dimension_to_component` shim~~ — V4 recs no longer
+>    produce V3.4 dimension codes, so the shim is unreachable for V4
+>    runs. It survives only as a defensive fallback for any V3.4-shaped
+>    rec dict that could leak in. Hard removal can land in a later
+>    cleanup pass.
+
+Still deferred:
 
 | Item | Reason |
 |---|---|
-| Wire full V3.4 recommendations engine into the sample runner | The V3.4 engine requires the V3.4 scorecard pipeline. A thin V4 adapter is a separate piece of work (§6.2 item 7 of the samples assessment) and belongs with Stack B6 report content, not Stack B5 report structure. Management Priorities / Watch List / WNTD / Implementation Framework render thin but correctly for now. |
-| Remove `_dimension_to_component` shim | Lives as long as the V3.4 recs engine does; retiring it depends on the item above. |
 | V4-aware demand-capture-audit builder | Current shim passes a V3.4-style scorecard stub; the audit itself is spec-compatible (profile-only). Cosmetic refactor. |
 | Penalty-explanation registry | Plain-English entries live in `v4_wording.penalty_explanation`; new codes won't auto-populate. Small; deferred until the next engine change. |
 | CI integration of the guardrail test suite | Not a report-layer change; should land when CI is next touched. |
 | Financial Impact range-width tolerance check | Narrow ranges at "Moderate" confidence are not currently flagged. Low priority; scoped post-rollout. |
 | Segment-intelligence class demotion (§6.2 item 10) | Segment prose does not currently apply the review-tier ceiling. Requires touching `segment_analysis` consumer path; deferred so this pass does not touch narrative builders. |
 
-These items do not block internal use. They may block pilot and will
-block commercial publication — see §7 for the readiness breakdown.
+These items do not block internal use or pilot operator use after the
+B6 migration; they may block commercial publication — see §7 for the
+readiness breakdown.
 
 ---
 
@@ -288,7 +305,7 @@ layer. A next engineer should not "fix" them inside the generator.
 | Use case | Status | Blockers |
 |---|---|---|
 | **Internal use** — scoring-engine QA, analyst diagnostics, internal reviews | **Ready.** | None. The sample set and guardrail tests exercise every mode; validation is clean. |
-| **Pilot operator use** — a small, supervised operator set with known caveats | **Ready structurally; blocked on recs engine wiring.** | Management Priorities / Watch List / WNTD / Implementation Framework still render thin. A pilot would show operators empty-feeling action sections. Fix is the §4 first deferred item (wire V3.4 recs engine through a V4 adapter). |
+| **Pilot operator use** — a small, supervised operator set with known caveats | **Ready (post B6 recommendation migration).** | The V4-native recommendations engine + action-card builder now populate Management Priorities / Watch List / WNTD / Implementation Framework with V4-evidence-anchored content (verified across all seven canonical samples). Pilot is no longer blocked on this item. Remaining caveats are from §7 enrichment / recalibration, not from the report layer. |
 | **Commercial publication** — paid operator deliverable, public cutover | **Not ready.** | All §4 deferred items ideally closed. All §7 enrichment / recalibration items ideally closed. Public methodology page softened further per readiness memo §D. Leaderboard cutover is its own separate workstream. |
 
 The post-fix verdict in the samples assessment is **READY FOR B6
@@ -327,23 +344,29 @@ scopes what "minor deferred" means for B6.
 
 ### Intentionally deferred (see §4 for the canonical list)
 
-Exactly and only:
+> **Closed by the B6 recommendation-layer migration:**
+> Items 1 and 2 (recommendations engine wiring;
+> `_dimension_to_component` shim removal) — both replaced or rendered
+> unreachable by the V4-native generator + action cards. Hard removal
+> of the shim can land in a later cleanup.
 
-1. Full V3.4 recommendations engine wiring (via a V4 adapter).
-2. `_dimension_to_component` shim removal (blocked on item 1).
-3. V4-aware demand-capture-audit builder.
-4. Penalty-explanation registry.
-5. CI integration of the guardrail test suite.
-6. Financial Impact range-width tolerance check.
-7. Segment-intelligence class demotion.
+Still deferred:
+
+1. V4-aware demand-capture-audit builder.
+2. Penalty-explanation registry.
+3. CI integration of the guardrail test suite.
+4. Financial Impact range-width tolerance check.
+5. Segment-intelligence class demotion.
 
 These are not complete. They are documented to be picked up later.
 
 ### Readiness summary
 
 - **Internal use: ready.**
-- **Pilot operator use: ready structurally; blocked on deferred
-  item 1 (recommendations engine wiring).**
+- **Pilot operator use: ready (post B6 recommendation migration).**
+  Management Priorities / Watch List / WNTD / Implementation Framework
+  populate with V4-evidence-anchored content; per-class behaviour
+  verified across all seven canonical samples.
 - **Public use / commercial publication: not ready.** Pending the
   deferred items above and the enrichment / recalibration / cutover
   work tracked in the existing status documents

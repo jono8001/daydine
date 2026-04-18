@@ -9,6 +9,11 @@
 
 ## Executive Summary
 
+**What you should fix now:**
+
+1. **Maintain accurate temporary-closure messaging** [FIX] — While `business_status = CLOSED_TEMPORARILY` is set, ensure the public profile communicates the closure window and any e
+2. **Publish a reachable phone number or booking link** [FIX] — The booking / contact path sub-signal carries 25% of the Commercial Readiness component weight and is currently absent.
+
 **V4 Score:** 8.895 / 10 · Rankable-B.
 **Components:** Trust 8.88; Customer Validation 9.37; Commercial Readiness 7.50.
 
@@ -105,7 +110,25 @@ No operational or risk alerts above baseline this period.
 
 ## Management Priorities
 
-No ranked priorities this month.
+### Priority 1: Maintain accurate temporary-closure messaging [FIX | NEW]
+
+While `business_status = CLOSED_TEMPORARILY` is set, ensure the public profile communicates the closure window and any expected reopening date so customers do not arrive to a closed venue.
+
+**Evidence:** business_status: CLOSED_TEMPORARILY.
+
+**Expected upside:** prevents reputation damage from confused arrivals.
+
+*Targets component: Commercial Readiness. V4 components feed the headline — this priority is how the score moves in the direction the observable evidence supports. (No specific score-movement number is forecast.)*
+
+### Priority 2: Publish a reachable phone number or booking link [FIX | NEW]
+
+The booking / contact path sub-signal carries 25% of the Commercial Readiness component weight and is currently absent.
+
+**Evidence:** No phone / reservation_url / reservable observed.
+
+**Expected upside:** adds 25% of the Commercial Readiness component once a contact path publishes.
+
+*Targets component: Commercial Readiness. V4 components feed the headline — this priority is how the score moves in the direction the observable evidence supports. (No specific score-movement number is forecast.)*
 
 ## Watch List
 
@@ -113,7 +136,8 @@ No explicit watch items this month. Default monitoring: FHRS inspection recency,
 
 ## What Not to Do This Month
 
-- **Don't treat photos, price level, social presence, delivery, takeaway, parking, or wheelchair access as score levers.** In V4 they are profile attributes only — changing them does not move the headline.
+- **Don't prioritise:** Don't chase reviews purely to lift the score. Customer Validation Bayesian shrinkage dampens the per-review effect on the shrunk rating until volume clears the platform n_cap / 2 threshold; review-volume growth is a long-game watch item, not a fix.
+- **Don't prioritise:** Don't treat photos, price level, social, delivery, takeaway, parking, or wheelchair access as score levers. These are profile attributes only in V4; changing them does not move the headline.
 
 ## Profile Narrative & Reputation Signals
 
@@ -125,7 +149,12 @@ No explicit watch items this month. Default monitoring: FHRS inspection recency,
 
 ## Implementation Framework
 
-No active action cards this month.
+| Action | Targets component | Status | Target date | Cost band | Expected upside | Next milestone |
+|---|---|---|---|---|---|---|
+| Maintain accurate temporary-closure messaging | Commercial Readiness | New | 25 April 2026 | Zero (profile update) | prevents reputation damage from confused arrivals. | Update the Google Business Profile description to include the closure window and expected reopening date. |
+| Publish a reachable phone number or booking link | Commercial Readiness | New | 09 May 2026 | Low (< £200) | adds 25% of the Commercial Readiness component once a contact path publishes. | Log into business.google.com → select venue → Info → add a public phone number or booking link. |
+
+*Upside claims cite the observable path they depend on; they do not forecast a specific `rcs_v4_final` movement. See the Evidence column in the Management Priorities section above for the V4 fields each action targets.*
 
 ## Next-Month Monitoring Plan
 

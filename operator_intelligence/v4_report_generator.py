@@ -869,13 +869,22 @@ def _render_management_priorities(out: Callable[[str], None],
     recs = inputs.recommendations or {}
     priorities = (recs.get("priority_actions") or [])[:3]
 
+    start_index = 1
     if inputs.report_mode == MODE_DIRECTIONAL_C:
-        # Lead with the unblock-to-rankable action
+        # Lead with the unblock-to-rankable narrative even before the
+        # priorities table — operators need the "why this isn't ranked"
+        # context up front.
         unblock = _unblock_action(inputs)
         out(f"### Priority 1 — Unblock to rankable")
         out("")
         out(unblock)
         out("")
+        # Skip the first ranked priority if it is the same entity /
+        # disambiguation rec the unblock heading already narrates.
+        if priorities and (priorities[0].get("targets_component") ==
+                            "Entity / Identity"):
+            priorities = priorities[1:]
+        start_index = 2
         if priorities:
             out("*Additional priorities below are subject to the unblock "
                 "above landing first.*")
@@ -886,10 +895,12 @@ def _render_management_priorities(out: Callable[[str], None],
         out("")
         return
 
-    for i, p in enumerate(priorities, start=1):
+    for i, p in enumerate(priorities, start=start_index):
         title = p.get("title") or "(untitled)"
-        dim = p.get("dimension") or ""
-        component = _dimension_to_component(dim)
+        # V4 recs emit `targets_component` directly. Fall back to the
+        # legacy dimension-to-component shim only if a V3.4 rec leaked in.
+        component = (p.get("targets_component")
+                      or _dimension_to_component(p.get("dimension") or ""))
         status = p.get("status") or "new"
         rec_type = (p.get("rec_type") or "").upper() or "ACTION"
         out(f"### Priority {i}: {title} [{rec_type} | {status.upper()}]")
@@ -898,9 +909,18 @@ def _render_management_priorities(out: Callable[[str], None],
         if rationale:
             out(rationale)
             out("")
+        evidence = p.get("evidence") or []
+        if evidence:
+            out("**Evidence:** " + "; ".join(evidence) + ".")
+            out("")
+        upside = p.get("expected_upside") or ""
+        if upside:
+            out(f"**Expected upside:** {upside}")
+            out("")
         out(f"*Targets component: {component}. V4 components feed the "
             f"headline — this priority is how the score moves in the "
-            f"direction observed evidence supports.*")
+            f"direction the observable evidence supports. (No specific "
+            f"score-movement number is forecast.)*")
         out("")
 
 
@@ -992,8 +1012,14 @@ def _render_watch_list(out: Callable[[str], None],
         return
     for w in watch[:5]:
         title = w.get("title") or "(untitled)"
-        status = w.get("status") or "ongoing"
-        out(f"- **{title}** ({status}).")
+        component = (w.get("targets_component")
+                      or _dimension_to_component(w.get("dimension") or ""))
+        rationale = w.get("rationale") or ""
+        evidence = w.get("evidence") or []
+        ev_str = (" Evidence: " + "; ".join(evidence) + "."
+                   if evidence else "")
+        rationale_str = f" {rationale}" if rationale else ""
+        out(f"- **{title}** ({component}).{rationale_str}{ev_str}")
     out("")
 
 
@@ -1007,30 +1033,21 @@ def _render_what_not_to_do(out: Callable[[str], None],
     out("")
     recs = inputs.recommendations or {}
     dont = recs.get("what_not_to_do") or []
-    rendered = []
-    for d in dont[:3]:
+
+    # V4-perennial items now come from the recs engine itself
+    # (`_what_not_to_do_perennials` in v4_recommendations.py). The renderer
+    # is a thin formatter; if no items are present we fall back to a
+    # short generic note.
+    if not dont:
+        out("- *(No specific anti-patterns flagged this month — see "
+            "general guidance in the appendix.)*")
+        out("")
+        return
+    for d in dont:
         title = d.get("title") or ""
-        if title:
-            rendered.append(f"- **Don't prioritise:** {title}.")
-    # V4-specific perennial items
-    if inputs.customer.available:
-        counts = [int(p.get("count") or 0)
-                   for p in inputs.customer.platforms.values()]
-        max_count = max(counts) if counts else 0
-        if max_count and max_count < 400:
-            rendered.append(
-                "- **Don't chase new reviews purely to lift the score.** "
-                "Customer Validation shrinkage dampens the effect until "
-                "volume clears the platform's n_cap / 2 threshold."
-            )
-    rendered.append(
-        "- **Don't treat photos, price level, social presence, delivery, "
-        "takeaway, parking, or wheelchair access as score levers.** "
-        "In V4 they are profile attributes only — changing them does not "
-        "move the headline."
-    )
-    for r in rendered:
-        out(r)
+        rationale = d.get("rationale") or ""
+        rationale_str = f" {rationale}" if rationale else ""
+        out(f"- **Don't prioritise:** {title}.{rationale_str}")
     out("")
 
 
@@ -1040,14 +1057,23 @@ def _render_what_not_to_do(out: Callable[[str], None],
 
 def _render_implementation_framework(out: Callable[[str], None],
                                        inputs: ReportInputs) -> None:
+    """Implementation Framework / Recommendation Tracker.
+
+    V4-native: cards come from `v4_action_cards.generate_v4_action_cards`,
+    which reads V4 recs (`targets_component`, `evidence`,
+    `expected_upside`) directly. The legacy V3.4
+    `implementation_framework.generate_action_cards` path is no longer
+    invoked; the legacy `_dimension_to_component` shim survives only as
+    a fallback if a V3.4 rec dict somehow leaks into a V4 run.
+    """
     out("## Implementation Framework")
     out("")
     try:
-        from operator_intelligence.implementation_framework import (
-            generate_action_cards,
+        from operator_intelligence.v4_action_cards import (
+            generate_v4_action_cards,
         )
-        cards = generate_action_cards(inputs.recommendations or {},
-                                       inputs.month_str) or []
+        cards = generate_v4_action_cards(
+            inputs.recommendations or {}, inputs.month_str) or []
     except Exception:
         cards = []
 
@@ -1056,22 +1082,25 @@ def _render_implementation_framework(out: Callable[[str], None],
         out("")
         return
 
-    out("| Action | Targets component | Status | Target date | Cost band | "
-        "Expected upside | Next milestone |")
+    out("| Action | Targets component | Status | Target date | "
+        "Cost band | Expected upside | Next milestone |")
     out("|---|---|---|---|---|---|---|")
     for c in cards[:6]:
         title = c.get("title") or ""
-        comp = _dimension_to_component(c.get("dimension") or "")
-        status = c.get("status_label") or c.get("status") or "new"
+        comp = (c.get("targets_component")
+                 or _dimension_to_component(c.get("dimension") or ""))
+        status = c.get("status_label") or c.get("status") or "New"
         target = c.get("target_date") or "—"
-        cost = c.get("cost_band") or "—"
+        cost_label = c.get("cost_label") or c.get("cost_band") or "—"
         upside = c.get("expected_upside") or "—"
         milestone = c.get("next_milestone") or "—"
-        out(f"| {title} | {comp} | {status} | {target} | {cost} | "
+        out(f"| {title} | {comp} | {status} | {target} | {cost_label} | "
             f"{upside} | {milestone} |")
     out("")
     out("*Upside claims cite the observable path they depend on; they "
-        "do not forecast a specific `rcs_v4_final` movement.*")
+        "do not forecast a specific `rcs_v4_final` movement. See the "
+        "Evidence column in the Management Priorities section above for "
+        "the V4 fields each action targets.*")
     out("")
 
 

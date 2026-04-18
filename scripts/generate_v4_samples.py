@@ -43,6 +43,9 @@ from operator_intelligence.v4_report_generator import (  # noqa: E402
 from operator_intelligence.v4_peer_benchmarks import (  # noqa: E402
     compute_v4_peer_benchmarks,
 )
+from operator_intelligence.v4_recommendations import (  # noqa: E402
+    generate_v4_recommendations,
+)
 
 MONTH = "2026-04"
 OUTPUT_DIR = os.path.join(REPO, "samples", "v4", "monthly")
@@ -132,6 +135,8 @@ def main():
             entity_resolution_note=ambig,
             peer_benchmarks=peer_benchmarks,
         )
+        # V4-native recommendations engine (deferred-item 1 closed)
+        inputs.recommendations = generate_v4_recommendations(inputs)
 
         report_text, qa = generate_v4_monthly_report(inputs)
         report_json = build_v4_report_json(inputs, report_text, qa)

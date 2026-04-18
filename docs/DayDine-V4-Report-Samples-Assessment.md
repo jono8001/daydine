@@ -502,10 +502,21 @@ positive fixture) also passes cleanly.
 
 Intentionally deferred to a later pass — each with a one-line reason.
 
+> **Update (B6 / recommendation-layer migration):** Item 1
+> (recommendations engine wiring) has since been **closed** by a
+> V4-native recommendations generator
+> (`operator_intelligence/v4_recommendations.py`) and a V4-native
+> action-card builder (`operator_intelligence/v4_action_cards.py`).
+> Management Priorities / Watch List / What Not to Do / Implementation
+> Framework now populate from V4 evidence anchors. The `_dimension_to_component`
+> shim (item 2) survives only as a fallback for any V3.4-shaped rec
+> dict that might leak in; the V4 generator does not invoke it. The
+> remaining items below are unchanged.
+
 | Item | Reason |
 |---|---|
-| Wire full V3.4 recommendations engine into the sample runner | The V3.4 engine requires the V3.4 scorecard pipeline. A thin V4 adapter is a separate piece of work (§6.2 item 7) and belongs with Stack B6 report content, not Stack B5 report structure. Management Priorities / Watch List / WNTD / Implementation Framework render thin but correctly for now. |
-| Remove `_dimension_to_component` shim | Lives as long as the V3.4 recs engine does; retiring it depends on the item above. |
+| ~~Wire full V3.4 recommendations engine into the sample runner~~ | **Closed by the B6 recommendation-layer migration.** Replaced by a V4-native generator + action-card builder; pilot-readiness section below now reflects this. |
+| ~~Remove `_dimension_to_component` shim~~ | **Effectively closed by the same migration.** The V4 recs generator never produces V3.4 dimension codes; the shim is now unreachable for V4 runs and lives only as a defensive fallback. Hard removal can land in a later cleanup. |
 | V4-aware demand-capture-audit builder | Current shim passes a V3.4-style scorecard stub; the audit itself is spec-compatible (profile-only). Cosmetic refactor. |
 | Penalty-explanation registry | Plain-English entries live in `v4_wording.penalty_explanation`; new codes won't auto-populate. Small; deferred until the next engine change. |
 | CI integration of the guardrail test suite | Not a report-layer change; should land when CI is next touched. |
@@ -517,7 +528,7 @@ Intentionally deferred to a later pass — each with a one-line reason.
 | Use case | Status |
 |---|---|
 | Internal use for scoring-engine QA / diagnostic work | **Ready.** Was ready before; remains ready. |
-| Pilot operator use (small operator set, supervised read) | **Ready structurally; blocked on deferred item 1 (recommendations engine wiring).** The five Must-fix items from §6.1 are closed; the three Should-fix wiring items we could take cleanly are closed. Management Priorities / Watch List / WNTD / Implementation Framework still render thin because the recs engine is not plumbed — a pilot would show operators empty-feeling action sections ("No ranked priorities this month."), which is correct but not yet operator-facing. Close deferred item 1 before pilot. |
+| Pilot operator use (small operator set, supervised read) | **Ready (post B6 recommendation migration).** The V4-native recommendations engine and action-card builder now populate Management Priorities / Watch List / What Not to Do This Month / Implementation Framework with V4-evidence-anchored content. Sample inspection confirms Vintner / Lambs / Loxleys / Soma / Opposition all carry meaningful priorities; Profile-only-D and Closed correctly suppress these sections. Pilot is no longer blocked on the recommendations wiring. |
 | Commercial publication (paid operator deliverable) | **Not yet ready.** The recommendations wiring (§6.2 item 7) is the remaining commercial-strength blocker. Financial Impact now uses evidence-grounded sizing, but Management Priorities is where the operator-facing commercial narrative lives, and that requires the recs engine to be present. Segment-intelligence tier demotion and the demand-capture-audit refactor are also preferable-before-money-changes-hands. |
 | Stack B6 start | **Clear to start.** The structural contract is stable. B6 can build on a known-good report surface. |
 
