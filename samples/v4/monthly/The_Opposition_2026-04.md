@@ -88,17 +88,26 @@ No operational or risk alerts above baseline this period.
 | Opening-hours completeness | 7/7 days | 25% |
 | Booking / contact path | No (observed: phone or reservable absent) | 25% |
 
-**Demand Capture Audit** — outside-in customer-journey check. *Narrative only — does not feed the score.*
+**Commercial Readiness — diagnostic depth on the two CR sub-signals with customer-path context**
 
-| Dimension | Verdict | Note |
+These verdicts explain *why* the CR sub-signals above read the way they do. They do not themselves feed the V4 score — only the four sub-signals above do (§5.7 of the report spec).
+
+| Customer-path dimension | CR sub-signal | Verdict | Finding |
+|---|---|---|---|
+| Booking Friction | booking / contact path | Partial | Booking is likely available via website, but no direct booking link is confirmed in Google Maps. A customer must leave Maps → find the website → locate the booking page. Each click loses ~20% of intent. |
+| Menu Visibility | menu online | Missing | No online menu detected. A customer deciding between you and a competitor who shows their menu will choose the one that reduces uncertainty. |
+
+**Wider customer-path diagnostics — narrative only, not V4 score inputs**
+
+These dimensions describe the customer journey beyond the CR sub-signals. They may usefully inform operator actions, but changing them does not move the headline — V4 scoring does not consume place types, photo count, price level, proposition framing, mobile usability, or listing-vs-reality contradictions (spec §2.3 / §5.3).
+
+| Dimension | Verdict | Finding |
 |---|---|---|
-| Booking Friction | Partial |  |
-| Menu Visibility | Missing |  |
-| CTA Clarity | Clear |  |
-| Photo Mix & Quality | Clear |  |
-| Proposition Clarity | Partial |  |
-| Mobile Usability | Clear |  |
-| Promise vs Path | Partial |  |
+| CTA Clarity | Clear | GBP profile is 10/10 complete. All critical action paths (call, directions, website) are populated. |
+| Photo Mix & Quality | Clear | 10 photos — competitive with peers. Photo content cannot be assessed from external data. |
+| Proposition Clarity | Partial | Insufficient review data to cross-reference proposition. Google types show: bistro, restaurant. Whether this matches the lived experience cannot be confirmed. |
+| Mobile Usability | Clear | Opening hours complete (7/7 days), website present, Place ID active. A mobile user can confirm hours and navigate without leaving Maps. |
+| Promise vs Path | Partial | No delivery/takeaway signal in Google types. If you offer these services, customers filtering for them won't find you. If you don't offer them, this is not friction — it's accurate. |
 
 ## Market Position
 

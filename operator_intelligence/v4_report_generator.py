@@ -508,45 +508,61 @@ def _render_commercial_readiness(out: Callable[[str], None],
         f"| 25% |")
     out("")
 
-    # Demand capture audit extension — narrative only, not in score
-    demand = _build_demand_capture_audit(inputs)
-    if demand:
-        out("**Demand Capture Audit** — outside-in customer-journey check. "
-            "*Narrative only — does not feed the score.*")
+    # Demand Capture Audit — split into CR-linked diagnostics and
+    # profile-only diagnostics. The CR-linked half *explains* why two of
+    # the four CR sub-signals above read the way they do; the rest are
+    # narrative observations that do not feed any V4 component.
+    from operator_intelligence.v4_demand_capture_audit import (
+        run_v4_demand_capture_audit,
+    )
+    demand = run_v4_demand_capture_audit(inputs)
+    if not demand:
+        return
+
+    cr_linked = demand.get("cr_linked_dimensions") or []
+    diagnostic = demand.get("diagnostic_dimensions") or []
+
+    if cr_linked:
+        out("**Commercial Readiness — diagnostic depth on the two CR "
+            "sub-signals with customer-path context**")
         out("")
-        out("| Dimension | Verdict | Note |")
+        out("These verdicts explain *why* the CR sub-signals above read "
+            "the way they do. They do not themselves feed the V4 score — "
+            "only the four sub-signals above do (§5.7 of the report spec).")
+        out("")
+        out("| Customer-path dimension | CR sub-signal | Verdict | Finding |")
+        out("|---|---|---|---|")
+        for dim in cr_linked:
+            name = dim.get("dimension") or ""
+            sub = dim.get("cr_sub_signal") or ""
+            verdict = dim.get("verdict") or ""
+            finding = (dim.get("finding") or "").replace("\n", " ")
+            if len(finding) > 260:
+                finding = finding[:257] + "…"
+            out(f"| {name} | {sub} | {verdict} | {finding} |")
+        out("")
+
+    if diagnostic:
+        out("**Wider customer-path diagnostics — narrative only, not V4 "
+            "score inputs**")
+        out("")
+        out("These dimensions describe the customer journey beyond the "
+            "CR sub-signals. They may usefully inform operator actions, "
+            "but changing them does not move the headline — V4 scoring "
+            "does not consume place types, photo count, price level, "
+            "proposition framing, mobile usability, or listing-vs-"
+            "reality contradictions (spec §2.3 / §5.3).")
+        out("")
+        out("| Dimension | Verdict | Finding |")
         out("|---|---|---|")
-        for dim in demand.get("dimensions", []):
-            out(f"| {dim.get('dimension')} | {dim.get('verdict')} | "
-                f"{dim.get('note', '')} |")
+        for dim in diagnostic:
+            name = dim.get("dimension") or ""
+            verdict = dim.get("verdict") or ""
+            finding = (dim.get("finding") or "").replace("\n", " ")
+            if len(finding) > 260:
+                finding = finding[:257] + "…"
+            out(f"| {name} | {verdict} | {finding} |")
         out("")
-
-
-def _build_demand_capture_audit(inputs: ReportInputs) -> Optional[dict]:
-    """Call the existing V3.4 demand-capture audit, with minimal shims.
-    Silent-fail if the helper refuses the inputs — this is narrative only."""
-    try:
-        from operator_intelligence.demand_capture_audit import (
-            run_demand_capture_audit,
-        )
-        # The V3.4 audit expects (venue_rec, scorecard, benchmarks,
-        # review_intel). The scorecard / benchmarks it reads are used only
-        # for verdict colouring; we pass a minimal stub keyed on the V4
-        # score so nothing V3.4-specific leaks into the verdicts.
-        scorecard_stub = {
-            "overall": inputs.rcs_v4_final or 0.0,
-            "google_rating": _safe_float(inputs.venue_record.get("gr")),
-            "google_reviews": _safe_int(inputs.venue_record.get("grc")),
-            "fsa_rating": _safe_int(inputs.venue_record.get("r")),
-        }
-        return run_demand_capture_audit(
-            inputs.venue_record,
-            scorecard_stub,
-            inputs.peer_benchmarks or {},
-            inputs.review_intel or {},
-        )
-    except Exception:
-        return None
 
 
 def _safe_int(x):
