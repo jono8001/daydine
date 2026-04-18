@@ -1,16 +1,55 @@
-name: Collect TripAdvisor Data & Score
+name: "[LEGACY / NON-VIABLE] TripAdvisor HTML Scraper"
+
+# ====================================================================
+# LEGACY WORKFLOW — DO NOT DISPATCH FOR REAL COLLECTION.
+#
+# The HTML-scrape path against https://www.tripadvisor.co.uk/Search is
+# non-viable from GitHub-hosted runners. Azure IP ranges (which the
+# hosted runners use) are on TripAdvisor's bot-protection block list
+# and every search returns HTTP 403 Forbidden. The collector now
+# fails fast with exit 7 and a named ::error:: diagnostic; a full
+# Stratford run produces zero real matches.
+#
+# The supported path is `.github/workflows/collect_tripadvisor_apify.yml`
+# (requires the `APIFY_TOKEN` secret). See:
+#   docs/DayDine-TripAdvisor-Blocker-Diagnosis.md
+#   docs/DayDine-TripAdvisor-Strategy-Decision.md
+#
+# This workflow is retained only so engineers can re-verify the 403
+# behaviour on demand. It is gated behind FORCE_LEGACY_TA_SCRAPER=true
+# so that clicking "Run workflow" by mistake aborts cleanly.
+# ====================================================================
 
 on:
   workflow_dispatch:
+    inputs:
+      FORCE_LEGACY_TA_SCRAPER:
+        description: 'Type "true" to confirm you really want the legacy 403-blocked path'
+        required: true
+        default: 'false'
 
 permissions:
   contents: write
 
 jobs:
   collect-and-score:
+    name: "[LEGACY] TripAdvisor HTML scraper (403-blocked on GH runners)"
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
+      - name: Preflight — refuse to run unless explicitly forced
+        run: |
+          if [ "${{ github.event.inputs.FORCE_LEGACY_TA_SCRAPER }}" != "true" ]; then
+            echo "::error::This workflow is LEGACY and NON-VIABLE."
+            echo "GitHub-hosted runner IPs are blocked by TripAdvisor."
+            echo "Use collect_tripadvisor_apify.yml instead."
+            echo ""
+            echo "To force-run for diagnostic purposes, re-dispatch with"
+            echo "FORCE_LEGACY_TA_SCRAPER = true."
+            exit 11
+          fi
+          echo "Legacy workflow forced by dispatch input. Proceeding."
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
@@ -58,18 +97,40 @@ jobs:
       - name: Inspect TripAdvisor side file
         run: |
           python - <<'PY'
-          import json, os
+          import json, os, sys
           p = "stratford_tripadvisor.json"
           if not os.path.exists(p):
-              print(f"TripAdvisor side file absent after collect step.")
-          else:
-              with open(p, encoding="utf-8") as f:
-                  d = json.load(f)
-              real = {k: v for k, v in d.items() if not k.startswith("_")}
-              matched = sum(1 for v in real.values()
-                            if isinstance(v, dict) and v.get("ta_present"))
-              print(f"TripAdvisor side file: {len(real)} entries, "
-                    f"{matched} matched.")
+              print("TripAdvisor side file absent after collect step.")
+              sys.exit(0)
+          with open(p, encoding="utf-8") as f:
+              d = json.load(f)
+          real = {k: v for k, v in d.items()
+                  if not k.startswith("_") and isinstance(v, dict)}
+          matched = sum(1 for v in real.values()
+                        if v.get("ta") is not None and not v.get("_skipped")
+                        and not v.get("_no_match") and not v.get("_error")
+                        and not v.get("_blocked"))
+          no_match = sum(1 for v in real.values() if v.get("_no_match"))
+          blocked = sum(1 for v in real.values() if v.get("_blocked"))
+          errors = sum(1 for v in real.values() if v.get("_error"))
+          skipped = sum(1 for v in real.values() if v.get("_skipped"))
+          print(f"TripAdvisor side file: {len(real)} fhrsid entries "
+                f"(+ {len(d) - len(real)} metadata keys)")
+          print(f"  matched: {matched}")
+          print(f"  no_match: {no_match}")
+          print(f"  blocked (HTTP 403/429): {blocked}")
+          print(f"  errors: {errors}")
+          print(f"  skipped: {skipped}")
+          # If the collect step exited 7 this job has already failed;
+          # the extra signal here catches the case where collect exited 0
+          # but the dataset is dominated by blocks (shouldn't happen with
+          # the current guard, but surfaces the state clearly if it does).
+          attempts = matched + no_match + blocked + errors
+          if attempts >= 20 and blocked / max(attempts, 1) >= 0.5:
+              print(f"::error::TripAdvisor collection dominated by blocks "
+                    f"({blocked}/{attempts}). Runner IP is on TA's block list. "
+                    "See docs/DayDine-TripAdvisor-Blocker-Diagnosis.md.")
+              sys.exit(7)
           PY
 
       - name: Merge TripAdvisor data

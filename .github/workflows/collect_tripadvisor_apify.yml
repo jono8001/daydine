@@ -1,0 +1,214 @@
+name: Collect TripAdvisor via Apify & Score
+
+# The supported path for TripAdvisor data collection. Replaces
+# `collect_tripadvisor.yml` (HTML scraper), which is non-viable from
+# GitHub-hosted runners — their IP ranges are on TripAdvisor's
+# bot-protection block list and every search returns HTTP 403.
+#
+# See docs/DayDine-TripAdvisor-Blocker-Diagnosis.md for the infrastructure
+# assessment and docs/DayDine-TripAdvisor-Strategy-Decision.md for why
+# Apify was chosen over the Content API / self-hosted runner options.
+#
+# Required secret:
+#   APIFY_TOKEN — user token from apify.com/account/integrations.
+#                 Add via Repo → Settings → Secrets and variables →
+#                 Actions → New repository secret.
+# Optional env:
+#   APIFY_ACTOR — override default actor. Default:
+#                 `scrapapi/tripadvisor-review-scraper`.
+#   MAX_REVIEWS — reviews per venue (default 5).
+#   MATCH_MIN_SCORE — combined fuzzy+coord match threshold
+#                     (default 0.55).
+#
+# What this workflow does:
+#   1. Fetch the committed Stratford establishments cache.
+#   2. Call Apify per venue; write raw per-venue files to
+#      data/raw/tripadvisor/.
+#   3. Consolidate raw files into stratford_tripadvisor.json.
+#   4. Merge headline fields (ta/trc/ta_present/ta_url) into
+#      stratford_establishments.json.
+#   5. Re-run the V3.4 scoring pipeline.
+#   6. Commit the updated trial dataset back to the branch.
+#
+# What this workflow does NOT do:
+#   * It does not touch the V4 scoring engine, any frontend surface,
+#     the public methodology doc, or the cutover plan. Public cutover
+#     and V4 recalibration are handled by separate prompts.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Optional dry-run limit (integer, 0 = all venues)'
+        required: false
+        default: '0'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: tripadvisor-apify
+  cancel-in-progress: false
+
+jobs:
+  collect-apify-and-score:
+    name: Apify-based TripAdvisor collection + scoring
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Preflight — require APIFY_TOKEN
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: |
+          if [ -z "$APIFY_TOKEN" ]; then
+            echo "::error::APIFY_TOKEN secret is not set."
+            echo "Add it via Repo Settings → Secrets and variables → Actions."
+            echo "Get the token from https://apify.com/account/integrations."
+            exit 10
+          fi
+          echo "APIFY_TOKEN is configured."
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests apify-client
+
+      - name: Inspect cache before fetch
+        run: |
+          if [ -f stratford_establishments.json ]; then
+            python - <<'PY'
+          import json
+          with open("stratford_establishments.json", "r", encoding="utf-8") as f:
+              d = json.load(f)
+          print(f"Pre-fetch cache rows: {len(d) if isinstance(d, dict) else 'n/a'}")
+          PY
+          else
+            echo "Pre-fetch cache: (absent)"
+          fi
+
+      - name: Fetch establishments from Firebase
+        run: python .github/scripts/fetch_firebase_stratford.py
+
+      - name: Inspect cache after fetch
+        run: |
+          python - <<'PY'
+          import json, sys
+          with open("stratford_establishments.json", "r", encoding="utf-8") as f:
+              d = json.load(f)
+          n = len(d) if isinstance(d, dict) else 0
+          print(f"Post-fetch cache rows: {n}")
+          if n == 0:
+              print("::error::Post-fetch cache is empty. Aborting before TripAdvisor.")
+              sys.exit(5)
+          PY
+
+      - name: Merge existing Google enrichment
+        run: python .github/scripts/merge_enrichment.py
+
+      - name: Collect TripAdvisor via Apify
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          APIFY_ACTOR: ${{ vars.APIFY_ACTOR }}
+          MAX_REVIEWS: ${{ vars.MAX_REVIEWS }}
+          MATCH_MIN_SCORE: ${{ vars.MATCH_MIN_SCORE }}
+        run: python .github/scripts/collect_tripadvisor_apify.py
+
+      - name: Inspect raw TripAdvisor files
+        run: |
+          python - <<'PY'
+          import glob, json, os
+          raw_files = sorted(glob.glob("data/raw/tripadvisor/*.json"))
+          print(f"Raw TA files: {len(raw_files)}")
+          with_rating = 0
+          for p in raw_files:
+              try:
+                  with open(p, encoding="utf-8") as f:
+                      d = json.load(f)
+                  if d.get("tripadvisor_rating") is not None:
+                      with_rating += 1
+              except Exception as e:
+                  print(f"  {os.path.basename(p)}: parse error: {e}")
+          print(f"  with rating: {with_rating}")
+          PY
+
+      - name: Consolidate TripAdvisor raw files
+        run: python .github/scripts/consolidate_tripadvisor.py
+
+      - name: Inspect TripAdvisor side file
+        run: |
+          python - <<'PY'
+          import json, os, sys
+          p = "stratford_tripadvisor.json"
+          if not os.path.exists(p):
+              print("TripAdvisor side file absent after consolidate step.")
+              sys.exit(0)
+          with open(p, encoding="utf-8") as f:
+              d = json.load(f)
+          real = {k: v for k, v in d.items()
+                  if not k.startswith("_") and isinstance(v, dict)}
+          matched = sum(1 for v in real.values() if v.get("ta") is not None)
+          print(f"TripAdvisor side file: {len(real)} fhrsid entries "
+                f"(+ {len(d) - len(real)} metadata keys)")
+          print(f"  with ta rating: {matched}")
+          # A run that produces zero matched records is suspicious but not
+          # necessarily a failure — it could legitimately mean the actor
+          # returned no candidates that cleared MATCH_MIN_SCORE. The
+          # honest-fail behaviour for the IP-blocking case lives in the
+          # collector itself; here we just surface the state.
+          PY
+
+      - name: Merge TripAdvisor data
+        run: python .github/scripts/merge_tripadvisor.py
+
+      - name: Inspect cache after TA merge
+        run: |
+          python - <<'PY'
+          import json, sys
+          with open("stratford_establishments.json", "r", encoding="utf-8") as f:
+              d = json.load(f)
+          n = len(d) if isinstance(d, dict) else 0
+          with_ta = sum(1 for v in d.values()
+                        if isinstance(v, dict) and v.get("ta_present"))
+          print(f"Post-TA-merge cache rows: {n} (with ta_present: {with_ta})")
+          if n == 0:
+              print("::error::Post-TA-merge cache is empty. Aborting before scoring.")
+              sys.exit(6)
+          PY
+
+      - name: Run RCS V3.4 scoring pipeline
+        run: python rcs_scoring_stratford.py --from-cache
+
+      - name: Inspect scoring outputs
+        run: |
+          python - <<'PY'
+          import csv, json, os
+          if os.path.exists("stratford_rcs_scores.csv"):
+              with open("stratford_rcs_scores.csv", encoding="utf-8") as f:
+                  rows = list(csv.DictReader(f))
+              print(f"Scoring CSV rows: {len(rows)}")
+          if os.path.exists("stratford_rcs_summary.json"):
+              with open("stratford_rcs_summary.json", encoding="utf-8") as f:
+                  s = json.load(f)
+              print(f"Summary: count={s.get('count')} ranked={s.get('ranked')} "
+                    f"mean={s.get('mean')} median={s.get('median')}")
+          PY
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git stash
+          git pull --rebase origin main
+          git stash pop || true
+          git add -A
+          git diff --cached --quiet && echo "No changes after pull" && exit 0
+          git commit -m "Collect TripAdvisor via Apify and re-score RCS"
+          git push
