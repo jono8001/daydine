@@ -1,6 +1,6 @@
 {
   "engine_version": "v4.0.0",
-  "computed_at": "2026-04-17T15:59:26Z",
+  "computed_at": "2026-04-18T14:47:05Z",
   "venue": {
     "fhrsid": "502816",
     "name": "Loxleys Restaurant and Wine Bar",
@@ -13,12 +13,12 @@
   "rankable": true,
   "league_table_eligible": true,
   "entity_match_status": "confirmed",
-  "rcs_v4_final": 8.772,
-  "base_score": 8.772,
-  "adjusted_score": 8.772,
+  "rcs_v4_final": 8.771,
+  "base_score": 8.771,
+  "adjusted_score": 8.771,
   "components": {
     "trust_compliance": {
-      "score": 8.723,
+      "score": 8.722,
       "available": true,
       "signals_used": 5
     },

@@ -4,7 +4,7 @@
     "name": "The Tea Shed",
     "components": {
       "trust_compliance": {
-        "score": 8.366,
+        "score": 8.365,
         "available": true,
         "signals_used": 5
       },
@@ -51,9 +51,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.366 (r_norm ok, signals_used=5, recency=0.231)",
+        "TrustCompliance=8.365 (r_norm ok, signals_used=5, recency=0.231)",
         "CustomerValidation=7.565 (google n=13 raw=4.8 shrunk=3.96 w=0.05)",
         "CommercialReadiness=2.500 (web=False, menu=True, hours=0.00, booking=False)",
         "base=7.126; distinction+0.000; adjusted=7.126; final=7.126",
@@ -66,7 +66,7 @@
     "name": "Shakespeare's",
     "components": {
       "trust_compliance": {
-        "score": 7.406,
+        "score": 7.405,
         "available": true,
         "signals_used": 5
       },
@@ -113,9 +113,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.406 (r_norm ok, signals_used=5, recency=0.861)",
+        "TrustCompliance=7.405 (r_norm ok, signals_used=5, recency=0.859)",
         "CustomerValidation=8.767 (google n=1375 raw=4.5 shrunk=4.48 w=1.00)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=7.282; distinction+0.000; adjusted=7.282; final=7.282",
@@ -175,9 +175,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.778 (r_norm ok, signals_used=5, recency=0.306)",
+        "TrustCompliance=8.778 (r_norm ok, signals_used=5, recency=0.305)",
         "CustomerValidation=9.336 (google n=121 raw=5.0 shrunk=4.72 w=0.48)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.837; distinction+0.000; adjusted=8.837; final=8.837",
@@ -190,7 +190,7 @@
     "name": "Birmingham City Football Club Ltd",
     "components": {
       "trust_compliance": {
-        "score": 9.902,
+        "score": 9.901,
         "available": true,
         "signals_used": 5
       },
@@ -220,9 +220,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.351,
-    "adjusted_score": 7.351,
-    "rcs_v4_final": 7.351,
+    "base_score": 7.35,
+    "adjusted_score": 7.35,
+    "rcs_v4_final": 7.35,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -237,12 +237,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.902 (r_norm ok, signals_used=5, recency=0.804)",
+        "TrustCompliance=9.901 (r_norm ok, signals_used=5, recency=0.802)",
         "CustomerValidation=7.533 (google n=11 raw=4.9 shrunk=3.95 w=0.05)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
-        "base=7.351; distinction+0.000; adjusted=7.351; final=7.351",
+        "base=7.350; distinction+0.000; adjusted=7.350; final=7.350",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -252,7 +252,7 @@
     "name": "Sans Oriental Restaurant",
     "components": {
       "trust_compliance": {
-        "score": 8.708,
+        "score": 8.707,
         "available": true,
         "signals_used": 5
       },
@@ -299,9 +299,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.708 (r_norm ok, signals_used=5, recency=0.916)",
+        "TrustCompliance=8.707 (r_norm ok, signals_used=5, recency=0.914)",
         "CustomerValidation=8.826 (google n=289 raw=4.6 shrunk=4.51 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.580; distinction+0.000; adjusted=8.580; final=8.580",
@@ -361,7 +361,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=None (FHRS unavailable)",
         "CustomerValidation=8.286 (google n=90 raw=4.5 shrunk=4.28 w=0.36)",
@@ -409,7 +409,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=907, r=5"
+        "reason": "days_since_rd=908, r=5"
       }
     ],
     "base_score": 6.919,
@@ -429,7 +429,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.124)",
         "CustomerValidation=9.153 (google n=566 raw=4.7 shrunk=4.64 w=1.00)",
@@ -491,9 +491,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.382 (r_norm ok, signals_used=5, recency=0.514)",
+        "TrustCompliance=9.382 (r_norm ok, signals_used=5, recency=0.513)",
         "CustomerValidation=8.036 (google n=516 raw=4.2 shrunk=4.17 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.494; distinction+0.000; adjusted=8.494; final=8.494",
@@ -506,7 +506,7 @@
     "name": "The Bridge",
     "components": {
       "trust_compliance": {
-        "score": 8.845,
+        "score": 8.844,
         "available": true,
         "signals_used": 5
       },
@@ -553,9 +553,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.845 (r_norm ok, signals_used=5, recency=0.189)",
+        "TrustCompliance=8.844 (r_norm ok, signals_used=5, recency=0.189)",
         "CustomerValidation=8.629 (google n=315 raw=4.5 shrunk=4.42 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.546; distinction+0.000; adjusted=8.546; final=8.546",
@@ -568,7 +568,7 @@
     "name": "Lambs",
     "components": {
       "trust_compliance": {
-        "score": 9.153,
+        "score": 9.152,
         "available": true,
         "signals_used": 5
       },
@@ -615,9 +615,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.153 (r_norm ok, signals_used=5, recency=0.806)",
+        "TrustCompliance=9.152 (r_norm ok, signals_used=5, recency=0.804)",
         "CustomerValidation=9.229 (google n=1372 raw=4.7 shrunk=4.68 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.939; distinction+0.000; adjusted=8.939; final=8.939",
@@ -630,7 +630,7 @@
     "name": "Pick Thai Ltd",
     "components": {
       "trust_compliance": {
-        "score": 8.695,
+        "score": 8.694,
         "available": true,
         "signals_used": 5
       },
@@ -677,9 +677,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.695 (r_norm ok, signals_used=5, recency=0.889)",
+        "TrustCompliance=8.694 (r_norm ok, signals_used=5, recency=0.887)",
         "CustomerValidation=8.705 (google n=176 raw=4.6 shrunk=4.45 w=0.70)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.520; distinction+0.000; adjusted=8.520; final=8.520",
@@ -693,7 +693,7 @@
     "name": "Oxheart",
     "components": {
       "trust_compliance": {
-        "score": 9.965,
+        "score": 9.963,
         "available": true,
         "signals_used": 5
       },
@@ -740,9 +740,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.965 (r_norm ok, signals_used=5, recency=0.929)",
+        "TrustCompliance=9.963 (r_norm ok, signals_used=5, recency=0.927)",
         "CustomerValidation=8.228 (google n=26 raw=5.0 shrunk=4.25 w=0.10)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=8.438; distinction+0.000; adjusted=8.438; final=8.438",
@@ -785,9 +785,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.07,
-    "adjusted_score": 7.07,
-    "rcs_v4_final": 7.07,
+    "base_score": 7.069,
+    "adjusted_score": 7.069,
+    "rcs_v4_final": 7.069,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -802,12 +802,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.881 (r_norm ok, signals_used=5, recency=0.613)",
+        "TrustCompliance=5.881 (r_norm ok, signals_used=5, recency=0.611)",
         "CustomerValidation=7.982 (google n=291 raw=4.2 shrunk=4.14 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=7.070; distinction+0.000; adjusted=7.070; final=7.070",
+        "base=7.069; distinction+0.000; adjusted=7.069; final=7.069",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -864,9 +864,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.808 (r_norm ok, signals_used=5, recency=0.367)",
+        "TrustCompliance=8.808 (r_norm ok, signals_used=5, recency=0.366)",
         "CustomerValidation=5.987 (google n=39 raw=3.0 shrunk=3.26 w=0.16)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=6.968; distinction+0.000; adjusted=6.968; final=6.968",
@@ -926,9 +926,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.484 (r_norm ok, signals_used=5, recency=0.468)",
+        "TrustCompliance=8.484 (r_norm ok, signals_used=5, recency=0.467)",
         "CustomerValidation=8.988 (google n=1157 raw=4.6 shrunk=4.57 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.563; distinction+0.000; adjusted=8.563; final=8.563",
@@ -988,9 +988,9 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.784 (r_norm ok, signals_used=5, recency=0.319)",
+        "TrustCompliance=8.784 (r_norm ok, signals_used=5, recency=0.318)",
         "CustomerValidation=7.648 (google n=10079 raw=4.0 shrunk=4.00 w=1.00)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=7.330; distinction+0.000; adjusted=7.330; final=7.330",
@@ -1004,7 +1004,7 @@
     "name": "The Olde Mint",
     "components": {
       "trust_compliance": {
-        "score": 8.534,
+        "score": 8.533,
         "available": true,
         "signals_used": 5
       },
@@ -1034,9 +1034,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.878,
-    "adjusted_score": 7.878,
-    "rcs_v4_final": 7.878,
+    "base_score": 7.877,
+    "adjusted_score": 7.877,
+    "rcs_v4_final": 7.877,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -1051,12 +1051,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.534 (r_norm ok, signals_used=5, recency=0.568)",
+        "TrustCompliance=8.533 (r_norm ok, signals_used=5, recency=0.567)",
         "CustomerValidation=7.420 (google n=89 raw=4.0 shrunk=3.90 w=0.36)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=7.878; distinction+0.000; adjusted=7.878; final=7.878",
+        "base=7.877; distinction+0.000; adjusted=7.877; final=7.877",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -1113,9 +1113,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.758 (r_norm ok, signals_used=5, recency=0.517)",
+        "TrustCompliance=9.758 (r_norm ok, signals_used=5, recency=0.516)",
         "CustomerValidation=7.166 (google n=18 raw=4.1 shrunk=3.79 w=0.07)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=7.878; distinction+0.000; adjusted=7.878; final=7.878",
@@ -1175,9 +1175,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.081 (r_norm ok, signals_used=5, recency=0.663)",
+        "TrustCompliance=9.081 (r_norm ok, signals_used=5, recency=0.661)",
         "CustomerValidation=8.544 (google n=206 raw=4.5 shrunk=4.39 w=0.82)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.602; distinction+0.000; adjusted=8.602; final=8.602",
@@ -1190,7 +1190,7 @@
     "name": "Southam Gateway Coffee Shop Ltd",
     "components": {
       "trust_compliance": {
-        "score": 9.223,
+        "score": 9.222,
         "available": true,
         "signals_used": 5
       },
@@ -1237,9 +1237,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.223 (r_norm ok, signals_used=5, recency=0.195)",
+        "TrustCompliance=9.222 (r_norm ok, signals_used=5, recency=0.195)",
         "CustomerValidation=8.672 (google n=97 raw=4.7 shrunk=4.44 w=0.39)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.716; distinction+0.000; adjusted=8.716; final=8.716",
@@ -1252,7 +1252,7 @@
     "name": "NFU Mutual",
     "components": {
       "trust_compliance": {
-        "score": 9.041,
+        "score": 9.04,
         "available": true,
         "signals_used": 5
       },
@@ -1299,9 +1299,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.041 (r_norm ok, signals_used=5, recency=0.832)",
+        "TrustCompliance=9.040 (r_norm ok, signals_used=5, recency=0.830)",
         "CustomerValidation=8.319 (google n=98 raw=4.5 shrunk=4.29 w=0.39)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=7.735; distinction+0.000; adjusted=7.735; final=7.735",
@@ -1314,7 +1314,7 @@
     "name": "Lexi's Loving Spoonful",
     "components": {
       "trust_compliance": {
-        "score": 9.254,
+        "score": 9.253,
         "available": true,
         "signals_used": 5
       },
@@ -1361,9 +1361,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.254 (r_norm ok, signals_used=5, recency=0.257)",
+        "TrustCompliance=9.253 (r_norm ok, signals_used=5, recency=0.257)",
         "CustomerValidation=7.005 (google n=6 raw=4.3 shrunk=3.72 w=0.05)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
         "base=6.854; distinction+0.000; adjusted=6.854; final=6.854",
@@ -1376,7 +1376,7 @@
     "name": "Pizza Junction Kineton Ltd",
     "components": {
       "trust_compliance": {
-        "score": 9.209,
+        "score": 9.208,
         "available": true,
         "signals_used": 5
       },
@@ -1423,9 +1423,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.209 (r_norm ok, signals_used=5, recency=0.417)",
+        "TrustCompliance=9.208 (r_norm ok, signals_used=5, recency=0.416)",
         "CustomerValidation=8.999 (google n=133 raw=4.8 shrunk=4.58 w=0.53)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.858; distinction+0.000; adjusted=8.858; final=8.858",
@@ -1438,7 +1438,7 @@
     "name": "The George Hotel",
     "components": {
       "trust_compliance": {
-        "score": 8.584,
+        "score": 8.583,
         "available": true,
         "signals_used": 5
       },
@@ -1485,9 +1485,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.584 (r_norm ok, signals_used=5, recency=0.667)",
+        "TrustCompliance=8.583 (r_norm ok, signals_used=5, recency=0.666)",
         "CustomerValidation=8.753 (google n=1034 raw=4.5 shrunk=4.47 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.497; distinction+0.000; adjusted=8.497; final=8.497",
@@ -1547,9 +1547,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.349 (r_norm ok, signals_used=5, recency=0.199)",
+        "TrustCompliance=8.349 (r_norm ok, signals_used=5, recency=0.198)",
         "CustomerValidation=7.410 (google n=8 raw=5.0 shrunk=3.89 w=0.05)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=7.424; distinction+0.000; adjusted=7.424; final=7.424",
@@ -1562,7 +1562,7 @@
     "name": "Gardener's Retreat",
     "components": {
       "trust_compliance": {
-        "score": 8.947,
+        "score": 8.946,
         "available": true,
         "signals_used": 5
       },
@@ -1592,9 +1592,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.334,
-    "adjusted_score": 7.334,
-    "rcs_v4_final": 7.334,
+    "base_score": 7.333,
+    "adjusted_score": 7.333,
+    "rcs_v4_final": 7.333,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -1609,12 +1609,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.947 (r_norm ok, signals_used=5, recency=0.643)",
+        "TrustCompliance=8.946 (r_norm ok, signals_used=5, recency=0.642)",
         "CustomerValidation=6.678 (google n=12 raw=3.5 shrunk=3.57 w=0.05)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
-        "base=7.334; distinction+0.000; adjusted=7.334; final=7.334",
+        "base=7.333; distinction+0.000; adjusted=7.333; final=7.333",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -1671,9 +1671,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.855 (r_norm ok, signals_used=5, recency=0.210)",
+        "TrustCompliance=8.855 (r_norm ok, signals_used=5, recency=0.209)",
         "CustomerValidation=9.428 (google n=250 raw=4.9 shrunk=4.76 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.910; distinction+0.000; adjusted=8.910; final=8.910",
@@ -1686,7 +1686,7 @@
     "name": "The Spice Room",
     "components": {
       "trust_compliance": {
-        "score": 9.23,
+        "score": 9.229,
         "available": true,
         "signals_used": 5
       },
@@ -1733,9 +1733,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.230 (r_norm ok, signals_used=5, recency=0.460)",
+        "TrustCompliance=9.229 (r_norm ok, signals_used=5, recency=0.459)",
         "CustomerValidation=8.599 (google n=127 raw=4.6 shrunk=4.41 w=0.51)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.686; distinction+0.000; adjusted=8.686; final=8.686",
@@ -1795,7 +1795,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=None (FHRS unavailable)",
         "CustomerValidation=7.358 (google n=13 raw=4.5 shrunk=3.87 w=0.05)",
@@ -1810,7 +1810,7 @@
     "name": "CAMEO Lunch Club",
     "components": {
       "trust_compliance": {
-        "score": 5.978,
+        "score": 5.977,
         "available": true,
         "signals_used": 5
       },
@@ -1840,9 +1840,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 5.67,
-    "adjusted_score": 5.67,
-    "rcs_v4_final": 5.67,
+    "base_score": 5.669,
+    "adjusted_score": 5.669,
+    "rcs_v4_final": 5.669,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -1857,12 +1857,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.978 (r_norm ok, signals_used=5, recency=0.556)",
+        "TrustCompliance=5.977 (r_norm ok, signals_used=5, recency=0.555)",
         "CustomerValidation=7.285 (google n=20 raw=4.2 shrunk=3.84 w=0.08)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
-        "base=5.670; distinction+0.000; adjusted=5.670; final=5.670",
+        "base=5.669; distinction+0.000; adjusted=5.669; final=5.669",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -1872,7 +1872,7 @@
     "name": "The Margin",
     "components": {
       "trust_compliance": {
-        "score": 8.456,
+        "score": 8.455,
         "available": true,
         "signals_used": 5
       },
@@ -1919,9 +1919,9 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.456 (r_norm ok, signals_used=5, recency=0.412)",
+        "TrustCompliance=8.455 (r_norm ok, signals_used=5, recency=0.411)",
         "CustomerValidation=7.872 (google n=73 raw=4.3 shrunk=4.10 w=0.29)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.050; distinction+0.000; adjusted=8.050; final=8.050",
@@ -1935,7 +1935,7 @@
     "name": "GAIL's Stratford-Upon-Avon",
     "components": {
       "trust_compliance": {
-        "score": 9.644,
+        "score": 9.643,
         "available": true,
         "signals_used": 5
       },
@@ -1982,9 +1982,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.644 (r_norm ok, signals_used=5, recency=0.287)",
+        "TrustCompliance=9.643 (r_norm ok, signals_used=5, recency=0.287)",
         "CustomerValidation=8.056 (google n=139 raw=4.3 shrunk=4.18 w=0.56)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.608; distinction+0.000; adjusted=8.608; final=8.608",
@@ -1997,7 +1997,7 @@
     "name": "Subway",
     "components": {
       "trust_compliance": {
-        "score": 4.583,
+        "score": 4.582,
         "available": true,
         "signals_used": 5
       },
@@ -2044,9 +2044,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=4.583 (r_norm ok, signals_used=5, recency=0.817)",
+        "TrustCompliance=4.582 (r_norm ok, signals_used=5, recency=0.815)",
         "CustomerValidation=6.944 (google n=256 raw=3.7 shrunk=3.69 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=6.083; distinction+0.000; adjusted=6.083; final=6.083",
@@ -2059,7 +2059,7 @@
     "name": "The Opposition",
     "components": {
       "trust_compliance": {
-        "score": 8.883,
+        "score": 8.882,
         "available": true,
         "signals_used": 5
       },
@@ -2089,9 +2089,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.895,
-    "adjusted_score": 8.895,
-    "rcs_v4_final": 8.895,
+    "base_score": 8.894,
+    "adjusted_score": 8.894,
+    "rcs_v4_final": 8.894,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -2106,12 +2106,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.883 (r_norm ok, signals_used=5, recency=0.516)",
+        "TrustCompliance=8.882 (r_norm ok, signals_used=5, recency=0.514)",
         "CustomerValidation=9.370 (google n=533 raw=4.8 shrunk=4.74 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=8.895; distinction+0.000; adjusted=8.895; final=8.895",
+        "base=8.894; distinction+0.000; adjusted=8.894; final=8.894",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -2121,7 +2121,7 @@
     "name": "Bistrot Pierre",
     "components": {
       "trust_compliance": {
-        "score": 4.903,
+        "score": 4.902,
         "available": true,
         "signals_used": 2
       },
@@ -2168,9 +2168,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=4.903 (r_norm ok, signals_used=2, recency=0.806)",
+        "TrustCompliance=4.902 (r_norm ok, signals_used=2, recency=0.804)",
         "CustomerValidation=7.846 (google n=970 raw=4.1 shrunk=4.08 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=6.617; distinction+0.000; adjusted=6.617; final=6.617",
@@ -2183,7 +2183,7 @@
     "name": "Cafe 16",
     "components": {
       "trust_compliance": {
-        "score": 8.948,
+        "score": 8.947,
         "available": true,
         "signals_used": 5
       },
@@ -2230,9 +2230,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.948 (r_norm ok, signals_used=5, recency=0.646)",
+        "TrustCompliance=8.947 (r_norm ok, signals_used=5, recency=0.644)",
         "CustomerValidation=8.966 (google n=215 raw=4.7 shrunk=4.57 w=0.86)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.739; distinction+0.000; adjusted=8.739; final=8.739",
@@ -2245,7 +2245,7 @@
     "name": "Ettington Garden Cafe",
     "components": {
       "trust_compliance": {
-        "score": 9.733,
+        "score": 9.732,
         "available": true,
         "signals_used": 5
       },
@@ -2292,9 +2292,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.733 (r_norm ok, signals_used=5, recency=0.466)",
+        "TrustCompliance=9.732 (r_norm ok, signals_used=5, recency=0.465)",
         "CustomerValidation=8.530 (google n=73 raw=4.7 shrunk=4.38 w=0.29)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.857; distinction+0.000; adjusted=8.857; final=8.857",
@@ -2354,7 +2354,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=9.599 (r_norm ok, signals_used=5, recency=0.198)",
         "CustomerValidation=9.160 (google n=600 raw=4.7 shrunk=4.65 w=1.00)",
@@ -2403,7 +2403,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=771, r=5"
+        "reason": "days_since_rd=772, r=5"
       }
     ],
     "base_score": 6.255,
@@ -2423,9 +2423,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.170)",
+        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.169)",
         "CustomerValidation=6.844 (google n=1 raw=5.0 shrunk=3.65 w=0.05)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=6.255; distinction+0.000; adjusted=6.255; final=6.255",
@@ -2485,9 +2485,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.892 (r_norm ok, signals_used=5, recency=0.285)",
+        "TrustCompliance=8.892 (r_norm ok, signals_used=5, recency=0.284)",
         "CustomerValidation=7.029 (google n=3 raw=5.0 shrunk=3.73 w=0.05)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=7.470; distinction+0.000; adjusted=7.470; final=7.470",
@@ -2500,7 +2500,7 @@
     "name": "Starbucks Drive Thru",
     "components": {
       "trust_compliance": {
-        "score": 9.95,
+        "score": 9.949,
         "available": true,
         "signals_used": 5
       },
@@ -2547,9 +2547,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.950 (r_norm ok, signals_used=5, recency=0.900)",
+        "TrustCompliance=9.949 (r_norm ok, signals_used=5, recency=0.898)",
         "CustomerValidation=6.317 (google n=587 raw=3.4 shrunk=3.41 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.947; distinction+0.000; adjusted=7.947; final=7.947",
@@ -2562,7 +2562,7 @@
     "name": "KFC - Southbound",
     "components": {
       "trust_compliance": {
-        "score": 9.022,
+        "score": 9.021,
         "available": true,
         "signals_used": 5
       },
@@ -2609,9 +2609,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.022 (r_norm ok, signals_used=5, recency=0.795)",
+        "TrustCompliance=9.021 (r_norm ok, signals_used=5, recency=0.793)",
         "CustomerValidation=6.123 (google n=373 raw=3.3 shrunk=3.32 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.489; distinction+0.000; adjusted=7.489; final=7.489",
@@ -2671,9 +2671,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.547 (r_norm ok, signals_used=5, recency=0.595)",
+        "TrustCompliance=8.547 (r_norm ok, signals_used=5, recency=0.593)",
         "CustomerValidation=7.420 (google n=9507 raw=3.9 shrunk=3.90 w=1.00)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=7.133; distinction+0.000; adjusted=7.133; final=7.133",
@@ -2733,7 +2733,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=9.624 (r_norm ok, signals_used=5, recency=0.248)",
         "CustomerValidation=8.535 (google n=198 raw=4.5 shrunk=4.38 w=0.79)",
@@ -2781,7 +2781,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=745, r=5"
+        "reason": "days_since_rd=746, r=5"
       }
     ],
     "base_score": 7.534,
@@ -2801,7 +2801,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.180)",
         "CustomerValidation=9.687 (google n=1239 raw=4.9 shrunk=4.87 w=1.00)",
@@ -2849,7 +2849,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=764, r=5"
+        "reason": "days_since_rd=765, r=5"
       }
     ],
     "base_score": 8.021,
@@ -2869,9 +2869,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.173)",
+        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.172)",
         "CustomerValidation=9.101 (google n=173 raw=4.8 shrunk=4.62 w=0.69)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.021; distinction+0.000; adjusted=8.021; final=8.021",
@@ -2884,7 +2884,7 @@
     "name": "Stratford Manor Hotel",
     "components": {
       "trust_compliance": {
-        "score": 9.912,
+        "score": 9.911,
         "available": true,
         "signals_used": 5
       },
@@ -2931,9 +2931,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.912 (r_norm ok, signals_used=5, recency=0.824)",
+        "TrustCompliance=9.911 (r_norm ok, signals_used=5, recency=0.822)",
         "CustomerValidation=7.628 (google n=1179 raw=4.0 shrunk=3.99 w=1.00)",
         "CommercialReadiness=5.000 (web=True, menu=False, hours=1.00, booking=False)",
         "base=8.147; distinction+0.000; adjusted=8.147; final=8.147",
@@ -2946,7 +2946,7 @@
     "name": "Shah's",
     "components": {
       "trust_compliance": {
-        "score": 9.324,
+        "score": 9.323,
         "available": true,
         "signals_used": 5
       },
@@ -2993,9 +2993,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.324 (r_norm ok, signals_used=5, recency=0.398)",
+        "TrustCompliance=9.323 (r_norm ok, signals_used=5, recency=0.397)",
         "CustomerValidation=9.068 (google n=331 raw=4.7 shrunk=4.61 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.935; distinction+0.000; adjusted=8.935; final=8.935",
@@ -3055,9 +3055,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.686 (r_norm ok, signals_used=5, recency=0.373)",
+        "TrustCompliance=9.686 (r_norm ok, signals_used=5, recency=0.372)",
         "CustomerValidation=8.320 (google n=1952 raw=4.3 shrunk=4.29 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.743; distinction+0.000; adjusted=8.743; final=8.743",
@@ -3070,7 +3070,7 @@
     "name": "The Yew Tree",
     "components": {
       "trust_compliance": {
-        "score": 7.25,
+        "score": 7.249,
         "available": true,
         "signals_used": 5
       },
@@ -3117,9 +3117,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.250 (r_norm ok, signals_used=5, recency=0.550)",
+        "TrustCompliance=7.249 (r_norm ok, signals_used=5, recency=0.549)",
         "CustomerValidation=9.099 (google n=391 raw=4.7 shrunk=4.62 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.119; distinction+0.000; adjusted=8.119; final=8.119",
@@ -3179,9 +3179,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.321 (r_norm ok, signals_used=5, recency=0.392)",
+        "TrustCompliance=9.321 (r_norm ok, signals_used=5, recency=0.391)",
         "CustomerValidation=8.898 (google n=441 raw=4.6 shrunk=4.54 w=1.00)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=8.482; distinction+0.000; adjusted=8.482; final=8.482",
@@ -3194,7 +3194,7 @@
     "name": "Ettington Park Hotel",
     "components": {
       "trust_compliance": {
-        "score": 9.3,
+        "score": 9.299,
         "available": true,
         "signals_used": 5
       },
@@ -3241,9 +3241,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.300 (r_norm ok, signals_used=5, recency=0.350)",
+        "TrustCompliance=9.299 (r_norm ok, signals_used=5, recency=0.349)",
         "CustomerValidation=9.210 (google n=1021 raw=4.7 shrunk=4.67 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.989; distinction+0.000; adjusted=8.989; final=8.989",
@@ -3256,7 +3256,7 @@
     "name": "The Alcester Inn",
     "components": {
       "trust_compliance": {
-        "score": 9.422,
+        "score": 9.421,
         "available": true,
         "signals_used": 5
       },
@@ -3303,9 +3303,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.422 (r_norm ok, signals_used=5, recency=0.843)",
+        "TrustCompliance=9.421 (r_norm ok, signals_used=5, recency=0.842)",
         "CustomerValidation=7.817 (google n=513 raw=4.1 shrunk=4.07 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.411; distinction+0.000; adjusted=8.411; final=8.411",
@@ -3318,7 +3318,7 @@
     "name": "Welcombe Hotel Golf Resort \\& Spa",
     "components": {
       "trust_compliance": {
-        "score": 4.224,
+        "score": 4.223,
         "available": true,
         "signals_used": 5
       },
@@ -3348,9 +3348,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 6.249,
-    "adjusted_score": 6.249,
-    "rcs_v4_final": 6.249,
+    "base_score": 6.248,
+    "adjusted_score": 6.248,
+    "rcs_v4_final": 6.248,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -3365,12 +3365,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=4.224 (r_norm ok, signals_used=5, recency=0.847)",
+        "TrustCompliance=4.223 (r_norm ok, signals_used=5, recency=0.845)",
         "CustomerValidation=7.631 (google n=1394 raw=4.0 shrunk=3.99 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=6.249; distinction+0.000; adjusted=6.249; final=6.249",
+        "base=6.248; distinction+0.000; adjusted=6.248; final=6.248",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -3380,7 +3380,7 @@
     "name": "The Bishops Fryer",
     "components": {
       "trust_compliance": {
-        "score": 9.629,
+        "score": 9.628,
         "available": true,
         "signals_used": 5
       },
@@ -3427,9 +3427,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.629 (r_norm ok, signals_used=5, recency=0.257)",
+        "TrustCompliance=9.628 (r_norm ok, signals_used=5, recency=0.257)",
         "CustomerValidation=8.172 (google n=253 raw=4.3 shrunk=4.23 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.654; distinction+0.000; adjusted=8.654; final=8.654",
@@ -3442,7 +3442,7 @@
     "name": "Tzatziki34",
     "components": {
       "trust_compliance": {
-        "score": 7.331,
+        "score": 7.33,
         "available": true,
         "signals_used": 5
       },
@@ -3489,9 +3489,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.331 (r_norm ok, signals_used=5, recency=0.711)",
+        "TrustCompliance=7.330 (r_norm ok, signals_used=5, recency=0.710)",
         "CustomerValidation=7.777 (google n=302 raw=4.1 shrunk=4.05 w=1.00)",
         "CommercialReadiness=5.000 (web=True, menu=True, hours=0.00, booking=False)",
         "base=7.182; distinction+0.000; adjusted=7.182; final=7.182",
@@ -3534,9 +3534,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.107,
-    "adjusted_score": 8.107,
-    "rcs_v4_final": 8.107,
+    "base_score": 8.106,
+    "adjusted_score": 8.106,
+    "rcs_v4_final": 8.106,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -3551,12 +3551,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.931 (r_norm ok, signals_used=5, recency=0.363)",
+        "TrustCompliance=8.931 (r_norm ok, signals_used=5, recency=0.362)",
         "CustomerValidation=7.576 (google n=83 raw=4.1 shrunk=3.97 w=0.33)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=8.107; distinction+0.000; adjusted=8.107; final=8.107",
+        "base=8.106; distinction+0.000; adjusted=8.106; final=8.106",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -3566,7 +3566,7 @@
     "name": "Soma",
     "components": {
       "trust_compliance": {
-        "score": 9.388,
+        "score": 9.387,
         "available": true,
         "signals_used": 5
       },
@@ -3613,9 +3613,9 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.388 (r_norm ok, signals_used=5, recency=0.525)",
+        "TrustCompliance=9.387 (r_norm ok, signals_used=5, recency=0.524)",
         "CustomerValidation=8.765 (google n=120 raw=4.7 shrunk=4.48 w=0.48)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.824; distinction+0.000; adjusted=8.824; final=8.824",
@@ -3629,7 +3629,7 @@
     "name": "Bumbles",
     "components": {
       "trust_compliance": {
-        "score": 9.281,
+        "score": 9.28,
         "available": true,
         "signals_used": 5
       },
@@ -3676,9 +3676,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.281 (r_norm ok, signals_used=5, recency=0.312)",
+        "TrustCompliance=9.280 (r_norm ok, signals_used=5, recency=0.311)",
         "CustomerValidation=9.242 (google n=275 raw=4.8 shrunk=4.68 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.996; distinction+0.000; adjusted=8.996; final=8.996",
@@ -3738,9 +3738,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.351 (r_norm ok, signals_used=5, recency=0.302)",
+        "TrustCompliance=5.351 (r_norm ok, signals_used=5, recency=0.301)",
         "CustomerValidation=7.601 (google n=522 raw=4.0 shrunk=3.98 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=6.686; distinction+0.000; adjusted=6.686; final=6.686",
@@ -3753,7 +3753,7 @@
     "name": "Lithos Restaurant",
     "components": {
       "trust_compliance": {
-        "score": 4.959,
+        "score": 4.958,
         "available": true,
         "signals_used": 2
       },
@@ -3783,9 +3783,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.168,
-    "adjusted_score": 7.168,
-    "rcs_v4_final": 7.168,
+    "base_score": 7.167,
+    "adjusted_score": 7.167,
+    "rcs_v4_final": 7.167,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -3800,12 +3800,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=4.959 (r_norm ok, signals_used=2, recency=0.918)",
+        "TrustCompliance=4.958 (r_norm ok, signals_used=2, recency=0.916)",
         "CustomerValidation=9.020 (google n=72 raw=5.0 shrunk=4.59 w=0.29)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=7.168; distinction+0.000; adjusted=7.168; final=7.168",
+        "base=7.167; distinction+0.000; adjusted=7.167; final=7.167",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -3815,7 +3815,7 @@
     "name": "The Crofts Cafe Also Trading As New York Pizzas",
     "components": {
       "trust_compliance": {
-        "score": 8.512,
+        "score": 8.511,
         "available": true,
         "signals_used": 5
       },
@@ -3853,9 +3853,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.512 (r_norm ok, signals_used=5, recency=0.524)",
+        "TrustCompliance=8.511 (r_norm ok, signals_used=5, recency=0.523)",
         "CustomerValidation=None (no platforms)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
         "base=3.405; distinction+0.000; adjusted=3.405; final=3.405",
@@ -3902,7 +3902,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=743, r=5"
+        "reason": "days_since_rd=744, r=5"
       }
     ],
     "base_score": 7.5,
@@ -3922,7 +3922,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.181)",
         "CustomerValidation=8.778 (google n=1831 raw=4.5 shrunk=4.49 w=1.00)",
@@ -3984,9 +3984,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.783 (r_norm ok, signals_used=5, recency=0.317)",
+        "TrustCompliance=8.783 (r_norm ok, signals_used=5, recency=0.316)",
         "CustomerValidation=8.042 (google n=565 raw=4.2 shrunk=4.17 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.257; distinction+0.000; adjusted=8.257; final=8.257",
@@ -4046,9 +4046,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.308 (r_norm ok, signals_used=5, recency=0.366)",
+        "TrustCompliance=9.308 (r_norm ok, signals_used=5, recency=0.365)",
         "CustomerValidation=8.451 (google n=88 raw=4.6 shrunk=4.35 w=0.35)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=7.901; distinction+0.000; adjusted=7.901; final=7.901",
@@ -4108,7 +4108,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=None (FHRS unavailable)",
         "CustomerValidation=8.705 (google n=176 raw=4.6 shrunk=4.45 w=0.70)",
@@ -4170,9 +4170,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.278 (r_norm ok, signals_used=5, recency=0.306)",
+        "TrustCompliance=9.278 (r_norm ok, signals_used=5, recency=0.305)",
         "CustomerValidation=9.026 (google n=272 raw=4.7 shrunk=4.59 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.898; distinction+0.000; adjusted=8.898; final=8.898",
@@ -4232,9 +4232,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.283 (r_norm ok, signals_used=5, recency=0.316)",
+        "TrustCompliance=9.283 (r_norm ok, signals_used=5, recency=0.315)",
         "CustomerValidation=8.257 (google n=530 raw=4.3 shrunk=4.26 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.554; distinction+0.000; adjusted=8.554; final=8.554",
@@ -4294,7 +4294,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=8.743 (r_norm ok, signals_used=5, recency=0.236)",
         "CustomerValidation=9.132 (google n=481 raw=4.7 shrunk=4.64 w=1.00)",
@@ -4356,9 +4356,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.395 (r_norm ok, signals_used=5, recency=0.791)",
+        "TrustCompliance=9.395 (r_norm ok, signals_used=5, recency=0.789)",
         "CustomerValidation=7.188 (google n=2386 raw=3.8 shrunk=3.80 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.118; distinction+0.000; adjusted=8.118; final=8.118",
@@ -4371,7 +4371,7 @@
     "name": "Coffee#1 Limited",
     "components": {
       "trust_compliance": {
-        "score": 8.848,
+        "score": 8.847,
         "available": true,
         "signals_used": 5
       },
@@ -4401,9 +4401,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.907,
-    "adjusted_score": 7.907,
-    "rcs_v4_final": 7.907,
+    "base_score": 7.906,
+    "adjusted_score": 7.906,
+    "rcs_v4_final": 7.906,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -4418,12 +4418,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.848 (r_norm ok, signals_used=5, recency=0.195)",
+        "TrustCompliance=8.847 (r_norm ok, signals_used=5, recency=0.195)",
         "CustomerValidation=8.039 (google n=538 raw=4.2 shrunk=4.17 w=1.00)",
         "CommercialReadiness=5.000 (web=True, menu=True, hours=0.00, booking=False)",
-        "base=7.907; distinction+0.000; adjusted=7.907; final=7.907",
+        "base=7.906; distinction+0.000; adjusted=7.906; final=7.906",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -4433,7 +4433,7 @@
     "name": "The Garden Cafe",
     "components": {
       "trust_compliance": {
-        "score": 9.165,
+        "score": 9.164,
         "available": true,
         "signals_used": 5
       },
@@ -4480,9 +4480,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.165 (r_norm ok, signals_used=5, recency=0.830)",
+        "TrustCompliance=9.164 (r_norm ok, signals_used=5, recency=0.828)",
         "CustomerValidation=8.990 (google n=1191 raw=4.6 shrunk=4.58 w=1.00)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=8.461; distinction+0.000; adjusted=8.461; final=8.461",
@@ -4495,7 +4495,7 @@
     "name": "Shakespaw Cat Cafe",
     "components": {
       "trust_compliance": {
-        "score": 9.873,
+        "score": 9.872,
         "available": true,
         "signals_used": 5
       },
@@ -4542,9 +4542,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.873 (r_norm ok, signals_used=5, recency=0.747)",
+        "TrustCompliance=9.872 (r_norm ok, signals_used=5, recency=0.745)",
         "CustomerValidation=8.976 (google n=952 raw=4.6 shrunk=4.57 w=1.00)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=8.363; distinction+0.000; adjusted=8.363; final=8.363",
@@ -4557,7 +4557,7 @@
     "name": "Ragley Hall Catering",
     "components": {
       "trust_compliance": {
-        "score": 8.991,
+        "score": 8.99,
         "available": true,
         "signals_used": 5
       },
@@ -4604,9 +4604,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.991 (r_norm ok, signals_used=5, recency=0.481)",
+        "TrustCompliance=8.990 (r_norm ok, signals_used=5, recency=0.480)",
         "CustomerValidation=8.998 (google n=1395 raw=4.6 shrunk=4.58 w=1.00)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
         "base=7.645; distinction+0.000; adjusted=7.645; final=7.645",
@@ -4666,7 +4666,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=7.241 (r_norm ok, signals_used=5, recency=0.282)",
         "CustomerValidation=8.514 (google n=849 raw=4.4 shrunk=4.37 w=1.00)",
@@ -4728,9 +4728,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=4.084 (r_norm ok, signals_used=5, recency=0.318)",
+        "TrustCompliance=4.084 (r_norm ok, signals_used=5, recency=0.317)",
         "CustomerValidation=8.619 (google n=297 raw=4.5 shrunk=4.42 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=6.637; distinction+0.000; adjusted=6.637; final=6.637",
@@ -4743,7 +4743,7 @@
     "name": "LeBuns",
     "components": {
       "trust_compliance": {
-        "score": 9.469,
+        "score": 9.468,
         "available": true,
         "signals_used": 5
       },
@@ -4790,9 +4790,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.469 (r_norm ok, signals_used=5, recency=0.687)",
+        "TrustCompliance=9.468 (r_norm ok, signals_used=5, recency=0.686)",
         "CustomerValidation=7.984 (google n=294 raw=4.2 shrunk=4.14 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.505; distinction+0.000; adjusted=8.505; final=8.505",
@@ -4852,9 +4852,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.479 (r_norm ok, signals_used=5, recency=0.559)",
+        "TrustCompliance=5.479 (r_norm ok, signals_used=5, recency=0.558)",
         "CustomerValidation=8.308 (google n=1321 raw=4.3 shrunk=4.28 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.055; distinction+0.000; adjusted=7.055; final=7.055",
@@ -4867,7 +4867,7 @@
     "name": "Costa",
     "components": {
       "trust_compliance": {
-        "score": 9.919,
+        "score": 9.918,
         "available": true,
         "signals_used": 5
       },
@@ -4897,9 +4897,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.612,
-    "adjusted_score": 8.612,
-    "rcs_v4_final": 8.612,
+    "base_score": 8.611,
+    "adjusted_score": 8.611,
+    "rcs_v4_final": 8.611,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -4914,12 +4914,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.919 (r_norm ok, signals_used=5, recency=0.838)",
+        "TrustCompliance=9.918 (r_norm ok, signals_used=5, recency=0.836)",
         "CustomerValidation=7.820 (google n=541 raw=4.1 shrunk=4.07 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=8.612; distinction+0.000; adjusted=8.612; final=8.612",
+        "base=8.611; distinction+0.000; adjusted=8.611; final=8.611",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -4929,7 +4929,7 @@
     "name": "Gilks' Garage Cafe",
     "components": {
       "trust_compliance": {
-        "score": 9.834,
+        "score": 9.833,
         "available": true,
         "signals_used": 5
       },
@@ -4976,9 +4976,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.834 (r_norm ok, signals_used=5, recency=0.667)",
+        "TrustCompliance=9.833 (r_norm ok, signals_used=5, recency=0.666)",
         "CustomerValidation=9.433 (google n=935 raw=4.8 shrunk=4.76 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=9.303; distinction+0.000; adjusted=9.303; final=9.303",
@@ -4991,7 +4991,7 @@
     "name": "A G D Equipment Ltd",
     "components": {
       "trust_compliance": {
-        "score": 9.601,
+        "score": 9.6,
         "available": true,
         "signals_used": 5
       },
@@ -5038,9 +5038,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.601 (r_norm ok, signals_used=5, recency=0.201)",
+        "TrustCompliance=9.600 (r_norm ok, signals_used=5, recency=0.201)",
         "CustomerValidation=7.771 (google n=16 raw=4.9 shrunk=4.05 w=0.06)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=7.712; distinction+0.000; adjusted=7.712; final=7.712",
@@ -5053,7 +5053,7 @@
     "name": "Wildwood Kitchen",
     "components": {
       "trust_compliance": {
-        "score": 7.631,
+        "score": 7.63,
         "available": true,
         "signals_used": 5
       },
@@ -5100,9 +5100,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.631 (r_norm ok, signals_used=5, recency=0.312)",
+        "TrustCompliance=7.630 (r_norm ok, signals_used=5, recency=0.311)",
         "CustomerValidation=8.299 (google n=1055 raw=4.3 shrunk=4.28 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.912; distinction+0.000; adjusted=7.912; final=7.912",
@@ -5115,7 +5115,7 @@
     "name": "Havilands Tea Room And Restaurant",
     "components": {
       "trust_compliance": {
-        "score": 2.016,
+        "score": 2.015,
         "available": true,
         "signals_used": 5
       },
@@ -5162,9 +5162,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=2.016 (r_norm ok, signals_used=5, recency=0.481)",
+        "TrustCompliance=2.015 (r_norm ok, signals_used=5, recency=0.480)",
         "CustomerValidation=7.355 (google n=277 raw=3.9 shrunk=3.87 w=1.00)",
         "CommercialReadiness=5.000 (web=True, menu=True, hours=0.00, booking=False)",
         "base=4.866; distinction+0.000; adjusted=4.866; final=4.866",
@@ -5177,7 +5177,7 @@
     "name": "Cinnamon Arch",
     "components": {
       "trust_compliance": {
-        "score": 8.394,
+        "score": 8.393,
         "available": true,
         "signals_used": 5
       },
@@ -5224,9 +5224,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.394 (r_norm ok, signals_used=5, recency=0.287)",
+        "TrustCompliance=8.393 (r_norm ok, signals_used=5, recency=0.287)",
         "CustomerValidation=8.339 (google n=52 raw=4.7 shrunk=4.30 w=0.21)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.235; distinction+0.000; adjusted=8.235; final=8.235",
@@ -5286,7 +5286,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=9.224 (r_norm ok, signals_used=5, recency=0.198)",
         "CustomerValidation=9.160 (google n=600 raw=4.7 shrunk=4.65 w=1.00)",
@@ -5349,9 +5349,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.345 (r_norm ok, signals_used=5, recency=0.190)",
+        "TrustCompliance=8.345 (r_norm ok, signals_used=5, recency=0.189)",
         "CustomerValidation=8.945 (google n=200 raw=4.7 shrunk=4.56 w=0.80)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.488; distinction+0.000; adjusted=8.488; final=8.488",
@@ -5364,7 +5364,7 @@
     "name": "Snitterfield Arms",
     "components": {
       "trust_compliance": {
-        "score": 9.431,
+        "score": 9.43,
         "available": true,
         "signals_used": 5
       },
@@ -5411,9 +5411,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.431 (r_norm ok, signals_used=5, recency=0.611)",
+        "TrustCompliance=9.430 (r_norm ok, signals_used=5, recency=0.610)",
         "CustomerValidation=8.695 (google n=102 raw=4.7 shrunk=4.45 w=0.41)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.810; distinction+0.000; adjusted=8.810; final=8.810",
@@ -5426,7 +5426,7 @@
     "name": "The Townhouse Also Trading As JR Hotel And Restaurants LTD",
     "components": {
       "trust_compliance": {
-        "score": 9.524,
+        "score": 9.523,
         "available": true,
         "signals_used": 5
       },
@@ -5473,9 +5473,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.524 (r_norm ok, signals_used=5, recency=0.798)",
+        "TrustCompliance=9.523 (r_norm ok, signals_used=5, recency=0.796)",
         "CustomerValidation=8.485 (google n=576 raw=4.4 shrunk=4.36 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.753; distinction+0.000; adjusted=8.753; final=8.753",
@@ -5522,7 +5522,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=779, r=5"
+        "reason": "days_since_rd=780, r=5"
       }
     ],
     "base_score": 6.648,
@@ -5542,9 +5542,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.167)",
+        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.166)",
         "CustomerValidation=6.884 (google n=8 raw=3.9 shrunk=3.66 w=0.05)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=6.648; distinction+0.000; adjusted=6.648; final=6.648",
@@ -5604,9 +5604,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.357 (r_norm ok, signals_used=5, recency=0.465)",
+        "TrustCompliance=9.357 (r_norm ok, signals_used=5, recency=0.464)",
         "CustomerValidation=8.816 (google n=275 raw=4.6 shrunk=4.50 w=1.00)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=8.460; distinction+0.000; adjusted=8.460; final=8.460",
@@ -5619,7 +5619,7 @@
     "name": "Bidford Juniors Football Club",
     "components": {
       "trust_compliance": {
-        "score": 9.49,
+        "score": 9.489,
         "available": true,
         "signals_used": 5
       },
@@ -5666,9 +5666,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.490 (r_norm ok, signals_used=5, recency=0.730)",
+        "TrustCompliance=9.489 (r_norm ok, signals_used=5, recency=0.728)",
         "CustomerValidation=6.968 (google n=6 raw=4.2 shrunk=3.70 w=0.05)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
         "base=6.931; distinction+0.000; adjusted=6.931; final=6.931",
@@ -5711,9 +5711,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.181,
-    "adjusted_score": 8.181,
-    "rcs_v4_final": 8.181,
+    "base_score": 8.18,
+    "adjusted_score": 8.18,
+    "rcs_v4_final": 8.18,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -5728,12 +5728,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.221 (r_norm ok, signals_used=5, recency=0.192)",
+        "TrustCompliance=9.221 (r_norm ok, signals_used=5, recency=0.191)",
         "CustomerValidation=8.316 (google n=1687 raw=4.3 shrunk=4.29 w=1.00)",
         "CommercialReadiness=5.000 (web=True, menu=True, hours=0.00, booking=False)",
-        "base=8.181; distinction+0.000; adjusted=8.181; final=8.181",
+        "base=8.180; distinction+0.000; adjusted=8.180; final=8.180",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -5790,9 +5790,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.244 (r_norm ok, signals_used=5, recency=0.539)",
+        "TrustCompliance=7.244 (r_norm ok, signals_used=5, recency=0.537)",
         "CustomerValidation=7.682 (google n=144 raw=4.1 shrunk=4.01 w=0.58)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.480; distinction+0.000; adjusted=7.480; final=7.480",
@@ -5852,7 +5852,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=5.877 (r_norm ok, signals_used=5, recency=0.354)",
         "CustomerValidation=8.889 (google n=416 raw=4.6 shrunk=4.53 w=1.00)",
@@ -5867,7 +5867,7 @@
     "name": "Costa Coffee",
     "components": {
       "trust_compliance": {
-        "score": 9.801,
+        "score": 9.8,
         "available": true,
         "signals_used": 5
       },
@@ -5914,9 +5914,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.801 (r_norm ok, signals_used=5, recency=0.602)",
+        "TrustCompliance=9.800 (r_norm ok, signals_used=5, recency=0.600)",
         "CustomerValidation=7.475 (google n=9 raw=5.0 shrunk=3.92 w=0.05)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=8.034; distinction+0.000; adjusted=8.034; final=8.034",
@@ -5976,9 +5976,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.608 (r_norm ok, signals_used=5, recency=0.216)",
+        "TrustCompliance=9.608 (r_norm ok, signals_used=5, recency=0.215)",
         "CustomerValidation=8.793 (google n=3261 raw=4.5 shrunk=4.49 w=1.00)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=8.175; distinction+0.000; adjusted=8.175; final=8.175",
@@ -6038,9 +6038,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.221 (r_norm ok, signals_used=5, recency=0.192)",
+        "TrustCompliance=9.221 (r_norm ok, signals_used=5, recency=0.191)",
         "CustomerValidation=7.585 (google n=388 raw=4.0 shrunk=3.97 w=1.00)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=7.852; distinction+0.000; adjusted=7.852; final=7.852",
@@ -6083,9 +6083,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.679,
-    "adjusted_score": 7.679,
-    "rcs_v4_final": 7.679,
+    "base_score": 7.678,
+    "adjusted_score": 7.678,
+    "rcs_v4_final": 7.678,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -6100,12 +6100,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.084 (r_norm ok, signals_used=5, recency=0.468)",
+        "TrustCompliance=7.084 (r_norm ok, signals_used=5, recency=0.467)",
         "CustomerValidation=8.267 (google n=598 raw=4.3 shrunk=4.27 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=7.679; distinction+0.000; adjusted=7.679; final=7.679",
+        "base=7.678; distinction+0.000; adjusted=7.678; final=7.678",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -6115,7 +6115,7 @@
     "name": "The Pavilion Coffee Shop And Community Space",
     "components": {
       "trust_compliance": {
-        "score": 8.949,
+        "score": 8.948,
         "available": true,
         "signals_used": 5
       },
@@ -6145,9 +6145,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.814,
-    "adjusted_score": 7.814,
-    "rcs_v4_final": 7.814,
+    "base_score": 7.813,
+    "adjusted_score": 7.813,
+    "rcs_v4_final": 7.813,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -6162,12 +6162,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.949 (r_norm ok, signals_used=5, recency=0.647)",
+        "TrustCompliance=8.948 (r_norm ok, signals_used=5, recency=0.646)",
         "CustomerValidation=7.743 (google n=20 raw=4.7 shrunk=4.04 w=0.08)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
-        "base=7.814; distinction+0.000; adjusted=7.814; final=7.814",
+        "base=7.813; distinction+0.000; adjusted=7.813; final=7.813",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -6210,7 +6210,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=1057, r=5"
+        "reason": "days_since_rd=1058, r=5"
       }
     ],
     "base_score": 7.105,
@@ -6230,7 +6230,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.088)",
         "CustomerValidation=8.733 (google n=194 raw=4.6 shrunk=4.47 w=0.78)",
@@ -6245,7 +6245,7 @@
     "name": "Cafe Living",
     "components": {
       "trust_compliance": {
-        "score": 5.469,
+        "score": 5.468,
         "available": true,
         "signals_used": 5
       },
@@ -6292,9 +6292,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.469 (r_norm ok, signals_used=5, recency=0.537)",
+        "TrustCompliance=5.468 (r_norm ok, signals_used=5, recency=0.536)",
         "CustomerValidation=8.086 (google n=1546 raw=4.2 shrunk=4.19 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=6.951; distinction+0.000; adjusted=6.951; final=6.951",
@@ -6307,7 +6307,7 @@
     "name": "Hudson's",
     "components": {
       "trust_compliance": {
-        "score": 6.021,
+        "score": 6.02,
         "available": true,
         "signals_used": 5
       },
@@ -6354,9 +6354,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=6.021 (r_norm ok, signals_used=5, recency=0.642)",
+        "TrustCompliance=6.020 (r_norm ok, signals_used=5, recency=0.640)",
         "CustomerValidation=8.232 (google n=132 raw=4.4 shrunk=4.25 w=0.53)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.238; distinction+0.000; adjusted=7.238; final=7.238",
@@ -6369,7 +6369,7 @@
     "name": "Barnabys",
     "components": {
       "trust_compliance": {
-        "score": 9.202,
+        "score": 9.201,
         "available": true,
         "signals_used": 5
       },
@@ -6416,9 +6416,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.202 (r_norm ok, signals_used=5, recency=0.904)",
+        "TrustCompliance=9.201 (r_norm ok, signals_used=5, recency=0.902)",
         "CustomerValidation=7.628 (google n=1179 raw=4.0 shrunk=3.99 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.238; distinction+0.000; adjusted=8.238; final=8.238",
@@ -6431,7 +6431,7 @@
     "name": "Costa Coffee",
     "components": {
       "trust_compliance": {
-        "score": 9.727,
+        "score": 9.726,
         "available": true,
         "signals_used": 5
       },
@@ -6461,9 +6461,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.907,
-    "adjusted_score": 7.907,
-    "rcs_v4_final": 7.907,
+    "base_score": 7.906,
+    "adjusted_score": 7.906,
+    "rcs_v4_final": 7.906,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -6478,12 +6478,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.727 (r_norm ok, signals_used=5, recency=0.453)",
+        "TrustCompliance=9.726 (r_norm ok, signals_used=5, recency=0.452)",
         "CustomerValidation=7.258 (google n=95 raw=3.9 shrunk=3.83 w=0.38)",
         "CommercialReadiness=5.000 (web=True, menu=True, hours=0.00, booking=False)",
-        "base=7.907; distinction+0.000; adjusted=7.907; final=7.907",
+        "base=7.906; distinction+0.000; adjusted=7.906; final=7.906",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -6493,7 +6493,7 @@
     "name": "Deli Cafe",
     "components": {
       "trust_compliance": {
-        "score": 9.583,
+        "score": 9.582,
         "available": true,
         "signals_used": 5
       },
@@ -6523,9 +6523,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.971,
-    "adjusted_score": 8.971,
-    "rcs_v4_final": 8.971,
+    "base_score": 8.97,
+    "adjusted_score": 8.97,
+    "rcs_v4_final": 8.97,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -6540,12 +6540,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.583 (r_norm ok, signals_used=5, recency=0.916)",
+        "TrustCompliance=9.582 (r_norm ok, signals_used=5, recency=0.914)",
         "CustomerValidation=8.917 (google n=510 raw=4.6 shrunk=4.54 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=8.971; distinction+0.000; adjusted=8.971; final=8.971",
+        "base=8.970; distinction+0.000; adjusted=8.970; final=8.970",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -6555,7 +6555,7 @@
     "name": "Avon Spice",
     "components": {
       "trust_compliance": {
-        "score": 9.208,
+        "score": 9.207,
         "available": true,
         "signals_used": 5
       },
@@ -6602,9 +6602,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.208 (r_norm ok, signals_used=5, recency=0.916)",
+        "TrustCompliance=9.207 (r_norm ok, signals_used=5, recency=0.914)",
         "CustomerValidation=8.627 (google n=312 raw=4.5 shrunk=4.42 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.690; distinction+0.000; adjusted=8.690; final=8.690",
@@ -6617,7 +6617,7 @@
     "name": "The Pickled Crab Deli",
     "components": {
       "trust_compliance": {
-        "score": 9.68,
+        "score": 9.679,
         "available": true,
         "signals_used": 5
       },
@@ -6664,9 +6664,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.680 (r_norm ok, signals_used=5, recency=0.359)",
+        "TrustCompliance=9.679 (r_norm ok, signals_used=5, recency=0.359)",
         "CustomerValidation=8.724 (google n=188 raw=4.6 shrunk=4.46 w=0.75)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.923; distinction+0.000; adjusted=8.923; final=8.923",
@@ -6726,9 +6726,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.770 (r_norm ok, signals_used=5, recency=0.390)",
+        "TrustCompliance=5.770 (r_norm ok, signals_used=5, recency=0.389)",
         "CustomerValidation=8.934 (google n=590 raw=4.6 shrunk=4.55 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.453; distinction+0.000; adjusted=7.453; final=7.453",
@@ -6741,7 +6741,7 @@
     "name": "Peppers",
     "components": {
       "trust_compliance": {
-        "score": 8.381,
+        "score": 8.38,
         "available": true,
         "signals_used": 5
       },
@@ -6788,9 +6788,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.381 (r_norm ok, signals_used=5, recency=0.261)",
+        "TrustCompliance=8.380 (r_norm ok, signals_used=5, recency=0.260)",
         "CustomerValidation=8.263 (google n=148 raw=4.4 shrunk=4.27 w=0.59)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.196; distinction+0.000; adjusted=8.196; final=8.196",
@@ -6833,9 +6833,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.578,
-    "adjusted_score": 8.578,
-    "rcs_v4_final": 8.578,
+    "base_score": 8.577,
+    "adjusted_score": 8.577,
+    "rcs_v4_final": 8.577,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -6850,12 +6850,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=8.755 (r_norm ok, signals_used=5, recency=0.260)",
         "CustomerValidation=8.779 (google n=124 raw=4.7 shrunk=4.49 w=0.50)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=8.578; distinction+0.000; adjusted=8.578; final=8.578",
+        "base=8.577; distinction+0.000; adjusted=8.577; final=8.577",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -6865,7 +6865,7 @@
     "name": "Costa Coffee",
     "components": {
       "trust_compliance": {
-        "score": 9.451,
+        "score": 9.45,
         "available": true,
         "signals_used": 5
       },
@@ -6912,9 +6912,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.451 (r_norm ok, signals_used=5, recency=0.652)",
+        "TrustCompliance=9.450 (r_norm ok, signals_used=5, recency=0.650)",
         "CustomerValidation=6.863 (google n=35 raw=3.7 shrunk=3.65 w=0.14)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=7.619; distinction+0.000; adjusted=7.619; final=7.619",
@@ -6960,7 +6960,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=771, r=5"
+        "reason": "days_since_rd=772, r=5"
       }
     ],
     "base_score": 7.036,
@@ -6980,9 +6980,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.170)",
+        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.169)",
         "CustomerValidation=8.581 (google n=121 raw=4.6 shrunk=4.40 w=0.48)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=7.036; distinction+0.000; adjusted=7.036; final=7.036",
@@ -7028,7 +7028,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=764, r=5"
+        "reason": "days_since_rd=765, r=5"
       }
     ],
     "base_score": 7.569,
@@ -7048,9 +7048,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.173)",
+        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.172)",
         "CustomerValidation=8.097 (google n=167 raw=4.3 shrunk=4.19 w=0.67)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.569; distinction+0.000; adjusted=7.569; final=7.569",
@@ -7110,9 +7110,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.907 (r_norm ok, signals_used=5, recency=0.314)",
+        "TrustCompliance=8.907 (r_norm ok, signals_used=5, recency=0.313)",
         "CustomerValidation=9.219 (google n=1160 raw=4.7 shrunk=4.67 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.836; distinction+0.000; adjusted=8.836; final=8.836",
@@ -7172,7 +7172,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=None (FHRS unavailable)",
         "CustomerValidation=7.847 (google n=127 raw=4.2 shrunk=4.09 w=0.51)",
@@ -7220,7 +7220,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=785, r=4"
+        "reason": "days_since_rd=786, r=4"
       }
     ],
     "base_score": 7.155,
@@ -7240,7 +7240,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.164)",
         "CustomerValidation=8.012 (google n=387 raw=4.2 shrunk=4.16 w=1.00)",
@@ -7293,9 +7293,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.321 (r_norm ok, signals_used=5, recency=0.392)",
+        "TrustCompliance=9.321 (r_norm ok, signals_used=5, recency=0.391)",
         "CustomerValidation=None (no platforms)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
         "base=3.728; distinction+0.000; adjusted=3.728; final=3.728",
@@ -7355,9 +7355,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.458 (r_norm ok, signals_used=5, recency=0.416)",
+        "TrustCompliance=8.458 (r_norm ok, signals_used=5, recency=0.415)",
         "CustomerValidation=6.940 (google n=218 raw=3.7 shrunk=3.69 w=0.87)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.631; distinction+0.000; adjusted=7.631; final=7.631",
@@ -7370,7 +7370,7 @@
     "name": "The Fox Inn",
     "components": {
       "trust_compliance": {
-        "score": 4.926,
+        "score": 4.925,
         "available": true,
         "signals_used": 2
       },
@@ -7417,9 +7417,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=4.926 (r_norm ok, signals_used=2, recency=0.851)",
+        "TrustCompliance=4.925 (r_norm ok, signals_used=2, recency=0.849)",
         "CustomerValidation=8.813 (google n=271 raw=4.6 shrunk=4.50 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.061; distinction+0.000; adjusted=7.061; final=7.061",
@@ -7432,7 +7432,7 @@
     "name": "Stratford Upon Avon Baptist Church",
     "components": {
       "trust_compliance": {
-        "score": 9.672,
+        "score": 9.671,
         "available": true,
         "signals_used": 5
       },
@@ -7479,9 +7479,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.672 (r_norm ok, signals_used=5, recency=0.343)",
+        "TrustCompliance=9.671 (r_norm ok, signals_used=5, recency=0.342)",
         "CustomerValidation=7.389 (google n=12 raw=4.6 shrunk=3.89 w=0.05)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
         "base=7.194; distinction+0.000; adjusted=7.194; final=7.194",
@@ -7541,9 +7541,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.176 (r_norm ok, signals_used=5, recency=0.402)",
+        "TrustCompliance=7.176 (r_norm ok, signals_used=5, recency=0.401)",
         "CustomerValidation=9.144 (google n=526 raw=4.7 shrunk=4.64 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.110; distinction+0.000; adjusted=8.110; final=8.110",
@@ -7556,7 +7556,7 @@
     "name": "The Lime Tree Restaurant",
     "components": {
       "trust_compliance": {
-        "score": 9.544,
+        "score": 9.543,
         "available": true,
         "signals_used": 5
       },
@@ -7603,9 +7603,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.544 (r_norm ok, signals_used=5, recency=0.838)",
+        "TrustCompliance=9.543 (r_norm ok, signals_used=5, recency=0.836)",
         "CustomerValidation=8.547 (google n=1817 raw=4.4 shrunk=4.39 w=1.00)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=8.039; distinction+0.000; adjusted=8.039; final=8.039",
@@ -7618,7 +7618,7 @@
     "name": "Karen's Korner",
     "components": {
       "trust_compliance": {
-        "score": 2.907,
+        "score": 2.906,
         "available": true,
         "signals_used": 5
       },
@@ -7665,9 +7665,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=2.907 (r_norm ok, signals_used=5, recency=0.513)",
+        "TrustCompliance=2.906 (r_norm ok, signals_used=5, recency=0.512)",
         "CustomerValidation=8.720 (google n=108 raw=4.7 shrunk=4.46 w=0.43)",
         "CommercialReadiness=5.000 (web=True, menu=True, hours=0.00, booking=False)",
         "base=5.837; distinction+0.000; adjusted=5.837; final=5.837",
@@ -7680,7 +7680,7 @@
     "name": "The Embankment",
     "components": {
       "trust_compliance": {
-        "score": 7.047,
+        "score": 7.046,
         "available": true,
         "signals_used": 5
       },
@@ -7727,9 +7727,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.047 (r_norm ok, signals_used=5, recency=0.393)",
+        "TrustCompliance=7.046 (r_norm ok, signals_used=5, recency=0.392)",
         "CustomerValidation=8.287 (google n=820 raw=4.3 shrunk=4.28 w=1.00)",
         "CommercialReadiness=5.000 (web=True, menu=False, hours=1.00, booking=False)",
         "base=7.298; distinction+0.000; adjusted=7.298; final=7.298",
@@ -7772,9 +7772,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 9.178,
-    "adjusted_score": 9.178,
-    "rcs_v4_final": 9.178,
+    "base_score": 9.177,
+    "adjusted_score": 9.177,
+    "rcs_v4_final": 9.177,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -7789,12 +7789,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.258 (r_norm ok, signals_used=5, recency=0.266)",
+        "TrustCompliance=9.258 (r_norm ok, signals_used=5, recency=0.265)",
         "CustomerValidation=9.665 (google n=950 raw=4.9 shrunk=4.86 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=9.178; distinction+0.000; adjusted=9.178; final=9.178",
+        "base=9.177; distinction+0.000; adjusted=9.177; final=9.177",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -7804,7 +7804,7 @@
     "name": "The Bluebell",
     "components": {
       "trust_compliance": {
-        "score": 9.093,
+        "score": 9.092,
         "available": true,
         "signals_used": 5
       },
@@ -7834,9 +7834,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.647,
-    "adjusted_score": 8.647,
-    "rcs_v4_final": 8.647,
+    "base_score": 8.646,
+    "adjusted_score": 8.646,
+    "rcs_v4_final": 8.646,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -7851,12 +7851,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.093 (r_norm ok, signals_used=5, recency=0.935)",
+        "TrustCompliance=9.092 (r_norm ok, signals_used=5, recency=0.933)",
         "CustomerValidation=8.633 (google n=323 raw=4.5 shrunk=4.42 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=8.647; distinction+0.000; adjusted=8.647; final=8.647",
+        "base=8.646; distinction+0.000; adjusted=8.646; final=8.646",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -7866,7 +7866,7 @@
     "name": "The Cowshed Cafe",
     "components": {
       "trust_compliance": {
-        "score": 5.934,
+        "score": 5.933,
         "available": true,
         "signals_used": 5
       },
@@ -7913,9 +7913,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.934 (r_norm ok, signals_used=5, recency=0.467)",
+        "TrustCompliance=5.933 (r_norm ok, signals_used=5, recency=0.466)",
         "CustomerValidation=8.010 (google n=377 raw=4.2 shrunk=4.16 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.103; distinction+0.000; adjusted=7.103; final=7.103",
@@ -7961,7 +7961,7 @@
       {
         "code": "STALE-5Y",
         "effect": "TrustCompliance cap 5.0",
-        "reason": "days_since_rd=4056"
+        "reason": "days_since_rd=4057"
       }
     ],
     "base_score": 6.726,
@@ -7981,7 +7981,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=5.000 (r_norm ok, signals_used=5, recency=0.000)",
         "CustomerValidation=8.836 (google n=303 raw=4.6 shrunk=4.51 w=1.00)",
@@ -7996,7 +7996,7 @@
     "name": "Touchdown Cafe",
     "components": {
       "trust_compliance": {
-        "score": 7.287,
+        "score": 7.286,
         "available": true,
         "signals_used": 5
       },
@@ -8043,9 +8043,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.287 (r_norm ok, signals_used=5, recency=0.374)",
+        "TrustCompliance=7.286 (r_norm ok, signals_used=5, recency=0.373)",
         "CustomerValidation=8.981 (google n=1034 raw=4.6 shrunk=4.57 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.081; distinction+0.000; adjusted=8.081; final=8.081",
@@ -8096,9 +8096,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=3.753 (r_norm ok, signals_used=2, recency=0.307)",
+        "TrustCompliance=3.753 (r_norm ok, signals_used=2, recency=0.306)",
         "CustomerValidation=None (no platforms)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
         "base=1.501; distinction+0.000; adjusted=1.501; final=0.000",
@@ -8111,7 +8111,7 @@
     "name": "Fast Flavour",
     "components": {
       "trust_compliance": {
-        "score": 9.252,
+        "score": 9.251,
         "available": true,
         "signals_used": 5
       },
@@ -8158,9 +8158,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.252 (r_norm ok, signals_used=5, recency=0.504)",
+        "TrustCompliance=9.251 (r_norm ok, signals_used=5, recency=0.503)",
         "CustomerValidation=7.820 (google n=27 raw=4.6 shrunk=4.07 w=0.11)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=7.970; distinction+0.000; adjusted=7.970; final=7.970",
@@ -8220,9 +8220,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.870 (r_norm ok, signals_used=5, recency=0.490)",
+        "TrustCompliance=8.870 (r_norm ok, signals_used=5, recency=0.489)",
         "CustomerValidation=8.480 (google n=42 raw=4.9 shrunk=4.36 w=0.17)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=8.114; distinction+0.000; adjusted=8.114; final=8.114",
@@ -8282,9 +8282,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.746 (r_norm ok, signals_used=5, recency=0.492)",
+        "TrustCompliance=9.746 (r_norm ok, signals_used=5, recency=0.491)",
         "CustomerValidation=8.880 (google n=75 raw=4.9 shrunk=4.53 w=0.30)",
         "CommercialReadiness=5.000 (web=True, menu=True, hours=0.00, booking=False)",
         "base=8.644; distinction+0.000; adjusted=8.644; final=8.644",
@@ -8344,9 +8344,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.305 (r_norm ok, signals_used=5, recency=0.360)",
+        "TrustCompliance=9.305 (r_norm ok, signals_used=5, recency=0.359)",
         "CustomerValidation=8.660 (google n=386 raw=4.5 shrunk=4.44 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.744; distinction+0.000; adjusted=8.744; final=8.744",
@@ -8359,7 +8359,7 @@
     "name": "The Red Lion",
     "components": {
       "trust_compliance": {
-        "score": 9.842,
+        "score": 9.841,
         "available": true,
         "signals_used": 5
       },
@@ -8406,9 +8406,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.842 (r_norm ok, signals_used=5, recency=0.684)",
+        "TrustCompliance=9.841 (r_norm ok, signals_used=5, recency=0.683)",
         "CustomerValidation=9.030 (google n=277 raw=4.7 shrunk=4.59 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=9.125; distinction+0.000; adjusted=9.125; final=9.125",
@@ -8421,7 +8421,7 @@
     "name": "Harbury Library Cafe",
     "components": {
       "trust_compliance": {
-        "score": 8.618,
+        "score": 8.617,
         "available": true,
         "signals_used": 5
       },
@@ -8468,9 +8468,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.618 (r_norm ok, signals_used=5, recency=0.736)",
+        "TrustCompliance=8.617 (r_norm ok, signals_used=5, recency=0.735)",
         "CustomerValidation=8.228 (google n=26 raw=5.0 shrunk=4.25 w=0.10)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=7.900; distinction+0.000; adjusted=7.900; final=7.900",
@@ -8516,7 +8516,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=781, r=5"
+        "reason": "days_since_rd=782, r=5"
       }
     ],
     "base_score": 7.262,
@@ -8536,7 +8536,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.166)",
         "CustomerValidation=9.083 (google n=79 raw=5.0 shrunk=4.61 w=0.32)",
@@ -8598,9 +8598,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.222 (r_norm ok, signals_used=5, recency=0.194)",
+        "TrustCompliance=9.222 (r_norm ok, signals_used=5, recency=0.193)",
         "CustomerValidation=7.186 (google n=1562 raw=3.8 shrunk=3.80 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.047; distinction+0.000; adjusted=8.047; final=8.047",
@@ -8613,7 +8613,7 @@
     "name": "Starbucks",
     "components": {
       "trust_compliance": {
-        "score": 9.969,
+        "score": 9.968,
         "available": true,
         "signals_used": 5
       },
@@ -8660,9 +8660,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.969 (r_norm ok, signals_used=5, recency=0.938)",
+        "TrustCompliance=9.968 (r_norm ok, signals_used=5, recency=0.935)",
         "CustomerValidation=7.171 (google n=548 raw=3.8 shrunk=3.79 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.339; distinction+0.000; adjusted=8.339; final=8.339",
@@ -8722,9 +8722,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.334 (r_norm ok, signals_used=5, recency=0.418)",
+        "TrustCompliance=9.334 (r_norm ok, signals_used=5, recency=0.417)",
         "CustomerValidation=8.667 (google n=96 raw=4.7 shrunk=4.44 w=0.38)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.759; distinction+0.000; adjusted=8.759; final=8.759",
@@ -8767,9 +8767,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.659,
-    "adjusted_score": 8.659,
-    "rcs_v4_final": 8.659,
+    "base_score": 8.658,
+    "adjusted_score": 8.658,
+    "rcs_v4_final": 8.658,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -8784,12 +8784,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.799 (r_norm ok, signals_used=5, recency=0.348)",
+        "TrustCompliance=8.799 (r_norm ok, signals_used=5, recency=0.347)",
         "CustomerValidation=8.920 (google n=184 raw=4.7 shrunk=4.55 w=0.74)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=8.659; distinction+0.000; adjusted=8.659; final=8.659",
+        "base=8.658; distinction+0.000; adjusted=8.658; final=8.658",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -8832,7 +8832,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=745, r=5"
+        "reason": "days_since_rd=746, r=5"
       }
     ],
     "base_score": 7.719,
@@ -8852,7 +8852,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.180)",
         "CustomerValidation=8.432 (google n=61 raw=4.7 shrunk=4.34 w=0.24)",
@@ -8897,9 +8897,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.661,
-    "adjusted_score": 8.661,
-    "rcs_v4_final": 8.661,
+    "base_score": 8.66,
+    "adjusted_score": 8.66,
+    "rcs_v4_final": 8.66,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -8914,12 +8914,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=9.274 (r_norm ok, signals_used=5, recency=0.298)",
         "CustomerValidation=8.502 (google n=711 raw=4.4 shrunk=4.37 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=8.661; distinction+0.000; adjusted=8.661; final=8.661",
+        "base=8.660; distinction+0.000; adjusted=8.660; final=8.660",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -8929,7 +8929,7 @@
     "name": "Four Teas",
     "components": {
       "trust_compliance": {
-        "score": 5.633,
+        "score": 5.632,
         "available": true,
         "signals_used": 5
       },
@@ -8976,9 +8976,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.633 (r_norm ok, signals_used=5, recency=0.865)",
+        "TrustCompliance=5.632 (r_norm ok, signals_used=5, recency=0.863)",
         "CustomerValidation=8.773 (google n=1602 raw=4.5 shrunk=4.48 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.326; distinction+0.000; adjusted=7.326; final=7.326",
@@ -8991,7 +8991,7 @@
     "name": "Curry Republic",
     "components": {
       "trust_compliance": {
-        "score": 5.543,
+        "score": 5.542,
         "available": true,
         "signals_used": 5
       },
@@ -9038,9 +9038,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.543 (r_norm ok, signals_used=5, recency=0.686)",
+        "TrustCompliance=5.542 (r_norm ok, signals_used=5, recency=0.684)",
         "CustomerValidation=8.407 (google n=126 raw=4.5 shrunk=4.33 w=0.50)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.125; distinction+0.000; adjusted=7.125; final=7.125",
@@ -9100,9 +9100,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.397 (r_norm ok, signals_used=5, recency=0.294)",
+        "TrustCompliance=8.397 (r_norm ok, signals_used=5, recency=0.293)",
         "CustomerValidation=8.938 (google n=116 raw=4.8 shrunk=4.55 w=0.46)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.506; distinction+0.000; adjusted=8.506; final=8.506",
@@ -9145,9 +9145,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.017,
-    "adjusted_score": 8.017,
-    "rcs_v4_final": 8.017,
+    "base_score": 8.016,
+    "adjusted_score": 8.016,
+    "rcs_v4_final": 8.016,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -9162,12 +9162,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.359 (r_norm ok, signals_used=5, recency=0.468)",
+        "TrustCompliance=9.359 (r_norm ok, signals_used=5, recency=0.467)",
         "CustomerValidation=7.829 (google n=23 raw=4.7 shrunk=4.08 w=0.09)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
-        "base=8.017; distinction+0.000; adjusted=8.017; final=8.017",
+        "base=8.016; distinction+0.000; adjusted=8.016; final=8.016",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -9177,7 +9177,7 @@
     "name": "DoubleTree By Hilton",
     "components": {
       "trust_compliance": {
-        "score": 8.388,
+        "score": 8.387,
         "available": true,
         "signals_used": 5
       },
@@ -9224,9 +9224,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.388 (r_norm ok, signals_used=5, recency=0.275)",
+        "TrustCompliance=8.387 (r_norm ok, signals_used=5, recency=0.275)",
         "CustomerValidation=8.308 (google n=1314 raw=4.3 shrunk=4.28 w=1.00)",
         "CommercialReadiness=2.500 (web=True, menu=False, hours=0.00, booking=False)",
         "base=7.469; distinction+0.000; adjusted=7.469; final=7.469",
@@ -9239,7 +9239,7 @@
     "name": "Cardamom",
     "components": {
       "trust_compliance": {
-        "score": 9.122,
+        "score": 9.121,
         "available": true,
         "signals_used": 5
       },
@@ -9286,9 +9286,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.122 (r_norm ok, signals_used=5, recency=0.743)",
+        "TrustCompliance=9.121 (r_norm ok, signals_used=5, recency=0.742)",
         "CustomerValidation=8.859 (google n=344 raw=4.6 shrunk=4.52 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.760; distinction+0.000; adjusted=8.760; final=8.760",
@@ -9350,9 +9350,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.758 (r_norm ok, signals_used=5, recency=0.517)",
+        "TrustCompliance=9.758 (r_norm ok, signals_used=5, recency=0.516)",
         "CustomerValidation=8.769 (google n=83 raw=4.8 shrunk=4.48 w=0.33)",
         "CommercialReadiness=5.000 (web=True, menu=True, hours=0.00, booking=False)",
         "base=8.599; distinction+0.050; adjusted=8.649; final=8.649",
@@ -9365,7 +9365,7 @@
     "name": "WINGERS STRATFORD",
     "components": {
       "trust_compliance": {
-        "score": 7.503,
+        "score": 7.502,
         "available": true,
         "signals_used": 5
       },
@@ -9412,9 +9412,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.503 (r_norm ok, signals_used=5, recency=0.806)",
+        "TrustCompliance=7.502 (r_norm ok, signals_used=5, recency=0.804)",
         "CustomerValidation=7.782 (google n=40 raw=4.4 shrunk=4.06 w=0.16)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=7.253; distinction+0.000; adjusted=7.253; final=7.253",
@@ -9427,7 +9427,7 @@
     "name": "Mr Odie's",
     "components": {
       "trust_compliance": {
-        "score": 8.481,
+        "score": 8.48,
         "available": true,
         "signals_used": 5
       },
@@ -9474,9 +9474,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.481 (r_norm ok, signals_used=5, recency=0.462)",
+        "TrustCompliance=8.480 (r_norm ok, signals_used=5, recency=0.461)",
         "CustomerValidation=9.159 (google n=89 raw=5.0 shrunk=4.65 w=0.36)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.639; distinction+0.000; adjusted=8.639; final=8.639",
@@ -9489,7 +9489,7 @@
     "name": "The Bull's Head",
     "components": {
       "trust_compliance": {
-        "score": 9.331,
+        "score": 9.33,
         "available": true,
         "signals_used": 5
       },
@@ -9536,9 +9536,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.331 (r_norm ok, signals_used=5, recency=0.412)",
+        "TrustCompliance=9.330 (r_norm ok, signals_used=5, recency=0.411)",
         "CustomerValidation=8.950 (google n=691 raw=4.6 shrunk=4.56 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.885; distinction+0.000; adjusted=8.885; final=8.885",
@@ -9598,9 +9598,9 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.376 (r_norm ok, signals_used=5, recency=0.302)",
+        "TrustCompliance=7.376 (r_norm ok, signals_used=5, recency=0.301)",
         "CustomerValidation=8.765 (google n=120 raw=4.7 shrunk=4.48 w=0.48)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.020; distinction+0.000; adjusted=8.020; final=8.020",
@@ -9614,7 +9614,7 @@
     "name": "Hussains",
     "components": {
       "trust_compliance": {
-        "score": 9.306,
+        "score": 9.305,
         "available": true,
         "signals_used": 5
       },
@@ -9661,9 +9661,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.306 (r_norm ok, signals_used=5, recency=0.362)",
+        "TrustCompliance=9.305 (r_norm ok, signals_used=5, recency=0.361)",
         "CustomerValidation=8.209 (google n=331 raw=4.3 shrunk=4.24 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.541; distinction+0.000; adjusted=8.541; final=8.541",
@@ -9707,9 +9707,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.529,
-    "adjusted_score": 7.529,
-    "rcs_v4_final": 7.529,
+    "base_score": 7.528,
+    "adjusted_score": 7.528,
+    "rcs_v4_final": 7.528,
     "confidence_class": "Directional-C",
     "rankable": false,
     "league_table_eligible": false,
@@ -9724,12 +9724,12 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.153 (r_norm ok, signals_used=5, recency=0.356)",
+        "TrustCompliance=7.153 (r_norm ok, signals_used=5, recency=0.355)",
         "CustomerValidation=7.872 (google n=73 raw=4.3 shrunk=4.10 w=0.29)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=7.529; distinction+0.000; adjusted=7.529; final=7.529",
+        "base=7.528; distinction+0.000; adjusted=7.528; final=7.528",
         "class=Directional-C; rankable=False; league=False",
         "entity_match=ambiguous"
       ]
@@ -9740,7 +9740,7 @@
     "name": "Greggs PLC",
     "components": {
       "trust_compliance": {
-        "score": 9.839,
+        "score": 9.838,
         "available": true,
         "signals_used": 5
       },
@@ -9770,9 +9770,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.72,
-    "adjusted_score": 7.72,
-    "rcs_v4_final": 7.72,
+    "base_score": 7.719,
+    "adjusted_score": 7.719,
+    "rcs_v4_final": 7.719,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -9787,12 +9787,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.839 (r_norm ok, signals_used=5, recency=0.678)",
+        "TrustCompliance=9.838 (r_norm ok, signals_used=5, recency=0.676)",
         "CustomerValidation=6.742 (google n=58 raw=3.6 shrunk=3.60 w=0.23)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
-        "base=7.720; distinction+0.000; adjusted=7.720; final=7.720",
+        "base=7.719; distinction+0.000; adjusted=7.719; final=7.719",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -9802,7 +9802,7 @@
     "name": "Mouchak",
     "components": {
       "trust_compliance": {
-        "score": 5.445,
+        "score": 5.444,
         "available": true,
         "signals_used": 5
       },
@@ -9849,9 +9849,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.445 (r_norm ok, signals_used=5, recency=0.489)",
+        "TrustCompliance=5.444 (r_norm ok, signals_used=5, recency=0.488)",
         "CustomerValidation=7.472 (google n=11 raw=4.8 shrunk=3.92 w=0.05)",
         "CommercialReadiness=5.000 (web=False, menu=True, hours=1.00, booking=False)",
         "base=6.290; distinction+0.000; adjusted=6.290; final=6.290",
@@ -9864,7 +9864,7 @@
     "name": "No 37 Cafe",
     "components": {
       "trust_compliance": {
-        "score": 9.593,
+        "score": 9.592,
         "available": true,
         "signals_used": 5
       },
@@ -9911,9 +9911,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.593 (r_norm ok, signals_used=5, recency=0.935)",
+        "TrustCompliance=9.592 (r_norm ok, signals_used=5, recency=0.933)",
         "CustomerValidation=8.238 (google n=430 raw=4.3 shrunk=4.25 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.669; distinction+0.000; adjusted=8.669; final=8.669",
@@ -9926,7 +9926,7 @@
     "name": "Costa",
     "components": {
       "trust_compliance": {
-        "score": 9.533,
+        "score": 9.532,
         "available": true,
         "signals_used": 5
       },
@@ -9973,9 +9973,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.533 (r_norm ok, signals_used=5, recency=0.817)",
+        "TrustCompliance=9.532 (r_norm ok, signals_used=5, recency=0.815)",
         "CustomerValidation=8.188 (google n=283 raw=4.3 shrunk=4.23 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.623; distinction+0.000; adjusted=8.623; final=8.623",
@@ -10035,7 +10035,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=9.618 (r_norm ok, signals_used=5, recency=0.236)",
         "CustomerValidation=8.164 (google n=241 raw=4.3 shrunk=4.22 w=0.96)",
@@ -10097,9 +10097,9 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.772 (r_norm ok, signals_used=5, recency=0.294)",
+        "TrustCompliance=8.772 (r_norm ok, signals_used=5, recency=0.293)",
         "CustomerValidation=7.648 (google n=10079 raw=4.0 shrunk=4.00 w=1.00)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=7.325; distinction+0.000; adjusted=7.325; final=7.325",
@@ -10113,7 +10113,7 @@
     "name": "Aston Martin Lagonda",
     "components": {
       "trust_compliance": {
-        "score": 9.579,
+        "score": 9.578,
         "available": true,
         "signals_used": 5
       },
@@ -10160,9 +10160,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.579 (r_norm ok, signals_used=5, recency=0.908)",
+        "TrustCompliance=9.578 (r_norm ok, signals_used=5, recency=0.906)",
         "CustomerValidation=8.906 (google n=468 raw=4.6 shrunk=4.54 w=1.00)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=8.214; distinction+0.000; adjusted=8.214; final=8.214",
@@ -10175,7 +10175,7 @@
     "name": "Red Hot Mamma Pizzeria",
     "components": {
       "trust_compliance": {
-        "score": 9.386,
+        "score": 9.385,
         "available": true,
         "signals_used": 5
       },
@@ -10222,9 +10222,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.386 (r_norm ok, signals_used=5, recency=0.522)",
+        "TrustCompliance=9.385 (r_norm ok, signals_used=5, recency=0.520)",
         "CustomerValidation=9.431 (google n=912 raw=4.8 shrunk=4.76 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=9.123; distinction+0.000; adjusted=9.123; final=9.123",
@@ -10237,7 +10237,7 @@
     "name": "Coffee Clouds",
     "components": {
       "trust_compliance": {
-        "score": 8.582,
+        "score": 8.581,
         "available": true,
         "signals_used": 5
       },
@@ -10284,9 +10284,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.582 (r_norm ok, signals_used=5, recency=0.664)",
+        "TrustCompliance=8.581 (r_norm ok, signals_used=5, recency=0.663)",
         "CustomerValidation=8.841 (google n=311 raw=4.6 shrunk=4.51 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.536; distinction+0.000; adjusted=8.536; final=8.536",
@@ -10299,7 +10299,7 @@
     "name": "Nanas Caff",
     "components": {
       "trust_compliance": {
-        "score": 9.637,
+        "score": 9.636,
         "available": true,
         "signals_used": 5
       },
@@ -10337,9 +10337,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.637 (r_norm ok, signals_used=5, recency=0.273)",
+        "TrustCompliance=9.636 (r_norm ok, signals_used=5, recency=0.273)",
         "CustomerValidation=None (no platforms)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=4.230; distinction+0.000; adjusted=4.230; final=4.230",
@@ -10352,7 +10352,7 @@
     "name": "The Stables",
     "components": {
       "trust_compliance": {
-        "score": 9.205,
+        "score": 9.204,
         "available": true,
         "signals_used": 5
       },
@@ -10399,9 +10399,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.205 (r_norm ok, signals_used=5, recency=0.410)",
+        "TrustCompliance=9.204 (r_norm ok, signals_used=5, recency=0.409)",
         "CustomerValidation=8.498 (google n=98 raw=4.6 shrunk=4.37 w=0.39)",
         "CommercialReadiness=2.500 (web=True, menu=False, hours=0.00, booking=False)",
         "base=7.881; distinction+0.000; adjusted=7.881; final=7.881",
@@ -10414,7 +10414,7 @@
     "name": "Nel's At The Pavilion",
     "components": {
       "trust_compliance": {
-        "score": 9.571,
+        "score": 9.57,
         "available": true,
         "signals_used": 5
       },
@@ -10461,9 +10461,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.571 (r_norm ok, signals_used=5, recency=0.891)",
+        "TrustCompliance=9.570 (r_norm ok, signals_used=5, recency=0.889)",
         "CustomerValidation=9.123 (google n=453 raw=4.7 shrunk=4.63 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=9.058; distinction+0.000; adjusted=9.058; final=9.058",
@@ -10523,7 +10523,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=9.608 (r_norm ok, signals_used=5, recency=0.216)",
         "CustomerValidation=8.404 (google n=292 raw=4.4 shrunk=4.33 w=1.00)",
@@ -10538,7 +10538,7 @@
     "name": "Arrow Mill",
     "components": {
       "trust_compliance": {
-        "score": 9.932,
+        "score": 9.931,
         "available": true,
         "signals_used": 5
       },
@@ -10585,9 +10585,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.932 (r_norm ok, signals_used=5, recency=0.863)",
+        "TrustCompliance=9.931 (r_norm ok, signals_used=5, recency=0.861)",
         "CustomerValidation=8.781 (google n=1988 raw=4.5 shrunk=4.49 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=9.049; distinction+0.000; adjusted=9.049; final=9.049",
@@ -10600,7 +10600,7 @@
     "name": "Digby's Events",
     "components": {
       "trust_compliance": {
-        "score": 9.677,
+        "score": 9.676,
         "available": true,
         "signals_used": 5
       },
@@ -10638,9 +10638,9 @@
     "entity_match_status": "probable",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.677 (r_norm ok, signals_used=5, recency=0.354)",
+        "TrustCompliance=9.676 (r_norm ok, signals_used=5, recency=0.353)",
         "CustomerValidation=None (no platforms)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
         "base=3.871; distinction+0.000; adjusted=3.871; final=3.871",
@@ -10654,7 +10654,7 @@
     "name": "Turkish Stonebakers",
     "components": {
       "trust_compliance": {
-        "score": 7.083,
+        "score": 7.082,
         "available": true,
         "signals_used": 5
       },
@@ -10701,9 +10701,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.083 (r_norm ok, signals_used=5, recency=0.215)",
+        "TrustCompliance=7.082 (r_norm ok, signals_used=5, recency=0.215)",
         "CustomerValidation=9.258 (google n=294 raw=4.8 shrunk=4.69 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.124; distinction+0.000; adjusted=8.124; final=8.124",
@@ -10763,9 +10763,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.760 (r_norm ok, signals_used=5, recency=0.520)",
+        "TrustCompliance=9.760 (r_norm ok, signals_used=5, recency=0.519)",
         "CustomerValidation=4.364 (google n=65 raw=2.0 shrunk=2.51 w=0.26)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=6.993; distinction+0.000; adjusted=6.993; final=6.993",
@@ -10778,7 +10778,7 @@
     "name": "Bruno's Bakery",
     "components": {
       "trust_compliance": {
-        "score": 8.655,
+        "score": 8.654,
         "available": true,
         "signals_used": 5
       },
@@ -10825,9 +10825,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.655 (r_norm ok, signals_used=5, recency=0.809)",
+        "TrustCompliance=8.654 (r_norm ok, signals_used=5, recency=0.807)",
         "CustomerValidation=8.827 (google n=290 raw=4.6 shrunk=4.51 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.559; distinction+0.000; adjusted=8.559; final=8.559",
@@ -10870,9 +10870,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 9.081,
-    "adjusted_score": 9.081,
-    "rcs_v4_final": 9.081,
+    "base_score": 9.08,
+    "adjusted_score": 9.08,
+    "rcs_v4_final": 9.08,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -10887,12 +10887,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.680 (r_norm ok, signals_used=5, recency=0.361)",
+        "TrustCompliance=9.680 (r_norm ok, signals_used=5, recency=0.360)",
         "CustomerValidation=9.074 (google n=105 raw=4.9 shrunk=4.61 w=0.42)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=9.081; distinction+0.000; adjusted=9.081; final=9.081",
+        "base=9.080; distinction+0.000; adjusted=9.080; final=9.080",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -10949,9 +10949,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.631 (r_norm ok, signals_used=5, recency=0.262)",
+        "TrustCompliance=9.631 (r_norm ok, signals_used=5, recency=0.261)",
         "CustomerValidation=8.303 (google n=94 raw=4.5 shrunk=4.28 w=0.38)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=7.964; distinction+0.000; adjusted=7.964; final=7.964",
@@ -11002,9 +11002,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.543 (r_norm ok, signals_used=5, recency=0.586)",
+        "TrustCompliance=8.543 (r_norm ok, signals_used=5, recency=0.585)",
         "CustomerValidation=None (no platforms)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=3.792; distinction+0.000; adjusted=3.792; final=3.792",
@@ -11017,7 +11017,7 @@
     "name": "The Buck And Bell",
     "components": {
       "trust_compliance": {
-        "score": 7.094,
+        "score": 7.093,
         "available": true,
         "signals_used": 5
       },
@@ -11064,9 +11064,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.094 (r_norm ok, signals_used=5, recency=0.238)",
+        "TrustCompliance=7.093 (r_norm ok, signals_used=5, recency=0.237)",
         "CustomerValidation=8.637 (google n=331 raw=4.5 shrunk=4.43 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.849; distinction+0.000; adjusted=7.849; final=7.849",
@@ -11079,7 +11079,7 @@
     "name": "Thespians Indian Restaurant",
     "components": {
       "trust_compliance": {
-        "score": 7.319,
+        "score": 7.318,
         "available": true,
         "signals_used": 5
       },
@@ -11126,9 +11126,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.319 (r_norm ok, signals_used=5, recency=0.687)",
+        "TrustCompliance=7.318 (r_norm ok, signals_used=5, recency=0.686)",
         "CustomerValidation=7.606 (google n=581 raw=4.0 shrunk=3.98 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.475; distinction+0.000; adjusted=7.475; final=7.475",
@@ -11141,7 +11141,7 @@
     "name": "Sorrento Restaurant Taste Of Italy",
     "components": {
       "trust_compliance": {
-        "score": 5.919,
+        "score": 5.918,
         "available": true,
         "signals_used": 5
       },
@@ -11188,9 +11188,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.919 (r_norm ok, signals_used=5, recency=0.687)",
+        "TrustCompliance=5.918 (r_norm ok, signals_used=5, recency=0.686)",
         "CustomerValidation=8.673 (google n=426 raw=4.5 shrunk=4.44 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.395; distinction+0.000; adjusted=7.395; final=7.395",
@@ -11250,7 +11250,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=9.255 (r_norm ok, signals_used=5, recency=0.260)",
         "CustomerValidation=8.329 (google n=3165 raw=4.3 shrunk=4.29 w=1.00)",
@@ -11298,7 +11298,7 @@
       {
         "code": "STALE-5Y",
         "effect": "TrustCompliance cap 5.0",
-        "reason": "days_since_rd=2439"
+        "reason": "days_since_rd=2440"
       }
     ],
     "base_score": 5.498,
@@ -11318,7 +11318,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=5.000 (r_norm ok, signals_used=5, recency=0.004)",
         "CustomerValidation=6.939 (google n=2 raw=5.0 shrunk=3.69 w=0.05)",
@@ -11333,7 +11333,7 @@
     "name": "Cotswold Cafe",
     "components": {
       "trust_compliance": {
-        "score": 9.48,
+        "score": 9.479,
         "available": true,
         "signals_used": 5
       },
@@ -11380,9 +11380,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.480 (r_norm ok, signals_used=5, recency=0.710)",
+        "TrustCompliance=9.479 (r_norm ok, signals_used=5, recency=0.708)",
         "CustomerValidation=9.013 (google n=258 raw=4.7 shrunk=4.59 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.973; distinction+0.000; adjusted=8.973; final=8.973",
@@ -11395,7 +11395,7 @@
     "name": "Espresso Barn",
     "components": {
       "trust_compliance": {
-        "score": 9.806,
+        "score": 9.805,
         "available": true,
         "signals_used": 5
       },
@@ -11442,9 +11442,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.806 (r_norm ok, signals_used=5, recency=0.611)",
+        "TrustCompliance=9.805 (r_norm ok, signals_used=5, recency=0.610)",
         "CustomerValidation=8.693 (google n=501 raw=4.5 shrunk=4.45 w=1.00)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=8.209; distinction+0.000; adjusted=8.209; final=8.209",
@@ -11504,7 +11504,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=9.177 (r_norm ok, signals_used=5, recency=0.354)",
         "CustomerValidation=9.193 (google n=826 raw=4.7 shrunk=4.66 w=1.00)",
@@ -11552,7 +11552,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=739, r=5"
+        "reason": "days_since_rd=740, r=5"
       }
     ],
     "base_score": 8.206,
@@ -11572,9 +11572,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.183)",
+        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.182)",
         "CustomerValidation=9.512 (google n=8975 raw=4.8 shrunk=4.80 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.206; distinction+0.000; adjusted=8.206; final=8.206",
@@ -11634,9 +11634,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.784 (r_norm ok, signals_used=5, recency=0.418)",
+        "TrustCompliance=5.784 (r_norm ok, signals_used=5, recency=0.417)",
         "CustomerValidation=8.642 (google n=144 raw=4.6 shrunk=4.43 w=0.58)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=6.578; distinction+0.000; adjusted=6.578; final=6.578",
@@ -11649,7 +11649,7 @@
     "name": "Ashorne Hill Management College",
     "components": {
       "trust_compliance": {
-        "score": 9.856,
+        "score": 9.855,
         "available": true,
         "signals_used": 5
       },
@@ -11696,9 +11696,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.856 (r_norm ok, signals_used=5, recency=0.711)",
+        "TrustCompliance=9.855 (r_norm ok, signals_used=5, recency=0.710)",
         "CustomerValidation=8.690 (google n=489 raw=4.5 shrunk=4.45 w=1.00)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
         "base=7.853; distinction+0.000; adjusted=7.853; final=7.853",
@@ -11711,7 +11711,7 @@
     "name": "Revs Automobilia",
     "components": {
       "trust_compliance": {
-        "score": 8.888,
+        "score": 8.887,
         "available": true,
         "signals_used": 5
       },
@@ -11758,9 +11758,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.888 (r_norm ok, signals_used=5, recency=0.525)",
+        "TrustCompliance=8.887 (r_norm ok, signals_used=5, recency=0.524)",
         "CustomerValidation=8.758 (google n=118 raw=4.7 shrunk=4.48 w=0.47)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.621; distinction+0.000; adjusted=8.621; final=8.621",
@@ -11773,7 +11773,7 @@
     "name": "The Garden Shed Cafe",
     "components": {
       "trust_compliance": {
-        "score": 7.13,
+        "score": 7.129,
         "available": true,
         "signals_used": 5
       },
@@ -11820,9 +11820,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.130 (r_norm ok, signals_used=5, recency=0.560)",
+        "TrustCompliance=7.129 (r_norm ok, signals_used=5, recency=0.559)",
         "CustomerValidation=8.913 (google n=494 raw=4.6 shrunk=4.54 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.988; distinction+0.000; adjusted=7.988; final=7.988",
@@ -11835,7 +11835,7 @@
     "name": "Elders Who Lunch (Hartley Locums)",
     "components": {
       "trust_compliance": {
-        "score": 8.506,
+        "score": 8.505,
         "available": true,
         "signals_used": 5
       },
@@ -11865,9 +11865,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 7.094,
-    "adjusted_score": 7.094,
-    "rcs_v4_final": 7.094,
+    "base_score": 7.093,
+    "adjusted_score": 7.093,
+    "rcs_v4_final": 7.093,
     "confidence_class": "Directional-C",
     "rankable": false,
     "league_table_eligible": false,
@@ -11882,12 +11882,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.506 (r_norm ok, signals_used=5, recency=0.512)",
+        "TrustCompliance=8.505 (r_norm ok, signals_used=5, recency=0.511)",
         "CustomerValidation=7.369 (google n=9 raw=4.8 shrunk=3.88 w=0.05)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
-        "base=7.094; distinction+0.000; adjusted=7.094; final=7.094",
+        "base=7.093; distinction+0.000; adjusted=7.093; final=7.093",
         "class=Directional-C; rankable=False; league=False"
       ]
     }
@@ -11897,7 +11897,7 @@
     "name": "Premier Inn",
     "components": {
       "trust_compliance": {
-        "score": 9.557,
+        "score": 9.556,
         "available": true,
         "signals_used": 5
       },
@@ -11927,9 +11927,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.102,
-    "adjusted_score": 8.102,
-    "rcs_v4_final": 8.102,
+    "base_score": 8.101,
+    "adjusted_score": 8.101,
+    "rcs_v4_final": 8.101,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -11944,12 +11944,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.557 (r_norm ok, signals_used=5, recency=0.863)",
+        "TrustCompliance=9.556 (r_norm ok, signals_used=5, recency=0.861)",
         "CustomerValidation=7.842 (google n=860 raw=4.1 shrunk=4.08 w=1.00)",
         "CommercialReadiness=5.000 (web=True, menu=True, hours=0.00, booking=False)",
-        "base=8.102; distinction+0.000; adjusted=8.102; final=8.102",
+        "base=8.101; distinction+0.000; adjusted=8.101; final=8.101",
         "class=Rankable-B; rankable=True; league=True"
       ]
     }
@@ -11959,7 +11959,7 @@
     "name": "Arden Tandoori",
     "components": {
       "trust_compliance": {
-        "score": 8.458,
+        "score": 8.457,
         "available": true,
         "signals_used": 5
       },
@@ -12006,9 +12006,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.458 (r_norm ok, signals_used=5, recency=0.415)",
+        "TrustCompliance=8.457 (r_norm ok, signals_used=5, recency=0.414)",
         "CustomerValidation=8.740 (google n=199 raw=4.6 shrunk=4.47 w=0.80)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.441; distinction+0.000; adjusted=8.441; final=8.441",
@@ -12054,7 +12054,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=737, r=5"
+        "reason": "days_since_rd=738, r=5"
       }
     ],
     "base_score": 7.284,
@@ -12074,9 +12074,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.184)",
+        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.183)",
         "CustomerValidation=8.298 (google n=1029 raw=4.3 shrunk=4.28 w=1.00)",
         "CommercialReadiness=5.000 (web=True, menu=True, hours=0.00, booking=False)",
         "base=7.284; distinction+0.000; adjusted=7.284; final=7.284",
@@ -12090,7 +12090,7 @@
     "name": "Earlswood Lunch Club",
     "components": {
       "trust_compliance": {
-        "score": 8.779,
+        "score": 8.778,
         "available": true,
         "signals_used": 5
       },
@@ -12137,9 +12137,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.779 (r_norm ok, signals_used=5, recency=0.307)",
+        "TrustCompliance=8.778 (r_norm ok, signals_used=5, recency=0.307)",
         "CustomerValidation=7.562 (google n=32 raw=4.3 shrunk=3.96 w=0.13)",
         "CommercialReadiness=0.000 (web=False, menu=False, hours=0.00, booking=False)",
         "base=6.914; distinction+0.000; adjusted=6.914; final=6.914",
@@ -12199,7 +12199,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=9.599 (r_norm ok, signals_used=5, recency=0.198)",
         "CustomerValidation=9.160 (google n=600 raw=4.7 shrunk=4.65 w=1.00)",
@@ -12262,9 +12262,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.399 (r_norm ok, signals_used=5, recency=0.549)",
+        "TrustCompliance=9.399 (r_norm ok, signals_used=5, recency=0.547)",
         "CustomerValidation=7.411 (google n=1938 raw=3.9 shrunk=3.90 w=1.00)",
         "CommercialReadiness=2.500 (web=True, menu=False, hours=0.00, booking=False)",
         "base=7.470; distinction+0.000; adjusted=7.470; final=7.470",
@@ -12277,7 +12277,7 @@
     "name": "Billesley Manor Hotel",
     "components": {
       "trust_compliance": {
-        "score": 8.77,
+        "score": 8.769,
         "available": true,
         "signals_used": 5
       },
@@ -12324,9 +12324,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.770 (r_norm ok, signals_used=5, recency=0.289)",
+        "TrustCompliance=8.769 (r_norm ok, signals_used=5, recency=0.289)",
         "CustomerValidation=8.078 (google n=1208 raw=4.2 shrunk=4.19 w=1.00)",
         "CommercialReadiness=2.500 (web=True, menu=False, hours=0.00, booking=False)",
         "base=7.518; distinction+0.000; adjusted=7.518; final=7.518",
@@ -12386,7 +12386,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=8.406 (r_norm ok, signals_used=5, recency=0.312)",
         "CustomerValidation=8.635 (google n=141 raw=4.6 shrunk=4.42 w=0.56)",
@@ -12434,7 +12434,7 @@
       {
         "code": "STALE-2Y",
         "effect": "TrustCompliance soft cap 7.0",
-        "reason": "days_since_rd=912, r=5"
+        "reason": "days_since_rd=913, r=5"
       }
     ],
     "base_score": 7.531,
@@ -12454,9 +12454,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.123)",
+        "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.122)",
         "CustomerValidation=8.013 (google n=392 raw=4.2 shrunk=4.16 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=7.531; distinction+0.000; adjusted=7.531; final=7.531",
@@ -12516,7 +12516,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=8.721 (r_norm ok, signals_used=5, recency=0.192)",
         "CustomerValidation=9.607 (google n=575 raw=4.9 shrunk=4.84 w=1.00)",
@@ -12531,7 +12531,7 @@
     "name": "Shipston Pizza And Kebab House",
     "components": {
       "trust_compliance": {
-        "score": 5.882,
+        "score": 5.881,
         "available": true,
         "signals_used": 5
       },
@@ -12578,9 +12578,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=5.882 (r_norm ok, signals_used=5, recency=0.614)",
+        "TrustCompliance=5.881 (r_norm ok, signals_used=5, recency=0.613)",
         "CustomerValidation=7.634 (google n=110 raw=4.1 shrunk=3.99 w=0.44)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=6.913; distinction+0.000; adjusted=6.913; final=6.913",
@@ -12640,9 +12640,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.221 (r_norm ok, signals_used=5, recency=0.192)",
+        "TrustCompliance=9.221 (r_norm ok, signals_used=5, recency=0.191)",
         "CustomerValidation=8.776 (google n=1698 raw=4.5 shrunk=4.48 w=1.00)",
         "CommercialReadiness=2.500 (web=True, menu=False, hours=0.00, booking=False)",
         "base=8.012; distinction+0.000; adjusted=8.012; final=8.012",
@@ -12702,9 +12702,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.887 (r_norm ok, signals_used=5, recency=0.275)",
+        "TrustCompliance=8.887 (r_norm ok, signals_used=5, recency=0.274)",
         "CustomerValidation=8.148 (google n=219 raw=4.3 shrunk=4.22 w=0.88)",
         "CommercialReadiness=2.500 (web=False, menu=False, hours=1.00, booking=False)",
         "base=7.597; distinction+0.000; adjusted=7.597; final=7.597",
@@ -12717,7 +12717,7 @@
     "name": "China Garden",
     "components": {
       "trust_compliance": {
-        "score": 4.357,
+        "score": 4.356,
         "available": true,
         "signals_used": 5
       },
@@ -12764,9 +12764,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=4.357 (r_norm ok, signals_used=5, recency=0.863)",
+        "TrustCompliance=4.356 (r_norm ok, signals_used=5, recency=0.861)",
         "CustomerValidation=6.186 (google n=148 raw=3.3 shrunk=3.35 w=0.59)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=5.651; distinction+0.000; adjusted=5.651; final=5.651",
@@ -12826,9 +12826,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.440 (r_norm ok, signals_used=5, recency=0.381)",
+        "TrustCompliance=8.440 (r_norm ok, signals_used=5, recency=0.380)",
         "CustomerValidation=8.316 (google n=184 raw=4.4 shrunk=4.29 w=0.74)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.243; distinction+0.000; adjusted=8.243; final=8.243",
@@ -12888,9 +12888,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.941 (r_norm ok, signals_used=5, recency=0.633)",
+        "TrustCompliance=8.941 (r_norm ok, signals_used=5, recency=0.631)",
         "CustomerValidation=9.414 (google n=763 raw=4.8 shrunk=4.75 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.938; distinction+0.000; adjusted=8.938; final=8.938",
@@ -12903,7 +12903,7 @@
     "name": "Loxleys Restaurant And Wine Bar",
     "components": {
       "trust_compliance": {
-        "score": 8.723,
+        "score": 8.722,
         "available": true,
         "signals_used": 5
       },
@@ -12933,9 +12933,9 @@
     },
     "penalties_applied": [],
     "caps_applied": [],
-    "base_score": 8.772,
-    "adjusted_score": 8.772,
-    "rcs_v4_final": 8.772,
+    "base_score": 8.771,
+    "adjusted_score": 8.771,
+    "rcs_v4_final": 8.771,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_table_eligible": true,
@@ -12950,12 +12950,12 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=8.723 (r_norm ok, signals_used=5, recency=0.946)",
+        "TrustCompliance=8.722 (r_norm ok, signals_used=5, recency=0.944)",
         "CustomerValidation=9.238 (google n=1669 raw=4.7 shrunk=4.68 w=1.00)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
-        "base=8.772; distinction+0.000; adjusted=8.772; final=8.772",
+        "base=8.771; distinction+0.000; adjusted=8.771; final=8.771",
         "class=Rankable-B; rankable=True; league=True",
         "alias public_name='Loxleys Restaurant and Wine Bar' alias_confidence=high"
       ]
@@ -13020,7 +13020,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
         "TrustCompliance=8.523 (r_norm ok, signals_used=5, recency=0.196)",
         "CustomerValidation=8.803 (google n=887 raw=4.6 shrunk=4.57 w=1.00; tripadvisor n=20 raw=4.4 shrunk=3.96 w=0.13)",
@@ -13036,7 +13036,7 @@
     "name": "Simla Takeaway",
     "components": {
       "trust_compliance": {
-        "score": 9.381,
+        "score": 9.38,
         "available": true,
         "signals_used": 5
       },
@@ -13083,9 +13083,9 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-17T15:59:26Z",
+      "computed_at": "2026-04-18T14:47:05Z",
       "decision_trace": [
-        "TrustCompliance=9.381 (r_norm ok, signals_used=5, recency=0.362)",
+        "TrustCompliance=9.380 (r_norm ok, signals_used=5, recency=0.361)",
         "CustomerValidation=7.384 (google n=73 raw=4.0 shrunk=3.88 w=0.29)",
         "CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)",
         "base=8.200; distinction+0.000; adjusted=8.200; final=8.200",

@@ -1,6 +1,6 @@
 {
   "engine_version": "v4.0.0",
-  "computed_at": "2026-04-17T15:59:26Z",
+  "computed_at": "2026-04-18T14:47:05Z",
   "venue": {
     "fhrsid": "1847445",
     "name": "Soma",
@@ -18,7 +18,7 @@
   "adjusted_score": 8.824,
   "components": {
     "trust_compliance": {
-      "score": 9.388,
+      "score": 9.387,
       "available": true,
       "signals_used": 5
     },

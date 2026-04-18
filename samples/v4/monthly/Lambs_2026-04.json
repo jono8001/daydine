@@ -1,6 +1,6 @@
 {
   "engine_version": "v4.0.0",
-  "computed_at": "2026-04-17T15:59:26Z",
+  "computed_at": "2026-04-18T14:47:05Z",
   "venue": {
     "fhrsid": "503316",
     "name": "Lambs",
@@ -18,7 +18,7 @@
   "adjusted_score": 8.939,
   "components": {
     "trust_compliance": {
-      "score": 9.153,
+      "score": 9.152,
       "available": true,
       "signals_used": 5
     },

@@ -149,6 +149,17 @@ def _flag_duplicate_gpids(establishments: dict, aliases: dict) -> dict:
     """Flag `entity_ambiguous = true` on any set of records sharing a gpid.
     Also compares against aliases['ambiguous_gpids'] for any human-reviewed
     groupings (which we respect even if no automatic duplicate is seen).
+
+    When a manual alias entry carries a `disambiguation_type` /
+    `reason_for_operator` / `primary_fhrsid` / `resolution_path`, the
+    resolver propagates these onto each flagged record (as
+    `disambiguation_type`, `disambiguation_reason`, etc.) so the V4
+    report can surface a specific operator-facing explanation rather
+    than a generic "ambiguous" label. When `primary_fhrsid` is set,
+    the non-primary records in that group are additionally marked
+    `fsa_closed = true` — the manual reviewer's assertion that the
+    non-primary is the retired side of a rebrand / relocation. Default
+    (no `primary_fhrsid`) keeps all records in the group ambiguous.
     """
     by_gpid: dict[str, list[str]] = {}
     for fid, rec in establishments.items():
@@ -157,26 +168,76 @@ def _flag_duplicate_gpids(establishments: dict, aliases: dict) -> dict:
             by_gpid.setdefault(g, []).append(str(fid))
 
     auto_groups = []
+    auto_group_fhrsids: set[str] = set()
     for g, fids in by_gpid.items():
         if len(fids) > 1:
             auto_groups.append({"gpid": g, "fhrsids": fids})
             for fid in fids:
                 establishments[fid]["entity_ambiguous"] = True
+                auto_group_fhrsids.add(fid)
 
-    # Respect manual ambiguity declarations too
+    # Respect manual ambiguity declarations + propagate disambiguation
+    # context onto each flagged record.
     manual_flagged = 0
+    retired_flagged = 0
     for entry in aliases.get("ambiguous_gpids", []) or []:
-        for fid in entry.get("fhrsids", []) or []:
-            fid = str(fid)
-            if fid in establishments:
-                if not establishments[fid].get("entity_ambiguous"):
-                    establishments[fid]["entity_ambiguous"] = True
-                    manual_flagged += 1
+        fhrsids = [str(f) for f in (entry.get("fhrsids") or [])]
+        primary = entry.get("primary_fhrsid")
+        if primary:
+            primary = str(primary)
+        for fid in fhrsids:
+            if fid not in establishments:
+                continue
+            rec = establishments[fid]
+            if not rec.get("entity_ambiguous"):
+                rec["entity_ambiguous"] = True
+                manual_flagged += 1
+            # Attach disambiguation context
+            if entry.get("disambiguation_type"):
+                rec["disambiguation_type"] = entry["disambiguation_type"]
+            if entry.get("reason_for_operator"):
+                rec["disambiguation_reason"] = entry["reason_for_operator"]
+            if entry.get("resolution_path"):
+                rec["disambiguation_resolution_path"] = \
+                    entry["resolution_path"]
+            if entry.get("site"):
+                rec["disambiguation_site"] = entry["site"]
+            # Primary / retired handling for rebrand_or_relocation
+            if primary and fid != primary:
+                rec["fsa_closed"] = True
+                rec["disambiguation_primary_fhrsid"] = primary
+                retired_flagged += 1
+            elif primary and fid == primary:
+                # Primary record — no longer ambiguous from our side.
+                rec["entity_ambiguous"] = False
+                rec["disambiguation_primary_fhrsid"] = primary
+
+    # Attach disambiguation context onto the auto_groups too so the
+    # resolver-report consumer (the V4 report generator) gets the
+    # richer context without having to re-read the alias table.
+    alias_by_gpid: dict[tuple[str, ...], dict] = {}
+    for entry in aliases.get("ambiguous_gpids", []) or []:
+        fhrsids_tuple = tuple(sorted(str(f) for f in entry.get("fhrsids", [])))
+        alias_by_gpid[fhrsids_tuple] = entry
+    for grp in auto_groups:
+        key = tuple(sorted(grp.get("fhrsids", [])))
+        alias_match = alias_by_gpid.get(key)
+        if alias_match:
+            # Copy names in alias-entry order (preserves the human-
+            # curated ordering) and the disambiguation fields.
+            grp["names"] = alias_match.get("names") or []
+            for f in (
+                "disambiguation_type", "reason_for_operator",
+                "resolution_path", "site", "primary_fhrsid",
+            ):
+                if f in alias_match:
+                    grp[f] = alias_match[f]
 
     return {
         "auto_groups": auto_groups,
         "manual_groups": aliases.get("ambiguous_gpids", []),
         "manual_only_flagged": manual_flagged,
+        "retired_flagged": retired_flagged,
     }
 
 

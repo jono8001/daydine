@@ -641,7 +641,11 @@
     "web": false,
     "fb": true,
     "ig": true,
-    "entity_ambiguous": true
+    "entity_ambiguous": true,
+    "disambiguation_type": "service_station_shared",
+    "disambiguation_reason": "Two separate brands share the service-station forecourt. Google Places returns one listing for the whole site; the FSA records each brand separately. Until each brand has a distinct Google Business Profile, both venues are flagged ambiguous and remain in Directional-C.",
+    "disambiguation_resolution_path": "Each brand operator requests a distinct Google Business Profile for their unit (franchise head office typically handles this for chain brands).",
+    "disambiguation_site": "Welcome Break Warwick Services Southbound, M40"
   },
   "1302779": {
     "a": "The Old Mint, Coventry Street, Southam",
@@ -1205,7 +1209,10 @@
     ],
     "web": true,
     "ig": false,
-    "entity_ambiguous": true
+    "entity_ambiguous": true,
+    "disambiguation_type": "rebrand_or_relocation",
+    "disambiguation_reason": "Two FSA records at different postcodes share one Google Place. Most commonly this is a rebrand or a relocation where the Google Business Profile survived and the old FSA record was not retired. Without operator confirmation it is not safe to assume either is closed.",
+    "disambiguation_resolution_path": "Operator confirms whether 'The Margin' or 'The Water Margin @ The Hollybush' is the current trading entity. Once confirmed, set `fsa_closed = true` on the retired record (via a manual patch on the establishments file) and remove the retired FHRSID from this entry."
   },
   "1747703": {
     "a": "6 - 7 High Street, Stratford-upon-Avon",
@@ -1495,7 +1502,11 @@
     "web": false,
     "fb": true,
     "ig": true,
-    "entity_ambiguous": true
+    "entity_ambiguous": true,
+    "disambiguation_type": "multi_tenant_site",
+    "disambiguation_reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+    "disambiguation_resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+    "disambiguation_site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
   },
   "1705603": {
     "a": "Escape Community Arts, The Old Slaughterhouse, Sheep Street, Stratford-upon-Avon",
@@ -2332,7 +2343,11 @@
     "web": true,
     "fb": true,
     "ig": true,
-    "entity_ambiguous": true
+    "entity_ambiguous": true,
+    "disambiguation_type": "food_hall_unit",
+    "disambiguation_reason": "Two separately FSA-registered units inside the Bell Court food hall share one Google Place ID (likely the hall's shared listing). Until each unit has a distinct Google Business Profile, both remain ambiguous and land in Directional-C.",
+    "disambiguation_resolution_path": "Each Bell Court unit requests a distinct Google Business Profile. Operators of multi-tenant food halls can do this via Google Business Profile Help.",
+    "disambiguation_site": "Bell Court, Stratford-upon-Avon"
   },
   "1774606": {
     "a": "Unit 3, Haydon House, 3 - 7 Alcester Road, Studley",
@@ -3392,7 +3407,11 @@
     "web": false,
     "fb": false,
     "ig": false,
-    "entity_ambiguous": true
+    "entity_ambiguous": true,
+    "disambiguation_type": "multi_tenant_site",
+    "disambiguation_reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+    "disambiguation_resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+    "disambiguation_site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
   },
   "503960": {
     "a": "The Bakery, 14 Sheep Street, Shipston-on-Stour",
@@ -6100,7 +6119,11 @@
     "web": true,
     "fb": true,
     "ig": true,
-    "entity_ambiguous": true
+    "entity_ambiguous": true,
+    "disambiguation_type": "food_hall_unit",
+    "disambiguation_reason": "Two separately FSA-registered units inside the Bell Court food hall share one Google Place ID (likely the hall's shared listing). Until each unit has a distinct Google Business Profile, both remain ambiguous and land in Directional-C.",
+    "disambiguation_resolution_path": "Each Bell Court unit requests a distinct Google Business Profile. Operators of multi-tenant food halls can do this via Google Business Profile Help.",
+    "disambiguation_site": "Bell Court, Stratford-upon-Avon"
   },
   "502864": {
     "a": "6A Chapel Street, Stratford-upon-Avon",
@@ -6190,7 +6213,10 @@
     ],
     "web": true,
     "ig": false,
-    "entity_ambiguous": true
+    "entity_ambiguous": true,
+    "disambiguation_type": "rebrand_or_relocation",
+    "disambiguation_reason": "Two FSA records at different postcodes share one Google Place. Most commonly this is a rebrand or a relocation where the Google Business Profile survived and the old FSA record was not retired. Without operator confirmation it is not safe to assume either is closed.",
+    "disambiguation_resolution_path": "Operator confirms whether 'The Margin' or 'The Water Margin @ The Hollybush' is the current trading entity. Once confirmed, set `fsa_closed = true` on the retired record (via a manual patch on the establishments file) and remove the retired FHRSID from this entry."
   },
   "1672980": {
     "a": "Alcester Business Centre, 4 Kinwarton Farm Road, Kinwarton, Alcester",
@@ -6431,7 +6457,11 @@
     "web": false,
     "fb": true,
     "ig": true,
-    "entity_ambiguous": true
+    "entity_ambiguous": true,
+    "disambiguation_type": "service_station_shared",
+    "disambiguation_reason": "Two separate brands share the service-station forecourt. Google Places returns one listing for the whole site; the FSA records each brand separately. Until each brand has a distinct Google Business Profile, both venues are flagged ambiguous and remain in Directional-C.",
+    "disambiguation_resolution_path": "Each brand operator requests a distinct Google Business Profile for their unit (franchise head office typically handles this for chain brands).",
+    "disambiguation_site": "Welcome Break Warwick Services Southbound, M40"
   },
   "1721314": {
     "a": "Banbury Road, Gaydon, Warwick",
@@ -7722,7 +7752,11 @@
     "web": false,
     "fb": true,
     "ig": true,
-    "entity_ambiguous": true
+    "entity_ambiguous": true,
+    "disambiguation_type": "multi_tenant_site",
+    "disambiguation_reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+    "disambiguation_resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+    "disambiguation_site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
   },
   "502838": {
     "a": "Banbury Road, Stratford-upon-Avon",

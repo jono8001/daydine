@@ -278,23 +278,48 @@ def _render_confidence_basis(out: Callable[[str], None],
     out(f"- Companies House: {sfs.get('companies_house', 'unmatched')}")
     out("")
 
-    # Entity-resolution context if ambiguous
+    # Entity-resolution context if ambiguous. The resolver now
+    # annotates each duplicate-gpid group with a disambiguation_type
+    # (service_station_shared / rebrand_or_relocation /
+    # multi_tenant_site / food_hall_unit) plus a human-readable
+    # reason and resolution path. Surface those so the operator gets
+    # a specific explanation, not a generic "ambiguous" label.
     if inputs.entity_ambiguous and inputs.entity_resolution_note:
         note = inputs.entity_resolution_note
         fhrsids = [str(f) for f in (note.get("fhrsids") or [])]
         names = note.get("names") or []
         others = [str(f) for f in fhrsids if str(f) != inputs.fhrsid]
-        if others:
-            # Pair with names where available (positional)
+
+        dtype = note.get("disambiguation_type")
+        reason = note.get("reason_for_operator")
+        resolution = note.get("resolution_path")
+        site = note.get("site")
+
+        if others or dtype:
             pairs = []
             for i, fid in enumerate(fhrsids):
                 if str(fid) == inputs.fhrsid:
                     continue
                 name = names[i] if i < len(names) else ""
                 pairs.append(f"{fid}" + (f" ({name})" if name else ""))
-            out(f"**Ambiguity context:** this venue shares identifiers with "
-                f"{len(others)} other FHRS record(s): "
-                + ", ".join(pairs) + ".")
+            if pairs:
+                out(f"**Ambiguity context:** this venue shares "
+                    f"identifiers with {len(others)} other FHRS "
+                    f"record(s): " + ", ".join(pairs) + ".")
+            if site:
+                out(f"**Site:** {site}.")
+            if dtype:
+                type_label = {
+                    "service_station_shared": "Service-station shared listing",
+                    "rebrand_or_relocation":  "Rebrand or relocation",
+                    "multi_tenant_site":      "Multi-tenant private site",
+                    "food_hall_unit":         "Food-hall shared listing",
+                }.get(dtype, dtype.replace("_", " ").title())
+                out(f"**Why ambiguous:** {type_label}.")
+            if reason:
+                out(reason)
+            if resolution:
+                out(f"*Resolution path:* {resolution}")
             out("")
 
 

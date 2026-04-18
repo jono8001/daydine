@@ -1,6 +1,6 @@
 {
   "engine_version": "v4.0.0",
-  "computed_at": "2026-04-17T15:59:26Z",
+  "computed_at": "2026-04-18T14:47:05Z",
   "venue": {
     "fhrsid": "503481",
     "name": "The Opposition",
@@ -13,12 +13,12 @@
   "rankable": true,
   "league_table_eligible": false,
   "entity_match_status": "confirmed",
-  "rcs_v4_final": 8.895,
-  "base_score": 8.895,
-  "adjusted_score": 8.895,
+  "rcs_v4_final": 8.894,
+  "base_score": 8.894,
+  "adjusted_score": 8.894,
   "components": {
     "trust_compliance": {
-      "score": 8.883,
+      "score": 8.882,
       "available": true,
       "signals_used": 5
     },
