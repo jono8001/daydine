@@ -117,6 +117,17 @@ def search_place(name, address, postcode):
         # API enum: OPERATIONAL | CLOSED_TEMPORARILY | CLOSED_PERMANENTLY
         result["business_status"] = place["businessStatus"]
 
+    # Schema version marker — bump when the field-mask adds new
+    # Commercial Readiness / closure fields so resume logic can
+    # detect pre-upgrade cache entries and re-enrich them instead of
+    # silently skipping (see _has_v4_schema below).
+    #
+    #   1  — original V3.4 fields (rating, review count, price, types, photos, reviews, hours)
+    #   2  — V4 Commercial Readiness additions (websiteUri,
+    #        nationalPhoneNumber, internationalPhoneNumber,
+    #        reservable, businessStatus)
+    result["_schema_version"] = 2
+
     hours = place.get("regularOpeningHours") or place.get("currentOpeningHours")
     if hours and "weekdayDescriptions" in hours:
         result["goh"] = hours["weekdayDescriptions"]
@@ -140,6 +151,32 @@ def search_place(name, address, postcode):
     return result
 
 
+MIN_V4_SCHEMA = 2
+
+
+def _has_v4_schema(entry: dict) -> bool:
+    """Return True if a cached enrichment entry was produced under the
+    V4 field mask. Resume logic uses this to decide whether to skip a
+    venue: if a pre-V4 entry is present, we re-enrich so the V4
+    Commercial Readiness / closure fields are collected.
+
+    `_no_match` entries are always treated as already-processed.
+    """
+    if entry.get("_no_match"):
+        return True
+    if int(entry.get("_schema_version", 1) or 1) >= MIN_V4_SCHEMA:
+        return True
+    # Fallback: accept if any of the V4 CR fields are already present,
+    # even if the schema marker is missing (covers one-shot runs on
+    # older schema files that happened to land some CR fields).
+    for k in ("websiteUri", "nationalPhoneNumber",
+               "internationalPhoneNumber", "reservable",
+               "business_status"):
+        if k in entry:
+            return True
+    return False
+
+
 def main():
     if not GOOGLE_API_KEY:
         print("ERROR: GOOGLE_PLACES_API_KEY not set")
@@ -156,13 +193,30 @@ def main():
 
     print(f"Loaded {len(data)} establishments")
 
-    # Load existing enrichment data (to resume partial runs)
+    # Load existing enrichment data (to resume partial runs).
+    #
+    # Resume policy: an entry is "already processed" only if it was
+    # produced under the V4 field mask (`_has_v4_schema`). Pre-V4
+    # entries are re-enriched so the V4 Commercial Readiness and
+    # closure fields actually land. Without this check, a pre-V4
+    # cache would silently block V4 field collection on every
+    # resumed run.
     output_path = "stratford_google_enrichment.json"
     enrichment = {}
+    reenrich_legacy = 0
     if os.path.exists(output_path):
         with open(output_path, "r", encoding="utf-8") as f:
             enrichment = json.load(f)
-        print(f"Loaded {len(enrichment)} existing enrichment records (resuming)")
+        pre_v4 = sum(1 for e in enrichment.values()
+                      if not _has_v4_schema(e))
+        if pre_v4:
+            print(f"Loaded {len(enrichment)} existing enrichment "
+                  f"records; {pre_v4} are pre-V4 and will be re-"
+                  f"enriched.")
+            reenrich_legacy = pre_v4
+        else:
+            print(f"Loaded {len(enrichment)} existing enrichment "
+                  f"records (resuming)")
 
     enriched = 0
     skipped = 0
@@ -175,8 +229,11 @@ def main():
         address = record.get("a", "")
         postcode = record.get("pc", "")
 
-        # Skip if already enriched
-        if key in enrichment:
+        # Skip only if the cached entry is already on the V4 schema
+        # (or is an explicit _no_match). Pre-V4 entries fall through
+        # and re-hit the API so the V4 Commercial Readiness fields
+        # collect.
+        if key in enrichment and _has_v4_schema(enrichment[key]):
             skipped += 1
             continue
 
@@ -192,7 +249,8 @@ def main():
                 no_match += 1
                 print(f"  [{i}/{total}] no match: {name}")
                 # Store empty so we don't re-query
-                enrichment[key] = {"_no_match": True}
+                enrichment[key] = {"_no_match": True,
+                                     "_schema_version": 2}
             else:
                 enrichment[key] = result
                 enriched += 1
