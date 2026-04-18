@@ -41,25 +41,25 @@
     "top_band_pct": 61.0
   },
   "v4": {
-    "rankable": 191,
-    "rankable_pct": 91.0,
-    "league_eligible": 190,
-    "league_eligible_pct": 90.5,
+    "rankable": 182,
+    "rankable_pct": 86.7,
+    "league_eligible": 181,
+    "league_eligible_pct": 86.2,
     "scores_all": {
       "n": 210,
-      "mean": 7.482,
-      "median": 7.761,
-      "stdev": 1.185,
+      "mean": 7.736,
+      "median": 8.006,
+      "stdev": 1.247,
       "min": 0.0,
-      "max": 8.928
+      "max": 9.303
     },
     "scores_rankable_only": {
-      "n": 191,
-      "mean": 7.716,
-      "median": 7.853,
-      "stdev": 0.749,
-      "min": 4.491,
-      "max": 8.928
+      "n": 182,
+      "mean": 7.999,
+      "median": 8.116,
+      "stdev": 0.788,
+      "min": 4.866,
+      "max": 9.303
     },
     "class_distribution": {
       "Rankable-A": {
@@ -67,12 +67,12 @@
         "pct": 0.5
       },
       "Rankable-B": {
-        "count": 190,
-        "pct": 90.5
+        "count": 181,
+        "pct": 86.2
       },
       "Directional-C": {
-        "count": 18,
-        "pct": 8.6
+        "count": 27,
+        "pct": 12.9
       },
       "Profile-only-D": {
         "count": 1,
@@ -85,14 +85,14 @@
   "cross_tab_v3_band_to_v4_class": {
     "Excellent": {
       "Rankable-A": 0,
-      "Rankable-B": 125,
-      "Directional-C": 3,
+      "Rankable-B": 118,
+      "Directional-C": 10,
       "Profile-only-D": 0
     },
     "Good": {
       "Rankable-A": 1,
-      "Rankable-B": 43,
-      "Directional-C": 5,
+      "Rankable-B": 41,
+      "Directional-C": 7,
       "Profile-only-D": 0
     },
     "Generally Satisfactory": {

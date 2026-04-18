@@ -1,23 +1,33 @@
 #!/usr/bin/env python3
 """
-collect_tripadvisor_apify.py — Collect TripAdvisor data via Apify scraper.
+collect_tripadvisor_apify.py — Collect TripAdvisor headline metadata via Apify.
 
-Uses the Apify TripAdvisor scraper (automation-lab/tripadvisor-scraper)
-to search for each restaurant and extract rating, review count, ranking,
-cuisine tags, price range, and up to 5 review texts.
+For each establishment this script queries an Apify TripAdvisor actor, picks
+the best candidate result by combined name similarity + coordinate proximity,
+and writes per-venue raw metadata files under `data/raw/tripadvisor/`. A
+subsequent `consolidate_tripadvisor.py` run builds `stratford_tripadvisor.json`.
 
-Cost: ~$0.003/review, ~$0.50 for 200 restaurants with 5 reviews each.
+Scoring only needs `ta` (rating) and `trc` (review count). Review text is
+collected for report narrative purposes only and is never consumed by the
+V4 scoring engine (spec V4 §9).
 
-Requires:
-    pip install apify-client
-    APIFY_TOKEN environment variable
+Env:
+    APIFY_TOKEN     (required) — Apify user token
+    APIFY_ACTOR     (optional) — Override the default actor. Known good:
+                      * automation-lab/tripadvisor-scraper (legacy)
+                      * scrapapi/tripadvisor-review-scraper (recommended
+                        per docs/review_data_strategy.md §2.2)
+    MAX_REVIEWS     (optional) — Max reviews per venue (default 5).
+    MATCH_MIN_SCORE (optional) — Min combined match score 0-1 (default 0.55)
 
 Reads:  stratford_establishments.json
-Writes: stratford_tripadvisor.json
+Writes: data/raw/tripadvisor/<slug>_<date>.json  (one file per matched venue)
 """
 
+import datetime
 import difflib
 import json
+import math
 import os
 import re
 import sys
@@ -25,11 +35,15 @@ import time
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 INPUT_PATH = os.path.join(REPO_ROOT, "stratford_establishments.json")
-OUTPUT_PATH = os.path.join(REPO_ROOT, "stratford_tripadvisor.json")
+RAW_DIR = os.path.join(REPO_ROOT, "data", "raw", "tripadvisor")
 
 APIFY_TOKEN = os.environ.get("APIFY_TOKEN", "")
+APIFY_ACTOR = os.environ.get("APIFY_ACTOR",
+                              "scrapapi/tripadvisor-review-scraper")
 LOCATION = "Stratford-upon-Avon"
-MAX_REVIEWS = 5
+MAX_REVIEWS = int(os.environ.get("MAX_REVIEWS", "5"))
+MATCH_MIN_SCORE = float(os.environ.get("MATCH_MIN_SCORE", "0.55"))
+COORD_TOLERANCE_M = 200.0
 
 
 def normalise_name(name):
@@ -41,6 +55,46 @@ def normalise_name(name):
 
 def fuzzy_score(a, b):
     return difflib.SequenceMatcher(None, normalise_name(a), normalise_name(b)).ratio()
+
+
+def slugify(name):
+    slug = re.sub(r"[^a-z0-9]+", "_", (name or "").lower()).strip("_")
+    return slug[:60] or "unknown"
+
+
+def haversine_m(a_lat, a_lon, b_lat, b_lon):
+    if None in (a_lat, a_lon, b_lat, b_lon):
+        return float("inf")
+    R = 6_371_000.0
+    p1 = math.radians(float(a_lat))
+    p2 = math.radians(float(b_lat))
+    dp = math.radians(float(b_lat) - float(a_lat))
+    dl = math.radians(float(b_lon) - float(a_lon))
+    h = math.sin(dp / 2) ** 2 + math.cos(p1) * math.cos(p2) * math.sin(dl / 2) ** 2
+    return 2 * R * math.asin(math.sqrt(h))
+
+
+def combined_match_score(target_name, target_lat, target_lon, candidate):
+    """Combine fuzzy name similarity (70%) and coord proximity (30%).
+
+    Coord proximity contributes only when both the target and the candidate
+    have coords. Otherwise fuzzy name similarity is returned unchanged.
+    Returns a float 0-1 where >= MATCH_MIN_SCORE is considered a match.
+    """
+    name = candidate.get("name") or candidate.get("title") or ""
+    sim = fuzzy_score(target_name, name)
+
+    c_lat = candidate.get("lat") or candidate.get("latitude")
+    c_lon = candidate.get("lng") or candidate.get("lon") or candidate.get("longitude")
+    if None in (target_lat, target_lon, c_lat, c_lon):
+        return sim
+    try:
+        d = haversine_m(target_lat, target_lon, float(c_lat), float(c_lon))
+    except (TypeError, ValueError):
+        return sim
+    # Proximity score: 1.0 at 0m, 0 at 1000m, linear in between
+    prox = max(0.0, 1.0 - min(d, 1000.0) / 1000.0)
+    return 0.7 * sim + 0.3 * prox
 
 
 def search_apify(query, token, max_places=1, max_reviews=5):
@@ -65,7 +119,7 @@ def search_apify(query, token, max_places=1, max_reviews=5):
     }
 
     try:
-        run = client.actor("automation-lab/tripadvisor-scraper").call(
+        run = client.actor(APIFY_ACTOR).call(
             run_input=run_input,
             timeout_secs=120,
         )
@@ -78,16 +132,20 @@ def search_apify(query, token, max_places=1, max_reviews=5):
         return []
 
 
-def extract_ta_data(apify_result, original_name):
+def extract_ta_data(apify_result, original_name, target_lat=None,
+                     target_lon=None):
     """
     Extract structured TripAdvisor data from an Apify result.
-    Returns dict with ta, trc, ta_url, ta_cuisines, ta_price, ta_reviews, etc.
+
+    Returns (entry_dict, combined_match_score) or (None, score) if the
+    result does not clear `MATCH_MIN_SCORE`.
     """
     entry = {}
 
-    name = apify_result.get("name", "")
-    match = fuzzy_score(original_name, name)
-    if match < 0.5:
+    name = apify_result.get("name", "") or apify_result.get("title", "")
+    match = combined_match_score(original_name, target_lat, target_lon,
+                                  apify_result)
+    if match < MATCH_MIN_SCORE:
         return None, match
 
     entry["ta_name"] = name
@@ -179,6 +237,22 @@ def should_search(record):
     return True
 
 
+def _raw_path_for(record, key):
+    slug = slugify(record.get("n") or f"venue_{key}")
+    date = datetime.date.today().strftime("%Y-%m-%d")
+    return os.path.join(RAW_DIR, f"{slug}_{key}_{date}.json")
+
+
+def _already_have_raw(key):
+    """Skip if a raw file for this fhrsid already exists (any date)."""
+    if not os.path.isdir(RAW_DIR):
+        return False
+    for f in os.listdir(RAW_DIR):
+        if f.endswith(".json") and f"_{key}_" in f:
+            return True
+    return False
+
+
 def main():
     if not APIFY_TOKEN:
         print("ERROR: APIFY_TOKEN not set")
@@ -190,21 +264,12 @@ def main():
         print(f"ERROR: {INPUT_PATH} not found")
         sys.exit(1)
 
+    os.makedirs(RAW_DIR, exist_ok=True)
+
     with open(INPUT_PATH, "r", encoding="utf-8") as f:
         establishments = json.load(f)
     print(f"Loaded {len(establishments)} establishments")
-
-    # Resume support — only keep records that have actual TA data
-    ta_data = {}
-    if os.path.exists(OUTPUT_PATH):
-        with open(OUTPUT_PATH, "r", encoding="utf-8") as f:
-            existing = json.load(f)
-        # Only keep successful results (have a ta rating), discard
-        # _skipped/_no_match/_error from previous failed runs
-        for k, v in existing.items():
-            if v.get("ta") is not None:
-                ta_data[k] = v
-        print(f"Loaded {len(ta_data)} existing records with TA data (resuming)")
+    print(f"Using Apify actor: {APIFY_ACTOR}")
 
     matched = 0
     no_match = 0
@@ -215,75 +280,81 @@ def main():
     for i, (key, record) in enumerate(establishments.items(), 1):
         name = record.get("n", "")
 
-        # Skip if already processed
-        if key in ta_data:
+        # Resume: if a raw file already exists for this fhrsid, skip
+        if _already_have_raw(key):
             skipped += 1
             continue
 
         if not name or not should_search(record):
-            ta_data[key] = {"_skipped": True}
             skipped += 1
             continue
 
         query = f"{name} {LOCATION}"
+        target_lat = record.get("lat")
+        target_lon = record.get("lon")
         print(f"  [{i}/{total}] Searching: {query}")
 
         try:
             results = search_apify(query, APIFY_TOKEN,
-                                   max_places=1, max_reviews=MAX_REVIEWS)
+                                   max_places=3, max_reviews=MAX_REVIEWS)
 
             if not results:
-                ta_data[key] = {"_no_match": True}
                 no_match += 1
                 print(f"    No results")
                 continue
 
-            # Take best match
+            # Pick best match by combined name+coord score
             best_entry = None
-            best_score = 0
+            best_score = 0.0
             for result in results:
-                entry, score = extract_ta_data(result, name)
+                entry, score = extract_ta_data(result, name,
+                                                target_lat, target_lon)
                 if entry and score > best_score:
                     best_entry = entry
                     best_score = score
 
             if best_entry:
-                ta_data[key] = best_entry
+                # Write a per-venue raw file using the schema used elsewhere
+                # in data/raw/tripadvisor/ (see vintner_wine_bar_*.json)
+                raw_out = {
+                    "fhrsid": str(key),
+                    "name": best_entry.get("ta_name"),
+                    "tripadvisor_url": best_entry.get("ta_url"),
+                    "tripadvisor_rating": best_entry.get("ta"),
+                    "tripadvisor_review_count": best_entry.get("trc"),
+                    "tripadvisor_ranking": best_entry.get("ta_ranking"),
+                    "tripadvisor_cuisines": best_entry.get("ta_cuisines", []),
+                    "collected_at": datetime.datetime.utcnow()
+                        .strftime("%Y-%m-%dT%H:%M:%SZ"),
+                    "collection_method": f"apify/{APIFY_ACTOR}",
+                    "match_score": best_entry.get("match_score"),
+                    "reviews_collected": len(best_entry.get("ta_reviews", [])),
+                    "reviews": best_entry.get("ta_reviews", []),
+                }
+                out_path = _raw_path_for(record, key)
+                with open(out_path, "w", encoding="utf-8") as f:
+                    json.dump(raw_out, f, indent=2, ensure_ascii=False)
                 matched += 1
-                ta_r = best_entry.get("ta", "-")
-                trc = best_entry.get("trc", 0)
-                revs = len(best_entry.get("ta_reviews", []))
-                print(f"    Match! rating={ta_r} reviews={trc} texts={revs} score={best_score:.2f}")
+                print(f"    Match! ta={raw_out['tripadvisor_rating']} "
+                      f"trc={raw_out['tripadvisor_review_count']} "
+                      f"score={best_score:.2f} -> {os.path.basename(out_path)}")
             else:
-                ta_data[key] = {"_no_match": True, "_best_score": round(best_score, 2)}
                 no_match += 1
                 print(f"    No fuzzy match (best={best_score:.2f})")
 
         except Exception as e:
             errors += 1
-            ta_data[key] = {"_error": str(e)[:200]}
             print(f"    Error: {e}")
-
-        # Save progress every 20 records
-        if i % 20 == 0:
-            with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-                json.dump(ta_data, f, indent=2, ensure_ascii=False)
-            print(f"    ... saved progress ({len(ta_data)} records)")
 
         # Small delay between Apify calls
         time.sleep(1)
 
-    # Final save
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        json.dump(ta_data, f, indent=2, ensure_ascii=False)
-
-    valid = sum(1 for v in ta_data.values() if v.get("ta") is not None)
-    with_reviews = sum(1 for v in ta_data.values() if v.get("ta_reviews"))
     print(f"\nDone. Total: {total}")
-    print(f"  Matched: {matched}, No match: {no_match}, Skipped: {skipped}, Errors: {errors}")
-    print(f"  With TA rating: {valid}")
-    print(f"  With review text: {with_reviews}")
-    print(f"Saved to {OUTPUT_PATH}")
+    print(f"  Matched: {matched}, No match: {no_match}, "
+          f"Skipped: {skipped}, Errors: {errors}")
+    print(f"  Raw files under: {RAW_DIR}")
+    print(f"Next step: run .github/scripts/consolidate_tripadvisor.py "
+          f"and .github/scripts/merge_tripadvisor.py")
 
 
 if __name__ == "__main__":

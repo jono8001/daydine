@@ -2,12 +2,22 @@
 
 *Status as of April 2026.*
 
+> **Stack B (operator report redesign) is complete as of April 2026.** The
+> V4 report layer is structurally done, tested, and documented. See
+> `docs/DayDine-V4-Report-Handoff.md` for the full handoff, the
+> verbatim deferred-items list, and the per-use-case readiness
+> breakdown. Public leaderboard cutover and the public methodology page
+> rewrite remain deferred and are **not** part of Stack B — they stay
+> gated on the data-coverage items tracked in
+> `docs/DayDine-V4-Readiness-For-Stack-B.md` §F.
+
 ## Where we are
 
-- **V4 is implemented.** `rcs_scoring_v4.py` produces V4 outputs following
-  `DayDine-V4-Scoring-Spec.md` exactly. Trust & Compliance (40%), Customer
-  Validation (45%), Commercial Readiness (15%). Confidence classes gate
-  league-table eligibility.
+- **V4 is implemented and running in parallel. No downstream public
+  surface reads V4 yet.** `rcs_scoring_v4.py` produces V4 outputs
+  following `DayDine-V4-Scoring-Spec.md` exactly. Trust & Compliance
+  (40%), Customer Validation (45%), Commercial Readiness (15%).
+  Confidence classes gate league-table eligibility.
 - **V3.4 still runs.** `rcs_scoring_stratford.py` is untouched and runs in
   parallel on every scoring invocation. Outputs stay under the existing
   `stratford_rcs_*` filenames.

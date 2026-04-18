@@ -9,6 +9,7 @@ permissions:
 jobs:
   fetch-and-score:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -19,11 +20,56 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
+      - name: Inspect cache before fetch
+        run: |
+          if [ -f stratford_establishments.json ]; then
+            python - <<'PY'
+          import json, sys
+          with open("stratford_establishments.json", "r", encoding="utf-8") as f:
+              d = json.load(f)
+          print(f"Pre-fetch cache rows: {len(d) if isinstance(d, dict) else 'n/a'}")
+          PY
+          else
+            echo "Pre-fetch cache: (absent)"
+          fi
+
       - name: Fetch from Firebase RTDB
         run: python .github/scripts/fetch_firebase_stratford.py
 
+      - name: Inspect cache after fetch
+        run: |
+          python - <<'PY'
+          import json, sys
+          with open("stratford_establishments.json", "r", encoding="utf-8") as f:
+              d = json.load(f)
+          n = len(d) if isinstance(d, dict) else 0
+          print(f"Post-fetch cache rows: {n}")
+          if n == 0:
+              print("::error::Post-fetch cache is empty. Aborting before scoring.")
+              sys.exit(5)
+          PY
+
       - name: Run RCS scoring pipeline
         run: python rcs_scoring_stratford.py --from-cache
+
+      - name: Inspect scoring outputs
+        run: |
+          python - <<'PY'
+          import csv, json, os
+          csv_path = "stratford_rcs_scores.csv"
+          sum_path = "stratford_rcs_summary.json"
+          if os.path.exists(csv_path):
+              with open(csv_path, encoding="utf-8") as f:
+                  rows = list(csv.DictReader(f))
+              print(f"Scoring CSV rows: {len(rows)}")
+          else:
+              print("Scoring CSV missing.")
+          if os.path.exists(sum_path):
+              with open(sum_path, encoding="utf-8") as f:
+                  s = json.load(f)
+              print(f"Summary: count={s.get('count')} ranked={s.get('ranked')} "
+                    f"mean={s.get('mean')} median={s.get('median')}")
+          PY
 
       - name: Commit data files
         run: |

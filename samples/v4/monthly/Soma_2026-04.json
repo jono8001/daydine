@@ -1,0 +1,70 @@
+{
+  "engine_version": "v4.0.0",
+  "computed_at": "2026-04-18T14:47:05Z",
+  "venue": {
+    "fhrsid": "1847445",
+    "name": "Soma",
+    "fsa_name": "Soma",
+    "postcode": "CV37 6EX"
+  },
+  "month": "2026-04",
+  "report_mode": "directional_c",
+  "confidence_class": "Directional-C",
+  "rankable": false,
+  "league_table_eligible": false,
+  "entity_match_status": "ambiguous",
+  "rcs_v4_final": 8.824,
+  "base_score": 8.824,
+  "adjusted_score": 8.824,
+  "components": {
+    "trust_compliance": {
+      "score": 9.387,
+      "available": true,
+      "signals_used": 5
+    },
+    "customer_validation": {
+      "score": 8.765,
+      "available": true,
+      "platforms": {
+        "google": {
+          "raw": 4.7,
+          "count": 120,
+          "shrunk": 4.48,
+          "weight": 0.48
+        }
+      }
+    },
+    "commercial_readiness": {
+      "score": 7.5,
+      "available": true,
+      "signals_used": 3
+    }
+  },
+  "distinction": {
+    "value": 0.0,
+    "sources": []
+  },
+  "penalties_applied": [],
+  "caps_applied": [],
+  "source_family_summary": {
+    "fsa": "present",
+    "customer_platforms": [
+      "google"
+    ],
+    "commercial": "full",
+    "companies_house": "unmatched"
+  },
+  "qa": {
+    "engine_version": "v4.0.0",
+    "report_mode": "directional_c",
+    "structural_check": {
+      "passed": true
+    },
+    "guardrail_check": {
+      "run": true,
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    }
+  }
+}

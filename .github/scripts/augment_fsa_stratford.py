@@ -231,23 +231,74 @@ def main():
         else:
             print(f"  OK: {known['name']}")
 
-    # For still-missing known restaurants, try fetching by FHRSID directly
+    # For still-missing known restaurants, try two fallbacks in order:
+    #   1. Fetch by FHRSID if the seed row has one (fast path).
+    #   2. Otherwise search the FSA API by name + postcode across all
+    #      local authorities. The public `GET /Establishments` endpoint
+    #      accepts `name` and `address` filters and returns matches
+    #      regardless of LA, which is how we find venues registered
+    #      under a parent entity in a different LA (e.g. Grace &
+    #      Savour at a Stratford postcode but under a Warwickshire
+    #      operator).
     for known in still_missing:
+        added_here = False
         fhrsid = known.get("fhrsid")
-        if not fhrsid:
-            continue
-        try:
-            url = f"https://api.ratings.food.gov.uk/Establishments/{fhrsid}"
-            resp = requests.get(url, headers=FSA_HEADERS, timeout=15)
-            if resp.status_code == 200:
-                fsa_rec = resp.json()
-                record = convert_to_firebase_format(fsa_rec)
-                establishments[fhrsid] = record
-                existing_ids.add(fhrsid)
-                added += 1
-                print(f"  ADDED by FHRSID: {record['n']} ({record['pc']})")
-        except requests.RequestException as e:
-            print(f"  Error fetching FHRSID {fhrsid}: {e}")
+        postcode = (known.get("postcode") or "").strip()
+        name = (known.get("name") or "").strip()
+
+        # Fallback 1: direct FHRSID fetch
+        if fhrsid and not added_here:
+            try:
+                url = f"https://api.ratings.food.gov.uk/Establishments/{fhrsid}"
+                resp = requests.get(url, headers=FSA_HEADERS, timeout=15)
+                if resp.status_code == 200:
+                    fsa_rec = resp.json()
+                    record = convert_to_firebase_format(fsa_rec)
+                    establishments[fhrsid] = record
+                    existing_ids.add(fhrsid)
+                    added += 1
+                    added_here = True
+                    print(f"  ADDED by FHRSID: {record['n']} ({record['pc']})")
+            except requests.RequestException as e:
+                print(f"  Error fetching FHRSID {fhrsid}: {e}")
+
+        # Fallback 2: search by name + postcode across all LAs
+        if not added_here and name:
+            try:
+                params = {"name": name, "pageSize": 5}
+                if postcode:
+                    params["address"] = postcode
+                resp = requests.get(FSA_URL, params=params,
+                                     headers=FSA_HEADERS, timeout=15)
+                if resp.status_code == 200:
+                    matches = (resp.json() or {}).get("establishments") or []
+                    # Pick the match whose postcode matches (ignoring
+                    # spaces / case) where possible; else take the first.
+                    def _pc(s):
+                        return (s or "").replace(" ", "").upper()
+                    chosen = next(
+                        (m for m in matches
+                         if _pc(m.get("PostCode")) == _pc(postcode)),
+                        matches[0] if matches else None,
+                    )
+                    if chosen:
+                        fid = str(chosen.get("FHRSID", ""))
+                        if fid and fid not in existing_ids:
+                            record = convert_to_firebase_format(chosen)
+                            establishments[fid] = record
+                            existing_ids.add(fid)
+                            added += 1
+                            added_here = True
+                            print(f"  ADDED by name/postcode search: "
+                                  f"{record['n']} ({record['pc']}) "
+                                  f"[seed: {name}]")
+            except requests.RequestException as e:
+                print(f"  Error searching for {name!r}: {e}")
+
+        if not added_here:
+            # Surface the true still-missing list so callers know which
+            # named-market gaps remain after both fallbacks.
+            print(f"  STILL MISSING after fallbacks: {name} ({postcode})")
 
     with open(est_path, "w", encoding="utf-8") as f:
         json.dump(establishments, f, indent=2, ensure_ascii=False)

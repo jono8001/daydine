@@ -1,0 +1,13 @@
+{
+  "engine_version": "v4.0.0",
+  "report_mode": "rankable_b",
+  "structural_check": {
+    "passed": true
+  },
+  "guardrail_check": {
+    "run": true,
+    "passed": true,
+    "errors": [],
+    "warnings": []
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "engine_version": "v4.0.0",
+  "computed_at": "2026-04-18T14:47:05Z",
+  "venue": {
+    "fhrsid": "502816",
+    "name": "Loxleys Restaurant and Wine Bar",
+    "fsa_name": "Loxleys Restaurant And Wine Bar",
+    "postcode": "CV37 6EF"
+  },
+  "month": "2026-04",
+  "report_mode": "rankable_b",
+  "confidence_class": "Rankable-B",
+  "rankable": true,
+  "league_table_eligible": true,
+  "entity_match_status": "confirmed",
+  "rcs_v4_final": 8.771,
+  "base_score": 8.771,
+  "adjusted_score": 8.771,
+  "components": {
+    "trust_compliance": {
+      "score": 8.722,
+      "available": true,
+      "signals_used": 5
+    },
+    "customer_validation": {
+      "score": 9.238,
+      "available": true,
+      "platforms": {
+        "google": {
+          "raw": 4.7,
+          "count": 1669,
+          "shrunk": 4.6806,
+          "weight": 1.0
+        }
+      }
+    },
+    "commercial_readiness": {
+      "score": 7.5,
+      "available": true,
+      "signals_used": 3
+    }
+  },
+  "distinction": {
+    "value": 0.0,
+    "sources": []
+  },
+  "penalties_applied": [],
+  "caps_applied": [],
+  "source_family_summary": {
+    "fsa": "present",
+    "customer_platforms": [
+      "google"
+    ],
+    "commercial": "full",
+    "companies_house": "unmatched"
+  },
+  "qa": {
+    "engine_version": "v4.0.0",
+    "report_mode": "rankable_b",
+    "structural_check": {
+      "passed": true
+    },
+    "guardrail_check": {
+      "run": true,
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    }
+  }
+}

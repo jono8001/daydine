@@ -1,0 +1,131 @@
+{
+  "generated_by": "tripadvisor_coverage.py",
+  "total_establishments": 210,
+  "ineligible_non_food": 15,
+  "eligible_for_ta_search": 195,
+  "matched_to_tripadvisor": 1,
+  "unmatched_raw_records": 0,
+  "eligible_not_attempted": 194,
+  "coverage_pct_of_eligible": 0.5,
+  "coverage_pct_of_total": 0.5,
+  "successful_matches_examples": [
+    {
+      "fhrsid": "503480",
+      "name": "Vintner Wine Bar",
+      "postcode": "CV37 6EF",
+      "ta": 4.4,
+      "trc": 20,
+      "ta_url": "https://www.tripadvisor.co.uk/Restaurant_Review-g186460-d730193-Reviews-The_Vintner_Wine_Bar-Stratford_upon_Avon_Warwickshire_England.html",
+      "match_method": "fhrsid_field",
+      "match_confidence": "high"
+    }
+  ],
+  "unmatched_raw_examples": [],
+  "not_attempted_examples_by_review_volume": [
+    {
+      "fhrsid": "503343",
+      "name": "Starbucks -  Southbound",
+      "postcode": "CV35 0AA",
+      "google_count": 10079,
+      "google_rating": 4
+    },
+    {
+      "fhrsid": "503218",
+      "name": "Burger King - Southbound",
+      "postcode": "CV35 0AA",
+      "google_count": 10079,
+      "google_rating": 4
+    },
+    {
+      "fhrsid": "1266904",
+      "name": "Good Breakfast",
+      "postcode": "CV35 0AA",
+      "google_count": 9507,
+      "google_rating": 3.9
+    },
+    {
+      "fhrsid": "1019047",
+      "name": "Miller And Carter",
+      "postcode": "CV37 6EX",
+      "google_count": 8975,
+      "google_rating": 4.8
+    },
+    {
+      "fhrsid": "503479",
+      "name": "The Pavillion",
+      "postcode": "OX15 6HT",
+      "google_count": 3261,
+      "google_rating": 4.5
+    },
+    {
+      "fhrsid": "503444",
+      "name": "Crowne Plaza",
+      "postcode": "CV37 6YR",
+      "google_count": 3165,
+      "google_rating": 4.3
+    },
+    {
+      "fhrsid": "1014807",
+      "name": "McDonald's",
+      "postcode": "CV37 0AH",
+      "google_count": 2386,
+      "google_rating": 3.8
+    },
+    {
+      "fhrsid": "503282",
+      "name": "Arrow Mill",
+      "postcode": "B49 5NL",
+      "google_count": 1988,
+      "google_rating": 4.5
+    },
+    {
+      "fhrsid": "504014",
+      "name": "The Kings Head",
+      "postcode": "CV35 9LT",
+      "google_count": 1952,
+      "google_rating": 4.3
+    },
+    {
+      "fhrsid": "502838",
+      "name": "Alveston Manor Hotel",
+      "postcode": "CV37 7HP",
+      "google_count": 1938,
+      "google_rating": 3.9
+    },
+    {
+      "fhrsid": "503732",
+      "name": "Pizza Hut Restaurants - Dine In",
+      "postcode": "CV37 0HZ",
+      "google_count": 1831,
+      "google_rating": 4.5
+    },
+    {
+      "fhrsid": "503854",
+      "name": "The Lime Tree Restaurant",
+      "postcode": "CV37 8LW",
+      "google_count": 1817,
+      "google_rating": 4.4
+    },
+    {
+      "fhrsid": "503369",
+      "name": "Studley Castle",
+      "postcode": "B80 7AJ",
+      "google_count": 1698,
+      "google_rating": 4.5
+    },
+    {
+      "fhrsid": "503552",
+      "name": "Premier Inn",
+      "postcode": "CV37 0AZ",
+      "google_count": 1687,
+      "google_rating": 4.3
+    },
+    {
+      "fhrsid": "502816",
+      "name": "Loxleys Restaurant And Wine Bar",
+      "postcode": "CV37 6EF",
+      "google_count": 1669,
+      "google_rating": 4.7
+    }
+  ]
+}

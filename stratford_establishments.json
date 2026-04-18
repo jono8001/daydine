@@ -50,7 +50,9 @@
         "rating": 3,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "fb": false,
+    "ig": false
   },
   "1584577": {
     "a": "Earlswood Nurseries Ltd, Earlswood Nurseries, Forshaw Heath Road, Earlswood",
@@ -118,7 +120,10 @@
         "rating": 2,
         "time": "4 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1695937": {
     "a": "The Phoenix, 38 Guild Street, Stratford-upon-Avon",
@@ -181,7 +186,10 @@
         "rating": 5,
         "time": "4 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1896718": {
     "a": "Wasps Elite Performance And Innovation Centre, Stratford Road, Henley-in-Arden",
@@ -234,7 +242,10 @@
         "rating": 5,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503081": {
     "a": "71A High Street, Henley-in-Arden",
@@ -299,7 +310,10 @@
         "rating": 5,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1927834": {
     "a": "Adventure Golf Course, Swans Nest Lane, Stratford-upon-Avon",
@@ -355,7 +369,10 @@
         "rating": 2,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503585": {
     "a": "Oxhill Centre, Oxhill, Warwick",
@@ -409,7 +426,10 @@
         "rating": 5,
         "time": "10 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1622070": {
     "a": "13 Waterside, Stratford-upon-Avon",
@@ -478,7 +498,10 @@
         "rating": 5,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503554": {
     "a": "High Street, Bidford-on-Avon, Alcester",
@@ -541,7 +564,10 @@
         "rating": 5,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503316": {
     "a": "12 Sheep Street, Stratford-upon-Avon",
@@ -605,7 +631,16 @@
         "rating": 5,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true,
+    "public_name": "Lambs",
+    "trading_names": [
+      "Lambs Restaurant"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   },
   "1381156": {
     "a": "9 Church Street, Stratford-upon-Avon",
@@ -659,7 +694,26 @@
         "rating": 5,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 12:00 – 2:45 PM, 5:00 – 10:00 PM",
+      "Wednesday: 12:00 – 2:45 PM, 5:00 – 10:00 PM",
+      "Thursday: 12:00 – 2:45 PM, 5:00 – 10:00 PM",
+      "Friday: 12:00 – 2:45 PM, 5:00 – 10:30 PM",
+      "Saturday: 12:00 – 2:45 PM, 5:00 – 10:30 PM",
+      "Sunday: 12:00 – 2:45 PM, 5:00 – 9:00 PM"
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false,
+    "public_name": "Pick Thai",
+    "trading_names": [
+      "Pick Thai 9 Church Street",
+      "Pick Thai Ltd"
+    ],
+    "alias_source": "Address '9 Church Street'; supersedes the venue historically known as 'No.9 Church Street'",
+    "alias_confidence": "high"
   },
   "1299513": {
     "a": "50 Main Street, Long Compton, Shipston-on-Stour",
@@ -719,7 +773,8 @@
         "rating": 5,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "ig": false
   },
   "1826837": {
     "a": "208 Birmingham Road, Stratford-upon-Avon",
@@ -783,7 +838,10 @@
         "rating": 5,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1563336": {
     "a": "Warwick Services M40 Southbound, Ashorne, Warwick",
@@ -847,7 +905,8 @@
         "rating": 4,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "ig": false
   },
   "1364372": {
     "a": "Bell Inn, Binton Road, Welford-on-Avon, Stratford-upon-Avon",
@@ -912,7 +971,10 @@
         "rating": 5,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503343": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -984,7 +1046,15 @@
         "rating": 1,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": true,
+    "ig": true,
+    "entity_ambiguous": true,
+    "disambiguation_type": "service_station_shared",
+    "disambiguation_reason": "Two separate brands share the service-station forecourt. Google Places returns one listing for the whole site; the FSA records each brand separately. Until each brand has a distinct Google Business Profile, both venues are flagged ambiguous and remain in Directional-C.",
+    "disambiguation_resolution_path": "Each brand operator requests a distinct Google Business Profile for their unit (franchise head office typically handles this for chain brands).",
+    "disambiguation_site": "Welcome Break Warwick Services Southbound, M40"
   },
   "1302779": {
     "a": "The Old Mint, Coventry Street, Southam",
@@ -1047,7 +1117,9 @@
         "rating": 4,
         "time": "11 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": false
   },
   "1826834": {
     "a": "Ferment And Flour, 6 Granville Court, Shipston-on-Stour",
@@ -1112,7 +1184,9 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "fb": false,
+    "ig": false
   },
   "1500965": {
     "a": "Venue Expresso, 3 High Street, Alcester",
@@ -1182,7 +1256,10 @@
         "rating": 5,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503918": {
     "a": "46 Coventry Street, Southam",
@@ -1248,7 +1325,9 @@
         "rating": 5,
         "time": "6 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": true
   },
   "503141": {
     "a": "National Farmers Union Mutual Insurance Society Ltd, Tiddington Road, Stratford-upon-Avon",
@@ -1308,7 +1387,10 @@
         "rating": 1,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1622074": {
     "a": "Brookside Farm, Gaydon Road, Bishops Itchington, Southam",
@@ -1328,7 +1410,13 @@
     "gty": [
       "route"
     ],
-    "gpid": "EjRHYXlkb24gUmQsIEJpc2hvcCdzIEl0Y2hpbmd0b24sIFNvdXRoYW0gQ1Y0NyAyUVosIFVLIi4qLAoUChIJA9HmUZMxd0gRESebRtKxb6sSFAoSCR0CqRu-MXdIEZ0OBz8oikdj"
+    "gpid": "EjRHYXlkb24gUmQsIEJpc2hvcCdzIEl0Y2hpbmd0b24sIFNvdXRoYW0gQ1Y0NyAyUVosIFVLIi4qLAoUChIJA9HmUZMxd0gRESebRtKxb6sSFAoSCR0CqRu-MXdIEZ0OBz8oikdj",
+    "gr": 4.3,
+    "grc": 6,
+    "gpc": 10,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1799218": {
     "a": "Kineton Pizza Junction Ltd, Southam Street, Kineton, Warwick",
@@ -1389,7 +1477,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "503972": {
     "a": "George Hotel, High Street, Shipston-on-Stour",
@@ -1459,7 +1550,10 @@
         "rating": 5,
         "time": "4 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1712197": {
     "a": "95 High Street, Henley-in-Arden",
@@ -1526,7 +1620,10 @@
         "rating": 5,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1291215": {
     "a": "Studley Garden Centre, Henley Road, Mappleborough Green, Studley",
@@ -1588,7 +1685,9 @@
         "rating": 1,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "fb": false,
+    "ig": false
   },
   "676556": {
     "a": "Whichford Pottery, Whichford, Shipston-on-Stour",
@@ -1653,7 +1752,10 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503032": {
     "a": "The Spice Room Ltd, 20C High Street, Alcester",
@@ -1717,7 +1819,10 @@
         "rating": 1,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1911092": {
     "a": "Coughton Court, Coughton, Alcester",
@@ -1768,7 +1873,9 @@
         "rating": 5,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "fb": false,
+    "ig": false
   },
   "1800190": {
     "a": "Village Hall, Burmington",
@@ -1819,7 +1926,10 @@
         "rating": 4,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1339997": {
     "a": "The Water Margin, Marton Road, Long Itchington, Southam",
@@ -1884,7 +1994,13 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": false,
+    "entity_ambiguous": true,
+    "disambiguation_type": "rebrand_or_relocation",
+    "disambiguation_reason": "Two FSA records at different postcodes share one Google Place. Most commonly this is a rebrand or a relocation where the Google Business Profile survived and the old FSA record was not retired. Without operator confirmation it is not safe to assume either is closed.",
+    "disambiguation_resolution_path": "Operator confirms whether 'The Margin' or 'The Water Margin @ The Hollybush' is the current trading entity. Once confirmed, set `fsa_closed = true` on the retired record (via a manual patch on the establishments file) and remove the retired FHRSID from this entry."
   },
   "1747703": {
     "a": "6 - 7 High Street, Stratford-upon-Avon",
@@ -1955,7 +2071,10 @@
         "rating": 5,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1452414": {
     "a": "Unit V, The Maybird Centre, Birmingham Road, Stratford-upon-Avon",
@@ -2021,7 +2140,10 @@
         "rating": 1,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503481": {
     "a": "13 Sheep Street, Stratford-upon-Avon",
@@ -2085,7 +2207,17 @@
         "rating": 4,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true,
+    "public_name": "The Opposition",
+    "trading_names": [
+      "Opposition Bistro",
+      "The Opposition Bistro"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   },
   "1808717": {
     "a": "Le Bistro Pierre, Swans Nest Hotel, Swans Nest Lane, Stratford-upon-Avon",
@@ -2150,7 +2282,10 @@
         "rating": 5,
         "time": "10 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503820": {
     "a": "16 Market Hill, Southam",
@@ -2218,7 +2353,10 @@
         "rating": 5,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1253303": {
     "a": "6 Banbury Road, Ettington, Stratford-upon-Avon",
@@ -2283,7 +2421,9 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": true
   },
   "1206081": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -2335,7 +2475,15 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": true,
+    "ig": true,
+    "entity_ambiguous": true,
+    "disambiguation_type": "multi_tenant_site",
+    "disambiguation_reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+    "disambiguation_resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+    "disambiguation_site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
   },
   "1705603": {
     "a": "Escape Community Arts, The Old Slaughterhouse, Sheep Street, Stratford-upon-Avon",
@@ -2377,7 +2525,10 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1739369": {
     "a": "",
@@ -2425,7 +2576,10 @@
         "rating": 5,
         "time": "5 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1024960": {
     "a": "Welcome Break Ltd (North), Warwick Services M40, Ashorne, Warwick",
@@ -2497,7 +2651,10 @@
         "rating": 1,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503345": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -2566,7 +2723,10 @@
         "rating": 1,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1266904": {
     "a": "Welcome Break Ltd (North), Warwick Services M40, Ashorne, Warwick",
@@ -2630,7 +2790,10 @@
         "rating": 3,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1297845": {
     "a": "26 High Street, Alcester",
@@ -2697,7 +2860,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1089841": {
     "a": "Cotswold Distillery, Phillips Field, Stourton, Shipston-on-Stour",
@@ -2762,7 +2928,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1672985": {
     "a": "Bidford On Avon Methodist Church, Chapel Close, Bidford-on-Avon, Alcester",
@@ -2828,7 +2997,10 @@
         "rating": 5,
         "time": "6 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503054": {
     "a": "Warwick Road, Black Hill, Stratford-upon-Avon",
@@ -2896,7 +3068,10 @@
         "rating": 5,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503525": {
     "a": "Shahs Restaurant, Charlecote Road, Wellesbourne, Warwick",
@@ -2961,7 +3136,10 @@
         "rating": 5,
         "time": "8 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "504014": {
     "a": "Kings Head Hotel, Charlecote Road, Wellesbourne, Warwick",
@@ -3028,7 +3206,10 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1284339": {
     "a": "Avon Dassett, Southam",
@@ -3091,7 +3272,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1774612": {
     "a": "Lower Langley Farm, Birmingham Road, Bishopton, Stratford-upon-Avon",
@@ -3156,7 +3340,10 @@
         "rating": 5,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": true
   },
   "502872": {
     "a": "Alderminster, Stratford-upon-Avon",
@@ -3223,7 +3410,10 @@
         "rating": 3,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1210746": {
     "a": "2 St Faiths Road, Alcester",
@@ -3292,7 +3482,10 @@
         "rating": 4,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503216": {
     "a": "Hallmark Hotels - The Welcombe, Warwick Road, Stratford-upon-Avon",
@@ -3363,7 +3556,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503781": {
     "a": "Ladbroke Road, Bishops Itchington, Southam",
@@ -3427,7 +3623,10 @@
         "rating": 1,
         "time": "10 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1421980": {
     "a": "10 Bridge Street, Stratford-upon-Avon",
@@ -3481,7 +3680,10 @@
         "rating": 1,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1246463": {
     "a": "37 Rother Street, Stratford-upon-Avon",
@@ -3549,7 +3751,9 @@
         "rating": 5,
         "time": "4 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": false
   },
   "1847445": {
     "a": "Kiosk 3, Bell Court, Stratford-upon-Avon",
@@ -3602,7 +3806,24 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "goh": [
+      "Monday: 9:30 AM – 5:00 PM",
+      "Tuesday: 9:30 AM – 5:00 PM",
+      "Wednesday: 9:30 AM – 5:00 PM",
+      "Thursday: 9:30 AM – 5:00 PM",
+      "Friday: 9:30 AM – 5:00 PM",
+      "Saturday: 9:30 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true,
+    "entity_ambiguous": true,
+    "disambiguation_type": "food_hall_unit",
+    "disambiguation_reason": "Two separately FSA-registered units inside the Bell Court food hall share one Google Place ID (likely the hall's shared listing). Until each unit has a distinct Google Business Profile, both remain ambiguous and land in Directional-C.",
+    "disambiguation_resolution_path": "Each Bell Court unit requests a distinct Google Business Profile. Operators of multi-tenant food halls can do this via Google Business Profile Help.",
+    "disambiguation_site": "Bell Court, Stratford-upon-Avon"
   },
   "1774606": {
     "a": "Unit 3, Haydon House, 3 - 7 Alcester Road, Studley",
@@ -3673,7 +3894,10 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "650308": {
     "a": "Summer Palace, Birmingham Road, Mappleborough Green, Studley",
@@ -3737,7 +3961,10 @@
         "rating": 3,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1896717": {
     "a": "LITHOS, 64 High Street, Henley-in-Arden",
@@ -3796,7 +4023,9 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": false
   },
   "1622082": {
     "a": "Briar Croft Cafe, Briar Croft, Alcester Road, Stratford-upon-Avon",
@@ -3820,7 +4049,17 @@
       "food",
       "establishment"
     ],
-    "gpid": "ChIJxeB2YQDPcEgRtflbEEKlGN8"
+    "gpid": "ChIJxeB2YQDPcEgRtflbEEKlGN8",
+    "web": false,
+    "fb": false,
+    "ig": false,
+    "public_name": "New York Pizzas",
+    "trading_names": [
+      "The Crofts Cafe",
+      "Briar Croft Cafe"
+    ],
+    "alias_source": "FSA 'The Crofts Cafe Also Trading As New York Pizzas'",
+    "alias_confidence": "high"
   },
   "503732": {
     "a": "Pizza Hut, Unit P, Maybird Retail Park, Birmingham Road",
@@ -3880,7 +4119,10 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1388310": {
     "a": "42 Rother Street, Stratford-upon-Avon",
@@ -3946,7 +4188,10 @@
         "rating": 5,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1584574": {
     "a": "Stratford-upon-Avon Golf Club, Tiddington Road, Stratford-upon-Avon",
@@ -4016,7 +4261,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1927833": {
     "a": "Kineton Sports And Social Club, Norton Grange, Little Kineton, Warwick",
@@ -4071,7 +4319,10 @@
         "rating": 5,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1552328": {
     "a": "38 Guild Street, Stratford-upon-Avon",
@@ -4137,7 +4388,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "502702": {
     "a": "Wildmoor Health And Fitness Club, Alcester Road, Stratford-upon-Avon",
@@ -4207,7 +4461,10 @@
         "rating": 1,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1739370": {
     "a": "Unit 17, Bell Court, Stratford-upon-Avon",
@@ -4270,7 +4527,10 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1014807": {
     "a": "McDonalds Restaurant Limited, Western Road, Stratford-upon-Avon",
@@ -4340,7 +4600,10 @@
         "rating": 1,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1093181": {
     "a": "6 Bards Walk, Stratford-upon-Avon",
@@ -4397,7 +4660,10 @@
         "rating": 4,
         "time": "8 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503376": {
     "a": "Dunnington Heath Farm, Dunnington, Alcester",
@@ -4460,7 +4726,10 @@
         "rating": 1,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1016715": {
     "a": "Shakespaw Cat Café, 6 Union Street, Stratford-upon-Avon",
@@ -4523,7 +4792,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "504026": {
     "a": "Ragley Hall, Alcester",
@@ -4581,7 +4853,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1747706": {
     "a": "Southam Road, Long Itchington, Southam",
@@ -4650,7 +4925,10 @@
         "rating": 4,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503114": {
     "a": "Mount Everest Restuarant, 31 Alcester Road, Studley",
@@ -4713,7 +4991,10 @@
         "rating": 5,
         "time": "7 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1871630": {
     "a": "Swan Hotel, Banbury Street, Kineton, Warwick",
@@ -4782,7 +5063,10 @@
         "rating": 4,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1695933": {
     "a": "1 Henley Street, Stratford-upon-Avon",
@@ -4853,7 +5137,10 @@
         "rating": 5,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503735": {
     "a": "Costa Coffee, Unit Q, Maybird Retail Park, Birmingham Road",
@@ -4919,7 +5206,10 @@
         "rating": 5,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1152776": {
     "a": "Gilks Garage, Banbury Road, Kineton, Warwick",
@@ -4982,7 +5272,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503565": {
     "a": "Avonbrook House, 198 Masons Road, Stratford-upon-Avon",
@@ -5044,7 +5337,10 @@
         "rating": 5,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503292": {
     "a": "10 - 11 Sheep Street, Stratford-upon-Avon",
@@ -5111,7 +5407,10 @@
         "rating": 5,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1800192": {
     "a": "4 - 5 Meer Street, Stratford-upon-Avon",
@@ -5167,7 +5466,10 @@
         "rating": 2,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1754520": {
     "a": "Cinnamon Arch, The Green, Long Itchington, Southam",
@@ -5228,7 +5530,9 @@
         "rating": 5,
         "time": "8 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": false
   },
   "1206075": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -5280,7 +5584,15 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false,
+    "entity_ambiguous": true,
+    "disambiguation_type": "multi_tenant_site",
+    "disambiguation_reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+    "disambiguation_resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+    "disambiguation_site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
   },
   "503960": {
     "a": "The Bakery, 14 Sheep Street, Shipston-on-Stour",
@@ -5346,7 +5658,10 @@
         "rating": 4,
         "time": "8 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1842631": {
     "a": "Bearley Road, Snitterfield, Stratford-upon-Avon",
@@ -5410,7 +5725,10 @@
         "rating": 4,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1896714": {
     "a": "The Church Street Townhouse, 16 Church Street, Stratford-upon-Avon",
@@ -5478,7 +5796,18 @@
         "rating": 5,
         "time": "11 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true,
+    "public_name": "The Church Street Townhouse",
+    "trading_names": [
+      "Church Street Townhouse",
+      "The Townhouse",
+      "JR Hotel And Restaurants LTD"
+    ],
+    "alias_source": "FSA name field 'The Townhouse Also Trading As JR Hotel And Restaurants LTD'",
+    "alias_confidence": "high"
   },
   "1291217": {
     "a": "Charlecote Gardens, Charlecote, Warwick",
@@ -5540,7 +5869,10 @@
         "rating": 5,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1228994": {
     "a": "Unit 22, Bell Court, Stratford-upon-Avon",
@@ -5604,7 +5936,10 @@
         "rating": 5,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "1453409": {
     "a": "",
@@ -5650,7 +5985,10 @@
         "rating": 5,
         "time": "8 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503552": {
     "a": "The Waterways, Birmingham Road, Stratford-upon-Avon",
@@ -5707,7 +6045,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503821": {
     "a": "4A High Street, Southam",
@@ -5771,7 +6112,10 @@
         "rating": 3,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1790270": {
     "a": "Cordelia, 31 Sheep Street, Stratford-upon-Avon",
@@ -5833,7 +6177,10 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1854458": {
     "a": "Oversley Mill Services, Alcester Bypass, Alcester",
@@ -5898,7 +6245,10 @@
         "rating": 5,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "503479": {
     "a": "Upton House, Banbury Road, Upton, Banbury",
@@ -5960,7 +6310,10 @@
         "rating": 5,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503541": {
     "a": "Tesco Stores Ltd, Birmingham Road, Stratford-upon-Avon",
@@ -6028,7 +6381,10 @@
         "rating": 1,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "1835033": {
     "a": "15 Welford Road, Barton, Bidford-on-Avon, Alcester",
@@ -6093,7 +6449,10 @@
         "rating": 2,
         "time": "8 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1474392": {
     "a": "Sports Pavilion, Wellington Avenue, Meon Vale, Stratford-upon-Avon",
@@ -6158,7 +6517,8 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "ig": false
   },
   "736236": {
     "a": "J N B Gymnastics, Unit 5, Featherbed Lane, Pathlow",
@@ -6223,7 +6583,10 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503715": {
     "a": "Asda Living, Unit L And M, Maybird Retail Park, Birmingham Road",
@@ -6289,7 +6652,10 @@
         "rating": 5,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1622072": {
     "a": "Unit 10, Dodwell Trading Estate, Evesham Road, Dodwell",
@@ -6358,7 +6724,10 @@
         "rating": 5,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1266894": {
     "a": "Barnabys Fish Restaurant, 22 Waterside, Stratford-upon-Avon",
@@ -6424,7 +6793,10 @@
         "rating": 5,
         "time": "4 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1552322": {
     "a": "6 Henley Street, Stratford-upon-Avon",
@@ -6481,7 +6853,10 @@
         "rating": 1,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1421992": {
     "a": "13 - 14 Meer Street, Stratford-upon-Avon",
@@ -6553,7 +6928,10 @@
         "rating": 4,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503105": {
     "a": "7 Greenhill Street, Stratford-upon-Avon",
@@ -6617,7 +6995,10 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1789006": {
     "a": "12 Market Hill, Southam",
@@ -6686,7 +7067,10 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503148": {
     "a": "Nuthurst Grange Hotel, Nuthurst Grange Road, Hockley Heath, Solihull",
@@ -6753,7 +7137,10 @@
         "rating": 1,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1421981": {
     "a": "45A High Street, Studley",
@@ -6817,7 +7204,10 @@
         "rating": 5,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "503286": {
     "a": "Georges Cafe, Unit 5, Beech Tree Park, Bidford-on-Avon",
@@ -6880,7 +7270,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1552333": {
     "a": "Unit 3, The Rosebird Centre, Shipston Road, Stratford-upon-Avon",
@@ -6946,7 +7339,9 @@
         "rating": 1,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "fb": true,
+    "ig": true
   },
   "1485802": {
     "a": "Home Guard Club, Main Street, Tiddington, Stratford-upon-Avon",
@@ -7007,7 +7402,10 @@
         "rating": 5,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1495078": {
     "a": "4 Greenhill Street, Stratford-upon-Avon",
@@ -7070,7 +7468,10 @@
         "rating": 1,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "503240": {
     "a": "152 High Street, Henley-in-Arden",
@@ -7139,7 +7540,10 @@
         "rating": 5,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1912631": {
     "a": "1 - 2 Granville Court, Shipston-on-Stour",
@@ -7198,7 +7602,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1253300": {
     "a": "Keys And Kitchen, 6 Ely Street, Stratford-upon-Avon",
@@ -7252,7 +7659,10 @@
         "rating": 5,
         "time": "6 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503270": {
     "a": "Kings Coughton, Alcester",
@@ -7274,7 +7684,10 @@
       "street_address"
     ],
     "gpc": 5,
-    "gpid": "ChIJ6Wdw5JDDcEgRkh-MB-0rmDI"
+    "gpid": "ChIJ6Wdw5JDDcEgRkh-MB-0rmDI",
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1799220": {
     "a": "BURGER KING, Unit W And Unit X, The Maybird Centre, Birmingham Road",
@@ -7336,7 +7749,10 @@
         "rating": 1,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1344517": {
     "a": "Fox Inn, Loxley, Warwick",
@@ -7398,7 +7814,10 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1781021": {
     "a": "Baptist Church, Payton Street, Stratford-upon-Avon",
@@ -7452,7 +7871,10 @@
         "rating": 4,
         "time": "4 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503401": {
     "a": "3 Bridge Street, Kineton, Warwick",
@@ -7516,7 +7938,10 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503854": {
     "a": "Stratford Garden Centre, Campden Road, Clifford Chambers, Stratford-upon-Avon",
@@ -7579,7 +8004,10 @@
         "rating": 5,
         "time": "5 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "979161": {
     "a": "Spernal Ash Nurseries, Alcester Road, Studley",
@@ -7634,7 +8062,10 @@
         "rating": 5,
         "time": "6 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "676561": {
     "a": "The View, Swans Nest Lane, Stratford-upon-Avon",
@@ -7696,7 +8127,10 @@
         "rating": 4,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1747702": {
     "a": "Unit 18, Bell Court, Stratford-upon-Avon",
@@ -7759,7 +8193,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1397584": {
     "a": "93 High Street, Henley-in-Arden",
@@ -7822,7 +8259,10 @@
         "rating": 5,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1838726": {
     "a": "The Cow Shed, Yew Trees Craft Centre, Stratford Road, Wootton Wawen",
@@ -7888,7 +8328,10 @@
         "rating": 5,
         "time": "8 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503555": {
     "a": "Camp Site, Dog Lane Fisheries, Napton-on-the-Hill",
@@ -7951,7 +8394,10 @@
         "rating": 4,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": false,
+    "ig": false
   },
   "503089": {
     "a": "Touchdown Inn, Wellesbourne Mountford Aerodrome, Loxley Road, Wellesbourne",
@@ -8020,7 +8466,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1765854": {
     "a": "Roebuck Inn, Birmingham Road, Alcester",
@@ -8038,7 +8487,10 @@
       "premise",
       "street_address"
     ],
-    "gpid": "ChIJD7ixY5zDcEgRDynPaXEfm5w"
+    "gpid": "ChIJD7ixY5zDcEgRDynPaXEfm5w",
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1808716": {
     "a": "2A Bridge Street, Stratford-upon-Avon",
@@ -8101,7 +8553,8 @@
         "rating": 1,
         "time": "a month ago"
       }
-    ]
+    ],
+    "ig": false
   },
   "1804017": {
     "a": "86B High Street, Henley-in-Arden",
@@ -8163,7 +8616,8 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "ig": false
   },
   "1577024": {
     "a": "Holt Farm, Holt Road, Southam",
@@ -8216,7 +8670,9 @@
         "rating": 4,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": true
   },
   "1796548": {
     "a": "13 Ely Street, Stratford-upon-Avon",
@@ -8281,7 +8737,10 @@
         "rating": 1,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1854461": {
     "a": "1 Warwick Road, Stratford-upon-Avon",
@@ -8345,7 +8804,10 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503926": {
     "a": "The Wight School, High Street, Harbury, Leamington Spa",
@@ -8411,7 +8873,8 @@
         "rating": 5,
         "time": "6 years ago"
       }
-    ]
+    ],
+    "ig": false
   },
   "1388307": {
     "a": "",
@@ -8465,7 +8928,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503772": {
     "a": "3 Bridge Street, Stratford-upon-Avon",
@@ -8535,7 +9001,10 @@
         "rating": 3,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503478": {
     "a": "8 - 9 High Street, Stratford-upon-Avon",
@@ -8603,7 +9072,10 @@
         "rating": 5,
         "time": "8 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1800191": {
     "a": "59 High Street, Alcester",
@@ -8665,7 +9137,9 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": true
   },
   "1774608": {
     "a": "Stratford Marina, Bridgefoot, Stratford-upon-Avon",
@@ -8727,7 +9201,10 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1747700": {
     "a": "Cotswold Distilling Company, Phillips Field, Whichford Road, Stourton",
@@ -8795,7 +9272,9 @@
         "rating": 5,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": true
   },
   "1556368": {
     "a": "Loungers UK Limited, Lounge, 32 - 34 Bridge Street, Stratford-upon-Avon",
@@ -8865,7 +9344,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "565220": {
     "a": "The Four Teas, 24 Sheep Street, Stratford-upon-Avon",
@@ -8931,7 +9413,10 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "502962": {
     "a": "Curry Rebublic Ltd, 35A High Street, Henley-in-Arden",
@@ -8997,7 +9482,10 @@
         "rating": 1,
         "time": "5 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1388303": {
     "a": "18 - 19 Rother Street, Stratford-upon-Avon",
@@ -9059,7 +9547,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1827674": {
     "a": "1A Daventry Street, Southam",
@@ -9127,7 +9618,8 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "ig": false
   },
   "502877": {
     "a": "The Double Tree By Hilton, Arden Street, Stratford-upon-Avon",
@@ -9181,7 +9673,10 @@
         "rating": 2,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503584": {
     "a": "First Floor, 2 - 4 Swan Street, Alcester",
@@ -9249,7 +9744,10 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1802818": {
     "a": "5 Shrieves Walk, Stratford-upon-Avon",
@@ -9302,7 +9800,9 @@
         "rating": 5,
         "time": "10 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": false
   },
   "1884822": {
     "a": "257 Birmingham Road, Stratford-upon-Avon",
@@ -9365,7 +9865,8 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "ig": false
   },
   "1796553": {
     "a": "3 Union Street, Stratford-upon-Avon",
@@ -9427,7 +9928,9 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": true
   },
   "1381141": {
     "a": "Bulls Head Inn, Stratford Road, Wootton Wawen, Henley-in-Arden",
@@ -9492,7 +9995,10 @@
         "rating": 3,
         "time": "10 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1589295": {
     "a": "Unit 3, Bell Court, Stratford-upon-Avon",
@@ -9563,7 +10069,15 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true,
+    "entity_ambiguous": true,
+    "disambiguation_type": "food_hall_unit",
+    "disambiguation_reason": "Two separately FSA-registered units inside the Bell Court food hall share one Google Place ID (likely the hall's shared listing). Until each unit has a distinct Google Business Profile, both remain ambiguous and land in Directional-C.",
+    "disambiguation_resolution_path": "Each Bell Court unit requests a distinct Google Business Profile. Operators of multi-tenant food halls can do this via Google Business Profile Help.",
+    "disambiguation_site": "Bell Court, Stratford-upon-Avon"
   },
   "502864": {
     "a": "6A Chapel Street, Stratford-upon-Avon",
@@ -9632,7 +10146,16 @@
         "rating": 5,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true,
+    "public_name": "Hussains Indian Cuisine",
+    "trading_names": [
+      "Hussains"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   },
   "1513917": {
     "a": "Hollybush Inn, Holly Bush Lane, Priors Marston, Southam",
@@ -9695,7 +10218,13 @@
         "rating": 1,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "ig": false,
+    "entity_ambiguous": true,
+    "disambiguation_type": "rebrand_or_relocation",
+    "disambiguation_reason": "Two FSA records at different postcodes share one Google Place. Most commonly this is a rebrand or a relocation where the Google Business Profile survived and the old FSA record was not retired. Without operator confirmation it is not safe to assume either is closed.",
+    "disambiguation_resolution_path": "Operator confirms whether 'The Margin' or 'The Water Margin @ The Hollybush' is the current trading entity. Once confirmed, set `fsa_closed = true` on the retired record (via a manual patch on the establishments file) and remove the retired FHRSID from this entry."
   },
   "1672980": {
     "a": "Alcester Business Centre, 4 Kinwarton Farm Road, Kinwarton, Alcester",
@@ -9760,7 +10289,10 @@
         "rating": 2,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": true,
+    "ig": true
   },
   "1826838": {
     "a": "67A High Street, Bidford-on-Avon, Alcester",
@@ -9823,7 +10355,9 @@
         "rating": 5,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "fb": false,
+    "ig": false
   },
   "559158": {
     "a": "37 Sheep Street, Stratford-upon-Avon",
@@ -9886,7 +10420,10 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "565221": {
     "a": "Costa Coffee, 68 High Street, Henley-in-Arden",
@@ -9952,7 +10489,10 @@
         "rating": 5,
         "time": "4 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1743693": {
     "a": "37 Henley Street, Stratford-upon-Avon",
@@ -10019,7 +10559,10 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503218": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -10086,7 +10629,15 @@
         "rating": 1,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": true,
+    "ig": true,
+    "entity_ambiguous": true,
+    "disambiguation_type": "service_station_shared",
+    "disambiguation_reason": "Two separate brands share the service-station forecourt. Google Places returns one listing for the whole site; the FSA records each brand separately. Until each brand has a distinct Google Business Profile, both venues are flagged ambiguous and remain in Directional-C.",
+    "disambiguation_resolution_path": "Each brand operator requests a distinct Google Business Profile for their unit (franchise head office typically handles this for chain brands).",
+    "disambiguation_site": "Welcome Break Warwick Services Southbound, M40"
   },
   "1721314": {
     "a": "Banbury Road, Gaydon, Warwick",
@@ -10147,7 +10698,10 @@
         "rating": 5,
         "time": "7 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1623426": {
     "a": "Red Hot Mamma, 22 High Street, Stratford-upon-Avon",
@@ -10209,7 +10763,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1662496": {
     "a": "2 Shrieves Walk, Stratford-upon-Avon",
@@ -10275,7 +10832,10 @@
         "rating": 4,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1754519": {
     "a": "14 The Mansley Centre, Timothys Bridge Road, Stratford Enterprise Park, Stratford-upon-Avon",
@@ -10335,7 +10895,10 @@
         "rating": 5,
         "time": "2 weeks ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1735216": {
     "a": "Lockerbie, Pig Trot Lane, Danzey Green, Solihull",
@@ -10396,7 +10959,10 @@
         "rating": 5,
         "time": "6 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": false,
+    "ig": false
   },
   "1699665": {
     "a": "Chesterton Road, Lighthorne, Warwick",
@@ -10459,7 +11025,10 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1467814": {
     "a": "Stratford Sports Club Limited, Stratford Sports Club, Swans Nest Lane, Stratford-upon-Avon",
@@ -10520,7 +11089,10 @@
         "rating": 2,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503282": {
     "a": "Alcester",
@@ -10588,7 +11160,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1774610": {
     "a": "",
@@ -10602,7 +11177,10 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1266889": {
     "a": "Dudley Taylor Pharmacies Ltd, 5 Kineton Road, Wellesbourne, Warwick",
@@ -10665,7 +11243,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503342": {
     "a": "Warwick Services M40 Nothbound, Ashorne, Warwick",
@@ -10732,7 +11313,10 @@
         "rating": 1,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1908606": {
     "a": "Brunos Bakery, 40 High Street, Studley",
@@ -10809,7 +11393,10 @@
         "rating": 3,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1796547": {
     "a": "Unit 10, Long Compton Industrial Estate, Old Road, Long Compton",
@@ -10876,7 +11463,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1756585": {
     "a": "Alcester Rugby Football Club, Kings Coughton, Alcester",
@@ -10936,7 +11526,10 @@
         "rating": 5,
         "time": "8 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1690228": {
     "a": "Compton Verney House Estate, Compton Verney, Warwick",
@@ -10969,7 +11562,10 @@
       "Friday: 10:00 AM – 5:00 PM",
       "Saturday: 10:00 AM – 5:00 PM",
       "Sunday: 10:00 AM – 5:00 PM"
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1029137": {
     "a": "Buck And Bell, The Green, Long Itchington, Southam",
@@ -11032,7 +11628,10 @@
         "rating": 4,
         "time": "9 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503261": {
     "a": "Thespians Restaurant, 26 Sheep Street, Stratford-upon-Avon",
@@ -11096,7 +11695,10 @@
         "rating": 3,
         "time": "4 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1871632": {
     "a": "7 - 8 Ely Street, Stratford-upon-Avon",
@@ -11163,7 +11765,10 @@
         "rating": 1,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503444": {
     "a": "Bridgefoot, Stratford-upon-Avon",
@@ -11219,7 +11824,10 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1155879": {
     "a": "",
@@ -11262,7 +11870,10 @@
         "rating": 5,
         "time": "3 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1339998": {
     "a": "Unit 4, London Road, Little Compton",
@@ -11325,7 +11936,10 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1056848": {
     "a": "Barn Antiques Centre, Station Road, Long Marston, Stratford-upon-Avon",
@@ -11388,7 +12002,10 @@
         "rating": 5,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "502863": {
     "a": "Hotel Indigo, Chapel Street, Stratford-upon-Avon",
@@ -11444,7 +12061,10 @@
         "rating": 4,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1019047": {
     "a": "Unit 20, Bell Court, Stratford-upon-Avon",
@@ -11508,7 +12128,10 @@
         "rating": 5,
         "time": "a month ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "504050": {
     "a": "Bishops Bowl Lakes, Bishops Itchington, Southam",
@@ -11570,7 +12193,10 @@
         "rating": 4,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503102": {
     "a": "Ashorne Hill, Leamington Spa",
@@ -11623,7 +12249,10 @@
         "rating": 5,
         "time": "4 months ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1826833": {
     "a": "Pitstop Cafe, Stretton-on-Fosse, Moreton-in-Marsh",
@@ -11688,7 +12317,10 @@
         "rating": 5,
         "time": "4 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1176874": {
     "a": "Wellesbourne Florists, 2 Newbold Road, Wellesbourne, Warwick",
@@ -11751,7 +12383,10 @@
         "rating": 3,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1838728": {
     "a": "Village Hall, The Crescent, Napton-on-the-Hill, Southam",
@@ -11812,7 +12447,10 @@
         "rating": 5,
         "time": "in the last week"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "503734": {
     "a": "Payton Street, Stratford-upon-Avon",
@@ -11869,7 +12507,10 @@
         "rating": 3,
         "time": "4 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503711": {
     "a": "137 High Street, Henley-in-Arden",
@@ -11933,7 +12574,10 @@
         "rating": 5,
         "time": "7 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "503931": {
     "a": "Bella Italia Restaurants Ltd, 32 Wood Street, Stratford-upon-Avon",
@@ -11993,7 +12637,18 @@
         "rating": 5,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true,
+    "public_name": "Super Nonna",
+    "trading_names": [
+      "Bella Italia",
+      "Super Nonna",
+      "Bella Italia Restaurants Ltd"
+    ],
+    "alias_source": "FSA 'Bella Italia Also Trading As Super Nonna'",
+    "alias_confidence": "high"
   },
   "1411434": {
     "a": "Earlswood Village Hall, Shutt Lane, Earlswood, Solihull",
@@ -12045,7 +12700,10 @@
         "rating": 4,
         "time": "7 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "1206079": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -12097,7 +12755,15 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": true,
+    "ig": true,
+    "entity_ambiguous": true,
+    "disambiguation_type": "multi_tenant_site",
+    "disambiguation_reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+    "disambiguation_resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+    "disambiguation_site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
   },
   "502838": {
     "a": "Banbury Road, Stratford-upon-Avon",
@@ -12154,7 +12820,10 @@
         "rating": 4,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "502681": {
     "a": "Billesley Manor, Billesley, Alcester",
@@ -12211,7 +12880,10 @@
         "rating": 5,
         "time": "3 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1622078": {
     "a": "2 The Minories, Henley Street, Stratford-upon-Avon",
@@ -12275,7 +12947,10 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1622076": {
     "a": "21 Bridge Street, Stratford-upon-Avon",
@@ -12339,7 +13014,10 @@
         "rating": 3,
         "time": "2 years ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "676557": {
     "a": "1 The Minories, Rother Street, Stratford-upon-Avon",
@@ -12405,7 +13083,10 @@
         "rating": 5,
         "time": "8 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "503319": {
     "a": "3 - 5 West Street, Shipston-on-Stour",
@@ -12469,7 +13150,10 @@
         "rating": 5,
         "time": "a year ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "503369": {
     "a": "Studley",
@@ -12522,7 +13206,10 @@
         "rating": 4,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "1131857": {
     "a": "D C S Stadium, Stratford Town Football Club, Knights Lane, Tiddington",
@@ -12584,7 +13271,10 @@
         "rating": 5,
         "time": "4 years ago"
       }
-    ]
+    ],
+    "web": false,
+    "fb": false,
+    "ig": false
   },
   "502970": {
     "a": "Must Go, 21 Windsor Street, Stratford-upon-Avon",
@@ -12648,7 +13338,10 @@
         "rating": 5,
         "time": "4 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1584576": {
     "a": "Unit 26, Bell Court, Stratford-upon-Avon",
@@ -12712,7 +13405,10 @@
         "rating": 1,
         "time": "2 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": false
   },
   "1317981": {
     "a": "Bargain Booze, 12 Warwick Road, Wellesbourne, Warwick",
@@ -12775,7 +13471,10 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true
   },
   "502816": {
     "a": "3 Sheep Street, Stratford-upon-Avon",
@@ -12841,6 +13540,173 @@
         "rating": 5,
         "time": "6 months ago"
       }
-    ]
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true,
+    "public_name": "Loxleys Restaurant and Wine Bar",
+    "trading_names": [
+      "Loxleys",
+      "Loxley's"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
+  },
+  "503480": {
+    "n": "Vintner Wine Bar",
+    "a": "The Vintner, 5 Sheep Street, Stratford-upon-Avon",
+    "pc": "CV37 6EF",
+    "la": "Stratford-on-Avon",
+    "r": 5,
+    "rd": "2024-05-09T00:00:00",
+    "lat": 52.191343,
+    "lon": -1.705451,
+    "id": 503480,
+    "t": null,
+    "sh": 8.0,
+    "ss": 8.0,
+    "sm": 7.5,
+    "s": 10.0,
+    "gr": 4.6,
+    "grc": 887,
+    "gpl": 2,
+    "gty": [
+      "wine_bar",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 10,
+    "gpid": "ChIJM4d8OjLOcEgRtipI76ULZ6E",
+    "goh": [
+      "Monday: 9:30 AM – 9:00 PM",
+      "Tuesday: 9:30 AM – 9:00 PM",
+      "Wednesday: 9:30 AM – 9:00 PM",
+      "Thursday: 9:30 AM – 9:00 PM",
+      "Friday: 9:30 AM – 9:00 PM",
+      "Saturday: 9:30 AM – 9:00 PM",
+      "Sunday: 9:30 AM – 9:00 PM"
+    ],
+    "g_reviews": [
+      {
+        "text": "We went with our dog and were seated in the cozy, pet-friendly section by the door — love when places are dog-friendly! 🐾\nThe staff were super attentive, and the food? Absolutely bursting with flavor.\nHighly recommend the crispy pork & mango salad — sweet, tangy, crunchy perfection.",
+        "rating": 5,
+        "time": "6 months ago"
+      },
+      {
+        "text": "Vintner provided great pre-theatre service helped us get to our showing on time.\n\nI had the vegan risotto, which was solid and what I was looking for. There was a set menu which offered a good selection, but we opted for fewer courses.\n\nThe staff were attentive throughout, checking in at the right moments. Everything moved smoothly, which made the visit easy and enjoyable.\n\nVintner works well as a place to eat before a show, and I would return.",
+        "rating": 4,
+        "time": "7 months ago"
+      },
+      {
+        "text": "Great little joint, had the Beef Rump and a Sticky Toffee Pudding and both were fantastic and good for the price. Just the rump was a little cheap but cooked perfectly, 4.5 for food. The service was exceptional, the waitress was very friendly and polite and very helpful, 5 for service. The atmosphere was also fantastic, very cute and quiet, no gross music, 5 for atmosphere",
+        "rating": 5,
+        "time": "a month ago"
+      },
+      {
+        "text": "This was our second visit to The Vinter, & it didn’t disappoint! We come to Stratford several times a year to visit the RSC. The Vintner does a set menu, which is excellent for pre-theatre dining. You can choose either two or three courses, available at certain times. The Vintner is an independent, family run restaurant, which is very popular & always seems busy, situated on Sheep Street. We pre-booked online (would recommend pre booking, especially weekends) & advised of my ND. When we arrived we, they were very busy. They sat us at a table that was near a staircase. It made me feel very uncomfortable, as I felt it was an area of high ‘people traffic’. Hubs asked if there was an alternate table. We were then moved to a different table, & then moved again as they realised the second table was booked by someone else in forty minutes. Our final table was lovely, & by a window, which helps me as it gives me a focus to distract me when I get anxious. Our server was very apologetic & kept asking if we were okay. We reassured her we were. I’m not sure if the notes had transferred from the OpenTable booking app or not, or whether they hadn’t been checked initially. We then ordered our food. I chose Cauliflower & Gruyère Cheese Mousse & hubs ordered Lamb Koftas with Giant Couscous & Tzatziki to start. We both thoroughly enjoyed them! My cheese mousse was delicious! We both ordered the same main course; Breast of Chicken, marinated in Lemon & Tarragon with tenderstem broccoli, mashed potatoes & white wine sauce. The chicken was still on the bone, the skin crispy & the meat, moist & juicy. It was scrumptious! We both ordered the Cherry & Almond tart with custard for dessert. It was a generous portion, & again, gorgeous. The last meal we had here was in January & the menu was different, so it looks like it’s updated regularly. (We had a cottage pie previously) The restaurant is lovely & the food, perfect. Apart from the slight glitch at the start, which was more than made up for after with the level of service throughout our visit, we would highly recommend The Vintner if you’re in Stratford! (We did forget photos as we were so engrossed in the meal, so the ones on the review may have a few bites taken already!)",
+        "rating": 5,
+        "time": "7 months ago"
+      },
+      {
+        "text": "What a lovely delightful restaurant.  Great choice of \"Sharable\" starters with very friendly staff especially Charlie.",
+        "rating": 5,
+        "time": "6 months ago"
+      }
+    ],
+    "web": true,
+    "fb": true,
+    "ig": true,
+    "gbp_completeness": 10.0,
+    "has_menu_online": true,
+    "price_range": "££",
+    "local_awards_count": 0,
+    "ta": 4.4,
+    "trc": 20,
+    "ta_present": true,
+    "ta_url": "https://www.tripadvisor.co.uk/Restaurant_Review-g186460-d730193-Reviews-The_Vintner_Wine_Bar-Stratford_upon_Avon_Warwickshire_England.html",
+    "public_name": "The Vintner Wine Bar",
+    "trading_names": [
+      "Vintner",
+      "The Vintner",
+      "Vintner Wine Bar"
+    ],
+    "alias_source": "Exact FSA name match (pre-existing Rankable-A venue)",
+    "alias_confidence": "high"
+  },
+  "503104": {
+    "n": "Simla Takeaway",
+    "a": "24 Greenhill Street, Stratford-upon-Avon",
+    "pc": "CV37 6LE",
+    "la": "Stratford-on-Avon",
+    "r": 5,
+    "rd": "2025-01-30T00:00:00",
+    "lat": 52.192994,
+    "lon": -1.711204,
+    "id": 503104,
+    "t": null,
+    "sh": 10.0,
+    "ss": 8.0,
+    "sm": 10.0,
+    "s": 10.0,
+    "gr": 4,
+    "grc": 73,
+    "gty": [
+      "meal_takeaway",
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpc": 7,
+    "gpid": "ChIJRTeBOzPOcEgRDJp1aOUQV_c",
+    "goh": [
+      "Monday: 5:00 – 11:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 5:00 – 11:00 PM",
+      "Thursday: 5:00 – 11:00 PM",
+      "Friday: 5:00 – 11:00 PM",
+      "Saturday: 5:00 – 11:00 PM",
+      "Sunday: 5:00 – 11:00 PM"
+    ],
+    "g_reviews": [
+      {
+        "text": "Takeaway only, no dine in option.\n\nFood is excellent, fresh produce (fresh salad/sides, etc), well spiced and served piping hot.     Extensive menu and above all, everything tasted great.\n\nI was staying in a nearby hotel overnight and brought the food back to my room, so if staying in Stratford and don't want to use the bland hotel menus, then this is worth a visit.",
+        "rating": 4,
+        "time": ""
+      },
+      {
+        "text": "Honestly the best Indian in Stratford! Never had a bad meal. A lot of places are hit and miss but not this place. Curries nice and thick sauce and the delivery guys are super friendly and always bring up to my flat for me. Lamb tikka makhani is amazing!",
+        "rating": 5,
+        "time": ""
+      },
+      {
+        "text": "The BEST takeaway in Stratford, absolutely gorgeous food and happy smiling staff. No need to order from anywhere else. Thank you. The Real Ron 👍🙏",
+        "rating": 5,
+        "time": ""
+      },
+      {
+        "text": "Ordered through just eat and found glass in my food, ordered before and has always been amazing however really not happy about this and when I tried to contacting them they said there was nothing they could do (contacted through just eat)",
+        "rating": 1,
+        "time": ""
+      },
+      {
+        "text": "We always have great food from Simla!  Definitely our favourite Indian takeaway in Stratford-on-Avon! The drivers are very professional and very friendly! Great value for money too.",
+        "rating": 5,
+        "time": ""
+      }
+    ],
+    "web": true,
+    "ig": false,
+    "gbp_completeness": 8.0,
+    "has_menu_online": true,
+    "cuisine_tags_count": 1,
+    "cuisine_tags": [
+      "indian"
+    ],
+    "local_awards_count": 0
   }
 }

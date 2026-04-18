@@ -1,0 +1,61 @@
+{
+  "engine_version": "v4.0.0",
+  "computed_at": "2026-04-18T14:47:05Z",
+  "venue": {
+    "fhrsid": "1765854",
+    "name": "The Roebuck Inn Alcester",
+    "fsa_name": "The Roebuck Inn Alcester",
+    "postcode": "B49 5QA"
+  },
+  "month": "2026-04",
+  "report_mode": "profile_only_d",
+  "confidence_class": "Profile-only-D",
+  "rankable": false,
+  "league_table_eligible": false,
+  "entity_match_status": "confirmed",
+  "rcs_v4_final": 0.0,
+  "base_score": 1.501,
+  "adjusted_score": 1.501,
+  "components": {
+    "trust_compliance": {
+      "score": 3.753,
+      "available": true,
+      "signals_used": 2
+    },
+    "customer_validation": {
+      "score": null,
+      "available": false,
+      "platforms": {}
+    },
+    "commercial_readiness": {
+      "score": 0.0,
+      "available": true,
+      "signals_used": 0
+    }
+  },
+  "distinction": {
+    "value": 0.0,
+    "sources": []
+  },
+  "penalties_applied": [],
+  "caps_applied": [],
+  "source_family_summary": {
+    "fsa": "present",
+    "customer_platforms": [],
+    "commercial": "partial",
+    "companies_house": "unmatched"
+  },
+  "qa": {
+    "engine_version": "v4.0.0",
+    "report_mode": "profile_only_d",
+    "structural_check": {
+      "passed": true
+    },
+    "guardrail_check": {
+      "run": true,
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    }
+  }
+}

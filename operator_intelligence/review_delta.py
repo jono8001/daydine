@@ -10,6 +10,20 @@ Two modes:
 Persists theme snapshots month-over-month for delta detection.
 """
 
+# ============================================================================
+# SHARED — NARRATIVE / PROFILE-ONLY HELPER (V3.4 origin, reused by V4)
+# ----------------------------------------------------------------------------
+# This module produces narrative / profile-only output. The V4 report layer
+# reuses it as a text / theme source (see `operator_intelligence/v4_report_
+# generator.py`) — NEVER as a score input. V4 scoring does not consume
+# sentiment, aspect scores, review text, photo count, price level, social
+# presence, or any other forbidden input defined in `docs/DayDine-V4-
+# Scoring-Spec.md` §2.3 / `docs/DayDine-V4-Report-Spec.md` §2.3.
+#
+# Changes here must keep the output shape stable so V4 consumers do not
+# break. See spec §8 for the narrative rules.
+# ============================================================================
+
 import json
 import os
 from collections import Counter

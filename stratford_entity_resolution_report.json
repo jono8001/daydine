@@ -1,0 +1,362 @@
+{
+  "generated_by": "resolve_entities.py",
+  "total_establishments": 210,
+  "manual_aliases_applied": 9,
+  "manual_aliases_missing_fhrsids": [],
+  "auto_parsed_trade_as": 0,
+  "records_with_public_name": 9,
+  "records_with_trading_names": 9,
+  "duplicate_gpid_groups": [
+    {
+      "gpid": "ChIJ1abMA1Iyd0gRmLbkMlGWa0o",
+      "fhrsids": [
+        "503343",
+        "503218"
+      ],
+      "names": [
+        "Starbucks - Southbound",
+        "Burger King - Southbound"
+      ],
+      "disambiguation_type": "service_station_shared",
+      "reason_for_operator": "Two separate brands share the service-station forecourt. Google Places returns one listing for the whole site; the FSA records each brand separately. Until each brand has a distinct Google Business Profile, both venues are flagged ambiguous and remain in Directional-C.",
+      "resolution_path": "Each brand operator requests a distinct Google Business Profile for their unit (franchise head office typically handles this for chain brands).",
+      "site": "Welcome Break Warwick Services Southbound, M40"
+    },
+    {
+      "gpid": "ChIJG1I-0yI7d0gR3UYQ-oZYhhE",
+      "fhrsids": [
+        "1339997",
+        "1513917"
+      ],
+      "names": [
+        "The Margin",
+        "The Water Margin @ The Hollybush"
+      ],
+      "disambiguation_type": "rebrand_or_relocation",
+      "reason_for_operator": "Two FSA records at different postcodes share one Google Place. Most commonly this is a rebrand or a relocation where the Google Business Profile survived and the old FSA record was not retired. Without operator confirmation it is not safe to assume either is closed.",
+      "resolution_path": "Operator confirms whether 'The Margin' or 'The Water Margin @ The Hollybush' is the current trading entity. Once confirmed, set `fsa_closed = true` on the retired record (via a manual patch on the establishments file) and remove the retired FHRSID from this entry.",
+      "primary_fhrsid": null
+    },
+    {
+      "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
+      "fhrsids": [
+        "1206081",
+        "1206075",
+        "1206079"
+      ],
+      "names": [
+        "South Costa",
+        "Dec X Canteen",
+        "Building 523 Costa And Kitchen"
+      ],
+      "disambiguation_type": "multi_tenant_site",
+      "reason_for_operator": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+      "resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+      "site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
+    },
+    {
+      "gpid": "ChIJqxorPpjPcEgRQDF1FDen5ck",
+      "fhrsids": [
+        "1847445",
+        "1589295"
+      ],
+      "names": [
+        "Soma",
+        "The Tempest"
+      ],
+      "disambiguation_type": "food_hall_unit",
+      "reason_for_operator": "Two separately FSA-registered units inside the Bell Court food hall share one Google Place ID (likely the hall's shared listing). Until each unit has a distinct Google Business Profile, both remain ambiguous and land in Directional-C.",
+      "resolution_path": "Each Bell Court unit requests a distinct Google Business Profile. Operators of multi-tenant food halls can do this via Google Business Profile Help.",
+      "site": "Bell Court, Stratford-upon-Avon"
+    }
+  ],
+  "manual_ambiguous_groups": [
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "disambiguation_type": "service_station_shared",
+      "fhrsids": [
+        "503343",
+        "503218"
+      ],
+      "names": [
+        "Starbucks - Southbound",
+        "Burger King - Southbound"
+      ],
+      "postcode": "CV35 0AA",
+      "site": "Welcome Break Warwick Services Southbound, M40",
+      "reason_for_operator": "Two separate brands share the service-station forecourt. Google Places returns one listing for the whole site; the FSA records each brand separately. Until each brand has a distinct Google Business Profile, both venues are flagged ambiguous and remain in Directional-C.",
+      "resolution_path": "Each brand operator requests a distinct Google Business Profile for their unit (franchise head office typically handles this for chain brands).",
+      "note": "Two FSA records attached to the same Google Place (same service station unit). Mark both ambiguous."
+    },
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "disambiguation_type": "rebrand_or_relocation",
+      "fhrsids": [
+        "1339997",
+        "1513917"
+      ],
+      "names": [
+        "The Margin",
+        "The Water Margin @ The Hollybush"
+      ],
+      "postcode_primary": "CV47 9PZ",
+      "postcode_secondary": "CV47 7RW",
+      "reason_for_operator": "Two FSA records at different postcodes share one Google Place. Most commonly this is a rebrand or a relocation where the Google Business Profile survived and the old FSA record was not retired. Without operator confirmation it is not safe to assume either is closed.",
+      "resolution_path": "Operator confirms whether 'The Margin' or 'The Water Margin @ The Hollybush' is the current trading entity. Once confirmed, set `fsa_closed = true` on the retired record (via a manual patch on the establishments file) and remove the retired FHRSID from this entry.",
+      "primary_fhrsid": null,
+      "note": "Two FSA records pointing at the same Google Place at different postcodes. Likely a rebrand or a Google matching error; mark both ambiguous until disambiguated."
+    },
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "disambiguation_type": "multi_tenant_site",
+      "fhrsids": [
+        "1206081",
+        "1206075",
+        "1206079"
+      ],
+      "names": [
+        "South Costa",
+        "Dec X Canteen",
+        "Building 523 Costa And Kitchen"
+      ],
+      "postcode": "CV35 0RR",
+      "site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
+      "reason_for_operator": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+      "resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+      "note": "Three FSA records at a single MoD / industrial site sharing one Google Place. All ambiguous; Directional-C is the correct permanent state."
+    },
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "disambiguation_type": "food_hall_unit",
+      "fhrsids": [
+        "1847445",
+        "1589295"
+      ],
+      "names": [
+        "Soma",
+        "The Tempest"
+      ],
+      "postcode": "CV37 6EX",
+      "site": "Bell Court, Stratford-upon-Avon",
+      "reason_for_operator": "Two separately FSA-registered units inside the Bell Court food hall share one Google Place ID (likely the hall's shared listing). Until each unit has a distinct Google Business Profile, both remain ambiguous and land in Directional-C.",
+      "resolution_path": "Each Bell Court unit requests a distinct Google Business Profile. Operators of multi-tenant food halls can do this via Google Business Profile Help.",
+      "note": "Two Bell Court units sharing one Google Place. Ambiguous."
+    }
+  ],
+  "records_flagged_ambiguous": 9,
+  "entity_match_class_counts": {
+    "confirmed": 200,
+    "probable": 1,
+    "ambiguous": 9,
+    "none": 0
+  },
+  "named_venue_resolution": {
+    "The Dirty Duck": {
+      "resolved_fhrsids": [],
+      "resolved": false,
+      "public_names": []
+    },
+    "The Black Swan": {
+      "resolved_fhrsids": [],
+      "resolved": false,
+      "public_names": []
+    },
+    "The Rooftop Restaurant": {
+      "resolved_fhrsids": [],
+      "resolved": false,
+      "public_names": []
+    },
+    "RSC Rooftop": {
+      "resolved_fhrsids": [],
+      "resolved": false,
+      "public_names": []
+    },
+    "Church Street Townhouse": {
+      "resolved_fhrsids": [
+        "1896714"
+      ],
+      "resolved": true,
+      "public_names": [
+        "The Church Street Townhouse"
+      ]
+    },
+    "The Townhouse": {
+      "resolved_fhrsids": [
+        "1896714"
+      ],
+      "resolved": true,
+      "public_names": [
+        "The Church Street Townhouse"
+      ]
+    },
+    "No 9 Church Street": {
+      "resolved_fhrsids": [],
+      "resolved": false,
+      "public_names": []
+    },
+    "No.9 Church Street": {
+      "resolved_fhrsids": [],
+      "resolved": false,
+      "public_names": []
+    },
+    "Pick Thai": {
+      "resolved_fhrsids": [
+        "1381156"
+      ],
+      "resolved": true,
+      "public_names": [
+        "Pick Thai"
+      ]
+    },
+    "Oscar's": {
+      "resolved_fhrsids": [],
+      "resolved": false,
+      "public_names": []
+    },
+    "Vintner": {
+      "resolved_fhrsids": [
+        "503480"
+      ],
+      "resolved": true,
+      "public_names": [
+        "The Vintner Wine Bar"
+      ]
+    },
+    "Lambs": {
+      "resolved_fhrsids": [
+        "503316"
+      ],
+      "resolved": true,
+      "public_names": [
+        "Lambs"
+      ]
+    },
+    "Loxleys": {
+      "resolved_fhrsids": [
+        "502816"
+      ],
+      "resolved": true,
+      "public_names": [
+        "Loxleys Restaurant and Wine Bar"
+      ]
+    },
+    "Opposition": {
+      "resolved_fhrsids": [
+        "503481"
+      ],
+      "resolved": true,
+      "public_names": [
+        "The Opposition"
+      ]
+    },
+    "New York Pizzas": {
+      "resolved_fhrsids": [
+        "1622082"
+      ],
+      "resolved": true,
+      "public_names": [
+        "New York Pizzas"
+      ]
+    },
+    "Super Nonna": {
+      "resolved_fhrsids": [
+        "503931"
+      ],
+      "resolved": true,
+      "public_names": [
+        "Super Nonna"
+      ]
+    },
+    "Hussains": {
+      "resolved_fhrsids": [
+        "502864"
+      ],
+      "resolved": true,
+      "public_names": [
+        "Hussains Indian Cuisine"
+      ]
+    },
+    "Bella Italia": {
+      "resolved_fhrsids": [
+        "503931"
+      ],
+      "resolved": true,
+      "public_names": [
+        "Super Nonna"
+      ]
+    }
+  },
+  "known_unresolved_not_in_slice": [
+    {
+      "query_name": "The Dirty Duck",
+      "aka": [
+        "Black Swan",
+        "The Dirty Duck / Black Swan",
+        "Greene King Dirty Duck"
+      ],
+      "postcode_hint": "CV37 6BA",
+      "address_hint": "Waterside, Stratford-upon-Avon",
+      "cause": "not_in_fsa_trial_slice",
+      "note": "High-profile venue. Not in the 210-record trial FSA slice. Consumer search must not silently return nothing; surface as 'not yet in trial dataset' with a link to feedback.",
+      "unblock": "Re-run .github/scripts/augment_fsa_stratford.py to pull all food business types for LA 320, or expand the trial slice."
+    },
+    {
+      "query_name": "The Rooftop Restaurant",
+      "aka": [
+        "RSC Rooftop",
+        "Royal Shakespeare Company Rooftop Restaurant"
+      ],
+      "postcode_hint": "CV37 6BB",
+      "address_hint": "Royal Shakespeare Theatre, Waterside, Stratford-upon-Avon",
+      "cause": "not_in_fsa_trial_slice",
+      "note": "Operated by RSC Enterprises Ltd. Not in trial slice.",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "The Golden Bee",
+      "aka": [],
+      "postcode_hint": "CV37 6QW",
+      "cause": "not_in_fsa_trial_slice",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "Baraset Barn",
+      "aka": [],
+      "postcode_hint": "CV35 9AA",
+      "cause": "not_in_fsa_trial_slice",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "Boston Tea Party",
+      "aka": [],
+      "postcode_hint": "CV37 6HJ",
+      "cause": "not_in_fsa_trial_slice",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "Osteria Da Gino",
+      "aka": [],
+      "postcode_hint": "CV37 6HJ",
+      "cause": "not_in_fsa_trial_slice",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "Grace & Savour",
+      "aka": [],
+      "postcode_hint": "CV37 6BA",
+      "cause": "not_in_fsa_trial_slice",
+      "unblock": "Same as above."
+    },
+    {
+      "query_name": "Oscar's",
+      "aka": [
+        "Oscars",
+        "Oscar's Stratford"
+      ],
+      "postcode_hint": null,
+      "cause": "not_found_in_any_dataset",
+      "note": "No FSA record plausibly maps to an 'Oscar's' trading name in Stratford. Either closed, never FSA-registered, or outside trial scope. Consumer search should return 'unknown venue'.",
+      "unblock": "Confirm existence via Google / TripAdvisor lookup; if still operational, add a manual FHRSID + expansion."
+    }
+  ]
+}

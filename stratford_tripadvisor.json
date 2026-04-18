@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "generated_at": "2026-04-17T15:59:25Z",
+    "source_dir": "data/raw/tripadvisor",
+    "raw_files_found": 1,
+    "matched": 1,
+    "unmatched": 0,
+    "total_establishments": 210
+  },
+  "_unmatched": [],
+  "503480": {
+    "ta": 4.4,
+    "trc": 20,
+    "ta_url": "https://www.tripadvisor.co.uk/Restaurant_Review-g186460-d730193-Reviews-The_Vintner_Wine_Bar-Stratford_upon_Avon_Warwickshire_England.html",
+    "ta_cuisines": [
+      "British",
+      "Wine Bar"
+    ],
+    "ta_present": true,
+    "match": {
+      "method": "fhrsid_field",
+      "confidence": "high",
+      "source_file": "data/raw/tripadvisor/vintner_wine_bar_2026-04-01.json",
+      "collected_at": "2026-04-01T21:03:55.484Z",
+      "collection_method": "apify_migrated"
+    }
+  }
+}
