@@ -189,7 +189,10 @@ No active action cards this month.
 
 ## How the Score Was Formed
 
-*Your V4 score was formed as follows:*
+**Formed from:** Trust 8.52 + Customer 8.80 + Commercial 7.50. Final: 8.496.
+
+<details>
+<summary>Raw engine trace (for audit)</summary>
 
 ```
 TrustCompliance=8.523 (r_norm ok, signals_used=5, recency=0.196)
@@ -199,6 +202,8 @@ base=8.496; distinction+0.000; adjusted=8.496; final=8.496
 class=Rankable-A; rankable=True; league=True
 alias public_name='The Vintner Wine Bar' alias_confidence=high
 ```
+
+</details>
 
 *Engine version: v4.0.0 · Computed at: 2026-04-17T15:59:26Z*
 

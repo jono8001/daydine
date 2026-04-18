@@ -16,7 +16,7 @@
 
 ## Financial Impact & Value at Stake
 
-*Financial impact cannot be robustly estimated for this venue.* Commercial Readiness evidence is unavailable, which is where most recoverable revenue shows up in the model. See the Score, Confidence & Rankability Basis section above.
+*Financial impact cannot be robustly estimated this month.* Commercial Readiness evidence is thin — website inferred rather than observed, and no booking-path signal — which is where most recoverable revenue shows up in the model. Once booking-path evidence lands (a published phone number, an observed reservable attribute, or a linked booking widget) the next report will include a Moderate-confidence estimate. Recommended action: publish a reachable phone number.
 
 ## Score, Confidence & Rankability Basis
 
@@ -178,7 +178,10 @@ No active action cards this month.
 
 ## How the Score Was Formed
 
-*Your V4 score was formed as follows:*
+**Formed from:** Trust 8.88 + Customer 9.37 + Commercial 7.50. Final: 8.895.
+
+<details>
+<summary>Raw engine trace (for audit)</summary>
 
 ```
 TrustCompliance=8.883 (r_norm ok, signals_used=5, recency=0.516)
@@ -187,6 +190,8 @@ CommercialReadiness=7.500 (web=True, menu=True, hours=1.00, booking=False)
 base=8.895; distinction+0.000; adjusted=8.895; final=8.895
 class=Rankable-B; rankable=True; league=True
 ```
+
+</details>
 
 *Engine version: v4.0.0 · Computed at: 2026-04-17T15:59:26Z*
 

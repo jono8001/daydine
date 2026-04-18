@@ -41,6 +41,14 @@ from operator_intelligence.v4_adapter import (
 from operator_intelligence.v4_report_spec import (
     validate_v4_report, to_qa_dict,
 )
+from operator_intelligence.v4_wording import (
+    effective_review_tier, review_opener, frequency_qualifier,
+    peer_claim_allowed, leadership_language, commercial_mood,
+    financial_impact_confidence,
+    FINANCIAL_IMPACT_FALLBACK_THIN,
+    FINANCIAL_IMPACT_FALLBACK_DIRECTIONAL,
+    one_line_score_summary, penalty_explanation,
+)
 
 # ---------------------------------------------------------------------------
 # Formatting helpers
@@ -296,32 +304,53 @@ def _render_confidence_basis(out: Callable[[str], None],
 
 def _render_decision_trace(out: Callable[[str], None],
                             inputs: ReportInputs) -> None:
-    """Compact decision trace block. Suppressed when rcs_v4_final is None."""
+    """Compact decision-trace block (spec §9). Suppressed when
+    rcs_v4_final is None.
+
+    Shape (in order):
+      1. One-line operator summary of how the number was formed.
+      2. Penalties / caps table, with a plain-English explanation row
+         for each code.
+      3. The engine's own raw trace, in a collapsible <details> block
+         — available for auditors but not the primary surface.
+      4. Engine version + timestamp footer.
+    """
     if inputs.rcs_v4_final is None:
         return
 
     out("## How the Score Was Formed")
     out("")
-    out("*Your V4 score was formed as follows:*")
+
+    # 1. One-line operator summary
+    summary = one_line_score_summary(inputs)
+    if summary:
+        out(summary)
+        out("")
+
+    # 2. Penalties / caps with plain-English explanations
+    if inputs.penalties_applied or inputs.caps_applied:
+        out("**Active penalties and caps**")
+        out("")
+        out("| Code | Effect | Reason | What this means |")
+        out("|---|---|---|---|")
+        for p in inputs.caps_applied + inputs.penalties_applied:
+            code = p.get('code', '')
+            out(f"| {code} | {p.get('effect', '')} | "
+                f"{p.get('reason', '')} | "
+                f"{penalty_explanation(code)} |")
+        out("")
+
+    # 3. Raw engine trace — collapsible, for auditors
+    out("<details>")
+    out("<summary>Raw engine trace (for audit)</summary>")
     out("")
     out("```")
     for line in inputs.decision_trace:
         out(line)
     out("```")
     out("")
-
-    if inputs.penalties_applied or inputs.caps_applied:
-        out("**Penalties and caps applied**")
-        out("")
-        out("| Code | Effect | Reason |")
-        out("|---|---|---|")
-        for p in inputs.caps_applied:
-            out(f"| {p.get('code', '')} | {p.get('effect', '')} | "
-                f"{p.get('reason', '')} |")
-        for p in inputs.penalties_applied:
-            out(f"| {p.get('code', '')} | {p.get('effect', '')} | "
-                f"{p.get('reason', '')} |")
-        out("")
+    out("</details>")
+    out("")
 
     out(f"*Engine version: {inputs.engine_version} · "
         f"Computed at: {inputs.computed_at}*")
@@ -538,61 +567,21 @@ def _safe_float(x):
 # Section: Financial Impact & Value at Stake (spec §5.2 / §6)
 # ---------------------------------------------------------------------------
 
-def _fi_confidence_label(inputs: ReportInputs) -> Optional[str]:
-    """Derive the mandatory confidence label for Financial Impact (spec §6.3).
-
-    Returns None if the section should be suppressed entirely.
-    """
-    if inputs.report_mode in {MODE_PROFILE_ONLY_D, MODE_CLOSED, MODE_TEMP_CLOSED}:
-        return None
-
-    cr = inputs.commercial
-    cv = inputs.customer
-    if not cr.available:
-        return None
-
-    r = inputs.venue_record
-    web_observed = bool(r.get("web_url"))  # observed, not inferred
-    phone_observed = bool(r.get("phone") or r.get("tel"))
-
-    # High: Rankable-A, all three families, CR >= 7, observed web AND phone
-    if (inputs.report_mode == MODE_RANKABLE_A
-            and web_observed and phone_observed
-            and (cr.score or 0) >= 7.0):
-        return "High"
-
-    # Moderate: Rankable-* with CR >= 6 and (website or phone observed) and
-    # at least one platform with >=30 reviews
-    big_plat = any(
-        int(p.get("count") or 0) >= 30 for p in cv.platforms.values()
-    ) if cv.available else False
-    if (inputs.report_mode in {MODE_RANKABLE_A, MODE_RANKABLE_B}
-            and (cr.score or 0) >= 6.0
-            and (web_observed or phone_observed)
-            and big_plat):
-        return "Moderate"
-
-    # Directional-C renders only at Low and only if CR is available
-    if inputs.report_mode == MODE_DIRECTIONAL_C:
-        return "Low"
-
-    # Otherwise Low
-    return "Low"
-
-
 def _render_financial_impact(out: Callable[[str], None],
                               inputs: ReportInputs) -> None:
     out("## Financial Impact & Value at Stake")
     out("")
 
-    conf = _fi_confidence_label(inputs)
+    conf = financial_impact_confidence(inputs)
     if conf is None:
-        # Directional-C fallback is handled by conf = "Low" above; this
-        # branch only hits when CR is unavailable or mode is D / Closed.
-        out("*Financial impact cannot be robustly estimated for this venue.* "
-            "Commercial Readiness evidence is unavailable, which is where "
-            "most recoverable revenue shows up in the model. See the Score, "
-            "Confidence & Rankability Basis section above.")
+        # Directional-C with CR present still renders at Low (conf is set
+        # by the wording helper). This branch is reached when CR is
+        # unavailable OR mode is D / Closed / temp_closed without
+        # rebookable signal.
+        if inputs.report_mode == MODE_DIRECTIONAL_C:
+            out(FINANCIAL_IMPACT_FALLBACK_DIRECTIONAL)
+        else:
+            out(FINANCIAL_IMPACT_FALLBACK_THIN)
         out("")
         return
 
@@ -1138,8 +1127,9 @@ def _render_profile_narrative(out: Callable[[str], None],
     analysis = ri.get("analysis") or {}
     reviews_analyzed = int(analysis.get("reviews_analyzed") or 0)
 
-    # Confidence tier (review-text based, bounded by V4 class per §8.2)
-    tier = _review_tier(inputs, reviews_analyzed)
+    # Confidence tier from wording module (raw from count, class ceiling
+    # applied). See v4_wording.effective_review_tier.
+    tier = effective_review_tier(inputs, reviews_analyzed)
     out(f"**Review-text confidence tier:** {tier}  "
         f"·  reviews analysed: {reviews_analyzed}.")
     out("")
@@ -1152,16 +1142,24 @@ def _render_profile_narrative(out: Callable[[str], None],
         out("")
         return
 
-    # What they praise / what they flag — theme-level, not numeric
+    # What they praise / what they flag — theme-level. Openers are chosen
+    # by v4_wording.review_opener() so the strength of the claim never
+    # exceeds the tier.
     praise = analysis.get("praise_themes") or []
     criticism = analysis.get("criticism_themes") or []
+    opener = review_opener(tier)
     if praise:
-        top_praise = [p.get("theme") or p.get("label") or str(p) for p in praise[:4]]
-        out("**What guests value (themes):** " + ", ".join(top_praise) + ".")
+        top_praise = [p.get("theme") or p.get("label") or str(p)
+                       for p in praise[:4]]
+        out(f"**What guests value:** {opener} {', '.join(top_praise)}.")
     if criticism:
-        top_crit = [c.get("theme") or c.get("label") or str(c) for c in criticism[:3]]
-        out("**What guests flag (themes):** " + ", ".join(top_crit) + ".")
+        top_crit = [c.get("theme") or c.get("label") or str(c)
+                     for c in criticism[:3]]
+        out(f"**What guests flag:** {opener} {', '.join(top_crit)}.")
     if praise or criticism:
+        freq = frequency_qualifier(tier)
+        out(f"*(Frequency qualifier for this tier: \"{freq}\". "
+            f"Stronger language would exceed the evidence.)*")
         out("")
 
     # Trajectory (requires >= directional tier on both ends)
@@ -1203,26 +1201,6 @@ def _render_profile_narrative(out: Callable[[str], None],
             mentions = d.get("mentions") or 0
             out(f"- {dish} — mentioned in {mentions} review(s).")
         out("")
-
-
-def _review_tier(inputs: ReportInputs, count: int) -> str:
-    """Derive review-text confidence tier (spec §8.2) with V4 class ceiling."""
-    if count < 5:
-        base = "Anecdotal"
-    elif count < 15:
-        base = "Indicative"
-    elif count < 50:
-        base = "Directional"
-    else:
-        base = "Established"
-    # Directional-C / D demote by one tier
-    if inputs.report_mode in {MODE_DIRECTIONAL_C, MODE_PROFILE_ONLY_D}:
-        demote = {"Established": "Directional",
-                   "Directional": "Indicative",
-                   "Indicative": "Anecdotal",
-                   "Anecdotal": "Anecdotal"}
-        base = demote[base]
-    return base
 
 
 # ---------------------------------------------------------------------------

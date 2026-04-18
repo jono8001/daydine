@@ -188,7 +188,10 @@ No active action cards this month.
 
 ## How the Score Was Formed
 
-*Your V4 score was formed as follows:*
+**Formed from:** Trust 8.72 + Customer 9.24 + Commercial 7.50. Final: 8.772.
+
+<details>
+<summary>Raw engine trace (for audit)</summary>
 
 ```
 TrustCompliance=8.723 (r_norm ok, signals_used=5, recency=0.946)
@@ -198,6 +201,8 @@ base=8.772; distinction+0.000; adjusted=8.772; final=8.772
 class=Rankable-B; rankable=True; league=True
 alias public_name='Loxleys Restaurant and Wine Bar' alias_confidence=high
 ```
+
+</details>
 
 *Engine version: v4.0.0 · Computed at: 2026-04-17T15:59:26Z*
 
