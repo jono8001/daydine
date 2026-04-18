@@ -55,6 +55,23 @@ HEADERS = {
 MIN_DELAY = 2.0
 MAX_DELAY = 3.5
 
+# Collection is treated as infrastructurally broken if at least this fraction
+# of attempted searches return HTTP 403 / 429. The runner IP range is almost
+# certainly on TripAdvisor's block list; failing honestly here stops the rest
+# of the pipeline from committing a misleading "all no_match" dataset.
+BLOCKED_RATIO_THRESHOLD = 0.5
+# Minimum attempts before the threshold check kicks in — a single blocked
+# lookup is not proof of blocking.
+BLOCKED_MIN_ATTEMPTS = 20
+
+
+class SearchBlocked(Exception):
+    """TripAdvisor search endpoint returned an IP-blocking status (403/429)."""
+
+    def __init__(self, message: str, status_code: int = 403) -> None:
+        super().__init__(message)
+        self.status_code = status_code
+
 
 def normalise_name(name):
     """Normalise a restaurant name for comparison."""
@@ -98,9 +115,26 @@ def search_tripadvisor(name, location="Stratford-upon-Avon"):
     try:
         resp = requests.get(TA_SEARCH_URL, params=params, headers=HEADERS,
                             timeout=15, allow_redirects=True)
-        resp.raise_for_status()
     except requests.RequestException as e:
-        print(f"    Search error: {e}")
+        # Transport-level error (DNS, TLS, connection). Not the same class
+        # of failure as IP blocking; treat as a soft "no result".
+        print(f"    Network error: {e}")
+        return []
+
+    # Treat IP-blocking status codes as a distinct failure mode. Swallowing
+    # them as "no match" (the pre-fix behaviour) hides the real cause and
+    # makes every run look like TripAdvisor has zero data for Stratford.
+    if resp.status_code in (403, 429):
+        raise SearchBlocked(
+            f"TripAdvisor returned HTTP {resp.status_code} for "
+            f"search query {name!r}. Runner IP is likely blocked.",
+            status_code=resp.status_code,
+        )
+
+    try:
+        resp.raise_for_status()
+    except requests.HTTPError as e:
+        print(f"    Search HTTP error: {e}")
         return []
 
     soup = BeautifulSoup(resp.text, "html.parser")
@@ -259,14 +293,19 @@ def main():
     no_match = 0
     skipped = 0
     errors = 0
+    blocked = 0
+    attempts = 0
     total = len(establishments)
 
     for i, (key, record) in enumerate(establishments.items(), 1):
         name = record.get("n", "")
         postcode = record.get("pc", "")
 
-        # Skip if already processed
-        if key in ta_data:
+        # Skip if already processed. Also skip reserved top-level metadata
+        # keys (`_meta`, `_unmatched`, …) that may have been written into
+        # the side file by consolidate_tripadvisor.py — those are not
+        # establishment fhrsids and must not be iterated as such.
+        if key.startswith("_") or key in ta_data:
             skipped += 1
             continue
 
@@ -287,6 +326,7 @@ def main():
 
         try:
             # Step 1: Search TripAdvisor
+            attempts += 1
             results = search_tripadvisor(name)
             time.sleep(random.uniform(MIN_DELAY, MAX_DELAY))
 
@@ -332,6 +372,25 @@ def main():
             print(f"  [{i}/{total}] {name} -> ta={entry.get('ta')} "
                   f"reviews={entry.get('trc')} match={score:.2f}")
 
+        except SearchBlocked as e:
+            # Record and keep probing for a while so we can prove we're
+            # blocked at the network layer rather than misdiagnosing a
+            # single transient 403. The threshold check below decides
+            # whether to fail the whole run.
+            blocked += 1
+            ta_data[key] = {"_blocked": True, "_status": e.status_code}
+            print(f"  [{i}/{total}] BLOCKED (HTTP {e.status_code}): {name}")
+            time.sleep(random.uniform(MIN_DELAY, MAX_DELAY))
+
+            # Early abort once the pattern is clear: once we've attempted
+            # enough and most are blocked, stop wasting requests.
+            if (attempts >= BLOCKED_MIN_ATTEMPTS
+                    and blocked / attempts >= BLOCKED_RATIO_THRESHOLD):
+                print(f"  ... early abort: {blocked}/{attempts} blocked "
+                      f"({100 * blocked / attempts:.0f}%). "
+                      f"Stopping before further requests.")
+                break
+
         except Exception as e:
             errors += 1
             ta_data[key] = {"_error": str(e)}
@@ -347,13 +406,46 @@ def main():
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(ta_data, f, indent=2, ensure_ascii=False)
 
-    valid = sum(1 for v in ta_data.values()
-                if v.get("ta") is not None and not v.get("_skipped")
-                and not v.get("_no_match") and not v.get("_error"))
-    print(f"\nDone. Total: {total}, Matched: {matched}, No match: {no_match}, "
-          f"Skipped: {skipped}, Errors: {errors}")
+    # Type-safe valid count. The resume file may carry top-level metadata
+    # keys (`_meta`, `_unmatched`) whose values are dicts or LISTS written
+    # by consolidate_tripadvisor.py. Iterating `ta_data.values()` and
+    # calling `.get()` on a list was the source of the AttributeError
+    # previously seen on CI.
+    valid = sum(
+        1 for k, v in ta_data.items()
+        if not k.startswith("_")
+        and isinstance(v, dict)
+        and v.get("ta") is not None
+        and not v.get("_skipped")
+        and not v.get("_no_match")
+        and not v.get("_error")
+        and not v.get("_blocked")
+    )
+
+    print(
+        f"\nDone. Total: {total}, Attempted: {attempts}, "
+        f"Matched: {matched}, No match: {no_match}, "
+        f"Skipped (pre-existing or non-food): {skipped}, "
+        f"Errors: {errors}, Blocked (HTTP 403/429): {blocked}"
+    )
     print(f"Records with TripAdvisor rating: {valid}")
     print(f"Saved to {OUTPUT_PATH}")
+
+    # Fail honestly when the runner's IP range is blocked by TripAdvisor.
+    # Without this guard every 403 is silently counted as 'no match' and
+    # downstream scoring commits a dataset that looks like TripAdvisor has
+    # zero coverage for Stratford, which is not the truth.
+    if attempts >= BLOCKED_MIN_ATTEMPTS and blocked / max(attempts, 1) >= BLOCKED_RATIO_THRESHOLD:
+        ratio_pct = 100 * blocked / attempts
+        sys.stderr.write(
+            "\n::error::TripAdvisor blocked "
+            f"{blocked}/{attempts} search attempts ({ratio_pct:.0f}%). "
+            "The current HTML-scrape approach is not viable from GitHub-hosted "
+            "runners. See docs/DayDine-TripAdvisor-Blocker-Diagnosis.md for the "
+            "recommended next strategy (TripAdvisor Content API or a "
+            "self-hosted / residential-IP collector).\n"
+        )
+        sys.exit(7)
 
 
 if __name__ == "__main__":
