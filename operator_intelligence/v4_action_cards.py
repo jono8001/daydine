@@ -16,8 +16,7 @@ Output card shape (matches what `v4_report_generator._render_implementation_fram
 expects):
 
     title              — rec.title
-    targets_component  — rec.targets_component (preferred)
-    dimension          — rec.dimension (legacy fallback)
+    targets_component  — rec.targets_component
     status             — rec.status
     status_label       — pretty status (Ongoing N months / Stale / etc.)
     target_date        — projected by cost-band window
@@ -28,6 +27,9 @@ expects):
     owner_guidance     — short who-does-this hint
     times_seen         — rec.times_seen
     evidence           — rec.evidence list
+
+The B6 cleanup removed the legacy `dimension` passthrough — V4 recs
+no longer carry that field.
 """
 from __future__ import annotations
 
@@ -187,7 +189,6 @@ def generate_v4_action_cards(recs: dict, month_str: str,
         cards.append({
             "title": r.get("title"),
             "targets_component": r.get("targets_component"),
-            "dimension": r.get("dimension"),
             "status": r.get("status", "new"),
             "status_label": _status_label(r),
             "target_date": _target_date(cost_band, today=today),

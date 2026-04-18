@@ -850,16 +850,19 @@ def _render_competitive_intel(out: Callable[[str], None],
 # Section: Management Priorities (spec §5.10)
 # ---------------------------------------------------------------------------
 
-def _dimension_to_component(dim: str) -> str:
-    """Map legacy V3.4 dimension codes onto V4 component names."""
-    mapping = {
-        "trust": "Trust & Compliance",
-        "experience": "Customer Validation",
-        "visibility": "Customer Validation",
-        "conversion": "Commercial Readiness",
-        "prestige": "Distinction",
-    }
-    return mapping.get((dim or "").lower(), "Commercial Readiness")
+# ---------------------------------------------------------------------------
+# Section: Management Priorities (spec §5.10)
+# ---------------------------------------------------------------------------
+
+# The V3.4 → V4 `_dimension_to_component` shim was removed after the
+# B6 recommendation-layer migration. V4 recommendations (produced by
+# `v4_recommendations.generate_v4_recommendations`) always emit
+# `targets_component` directly. If an unexpected rec lacks that field,
+# the renderer shows "(unspecified component)" rather than silently
+# mapping from a V3.4 dimension code.
+
+def _component_for(rec: dict) -> str:
+    return rec.get("targets_component") or "(unspecified component)"
 
 
 def _render_management_priorities(out: Callable[[str], None],
@@ -897,10 +900,7 @@ def _render_management_priorities(out: Callable[[str], None],
 
     for i, p in enumerate(priorities, start=start_index):
         title = p.get("title") or "(untitled)"
-        # V4 recs emit `targets_component` directly. Fall back to the
-        # legacy dimension-to-component shim only if a V3.4 rec leaked in.
-        component = (p.get("targets_component")
-                      or _dimension_to_component(p.get("dimension") or ""))
+        component = _component_for(p)
         status = p.get("status") or "new"
         rec_type = (p.get("rec_type") or "").upper() or "ACTION"
         out(f"### Priority {i}: {title} [{rec_type} | {status.upper()}]")
@@ -1012,8 +1012,7 @@ def _render_watch_list(out: Callable[[str], None],
         return
     for w in watch[:5]:
         title = w.get("title") or "(untitled)"
-        component = (w.get("targets_component")
-                      or _dimension_to_component(w.get("dimension") or ""))
+        component = _component_for(w)
         rationale = w.get("rationale") or ""
         evidence = w.get("evidence") or []
         ev_str = (" Evidence: " + "; ".join(evidence) + "."
@@ -1063,8 +1062,8 @@ def _render_implementation_framework(out: Callable[[str], None],
     which reads V4 recs (`targets_component`, `evidence`,
     `expected_upside`) directly. The legacy V3.4
     `implementation_framework.generate_action_cards` path is no longer
-    invoked; the legacy `_dimension_to_component` shim survives only as
-    a fallback if a V3.4 rec dict somehow leaks into a V4 run.
+    invoked and the V3.4 `_dimension_to_component` shim has been
+    removed (B6 cleanup).
     """
     out("## Implementation Framework")
     out("")
@@ -1087,8 +1086,7 @@ def _render_implementation_framework(out: Callable[[str], None],
     out("|---|---|---|---|---|---|---|")
     for c in cards[:6]:
         title = c.get("title") or ""
-        comp = (c.get("targets_component")
-                 or _dimension_to_component(c.get("dimension") or ""))
+        comp = _component_for(c)
         status = c.get("status_label") or c.get("status") or "New"
         target = c.get("target_date") or "—"
         cost_label = c.get("cost_label") or c.get("cost_band") or "—"

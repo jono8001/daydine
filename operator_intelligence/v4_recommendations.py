@@ -30,10 +30,11 @@ Output schema (per recommendation):
     status             "new" | "ongoing" | "stale" | "chronic" (V3.4
                        lifecycle support; new is default)
     times_seen         int (1 by default)
-    dimension          legacy V3.4-shaped dimension code, kept only so
-                       the existing implementation_framework helpers
-                       work. The V4 action-card builder
-                       (`v4_action_cards`) does not need it.
+
+This generator does not emit a V3.4-shaped `dimension` field. The V4
+renderer and the V4 action-card builder both read `targets_component`
+directly. If a legacy consumer needs the V3.4 dimension label, it
+should do the mapping at the consumption boundary — not here.
 """
 from __future__ import annotations
 
@@ -44,21 +45,6 @@ from operator_intelligence.v4_adapter import (
     MODE_RANKABLE_A, MODE_RANKABLE_B, MODE_DIRECTIONAL_C,
     MODE_PROFILE_ONLY_D, MODE_CLOSED, MODE_TEMP_CLOSED,
 )
-
-
-# ---------------------------------------------------------------------------
-# Component → legacy V3.4 dimension fallback map
-# ---------------------------------------------------------------------------
-# Used only so V3.4 helpers (cost-band inference etc.) keep working when
-# they look at `dimension`. V4 builders should read `targets_component`.
-
-_COMPONENT_TO_LEGACY_DIM = {
-    "Trust & Compliance": "trust",
-    "Customer Validation": "experience",
-    "Commercial Readiness": "conversion",
-    "Distinction": "prestige",
-    "Entity / Identity": "trust",
-}
 
 
 def _rec(rec_type: str, component: str, title: str, rationale: str,
@@ -76,7 +62,6 @@ def _rec(rec_type: str, component: str, title: str, rationale: str,
         "expected_upside": expected_upside,
         "status": "new",
         "times_seen": 1,
-        "dimension": _COMPONENT_TO_LEGACY_DIM.get(component, "conversion"),
     }
 
 
