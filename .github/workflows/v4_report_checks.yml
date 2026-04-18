@@ -1,0 +1,145 @@
+name: V4 Report Guardrails
+
+# Pilot-readiness gate for the V4 operator report layer.
+#
+# Runs on every push and pull request that touches the V4 report code
+# or its tests. Two checks:
+#
+#   1. Guardrail test suite — the 24 narrative / structural /
+#      per-class rules in tests/test_v4_report_guardrails.py.
+#      Any failure blocks merge.
+#
+#   2. Reproducible sample generation — regenerates the seven
+#      canonical samples under samples/v4/monthly/ and asserts the
+#      run summary matches the version committed on the branch. If
+#      the score inputs or the generator drift without the committed
+#      summary being updated, the build fails and the diff is
+#      surfaced in the CI log.
+#
+# Neither step calls out to external APIs or modifies scoring data.
+# The workflow does not write back to the repository.
+
+on:
+  push:
+    paths:
+      - 'operator_intelligence/v4_*.py'
+      - 'operator_intelligence/demand_capture_audit.py'
+      - 'tests/test_v4_report_guardrails.py'
+      - 'scripts/generate_v4_samples.py'
+      - 'rcs_scoring_v4.py'
+      - 'stratford_establishments.json'
+      - 'stratford_rcs_v4_scores.json'
+      - 'stratford_menus.json'
+      - 'stratford_editorial.json'
+      - 'samples/v4/monthly/_summary_*.json'
+      - '.github/workflows/v4_report_checks.yml'
+  pull_request:
+    paths:
+      - 'operator_intelligence/v4_*.py'
+      - 'operator_intelligence/demand_capture_audit.py'
+      - 'tests/test_v4_report_guardrails.py'
+      - 'scripts/generate_v4_samples.py'
+      - 'rcs_scoring_v4.py'
+      - 'stratford_establishments.json'
+      - 'stratford_rcs_v4_scores.json'
+      - 'stratford_menus.json'
+      - 'stratford_editorial.json'
+      - 'samples/v4/monthly/_summary_*.json'
+      - '.github/workflows/v4_report_checks.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guardrails:
+    name: V4 report guardrail tests + sample reproducibility
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install runtime-only deps (none required for V4 report)
+        run: |
+          python -m pip install --upgrade pip
+          # The V4 report layer is pure stdlib. If a dep is added
+          # later, extend this line rather than adding a requirements
+          # file to the report path.
+
+      - name: Run V4 guardrail test suite
+        run: python -m tests.test_v4_report_guardrails
+
+      - name: Regenerate V4 samples (reproducible; no network)
+        run: python scripts/generate_v4_samples.py
+
+      - name: Verify sample run summary is reproducible
+        run: |
+          python - <<'PY'
+          """Fail the build if the regenerated run summary diverges
+          from the committed baseline. Reviewers should update the
+          committed summary deliberately; silent drift is caught
+          here."""
+          import json
+          import subprocess
+          import sys
+
+          path = "samples/v4/monthly/_summary_2026-04.json"
+          # Use git to compare the regenerated file against the
+          # version committed on this branch.
+          diff = subprocess.run(
+              ["git", "--no-pager", "diff", "--no-ext-diff", "--", path],
+              capture_output=True,
+              text=True,
+              check=False,
+          )
+          if diff.returncode != 0:
+              sys.stderr.write(diff.stderr)
+              sys.exit(diff.returncode)
+          if diff.stdout.strip():
+              sys.stderr.write(
+                  "Sample run summary diverged from committed baseline. "
+                  "If this is intentional, regenerate locally with\n"
+                  "  python scripts/generate_v4_samples.py\n"
+                  "and commit the updated samples/v4/monthly/ tree.\n\n"
+              )
+              sys.stderr.write(diff.stdout)
+              sys.exit(1)
+          print("Sample run summary matches committed baseline.")
+          PY
+
+      - name: Verify all sample QAs are clean
+        run: |
+          python - <<'PY'
+          """Fail the build if any sample's `*_qa.json` reports
+          errors or warnings. The guardrail test suite already covers
+          rule-level behaviour; this double-checks the end-to-end
+          pipeline."""
+          import glob
+          import json
+          import sys
+
+          errs = warns = 0
+          offenders = []
+          for p in sorted(glob.glob("samples/v4/monthly/*_qa.json")):
+              with open(p, encoding="utf-8") as f:
+                  q = json.load(f)
+              e = q.get("guardrail_check", {}).get("errors") or []
+              w = q.get("guardrail_check", {}).get("warnings") or []
+              if e or w:
+                  offenders.append((p, e, w))
+              errs += len(e)
+              warns += len(w)
+          if offenders:
+              for p, e, w in offenders:
+                  sys.stderr.write(f"{p}: {len(e)} errors, {len(w)} warnings\n")
+                  for entry in e + w:
+                      sys.stderr.write(f"  {entry}\n")
+              sys.exit(1)
+          print(f"All sample QAs clean: {errs} errors, {warns} warnings "
+                f"across "
+                f"{len(glob.glob('samples/v4/monthly/*_qa.json'))} samples.")
+          PY
