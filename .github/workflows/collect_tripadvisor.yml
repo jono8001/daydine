@@ -20,8 +20,34 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
 
+      - name: Inspect cache before fetch
+        run: |
+          if [ -f stratford_establishments.json ]; then
+            python - <<'PY'
+          import json
+          with open("stratford_establishments.json", "r", encoding="utf-8") as f:
+              d = json.load(f)
+          print(f"Pre-fetch cache rows: {len(d) if isinstance(d, dict) else 'n/a'}")
+          PY
+          else
+            echo "Pre-fetch cache: (absent)"
+          fi
+
       - name: Fetch establishments from Firebase
         run: python .github/scripts/fetch_firebase_stratford.py
+
+      - name: Inspect cache after fetch
+        run: |
+          python - <<'PY'
+          import json, sys
+          with open("stratford_establishments.json", "r", encoding="utf-8") as f:
+              d = json.load(f)
+          n = len(d) if isinstance(d, dict) else 0
+          print(f"Post-fetch cache rows: {n}")
+          if n == 0:
+              print("::error::Post-fetch cache is empty. Aborting before TripAdvisor.")
+              sys.exit(5)
+          PY
 
       - name: Merge existing Google enrichment
         run: python .github/scripts/merge_enrichment.py
@@ -29,11 +55,58 @@ jobs:
       - name: Collect TripAdvisor data
         run: python .github/scripts/collect_tripadvisor.py
 
+      - name: Inspect TripAdvisor side file
+        run: |
+          python - <<'PY'
+          import json, os
+          p = "stratford_tripadvisor.json"
+          if not os.path.exists(p):
+              print(f"TripAdvisor side file absent after collect step.")
+          else:
+              with open(p, encoding="utf-8") as f:
+                  d = json.load(f)
+              real = {k: v for k, v in d.items() if not k.startswith("_")}
+              matched = sum(1 for v in real.values()
+                            if isinstance(v, dict) and v.get("ta_present"))
+              print(f"TripAdvisor side file: {len(real)} entries, "
+                    f"{matched} matched.")
+          PY
+
       - name: Merge TripAdvisor data
         run: python .github/scripts/merge_tripadvisor.py
 
+      - name: Inspect cache after TA merge
+        run: |
+          python - <<'PY'
+          import json, sys
+          with open("stratford_establishments.json", "r", encoding="utf-8") as f:
+              d = json.load(f)
+          n = len(d) if isinstance(d, dict) else 0
+          with_ta = sum(1 for v in d.values()
+                        if isinstance(v, dict) and v.get("ta_present"))
+          print(f"Post-TA-merge cache rows: {n} (with ta_present: {with_ta})")
+          if n == 0:
+              print("::error::Post-TA-merge cache is empty. Aborting before scoring.")
+              sys.exit(6)
+          PY
+
       - name: Run RCS V2 scoring pipeline
         run: python rcs_scoring_stratford.py --from-cache
+
+      - name: Inspect scoring outputs
+        run: |
+          python - <<'PY'
+          import csv, json, os
+          if os.path.exists("stratford_rcs_scores.csv"):
+              with open("stratford_rcs_scores.csv", encoding="utf-8") as f:
+                  rows = list(csv.DictReader(f))
+              print(f"Scoring CSV rows: {len(rows)}")
+          if os.path.exists("stratford_rcs_summary.json"):
+              with open("stratford_rcs_summary.json", encoding="utf-8") as f:
+                  s = json.load(f)
+              print(f"Summary: count={s.get('count')} ranked={s.get('ranked')} "
+                    f"mean={s.get('mean')} median={s.get('median')}")
+          PY
 
       - name: Commit results
         run: |
