@@ -1,16 +1,55 @@
-name: Collect TripAdvisor Data & Score
+name: "[LEGACY / NON-VIABLE] TripAdvisor HTML Scraper"
+
+# ====================================================================
+# LEGACY WORKFLOW — DO NOT DISPATCH FOR REAL COLLECTION.
+#
+# The HTML-scrape path against https://www.tripadvisor.co.uk/Search is
+# non-viable from GitHub-hosted runners. Azure IP ranges (which the
+# hosted runners use) are on TripAdvisor's bot-protection block list
+# and every search returns HTTP 403 Forbidden. The collector now
+# fails fast with exit 7 and a named ::error:: diagnostic; a full
+# Stratford run produces zero real matches.
+#
+# The supported path is `.github/workflows/collect_tripadvisor_apify.yml`
+# (requires the `APIFY_TOKEN` secret). See:
+#   docs/DayDine-TripAdvisor-Blocker-Diagnosis.md
+#   docs/DayDine-TripAdvisor-Strategy-Decision.md
+#
+# This workflow is retained only so engineers can re-verify the 403
+# behaviour on demand. It is gated behind FORCE_LEGACY_TA_SCRAPER=true
+# so that clicking "Run workflow" by mistake aborts cleanly.
+# ====================================================================
 
 on:
   workflow_dispatch:
+    inputs:
+      FORCE_LEGACY_TA_SCRAPER:
+        description: 'Type "true" to confirm you really want the legacy 403-blocked path'
+        required: true
+        default: 'false'
 
 permissions:
   contents: write
 
 jobs:
   collect-and-score:
+    name: "[LEGACY] TripAdvisor HTML scraper (403-blocked on GH runners)"
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
+      - name: Preflight — refuse to run unless explicitly forced
+        run: |
+          if [ "${{ github.event.inputs.FORCE_LEGACY_TA_SCRAPER }}" != "true" ]; then
+            echo "::error::This workflow is LEGACY and NON-VIABLE."
+            echo "GitHub-hosted runner IPs are blocked by TripAdvisor."
+            echo "Use collect_tripadvisor_apify.yml instead."
+            echo ""
+            echo "To force-run for diagnostic purposes, re-dispatch with"
+            echo "FORCE_LEGACY_TA_SCRAPER = true."
+            exit 11
+          fi
+          echo "Legacy workflow forced by dispatch input. Proceeding."
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5

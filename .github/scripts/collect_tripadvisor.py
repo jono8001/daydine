@@ -1,14 +1,29 @@
 #!/usr/bin/env python3
 """
-collect_tripadvisor.py — Collect TripAdvisor data for Stratford establishments.
+collect_tripadvisor.py — LEGACY TripAdvisor HTML scraper (NON-VIABLE on
+GitHub-hosted runners).
 
-Scrapes TripAdvisor search results to find matching restaurants, then
-extracts rating, review count, cuisine tags, price range, and URL.
+!!! DO NOT USE FOR REAL COLLECTION !!!
 
-Uses fuzzy name matching (difflib) to handle spelling variations.
-Throttles to 1 request per 2-3 seconds to avoid rate limiting.
+The HTML-scrape path against https://www.tripadvisor.co.uk/Search is
+blocked by TripAdvisor's bot-protection layer when called from
+GitHub-hosted runner IP ranges. Every search returns HTTP 403. The
+script now fails fast via `SearchBlocked` + `sys.exit(7)` rather than
+silently treating blocks as no-match, but it cannot produce real
+TripAdvisor coverage.
 
-Usage:
+Supported path:  `.github/scripts/collect_tripadvisor_apify.py` +
+                 `.github/workflows/collect_tripadvisor_apify.yml`
+                 (requires the `APIFY_TOKEN` secret).
+
+See:  docs/DayDine-TripAdvisor-Blocker-Diagnosis.md
+      docs/DayDine-TripAdvisor-Strategy-Decision.md
+
+This script is retained so engineers can reproduce the 403 behaviour
+on demand. The associated workflow (`collect_tripadvisor.yml`) is
+gated behind a FORCE_LEGACY_TA_SCRAPER=true dispatch input.
+
+Usage (diagnostic only):
     python .github/scripts/collect_tripadvisor.py
 
 Requires:
