@@ -44,7 +44,7 @@ from operator_intelligence.v4_report_spec import (
 from operator_intelligence.v4_wording import (
     effective_review_tier, review_opener, frequency_qualifier,
     peer_claim_allowed, leadership_language, commercial_mood,
-    financial_impact_confidence,
+    financial_impact_confidence, financial_impact_range_check,
     FINANCIAL_IMPACT_FALLBACK_THIN,
     FINANCIAL_IMPACT_FALLBACK_DIRECTIONAL,
     one_line_score_summary, penalty_explanation,
@@ -637,6 +637,12 @@ def _render_financial_impact(out: Callable[[str], None],
             "subject to gap closure |")
         out(f"| Annual projection | — | £{annual_low:,.0f} – £{annual_high:,.0f} | "
             "directional |")
+        out("")
+
+        # Range-width tolerance check — flags narrow / wide / tiny-
+        # spread ranges against the confidence tier's expected bounds.
+        tol = financial_impact_range_check(low, high, conf)
+        out(tol.get("message") or "")
         out("")
 
     if cost_band:
@@ -1326,19 +1332,65 @@ def _render_profile_narrative(out: Callable[[str], None],
                 out(f"- Receding themes: {', '.join(fading[:3])}.")
             out("")
 
-    # Segment intelligence
+    # Segment intelligence — class-aware suppression / demotion
+    # (pilot-hardening pass).
+    #
+    #   Rankable-A / Rankable-B / temp_closed: full block, per-segment
+    #     prose allowed (bounded by the segment's own min-review gate).
+    #   Directional-C: demote — render segments headline-only (label +
+    #     review count + total reviews analysed). No per-segment praise
+    #     prose; the class already caps narrative strength and segment
+    #     prose often claims more than the evidence supports.
+    #   Profile-only-D / Closed: Profile Narrative itself is suppressed
+    #     upstream, so segment logic never runs.
+    #
+    # A global minimum of 15 reviews analysed is required for the
+    # segment block to render at all — below that, the segmentation
+    # signal is too thin to distinguish from noise even at Rankable-*.
     seg = inputs.segment_intel or {}
     insights = (seg.get("insights") or {}).get("segment_insights") or {}
     if insights:
-        out("**Guest segments**")
-        out("")
-        for key, s in list(insights.items())[:4]:
-            label = s.get("label") or key
-            n = s.get("review_count") or 0
-            if n < 2:
-                continue
-            praise_text = s.get("top_praise") or ""
-            out(f"- **{label}** ({n} reviews): {praise_text[:160]}.")
+        demoted = inputs.report_mode == MODE_DIRECTIONAL_C
+        total_reviews = int(
+            ((seg.get("segment_data") or {}).get("total_reviews") or 0)
+            or reviews_analyzed
+        )
+        if total_reviews < 15:
+            out("**Guest segments**")
+            out("")
+            out("*Too few reviews analysed for segment-level insight "
+                "this month. The segment classifier needs at least 15 "
+                "reviews before per-segment reads are meaningful.*")
+            out("")
+        elif demoted:
+            out("**Guest segments (demoted — Directional-C)**")
+            out("")
+            out("*Class caps narrative strength; segment reads are "
+                "shown as volume counts only. Per-segment praise / "
+                "criticism prose would claim more than the class "
+                "evidence supports.*")
+            out("")
+            segs_rendered = 0
+            for key, s in insights.items():
+                n = int(s.get("review_count") or 0)
+                if n < 2:
+                    continue
+                label = s.get("label") or key
+                out(f"- **{label}** — {n} review(s).")
+                segs_rendered += 1
+                if segs_rendered >= 4:
+                    break
+            out("")
+        else:
+            out("**Guest segments**")
+            out("")
+            for key, s in list(insights.items())[:4]:
+                label = s.get("label") or key
+                n = s.get("review_count") or 0
+                if n < 2:
+                    continue
+                praise_text = s.get("top_praise") or ""
+                out(f"- **{label}** ({n} reviews): {praise_text[:160]}.")
         out("")
 
     # Menu intelligence (if present) — thin wrapper

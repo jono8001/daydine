@@ -637,20 +637,35 @@ def _enforce_financial_impact_rules(report_text: str,
 
     # Ranges — any pound figure must appear as a range (low–high) not a
     # bare precise number.
+    #
+    # Exemption: diagnostic metrics (range-width check line, cost-band
+    # floor / ceiling annotations) may cite a bare £ figure because the
+    # figure is a *metric about the range*, not a revenue claim. We
+    # accept `£N` immediately preceded by a diagnostic keyword.
+    DIAGNOSTIC_KW = re.compile(
+        r"\b(width|spread|floor|ceiling|max[- ]spread|"
+        r"min[- ]spread|cost|band)\s+£",
+        re.IGNORECASE,
+    )
     for m in re.finditer(r"£[\d,]+(?:\.\d{2})?", body):
         pos = m.end()
         tail = body[pos:pos + 20]
         # Accept ranges marked by –, -, "to", or "–£", etc.
-        if not re.match(r"\s*(?:–|-|to|\band\b)\s*£", tail):
-            # If the line already contains a range somewhere, allow
-            line = body[:pos].rsplit("\n", 1)[-1] + body[pos:].split("\n", 1)[0]
-            if "–" in line or " to £" in line or "- £" in line:
-                continue
-            result.fail(
-                "GUARD_FI_BARE_POUND_FIGURE",
-                match=f"Financial figure without range: {m.group(0)}",
-                severity="warning",
-            )
+        if re.match(r"\s*(?:–|-|to|\band\b)\s*£", tail):
+            continue
+        # Accept when the line already contains a range
+        line = body[:pos].rsplit("\n", 1)[-1] + body[pos:].split("\n", 1)[0]
+        if "–" in line or " to £" in line or "- £" in line:
+            continue
+        # Accept diagnostic-metric context (spread / width / floor / etc.)
+        head = body[max(0, m.start() - 24):m.start() + 1]
+        if DIAGNOSTIC_KW.search(head):
+            continue
+        result.fail(
+            "GUARD_FI_BARE_POUND_FIGURE",
+            match=f"Financial figure without range: {m.group(0)}",
+            severity="warning",
+        )
 
 
 # ---------------------------------------------------------------------------

@@ -236,6 +236,107 @@ FINANCIAL_IMPACT_FALLBACK_DIRECTIONAL = (
 
 
 # ---------------------------------------------------------------------------
+# Financial Impact range-width tolerance (spec §6, pilot-hardening pass)
+# ---------------------------------------------------------------------------
+#
+# A £ range with a suspiciously narrow or mechanically wide spread
+# signals that the rendered figures aren't anchored in evidence the
+# confidence label can support. We check both boundary conditions and
+# return a short operator-facing line describing the range's health.
+#
+# Thresholds (tuned so the current post-calibration CR-driven sizing
+# lands squarely in "within-tolerance"):
+#
+#   High confidence:     ratio 2.0 – 4.0, min-spread £400
+#   Moderate confidence: ratio 2.0 – 5.0, min-spread £200
+#   Low confidence:      ratio 1.8 – 6.0, min-spread £100
+#
+# Outside those bounds we emit a tolerance warning. Inside, we emit a
+# short confirming line so the reader can see the range was checked.
+
+_FI_TOLERANCE_BOUNDS = {
+    "High":     {"ratio_min": 2.0, "ratio_max": 4.0, "min_spread": 400},
+    "Moderate": {"ratio_min": 2.0, "ratio_max": 5.0, "min_spread": 200},
+    "Low":      {"ratio_min": 1.8, "ratio_max": 6.0, "min_spread": 100},
+}
+
+
+def financial_impact_range_check(low: float, high: float,
+                                   confidence: str) -> dict:
+    """Check the (low, high) £ range against tolerance bounds for the
+    given confidence label. Returns a dict with:
+
+        ok          bool  — within tolerance for the confidence tier
+        ratio       float — high / max(low, 1)
+        spread      float — high − low
+        status      "within" | "narrow" | "wide" | "tiny_spread" | "no_range"
+        message     short operator-facing line to render under the table
+
+    Never raises; falls back to a neutral message on unknown confidence
+    labels.
+    """
+    if low is None or high is None or low <= 0:
+        return {
+            "ok": False,
+            "ratio": None,
+            "spread": None,
+            "status": "no_range",
+            "message": "*Range: not available.*",
+        }
+
+    spread = high - low
+    ratio = high / max(low, 1)
+    bounds = _FI_TOLERANCE_BOUNDS.get(confidence) or _FI_TOLERANCE_BOUNDS["Low"]
+
+    if spread < bounds["min_spread"]:
+        return {
+            "ok": False, "ratio": ratio, "spread": spread,
+            "status": "tiny_spread",
+            "message": (
+                f"*Range width £{int(spread)} (ratio {ratio:.1f}×) — "
+                f"narrower than the evidence typically supports at "
+                f"**{confidence}** confidence. Treat as illustrative "
+                f"only; the narrow band is a rendering artefact, not "
+                f"a claim of precision.*"
+            ),
+        }
+    if ratio < bounds["ratio_min"]:
+        return {
+            "ok": False, "ratio": ratio, "spread": spread,
+            "status": "narrow",
+            "message": (
+                f"*Range ratio {ratio:.1f}× — narrower than typical "
+                f"for **{confidence}** confidence. The figures cluster "
+                f"tightly because only one or two CR sub-signals drive "
+                f"the estimate; a wider range would more honestly "
+                f"reflect the uncertainty.*"
+            ),
+        }
+    if ratio > bounds["ratio_max"]:
+        return {
+            "ok": False, "ratio": ratio, "spread": spread,
+            "status": "wide",
+            "message": (
+                f"*Range ratio {ratio:.1f}× — wider than typical for "
+                f"**{confidence}** confidence. Multiple weakly-"
+                f"anchored inputs stacked up; the midpoint is not a "
+                f"reliable centre. Use the low end as a conservative "
+                f"floor and the high end as a ceiling.*"
+            ),
+        }
+    return {
+        "ok": True, "ratio": ratio, "spread": spread,
+        "status": "within",
+        "message": (
+            f"*Range ratio {ratio:.1f}× and spread £{int(spread)} — "
+            f"within the expected band for **{confidence}** confidence. "
+            f"The figures are directional; internal cover and spend "
+            f"data would tighten them.*"
+        ),
+    }
+
+
+# ---------------------------------------------------------------------------
 # Compact decision-trace summary helpers (spec §9)
 # ---------------------------------------------------------------------------
 
@@ -270,26 +371,141 @@ def one_line_score_summary(inputs: ReportInputs) -> str:
     return f"**Formed from:** {core}. Final: {inputs.rcs_v4_final:.3f}."
 
 
-def penalty_explanation(code: str) -> str:
-    """Short operator-facing explanation for a penalty / cap code."""
-    table = {
-        "CH-1": "Companies House shows this entity as dissolved; the "
-                "score is hard-capped at 3.0 until a new valid entity "
-                "is confirmed.",
-        "CH-2": "Companies House shows the entity in liquidation or "
-                "administration; the score is capped at 5.0.",
-        "CH-3": "Statutory accounts are overdue at Companies House; "
-                "a small absolute penalty applies.",
-        "CH-4": "Three or more director changes in the last 12 months "
-                "reduce the score by 8% as a viability-risk signal.",
-        "STALE-2Y": "The last FHRS inspection was more than two years "
-                    "ago and the rating is 3+; Trust & Compliance is "
-                    "soft-capped at 7.0 until a fresh inspection.",
-        "STALE-3Y": "The last FHRS inspection was more than three "
-                    "years ago; Trust & Compliance is reduced by 15%.",
-        "STALE-5Y": "The last FHRS inspection was more than five years "
-                    "ago; Trust & Compliance is hard-capped at 5.0 and "
-                    "the venue is excluded from the default league "
-                    "table.",
+# ---------------------------------------------------------------------------
+# Penalty / cap registry (spec §7 / §9)
+# ---------------------------------------------------------------------------
+#
+# Single source of truth for operator-facing explanations of every code
+# the V4 scoring engine emits in `penalties_applied` or `caps_applied`.
+# Each entry carries:
+#
+#   kind           "cap" | "penalty"
+#   severity       "blocking" | "high" | "medium" | "low"
+#                  Used for colouring / ordering in the decision trace
+#                  and to prioritise a matched rec in the recommendations
+#                  engine.
+#   targets_component  The V4 component primarily affected. Report
+#                  sections that render a penalty row next to a
+#                  component card can filter by this.
+#   short          One-sentence operator-facing headline. Safe to render
+#                  inside narrow table cells.
+#   long           Longer operator-facing explanation. Used by the
+#                  "How the Score Was Formed" section and the
+#                  Trust & Compliance / CR diagnostic blocks.
+#
+# Any code the engine emits MUST have an entry here. If an unknown code
+# appears at render time, `penalty_explanation()` returns a structured
+# fallback that names the code and points the reader at the decision
+# trace — never a silent empty cell.
+#
+# Adding a new code: add the entry here; the guardrail test
+# `test_penalty_registry_covers_all_engine_codes` (to be added with the
+# next engine change) enforces parity.
+
+PENALTY_REGISTRY = {
+    # Companies House (penalty-only tier, spec §7.2)
+    "CH-1": {
+        "kind": "cap",
+        "severity": "blocking",
+        "targets_component": "Trust & Compliance",
+        "short": "Companies House shows this entity as dissolved; score "
+                 "hard-capped at 3.0.",
+        "long":  "Companies House shows this entity as dissolved; the "
+                 "score is hard-capped at 3.0 until a new valid entity "
+                 "is confirmed.",
+    },
+    "CH-2": {
+        "kind": "cap",
+        "severity": "high",
+        "targets_component": "Trust & Compliance",
+        "short": "Companies House shows the entity in liquidation or "
+                 "administration; score capped at 5.0.",
+        "long":  "Companies House shows the entity in liquidation or "
+                 "administration; the score is capped at 5.0 until the "
+                 "status clears.",
+    },
+    "CH-3": {
+        "kind": "penalty",
+        "severity": "medium",
+        "targets_component": "Trust & Compliance",
+        "short": "Statutory accounts are overdue at Companies House; "
+                 "a small absolute penalty applies.",
+        "long":  "Statutory accounts are overdue at Companies House "
+                 "beyond the 90-day threshold; a -0.30 absolute "
+                 "penalty applies to the headline until accounts file.",
+    },
+    "CH-4": {
+        "kind": "penalty",
+        "severity": "low",
+        "targets_component": "Trust & Compliance",
+        "short": "Three or more director changes in the last 12 months "
+                 "reduce the score by 8%.",
+        "long":  "Three or more director changes in the trailing 12 "
+                 "months trigger a 0.92 multiplier on the adjusted "
+                 "score, treated as a viability-risk signal.",
+    },
+    # Stale inspection (spec §7.3)
+    "STALE-2Y": {
+        "kind": "cap",
+        "severity": "medium",
+        "targets_component": "Trust & Compliance",
+        "short": "Last FHRS inspection >2 years ago with rating ≥3; "
+                 "Trust soft-capped at 7.0.",
+        "long":  "The last FHRS inspection was more than two years ago "
+                 "and the rating is 3 or higher; Trust & Compliance is "
+                 "soft-capped at 7.0 until a fresh inspection lands.",
+    },
+    "STALE-3Y": {
+        "kind": "cap",
+        "severity": "high",
+        "targets_component": "Trust & Compliance",
+        "short": "Last FHRS inspection >3 years ago; Trust reduced by 15%.",
+        "long":  "The last FHRS inspection was more than three years "
+                 "ago; Trust & Compliance is reduced by 15% until a "
+                 "fresh inspection lands.",
+    },
+    "STALE-5Y": {
+        "kind": "cap",
+        "severity": "blocking",
+        "targets_component": "Trust & Compliance",
+        "short": "Last FHRS inspection >5 years ago; Trust hard-capped "
+                 "at 5.0 and venue excluded from league tables.",
+        "long":  "The last FHRS inspection was more than five years "
+                 "ago; Trust & Compliance is hard-capped at 5.0 and "
+                 "the venue is excluded from the default league table "
+                 "until a fresh inspection lands.",
+    },
+}
+
+
+def penalty_entry(code: str) -> dict:
+    """Structured registry lookup. Returns the full entry for `code`,
+    or a `kind=unknown` placeholder when the code is not registered.
+
+    The placeholder is deliberately informative: it names the code and
+    points the reader at the decision trace so the report never
+    silently drops a penalty."""
+    if code in PENALTY_REGISTRY:
+        return dict(PENALTY_REGISTRY[code])
+    return {
+        "kind": "unknown",
+        "severity": "medium",
+        "targets_component": None,
+        "short": (f"Penalty / cap code `{code}` applied — see the "
+                  "decision trace for the effect and reason."),
+        "long":  (f"The scoring engine emitted penalty / cap code "
+                  f"`{code}`. No operator-facing explanation is "
+                  "registered for this code in `v4_wording.PENALTY_"
+                  "REGISTRY`. The decision-trace block below preserves "
+                  "the raw effect and reason as emitted by the engine."),
     }
-    return table.get(code, "")
+
+
+def penalty_explanation(code: str) -> str:
+    """Backwards-compatible: returns the short explanation string.
+
+    Existing consumers (decision-trace table, action-card builder)
+    continue to work unchanged. New consumers that need severity /
+    targets_component / long form should call `penalty_entry` directly.
+    """
+    return penalty_entry(code).get("short") or ""

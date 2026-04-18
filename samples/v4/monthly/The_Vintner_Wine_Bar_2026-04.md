@@ -30,6 +30,8 @@
 | Monthly revenue impact | — | £240 – £720 | subject to gap closure |
 | Annual projection | — | £2,880 – £8,640 | directional |
 
+*Range ratio 3.0× and spread £480 — within the expected band for **Low** confidence. The figures are directional; internal cover and spend data would tighten them.*
+
 **Recommended action cost band:** £200 – £1,000 (booking widget / published phone)
 **Expected payback window:** 1 – 3 months
 
