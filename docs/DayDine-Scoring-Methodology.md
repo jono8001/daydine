@@ -1,14 +1,18 @@
 # DayDine Scoring Methodology
 
-**Restaurant Confidence Score (RCS) — V4 (current framework)**
-*Last updated: April 2026*
+**Restaurant Confidence Score (RCS) — V4 (next framework, implemented in parallel)**
+*Last updated: April 2026. Provisional. Not yet the public surface.*
 
-> **Transition notice.** V4 is the current scoring framework. V3.4 remains in
-> the repository and is still computed in parallel on each run so V4's behaviour
-> can be audited venue-by-venue against the legacy output. Public leaderboards
-> will cut over to V4 once the calibration work documented in
-> `DayDine-V4-Scoring-Comparison.md` completes. Anything on this page that is
-> specific to the legacy model is labelled **V3.4 legacy**.
+> **Transition notice.** V4 is the **next** scoring framework and is implemented
+> as a parallel model in the repository. The **public ranking surface continues
+> to run on V3.4** until the data-coverage prerequisites documented in
+> `docs/DayDine-V4-Readiness-For-Stack-B.md` §F are complete. V4 is the
+> authoritative internal scoring contract today; it is not the public surface.
+>
+> Anything on this page that is not labelled **V3.4 legacy** describes V4
+> behaviour that will ship to the public once cutover gates close. Until then,
+> treat every number on this page as an April 2026 pre-cutover snapshot, not
+> a stable public claim.
 
 ---
 
@@ -305,9 +309,14 @@ operators.
 
 ## 12. Current Coverage
 
-**Live trial market:** Stratford-upon-Avon — 210 establishments scored under
-both V3.4 and V4. Under V4: 1 Rankable-A, 190 Rankable-B, 18 Directional-C,
-1 Profile-only-D. Mean score 7.85 across rankable venues.
+**Trial market:** Stratford-upon-Avon — 210 establishments scored under both
+V3.4 and V4 in parallel. **The public site still runs V3.4**; the V4 figures
+below are an April 2026 pre-cutover snapshot, not a stable public claim.
+
+Under the current V4 snapshot: 1 Rankable-A, 181 Rankable-B, 27 Directional-C,
+1 Profile-only-D. Rankable mean ≈ 8.0; stdev ≈ 0.8. These numbers will shift
+after the enrichment and recalibration tasks listed in
+`docs/DayDine-V4-Readiness-For-Stack-B.md` §F.
 
 New markets are added as data pipelines (FSA, Google, TripAdvisor, Companies
 House) are validated per local authority.

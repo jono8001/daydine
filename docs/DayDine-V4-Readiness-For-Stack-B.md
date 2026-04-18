@@ -2,14 +2,24 @@
 
 *Authored April 2026. Branch: `claude/verify-v4-scoring-spec-L4Cjv`.*
 *Scope: Stratford trial (210 establishments). Stack A = scoring engine,
-data pipeline, entity resolution, calibration. Stack B = report / frontend
-redesign.*
+data pipeline, entity resolution, calibration. Stack B = operator
+report redesign (frontend cutover remains a separate workstream).*
+
+> **Stack B outcome (April 2026):** the operator report redesign is
+> structurally complete. The V4 report layer is built, tested, and
+> documented. See `docs/DayDine-V4-Report-Handoff.md` for the
+> authoritative handoff, the verbatim deferred-items list, and the
+> per-use-case readiness breakdown. This memo stays the canonical
+> record of what Stack A shipped; it does not rescope the deferred
+> items Stack B recorded.
 
 ---
 
-## Verdict
+## Verdict (as issued pre-Stack-B)
 
-**READY FOR STACK B WITH MINOR WARNINGS.**
+**READY FOR STACK B WITH MINOR WARNINGS.** *(Stack B has since run
+and is complete; see the handoff note above. This verdict is
+retained for historical context.)*
 
 V4 engine is spec-aligned, calibrated, and emitting a stable per-venue
 schema. All Stack-A data wiring is in place. Stack B can start report
