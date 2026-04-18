@@ -10,6 +10,7 @@
 
 **V4 Score:** 8.772 / 10 · Rankable-B.
 **Components:** Trust 8.72; Customer Validation 9.24; Commercial Readiness 7.50.
+**Local (5 mi) peer position:** #27 of 182 (peer pool scoped to league-eligible venues).
 
 *External-evidence diagnosis. No POS or internal data required. See Data Basis below.*
 
@@ -22,8 +23,8 @@
 
 | Metric | Current | At stake | Notes |
 |---|---|---|---|
-| Monthly revenue impact | — | £180 – £1,350 | subject to gap closure |
-| Annual projection | — | £2,160 – £16,200 | directional |
+| Monthly revenue impact | — | £260 – £780 | subject to gap closure |
+| Annual projection | — | £3,120 – £9,360 | directional |
 
 **Recommended action cost band:** £200 – £1,000 (booking widget / published phone)
 **Expected payback window:** 1 – 3 months
@@ -109,15 +110,15 @@ No operational or risk alerts above baseline this period.
 
 | Peer ring | Position | Peer avg | Peer top |
 |---|---|---:|---:|
-| Local (5 mi) | — | — | — |
-| Catchment (15 mi) | — | — | — |
-| UK category cohort | — | — | — |
+| Local (5 mi) | #27 of 182 | 7.99 | 9.30 |
+| Catchment (15 mi) | #25 of 167 | 8.02 | 9.30 |
+| UK category cohort | #27 of 182 | 7.99 | 9.30 |
 
 *Peer pool scoped to Rankable-A ∪ Rankable-B where data allows. Directional-C venues are counted separately.*
 
 ## Competitive Market Intelligence
 
-No structural competitive-intelligence alerts this month.
+- **Competitive density:** 181 direct competitors within 5 mi. Differentiation is commercially critical; lean on Distinction, Customer Validation top-of-band, and Commercial Readiness to stand apart.
 
 ## Management Priorities
 

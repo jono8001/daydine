@@ -257,6 +257,25 @@ def build_report_inputs(
     closure = _closure_status(venue_record)
     mode = _derive_mode(v4_score, venue_record)
 
+    # Defensive override for closure states (spec §7.4).
+    # If the scoring engine was not re-run after a closure flag landed on
+    # the venue record, the V4 payload may still report
+    # `rankable=True / league_table_eligible=True`. The report renderer
+    # must not trust those flags when a closure state is active — the
+    # closure banner would otherwise contradict the inline rankability
+    # line. Adapter normalises here so every downstream consumer sees
+    # the same closure-correct flags.
+    payload_rankable = bool(v4_score.get("rankable"))
+    payload_league = bool(v4_score.get("league_table_eligible"))
+    payload_final = v4_score.get("rcs_v4_final")
+    if closure == "closed_permanently":
+        payload_rankable = False
+        payload_league = False
+        payload_final = None  # spec §7.4 row 1: no score published
+    elif closure == "closed_temporarily":
+        # Spec §7.4 row 2: score preserved; league eligibility off.
+        payload_league = False
+
     public_name = venue_record.get("public_name") or venue_record.get("n") or ""
     fsa_name = venue_record.get("n") or public_name
 
@@ -271,13 +290,13 @@ def build_report_inputs(
         postcode=venue_record.get("pc") or "",
         la=venue_record.get("la"),
         month_str=month_str,
-        # Headline
-        rcs_v4_final=v4_score.get("rcs_v4_final"),
+        # Headline (closure-corrected)
+        rcs_v4_final=payload_final,
         base_score=float(v4_score.get("base_score") or 0.0),
         adjusted_score=float(v4_score.get("adjusted_score") or 0.0),
         confidence_class=v4_score.get("confidence_class") or "",
-        rankable=bool(v4_score.get("rankable")),
-        league_table_eligible=bool(v4_score.get("league_table_eligible")),
+        rankable=payload_rankable,
+        league_table_eligible=payload_league,
         entity_match_status=v4_score.get("entity_match_status") or "",
         entity_ambiguous=bool(venue_record.get("entity_ambiguous")),
         source_family_summary=dict(srcfam),

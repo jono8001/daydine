@@ -27,7 +27,7 @@ Insufficient evidence for a published score. Profile only.
 
 ## How to unlock full scoring
 
-Establish public customer-platform evidence. A single venue platform profile with at least five reviews moves this venue out of Directional-C into Rankable-B.
+Establish public customer-platform evidence. One venue profile with five or more reviews moves this venue out of Profile-only-D into Directional-C. A second platform with ≥ 30 combined reviews unlocks Rankable-B.
 
 - Minimum to reach Directional-C: one primary evidence family and four or more populated signals.
 - Minimum to reach Rankable-B: two primary families, seven or more populated signals, ten or more combined customer reviews, and a confirmed or probable entity match.

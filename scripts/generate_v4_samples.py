@@ -40,6 +40,9 @@ from operator_intelligence.v4_adapter import build_report_inputs  # noqa: E402
 from operator_intelligence.v4_report_generator import (  # noqa: E402
     generate_v4_monthly_report, build_v4_report_json,
 )
+from operator_intelligence.v4_peer_benchmarks import (  # noqa: E402
+    compute_v4_peer_benchmarks,
+)
 
 MONTH = "2026-04"
 OUTPUT_DIR = os.path.join(REPO, "samples", "v4", "monthly")
@@ -113,6 +116,13 @@ def main():
 
         ambig = amb_lookup.get(fid)
 
+        peer_benchmarks = compute_v4_peer_benchmarks(
+            venue_fid=fid,
+            venue_record=venue_record,
+            v4_scores=v4,
+            establishments=establishments,
+        )
+
         inputs = build_report_inputs(
             v4_score=v4_score,
             venue_record=venue_record,
@@ -120,6 +130,7 @@ def main():
             menu_record=menus.get(fid),
             editorial=editorial.get(fid),
             entity_resolution_note=ambig,
+            peer_benchmarks=peer_benchmarks,
         )
 
         report_text, qa = generate_v4_monthly_report(inputs)

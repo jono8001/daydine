@@ -11,7 +11,7 @@
   "report_mode": "temp_closed",
   "confidence_class": "Rankable-B",
   "rankable": true,
-  "league_table_eligible": true,
+  "league_table_eligible": false,
   "entity_match_status": "confirmed",
   "rcs_v4_final": 8.895,
   "base_score": 8.895,

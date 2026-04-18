@@ -97,6 +97,7 @@ SECTIONS_FULL_REPORT = [
 
 SECTIONS_DIRECTIONAL_C = [
     "Executive Summary",
+    "Financial Impact & Value at Stake",
     "Score, Confidence & Rankability Basis",
     "Why this venue isn't league-ranked yet",
     "Operational & Risk Alerts",
@@ -104,8 +105,11 @@ SECTIONS_DIRECTIONAL_C = [
     "Customer Validation",
     "Commercial Readiness",
     "Management Priorities",
+    "Watch List",
+    "What Not to Do This Month",
     "Profile Narrative & Reputation Signals",
     "Implementation Framework",
+    "Next-Month Monitoring Plan",
     "Data Basis",
     "Evidence Appendix",
     "How the Score Was Formed",

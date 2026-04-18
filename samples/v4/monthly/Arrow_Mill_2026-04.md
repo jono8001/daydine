@@ -18,7 +18,7 @@ This venue is flagged as permanently closed. No V4 score has been published per 
 
 ## Evidence Appendix
 
-*Factual inventory of the observable data underpinning this report.*
+*Data below reflects the last observed state before closure was detected; it does not describe current operation. Retained for audit.*
 
 | Field | Value |
 |---|---|

@@ -21,7 +21,7 @@
 ## Score, Confidence & Rankability Basis
 
 **Confidence class:** Rankable-B
-**Rankable:** Yes  ·  **League-eligible:** Yes
+**Rankable:** Yes  ·  **League-eligible:** No
 **Entity match:** confirmed
 
 Acceptable evidence, but venue is temporarily closed — excluded from league tables until reopened.
@@ -97,17 +97,11 @@ No operational or risk alerts above baseline this period.
 
 ## Market Position
 
-| Peer ring | Position | Peer avg | Peer top |
-|---|---|---:|---:|
-| Local (5 mi) | — | — | — |
-| Catchment (15 mi) | — | — | — |
-| UK category cohort | — | — | — |
-
-*Peer pool scoped to Rankable-A ∪ Rankable-B where data allows. Directional-C venues are counted separately.*
+*League-table placement suppressed while this venue is excluded from the default league: venue is temporarily closed.*
 
 ## Competitive Market Intelligence
 
-No structural competitive-intelligence alerts this month.
+- **Competitive density:** 181 direct competitors within 5 mi. Differentiation is commercially critical; lean on Distinction, Customer Validation top-of-band, and Commercial Readiness to stand apart.
 
 ## Management Priorities
 

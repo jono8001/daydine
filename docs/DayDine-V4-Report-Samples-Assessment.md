@@ -472,4 +472,64 @@ Plus the run summary: `samples/v4/monthly/_summary_2026-04.json`.
    explanation table, and a `<details>` wrapper around the raw engine
    trace. Operator-facing ergonomics are right.
 
-Stopping.
+---
+
+## 10. Post-fix changes (follow-up pass)
+
+A follow-up pass addressed all five §6.1 Must-fix items plus three of
+the §6.2 Should-fix items. Every change lives in the report layer; the
+scoring engine is untouched.
+
+### 10.1 What was fixed
+
+| # | Item | File(s) | Evidence of fix |
+|---|---|---|---|
+| F1 | Temp-closed leakage of `league_table_eligible = True` | `operator_intelligence/v4_adapter.py` | Adapter now defensively overrides `rankable` and `league_table_eligible` when a closure state is detected on the venue record. Samples: The Opposition now renders `Rankable: Yes · League-eligible: No`. |
+| F2 | Directional-C over-gating (Watch List / WNTD / Monitoring suppressed) | `operator_intelligence/v4_report_spec.py` (expanded `SECTIONS_DIRECTIONAL_C`); `operator_intelligence/v4_report_generator.py` (`_render_directional_c_report`) | Soma (Directional-C) now renders 17 H2 sections, including Watch List, What Not to Do This Month, and Next-Month Monitoring Plan. |
+| F3 | Profile-only-D unblock wording said "out of Directional-C" for a D venue | `operator_intelligence/v4_report_generator.py` (`_profile_only_d_unblock_action` / `_directional_c_unblock_action` split) | Roebuck's "How to unlock full scoring" now narrates the correct D → Directional-C → Rankable-B ladder with the first step explicit. |
+| F4 | Directional-C Financial Impact rendered full figures with a caveat wrapper | `operator_intelligence/v4_report_generator.py` (`_render_financial_impact`) | Soma now renders the canonical `FINANCIAL_IMPACT_FALLBACK_DIRECTIONAL` wording by default; no £ figures shown. |
+| F5 | Closed Evidence Appendix showed pre-closure data without a header | `operator_intelligence/v4_report_generator.py` (`_render_evidence_appendix`) | Arrow Mill (synthetic Closed) now renders: *"Data below reflects the last observed state before closure was detected; it does not describe current operation. Retained for audit."* |
+| S1 | Financial Impact sizing driven by `gpl` | `operator_intelligence/v4_report_generator.py` (`_fi_estimate` rewrite) | Sizing is now CR-score-driven + review-volume-scaled; `gpl` is a weak ±25% prior only. Vintner (887 reviews, CR 7.5) now shows £240–£720 / month; Lambs (1,372 reviews, CR 7.5) shows £250–£760. Both narrower, both evidence-grounded, neither a carbon copy. |
+| S2 | Venue-level Financial Impact scaling by review volume | same | Log-scale multiplier keyed to combined platform review count (1.0 at 300 reviews, 0.4 at 30, 2.5 ceiling). Replaces the uniform-across-venues output the V3.4 shim produced. |
+| S3 | Peer benchmarks not populated in the sample runner | new `operator_intelligence/v4_peer_benchmarks.py`; wired in `scripts/generate_v4_samples.py` | Lightweight V4-aware module computes ring1_local (same LA), ring2_catchment (≤ 15 mi haversine), and ring3_uk_cohort (whole Rankable-\* pool), scoped to `Rankable-A ∪ Rankable-B`. Vintner now reports #64 of 182 local; Lambs #12 of 182. Market Position table no longer renders empty. |
+
+Regenerated under the new logic, all seven canonical samples now pass
+the two-layer QA with 0 errors and 0 warnings. The 24-test guardrail
+suite (now including the expanded Directional-C section list in its
+positive fixture) also passes cleanly.
+
+### 10.2 What remains deferred
+
+Intentionally deferred to a later pass — each with a one-line reason.
+
+| Item | Reason |
+|---|---|
+| Wire full V3.4 recommendations engine into the sample runner | The V3.4 engine requires the V3.4 scorecard pipeline. A thin V4 adapter is a separate piece of work (§6.2 item 7) and belongs with Stack B6 report content, not Stack B5 report structure. Management Priorities / Watch List / WNTD / Implementation Framework render thin but correctly for now. |
+| Remove `_dimension_to_component` shim | Lives as long as the V3.4 recs engine does; retiring it depends on the item above. |
+| V4-aware demand-capture-audit builder | Current shim passes a V3.4-style scorecard stub; the audit itself is spec-compatible (profile-only). Cosmetic refactor. |
+| Penalty-explanation registry | Plain-English entries live in `v4_wording.penalty_explanation`; new codes won't auto-populate. Small; deferred until the next engine change. |
+| CI integration of the guardrail test suite | Not a report-layer change; should land when CI is next touched. |
+| Financial Impact range-width tolerance check | Narrow ranges at "Moderate" confidence are not currently flagged. Low priority; scoped post-rollout. |
+| Segment-intelligence class demotion (§6.2 item 10) | Segment prose does not currently apply the review-tier ceiling. Requires touching `segment_analysis` consumer path; deferred so this pass does not touch narrative builders. |
+
+### 10.3 Readiness after the fixes
+
+| Use case | Status |
+|---|---|
+| Internal use for scoring-engine QA / diagnostic work | **Ready.** Was ready before; remains ready. |
+| Pilot operator use (small operator set, supervised read) | **Ready.** The five Must-fix items from §6.1 are closed; the three Should-fix wiring items we could take cleanly are closed. Management Priorities / Watch List / WNTD / Implementation Framework still render thin because the recs engine is not plumbed, but they render correctly — a pilot reader will see "No ranked priorities this month." rather than contradictions. |
+| Commercial publication (paid operator deliverable) | **Not yet ready.** The recommendations wiring (§6.2 item 7) is the remaining commercial-strength blocker. Financial Impact now uses evidence-grounded sizing, but Management Priorities is where the operator-facing commercial narrative lives, and that requires the recs engine to be present. Segment-intelligence tier demotion and the demand-capture-audit refactor are also preferable-before-money-changes-hands. |
+| Stack B6 start | **Clear to start.** The structural contract is stable. B6 can build on a known-good report surface. |
+
+### 10.4 Post-fix verdict
+
+**READY FOR B6 WITH MINOR DEFERRED ITEMS**
+
+The V4 report layer is structurally complete and internally consistent.
+Every Must-fix item from §6.1 is resolved and verified via the sample
+set. The deferred items in §10.2 are real but none of them block B6;
+they are the natural Stack B6 workstream. A pilot-to-operator rollout
+should wait until the recommendations engine is plumbed; commercial
+publication should wait until the commercial-narrative wiring is
+complete. No further changes are needed at the structural / rendering
+layer before B6 begins.

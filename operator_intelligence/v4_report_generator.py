@@ -569,19 +569,30 @@ def _safe_float(x):
 
 def _render_financial_impact(out: Callable[[str], None],
                               inputs: ReportInputs) -> None:
+    """Financial Impact & Value at Stake (spec §5.2 / §6).
+
+    Directional-C defaults to the canonical fallback wording; the
+    headline score for those venues is not league-ranked, so any £
+    range would be read as precision the evidence does not support.
+    Operators who want sizing can drill into the Commercial Readiness
+    section — the per-venue gap list is there.
+
+    Rankable-A / Rankable-B / temp_closed render the full section, or
+    the thin-evidence fallback wording when Commercial Readiness
+    evidence will not support a confidence label.
+    """
     out("## Financial Impact & Value at Stake")
     out("")
 
+    # Directional-C default: canonical fallback wording (spec §6.4).
+    if inputs.report_mode == MODE_DIRECTIONAL_C:
+        out(FINANCIAL_IMPACT_FALLBACK_DIRECTIONAL)
+        out("")
+        return
+
     conf = financial_impact_confidence(inputs)
     if conf is None:
-        # Directional-C with CR present still renders at Low (conf is set
-        # by the wording helper). This branch is reached when CR is
-        # unavailable OR mode is D / Closed / temp_closed without
-        # rebookable signal.
-        if inputs.report_mode == MODE_DIRECTIONAL_C:
-            out(FINANCIAL_IMPACT_FALLBACK_DIRECTIONAL)
-        else:
-            out(FINANCIAL_IMPACT_FALLBACK_THIN)
+        out(FINANCIAL_IMPACT_FALLBACK_THIN)
         out("")
         return
 
@@ -648,42 +659,88 @@ def _fi_estimate(inputs: ReportInputs, gaps: list[str]
                              Optional[str], Optional[str]]:
     """Return (monthly_range £, cost_band, payback) or (None, None, None).
 
-    Uses commercial_estimates helpers where possible, with conservative
-    fallbacks. Never emits a point estimate.
+    Rewritten per spec §6.5 and §4.7 of the samples assessment so that
+    sizing is driven by the two strongest observable signals:
+
+      1. **Commercial Readiness component score** — the report's own
+         measurement of the gap between current observable customer-path
+         signals and a complete one. A higher CR score means less
+         recoverable revenue; a lower CR score means more.
+      2. **Customer Validation review volume** — a log-scale proxy for
+         venue demand. A Vintner (887 Google reviews) is a different-
+         sized opportunity from a Soma (120 reviews) or a cafe with 20.
+
+    `gpl` (price level) is kept only as a **weak prior** — a ±25%
+    modifier on the spend side — so high-end venues show a slightly
+    higher £ ceiling than cafes at the same CR score, without `gpl`
+    dominating the estimate. Price level is excluded from V4 scoring
+    per spec §2.3; this restricted use as a sizing modifier is within
+    the §6.5 carve-out.
     """
     if not gaps:
         return None, None, None
+
+    # --- 1. CR-driven monthly-recoverable ceiling --------------------------
+    # A CR of 10.0 means "fully present customer path" — nothing to recover
+    # from CR gaps. A CR of 0 means the entire CR weight is unfunded.
+    cr_score = inputs.commercial.score if inputs.commercial.available else None
+    if cr_score is None:
+        # Without CR evidence the model should not produce a figure.
+        return None, None, None
+
+    # Recoverable share scales linearly from CR=10 (0% recoverable) to
+    # CR=0 (100% recoverable). Floor at 5% so some signal survives even
+    # at full CR.
+    recoverable_share = max(0.05, (10.0 - cr_score) / 10.0)
+
+    # --- 2. Volume anchor from Customer Validation reviews -----------------
+    # Sum of counts across all platforms. Log-scale so a 10x volume
+    # difference is a linear scaling factor, not a 10x one.
+    import math
+    total_reviews = 0
+    if inputs.customer.available:
+        for p in inputs.customer.platforms.values():
+            total_reviews += int(p.get("count") or 0)
+    # Volume multiplier: 1.0 at ~300 reviews (mid-scale UK independent),
+    # 0.4 at ~30 reviews, 2.0 at ~3000 reviews. Gently bounded.
+    # log10(max(total, 10)) / log10(300) gives 1.0 at 300.
+    anchor = max(total_reviews, 10)
+    volume_multiplier = math.log10(anchor) / math.log10(300)
+    volume_multiplier = max(0.4, min(2.5, volume_multiplier))
+
+    # --- 3. Spend prior (gpl as a weak modifier) ---------------------------
+    # Baseline monthly recoverable value at CR=5 / 300 reviews / medium
+    # price = £800 low / £2,400 high. Tuned to approximate the range the
+    # V3.4 generator produced without becoming a `gpl`-driven table.
+    base_low = 800.0
+    base_high = 2400.0
+
+    # gpl modifier: +25% per level above 2, -25% per level below 2,
+    # capped at ±50%. Never zero.
+    gpl = inputs.venue_record.get("gpl")
     try:
-        from operator_intelligence.commercial_estimates import (
-            _spend_range, _MONTHLY_COVERS,
-        )
-        gpl = inputs.venue_record.get("gpl")
-        try:
-            gpl_int = int(gpl) if gpl is not None else 2
-        except (ValueError, TypeError):
-            gpl_int = 2
-        spend_low, spend_high = _spend_range(gpl_int)
-        covers_low, covers_high = _MONTHLY_COVERS.get(
-            gpl_int, _MONTHLY_COVERS[2])
-    except Exception:
-        spend_low, spend_high = 15, 35
-        covers_low, covers_high = 600, 1500
+        gpl_int = int(gpl) if gpl is not None else 2
+    except (ValueError, TypeError):
+        gpl_int = 2
+    gpl_modifier = 1.0 + max(-0.5, min(0.5, 0.25 * (gpl_int - 2)))
 
-    # Per-gap leakage: ~2% of monthly covers at risk per observed gap
-    per_gap_pct = 0.02
-    gap_count = len(gaps)
-    leak_low = covers_low * per_gap_pct * gap_count * spend_low
-    leak_high = covers_high * per_gap_pct * gap_count * spend_high * 1.5
+    low = base_low * recoverable_share * volume_multiplier * gpl_modifier
+    high = base_high * recoverable_share * volume_multiplier * gpl_modifier
 
-    # Cost band derivation: website/menu/hours are low-cost; booking-path is
-    # higher where it implies integration
+    # --- 4. Cost band and payback ------------------------------------------
     cost_band = "< £200 (profile updates)"
     payback = "< 1 month"
     if "no reachable booking / contact path" in gaps:
         cost_band = "£200 – £1,000 (booking widget / published phone)"
         payback = "1 – 3 months"
+    elif len(gaps) >= 3:
+        cost_band = "£200 – £1,000 (multiple profile updates)"
+        payback = "1 – 3 months"
 
-    return (round(leak_low), round(leak_high)), cost_band, payback
+    # Round to nearest £10 so the range never reads as spurious precision.
+    low_r = int(round(low / 10.0) * 10)
+    high_r = int(round(high / 10.0) * 10)
+    return (low_r, high_r), cost_band, payback
 
 
 # ---------------------------------------------------------------------------
@@ -814,7 +871,7 @@ def _render_management_priorities(out: Callable[[str], None],
 
     if inputs.report_mode == MODE_DIRECTIONAL_C:
         # Lead with the unblock-to-rankable action
-        unblock = _directional_unblock_action(inputs)
+        unblock = _unblock_action(inputs)
         out(f"### Priority 1 — Unblock to rankable")
         out("")
         out(unblock)
@@ -847,7 +904,8 @@ def _render_management_priorities(out: Callable[[str], None],
         out("")
 
 
-def _directional_unblock_action(inputs: ReportInputs) -> str:
+def _directional_c_unblock_action(inputs: ReportInputs) -> str:
+    """Unblock path for a Directional-C venue (C → B)."""
     if inputs.entity_match_status == "ambiguous":
         return ("Disambiguate the FHRS record. Ambiguity caps this venue at "
                 "Directional-C regardless of rating or readiness. See the "
@@ -858,12 +916,62 @@ def _directional_unblock_action(inputs: ReportInputs) -> str:
                 "FHRS record nor a confirmed Google Place ID in the pipeline.")
     if not inputs.customer.available:
         return ("Establish public customer-platform evidence. A single "
-                "venue platform profile with at least five reviews moves "
-                "this venue out of Directional-C into Rankable-B.")
+                "venue platform profile with five or more reviews moves "
+                "this venue from Directional-C into Rankable-B.")
     # Thin reviews default
     return ("Grow visible review volume on at least one platform above 30. "
             "Current evidence is below the threshold that separates "
-            "directional from league-ranked.")
+            "directional from league-ranked, so the venue stays in "
+            "Directional-C until count clears the bar.")
+
+
+def _profile_only_d_unblock_action(inputs: ReportInputs) -> str:
+    """Unblock path for a Profile-only-D venue.
+
+    The aspirational ladder is **D → Directional-C → Rankable-B**. This
+    builder narrates the first step (D → C) explicitly, so the text does
+    not read as if the venue were already Directional-C.
+    """
+    if inputs.entity_match_status == "none":
+        return ("Resolve the entity match. This venue has no confirmed "
+                "FHRS record and no confirmed Google Place ID in the "
+                "pipeline; establishing either one is the first step "
+                "out of Profile-only-D.")
+
+    families = sum([
+        inputs.trust.available,
+        inputs.customer.available,
+        inputs.commercial.available,
+    ])
+
+    if families == 0:
+        return ("Establish at least one primary evidence family. FSA / "
+                "FHRS, a public customer platform (Google / TripAdvisor), "
+                "or public customer-path signals (website, menu, hours, "
+                "booking) each count — one is enough to move this venue "
+                "out of Profile-only-D into Directional-C. A second family "
+                "unlocks Rankable-B.")
+
+    if not inputs.customer.available:
+        return ("Establish public customer-platform evidence. One venue "
+                "profile with five or more reviews moves this venue out of "
+                "Profile-only-D into Directional-C. A second platform "
+                "with ≥ 30 combined reviews unlocks Rankable-B.")
+
+    # Fallback: thin signals across available families
+    return ("Increase populated signals. Profile-only-D requires fewer "
+            "than four populated signals or fewer than one primary "
+            "evidence family; adding populated signals in any family "
+            "(inspection, customer platform, customer-path) moves this "
+            "venue into Directional-C. A second family then unlocks "
+            "Rankable-B.")
+
+
+def _unblock_action(inputs: ReportInputs) -> str:
+    """Dispatch to the class-appropriate unblock narrative."""
+    if inputs.report_mode == MODE_PROFILE_ONLY_D:
+        return _profile_only_d_unblock_action(inputs)
+    return _directional_c_unblock_action(inputs)
 
 
 # ---------------------------------------------------------------------------
@@ -1019,7 +1127,7 @@ def _render_executive_summary(out: Callable[[str], None],
     if inputs.report_mode == MODE_DIRECTIONAL_C:
         out("**What you should fix now:**")
         out("")
-        out("1. " + _directional_unblock_action(inputs).split(". ")[0] + ".")
+        out("1. " + _unblock_action(inputs).split(". ")[0] + ".")
         for i, p in enumerate(priorities[:2], start=2):
             title = p.get("title") or ""
             rec_type = (p.get("rec_type") or "ACTION").upper()
@@ -1248,7 +1356,13 @@ def _render_evidence_appendix(out: Callable[[str], None],
                                 inputs: ReportInputs) -> None:
     out("## Evidence Appendix")
     out("")
-    out("*Factual inventory of the observable data underpinning this report.*")
+    if inputs.report_mode == MODE_CLOSED:
+        out("*Data below reflects the last observed state before closure "
+            "was detected; it does not describe current operation. "
+            "Retained for audit.*")
+    else:
+        out("*Factual inventory of the observable data underpinning this "
+            "report.*")
     out("")
     r = inputs.venue_record
     rows: list[tuple[str, str]] = []
@@ -1311,8 +1425,14 @@ def _render_full_report(out: Callable[[str], None],
 
 def _render_directional_c_report(out: Callable[[str], None],
                                    inputs: ReportInputs) -> None:
-    """Directional-C — peer sections replaced, demoted overall."""
+    """Directional-C — peer sections replaced; Watch List / What Not
+    to Do / Next-Month Monitoring Plan are Conditional per spec
+    §5.11 / §5.12 / §5.15 and render with reduced scope."""
     _render_executive_summary(out, inputs)
+    # Financial Impact rendered near the front for parity with A / B;
+    # the builder itself renders the canonical fallback wording for
+    # Directional-C by default (see _render_financial_impact).
+    _render_financial_impact(out, inputs)
     _render_confidence_basis(out, inputs)
     _render_score_card(out, inputs)
 
@@ -1322,17 +1442,19 @@ def _render_directional_c_report(out: Callable[[str], None],
     reason = _directional_c_reason(inputs)
     out(f"**Reason:** {reason}.")
     out("")
-    out(_directional_unblock_action(inputs))
+    out(_unblock_action(inputs))
     out("")
 
     _render_risk_alerts(out, inputs)
     _render_trust_compliance(out, inputs)
     _render_customer_validation(out, inputs)
     _render_commercial_readiness(out, inputs)
-    _render_financial_impact(out, inputs)  # renders with Low confidence
     _render_management_priorities(out, inputs)
+    _render_watch_list(out, inputs)
+    _render_what_not_to_do(out, inputs)
     _render_profile_narrative(out, inputs)
     _render_implementation_framework(out, inputs)
+    _render_monitoring_plan(out, inputs)
     _render_data_basis(out, inputs)
     _render_evidence_appendix(out, inputs)
     _render_decision_trace(out, inputs)
@@ -1357,7 +1479,7 @@ def _render_profile_only_d_report(out: Callable[[str], None],
 
     out("## How to unlock full scoring")
     out("")
-    unblock = _directional_unblock_action(inputs)
+    unblock = _unblock_action(inputs)
     out(unblock)
     out("")
     out("- Minimum to reach Directional-C: one primary evidence family and "
