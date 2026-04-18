@@ -1772,6 +1772,19 @@ def main():
         with open(JSON_CACHE, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
 
+    # Belt-and-braces: refuse to run statistics on an empty input. The fetch
+    # script should already have caught this, but if something upstream
+    # produced an empty/malformed cache we want the failure message to point
+    # at the real cause (empty input), not at a downstream StatisticsError.
+    if not isinstance(data, dict) or len(data) == 0:
+        print(
+            f"ERROR: scoring input is empty or malformed "
+            f"({type(data).__name__} with {len(data) if hasattr(data, '__len__') else '?'} entries). "
+            f"Cache: {JSON_CACHE}. Re-run the fetch step and verify it reports >0 rows.",
+            file=sys.stderr,
+        )
+        sys.exit(4)
+
     print(f"\nRunning V3.4 RCS pipeline on {len(data)} establishments...")
     print(f"  7 tiers | 40 signals | 6 rating bands | temporal decay | convergence\n")
 
@@ -1858,8 +1871,8 @@ def generate_report(scored, summary):
     w(f"| Excluded (non-food) | {len(not_ranked)} |")
     w(f"| Insufficient data | {len(insufficient)} |")
     w(f"| Methodology | RCS V3.4 — 40 signals, 7 tiers, temporal decay, convergence |")
-    w(f"| Mean RCS | {statistics.mean(ranked_scores):.2f} |")
-    w(f"| Median RCS | {statistics.median(ranked_scores):.2f} |")
+    w(f"| Mean RCS | {statistics.mean(ranked_scores):.2f} |" if ranked_scores else "| Mean RCS | — |")
+    w(f"| Median RCS | {statistics.median(ranked_scores):.2f} |" if ranked_scores else "| Median RCS | — |")
     w(f"| Signals avg | {avg_sig:.1f} / {TOTAL_SIGNALS} ({avg_sig/TOTAL_SIGNALS*100:.0f}%) |")
     w(f"| Review sentiment | {len(with_sent)} analyzed, {len(red_flagged)} red flags |")
     w("")
