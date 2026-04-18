@@ -135,8 +135,16 @@ def main():
             entity_resolution_note=ambig,
             peer_benchmarks=peer_benchmarks,
         )
-        # V4-native recommendations engine (deferred-item 1 closed)
-        inputs.recommendations = generate_v4_recommendations(inputs)
+        # V4-native recommendations engine (deferred-item 1 closed).
+        # History persistence is disabled here so the committed sample
+        # outputs are byte-reproducible run-to-run; the CI
+        # reproducibility gate in
+        # .github/workflows/v4_report_checks.yml depends on that. The
+        # lifecycle pathway is exercised separately by
+        # tests/test_v4_history.py.
+        inputs.recommendations = generate_v4_recommendations(
+            inputs, disable_history=True,
+        )
 
         report_text, qa = generate_v4_monthly_report(inputs)
         report_json = build_v4_report_json(inputs, report_text, qa)

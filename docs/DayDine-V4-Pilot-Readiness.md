@@ -13,14 +13,15 @@ and public methodology page are out of scope and remain deferred.*
 
 ## Final verdict
 
-**PILOT READY WITH MINOR WARNINGS**
+**PILOT READY**
 
 The V4 operator report is ready to be put in front of a small,
-supervised set of pilot operators. Three minor warnings (§4 below)
-are tracked but do not block supervised pilot use. Commercial
-publication remains gated on the data-coverage / recalibration items
-tracked in the existing Stack-A status docs and is explicitly not
-certified here.
+supervised set of pilot operators. The main remaining warning
+(recommendation-history persistence) has since been closed —
+see §4.1 below. Two residual items (§4.2) are tracked but do not
+block supervised pilot use. Commercial publication remains gated
+on the data-coverage / recalibration items tracked in the existing
+Stack-A status docs and is explicitly not certified here.
 
 ---
 
@@ -222,26 +223,36 @@ All seven samples carry:
 
 ---
 
-## 4. Remaining minor warnings
+## 4. Pilot-warning status
 
-Three items that don't block pilot but should be tracked:
+### 4.1 Closed since the previous revision
 
-1. **Recommendation history persistence is not yet wired.** The V4
-   recs generator currently emits `status = "new"` and `times_seen
-   = 1` for every run. The prior recommendation-history prompt was
-   redirected before the persistence module landed on the branch,
-   so the Implementation Framework table cannot today show "Ongoing
-   (3 months)" / "Stale" / "Chronic" lifecycle labels. Pilot
-   reports will read as if every priority is new each month.
-   Recommended next step: resume the paused
-   `v4_recommendations_history.py` workstream.
+1. **Recommendation history persistence** — **closed.** A V4-native
+   history module (`operator_intelligence/v4_recommendations_history.py`)
+   now merges the candidate recs against a per-venue
+   `history/v4_recommendations/<fhrsid>.json` store before the
+   priority selection. Rec identity is
+   `md5(fhrsid + ":" + targets_component + ":" + title)[:12]`.
+   Status advances `new → ongoing → resolved → reopened`; Stale /
+   Overdue / Chronic labels fall out of the existing action-card
+   `_status_label` helper via the `times_seen` counter. Suppression
+   modes (Profile-only-D / Closed) short-circuit so a transient
+   reading never silently resolves every existing entry. The
+   lifecycle is covered by nine pytest-free tests in
+   `tests/test_v4_history.py` which are now part of the CI gate in
+   `.github/workflows/v4_report_checks.yml`. The sample runner opts
+   out of persistence via `disable_history=True` so the CI
+   reproducibility check stays byte-stable; history lifecycle is
+   verified separately by the lifecycle test suite.
 
-2. **V3.4 `recommendations.py` and `implementation_framework.py`
+### 4.2 Remaining minor items (tracked, not blocking pilot)
+
+1. **V3.4 `recommendations.py` and `implementation_framework.py`
    still live on disk.** Neither is invoked from any V4 code path
    (verified by grep). They continue to serve the V3.4-parallel
    generator. Hard removal is a post-cutover cleanup.
 
-3. **Segment class-demotion branch is in place but untested live.**
+2. **Segment class-demotion branch is in place but untested live.**
    The Directional-C demotion to label + count only fires when
    `segment_intel` is populated; the sample runner currently passes
    `segment_intel=None`, so no sample exercises the demoted path
@@ -274,11 +285,13 @@ parallel status docs:
 
 ## 6. Decision
 
-The V4 operator report layer is **pilot-ready** subject to the three
-minor warnings in §4. A supervised pilot can proceed using the
-canonical samples under `samples/v4/monthly/` as the read-me shape.
-Commercial publication remains blocked by the items in §5 and is not
-certified here.
+The V4 operator report layer is **pilot-ready**. The main warning
+from the previous revision (recommendation-history persistence)
+has been closed; only two residual cleanup items remain (§4.2),
+neither of which blocks pilot use. A supervised pilot can proceed
+using the canonical samples under `samples/v4/monthly/` as the
+read-me shape. Commercial publication remains blocked by the items
+in §5 and is not certified here.
 
 ---
 

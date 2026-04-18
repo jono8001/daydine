@@ -2,22 +2,23 @@ name: V4 Report Guardrails
 
 # Pilot-readiness gate for the V4 operator report layer.
 #
-# Runs on every push and pull request that touches the V4 report code
-# or its tests. Two checks:
+# Runs on every push and pull request that touches the V4 report
+# code, its tests, or the V4 scoring inputs. Gates:
 #
 #   1. Guardrail test suite — the 24 narrative / structural /
 #      per-class rules in tests/test_v4_report_guardrails.py.
-#      Any failure blocks merge.
-#
-#   2. Reproducible sample generation — regenerates the seven
+#   2. Recommendation-history lifecycle tests — the 9 tests in
+#      tests/test_v4_history.py covering new -> ongoing -> resolved
+#      -> reopened transitions and suppression-mode safety.
+#   3. Reproducible sample generation — regenerates the seven
 #      canonical samples under samples/v4/monthly/ and asserts the
-#      run summary matches the version committed on the branch. If
-#      the score inputs or the generator drift without the committed
-#      summary being updated, the build fails and the diff is
-#      surfaced in the CI log.
+#      run summary matches the version committed on the branch.
+#   4. End-to-end QA aggregate — every *_qa.json must show zero
+#      errors and zero warnings.
 #
-# Neither step calls out to external APIs or modifies scoring data.
-# The workflow does not write back to the repository.
+# Any failure blocks merge. Neither step calls out to external APIs
+# or modifies scoring data. The workflow does not write back to the
+# repository.
 
 on:
   push:
@@ -25,6 +26,7 @@ on:
       - 'operator_intelligence/v4_*.py'
       - 'operator_intelligence/demand_capture_audit.py'
       - 'tests/test_v4_report_guardrails.py'
+      - 'tests/test_v4_history.py'
       - 'scripts/generate_v4_samples.py'
       - 'rcs_scoring_v4.py'
       - 'stratford_establishments.json'
@@ -38,6 +40,7 @@ on:
       - 'operator_intelligence/v4_*.py'
       - 'operator_intelligence/demand_capture_audit.py'
       - 'tests/test_v4_report_guardrails.py'
+      - 'tests/test_v4_history.py'
       - 'scripts/generate_v4_samples.py'
       - 'rcs_scoring_v4.py'
       - 'stratford_establishments.json'
@@ -73,6 +76,9 @@ jobs:
       - name: Run V4 guardrail test suite
         run: python -m tests.test_v4_report_guardrails
 
+      - name: Run V4 recommendation-history lifecycle tests
+        run: python -m tests.test_v4_history
+
       - name: Regenerate V4 samples (reproducible; no network)
         run: python scripts/generate_v4_samples.py
 
@@ -88,8 +94,6 @@ jobs:
           import sys
 
           path = "samples/v4/monthly/_summary_2026-04.json"
-          # Use git to compare the regenerated file against the
-          # version committed on this branch.
           diff = subprocess.run(
               ["git", "--no-pager", "diff", "--no-ext-diff", "--", path],
               capture_output=True,
@@ -115,9 +119,7 @@ jobs:
         run: |
           python - <<'PY'
           """Fail the build if any sample's `*_qa.json` reports
-          errors or warnings. The guardrail test suite already covers
-          rule-level behaviour; this double-checks the end-to-end
-          pipeline."""
+          errors or warnings."""
           import glob
           import json
           import sys

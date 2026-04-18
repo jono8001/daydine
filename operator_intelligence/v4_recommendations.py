@@ -598,11 +598,27 @@ def _select_what_not_to_do(all_recs: list[dict]) -> list[dict]:
 # Public entry point
 # ---------------------------------------------------------------------------
 
-def generate_v4_recommendations(inputs: ReportInputs) -> dict:
+def generate_v4_recommendations(inputs: ReportInputs, *,
+                                  history_root: Optional[str] = None,
+                                  disable_history: bool = False) -> dict:
     """Build the recommendations payload the V4 renderers consume.
 
     Returns `{priority_actions, watch_items, what_not_to_do, all_recs}`.
     Suppressed (empty payload) for Profile-only-D and Closed.
+
+    History persistence (spec follow-up, closes the main pilot warning):
+    actionable candidates (fix / exploit / protect / watch) are merged
+    against `history/v4_recommendations/<fhrsid>.json` before the
+    priority selection, so `status` and `times_seen` reflect continuity
+    across runs. See `v4_recommendations_history.apply_history` for
+    the identity / lifecycle rules. `ignore`-type perennials are not
+    persisted.
+
+    Args:
+      history_root: override the default history storage root.
+      disable_history: read/write nothing to disk and return
+        decorated candidates as if this were a first-ever run. Used by
+        the reproducibility-sensitive sample runner and by tests.
     """
     if inputs.report_mode in {MODE_PROFILE_ONLY_D, MODE_CLOSED}:
         return {
@@ -622,6 +638,21 @@ def generate_v4_recommendations(inputs: ReportInputs) -> dict:
     # Always add watch + what-not-to-do perennials
     candidates.extend(_watch_recs(inputs))
     candidates.extend(_what_not_to_do_perennials(inputs))
+
+    # Merge with history before selection, so the priority actions
+    # / watch items / implementation framework cards carry stable
+    # first_seen / times_seen / status values.
+    from operator_intelligence.v4_recommendations_history import (
+        generate_and_persist,
+    )
+    generate_and_persist(
+        candidates,
+        venue_id=inputs.fhrsid,
+        month_str=inputs.month_str,
+        report_mode=inputs.report_mode,
+        history_root=history_root,
+        disable_persistence=disable_history,
+    )
 
     return {
         "priority_actions": _select_priority_actions(candidates, inputs),
