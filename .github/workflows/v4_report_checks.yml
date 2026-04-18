@@ -25,8 +25,10 @@ on:
     paths:
       - 'operator_intelligence/v4_*.py'
       - 'operator_intelligence/demand_capture_audit.py'
+      - 'operator_intelligence/legacy_boundary.py'
       - 'tests/test_v4_report_guardrails.py'
       - 'tests/test_v4_history.py'
+      - 'tests/test_v4_legacy_boundary.py'
       - 'scripts/generate_v4_samples.py'
       - 'rcs_scoring_v4.py'
       - 'stratford_establishments.json'
@@ -39,8 +41,10 @@ on:
     paths:
       - 'operator_intelligence/v4_*.py'
       - 'operator_intelligence/demand_capture_audit.py'
+      - 'operator_intelligence/legacy_boundary.py'
       - 'tests/test_v4_report_guardrails.py'
       - 'tests/test_v4_history.py'
+      - 'tests/test_v4_legacy_boundary.py'
       - 'scripts/generate_v4_samples.py'
       - 'rcs_scoring_v4.py'
       - 'stratford_establishments.json'
@@ -78,6 +82,9 @@ jobs:
 
       - name: Run V4 recommendation-history lifecycle tests
         run: python -m tests.test_v4_history
+
+      - name: Enforce V4 ↔ V3.4 legacy import boundary
+        run: python -m tests.test_v4_legacy_boundary
 
       - name: Regenerate V4 samples (reproducible; no network)
         run: python scripts/generate_v4_samples.py

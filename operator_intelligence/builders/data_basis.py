@@ -1,5 +1,20 @@
 """Data Basis section — what this report is built on."""
 
+# ============================================================================
+# LEGACY (V3.4) — NOT PART OF THE ACTIVE V4 PATH
+# ----------------------------------------------------------------------------
+# This module is part of the DayDine V3.4 scoring / reporting layer. V4 is
+# now the active model (`rcs_scoring_v4.py` + `operator_intelligence/v4_*.py`).
+# This file is retained only for rollback, comparison against V4 output
+# (via `compare_v3_v4.py`), and historical reference.
+#
+# Do NOT import this module from any V4 code path. The boundary check in
+# `tests/test_v4_legacy_boundary.py` enforces this.
+#
+# See `docs/DayDine-Legacy-Quarantine-Note.md` for conditions under which
+# this file becomes safe to delete.
+# ============================================================================
+
 
 def build_data_basis(w, venue_rec, review_intel):
     """Render the Data Basis section — compact evidence overview."""
