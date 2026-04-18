@@ -1,0 +1,212 @@
+name: V4 Scheduled Scoring
+
+# Scheduled DayDine V4 scoring + report regeneration.
+#
+# Scope (what this workflow DOES do):
+#   * Run entity resolution against the committed trial dataset.
+#   * Run the V4 scoring engine (rcs_scoring_v4.py) and refresh the
+#     V4 score JSON + CSV artefacts.
+#   * Regenerate the V3.4 vs V4 comparison, the commercial-readiness
+#     coverage report, and the TripAdvisor coverage report.
+#   * Regenerate the canonical V4 operator-report samples under
+#     samples/v4/monthly/ with history disabled (reproducible).
+#   * Re-run the V4 guardrail, history-lifecycle, and legacy-boundary
+#     test suites defensively.
+#   * Upload all of the above as a workflow artefact named
+#     `daydine-v4-artifacts-<run_id>`.
+#
+# Scope (what this workflow does NOT do):
+#   * It does NOT call external APIs. No Google Places, no FSA, no
+#     TripAdvisor, no Companies House. Enrichment is handled by
+#     `enrich_and_score.yml` / `full_pipeline.yml` / the ad-hoc
+#     TripAdvisor workflow, which require secrets this job does not
+#     read.
+#   * It does NOT commit back to the repository. V4 outputs are
+#     intentionally surfaced as artefacts so that scheduled runs
+#     cannot silently overwrite committed V4 baselines or imply a
+#     public cutover. A future cutover prompt will decide where V4
+#     outputs are promoted (branch, directory, public bucket).
+#   * It does NOT modify `stratford_rcs_scores.csv`, the rankings
+#     JSON consumed by `index.html`, or any Vercel-served file. The
+#     live frontend continues to read V3.4 data until a deliberate
+#     cutover prompt.
+#   * It does NOT mark the V4 migration as "done". See
+#     `docs/DayDine-V4-Public-Cutover-Blockers.md` for the live
+#     blocker list.
+#
+# Trigger model:
+#   * `schedule`: weekly, Mondays 06:00 UTC. Chosen to surface any
+#     drift early in the week without competing with the V3.4 full
+#     pipeline.
+#   * `workflow_dispatch`: allows manual re-runs on any branch. The
+#     sample-reproducibility check guards against silent drift.
+#
+# Required secrets / env vars:
+#   * None. This workflow is deliberately self-contained. All
+#     scoring inputs are committed to the repo (trial scope).
+#
+# Required input files (must be present in the repo at run time):
+#   * stratford_establishments.json
+#   * stratford_menus.json                        (optional but expected)
+#   * stratford_editorial.json                    (optional but expected)
+#   * data/entity_aliases.json
+#   * stratford_entity_resolution_report.json     (regenerated in-run)
+#
+# Failure behaviour:
+#   * Any scoring or test failure fails the job.
+#   * Sample reproducibility (diff vs committed baseline) is a WARN,
+#     not a fail: scheduled runs may legitimately drift if the
+#     committed inputs change between runs. The guardrail workflow
+#     (`v4_report_checks.yml`) is the blocking gate for drift.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # Mondays 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Optional note for manual dispatch (audit only)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+concurrency:
+  group: v4-scheduled-scoring
+  cancel-in-progress: false
+
+jobs:
+  score-v4:
+    name: V4 scoring + report artefact refresh
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install runtime deps (stdlib only for V4 core)
+        run: |
+          python -m pip install --upgrade pip
+          # V4 scoring + report layer is pure stdlib. resolve_entities
+          # and the coverage scripts are also stdlib. If any of those
+          # gain a dep, add it here rather than introducing a
+          # requirements file on the V4 path.
+
+      - name: Record run context
+        run: |
+          echo "Run ID:       ${{ github.run_id }}"
+          echo "Ref:          ${{ github.ref }}"
+          echo "SHA:          ${{ github.sha }}"
+          echo "Event:        ${{ github.event_name }}"
+          echo "Dispatch note: ${{ github.event.inputs.reason }}"
+
+      - name: Resolve entities (alias table + GPID flags)
+        run: python .github/scripts/resolve_entities.py
+
+      - name: Run V4 scoring engine
+        run: |
+          python rcs_scoring_v4.py \
+            --input stratford_establishments.json \
+            --menus stratford_menus.json \
+            --editorial stratford_editorial.json \
+            --out-json stratford_rcs_v4_scores.json \
+            --out-csv  stratford_rcs_v4_scores.csv
+
+      - name: Compare V3.4 vs V4 (side-by-side)
+        continue-on-error: true
+        run: python compare_v3_v4.py
+
+      - name: Commercial readiness coverage
+        continue-on-error: true
+        run: python .github/scripts/commercial_readiness_coverage.py
+
+      - name: TripAdvisor coverage
+        continue-on-error: true
+        run: python .github/scripts/tripadvisor_coverage.py
+
+      - name: Regenerate V4 operator samples (history disabled)
+        run: python scripts/generate_v4_samples.py
+
+      - name: V4 guardrail test suite
+        run: python -m tests.test_v4_report_guardrails
+
+      - name: V4 recommendation-history lifecycle tests
+        run: python -m tests.test_v4_history
+
+      - name: V4 ↔ V3.4 legacy-boundary tests
+        run: python -m tests.test_v4_legacy_boundary
+
+      - name: Check sample reproducibility (WARN only on drift)
+        continue-on-error: true
+        run: |
+          python - <<'PY'
+          """Non-blocking drift check for scheduled runs. The blocking
+          equivalent lives in v4_report_checks.yml. Here we only log a
+          warning so scheduled drift is visible in the artefact
+          bundle without failing the weekly job."""
+          import json
+          import subprocess
+          import sys
+
+          path = "samples/v4/monthly/_summary_2026-04.json"
+          diff = subprocess.run(
+              ["git", "--no-pager", "diff", "--no-ext-diff", "--", path],
+              capture_output=True,
+              text=True,
+              check=False,
+          )
+          if diff.stdout.strip():
+              print("::warning::V4 sample summary drifted from committed baseline.")
+              print(diff.stdout)
+          else:
+              print("V4 sample summary matches committed baseline.")
+          PY
+
+      - name: Verify sample QAs are clean
+        run: |
+          python - <<'PY'
+          import glob
+          import json
+          import sys
+
+          errs = warns = 0
+          offenders = []
+          for p in sorted(glob.glob("samples/v4/monthly/*_qa.json")):
+              with open(p, encoding="utf-8") as f:
+                  q = json.load(f)
+              e = q.get("guardrail_check", {}).get("errors") or []
+              w = q.get("guardrail_check", {}).get("warnings") or []
+              if e or w:
+                  offenders.append((p, e, w))
+              errs += len(e)
+              warns += len(w)
+          if offenders:
+              for p, e, w in offenders:
+                  sys.stderr.write(f"{p}: {len(e)} errors, {len(w)} warnings\n")
+                  for entry in e + w:
+                      sys.stderr.write(f"  {entry}\n")
+              sys.exit(1)
+          print(f"All sample QAs clean: {errs} errors, {warns} warnings.")
+          PY
+
+      - name: Upload V4 artefact bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: daydine-v4-artifacts-${{ github.run_id }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            stratford_rcs_v4_scores.json
+            stratford_rcs_v4_scores.csv
+            samples/v4/monthly/**
+            stratford_entity_resolution_report.json
+            stratford_v3_v4_comparison.csv
+            stratford_v3_v4_distribution.json
+            stratford_v3_v4_movers.json
+            stratford_v3_v4_sanity.json
+            stratford_commercial_readiness_coverage.json
+            stratford_tripadvisor_coverage.json
