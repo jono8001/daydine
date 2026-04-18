@@ -1,0 +1,70 @@
+{
+  "engine_version": "v4.0.0",
+  "computed_at": "2026-04-17T15:59:26Z",
+  "venue": {
+    "fhrsid": "503481",
+    "name": "The Opposition",
+    "fsa_name": "The Opposition",
+    "postcode": "CV37 6EF"
+  },
+  "month": "2026-04",
+  "report_mode": "temp_closed",
+  "confidence_class": "Rankable-B",
+  "rankable": true,
+  "league_table_eligible": true,
+  "entity_match_status": "confirmed",
+  "rcs_v4_final": 8.895,
+  "base_score": 8.895,
+  "adjusted_score": 8.895,
+  "components": {
+    "trust_compliance": {
+      "score": 8.883,
+      "available": true,
+      "signals_used": 5
+    },
+    "customer_validation": {
+      "score": 9.37,
+      "available": true,
+      "platforms": {
+        "google": {
+          "raw": 4.8,
+          "count": 533,
+          "shrunk": 4.7361,
+          "weight": 1.0
+        }
+      }
+    },
+    "commercial_readiness": {
+      "score": 7.5,
+      "available": true,
+      "signals_used": 3
+    }
+  },
+  "distinction": {
+    "value": 0.0,
+    "sources": []
+  },
+  "penalties_applied": [],
+  "caps_applied": [],
+  "source_family_summary": {
+    "fsa": "present",
+    "customer_platforms": [
+      "google"
+    ],
+    "commercial": "full",
+    "companies_house": "unmatched"
+  },
+  "qa": {
+    "engine_version": "v4.0.0",
+    "report_mode": "temp_closed",
+    "structural_check": {
+      "passed": true
+    },
+    "guardrail_check": {
+      "run": true,
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "month": "2026-04",
+  "samples": [
+    {
+      "fhrsid": "503480",
+      "label": "Vintner Wine Bar (Rankable-A)",
+      "mode": "rankable_a",
+      "score": 8.496,
+      "class": "Rankable-A",
+      "guard_errors": 0,
+      "guard_warnings": 0,
+      "path": "/home/user/daydine/samples/v4/monthly/The_Vintner_Wine_Bar_2026-04.md"
+    },
+    {
+      "fhrsid": "503316",
+      "label": "Lambs (Rankable-B)",
+      "mode": "rankable_b",
+      "score": 8.939,
+      "class": "Rankable-B",
+      "guard_errors": 0,
+      "guard_warnings": 0,
+      "path": "/home/user/daydine/samples/v4/monthly/Lambs_2026-04.md"
+    },
+    {
+      "fhrsid": "502816",
+      "label": "Loxleys Restaurant And Wine Bar (Rankable-B)",
+      "mode": "rankable_b",
+      "score": 8.772,
+      "class": "Rankable-B",
+      "guard_errors": 0,
+      "guard_warnings": 0,
+      "path": "/home/user/daydine/samples/v4/monthly/Loxleys_Restaurant_and_Wine_Bar_2026-04.md"
+    },
+    {
+      "fhrsid": "1847445",
+      "label": "Soma (Directional-C, ambiguous entity)",
+      "mode": "directional_c",
+      "score": 8.824,
+      "class": "Directional-C",
+      "guard_errors": 0,
+      "guard_warnings": 0,
+      "path": "/home/user/daydine/samples/v4/monthly/Soma_2026-04.md"
+    },
+    {
+      "fhrsid": "1765854",
+      "label": "The Roebuck Inn Alcester (Profile-only-D)",
+      "mode": "profile_only_d",
+      "score": 0.0,
+      "class": "Profile-only-D",
+      "guard_errors": 0,
+      "guard_warnings": 0,
+      "path": "/home/user/daydine/samples/v4/monthly/The_Roebuck_Inn_Alcester_2026-04.md"
+    },
+    {
+      "fhrsid": "503282",
+      "label": "Arrow Mill (synthetic: closed)",
+      "mode": "closed",
+      "score": null,
+      "class": "Rankable-B",
+      "guard_errors": 0,
+      "guard_warnings": 0,
+      "path": "/home/user/daydine/samples/v4/monthly/Arrow_Mill_2026-04.md"
+    },
+    {
+      "fhrsid": "503481",
+      "label": "The Opposition (synthetic: temp closed)",
+      "mode": "temp_closed",
+      "score": 8.895,
+      "class": "Rankable-B",
+      "guard_errors": 0,
+      "guard_warnings": 0,
+      "path": "/home/user/daydine/samples/v4/monthly/The_Opposition_2026-04.md"
+    }
+  ]
+}
