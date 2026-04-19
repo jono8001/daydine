@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -80 1000 360" role="img" aria-label="DayDine">
+  <text x="40" y="210" fill="#2e2c2a" font-family="'Nunito', system-ui, sans-serif" font-weight="800" font-size="220" letter-spacing="-0.02em">DayDıne</text>
+  <circle cx="638.75" cy="63.77" r="61.45" fill="#d99a3a" opacity="0.165"/>
+  <circle cx="638.75" cy="63.77" r="46.08" fill="#d99a3a" opacity="0.24"/>
+  <circle cx="638.75" cy="63.77" r="32.92" fill="#d99a3a" opacity="0.3375"/>
+  <circle cx="638.75" cy="63.77" r="21.95" fill="#d99a3a"/>
+</svg>
