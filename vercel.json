@@ -5,5 +5,9 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/search", "destination": "/search.html" }
+  ],
+  "redirects": [
+    { "source": "/pricing", "destination": "/for-restaurants#pricing", "permanent": true },
+    { "source": "/reports", "destination": "/for-restaurants#preview", "permanent": true }
   ]
 }
