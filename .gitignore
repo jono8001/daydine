@@ -1,3 +1,6 @@
 .env
 __pycache__/
 outputs/monthly/pdf/
+
+# Design handoff reference (JSX/Babel — not shipped; see README inside bundle)
+design_handoff_editorial_v2/
