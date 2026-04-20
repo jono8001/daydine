@@ -32,13 +32,35 @@ import os
 import re
 import sys
 import time
+from pathlib import Path
 from urllib.parse import quote_plus
 
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
-INPUT_PATH = os.path.join(REPO_ROOT, "stratford_establishments.json")
-RAW_DIR = os.path.join(REPO_ROOT, "data", "raw", "tripadvisor")
-CACHE_DIR = os.path.join(REPO_ROOT, "data", "cache")
-URL_CACHE_PATH = os.path.join(CACHE_DIR, "tripadvisor_url_cache.json")
+# Repo root resolved from THIS file's location. .parents[2] because the
+# script lives at `<repo>/.github/scripts/collect_tripadvisor_apify.py`.
+# Using pathlib here instead of os.path because pathlib's `.parents[N]`
+# indexing is less error-prone than stacked `os.path.join(..., "..", "..")`
+# calls (which, when the script is loaded from an unrelated directory,
+# can resolve to `/` and cause writes to `/data/...` with
+# PermissionError — that happened on run #9 of the workflow's preflight
+# test step).
+REPO_ROOT = Path(__file__).resolve().parents[2]
+
+# All write-paths are env-overridable so tests (and any future alternate
+# deployments) can redirect writes to a tmpdir without string-patching
+# this file. The defaults are the canonical repo-relative locations.
+INPUT_PATH = (
+    os.environ.get("STRATFORD_ESTABLISHMENTS_PATH")
+    or str(REPO_ROOT / "stratford_establishments.json")
+)
+RAW_DIR = (
+    os.environ.get("TRIPADVISOR_RAW_DIR")
+    or str(REPO_ROOT / "data" / "raw" / "tripadvisor")
+)
+CACHE_DIR = (
+    os.environ.get("TRIPADVISOR_CACHE_DIR")
+    or str(REPO_ROOT / "data" / "cache")
+)
+URL_CACHE_PATH = str(Path(CACHE_DIR) / "tripadvisor_url_cache.json")
 
 APIFY_TOKEN = os.environ.get("APIFY_TOKEN", "")
 APIFY_ACTOR = os.environ.get("APIFY_ACTOR") or "scrapapi/tripadvisor-review-scraper"

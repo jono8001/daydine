@@ -214,41 +214,30 @@ class GuardFiresOnZeroMatchesTest(unittest.TestCase):
     def _run_main_with_empty_actor(self, n_venues, limit=0):
         with tempfile.TemporaryDirectory() as td:
             td = Path(td)
-            # Fixture: N establishments with names and coords
+            # Fixture: N establishments with names and coords.
             establishments = {
                 str(i): {"n": f"Venue {i}", "pc": "CV37",
                          "lat": 52.19, "lon": -1.71}
                 for i in range(1, n_venues + 1)
             }
-            (td / "stratford_establishments.json").write_text(
-                json.dumps(establishments))
+            est_path = td / "stratford_establishments.json"
+            est_path.write_text(json.dumps(establishments))
 
+            # Redirect ALL filesystem writes into the tmpdir via env
+            # vars (see collector's top-of-file env overrides). This
+            # replaces the previous string-patching trick which missed
+            # CACHE_DIR / URL_CACHE_PATH and caused the run #9 preflight
+            # failure (PermissionError writing to /data/cache/...).
             env = {
                 "APIFY_TOKEN": "fake",
                 "APIFY_ACTOR": "scrapapi/tripadvisor-review-scraper",
                 "MATCH_MIN_SCORE": "0.55",
                 "MAX_REVIEWS": "5",
                 "DRY_RUN_LIMIT": str(limit),
+                "STRATFORD_ESTABLISHMENTS_PATH": str(est_path),
+                "TRIPADVISOR_RAW_DIR": str(td / "data" / "raw" / "tripadvisor"),
+                "TRIPADVISOR_CACHE_DIR": str(td / "data" / "cache"),
             }
-            for k, v in env.items():
-                os.environ[k] = v
-
-            # Load a fresh copy of the module pointed at our tmpdir so
-            # INPUT_PATH / RAW_DIR don't touch the real repo state.
-            src = COLLECTOR_PATH.read_text()
-            src = src.replace(
-                'os.path.join(REPO_ROOT, "stratford_establishments.json")',
-                repr(str(td / "stratford_establishments.json")))
-            src = src.replace(
-                'os.path.join(REPO_ROOT, "data", "raw", "tripadvisor")',
-                repr(str(td / "data" / "raw" / "tripadvisor")))
-            tmp_path = td / "collector.py"
-            tmp_path.write_text(src)
-
-            spec = importlib.util.spec_from_file_location(
-                "collector_tmp", tmp_path)
-            m = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(m)
 
             class _FakeDataset:
                 def iterate_items(self):
@@ -263,11 +252,33 @@ class GuardFiresOnZeroMatchesTest(unittest.TestCase):
                 def actor(self, name): return _FakeActor()
                 def dataset(self, _id): return _FakeDataset()
 
-            # Patch the apify_client import inside the module so search_apify
-            # uses the fake client.
             fake_mod = type(sys)("apify_client")
             fake_mod.ApifyClient = _FakeClient
-            with mock.patch.dict(sys.modules, {"apify_client": fake_mod}):
+
+            # mock.patch.dict auto-restores os.environ on exit so the
+            # tmpdir-scoped env overrides don't leak into later tests.
+            with mock.patch.dict(os.environ, env, clear=False), \
+                 mock.patch.dict(sys.modules, {"apify_client": fake_mod}):
+                # Load the REAL collector module (no source rewriting).
+                # Because module-level constants are evaluated at import
+                # time, the env overrides above MUST already be live.
+                spec = importlib.util.spec_from_file_location(
+                    f"collector_tmp_{id(self)}_{n_venues}_{limit}",
+                    COLLECTOR_PATH)
+                m = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(m)
+
+                # Sanity check that the env overrides took effect before
+                # we run main() — a missed override would let main()
+                # scribble on the real repo.
+                for attr in ("INPUT_PATH", "RAW_DIR", "CACHE_DIR",
+                              "URL_CACHE_PATH"):
+                    resolved = getattr(m, attr)
+                    self.assertTrue(
+                        str(resolved).startswith(str(td)),
+                        f"{attr} must point inside tmpdir {td!s} — got "
+                        f"{resolved!s}. Env-override wiring is broken.")
+
                 with self.assertRaises(SystemExit) as cm:
                     m.main()
                 return cm.exception.code
@@ -280,6 +291,80 @@ class GuardFiresOnZeroMatchesTest(unittest.TestCase):
     def test_dry_run_limit_respected_and_guard_still_fires(self):
         code = self._run_main_with_empty_actor(n_venues=50, limit=3)
         self.assertEqual(code, 1, "limit=3 should also trip guard on 0 matches")
+
+
+class EnvPathOverrideTest(unittest.TestCase):
+    """Regression test for run #9. The collector used to build CACHE_DIR
+    via `os.path.abspath(os.path.join(__file__, '..', '..', 'data',
+    'cache'))`. When the file was loaded from a tmpdir (as the test
+    harness did) that resolved to `/data/cache` and _save_url_cache
+    raised PermissionError.
+
+    Fix: all write paths are env-overridable. This test asserts the
+    override wiring is still intact so no future refactor silently
+    hardcodes a repo-absolute path."""
+
+    def test_all_write_paths_respect_env_overrides(self):
+        with tempfile.TemporaryDirectory() as td:
+            td = Path(td)
+            env = {
+                "APIFY_TOKEN": "t",
+                "STRATFORD_ESTABLISHMENTS_PATH": str(
+                    td / "a" / "stratford_establishments.json"),
+                "TRIPADVISOR_RAW_DIR": str(td / "a" / "raw"),
+                "TRIPADVISOR_CACHE_DIR": str(td / "a" / "cache"),
+            }
+            with mock.patch.dict(os.environ, env, clear=False):
+                spec = importlib.util.spec_from_file_location(
+                    "collector_env_override_check", COLLECTOR_PATH)
+                m = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(m)
+
+            self.assertEqual(m.INPUT_PATH,
+                             str(td / "a" / "stratford_establishments.json"))
+            self.assertEqual(m.RAW_DIR, str(td / "a" / "raw"))
+            self.assertEqual(m.CACHE_DIR, str(td / "a" / "cache"))
+            self.assertEqual(
+                m.URL_CACHE_PATH,
+                str(td / "a" / "cache" / "tripadvisor_url_cache.json"))
+
+    def test_defaults_are_repo_relative(self):
+        """Without overrides the defaults must land inside the repo,
+        NOT at filesystem root (the run #9 bug)."""
+        # Clean any override env var from a prior test, then import.
+        clean = {k: "" for k in
+                 ("STRATFORD_ESTABLISHMENTS_PATH", "TRIPADVISOR_RAW_DIR",
+                  "TRIPADVISOR_CACHE_DIR")}
+        # mock.patch.dict with values will keep them; we want to DROP
+        # these keys so the `or` fallback inside the module takes over.
+        to_drop = [k for k in clean if k in os.environ]
+        saved = {k: os.environ[k] for k in to_drop}
+        for k in to_drop:
+            del os.environ[k]
+        try:
+            spec = importlib.util.spec_from_file_location(
+                "collector_defaults", COLLECTOR_PATH)
+            m = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(m)
+            repo_root = str(m.REPO_ROOT)
+            # Every default write-path must be UNDER the repo root.
+            for attr in ("INPUT_PATH", "RAW_DIR", "CACHE_DIR",
+                          "URL_CACHE_PATH"):
+                p = getattr(m, attr)
+                self.assertTrue(
+                    str(p).startswith(repo_root),
+                    f"{attr} default must resolve inside the repo root "
+                    f"({repo_root!s}); got {p!r}. If this fails, someone "
+                    f"has probably broken the pathlib `parents[2]` resolution.")
+                self.assertFalse(
+                    str(p).startswith("/data/"),
+                    f"{attr} must not resolve to /data/... "
+                    f"(filesystem root); got {p!r}. This is the run #9 bug.")
+        finally:
+            # Restore any env vars we dropped so subsequent tests still
+            # see their fixtures.
+            for k, v in saved.items():
+                os.environ[k] = v
 
 
 class BuildApifyInputBranchingTest(unittest.TestCase):
