@@ -509,31 +509,68 @@ class SearchActorTest(unittest.TestCase):
         produces "Field input.query is required" at validation time, so
         the actor rejects every call before any credit is spent.
 
-        Asserts `query` is present AND non-empty. `search` / `searchString`
-        aliases are OK to include but must not substitute for `query`."""
+        Asserts `query` is present AND non-empty."""
         inp = self.m.build_search_actor_input(
             "getdataforme/tripadvisor-places-search-scraper",
-            "Vintner Wine Bar Stratford-upon-Avon")
+            "Vintner Wine Bar", "Stratford-upon-Avon")
         self.assertIn("query", inp,
                       "payload must contain 'query' — actor requires it")
         self.assertIsInstance(inp["query"], str)
         self.assertTrue(inp["query"].strip(),
                         "'query' must be a non-empty string")
-        self.assertEqual(inp["query"],
-                         "Vintner Wine Bar Stratford-upon-Avon")
+        self.assertEqual(inp["query"], "Vintner Wine Bar")
         self.assertIn("maxItems", inp)
+
+    def test_search_actor_query_does_not_bundle_location(self):
+        """Regression guard for run #11 of collect_tripadvisor_apify.yml.
+
+        Concatenating the location into `query` (e.g. "Impasto Stratford-
+        upon-Avon") made the search actor silently return 0 items for
+        every real Stratford venue. The fix: `query` holds the venue
+        name alone; location goes in a dedicated location field.
+
+        Asserts `query` contains the venue name, does NOT contain
+        "Stratford" or any location-flavoured substring, AND that the
+        location actually ended up in one of the documented location
+        fields (location, locationFullName, near, geo, region, city)."""
+        inp = self.m.build_search_actor_input(
+            "getdataforme/tripadvisor-places-search-scraper",
+            "Impasto Micro-Pizzeria", "Stratford-upon-Avon")
+        self.assertEqual(inp["query"], "Impasto Micro-Pizzeria")
+        for marker in ("Stratford", "Avon"):
+            self.assertNotIn(
+                marker, inp["query"],
+                f"`query` must NOT contain {marker!r} — location belongs "
+                f"in a separate field. Got: {inp['query']!r}")
+        # Location must be present in at least one of the documented
+        # location aliases.
+        location_channels = [
+            inp.get(k) for k in
+            ("location", "locationFullName", "near", "geo", "region", "city")
+        ]
+        self.assertTrue(
+            any("Stratford-upon-Avon" in str(l or "")
+                for l in location_channels),
+            f"location must be populated in at least one of "
+            f"(location, locationFullName, near, geo, region, city); "
+            f"got: {location_channels!r}"
+        )
 
     def test_search_actor_generic_fallback_also_has_query(self):
         """The generic (unknown-actor) branch must also populate `query`
         — actors outside the getdataforme family sometimes use the same
         field name, and sending it costs nothing if ignored."""
         inp = self.m.build_search_actor_input(
-            "somevendor/another-ta-search", "Loxleys Stratford")
+            "somevendor/another-ta-search", "Loxleys", "Stratford-upon-Avon")
         self.assertIn("query", inp)
         self.assertTrue(inp["query"].strip())
+        # Same location-channel guarantee for generic fallback.
+        self.assertEqual(inp["query"], "Loxleys")
+        self.assertIn("location", inp)
+        self.assertEqual(inp["location"], "Stratford-upon-Avon")
 
     def test_cache_hit_short_circuits_actor(self):
-        """If the cache already knows the URL, don't even call Apify."""
+        """If the cache already knows a REAL URL, don't even call Apify."""
         cache = {
             "vintner wine bar stratford-upon-avon": {
                 "url": "https://www.tripadvisor.com/Restaurant_Review-x-Reviews-V.html",
@@ -548,7 +585,8 @@ class SearchActorTest(unittest.TestCase):
         fake.ApifyClient = _Explode
         with mock.patch.dict(sys.modules, {"apify_client": fake}):
             url, name = self.m.resolve_tripadvisor_url(
-                "Vintner Wine Bar Stratford-upon-Avon", "fake_token", cache)
+                "Vintner Wine Bar", "Stratford-upon-Avon", "fake_token",
+                cache)
         self.assertEqual(url,
                          "https://www.tripadvisor.com/Restaurant_Review-x-Reviews-V.html")
         self.assertEqual(name, "Vintner")
@@ -575,12 +613,48 @@ class SearchActorTest(unittest.TestCase):
         cache = {}
         with mock.patch.dict(sys.modules, {"apify_client": fake}):
             url, name = self.m.resolve_tripadvisor_url(
-                "Target Stratford-upon-Avon", "fake_token", cache)
+                "Target", "Stratford-upon-Avon", "fake_token", cache)
         self.assertIn("Restaurant_Review-g186460-d1", url)
         self.assertEqual(name, "Target Restaurant")
         # And it was cached under the normalised key.
         cached = cache["target stratford-upon-avon"]
         self.assertEqual(cached["url"], url)
+
+    def test_null_cache_entry_triggers_retry(self):
+        """A cached miss (`url: None`) must NOT short-circuit — previous
+        runs that produced null entries may have failed for reasons
+        since fixed (run #11's concatenated-query bug). We re-query
+        and overwrite the entry with the latest result."""
+        cache = {
+            "vintner wine bar stratford-upon-avon": {
+                "url": None, "name": None,
+                "resolved_at": "2026-04-20T00:00:00Z",
+            }
+        }
+        items = [{"url": "https://www.tripadvisor.com/Restaurant_Review-g1-d1-Reviews-Vintner.html",
+                  "name": "The Vintner Wine Bar"}]
+        class _Dataset:
+            def iterate_items(self_inner): return iter(items)
+        class _Actor:
+            def call(self_inner, run_input=None, timeout_secs=None):
+                return {"defaultDatasetId": "stub"}
+        class _Client:
+            def __init__(self_inner, token): pass
+            def actor(self_inner, name): return _Actor()
+            def dataset(self_inner, _id): return _Dataset()
+        fake = type(sys)("apify_client")
+        fake.ApifyClient = _Client
+        with mock.patch.dict(sys.modules, {"apify_client": fake}):
+            url, name = self.m.resolve_tripadvisor_url(
+                "Vintner Wine Bar", "Stratford-upon-Avon", "fake_token",
+                cache)
+        self.assertIsNotNone(url,
+                             "null cache entry must be re-queried, not "
+                             "used as a cache hit")
+        self.assertIn("Restaurant_Review-g1-d1", url)
+        # Cache must now hold the fresh positive result.
+        self.assertEqual(
+            cache["vintner wine bar stratford-upon-avon"]["url"], url)
 
 
 if __name__ == "__main__":

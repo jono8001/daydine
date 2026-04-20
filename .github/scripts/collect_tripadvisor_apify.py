@@ -162,35 +162,65 @@ def build_apify_input(actor: str, query: str, max_places: int,
     }
 
 
-def build_search_actor_input(actor: str, query: str,
+def build_search_actor_input(actor: str, venue_name: str, location: str,
                               max_items: int = 5) -> dict:
     """Build input payload for the URL-resolution search actor.
 
     Keeps the same branch-by-actor pattern as `build_apify_input`.
 
+    Venue name and location are supplied as SEPARATE parameters (not
+    pre-concatenated) because run #11 showed
+    getdataforme/tripadvisor-places-search-scraper silently returns
+    zero results when fed a single concatenated `query` string — its
+    relevance ranker appears to expect the venue name alone with the
+    location passed via a dedicated location/near/locationFullName
+    field.
+
     `getdataforme/tripadvisor-places-search-scraper` — per run #10's
-    validation error ("Field input.query is required") the actor's
-    declared input field is `query` (singular), NOT `search`. We send
-    `search` / `searchString` as belt-and-braces aliases in case a
-    future minor schema change adds them, but `query` is the one the
-    actor actually validates against.
+    validation error ("Field input.query is required") the actor
+    validates against `query`. We also populate the common location-
+    field aliases (`location`, `locationFullName`, `near`, `geo`,
+    `region`, `city`) — extras are ignored by actors that don't
+    consume them. `category: "restaurants"` is included to bias the
+    search away from hotels/attractions (verifiable in docs; harmless
+    if the actor ignores it).
+
+    Returns a dict that is safe to send to the Apify client verbatim.
     """
+    venue = (venue_name or "").strip()
+    loc = (location or "").strip()
+
     if actor.startswith("getdataforme/tripadvisor-places-search-scraper"):
         return {
-            "query": query,
-            "search": query,
-            "searchString": query,
+            "query": venue,
+            "location": loc,
+            "locationFullName": loc,
+            "near": loc,
+            "geo": loc,
+            "region": loc,
+            "city": loc,
+            "category": "restaurants",
             "maxItems": max_items,
-            "locationFullName": query,
         }
-    # Generic fallback covers search actors that follow the more common
-    # apify convention.
+    # Generic fallback for unknown/alternate search actors (e.g.
+    # apify/tripadvisor-search or compass/crawler-google-places).
+    # Populate every field name in common circulation so one of them
+    # hits. Extras are ignored.
     return {
-        "query": query,
-        "searchQueries": [query],
-        "search": query,
-        "searchString": query,
+        "query": venue,
+        "search": venue,
+        "searchString": venue,
+        "searchQueries": [f"{venue} {loc}".strip()],
+        "searchStringsArray": [f"{venue} {loc}".strip()],
+        "location": loc,
+        "locationFullName": loc,
+        "near": loc,
+        "geo": loc,
+        "region": loc,
+        "city": loc,
+        "category": "restaurants",
         "maxItems": max_items,
+        "maxResults": max_items,
     }
 
 
@@ -584,24 +614,44 @@ def _extract_ta_url_candidates(item):
     return urls
 
 
-def resolve_tripadvisor_url(query: str, token: str, cache: dict):
+def resolve_tripadvisor_url(venue_name: str, location: str, token: str,
+                             cache: dict):
     """Resolve a venue name+location to a TripAdvisor place URL.
 
-    Two-stage pipeline stage 1: query a lightweight TripAdvisor places
-    search actor and take the first result whose URL matches a real
-    review page (TA_REVIEW_URL_RE). Results are cached in
-    `tripadvisor_url_cache.json` keyed by the lowercased query, so
-    re-runs only burn search-actor credits on new venues.
+    Two-stage pipeline stage 1: call the TripAdvisor places search
+    actor (APIFY_SEARCH_ACTOR) with venue_name and location as
+    SEPARATE fields, then pick the first result whose URL matches a
+    real review page (TA_REVIEW_URL_RE).
 
-    Returns (url, resolved_name). Both None if nothing matched. Cache
-    entries with `url: null` are stored too so repeat failures don't
-    re-query the search actor.
+    Run #11 proved we must split name and location: passing a single
+    concatenated `query` (e.g. "Impasto Micro-Pizzeria Stratford-upon-
+    Avon") made the actor return zero items for every real Stratford
+    venue. build_search_actor_input now puts the venue in `query` and
+    the location in `location`/`near`/`locationFullName`/etc.
+
+    Results (URL + name + timestamp, or null URL on miss) are cached
+    in `tripadvisor_url_cache.json` keyed by the normalised
+    "venue location" string, so re-runs only burn search-actor
+    credits on new venues.
+
+    Returns (url, resolved_name). Both None if nothing matched.
     """
-    cache_key = query.lower().strip()
+    cache_key = f"{venue_name} {location}".lower().strip()
     if cache_key in cache:
         hit = cache[cache_key]
         if isinstance(hit, dict):
-            return hit.get("url"), hit.get("name")
+            cached_url = hit.get("url")
+            if cached_url:
+                # Real URL cached — use it (happy path, no Apify call).
+                return cached_url, hit.get("name")
+            # Cached miss (url is None/empty). Re-try against the
+            # current actor + payload: a previous run's null is often
+            # a symptom of an input-shape bug we've since fixed (e.g.
+            # pre-run-#12 concatenated-query bug). Keeping null in the
+            # cache forever would hide those fixes. Re-querying
+            # overwrites the entry with the latest result.
+            print(f"    Cached null entry for {cache_key!r}; re-querying "
+                  f"search actor to see if the shape fix changes anything.")
 
     try:
         from apify_client import ApifyClient
@@ -610,7 +660,8 @@ def resolve_tripadvisor_url(query: str, token: str, cache: dict):
         return None, None
 
     client = ApifyClient(token)
-    run_input = build_search_actor_input(APIFY_SEARCH_ACTOR, query)
+    run_input = build_search_actor_input(
+        APIFY_SEARCH_ACTOR, venue_name, location)
 
     try:
         run = client.actor(APIFY_SEARCH_ACTOR).call(
@@ -623,6 +674,33 @@ def resolve_tripadvisor_url(query: str, token: str, cache: dict):
         return None, None
 
     print(f"    Search actor returned {len(items)} item(s)")
+
+    # Noisier diagnostic when zero items come back. Shows the input we
+    # sent and the run-metadata keys Apify exposed — enough to spot
+    # field-name mismatches, category-filter misses, or actor-side
+    # errors that the SDK swallows into an empty dataset.
+    if len(items) == 0:
+        try:
+            input_summary = json.dumps(run_input, ensure_ascii=False)[:500]
+        except Exception:
+            input_summary = repr(run_input)[:500]
+        run_status = None
+        run_msg = None
+        run_keys = []
+        if isinstance(run, dict):
+            run_status = run.get("status")
+            run_msg = run.get("statusMessage") or run.get("exitCode")
+            run_keys = sorted(run.keys())
+        print(f"    [diag] actor: {APIFY_SEARCH_ACTOR}")
+        print(f"    [diag] input: {input_summary}")
+        print(f"    [diag] run.status={run_status!r} "
+              f"run.statusMessage/exitCode={run_msg!r} "
+              f"run_keys={run_keys}")
+        print("    [diag] hint: if status=SUCCEEDED and items=0, the "
+              "search actor found nothing relevant. Try splitting name "
+              "and location further, add a category filter, or set "
+              "APIFY_SEARCH_ACTOR to an alternative "
+              "(apify/tripadvisor-search, compass/crawler-google-places).")
 
     url = None
     name = None
@@ -722,8 +800,10 @@ def main():
             # Stage 1 — name -> TripAdvisor URL via the search actor.
             # The result is cached; repeat calls hit the cache, not
             # the actor, so re-dispatches are cheap.
+            # Pass venue name and location as SEPARATE args (see
+            # resolve_tripadvisor_url docstring and run #11 notes).
             resolved_url, resolved_name = resolve_tripadvisor_url(
-                query, APIFY_TOKEN, url_cache)
+                name, LOCATION, APIFY_TOKEN, url_cache)
             # Persist cache after every venue so a mid-run failure
             # doesn't waste the stage-1 credits already spent.
             _save_url_cache(url_cache)
