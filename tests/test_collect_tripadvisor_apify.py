@@ -501,12 +501,36 @@ class SearchActorTest(unittest.TestCase):
             "APIFY_SEARCH_ACTOR": "getdataforme/tripadvisor-places-search-scraper",
         })
 
-    def test_search_actor_payload_uses_getdataforme_shape(self):
+    def test_search_actor_payload_uses_query_field(self):
+        """Regression guard for run #10 of collect_tripadvisor_apify.yml.
+
+        getdataforme/tripadvisor-places-search-scraper's declared input
+        field is `query` (singular). Sending only `search` / `searchString`
+        produces "Field input.query is required" at validation time, so
+        the actor rejects every call before any credit is spent.
+
+        Asserts `query` is present AND non-empty. `search` / `searchString`
+        aliases are OK to include but must not substitute for `query`."""
         inp = self.m.build_search_actor_input(
             "getdataforme/tripadvisor-places-search-scraper",
             "Vintner Wine Bar Stratford-upon-Avon")
-        self.assertEqual(inp["search"], "Vintner Wine Bar Stratford-upon-Avon")
+        self.assertIn("query", inp,
+                      "payload must contain 'query' — actor requires it")
+        self.assertIsInstance(inp["query"], str)
+        self.assertTrue(inp["query"].strip(),
+                        "'query' must be a non-empty string")
+        self.assertEqual(inp["query"],
+                         "Vintner Wine Bar Stratford-upon-Avon")
         self.assertIn("maxItems", inp)
+
+    def test_search_actor_generic_fallback_also_has_query(self):
+        """The generic (unknown-actor) branch must also populate `query`
+        — actors outside the getdataforme family sometimes use the same
+        field name, and sending it costs nothing if ignored."""
+        inp = self.m.build_search_actor_input(
+            "somevendor/another-ta-search", "Loxleys Stratford")
+        self.assertIn("query", inp)
+        self.assertTrue(inp["query"].strip())
 
     def test_cache_hit_short_circuits_actor(self):
         """If the cache already knows the URL, don't even call Apify."""

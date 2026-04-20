@@ -167,10 +167,17 @@ def build_search_actor_input(actor: str, query: str,
     """Build input payload for the URL-resolution search actor.
 
     Keeps the same branch-by-actor pattern as `build_apify_input`.
-    `getdataforme/tripadvisor-places-search-scraper` takes a `search`
-    string + `maxItems`; generic fallback uses `searchQueries`."""
+
+    `getdataforme/tripadvisor-places-search-scraper` — per run #10's
+    validation error ("Field input.query is required") the actor's
+    declared input field is `query` (singular), NOT `search`. We send
+    `search` / `searchString` as belt-and-braces aliases in case a
+    future minor schema change adds them, but `query` is the one the
+    actor actually validates against.
+    """
     if actor.startswith("getdataforme/tripadvisor-places-search-scraper"):
         return {
+            "query": query,
             "search": query,
             "searchString": query,
             "maxItems": max_items,
@@ -179,6 +186,7 @@ def build_search_actor_input(actor: str, query: str,
     # Generic fallback covers search actors that follow the more common
     # apify convention.
     return {
+        "query": query,
         "searchQueries": [query],
         "search": query,
         "searchString": query,
