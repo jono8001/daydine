@@ -7,15 +7,45 @@
       "display_name": "Stratford-upon-Avon",
       "region": "West Midlands",
       "status": "live",
-      "total_venues": 190,
-      "top_score": 10.0
+      "total_venues": 181,
+      "top_score": 9.303
     }
   ],
   "pipeline": [
-    { "display_name": "Warwick", "region": "West Midlands", "status": "validating" },
-    { "display_name": "Birmingham", "region": "West Midlands", "status": "requested" },
-    { "display_name": "Oxford", "region": "South East", "status": "requested" },
-    { "display_name": "Bath", "region": "South West", "status": "requested" },
-    { "display_name": "Edinburgh", "region": "Scotland", "status": "requested" }
+    {
+      "slug": "warwick",
+      "la_name": "Warwick",
+      "display_name": "Warwick",
+      "region": "West Midlands",
+      "status": "validating"
+    },
+    {
+      "slug": "birmingham",
+      "la_name": "Birmingham",
+      "display_name": "Birmingham",
+      "region": "West Midlands",
+      "status": "requested"
+    },
+    {
+      "slug": "oxford",
+      "la_name": "Oxford",
+      "display_name": "Oxford",
+      "region": "South East",
+      "status": "requested"
+    },
+    {
+      "slug": "bath",
+      "la_name": "Bath and North East Somerset",
+      "display_name": "Bath",
+      "region": "South West",
+      "status": "requested"
+    },
+    {
+      "slug": "edinburgh",
+      "la_name": "City of Edinburgh",
+      "display_name": "Edinburgh",
+      "region": "Scotland",
+      "status": "requested"
+    }
   ]
 }

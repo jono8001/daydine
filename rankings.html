@@ -60,10 +60,20 @@
     <div>Top <b id="rkTopScore">—</b> · RCS V4</div>
   </div>
 </div>
-<p class="rk-dek">
+<p class="rk-dek" id="rkDek">
   Every ranked venue scored on the 0–10 Restaurant Confidence Scale. Public data only.
   Hygiene, customer platforms and commercial-readiness signals in three weighted components.
 </p>
+
+<div class="fsa-banner" id="fsaBanner" style="display:none;">
+  <span class="lbl">FSA preview</span>
+  <p class="note">
+    <b>This market is not yet on the full RCS V4 pipeline.</b> The list below is ranked on
+    public Food Standards Agency data only — hygiene score, confidence in management, structural
+    compliance. Customer-platform and commercial-readiness signals land when the market enters validation.
+    <a href="mailto:hello@daydine.co.uk?subject=Notify%20me%20when%20RCS%20V4%20goes%20live">Notify me when this market goes live →</a>
+  </p>
+</div>
 
 <!-- ================ FILTER BAR ================ -->
 <div class="filterbar" id="filterBar">
@@ -238,9 +248,6 @@ function moveHtml(v) {
 }
 
 // ---- Slug resolution ----
-// 1. If the page is served at /rankings/<slug>, use that.
-// 2. Else query param ?market=slug
-// 3. Else default to stratford-on-avon (the only live market).
 var DATA_SLUG = (function () {
   var m = window.location.pathname.match(/\/rankings\/([^\/]+?)(?:\.html)?$/);
   if (m && m[1] && m[1] !== 'rankings') return m[1];
@@ -252,24 +259,57 @@ var ALL = [];
 var FILTERED = [];
 var TOP_N = 10;
 var MARKET_META = {};
+var FIREBASE_URL = 'https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app';
 
-Promise.all([
-  fetch('/assets/rankings/' + DATA_SLUG + '.json').then(function (r) {
-    if (!r.ok) throw new Error('not found');
-    return r.json();
-  }),
-  fetch('/assets/rankings/index.json').then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
-]).then(function (res) {
-  var data = res[0];
-  var idx = res[1];
+// Main load: try the curated RCS JSON; if missing, fall back to FSA-only from Firebase.
+fetch('/assets/rankings/index.json').then(function (r) { return r.ok ? r.json() : null; })
+  .catch(function () { return null; })
+  .then(function (idx) {
+    return fetch('/assets/rankings/' + DATA_SLUG + '.json')
+      .then(function (r) {
+        if (r.ok) return r.json().then(function (d) { return { data: d, idx: idx, fsaFallback: false }; });
+        // JSON 404 — try FSA fallback
+        return loadFSAFallback(DATA_SLUG, idx).then(function (d) { return { data: d, idx: idx, fsaFallback: true }; });
+      })
+      .catch(function () { return loadFSAFallback(DATA_SLUG, idx).then(function (d) { return { data: d, idx: idx, fsaFallback: true }; }); });
+  })
+  .then(function (result) {
+    if (!result || !result.data) {
+      // Nothing in curated JSON, nothing in Firebase for this LA.
+      renderNoData(result && result.idx);
+      return;
+    }
+    bindMarket(result.data, result.idx, result.fsaFallback);
+  })
+  .catch(function () { renderNoData(null); });
+
+function renderNoData(idx) {
+  var display = slugToDisplayName(DATA_SLUG, idx);
+  document.getElementById('rkTitle').innerHTML = emphasise(display);
+  document.title = display + ' rankings — DayDine';
+  document.getElementById('issueMarket').textContent = display;
+  document.getElementById('ssMarket').textContent = display;
+  document.getElementById('rkKicker').textContent = 'Not yet indexed';
+  var meta = document.querySelector('.rk-meta');
+  if (meta) meta.innerHTML = '';
+  document.getElementById('rkBody').innerHTML =
+    '<tr><td colspan="7" class="rk-empty">' +
+    'No ranked data for <b>' + esc(display) + '</b> yet. ' +
+    '<a href="mailto:hello@daydine.co.uk?subject=' +
+    encodeURIComponent('Market request: ' + display) +
+    '" style="color:var(--accent); border-bottom:1px solid currentColor;">Request this market</a>' +
+    ' · <a href="/rankings" style="color:var(--accent);">See live markets →</a>' +
+    '</td></tr>';
+  document.getElementById('rkCount').textContent = '';
+}
+
+function bindMarket(data, idx, fsaFallback) {
   MARKET_META = data;
   ALL = (data.venues || []).slice();
   TOP_N = data.top_n || 10;
 
-  // --- Bind header / sub-strip ---
   var displayName = data.display_name || data.la_name || DATA_SLUG;
-  var emTitle = emphasise(displayName);
-  document.getElementById('rkTitle').innerHTML = emTitle;
+  document.getElementById('rkTitle').innerHTML = emphasise(displayName);
   document.title = displayName + ' rankings — DayDine';
   document.getElementById('issueMarket').textContent = displayName;
   document.getElementById('ssMarket').textContent = displayName;
@@ -282,13 +322,17 @@ Promise.all([
     document.getElementById('rkTopScore').textContent = top.toFixed(2);
   }
 
-  // --- Mark this a pipeline market if not in index.available ---
-  if (idx && idx.available) {
+  if (fsaFallback) {
+    document.getElementById('fsaBanner').style.display = '';
+    document.getElementById('rkKicker').textContent = 'FSA preview · Full RCS V4 pipeline pending';
+    var meta = document.querySelector('.rk-meta');
+    if (meta) meta.innerHTML = '<div><b>' + (data.total_venues || ALL.length) + '</b> FSA-ranked</div><div>Top <b>' + (ALL[0] && ALL[0].rcs_final != null ? ALL[0].rcs_final.toFixed(2) : '—') + '</b> · FSA only</div>';
+  } else if (idx && idx.available) {
     var inAvail = idx.available.some(function (a) { return a.slug === DATA_SLUG; });
     if (!inAvail) document.getElementById('rkKicker').textContent = 'Pipeline market';
   }
 
-  // --- Populate category filter ---
+  // Category filter options
   var cats = {};
   ALL.forEach(function (v) { cats[v.category] = (cats[v.category] || 0) + 1; });
   var sel = document.getElementById('fCategory');
@@ -299,11 +343,91 @@ Promise.all([
   });
 
   renderAll();
-}).catch(function () {
-  document.getElementById('rkBody').innerHTML =
-    '<tr><td colspan="7" class="rk-empty">No ranked data available for this market yet. <a href="/rankings" style="color:var(--accent);">See live markets →</a></td></tr>';
-  document.getElementById('rkCount').textContent = '';
-});
+}
+
+// ---- FSA fallback from Firebase RTDB REST ----
+function slugToLAName(slug, idx) {
+  if (!slug) return null;
+  // Check index.json (available + pipeline) for explicit la_name
+  if (idx) {
+    var all = (idx.available || []).concat(idx.pipeline || []);
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].slug === slug && all[i].la_name) return all[i].la_name;
+    }
+  }
+  // Fallback: title-case the slug ("bath" → "Bath", "north-east-lincolnshire" → "North East Lincolnshire")
+  return slug.split('-').map(function (w) { return w.charAt(0).toUpperCase() + w.slice(1); }).join(' ');
+}
+function slugToDisplayName(slug, idx) {
+  if (idx) {
+    var all = (idx.available || []).concat(idx.pipeline || []);
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].slug === slug && all[i].display_name) return all[i].display_name;
+    }
+  }
+  return slugToLAName(slug, idx);
+}
+function fsaCategorise(row) {
+  var gty = row.gty || [];
+  var joined = (Array.isArray(gty) ? gty.join(' ') : String(gty)).toLowerCase();
+  if (/pub|bar|beer_garden/.test(joined)) return 'Pub / Bar';
+  if (/cafe|coffee_shop|tea_house/.test(joined)) return 'Cafe / Coffee Shop';
+  if (/bakery/.test(joined)) return 'Bakery';
+  if (/hotel|lodging|inn/.test(joined)) return 'Hotel / Accommodation';
+  if (/meal_takeaway|meal_delivery|fast_food/.test(joined)) return 'Takeaway / Delivery';
+  if (/restaurant|food/.test(joined)) return 'Restaurant (General)';
+  return 'Restaurant (General)';
+}
+function fsaBandFor(score) {
+  if (score == null) return ['Insufficient Data', 'good'];
+  if (score >= 8.0) return ['Excellent', 'excellent'];
+  if (score >= 6.5) return ['Good', 'good'];
+  if (score >= 5.0) return ['Generally Satisfactory', 'satisfactory'];
+  if (score >= 3.5) return ['Improvement Necessary', 'improvement'];
+  if (score >= 2.0) return ['Major Improvement', 'major'];
+  return ['Urgent Improvement', 'urgent'];
+}
+function loadFSAFallback(slug, idx) {
+  var la = slugToLAName(slug, idx);
+  var display = slugToDisplayName(slug, idx);
+  var url = FIREBASE_URL + '/daydine/establishments.json?orderBy=%22la%22&equalTo=%22' + encodeURIComponent(la) + '%22';
+  return fetch(url).then(function (r) {
+    if (!r.ok) return null;
+    return r.json();
+  }).then(function (raw) {
+    if (!raw) return null;
+    var rows = Object.keys(raw).map(function (id) { return Object.assign({ _id: id }, raw[id]); })
+      .filter(function (r) { return r.s != null && r.n; });
+    if (!rows.length) return null;
+    rows.sort(function (a, b) { return (b.s || 0) - (a.s || 0); });
+    var venues = rows.map(function (r, i) {
+      var b = fsaBandFor(r.s);
+      return {
+        rank: i + 1,
+        name: r.n,
+        postcode: r.pc || '',
+        category: fsaCategorise(r),
+        rcs_final: typeof r.s === 'number' ? r.s : parseFloat(r.s),
+        rcs_band: b[0],
+        band_class: b[1],
+        convergence: 'neutral',
+        movement: 'same',
+        movement_delta: 0
+      };
+    });
+    return {
+      la_name: la,
+      display_name: display,
+      slug: slug,
+      total_venues: venues.length,
+      top_n: Math.min(10, venues.length),
+      others_count: Math.max(0, venues.length - 10),
+      last_updated: '',
+      venues: venues,
+      _is_fsa_fallback: true
+    };
+  }).catch(function () { return null; });
+}
 
 function emphasise(name) {
   // Wrap the second word (if any) in <em> so "Stratford-upon-Avon" → "Stratford-<em>upon-Avon</em>"

@@ -1773,6 +1773,28 @@ body.ed .num { font-variant-numeric: tabular-nums; font-family: var(--mono); }
   font-size: 18px; color: var(--ink-dim);
 }
 
+.ed .fsa-banner {
+  max-width: 1240px; margin: 0 auto;
+  padding: 14px 32px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg-2);
+  display: flex; gap: 18px; align-items: baseline; flex-wrap: wrap;
+}
+.ed .fsa-banner .lbl {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent);
+  padding: 3px 8px; border: 1px solid var(--accent);
+  border-radius: 2px;
+}
+.ed .fsa-banner .note {
+  font-family: var(--serif); font-style: italic;
+  font-size: 15px; color: var(--ink-2);
+  line-height: 1.5;
+}
+.ed .fsa-banner .note b { font-style: normal; color: var(--ink); font-weight: 500; }
+.ed .fsa-banner a { color: var(--accent); border-bottom: 1px solid currentColor; text-decoration: none; }
+
 /* "Others" block */
 .ed .others {
   max-width: 1240px; margin: 0 auto;
