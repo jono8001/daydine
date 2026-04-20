@@ -297,9 +297,46 @@ class BuildApifyInputBranchingTest(unittest.TestCase):
         self.assertIn("startUrls", inp)
         self.assertNotIn("searchQueries", inp)
         self.assertTrue(
-            inp["startUrls"][0]["url"].startswith(
+            inp["startUrls"][0].startswith(
                 "https://www.tripadvisor.com/Search?q="),
-            "startUrls[0].url must be a TripAdvisor Search URL")
+            "startUrls[0] must be a TripAdvisor Search URL")
+
+    def test_scrapapi_start_urls_is_list_of_strings(self):
+        """Regression guard for run #7 of collect_tripadvisor_apify.yml.
+
+        The actor's input schema declares `startUrls: array<string>`,
+        NOT `array<{url: string}>`. Sending dicts produces:
+          "Field input.startUrls.0 must be string"
+        and every per-venue call fails. This test asserts the payload
+        shape so the dict form can't accidentally come back (e.g. if
+        someone copies the apify/web-scraper convention into this
+        branch)."""
+        inp = self.m.build_apify_input(
+            "scrapapi/tripadvisor-review-scraper",
+            "Loxleys Stratford-upon-Avon", 3, 5)
+        self.assertIsInstance(inp["startUrls"], list)
+        self.assertGreater(len(inp["startUrls"]), 0,
+                           "startUrls must be non-empty")
+        for i, u in enumerate(inp["startUrls"]):
+            self.assertIsInstance(
+                u, str,
+                f"startUrls[{i}] must be str, got {type(u).__name__}: {u!r}")
+            self.assertTrue(
+                u.startswith("http"),
+                f"startUrls[{i}] must be an absolute URL, got {u!r}")
+
+    def test_scrapapi_review_limit_aliases_present(self):
+        """Both maxReviewsPerPlace and maxReviewsPerUrl carry MAX_REVIEWS.
+
+        scrapapi/tripadvisor-review-scraper's documented field is
+        `maxReviewsPerUrl`; some neighbouring actors use
+        `maxReviewsPerPlace`. We send both so a minor rename upstream
+        can't silently drop us back to the actor's default review
+        limit."""
+        inp = self.m.build_apify_input(
+            "scrapapi/tripadvisor-review-scraper", "Lambs", 3, 7)
+        self.assertEqual(inp.get("maxReviewsPerUrl"), 7)
+        self.assertEqual(inp.get("maxReviewsPerPlace"), 7)
 
     def test_legacy_emits_search_queries(self):
         inp = self.m.build_apify_input(

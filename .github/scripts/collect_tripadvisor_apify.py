@@ -77,11 +77,21 @@ def build_apify_input(actor: str, query: str, max_places: int,
         search_url = (
             "https://www.tripadvisor.com/Search?q=" + quote_plus(query)
         )
+        # This actor's input schema declares `startUrls` as
+        # `array<string>`, NOT the `array<{url: string}>` shape used by
+        # apify/web-scraper and many scrapers derived from it. Sending
+        # dicts yields:
+        #   "Field input.startUrls.0 must be string"
+        # Similarly `maxReviewsPerUrl` (per the actor's schema) is
+        # passed alongside `maxReviewsPerPlace` as an alias so a future
+        # minor schema rename doesn't silently drop the limit back to
+        # the actor's default.
         return {
-            "startUrls": [{"url": search_url}],
+            "startUrls": [search_url],
             "keywords": [query],
             "searchStrings": [query],
             "locationFullName": query,
+            "maxReviewsPerUrl": max_reviews,
             "maxReviewsPerPlace": max_reviews,
             "maxItems": max_places,
             "language": "en",
