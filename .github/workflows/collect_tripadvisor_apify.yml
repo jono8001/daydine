@@ -47,7 +47,13 @@ permissions:
   contents: write
 
 concurrency:
-  group: tripadvisor-apify
+  # Serialize ALL workflows that commit to main from the TripAdvisor /
+  # scoring pipeline. Shared with collect_tripadvisor.yml (legacy) so a
+  # belt-and-braces fall-back to the legacy path cannot race this one.
+  # cancel-in-progress: false is deliberate — a late run must WAIT, not
+  # stomp, so we never produce a commit that hasn't seen the winner's
+  # changes.
+  group: daydine-pipeline-commit
   cancel-in-progress: false
 
 jobs:
@@ -78,6 +84,15 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests apify-client
+
+      - name: Unit tests for TripAdvisor collector (normaliser + guard)
+        # Runs BEFORE the actor call so a regression in extract_ta_data,
+        # the response-shape normaliser, or the zero-match guard fails
+        # fast (exit 13 reserved for "collector tests red") without
+        # burning Apify credits or committing misleading output.
+        run: |
+          python -m tests.test_collect_tripadvisor_apify \
+            || { echo "::error::Collector unit tests failed — aborting run before Apify call."; exit 13; }
 
       - name: Inspect cache before fetch
         run: |
@@ -111,6 +126,14 @@ jobs:
       - name: Merge existing Google enrichment
         run: python .github/scripts/merge_enrichment.py
 
+      - name: Snapshot raw file count BEFORE collect
+        id: raw_pre
+        run: |
+          mkdir -p data/raw/tripadvisor
+          pre=$(find data/raw/tripadvisor -maxdepth 1 -name '*.json' | wc -l)
+          echo "pre=$pre" >> "$GITHUB_OUTPUT"
+          echo "Raw files before collect: $pre"
+
       - name: Collect TripAdvisor via Apify
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
@@ -124,11 +147,16 @@ jobs:
         run: python .github/scripts/collect_tripadvisor_apify.py
 
       - name: Inspect raw TripAdvisor files
+        env:
+          RAW_PRE: ${{ steps.raw_pre.outputs.pre }}
         run: |
           python - <<'PY'
-          import glob, json, os
+          import glob, json, os, sys
           raw_files = sorted(glob.glob("data/raw/tripadvisor/*.json"))
-          print(f"Raw TA files: {len(raw_files)}")
+          pre = int(os.environ.get("RAW_PRE") or "0")
+          post = len(raw_files)
+          new = max(0, post - pre)
+          print(f"Raw TA files: post={post} pre={pre} new_this_run={new}")
           with_rating = 0
           for p in raw_files:
               try:
@@ -139,6 +167,15 @@ jobs:
               except Exception as e:
                   print(f"  {os.path.basename(p)}: parse error: {e}")
           print(f"  with rating: {with_rating}")
+          # Belt-and-braces workflow-layer guard: even if the collector's
+          # own hard-fail didn't catch it, zero new raw files written
+          # during the run means the pipeline produced nothing usable.
+          # This fires independently of the collector's exit code.
+          if new == 0:
+              print("::error::Zero new raw TripAdvisor files were written "
+                    "during this run. Aborting before consolidation so we "
+                    "don't commit a misleading 'same as last time' result.")
+              sys.exit(12)
           PY
 
       - name: Consolidate TripAdvisor raw files
@@ -205,14 +242,46 @@ jobs:
 
       - name: Commit results
         run: |
+          set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add -A
-          git diff --cached --quiet && echo "No changes to commit" && exit 0
-          git stash
-          git pull --rebase origin main
-          git stash pop || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          # Rebase-with-autostash replaces the previous stash/pull/pop pattern
+          # that could silently drop conflict markers into committed files
+          # (see b705c2d). --autostash handles uncommitted changes cleanly;
+          # --no-verify-signatures isn't used so we don't bypass any hook.
+          # On conflict we ABORT the rebase, reset the working tree, and
+          # fail the job — we never commit conflict markers.
+          if ! git pull --rebase --autostash origin main; then
+            echo "::error::git pull --rebase hit a conflict against origin/main."
+            echo "Aborting rebase and failing the job rather than committing"
+            echo "unresolved conflict markers. A later workflow dispatch will"
+            echo "pick up the current main cleanly."
+            git rebase --abort || true
+            git reset --hard HEAD || true
+            exit 1
+          fi
+
+          # Belt and braces: refuse to commit if any tracked file contains
+          # git conflict markers. Catches any weird post-rebase state we
+          # didn't anticipate.
+          if git grep -I -n -E '^(<<<<<<< |=======$|>>>>>>> )' -- . > /tmp/markers.txt 2>/dev/null; then
+            echo "::error::Conflict markers found in working tree:"
+            cat /tmp/markers.txt
+            exit 1
+          fi
+
           git add -A
-          git diff --cached --quiet && echo "No changes after pull" && exit 0
+          if git diff --cached --quiet; then
+            echo "No changes after rebase"
+            exit 0
+          fi
+
           git commit -m "Collect TripAdvisor via Apify and re-score RCS"
           git push
