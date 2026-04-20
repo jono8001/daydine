@@ -1,123 +1,247 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <meta name="robots" content="noindex, follow">
-  <title>What Your Nearest Competitor Is Doing Better | DayDine</title>
+  <title>For restaurants — DayDine</title>
+  <meta name="description" content="See exactly why you're ranked where you are. DayDine's Position & Competitor Report decomposes your RCS V4 score into the three weighted components — and names the closest venues outranking you.">
+  <link rel="canonical" href="https://daydine.vercel.app/for-restaurants">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DayDine for Restaurants — Position & Competitor Reports">
+  <meta property="og:description" content="Understand your RCS V4 ranking. One-off report £49 or monitoring subscription £39/mo.">
+  <meta property="og:url" content="https://daydine.vercel.app/for-restaurants">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/daydine.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/daydine.css">
 </head>
-<body data-page-type="operator">
+<body class="ed" data-page-type="operator">
+<a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="nav-brand" href="/">
-      <img class="nav-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine">
-    </a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="/">Day<em>dine</em></a>
+    <div class="mast-issue">For restaurants · <b>Intelligence</b></div>
+    <button class="mast-toggle" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <div class="nav-links">
-      <a class="nav-link" href="/rankings">Rankings</a>
-      <a class="nav-link" href="/search">Search</a>
-      <a class="nav-link" href="/reports">Reports</a>
-      <a class="nav-link" href="/methodology">Methodology</a>
-      <a class="btn btn-primary nav-cta" href="/reports">Get a Market Report</a>
+    <nav class="mast-nav">
+      <a href="/">Home</a>
+      <a href="/rankings">Rankings</a>
+      <a href="/search">Search</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/for-restaurants" class="on">For restaurants</a>
+    </nav>
+  </div>
+</header>
+
+<div class="sub-strip">
+  <span>Position &amp; Competitor Report · <b>£49</b> one-off / <b>£39/mo</b></span>
+  <span class="dot">·</span>
+  <span>Reports <b>explain</b> positions. They don't move them.</span>
+  <span class="dot">·</span>
+  <span>Delivered within <b>48 hours</b></span>
+</div>
+
+<main id="main">
+
+<!-- ================ HERO ================ -->
+<section class="op-hero">
+  <div>
+    <div class="op-hero-kicker">DayDine Intelligence · For operators</div>
+    <h1>See exactly <em>why</em> you're ranked where you are.</h1>
+    <p class="lede">
+      A confidential report on your venue's standing in the DayDine rankings — <b>the three weighted components, the closest peers, the signals pulling them ahead, and the specific gaps you can close.</b>
+      Same RCS V4 data that powers the public list, formatted for your team.
+    </p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#sample">See a sample report</a>
+      <a class="btn" href="#pricing">Pricing</a>
+    </div>
+    <div class="promise-bar">
+      <span>Confidential</span>
+      <span>·</span>
+      <span>Does <b>not</b> affect ranking</span>
+      <span>·</span>
+      <span>Public-signal only</span>
     </div>
   </div>
-</nav>
 
-<section class="hero" style="padding-bottom: 64px;">
-  <div class="container container-narrow">
-    <div class="hero-inner">
-      <div class="kicker kicker-accent mb-2">Operator Intelligence</div>
-      <h1 class="h-display h-display-lg mb-3">
-        3 things your nearest competitor<br>is doing better than you
-      </h1>
-      <p class="body-lg mb-4" style="max-width: 620px;">
-        DayDine tracks 40 public market signals across every restaurant in your local market.
-        Your Position &amp; Competitor Report identifies the specific signals where competitors outperform you &mdash; and tells you what to do about it.
-      </p>
-
-      <ul class="check-list" style="margin-bottom: 32px; max-width: 600px;">
-        <li class="check-item">Which of your 5 closest competitors is outranking you &mdash; and by how much</li>
-        <li class="check-item">The specific signals pulling their score up while yours stays flat</li>
-        <li class="check-item">A prioritised action list for closing the gap this month</li>
-      </ul>
-
-      <div style="font-family: var(--sans); font-size: 14px; color: var(--text-muted); margin-bottom: 32px;">
-        <span id="delivery-date"></span>
-        <span style="color: var(--border); margin: 0 8px;">&middot;</span>
-        &pound;49 one-time
-        <span style="color: var(--border); margin: 0 8px;">&middot;</span>
-        7-day refund guarantee
-      </div>
-
-      <div>
-        <a class="btn btn-primary btn-lg"
-           href="mailto:hello@daydine.com?subject=Competitor%20Report%20Request&body=Please%20send%20me%20a%20DayDine%20Position%20%26%20Competitor%20Report.%0A%0AVenue%20name%3A%0AVenue%20address%20or%20postcode%3A%0ABest%20contact%20email%3A">
-          Get Your Competitor Report &mdash; &pound;49
-        </a>
-        <p style="margin-top: 14px; font-size: 14px;">
-          <a style="color: var(--accent); font-weight: 500;"
-             href="mailto:hello@daydine.com?subject=Stay%20Ahead%20Subscription&body=I'm%20interested%20in%20the%20Stay%20Ahead%20monthly%20subscription%20(%C2%A339%2Fmonth).%0A%0AVenue%20name%3A%0AVenue%20address%20or%20postcode%3A%0ABest%20contact%20email%3A">
-            Or monitor your market monthly for &pound;39/month &rarr;
-          </a>
-        </p>
-      </div>
+  <aside class="instrument">
+    <div class="instrument-title">
+      <span class="name">Your venue</span>
+      <span class="city">RCS V4 · Sample readout</span>
     </div>
+    <div class="row"><span class="k">Rank, local authority</span><span class="v">14 <span class="up">▲3</span></span></div>
+    <div class="row"><span class="k">RCS score</span><span class="v">7.82</span></div>
+    <div class="row"><span class="k">Band</span><span class="v">Good</span></div>
+    <div class="row"><span class="k">Trust &amp; Compliance</span><span class="v up">+0.4</span></div>
+    <div class="row"><span class="k">Customer Validation</span><span class="v up">+0.2</span></div>
+    <div class="row"><span class="k">Commercial Readiness</span><span class="v down">−0.3</span></div>
+    <div class="row"><span class="k">Closest competitor</span><span class="v">#11 (+0.19 RCS)</span></div>
+    <div class="row"><span class="k">Report delivered</span><span class="v">Within 48 hours</span></div>
+  </aside>
+</section>
+
+<!-- ================ PREVIEW / CLAIM ================ -->
+<section class="op-section" id="preview">
+  <div class="op-section-head">
+    <div>
+      <div class="op-eyebrow">Preview your standing · Free</div>
+      <h2 class="op-title">Already in our rankings? <em>See where you sit.</em></h2>
+    </div>
+    <div class="op-dek">Verify your venue with Companies House and we'll return your current rank and three-score split — free. The interpretation and the competitor names live in the paid report.</div>
+  </div>
+
+  <div class="claim-block">
+    <form class="claim-form" id="claimForm">
+      <div class="kicker">Step one of two · 30 seconds</div>
+      <h3>Claim your <em>listing</em>.</h3>
+      <p class="intro">We match your company number to our ranked dataset and send your rank preview by email within two working hours. Verification uses Companies House only.</p>
+      <div class="claim-field">
+        <label for="cf-name">Venue name</label>
+        <input id="cf-name" name="venue" type="text" required placeholder="e.g. The Vintner Wine Bar">
+      </div>
+      <div class="claim-field">
+        <label for="cf-ch">Companies House number</label>
+        <input id="cf-ch" name="companies_house" type="text" placeholder="8 digits, e.g. 12486301">
+      </div>
+      <div class="claim-field">
+        <label for="cf-role">Your role</label>
+        <select id="cf-role" name="role">
+          <option>Owner / Director</option>
+          <option>General Manager</option>
+          <option>Head Chef / Chef-patron</option>
+          <option>Operations Director</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="claim-field">
+        <label for="cf-email">Work email</label>
+        <input id="cf-email" name="email" type="email" required placeholder="ops@yourvenue.co.uk">
+      </div>
+      <div class="submit-row">
+        <button type="submit" class="btn btn-primary">Send my rank preview</button>
+        <span class="fine">No card needed · Reply within 2 working hours</span>
+      </div>
+    </form>
+
+    <aside class="claim-preview">
+      <div class="cp-head">
+        <span class="cp-name" id="cpName">Your venue</span>
+        <span class="cp-stamp" id="cpStamp">Sample preview</span>
+      </div>
+      <div class="cp-main">
+        <div>
+          <div class="cp-rank-label">Stratford-upon-Avon · Illustrative</div>
+          <div class="cp-rank-big">14</div>
+        </div>
+        <div class="cp-trend-wrap">
+          <svg class="cp-trend-svg" viewBox="0 0 300 70" preserveAspectRatio="none">
+            <polyline points="0,55 75,45 150,40 225,22 300,12"
+              fill="none" stroke="#b77a3a" stroke-width="1.5" />
+            <circle cx="0"   cy="55" r="2.5" fill="#6c5a44" />
+            <circle cx="75"  cy="45" r="2.5" fill="#6c5a44" />
+            <circle cx="150" cy="40" r="2.5" fill="#6c5a44" />
+            <circle cx="225" cy="22" r="2.5" fill="#6c5a44" />
+            <circle cx="300" cy="12" r="3.5" fill="#b77a3a" />
+          </svg>
+          <div class="cp-trend-pts">
+            <span>Dec<b>#22</b></span>
+            <span>Jan<b>#19</b></span>
+            <span>Feb<b>#17</b></span>
+            <span>Mar<b>#15</b></span>
+            <span class="cur">Apr<b>#14</b></span>
+          </div>
+        </div>
+      </div>
+      <div class="cp-lock">
+        <span class="lk-icon">Locked</span>
+        <div class="lk-body">
+          <b>Why you moved — and what's capping you — is in the report.</b>
+          Component breakdown, peer movements, cross-source convergence, and the forward read are behind verification and payment. The rank number itself is always free.
+        </div>
+      </div>
+    </aside>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-brand">
-          <img class="footer-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine">
-        </div>
-        <p class="footer-tagline">UK hospitality intelligence.<br>Public-signal market rankings.</p>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Intelligence</div>
-        <a class="footer-link" href="/rankings">Market Rankings</a>
-        <a class="footer-link" href="/search">Restaurant Search</a>
-        <a class="footer-link" href="/methodology">Methodology</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Operator Tools</div>
-        <a class="footer-link" href="/reports">Position Reports</a>
-        <a class="footer-link" href="/sample">Sample Report</a>
-        <a class="footer-link" href="/pricing">Pricing</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Coverage</div>
-        <a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a>
-        <span class="footer-link footer-link-muted">5 markets in pipeline</span>
-        <a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market &rarr;</a>
-      </div>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-col">
+      <h5>DayDine</h5>
+      <p>A data-driven ranking of where to eat in Britain. <b>Public market signals. Transparent methodology. No pay-to-play.</b></p>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 DayDine. Data sourced from the Food Standards Agency, Google, TripAdvisor, and Companies House.</p>
+    <div class="foot-col">
+      <h5>Read</h5>
+      <a href="/rankings">Rankings</a>
+      <a href="/search">Establishment search</a>
+      <a href="/methodology">Methodology</a>
     </div>
+    <div class="foot-col">
+      <h5>Operators</h5>
+      <a href="#preview">Preview your rank</a>
+      <a href="#sample">Sample report</a>
+      <a href="#pricing">Pricing</a>
+    </div>
+    <div class="foot-col">
+      <h5>About</h5>
+      <a href="/methodology">How RCS V4 works</a>
+      <a href="mailto:hello@daydine.co.uk">Contact</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 DayDine</span>
+    <span>Methodology V4</span>
+    <span>Made in the UK</span>
+    <a class="operator-link" href="/">← Back to the public site</a>
   </div>
 </footer>
 
-<script src="/assets/daydine.js"></script>
 <script>
+// ---- Masthead mobile toggle ----
 (function () {
-  var d = new Date();
-  var days = 2;
-  while (days > 0) {
-    d.setDate(d.getDate() + 1);
-    if (d.getDay() !== 0 && d.getDay() !== 6) days--;
-  }
-  var el = document.getElementById('delivery-date');
-  if (el) el.textContent = 'In your inbox by ' + d.toLocaleDateString('en-GB', {weekday: 'long', day: 'numeric', month: 'long'});
+  var t = document.querySelector('.mast-toggle');
+  var n = document.querySelector('.mast-nav');
+  if (!t || !n) return;
+  t.addEventListener('click', function () {
+    var open = n.classList.toggle('open');
+    t.setAttribute('aria-expanded', String(open));
+  });
+})();
+
+// ---- Claim form: mailto: submit, mirrors existing repo convention ----
+(function () {
+  var form = document.getElementById('claimForm');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var data = new FormData(form);
+    var venue = String(data.get('venue') || '').trim();
+    var ch    = String(data.get('companies_house') || '').trim();
+    var role  = String(data.get('role') || '').trim();
+    var email = String(data.get('email') || '').trim();
+    var subject = 'Rank preview request: ' + (venue || 'DayDine operator');
+    var body = [
+      'Please send me my DayDine rank preview.',
+      '',
+      'Venue name: '              + venue,
+      'Companies House number: '  + ch,
+      'Role: '                    + role,
+      'Work email: '              + email,
+      '',
+      'Thanks.'
+    ].join('\n');
+    // Update the preview panel so the operator can see what they'll read
+    if (venue) document.getElementById('cpName').textContent = venue;
+    document.getElementById('cpStamp').textContent = 'Preview requested · Check your email';
+    window.location.href = 'mailto:hello@daydine.co.uk?subject='
+      + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
 })();
 </script>
 </body>
