@@ -1,460 +1,375 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>DayDine — UK Hospitality Intelligence | Restaurant Rankings &amp; Market Data</title>
-  <meta name="description" content="DayDine ranks UK restaurants using 40 public market signals. Live local rankings, competitive benchmarking, and operator intelligence. Stratford-upon-Avon live now.">
+  <title>DayDine — A data-driven ranking of where to eat in Britain</title>
+  <meta name="description" content="DayDine computes the Restaurant Confidence Score for every ranked UK venue from public market data — food safety, customer ratings, commercial readiness. No critics. No paid placements.">
   <link rel="canonical" href="https://daydine.vercel.app/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="DayDine — UK Hospitality Intelligence">
-  <meta property="og:description" content="Restaurant rankings built on public market signals. 40 signals, 7 data tiers, confidence-aware methodology. Live in Stratford-upon-Avon.">
+  <meta property="og:title" content="DayDine — A data-driven ranking of where to eat in Britain">
+  <meta property="og:description" content="The Restaurant Confidence Score. 40 public signals, three weighted components, no critics. Live in Stratford-upon-Avon.">
   <meta property="og:url" content="https://daydine.vercel.app/">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/daydine.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/daydine.css">
 </head>
-<body data-page-type="diner">
+<body class="ed" data-page-type="diner">
 <a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="nav-brand" href="/">
-      <img class="nav-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine">
-    </a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="/">Day<em>dine</em></a>
+    <div class="mast-issue" id="issueStamp">Stratford-upon-Avon · <b>Live</b></div>
+    <button class="mast-toggle" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <div class="nav-links">
-      <a class="nav-link" href="/rankings">Rankings</a>
-      <a class="nav-link" href="/search">Search</a>
-      <a class="nav-link" href="/reports">Reports</a>
-      <a class="nav-link" href="/methodology">Methodology</a>
-      <a class="btn btn-primary nav-cta" href="/reports">Get a Market Report</a>
-    </div>
+    <nav class="mast-nav">
+      <a href="/" class="on">Home</a>
+      <a href="/rankings">Rankings</a>
+      <a href="/search">Search</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/for-restaurants">For restaurants</a>
+    </nav>
   </div>
-</nav>
+</header>
 
-<main id="main">
-<!-- ================ HERO ================ -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-inner" style="text-align: center; max-width: 800px; margin: 0 auto;">
-      <div class="kicker kicker-accent mb-2">UK Hospitality Intelligence</div>
-      <h1 class="h-display h-display-xl mb-3">
-        Restaurant rankings built on<br>
-        what the market actually shows
-      </h1>
-      <p class="body-lg mb-4" style="max-width: 640px; margin: 0 auto;">
-        DayDine synthesises 40 public signals — from food safety records to review
-        trajectories — into a single confidence-aware score for every ranked venue.
-        Transparent methodology. No pay-to-play.
-      </p>
-      <div class="row" style="justify-content: center; gap: 16px;">
-        <a class="btn btn-primary btn-lg" href="/rankings">Explore Rankings</a>
-        <a class="btn btn-secondary btn-lg" href="/reports">Operator Intelligence</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================ PROOF BAR ================ -->
-<div class="proof-bar">
-  <div class="proof-bar-inner">
-    <div class="proof-stat"><span class="proof-num">264,791</span><span class="proof-label">UK restaurants tracked</span></div>
-    <div class="proof-divider"></div>
-    <div class="proof-stat"><span class="proof-num">40</span><span class="proof-label">public signals per venue</span></div>
-    <div class="proof-divider"></div>
-    <div class="proof-stat"><span class="proof-num">7</span><span class="proof-label">independent data tiers</span></div>
-    <div class="proof-divider"></div>
-    <div class="proof-stat"><span class="proof-num">1</span><span class="proof-label">live market &amp; expanding</span></div>
-  </div>
+<div class="sub-strip">
+  <span><b>264,791</b> UK establishments tracked</span>
+  <span class="dot">·</span>
+  <span>RCS V4 — <b>data-driven</b>, no critics</span>
+  <span class="dot">·</span>
+  <span>Last updated <b id="lastUpdated">—</b></span>
 </div>
 
-<!-- ================ LIVE MARKET — STRATFORD ================ -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="row-end mb-4">
-      <div>
-        <div class="kicker kicker-accent mb-1">Live Market</div>
-        <h2 class="h-display h-display-md">Stratford-upon-Avon</h2>
-        <p class="body-md" style="margin-top: 8px;">190 venues ranked weekly by the Restaurant Confidence Score.</p>
-      </div>
-      <a class="btn btn-ghost" href="/rankings/stratford-on-avon">Full leaderboard →</a>
-    </div>
+<main id="main">
 
-    <form id="heroSearchForm" class="area-search mb-4" style="max-width: 560px;" autocomplete="off">
-      <input type="text" id="heroSearchInput" class="area-search-input"
-             placeholder="Search by town, city or postcode…"
-             aria-label="Search your area">
-      <div id="heroSearchDropdown" class="area-search-dropdown" role="listbox"></div>
-    </form>
-
-    <div id="rankingsPreview" class="rank-table">
-      <div class="rank-head">
-        <div>Rank</div>
-        <div>Venue</div>
-        <div>Category</div>
-        <div style="text-align:center;">Score</div>
-        <div style="text-align:center;">Movement</div>
-      </div>
-      <div id="rankingsPreviewBody"></div>
-    </div>
-    <p class="body-sm center mt-2" id="rankingsPreviewMeta">Loading latest rankings…</p>
-  </div>
-</section>
-
-<!-- ================ HOW IT WORKS ================ -->
-<section class="section">
-  <div class="container">
-    <div class="center mb-5">
-      <div class="kicker mb-1">How It Works</div>
-      <h2 class="h-display h-display-md">From public signals to market position</h2>
-    </div>
-    <div class="grid-3">
-      <div class="card card-hover">
-        <div class="step-num">01</div>
-        <h3 class="step-title">Collect</h3>
-        <p class="step-desc">We monitor public data continuously — food safety inspections, review platforms, business filings, operational signals — and normalise it into comparable metrics.</p>
-      </div>
-      <div class="card card-hover">
-        <div class="step-num">02</div>
-        <h3 class="step-title">Score</h3>
-        <p class="step-desc">The Restaurant Confidence Score synthesises 40 signals across 7 independent tiers into a single 0–10 metric. Cross-source convergence is measured. Thin data is flagged, not hidden.</p>
-      </div>
-      <div class="card card-hover">
-        <div class="step-num">03</div>
-        <h3 class="step-title">Rank</h3>
-        <p class="step-desc">Every venue in a covered market gets a unique position relative to its local peers. Scores update weekly. The methodology is published. The formula is not.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================ OPERATOR VALUE PROP ================ -->
-<section class="cta-band">
-  <div class="container container-narrow">
-    <div class="kicker kicker-accent mb-2">For Operators</div>
-    <h2 class="cta-band-title">
-      Know where you stand.<br>
-      See what your competitors do better.
-    </h2>
-    <p class="body-lg mb-3" style="max-width: 640px; margin-left:auto; margin-right:auto;">
-      Your Position Report maps your exact local rank, your five closest competitors,
-      the signals pulling them ahead — and the specific actions that will move you up.
+<!-- ================ HERO ================ -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">RCS V4 <span class="byline">First UK market live · Stratford-upon-Avon</span></div>
+    <h1 class="hero-headline">
+      A data-driven ranking of where to eat in <em>Britain</em>, scored from public market data.
+    </h1>
+    <p class="hero-lede">
+      The Restaurant Confidence Score reads food safety inspections, customer ratings,
+      and commercial readiness signals — and blends them into a single number, for every
+      ranked venue. <b>No critics. No paid placements. No opinions we can't defend with data.</b>
     </p>
-    <div class="row" style="justify-content: center; gap: 16px;">
-      <a class="btn btn-primary btn-lg" href="/reports">Get Your Position Report — £49</a>
-      <a class="btn btn-secondary btn-lg" href="/sample">View Sample</a>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/rankings">Open the rankings</a>
+      <a class="btn" href="/methodology">How the score works</a>
     </div>
-    <p class="body-sm mt-2" style="color: var(--text-subtle);">Delivered as PDF within 48 hours · 7-day refund guarantee</p>
+  </div>
+  <aside class="hero-right">
+    <div class="hero-rightcard">
+      <div class="rc-kicker"><b>This week</b> · Top of Stratford-upon-Avon</div>
+      <h3>Three rooms where every data source <em>agrees</em>.</h3>
+      <ul class="rc-list" id="heroTopList">
+        <li><span class="rk">—</span><span class="nm">Loading…</span><span class="me">—</span></li>
+      </ul>
+      <div class="rc-foot">See the full list <a href="/rankings/stratford-on-avon">in the Stratford ranking →</a></div>
+    </div>
+  </aside>
+</section>
+
+<!-- ================ MARKETS ================ -->
+<section class="section" id="markets">
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Live + pipeline markets</div>
+      <h2 class="section-title">Starting with <em>Stratford-upon-Avon.</em></h2>
+    </div>
+    <div class="section-dek">One live market today, five more validating. Every market gets the full 40-signal pipeline before it goes live.</div>
+  </div>
+  <div class="market-grid" id="marketGrid">
+    <div class="mkt soon"><div class="mkt-head"><div class="mkt-name">Loading…</div></div></div>
   </div>
 </section>
 
-<!-- ================ METHODOLOGY BRIEF ================ -->
+<!-- ================ TOP OF THE LIST (Stratford top 5) ================ -->
 <section class="section">
-  <div class="container">
-    <div class="row-end mb-4">
-      <div>
-        <div class="kicker mb-1">The Score</div>
-        <h2 class="h-display h-display-md">What moves the Restaurant Confidence Score</h2>
-      </div>
-      <a class="btn btn-ghost" href="/methodology">Full methodology →</a>
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Live ranking · Stratford-upon-Avon</div>
+      <h2 class="section-title">The top of the <em>Stratford</em> list.</h2>
     </div>
-    <div class="grid-3">
-      <div class="signal-card">
-        <div class="signal-card-icon">★</div>
-        <div>
-          <div class="signal-card-title">Food Safety</div>
-          <div class="signal-card-desc">FSA hygiene rating, structural, management — 23%.</div>
-        </div>
+    <a class="section-link" href="/rankings/stratford-on-avon">Full 190-venue leaderboard →</a>
+  </div>
+  <div id="topFive">
+    <div class="topfive head">
+      <div>Rank</div>
+      <div>Venue</div>
+      <div class="tf-cat-head">Category</div>
+      <div style="text-align:right;">RCS</div>
+      <div style="text-align:right;">Sources</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ EDITORIAL PICKS (converged & excellent) ================ -->
+<section class="section">
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">High-confidence picks</div>
+      <h2 class="section-title">Where every source <em>agrees.</em></h2>
+    </div>
+    <div class="section-dek">Rooms in the Excellent band where FSA, Google and TripAdvisor ratings converge within ten points of each other.</div>
+  </div>
+  <div class="picks" id="picksGrid">
+    <!-- hydrated -->
+  </div>
+</section>
+
+<!-- ================ TRUST ================ -->
+<section class="trust">
+  <div>
+    <h2>Three scores. <em>One</em> number.</h2>
+  </div>
+  <div class="trust-body">
+    <p>
+      The Restaurant Confidence Score is a single 0–10 figure computed from three
+      weighted components. The formula, the weights, and the version history are all
+      public. No restaurant has ever paid for its ranking. None ever will.
+    </p>
+    <div class="trust-promise">
+      <div class="trust-promise-row">
+        <span class="p-num">Trust &amp; Compliance · 40%</span>
+        <span><b>Food safety &amp; regulatory standing.</b> FSA/FHRS hygiene ratings, structural compliance, confidence in management, inspection recency. Public-register data, decayed over time.</span>
       </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">◉</div>
-        <div>
-          <div class="signal-card-title">Google Signals</div>
-          <div class="signal-card-desc">Rating, reviews, aspect sentiment, photos — 24%.</div>
-        </div>
+      <div class="trust-promise-row">
+        <span class="p-num">Customer Validation · 45%</span>
+        <span><b>What real customers say.</b> Bayesian-shrunk ratings from Google, TripAdvisor and OpenTable, with cross-source convergence flags when independent sources agree or disagree.</span>
       </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">⟳</div>
-        <div>
-          <div class="signal-card-title">Online Presence</div>
-          <div class="signal-card-desc">TripAdvisor, web, social confidence — 13%.</div>
-        </div>
+      <div class="trust-promise-row">
+        <span class="p-num">Commercial Readiness · 15%</span>
+        <span><b>Is the venue set up to trade?</b> Online presence, hours completeness, reservation &amp; delivery paths, photo coverage, Companies House signals.</span>
       </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">✓</div>
-        <div>
-          <div class="signal-card-title">Operational</div>
-          <div class="signal-card-desc">Reservations, delivery, accessibility, hours — 15%.</div>
-        </div>
-      </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">⬡</div>
-        <div>
-          <div class="signal-card-title">Menu &amp; Offering</div>
-          <div class="signal-card-desc">Online menu, dietary breadth, cuisine tags — 10%.</div>
-        </div>
-      </div>
-      <div class="signal-card">
-        <div class="signal-card-icon">↗</div>
-        <div>
-          <div class="signal-card-title">Reputation &amp; Awards</div>
-          <div class="signal-card-desc">Michelin, AA, local awards — 8%.</div>
-        </div>
+      <div class="trust-promise-row">
+        <span class="p-num">Modifier</span>
+        <span><b>Capped editorial recognition.</b> Michelin &amp; AA distinctions contribute a small, bounded bonus. Awards can only move a venue inside its band — never buy a higher one. Read the full <a href="/methodology">methodology</a>.</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================ COVERAGE ================ -->
-<section class="section section-alt">
-  <div class="container container-narrow center">
-    <div class="kicker mb-1">Coverage</div>
-    <h2 class="h-display h-display-md mb-2">Expanding across the UK</h2>
-    <p class="body-lg mb-3" style="max-width: 580px; margin: 0 auto;">
-      Stratford-upon-Avon is our first fully ranked market.
-      New Local Authority areas are being added regularly.
-      Tell us where you operate and we'll prioritise your area.
-    </p>
-    <a class="btn btn-secondary btn-lg" href="mailto:hello@daydine.com?subject=Area%20request">Request Your Area</a>
+<!-- ================ JOURNAL / UPDATES ================ -->
+<section class="section" id="journal">
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">Pipeline notes</div>
+      <h2 class="section-title">What's <em>new</em> in the data.</h2>
+    </div>
+    <a class="section-link" href="/methodology">Methodology changelog →</a>
+  </div>
+  <div class="journal">
+    <article class="article">
+      <div class="article-eyebrow">Methodology · V3.4 → V4</div>
+      <h3 class="article-title">Bayesian shrinkage replaces raw review averages.</h3>
+      <p class="article-dek">Small-sample venues no longer outrank established ones on a handful of five-star reviews. The Customer Validation component now shrinks every rating toward the category prior.</p>
+      <div class="article-byline">Posted April 2026</div>
+    </article>
+    <article class="article">
+      <div class="article-eyebrow">Coverage · Pipeline</div>
+      <h3 class="article-title">Warwick enters validation; four more markets requested.</h3>
+      <p class="article-dek">Warwick is in pre-live signal-coverage QA. Birmingham, Oxford, Bath and Edinburgh are in the requested queue, pending Google Places enrichment budgets.</p>
+      <div class="article-byline">Posted April 2026</div>
+    </article>
+    <article class="article">
+      <div class="article-eyebrow">Scoring · Temporal decay</div>
+      <h3 class="article-title">Older inspections and reviews lose weight over time.</h3>
+      <p class="article-dek">An exponential decay (λ = 0.0023 for FSA, 0.0046 for review recency) means a 300-day-old inspection contributes roughly half the signal of a fresh one — without being discarded.</p>
+      <div class="article-byline">Posted March 2026</div>
+    </article>
   </div>
 </section>
+
+<!-- ================ NEWSLETTER ================ -->
+<section class="newsletter">
+  <h3>The <em>weekly</em> note.</h3>
+  <p>One short email when a new market goes live, when the scoring model changes, or when a methodology test is published. No ads, no sponsored spots.</p>
+  <form id="newsletterForm" onsubmit="event.preventDefault(); this.querySelector('button').textContent = 'Subscribed ✓'; this.querySelector('button').disabled = true; this.querySelector('input').disabled = true;">
+    <input type="email" placeholder="your@email.co.uk" required aria-label="Email address">
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="fine">Free · Weekly · unsubscribe anytime</div>
+</section>
+
 </main>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-brand">
-          <img class="footer-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine">
-        </div>
-        <p class="footer-tagline">UK hospitality intelligence.<br>Public-signal market rankings.</p>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Intelligence</div>
-        <a class="footer-link" href="/rankings">Market Rankings</a>
-        <a class="footer-link" href="/search">Restaurant Search</a>
-        <a class="footer-link" href="/methodology">Methodology</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Operator Tools</div>
-        <a class="footer-link" href="/reports">Position Reports</a>
-        <a class="footer-link" href="/sample">Sample Report</a>
-        <a class="footer-link" href="/pricing">Pricing</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Coverage</div>
-        <a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a>
-        <span class="footer-link footer-link-muted">5 markets in pipeline</span>
-        <a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market &rarr;</a>
-      </div>
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-col">
+      <h5>DayDine</h5>
+      <p>A data-driven ranking of where to eat in Britain. <b>Public market signals. Transparent methodology. No pay-to-play.</b></p>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 DayDine. Data sourced from the Food Standards Agency, Google, TripAdvisor, and Companies House.</p>
+    <div class="foot-col">
+      <h5>Read</h5>
+      <a href="/rankings">Rankings</a>
+      <a href="/search">Establishment search</a>
+      <a href="/methodology">Methodology</a>
+      <a href="#journal">Pipeline notes</a>
     </div>
+    <div class="foot-col">
+      <h5>Operators</h5>
+      <a href="/for-restaurants">Position &amp; Competitor Report</a>
+      <a href="/for-restaurants#preview">Preview your rank</a>
+      <a href="/for-restaurants#pricing">Pricing</a>
+    </div>
+    <div class="foot-col">
+      <h5>About</h5>
+      <a href="/methodology">How RCS V4 works</a>
+      <a href="mailto:hello@daydine.co.uk">Contact</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 DayDine</span>
+    <span>Methodology V4</span>
+    <span>Made in the UK</span>
+    <a class="operator-link" href="/for-restaurants">For restaurants: see your own ranking →</a>
   </div>
 </footer>
 
-<script src="/assets/daydine.js"></script>
 <script>
-  // ===== Rankings preview — inline top 5 =====
-  (async function loadRankingsPreview() {
-    try {
-      const resp = await fetch('/assets/rankings/stratford-on-avon.json');
-      if (!resp.ok) throw new Error('fetch failed');
-      const data = await resp.json();
-      const body = document.getElementById('rankingsPreviewBody');
-      const top5 = (data.venues || []).slice(0, 5);
-      body.innerHTML = top5.map(venue => {
-        const bandClass = 'score-badge-' + (venue.band_class || 'good');
-        const rankClass = venue.rank <= 3 ? 'rank-num rank-num-top' : 'rank-num';
-        return `
-          <div class="rank-row">
-            <div class="${rankClass}">#${venue.rank}</div>
-            <div>
-              <div class="rank-name">${esc(venue.name)}</div>
-              <div class="rank-sub">${esc(venue.postcode)}</div>
-            </div>
-            <div class="rank-category">${esc(venue.category)}</div>
-            <div class="rank-score">
-              <span class="score-badge ${bandClass}">
-                <span class="score-badge-num">${venue.rcs_final.toFixed(1)}</span>
-                <span class="score-badge-max">/ 10</span>
-              </span>
-            </div>
-            <div class="rank-change">${movementHtml(venue)}</div>
-          </div>
-        `;
+// ---- Masthead mobile toggle ----
+(function () {
+  var t = document.querySelector('.mast-toggle');
+  var n = document.querySelector('.mast-nav');
+  if (!t || !n) return;
+  t.addEventListener('click', function () {
+    var open = n.classList.toggle('open');
+    t.setAttribute('aria-expanded', String(open));
+  });
+})();
+
+// ---- Helpers ----
+function fmtDate(iso) {
+  if (!iso) return '—';
+  var d = new Date(iso + 'T00:00:00');
+  if (isNaN(d)) return iso;
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+}
+function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]; }); }
+function shortCat(cat) {
+  // Trim " (General)" suffixes for compactness
+  return String(cat || '').replace(/\s*\(General\)\s*$/, '');
+}
+
+// ---- Markets grid + hero top-3 + top-5 + picks from JSON ----
+Promise.all([
+  fetch('/assets/rankings/index.json').then(r => r.json()).catch(() => null),
+  fetch('/assets/rankings/stratford-on-avon.json').then(r => r.json()).catch(() => null)
+]).then(function (results) {
+  var idx = results[0];
+  var strat = results[1];
+
+  // ---- Last updated stamp ----
+  var lu = (idx && idx.last_updated) || (strat && strat.last_updated);
+  if (lu) document.getElementById('lastUpdated').textContent = fmtDate(lu);
+
+  // ---- Markets grid ----
+  var grid = document.getElementById('marketGrid');
+  if (grid && idx) {
+    var html = '';
+    (idx.available || []).forEach(function (m) {
+      var top3 = (strat && strat.venues || []).slice(0, 3);
+      html += '<a class="mkt live" href="/rankings/' + encodeURIComponent(m.slug) + '">';
+      html += '<div class="mkt-head"><div class="mkt-name">' + esc(m.display_name) + '</div>';
+      html += '<span class="mkt-tag live">Live</span></div>';
+      var topScore = (typeof m.top_score === 'number') ? m.top_score.toFixed(2) : '—';
+      html += '<div class="mkt-sub">' + esc(m.region) + ' · ' + esc(String(m.total_venues)) + ' venues ranked · top score ' + topScore + '</div>';
+      if (top3.length) {
+        html += '<ul class="mkt-top3">';
+        top3.forEach(function (v) {
+          html += '<li><span class="rk">0' + v.rank + '</span><span class="nm">' + esc(v.name) + '</span><span class="score">' + (v.rcs_final).toFixed(2) + '</span></li>';
+        });
+        html += '</ul>';
+      }
+      html += '<div class="mkt-cta">Open the Stratford ranking →</div>';
+      html += '</a>';
+    });
+    (idx.pipeline || []).forEach(function (m) {
+      var tagClass = m.status === 'validating' ? 'validating' : 'requested';
+      var tagLabel = m.status === 'validating' ? 'Validating' : 'Requested';
+      var blurb = m.status === 'validating'
+        ? 'In pre-live signal-coverage QA. FSA complete; Google Places enrichment running.'
+        : 'Requested for the pipeline. Enters validation once enrichment budget is allocated.';
+      html += '<div class="mkt soon">';
+      html += '<div class="mkt-head"><div class="mkt-name">' + esc(m.display_name) + '</div>';
+      html += '<span class="mkt-tag ' + tagClass + '">' + tagLabel + '</span></div>';
+      html += '<div class="mkt-sub">' + esc(m.region) + ' · ' + esc(blurb) + '</div>';
+      html += '<div class="mkt-cta">Notify me when this market goes live</div>';
+      html += '</div>';
+    });
+    grid.innerHTML = html;
+  }
+
+  // ---- Hero right: top 3 ----
+  if (strat && strat.venues && strat.venues.length) {
+    var heroList = document.getElementById('heroTopList');
+    if (heroList) {
+      heroList.innerHTML = strat.venues.slice(0, 3).map(function (v) {
+        return '<li>' +
+               '<span class="rk">0' + v.rank + '</span>' +
+               '<span class="nm">' + esc(v.name) + '</span>' +
+               '<span class="me">' + esc(v.postcode) + '</span>' +
+               '</li>';
       }).join('');
-      document.getElementById('rankingsPreviewMeta').textContent =
-        `Last updated ${formatDate(data.last_updated)} · Showing top 5 of ${data.total_venues}`;
-    } catch (err) {
-      document.getElementById('rankingsPreviewMeta').textContent =
-        'Unable to load rankings preview.';
-      console.error(err);
     }
+  }
 
-    function esc(s) {
-      const el = document.createElement('span');
-      el.textContent = s == null ? '' : String(s);
-      return el.innerHTML;
+  // ---- Top 5 row set ----
+  if (strat && strat.venues) {
+    var top5 = strat.venues.slice(0, 5);
+    var container = document.getElementById('topFive');
+    if (container) {
+      top5.forEach(function (v) {
+        var convLabel = v.convergence === 'converged' ? '✓ Agree'
+                      : v.convergence === 'diverged' ? '⚠ Split'
+                      : '· Neutral';
+        var row = document.createElement('div');
+        row.className = 'topfive';
+        row.innerHTML =
+          '<div class="tf-rank">' + v.rank + '</div>' +
+          '<div><div class="tf-name">' + esc(v.name) + '</div>' +
+          '<div class="tf-meta">' + esc(v.postcode) + '</div></div>' +
+          '<div class="tf-cat">' + esc(shortCat(v.category)) + '</div>' +
+          '<div class="tf-score">' + (v.rcs_final).toFixed(2) + '</div>' +
+          '<div class="tf-conv ' + esc(v.convergence) + '">' + convLabel + '</div>';
+        container.appendChild(row);
+      });
     }
-    function formatDate(iso) {
-      if (!iso) return '—';
-      const d = new Date(iso);
-      if (isNaN(d)) return iso;
-      return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-    }
-    function movementHtml(venue) {
-      var m = venue.movement, d = venue.movement_delta || 0;
-      if (m === 'up') return '<span class="movement-delta movement-delta-up">&#9650; ' + d + '</span>';
-      if (m === 'down') return '<span class="movement-delta movement-delta-down">&#9660; ' + Math.abs(d) + '</span>';
-      if (m === 'same') return '<span class="movement-delta movement-delta-same">&#8212;</span>';
-      return '<span class="movement movement-new">NEW</span>';
-    }
-  })();
+  }
 
-  // ===== Hero area search — postcodes.io autocomplete → rankings router =====
-  (function setupHeroSearch() {
-    const input    = document.getElementById('heroSearchInput');
-    const dropdown = document.getElementById('heroSearchDropdown');
-    const form     = document.getElementById('heroSearchForm');
-    let debounce = null;
-    let activeIdx = -1;
-    let availableSlugs = new Set();
-
-    // Load the registry so we know which LAs are covered
-    fetch('/assets/rankings/index.json')
-      .then(r => r.json())
-      .then(idx => {
-        availableSlugs = new Set((idx.available || []).map(a => a.slug));
-      })
-      .catch(() => {});
-
-    input.addEventListener('input', () => {
-      clearTimeout(debounce);
-      const val = input.value.trim();
-      if (val.length < 2) { closeDropdown(); return; }
-      // Postcode shortcut — don't autocomplete
-      if (/^[A-Z]{1,2}\d/i.test(val)) { closeDropdown(); return; }
-      debounce = setTimeout(async () => {
-        try {
-          const resp = await fetch('https://api.postcodes.io/places?q=' + encodeURIComponent(val) + '&limit=6');
-          const data = await resp.json();
-          if (!data.result || !data.result.length) { closeDropdown(); return; }
-          dropdown.innerHTML = '';
-          activeIdx = -1;
-          data.result.forEach(place => {
-            const opt = document.createElement('div');
-            opt.className = 'area-search-option';
-            opt.dataset.lat = place.latitude;
-            opt.dataset.lon = place.longitude;
-            opt.dataset.name = place.name_1;
-            opt.textContent = place.name_1 + (place.county_unitary ? ', ' + place.county_unitary : '');
-            opt.addEventListener('mousedown', e => { e.preventDefault(); pickOption(opt); });
-            dropdown.appendChild(opt);
-          });
-          dropdown.classList.add('open');
-        } catch (e) { closeDropdown(); }
-      }, 250);
-    });
-
-    input.addEventListener('keydown', e => {
-      const opts = dropdown.querySelectorAll('.area-search-option');
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        if (activeIdx >= 0 && opts[activeIdx]) {
-          pickOption(opts[activeIdx]);
-        } else {
-          resolveAndNavigate(input.value.trim());
-        }
-        return;
-      }
-      if (!dropdown.classList.contains('open') || !opts.length) return;
-      if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        activeIdx = Math.min(activeIdx + 1, opts.length - 1);
-        highlight(opts);
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        activeIdx = Math.max(activeIdx - 1, 0);
-        highlight(opts);
-      } else if (e.key === 'Escape') {
-        closeDropdown();
-      }
-    });
-
-    input.addEventListener('blur', () => setTimeout(closeDropdown, 150));
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      resolveAndNavigate(input.value.trim());
-    });
-
-    function highlight(opts) {
-      opts.forEach((o, i) => o.classList.toggle('active', i === activeIdx));
+  // ---- Picks: Excellent + converged, take 3 ----
+  if (strat && strat.venues) {
+    var picksEl = document.getElementById('picksGrid');
+    if (picksEl) {
+      var picks = strat.venues
+        .filter(function (v) { return v.rcs_band === 'Excellent' && v.convergence === 'converged'; })
+        .slice(0, 3);
+      var lines = {
+        'Pub / Bar': 'An independently-rated pub where hygiene, customer signal and review volume all land in the top band. The kind of local that every source agrees on.',
+        'Cafe / Coffee Shop': 'A small-format room holding a full-band score across three independent data sources — the rarer signal of a café getting everything right at once.',
+        'Restaurant (General)': 'An Excellent-band restaurant with no cross-source disagreement. FSA, customer platforms and commercial-readiness signals all line up.',
+        'Hotel / Accommodation': 'Hotel food-service scoring at the top of its band with converged signal across every data source we carry for the venue.'
+      };
+      picksEl.innerHTML = picks.map(function (v) {
+        var body = lines[v.category] || 'An Excellent-band venue where every independent data source we read — FSA, customer platforms, commercial-readiness signals — is <em>in agreement</em> on the quality of the room.';
+        return '<article class="pick">' +
+               '<div class="pick-eyebrow">Rank 0' + v.rank + ' · Converged sources</div>' +
+               '<div class="pick-score">' + (v.rcs_final).toFixed(2) + '<small>/ 10</small></div>' +
+               '<h3 class="pick-name">' + esc(v.name) + '</h3>' +
+               '<div class="pick-meta">' + esc(shortCat(v.category)) + ' · ' + esc(v.postcode) + '</div>' +
+               '<p class="pick-body">' + body + '</p>' +
+               '</article>';
+      }).join('');
     }
-    function closeDropdown() {
-      dropdown.classList.remove('open');
-      activeIdx = -1;
-    }
-    async function pickOption(opt) {
-      const lat = opt.dataset.lat;
-      const lon = opt.dataset.lon;
-      input.value = opt.dataset.name;
-      closeDropdown();
-      try {
-        const r = await fetch(`https://api.postcodes.io/postcodes?lon=${lon}&lat=${lat}&limit=1`);
-        const d = await r.json();
-        const la = d.result && d.result[0] && d.result[0].admin_district;
-        routeToLA(la);
-      } catch (e) {
-        routeToLA(null);
-      }
-    }
-    async function resolveAndNavigate(query) {
-      if (!query) return;
-      closeDropdown();
-      try {
-        // Postcode first
-        if (/^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i.test(query)) {
-          const pc = encodeURIComponent(query.replace(/\s+/g, ''));
-          const r = await fetch('https://api.postcodes.io/postcodes/' + pc);
-          const d = await r.json();
-          if (d.status === 200 && d.result) {
-            routeToLA(d.result.admin_district);
-            return;
-          }
-        }
-        // Place name
-        const r2 = await fetch('https://api.postcodes.io/places?q=' + encodeURIComponent(query) + '&limit=1');
-        const d2 = await r2.json();
-        if (d2.result && d2.result[0]) {
-          const place = d2.result[0];
-          const r3 = await fetch(`https://api.postcodes.io/postcodes?lon=${place.longitude}&lat=${place.latitude}&limit=1`);
-          const d3 = await r3.json();
-          const la = d3.result && d3.result[0] && d3.result[0].admin_district;
-          routeToLA(la);
-          return;
-        }
-      } catch (e) {}
-      // Fall back to Rankings landing
-      window.location.href = '/rankings';
-    }
-    function routeToLA(la) {
-      if (!la) { window.location.href = '/rankings'; return; }
-      const slug = la.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      if (availableSlugs.has(slug)) {
-        window.location.href = '/rankings/' + slug;
-      } else {
-        window.location.href = '/rankings?area=' + encodeURIComponent(slug) + '&name=' + encodeURIComponent(la);
-      }
-    }
-  })();
+  }
+}).catch(function () { /* fail silently; empty sections remain */ });
 </script>
 </body>
 </html>
