@@ -201,9 +201,24 @@ class V4Score:
     confidence_class: str            # Rankable-A | Rankable-B | Directional-C | Profile-only-D
     rankable: bool
     league_table_eligible: bool
-    source_families_present: dict[str, Any]
-    entity_match_status: str         # confirmed | probable | ambiguous | none
-    audit: dict[str, Any]
+    # Orthogonal to confidence_class. Added 2026-04 as part of the
+    # TripAdvisor-deferral pivot (see docs/ADR-001-TripAdvisor-Deferral.md).
+    # Describes public-signal completeness and entity-resolution quality
+    # WITHOUT claiming multi-platform review corroboration. Does not
+    # affect rcs_v4_final, base_score, adjusted_score, or the
+    # Rankable-A/B/C/D class. One of:
+    #   coverage-ready     — verified entity + complete commercial
+    #                        readiness + at least one big-N customer
+    #                        platform. These venues would promote to
+    #                        Rankable-A if a second review platform
+    #                        landed.
+    #   coverage-partial   — at least one such gate unmet.
+    #   coverage-absent    — insufficient public signal overall
+    #                        (aligns with Profile-only-D rationale).
+    coverage_status: str = "coverage-absent"
+    source_families_present: dict[str, Any] = field(default_factory=dict)
+    entity_match_status: str = ""    # confirmed | probable | ambiguous | none
+    audit: dict[str, Any] = field(default_factory=dict)
 
     def to_dict(self) -> dict[str, Any]:
         """Serialise to the JSON shape in spec 10.1."""
@@ -245,6 +260,7 @@ class V4Score:
             "adjusted_score": _round3(self.adjusted_score),
             "rcs_v4_final": _round3(self.rcs_v4_final),
             "confidence_class": self.confidence_class,
+            "coverage_status": self.coverage_status,
             "rankable": self.rankable,
             "league_table_eligible": self.league_table_eligible,
             "source_family_summary": self.source_families_present,
@@ -794,6 +810,81 @@ def apply_low_review_cap(confidence: str, customer: CustomerResult) -> str:
     return confidence
 
 
+# Coverage-status thresholds. These are deliberately the same gates the
+# spec uses for Rankable-A *minus* the multi-platform requirement. A
+# venue that is "coverage-ready" today would be Rankable-A the moment a
+# second review platform returned. See docs/ADR-001-TripAdvisor-Deferral.md.
+#
+# COVERAGE_READY_CR_MIN_SIGNALS tracks what Rankable-A itself accepts:
+# the spec's `signals >= 10` gate is satisfied by Trust=5 + Customer=3*1
+# + Commercial=2 = 10, so commercial_strong means >= 2 of the 4
+# sub-signals. Raising this to 3 or 4 would make the flag stricter than
+# Rankable-A which would be dishonest. Lowering it would let venues
+# with one CR sub-signal qualify, which would exceed Rankable-A's own
+# threshold. 2 is the right anchor.
+COVERAGE_READY_CR_MIN_SIGNALS = 2
+COVERAGE_READY_BIG_N = 30            # single-platform review count threshold
+COVERAGE_READY_MIN_TRUST_SIGNALS = 4  # of 5 Trust sub-signals
+
+
+def compute_coverage_status(trust: TrustResult,
+                             customer: CustomerResult,
+                             commercial: CommercialResult,
+                             entity_match: str,
+                             entity_dissolved: bool,
+                             closure: Optional[str]) -> str:
+    """Return 'coverage-ready' | 'coverage-partial' | 'coverage-absent'.
+
+    This is an ORTHOGONAL quality flag introduced in the 2026-04 pivot
+    (ADR-001). It describes public-signal completeness and entity-
+    resolution quality without claiming multi-platform review
+    corroboration. It does NOT affect rcs_v4_final, base_score,
+    adjusted_score, or confidence_class. Downstream surfaces may
+    choose to display it; the scoring engine itself only emits it.
+
+    coverage-ready — all three components available (Trust, Customer,
+      Commercial), entity match confirmed (Google Places is the
+      canonical resolver under ADR-001), Commercial Readiness has at
+      least 3 of its 4 sub-signals observed, at least one customer
+      platform has >= 30 reviews, venue is neither dissolved nor
+      permanently closed. These are the venues that would promote to
+      Rankable-A the moment a second independent review platform
+      populates.
+
+    coverage-partial — at least one of the above gates unmet but at
+      least one of (Trust, Customer, Commercial) is available.
+
+    coverage-absent — none of the three components available, or
+      entity match is 'none'. Aligns with the Profile-only-D
+      rationale.
+    """
+    any_available = (trust.available or customer.available
+                     or commercial.available)
+    if not any_available or entity_match == "none":
+        return "coverage-absent"
+
+    all_three_available = (trust.available and customer.available
+                           and commercial.available)
+    trust_strong = trust.available and trust.signals_used >= COVERAGE_READY_MIN_TRUST_SIGNALS
+    commercial_strong = (commercial.available
+                         and commercial.signals_used
+                         >= COVERAGE_READY_CR_MIN_SIGNALS)
+    has_big_platform = customer.available and any(
+        p.count >= COVERAGE_READY_BIG_N for p in customer.platforms
+    )
+
+    if (all_three_available
+            and entity_match == "confirmed"
+            and trust_strong
+            and commercial_strong
+            and has_big_platform
+            and not entity_dissolved
+            and closure != "closed_permanently"):
+        return "coverage-ready"
+
+    return "coverage-partial"
+
+
 def rankable_flags(confidence: str, trust: TrustResult,
                     closure: Optional[str], entity_dissolved: bool,
                     customer: CustomerResult) -> tuple[bool, bool]:
@@ -892,6 +983,13 @@ def score_venue(
     rankable, league_eligible = rankable_flags(
         confidence, trust, closure, entity_dissolved, customer)
 
+    # Coverage status (orthogonal to confidence_class; does not affect
+    # rcs_v4_final). Added 2026-04 as part of the TripAdvisor-deferral
+    # pivot — see docs/ADR-001-TripAdvisor-Deferral.md.
+    coverage = compute_coverage_status(
+        trust, customer, commercial, em_status,
+        entity_dissolved=entity_dissolved, closure=closure)
+
     # Final: Profile-only-D venues get no published headline (spec §2.4);
     # permanently closed venues get no published score (spec §7.4 row 1).
     if confidence == "Profile-only-D":
@@ -967,6 +1065,7 @@ def score_venue(
         adjusted_score=adjusted,
         rcs_v4_final=final,
         confidence_class=confidence,
+        coverage_status=coverage,
         rankable=rankable,
         league_table_eligible=league_eligible,
         source_families_present=families,

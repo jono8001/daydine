@@ -1,5 +1,18 @@
 name: Collect Reviews (Playwright)
 
+# TripAdvisor collection is DEFERRED as of the architectural pivot
+# (see docs/ADR-001-TripAdvisor-Deferral.md). Google Places is now
+# the canonical entity-resolution layer. Scheduled execution of this
+# workflow is disabled so we don't burn runner minutes on a known-
+# blocked path. It remains available via workflow_dispatch for
+# anyone testing a revival path or running a one-off experiment.
+#
+# To revive:
+#   1. Read docs/ADR-001-TripAdvisor-Deferral.md §"Conditions that
+#      would justify reviving".
+#   2. Uncomment the `schedule:` block below.
+#   3. Update the ADR to record the revival rationale.
+
 on:
   workflow_dispatch:
     inputs:
@@ -11,8 +24,9 @@ on:
         description: 'Max reviews per restaurant'
         required: false
         default: '50'
-  schedule:
-    - cron: '0 2 1,15 * *'  # 1st and 15th of month at 2am UTC
+  # schedule:
+  #   - cron: '0 2 1,15 * *'  # 1st and 15th of month at 2am UTC
+  #   (DISABLED — see ADR-001; TripAdvisor deferred.)
 
 permissions:
   contents: write
