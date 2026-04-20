@@ -624,7 +624,7 @@
       "rcs": 7.835,
       "sentiment": 0.15,
       "red_flag_count": 3,
-      "red_flags": "dirty; filthy"
+      "red_flags": "filthy; dirty"
     },
     {
       "rank": 153,
@@ -633,7 +633,7 @@
       "rcs": 7.257,
       "sentiment": 0.14,
       "red_flag_count": 2,
-      "red_flags": "disgusting; inedible"
+      "red_flags": "inedible; disgusting"
     },
     {
       "rank": 155,
@@ -642,7 +642,7 @@
       "rcs": 7.225,
       "sentiment": 0.12,
       "red_flag_count": 2,
-      "red_flags": "disgusting; avoid this"
+      "red_flags": "avoid this; disgusting"
     },
     {
       "rank": 156,
@@ -651,7 +651,7 @@
       "rcs": 7.204,
       "sentiment": 0.0,
       "red_flag_count": 4,
-      "red_flags": "disgusting; rude staff; filthy; closed down"
+      "red_flags": "rude staff; closed down; disgusting; filthy"
     },
     {
       "rank": 161,
@@ -660,7 +660,7 @@
       "rcs": 7.007,
       "sentiment": 0.19,
       "red_flag_count": 2,
-      "red_flags": "disgusting; undercooked"
+      "red_flags": "undercooked; disgusting"
     },
     {
       "rank": 166,
@@ -669,7 +669,7 @@
       "rcs": 6.876,
       "sentiment": 0.35,
       "red_flag_count": 3,
-      "red_flags": "disgusting; dirty; filthy"
+      "red_flags": "filthy; disgusting; dirty"
     },
     {
       "rank": 172,
@@ -678,7 +678,7 @@
       "rcs": 6.576,
       "sentiment": 0.12,
       "red_flag_count": 2,
-      "red_flags": "disgusting; avoid this"
+      "red_flags": "avoid this; disgusting"
     },
     {
       "rank": 175,
@@ -687,7 +687,7 @@
       "rcs": 6.308,
       "sentiment": 0.0,
       "red_flag_count": 4,
-      "red_flags": "disgusting; rude staff; filthy; closed down"
+      "red_flags": "rude staff; closed down; disgusting; filthy"
     },
     {
       "rank": 179,
@@ -696,7 +696,7 @@
       "rcs": 6.205,
       "sentiment": 0.45,
       "red_flag_count": 3,
-      "red_flags": "disgusting; inedible; avoid this"
+      "red_flags": "inedible; avoid this; disgusting"
     },
     {
       "rank": 190,
@@ -705,7 +705,7 @@
       "rcs": 1.94,
       "sentiment": 0.24,
       "red_flag_count": 2,
-      "red_flags": "dirty; avoid this"
+      "red_flags": "avoid this; dirty"
     }
   ],
   "convergence": {
@@ -716,5 +716,5 @@
     "insufficient_sources": 3
   },
   "methodology": "RCS V3.4",
-  "generated_at": "2026-04-20T17:22:40.355750+00:00"
+  "generated_at": "2026-04-20T17:56:32.131474+00:00"
 }
