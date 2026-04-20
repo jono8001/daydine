@@ -42,7 +42,7 @@ APIFY_ACTOR = os.environ.get("APIFY_ACTOR",
                               "scrapapi/tripadvisor-review-scraper")
 LOCATION = "Stratford-upon-Avon"
 MAX_REVIEWS = int(os.environ.get("MAX_REVIEWS") or "5")
-MATCH_MIN_SCORE = float(os.environ.get("MATCH_MIN_SCORE", "0.55"))
+MATCH_MIN_SCORE = float(os.environ.get("MATCH_MIN_SCORE") or "0.55")
 COORD_TOLERANCE_M = 200.0
 
 
