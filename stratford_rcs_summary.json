@@ -624,7 +624,7 @@
       "rcs": 7.835,
       "sentiment": 0.15,
       "red_flag_count": 3,
-      "red_flags": "filthy; dirty"
+      "red_flags": "dirty; filthy"
     },
     {
       "rank": 153,
@@ -651,7 +651,7 @@
       "rcs": 7.204,
       "sentiment": 0.0,
       "red_flag_count": 4,
-      "red_flags": "closed down; filthy; rude staff; disgusting"
+      "red_flags": "disgusting; rude staff; closed down; filthy"
     },
     {
       "rank": 161,
@@ -660,7 +660,7 @@
       "rcs": 7.007,
       "sentiment": 0.19,
       "red_flag_count": 2,
-      "red_flags": "disgusting; undercooked"
+      "red_flags": "undercooked; disgusting"
     },
     {
       "rank": 166,
@@ -669,7 +669,7 @@
       "rcs": 6.876,
       "sentiment": 0.35,
       "red_flag_count": 3,
-      "red_flags": "filthy; dirty; disgusting"
+      "red_flags": "dirty; disgusting; filthy"
     },
     {
       "rank": 172,
@@ -687,7 +687,7 @@
       "rcs": 6.308,
       "sentiment": 0.0,
       "red_flag_count": 4,
-      "red_flags": "closed down; filthy; rude staff; disgusting"
+      "red_flags": "disgusting; rude staff; closed down; filthy"
     },
     {
       "rank": 179,
@@ -716,5 +716,5 @@
     "insufficient_sources": 3
   },
   "methodology": "RCS V3.4",
-  "generated_at": "2026-04-20T17:03:15.123154+00:00"
+  "generated_at": "2026-04-20T17:09:04.803224+00:00"
 }
