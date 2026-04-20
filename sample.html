@@ -1,159 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
   <title>Sample Position Report — DayDine</title>
-  <meta name="description" content="Download a full sample DayDine Position & Competitor Report. See exactly what you'll receive — cover, contents, executive summary, segment intelligence, demand-capture audit and prioritised actions.">
+  <meta name="description" content="Download a full sample DayDine Position & Competitor Report. See exactly what you'll receive — cover, executive summary, three-component breakdown, peer cohort and prioritised outlook.">
   <link rel="canonical" href="https://daydine.vercel.app/sample">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Sample Position Report — DayDine">
   <meta property="og:description" content="Download a full sample DayDine Position & Competitor Report — see what you'll receive before you order.">
   <meta property="og:url" content="https://daydine.vercel.app/sample">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/daydine.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/daydine.css">
   <style>
-    .sample-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
+    .ed .sample-actions {
+      display: flex; flex-wrap: wrap; gap: 14px; align-items: center;
       margin: 24px 0 8px;
     }
-    .sample-meta {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-family: var(--mono);
+    .ed .sample-meta {
+      font-size: 11px; color: var(--ink-dim);
+      font-family: var(--mono); letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
-    .sample-disclaimer {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
+    .ed .sample-disclaimer {
+      background: var(--bg-2);
+      border: 1px solid var(--rule-strong);
       border-left: 3px solid var(--accent);
-      border-radius: 8px;
-      padding: 16px 20px;
-      margin: 24px 0 32px;
-      font-size: 14px;
-      color: var(--text);
-      line-height: 1.55;
+      border-radius: 3px;
+      padding: 16px 20px; margin: 24px 0 32px;
+      font-family: var(--serif); font-size: 15px;
+      color: var(--ink-2); line-height: 1.55;
     }
-    .sample-disclaimer strong { color: var(--accent-dark); }
-    .pdf-preview-frame {
-      width: 100%;
-      height: 820px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: var(--surface-2);
-      box-shadow: var(--shadow-md);
+    .ed .sample-disclaimer strong { color: var(--ink); font-weight: 500; }
+    .ed .pdf-preview-frame {
+      width: 100%; height: 820px;
+      border: 1px solid var(--rule-strong);
+      border-radius: 3px;
+      background: var(--bg-2);
     }
-    .pdf-preview-fallback {
-      padding: 28px;
-      background: var(--surface-2);
-      border: 1px dashed var(--border);
-      border-radius: var(--radius-lg);
-      text-align: center;
-      font-size: 14px;
-      color: var(--text-muted);
+    .ed .pdf-preview-fallback {
+      padding: 28px; background: var(--bg-2);
+      border: 1px dashed var(--rule-strong);
+      border-radius: 3px; text-align: center;
+      font-family: var(--serif); font-size: 14px;
+      color: var(--ink-dim);
     }
     @media (max-width: 760px) {
-      .pdf-preview-frame { height: 540px; }
+      .ed .pdf-preview-frame { height: 540px; }
     }
+    .ed .page-head {
+      max-width: 1040px; margin: 0 auto;
+      padding: 64px 32px 32px;
+    }
+    .ed .page-head .op-eyebrow { padding-bottom: 10px; }
+    .ed .page-head h1 {
+      font-family: var(--serif);
+      font-size: clamp(40px, 5vw, 68px);
+      font-weight: 500; letter-spacing: -0.025em;
+      color: var(--ink); line-height: 1.05; margin: 0 0 18px;
+      text-wrap: balance;
+    }
+    .ed .page-head h1 em { font-style: italic; color: var(--accent-2); }
+    .ed .page-head .lede {
+      font-family: var(--serif); font-size: 19px;
+      line-height: 1.5; color: var(--ink-2);
+      max-width: 62ch; margin: 0;
+    }
+    .ed .sample-wrap-inner { max-width: 1040px; margin: 0 auto; padding: 0 32px 64px; }
   </style>
 </head>
-<body data-page-type="diner">
+<body class="ed" data-page-type="diner">
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="nav-brand" href="/">
-      <img class="nav-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine">
-    </a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="/">Day<em>dine</em></a>
+    <div class="mast-issue">Sample · <b>Position Report</b></div>
+    <button class="mast-toggle" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <div class="nav-links">
-      <a class="nav-link" href="/rankings">Rankings</a>
-      <a class="nav-link" href="/search">Search</a>
-      <a class="nav-link" href="/reports">Reports</a>
-      <a class="nav-link" href="/methodology">Methodology</a>
-      <a class="btn btn-primary nav-cta" href="/reports">Get a Market Report</a>
+    <nav class="mast-nav">
+      <a href="/">Home</a>
+      <a href="/rankings">Rankings</a>
+      <a href="/search">Search</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/for-restaurants">For restaurants</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="page-head">
+  <div class="op-eyebrow">Sample · Illustrative</div>
+  <h1>See exactly <em>what you'll receive.</em></h1>
+  <p class="lede">
+    A full sample DayDine Position &amp; Competitor Report — same format, same structure, same depth as the one you'll get for your own venue.
+    Cover, executive summary, three-component decomposition, peer cohort, convergence read, and a non-prescriptive outlook memo.
+  </p>
+
+  <div class="sample-actions">
+    <a class="btn btn-primary"
+       href="/assets/reports/daydine-sample-report.pdf"
+       download="daydine-sample-report.pdf">Download sample PDF</a>
+    <a class="btn" href="/for-restaurants#pricing">Get your report — £49</a>
+    <span class="sample-meta">PDF · ~120 KB · A4</span>
+  </div>
+
+  <div class="sample-disclaimer">
+    <strong>This sample describes a fictional venue.</strong> Every score, review excerpt, competitor name and finding in the document is invented, for illustration only. Your real DayDine report contains externally-verifiable RCS V4 data for your own venue, drawn from FSA/FHRS, Google, TripAdvisor and Companies House.
+  </div>
+</div>
+
+<div class="sample-wrap-inner">
+  <object class="pdf-preview-frame"
+          data="/assets/reports/daydine-sample-report.pdf#view=FitH"
+          type="application/pdf">
+    <div class="pdf-preview-fallback">
+      Inline PDF preview isn't supported in this browser.<br><br>
+      <a class="btn btn-primary" href="/assets/reports/daydine-sample-report.pdf" download="daydine-sample-report.pdf">Download the sample PDF instead</a>
+    </div>
+  </object>
+
+  <div style="text-align:center; margin-top: 32px;">
+    <a class="btn btn-primary" href="/for-restaurants#pricing">Get your report — £49</a>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-col">
+      <h5>DayDine</h5>
+      <p>A data-driven ranking of where to eat in Britain. <b>Public market signals. Transparent methodology. No pay-to-play.</b></p>
+    </div>
+    <div class="foot-col">
+      <h5>Read</h5>
+      <a href="/rankings">Rankings</a>
+      <a href="/search">Establishment search</a>
+      <a href="/methodology">Methodology</a>
+    </div>
+    <div class="foot-col">
+      <h5>Operators</h5>
+      <a href="/for-restaurants">Position &amp; Competitor Report</a>
+      <a href="/for-restaurants#preview">Preview your rank</a>
+      <a href="/for-restaurants#pricing">Pricing</a>
+    </div>
+    <div class="foot-col">
+      <h5>About</h5>
+      <a href="/methodology">How RCS V4 works</a>
+      <a href="mailto:hello@daydine.co.uk">Contact</a>
     </div>
   </div>
-</nav>
-
-<section class="section" style="padding-top: 80px;">
-  <div class="container container-narrow">
-    <div class="kicker mb-1">Sample Report</div>
-    <h1 class="h-display h-display-lg mb-3">See exactly what you'll receive</h1>
-    <p class="body-lg mb-3">
-      Download a full sample DayDine Position &amp; Competitor Report — the same format, structure and depth as the report you'll receive for your own venue. Twenty-plus pages: cover, contents, executive summary, demand forecast, guest segment intelligence, demand-capture audit, prioritised actions and competitive position.
-    </p>
-
-    <div class="sample-actions">
-      <a class="btn btn-primary btn-lg"
-         href="/assets/reports/daydine-sample-report.pdf"
-         download="daydine-sample-report.pdf">
-        Download Sample PDF
-      </a>
-      <a class="btn btn-secondary btn-lg" href="/reports">Get Your Report &mdash; &pound;49</a>
-      <span class="sample-meta">PDF &middot; ~120&nbsp;KB &middot; A4</span>
-    </div>
-
-    <div class="sample-disclaimer">
-      <strong>This sample describes a fictional venue.</strong> "The Harvest Table" and every score, review excerpt, competitor name and finding in the document are invented and exist only to illustrate the report format. Your real DayDine report will contain externally-verifiable data for your own venue, drawn from FSA, Google, Tripadvisor and Companies House.
-    </div>
-
-    <object class="pdf-preview-frame"
-            data="/assets/reports/daydine-sample-report.pdf#view=FitH"
-            type="application/pdf">
-      <div class="pdf-preview-fallback">
-        Inline PDF preview isn't supported in this browser.
-        <br><br>
-        <a class="btn btn-primary" href="/assets/reports/daydine-sample-report.pdf" download="daydine-sample-report.pdf">Download the sample PDF instead</a>
-      </div>
-    </object>
-
-    <div class="center mt-4">
-      <a class="btn btn-primary btn-lg" href="/reports">Get Your Report &mdash; &pound;49</a>
-    </div>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-brand">
-          <img class="footer-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine">
-        </div>
-        <p class="footer-tagline">UK hospitality intelligence.<br>Public-signal market rankings.</p>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Intelligence</div>
-        <a class="footer-link" href="/rankings">Market Rankings</a>
-        <a class="footer-link" href="/search">Restaurant Search</a>
-        <a class="footer-link" href="/methodology">Methodology</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Operator Tools</div>
-        <a class="footer-link" href="/reports">Position Reports</a>
-        <a class="footer-link" href="/sample">Sample Report</a>
-        <a class="footer-link" href="/pricing">Pricing</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Coverage</div>
-        <a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a>
-        <span class="footer-link footer-link-muted">5 markets in pipeline</span>
-        <a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market &rarr;</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 DayDine. Sample report describes a fictional venue, provided for illustration only.</p>
-    </div>
+  <div class="foot-bottom">
+    <span>© 2026 DayDine</span>
+    <span>Methodology V4</span>
+    <span>Made in the UK</span>
+    <a class="operator-link" href="/for-restaurants">For restaurants →</a>
   </div>
 </footer>
 
-<script src="/assets/daydine.js"></script>
+<script>
+(function () {
+  var t = document.querySelector('.mast-toggle');
+  var n = document.querySelector('.mast-nav');
+  if (!t || !n) return;
+  t.addEventListener('click', function () {
+    var open = n.classList.toggle('open');
+    t.setAttribute('aria-expanded', String(open));
+  });
+})();
+</script>
 </body>
 </html>
