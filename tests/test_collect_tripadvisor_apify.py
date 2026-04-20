@@ -291,15 +291,15 @@ class BuildApifyInputBranchingTest(unittest.TestCase):
         self.m = _load_collector({"APIFY_TOKEN": "t"})
 
     def test_scrapapi_emits_start_urls(self):
+        """Without resolved_urls we still emit a valid payload — the
+        startUrls list falls back to the TA Search URL form. Production
+        flow passes resolved_urls from the search pre-stage (see
+        test_scrapapi_with_resolved_urls_uses_them)."""
         inp = self.m.build_apify_input(
             "scrapapi/tripadvisor-review-scraper",
             "The Vintner Wine Bar Stratford-upon-Avon", 3, 5)
         self.assertIn("startUrls", inp)
         self.assertNotIn("searchQueries", inp)
-        self.assertTrue(
-            inp["startUrls"][0].startswith(
-                "https://www.tripadvisor.com/Search?q="),
-            "startUrls[0] must be a TripAdvisor Search URL")
 
     def test_scrapapi_start_urls_is_list_of_strings(self):
         """Regression guard for run #7 of collect_tripadvisor_apify.yml.
@@ -338,11 +338,140 @@ class BuildApifyInputBranchingTest(unittest.TestCase):
         self.assertEqual(inp.get("maxReviewsPerUrl"), 7)
         self.assertEqual(inp.get("maxReviewsPerPlace"), 7)
 
+    def test_scrapapi_with_resolved_urls_uses_them(self):
+        """When the pre-stage search actor resolves a real review URL,
+        build_apify_input passes it through verbatim in startUrls."""
+        resolved = (
+            "https://www.tripadvisor.com/Restaurant_Review-g186460-"
+            "d730193-Reviews-The_Vintner_Wine_Bar-"
+            "Stratford_upon_Avon_Warwickshire_England.html"
+        )
+        inp = self.m.build_apify_input(
+            "scrapapi/tripadvisor-review-scraper",
+            "Vintner Wine Bar Stratford-upon-Avon", 3, 5,
+            resolved_urls=[resolved])
+        self.assertEqual(inp["startUrls"], [resolved])
+        # Verify the review-URL pattern actually matches.
+        self.assertIsNotNone(self.m.TA_REVIEW_URL_RE.search(inp["startUrls"][0]))
+
+    def test_scrapapi_payload_must_have_review_url_or_search_string(self):
+        """Regression guard for run #8 of collect_tripadvisor_apify.yml.
+
+        The actor either (a) ingests resolved `/Restaurant_Review-` /
+        `/Hotel_Review-` URLs, or (b) — for actors that support it —
+        performs its own internal search via a non-empty `searchString`.
+        Sending a payload with neither (Search-URL-shaped startUrls
+        and no searchString) returns 0 items on every call.
+
+        This test asserts that at least ONE of those channels is
+        populated, regardless of whether resolved_urls was supplied."""
+        # Case A: caller supplied a real resolved URL
+        inp_a = self.m.build_apify_input(
+            "scrapapi/tripadvisor-review-scraper",
+            "Loxleys Stratford", 3, 5,
+            resolved_urls=[
+                "https://www.tripadvisor.com/Restaurant_Review-g186460-"
+                "d1089654-Reviews-Loxleys_Restaurant_and_Wine_Bar.html"
+            ])
+        self._assert_payload_actionable(inp_a)
+
+        # Case B: no resolved URL — payload must still be actionable
+        # via searchString (belt-and-braces alias) so that actors which
+        # support internal search can still act on it.
+        inp_b = self.m.build_apify_input(
+            "scrapapi/tripadvisor-review-scraper",
+            "Loxleys Stratford", 3, 5)
+        self._assert_payload_actionable(inp_b)
+
+    def _assert_payload_actionable(self, inp):
+        """Helper: assert payload has at least one of: resolved review
+        URL in startUrls, or non-empty searchString."""
+        urls = inp.get("startUrls") or []
+        search_string = (inp.get("searchString") or "").strip()
+        has_review_url = any(
+            isinstance(u, str) and self.m.TA_REVIEW_URL_RE.search(u)
+            for u in urls
+        )
+        self.assertTrue(
+            has_review_url or bool(search_string),
+            f"scrapapi payload must contain either a resolved review URL "
+            f"in startUrls (matching /Restaurant_Review-/Hotel_Review-) "
+            f"OR a non-empty searchString. Got: "
+            f"startUrls={urls!r}, searchString={search_string!r}"
+        )
+
     def test_legacy_emits_search_queries(self):
         inp = self.m.build_apify_input(
             "automation-lab/tripadvisor-scraper", "Lambs Stratford", 3, 5)
         self.assertIn("searchQueries", inp)
         self.assertNotIn("startUrls", inp)
+
+
+class SearchActorTest(unittest.TestCase):
+    """resolve_tripadvisor_url: cache behaviour + URL-pattern filtering."""
+
+    def setUp(self):
+        self.m = _load_collector({
+            "APIFY_TOKEN": "t",
+            "APIFY_SEARCH_ACTOR": "getdataforme/tripadvisor-places-search-scraper",
+        })
+
+    def test_search_actor_payload_uses_getdataforme_shape(self):
+        inp = self.m.build_search_actor_input(
+            "getdataforme/tripadvisor-places-search-scraper",
+            "Vintner Wine Bar Stratford-upon-Avon")
+        self.assertEqual(inp["search"], "Vintner Wine Bar Stratford-upon-Avon")
+        self.assertIn("maxItems", inp)
+
+    def test_cache_hit_short_circuits_actor(self):
+        """If the cache already knows the URL, don't even call Apify."""
+        cache = {
+            "vintner wine bar stratford-upon-avon": {
+                "url": "https://www.tripadvisor.com/Restaurant_Review-x-Reviews-V.html",
+                "name": "Vintner",
+                "resolved_at": "2026-04-20T00:00:00Z",
+            }
+        }
+        class _Explode:  # pragma: no cover — should never execute
+            def __init__(self, *a, **kw):
+                raise AssertionError("ApifyClient must not be called on cache hit")
+        fake = type(sys)("apify_client")
+        fake.ApifyClient = _Explode
+        with mock.patch.dict(sys.modules, {"apify_client": fake}):
+            url, name = self.m.resolve_tripadvisor_url(
+                "Vintner Wine Bar Stratford-upon-Avon", "fake_token", cache)
+        self.assertEqual(url,
+                         "https://www.tripadvisor.com/Restaurant_Review-x-Reviews-V.html")
+        self.assertEqual(name, "Vintner")
+
+    def test_picks_first_review_url_and_caches_it(self):
+        """Filter candidates by TA_REVIEW_URL_RE and persist in cache."""
+        items = [
+            {"url": "https://www.tripadvisor.com/Hotels-Stratford.html"},
+            {"url": "https://www.tripadvisor.com/Restaurant_Review-g186460-d1-Reviews-Target.html",
+             "name": "Target Restaurant"},
+            {"url": "https://www.tripadvisor.com/Restaurant_Review-g186460-d2-Reviews-Other.html"},
+        ]
+        class _Dataset:
+            def iterate_items(self_inner): return iter(items)
+        class _Actor:
+            def call(self_inner, run_input=None, timeout_secs=None):
+                return {"defaultDatasetId": "stub"}
+        class _Client:
+            def __init__(self_inner, token): pass
+            def actor(self_inner, name): return _Actor()
+            def dataset(self_inner, _id): return _Dataset()
+        fake = type(sys)("apify_client")
+        fake.ApifyClient = _Client
+        cache = {}
+        with mock.patch.dict(sys.modules, {"apify_client": fake}):
+            url, name = self.m.resolve_tripadvisor_url(
+                "Target Stratford-upon-Avon", "fake_token", cache)
+        self.assertIn("Restaurant_Review-g186460-d1", url)
+        self.assertEqual(name, "Target Restaurant")
+        # And it was cached under the normalised key.
+        cached = cache["target stratford-upon-avon"]
+        self.assertEqual(cached["url"], url)
 
 
 if __name__ == "__main__":

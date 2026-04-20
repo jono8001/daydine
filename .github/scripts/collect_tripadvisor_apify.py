@@ -37,9 +37,20 @@ from urllib.parse import quote_plus
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 INPUT_PATH = os.path.join(REPO_ROOT, "stratford_establishments.json")
 RAW_DIR = os.path.join(REPO_ROOT, "data", "raw", "tripadvisor")
+CACHE_DIR = os.path.join(REPO_ROOT, "data", "cache")
+URL_CACHE_PATH = os.path.join(CACHE_DIR, "tripadvisor_url_cache.json")
 
 APIFY_TOKEN = os.environ.get("APIFY_TOKEN", "")
 APIFY_ACTOR = os.environ.get("APIFY_ACTOR") or "scrapapi/tripadvisor-review-scraper"
+# Pre-stage search actor. scrapapi/tripadvisor-review-scraper only ingests
+# already-resolved TripAdvisor /Restaurant_Review-/Hotel_Review- URLs
+# (proven empirically on run #8: feeding it a TripAdvisor Search URL
+# returned 0 raw items per venue). We resolve each venue name to a
+# restaurant URL via a cheap search actor first and cache the mapping.
+APIFY_SEARCH_ACTOR = (
+    os.environ.get("APIFY_SEARCH_ACTOR")
+    or "getdataforme/tripadvisor-places-search-scraper"
+)
 LOCATION = "Stratford-upon-Avon"
 MAX_REVIEWS = int(os.environ.get("MAX_REVIEWS") or "5")
 MATCH_MIN_SCORE = float(os.environ.get("MATCH_MIN_SCORE") or "0.55")
@@ -48,9 +59,16 @@ COORD_TOLERANCE_M = 200.0
 # 0 / unset / negative ⇒ no limit; >0 ⇒ process only the first N venues.
 DRY_RUN_LIMIT = int(os.environ.get("DRY_RUN_LIMIT") or "0")
 
+# Matches a real TripAdvisor review/property URL (vs a Search URL).
+# Used to validate search-actor output and to assert the review-scraper
+# payload contains resolvable URLs (see tests/).
+TA_REVIEW_URL_RE = re.compile(
+    r"/(Restaurant_Review|Hotel_Review|Attraction_Review)-", re.IGNORECASE)
+
 
 def build_apify_input(actor: str, query: str, max_places: int,
-                       max_reviews: int) -> dict:
+                       max_reviews: int,
+                       resolved_urls: list | None = None) -> dict:
     """Build the Apify actor input payload for `query`, branching by actor.
 
     TripAdvisor Apify actors do not share a common input schema, so the
@@ -60,36 +78,50 @@ def build_apify_input(actor: str, query: str, max_places: int,
 
     Known actors:
 
-      * `scrapapi/tripadvisor-review-scraper` — strictly requires
-        `startUrls`. The "No startUrls provided" error message mentions
-        "hotel URL, hotel name, or keyword" — the first is mandatory,
-        the other two are aliases the actor understands if present.
-        We provide a TripAdvisor Search URL built from the query so the
-        actor can resolve restaurants by name even when the exact
-        restaurant URL isn't known, plus the keyword/searchString
-        aliases as belt-and-braces.
+      * `scrapapi/tripadvisor-review-scraper` — this is a REVIEW scraper.
+        It ingests already-resolved TripAdvisor `/Restaurant_Review-` /
+        `/Hotel_Review-` URLs and emits reviews. It does NOT resolve
+        venue names itself: feeding it a TripAdvisor Search URL returns
+        0 raw items (proven empirically on run #8 — the actor visits
+        the Search page, finds nothing review-shaped, and exits clean).
+        The surrounding pipeline resolves names to URLs via a search
+        actor first (see resolve_tripadvisor_url / APIFY_SEARCH_ACTOR),
+        and passes the resolved URLs in via `resolved_urls`.
+
+        `startUrls` shape: `array<string>` per the actor's schema (NOT
+        `array<{url: string}>` like apify/web-scraper). Sending dicts
+        yields "Field input.startUrls.0 must be string" on every call.
+
+        `searchString` / `keywords` / `locationFullName` aliases are
+        included as belt-and-braces — they're ignored by this actor
+        today, but cost nothing and cover the case where a future
+        schema change adds a built-in search mode.
 
       * `automation-lab/tripadvisor-scraper` — legacy keyword-based
         schema. Takes a list of arbitrary search queries and does
         discovery internally.
     """
     if actor.startswith("scrapapi/tripadvisor-review-scraper"):
-        search_url = (
-            "https://www.tripadvisor.com/Search?q=" + quote_plus(query)
-        )
-        # This actor's input schema declares `startUrls` as
-        # `array<string>`, NOT the `array<{url: string}>` shape used by
-        # apify/web-scraper and many scrapers derived from it. Sending
-        # dicts yields:
-        #   "Field input.startUrls.0 must be string"
-        # Similarly `maxReviewsPerUrl` (per the actor's schema) is
-        # passed alongside `maxReviewsPerPlace` as an alias so a future
-        # minor schema rename doesn't silently drop the limit back to
-        # the actor's default.
+        if resolved_urls:
+            urls = [u for u in resolved_urls if isinstance(u, str) and u]
+        else:
+            # No resolved URL — this call is expected to return 0 items
+            # against this specific actor, but we still send a valid
+            # payload rather than skipping: the guard layer is what
+            # catches the "zero raw items" case, and callers that know
+            # they have no URL should not reach here.
+            urls = [
+                "https://www.tripadvisor.com/Search?q=" + quote_plus(query)
+            ]
         return {
-            "startUrls": [search_url],
-            "keywords": [query],
+            "startUrls": urls,
+            # searchString (singular) is the field name in some TripAdvisor
+            # scrapers that DO support internal search. searchStrings
+            # (plural) is the alias used by others. Including both plus
+            # keywords / locationFullName is cheap belt-and-braces.
+            "searchString": query,
             "searchStrings": [query],
+            "keywords": [query],
             "locationFullName": query,
             "maxReviewsPerUrl": max_reviews,
             "maxReviewsPerPlace": max_reviews,
@@ -105,6 +137,30 @@ def build_apify_input(actor: str, query: str, max_places: int,
         "maxPlacesPerQuery": max_places,
         "maxReviewsPerPlace": max_reviews,
         "language": "en",
+    }
+
+
+def build_search_actor_input(actor: str, query: str,
+                              max_items: int = 5) -> dict:
+    """Build input payload for the URL-resolution search actor.
+
+    Keeps the same branch-by-actor pattern as `build_apify_input`.
+    `getdataforme/tripadvisor-places-search-scraper` takes a `search`
+    string + `maxItems`; generic fallback uses `searchQueries`."""
+    if actor.startswith("getdataforme/tripadvisor-places-search-scraper"):
+        return {
+            "search": query,
+            "searchString": query,
+            "maxItems": max_items,
+            "locationFullName": query,
+        }
+    # Generic fallback covers search actors that follow the more common
+    # apify convention.
+    return {
+        "searchQueries": [query],
+        "search": query,
+        "searchString": query,
+        "maxItems": max_items,
     }
 
 
@@ -286,9 +342,17 @@ def normalise_apify_items(raw_items):
     return list(grouped.values())
 
 
-def search_apify(query, token, max_places=1, max_reviews=5):
+def search_apify(query, token, max_places=1, max_reviews=5,
+                  resolved_urls=None):
     """
-    Run the Apify TripAdvisor scraper for a single query.
+    Run the Apify TripAdvisor REVIEW scraper for a single query.
+
+    `resolved_urls` (list[str] | None) is the output of the pre-stage
+    URL-resolution search actor. When provided, those URLs are passed
+    verbatim to the review actor — which is the only shape the
+    `scrapapi/tripadvisor-review-scraper` actor will actually act on
+    (see build_apify_input docstring).
+
     Returns list of normalised per-place dicts (see normalise_apify_items).
     """
     try:
@@ -299,7 +363,9 @@ def search_apify(query, token, max_places=1, max_reviews=5):
 
     client = ApifyClient(token)
 
-    run_input = build_apify_input(APIFY_ACTOR, query, max_places, max_reviews)
+    run_input = build_apify_input(
+        APIFY_ACTOR, query, max_places, max_reviews,
+        resolved_urls=resolved_urls)
 
     try:
         run = client.actor(APIFY_ACTOR).call(
@@ -450,6 +516,109 @@ def _count_raw_files():
     return sum(1 for f in os.listdir(RAW_DIR) if f.endswith(".json"))
 
 
+def _load_url_cache():
+    """Read data/cache/tripadvisor_url_cache.json if present."""
+    if not os.path.exists(URL_CACHE_PATH):
+        return {}
+    try:
+        with open(URL_CACHE_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        return data if isinstance(data, dict) else {}
+    except (OSError, ValueError):
+        return {}
+
+
+def _save_url_cache(cache):
+    """Persist the URL cache. Safe to call after every venue so a
+    partially-run job doesn't waste credits on a re-run."""
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    with open(URL_CACHE_PATH, "w", encoding="utf-8") as f:
+        json.dump(cache, f, indent=2, ensure_ascii=False, sort_keys=True)
+
+
+def _extract_ta_url_candidates(item):
+    """Pull every plausible TA URL out of a search-actor item."""
+    urls = []
+    if not isinstance(item, dict):
+        return urls
+    for key in ("url", "webUrl", "tripadvisor_url", "link", "href"):
+        v = item.get(key)
+        if isinstance(v, str) and v:
+            urls.append(v)
+    place = _place_container(item)
+    if place is not item and isinstance(place, dict):
+        for key in ("url", "webUrl", "tripadvisor_url", "link", "href"):
+            v = place.get(key)
+            if isinstance(v, str) and v:
+                urls.append(v)
+    return urls
+
+
+def resolve_tripadvisor_url(query: str, token: str, cache: dict):
+    """Resolve a venue name+location to a TripAdvisor place URL.
+
+    Two-stage pipeline stage 1: query a lightweight TripAdvisor places
+    search actor and take the first result whose URL matches a real
+    review page (TA_REVIEW_URL_RE). Results are cached in
+    `tripadvisor_url_cache.json` keyed by the lowercased query, so
+    re-runs only burn search-actor credits on new venues.
+
+    Returns (url, resolved_name). Both None if nothing matched. Cache
+    entries with `url: null` are stored too so repeat failures don't
+    re-query the search actor.
+    """
+    cache_key = query.lower().strip()
+    if cache_key in cache:
+        hit = cache[cache_key]
+        if isinstance(hit, dict):
+            return hit.get("url"), hit.get("name")
+
+    try:
+        from apify_client import ApifyClient
+    except ImportError:
+        print("ERROR: apify-client not installed")
+        return None, None
+
+    client = ApifyClient(token)
+    run_input = build_search_actor_input(APIFY_SEARCH_ACTOR, query)
+
+    try:
+        run = client.actor(APIFY_SEARCH_ACTOR).call(
+            run_input=run_input, timeout_secs=120)
+        items = list(
+            client.dataset(run["defaultDatasetId"]).iterate_items())
+    except Exception as e:
+        print(f"    Search actor error: {e}")
+        # Do NOT cache transient errors — next run should retry.
+        return None, None
+
+    print(f"    Search actor returned {len(items)} item(s)")
+
+    url = None
+    name = None
+    for item in items:
+        for candidate in _extract_ta_url_candidates(item):
+            if TA_REVIEW_URL_RE.search(candidate):
+                url = candidate
+                place = _place_container(item)
+                name = (
+                    (place.get("name") if isinstance(place, dict) else None)
+                    or (item.get("name") if isinstance(item, dict) else None)
+                    or (item.get("title") if isinstance(item, dict) else None)
+                )
+                break
+        if url:
+            break
+
+    cache[cache_key] = {
+        "url": url,
+        "name": name,
+        "resolved_at": datetime.datetime.utcnow().strftime(
+            "%Y-%m-%dT%H:%M:%SZ"),
+    }
+    return url, name
+
+
 def main():
     if not APIFY_TOKEN:
         print("ERROR: APIFY_TOKEN not set")
@@ -492,6 +661,15 @@ def main():
     # Track if all candidates fell BELOW MATCH_MIN_SCORE so we can
     # log a more informative diagnostic at the end of the run.
     under_threshold = 0
+    # Count how many venues were dropped at stage 1 (URL resolution)
+    # vs stage 2 (review scrape / matcher). Makes post-mortems easier.
+    unresolved_url = 0
+    # Load the persistent name-to-URL cache. Search-actor calls are the
+    # expensive bit; caching means a rerun only pays for new venues.
+    url_cache = _load_url_cache()
+    print(f"URL cache: {len(url_cache)} entries loaded from "
+          f"{os.path.relpath(URL_CACHE_PATH, REPO_ROOT)}")
+    print(f"Using search actor: {APIFY_SEARCH_ACTOR}")
 
     for i, (key, record) in enumerate(establishments.items(), 1):
         name = record.get("n", "")
@@ -508,15 +686,35 @@ def main():
         query = f"{name} {LOCATION}"
         target_lat = record.get("lat")
         target_lon = record.get("lon")
-        print(f"  [{i}/{total}] Searching: {query}")
+        print(f"  [{i}/{total}] Resolving: {query}")
 
         try:
-            results = search_apify(query, APIFY_TOKEN,
-                                   max_places=3, max_reviews=MAX_REVIEWS)
+            # Stage 1 — name -> TripAdvisor URL via the search actor.
+            # The result is cached; repeat calls hit the cache, not
+            # the actor, so re-dispatches are cheap.
+            resolved_url, resolved_name = resolve_tripadvisor_url(
+                query, APIFY_TOKEN, url_cache)
+            # Persist cache after every venue so a mid-run failure
+            # doesn't waste the stage-1 credits already spent.
+            _save_url_cache(url_cache)
+
+            if not resolved_url:
+                no_match += 1
+                unresolved_url += 1
+                print(f"    No review URL resolved for {name!r}")
+                continue
+
+            print(f"    Resolved -> {resolved_url}")
+
+            # Stage 2 — review scrape against the resolved URL.
+            results = search_apify(
+                query, APIFY_TOKEN, max_places=3, max_reviews=MAX_REVIEWS,
+                resolved_urls=[resolved_url])
 
             if not results:
                 no_match += 1
-                print(f"    No results")
+                print(f"    Review actor returned no usable items for "
+                      f"{resolved_url}")
                 continue
 
             # Pick best match by combined name+coord score
@@ -575,10 +773,14 @@ def main():
     post_raw_count = _count_raw_files()
     new_raw_files = max(0, post_raw_count - pre_raw_count)
 
+    # Final cache save catches any last-venue updates.
+    _save_url_cache(url_cache)
+
     print(f"\nDone. Total: {total}")
     print(
         f"  Matched: {matched}, No match: {no_match} "
-        f"(of which {under_threshold} below MATCH_MIN_SCORE), "
+        f"(of which {unresolved_url} had no URL resolved, "
+        f"{under_threshold} below MATCH_MIN_SCORE), "
         f"Skipped: {skipped}, Errors: {errors}"
     )
     print(
@@ -586,6 +788,7 @@ def main():
         f"new raw files written this run: {new_raw_files} "
         f"(pre={pre_raw_count}, post={post_raw_count})"
     )
+    print(f"  URL cache now has {len(url_cache)} entries")
     print(f"  Raw files under: {RAW_DIR}")
     print(f"Next step: run .github/scripts/consolidate_tripadvisor.py "
           f"and .github/scripts/merge_tripadvisor.py")
@@ -627,11 +830,12 @@ def main():
         sys.stderr.write(
             "\n::error::Apify TripAdvisor collection failed. "
             + "; ".join(failure_reasons)
-            + ". This usually means either the actor's input schema does "
-              "not match the payload in build_apify_input(), the actor's "
-              "response shape is nested differently than normalise_apify_items "
-              "expects, or the authenticated Apify account is rate-limited. "
-              "Inspect the Apify run logs for the actor's exact output. "
+            + ". Likely causes: (1) the search actor resolved no URLs "
+              "for these venues — check APIFY_SEARCH_ACTOR and the "
+              f"cache at {os.path.relpath(URL_CACHE_PATH, REPO_ROOT)}; "
+              "(2) the review actor's response shape changed and "
+              "normalise_apify_items now sees nothing; "
+              "(3) the authenticated Apify account is rate-limited. "
               "See docs/DayDine-TripAdvisor-Strategy-Decision.md.\n"
         )
         # raise SystemExit is slightly more robust than sys.exit: it is an
