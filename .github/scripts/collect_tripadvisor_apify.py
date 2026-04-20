@@ -38,8 +38,7 @@ INPUT_PATH = os.path.join(REPO_ROOT, "stratford_establishments.json")
 RAW_DIR = os.path.join(REPO_ROOT, "data", "raw", "tripadvisor")
 
 APIFY_TOKEN = os.environ.get("APIFY_TOKEN", "")
-APIFY_ACTOR = os.environ.get("APIFY_ACTOR",
-                              "scrapapi/tripadvisor-review-scraper")
+APIFY_ACTOR = os.environ.get("APIFY_ACTOR") or "scrapapi/tripadvisor-review-scraper"
 LOCATION = "Stratford-upon-Avon"
 MAX_REVIEWS = int(os.environ.get("MAX_REVIEWS") or "5")
 MATCH_MIN_SCORE = float(os.environ.get("MATCH_MIN_SCORE") or "0.55")
