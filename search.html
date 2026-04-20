@@ -12,9 +12,10 @@
   <meta property="og:description" content="Search 264,791 UK restaurants. FSA hygiene ratings, Google scores, inspection histories, and sub-scores.">
   <meta property="og:url" content="https://daydine.vercel.app/search">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/daydine.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/daydine.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <style>
     /* ---- Search page overrides — aligned to shared design system ---- */
@@ -388,26 +389,25 @@
     }
   </style>
 </head>
-<body data-page-type="diner">
+<body class="ed" data-page-type="diner">
 <a class="skip-link" href="#main">Skip to content</a>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a class="nav-brand" href="/">
-      <img class="nav-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine">
-    </a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="/">Day<em>dine</em></a>
+    <div class="mast-issue">Search · <b>264,791 establishments</b></div>
+    <button class="mast-toggle" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
-    <div class="nav-links">
-      <a class="nav-link" href="/rankings">Rankings</a>
-      <a class="nav-link active" href="/search">Search</a>
-      <a class="nav-link" href="/reports">Reports</a>
-      <a class="nav-link" href="/methodology">Methodology</a>
-      <a class="btn btn-primary nav-cta" href="/reports">Get a Market Report</a>
-    </div>
+    <nav class="mast-nav">
+      <a href="/">Home</a>
+      <a href="/rankings">Rankings</a>
+      <a href="/search" class="on">Search</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/for-restaurants">For restaurants</a>
+    </nav>
   </div>
-</nav>
+</header>
 
 <main id="main">
 <div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px 16px;">
@@ -493,41 +493,49 @@
   </div>
 </main>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-brand">
-          <img class="footer-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine">
-        </div>
-        <p class="footer-tagline">UK hospitality intelligence.<br>Public-signal market rankings.</p>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Intelligence</div>
-        <a class="footer-link" href="/rankings">Market Rankings</a>
-        <a class="footer-link" href="/search">Restaurant Search</a>
-        <a class="footer-link" href="/methodology">Methodology</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Operator Tools</div>
-        <a class="footer-link" href="/reports">Position Reports</a>
-        <a class="footer-link" href="/sample">Sample Report</a>
-        <a class="footer-link" href="/pricing">Pricing</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Coverage</div>
-        <a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a>
-        <span class="footer-link footer-link-muted">5 markets in pipeline</span>
-        <a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market &rarr;</a>
-      </div>
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-col">
+      <h5>DayDine</h5>
+      <p>A data-driven ranking of where to eat in Britain. <b>Public market signals. Transparent methodology. No pay-to-play.</b></p>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 DayDine. Data sourced from the Food Standards Agency, Google, TripAdvisor, and Companies House.</p>
+    <div class="foot-col">
+      <h5>Read</h5>
+      <a href="/rankings">Rankings</a>
+      <a href="/search">Establishment search</a>
+      <a href="/methodology">Methodology</a>
     </div>
+    <div class="foot-col">
+      <h5>Operators</h5>
+      <a href="/for-restaurants">Position &amp; Competitor Report</a>
+      <a href="/for-restaurants#preview">Preview your rank</a>
+      <a href="/for-restaurants#pricing">Pricing</a>
+    </div>
+    <div class="foot-col">
+      <h5>About</h5>
+      <a href="/methodology">How RCS V4 works</a>
+      <a href="mailto:hello@daydine.co.uk">Contact</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 DayDine</span>
+    <span>Methodology V4</span>
+    <span>Made in the UK</span>
+    <a class="operator-link" href="/for-restaurants">For restaurants →</a>
   </div>
 </footer>
 
-<script src="/assets/daydine.js"></script>
+<script>
+(function () {
+  var t = document.querySelector('.mast-toggle');
+  var n = document.querySelector('.mast-nav');
+  if (!t || !n) return;
+  t.addEventListener('click', function () {
+    var open = n.classList.toggle('open');
+    t.setAttribute('aria-expanded', String(open));
+  });
+})();
+</script>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
