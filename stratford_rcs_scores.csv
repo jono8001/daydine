@@ -154,7 +154,11 @@ rank,fhrsid,business_name,postcode,category,category_source,is_food,confidence,c
 153,1513917,The Water Margin @ The Hollybush,CV47 7RW,Takeaway,google_types,True,Low,0.8,6.269,6.146,,10.0,,,7.257,Good,converged(avg_div=0.060),3.223,3.333,14,40,10,4,0.71,0.14,2,inedible; disgusting,not_checked
 154,1589295,The Tempest,CV37 6EX,Italian Restaurant,google_types,True,Medium,0.5,6.621,8.828,,10.0,3.333,,7.245,Good,neutral(avg_div=0.140),7.114,3.333,15,40,10,5,0.67,0.85,0,,not_checked
 155,503342,Burger King - Northbound,CV35 0AA,American / Grill,google_types,True,Medium,0.5,9.034,4.417,,10.0,6.667,,7.225,Good,diverged(avg_div=0.600),4.815,3.333,18,40,11,7,0.61,0.12,2,avoid this; disgusting,not_checked
+<<<<<<< Updated upstream
 156,1024960,Starbucks Drive Thru,CV35 0AA,Fast Food / Quick Service,google_types,True,Low,0.8,9.787,5.893,,10.0,,,7.204,Good,diverged(avg_div=0.320),4.389,3.333,18,40,11,7,0.61,0.0,4,rude staff; closed down; disgusting; filthy,not_checked
+=======
+156,1024960,Starbucks Drive Thru,CV35 0AA,Fast Food / Quick Service,google_types,True,Low,0.8,9.787,5.893,,10.0,,,7.204,Good,diverged(avg_div=0.320),4.389,3.333,18,40,11,7,0.61,0.0,4,rude staff; filthy; disgusting; closed down,not_checked
+>>>>>>> Stashed changes
 157,1747706,The Long Itch Diner,CV47 9QZ,Fast Food / Quick Service,google_types,True,Medium,0.5,6.164,8.821,,10.0,3.333,,7.202,Good,converged(avg_div=0.080),6.374,3.333,19,40,11,8,0.58,0.6,0,,not_checked
 158,503401,Shukurs,CV35 0HP,Indian Restaurant,google_types,True,Medium,0.5,6.335,9.383,,10.0,3.333,,7.201,Good,neutral(avg_div=0.140),7.417,3.333,18,40,11,7,0.61,1.0,0,,not_checked
 159,503089,Touchdown Cafe,CV35 9EU,Cafe / Coffee Shop,google_types,True,Medium,0.5,6.294,8.956,,10.0,3.333,,7.091,Good,neutral(avg_div=0.120),6.657,3.333,16,40,11,5,0.69,0.7,0,,not_checked
@@ -173,11 +177,19 @@ rank,fhrsid,business_name,postcode,category,category_source,is_food,confidence,c
 172,503218,Burger King - Southbound,CV35 0AA,American / Grill,google_types,True,Medium,0.5,7.726,4.417,,10.0,6.667,,6.576,Good,diverged(avg_div=0.600),4.488,3.333,18,40,11,7,0.61,0.12,2,avoid this; disgusting,not_checked
 173,1421980,Tzatziki34,CV37 6AB,Mediterranean Restaurant,google_types,True,Low,0.8,6.777,8.347,,,3.333,,6.544,Good,converged(avg_div=0.020),6.346,3.333,15,40,10,5,0.67,0.67,0,,not_checked
 174,1826837,Cafe Chutneys,CV37 0AX,Indian Restaurant,google_types,True,Medium,0.5,5.438,8.941,,10.0,3.333,,6.419,Generally Satisfactory,mild_divergence(avg_div=0.240),7.118,3.333,18,40,11,7,0.61,0.97,0,,not_checked
+<<<<<<< Updated upstream
 175,503343,Starbucks -  Southbound,CV35 0AA,Fast Food / Quick Service,google_types,True,Low,0.8,7.77,5.893,,10.0,,,6.308,Generally Satisfactory,diverged(avg_div=0.320),3.717,3.333,18,40,11,7,0.61,0.0,4,rude staff; closed down; disgusting; filthy,not_checked
 176,503715,Cafe Living,CV37 0HZ,Cafe / Coffee Shop,google_types,True,Low,0.8,4.896,6.951,,10.0,,,6.285,Generally Satisfactory,mild_divergence(avg_div=0.240),3.915,3.333,16,40,11,5,0.69,0.27,1,disgusting,not_checked
 177,565220,Four Teas,CV37 6EF,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.248,9.375,,10.0,3.333,,6.271,Generally Satisfactory,diverged(avg_div=0.300),7.03,3.333,18,40,11,7,0.61,1.0,0,,not_checked
 178,502962,Curry Republic,B95 5AA,Indian Restaurant,google_types,True,Medium,0.5,5.056,7.97,,10.0,6.667,,6.212,Generally Satisfactory,diverged(avg_div=0.300),6.606,3.333,18,40,11,7,0.61,0.47,1,hair in,not_checked
 179,1495078,Four Seasons Pho Limited,CV37 6LF,Asian Restaurant,google_types,True,Medium,0.5,7.091,7.823,,10.0,3.333,,6.205,Generally Satisfactory,neutral(avg_div=0.140),5.744,3.333,16,40,10,6,0.62,0.45,3,inedible; avoid this; disgusting,not_checked
+=======
+175,503343,Starbucks -  Southbound,CV35 0AA,Fast Food / Quick Service,google_types,True,Low,0.8,7.77,5.893,,10.0,,,6.308,Generally Satisfactory,diverged(avg_div=0.320),3.717,3.333,18,40,11,7,0.61,0.0,4,rude staff; filthy; disgusting; closed down,not_checked
+176,503715,Cafe Living,CV37 0HZ,Cafe / Coffee Shop,google_types,True,Low,0.8,4.896,6.951,,10.0,,,6.285,Generally Satisfactory,mild_divergence(avg_div=0.240),3.915,3.333,16,40,11,5,0.69,0.27,1,disgusting,not_checked
+177,565220,Four Teas,CV37 6EF,Cafe / Coffee Shop,google_types,True,Medium,0.5,5.248,9.375,,10.0,3.333,,6.271,Generally Satisfactory,diverged(avg_div=0.300),7.03,3.333,18,40,11,7,0.61,1.0,0,,not_checked
+178,502962,Curry Republic,B95 5AA,Indian Restaurant,google_types,True,Medium,0.5,5.056,7.97,,10.0,6.667,,6.212,Generally Satisfactory,diverged(avg_div=0.300),6.606,3.333,18,40,11,7,0.61,0.47,1,hair in,not_checked
+179,1495078,Four Seasons Pho Limited,CV37 6LF,Asian Restaurant,google_types,True,Medium,0.5,7.091,7.823,,10.0,3.333,,6.205,Generally Satisfactory,neutral(avg_div=0.140),5.744,3.333,16,40,10,6,0.62,0.45,3,avoid this; inedible; disgusting,not_checked
+>>>>>>> Stashed changes
 180,1266904,Good Breakfast,CV35 0AA,Cafe / Coffee Shop,google_types,True,Medium,0.5,7.804,5.004,,10.0,3.333,,6.087,Generally Satisfactory,diverged(avg_div=0.620),5.097,3.333,16,40,10,6,0.62,0.55,0,,not_checked
 181,650308,New Summer Palace Restaurant,B80 7DF,Chinese Restaurant,google_types,True,Medium,0.5,4.644,8.899,,10.0,3.333,,5.986,Generally Satisfactory,mild_divergence(avg_div=0.200),6.744,3.333,17,40,11,6,0.65,0.9,0,,not_checked
 182,1826838,Mouchak,B50 4BG,Indian Restaurant,google_types,True,Medium,0.5,4.845,7.856,,10.0,3.333,,5.767,Generally Satisfactory,diverged(avg_div=0.340),6.794,3.333,14,40,10,4,0.71,0.9,0,,not_checked

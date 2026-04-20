@@ -1,6 +1,10 @@
 {
   "_meta": {
+<<<<<<< Updated upstream
     "generated_at": "2026-04-20T17:56:31Z",
+=======
+    "generated_at": "2026-04-20T19:01:07Z",
+>>>>>>> Stashed changes
     "source_dir": "data/raw/tripadvisor",
     "raw_files_found": 1,
     "matched": 0,
