@@ -117,6 +117,10 @@ jobs:
           APIFY_ACTOR: ${{ vars.APIFY_ACTOR }}
           MAX_REVIEWS: ${{ vars.MAX_REVIEWS }}
           MATCH_MIN_SCORE: ${{ vars.MATCH_MIN_SCORE }}
+          # Thread the dispatch input `limit` into the collector so that
+          # e.g. dispatching with limit=5 actually processes only the
+          # first 5 venues, instead of the full 208. 0 == no limit.
+          DRY_RUN_LIMIT: ${{ github.event.inputs.limit }}
         run: python .github/scripts/collect_tripadvisor_apify.py
 
       - name: Inspect raw TripAdvisor files

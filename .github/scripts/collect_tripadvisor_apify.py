@@ -32,6 +32,7 @@ import os
 import re
 import sys
 import time
+from urllib.parse import quote_plus
 
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 INPUT_PATH = os.path.join(REPO_ROOT, "stratford_establishments.json")
@@ -43,6 +44,58 @@ LOCATION = "Stratford-upon-Avon"
 MAX_REVIEWS = int(os.environ.get("MAX_REVIEWS") or "5")
 MATCH_MIN_SCORE = float(os.environ.get("MATCH_MIN_SCORE") or "0.55")
 COORD_TOLERANCE_M = 200.0
+# Optional dry-run limit wired from the workflow's dispatch input.
+# 0 / unset / negative ⇒ no limit; >0 ⇒ process only the first N venues.
+DRY_RUN_LIMIT = int(os.environ.get("DRY_RUN_LIMIT") or "0")
+
+
+def build_apify_input(actor: str, query: str, max_places: int,
+                       max_reviews: int) -> dict:
+    """Build the Apify actor input payload for `query`, branching by actor.
+
+    TripAdvisor Apify actors do not share a common input schema, so the
+    shape has to be chosen per actor. Supporting multiple actors from one
+    switch statement means we can swap actors via the APIFY_ACTOR env var
+    without editing this script.
+
+    Known actors:
+
+      * `scrapapi/tripadvisor-review-scraper` — strictly requires
+        `startUrls`. The "No startUrls provided" error message mentions
+        "hotel URL, hotel name, or keyword" — the first is mandatory,
+        the other two are aliases the actor understands if present.
+        We provide a TripAdvisor Search URL built from the query so the
+        actor can resolve restaurants by name even when the exact
+        restaurant URL isn't known, plus the keyword/searchString
+        aliases as belt-and-braces.
+
+      * `automation-lab/tripadvisor-scraper` — legacy keyword-based
+        schema. Takes a list of arbitrary search queries and does
+        discovery internally.
+    """
+    if actor.startswith("scrapapi/tripadvisor-review-scraper"):
+        search_url = (
+            "https://www.tripadvisor.com/Search?q=" + quote_plus(query)
+        )
+        return {
+            "startUrls": [{"url": search_url}],
+            "keywords": [query],
+            "searchStrings": [query],
+            "locationFullName": query,
+            "maxReviewsPerPlace": max_reviews,
+            "maxItems": max_places,
+            "language": "en",
+            "includeReviews": True,
+        }
+
+    # Default / legacy: automation-lab/tripadvisor-scraper and compatible.
+    return {
+        "searchQueries": [query],
+        "placeType": "restaurant",
+        "maxPlacesPerQuery": max_places,
+        "maxReviewsPerPlace": max_reviews,
+        "language": "en",
+    }
 
 
 def normalise_name(name):
@@ -109,13 +162,7 @@ def search_apify(query, token, max_places=1, max_reviews=5):
 
     client = ApifyClient(token)
 
-    run_input = {
-        "searchQueries": [query],
-        "placeType": "restaurant",
-        "maxPlacesPerQuery": max_places,
-        "maxReviewsPerPlace": max_reviews,
-        "language": "en",
-    }
+    run_input = build_apify_input(APIFY_ACTOR, query, max_places, max_reviews)
 
     try:
         run = client.actor(APIFY_ACTOR).call(
@@ -270,6 +317,15 @@ def main():
     print(f"Loaded {len(establishments)} establishments")
     print(f"Using Apify actor: {APIFY_ACTOR}")
 
+    # Dry-run limit. Workflow dispatch input `limit` is threaded through as
+    # DRY_RUN_LIMIT. 0 means "no limit" (legacy default). Apply BEFORE the
+    # per-venue loop so `total` and the final guard reflect the limited set.
+    if DRY_RUN_LIMIT and DRY_RUN_LIMIT > 0:
+        limited = dict(list(establishments.items())[:DRY_RUN_LIMIT])
+        print(f"DRY_RUN_LIMIT={DRY_RUN_LIMIT} — limiting loop to "
+              f"{len(limited)} establishments (of {len(establishments)})")
+        establishments = limited
+
     matched = 0
     no_match = 0
     skipped = 0
@@ -354,6 +410,25 @@ def main():
     print(f"  Raw files under: {RAW_DIR}")
     print(f"Next step: run .github/scripts/consolidate_tripadvisor.py "
           f"and .github/scripts/merge_tripadvisor.py")
+
+    # Hard-fail guard. If we attempted any venues and none matched, the
+    # actor was almost certainly fed a payload it didn't understand
+    # (input-schema mismatch) or the authenticated account is rate-limited
+    # / out of credits. Either way, zero matches over N>0 venues is a
+    # meaningful pipeline failure that must not be silently counted as
+    # "no-match". This covers the case where every per-venue call exits 0
+    # with an empty dataset (which would not increment `errors`).
+    if total > 0 and matched == 0:
+        sys.stderr.write(
+            "\n::error::Apify TripAdvisor collection produced ZERO matches "
+            f"across {total} attempted venues "
+            f"(no_match={no_match}, skipped={skipped}, errors={errors}). "
+            "This almost always means the actor's input schema does not "
+            "match the payload build in build_apify_input() — inspect the "
+            "Apify run logs for the actor's exact error. "
+            "See docs/DayDine-TripAdvisor-Strategy-Decision.md.\n"
+        )
+        sys.exit(1)
 
 
 if __name__ == "__main__":
