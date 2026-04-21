@@ -249,3 +249,77 @@ have.
 None (2026-04-21). To supersede, write ADR-002 that references this
 ADR by number and documents the trigger condition from §5 that was
 met.
+
+---
+
+## Addendum — Workflow alignment (2026-04-22)
+
+*Follow-up to ADR-001 after run #4 of "Collect Reviews (Playwright)"
+(https://github.com/jono8001/daydine/actions/runs/24691572809/job/72214494463)
+exposed three operational issues. Recorded here rather than in a
+separate ADR because this is enforcement, not a new decision.*
+
+### A. Alignment of `collect_reviews.yml`
+
+The "Collect TripAdvisor Reviews" step invoking
+`collect_tripadvisor_playwright.py` is **removed** from
+`.github/workflows/collect_reviews.yml`. The script itself is
+retained on disk so the revival checklist in §5 remains viable, but
+the workflow no longer spends runtime invoking a known-deferred
+collector. Run #4 proved this was not cosmetic: the TA step
+consumed the 2-minute gap between Google completion and the job's
+120-minute timeout, which then cancelled the merge/update/monitor
+/commit steps and lost ~1h57m of successful Google scraping.
+
+### B. Commit-step decoupling
+
+The "Commit results" step now runs with `if: always()` and uses a
+rebase-with-autostash pattern (`git stash --include-untracked; git
+pull --rebase; git stash pop`) that explicitly aborts on conflict
+rather than committing markers. Each upstream step carries an `id:`
+and its outcome is rendered into the commit body so forensics does
+not require opening the Actions UI. The commit step also
+grep-checks the working tree for conflict markers before committing
+(same pattern already proven in `.github/workflows/collect_reviews.yml`'s
+sibling workflows).
+
+### C. `collect_google_reviews_playwright.py` improvements
+
+Two corrections to the output schema, recorded here so downstream
+consumers can rely on them:
+
+* **`total_reviews_found` is now robust.** The previous single
+  selector `[aria-label*="review"]` matched a Sort/Reviews-tab
+  element that carries the word "review" but no count, which made
+  every venue in run #4 log `(0 total on Google)`. The extractor
+  now walks a layered set of selectors (`button[jsaction*="reviewChart"]`,
+  `button[aria-label*="reviews"]`, `span[aria-label*="reviews"]`,
+  then a regex-exact-text fallback, then a bounded span/button
+  scan). Counts like `847 reviews` (no comma) and `1,234 reviews`
+  both parse correctly — verified against 8 representative
+  strings. Per-venue stdout now includes a `total_reviews_found=N`
+  line so successful extraction is visible in the log.
+
+* **`star_histogram` is a new output field.** The 5/4/3/2/1 bars
+  from Google's aggregate panel above the reviews list are read
+  from their aria-labels (shape: `"<N> stars, <count> reviews"`).
+  Value: a `{"5": int, "4": int, "3": int, "2": int, "1": int}`
+  dict when the panel is found, or **`None` (not `{}`)** when the
+  panel wasn't found — this lets downstream code distinguish
+  "not captured this run" (None) from "captured, some star level
+  is truly zero" (dict with a zero value). Log line
+  `star_histogram=...` emitted per venue.
+
+Both changes are additive: existing consumers reading
+`total_reviews_found` still see an integer (0 on failure); new
+consumers reading `star_histogram` must handle `None`.
+
+### D. Scoring semantics (unchanged)
+
+No change to the V4 engine, weights, priors, penalties, caps,
+classification gates, or `coverage_status` thresholds. The additions
+above only enrich what the Playwright collector writes into
+`data/raw/google/*.json`. Downstream scoring does not yet read
+`star_histogram`; any future use must be added as a separate,
+explicit scoring spec change and must not silently affect
+`rcs_v4_final`.
