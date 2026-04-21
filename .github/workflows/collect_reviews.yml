@@ -1,17 +1,24 @@
 name: Collect Reviews (Playwright)
 
-# TripAdvisor collection is DEFERRED as of the architectural pivot
-# (see docs/ADR-001-TripAdvisor-Deferral.md). Google Places is now
-# the canonical entity-resolution layer. Scheduled execution of this
-# workflow is disabled so we don't burn runner minutes on a known-
-# blocked path. It remains available via workflow_dispatch for
-# anyone testing a revival path or running a one-off experiment.
+# TripAdvisor collection is DEFERRED as of ADR-001
+# (docs/ADR-001-TripAdvisor-Deferral.md). This workflow now only
+# collects Google reviews. The `collect_tripadvisor_playwright.py`
+# script remains on disk so it can be re-wired later, but it is NOT
+# invoked here — run #4 proved that running a known-blocked TA step
+# inside this workflow eats runtime and, via the job timeout, caused
+# the commit step to be skipped, losing ~2 hours of successful Google
+# scraping. Alignment: §7 of ADR-001 "Files changed in this decision".
 #
-# To revive:
+# Scheduled execution is also disabled. Use workflow_dispatch for
+# one-off experiments.
+#
+# To revive TripAdvisor:
 #   1. Read docs/ADR-001-TripAdvisor-Deferral.md §"Conditions that
 #      would justify reviving".
-#   2. Uncomment the `schedule:` block below.
-#   3. Update the ADR to record the revival rationale.
+#   2. Re-add the step invoking `collect_tripadvisor_playwright.py`
+#      (between "Collect Google Reviews" and "Merge Reviews").
+#   3. Uncomment the `schedule:` block below.
+#   4. Update the ADR to record the revival rationale.
 
 on:
   workflow_dispatch:
@@ -34,7 +41,7 @@ permissions:
 jobs:
   collect-reviews:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 150
     permissions:
       contents: write
     env:
@@ -56,6 +63,8 @@ jobs:
           playwright install-deps
 
       - name: Collect Google Reviews
+        id: google
+        continue-on-error: true
         run: |
           LIMIT_ARG=""
           if [ "${{ github.event.inputs.limit }}" != "0" ] && [ -n "${{ github.event.inputs.limit }}" ]; then
@@ -63,38 +72,91 @@ jobs:
           fi
           MAX_ARG="${{ github.event.inputs.max_reviews || '50' }}"
           python .github/scripts/collect_google_reviews_playwright.py $LIMIT_ARG --max-reviews $MAX_ARG
-        continue-on-error: true
 
-      - name: Collect TripAdvisor Reviews
-        run: |
-          LIMIT_ARG=""
-          if [ "${{ github.event.inputs.limit }}" != "0" ] && [ -n "${{ github.event.inputs.limit }}" ]; then
-            LIMIT_ARG="--limit ${{ github.event.inputs.limit }}"
-          fi
-          MAX_ARG="${{ github.event.inputs.max_reviews || '50' }}"
-          python .github/scripts/collect_tripadvisor_playwright.py $LIMIT_ARG --max-reviews $MAX_ARG
-        continue-on-error: true
+      # TripAdvisor step intentionally removed (ADR-001). Do not re-add
+      # without following the revival checklist in the header comment.
 
       - name: Merge Reviews
+        id: merge
+        if: always()
+        continue-on-error: true
         run: python .github/scripts/merge_multi_source_reviews.py
 
       - name: Update Establishments with Review Data
+        id: update
+        if: always()
+        continue-on-error: true
         run: python .github/scripts/merge_enrichment.py --include-reviews
 
       - name: Monitor Collection Health
-        run: python .github/scripts/review_data_monitor.py
+        id: monitor
+        if: always()
         continue-on-error: true
+        run: python .github/scripts/review_data_monitor.py
 
       - name: Commit results
+        # Runs even if an upstream step failed, errored, or the job hit
+        # its timeout. A partial collection must still produce a commit
+        # of whatever fresh data/raw/google/ and data/processed/ files
+        # exist on disk — losing successful Google scraping because a
+        # downstream step blipped is unacceptable (see run #4 post-
+        # mortem referenced in the workflow header).
+        if: always()
         run: |
+          set -u
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Capture step outcomes for the commit body so future
+          # forensics has a per-step record without needing to open
+          # the Actions UI.
+          GOOGLE_OUTCOME='${{ steps.google.outcome }}'
+          MERGE_OUTCOME='${{ steps.merge.outcome }}'
+          UPDATE_OUTCOME='${{ steps.update.outcome }}'
+          MONITOR_OUTCOME='${{ steps.monitor.outcome }}'
+
+          # Summarise which files will be committed so the log also
+          # carries this info even if the commit itself is a no-op.
+          NEW_RAW_COUNT=$(find data/raw/google -name '*.json' -newer .github/workflows/collect_reviews.yml 2>/dev/null | wc -l || echo 0)
+          PROCESSED_COUNT=$(find data/processed -name '*_combined.json' -newer .github/workflows/collect_reviews.yml 2>/dev/null | wc -l || echo 0)
+          echo "Step outcomes: google=$GOOGLE_OUTCOME merge=$MERGE_OUTCOME update=$UPDATE_OUTCOME monitor=$MONITOR_OUTCOME"
+          echo "Fresh files: data/raw/google=$NEW_RAW_COUNT data/processed=$PROCESSED_COUNT"
+
           git add -A
-          git diff --cached --quiet && echo "No changes to commit" && exit 0
-          git stash
-          git pull --rebase origin main
+          if git diff --cached --quiet; then
+            echo "No changes to commit (no fresh data on disk)"
+            exit 0
+          fi
+
+          # Use rebase-with-autostash pattern to avoid the b705c2d-era
+          # stash/pop failure mode that silently committed conflict
+          # markers. Abort the rebase on conflict and still exit 0 from
+          # this step — we want the workflow to surface the conflict
+          # clearly but not to mark every run red.
+          git stash --include-untracked || true
+          if ! git pull --rebase origin main; then
+            echo "::warning::Rebase hit a conflict during Commit results — aborting"
+            git rebase --abort || true
+            git stash pop || true
+            exit 0
+          fi
           git stash pop || true
           git add -A
-          git diff --cached --quiet && echo "No changes after pull" && exit 0
-          git commit -m "chore: automated review collection $(date +%Y-%m-%d)"
+          if git diff --cached --quiet; then
+            echo "No changes after rebase"
+            exit 0
+          fi
+
+          # Belt-and-braces: refuse to commit if any tracked file
+          # contains Git conflict markers. Catches weird post-rebase
+          # states we didn't anticipate.
+          if git grep -I -n -E '^(<<<<<<< |=======$|>>>>>>> )' -- . > /tmp/markers.txt 2>/dev/null; then
+            echo "::error::Conflict markers detected in working tree; refusing to commit"
+            cat /tmp/markers.txt
+            exit 1
+          fi
+
+          COMMIT_MSG=$(printf 'chore: automated review collection %s\n\nStep outcomes (ADR-001-aligned; TA deferred):\n  collect_google: %s\n  merge_reviews:  %s\n  update_est:     %s\n  monitor_health: %s\n\nFresh artefacts staged:\n  data/raw/google new files:  %s\n  data/processed updated:     %s\n' \
+            "$(date +%Y-%m-%d)" "$GOOGLE_OUTCOME" "$MERGE_OUTCOME" "$UPDATE_OUTCOME" "$MONITOR_OUTCOME" "$NEW_RAW_COUNT" "$PROCESSED_COUNT")
+          git commit -m "$COMMIT_MSG"
           git push

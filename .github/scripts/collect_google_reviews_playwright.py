@@ -89,6 +89,133 @@ async def accept_cookies(page):
     return False
 
 
+async def extract_total_review_count(page):
+    """Return the venue's total Google review count as an int, or 0 if
+    it can't be found.
+
+    Run #4 showed the old extractor (locator `[aria-label*="review"]`
+    on first match + regex `([\d,]+)\s*review`) returned 0 for every
+    venue in the Stratford trial. Root cause: the first-matching
+    element was typically a "Sort reviews" button or a tab label
+    whose text/aria-label carries the word "review" but no count.
+    The digit-regex was fine; the selector wasn't.
+
+    This version walks a layered set of selectors from specific to
+    generic, trying the aria-label first (more reliable) then text
+    content. Logs the total found so future runs can see which
+    path won at a glance.
+    """
+    count_re = re.compile(r"([\d][\d,]*)\s*reviews?", re.IGNORECASE)
+    strict_text_re = re.compile(r"^\s*([\d][\d,]*)\s*reviews?\s*$",
+                                 re.IGNORECASE)
+
+    # Strategy 1: the aggregate-reviews chart button near the overall
+    # rating — most specific and stable.
+    specific_selectors = [
+        'button[jsaction*="reviewChart"]',
+        'button[aria-label*="reviews"]',
+        'span[aria-label*="reviews"]',
+    ]
+    for selector in specific_selectors:
+        try:
+            loc = page.locator(selector).first
+            if not await loc.is_visible(timeout=2000):
+                continue
+            label = (await loc.get_attribute("aria-label") or "")
+            m = count_re.search(label)
+            if m:
+                return int(m.group(1).replace(",", ""))
+            text = (await loc.text_content() or "")
+            m = count_re.search(text)
+            if m:
+                return int(m.group(1).replace(",", ""))
+        except Exception:
+            continue
+
+    # Strategy 2: any element whose entire visible text matches
+    # "<number> reviews" exactly. Playwright's text=/.../ supports
+    # regex matching on inner text.
+    try:
+        loc = page.locator("text=/^\\s*[\\d][\\d,]*\\s+reviews?\\s*$/i").first
+        if await loc.is_visible(timeout=2000):
+            text = (await loc.text_content() or "")
+            m = strict_text_re.match(text)
+            if m:
+                return int(m.group(1).replace(",", ""))
+    except Exception:
+        pass
+
+    # Strategy 3 (last resort): scan a bounded set of visible spans
+    # for the "<N> reviews" shape. Bounded to first 40 to keep it cheap.
+    try:
+        spans = page.locator("span, button")
+        n = await spans.count()
+        for i in range(min(n, 40)):
+            try:
+                s = spans.nth(i)
+                text = (await s.text_content() or "").strip()
+                m = strict_text_re.match(text)
+                if m:
+                    return int(m.group(1).replace(",", ""))
+            except Exception:
+                continue
+    except Exception:
+        pass
+
+    return 0
+
+
+async def extract_star_histogram(page):
+    """Return the 5/4/3/2/1 star distribution as a dict, or None.
+
+    Google's place panel renders five bar elements above the reviews
+    list, each with an aria-label of the form
+        "5 stars, 412 reviews"
+    (the exact punctuation varies slightly by locale). We try a
+    couple of common shapes per rating and populate {"5": ..., "4":
+    ...} etc. on success.
+
+    Returns:
+      dict with all five keys if the panel was found,
+      partial dict if only some bars were readable (caller decides
+        whether to accept),
+      None if nothing was read (distinguishes "not captured" from
+        "zero reviews" — per spec, downstream should treat
+        star_histogram=None as "not captured this run" and a dict
+        with zero values as "captured, truly zero").
+    """
+    count_re = re.compile(r"([\d][\d,]*)\s*reviews?", re.IGNORECASE)
+    hist: dict[str, int] = {}
+    for stars in (5, 4, 3, 2, 1):
+        label = None
+        # Try several locale-robust shapes of the aria-label.
+        for locator_spec in (
+            f'[aria-label^="{stars} stars,"]',
+            f'[aria-label^="{stars} stars "]',
+            f'[aria-label*="{stars} stars"]',
+            f'[role="img"][aria-label*="{stars} stars"]',
+        ):
+            try:
+                loc = page.locator(locator_spec).first
+                if not await loc.is_visible(timeout=500):
+                    continue
+                lbl = await loc.get_attribute("aria-label")
+                if lbl and count_re.search(lbl):
+                    label = lbl
+                    break
+            except Exception:
+                continue
+        if label is None:
+            continue
+        m = count_re.search(label)
+        if m:
+            try:
+                hist[str(stars)] = int(m.group(1).replace(",", ""))
+            except ValueError:
+                continue
+    return hist if hist else None
+
+
 async def collect_reviews_for_venue(page, venue, max_reviews):
     """Collect reviews for a single venue from Google Maps."""
     name = venue.get("n", "")
@@ -129,17 +256,17 @@ async def collect_reviews_for_venue(page, venue, max_reviews):
     except Exception:
         pass
 
-    # Get total review count from the place page
-    total_reviews = 0
-    try:
-        review_count_el = page.locator('[aria-label*="review"]').first
-        if await review_count_el.is_visible(timeout=3000):
-            text = await review_count_el.text_content()
-            match = re.search(r'([\d,]+)\s*review', text)
-            if match:
-                total_reviews = int(match.group(1).replace(',', ''))
-    except Exception:
-        pass
+    # Get total review count from the place page (robust across UI
+    # variants — see extract_total_review_count() for the layered
+    # strategy). Also capture the 5/4/3/2/1 aggregate histogram from
+    # the stars panel above the reviews list.
+    total_reviews = await extract_total_review_count(page)
+    print(f"total_reviews_found={total_reviews}")
+    star_histogram = await extract_star_histogram(page)
+    if star_histogram is None:
+        print("star_histogram=None (aggregate panel not found)")
+    else:
+        print(f"star_histogram={star_histogram}")
 
     # Click on Reviews tab
     try:
@@ -302,6 +429,10 @@ async def collect_reviews_for_venue(page, venue, max_reviews):
         "collected_at": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
         "collection_method": "playwright",
         "total_reviews_found": total_reviews,
+        # None (not {}) when the aggregate panel was not captured —
+        # downstream consumers can distinguish "not captured this run"
+        # from "captured, truly zero reviews at some star level".
+        "star_histogram": star_histogram,
         "reviews_collected": len(reviews),
         "reviews": reviews,
     }
