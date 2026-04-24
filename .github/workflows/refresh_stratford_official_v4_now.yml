@@ -37,6 +37,9 @@ jobs:
       - name: Fetch fresh Stratford FSA/Firebase base
         run: python .github/scripts/fetch_firebase_stratford.py
 
+      - name: Enrich official FSA/FHRS business types
+        run: python .github/scripts/enrich_fsa_business_types.py
+
       - name: Fresh official Google Places enrichment only
         env:
           GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
