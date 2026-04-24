@@ -52,7 +52,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.364 (r_norm ok, signals_used=5, recency=0.227)",
         "CustomerValidation=7.565 (google n=13 raw=4.8 shrunk=3.96 w=0.05)",
@@ -116,7 +116,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.399 (r_norm ok, signals_used=5, recency=0.847)",
         "CustomerValidation=8.768 (google n=1387 raw=4.5 shrunk=4.48 w=1.00)",
@@ -179,7 +179,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.776 (r_norm ok, signals_used=5, recency=0.301)",
         "CustomerValidation=9.361 (google n=127 raw=5.0 shrunk=4.73 w=0.51)",
@@ -242,7 +242,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.895 (r_norm ok, signals_used=5, recency=0.791)",
         "CustomerValidation=7.585 (google n=12 raw=4.9 shrunk=3.97 w=0.05)",
@@ -305,7 +305,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.701 (r_norm ok, signals_used=5, recency=0.902)",
         "CustomerValidation=8.826 (google n=289 raw=4.6 shrunk=4.51 w=1.00)",
@@ -368,7 +368,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=None (FHRS unavailable)",
         "CustomerValidation=8.286 (google n=90 raw=4.5 shrunk=4.28 w=0.36)",
@@ -437,7 +437,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.122)",
         "CustomerValidation=9.153 (google n=566 raw=4.7 shrunk=4.64 w=1.00)",
@@ -501,7 +501,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.378 (r_norm ok, signals_used=5, recency=0.506)",
         "CustomerValidation=8.036 (google n=518 raw=4.2 shrunk=4.17 w=1.00)",
@@ -570,7 +570,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.186)",
         "CustomerValidation=8.629 (google n=315 raw=4.5 shrunk=4.42 w=1.00)",
@@ -633,7 +633,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.146 (r_norm ok, signals_used=5, recency=0.793)",
         "CustomerValidation=9.229 (google n=1376 raw=4.7 shrunk=4.68 w=1.00)",
@@ -696,7 +696,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.688 (r_norm ok, signals_used=5, recency=0.875)",
         "CustomerValidation=8.707 (google n=177 raw=4.6 shrunk=4.46 w=0.71)",
@@ -761,7 +761,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.957 (r_norm ok, signals_used=5, recency=0.914)",
         "CustomerValidation=8.228 (google n=26 raw=5.0 shrunk=4.25 w=0.10)",
@@ -824,7 +824,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.876 (r_norm ok, signals_used=5, recency=0.603)",
         "CustomerValidation=7.984 (google n=295 raw=4.2 shrunk=4.14 w=1.00)",
@@ -887,7 +887,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.805 (r_norm ok, signals_used=5, recency=0.361)",
         "CustomerValidation=6.105 (google n=40 raw=3.1 shrunk=3.31 w=0.16)",
@@ -950,7 +950,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.480 (r_norm ok, signals_used=5, recency=0.461)",
         "CustomerValidation=8.988 (google n=1160 raw=4.6 shrunk=4.57 w=1.00)",
@@ -1013,7 +1013,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.782 (r_norm ok, signals_used=5, recency=0.314)",
         "CustomerValidation=7.648 (google n=10103 raw=4.0 shrunk=4.00 w=1.00)",
@@ -1077,7 +1077,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.529 (r_norm ok, signals_used=5, recency=0.559)",
         "CustomerValidation=7.418 (google n=88 raw=4.0 shrunk=3.90 w=0.35)",
@@ -1140,7 +1140,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.754 (r_norm ok, signals_used=5, recency=0.509)",
         "CustomerValidation=7.166 (google n=18 raw=4.1 shrunk=3.79 w=0.07)",
@@ -1203,7 +1203,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.076 (r_norm ok, signals_used=5, recency=0.652)",
         "CustomerValidation=8.546 (google n=208 raw=4.5 shrunk=4.39 w=0.83)",
@@ -1266,7 +1266,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.221 (r_norm ok, signals_used=5, recency=0.192)",
         "CustomerValidation=8.677 (google n=98 raw=4.7 shrunk=4.44 w=0.39)",
@@ -1329,7 +1329,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.034 (r_norm ok, signals_used=5, recency=0.819)",
         "CustomerValidation=8.319 (google n=98 raw=4.5 shrunk=4.29 w=0.39)",
@@ -1392,7 +1392,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.252 (r_norm ok, signals_used=5, recency=0.253)",
         "CustomerValidation=7.005 (google n=6 raw=4.3 shrunk=3.72 w=0.05)",
@@ -1455,7 +1455,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.205 (r_norm ok, signals_used=5, recency=0.411)",
         "CustomerValidation=9.029 (google n=143 raw=4.8 shrunk=4.59 w=0.57)",
@@ -1518,7 +1518,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.578 (r_norm ok, signals_used=5, recency=0.656)",
         "CustomerValidation=8.753 (google n=1037 raw=4.5 shrunk=4.47 w=1.00)",
@@ -1581,7 +1581,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.348 (r_norm ok, signals_used=5, recency=0.195)",
         "CustomerValidation=7.410 (google n=8 raw=5.0 shrunk=3.89 w=0.05)",
@@ -1644,7 +1644,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.941 (r_norm ok, signals_used=5, recency=0.633)",
         "CustomerValidation=6.678 (google n=12 raw=3.5 shrunk=3.57 w=0.05)",
@@ -1707,7 +1707,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.853 (r_norm ok, signals_used=5, recency=0.206)",
         "CustomerValidation=9.430 (google n=251 raw=4.9 shrunk=4.76 w=1.00)",
@@ -1770,7 +1770,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.226 (r_norm ok, signals_used=5, recency=0.452)",
         "CustomerValidation=8.599 (google n=127 raw=4.6 shrunk=4.41 w=0.51)",
@@ -1833,7 +1833,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=None (FHRS unavailable)",
         "CustomerValidation=7.358 (google n=13 raw=4.5 shrunk=3.87 w=0.05)",
@@ -1897,7 +1897,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.974 (r_norm ok, signals_used=5, recency=0.547)",
         "CustomerValidation=7.285 (google n=20 raw=4.2 shrunk=3.84 w=0.08)",
@@ -1960,7 +1960,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.452 (r_norm ok, signals_used=5, recency=0.405)",
         "CustomerValidation=8.829 (google n=141 raw=4.7 shrunk=4.51 w=0.56)",
@@ -2024,7 +2024,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.641 (r_norm ok, signals_used=5, recency=0.283)",
         "CustomerValidation=8.067 (google n=146 raw=4.3 shrunk=4.18 w=0.58)",
@@ -2087,7 +2087,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=4.577 (r_norm ok, signals_used=5, recency=0.804)",
         "CustomerValidation=6.944 (google n=257 raw=3.7 shrunk=3.69 w=1.00)",
@@ -2150,7 +2150,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.879 (r_norm ok, signals_used=5, recency=0.507)",
         "CustomerValidation=9.372 (google n=541 raw=4.8 shrunk=4.74 w=1.00)",
@@ -2213,7 +2213,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=4.896 (r_norm ok, signals_used=2, recency=0.793)",
         "CustomerValidation=7.847 (google n=975 raw=4.1 shrunk=4.09 w=1.00)",
@@ -2276,7 +2276,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.943 (r_norm ok, signals_used=5, recency=0.636)",
         "CustomerValidation=8.966 (google n=215 raw=4.7 shrunk=4.57 w=0.86)",
@@ -2339,7 +2339,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.729 (r_norm ok, signals_used=5, recency=0.459)",
         "CustomerValidation=8.537 (google n=74 raw=4.7 shrunk=4.38 w=0.30)",
@@ -2402,7 +2402,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.597 (r_norm ok, signals_used=5, recency=0.195)",
         "CustomerValidation=9.161 (google n=601 raw=4.7 shrunk=4.65 w=1.00)",
@@ -2472,7 +2472,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.167)",
         "CustomerValidation=6.844 (google n=1 raw=5.0 shrunk=3.65 w=0.05)",
@@ -2535,7 +2535,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.890 (r_norm ok, signals_used=5, recency=0.280)",
         "CustomerValidation=7.029 (google n=3 raw=5.0 shrunk=3.73 w=0.05)",
@@ -2598,7 +2598,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.943 (r_norm ok, signals_used=5, recency=0.885)",
         "CustomerValidation=6.317 (google n=590 raw=3.4 shrunk=3.41 w=1.00)",
@@ -2661,7 +2661,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.016 (r_norm ok, signals_used=5, recency=0.782)",
         "CustomerValidation=6.123 (google n=373 raw=3.3 shrunk=3.32 w=1.00)",
@@ -2724,7 +2724,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.543 (r_norm ok, signals_used=5, recency=0.585)",
         "CustomerValidation=5.010 (google n=26 raw=1.9 shrunk=2.81 w=0.10)",
@@ -2787,7 +2787,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.622 (r_norm ok, signals_used=5, recency=0.244)",
         "CustomerValidation=8.536 (google n=199 raw=4.5 shrunk=4.38 w=0.80)",
@@ -2856,7 +2856,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.177)",
         "CustomerValidation=9.688 (google n=1250 raw=4.9 shrunk=4.87 w=1.00)",
@@ -2925,7 +2925,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.170)",
         "CustomerValidation=9.101 (google n=173 raw=4.8 shrunk=4.62 w=0.69)",
@@ -2988,7 +2988,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.906 (r_norm ok, signals_used=5, recency=0.811)",
         "CustomerValidation=7.853 (google n=1190 raw=4.1 shrunk=4.09 w=1.00)",
@@ -3051,7 +3051,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.321 (r_norm ok, signals_used=5, recency=0.391)",
         "CustomerValidation=9.069 (google n=332 raw=4.7 shrunk=4.61 w=1.00)",
@@ -3114,7 +3114,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.683 (r_norm ok, signals_used=5, recency=0.367)",
         "CustomerValidation=8.550 (google n=1968 raw=4.4 shrunk=4.39 w=1.00)",
@@ -3177,7 +3177,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.246 (r_norm ok, signals_used=5, recency=0.541)",
         "CustomerValidation=9.101 (google n=396 raw=4.7 shrunk=4.62 w=1.00)",
@@ -3240,7 +3240,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.318 (r_norm ok, signals_used=5, recency=0.386)",
         "CustomerValidation=8.897 (google n=440 raw=4.6 shrunk=4.54 w=1.00)",
@@ -3303,7 +3303,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.297 (r_norm ok, signals_used=5, recency=0.344)",
         "CustomerValidation=9.210 (google n=1024 raw=4.7 shrunk=4.67 w=1.00)",
@@ -3366,7 +3366,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.415 (r_norm ok, signals_used=5, recency=0.830)",
         "CustomerValidation=8.036 (google n=518 raw=4.2 shrunk=4.17 w=1.00)",
@@ -3429,7 +3429,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=4.217 (r_norm ok, signals_used=5, recency=0.834)",
         "CustomerValidation=7.632 (google n=1402 raw=4.0 shrunk=3.99 w=1.00)",
@@ -3492,7 +3492,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.627 (r_norm ok, signals_used=5, recency=0.253)",
         "CustomerValidation=8.172 (google n=253 raw=4.3 shrunk=4.23 w=1.00)",
@@ -3555,7 +3555,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.325 (r_norm ok, signals_used=5, recency=0.700)",
         "CustomerValidation=7.777 (google n=302 raw=4.1 shrunk=4.05 w=1.00)",
@@ -3619,7 +3619,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.928 (r_norm ok, signals_used=5, recency=0.357)",
         "CustomerValidation=7.748 (google n=84 raw=4.2 shrunk=4.04 w=0.34)",
@@ -3682,7 +3682,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.383 (r_norm ok, signals_used=5, recency=0.517)",
         "CustomerValidation=8.309 (google n=1342 raw=4.3 shrunk=4.28 w=1.00)",
@@ -3746,7 +3746,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.278 (r_norm ok, signals_used=5, recency=0.307)",
         "CustomerValidation=9.244 (google n=278 raw=4.8 shrunk=4.68 w=1.00)",
@@ -3809,7 +3809,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.348 (r_norm ok, signals_used=5, recency=0.297)",
         "CustomerValidation=7.601 (google n=526 raw=4.0 shrunk=3.98 w=1.00)",
@@ -3872,7 +3872,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=4.952 (r_norm ok, signals_used=2, recency=0.904)",
         "CustomerValidation=9.091 (google n=80 raw=5.0 shrunk=4.62 w=0.32)",
@@ -3926,7 +3926,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.508 (r_norm ok, signals_used=5, recency=0.516)",
         "CustomerValidation=None (no platforms)",
@@ -3996,7 +3996,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.178)",
         "CustomerValidation=8.778 (google n=1831 raw=4.5 shrunk=4.49 w=1.00)",
@@ -4060,7 +4060,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.781 (r_norm ok, signals_used=5, recency=0.312)",
         "CustomerValidation=8.042 (google n=567 raw=4.2 shrunk=4.17 w=1.00)",
@@ -4123,7 +4123,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.305 (r_norm ok, signals_used=5, recency=0.360)",
         "CustomerValidation=8.451 (google n=88 raw=4.6 shrunk=4.35 w=0.35)",
@@ -4186,7 +4186,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=None (FHRS unavailable)",
         "CustomerValidation=8.707 (google n=177 raw=4.6 shrunk=4.46 w=0.71)",
@@ -4249,7 +4249,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.276 (r_norm ok, signals_used=5, recency=0.301)",
         "CustomerValidation=9.033 (google n=281 raw=4.7 shrunk=4.59 w=1.00)",
@@ -4312,7 +4312,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.280 (r_norm ok, signals_used=5, recency=0.311)",
         "CustomerValidation=8.258 (google n=536 raw=4.3 shrunk=4.26 w=1.00)",
@@ -4375,7 +4375,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.741 (r_norm ok, signals_used=5, recency=0.233)",
         "CustomerValidation=9.133 (google n=486 raw=4.7 shrunk=4.64 w=1.00)",
@@ -4438,7 +4438,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.389 (r_norm ok, signals_used=5, recency=0.778)",
         "CustomerValidation=7.188 (google n=2395 raw=3.8 shrunk=3.80 w=1.00)",
@@ -4501,7 +4501,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.846 (r_norm ok, signals_used=5, recency=0.192)",
         "CustomerValidation=8.039 (google n=538 raw=4.2 shrunk=4.17 w=1.00)",
@@ -4565,7 +4565,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.158 (r_norm ok, signals_used=5, recency=0.817)",
         "CustomerValidation=8.990 (google n=1195 raw=4.6 shrunk=4.58 w=1.00)",
@@ -4628,7 +4628,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.867 (r_norm ok, signals_used=5, recency=0.735)",
         "CustomerValidation=8.976 (google n=959 raw=4.6 shrunk=4.57 w=1.00)",
@@ -4691,7 +4691,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.987 (r_norm ok, signals_used=5, recency=0.474)",
         "CustomerValidation=8.998 (google n=1398 raw=4.6 shrunk=4.58 w=1.00)",
@@ -4754,7 +4754,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.239 (r_norm ok, signals_used=5, recency=0.278)",
         "CustomerValidation=8.514 (google n=854 raw=4.4 shrunk=4.37 w=1.00)",
@@ -4817,7 +4817,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=4.082 (r_norm ok, signals_used=5, recency=0.313)",
         "CustomerValidation=8.620 (google n=299 raw=4.5 shrunk=4.42 w=1.00)",
@@ -4880,7 +4880,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.463 (r_norm ok, signals_used=5, recency=0.676)",
         "CustomerValidation=7.985 (google n=297 raw=4.2 shrunk=4.14 w=1.00)",
@@ -4943,7 +4943,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.475 (r_norm ok, signals_used=5, recency=0.550)",
         "CustomerValidation=8.308 (google n=1324 raw=4.3 shrunk=4.28 w=1.00)",
@@ -5006,7 +5006,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.912 (r_norm ok, signals_used=5, recency=0.824)",
         "CustomerValidation=7.820 (google n=542 raw=4.1 shrunk=4.07 w=1.00)",
@@ -5069,7 +5069,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.828 (r_norm ok, signals_used=5, recency=0.656)",
         "CustomerValidation=9.434 (google n=945 raw=4.8 shrunk=4.76 w=1.00)",
@@ -5132,7 +5132,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.599 (r_norm ok, signals_used=5, recency=0.198)",
         "CustomerValidation=7.812 (google n=17 raw=4.9 shrunk=4.07 w=0.07)",
@@ -5195,7 +5195,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.628 (r_norm ok, signals_used=5, recency=0.307)",
         "CustomerValidation=8.300 (google n=1062 raw=4.3 shrunk=4.28 w=1.00)",
@@ -5258,7 +5258,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=2.012 (r_norm ok, signals_used=5, recency=0.474)",
         "CustomerValidation=7.355 (google n=277 raw=3.9 shrunk=3.87 w=1.00)",
@@ -5322,7 +5322,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.391 (r_norm ok, signals_used=5, recency=0.283)",
         "CustomerValidation=8.327 (google n=51 raw=4.7 shrunk=4.29 w=0.20)",
@@ -5385,7 +5385,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.222 (r_norm ok, signals_used=5, recency=0.195)",
         "CustomerValidation=9.161 (google n=601 raw=4.7 shrunk=4.65 w=1.00)",
@@ -5449,7 +5449,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.343 (r_norm ok, signals_used=5, recency=0.187)",
         "CustomerValidation=8.945 (google n=200 raw=4.7 shrunk=4.56 w=0.80)",
@@ -5512,7 +5512,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.426 (r_norm ok, signals_used=5, recency=0.602)",
         "CustomerValidation=8.740 (google n=113 raw=4.7 shrunk=4.47 w=0.45)",
@@ -5575,7 +5575,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.518 (r_norm ok, signals_used=5, recency=0.785)",
         "CustomerValidation=8.485 (google n=576 raw=4.4 shrunk=4.36 w=1.00)",
@@ -5645,7 +5645,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.164)",
         "CustomerValidation=6.884 (google n=8 raw=3.9 shrunk=3.66 w=0.05)",
@@ -5708,7 +5708,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.354 (r_norm ok, signals_used=5, recency=0.457)",
         "CustomerValidation=8.818 (google n=277 raw=4.6 shrunk=4.50 w=1.00)",
@@ -5771,7 +5771,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.484 (r_norm ok, signals_used=5, recency=0.718)",
         "CustomerValidation=6.968 (google n=6 raw=4.2 shrunk=3.70 w=0.05)",
@@ -5834,7 +5834,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.219 (r_norm ok, signals_used=5, recency=0.189)",
         "CustomerValidation=8.316 (google n=1695 raw=4.3 shrunk=4.29 w=1.00)",
@@ -5897,7 +5897,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.240 (r_norm ok, signals_used=5, recency=0.530)",
         "CustomerValidation=7.682 (google n=144 raw=4.1 shrunk=4.01 w=0.58)",
@@ -5960,7 +5960,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.874 (r_norm ok, signals_used=5, recency=0.349)",
         "CustomerValidation=8.748 (google n=949 raw=4.5 shrunk=4.47 w=1.00)",
@@ -6023,7 +6023,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.796 (r_norm ok, signals_used=5, recency=0.592)",
         "CustomerValidation=7.595 (google n=11 raw=5.0 shrunk=3.98 w=0.05)",
@@ -6086,7 +6086,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.606 (r_norm ok, signals_used=5, recency=0.212)",
         "CustomerValidation=8.793 (google n=3288 raw=4.5 shrunk=4.49 w=1.00)",
@@ -6149,7 +6149,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.219 (r_norm ok, signals_used=5, recency=0.189)",
         "CustomerValidation=6.849 (google n=27 raw=3.7 shrunk=3.65 w=0.11)",
@@ -6212,7 +6212,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.080 (r_norm ok, signals_used=5, recency=0.461)",
         "CustomerValidation=8.267 (google n=600 raw=4.3 shrunk=4.27 w=1.00)",
@@ -6275,7 +6275,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.944 (r_norm ok, signals_used=5, recency=0.637)",
         "CustomerValidation=7.743 (google n=20 raw=4.7 shrunk=4.04 w=0.08)",
@@ -6344,7 +6344,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.087)",
         "CustomerValidation=8.735 (google n=196 raw=4.6 shrunk=4.47 w=0.78)",
@@ -6407,7 +6407,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.464 (r_norm ok, signals_used=5, recency=0.529)",
         "CustomerValidation=8.086 (google n=1550 raw=4.2 shrunk=4.19 w=1.00)",
@@ -6470,7 +6470,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=6.016 (r_norm ok, signals_used=5, recency=0.631)",
         "CustomerValidation=8.235 (google n=133 raw=4.4 shrunk=4.25 w=0.53)",
@@ -6533,7 +6533,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.195 (r_norm ok, signals_used=5, recency=0.889)",
         "CustomerValidation=7.628 (google n=1190 raw=4.0 shrunk=3.99 w=1.00)",
@@ -6596,7 +6596,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.723 (r_norm ok, signals_used=5, recency=0.446)",
         "CustomerValidation=7.088 (google n=98 raw=3.8 shrunk=3.75 w=0.39)",
@@ -6660,7 +6660,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.576 (r_norm ok, signals_used=5, recency=0.902)",
         "CustomerValidation=8.918 (google n=516 raw=4.6 shrunk=4.55 w=1.00)",
@@ -6723,7 +6723,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.201 (r_norm ok, signals_used=5, recency=0.902)",
         "CustomerValidation=8.629 (google n=315 raw=4.5 shrunk=4.42 w=1.00)",
@@ -6786,7 +6786,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.677 (r_norm ok, signals_used=5, recency=0.354)",
         "CustomerValidation=8.730 (google n=192 raw=4.6 shrunk=4.46 w=0.77)",
@@ -6849,7 +6849,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.767 (r_norm ok, signals_used=5, recency=0.384)",
         "CustomerValidation=8.934 (google n=592 raw=4.6 shrunk=4.55 w=1.00)",
@@ -6912,7 +6912,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.378 (r_norm ok, signals_used=5, recency=0.257)",
         "CustomerValidation=8.263 (google n=148 raw=4.4 shrunk=4.27 w=0.59)",
@@ -6975,7 +6975,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.753 (r_norm ok, signals_used=5, recency=0.256)",
         "CustomerValidation=8.782 (google n=125 raw=4.7 shrunk=4.49 w=0.50)",
@@ -7038,7 +7038,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.446 (r_norm ok, signals_used=5, recency=0.642)",
         "CustomerValidation=6.863 (google n=35 raw=3.7 shrunk=3.65 w=0.14)",
@@ -7107,7 +7107,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.167)",
         "CustomerValidation=8.581 (google n=121 raw=4.6 shrunk=4.40 w=0.48)",
@@ -7176,7 +7176,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.170)",
         "CustomerValidation=8.094 (google n=165 raw=4.3 shrunk=4.19 w=0.66)",
@@ -7239,7 +7239,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.904 (r_norm ok, signals_used=5, recency=0.309)",
         "CustomerValidation=9.219 (google n=1163 raw=4.7 shrunk=4.67 w=1.00)",
@@ -7302,7 +7302,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=None (FHRS unavailable)",
         "CustomerValidation=7.847 (google n=127 raw=4.2 shrunk=4.09 w=0.51)",
@@ -7371,7 +7371,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.162)",
         "CustomerValidation=8.012 (google n=387 raw=4.2 shrunk=4.16 w=1.00)",
@@ -7425,7 +7425,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.318 (r_norm ok, signals_used=5, recency=0.386)",
         "CustomerValidation=None (no platforms)",
@@ -7488,7 +7488,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.455 (r_norm ok, signals_used=5, recency=0.410)",
         "CustomerValidation=6.941 (google n=222 raw=3.7 shrunk=3.69 w=0.89)",
@@ -7551,7 +7551,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=4.919 (r_norm ok, signals_used=2, recency=0.838)",
         "CustomerValidation=8.815 (google n=273 raw=4.6 shrunk=4.50 w=1.00)",
@@ -7614,7 +7614,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.669 (r_norm ok, signals_used=5, recency=0.338)",
         "CustomerValidation=7.389 (google n=12 raw=4.6 shrunk=3.89 w=0.05)",
@@ -7677,7 +7677,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.173 (r_norm ok, signals_used=5, recency=0.396)",
         "CustomerValidation=9.144 (google n=528 raw=4.7 shrunk=4.64 w=1.00)",
@@ -7740,7 +7740,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.537 (r_norm ok, signals_used=5, recency=0.824)",
         "CustomerValidation=8.548 (google n=1823 raw=4.4 shrunk=4.39 w=1.00)",
@@ -7803,7 +7803,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=2.903 (r_norm ok, signals_used=5, recency=0.505)",
         "CustomerValidation=8.720 (google n=108 raw=4.7 shrunk=4.46 w=0.43)",
@@ -7867,7 +7867,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.043 (r_norm ok, signals_used=5, recency=0.387)",
         "CustomerValidation=8.287 (google n=822 raw=4.3 shrunk=4.28 w=1.00)",
@@ -7930,7 +7930,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.256 (r_norm ok, signals_used=5, recency=0.262)",
         "CustomerValidation=9.668 (google n=976 raw=4.9 shrunk=4.86 w=1.00)",
@@ -7993,7 +7993,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.085 (r_norm ok, signals_used=5, recency=0.921)",
         "CustomerValidation=8.633 (google n=324 raw=4.5 shrunk=4.42 w=1.00)",
@@ -8056,7 +8056,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.930 (r_norm ok, signals_used=5, recency=0.460)",
         "CustomerValidation=8.010 (google n=380 raw=4.2 shrunk=4.16 w=1.00)",
@@ -8125,7 +8125,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.000 (r_norm ok, signals_used=5, recency=0.000)",
         "CustomerValidation=8.836 (google n=303 raw=4.6 shrunk=4.51 w=1.00)",
@@ -8188,7 +8188,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.284 (r_norm ok, signals_used=5, recency=0.368)",
         "CustomerValidation=8.982 (google n=1042 raw=4.6 shrunk=4.57 w=1.00)",
@@ -8242,7 +8242,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=3.751 (r_norm ok, signals_used=2, recency=0.302)",
         "CustomerValidation=None (no platforms)",
@@ -8305,7 +8305,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.248 (r_norm ok, signals_used=5, recency=0.496)",
         "CustomerValidation=7.605 (google n=95 raw=4.1 shrunk=3.98 w=0.38)",
@@ -8368,7 +8368,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.866 (r_norm ok, signals_used=5, recency=0.482)",
         "CustomerValidation=8.406 (google n=46 raw=4.8 shrunk=4.33 w=0.18)",
@@ -8431,7 +8431,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.742 (r_norm ok, signals_used=5, recency=0.485)",
         "CustomerValidation=8.880 (google n=75 raw=4.9 shrunk=4.53 w=0.30)",
@@ -8495,7 +8495,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.302 (r_norm ok, signals_used=5, recency=0.354)",
         "CustomerValidation=8.661 (google n=388 raw=4.5 shrunk=4.44 w=1.00)",
@@ -8558,7 +8558,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.837 (r_norm ok, signals_used=5, recency=0.673)",
         "CustomerValidation=8.828 (google n=291 raw=4.6 shrunk=4.51 w=1.00)",
@@ -8621,7 +8621,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.612 (r_norm ok, signals_used=5, recency=0.725)",
         "CustomerValidation=8.288 (google n=28 raw=5.0 shrunk=4.28 w=0.11)",
@@ -8690,7 +8690,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.163)",
         "CustomerValidation=9.099 (google n=81 raw=5.0 shrunk=4.62 w=0.32)",
@@ -8753,7 +8753,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.220 (r_norm ok, signals_used=5, recency=0.190)",
         "CustomerValidation=7.186 (google n=1565 raw=3.8 shrunk=3.80 w=1.00)",
@@ -8816,7 +8816,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.961 (r_norm ok, signals_used=5, recency=0.923)",
         "CustomerValidation=7.171 (google n=551 raw=3.8 shrunk=3.79 w=1.00)",
@@ -8879,7 +8879,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.331 (r_norm ok, signals_used=5, recency=0.412)",
         "CustomerValidation=8.699 (google n=103 raw=4.7 shrunk=4.45 w=0.41)",
@@ -8942,7 +8942,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.796 (r_norm ok, signals_used=5, recency=0.342)",
         "CustomerValidation=8.930 (google n=190 raw=4.7 shrunk=4.55 w=0.76)",
@@ -9011,7 +9011,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.177)",
         "CustomerValidation=8.441 (google n=62 raw=4.7 shrunk=4.34 w=0.25)",
@@ -9074,7 +9074,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.272 (r_norm ok, signals_used=5, recency=0.293)",
         "CustomerValidation=8.502 (google n=713 raw=4.4 shrunk=4.37 w=1.00)",
@@ -9137,7 +9137,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.626 (r_norm ok, signals_used=5, recency=0.851)",
         "CustomerValidation=8.543 (google n=1603 raw=4.4 shrunk=4.39 w=1.00)",
@@ -9200,7 +9200,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.537 (r_norm ok, signals_used=5, recency=0.675)",
         "CustomerValidation=8.412 (google n=128 raw=4.5 shrunk=4.33 w=0.51)",
@@ -9263,7 +9263,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.395 (r_norm ok, signals_used=5, recency=0.289)",
         "CustomerValidation=8.950 (google n=119 raw=4.8 shrunk=4.56 w=0.48)",
@@ -9326,7 +9326,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.355 (r_norm ok, signals_used=5, recency=0.461)",
         "CustomerValidation=7.829 (google n=23 raw=4.7 shrunk=4.08 w=0.09)",
@@ -9389,7 +9389,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.385 (r_norm ok, signals_used=5, recency=0.271)",
         "CustomerValidation=8.308 (google n=1321 raw=4.3 shrunk=4.28 w=1.00)",
@@ -9452,7 +9452,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.116 (r_norm ok, signals_used=5, recency=0.731)",
         "CustomerValidation=8.860 (google n=347 raw=4.6 shrunk=4.52 w=1.00)",
@@ -9517,7 +9517,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.754 (r_norm ok, signals_used=5, recency=0.509)",
         "CustomerValidation=8.769 (google n=83 raw=4.8 shrunk=4.48 w=0.33)",
@@ -9581,7 +9581,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.496 (r_norm ok, signals_used=5, recency=0.793)",
         "CustomerValidation=7.825 (google n=44 raw=4.4 shrunk=4.08 w=0.18)",
@@ -9644,7 +9644,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.477 (r_norm ok, signals_used=5, recency=0.454)",
         "CustomerValidation=9.130 (google n=85 raw=5.0 shrunk=4.63 w=0.34)",
@@ -9707,7 +9707,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.327 (r_norm ok, signals_used=5, recency=0.405)",
         "CustomerValidation=8.951 (google n=698 raw=4.6 shrunk=4.56 w=1.00)",
@@ -9770,7 +9770,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.373 (r_norm ok, signals_used=5, recency=0.297)",
         "CustomerValidation=8.772 (google n=122 raw=4.7 shrunk=4.48 w=0.49)",
@@ -9834,7 +9834,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.303 (r_norm ok, signals_used=5, recency=0.356)",
         "CustomerValidation=7.997 (google n=333 raw=4.2 shrunk=4.15 w=1.00)",
@@ -9898,7 +9898,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.150 (r_norm ok, signals_used=5, recency=0.350)",
         "CustomerValidation=7.872 (google n=73 raw=4.3 shrunk=4.10 w=0.29)",
@@ -9962,7 +9962,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.834 (r_norm ok, signals_used=5, recency=0.667)",
         "CustomerValidation=6.742 (google n=61 raw=3.6 shrunk=3.60 w=0.24)",
@@ -10025,7 +10025,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.441 (r_norm ok, signals_used=5, recency=0.481)",
         "CustomerValidation=7.455 (google n=12 raw=4.7 shrunk=3.91 w=0.05)",
@@ -10088,7 +10088,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.585 (r_norm ok, signals_used=5, recency=0.921)",
         "CustomerValidation=8.238 (google n=430 raw=4.3 shrunk=4.25 w=1.00)",
@@ -10151,7 +10151,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.527 (r_norm ok, signals_used=5, recency=0.804)",
         "CustomerValidation=8.189 (google n=284 raw=4.3 shrunk=4.23 w=1.00)",
@@ -10214,7 +10214,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.616 (r_norm ok, signals_used=5, recency=0.233)",
         "CustomerValidation=8.169 (google n=248 raw=4.3 shrunk=4.22 w=0.99)",
@@ -10277,7 +10277,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.770 (r_norm ok, signals_used=5, recency=0.289)",
         "CustomerValidation=4.342 (google n=67 raw=2.0 shrunk=2.49 w=0.27)",
@@ -10341,7 +10341,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.572 (r_norm ok, signals_used=5, recency=0.893)",
         "CustomerValidation=8.906 (google n=467 raw=4.6 shrunk=4.54 w=1.00)",
@@ -10404,7 +10404,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.382 (r_norm ok, signals_used=5, recency=0.513)",
         "CustomerValidation=9.435 (google n=953 raw=4.8 shrunk=4.76 w=1.00)",
@@ -10467,7 +10467,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.577 (r_norm ok, signals_used=5, recency=0.653)",
         "CustomerValidation=8.841 (google n=312 raw=4.6 shrunk=4.51 w=1.00)",
@@ -10530,7 +10530,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.634 (r_norm ok, signals_used=5, recency=0.269)",
         "CustomerValidation=7.410 (google n=8 raw=5.0 shrunk=3.89 w=0.05)",
@@ -10593,7 +10593,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.202 (r_norm ok, signals_used=5, recency=0.403)",
         "CustomerValidation=9.034 (google n=282 raw=4.7 shrunk=4.59 w=1.00)",
@@ -10656,7 +10656,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.564 (r_norm ok, signals_used=5, recency=0.877)",
         "CustomerValidation=9.125 (google n=461 raw=4.7 shrunk=4.63 w=1.00)",
@@ -10719,7 +10719,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.606 (r_norm ok, signals_used=5, recency=0.213)",
         "CustomerValidation=8.404 (google n=293 raw=4.4 shrunk=4.33 w=1.00)",
@@ -10782,7 +10782,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.925 (r_norm ok, signals_used=5, recency=0.849)",
         "CustomerValidation=8.781 (google n=2005 raw=4.5 shrunk=4.49 w=1.00)",
@@ -10836,7 +10836,7 @@
     "entity_match_status": "probable",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.674 (r_norm ok, signals_used=5, recency=0.348)",
         "CustomerValidation=None (no platforms)",
@@ -10900,7 +10900,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.081 (r_norm ok, signals_used=5, recency=0.212)",
         "CustomerValidation=9.260 (google n=296 raw=4.8 shrunk=4.69 w=1.00)",
@@ -10963,7 +10963,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.756 (r_norm ok, signals_used=5, recency=0.512)",
         "CustomerValidation=4.342 (google n=67 raw=2.0 shrunk=2.49 w=0.27)",
@@ -11027,7 +11027,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.648 (r_norm ok, signals_used=5, recency=0.796)",
         "CustomerValidation=8.831 (google n=296 raw=4.6 shrunk=4.51 w=1.00)",
@@ -11090,7 +11090,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.678 (r_norm ok, signals_used=5, recency=0.355)",
         "CustomerValidation=9.079 (google n=106 raw=4.9 shrunk=4.61 w=0.42)",
@@ -11153,7 +11153,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.629 (r_norm ok, signals_used=5, recency=0.257)",
         "CustomerValidation=8.307 (google n=95 raw=4.5 shrunk=4.28 w=0.38)",
@@ -11207,7 +11207,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.539 (r_norm ok, signals_used=5, recency=0.577)",
         "CustomerValidation=None (no platforms)",
@@ -11270,7 +11270,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.092 (r_norm ok, signals_used=5, recency=0.234)",
         "CustomerValidation=8.639 (google n=336 raw=4.5 shrunk=4.43 w=1.00)",
@@ -11333,7 +11333,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.313 (r_norm ok, signals_used=5, recency=0.676)",
         "CustomerValidation=7.606 (google n=584 raw=4.0 shrunk=3.98 w=1.00)",
@@ -11396,7 +11396,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.913 (r_norm ok, signals_used=5, recency=0.676)",
         "CustomerValidation=8.675 (google n=430 raw=4.5 shrunk=4.44 w=1.00)",
@@ -11459,7 +11459,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.253 (r_norm ok, signals_used=5, recency=0.256)",
         "CustomerValidation=8.329 (google n=3182 raw=4.3 shrunk=4.29 w=1.00)",
@@ -11528,7 +11528,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.000 (r_norm ok, signals_used=5, recency=0.004)",
         "CustomerValidation=6.939 (google n=2 raw=5.0 shrunk=3.69 w=0.05)",
@@ -11591,7 +11591,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.474 (r_norm ok, signals_used=5, recency=0.699)",
         "CustomerValidation=9.020 (google n=265 raw=4.7 shrunk=4.59 w=1.00)",
@@ -11654,7 +11654,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.801 (r_norm ok, signals_used=5, recency=0.602)",
         "CustomerValidation=8.295 (google n=92 raw=4.5 shrunk=4.28 w=0.37)",
@@ -11717,7 +11717,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.174 (r_norm ok, signals_used=5, recency=0.349)",
         "CustomerValidation=9.193 (google n=829 raw=4.7 shrunk=4.66 w=1.00)",
@@ -11786,7 +11786,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.180)",
         "CustomerValidation=9.513 (google n=9123 raw=4.8 shrunk=4.80 w=1.00)",
@@ -11849,7 +11849,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.781 (r_norm ok, signals_used=5, recency=0.412)",
         "CustomerValidation=8.647 (google n=146 raw=4.6 shrunk=4.43 w=0.58)",
@@ -11912,7 +11912,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.850 (r_norm ok, signals_used=5, recency=0.700)",
         "CustomerValidation=8.690 (google n=490 raw=4.5 shrunk=4.45 w=1.00)",
@@ -11975,7 +11975,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.883 (r_norm ok, signals_used=5, recency=0.517)",
         "CustomerValidation=9.020 (google n=140 raw=4.8 shrunk=4.59 w=0.56)",
@@ -12038,7 +12038,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.126 (r_norm ok, signals_used=5, recency=0.551)",
         "CustomerValidation=8.914 (google n=499 raw=4.6 shrunk=4.54 w=1.00)",
@@ -12101,7 +12101,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.502 (r_norm ok, signals_used=5, recency=0.504)",
         "CustomerValidation=7.682 (google n=14 raw=4.9 shrunk=4.01 w=0.06)",
@@ -12164,7 +12164,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.550 (r_norm ok, signals_used=5, recency=0.849)",
         "CustomerValidation=7.842 (google n=863 raw=4.1 shrunk=4.08 w=1.00)",
@@ -12227,7 +12227,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.454 (r_norm ok, signals_used=5, recency=0.409)",
         "CustomerValidation=8.540 (google n=202 raw=4.5 shrunk=4.38 w=0.81)",
@@ -12296,7 +12296,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.181)",
         "CustomerValidation=8.298 (google n=1029 raw=4.3 shrunk=4.28 w=1.00)",
@@ -12361,7 +12361,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.776 (r_norm ok, signals_used=5, recency=0.302)",
         "CustomerValidation=7.562 (google n=32 raw=4.3 shrunk=3.96 w=0.13)",
@@ -12424,7 +12424,7 @@
     "entity_match_status": "ambiguous",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.597 (r_norm ok, signals_used=5, recency=0.195)",
         "CustomerValidation=9.161 (google n=601 raw=4.7 shrunk=4.65 w=1.00)",
@@ -12488,7 +12488,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.395 (r_norm ok, signals_used=5, recency=0.540)",
         "CustomerValidation=7.411 (google n=1944 raw=3.9 shrunk=3.90 w=1.00)",
@@ -12551,7 +12551,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.767 (r_norm ok, signals_used=5, recency=0.285)",
         "CustomerValidation=8.079 (google n=1215 raw=4.2 shrunk=4.19 w=1.00)",
@@ -12614,7 +12614,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.404 (r_norm ok, signals_used=5, recency=0.307)",
         "CustomerValidation=8.638 (google n=142 raw=4.6 shrunk=4.43 w=0.57)",
@@ -12683,7 +12683,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=7.000 (r_norm ok, signals_used=5, recency=0.121)",
         "CustomerValidation=8.014 (google n=393 raw=4.2 shrunk=4.16 w=1.00)",
@@ -12746,7 +12746,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.720 (r_norm ok, signals_used=5, recency=0.189)",
         "CustomerValidation=9.608 (google n=581 raw=4.9 shrunk=4.84 w=1.00)",
@@ -12809,7 +12809,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=5.877 (r_norm ok, signals_used=5, recency=0.604)",
         "CustomerValidation=7.634 (google n=110 raw=4.1 shrunk=3.99 w=0.44)",
@@ -12872,7 +12872,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=9.219 (r_norm ok, signals_used=5, recency=0.189)",
         "CustomerValidation=8.776 (google n=1706 raw=4.5 shrunk=4.48 w=1.00)",
@@ -12935,7 +12935,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.885 (r_norm ok, signals_used=5, recency=0.270)",
         "CustomerValidation=8.148 (google n=219 raw=4.3 shrunk=4.22 w=0.88)",
@@ -12998,7 +12998,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=4.350 (r_norm ok, signals_used=5, recency=0.849)",
         "CustomerValidation=6.186 (google n=147 raw=3.3 shrunk=3.35 w=0.59)",
@@ -13061,7 +13061,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.437 (r_norm ok, signals_used=5, recency=0.375)",
         "CustomerValidation=8.120 (google n=187 raw=4.3 shrunk=4.20 w=0.75)",
@@ -13124,7 +13124,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.936 (r_norm ok, signals_used=5, recency=0.623)",
         "CustomerValidation=9.415 (google n=774 raw=4.8 shrunk=4.76 w=1.00)",
@@ -13187,7 +13187,7 @@
     "entity_match_status": "confirmed",
     "audit": {
       "engine_version": "v4.0.0",
-      "computed_at": "2026-04-24T10:30:15Z",
+      "computed_at": "2026-04-24T11:03:30Z",
       "decision_trace": [
         "TrustCompliance=8.716 (r_norm ok, signals_used=5, recency=0.931)",
         "CustomerValidation=9.239 (google n=1677 raw=4.7 shrunk=4.68 w=1.00)",

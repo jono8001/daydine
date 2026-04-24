@@ -3,9 +3,10 @@
   "display_name": "Stratford-upon-Avon",
   "slug": "stratford-on-avon",
   "methodology_version": "V4 official-source mode",
-  "total_venues": 169,
+  "total_venues": 150,
   "top_n": 10,
-  "others_count": 159,
+  "others_count": 140,
+  "excluded_non_food_or_ambiguous": 19,
   "last_updated": "2026-04-24",
   "venues": [
     {
