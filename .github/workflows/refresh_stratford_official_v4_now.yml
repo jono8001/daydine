@@ -56,8 +56,9 @@ jobs:
           COMPANIES_HOUSE_API_KEY: ${{ secrets.COMPANIES_HOUSE_API_KEY }}
         run: python .github/scripts/enrich_companies_house.py
 
-      - name: Run V4 scoring engine with risk layer
+      - name: Run V4 scoring engine with risk-layer fallback
         run: |
+          set +e
           python scripts/run_v4_scoring_with_risk.py \
             --input stratford_establishments.json \
             --menus stratford_menus.json \
@@ -65,6 +66,37 @@ jobs:
             --companies-house stratford_companies_house.json \
             --out-json stratford_rcs_v4_scores.json \
             --out-csv stratford_rcs_v4_scores.csv
+          RISK_STATUS=$?
+          set -e
+
+          if [ "$RISK_STATUS" -ne 0 ]; then
+            echo "Risk-aware V4 runner failed with status $RISK_STATUS; falling back to canonical V4 scorer without Companies House risk caps."
+            python rcs_scoring_v4.py \
+              --input stratford_establishments.json \
+              --menus stratford_menus.json \
+              --editorial stratford_editorial.json \
+              --out-json stratford_rcs_v4_scores.json \
+              --out-csv stratford_rcs_v4_scores.csv
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          Path('stratford_companies_house_runtime_status.json').write_text(json.dumps({
+            'risk_scoring_enabled': False,
+            'fallback_used': True,
+            'reason': 'risk-aware runner failed; canonical V4 scorer used so public rankings remain fresh'
+          }, indent=2) + '\n')
+          PY
+          else
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          Path('stratford_companies_house_runtime_status.json').write_text(json.dumps({
+            'risk_scoring_enabled': True,
+            'fallback_used': False,
+            'reason': 'risk-aware runner completed'
+          }, indent=2) + '\n')
+          PY
+          fi
 
       - name: Build configured town and district ranking JSON from V4
         run: |
