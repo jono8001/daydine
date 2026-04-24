@@ -1,42 +1,14 @@
 {
   "generated_by": "resolve_entities.py",
-  "total_establishments": 210,
-  "manual_aliases_applied": 9,
-  "manual_aliases_missing_fhrsids": [],
+  "total_establishments": 208,
+  "manual_aliases_applied": 8,
+  "manual_aliases_missing_fhrsids": [
+    "503480"
+  ],
   "auto_parsed_trade_as": 0,
-  "records_with_public_name": 9,
-  "records_with_trading_names": 9,
+  "records_with_public_name": 8,
+  "records_with_trading_names": 8,
   "duplicate_gpid_groups": [
-    {
-      "gpid": "ChIJ1abMA1Iyd0gRmLbkMlGWa0o",
-      "fhrsids": [
-        "503343",
-        "503218"
-      ],
-      "names": [
-        "Starbucks - Southbound",
-        "Burger King - Southbound"
-      ],
-      "disambiguation_type": "service_station_shared",
-      "reason_for_operator": "Two separate brands share the service-station forecourt. Google Places returns one listing for the whole site; the FSA records each brand separately. Until each brand has a distinct Google Business Profile, both venues are flagged ambiguous and remain in Directional-C.",
-      "resolution_path": "Each brand operator requests a distinct Google Business Profile for their unit (franchise head office typically handles this for chain brands).",
-      "site": "Welcome Break Warwick Services Southbound, M40"
-    },
-    {
-      "gpid": "ChIJG1I-0yI7d0gR3UYQ-oZYhhE",
-      "fhrsids": [
-        "1339997",
-        "1513917"
-      ],
-      "names": [
-        "The Margin",
-        "The Water Margin @ The Hollybush"
-      ],
-      "disambiguation_type": "rebrand_or_relocation",
-      "reason_for_operator": "Two FSA records at different postcodes share one Google Place. Most commonly this is a rebrand or a relocation where the Google Business Profile survived and the old FSA record was not retired. Without operator confirmation it is not safe to assume either is closed.",
-      "resolution_path": "Operator confirms whether 'The Margin' or 'The Water Margin @ The Hollybush' is the current trading entity. Once confirmed, set `fsa_closed = true` on the retired record (via a manual patch on the establishments file) and remove the retired FHRSID from this entry.",
-      "primary_fhrsid": null
-    },
     {
       "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
       "fhrsids": [
@@ -55,19 +27,11 @@
       "site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
     },
     {
-      "gpid": "ChIJqxorPpjPcEgRQDF1FDen5ck",
+      "gpid": "ChIJOV7_VJwzd0gRyA1PYI__0uU",
       "fhrsids": [
-        "1847445",
-        "1589295"
-      ],
-      "names": [
-        "Soma",
-        "The Tempest"
-      ],
-      "disambiguation_type": "food_hall_unit",
-      "reason_for_operator": "Two separately FSA-registered units inside the Bell Court food hall share one Google Place ID (likely the hall's shared listing). Until each unit has a distinct Google Business Profile, both remain ambiguous and land in Directional-C.",
-      "resolution_path": "Each Bell Court unit requests a distinct Google Business Profile. Operators of multi-tenant food halls can do this via Google Business Profile Help.",
-      "site": "Bell Court, Stratford-upon-Avon"
+        "503218",
+        "503342"
+      ]
     }
   ],
   "manual_ambiguous_groups": [
@@ -143,11 +107,11 @@
       "note": "Two Bell Court units sharing one Google Place. Ambiguous."
     }
   ],
-  "records_flagged_ambiguous": 9,
+  "records_flagged_ambiguous": 10,
   "entity_match_class_counts": {
-    "confirmed": 200,
+    "confirmed": 197,
     "probable": 1,
-    "ambiguous": 9,
+    "ambiguous": 10,
     "none": 0
   },
   "named_venue_resolution": {
@@ -214,13 +178,9 @@
       "public_names": []
     },
     "Vintner": {
-      "resolved_fhrsids": [
-        "503480"
-      ],
-      "resolved": true,
-      "public_names": [
-        "The Vintner Wine Bar"
-      ]
+      "resolved_fhrsids": [],
+      "resolved": false,
+      "public_names": []
     },
     "Lambs": {
       "resolved_fhrsids": [

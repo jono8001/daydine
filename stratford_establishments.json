@@ -13,7 +13,17 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 13,
+    "gty": [
+      "cafe",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJtVIsVtA9d0gRr-wqbxCBfqQ",
+    "business_status": "CLOSED_PERMANENTLY"
   },
   "1584577": {
     "a": "Earlswood Nurseries Ltd, Earlswood Nurseries, Forshaw Heath Road, Earlswood",
@@ -29,7 +39,35 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 1387,
+    "gty": [
+      "garden_center",
+      "garden",
+      "hardware_store",
+      "building_materials_store",
+      "general_contractor",
+      "supplier",
+      "store",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJYSihybe4cEgR13eTzFCGqnQ",
+    "goh": [
+      "Monday: 9:00 AM – 6:00 PM",
+      "Tuesday: 9:00 AM – 6:00 PM",
+      "Wednesday: 9:00 AM – 6:00 PM",
+      "Thursday: 9:00 AM – 6:00 PM",
+      "Friday: 9:00 AM – 6:00 PM",
+      "Saturday: 9:00 AM – 6:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.earlswoodglc.co.uk/",
+    "phone": "01564 702314",
+    "business_status": "OPERATIONAL"
   },
   "1695937": {
     "a": "The Phoenix, 38 Guild Street, Stratford-upon-Avon",
@@ -45,7 +83,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 127,
+    "gty": [
+      "pizza_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJT2SzHAPPcEgREWrVNsCQTTI",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: 4:00 – 9:00 PM",
+      "Friday: 4:00 – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 5:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://impastopizzeria.co.uk/",
+    "phone": "07725 029512",
+    "business_status": "OPERATIONAL"
   },
   "1896718": {
     "a": "Wasps Elite Performance And Innovation Centre, Stratford Road, Henley-in-Arden",
@@ -61,7 +122,18 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 12,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ_25bTGzHcEgRCmMRsYCpUOI",
+    "phone": "01564 332383",
+    "business_status": "OPERATIONAL"
   },
   "503081": {
     "a": "71A High Street, Henley-in-Arden",
@@ -77,7 +149,32 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 289,
+    "gty": [
+      "chinese_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJF4gmYCXGcEgRCSZWeZHcc6E",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 12:00 – 2:00 PM, 5:00 – 10:00 PM",
+      "Wednesday: 12:00 – 2:00 PM, 5:00 – 10:00 PM",
+      "Thursday: 12:00 – 2:00 PM, 5:00 – 10:00 PM",
+      "Friday: 12:00 – 2:00 PM, 5:00 – 11:00 PM",
+      "Saturday: 5:00 – 10:59 PM",
+      "Sunday: 5:00 – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.sansrestaurants.co.uk/",
+    "phone": "01564 792104",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1927834": {
     "a": "Adventure Golf Course, Swans Nest Lane, Stratford-upon-Avon",
@@ -88,7 +185,27 @@
     "n": "Golden Putter Stratford Upon",
     "pc": "CV37 7LS",
     "rd": "1901-01-01T00:00:00",
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 90,
+    "gty": [
+      "miniature_golf_course",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJsYzIGy7OcEgRDJsw62M9Fc0",
+    "goh": [
+      "Monday: 10:00 AM – 5:00 PM",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.stratfordadventuregolf.co.uk/",
+    "business_status": "OPERATIONAL"
   },
   "503585": {
     "a": "Oxhill Centre, Oxhill, Warwick",
@@ -104,7 +221,20 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 566,
+    "gty": [
+      "pet_care",
+      "association_or_organization",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJA8l48PQsd0gRPTXXQ8X__VU",
+    "web": true,
+    "web_url": "http://www.redwings.org.uk/",
+    "business_status": "CLOSED_PERMANENTLY"
   },
   "1622070": {
     "a": "13 Waterside, Stratford-upon-Avon",
@@ -120,7 +250,36 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 518,
+    "gty": [
+      "italian_restaurant",
+      "breakfast_restaurant",
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "restaurant",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJbw23GhHPcEgR77QJDXG8B_4",
+    "goh": [
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 9:00 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 9:00 PM",
+      "Saturday: 9:00 AM – 9:00 PM",
+      "Sunday: 9:00 AM – 8:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.carluccios.com/restaurants/stratford-upon-avon",
+    "phone": "01789 335998",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503554": {
     "a": "High Street, Bidford-on-Avon, Alcester",
@@ -136,7 +295,30 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 315,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJqdHzRFjbcEgRXm4Spbyv-Nk",
+    "goh": [
+      "Monday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Tuesday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Wednesday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Thursday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Friday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Saturday: 12:00 – 2:00 PM, 6:30 – 9:00 PM",
+      "Sunday: 12:00 – 3:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.thebridgeatbidford.com/",
+    "phone": "01789 773700",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503316": {
     "a": "12 Sheep Street, Stratford-upon-Avon",
@@ -152,7 +334,37 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 1376,
+    "gty": [
+      "restaurant",
+      "british_restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ07kQJjLOcEgR6LZ0g4f17Eg",
+    "goh": [
+      "Monday: 4:45 – 9:00 PM",
+      "Tuesday: 12:00 – 9:00 PM",
+      "Wednesday: 12:00 – 9:00 PM",
+      "Thursday: 12:00 – 9:00 PM",
+      "Friday: 12:00 – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 8:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.lambsrestaurant.co.uk/",
+    "phone": "01789 292554",
+    "reservable": true,
+    "business_status": "OPERATIONAL",
+    "public_name": "Lambs",
+    "trading_names": [
+      "Lambs Restaurant"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   },
   "1381156": {
     "a": "9 Church Street, Stratford-upon-Avon",
@@ -168,7 +380,29 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 177,
+    "gty": [
+      "thai_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJh9X5PfXPcEgRqNy4_qe9uW4",
+    "web": true,
+    "web_url": "https://pickthairestaurant.co.uk/",
+    "phone": "01789 509884",
+    "reservable": true,
+    "business_status": "CLOSED_TEMPORARILY",
+    "public_name": "Pick Thai",
+    "trading_names": [
+      "Pick Thai 9 Church Street",
+      "Pick Thai Ltd"
+    ],
+    "alias_source": "Address '9 Church Street'; supersedes the venue historically known as 'No.9 Church Street'",
+    "alias_confidence": "high"
   },
   "1299513": {
     "a": "50 Main Street, Long Compton, Shipston-on-Stour",
@@ -182,7 +416,30 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 26,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJb3nFBd4rcUgRV0nnAHxCT1A",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: Closed",
+      "Friday: 7:00 – 10:00 PM",
+      "Saturday: 7:00 – 10:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.oxheart.co.uk/",
+    "phone": "01608 684505",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1826837": {
     "a": "208 Birmingham Road, Stratford-upon-Avon",
@@ -198,7 +455,31 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 295,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJXwcOQufPcEgRTSmcK3_J9a4",
+    "goh": [
+      "Monday: 5:00 – 10:30 PM",
+      "Tuesday: 5:00 – 10:30 PM",
+      "Wednesday: 5:00 – 10:30 PM",
+      "Thursday: 5:00 – 10:30 PM",
+      "Friday: 5:00 – 10:30 PM",
+      "Saturday: 5:00 – 10:30 PM",
+      "Sunday: 5:00 – 10:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://chutneysbaltiwalla.co.uk/",
+    "phone": "01789 641593",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1563336": {
     "a": "Warwick Services M40 Southbound, Ashorne, Warwick",
@@ -214,7 +495,31 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.1,
+    "grc": 40,
+    "gty": [
+      "noodle_shop",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJO6cyUpkzd0gRoAuZT8QUXfc",
+    "goh": [
+      "Monday: 11:45 AM – 8:00 PM",
+      "Tuesday: 11:45 AM – 8:00 PM",
+      "Wednesday: 11:45 AM – 8:00 PM",
+      "Thursday: 11:45 AM – 8:00 PM",
+      "Friday: 11:45 AM – 9:00 PM",
+      "Saturday: 11:45 AM – 8:00 PM",
+      "Sunday: 11:45 AM – 9:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://chopstixnoodles.co.uk/",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1364372": {
     "a": "Bell Inn, Binton Road, Welford-on-Avon, Stratford-upon-Avon",
@@ -230,7 +535,32 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 1160,
+    "gty": [
+      "pub",
+      "restaurant",
+      "food",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJUfnt47facEgRD3-FdZm4JTY",
+    "goh": [
+      "Monday: 11:45 AM – 11:00 PM",
+      "Tuesday: 11:45 AM – 11:00 PM",
+      "Wednesday: 11:45 AM – 11:00 PM",
+      "Thursday: 11:45 AM – 11:00 PM",
+      "Friday: 11:45 AM – 11:00 PM",
+      "Saturday: 11:45 AM – 11:00 PM",
+      "Sunday: 11:45 AM – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://thebellwelford.co.uk/",
+    "phone": "01789 750353",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503343": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -246,7 +576,32 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 10103,
+    "gty": [
+      "rest_stop",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ1abMA1Iyd0gRmLbkMlGWa0o",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "web": true,
+    "web_url": "https://www.welcomebreak.co.uk/locations/warwick-south/",
+    "business_status": "OPERATIONAL",
+    "entity_ambiguous": true,
+    "disambiguation_type": "service_station_shared",
+    "disambiguation_reason": "Two separate brands share the service-station forecourt. Google Places returns one listing for the whole site; the FSA records each brand separately. Until each brand has a distinct Google Business Profile, both venues are flagged ambiguous and remain in Directional-C.",
+    "disambiguation_resolution_path": "Each brand operator requests a distinct Google Business Profile for their unit (franchise head office typically handles this for chain brands).",
+    "disambiguation_site": "Welcome Break Warwick Services Southbound, M40"
   },
   "1302779": {
     "a": "The Old Mint, Coventry Street, Southam",
@@ -262,7 +617,28 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 88,
+    "gty": [
+      "pub",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ26u8MGIxd0gRlQV1h3OGSOk",
+    "goh": [
+      "Monday: 11:00 AM – 11:00 PM",
+      "Tuesday: 11:00 AM – 11:00 PM",
+      "Wednesday: 11:00 AM – 12:00 AM",
+      "Thursday: 11:00 AM – 11:00 PM",
+      "Friday: 11:00 AM – 2:00 AM",
+      "Saturday: 11:00 AM – 1:00 AM",
+      "Sunday: 11:00 AM – 10:30 PM"
+    ],
+    "phone": "01926 811684",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1826834": {
     "a": "Ferment And Flour, 6 Granville Court, Shipston-on-Stour",
@@ -278,7 +654,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 18,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJhxRH5AXVcEgR3cnRjzBs3hU",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 9:00 AM – 1:00 PM",
+      "Thursday: 9:00 AM – 1:00 PM",
+      "Friday: 9:00 AM – 1:00 PM",
+      "Saturday: 9:00 AM – 1:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "https://www.instagram.com/ferment_and_flour_?igsh=MWx5MGRkeG44bmY1ZA==",
+    "business_status": "OPERATIONAL"
   },
   "1500965": {
     "a": "Venue Expresso, 3 High Street, Alcester",
@@ -294,7 +694,37 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 208,
+    "gty": [
+      "cafe",
+      "cocktail_bar",
+      "brunch_restaurant",
+      "breakfast_restaurant",
+      "bar",
+      "restaurant",
+      "point_of_interest",
+      "food_store",
+      "food",
+      "store",
+      "establishment"
+    ],
+    "gpid": "ChIJI6oMR3nDcEgRANDeDB2tboc",
+    "goh": [
+      "Monday: 9:00 AM – 4:00 PM",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 4:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://cafedesfleursalcester.co.uk/",
+    "phone": "01789 400770",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503918": {
     "a": "46 Coventry Street, Southam",
@@ -310,7 +740,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 98,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpid": "ChIJzVS9crkwd0gRfxFa5ixUG0w",
+    "goh": [
+      "Monday: 9:00 AM – 3:30 PM",
+      "Tuesday: 9:00 AM – 3:30 PM",
+      "Wednesday: 9:00 AM – 3:30 PM",
+      "Thursday: 9:00 AM – 3:30 PM",
+      "Friday: 9:00 AM – 3:30 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "phone": "07579 074592",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "503141": {
     "a": "National Farmers Union Mutual Insurance Society Ltd, Tiddington Road, Stratford-upon-Avon",
@@ -324,7 +778,29 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 98,
+    "gty": [
+      "insurance_agency",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJK3ARcD7OcEgRwaJSEyzsUGg",
+    "goh": [
+      "Monday: 9:00 AM – 5:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.nfumutual.co.uk/",
+    "phone": "01789 204211",
+    "business_status": "OPERATIONAL"
   },
   "1622074": {
     "a": "Brookside Farm, Gaydon Road, Bishops Itchington, Southam",
@@ -340,7 +816,15 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 6,
+    "gty": [
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJT5praqYxd0gRyr_IGx5eWWU",
+    "business_status": "OPERATIONAL"
   },
   "1799218": {
     "a": "Kineton Pizza Junction Ltd, Southam Street, Kineton, Warwick",
@@ -354,7 +838,31 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 143,
+    "gty": [
+      "pizza_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJMZU_iOMtd0gRpw_OhfXFFDI",
+    "goh": [
+      "Monday: 8:30 AM – 10:00 PM",
+      "Tuesday: 8:30 AM – 10:00 PM",
+      "Wednesday: 8:30 AM – 10:00 PM",
+      "Thursday: 8:30 AM – 10:00 PM",
+      "Friday: 8:30 AM – 10:00 PM",
+      "Saturday: 8:30 AM – 10:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.kinetonpizza.co.uk/",
+    "phone": "01926 245586",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503972": {
     "a": "George Hotel, High Street, Shipston-on-Stour",
@@ -370,7 +878,37 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 1037,
+    "gty": [
+      "pub",
+      "bar_and_grill",
+      "beer_garden",
+      "bed_and_breakfast",
+      "british_restaurant",
+      "bar",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJRWdHoUjUcEgR7Uf7XalNZmM",
+    "goh": [
+      "Monday: 8:00 AM – 11:00 PM",
+      "Tuesday: 8:00 AM – 11:00 PM",
+      "Wednesday: 8:00 AM – 11:00 PM",
+      "Thursday: 8:00 AM – 11:00 PM",
+      "Friday: 8:00 AM – 12:00 AM",
+      "Saturday: 8:00 AM – 12:00 AM",
+      "Sunday: 8:00 AM – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://thegeorgeshipston.co.uk/",
+    "phone": "01608 661453",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1712197": {
     "a": "95 High Street, Henley-in-Arden",
@@ -386,7 +924,34 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 8,
+    "gty": [
+      "cafe",
+      "sandwich_shop",
+      "coffee_shop",
+      "restaurant",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ1-pC-KrHcEgRViL_8bs2-Hs",
+    "goh": [
+      "Monday: 9:00 AM – 3:00 PM",
+      "Tuesday: 8:00 AM – 2:00 PM",
+      "Wednesday: 8:00 AM – 2:00 PM",
+      "Thursday: 8:00 AM – 2:00 PM",
+      "Friday: 8:00 AM – 2:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://hollys.co.uk/",
+    "phone": "01564 792776",
+    "business_status": "OPERATIONAL"
   },
   "1291215": {
     "a": "Studley Garden Centre, Henley Road, Mappleborough Green, Studley",
@@ -402,7 +967,29 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.5,
+    "grc": 12,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJwTbCv-jBcEgRagu1R2goyDk",
+    "goh": [
+      "Monday: 9:00 AM – 5:30 PM",
+      "Tuesday: 9:00 AM – 5:30 PM",
+      "Wednesday: 9:00 AM – 5:30 PM",
+      "Thursday: 9:00 AM – 5:30 PM",
+      "Friday: 9:00 AM – 5:30 PM",
+      "Saturday: 9:00 AM – 5:30 PM",
+      "Sunday: 10:00 AM – 4:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://britishgardencentres.com/",
+    "phone": "01527 390590",
+    "business_status": "OPERATIONAL"
   },
   "676556": {
     "a": "Whichford Pottery, Whichford, Shipston-on-Stour",
@@ -418,7 +1005,30 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 251,
+    "gty": [
+      "restaurant",
+      "cafe",
+      "breakfast_restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJc0wULFbVdkgR84G_P8nQHqA",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "phone": "01608 684950",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "503032": {
     "a": "The Spice Room Ltd, 20C High Street, Alcester",
@@ -434,7 +1044,32 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 127,
+    "gty": [
+      "meal_takeaway",
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJNcmLQ3nDcEgR3zbCM_f0foM",
+    "goh": [
+      "Monday: 5:30 – 10:30 PM",
+      "Tuesday: 5:30 – 10:30 PM",
+      "Wednesday: 4:30 – 10:30 PM",
+      "Thursday: 5:30 – 10:30 PM",
+      "Friday: 5:30 – 11:30 PM",
+      "Saturday: 5:30 PM – 12:30 AM",
+      "Sunday: 5:30 – 10:15 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.pizza20.co.uk/",
+    "phone": "01789 766966",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1911092": {
     "a": "Coughton Court, Coughton, Alcester",
@@ -445,7 +1080,24 @@
     "n": "Coughton Court Cafe",
     "pc": "B49 5JA",
     "rd": "1901-01-01T00:00:00",
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 13,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJsaohwxPDcEgRUCP69xcdRsA",
+    "web": true,
+    "web_url": "https://www.nationaltrust.org.uk/visit/warwickshire/coughton-court/eating-and-shopping-at-coughton-court",
+    "phone": "01789 400777",
+    "reservable": false,
+    "business_status": "CLOSED_TEMPORARILY"
   },
   "1800190": {
     "a": "Village Hall, Burmington",
@@ -459,7 +1111,18 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 20,
+    "gty": [
+      "event_venue",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJk09EfpWxcEgRC9xT2L0gxEI",
+    "phone": "07835 339995",
+    "business_status": "OPERATIONAL"
   },
   "1339997": {
     "a": "The Water Margin, Marton Road, Long Itchington, Southam",
@@ -475,7 +1138,36 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 141,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJPWwyrtY3d0gRhJbJWIJge_s",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 9:00 AM – 3:00 PM",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://m.facebook.com/themargincafe/?ref=page_internal&mt_nav=0",
+    "phone": "07597 739189",
+    "business_status": "OPERATIONAL",
+    "entity_ambiguous": true,
+    "disambiguation_type": "rebrand_or_relocation",
+    "disambiguation_reason": "Two FSA records at different postcodes share one Google Place. Most commonly this is a rebrand or a relocation where the Google Business Profile survived and the old FSA record was not retired. Without operator confirmation it is not safe to assume either is closed.",
+    "disambiguation_resolution_path": "Operator confirms whether 'The Margin' or 'The Water Margin @ The Hollybush' is the current trading entity. Once confirmed, set `fsa_closed = true` on the retired record (via a manual patch on the establishments file) and remove the retired FHRSID from this entry."
   },
   "1747703": {
     "a": "6 - 7 High Street, Stratford-upon-Avon",
@@ -491,7 +1183,38 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 146,
+    "gty": [
+      "bakery",
+      "sandwich_shop",
+      "coffee_shop",
+      "pastry_shop",
+      "cafe",
+      "dessert_shop",
+      "confectionery",
+      "food_store",
+      "store",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJySavy_fPcEgRTKFtXgWIaDY",
+    "goh": [
+      "Monday: 7:00 AM – 6:00 PM",
+      "Tuesday: 7:00 AM – 6:00 PM",
+      "Wednesday: 7:00 AM – 6:00 PM",
+      "Thursday: 7:00 AM – 6:00 PM",
+      "Friday: 7:00 AM – 6:00 PM",
+      "Saturday: 7:00 AM – 6:00 PM",
+      "Sunday: 7:30 AM – 6:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://gails.com/pages/stratford-upon-avon",
+    "phone": "01789 387996",
+    "business_status": "OPERATIONAL"
   },
   "1452414": {
     "a": "Unit V, The Maybird Centre, Birmingham Road, Stratford-upon-Avon",
@@ -507,7 +1230,33 @@
     "sh": 2.5,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.7,
+    "grc": 257,
+    "gty": [
+      "sandwich_shop",
+      "meal_takeaway",
+      "fast_food_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJ57_aXLXPcEgRow_8l5TSmsk",
+    "goh": [
+      "Monday: 8:00 AM – 9:00 PM",
+      "Tuesday: 8:00 AM – 9:00 PM",
+      "Wednesday: 8:00 AM – 9:00 PM",
+      "Thursday: 8:00 AM – 9:00 PM",
+      "Friday: 8:00 AM – 9:00 PM",
+      "Saturday: 8:00 AM – 9:00 PM",
+      "Sunday: 8:00 AM – 9:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://restaurants.subway.com/united-kingdom/en/stratford-upon-avon/unit-v-maybird-retail-park?utm_source=yxt-goog&utm_medium=local&utm_term=acq&utm_content=45261&utm_campaign=evergreen-2020&y_source=1_MTQ5MjYzNDYtNzE1LWxvY2F0aW9uLndlYnNpdGU%3D",
+    "phone": "01789 262995",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "503481": {
     "a": "13 Sheep Street, Stratford-upon-Avon",
@@ -523,7 +1272,38 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 541,
+    "gty": [
+      "bistro",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ7f1ZJjLOcEgREqBVi1vVlKY",
+    "goh": [
+      "Monday: 5:00 – 9:00 PM",
+      "Tuesday: 12:00 – 2:00 PM, 5:00 – 9:00 PM",
+      "Wednesday: 12:00 – 2:00 PM, 5:00 – 9:00 PM",
+      "Thursday: 12:00 – 2:00 PM, 5:00 – 9:00 PM",
+      "Friday: 12:00 – 2:00 PM, 5:00 – 9:00 PM",
+      "Saturday: 12:00 – 2:00 PM, 5:00 – 9:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.theoppo.co.uk/",
+    "phone": "01789 269980",
+    "reservable": true,
+    "business_status": "OPERATIONAL",
+    "public_name": "The Opposition",
+    "trading_names": [
+      "Opposition Bistro",
+      "The Opposition Bistro"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   },
   "1808717": {
     "a": "Le Bistro Pierre, Swans Nest Hotel, Swans Nest Lane, Stratford-upon-Avon",
@@ -536,7 +1316,35 @@
     "r": 5,
     "rd": "2026-01-13T00:00:00",
     "s": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 975,
+    "gty": [
+      "french_restaurant",
+      "bistro",
+      "breakfast_restaurant",
+      "pub",
+      "bar",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJgy6jFjDOcEgRq_eouPDqIFE",
+    "goh": [
+      "Monday: 7:00 AM – 8:30 PM",
+      "Tuesday: 7:00 AM – 8:30 PM",
+      "Wednesday: 7:00 AM – 8:30 PM",
+      "Thursday: 7:00 AM – 8:30 PM",
+      "Friday: 7:00 AM – 8:30 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 12:00 – 8:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.bistrotpierre.co.uk/locations/stratford-upon-avon/",
+    "phone": "01789 264804",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503820": {
     "a": "16 Market Hill, Southam",
@@ -552,7 +1360,34 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 215,
+    "gty": [
+      "coffee_shop",
+      "breakfast_restaurant",
+      "cafe",
+      "restaurant",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJaf4cLrkwd0gREeHjohjrj6w",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 9:00 AM – 3:00 PM",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://cafe16.com/",
+    "phone": "01926 812288",
+    "business_status": "OPERATIONAL"
   },
   "1253303": {
     "a": "6 Banbury Road, Ettington, Stratford-upon-Avon",
@@ -568,7 +1403,30 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 74,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJCTMFo1_TcEgRTeo9kdtDeGA",
+    "goh": [
+      "Monday: 8:30 AM – 4:00 PM",
+      "Tuesday: 8:30 AM – 4:00 PM",
+      "Wednesday: 8:30 AM – 4:00 PM",
+      "Thursday: 8:30 AM – 4:00 PM",
+      "Friday: 8:30 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 1:30 PM",
+      "Sunday: Closed"
+    ],
+    "phone": "01789 740496",
+    "business_status": "OPERATIONAL"
   },
   "1206081": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -584,7 +1442,24 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 601,
+    "gty": [
+      "corporate_office",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
+    "web": true,
+    "web_url": "https://www.jaguarlandrover.com/?utm_source=Yext&utm_medium=organic&utm_campaign=HQ004",
+    "phone": "01926 641111",
+    "business_status": "OPERATIONAL",
+    "entity_ambiguous": true,
+    "disambiguation_type": "multi_tenant_site",
+    "disambiguation_reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+    "disambiguation_resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+    "disambiguation_site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
   },
   "1705603": {
     "a": "Escape Community Arts, The Old Slaughterhouse, Sheep Street, Stratford-upon-Avon",
@@ -600,7 +1475,29 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 1,
+    "gty": [
+      "medical_clinic",
+      "point_of_interest",
+      "health",
+      "establishment"
+    ],
+    "gpid": "ChIJ0-n3fXzPcEgRrdVwLqzbisQ",
+    "goh": [
+      "Monday: 1:00 – 3:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: Closed",
+      "Friday: 10:00 AM – 2:00 PM",
+      "Saturday: 1:30 – 4:30 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://wellbeing.turning-point.co.uk/warwickshire/our-services/",
+    "phone": "01789 532110",
+    "business_status": "OPERATIONAL"
   },
   "1739369": {
     "a": "",
@@ -614,7 +1511,31 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 3,
+    "gty": [
+      "butcher_shop",
+      "food_store",
+      "store",
+      "point_of_interest",
+      "service",
+      "manufacturer",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJV-VxFmxCd0gRJqek_tW3Fu0",
+    "goh": [
+      "Monday: 4:00 AM – 11:00 PM",
+      "Tuesday: 4:00 AM – 11:00 PM",
+      "Wednesday: 4:00 AM – 11:00 PM",
+      "Thursday: 4:00 AM – 11:00 PM",
+      "Friday: 4:00 AM – 11:00 PM",
+      "Saturday: 4:00 AM – 11:00 PM",
+      "Sunday: Closed"
+    ],
+    "phone": "01455 550184",
+    "business_status": "OPERATIONAL"
   },
   "1024960": {
     "a": "Welcome Break Ltd (North), Warwick Services M40, Ashorne, Warwick",
@@ -630,7 +1551,39 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.4,
+    "grc": 590,
+    "gty": [
+      "coffee_shop",
+      "coffee_stand",
+      "tea_store",
+      "sandwich_shop",
+      "meal_takeaway",
+      "cafe",
+      "tea_house",
+      "restaurant",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJcRN-OmLedkgR3pyi5KRNs0E",
+    "goh": [
+      "Monday: 5:30 AM – 9:00 PM",
+      "Tuesday: 5:30 AM – 9:00 PM",
+      "Wednesday: 5:30 AM – 9:00 PM",
+      "Thursday: 5:30 AM – 9:00 PM",
+      "Friday: 5:30 AM – 9:00 PM",
+      "Saturday: 5:30 AM – 9:00 PM",
+      "Sunday: 7:00 AM – 9:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.starbucks.co.uk/store-locator/47011",
+    "phone": "020 3047 2656",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "503345": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -646,7 +1599,35 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.3,
+    "grc": 373,
+    "gty": [
+      "fast_food_restaurant",
+      "electric_vehicle_charging_station",
+      "chicken_wings_restaurant",
+      "chicken_restaurant",
+      "meal_takeaway",
+      "transportation_service",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJkxFJAVEyd0gRCDt3qKCcKdQ",
+    "goh": [
+      "Monday: 11:00 AM – 10:00 PM",
+      "Tuesday: 11:00 AM – 10:00 PM",
+      "Wednesday: 11:00 AM – 10:00 PM",
+      "Thursday: 11:00 AM – 10:00 PM",
+      "Friday: 11:00 AM – 10:00 PM",
+      "Saturday: 11:00 AM – 10:00 PM",
+      "Sunday: 11:00 AM – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.kfc.co.uk/kfc-near-me/Warwick-M40-North-Services?utm_term=Warwick&utm_medium=organic&utm_source=uberall",
+    "phone": "01926 650168",
+    "business_status": "OPERATIONAL"
   },
   "1266904": {
     "a": "Welcome Break Ltd (North), Warwick Services M40, Ashorne, Warwick",
@@ -662,7 +1643,32 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 1.9,
+    "grc": 26,
+    "gty": [
+      "breakfast_restaurant",
+      "rest_stop",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJCxFBsEwzd0gRUNqi20-2JDY",
+    "goh": [
+      "Monday: 6:00 – 11:30 AM",
+      "Tuesday: 6:00 – 11:30 AM",
+      "Wednesday: 6:00 – 11:30 AM",
+      "Thursday: 6:00 – 11:30 AM",
+      "Friday: 6:00 – 11:30 AM",
+      "Saturday: 6:00 – 11:30 AM",
+      "Sunday: 7:00 – 11:30 AM"
+    ],
+    "web": true,
+    "web_url": "https://www.welcomebreak.co.uk/brands/the-good-breakfast/",
+    "phone": "01908 299700",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1297845": {
     "a": "26 High Street, Alcester",
@@ -678,7 +1684,34 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 199,
+    "gty": [
+      "coffee_shop",
+      "tea_house",
+      "cafe",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpid": "ChIJe9BVXHnDcEgRWmeVk36NZn8",
+    "goh": [
+      "Monday: 9:30 AM – 4:00 PM",
+      "Tuesday: 9:30 AM – 4:00 PM",
+      "Wednesday: 9:30 AM – 4:00 PM",
+      "Thursday: 9:30 AM – 4:00 PM",
+      "Friday: 9:30 AM – 4:00 PM, 5:00 – 10:30 PM",
+      "Saturday: 9:30 AM – 4:00 PM, 5:00 – 10:30 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "https://www.theloungebars.co.uk/the-lounge-alcester",
+    "phone": "01789 764982",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1089841": {
     "a": "Cotswold Distillery, Phillips Field, Stourton, Shipston-on-Stour",
@@ -694,7 +1727,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 1250,
+    "gty": [
+      "tour_agency",
+      "travel_agency",
+      "manufacturer",
+      "service",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpid": "ChIJNVfg1U7UcEgREJx3BaPEUpA",
+    "goh": [
+      "Monday: 9:00 AM – 5:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.cotswoldsdistillery.com/",
+    "phone": "01608 238533",
+    "business_status": "OPERATIONAL"
   },
   "1672985": {
     "a": "Bidford On Avon Methodist Church, Chapel Close, Bidford-on-Avon, Alcester",
@@ -708,7 +1766,34 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 173,
+    "gty": [
+      "cafe",
+      "cake_shop",
+      "bakery",
+      "manufacturer",
+      "wholesaler",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJeQ_dcLPbcEgR-G8xyTEdIIs",
+    "goh": [
+      "Monday: 9:00 AM – 3:00 PM",
+      "Tuesday: 9:00 AM – 3:00 PM",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: Closed"
+    ],
+    "phone": "01789 772726",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503054": {
     "a": "Warwick Road, Black Hill, Stratford-upon-Avon",
@@ -724,7 +1809,35 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 1190,
+    "gty": [
+      "hotel",
+      "wedding_venue",
+      "gym",
+      "lodging",
+      "sports_activity_location",
+      "service",
+      "health",
+      "event_venue",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ4ThqBSrMcEgRFtOxCOY6SOU",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "web": true,
+    "web_url": "https://www.stratfordmanor.co.uk/?utm_source=google&utm_medium=local&utm_campaign=hotel-stratfordmanor",
+    "phone": "01789 731173",
+    "business_status": "OPERATIONAL"
   },
   "503525": {
     "a": "Shahs Restaurant, Charlecote Road, Wellesbourne, Warwick",
@@ -740,7 +1853,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 332,
+    "gty": [
+      "indian_restaurant",
+      "asian_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJN9B18GzNcEgRCiMERUu5sFs",
+    "goh": [
+      "Monday: 5:30 – 11:00 PM",
+      "Tuesday: 5:30 – 11:00 PM",
+      "Wednesday: 5:30 – 11:00 PM",
+      "Thursday: 5:30 – 11:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:00 – 11:00 PM",
+      "Sunday: 5:00 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://shahsindianrestaurant.co.uk/",
+    "phone": "01789 471111",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "504014": {
     "a": "Kings Head Hotel, Charlecote Road, Wellesbourne, Warwick",
@@ -756,7 +1894,34 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 1968,
+    "gty": [
+      "pub",
+      "british_restaurant",
+      "gastropub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJgbDXmmzNcEgRwM-DQpl97ow",
+    "goh": [
+      "Monday: 9:00 AM – 11:00 PM",
+      "Tuesday: 9:00 AM – 11:00 PM",
+      "Wednesday: 9:00 AM – 11:00 PM",
+      "Thursday: 9:00 AM – 11:00 PM",
+      "Friday: 9:00 AM – 11:00 PM",
+      "Saturday: 9:00 AM – 11:00 PM",
+      "Sunday: 9:00 AM – 10:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.vintageinn.co.uk/restaurants/midlands/thekingsheadwellesbourne?utm_source=google&utm_medium=organic&utm_campaign=gmb-homepage",
+    "phone": "01789 840206",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1284339": {
     "a": "Avon Dassett, Southam",
@@ -772,7 +1937,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 396,
+    "gty": [
+      "pub",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ8dsF2q4vd0gRyjlW1Tk0SyU",
+    "goh": [
+      "Monday: 12:00 – 3:00 PM, 5:00 – 10:00 PM",
+      "Tuesday: 12:00 – 3:00 PM, 5:00 – 10:00 PM",
+      "Wednesday: 12:00 – 3:00 PM, 5:00 – 11:00 PM",
+      "Thursday: 12:00 – 3:00 PM, 5:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 9:00 AM – 11:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.theyewtreepub.co.uk/",
+    "phone": "01295 690844",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1774612": {
     "a": "Lower Langley Farm, Birmingham Road, Bishopton, Stratford-upon-Avon",
@@ -788,7 +1976,31 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 440,
+    "gty": [
+      "dessert_shop",
+      "confectionery",
+      "food_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpid": "ChIJbcLLt28ddkgRzFtGoHUj63Y",
+    "goh": [
+      "Monday: 10:00 AM – 11:00 PM",
+      "Tuesday: 10:00 AM – 11:00 PM",
+      "Wednesday: 10:00 AM – 11:00 PM",
+      "Thursday: 10:00 AM – 11:00 PM",
+      "Friday: 10:00 AM – 12:00 AM",
+      "Saturday: 10:00 AM – 12:00 AM",
+      "Sunday: 10:00 AM – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.lovechurroslondon.com/",
+    "business_status": "OPERATIONAL"
   },
   "502872": {
     "a": "Alderminster, Stratford-upon-Avon",
@@ -804,7 +2016,34 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 1024,
+    "gty": [
+      "hotel",
+      "wedding_venue",
+      "lodging",
+      "event_venue",
+      "service",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJMc_IicbTcEgRy4T1dRHRy8I",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "web": true,
+    "web_url": "https://www.handpickedhotels.co.uk/ettingtonpark?utm_source=google&utm_medium=local&utm_campaign=hotel-ettingtonpark",
+    "phone": "01789 450123",
+    "business_status": "OPERATIONAL"
   },
   "1210746": {
     "a": "2 St Faiths Road, Alcester",
@@ -820,7 +2059,37 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 518,
+    "gty": [
+      "inn",
+      "live_music_venue",
+      "hotel",
+      "event_venue",
+      "lodging",
+      "bar",
+      "restaurant",
+      "service",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJjwZhXK7DcEgRK8vJy0yE8GA",
+    "goh": [
+      "Monday: 8:00 AM – 12:00 AM",
+      "Tuesday: 8:00 AM – 12:00 AM",
+      "Wednesday: 8:00 AM – 12:00 AM",
+      "Thursday: 8:00 AM – 12:00 AM",
+      "Friday: 8:00 AM – 12:00 AM",
+      "Saturday: 8:00 AM – 12:00 AM",
+      "Sunday: 8:00 AM – 12:00 AM"
+    ],
+    "web": true,
+    "web_url": "http://www.thealcesterinn.co.uk/",
+    "phone": "01789 400144",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503216": {
     "a": "Hallmark Hotels - The Welcombe, Warwick Road, Stratford-upon-Avon",
@@ -836,7 +2105,38 @@
     "sh": 2.5,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 1402,
+    "gty": [
+      "hotel",
+      "wedding_venue",
+      "spa",
+      "golf_course",
+      "lodging",
+      "event_venue",
+      "athletic_field",
+      "sports_activity_location",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJxWV3_UHOcEgR1xPLalQrJyg",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "web": true,
+    "web_url": "https://thewelcombehotel.co.uk/",
+    "phone": "01789 295252",
+    "business_status": "OPERATIONAL"
   },
   "503781": {
     "a": "Ladbroke Road, Bishops Itchington, Southam",
@@ -852,7 +2152,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 253,
+    "gty": [
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJE19Jp6Uxd0gRsB2TfuTe_Xw",
+    "goh": [
+      "Monday: 5:00 – 9:00 PM",
+      "Tuesday: 5:00 – 9:00 PM",
+      "Wednesday: 5:00 – 9:00 PM",
+      "Thursday: 5:00 – 9:00 PM",
+      "Friday: 12:00 – 2:00 PM, 4:30 – 9:00 PM",
+      "Saturday: 4:30 – 9:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "https://www.thebishopsfryer.com/",
+    "phone": "01926 614093",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1421980": {
     "a": "10 Bridge Street, Stratford-upon-Avon",
@@ -868,7 +2192,20 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 302,
+    "gty": [
+      "greek_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJ2XVfAVHPcEgRjFq1SL9CdXw",
+    "phone": "01789 297594",
+    "reservable": true,
+    "business_status": "CLOSED_TEMPORARILY"
   },
   "1246463": {
     "a": "37 Rother Street, Stratford-upon-Avon",
@@ -884,7 +2221,34 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 84,
+    "gty": [
+      "beer_garden",
+      "pub",
+      "live_music_venue",
+      "restaurant",
+      "food",
+      "bar",
+      "store",
+      "event_venue",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJrewGXvvPcEgRJOwbvWS3R1Q",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: Closed",
+      "Friday: 6:00 PM – 1:00 AM",
+      "Saturday: 4:00 PM – 1:00 AM",
+      "Sunday: Closed"
+    ],
+    "phone": "07341 841971",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1847445": {
     "a": "Kiosk 3, Bell Court, Stratford-upon-Avon",
@@ -900,7 +2264,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1342,
+    "gty": [
+      "shopping_mall",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJrWZhSzLOcEgRwmWwcZ0UusQ",
+    "goh": [
+      "Monday: 8:30 AM – 12:00 AM",
+      "Tuesday: 8:30 AM – 12:00 AM",
+      "Wednesday: 8:30 AM – 12:00 AM",
+      "Thursday: 8:30 AM – 12:00 AM",
+      "Friday: 8:30 AM – 12:00 AM",
+      "Saturday: 8:30 AM – 12:00 AM",
+      "Sunday: 10:00 AM – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.bellcourtstratford.com/",
+    "business_status": "OPERATIONAL",
+    "entity_ambiguous": true,
+    "disambiguation_type": "food_hall_unit",
+    "disambiguation_reason": "Two separately FSA-registered units inside the Bell Court food hall share one Google Place ID (likely the hall's shared listing). Until each unit has a distinct Google Business Profile, both remain ambiguous and land in Directional-C.",
+    "disambiguation_resolution_path": "Each Bell Court unit requests a distinct Google Business Profile. Operators of multi-tenant food halls can do this via Google Business Profile Help.",
+    "disambiguation_site": "Bell Court, Stratford-upon-Avon"
   },
   "1774606": {
     "a": "Unit 3, Haydon House, 3 - 7 Alcester Road, Studley",
@@ -916,7 +2305,37 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 278,
+    "gty": [
+      "coffee_shop",
+      "pizza_restaurant",
+      "gift_shop",
+      "hamburger_restaurant",
+      "cafe",
+      "chicken_restaurant",
+      "food_store",
+      "american_restaurant",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ_y5R4e3BcEgRGnB5wqvj-lE",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 9:00 AM – 9:00 PM",
+      "Thursday: 9:00 AM – 9:00 PM",
+      "Friday: 9:00 AM – 10:00 PM",
+      "Saturday: 9:00 AM – 10:00 PM",
+      "Sunday: 9:00 AM – 8:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.martinsstudley.co.uk/",
+    "business_status": "OPERATIONAL"
   },
   "650308": {
     "a": "Summer Palace, Birmingham Road, Mappleborough Green, Studley",
@@ -932,7 +2351,31 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 526,
+    "gty": [
+      "chinese_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ8z0zYS_BcEgRcxL4Ucqp_Gk",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 5:00 – 10:00 PM",
+      "Wednesday: 5:00 – 10:00 PM",
+      "Thursday: 5:00 – 10:00 PM",
+      "Friday: 5:00 – 10:00 PM",
+      "Saturday: 5:00 – 10:00 PM",
+      "Sunday: 12:30 – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://summerpalacestudley.co.uk/WzIc",
+    "phone": "01527 857118",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1896717": {
     "a": "LITHOS, 64 High Street, Henley-in-Arden",
@@ -945,7 +2388,30 @@
     "r": 5,
     "rd": "2026-03-11T00:00:00",
     "s": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 80,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJw2Ec-BnHcEgRk4QFHHn6P3Y",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 12:00 – 3:00 PM, 5:00 – 9:30 PM",
+      "Wednesday: 12:00 – 3:00 PM, 5:00 – 9:30 PM",
+      "Thursday: 12:00 – 3:00 PM, 5:00 – 9:30 PM",
+      "Friday: 12:00 – 9:30 PM",
+      "Saturday: 12:00 – 9:30 PM",
+      "Sunday: 12:00 – 6:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.lithos-restaurant.co.uk/",
+    "phone": "0121 725 2496",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1622082": {
     "a": "Briar Croft Cafe, Briar Croft, Alcester Road, Stratford-upon-Avon",
@@ -961,7 +2427,23 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gty": [
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJxeB2YQDPcEgRtflbEEKlGN8",
+    "business_status": "OPERATIONAL",
+    "public_name": "New York Pizzas",
+    "trading_names": [
+      "The Crofts Cafe",
+      "Briar Croft Cafe"
+    ],
+    "alias_source": "FSA 'The Crofts Cafe Also Trading As New York Pizzas'",
+    "alias_confidence": "high"
   },
   "503732": {
     "a": "Pizza Hut, Unit P, Maybird Retail Park, Birmingham Road",
@@ -977,7 +2459,27 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 1831,
+    "gty": [
+      "pizza_restaurant",
+      "vegan_restaurant",
+      "family_restaurant",
+      "vegetarian_restaurant",
+      "meal_takeaway",
+      "fast_food_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJeyNuhzHOcEgRI1EPt-qlwu8",
+    "web": true,
+    "web_url": "https://www.pizzahut.co.uk/restaurants/store/details/Stratford-Upon-Avon?keywordutm_source=google",
+    "phone": "01789 204182",
+    "reservable": true,
+    "business_status": "CLOSED_PERMANENTLY"
   },
   "1388310": {
     "a": "42 Rother Street, Stratford-upon-Avon",
@@ -993,7 +2495,33 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 567,
+    "gty": [
+      "pub",
+      "brewpub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJsdeYHjPOcEgR_9bOJS2FpG8",
+    "goh": [
+      "Monday: 11:00 AM – 11:00 PM",
+      "Tuesday: 11:00 AM – 11:00 PM",
+      "Wednesday: 11:00 AM – 11:00 PM",
+      "Thursday: 11:00 AM – 12:30 AM",
+      "Friday: 11:00 AM – 12:30 AM",
+      "Saturday: 11:00 AM – 12:30 AM",
+      "Sunday: 11:00 AM – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://thecoachhousestratford.co.uk/",
+    "phone": "01789 293071",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1584574": {
     "a": "Stratford-upon-Avon Golf Club, Tiddington Road, Stratford-upon-Avon",
@@ -1009,7 +2537,37 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 88,
+    "gty": [
+      "sports_coaching",
+      "sports_school",
+      "sports_club",
+      "health",
+      "golf_course",
+      "athletic_field",
+      "sports_activity_location",
+      "association_or_organization",
+      "sporting_goods_store",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpid": "ChIJtUxQYhbOcEgRVh1sfSoeqmQ",
+    "goh": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 6:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 6:00 PM",
+      "Friday: 8:00 AM – 6:00 PM",
+      "Saturday: 8:00 AM – 6:00 PM",
+      "Sunday: 8:00 AM – 6:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.stratfordonavongolfclub.co.uk/",
+    "phone": "01789 205749",
+    "business_status": "OPERATIONAL"
   },
   "1927833": {
     "a": "Kineton Sports And Social Club, Norton Grange, Little Kineton, Warwick",
@@ -1018,7 +2576,29 @@
     "n": "Slimming World",
     "pc": "CV35 0FA",
     "rd": "1901-01-01T00:00:00",
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 177,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJe3HTeKctd0gRsTD-NZlQsRw",
+    "goh": [
+      "Monday: 5:00 – 11:00 PM",
+      "Tuesday: 5:00 – 11:00 PM",
+      "Wednesday: 5:00 – 11:00 PM",
+      "Thursday: 5:00 – 11:00 PM",
+      "Friday: 5:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.kinetonssc.com/",
+    "phone": "01926 640901",
+    "business_status": "OPERATIONAL"
   },
   "1552328": {
     "a": "38 Guild Street, Stratford-upon-Avon",
@@ -1034,7 +2614,33 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 281,
+    "gty": [
+      "bar",
+      "pizza_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJv4iJTXTPcEgRWN0-gXmqD74",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 PM – 12:00 AM",
+      "Friday: 12:00 PM – 1:00 AM",
+      "Saturday: 12:00 PM – 1:00 AM",
+      "Sunday: 12:00 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.phoenixstratford.co.uk/",
+    "phone": "01789 631036",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "502702": {
     "a": "Wildmoor Health And Fitness Club, Alcester Road, Stratford-upon-Avon",
@@ -1050,7 +2656,37 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 536,
+    "gty": [
+      "fitness_center",
+      "swimming_pool",
+      "gym",
+      "sports_club",
+      "spa",
+      "association_or_organization",
+      "sports_activity_location",
+      "health",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJPTQLWezPcEgRHYifz9oWO2M",
+    "goh": [
+      "Monday: 6:30 AM – 10:00 PM",
+      "Tuesday: 6:30 AM – 10:00 PM",
+      "Wednesday: 6:30 AM – 10:00 PM",
+      "Thursday: 6:30 AM – 10:00 PM",
+      "Friday: 6:30 AM – 9:00 PM",
+      "Saturday: 7:30 AM – 8:00 PM",
+      "Sunday: 7:30 AM – 8:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.bannatyne.co.uk/health-club/Wildmoor",
+    "phone": "01789 299666",
+    "business_status": "OPERATIONAL"
   },
   "1739370": {
     "a": "Unit 17, Bell Court, Stratford-upon-Avon",
@@ -1066,7 +2702,31 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 486,
+    "gty": [
+      "pizza_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJOaoTM3LPcEgRL5MvaX-6nAY",
+    "goh": [
+      "Monday: 10:00 AM – 9:00 PM",
+      "Tuesday: 10:00 AM – 9:00 PM",
+      "Wednesday: 10:00 AM – 9:00 PM",
+      "Thursday: 10:00 AM – 9:00 PM",
+      "Friday: 10:00 AM – 9:00 PM",
+      "Saturday: 10:00 AM – 9:00 PM",
+      "Sunday: 10:00 AM – 3:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.cortecampana.co.uk/",
+    "phone": "01789 641177",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1014807": {
     "a": "McDonalds Restaurant Limited, Western Road, Stratford-upon-Avon",
@@ -1082,7 +2742,36 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.8,
+    "grc": 2395,
+    "gty": [
+      "fast_food_restaurant",
+      "hamburger_restaurant",
+      "chicken_restaurant",
+      "diner",
+      "american_restaurant",
+      "breakfast_restaurant",
+      "service",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJiYe72jTOcEgRQWBv2zWWEpc",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "web": true,
+    "web_url": "https://www.mcdonalds.com/gb/en-gb.html?cid=RF:YEXT:GMB:8261460:Clicks:DIRSYN:",
+    "phone": "01789 298187",
+    "business_status": "OPERATIONAL"
   },
   "1093181": {
     "a": "6 Bards Walk, Stratford-upon-Avon",
@@ -1098,7 +2787,24 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 538,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ53EdvDPOcEgRn0d-aG7fXeg",
+    "web": true,
+    "web_url": "http://www.coffee1.co.uk/",
+    "phone": "01789 297741",
+    "reservable": false,
+    "business_status": "CLOSED_PERMANENTLY"
   },
   "503376": {
     "a": "Dunnington Heath Farm, Dunnington, Alcester",
@@ -1114,7 +2820,30 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 1195,
+    "gty": [
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJeaciHynDcEgRdPnWtWrjwSc",
+    "goh": [
+      "Monday: 8:00 AM – 5:00 PM",
+      "Tuesday: 8:00 AM – 5:00 PM",
+      "Wednesday: 8:00 AM – 5:00 PM",
+      "Thursday: 8:00 AM – 5:00 PM",
+      "Friday: 8:00 AM – 5:00 PM",
+      "Saturday: 8:00 AM – 5:00 PM",
+      "Sunday: 8:00 AM – 4:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.hillers.co.uk/",
+    "phone": "01789 773057",
+    "business_status": "OPERATIONAL"
   },
   "1016715": {
     "a": "Shakespaw Cat Café, 6 Union Street, Stratford-upon-Avon",
@@ -1130,7 +2859,30 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 959,
+    "gty": [
+      "cat_cafe",
+      "tea_house",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJR8KW3TPOcEgRYdbDIUrFTuk",
+    "goh": [
+      "Monday: 10:30 AM – 6:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 10:30 AM – 6:00 PM",
+      "Thursday: 10:30 AM – 6:00 PM",
+      "Friday: 10:30 AM – 6:00 PM",
+      "Saturday: 10:30 AM – 6:00 PM",
+      "Sunday: 10:30 AM – 6:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://shakespawcatcafe.com/",
+    "phone": "01789 414899",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "504026": {
     "a": "Ragley Hall, Alcester",
@@ -1146,7 +2898,25 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 1398,
+    "gty": [
+      "event_venue",
+      "tourist_attraction",
+      "park",
+      "wedding_venue",
+      "live_music_venue",
+      "garden",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJeazHrhTDcEgRlQMrjbtf_HA",
+    "web": true,
+    "web_url": "http://www.ragley.co.uk/",
+    "phone": "01789 762090",
+    "business_status": "OPERATIONAL"
   },
   "1747706": {
     "a": "Southam Road, Long Itchington, Southam",
@@ -1162,7 +2932,36 @@
     "sh": 10.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 854,
+    "gty": [
+      "cafe",
+      "sandwich_shop",
+      "diner",
+      "breakfast_restaurant",
+      "meal_takeaway",
+      "fast_food_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ8Z4phUA3d0gRqFuPwA4VrpI",
+    "goh": [
+      "Monday: 8:30 AM – 3:00 PM",
+      "Tuesday: 8:30 AM – 3:00 PM",
+      "Wednesday: 8:30 AM – 3:00 PM",
+      "Thursday: 8:30 AM – 3:00 PM",
+      "Friday: 8:30 AM – 3:00 PM",
+      "Saturday: 8:30 AM – 3:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.longitchdiner.co.uk/",
+    "phone": "01926 819096",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "503114": {
     "a": "Mount Everest Restuarant, 31 Alcester Road, Studley",
@@ -1178,7 +2977,30 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 2.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 299,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJzRCeYWjBcEgRt-J6JndF01k",
+    "goh": [
+      "Monday: 5:00 – 11:00 PM",
+      "Tuesday: 5:00 – 11:00 PM",
+      "Wednesday: 5:00 – 11:00 PM",
+      "Thursday: 5:00 – 11:00 PM",
+      "Friday: 5:00 – 11:00 PM",
+      "Saturday: 5:00 – 11:00 PM",
+      "Sunday: 5:00 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://themounteverestrestaurants.com/",
+    "phone": "01527 850717",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1871630": {
     "a": "Swan Hotel, Banbury Street, Kineton, Warwick",
@@ -1194,7 +3016,35 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 297,
+    "gty": [
+      "pub",
+      "wine_bar",
+      "live_music_venue",
+      "hotel",
+      "lodging",
+      "bar",
+      "event_venue",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJZ8J-JqEtd0gRs7ktZHEopBs",
+    "goh": [
+      "Monday: 4:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://twsk.uk/",
+    "phone": "01926 640664",
+    "business_status": "OPERATIONAL"
   },
   "1695933": {
     "a": "1 Henley Street, Stratford-upon-Avon",
@@ -1210,7 +3060,37 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1324,
+    "gty": [
+      "diner",
+      "pastry_shop",
+      "cafe",
+      "bakery",
+      "dessert_shop",
+      "confectionery",
+      "food_store",
+      "store",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJ2WVkljPOcEgRZdG39Hao51Q",
+    "goh": [
+      "Monday: 8:30 AM – 4:00 PM",
+      "Tuesday: 8:30 AM – 4:00 PM",
+      "Wednesday: 8:30 AM – 4:00 PM",
+      "Thursday: 8:30 AM – 4:00 PM",
+      "Friday: 8:30 AM – 4:00 PM",
+      "Saturday: 8:30 AM – 5:00 PM",
+      "Sunday: 8:30 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://hobsonspatisseries.uk/",
+    "phone": "01789 293330",
+    "business_status": "OPERATIONAL"
   },
   "503735": {
     "a": "Costa Coffee, Unit Q, Maybird Retail Park, Birmingham Road",
@@ -1226,7 +3106,33 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 542,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJ224ZxTPOcEgR6i7kW_aVzW0",
+    "goh": [
+      "Monday: 7:00 AM – 7:00 PM",
+      "Tuesday: 7:00 AM – 7:00 PM",
+      "Wednesday: 7:00 AM – 7:00 PM",
+      "Thursday: 7:00 AM – 7:00 PM",
+      "Friday: 7:00 AM – 7:00 PM",
+      "Saturday: 7:00 AM – 7:00 PM",
+      "Sunday: 8:00 AM – 5:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.costa.co.uk/?utm_campaign=d1871504-86ac-4f4a-8b49-41f4ff530b79&utm_source=local",
+    "phone": "0333 003 5883",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1152776": {
     "a": "Gilks Garage, Banbury Road, Kineton, Warwick",
@@ -1242,7 +3148,30 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 945,
+    "gty": [
+      "cafe",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJd4cutyEtd0gRqyike4QwESk",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://gilksgaragecafe.com/",
+    "phone": "01926 640539",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503565": {
     "a": "Avonbrook House, 198 Masons Road, Stratford-upon-Avon",
@@ -1258,7 +3187,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 17,
+    "gty": [
+      "service",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJpSELgbjPcEgR7hvPjGfWNbQ",
+    "goh": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 6:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 6:00 PM",
+      "Friday: 8:00 AM – 5:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.agd-equipment.co.uk/",
+    "phone": "01789 292227",
+    "business_status": "OPERATIONAL"
   },
   "503292": {
     "a": "10 - 11 Sheep Street, Stratford-upon-Avon",
@@ -1274,7 +3225,34 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1062,
+    "gty": [
+      "italian_restaurant",
+      "pizza_restaurant",
+      "family_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJw8aSJTLOcEgRmTl3Hf5AN6Y",
+    "goh": [
+      "Monday: 12:00 – 9:00 PM",
+      "Tuesday: 12:00 – 9:00 PM",
+      "Wednesday: 12:00 – 9:00 PM",
+      "Thursday: 12:00 – 9:00 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://wildwoodrestaurants.co.uk/restaurant/stratford-upon-avon/",
+    "phone": "01789 262910",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1800192": {
     "a": "4 - 5 Meer Street, Stratford-upon-Avon",
@@ -1290,7 +3268,21 @@
     "sh": 2.5,
     "sm": 0.0,
     "ss": 2.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.9,
+    "grc": 277,
+    "gty": [
+      "tea_house",
+      "cafe",
+      "breakfast_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJ3xTOpjPOcEgRwAaRKOxTk3c",
+    "phone": "07818 089047",
+    "business_status": "CLOSED_TEMPORARILY"
   },
   "1754520": {
     "a": "Cinnamon Arch, The Green, Long Itchington, Southam",
@@ -1304,7 +3296,31 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 51,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJ_y24Yes3d0gRNcfliv5mHWo",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 5:30 – 10:30 PM",
+      "Wednesday: 5:30 – 10:30 PM",
+      "Thursday: 5:30 – 10:30 PM",
+      "Friday: 5:30 – 10:30 PM",
+      "Saturday: 5:30 – 10:30 PM",
+      "Sunday: 5:30 – 10:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.duckonthepondlongitchington.co.uk/",
+    "phone": "01926 624661",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1206075": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -1320,7 +3336,24 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 601,
+    "gty": [
+      "corporate_office",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
+    "web": true,
+    "web_url": "https://www.jaguarlandrover.com/?utm_source=Yext&utm_medium=organic&utm_campaign=HQ004",
+    "phone": "01926 641111",
+    "business_status": "OPERATIONAL",
+    "entity_ambiguous": true,
+    "disambiguation_type": "multi_tenant_site",
+    "disambiguation_reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+    "disambiguation_resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+    "disambiguation_site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
   },
   "503960": {
     "a": "The Bakery, 14 Sheep Street, Shipston-on-Stour",
@@ -1336,7 +3369,31 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 200,
+    "gty": [
+      "cafe",
+      "coffee_shop",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ27rYHkbUcEgR0RqbtWwql10",
+    "goh": [
+      "Monday: 8:00 AM – 3:00 PM",
+      "Tuesday: 8:00 AM – 3:00 PM",
+      "Wednesday: 8:00 AM – 3:00 PM",
+      "Thursday: 8:00 AM – 3:00 PM",
+      "Friday: 8:00 AM – 3:00 PM",
+      "Saturday: 8:00 AM – 2:00 PM",
+      "Sunday: Closed"
+    ],
+    "phone": "01608 661563",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1842631": {
     "a": "Bearley Road, Snitterfield, Stratford-upon-Avon",
@@ -1352,7 +3409,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 113,
+    "gty": [
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJRQgHzYHPcEgRP4WR1yAXcOo",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.thesnitterfieldarms.co.uk/",
+    "phone": "01789 647388",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1896714": {
     "a": "The Church Street Townhouse, 16 Church Street, Stratford-upon-Avon",
@@ -1368,7 +3450,43 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 576,
+    "gty": [
+      "hotel",
+      "pub",
+      "lodging",
+      "gastropub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJiY16YjLOcEgRf4YND3V9oN4",
+    "goh": [
+      "Monday: 8:00 AM – 10:00 PM",
+      "Tuesday: 8:00 AM – 10:00 PM",
+      "Wednesday: 8:00 AM – 10:00 PM",
+      "Thursday: 8:00 AM – 10:00 PM",
+      "Friday: 8:00 AM – 10:00 PM",
+      "Saturday: 8:00 AM – 10:00 PM",
+      "Sunday: 8:00 AM – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.stratfordtownhouse.co.uk/",
+    "phone": "01789 262222",
+    "reservable": true,
+    "business_status": "OPERATIONAL",
+    "public_name": "The Church Street Townhouse",
+    "trading_names": [
+      "Church Street Townhouse",
+      "The Townhouse",
+      "JR Hotel And Restaurants LTD"
+    ],
+    "alias_source": "FSA name field 'The Townhouse Also Trading As JR Hotel And Restaurants LTD'",
+    "alias_confidence": "high"
   },
   "1291217": {
     "a": "Charlecote Gardens, Charlecote, Warwick",
@@ -1384,7 +3502,29 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.9,
+    "grc": 8,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJld4PdmHNcEgR7eajg9iMFco",
+    "goh": [
+      "Monday: 9:00 AM – 4:30 PM",
+      "Tuesday: 9:00 AM – 4:30 PM",
+      "Wednesday: 9:00 AM – 4:30 PM",
+      "Thursday: 9:00 AM – 4:30 PM",
+      "Friday: 9:00 AM – 4:30 PM",
+      "Saturday: 9:00 AM – 4:30 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://britishgardencentres.com/",
+    "phone": "01789 841842",
+    "business_status": "OPERATIONAL"
   },
   "1228994": {
     "a": "Unit 22, Bell Court, Stratford-upon-Avon",
@@ -1400,7 +3540,31 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 277,
+    "gty": [
+      "bakery",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ4QxF7jPOcEgRq3BYJpBhcnA",
+    "goh": [
+      "Monday: 8:00 AM – 3:00 PM",
+      "Tuesday: 8:00 AM – 3:00 PM",
+      "Wednesday: 8:00 AM – 3:00 PM",
+      "Thursday: 8:00 AM – 3:00 PM",
+      "Friday: 8:00 AM – 3:00 PM",
+      "Saturday: 8:00 AM – 4:00 PM",
+      "Sunday: 8:00 AM – 3:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://morbakery.co.uk/",
+    "phone": "01789 204952",
+    "business_status": "OPERATIONAL"
   },
   "1453409": {
     "a": "",
@@ -1414,7 +3578,19 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 6,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ410yx1jbcEgRYo4x2QsP2aE",
+    "web": true,
+    "web_url": "https://www.bidfordfc.co.uk/",
+    "business_status": "OPERATIONAL"
   },
   "503552": {
     "a": "The Waterways, Birmingham Road, Stratford-upon-Avon",
@@ -1430,7 +3606,24 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1695,
+    "gty": [
+      "hotel",
+      "inn",
+      "bed_and_breakfast",
+      "lodging",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJMZi2MTXOcEgRdGbQlVELl7M",
+    "web": true,
+    "web_url": "https://www.premierinn.com/gb/en/hotels/england/warwickshire/stratford-upon-avon/stratford-upon-avon-waterways.html?cid=GLBC_STRAVO",
+    "phone": "0333 321 9243",
+    "business_status": "OPERATIONAL"
   },
   "503821": {
     "a": "4A High Street, Southam",
@@ -1446,7 +3639,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 144,
+    "gty": [
+      "indian_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJsQ_9QLkwd0gRSa48I6w27ik",
+    "goh": [
+      "Monday: 5:30 – 10:00 PM",
+      "Tuesday: 5:30 – 10:00 PM",
+      "Wednesday: 5:30 – 10:00 PM",
+      "Thursday: 5:30 – 10:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 10:00 PM"
+    ],
+    "phone": "01926 815015",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1790270": {
     "a": "Cordelia, 31 Sheep Street, Stratford-upon-Avon",
@@ -1462,7 +3678,29 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 949,
+    "gty": [
+      "museum",
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJseq5hzHOcEgRP_8s4W8gaEE",
+    "goh": [
+      "Monday: 10:30 AM – 5:30 PM",
+      "Tuesday: 10:30 AM – 5:30 PM",
+      "Wednesday: 10:30 AM – 5:30 PM",
+      "Thursday: 10:30 AM – 5:30 PM",
+      "Friday: 10:30 AM – 5:30 PM",
+      "Saturday: 10:30 AM – 5:30 PM",
+      "Sunday: 10:30 AM – 5:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.tudorworld.com/",
+    "phone": "01789 298070",
+    "business_status": "OPERATIONAL"
   },
   "1854458": {
     "a": "Oversley Mill Services, Alcester Bypass, Alcester",
@@ -1478,7 +3716,33 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 11,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJJ3gjN9PDcEgRRMARiQWR654",
+    "goh": [
+      "Monday: 5:30 AM – 9:00 PM",
+      "Tuesday: 5:30 AM – 9:00 PM",
+      "Wednesday: 5:30 AM – 9:00 PM",
+      "Thursday: 5:30 AM – 9:00 PM",
+      "Friday: 5:30 AM – 9:00 PM",
+      "Saturday: 6:00 AM – 9:00 PM",
+      "Sunday: 7:00 AM – 8:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.costacoffee.co.uk/",
+    "phone": "01789 339794",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "503479": {
     "a": "Upton House, Banbury Road, Upton, Banbury",
@@ -1494,7 +3758,28 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 3288,
+    "gty": [
+      "tourist_attraction",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJjzYlpwIsd0gRD6MmTpOZQqY",
+    "goh": [
+      "Monday: 11:00 AM – 4:00 PM",
+      "Tuesday: 11:00 AM – 4:00 PM",
+      "Wednesday: 11:00 AM – 4:00 PM",
+      "Thursday: 11:00 AM – 4:00 PM",
+      "Friday: 11:00 AM – 4:00 PM",
+      "Saturday: 11:00 AM – 4:00 PM",
+      "Sunday: 11:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.nationaltrust.org.uk/upton-house/",
+    "phone": "01295 670266",
+    "business_status": "OPERATIONAL"
   },
   "503541": {
     "a": "Tesco Stores Ltd, Birmingham Road, Stratford-upon-Avon",
@@ -1510,7 +3795,33 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.7,
+    "grc": 27,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJU0p3MafPcEgRyAI-FcpKPco",
+    "goh": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 6:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 6:00 PM",
+      "Friday: 8:00 AM – 6:00 PM",
+      "Saturday: 7:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.costa.co.uk/?utm_campaign=c4a52c13-4de6-490b-b9ee-1a1988cb6ae7&utm_source=local",
+    "phone": "0333 003 5883",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1835033": {
     "a": "15 Welford Road, Barton, Bidford-on-Avon, Alcester",
@@ -1526,7 +3837,32 @@
     "sh": 5.0,
     "sm": 10.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 600,
+    "gty": [
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJyV-FEEPbcEgR9_4Kx6dX1NU",
+    "goh": [
+      "Monday: 4:00 – 10:00 PM",
+      "Tuesday: 4:00 – 10:00 PM",
+      "Wednesday: 4:00 – 10:00 PM",
+      "Thursday: 12:00 – 10:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.cottageofcontent.pub/",
+    "phone": "01789 772279",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1474392": {
     "a": "Sports Pavilion, Wellington Avenue, Meon Vale, Stratford-upon-Avon",
@@ -1542,7 +3878,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 20,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJnQrcH0vbcEgRUS362fq8WJQ",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "phone": "07921 371523",
+    "business_status": "OPERATIONAL"
   },
   "736236": {
     "a": "J N B Gymnastics, Unit 5, Featherbed Lane, Pathlow",
@@ -1558,7 +3917,32 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 196,
+    "gty": [
+      "gym",
+      "sports_complex",
+      "sports_school",
+      "sports_activity_location",
+      "point_of_interest",
+      "health",
+      "establishment"
+    ],
+    "gpid": "ChIJI2KBRnTPcEgRmnzH4IRBaP4",
+    "goh": [
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 9:00 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 8:00 PM",
+      "Saturday: 9:00 AM – 8:00 PM",
+      "Sunday: 9:00 AM – 8:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://jnbgymnasticsacademy.com/",
+    "phone": "07469 879796",
+    "business_status": "OPERATIONAL"
   },
   "503715": {
     "a": "Asda Living, Unit L And M, Maybird Retail Park, Birmingham Road",
@@ -1574,7 +3958,32 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 1550,
+    "gty": [
+      "home_goods_store",
+      "cafe",
+      "clothing_store",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpid": "ChIJg07Xy0rOcEgRbYRVrlQuTeI",
+    "goh": [
+      "Monday: 9:00 AM – 8:00 PM",
+      "Tuesday: 9:00 AM – 8:00 PM",
+      "Wednesday: 9:00 AM – 8:00 PM",
+      "Thursday: 9:00 AM – 8:00 PM",
+      "Friday: 9:00 AM – 8:00 PM",
+      "Saturday: 9:00 AM – 7:00 PM",
+      "Sunday: 10:30 AM – 4:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://storelocator.asda.com/store/stratford-upon-avon-living",
+    "phone": "01789 416800",
+    "business_status": "OPERATIONAL"
   },
   "1622072": {
     "a": "Unit 10, Dodwell Trading Estate, Evesham Road, Dodwell",
@@ -1590,7 +3999,36 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 133,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "furniture_store",
+      "home_improvement_store",
+      "home_goods_store",
+      "food_store",
+      "store",
+      "service",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJxxro7XTPcEgRoIuYj3CLwtM",
+    "goh": [
+      "Monday: 10:00 AM – 5:00 PM",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://hudsonsstratford.com/",
+    "phone": "01789 631070",
+    "business_status": "OPERATIONAL"
   },
   "1266894": {
     "a": "Barnabys Fish Restaurant, 22 Waterside, Stratford-upon-Avon",
@@ -1606,7 +4044,30 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 1190,
+    "gty": [
+      "fast_food_restaurant",
+      "fish_and_chips_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJNx0QkDHOcEgR-syV1E0kMTc",
+    "goh": [
+      "Monday: 12:00 – 8:00 PM",
+      "Tuesday: 12:00 – 8:00 PM",
+      "Wednesday: 12:00 – 8:00 PM",
+      "Thursday: 12:00 – 8:00 PM",
+      "Friday: 12:00 – 8:00 PM",
+      "Saturday: 12:00 – 8:00 PM",
+      "Sunday: 12:00 – 7:00 PM"
+    ],
+    "phone": "01789 261485",
+    "business_status": "OPERATIONAL"
   },
   "1552322": {
     "a": "6 Henley Street, Stratford-upon-Avon",
@@ -1622,7 +4083,21 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.8,
+    "grc": 98,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJl-fUavDPcEgRTeq2tKtBnpU",
+    "phone": "0333 003 5883",
+    "business_status": "CLOSED_TEMPORARILY"
   },
   "1421992": {
     "a": "13 - 14 Meer Street, Stratford-upon-Avon",
@@ -1638,7 +4113,37 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 516,
+    "gty": [
+      "cafe",
+      "coffee_shop",
+      "breakfast_restaurant",
+      "british_restaurant",
+      "meal_takeaway",
+      "sandwich_shop",
+      "tea_house",
+      "food_store",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJa9yHDjPOcEgRmD8AOSejzqM",
+    "goh": [
+      "Monday: 9:00 AM – 4:00 PM",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.delicafestratford.co.uk/",
+    "business_status": "OPERATIONAL"
   },
   "503105": {
     "a": "7 Greenhill Street, Stratford-upon-Avon",
@@ -1654,7 +4159,31 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 315,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJQ3day8zPcEgRY3B5c_xGd84",
+    "goh": [
+      "Monday: 5:30 – 11:00 PM",
+      "Tuesday: 5:30 – 11:00 PM",
+      "Wednesday: 5:30 – 11:00 PM",
+      "Thursday: 5:30 – 11:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://avon-spice.co.uk/",
+    "phone": "01789 267067",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1789006": {
     "a": "12 Market Hill, Southam",
@@ -1670,7 +4199,36 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 192,
+    "gty": [
+      "deli",
+      "coffee_shop",
+      "cafe",
+      "meal_takeaway",
+      "food_store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpid": "ChIJHfG7jUbLcEgRJxsQUicM-3I",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 10:00 AM – 6:00 PM",
+      "Wednesday: 10:00 AM – 6:00 PM",
+      "Thursday: 10:00 AM – 6:00 PM",
+      "Friday: 10:00 AM – 6:00 PM",
+      "Saturday: 10:00 AM – 6:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.thepickledcrab.com/",
+    "phone": "07921 392823",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503148": {
     "a": "Nuthurst Grange Hotel, Nuthurst Grange Road, Hockley Heath, Solihull",
@@ -1686,7 +4244,34 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 592,
+    "gty": [
+      "hotel",
+      "lodging",
+      "wedding_venue",
+      "event_venue",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJDzgmVfnHcEgRD9V2fmty8Ok",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "web": true,
+    "web_url": "https://nuthurstgrange.com/",
+    "phone": "01564 783972",
+    "business_status": "OPERATIONAL"
   },
   "1421981": {
     "a": "45A High Street, Studley",
@@ -1702,7 +4287,31 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 148,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJN0Lz6WjBcEgREp2bEDgJKq4",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 5:30 – 10:30 PM",
+      "Wednesday: 5:30 – 10:30 PM",
+      "Thursday: 5:30 – 10:30 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 10:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.peppersrestaurant.co.uk/",
+    "phone": "01527 465458",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503286": {
     "a": "Georges Cafe, Unit 5, Beech Tree Park, Bidford-on-Avon",
@@ -1718,7 +4327,29 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 125,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ41s9b1LbcEgRN8Lfx1SxVNU",
+    "goh": [
+      "Monday: 7:30 AM – 2:00 PM",
+      "Tuesday: 7:30 AM – 2:00 PM",
+      "Wednesday: 7:30 AM – 2:00 PM",
+      "Thursday: 7:30 AM – 2:00 PM",
+      "Friday: 7:30 AM – 2:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "https://igdaf.top/kates-cafe",
+    "phone": "07971 720513",
+    "business_status": "OPERATIONAL"
   },
   "1552333": {
     "a": "Unit 3, The Rosebird Centre, Shipston Road, Stratford-upon-Avon",
@@ -1734,7 +4365,33 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.7,
+    "grc": 35,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ1xnzSyDPcEgRQTDQGJWgOII",
+    "goh": [
+      "Monday: 6:00 AM – 7:00 PM",
+      "Tuesday: 6:00 AM – 7:00 PM",
+      "Wednesday: 6:00 AM – 7:00 PM",
+      "Thursday: 6:00 AM – 7:00 PM",
+      "Friday: 6:00 AM – 7:00 PM",
+      "Saturday: 7:00 AM – 7:00 PM",
+      "Sunday: 8:00 AM – 6:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.costa.co.uk/?utm_campaign=a4a8ca16-7a81-4331-8f9d-5f06c890e387&utm_source=local",
+    "phone": "0333 003 5883",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1485802": {
     "a": "Home Guard Club, Main Street, Tiddington, Stratford-upon-Avon",
@@ -1750,7 +4407,28 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 121,
+    "gty": [
+      "point_of_interest",
+      "association_or_organization",
+      "establishment"
+    ],
+    "gpid": "ChIJWa__0RLOcEgRhyvdfVw3BAQ",
+    "goh": [
+      "Monday: 6:00 – 11:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 6:00 – 11:00 PM",
+      "Thursday: 6:00 – 11:00 PM",
+      "Friday: 6:00 – 9:00 PM",
+      "Saturday: 12:00 PM – 12:00 AM",
+      "Sunday: 12:00 – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.facebook.com/homeguardsclub/",
+    "phone": "07956 791001",
+    "business_status": "OPERATIONAL"
   },
   "1495078": {
     "a": "4 Greenhill Street, Stratford-upon-Avon",
@@ -1766,7 +4444,31 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 165,
+    "gty": [
+      "vietnamese_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJLQGVrIDPcEgRRNvQ8J7I2Rk",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 5:00 – 11:00 PM",
+      "Wednesday: 5:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://fourseasonspho.co.uk/",
+    "phone": "01789 414445",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503240": {
     "a": "152 High Street, Henley-in-Arden",
@@ -1782,7 +4484,35 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 1163,
+    "gty": [
+      "ice_cream_shop",
+      "cafe",
+      "dessert_shop",
+      "confectionery",
+      "tea_house",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJtVAbMzvGcEgRNCgPVQIXIuA",
+    "goh": [
+      "Monday: 9:00 AM – 5:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: 9:00 AM – 5:30 PM",
+      "Sunday: 9:00 AM – 5:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.henleyicecream.co.uk/",
+    "phone": "01564 795172",
+    "business_status": "OPERATIONAL"
   },
   "1912631": {
     "a": "1 - 2 Granville Court, Shipston-on-Stour",
@@ -1793,7 +4523,31 @@
     "n": "Shipston Bengal Cuisine",
     "pc": "CV36 4PP",
     "rd": "1901-01-01T00:00:00",
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 127,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJxaiyr0jUcEgR_goNQXLedUM",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 5:30 – 11:00 PM",
+      "Wednesday: 5:30 – 11:00 PM",
+      "Thursday: 5:30 – 11:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.shipstonbengal.com/",
+    "phone": "01608 664445",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1253300": {
     "a": "Keys And Kitchen, 6 Ely Street, Stratford-upon-Avon",
@@ -1809,7 +4563,18 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 387,
+    "gty": [
+      "pub",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJyTHR-TLOcEgROUPYwQCax1k",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503270": {
     "a": "Kings Coughton, Alcester",
@@ -1825,7 +4590,12 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gty": [
+      "premise",
+      "street_address"
+    ],
+    "gpid": "ChIJ6Wdw5JDDcEgRkh-MB-0rmDI"
   },
   "1799220": {
     "a": "BURGER KING, Unit W And Unit X, The Maybird Centre, Birmingham Road",
@@ -1841,7 +4611,29 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.7,
+    "grc": 222,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJl5iLHADPcEgRBUd7GDvLEkI",
+    "goh": [
+      "Monday: 8:00 AM – 12:00 AM",
+      "Tuesday: 8:00 AM – 11:00 PM",
+      "Wednesday: 8:00 AM – 11:00 PM",
+      "Thursday: 8:00 AM – 11:00 PM",
+      "Friday: 8:00 AM – 12:00 AM",
+      "Saturday: 8:00 AM – 12:00 AM",
+      "Sunday: 8:00 AM – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://locations.burgerking.co.uk/stratford-upon-avon/maybird-shopping-park",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1344517": {
     "a": "Fox Inn, Loxley, Warwick",
@@ -1854,7 +4646,32 @@
     "r": 5,
     "rd": "2026-02-06T00:00:00",
     "s": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 273,
+    "gty": [
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJl-BYUnDScEgRdpC19Q8TMX0",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 6:00 – 10:30 PM",
+      "Wednesday: 12:00 – 3:00 PM, 5:00 – 10:00 PM",
+      "Thursday: 12:00 – 3:00 PM, 5:00 – 10:30 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.foxloxley.co.uk/",
+    "phone": "01789 840933",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1781021": {
     "a": "Baptist Church, Payton Street, Stratford-upon-Avon",
@@ -1870,7 +4687,21 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 12,
+    "gty": [
+      "church",
+      "place_of_worship",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ9SYsTjHOcEgRLxIZs-829wY",
+    "web": true,
+    "web_url": "https://www.stratforduponavonbaptist.org.uk/",
+    "phone": "01789 414205",
+    "business_status": "OPERATIONAL"
   },
   "503401": {
     "a": "3 Bridge Street, Kineton, Warwick",
@@ -1886,7 +4717,31 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 528,
+    "gty": [
+      "bangladeshi_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJsyBm-sk0d0gRZovNEn0rXts",
+    "goh": [
+      "Monday: 5:00 – 10:30 PM",
+      "Tuesday: 5:00 – 10:30 PM",
+      "Wednesday: 5:00 – 10:30 PM",
+      "Thursday: 5:00 – 10:30 PM",
+      "Friday: 5:00 – 11:00 PM",
+      "Saturday: 5:00 – 11:00 PM",
+      "Sunday: 5:00 – 10:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.shukursbrasserie.com/",
+    "phone": "01926 642171",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503854": {
     "a": "Stratford Garden Centre, Campden Road, Clifford Chambers, Stratford-upon-Avon",
@@ -1902,7 +4757,30 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 1823,
+    "gty": [
+      "garden_center",
+      "service",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJf3HZJzrQcEgRnCNO_xOfOtg",
+    "goh": [
+      "Monday: 9:00 AM – 5:30 PM",
+      "Tuesday: 9:00 AM – 5:30 PM",
+      "Wednesday: 9:00 AM – 5:30 PM",
+      "Thursday: 9:00 AM – 5:30 PM",
+      "Friday: 9:00 AM – 5:30 PM",
+      "Saturday: 9:00 AM – 5:30 PM",
+      "Sunday: 10:30 AM – 4:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://stratfordgardencentre.co.uk/",
+    "phone": "01789 205745",
+    "business_status": "OPERATIONAL"
   },
   "979161": {
     "a": "Spernal Ash Nurseries, Alcester Road, Studley",
@@ -1918,7 +4796,19 @@
     "sh": 5.0,
     "sm": 0.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 108,
+    "gty": [
+      "breakfast_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJYUllYuDDcEgR09pb2TDpPrk",
+    "phone": "07528 581270",
+    "business_status": "CLOSED_TEMPORARILY"
   },
   "676561": {
     "a": "The View, Swans Nest Lane, Stratford-upon-Avon",
@@ -1934,7 +4824,29 @@
     "sh": 5.0,
     "sm": 10.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 822,
+    "gty": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJZVUwRK7PcEgRzsGAt-mPIdw",
+    "goh": [
+      "Monday: Open 24 hours",
+      "Tuesday: Open 24 hours",
+      "Wednesday: Open 24 hours",
+      "Thursday: Open 24 hours",
+      "Friday: Open 24 hours",
+      "Saturday: Open 24 hours",
+      "Sunday: Open 24 hours"
+    ],
+    "web": true,
+    "web_url": "https://swansnesthotel.co.uk/?utm_source=google&utm_medium=local&utm_campaign=hotel-swansnest",
+    "phone": "01789 266804",
+    "business_status": "OPERATIONAL"
   },
   "1747702": {
     "a": "Unit 18, Bell Court, Stratford-upon-Avon",
@@ -1950,7 +4862,31 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 976,
+    "gty": [
+      "brazilian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJmU2Wnl_PcEgRciAZqfMaIBs",
+    "goh": [
+      "Monday: 12:00 – 10:00 PM",
+      "Tuesday: 12:00 – 10:00 PM",
+      "Wednesday: 12:00 – 10:00 PM",
+      "Thursday: 12:00 – 10:00 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.belezarodizio.co.uk/",
+    "phone": "01789 647278",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1397584": {
     "a": "93 High Street, Henley-in-Arden",
@@ -1966,7 +4902,30 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 324,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJi-UVQyXGcEgRsjC7Org8c7o",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 12:00 – 2:30 PM, 6:00 – 9:30 PM",
+      "Wednesday: 12:00 – 2:30 PM, 6:00 – 9:30 PM",
+      "Thursday: 12:00 – 2:30 PM, 6:00 – 9:30 PM",
+      "Friday: 12:00 – 2:30 PM, 6:00 – 9:30 PM",
+      "Saturday: 12:00 – 2:30 PM, 6:00 – 9:30 PM",
+      "Sunday: 12:00 – 2:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.thebluebellathenley.co.uk/",
+    "phone": "01564 793049",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1838726": {
     "a": "The Cow Shed, Yew Trees Craft Centre, Stratford Road, Wootton Wawen",
@@ -1982,7 +4941,33 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 380,
+    "gty": [
+      "cafe",
+      "coffee_shop",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJfX4RLQHGcEgRngJPe3T_H-M",
+    "goh": [
+      "Monday: 10:00 AM – 3:30 PM",
+      "Tuesday: 10:00 AM – 4:30 PM",
+      "Wednesday: 10:00 AM – 4:30 PM",
+      "Thursday: 10:00 AM – 4:30 PM",
+      "Friday: 10:00 AM – 4:30 PM",
+      "Saturday: 10:00 AM – 4:30 PM",
+      "Sunday: 10:00 AM – 4:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.cowshedcafe.com/",
+    "phone": "01564 792979",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503555": {
     "a": "Camp Site, Dog Lane Fisheries, Napton-on-the-Hill",
@@ -1998,7 +4983,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 303,
+    "gty": [
+      "fishing_pond",
+      "campground",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJrVN6LBM7d0gRUfCftiFwaP4",
+    "goh": [
+      "Monday: 7:00 AM – 6:00 PM",
+      "Tuesday: 7:00 AM – 6:00 PM",
+      "Wednesday: 7:00 AM – 6:00 PM",
+      "Thursday: 7:00 AM – 6:00 PM",
+      "Friday: 7:00 AM – 6:00 PM",
+      "Saturday: 7:00 AM – 6:00 PM",
+      "Sunday: 7:00 AM – 6:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.doglanefishery.co.uk/",
+    "phone": "07957 861733",
+    "business_status": "OPERATIONAL"
   },
   "503089": {
     "a": "Touchdown Inn, Wellesbourne Mountford Aerodrome, Loxley Road, Wellesbourne",
@@ -2014,7 +5022,36 @@
     "sh": 10.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 1042,
+    "gty": [
+      "cafe",
+      "breakfast_restaurant",
+      "tea_house",
+      "coffee_shop",
+      "food_store",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJp9R7u4TNcEgRXvUWcgrovZg",
+    "goh": [
+      "Monday: 9:00 AM – 5:00 PM",
+      "Tuesday: 9:00 AM – 5:00 PM",
+      "Wednesday: 9:00 AM – 5:00 PM",
+      "Thursday: 9:00 AM – 5:00 PM",
+      "Friday: 9:00 AM – 5:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: 9:00 AM – 5:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.facebook.com/airfieldcafe/",
+    "phone": "01789 470575",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1765854": {
     "a": "Roebuck Inn, Birmingham Road, Alcester",
@@ -2027,7 +5064,12 @@
     "r": 4,
     "rd": "2024-11-19T00:00:00",
     "s": 8.0,
-    "t": 1
+    "t": 1,
+    "gty": [
+      "premise",
+      "street_address"
+    ],
+    "gpid": "ChIJD7ixY5zDcEgRDynPaXEfm5w"
   },
   "1808716": {
     "a": "2A Bridge Street, Stratford-upon-Avon",
@@ -2043,7 +5085,28 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 95,
+    "gty": [
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJyf41AwDPcEgRbge4P-pYNq0",
+    "goh": [
+      "Monday: 11:00 AM – 10:00 PM",
+      "Tuesday: 11:00 AM – 10:00 PM",
+      "Wednesday: 11:00 AM – 10:00 PM",
+      "Thursday: 11:00 AM – 10:00 PM",
+      "Friday: 11:00 AM – 11:30 PM",
+      "Saturday: 11:00 AM – 11:30 PM",
+      "Sunday: 11:00 AM – 10:00 PM"
+    ],
+    "phone": "07711 576661",
+    "business_status": "OPERATIONAL"
   },
   "1804017": {
     "a": "86B High Street, Henley-in-Arden",
@@ -2059,7 +5122,27 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 46,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJvVQ6GvLHcEgRl2cLgnooNoE",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM, 5:00 – 8:30 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 4:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ],
+    "phone": "07495 998698",
+    "business_status": "OPERATIONAL"
   },
   "1577024": {
     "a": "Holt Farm, Holt Road, Southam",
@@ -2075,7 +5158,18 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 75,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ7awRS-w7d0gRKyd3CTO1Wow",
+    "phone": "07861 585657",
+    "business_status": "CLOSED_TEMPORARILY"
   },
   "1796548": {
     "a": "13 Ely Street, Stratford-upon-Avon",
@@ -2091,7 +5185,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 388,
+    "gty": [
+      "fast_food_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJo42y-TLOcEgRl4l0qxujbWs",
+    "goh": [
+      "Monday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Tuesday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Wednesday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Thursday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Friday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Saturday: 12:00 – 3:00 PM, 5:00 – 9:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "https://thekingfishertakeawayandresturant.co.uk/order-now",
+    "phone": "01789 292513",
+    "business_status": "OPERATIONAL"
   },
   "1854461": {
     "a": "1 Warwick Road, Stratford-upon-Avon",
@@ -2107,7 +5225,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 291,
+    "gty": [
+      "pub",
+      "restaurant",
+      "bar",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJ3aEhwYvPcEgRg8xFWQIJwKs",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://redlionstratforduponavon.com/?utm_source=google&utm_medium=organic&utm_campaign=google_business_profile",
+    "phone": "01789 613770",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503926": {
     "a": "The Wight School, High Street, Harbury, Leamington Spa",
@@ -2123,7 +5266,33 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 28,
+    "gty": [
+      "art_gallery",
+      "cafe",
+      "library",
+      "event_venue",
+      "service",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJMYT7P2Uxd0gRZobO1um1_sU",
+    "goh": [
+      "Monday: 10:00 AM – 4:30 PM",
+      "Tuesday: 10:00 AM – 4:30 PM",
+      "Wednesday: 9:15 AM – 4:30 PM",
+      "Thursday: 9:15 AM – 4:30 PM",
+      "Friday: 9:15 AM – 4:30 PM",
+      "Saturday: 10:00 AM – 12:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.harburyvillagelibrary.org.uk/",
+    "phone": "01926 258776",
+    "business_status": "OPERATIONAL"
   },
   "1388307": {
     "a": "",
@@ -2137,7 +5306,21 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 81,
+    "gty": [
+      "catering_service",
+      "food_delivery",
+      "event_venue",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJ6Xtw-RpOd0gRmN-NXHtVfG4",
+    "phone": "07974 263423",
+    "business_status": "OPERATIONAL"
   },
   "503772": {
     "a": "3 Bridge Street, Stratford-upon-Avon",
@@ -2153,7 +5336,36 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.8,
+    "grc": 1565,
+    "gty": [
+      "fast_food_restaurant",
+      "diner",
+      "breakfast_restaurant",
+      "chicken_restaurant",
+      "hamburger_restaurant",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJs9StcDHOcEgRCSAeFXLChWU",
+    "goh": [
+      "Monday: 6:00 AM – 10:00 PM",
+      "Tuesday: 6:00 AM – 10:00 PM",
+      "Wednesday: 6:00 AM – 10:00 PM",
+      "Thursday: 6:00 AM – 10:00 PM",
+      "Friday: 6:00 AM – 10:00 PM",
+      "Saturday: 6:00 AM – 10:00 PM",
+      "Sunday: 6:00 AM – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.mcdonalds.com/gb/en-gb.html?cid=RF:YEXT:GMB:8260130:Clicks:DIRSYN:",
+    "phone": "01789 298645",
+    "business_status": "OPERATIONAL"
   },
   "503478": {
     "a": "8 - 9 High Street, Stratford-upon-Avon",
@@ -2169,7 +5381,35 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.8,
+    "grc": 551,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "sandwich_shop",
+      "food_store",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ12zgzDPOcEgRrcUkHFLP_QU",
+    "goh": [
+      "Monday: 7:00 AM – 6:00 PM",
+      "Tuesday: 7:00 AM – 6:00 PM",
+      "Wednesday: 7:00 AM – 6:00 PM",
+      "Thursday: 7:00 AM – 6:00 PM",
+      "Friday: 7:00 AM – 6:00 PM",
+      "Saturday: 7:00 AM – 6:00 PM",
+      "Sunday: 8:00 AM – 5:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.starbucks.co.uk/store-locator/store/1011693/stratford-upon-avon-high-street-unit-2-stratford-upon-avon-eng-cv-37-6-au-gb",
+    "phone": "01789 268989",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1800191": {
     "a": "59 High Street, Alcester",
@@ -2185,7 +5425,27 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 103,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJdQ7NvGLDcEgRztma3kWhV7w",
+    "goh": [
+      "Monday: 8:00 AM – 4:00 PM",
+      "Tuesday: 8:00 AM – 4:00 PM",
+      "Wednesday: 8:00 AM – 4:00 PM",
+      "Thursday: 8:00 AM – 4:00 PM",
+      "Friday: 8:00 AM – 11:00 PM",
+      "Saturday: 8:00 AM – 11:00 PM",
+      "Sunday: 8:00 AM – 5:00 PM"
+    ],
+    "phone": "07387 748203",
+    "business_status": "OPERATIONAL"
   },
   "1774608": {
     "a": "Stratford Marina, Bridgefoot, Stratford-upon-Avon",
@@ -2201,7 +5461,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 190,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJkdavonDPcEgRlyrQTXdKJ10",
+    "goh": [
+      "Monday: 11:00 AM – 10:00 PM",
+      "Tuesday: 11:00 AM – 10:00 PM",
+      "Wednesday: 11:00 AM – 10:00 PM",
+      "Thursday: 11:00 AM – 10:00 PM",
+      "Friday: 9:30 AM – 11:00 PM",
+      "Saturday: 9:30 AM – 11:00 PM",
+      "Sunday: 9:30 AM – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.no4riverside.com/",
+    "phone": "01789 595122",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1747700": {
     "a": "Cotswold Distilling Company, Phillips Field, Whichford Road, Stourton",
@@ -2217,7 +5500,36 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 62,
+    "gty": [
+      "cafe",
+      "pizza_restaurant",
+      "meal_takeaway",
+      "coffee_shop",
+      "food_store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "store",
+      "establishment"
+    ],
+    "gpid": "ChIJyy1MA_fVcEgRkpH5ahmB8eo",
+    "goh": [
+      "Monday: 10:00 AM – 5:00 PM",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.cotswoldsdistillery.com/",
+    "phone": "01608 611543",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1556368": {
     "a": "Loungers UK Limited, Lounge, 32 - 34 Bridge Street, Stratford-upon-Avon",
@@ -2233,7 +5545,37 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 713,
+    "gty": [
+      "restaurant",
+      "family_restaurant",
+      "breakfast_restaurant",
+      "vegan_restaurant",
+      "vegetarian_restaurant",
+      "cafe",
+      "bar",
+      "british_restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJRXz4BcHPcEgRBsca9EN68EI",
+    "goh": [
+      "Monday: 9:00 AM – 11:00 PM",
+      "Tuesday: 9:00 AM – 11:00 PM",
+      "Wednesday: 9:00 AM – 11:00 PM",
+      "Thursday: 9:00 AM – 11:00 PM",
+      "Friday: 9:00 AM – 12:00 AM",
+      "Saturday: 9:00 AM – 12:00 AM",
+      "Sunday: 9:00 AM – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://thelounges.co.uk/prospero",
+    "phone": "01789 713236",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "565220": {
     "a": "The Four Teas, 24 Sheep Street, Stratford-upon-Avon",
@@ -2249,7 +5591,33 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 1603,
+    "gty": [
+      "tea_house",
+      "breakfast_restaurant",
+      "diner",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJr_WA2zPOcEgRtI-aiRpb_aI",
+    "goh": [
+      "Monday: 9:30 AM – 4:00 PM",
+      "Tuesday: 9:30 AM – 4:00 PM",
+      "Wednesday: 9:30 AM – 4:00 PM",
+      "Thursday: 9:30 AM – 4:00 PM",
+      "Friday: 9:30 AM – 4:00 PM",
+      "Saturday: 9:30 AM – 4:00 PM",
+      "Sunday: 10:30 AM – 3:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.thefourteas.co.uk/",
+    "phone": "01789 293908",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "502962": {
     "a": "Curry Rebublic Ltd, 35A High Street, Henley-in-Arden",
@@ -2265,7 +5633,32 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 128,
+    "gty": [
+      "indian_restaurant",
+      "asian_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJI1ADly_GcEgR6OS_QdDHjQk",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 5:30 – 11:00 PM",
+      "Wednesday: 5:30 – 11:00 PM",
+      "Thursday: 5:30 – 11:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.curryrepublichenley.co.uk/",
+    "phone": "01564 793745",
+    "business_status": "OPERATIONAL"
   },
   "1388303": {
     "a": "18 - 19 Rother Street, Stratford-upon-Avon",
@@ -2281,7 +5674,29 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 119,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ4auvednPcEgRTCtTiD8RlQI",
+    "goh": [
+      "Monday: 11:00 AM – 5:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: Closed",
+      "Thursday: 11:00 AM – 5:00 PM",
+      "Friday: 11:00 AM – 5:00 PM",
+      "Saturday: 11:00 AM – 5:00 PM",
+      "Sunday: 11:00 AM – 5:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.lilyscafe.co.uk/",
+    "phone": "07914 858525",
+    "business_status": "OPERATIONAL"
   },
   "1827674": {
     "a": "1A Daventry Street, Southam",
@@ -2297,7 +5712,36 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 23,
+    "gty": [
+      "cafe",
+      "coffee_shop",
+      "breakfast_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ0eTlrBMxd0gRtqKWJ14bRJg",
+    "goh": [
+      "Monday: 9:00 AM – 2:00 PM",
+      "Tuesday: 9:00 AM – 2:00 PM",
+      "Wednesday: 10:00 AM – 2:00 PM",
+      "Thursday: 9:00 AM – 2:00 PM",
+      "Friday: 8:30 AM – 2:00 PM",
+      "Saturday: 9:00 AM – 2:00 PM",
+      "Sunday: 10:00 AM – 2:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://pickledandtipsy.uk/",
+    "phone": "01926 815381",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "502877": {
     "a": "The Double Tree By Hilton, Arden Street, Stratford-upon-Avon",
@@ -2311,7 +5755,23 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1321,
+    "gty": [
+      "hotel",
+      "business_center",
+      "lodging",
+      "event_venue",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJ53EdvDPOcEgRF570SBNlU1E",
+    "web": true,
+    "web_url": "https://www.hilton.com/en/hotels/bhxsadi-doubletree-stratford-upon-avon/?SEO_id=GMB-EMEA-DI-BHXSADI",
+    "phone": "01789 271000",
+    "business_status": "OPERATIONAL"
   },
   "503584": {
     "a": "First Floor, 2 - 4 Swan Street, Alcester",
@@ -2327,7 +5787,35 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 347,
+    "gty": [
+      "indian_restaurant",
+      "fine_dining_restaurant",
+      "diner",
+      "meal_takeaway",
+      "service",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJoyNnfnnDcEgRaRxBpBjez-I",
+    "goh": [
+      "Monday: 5:30 – 11:30 PM",
+      "Tuesday: 5:30 – 11:30 PM",
+      "Wednesday: 5:30 – 11:30 PM",
+      "Thursday: 5:30 – 11:30 PM",
+      "Friday: 5:30 – 11:30 PM",
+      "Saturday: 5:30 – 11:30 PM",
+      "Sunday: 5:30 – 11:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://cardamomindiancuisine.com/",
+    "phone": "01789 765859",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1802818": {
     "a": "5 Shrieves Walk, Stratford-upon-Avon",
@@ -2343,7 +5831,18 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 83,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJebKK5HPPcEgRVjRBU43TOfM",
+    "phone": "07944 028813",
+    "business_status": "CLOSED_TEMPORARILY"
   },
   "1884822": {
     "a": "257 Birmingham Road, Stratford-upon-Avon",
@@ -2359,7 +5858,29 @@
     "sh": 10.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 44,
+    "gty": [
+      "chicken_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJgaVzvbnPcEgRRKlayEgT4Ng",
+    "goh": [
+      "Monday: 11:00 AM – 11:00 PM",
+      "Tuesday: 11:00 AM – 11:00 PM",
+      "Wednesday: 11:00 AM – 11:00 PM",
+      "Thursday: 11:00 AM – 11:00 PM",
+      "Friday: 11:00 AM – 11:00 PM",
+      "Saturday: 11:00 AM – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.wingers.uk.net/",
+    "business_status": "OPERATIONAL"
   },
   "1796553": {
     "a": "3 Union Street, Stratford-upon-Avon",
@@ -2375,7 +5896,29 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 85,
+    "gty": [
+      "cafe",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJkeNEhCTPcEgRROED0tkXxwE",
+    "goh": [
+      "Monday: 10:00 AM – 6:45 PM",
+      "Tuesday: 10:00 AM – 7:00 PM",
+      "Wednesday: 10:00 AM – 6:30 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 11:45 AM – 7:15 PM",
+      "Saturday: 9:00 AM – 7:00 PM",
+      "Sunday: 9:00 AM – 6:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.instagram.com/mrodies",
+    "phone": "07927 147960",
+    "business_status": "OPERATIONAL"
   },
   "1381141": {
     "a": "Bulls Head Inn, Stratford Road, Wootton Wawen, Henley-in-Arden",
@@ -2391,7 +5934,32 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 698,
+    "gty": [
+      "pub",
+      "bar",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJF33hvgjGcEgRMy76kE2rbe0",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 PM – 12:00 AM",
+      "Saturday: 12:00 PM – 12:00 AM",
+      "Sunday: 1:00 – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.thebullshead.pub/",
+    "phone": "01564 795803",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1589295": {
     "a": "Unit 3, Bell Court, Stratford-upon-Avon",
@@ -2407,7 +5975,42 @@
     "sh": 5.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 122,
+    "gty": [
+      "cafe",
+      "coffee_shop",
+      "dog_cafe",
+      "coffee_roastery",
+      "coffee_stand",
+      "art_gallery",
+      "italian_restaurant",
+      "food_store",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJqxorPpjPcEgRQDF1FDen5ck",
+    "goh": [
+      "Monday: 9:30 AM – 5:00 PM",
+      "Tuesday: 9:30 AM – 5:00 PM",
+      "Wednesday: 9:30 AM – 5:00 PM",
+      "Thursday: 9:30 AM – 5:00 PM",
+      "Friday: 9:30 AM – 5:00 PM",
+      "Saturday: 9:30 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.thetempestcaffe.com/",
+    "business_status": "OPERATIONAL",
+    "entity_ambiguous": true,
+    "disambiguation_type": "food_hall_unit",
+    "disambiguation_reason": "Two separately FSA-registered units inside the Bell Court food hall share one Google Place ID (likely the hall's shared listing). Until each unit has a distinct Google Business Profile, both remain ambiguous and land in Directional-C.",
+    "disambiguation_resolution_path": "Each Bell Court unit requests a distinct Google Business Profile. Operators of multi-tenant food halls can do this via Google Business Profile Help.",
+    "disambiguation_site": "Bell Court, Stratford-upon-Avon"
   },
   "502864": {
     "a": "6A Chapel Street, Stratford-upon-Avon",
@@ -2423,7 +6026,40 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 333,
+    "gty": [
+      "indian_restaurant",
+      "fine_dining_restaurant",
+      "asian_restaurant",
+      "meal_takeaway",
+      "fast_food_restaurant",
+      "bangladeshi_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJiSIlQzLOcEgRKxuXkyr2EVE",
+    "goh": [
+      "Monday: 5:00 PM – 12:00 AM",
+      "Tuesday: 5:00 PM – 12:00 AM",
+      "Wednesday: 5:00 PM – 12:00 AM",
+      "Thursday: 5:00 PM – 12:00 AM",
+      "Friday: 5:00 PM – 12:00 AM",
+      "Saturday: 12:30 – 2:30 PM, 5:00 PM – 12:00 AM",
+      "Sunday: 12:30 – 2:30 PM, 5:00 PM – 12:00 AM"
+    ],
+    "phone": "01789 267506",
+    "reservable": true,
+    "business_status": "OPERATIONAL",
+    "public_name": "Hussains Indian Cuisine",
+    "trading_names": [
+      "Hussains"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   },
   "1513917": {
     "a": "Hollybush Inn, Holly Bush Lane, Priors Marston, Southam",
@@ -2439,7 +6075,35 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 73,
+    "gty": [
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJG1I-0yI7d0gR3UYQ-oZYhhE",
+    "goh": [
+      "Monday: 4:30 – 10:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 4:30 – 10:00 PM",
+      "Thursday: 4:30 – 10:00 PM",
+      "Friday: 4:30 – 10:00 PM",
+      "Saturday: 4:30 – 10:00 PM",
+      "Sunday: 4:30 – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://nwmkitchen.com/",
+    "phone": "01327 317448",
+    "reservable": true,
+    "business_status": "OPERATIONAL",
+    "entity_ambiguous": true,
+    "disambiguation_type": "rebrand_or_relocation",
+    "disambiguation_reason": "Two FSA records at different postcodes share one Google Place. Most commonly this is a rebrand or a relocation where the Google Business Profile survived and the old FSA record was not retired. Without operator confirmation it is not safe to assume either is closed.",
+    "disambiguation_resolution_path": "Operator confirms whether 'The Margin' or 'The Water Margin @ The Hollybush' is the current trading entity. Once confirmed, set `fsa_closed = true` on the retired record (via a manual patch on the establishments file) and remove the retired FHRSID from this entry."
   },
   "1672980": {
     "a": "Alcester Business Centre, 4 Kinwarton Farm Road, Kinwarton, Alcester",
@@ -2455,7 +6119,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 3.6,
+    "grc": 61,
+    "gty": [
+      "bakery",
+      "food_store",
+      "food",
+      "store",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJq3T9OMnFcEgREYu0OtbzbeM",
+    "goh": [
+      "Monday: 6:30 AM – 5:00 PM",
+      "Tuesday: 6:30 AM – 5:00 PM",
+      "Wednesday: 6:30 AM – 5:00 PM",
+      "Thursday: 6:30 AM – 5:00 PM",
+      "Friday: 6:30 AM – 5:00 PM",
+      "Saturday: 7:00 AM – 5:00 PM",
+      "Sunday: 8:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.greggs.co.uk/",
+    "phone": "01789 651007",
+    "business_status": "OPERATIONAL"
   },
   "1826838": {
     "a": "67A High Street, Bidford-on-Avon, Alcester",
@@ -2471,7 +6159,31 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 12,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJQcGb6sfbcEgR-AGoWCP56ng",
+    "goh": [
+      "Monday: 5:30 – 10:30 PM",
+      "Tuesday: Closed",
+      "Wednesday: 5:30 – 10:30 PM",
+      "Thursday: 5:00 – 10:30 PM",
+      "Friday: 5:30 – 10:30 PM",
+      "Saturday: 5:30 – 10:30 PM",
+      "Sunday: 5:30 – 10:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://mouchakrestaurant.co.uk/",
+    "phone": "07496 284357",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "559158": {
     "a": "37 Sheep Street, Stratford-upon-Avon",
@@ -2487,7 +6199,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 430,
+    "gty": [
+      "cafe",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJeREMhjHOcEgRuAQ6aDvGYmg",
+    "goh": [
+      "Monday: 10:00 AM – 4:00 PM",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.instagram.com/no37cafe_/",
+    "phone": "01789 209956",
+    "business_status": "OPERATIONAL"
   },
   "565221": {
     "a": "Costa Coffee, 68 High Street, Henley-in-Arden",
@@ -2503,7 +6237,33 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 284,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJse01SiXGcEgR9v9CgWLpcMU",
+    "goh": [
+      "Monday: 6:30 AM – 5:30 PM",
+      "Tuesday: 6:30 AM – 5:30 PM",
+      "Wednesday: 6:30 AM – 5:30 PM",
+      "Thursday: 6:30 AM – 5:30 PM",
+      "Friday: 6:30 AM – 5:30 PM",
+      "Saturday: 8:00 AM – 5:00 PM",
+      "Sunday: 8:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.costa.co.uk/?utm_campaign=ac7ba39b-ea2b-44ab-929e-5d9ae25eff71&utm_source=local",
+    "phone": "0333 003 5883",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1743693": {
     "a": "37 Henley Street, Stratford-upon-Avon",
@@ -2519,7 +6279,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 248,
+    "gty": [
+      "snack_bar",
+      "cafe",
+      "breakfast_restaurant",
+      "meal_takeaway",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJSRSWdzPOcEgRYi9OEVxSvKY",
+    "goh": [
+      "Monday: 8:30 AM – 6:00 PM",
+      "Tuesday: 8:30 AM – 6:00 PM",
+      "Wednesday: 8:30 AM – 6:00 PM",
+      "Thursday: 8:30 AM – 6:00 PM",
+      "Friday: 8:30 AM – 6:00 PM",
+      "Saturday: 8:30 AM – 6:00 PM",
+      "Sunday: 8:30 AM – 6:00 PM"
+    ],
+    "phone": "01789 261188",
+    "business_status": "OPERATIONAL"
   },
   "503218": {
     "a": "(South)Forte Welcome Break Ltd, Warwick Services M40, Ashorne, Warwick",
@@ -2535,7 +6319,39 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 2,
+    "grc": 67,
+    "gty": [
+      "fast_food_restaurant",
+      "hamburger_restaurant",
+      "american_restaurant",
+      "restaurant",
+      "service",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJOV7_VJwzd0gRyA1PYI__0uU",
+    "goh": [
+      "Monday: 10:00 AM – 10:00 PM",
+      "Tuesday: 10:00 AM – 11:00 PM",
+      "Wednesday: 10:00 AM – 10:00 PM",
+      "Thursday: 10:00 AM – 10:00 PM",
+      "Friday: 10:00 AM – 11:00 PM",
+      "Saturday: 10:00 AM – 10:00 PM",
+      "Sunday: 10:00 AM – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://locations.burgerking.co.uk/ashorne/m40-junction-12/13",
+    "phone": "01926 650168",
+    "reservable": false,
+    "business_status": "OPERATIONAL",
+    "entity_ambiguous": true,
+    "disambiguation_type": "service_station_shared",
+    "disambiguation_reason": "Two separate brands share the service-station forecourt. Google Places returns one listing for the whole site; the FSA records each brand separately. Until each brand has a distinct Google Business Profile, both venues are flagged ambiguous and remain in Directional-C.",
+    "disambiguation_resolution_path": "Each brand operator requests a distinct Google Business Profile for their unit (franchise head office typically handles this for chain brands).",
+    "disambiguation_site": "Welcome Break Warwick Services Southbound, M40"
   },
   "1721314": {
     "a": "Banbury Road, Gaydon, Warwick",
@@ -2551,7 +6367,28 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 467,
+    "gty": [
+      "manufacturer",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ5dKkTxIyd0gRHDR00Zlh41g",
+    "goh": [
+      "Monday: 8:00 AM – 6:00 PM",
+      "Tuesday: 8:00 AM – 6:00 PM",
+      "Wednesday: 8:00 AM – 6:00 PM",
+      "Thursday: 8:00 AM – 6:00 PM",
+      "Friday: 8:00 AM – 6:00 PM",
+      "Saturday: Closed",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "https://www.astonmartin.com/en-gb?utm_source=gbp&utm_medium=organic&utm_campaign=gbp-listing",
+    "phone": "01926 441070",
+    "business_status": "OPERATIONAL"
   },
   "1623426": {
     "a": "Red Hot Mamma, 22 High Street, Stratford-upon-Avon",
@@ -2567,7 +6404,30 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 953,
+    "gty": [
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJSQoU5XrPcEgRIfWfcVFVasI",
+    "goh": [
+      "Monday: 12:00 – 9:00 PM",
+      "Tuesday: 12:00 – 9:00 PM",
+      "Wednesday: 12:00 – 9:00 PM",
+      "Thursday: 12:00 – 9:00 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.redhotmamma.co.uk/stratford",
+    "phone": "01789 508718",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1662496": {
     "a": "2 Shrieves Walk, Stratford-upon-Avon",
@@ -2583,7 +6443,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 312,
+    "gty": [
+      "cafe",
+      "food_store",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJkZxy4SrPcEgRJWOFQ1JG4k4",
+    "goh": [
+      "Monday: 10:00 AM – 3:00 PM",
+      "Tuesday: 10:00 AM – 3:00 PM",
+      "Wednesday: Closed",
+      "Thursday: 10:00 AM – 3:00 PM",
+      "Friday: 10:00 AM – 3:00 PM",
+      "Saturday: 10:00 AM – 3:30 PM",
+      "Sunday: 10:00 AM – 3:30 PM"
+    ],
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1754519": {
     "a": "14 The Mansley Centre, Timothys Bridge Road, Stratford Enterprise Park, Stratford-upon-Avon",
@@ -2597,7 +6480,27 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 8,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJD6PvLwjPcEgRGgScmgqvwDM",
+    "goh": [
+      "Monday: 8:30 AM – 3:30 PM",
+      "Tuesday: 8:30 AM – 3:30 PM",
+      "Wednesday: 8:30 AM – 3:30 PM",
+      "Thursday: 8:30 AM – 3:30 PM",
+      "Friday: 8:30 AM – 3:30 PM",
+      "Saturday: 9:30 AM – 1:30 PM",
+      "Sunday: Closed"
+    ],
+    "phone": "01789 207414",
+    "business_status": "OPERATIONAL"
   },
   "1735216": {
     "a": "Lockerbie, Pig Trot Lane, Danzey Green, Solihull",
@@ -2613,7 +6516,33 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 282,
+    "gty": [
+      "breakfast_restaurant",
+      "sports_school",
+      "sports_coaching",
+      "sports_activity_location",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJLc7xG2i4cEgR3Tipe6w2s3c",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 7:30 AM – 1:00 PM",
+      "Wednesday: 7:30 AM – 1:00 PM",
+      "Thursday: 7:30 AM – 1:00 PM",
+      "Friday: 7:30 AM – 1:00 PM",
+      "Saturday: 7:30 AM – 1:00 PM",
+      "Sunday: 7:30 AM – 12:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.cottagefarmstables.com/",
+    "phone": "01564 703314",
+    "business_status": "OPERATIONAL"
   },
   "1699665": {
     "a": "Chesterton Road, Lighthorne, Warwick",
@@ -2629,7 +6558,28 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 461,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJowG0UV0yd0gRzMv-vHuZhRE",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 3:00 PM",
+      "Sunday: 9:00 AM – 3:00 PM"
+    ],
+    "phone": "07712 061317",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1467814": {
     "a": "Stratford Sports Club Limited, Stratford Sports Club, Swans Nest Lane, Stratford-upon-Avon",
@@ -2645,7 +6595,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.4,
+    "grc": 293,
+    "gty": [
+      "sports_club",
+      "point_of_interest",
+      "association_or_organization",
+      "establishment"
+    ],
+    "gpid": "ChIJMYO7XS7OcEgR1qfaiky1Es8",
+    "goh": [
+      "Monday: 10:00 AM – 10:00 PM",
+      "Tuesday: 10:00 AM – 10:00 PM",
+      "Wednesday: 10:00 AM – 10:00 PM",
+      "Thursday: 10:00 AM – 10:00 PM",
+      "Friday: 10:00 AM – 10:00 PM",
+      "Saturday: 10:00 AM – 10:00 PM",
+      "Sunday: 10:00 AM – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.stratfordsport.co.uk/",
+    "phone": "01789 296629",
+    "business_status": "OPERATIONAL"
   },
   "503282": {
     "a": "Alcester",
@@ -2661,7 +6633,35 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 2005,
+    "gty": [
+      "pub",
+      "beer_garden",
+      "bar",
+      "hotel",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJGZz0dG3DcEgRNJ-NsIIOmOc",
+    "goh": [
+      "Monday: 10:30 AM – 11:00 PM",
+      "Tuesday: 10:30 AM – 11:00 PM",
+      "Wednesday: 10:30 AM – 11:00 PM",
+      "Thursday: 10:30 AM – 11:00 PM",
+      "Friday: 10:30 AM – 11:00 PM",
+      "Saturday: 10:30 AM – 11:00 PM",
+      "Sunday: 10:30 AM – 10:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.thearrowmill.co.uk/",
+    "phone": "01789 333790",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1774610": {
     "a": "",
@@ -2691,7 +6691,31 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 296,
+    "gty": [
+      "turkish_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJ_3Tk-5nNcEgRqkTDm4wFmLI",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 4:30 – 9:30 PM",
+      "Wednesday: 4:30 – 9:30 PM",
+      "Thursday: 4:30 – 10:00 PM",
+      "Friday: 4:30 – 10:00 PM",
+      "Saturday: 4:30 – 10:00 PM",
+      "Sunday: 12:30 – 9:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.turkishstonebakers.com/",
+    "phone": "01789 842100",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503342": {
     "a": "Warwick Services M40 Nothbound, Ashorne, Warwick",
@@ -2707,7 +6731,35 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 2,
+    "grc": 67,
+    "gty": [
+      "fast_food_restaurant",
+      "hamburger_restaurant",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJOV7_VJwzd0gRyA1PYI__0uU",
+    "goh": [
+      "Monday: 10:00 AM – 10:00 PM",
+      "Tuesday: 10:00 AM – 11:00 PM",
+      "Wednesday: 10:00 AM – 10:00 PM",
+      "Thursday: 10:00 AM – 10:00 PM",
+      "Friday: 10:00 AM – 11:00 PM",
+      "Saturday: 10:00 AM – 10:00 PM",
+      "Sunday: 10:00 AM – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://locations.burgerking.co.uk/ashorne/m40-junction-12/13",
+    "phone": "01926 650168",
+    "reservable": false,
+    "business_status": "OPERATIONAL",
+    "entity_ambiguous": true
   },
   "1908606": {
     "a": "Brunos Bakery, 40 High Street, Studley",
@@ -2723,7 +6775,43 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 296,
+    "gty": [
+      "bakery",
+      "breakfast_restaurant",
+      "sandwich_shop",
+      "cake_shop",
+      "deli",
+      "coffee_shop",
+      "cafe",
+      "wholesaler",
+      "food_store",
+      "catering_service",
+      "food_delivery",
+      "service",
+      "manufacturer",
+      "store",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJIczssGjBcEgRI-NrXjiMaWs",
+    "goh": [
+      "Monday: 7:00 AM – 4:00 PM",
+      "Tuesday: 7:00 AM – 4:00 PM",
+      "Wednesday: 7:00 AM – 4:00 PM",
+      "Thursday: 7:00 AM – 4:00 PM",
+      "Friday: 7:00 AM – 4:00 PM",
+      "Saturday: 7:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.brunosbakerystudley.com/",
+    "phone": "01527 854652",
+    "business_status": "OPERATIONAL"
   },
   "1796547": {
     "a": "Unit 10, Long Compton Industrial Estate, Old Road, Long Compton",
@@ -2739,7 +6827,34 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 106,
+    "gty": [
+      "home_goods_store",
+      "coffee_shop",
+      "jewelry_store",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJKyDowFwrcUgRBwYwIMR1NRc",
+    "goh": [
+      "Monday: 10:00 AM – 4:00 PM",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: 10:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.feelgoodcrystals.co.uk/",
+    "phone": "01608 544720",
+    "business_status": "OPERATIONAL"
   },
   "1756585": {
     "a": "Alcester Rugby Football Club, Kings Coughton, Alcester",
@@ -2753,7 +6868,29 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 95,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJS38BMZrDcEgRMs_N00fzPZY",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 6:30 – 9:30 PM",
+      "Wednesday: Closed",
+      "Thursday: 6:30 – 9:30 PM",
+      "Friday: Closed",
+      "Saturday: 12:30 – 8:30 PM",
+      "Sunday: 11:30 AM – 6:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://alcesterrfc.rfu.club/",
+    "phone": "01789 764061",
+    "business_status": "OPERATIONAL"
   },
   "1690228": {
     "a": "Compton Verney House Estate, Compton Verney, Warwick",
@@ -2769,7 +6906,27 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gty": [
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ_YFnKMctd0gRNlwCuVVki28",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: 10:00 AM – 5:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.comptonverney.org.uk/plan-your-visit/eat-and-drink/",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1029137": {
     "a": "Buck And Bell, The Green, Long Itchington, Southam",
@@ -2785,7 +6942,28 @@
     "sh": 7.5,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 336,
+    "gty": [
+      "pub",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJu1Arr0A3d0gR1nTU654zTFg",
+    "goh": [
+      "Monday: 10:00 AM – 11:00 PM",
+      "Tuesday: 10:00 AM – 11:00 PM",
+      "Wednesday: 10:00 AM – 11:00 PM",
+      "Thursday: 10:00 AM – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ],
+    "phone": "01926 259221",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503261": {
     "a": "Thespians Restaurant, 26 Sheep Street, Stratford-upon-Avon",
@@ -2801,7 +6979,31 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4,
+    "grc": 584,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ7f1ZJjLOcEgRHrp8asL-pyQ",
+    "goh": [
+      "Monday: 12:00 – 5:29 PM, 5:30 – 11:30 PM",
+      "Tuesday: 12:00 – 5:29 PM, 5:30 – 11:30 PM",
+      "Wednesday: 12:00 – 5:29 PM, 5:30 – 11:30 PM",
+      "Thursday: 12:00 – 5:29 PM, 5:30 – 11:30 PM",
+      "Friday: 5:30 – 11:30 PM",
+      "Saturday: 12:00 – 5:29 PM, 5:30 – 11:30 PM",
+      "Sunday: 12:00 – 5:29 PM, 5:30 – 11:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://thespiansindian.co.uk/",
+    "phone": "01789 267187",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1871632": {
     "a": "7 - 8 Ely Street, Stratford-upon-Avon",
@@ -2817,7 +7019,34 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 430,
+    "gty": [
+      "italian_restaurant",
+      "family_restaurant",
+      "fine_dining_restaurant",
+      "seafood_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJzZ6kVzLOcEgRthpKAcmxmOQ",
+    "goh": [
+      "Monday: 12:00 – 9:30 PM",
+      "Tuesday: 12:00 – 9:30 PM",
+      "Wednesday: 12:00 – 9:30 PM",
+      "Thursday: 12:00 – 9:30 PM",
+      "Friday: 12:00 – 9:30 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.sorrentorestaurant.co.uk/",
+    "phone": "01789 297999",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503444": {
     "a": "Bridgefoot, Stratford-upon-Avon",
@@ -2833,7 +7062,23 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 3182,
+    "gty": [
+      "hotel",
+      "wedding_venue",
+      "lodging",
+      "service",
+      "event_venue",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJr72NPjHOcEgR6GjIXRRMctU",
+    "web": true,
+    "web_url": "https://www.ihg.com/crowneplaza/hotels/gb/en/stratford-upon-avon/sfdua/hoteldetail?cm_mmc=GoogleMaps-_-CP-_-GB-_-SFDUA",
+    "phone": "01789 279988",
+    "business_status": "OPERATIONAL"
   },
   "1155879": {
     "a": "",
@@ -2847,7 +7092,27 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 5,
+    "grc": 2,
+    "gty": [
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJhbfsstcld0gRT56GLIcalEI",
+    "goh": [
+      "Monday: 10:00 AM – 4:00 PM",
+      "Tuesday: 10:00 AM – 4:00 PM",
+      "Wednesday: 10:00 AM – 4:00 PM",
+      "Thursday: 10:00 AM – 4:00 PM",
+      "Friday: 10:00 AM – 4:00 PM",
+      "Saturday: 10:00 AM – 4:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://www.mid-englandbarrow.co.uk/",
+    "phone": "07791 807970",
+    "business_status": "OPERATIONAL"
   },
   "1339998": {
     "a": "Unit 4, London Road, Little Compton",
@@ -2863,7 +7128,30 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 265,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ6Sr6Vq8vcUgRJb4dG-aajAc",
+    "goh": [
+      "Monday: 9:00 AM – 3:00 PM",
+      "Tuesday: 9:00 AM – 3:00 PM",
+      "Wednesday: 9:00 AM – 3:00 PM",
+      "Thursday: 9:00 AM – 3:00 PM",
+      "Friday: 9:00 AM – 3:00 PM",
+      "Saturday: 9:00 AM – 1:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "https://www.cotswoldcafe-patsbaps.co.uk/",
+    "phone": "01608 674729",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1056848": {
     "a": "Barn Antiques Centre, Station Road, Long Marston, Stratford-upon-Avon",
@@ -2879,7 +7167,27 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 92,
+    "gty": [
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJUeFFkBrbcEgR5TTMV1jC3q8",
+    "goh": [
+      "Monday: 9:00 AM – 3:00 PM",
+      "Tuesday: 9:00 AM – 4:00 PM",
+      "Wednesday: 9:00 AM – 4:00 PM",
+      "Thursday: 9:00 AM – 4:00 PM",
+      "Friday: 9:00 AM – 4:00 PM",
+      "Saturday: 9:00 AM – 5:00 PM",
+      "Sunday: 9:00 AM – 5:00 PM"
+    ],
+    "business_status": "OPERATIONAL"
   },
   "502863": {
     "a": "Hotel Indigo, Chapel Street, Stratford-upon-Avon",
@@ -2895,7 +7203,23 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 829,
+    "gty": [
+      "hotel",
+      "wedding_venue",
+      "lodging",
+      "service",
+      "event_venue",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJZ6LNQjLOcEgRujEs2c_ntTg",
+    "web": true,
+    "web_url": "https://stratford.hotelindigo.com/",
+    "phone": "01789 279953",
+    "business_status": "OPERATIONAL"
   },
   "1019047": {
     "a": "Unit 20, Bell Court, Stratford-upon-Avon",
@@ -2911,7 +7235,31 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 9123,
+    "gty": [
+      "steak_house",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ3fwE6sTPcEgR7UuC-xoQ6cA",
+    "goh": [
+      "Monday: 12:00 – 11:00 PM",
+      "Tuesday: 12:00 – 11:00 PM",
+      "Wednesday: 12:00 – 11:00 PM",
+      "Thursday: 12:00 – 11:00 PM",
+      "Friday: 12:00 – 11:00 PM",
+      "Saturday: 12:00 – 11:00 PM",
+      "Sunday: 12:00 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.millerandcarter.co.uk/restaurants/east-and-west-midlands/millerandcarterstratforduponavon?utm_source=google&utm_medium=organic&utm_campaign=gmb-homepage",
+    "phone": "01789 338331",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "504050": {
     "a": "Bishops Bowl Lakes, Bishops Itchington, Southam",
@@ -2927,7 +7275,29 @@
     "sh": 5.0,
     "sm": 7.5,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 146,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJlxLB6ggxd0gRsWcrBKk_vwg",
+    "goh": [
+      "Monday: 7:00 AM – 5:00 PM",
+      "Tuesday: 7:00 AM – 5:00 PM",
+      "Wednesday: 7:00 AM – 5:00 PM",
+      "Thursday: 7:00 AM – 5:00 PM",
+      "Friday: 7:00 AM – 5:00 PM",
+      "Saturday: 7:00 AM – 5:00 PM",
+      "Sunday: 7:00 AM – 5:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.bishopsbowlfishery.com/",
+    "phone": "01926 612379",
+    "business_status": "OPERATIONAL"
   },
   "503102": {
     "a": "Ashorne Hill, Leamington Spa",
@@ -2943,7 +7313,20 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 490,
+    "gty": [
+      "event_venue",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJe5Q_dyczd0gRwZUAhr4PnuY",
+    "web": true,
+    "web_url": "https://ashornehill.co.uk/",
+    "phone": "01926 488000",
+    "business_status": "OPERATIONAL"
   },
   "1826833": {
     "a": "Pitstop Cafe, Stretton-on-Fosse, Moreton-in-Marsh",
@@ -2959,7 +7342,30 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 140,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJrZMmOQDXcEgRJeQLVDF4Who",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: 8:00 AM – 4:00 PM",
+      "Wednesday: 8:00 AM – 4:00 PM",
+      "Thursday: 8:00 AM – 4:00 PM",
+      "Friday: 8:00 AM – 4:00 PM",
+      "Saturday: 8:00 AM – 4:00 PM",
+      "Sunday: 8:00 AM – 4:00 PM"
+    ],
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1176874": {
     "a": "Wellesbourne Florists, 2 Newbold Road, Wellesbourne, Warwick",
@@ -2975,7 +7381,30 @@
     "sh": 5.0,
     "sm": 10.0,
     "ss": 5.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 499,
+    "gty": [
+      "cafe",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJV17x_LjNcEgR81h6WwjYMUg",
+    "goh": [
+      "Monday: 9:00 AM – 4:30 PM",
+      "Tuesday: 9:00 AM – 4:30 PM",
+      "Wednesday: 9:00 AM – 4:30 PM",
+      "Thursday: 9:00 AM – 4:30 PM",
+      "Friday: 9:00 AM – 4:30 PM",
+      "Saturday: 9:00 AM – 4:30 PM",
+      "Sunday: 9:00 AM – 4:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.thegardenshedcafe.co.uk/",
+    "phone": "01789 507619",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1838728": {
     "a": "Village Hall, The Crescent, Napton-on-the-Hill, Southam",
@@ -2991,7 +7420,28 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 14,
+    "gty": [
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJE4wcU8Iwd0gRD5BA6zK5G6A",
+    "goh": [
+      "Monday: 8:30 AM – 5:00 PM",
+      "Tuesday: 8:30 AM – 5:00 PM",
+      "Wednesday: 8:30 AM – 5:00 PM",
+      "Thursday: 8:30 AM – 5:00 PM",
+      "Friday: 8:30 AM – 5:00 PM",
+      "Saturday: 10:30 AM – 4:30 PM",
+      "Sunday: 10:30 AM – 4:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.hartleylocums.co.uk/",
+    "phone": "07731 728303",
+    "business_status": "OPERATIONAL"
   },
   "503734": {
     "a": "Payton Street, Stratford-upon-Avon",
@@ -3007,7 +7457,24 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 863,
+    "gty": [
+      "hotel",
+      "bed_and_breakfast",
+      "inn",
+      "lodging",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ9SYsTjHOcEgRxVLnk9c6QhE",
+    "web": true,
+    "web_url": "https://www.premierinn.com/gb/en/hotels/england/warwickshire/stratford-upon-avon/stratford-upon-avon-central.html?cid=GLBC_STUPAV",
+    "phone": "0333 321 9223",
+    "business_status": "OPERATIONAL"
   },
   "503711": {
     "a": "137 High Street, Henley-in-Arden",
@@ -3023,7 +7490,31 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 202,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJs6_3KyXGcEgRk-thdjEPg_o",
+    "goh": [
+      "Monday: 5:30 – 11:30 PM",
+      "Tuesday: 5:30 – 11:30 PM",
+      "Wednesday: 5:30 – 11:30 PM",
+      "Thursday: 5:30 – 11:30 PM",
+      "Friday: 5:30 PM – 12:30 AM",
+      "Saturday: 5:30 PM – 12:30 AM",
+      "Sunday: 5:30 – 11:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.ardentandoori.co.uk/",
+    "phone": "01564 792503",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "503931": {
     "a": "Bella Italia Restaurants Ltd, 32 Wood Street, Stratford-upon-Avon",
@@ -3039,7 +7530,35 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 1029,
+    "gty": [
+      "restaurant",
+      "lounge_bar",
+      "vegan_restaurant",
+      "vegetarian_restaurant",
+      "night_club",
+      "italian_restaurant",
+      "bar",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ8f1sqDPOcEgRqoINSjhvWdo",
+    "web": true,
+    "web_url": "https://www.bellaitalia.co.uk/restaurants/stratford-upon-avon/wood-street/?utm_source=google&utm_medium=organic&utm_campaign=google_lpm_bellaitalia_stratforduponavon",
+    "phone": "01789 336969",
+    "reservable": true,
+    "business_status": "CLOSED_PERMANENTLY",
+    "public_name": "Super Nonna",
+    "trading_names": [
+      "Bella Italia",
+      "Super Nonna",
+      "Bella Italia Restaurants Ltd"
+    ],
+    "alias_source": "FSA 'Bella Italia Also Trading As Super Nonna'",
+    "alias_confidence": "high"
   },
   "1411434": {
     "a": "Earlswood Village Hall, Shutt Lane, Earlswood, Solihull",
@@ -3053,7 +7572,20 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 32,
+    "gty": [
+      "community_center",
+      "event_venue",
+      "service",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJX1k_CIy4cEgRrKSfJRlEnlA",
+    "web": true,
+    "web_url": "http://www.earlswoodvillagehall.org.uk/",
+    "business_status": "OPERATIONAL"
   },
   "1206079": {
     "a": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon",
@@ -3069,7 +7601,24 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 10.0,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 601,
+    "gty": [
+      "corporate_office",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
+    "web": true,
+    "web_url": "https://www.jaguarlandrover.com/?utm_source=Yext&utm_medium=organic&utm_campaign=HQ004",
+    "phone": "01926 641111",
+    "business_status": "OPERATIONAL",
+    "entity_ambiguous": true,
+    "disambiguation_type": "multi_tenant_site",
+    "disambiguation_reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here.",
+    "disambiguation_resolution_path": "These records will likely remain Directional-C permanently. If distinct Google listings exist for each unit, the alias table can be updated per unit; otherwise accept the Directional-C classification as the honest output.",
+    "disambiguation_site": "Jaguar Land Rover, Gaydon Test Centre, Banbury Road, Gaydon"
   },
   "502838": {
     "a": "Banbury Road, Stratford-upon-Avon",
@@ -3085,7 +7634,24 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.9,
+    "grc": 1944,
+    "gty": [
+      "hotel",
+      "spa",
+      "wedding_venue",
+      "lodging",
+      "event_venue",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJqxlELjvOcEgRCF8FH6frDIE",
+    "web": true,
+    "web_url": "https://www.macdonaldhotels.co.uk/alveston-manor?utm_source=google&utm_medium=organic&utm_campaign=alveston-manor-hotel-gmb",
+    "phone": "0344 879 9138",
+    "business_status": "OPERATIONAL"
   },
   "502681": {
     "a": "Billesley Manor, Billesley, Alcester",
@@ -3101,7 +7667,24 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 1215,
+    "gty": [
+      "hotel",
+      "resort_hotel",
+      "wedding_venue",
+      "event_venue",
+      "lodging",
+      "point_of_interest",
+      "service",
+      "establishment"
+    ],
+    "gpid": "ChIJz5pCJG3FcEgRgiwBGQLFCLw",
+    "web": true,
+    "web_url": "https://www.marriott.com/en-us/hotels/bhxbm-billesley-manor-hotel-and-spa-a-tribute-portfolio-hotel/overview/?cid=NAT_google_hotel_url",
+    "phone": "01789 279955",
+    "business_status": "OPERATIONAL"
   },
   "1622078": {
     "a": "2 The Minories, Henley Street, Stratford-upon-Avon",
@@ -3117,7 +7700,30 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.6,
+    "grc": 142,
+    "gty": [
+      "japanese_restaurant",
+      "restaurant",
+      "food",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJmYylt-vPcEgRk7zRSQVqPqY",
+    "goh": [
+      "Monday: 12:00 – 9:00 PM",
+      "Tuesday: 12:00 – 9:00 PM",
+      "Wednesday: 12:00 – 9:00 PM",
+      "Thursday: 12:00 – 9:00 PM",
+      "Friday: 12:00 – 9:00 PM",
+      "Saturday: 12:00 – 9:00 PM",
+      "Sunday: 5:00 – 9:00 PM"
+    ],
+    "phone": "01789 632760",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1622076": {
     "a": "21 Bridge Street, Stratford-upon-Avon",
@@ -3131,7 +7737,33 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.2,
+    "grc": 393,
+    "gty": [
+      "coffee_shop",
+      "cafe",
+      "food_store",
+      "store",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJJ9iLe0ndekgR-rpge-FHeJg",
+    "goh": [
+      "Monday: 6:30 AM – 6:30 PM",
+      "Tuesday: 6:30 AM – 6:30 PM",
+      "Wednesday: 6:30 AM – 6:30 PM",
+      "Thursday: 6:30 AM – 6:30 PM",
+      "Friday: 6:30 AM – 6:30 PM",
+      "Saturday: 7:30 AM – 6:30 PM",
+      "Sunday: 8:30 AM – 6:30 PM"
+    ],
+    "web": true,
+    "web_url": "https://caffenero.com/uk/store/chester-bridge-st-221/?utm_source=GMB&utm_medium=organic&utm_campaign=chester_bridge_street",
+    "phone": "01244 344728",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "676557": {
     "a": "1 The Minories, Rother Street, Stratford-upon-Avon",
@@ -3147,7 +7779,33 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.9,
+    "grc": 581,
+    "gty": [
+      "vegan_restaurant",
+      "vegetarian_restaurant",
+      "cafe",
+      "restaurant",
+      "point_of_interest",
+      "food",
+      "establishment"
+    ],
+    "gpid": "ChIJ3RJTcYLPcEgRcTfMHnbcNio",
+    "goh": [
+      "Monday: 10:00 AM – 5:00 PM",
+      "Tuesday: 10:00 AM – 5:00 PM",
+      "Wednesday: 10:00 AM – 5:00 PM",
+      "Thursday: 10:00 AM – 5:00 PM",
+      "Friday: 10:00 AM – 5:00 PM",
+      "Saturday: 10:00 AM – 5:00 PM",
+      "Sunday: Closed"
+    ],
+    "web": true,
+    "web_url": "http://plantariumcafe.co.uk/",
+    "phone": "01789 508743",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "503319": {
     "a": "3 - 5 West Street, Shipston-on-Stour",
@@ -3163,7 +7821,32 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.1,
+    "grc": 110,
+    "gty": [
+      "meal_takeaway",
+      "fast_food_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJldAAsUjUcEgRFnK4S2waHWQ",
+    "goh": [
+      "Monday: 4:00 – 11:00 PM",
+      "Tuesday: 4:00 – 11:00 PM",
+      "Wednesday: 4:00 – 11:00 PM",
+      "Thursday: 4:00 – 11:00 PM",
+      "Friday: 4:00 – 11:00 PM",
+      "Saturday: 4:00 – 11:00 PM",
+      "Sunday: 4:00 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.shipstonpizzaandkebab.co.uk/",
+    "phone": "01608 666260",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "503369": {
     "a": "Studley",
@@ -3179,7 +7862,20 @@
     "sh": 10.0,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.5,
+    "grc": 1706,
+    "gty": [
+      "hotel",
+      "lodging",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJX6r4kETBcEgRCuIxuCkUwuY",
+    "web": true,
+    "web_url": "https://www.warnerhotels.co.uk/hotels/studley-castle-hotel?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "phone": "0330 135 9579",
+    "business_status": "OPERATIONAL"
   },
   "1131857": {
     "a": "D C S Stadium, Stratford Town Football Club, Knights Lane, Tiddington",
@@ -3195,7 +7891,29 @@
     "sh": 10.0,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 219,
+    "gty": [
+      "sports_club",
+      "association_or_organization",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJYfipBRLOcEgRKAvjeXYmU8A",
+    "goh": [
+      "Monday: 6:00 – 10:00 PM",
+      "Tuesday: 6:00 – 10:00 PM",
+      "Wednesday: 6:00 – 10:00 PM",
+      "Thursday: 6:00 – 10:00 PM",
+      "Friday: 6:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.stratfordtownfc.co.uk/",
+    "phone": "01789 269336",
+    "business_status": "OPERATIONAL"
   },
   "502970": {
     "a": "Must Go, 21 Windsor Street, Stratford-upon-Avon",
@@ -3211,7 +7929,31 @@
     "sh": 5.0,
     "sm": 5.0,
     "ss": 2.5,
-    "t": 1
+    "t": 1,
+    "gr": 3.3,
+    "grc": 147,
+    "gty": [
+      "restaurant",
+      "chinese_restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJA9pebDPOcEgRldRUFwUu6DY",
+    "goh": [
+      "Monday: 12:00 – 10:00 PM",
+      "Tuesday: Closed",
+      "Wednesday: 12:00 – 10:00 PM",
+      "Thursday: 12:00 – 10:00 PM",
+      "Friday: 12:00 – 10:30 PM",
+      "Saturday: 12:00 – 10:30 PM",
+      "Sunday: 12:00 – 10:00 PM"
+    ],
+    "web": true,
+    "web_url": "https://www.mustgochinagarden.co.uk/",
+    "phone": "01789 293679",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "1584576": {
     "a": "Unit 26, Bell Court, Stratford-upon-Avon",
@@ -3227,7 +7969,32 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.3,
+    "grc": 187,
+    "gty": [
+      "hamburger_restaurant",
+      "american_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJjYFyyOTPcEgRv-qv8Q-l1lE",
+    "goh": [
+      "Monday: Closed",
+      "Tuesday: Closed",
+      "Wednesday: 12:00 – 9:30 PM",
+      "Thursday: 12:00 – 9:30 PM",
+      "Friday: 12:00 – 10:00 PM",
+      "Saturday: 12:00 – 10:00 PM",
+      "Sunday: 12:00 – 9:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.libertineburger.com/",
+    "phone": "01789 338200",
+    "reservable": false,
+    "business_status": "OPERATIONAL"
   },
   "1317981": {
     "a": "Bargain Booze, 12 Warwick Road, Wellesbourne, Warwick",
@@ -3243,7 +8010,31 @@
     "sh": 7.5,
     "sm": 10.0,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.8,
+    "grc": 774,
+    "gty": [
+      "indian_restaurant",
+      "restaurant",
+      "food",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJ4eCZ5SzNcEgRK501XV8NiJA",
+    "goh": [
+      "Monday: 5:30 – 11:00 PM",
+      "Tuesday: 5:30 – 11:00 PM",
+      "Wednesday: 5:30 – 11:00 PM",
+      "Thursday: 5:30 – 11:00 PM",
+      "Friday: 5:30 – 11:00 PM",
+      "Saturday: 5:30 – 11:00 PM",
+      "Sunday: 5:30 – 11:00 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.kolshi.co.uk/",
+    "phone": "01789 470777",
+    "reservable": true,
+    "business_status": "OPERATIONAL"
   },
   "502816": {
     "a": "3 Sheep Street, Stratford-upon-Avon",
@@ -3259,6 +8050,39 @@
     "sh": 7.5,
     "sm": 7.5,
     "ss": 7.5,
-    "t": 1
+    "t": 1,
+    "gr": 4.7,
+    "grc": 1677,
+    "gty": [
+      "restaurant",
+      "wine_bar",
+      "british_restaurant",
+      "food",
+      "bar",
+      "point_of_interest",
+      "establishment"
+    ],
+    "gpid": "ChIJPakIOjLOcEgRqV2Dw8uh8QU",
+    "goh": [
+      "Monday: 11:30 AM – 11:00 PM",
+      "Tuesday: 11:30 AM – 11:00 PM",
+      "Wednesday: 11:30 AM – 11:00 PM",
+      "Thursday: 11:30 AM – 11:00 PM",
+      "Friday: 11:30 AM – 11:00 PM",
+      "Saturday: 11:30 AM – 11:00 PM",
+      "Sunday: 11:30 AM – 10:30 PM"
+    ],
+    "web": true,
+    "web_url": "http://www.loxleysrestaurant.co.uk/",
+    "phone": "01789 292128",
+    "reservable": true,
+    "business_status": "OPERATIONAL",
+    "public_name": "Loxleys Restaurant and Wine Bar",
+    "trading_names": [
+      "Loxleys",
+      "Loxley's"
+    ],
+    "alias_source": "Exact FSA name match",
+    "alias_confidence": "high"
   }
 }

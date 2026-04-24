@@ -1,14 +1,15 @@
 {
-  "last_updated": "2026-04-12",
+  "last_updated": "2026-04-24",
   "available": [
     {
       "slug": "stratford-on-avon",
       "la_name": "Stratford-on-Avon",
       "display_name": "Stratford-upon-Avon",
-      "region": "West Midlands",
+      "region": "Warwickshire",
       "status": "live",
-      "total_venues": 181,
-      "top_score": 9.303
+      "methodology_version": "V4 official-source mode",
+      "total_venues": 169,
+      "top_score": 9.677
     }
   ],
   "pipeline": [
