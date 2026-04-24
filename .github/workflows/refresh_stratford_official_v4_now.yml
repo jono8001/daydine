@@ -86,7 +86,10 @@ jobs:
           git add -A
           git diff --cached --quiet && echo "No changes after pull" && exit 0
 
-          if git grep -n '<<<<<<<\|=======\|>>>>>>>' -- . ':!*.md' ; then
+          # Detect genuine unresolved merge-conflict markers only.
+          # The old pattern also matched ordinary decorative separator lines
+          # such as "# =======" and printed "======" banners in Python/HTML.
+          if git grep -n -E '^(<<<<<<<|=======|>>>>>>>)' -- . ':!*.md' ; then
             echo "Conflict markers detected; refusing to commit"
             exit 1
           fi
