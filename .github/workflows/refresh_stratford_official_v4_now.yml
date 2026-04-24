@@ -1,0 +1,353 @@
+name: Refresh Stratford Official Google V4 Now
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh_stratford_official_v4_now.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-stratford-official-v4-now
+  cancel-in-progress: false
+
+jobs:
+  refresh-stratford-official-v4:
+    name: Official Google Places refresh + V4 Stratford public ranking
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip requests
+
+      - name: Fetch fresh Stratford FSA/Firebase base
+        run: python .github/scripts/fetch_firebase_stratford.py
+
+      - name: Fresh official Google Places enrichment only
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: |
+          python - <<'PY'
+          """One-shot official-source Google Places enrichment for Stratford.
+
+          This deliberately avoids Google review text, AI summaries, photos,
+          Playwright scraping, TripAdvisor scraping and sentiment data. It
+          collects only official metadata needed for V4 public ranking and
+          commercial-readiness signals.
+          """
+          import json
+          import os
+          import sys
+          import time
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          import requests
+
+          api_key = os.environ.get("GOOGLE_PLACES_API_KEY")
+          if not api_key:
+              print("ERROR: GOOGLE_PLACES_API_KEY not set", file=sys.stderr)
+              sys.exit(1)
+
+          input_path = Path("stratford_establishments.json")
+          output_path = Path("stratford_google_enrichment.json")
+          data = json.loads(input_path.read_text(encoding="utf-8"))
+
+          field_mask = ",".join([
+              "places.id",
+              "places.displayName",
+              "places.formattedAddress",
+              "places.location",
+              "places.types",
+              "places.businessStatus",
+              "places.nationalPhoneNumber",
+              "places.internationalPhoneNumber",
+              "places.websiteUri",
+              "places.rating",
+              "places.userRatingCount",
+              "places.regularOpeningHours.weekdayDescriptions",
+              "places.currentOpeningHours.weekdayDescriptions",
+              "places.reservable",
+          ])
+          fields_used = field_mask.split(",")
+          url = "https://places.googleapis.com/v1/places:searchText"
+          headers = {
+              "Content-Type": "application/json",
+              "X-Goog-Api-Key": api_key,
+              "X-Goog-FieldMask": field_mask,
+          }
+
+          enrichment = {}
+          matched = no_match = failed = 0
+          generated_at = datetime.now(timezone.utc).isoformat()
+
+          for i, (key, rec) in enumerate(data.items(), 1):
+              name = rec.get("n") or ""
+              postcode = rec.get("pc") or ""
+              address = rec.get("a") or ""
+              if not name:
+                  enrichment[key] = {"_no_match": True, "_schema_version": 3}
+                  continue
+
+              query = f"{name}, {address}, {postcode}, UK" if address else f"{name}, {postcode}, UK"
+              body = {"textQuery": query, "languageCode": "en", "regionCode": "GB"}
+
+              try:
+                  resp = requests.post(url, headers=headers, json=body, timeout=20)
+                  resp.raise_for_status()
+                  places = resp.json().get("places") or []
+              except requests.exceptions.HTTPError as exc:
+                  failed += 1
+                  status = exc.response.status_code if exc.response is not None else "?"
+                  print(f"[{i}/{len(data)}] Google API error {status}: {name}")
+                  if status in (403, 429):
+                      print("Stopping early because quota/permission/rate-limit was hit.")
+                      break
+                  continue
+              except Exception as exc:
+                  failed += 1
+                  print(f"[{i}/{len(data)}] Google API error: {name}: {exc}")
+                  continue
+
+              if not places:
+                  no_match += 1
+                  enrichment[key] = {
+                      "_no_match": True,
+                      "_schema_version": 3,
+                      "generated_at": generated_at,
+                      "data_provenance": ["google_places_api_new_official"],
+                      "google_official_fields_used": fields_used,
+                  }
+                  print(f"[{i}/{len(data)}] no match: {name}")
+                  time.sleep(0.15)
+                  continue
+
+              p = places[0]
+              out = {
+                  "gpid": p.get("id", ""),
+                  "_schema_version": 3,
+                  "generated_at": generated_at,
+                  "data_provenance": ["google_places_api_new_official"],
+                  "google_official_fields_used": fields_used,
+              }
+              if p.get("displayName", {}).get("text"):
+                  out["google_display_name"] = p["displayName"]["text"]
+              if p.get("formattedAddress"):
+                  out["google_formatted_address"] = p["formattedAddress"]
+              if p.get("location"):
+                  out["google_location"] = p["location"]
+              if "rating" in p:
+                  out["gr"] = p["rating"]
+              if "userRatingCount" in p:
+                  out["grc"] = p["userRatingCount"]
+              if p.get("types"):
+                  out["gty"] = p["types"]
+              if p.get("websiteUri"):
+                  out["websiteUri"] = p["websiteUri"]
+                  out["web_url"] = p["websiteUri"]
+              if p.get("nationalPhoneNumber"):
+                  out["nationalPhoneNumber"] = p["nationalPhoneNumber"]
+              if p.get("internationalPhoneNumber"):
+                  out["internationalPhoneNumber"] = p["internationalPhoneNumber"]
+              phone = p.get("nationalPhoneNumber") or p.get("internationalPhoneNumber")
+              if phone:
+                  out["phone"] = phone
+              if "reservable" in p:
+                  out["reservable"] = bool(p["reservable"])
+              if p.get("businessStatus"):
+                  out["business_status"] = p["businessStatus"]
+              hours = p.get("regularOpeningHours") or p.get("currentOpeningHours")
+              if hours and hours.get("weekdayDescriptions"):
+                  out["goh"] = hours["weekdayDescriptions"]
+
+              enrichment[key] = out
+              matched += 1
+              print(f"[{i}/{len(data)}] matched: {name} rating={out.get('gr', '-')} reviews={out.get('grc', 0)}")
+              time.sleep(0.15)
+
+              if i % 25 == 0:
+                  output_path.write_text(json.dumps(enrichment, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+          output_path.write_text(json.dumps(enrichment, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+          print(f"Official Google enrichment complete: matched={matched}, no_match={no_match}, failed={failed}, total_written={len(enrichment)}")
+          PY
+
+      - name: Merge official Google enrichment into Stratford establishments
+        run: python .github/scripts/merge_enrichment.py
+
+      - name: Resolve entities
+        run: python .github/scripts/resolve_entities.py
+
+      - name: Run V4 scoring engine
+        run: |
+          python rcs_scoring_v4.py \
+            --input stratford_establishments.json \
+            --menus stratford_menus.json \
+            --editorial stratford_editorial.json \
+            --out-json stratford_rcs_v4_scores.json \
+            --out-csv stratford_rcs_v4_scores.csv
+
+      - name: Build public Stratford ranking JSON from V4
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import date
+          from pathlib import Path
+
+          root = Path('.')
+          scores = json.loads(Path('stratford_rcs_v4_scores.json').read_text(encoding='utf-8'))
+          est = json.loads(Path('stratford_establishments.json').read_text(encoding='utf-8'))
+          out_dir = Path('assets/rankings')
+          out_dir.mkdir(parents=True, exist_ok=True)
+          slug = 'stratford-on-avon'
+          area_path = out_dir / f'{slug}.json'
+          index_path = out_dir / 'index.json'
+
+          prior = {}
+          if area_path.exists():
+              try:
+                  old = json.loads(area_path.read_text(encoding='utf-8'))
+                  prior = {v.get('name'): v.get('rank') for v in old.get('venues', []) if v.get('name')}
+              except Exception:
+                  prior = {}
+
+          def band(score):
+              if score >= 8.0:
+                  return 'Excellent', 'excellent'
+              if score >= 6.5:
+                  return 'Good', 'good'
+              if score >= 5.0:
+                  return 'Generally Satisfactory', 'satisfactory'
+              if score >= 3.5:
+                  return 'Improvement Necessary', 'improvement'
+              if score >= 2.0:
+                  return 'Major Improvement', 'major'
+              return 'Urgent Improvement', 'urgent'
+
+          def category(record):
+              types = ' '.join(record.get('gty') or []).lower()
+              name = (record.get('n') or '').lower()
+              joined = types + ' ' + name
+              if any(x in joined for x in ['cafe', 'coffee', 'tea_room']):
+                  return 'Cafe / Coffee Shop'
+              if any(x in joined for x in ['pub', 'bar', 'inn']):
+                  return 'Pub / Bar'
+              if 'bakery' in joined:
+                  return 'Bakery'
+              if any(x in joined for x in ['hotel', 'lodging']):
+                  return 'Hotel / Accommodation'
+              if any(x in joined for x in ['meal_takeaway', 'takeaway', 'delivery', 'fast_food']):
+                  return 'Takeaway / Delivery'
+              return 'Restaurant (General)'
+
+          eligible = []
+          for key, s in scores.items():
+              score = s.get('rcs_v4_final')
+              if score is None or not s.get('league_table_eligible'):
+                  continue
+              rec = est.get(str(key), {})
+              eligible.append((float(score), str(key), s, rec))
+          eligible.sort(key=lambda item: item[0], reverse=True)
+
+          venues = []
+          for rank, (score, key, s, rec) in enumerate(eligible, 1):
+              b, bc = band(score)
+              name = s.get('name') or rec.get('n') or key
+              previous = prior.get(name)
+              if previous is None:
+                  movement = 'new'
+                  movement_delta = 0
+              else:
+                  delta = int(previous) - rank
+                  movement_delta = delta
+                  movement = 'up' if delta > 0 else 'down' if delta < 0 else 'same'
+
+              platform_summary = s.get('source_family_summary', {}).get('customer_platforms') or []
+              venues.append({
+                  'rank': rank,
+                  'name': name,
+                  'postcode': rec.get('pc', ''),
+                  'category': category(rec),
+                  'rcs_final': round(score, 3),
+                  'rcs_band': b,
+                  'band_class': bc,
+                  'convergence': 'single-platform' if platform_summary == ['google'] else 'multi-platform',
+                  'movement': movement,
+                  'movement_delta': movement_delta,
+                  'confidence_class': s.get('confidence_class'),
+                  'coverage_status': s.get('coverage_status'),
+                  'single_platform_caveat': platform_summary == ['google'],
+                  'public_evidence_label': 'Official Google + FSA evidence' if platform_summary == ['google'] else 'Multi-source public evidence',
+              })
+
+          area = {
+              'la_name': 'Stratford-on-Avon',
+              'display_name': 'Stratford-upon-Avon',
+              'slug': slug,
+              'methodology_version': 'V4 official-source mode',
+              'total_venues': len(venues),
+              'top_n': min(10, len(venues)),
+              'others_count': max(0, len(venues) - min(10, len(venues))),
+              'last_updated': date.today().isoformat(),
+              'venues': venues[:10],
+          }
+          area_path.write_text(json.dumps(area, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+
+          if index_path.exists():
+              index = json.loads(index_path.read_text(encoding='utf-8'))
+          else:
+              index = {'last_updated': None, 'available': [], 'pipeline': []}
+          available = [e for e in index.get('available', []) if e.get('slug') != slug]
+          available.append({
+              'slug': slug,
+              'la_name': 'Stratford-on-Avon',
+              'display_name': 'Stratford-upon-Avon',
+              'region': 'Warwickshire',
+              'status': 'live',
+              'methodology_version': 'V4 official-source mode',
+              'total_venues': area['total_venues'],
+              'top_score': area['venues'][0]['rcs_final'] if area['venues'] else None,
+          })
+          index['available'] = sorted(available, key=lambda e: e['display_name'].lower())
+          index['last_updated'] = date.today().isoformat()
+          index_path.write_text(json.dumps(index, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
+          print(f"Built V4 public ranking JSON: {len(venues)} eligible venues, top_n={area['top_n']}")
+          PY
+
+      - name: V4 scoring regression checks
+        run: |
+          python -m tests.test_coverage_status
+          python -m tests.test_v4_report_guardrails
+
+      - name: Commit refreshed official-source V4 data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+
+          git stash
+          git pull --rebase origin main
+          git stash pop || true
+          git add -A
+          git diff --cached --quiet && echo "No changes after pull" && exit 0
+
+          if git grep -n '<<<<<<<\|=======\|>>>>>>>' -- . ':!*.md' ; then
+            echo "Conflict markers detected; refusing to commit"
+            exit 1
+          fi
+
+          git commit -m "Refresh Stratford official Google Places data and V4 ranking"
+          git push
