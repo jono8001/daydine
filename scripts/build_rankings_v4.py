@@ -267,6 +267,29 @@ def category(record: dict[str, Any]) -> str:
     return "Restaurant (General)"
 
 
+def build_category_rankings(venues: list[dict[str, Any]], per_category: int = 5) -> list[dict[str, Any]]:
+    """Return compact top lists for each diner-facing category."""
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for venue in venues:
+        grouped.setdefault(venue.get("category") or "Other", []).append(venue)
+
+    category_rankings: list[dict[str, Any]] = []
+    for cat, items in sorted(grouped.items(), key=lambda item: (-len(item[1]), item[0])):
+        top_items = []
+        for category_rank, venue in enumerate(items[:per_category], 1):
+            public_venue = dict(venue)
+            public_venue["category_rank"] = category_rank
+            top_items.append(public_venue)
+        category_rankings.append({
+            "category": cat,
+            "slug": slugify(cat),
+            "total_venues": len(items),
+            "top_n": len(top_items),
+            "venues": top_items,
+        })
+    return category_rankings
+
+
 def prior_ranks(path: Path) -> dict[str, int]:
     if not path.exists():
         return {}
@@ -360,6 +383,7 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
         })
 
     visible = venues[:top_n]
+    category_rankings = build_category_rankings(venues, per_category=5)
     return {
         "la_name": la,
         "display_name": display,
@@ -371,6 +395,8 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
         "excluded_non_food_or_ambiguous": excluded_non_food,
         "excluded_by_public_override": excluded_by_override,
         "included_by_public_override": included_by_override,
+        "category_rankings": category_rankings,
+        "category_count": len(category_rankings),
         "last_updated": date.today().isoformat(),
         "venues": visible,
     }
@@ -415,6 +441,7 @@ def main() -> int:
     print(f"Excluded non-food/ambiguous public entries: {area['excluded_non_food_or_ambiguous']}")
     print(f"Excluded by public override: {area['excluded_by_public_override']}")
     print(f"Included by public override: {area['included_by_public_override']}")
+    print(f"Category-specific lists: {area['category_count']}")
     return 0
 
 
