@@ -1,6 +1,12 @@
 name: Refresh Stratford Official Google V4 Now
 
+# One-shot trigger bump: 2026-04-24T03:37Z
+
 on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh_stratford_official_v4_now.yml'
   workflow_dispatch:
 
 permissions:
