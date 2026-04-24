@@ -1,0 +1,12 @@
+{
+  "_note": "Review gate for Companies House risk flags. Raw Companies House matches are still collected, but risk caps/penalties should only affect V4 scoring after explicit review approval. This avoids over-penalising venues where legal-entity matching is ambiguous or historical.",
+  "policy": {
+    "mode": "review_required_for_risk",
+    "apply_clean_active_matches_without_review": true,
+    "require_review_for_dissolved_or_inactive_company": true,
+    "require_review_for_overdue_accounts": true,
+    "require_review_for_overdue_confirmation_statement": true
+  },
+  "reviews": [
+  ]
+}
