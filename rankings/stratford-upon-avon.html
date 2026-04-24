@@ -66,6 +66,18 @@
       <tbody id="rkBody"><tr><td colspan="5" class="rk-empty">Loading guide…</td></tr></tbody>
     </table>
   </div>
+
+  <section class="section" id="categorySection" hidden>
+    <div class="section-head">
+      <div>
+        <div class="section-eyebrow">Category guides</div>
+        <h2 class="section-title">Best by <em>occasion.</em></h2>
+      </div>
+      <div class="section-dek">The overall top 10 is useful, but cafés, pubs, restaurants and takeaways are not always substitutes. These category lists use the same V4 evidence and public eligibility rules.</div>
+    </div>
+    <div class="market-grid" id="categoryRankings"></div>
+  </section>
+
   <section class="meth-note">
     <div><h3>Why this is a town guide, not a district list.</h3></div>
     <dl>
@@ -91,14 +103,32 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){retur
 function fmtDate(iso){if(!iso)return '—';var d=new Date(iso+'T00:00:00');return isNaN(d)?iso:d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
 function shortCat(cat){return String(cat||'').replace(/\s*\(General\)\s*$/,'');}
 function confidenceLabel(v){var score=Number(v.rcs_final||0);if((v.rcs_band||'')==='Excellent'||score>=8.2)return 'Excellent safe bet';if((v.rcs_band||'')==='Good'||score>=7.0)return 'Highly promising';if(score>=5.8)return 'Good, check first';return 'Thin evidence';}
+function categoryOrder(cat){var c=String(cat||'').toLowerCase();if(c.indexOf('restaurant')>=0)return 1;if(c.indexOf('cafe')>=0)return 2;if(c.indexOf('pub')>=0||c.indexOf('bar')>=0)return 3;if(c.indexOf('takeaway')>=0)return 4;if(c.indexOf('hotel')>=0)return 5;if(c.indexOf('bakery')>=0)return 6;return 20;}
+function renderCategoryRankings(groups){
+  var section=document.getElementById('categorySection');
+  var wrap=document.getElementById('categoryRankings');
+  if(!groups||!groups.length||!section||!wrap)return;
+  var ordered=groups.slice().sort(function(a,b){return categoryOrder(a.category)-categoryOrder(b.category)||String(a.category).localeCompare(String(b.category));});
+  wrap.innerHTML=ordered.map(function(group){
+    var title='Best '+shortCat(group.category).toLowerCase();
+    var items=(group.venues||[]).slice(0,5).map(function(v){
+      return '<li><span class="rk">#'+esc(v.category_rank||v.rank)+'</span><span class="nm">'+esc(v.name)+'</span><span class="me">'+Number(v.rcs_final||0).toFixed(2)+'</span></li>';
+    }).join('');
+    return '<article class="mkt live"><div class="mkt-head"><div class="mkt-name">'+esc(title)+'</div><span class="mkt-tag live">'+esc(group.total_venues)+' venues</span></div><div class="mkt-sub">Top evidenced options in this category.</div><ul class="rc-list">'+items+'</ul></article>';
+  }).join('');
+  section.hidden=false;
+}
 var ALL=[];var FILTERED=[];var TOP_N=10;
 fetch('/assets/rankings/stratford-upon-avon.json').then(function(r){return r.json();}).then(function(data){
   ALL=(data.venues||[]).slice();TOP_N=data.top_n||10;
   document.getElementById('rkTotal').textContent=data.total_venues||ALL.length;
   document.getElementById('rkUpdated').textContent=fmtDate(data.last_updated);
   if(data.description){document.getElementById('areaDek').textContent=data.description;}
-  var cats={};ALL.forEach(function(v){cats[v.category]=(cats[v.category]||0)+1;});
+  var cats={};
+  (data.category_rankings||[]).forEach(function(group){cats[group.category]=group.total_venues||((group.venues||[]).length);});
+  if(!Object.keys(cats).length){ALL.forEach(function(v){cats[v.category]=(cats[v.category]||0)+1;});}
   var sel=document.getElementById('fCategory');Object.keys(cats).sort(function(a,b){return cats[b]-cats[a];}).forEach(function(c){var opt=document.createElement('option');opt.value=c;opt.textContent=shortCat(c)+' · '+cats[c];sel.appendChild(opt);});
+  renderCategoryRankings(data.category_rankings||[]);
   renderAll();
 }).catch(function(){document.getElementById('rkBody').innerHTML='<tr><td colspan="5" class="rk-empty">Unable to load guide.</td></tr>';});
 function applyFilters(){var cat=document.getElementById('fCategory').value;var band=document.getElementById('fBand').value;var sort=document.getElementById('fSort').value;var q=document.getElementById('fSearch').value.trim().toLowerCase();var out=ALL.slice();if(cat!=='all')out=out.filter(function(v){return v.category===cat;});if(band!=='all')out=out.filter(function(v){return v.rcs_band===band;});if(q)out=out.filter(function(v){return (v.name||'').toLowerCase().indexOf(q)>=0||(v.postcode||'').toLowerCase().indexOf(q)>=0;});if(sort==='score')out.sort(function(a,b){return (b.rcs_final||0)-(a.rcs_final||0);});else if(sort==='name')out.sort(function(a,b){return (a.name||'').localeCompare(b.name||'');});else out.sort(function(a,b){return a.rank-b.rank;});FILTERED=out;}
