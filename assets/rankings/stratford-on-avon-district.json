@@ -116,7 +116,7 @@
     {
       "category": "Cafe / Coffee Shop",
       "slug": "cafe-coffee-shop",
-      "total_venues": 42,
+      "total_venues": 50,
       "top_n": 5,
       "venues": [
         {
@@ -177,12 +177,12 @@
           "category_rank": 3
         },
         {
-          "rank": 19,
-          "name": "Henley Ice Cream Limited",
-          "postcode": "B95 5BS",
+          "rank": 12,
+          "name": "The Pickled Crab Deli",
+          "postcode": "CV47 0HF",
           "category": "Cafe / Coffee Shop",
           "fsa_business_type": "restaurant/cafe/canteen",
-          "rcs_final": 9.21,
+          "rcs_final": 9.299,
           "rcs_band": "Excellent",
           "band_class": "excellent",
           "convergence": "single-platform",
@@ -196,12 +196,12 @@
           "category_rank": 4
         },
         {
-          "rank": 20,
-          "name": "The Garden Cafe",
-          "postcode": "B49 5PD",
+          "rank": 19,
+          "name": "Henley Ice Cream Limited",
+          "postcode": "B95 5BS",
           "category": "Cafe / Coffee Shop",
           "fsa_business_type": "restaurant/cafe/canteen",
-          "rcs_final": 9.209,
+          "rcs_final": 9.21,
           "rcs_band": "Excellent",
           "band_class": "excellent",
           "convergence": "single-platform",
@@ -322,28 +322,9 @@
     {
       "category": "Takeaway / Delivery",
       "slug": "takeaway-delivery",
-      "total_venues": 27,
+      "total_venues": 17,
       "top_n": 5,
       "venues": [
-        {
-          "rank": 12,
-          "name": "The Pickled Crab Deli",
-          "postcode": "CV47 0HF",
-          "category": "Takeaway / Delivery",
-          "fsa_business_type": "restaurant/cafe/canteen",
-          "rcs_final": 9.299,
-          "rcs_band": "Excellent",
-          "band_class": "excellent",
-          "convergence": "single-platform",
-          "movement": "new",
-          "movement_delta": 0,
-          "confidence_class": "Rankable-B",
-          "coverage_status": "coverage-ready",
-          "single_platform_caveat": true,
-          "public_evidence_label": "Official Google + FSA evidence",
-          "public_override": null,
-          "category_rank": 1
-        },
         {
           "rank": 26,
           "name": "Cardamom",
@@ -361,7 +342,7 @@
           "single_platform_caveat": true,
           "public_evidence_label": "Official Google + FSA evidence",
           "public_override": null,
-          "category_rank": 2
+          "category_rank": 1
         },
         {
           "rank": 28,
@@ -380,7 +361,7 @@
           "single_platform_caveat": true,
           "public_evidence_label": "Official Google + FSA evidence",
           "public_override": null,
-          "category_rank": 3
+          "category_rank": 2
         },
         {
           "rank": 33,
@@ -399,7 +380,7 @@
           "single_platform_caveat": true,
           "public_evidence_label": "Official Google + FSA evidence",
           "public_override": null,
-          "category_rank": 4
+          "category_rank": 3
         },
         {
           "rank": 38,
@@ -408,6 +389,25 @@
           "category": "Takeaway / Delivery",
           "fsa_business_type": "restaurant/cafe/canteen",
           "rcs_final": 9.028,
+          "rcs_band": "Excellent",
+          "band_class": "excellent",
+          "convergence": "single-platform",
+          "movement": "new",
+          "movement_delta": 0,
+          "confidence_class": "Rankable-B",
+          "coverage_status": "coverage-ready",
+          "single_platform_caveat": true,
+          "public_evidence_label": "Official Google + FSA evidence",
+          "public_override": null,
+          "category_rank": 4
+        },
+        {
+          "rank": 49,
+          "name": "Sans Oriental Restaurant",
+          "postcode": "B95 5AT",
+          "category": "Takeaway / Delivery",
+          "fsa_business_type": "restaurant/cafe/canteen",
+          "rcs_final": 8.952,
           "rcs_band": "Excellent",
           "band_class": "excellent",
           "convergence": "single-platform",
@@ -528,8 +528,8 @@
     {
       "category": "Bakery",
       "slug": "bakery",
-      "total_venues": 4,
-      "top_n": 4,
+      "total_venues": 6,
+      "top_n": 5,
       "venues": [
         {
           "rank": 21,
@@ -551,6 +551,44 @@
           "category_rank": 1
         },
         {
+          "rank": 43,
+          "name": "GAIL's Stratford-Upon-Avon",
+          "postcode": "CV37 6AU",
+          "category": "Bakery",
+          "fsa_business_type": "restaurant/cafe/canteen",
+          "rcs_final": 8.987,
+          "rcs_band": "Excellent",
+          "band_class": "excellent",
+          "convergence": "single-platform",
+          "movement": "new",
+          "movement_delta": 0,
+          "confidence_class": "Rankable-B",
+          "coverage_status": "coverage-ready",
+          "single_platform_caveat": true,
+          "public_evidence_label": "Official Google + FSA evidence",
+          "public_override": null,
+          "category_rank": 2
+        },
+        {
+          "rank": 51,
+          "name": "Bruno's Bakery",
+          "postcode": "B80 7HJ",
+          "category": "Bakery",
+          "fsa_business_type": "restaurant/cafe/canteen",
+          "rcs_final": 8.933,
+          "rcs_band": "Excellent",
+          "band_class": "excellent",
+          "convergence": "single-platform",
+          "movement": "new",
+          "movement_delta": 0,
+          "confidence_class": "Rankable-B",
+          "coverage_status": "coverage-ready",
+          "single_platform_caveat": true,
+          "public_evidence_label": "Official Google + FSA evidence",
+          "public_override": null,
+          "category_rank": 3
+        },
+        {
           "rank": 92,
           "name": "Greggs PLC",
           "postcode": "B49 6EH",
@@ -567,7 +605,7 @@
           "single_platform_caveat": true,
           "public_evidence_label": "Official Google + FSA evidence",
           "public_override": null,
-          "category_rank": 2
+          "category_rank": 4
         },
         {
           "rank": 122,
@@ -586,26 +624,7 @@
           "single_platform_caveat": true,
           "public_evidence_label": "Official Google + FSA evidence",
           "public_override": null,
-          "category_rank": 3
-        },
-        {
-          "rank": 152,
-          "name": "Hobsons Patisseries",
-          "postcode": "CV37 6PT",
-          "category": "Bakery",
-          "fsa_business_type": "restaurant/cafe/canteen",
-          "rcs_final": 7.429,
-          "rcs_band": "Good",
-          "band_class": "good",
-          "convergence": "single-platform",
-          "movement": "new",
-          "movement_delta": 0,
-          "confidence_class": "Rankable-B",
-          "coverage_status": "coverage-ready",
-          "single_platform_caveat": true,
-          "public_evidence_label": "Official Google + FSA evidence",
-          "public_override": null,
-          "category_rank": 4
+          "category_rank": 5
         }
       ]
     }

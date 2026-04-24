@@ -116,7 +116,7 @@
     {
       "category": "Cafe / Coffee Shop",
       "slug": "cafe-coffee-shop",
-      "total_venues": 13,
+      "total_venues": 16,
       "top_n": 5,
       "venues": [
         {
@@ -322,7 +322,7 @@
     {
       "category": "Takeaway / Delivery",
       "slug": "takeaway-delivery",
-      "total_venues": 12,
+      "total_venues": 8,
       "top_n": 5,
       "venues": [
         {
@@ -345,12 +345,12 @@
           "category_rank": 1
         },
         {
-          "rank": 20,
-          "name": "GAIL's Stratford-Upon-Avon",
-          "postcode": "CV37 6AU",
+          "rank": 36,
+          "name": "McDonald's",
+          "postcode": "CV37 0AH",
           "category": "Takeaway / Delivery",
           "fsa_business_type": "restaurant/cafe/canteen",
-          "rcs_final": 8.987,
+          "rcs_final": 8.49,
           "rcs_band": "Excellent",
           "band_class": "excellent",
           "convergence": "single-platform",
@@ -364,12 +364,12 @@
           "category_rank": 2
         },
         {
-          "rank": 22,
-          "name": "Deli Cafe",
-          "postcode": "CV37 6QB",
+          "rank": 39,
+          "name": "Hussains",
+          "postcode": "CV37 6EP",
           "category": "Takeaway / Delivery",
           "fsa_business_type": "restaurant/cafe/canteen",
-          "rcs_final": 8.969,
+          "rcs_final": 8.445,
           "rcs_band": "Excellent",
           "band_class": "excellent",
           "convergence": "single-platform",
@@ -383,12 +383,12 @@
           "category_rank": 3
         },
         {
-          "rank": 29,
-          "name": "Starbucks",
-          "postcode": "CV37 6AU",
+          "rank": 40,
+          "name": "McDonald's",
+          "postcode": "CV37 6AB",
           "category": "Takeaway / Delivery",
           "fsa_business_type": "restaurant/cafe/canteen",
-          "rcs_final": 8.711,
+          "rcs_final": 8.422,
           "rcs_band": "Excellent",
           "band_class": "excellent",
           "convergence": "single-platform",
@@ -402,12 +402,12 @@
           "category_rank": 4
         },
         {
-          "rank": 31,
-          "name": "The Food Of Love",
-          "postcode": "CV37 6QW",
+          "rank": 44,
+          "name": "Wildwood Kitchen",
+          "postcode": "CV37 6EF",
           "category": "Takeaway / Delivery",
           "fsa_business_type": "restaurant/cafe/canteen",
-          "rcs_final": 8.648,
+          "rcs_final": 8.286,
           "rcs_band": "Excellent",
           "band_class": "excellent",
           "convergence": "single-platform",
@@ -528,8 +528,8 @@
     {
       "category": "Bakery",
       "slug": "bakery",
-      "total_venues": 2,
-      "top_n": 2,
+      "total_venues": 3,
+      "top_n": 3,
       "venues": [
         {
           "rank": 9,
@@ -551,6 +551,25 @@
           "category_rank": 1
         },
         {
+          "rank": 20,
+          "name": "GAIL's Stratford-Upon-Avon",
+          "postcode": "CV37 6AU",
+          "category": "Bakery",
+          "fsa_business_type": "restaurant/cafe/canteen",
+          "rcs_final": 8.987,
+          "rcs_band": "Excellent",
+          "band_class": "excellent",
+          "convergence": "single-platform",
+          "movement": "new",
+          "movement_delta": 0,
+          "confidence_class": "Rankable-B",
+          "coverage_status": "coverage-ready",
+          "single_platform_caveat": true,
+          "public_evidence_label": "Official Google + FSA evidence",
+          "public_override": null,
+          "category_rank": 2
+        },
+        {
           "rank": 64,
           "name": "Hobsons Patisseries",
           "postcode": "CV37 6PT",
@@ -567,7 +586,7 @@
           "single_platform_caveat": true,
           "public_evidence_label": "Official Google + FSA evidence",
           "public_override": null,
-          "category_rank": 2
+          "category_rank": 3
         }
       ]
     }
