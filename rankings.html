@@ -1,175 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>UK Restaurant Market Rankings | DayDine</title>
-  <meta name="description" content="DayDine ranks UK restaurants by market using 40 public signals. Confidence-aware scores updated weekly. Stratford-upon-Avon live now, more markets expanding.">
+  <title>Trusted restaurant guides by local area — DayDine</title>
+  <meta name="description" content="Find trusted places to eat by local area. DayDine uses public evidence, clear confidence labels and simple caveats instead of paid placement.">
   <link rel="canonical" href="https://daydine.vercel.app/rankings">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Market Rankings — DayDine">
-  <meta property="og:description" content="UK restaurant rankings built on public market signals. See your local market.">
+  <meta property="og:title" content="Trusted restaurant guides — DayDine">
+  <meta property="og:description" content="A simple public-evidence guide to reliable restaurants, starting with Stratford-upon-Avon.">
   <meta property="og:url" content="https://daydine.vercel.app/rankings">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/daydine.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body data-page-type="diner">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a class="nav-brand" href="/">
-      <img class="nav-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine">
-    </a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="nav-brand" href="/"><img class="nav-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine"></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links">
       <a class="nav-link active" href="/rankings">Rankings</a>
       <a class="nav-link" href="/search">Search</a>
-      <a class="nav-link" href="/reports">Reports</a>
       <a class="nav-link" href="/methodology">Methodology</a>
-      <a class="btn btn-primary nav-cta" href="/reports">Get a Market Report</a>
+      <a class="nav-link" href="/reports">For restaurants</a>
+      <a class="btn btn-primary nav-cta" href="/rankings/stratford-on-avon">Find somewhere to eat</a>
     </div>
   </div>
 </nav>
 
 <main id="main">
-<!-- ================ HEADER ================ -->
-<section class="section" style="padding-top: 80px; padding-bottom: 48px;">
+<section class="section" style="padding-top:80px; padding-bottom:48px;">
   <div class="container">
-    <div class="kicker mb-1">Market Rankings</div>
-    <h1 class="h-display h-display-lg mb-2">UK restaurant rankings by local market</h1>
-    <p class="body-lg" style="max-width: 640px;">Every ranked venue scored by 40 public signals. Confidence-aware methodology. Updated weekly.</p>
+    <div class="kicker kicker-accent mb-1">Local restaurant guides</div>
+    <h1 class="h-display h-display-lg mb-2">Find trusted places to eat near you.</h1>
+    <p class="body-lg" style="max-width:680px;">
+      DayDine is a public-evidence guide. We look beyond star ratings to show which places have strong customer validation,
+      hygiene evidence and enough public information to make a confident choice.
+    </p>
   </div>
 </section>
 
-<!-- ================ PROOF BAR ================ -->
 <div class="proof-bar">
   <div class="proof-bar-inner">
-    <div class="proof-stat"><span class="proof-num">40</span><span class="proof-label">public signals</span></div>
+    <div class="proof-stat"><span class="proof-num">No</span><span class="proof-label">paid ranking</span></div>
     <div class="proof-divider"></div>
-    <div class="proof-stat"><span class="proof-num">7</span><span class="proof-label">data tiers</span></div>
+    <div class="proof-stat"><span class="proof-num">Clear</span><span class="proof-label">confidence labels</span></div>
     <div class="proof-divider"></div>
-    <div class="proof-stat"><span class="proof-num" id="proofVenues">190</span><span class="proof-label">venues ranked</span></div>
+    <div class="proof-stat"><span class="proof-num" id="proofVenues">—</span><span class="proof-label">venues in live guide</span></div>
     <div class="proof-divider"></div>
-    <div class="proof-stat"><span class="proof-num">Weekly</span><span class="proof-label">score refresh</span></div>
+    <div class="proof-stat"><span class="proof-num">Simple</span><span class="proof-label">reasons and caveats</span></div>
   </div>
 </div>
 
-<!-- ================ MARKET SEARCH ================ -->
-<section class="section" style="padding-top: 48px; padding-bottom: 48px;">
-  <div class="container">
-    <form id="rankingsSearchForm" class="area-search mb-4" style="max-width: 560px;" autocomplete="off">
-      <input type="text" id="rankingsSearchInput" class="area-search-input"
-             placeholder="Find your market — enter a town, city or postcode…"
-             aria-label="Search your area">
-      <div id="rankingsSearchDropdown" class="area-search-dropdown" role="listbox"></div>
-    </form>
-
-    <div id="waitlistCard" class="waitlist-card" style="display:none;">
-      <div class="kicker kicker-accent mb-2">Not Yet Covered</div>
-      <h3 class="h-display h-display-sm mb-2" id="waitlistArea">&mdash;</h3>
-      <p class="body-md mb-3">This market is not yet ranked. Request it and we'll prioritise coverage.</p>
-      <a id="waitlistCta" class="btn btn-primary" href="#">Request this market</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================ ACTIVE MARKETS ================ -->
-<section class="section section-alt" style="padding-top: 64px; padding-bottom: 64px;">
+<section class="section section-alt" style="padding-top:64px; padding-bottom:64px;">
   <div class="container">
     <div class="row-end mb-4">
       <div>
-        <div class="kicker kicker-accent mb-1">Active Markets</div>
-        <h2 class="h-display h-display-md">Ranked markets</h2>
-      </div>
-    </div>
-
-    <div id="marketCards" style="display: grid; gap: 20px;"></div>
-
-    <div id="marketCardsLoading" style="padding: 24px; text-align: center;">
-      <span class="body-sm">Loading markets…</span>
-    </div>
-
-    <!-- Pipeline markets -->
-    <div id="pipelineSection" style="display: none; margin-top: 48px;">
-      <div class="kicker mb-2">Pipeline</div>
-      <div id="pipelineMarkets" style="display: flex; flex-wrap: wrap; gap: 8px;"></div>
-      <p class="body-sm mt-2" style="color: var(--text-subtle);">Markets are added once data pipelines are validated. <a style="color: var(--accent); font-weight: 500;" href="mailto:hello@daydine.com?subject=Area%20request">Request a market &rarr;</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ================ FEATURED MARKET: STRATFORD ================ -->
-<section class="section" style="padding-bottom: 64px;">
-  <div class="container">
-    <div class="row-end mb-4">
-      <div>
-        <div class="kicker mb-1">Featured Market</div>
+        <div class="kicker kicker-accent mb-1">Active guide</div>
         <h2 class="h-display h-display-md">Stratford-upon-Avon</h2>
-        <p class="body-md" style="margin-top: 8px;">Top-ranked venues from the first live market.</p>
+        <p class="body-md" style="margin-top:8px;">The first live DayDine guide. More towns and cities can be requested.</p>
       </div>
-      <a class="btn btn-ghost" href="/rankings/stratford-on-avon">Full leaderboard →</a>
+      <a class="btn btn-primary" href="/rankings/stratford-on-avon">Open the Stratford guide</a>
+    </div>
+    <div id="marketCards" style="display:grid; gap:20px;"></div>
+    <div id="marketCardsLoading" style="padding:24px; text-align:center;"><span class="body-sm">Loading markets…</span></div>
+    <div id="pipelineSection" style="display:none; margin-top:40px;">
+      <div class="kicker mb-2">Coming next</div>
+      <div id="pipelineMarkets" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+      <p class="body-sm mt-2" style="color:var(--text-subtle);">Want your town next? <a style="color:var(--accent); font-weight:500;" href="mailto:hello@daydine.com?subject=Area%20request">Request a market →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-bottom:64px;">
+  <div class="container">
+    <div class="row-end mb-4">
+      <div>
+        <div class="kicker mb-1">Quick start</div>
+        <h2 class="h-display h-display-md">Places to check first in Stratford</h2>
+        <p class="body-md" style="margin-top:8px;">A short starting list for diners. Always check the restaurant’s own menu and opening times before travelling.</p>
+      </div>
+      <a class="btn btn-ghost" href="/rankings/stratford-on-avon">Full guide →</a>
     </div>
 
-    <!-- Category filters -->
-    <div id="categoryFilters" class="filter-bar" style="display: none;"></div>
-
-    <!-- Table meta -->
     <div class="table-meta">
       <span class="table-meta-count" id="tableCount">Loading…</span>
-      <span>Showing top 10 · <a href="/methodology" style="color: var(--accent); font-weight: 500;">How scores work →</a></span>
+      <span><a href="/methodology" style="color:var(--accent); font-weight:500;">How DayDine decides →</a></span>
     </div>
 
-    <!-- Rankings table -->
     <div id="featuredTable" class="rank-table">
       <div class="rank-head">
         <div>Rank</div>
         <div>Venue</div>
-        <div>Category</div>
+        <div>Type</div>
+        <div style="text-align:center;">Confidence</div>
         <div style="text-align:center;">Score</div>
-        <div style="text-align:center;">Movement</div>
       </div>
       <div id="featuredTableBody"></div>
     </div>
-
-    <div id="othersNote" class="mt-3 center body-md" style="display:none;"></div>
-
-    <p class="center mt-3">
-      <a class="btn btn-ghost" href="/rankings/stratford-on-avon">View full leaderboard →</a>
-    </p>
   </div>
 </section>
 
-<!-- ================ OPERATOR CTA ================ -->
-<section class="section section-alt" style="padding-top: 64px; padding-bottom: 64px;">
-  <div class="container container-narrow center">
-    <div class="kicker kicker-accent mb-1">For Operators</div>
-    <h2 class="h-display h-display-md mb-2">See where you rank — and what to do about it</h2>
-    <p class="body-lg mb-3" style="max-width: 580px; margin: 0 auto;">
-      Your Position Report reveals your exact rank, your five closest competitors,
-      and the specific signals that separate you. Delivered within 48 hours.
+<section class="cta-band">
+  <div class="container container-narrow">
+    <div class="kicker kicker-accent mb-2">For restaurants</div>
+    <h2 class="cta-band-title">The public guide stays simple. The operator report goes deeper.</h2>
+    <p class="body-lg mb-3" style="max-width:640px; margin-left:auto; margin-right:auto;">
+      Restaurants can see the full explanation behind their position, competitor set and practical improvement opportunities in the operator report.
     </p>
-    <div class="row" style="justify-content: center;">
-      <a class="btn btn-primary btn-lg" href="/reports">Get a Market Report — £49</a>
-      <a class="btn btn-secondary btn-lg" href="/sample">View Sample</a>
+    <div class="row" style="justify-content:center;">
+      <a class="btn btn-primary btn-lg" href="/reports">View operator reports</a>
+      <a class="btn btn-secondary btn-lg" href="/sample">View sample</a>
     </div>
-  </div>
-</section>
-
-<!-- ================ COVERAGE ================ -->
-<section class="section">
-  <div class="container container-narrow center">
-    <div class="kicker mb-1">Coverage</div>
-    <h2 class="h-display h-display-md mb-2">Expanding across the UK</h2>
-    <p class="body-lg mb-3" style="max-width: 560px; margin: 0 auto;">
-      Each new market is added once the data pipeline — FSA records, Google Places, TripAdvisor, Companies House — is validated for that Local Authority area.
-    </p>
-    <a class="btn btn-secondary btn-lg" href="mailto:hello@daydine.com?subject=Area%20request">Request a Market</a>
   </div>
 </section>
 </main>
@@ -177,277 +122,35 @@
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-brand">
-          <img class="footer-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine">
-        </div>
-        <p class="footer-tagline">UK hospitality intelligence.<br>Public-signal market rankings.</p>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Intelligence</div>
-        <a class="footer-link" href="/rankings">Market Rankings</a>
-        <a class="footer-link" href="/search">Restaurant Search</a>
-        <a class="footer-link" href="/methodology">Methodology</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Operator Tools</div>
-        <a class="footer-link" href="/reports">Position Reports</a>
-        <a class="footer-link" href="/sample">Sample Report</a>
-        <a class="footer-link" href="/pricing">Pricing</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Coverage</div>
-        <a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a>
-        <span class="footer-link footer-link-muted">5 markets in pipeline</span>
-        <a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market &rarr;</a>
-      </div>
+      <div class="footer-col"><div class="footer-brand"><img class="footer-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine"></div><p class="footer-tagline">A public-evidence guide to trusted places to eat.</p></div>
+      <div class="footer-col"><div class="footer-heading">For diners</div><a class="footer-link" href="/rankings">Rankings</a><a class="footer-link" href="/search">Restaurant search</a><a class="footer-link" href="/methodology">How it works</a></div>
+      <div class="footer-col"><div class="footer-heading">For operators</div><a class="footer-link" href="/reports">Position reports</a><a class="footer-link" href="/sample">Sample report</a><a class="footer-link" href="/pricing">Pricing</a></div>
+      <div class="footer-col"><div class="footer-heading">Coverage</div><a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a><a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market →</a></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 DayDine. Data sourced from the Food Standards Agency, Google, TripAdvisor, and Companies House.</p>
-    </div>
+    <div class="footer-bottom"><p class="footer-copy">© 2026 DayDine. No paid ranking. Public evidence only.</p></div>
   </div>
 </footer>
 
 <script src="/assets/daydine.js"></script>
 <script>
-  let availableSlugs = new Set();
-  let availableEntries = [];
-  let allVenues = [];
-  let activeCategory = 'all';
+function esc(s){const el=document.createElement('span');el.textContent=s==null?'':String(s);return el.innerHTML;}
+function shortCat(cat){return String(cat||'').replace(/\s*\(General\)\s*$/,'');}
+function formatDate(iso){if(!iso)return '—';const d=new Date(iso);return isNaN(d)?iso:d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
+function confidenceLabel(v){const score=Number(v.rcs_final||0);if((v.rcs_band||'')==='Excellent'||score>=8.2)return 'Excellent safe bet';if((v.rcs_band||'')==='Good'||score>=7.0)return 'Highly promising';if(score>=5.8)return 'Good, check first';return 'Thin evidence';}
 
-  function esc(s) {
-    const el = document.createElement('span');
-    el.textContent = s == null ? '' : String(s);
-    return el.innerHTML;
-  }
-  function formatDate(iso) {
-    if (!iso) return '';
-    const d = new Date(iso);
-    return isNaN(d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-  }
+fetch('/assets/rankings/index.json').then(r=>r.json()).then(idx=>{
+  const entries=idx.available||[];
+  document.getElementById('marketCardsLoading').style.display='none';
+  document.getElementById('marketCards').innerHTML=entries.map(e=>`<a href="/rankings/${esc(e.slug)}" class="market-card"><div><div class="market-card-name">${esc(e.display_name)}</div><div class="market-card-meta"><span class="market-card-stat"><strong>${e.total_venues}</strong> venues</span><span class="market-card-stat">Top score <strong>${Number(e.top_score).toFixed(1)}</strong></span><span class="market-card-stat">Updated ${formatDate(idx.last_updated)}</span></div></div><span class="market-card-badge">Live</span></a>`).join('');
+  document.getElementById('proofVenues').textContent=entries.reduce((s,e)=>s+Number(e.total_venues||0),0)||'—';
+  if(idx.pipeline&&idx.pipeline.length){document.getElementById('pipelineSection').style.display='';document.getElementById('pipelineMarkets').innerHTML=idx.pipeline.map(m=>`<span class="chip" style="cursor:default; ${m.status==='validating'?'background:rgba(196,154,42,0.08); color:var(--accent); border-color:rgba(196,154,42,0.3);':'background:transparent; border-style:dashed;'}">${esc(m.display_name)} <span style="font-family:var(--mono);font-size:10px;opacity:.7;margin-left:4px;">${m.status==='validating'?'Validating':'Requested'}</span></span>`).join('');}
+}).catch(()=>{document.getElementById('marketCardsLoading').textContent='Unable to load markets.';});
 
-  // ===== 1. Load market index → render market cards + pipeline =====
-  fetch('/assets/rankings/index.json')
-    .then(r => r.json())
-    .then(idx => {
-      availableEntries = idx.available || [];
-      availableSlugs = new Set(availableEntries.map(a => a.slug));
-      renderMarketCards(availableEntries, idx.last_updated);
-      if (idx.pipeline && idx.pipeline.length) renderPipeline(idx.pipeline);
-    })
-    .catch(() => {
-      document.getElementById('marketCards').innerHTML = '<p class="body-sm">Unable to load markets.</p>';
-      document.getElementById('marketCardsLoading').style.display = 'none';
-    });
-
-  function renderMarketCards(entries, lastUpdated) {
-    document.getElementById('marketCardsLoading').style.display = 'none';
-    const container = document.getElementById('marketCards');
-    container.innerHTML = entries.map(e => `
-      <a href="/rankings/${esc(e.slug)}" class="market-card">
-        <div>
-          <div class="market-card-name">${esc(e.display_name)}</div>
-          <div class="market-card-meta">
-            <span class="market-card-stat"><strong>${e.total_venues}</strong> venues ranked</span>
-            <span class="market-card-stat">Top score <strong>${Number(e.top_score).toFixed(1)}</strong></span>
-            <span class="market-card-stat">Updated ${formatDate(lastUpdated)}</span>
-          </div>
-        </div>
-        <span class="market-card-badge">Live</span>
-      </a>
-    `).join('');
-    // Update proof bar venue count
-    let total = entries.reduce((s, e) => s + e.total_venues, 0);
-    document.getElementById('proofVenues').textContent = total;
-  }
-
-  function renderPipeline(pipeline) {
-    document.getElementById('pipelineSection').style.display = '';
-    var container = document.getElementById('pipelineMarkets');
-    container.innerHTML = pipeline.map(function(m) {
-      var label = m.status === 'validating' ? 'Validating' : 'Requested';
-      var style = m.status === 'validating'
-        ? 'background: rgba(196,154,42,0.08); color: var(--accent); border-color: rgba(196,154,42,0.3);'
-        : 'background: transparent; border-style: dashed;';
-      return '<span class="chip" style="cursor: default; ' + style + '">' +
-        esc(m.display_name) + ' <span style="font-family:var(--mono);font-size:10px;opacity:0.7;margin-left:4px;">' + label + '</span></span>';
-    }).join('');
-  }
-
-  // ===== 2. Load featured market → render table with convergence + category filters =====
-  (async function loadFeaturedMarket() {
-    try {
-      const resp = await fetch('/assets/rankings/stratford-on-avon.json');
-      if (!resp.ok) throw new Error('fetch failed');
-      const data = await resp.json();
-      allVenues = data.venues || [];
-
-      // Build category filters from actual data
-      const cats = {};
-      allVenues.forEach(v => { cats[v.category] = (cats[v.category] || 0) + 1; });
-      const sorted = Object.entries(cats).sort((a, b) => b[1] - a[1]);
-      const filterBar = document.getElementById('categoryFilters');
-      filterBar.style.display = '';
-      filterBar.innerHTML = `<button class="filter-btn active" data-cat="all">All<span class="filter-count">${allVenues.length}</span></button>` +
-        sorted.map(([cat, count]) =>
-          `<button class="filter-btn" data-cat="${esc(cat)}">${esc(cat)}<span class="filter-count">${count}</span></button>`
-        ).join('');
-      filterBar.addEventListener('click', e => {
-        const btn = e.target.closest('.filter-btn');
-        if (!btn) return;
-        activeCategory = btn.dataset.cat;
-        filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
-        renderTable();
-      });
-
-      document.getElementById('tableCount').textContent =
-        `${allVenues.length} venues · Last updated ${formatDate(data.last_updated)}`;
-
-      renderTable();
-
-      if (data.others_count > 0) {
-        const note = document.getElementById('othersNote');
-        note.style.display = '';
-        note.innerHTML = `<span class="kicker">And <strong style="font-size: 14px; color: var(--text);">${data.others_count}</strong> other ranked venues in ${esc(data.display_name)}</span>`;
-      }
-    } catch (err) {
-      document.getElementById('tableCount').textContent = 'Unable to load rankings.';
-    }
-  })();
-
-  function movementHtml(venue) {
-    var m = venue.movement, d = venue.movement_delta || 0;
-    if (m === 'up') return '<span class="movement-delta movement-delta-up">&#9650; ' + d + '</span>';
-    if (m === 'down') return '<span class="movement-delta movement-delta-down">&#9660; ' + Math.abs(d) + '</span>';
-    if (m === 'same') return '<span class="movement-delta movement-delta-same">&#8212;</span>';
-    return '<span class="movement movement-new">NEW</span>';
-  }
-
-  function renderTable() {
-    const filtered = activeCategory === 'all'
-      ? allVenues
-      : allVenues.filter(v => v.category === activeCategory);
-
-    document.getElementById('featuredTableBody').innerHTML = filtered.map(venue => {
-      const bandClass = 'score-badge-' + (venue.band_class || 'good');
-      const rankClass = venue.rank <= 3 ? 'rank-num rank-num-top' : 'rank-num';
-      return `
-        <div class="rank-row">
-          <div class="${rankClass}">#${venue.rank}</div>
-          <div>
-            <div class="rank-name">${esc(venue.name)}</div>
-            <div class="rank-sub">${esc(venue.postcode)}</div>
-          </div>
-          <div class="rank-category">${esc(venue.category)}</div>
-          <div class="rank-score">
-            <span class="score-badge ${bandClass}">
-              <span class="score-badge-num">${Number(venue.rcs_final).toFixed(1)}</span>
-              <span class="score-badge-max">/ 10</span>
-            </span>
-          </div>
-          <div class="rank-change">${movementHtml(venue)}</div>
-        </div>
-      `;
-    }).join('');
-  }
-
-  // ===== 3. Waitlist =====
-  (function() {
-    const params = new URLSearchParams(window.location.search);
-    const area = params.get('name');
-    if (area) showWaitlist(area);
-  })();
-
-  function showWaitlist(areaName) {
-    const card = document.getElementById('waitlistCard');
-    document.getElementById('waitlistArea').textContent = areaName;
-    document.getElementById('waitlistCta').href =
-      'mailto:hello@daydine.com?subject=' + encodeURIComponent('Market request: ' + areaName) +
-      '&body=' + encodeURIComponent("Please notify me when DayDine rankings are available for " + areaName + ".");
-    card.style.display = '';
-    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-
-  // ===== 4. Area search autocomplete =====
-  (function() {
-    const input = document.getElementById('rankingsSearchInput');
-    const dropdown = document.getElementById('rankingsSearchDropdown');
-    const form = document.getElementById('rankingsSearchForm');
-    let debounce = null, activeIdx = -1;
-
-    input.addEventListener('input', () => {
-      clearTimeout(debounce);
-      const val = input.value.trim();
-      if (val.length < 2) { close(); return; }
-      if (/^[A-Z]{1,2}\d/i.test(val)) { close(); return; }
-      debounce = setTimeout(async () => {
-        try {
-          const resp = await fetch('https://api.postcodes.io/places?q=' + encodeURIComponent(val) + '&limit=6');
-          const data = await resp.json();
-          if (!data.result || !data.result.length) { close(); return; }
-          dropdown.innerHTML = '';
-          activeIdx = -1;
-          data.result.forEach(place => {
-            const opt = document.createElement('div');
-            opt.className = 'area-search-option';
-            opt.dataset.lat = place.latitude;
-            opt.dataset.lon = place.longitude;
-            opt.dataset.name = place.name_1;
-            opt.textContent = place.name_1 + (place.county_unitary ? ', ' + place.county_unitary : '');
-            opt.addEventListener('mousedown', e => { e.preventDefault(); pick(opt); });
-            dropdown.appendChild(opt);
-          });
-          dropdown.classList.add('open');
-        } catch (e) { close(); }
-      }, 250);
-    });
-
-    input.addEventListener('keydown', e => {
-      const opts = dropdown.querySelectorAll('.area-search-option');
-      if (e.key === 'Enter') { e.preventDefault(); activeIdx >= 0 && opts[activeIdx] ? pick(opts[activeIdx]) : resolve(input.value.trim()); return; }
-      if (!dropdown.classList.contains('open') || !opts.length) return;
-      if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = Math.min(activeIdx + 1, opts.length - 1); hl(opts); }
-      else if (e.key === 'ArrowUp') { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); hl(opts); }
-      else if (e.key === 'Escape') close();
-    });
-    input.addEventListener('blur', () => setTimeout(close, 150));
-    form.addEventListener('submit', e => { e.preventDefault(); resolve(input.value.trim()); });
-
-    function hl(opts) { opts.forEach((o, i) => o.classList.toggle('active', i === activeIdx)); }
-    function close() { dropdown.classList.remove('open'); activeIdx = -1; }
-    async function pick(opt) {
-      input.value = opt.dataset.name; close();
-      try {
-        const r = await fetch(`https://api.postcodes.io/postcodes?lon=${opt.dataset.lon}&lat=${opt.dataset.lat}&limit=1`);
-        const d = await r.json();
-        route(d.result && d.result[0] && d.result[0].admin_district);
-      } catch (e) {}
-    }
-    async function resolve(q) {
-      if (!q) return; close();
-      try {
-        if (/^[A-Z]{1,2}\d[A-Z\d]?\s*\d[A-Z]{2}$/i.test(q)) {
-          const r = await fetch('https://api.postcodes.io/postcodes/' + encodeURIComponent(q.replace(/\s+/g, '')));
-          const d = await r.json();
-          if (d.status === 200 && d.result) { route(d.result.admin_district); return; }
-        }
-        const r2 = await fetch('https://api.postcodes.io/places?q=' + encodeURIComponent(q) + '&limit=1');
-        const d2 = await r2.json();
-        if (d2.result && d2.result[0]) {
-          const p = d2.result[0];
-          const r3 = await fetch(`https://api.postcodes.io/postcodes?lon=${p.longitude}&lat=${p.latitude}&limit=1`);
-          const d3 = await r3.json();
-          route(d3.result && d3.result[0] && d3.result[0].admin_district); return;
-        }
-        showWaitlist(q);
-      } catch (e) { showWaitlist(q); }
-    }
-    function route(la) {
-      if (!la) return;
-      const slug = la.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-      availableSlugs.has(slug) ? window.location.href = '/rankings/' + slug : showWaitlist(la);
-    }
-  })();
+fetch('/assets/rankings/stratford-on-avon.json').then(r=>r.json()).then(data=>{
+  const venues=(data.venues||[]).slice(0,10);
+  document.getElementById('tableCount').textContent=`${data.total_venues||venues.length} venues · Updated ${formatDate(data.last_updated)}`;
+  document.getElementById('featuredTableBody').innerHTML=venues.map(v=>`<div class="rank-row"><div class="${v.rank<=3?'rank-num rank-num-top':'rank-num'}">#${v.rank}</div><div><div class="rank-name">${esc(v.name)}</div><div class="rank-sub">${esc(v.postcode||'')}</div></div><div class="rank-category">${esc(shortCat(v.category))}</div><div class="rank-change">${confidenceLabel(v)}</div><div class="rank-score"><span class="score-badge score-badge-${v.band_class||'good'}"><span class="score-badge-num">${Number(v.rcs_final||0).toFixed(1)}</span><span class="score-badge-max">/ 10</span></span></div></div>`).join('');
+}).catch(()=>{document.getElementById('tableCount').textContent='Unable to load guide.';});
 </script>
 </body>
 </html>
