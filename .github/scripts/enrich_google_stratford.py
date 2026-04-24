@@ -1,227 +1,200 @@
 #!/usr/bin/env python3
-"""
-enrich_google_stratford.py — Enrich Stratford establishments with Google Places data.
+"""Official Google Places enrichment for the Stratford DayDine dataset.
 
-Reads stratford_establishments.json, calls Google Places API (New) Text Search
-for each establishment, and saves enrichment data to stratford_google_enrichment.json.
+This script reads ``stratford_establishments.json``, calls the Google Places API
+(New) Text Search endpoint for each establishment, and writes
+``stratford_google_enrichment.json``.
+
+V4 public-ranking policy:
+- use official Google Places API metadata only;
+- do not scrape Google;
+- do not request or store Google review text;
+- do not request or store Google AI summaries;
+- do not request or store Google photos/photo counts for headline scoring;
+- keep field masks deliberately small and auditable.
 
 Requires:
     GOOGLE_PLACES_API_KEY environment variable
 """
 
+from __future__ import annotations
+
 import json
-import math
 import os
 import sys
 import time
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
 
 import requests
 
 GOOGLE_API_KEY = os.environ.get("GOOGLE_PLACES_API_KEY", "")
 PLACES_SEARCH_URL = "https://places.googleapis.com/v1/places:searchText"
 
-# Rate limit: ~10 req/sec max, use 0.15s to be safe
+# Rate limit: ~10 req/sec max; 0.15s is deliberately conservative.
 RATE_LIMIT_DELAY = 0.15
 
+# Schema v3 = official-source V4 metadata mode. This deliberately excludes
+# places.reviews, places.photos, generative summaries, and other non-essential
+# fields. Keep this constant near the top so policy review is easy.
+GOOGLE_PLACES_FIELD_MASK_V4 = ",".join([
+    "places.id",
+    "places.displayName",
+    "places.formattedAddress",
+    "places.location",
+    "places.types",
+    "places.businessStatus",
+    "places.nationalPhoneNumber",
+    "places.internationalPhoneNumber",
+    "places.websiteUri",
+    "places.rating",
+    "places.userRatingCount",
+    "places.regularOpeningHours.weekdayDescriptions",
+    "places.currentOpeningHours.weekdayDescriptions",
+    "places.reservable",
+])
 
-def search_place(name, address, postcode):
-    """
-    Search for a place using Google Places API (New) Text Search.
-    Returns dict with Google data fields or None if not found.
-    """
-    query = f"{name}, {postcode}, UK"
+FORBIDDEN_FIELD_MASK_TOKENS = (
+    "places.reviews",
+    "places.photos",
+    "places.generativeSummary",
+    "places.reviewSummary",
+    "places.editorialSummary",
+)
+
+SCHEMA_VERSION = 3
+MIN_OFFICIAL_SCHEMA = 3
+
+
+def assert_official_field_mask() -> None:
+    """Fail fast if a future edit adds non-approved high-risk fields."""
+    offenders = [token for token in FORBIDDEN_FIELD_MASK_TOKENS
+                 if token in GOOGLE_PLACES_FIELD_MASK_V4]
+    if offenders:
+        raise RuntimeError(
+            "Google Places V4 field mask includes forbidden fields: "
+            + ", ".join(offenders)
+        )
+
+
+def build_query(name: str, address: str, postcode: str) -> str:
     if address:
-        query = f"{name}, {address}, {postcode}, UK"
+        return f"{name}, {address}, {postcode}, UK"
+    return f"{name}, {postcode}, UK"
 
-    headers = {
-        "Content-Type": "application/json",
-        "X-Goog-Api-Key": GOOGLE_API_KEY,
-        "X-Goog-FieldMask": (
-            "places.id,"
-            "places.rating,"
-            "places.userRatingCount,"
-            "places.priceLevel,"
-            "places.types,"
-            "places.photos,"
-            "places.reviews,"
-            # Commercial Readiness customer-path fields (V4 spec §5)
-            "places.websiteUri,"
-            "places.nationalPhoneNumber,"
-            "places.internationalPhoneNumber,"
-            "places.reservable,"
-            # Closure handling (V4 spec §7.4)
-            "places.businessStatus,"
-            "places.regularOpeningHours.weekdayDescriptions,"
-            "places.currentOpeningHours.weekdayDescriptions"
-        ),
-    }
-    body = {
-        "textQuery": query,
-        "languageCode": "en",
-        "regionCode": "GB",
+
+def extract_place(place: dict[str, Any], generated_at: str) -> dict[str, Any]:
+    """Map one Places API response object into DayDine's compact aliases."""
+    result: dict[str, Any] = {
+        "gpid": place.get("id", ""),
+        "_schema_version": SCHEMA_VERSION,
+        "generated_at": generated_at,
+        "data_provenance": ["google_places_api_new_official"],
+        "google_official_fields_used": GOOGLE_PLACES_FIELD_MASK_V4.split(","),
     }
 
-    resp = requests.post(PLACES_SEARCH_URL, headers=headers, json=body, timeout=15)
-    resp.raise_for_status()
-    data = resp.json()
+    display_name = place.get("displayName") or {}
+    if isinstance(display_name, dict) and display_name.get("text"):
+        result["google_display_name"] = display_name["text"]
 
-    places = data.get("places", [])
-    if not places:
-        return None
-
-    place = places[0]
-    result = {"gpid": place.get("id", "")}
-
+    if place.get("formattedAddress"):
+        result["google_formatted_address"] = place["formattedAddress"]
+    if place.get("location"):
+        result["google_location"] = place["location"]
     if "rating" in place:
         result["gr"] = place["rating"]
     if "userRatingCount" in place:
         result["grc"] = place["userRatingCount"]
-    if "priceLevel" in place:
-        # API returns strings like "PRICE_LEVEL_MODERATE" etc.
-        price_map = {
-            "PRICE_LEVEL_FREE": 0,
-            "PRICE_LEVEL_INEXPENSIVE": 1,
-            "PRICE_LEVEL_MODERATE": 2,
-            "PRICE_LEVEL_EXPENSIVE": 3,
-            "PRICE_LEVEL_VERY_EXPENSIVE": 4,
-        }
-        result["gpl"] = price_map.get(place["priceLevel"], None)
-    if "types" in place:
+    if place.get("types"):
         result["gty"] = place["types"]
-    if "photos" in place:
-        result["gpc"] = len(place["photos"])  # photo count
 
-    # --- Commercial Readiness signals (V4 §5) ---
-    # Store the raw Google fields AND normalised short aliases so
-    # downstream merge/scoring can pick either up.
     website_uri = place.get("websiteUri")
     if website_uri:
         result["websiteUri"] = website_uri
         result["web_url"] = website_uri
 
-    nat_phone = place.get("nationalPhoneNumber")
-    intl_phone = place.get("internationalPhoneNumber")
-    if nat_phone:
-        result["nationalPhoneNumber"] = nat_phone
-    if intl_phone:
-        result["internationalPhoneNumber"] = intl_phone
-    if nat_phone or intl_phone:
-        result["phone"] = nat_phone or intl_phone
+    national_phone = place.get("nationalPhoneNumber")
+    international_phone = place.get("internationalPhoneNumber")
+    if national_phone:
+        result["nationalPhoneNumber"] = national_phone
+    if international_phone:
+        result["internationalPhoneNumber"] = international_phone
+    phone = national_phone or international_phone
+    if phone:
+        result["phone"] = phone
 
     if "reservable" in place:
-        # Places API returns a real bool here
         result["reservable"] = bool(place["reservable"])
 
-    # --- Closure flag (V4 §7.4) ---
-    if "businessStatus" in place:
-        # API enum: OPERATIONAL | CLOSED_TEMPORARILY | CLOSED_PERMANENTLY
+    if place.get("businessStatus"):
         result["business_status"] = place["businessStatus"]
 
-    # Schema version marker — bump when the field-mask adds new
-    # Commercial Readiness / closure fields so resume logic can
-    # detect pre-upgrade cache entries and re-enrich them instead of
-    # silently skipping (see _has_v4_schema below).
-    #
-    #   1  — original V3.4 fields (rating, review count, price, types, photos, reviews, hours)
-    #   2  — V4 Commercial Readiness additions (websiteUri,
-    #        nationalPhoneNumber, internationalPhoneNumber,
-    #        reservable, businessStatus)
-    result["_schema_version"] = 2
-
     hours = place.get("regularOpeningHours") or place.get("currentOpeningHours")
-    if hours and "weekdayDescriptions" in hours:
+    if hours and hours.get("weekdayDescriptions"):
         result["goh"] = hours["weekdayDescriptions"]
-
-    # Reviews — extract up to 5 most relevant
-    reviews = place.get("reviews", [])
-    if reviews:
-        extracted = []
-        for rev in reviews[:5]:
-            entry = {}
-            orig = rev.get("originalText") or rev.get("text")
-            if orig:
-                entry["text"] = orig.get("text", "") if isinstance(orig, dict) else str(orig)
-            entry["rating"] = rev.get("rating")
-            entry["time"] = rev.get("relativePublishTimeDescription", "")
-            if entry.get("text"):
-                extracted.append(entry)
-        if extracted:
-            result["g_reviews"] = extracted
 
     return result
 
 
-MIN_V4_SCHEMA = 2
+def search_place(name: str, address: str, postcode: str,
+                 generated_at: str) -> dict[str, Any] | None:
+    """Search for a place and return compact official metadata or None."""
+    assert_official_field_mask()
+    headers = {
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": GOOGLE_API_KEY,
+        "X-Goog-FieldMask": GOOGLE_PLACES_FIELD_MASK_V4,
+    }
+    body = {
+        "textQuery": build_query(name, address, postcode),
+        "languageCode": "en",
+        "regionCode": "GB",
+    }
+
+    resp = requests.post(PLACES_SEARCH_URL, headers=headers, json=body, timeout=20)
+    resp.raise_for_status()
+    places = resp.json().get("places", [])
+    if not places:
+        return None
+    return extract_place(places[0], generated_at)
 
 
-def _has_v4_schema(entry: dict) -> bool:
-    """Return True if a cached enrichment entry was produced under the
-    V4 field mask. Resume logic uses this to decide whether to skip a
-    venue: if a pre-V4 entry is present, we re-enrich so the V4
-    Commercial Readiness / closure fields are collected.
-
-    `_no_match` entries are always treated as already-processed.
-    """
+def _has_official_schema(entry: dict[str, Any]) -> bool:
+    """Return True if a cached enrichment entry uses the official-source schema."""
     if entry.get("_no_match"):
-        return True
-    if int(entry.get("_schema_version", 1) or 1) >= MIN_V4_SCHEMA:
-        return True
-    # Fallback: accept if any of the V4 CR fields are already present,
-    # even if the schema marker is missing (covers one-shot runs on
-    # older schema files that happened to land some CR fields).
-    for k in ("websiteUri", "nationalPhoneNumber",
-               "internationalPhoneNumber", "reservable",
-               "business_status"):
-        if k in entry:
-            return True
-    return False
+        return int(entry.get("_schema_version", 1) or 1) >= MIN_OFFICIAL_SCHEMA
+    return int(entry.get("_schema_version", 1) or 1) >= MIN_OFFICIAL_SCHEMA
 
 
-def main():
+def main() -> int:
     if not GOOGLE_API_KEY:
-        print("ERROR: GOOGLE_PLACES_API_KEY not set")
-        sys.exit(1)
+        print("ERROR: GOOGLE_PLACES_API_KEY not set", file=sys.stderr)
+        return 1
 
-    # Load establishments
-    input_path = "stratford_establishments.json"
-    if not os.path.exists(input_path):
-        print(f"ERROR: {input_path} not found")
-        sys.exit(1)
+    assert_official_field_mask()
 
-    with open(input_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    input_path = Path("stratford_establishments.json")
+    output_path = Path("stratford_google_enrichment.json")
 
+    if not input_path.exists():
+        print(f"ERROR: {input_path} not found", file=sys.stderr)
+        return 1
+
+    data = json.loads(input_path.read_text(encoding="utf-8"))
     print(f"Loaded {len(data)} establishments")
+    print("Google field mask:", GOOGLE_PLACES_FIELD_MASK_V4)
 
-    # Load existing enrichment data (to resume partial runs).
-    #
-    # Resume policy: an entry is "already processed" only if it was
-    # produced under the V4 field mask (`_has_v4_schema`). Pre-V4
-    # entries are re-enriched so the V4 Commercial Readiness and
-    # closure fields actually land. Without this check, a pre-V4
-    # cache would silently block V4 field collection on every
-    # resumed run.
-    output_path = "stratford_google_enrichment.json"
-    enrichment = {}
-    reenrich_legacy = 0
-    if os.path.exists(output_path):
-        with open(output_path, "r", encoding="utf-8") as f:
-            enrichment = json.load(f)
-        pre_v4 = sum(1 for e in enrichment.values()
-                      if not _has_v4_schema(e))
-        if pre_v4:
-            print(f"Loaded {len(enrichment)} existing enrichment "
-                  f"records; {pre_v4} are pre-V4 and will be re-"
-                  f"enriched.")
-            reenrich_legacy = pre_v4
-        else:
-            print(f"Loaded {len(enrichment)} existing enrichment "
-                  f"records (resuming)")
+    enrichment: dict[str, Any] = {}
+    if output_path.exists():
+        enrichment = json.loads(output_path.read_text(encoding="utf-8"))
+        pre_official = sum(1 for entry in enrichment.values()
+                           if not _has_official_schema(entry))
+        print(f"Loaded {len(enrichment)} existing enrichment records; "
+              f"{pre_official} will be re-enriched for schema v{SCHEMA_VERSION}.")
 
-    enriched = 0
-    skipped = 0
-    no_match = 0
-    failed = 0
+    generated_at = datetime.now(timezone.utc).isoformat()
+    enriched = skipped = no_match = failed = 0
     total = len(data)
 
     for i, (key, record) in enumerate(data.items(), 1):
@@ -229,66 +202,71 @@ def main():
         address = record.get("a", "")
         postcode = record.get("pc", "")
 
-        # Skip only if the cached entry is already on the V4 schema
-        # (or is an explicit _no_match). Pre-V4 entries fall through
-        # and re-hit the API so the V4 Commercial Readiness fields
-        # collect.
-        if key in enrichment and _has_v4_schema(enrichment[key]):
+        if key in enrichment and _has_official_schema(enrichment[key]):
             skipped += 1
             continue
-
         if not name:
             skipped += 1
             continue
 
         try:
-            result = search_place(name, address, postcode)
+            result = search_place(name, address, postcode, generated_at)
             time.sleep(RATE_LIMIT_DELAY)
 
             if result is None:
                 no_match += 1
                 print(f"  [{i}/{total}] no match: {name}")
-                # Store empty so we don't re-query
-                enrichment[key] = {"_no_match": True,
-                                     "_schema_version": 2}
+                enrichment[key] = {
+                    "_no_match": True,
+                    "_schema_version": SCHEMA_VERSION,
+                    "generated_at": generated_at,
+                    "data_provenance": ["google_places_api_new_official"],
+                    "google_official_fields_used": GOOGLE_PLACES_FIELD_MASK_V4.split(","),
+                }
             else:
                 enrichment[key] = result
                 enriched += 1
-                gr = result.get('gr', '-')
-                grc = result.get('grc', 0)
-                gpc = result.get('gpc', 0)
-                print(f"  [{i}/{total}] {name} -> gr={gr} grc={grc} photos={gpc}")
+                print(
+                    f"  [{i}/{total}] {name} -> "
+                    f"gr={result.get('gr', '-')} "
+                    f"grc={result.get('grc', 0)} "
+                    f"web={'yes' if result.get('web_url') else 'no'} "
+                    f"phone={'yes' if result.get('phone') else 'no'}"
+                )
 
-        except requests.exceptions.HTTPError as e:
+        except requests.exceptions.HTTPError as exc:
             failed += 1
-            status = e.response.status_code if e.response is not None else '?'
-            print(f"  [{i}/{total}] API error ({status}) for {name}: {e}")
-            if e.response is not None and e.response.status_code == 429:
+            status = exc.response.status_code if exc.response is not None else "?"
+            print(f"  [{i}/{total}] API error ({status}) for {name}: {exc}")
+            if status == 429:
                 print("  Rate limited — sleeping 10s")
                 time.sleep(10)
-            elif e.response is not None and e.response.status_code == 403:
-                print("  API key invalid or quota exceeded — stopping")
+            elif status == 403:
+                print("  API key invalid, API disabled, or quota exceeded — stopping")
                 break
-        except Exception as e:
+        except Exception as exc:
             failed += 1
-            print(f"  [{i}/{total}] error for {name}: {e}")
+            print(f"  [{i}/{total}] error for {name}: {exc}")
 
-        # Save progress every 25 records
         if i % 25 == 0:
-            with open(output_path, "w", encoding="utf-8") as f:
-                json.dump(enrichment, f, indent=2, ensure_ascii=False)
+            output_path.write_text(
+                json.dumps(enrichment, indent=2, ensure_ascii=False) + "\n",
+                encoding="utf-8",
+            )
             print(f"  ... saved progress ({len(enrichment)} records)")
 
-    # Final save
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(enrichment, f, indent=2, ensure_ascii=False)
+    output_path.write_text(
+        json.dumps(enrichment, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
 
     matched = sum(1 for v in enrichment.values() if not v.get("_no_match"))
-    print(f"\nDone. Total: {total}, Enriched: {enriched}, "
-          f"Skipped: {skipped}, No match: {no_match}, Failed: {failed}")
+    print(f"\nDone. Total: {total}, Enriched: {enriched}, Skipped: {skipped}, "
+          f"No match: {no_match}, Failed: {failed}")
     print(f"Enrichment file: {len(enrichment)} records ({matched} with Google data)")
     print(f"Saved to {output_path}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
