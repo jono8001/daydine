@@ -103,7 +103,16 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){retur
 function fmtDate(iso){if(!iso)return '—';var d=new Date(iso+'T00:00:00');return isNaN(d)?iso:d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
 function shortCat(cat){return String(cat||'').replace(/\s*\(General\)\s*$/,'');}
 function confidenceLabel(v){var score=Number(v.rcs_final||0);if((v.rcs_band||'')==='Excellent'||score>=8.2)return 'Excellent safe bet';if((v.rcs_band||'')==='Good'||score>=7.0)return 'Highly promising';if(score>=5.8)return 'Good, check first';return 'Thin evidence';}
-function categoryOrder(cat){var c=String(cat||'').toLowerCase();if(c.indexOf('restaurant')>=0)return 1;if(c.indexOf('cafe')>=0)return 2;if(c.indexOf('pub')>=0||c.indexOf('bar')>=0)return 3;if(c.indexOf('takeaway')>=0)return 4;if(c.indexOf('hotel')>=0)return 5;if(c.indexOf('bakery')>=0)return 6;return 20;}
+function evidenceSummary(v){
+  var bits=[];
+  if(v.fsa_business_type) bits.push('FSA-backed food venue');
+  if(v.rcs_band==='Excellent'||Number(v.rcs_final||0)>=8.5) bits.push('strong evidence score');
+  if(v.confidence_class) bits.push(v.confidence_class);
+  if(v.single_platform_caveat) bits.push('Google-led customer signal');
+  else if(v.convergence==='multi-platform') bits.push('multi-source public evidence');
+  return bits.slice(0,4).join(' · ');
+}
+function categoryOrder(cat){var c=String(cat||'').toLowerCase();if(c.indexOf('restaurant')>=0)return 1;if(c.indexOf('cafe')>=0)return 2;if(c.indexOf('bakery')>=0)return 3;if(c.indexOf('pub')>=0||c.indexOf('bar')>=0)return 4;if(c.indexOf('takeaway')>=0)return 5;if(c.indexOf('hotel')>=0)return 6;return 20;}
 function renderCategoryRankings(groups){
   var section=document.getElementById('categorySection');
   var wrap=document.getElementById('categoryRankings');
@@ -112,7 +121,7 @@ function renderCategoryRankings(groups){
   wrap.innerHTML=ordered.map(function(group){
     var title='Best '+shortCat(group.category).toLowerCase();
     var items=(group.venues||[]).slice(0,5).map(function(v){
-      return '<li><span class="rk">#'+esc(v.category_rank||v.rank)+'</span><span class="nm">'+esc(v.name)+'</span><span class="me">'+Number(v.rcs_final||0).toFixed(2)+'</span></li>';
+      return '<li><span class="rk">#'+esc(v.category_rank||v.rank)+'</span><span class="nm">'+esc(v.name)+'<br><small>'+esc(evidenceSummary(v))+'</small></span><span class="me">'+Number(v.rcs_final||0).toFixed(2)+'</span></li>';
     }).join('');
     return '<article class="mkt live"><div class="mkt-head"><div class="mkt-name">'+esc(title)+'</div><span class="mkt-tag live">'+esc(group.total_venues)+' venues</span></div><div class="mkt-sub">Top evidenced options in this category.</div><ul class="rc-list">'+items+'</ul></article>';
   }).join('');
@@ -132,7 +141,7 @@ fetch('/assets/rankings/stratford-upon-avon.json').then(function(r){return r.jso
   renderAll();
 }).catch(function(){document.getElementById('rkBody').innerHTML='<tr><td colspan="5" class="rk-empty">Unable to load guide.</td></tr>';});
 function applyFilters(){var cat=document.getElementById('fCategory').value;var band=document.getElementById('fBand').value;var sort=document.getElementById('fSort').value;var q=document.getElementById('fSearch').value.trim().toLowerCase();var out=ALL.slice();if(cat!=='all')out=out.filter(function(v){return v.category===cat;});if(band!=='all')out=out.filter(function(v){return v.rcs_band===band;});if(q)out=out.filter(function(v){return (v.name||'').toLowerCase().indexOf(q)>=0||(v.postcode||'').toLowerCase().indexOf(q)>=0;});if(sort==='score')out.sort(function(a,b){return (b.rcs_final||0)-(a.rcs_final||0);});else if(sort==='name')out.sort(function(a,b){return (a.name||'').localeCompare(b.name||'');});else out.sort(function(a,b){return a.rank-b.rank;});FILTERED=out;}
-function renderAll(){applyFilters();var body=document.getElementById('rkBody');var topSlice=FILTERED.slice(0,TOP_N);if(!topSlice.length){body.innerHTML='<tr><td colspan="5" class="rk-empty">Nothing matches those filters. Try loosening one.</td></tr>';}else{body.innerHTML=topSlice.map(function(v){return '<tr class="rl-row'+(v.rank<=3?' top3':'')+'"><td class="rl-rank">'+String(v.rank).padStart(2,'0')+'</td><td><div class="rl-name">'+esc(v.name)+'</div><div class="rl-sub">'+esc(v.postcode||'')+'</div></td><td class="rl-cat">'+esc(shortCat(v.category))+'</td><td class="rl-band">'+esc(confidenceLabel(v))+'</td><td class="rl-score">'+Number(v.rcs_final||0).toFixed(2)+'</td></tr>';}).join('');}document.getElementById('rkCount').textContent=FILTERED.length+' match'+(FILTERED.length===1?'':'es')+(FILTERED.length>TOP_N?' · showing first '+TOP_N:'');}
+function renderAll(){applyFilters();var body=document.getElementById('rkBody');var topSlice=FILTERED.slice(0,TOP_N);if(!topSlice.length){body.innerHTML='<tr><td colspan="5" class="rk-empty">Nothing matches those filters. Try loosening one.</td></tr>';}else{body.innerHTML=topSlice.map(function(v){return '<tr class="rl-row'+(v.rank<=3?' top3':'')+'"><td class="rl-rank">'+String(v.rank).padStart(2,'0')+'</td><td><div class="rl-name">'+esc(v.name)+'</div><div class="rl-sub">'+esc(v.postcode||'')+'</div><div class="rl-sub">Why: '+esc(evidenceSummary(v))+'</div></td><td class="rl-cat">'+esc(shortCat(v.category))+'</td><td class="rl-band">'+esc(confidenceLabel(v))+'</td><td class="rl-score">'+Number(v.rcs_final||0).toFixed(2)+'</td></tr>';}).join('');}document.getElementById('rkCount').textContent=FILTERED.length+' match'+(FILTERED.length===1?'':'es')+(FILTERED.length>TOP_N?' · showing first '+TOP_N:'');}
 ['fCategory','fBand','fSort'].forEach(function(id){document.getElementById(id).addEventListener('change',renderAll);});document.getElementById('fSearch').addEventListener('input',function(){clearTimeout(window._fsT);window._fsT=setTimeout(renderAll,120);});
 </script>
 </body>
