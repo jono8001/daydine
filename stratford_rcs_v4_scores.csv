@@ -1,209 +1,209 @@
-fhrsid,name,confidence_class,rankable,league_table_eligible,rcs_v4_final,base_score,adjusted_score,trust_score,customer_score,commercial_score,distinction_value,distinction_sources,platforms,total_reviews,entity_match_status,penalties,caps
-1354963,The Tea Shed,Directional-C,False,False,,7.125,7.125,8.364,7.565,2.5,0.0,,google,13,confirmed,,
-1584577,Shakespeare's,Rankable-B,True,True,8.03,8.03,8.03,7.399,8.768,7.5,0.0,,google,1387,confirmed,,
-1695937,Impasto Micro-Pizzeria,Rankable-B,True,True,9.223,9.223,9.223,8.776,9.361,10.0,0.0,,google,127,confirmed,,
-1896718,Birmingham City Football Club Ltd,Rankable-B,True,True,7.747,7.747,7.747,9.895,7.585,2.5,0.0,,google,12,confirmed,,
-503081,Sans Oriental Restaurant,Rankable-B,True,True,8.952,8.952,8.952,8.701,8.826,10.0,0.0,,google,289,confirmed,,
-1927834,Golden Putter Stratford Upon,Directional-C,False,False,4.479,4.479,4.479,,8.286,5.0,0.0,,google,90,confirmed,,
-503585,Redwings Horse Sanctuary,Directional-C,False,False,,7.294,7.294,7.0,9.153,2.5,0.0,,google,566,confirmed,,STALE-2Y
-1622070,Carluccio's,Rankable-B,True,True,8.867,8.867,8.867,9.378,8.036,10.0,0.0,,google,518,confirmed,,
-503554,The Bridge,Rankable-B,True,True,8.183,8.183,8.183,7.0,8.629,10.0,0.0,,google,315,confirmed,,STALE-2Y
-503316,Lambs,Rankable-B,True,True,9.311,9.311,9.311,9.146,9.229,10.0,0.0,,google,1376,confirmed,,
-1381156,Pick Thai Ltd,Rankable-B,True,False,8.518,8.518,8.518,8.688,8.707,7.5,0.0,,google,177,confirmed,,
-1299513,Oxheart,Rankable-B,True,True,9.186,9.186,9.186,9.957,8.228,10.0,0.0,,google,26,confirmed,,
-1826837,Cafe Chutneys,Rankable-B,True,True,7.443,7.443,7.443,5.876,7.984,10.0,0.0,,google,295,confirmed,,
-1563336,Chopstix South,Rankable-B,True,True,7.395,7.395,7.395,8.805,6.105,7.5,0.0,,google,40,confirmed,,
-1364372,The Bell Inn,Rankable-B,True,True,8.937,8.937,8.937,8.48,8.988,10.0,0.0,,google,1160,confirmed,,
-503343,Starbucks -  Southbound,Directional-C,False,False,7.704,7.704,7.704,8.782,7.648,5.0,0.0,,google,10103,ambiguous,,
-1302779,The Olde Mint,Rankable-B,True,True,7.875,7.875,7.875,8.529,7.418,7.5,0.0,,google,88,confirmed,,
-1826834,Ferment And Flour (Bastardos),Rankable-B,True,True,8.251,8.251,8.251,9.754,7.166,7.5,0.0,,google,18,confirmed,,
-1500965,Cafe Des Fleurs,Rankable-B,True,True,8.976,8.976,8.976,9.076,8.546,10.0,0.0,,google,208,confirmed,,
-503918,Southam Gateway Coffee Shop Ltd,Rankable-B,True,True,8.718,8.718,8.718,9.221,8.677,7.5,0.0,,google,98,confirmed,,
-503141,NFU Mutual,Rankable-B,True,True,8.482,8.482,8.482,9.034,8.319,7.5,0.0,,google,98,confirmed,,
-1622074,Lexi's Loving Spoonful,Directional-C,False,False,6.853,6.853,6.853,9.252,7.005,0.0,0.0,,google,6,confirmed,,
-1799218,Pizza Junction Kineton Ltd,Rankable-B,True,True,9.245,9.245,9.245,9.205,9.029,10.0,0.0,,google,143,confirmed,,
-503972,The George Hotel,Rankable-B,True,True,8.87,8.87,8.87,8.578,8.753,10.0,0.0,,google,1037,confirmed,,
-1712197,The Sandwich Shop,Directional-C,False,False,8.174,8.174,8.174,8.348,7.41,10.0,0.0,,google,8,confirmed,,
-1291215,Gardener's Retreat,Rankable-B,True,True,8.082,8.082,8.082,8.941,6.678,10.0,0.0,,google,12,confirmed,,
-676556,The Straw Kitchen,Rankable-B,True,True,8.91,8.91,8.91,8.853,9.43,7.5,0.0,,google,251,confirmed,,
-503032,The Spice Room,Rankable-B,True,True,9.06,9.06,9.06,9.226,8.599,10.0,0.0,,google,127,confirmed,,
-1911092,Coughton Court Cafe,Directional-C,False,False,4.436,4.436,4.436,,7.358,7.5,0.0,,google,13,confirmed,,
-1800190,CAMEO Lunch Club,Rankable-B,True,True,6.043,6.043,6.043,5.974,7.285,2.5,0.0,,google,20,confirmed,,
-1339997,The Margin,Directional-C,False,False,8.854,8.854,8.854,8.452,8.829,10.0,0.0,,google,141,ambiguous,,
-1747703,GAIL's Stratford-Upon-Avon,Rankable-B,True,True,8.987,8.987,8.987,9.641,8.067,10.0,0.0,,google,146,confirmed,,
-1452414,Subway,Rankable-B,True,True,6.456,6.456,6.456,4.577,6.944,10.0,0.0,,google,257,confirmed,,
-503481,The Opposition,Rankable-B,True,True,9.269,9.269,9.269,8.879,9.372,10.0,0.0,,google,541,confirmed,,
-1808717,Bistrot Pierre,Rankable-B,True,True,6.989,6.989,6.989,4.896,7.847,10.0,0.0,,google,975,confirmed,,
-503820,Cafe 16,Rankable-B,True,True,9.112,9.112,9.112,8.943,8.966,10.0,0.0,,google,215,confirmed,,
-1253303,Ettington Garden Cafe,Rankable-B,True,True,8.859,8.859,8.859,9.729,8.537,7.5,0.0,,google,74,confirmed,,
-1206081,South Costa,Directional-C,False,False,8.711,8.711,8.711,9.597,9.161,5.0,0.0,,google,601,ambiguous,,
-1705603,Escape Arts,Directional-C,False,False,7.005,7.005,7.005,7.0,6.844,7.5,0.0,,google,1,confirmed,,STALE-2Y
-1739369,Paul's Catering,Directional-C,False,False,7.844,7.844,7.844,8.89,7.029,7.5,0.0,,google,3,confirmed,,
-1024960,Starbucks Drive Thru,Rankable-B,True,True,8.32,8.32,8.32,9.943,6.317,10.0,0.0,,google,590,confirmed,,
-503345,KFC - Southbound,Rankable-B,True,True,7.862,7.862,7.862,9.016,6.123,10.0,0.0,,google,373,confirmed,,
-1266904,Good Breakfast,Rankable-B,True,True,6.796,6.796,6.796,8.543,5.01,7.5,0.0,,google,26,confirmed,,
-1297845,Lounge@26,Rankable-B,True,True,9.19,9.19,9.19,9.622,8.536,10.0,0.0,,google,199,confirmed,,
-1089841,Cotswold Distillery Cafe,Rankable-B,True,True,8.284,8.284,8.284,7.0,9.688,7.5,0.0,,google,1250,confirmed,,STALE-2Y
-1672985,Bidford Community Fridge & Cafe,Rankable-B,True,True,8.021,8.021,8.021,7.0,9.101,7.5,0.0,,google,173,confirmed,,STALE-2Y
-503054,Stratford Manor Hotel,Rankable-B,True,True,8.621,8.621,8.621,9.906,7.853,7.5,0.0,,google,1190,confirmed,,
-503525,Shah's,Rankable-B,True,True,9.309,9.309,9.309,9.321,9.069,10.0,0.0,,google,332,confirmed,,
-504014,The Kings Head,Rankable-B,True,True,9.221,9.221,9.221,9.683,8.55,10.0,0.0,,google,1968,confirmed,,
-1284339,The Yew Tree,Rankable-B,True,True,8.494,8.494,8.494,7.246,9.101,10.0,0.0,,google,396,confirmed,,
-1774612,International Circus Churros 2,Rankable-B,True,True,8.856,8.856,8.856,9.318,8.897,7.5,0.0,,google,440,confirmed,,
-502872,Ettington Park Hotel,Rankable-B,True,True,9.363,9.363,9.363,9.297,9.21,10.0,0.0,,google,1024,confirmed,,
-1210746,The Alcester Inn,Rankable-B,True,True,8.882,8.882,8.882,9.415,8.036,10.0,0.0,,google,518,confirmed,,
-503216,Welcombe Hotel Golf Resort \& Spa,Rankable-B,True,True,6.621,6.621,6.621,4.217,7.632,10.0,0.0,,google,1402,confirmed,,
-503781,The Bishops Fryer,Rankable-B,True,True,9.028,9.028,9.028,9.627,8.172,10.0,0.0,,google,253,confirmed,,
-1421980,Tzatziki34,Rankable-B,True,False,7.18,7.18,7.18,7.325,7.777,5.0,0.0,,google,302,confirmed,,
-1246463,The Avon Lounge,Rankable-B,True,True,8.183,8.183,8.183,8.928,7.748,7.5,0.0,,google,84,confirmed,,
-1847445,Soma,Directional-C,False,False,8.617,8.617,8.617,9.383,8.309,7.5,0.0,,google,1342,ambiguous,,
-1774606,Bumbles,Rankable-B,True,True,8.996,8.996,8.996,9.278,9.244,7.5,0.0,,google,278,confirmed,,
-650308,New Summer Palace Restaurant,Rankable-B,True,True,7.06,7.06,7.06,5.348,7.601,10.0,0.0,,google,526,confirmed,,
-1896717,Lithos Restaurant,Rankable-B,True,True,7.572,7.572,7.572,4.952,9.091,10.0,0.0,,google,80,confirmed,,
-1622082,The Crofts Cafe Also Trading As New York Pizzas,Directional-C,False,False,3.403,3.403,3.403,8.508,,0.0,0.0,,,0,confirmed,,
-503732,Pizza Hut Restaurants - Dine In,Directional-C,False,False,,7.875,7.875,7.0,8.778,7.5,0.0,,google,1831,confirmed,,STALE-2Y
-1388310,The Coach House,Rankable-B,True,True,8.631,8.631,8.631,8.781,8.042,10.0,0.0,,google,567,confirmed,,
-1584574,Stratford On Avon Golf Club,Rankable-B,True,True,8.65,8.65,8.65,9.305,8.451,7.5,0.0,,google,88,confirmed,,
-1927833,Slimming World,Directional-C,False,False,5.043,5.043,5.043,,8.707,7.5,0.0,,google,177,confirmed,,
-1552328,The Phoenix,Rankable-B,True,True,9.275,9.275,9.275,9.276,9.033,10.0,0.0,,google,281,confirmed,,
-502702,Bannatyne Health Club And Spa Wildmoor,Rankable-B,True,True,8.928,8.928,8.928,9.28,8.258,10.0,0.0,,google,536,confirmed,,
-1739370,Corte Campana,Rankable-B,True,True,9.106,9.106,9.106,8.741,9.133,10.0,0.0,,google,486,confirmed,,
-1014807,McDonald's,Rankable-B,True,True,8.49,8.49,8.49,9.389,7.188,10.0,0.0,,google,2395,confirmed,,
-1093181,Coffee#1 Limited,Directional-C,False,False,,8.281,8.281,8.846,8.039,7.5,0.0,,google,538,confirmed,,
-503376,The Garden Cafe,Rankable-B,True,True,9.209,9.209,9.209,9.158,8.99,10.0,0.0,,google,1195,confirmed,,
-1016715,Shakespaw Cat Cafe,Rankable-B,True,True,9.111,9.111,9.111,9.867,8.976,7.5,0.0,,google,959,confirmed,,
-504026,Ragley Hall Catering,Rankable-B,True,True,8.394,8.394,8.394,8.987,8.998,5.0,0.0,,google,1398,confirmed,,
-1747706,The Long Itch Diner,Rankable-B,True,True,8.227,8.227,8.227,7.239,8.514,10.0,0.0,,google,854,confirmed,,
-503114,Mount Everest Nepalese Cuisine,Rankable-B,True,True,7.012,7.012,7.012,4.082,8.62,10.0,0.0,,google,299,confirmed,,
-1871630,LeBuns,Rankable-B,True,True,8.878,8.878,8.878,9.463,7.985,10.0,0.0,,google,297,confirmed,,
-1695933,Hobsons Patisseries,Rankable-B,True,True,7.429,7.429,7.429,5.475,8.308,10.0,0.0,,google,1324,confirmed,,
-503735,Costa,Rankable-B,True,True,8.984,8.984,8.984,9.912,7.82,10.0,0.0,,google,542,confirmed,,
-1152776,Gilks' Garage Cafe,Rankable-B,True,True,9.677,9.677,9.677,9.828,9.434,10.0,0.0,,google,945,confirmed,,
-503565,A G D Equipment Ltd,Rankable-B,True,True,8.48,8.48,8.48,9.599,7.812,7.5,0.0,,google,17,confirmed,,
-503292,Wildwood Kitchen,Rankable-B,True,True,8.286,8.286,8.286,7.628,8.3,10.0,0.0,,google,1062,confirmed,,
-1800192,Havilands Tea Room And Restaurant,Rankable-B,True,False,4.864,4.864,4.864,2.012,7.355,5.0,0.0,,google,277,confirmed,,
-1754520,Cinnamon Arch,Rankable-B,True,True,8.604,8.604,8.604,8.391,8.327,10.0,0.0,,google,51,confirmed,,
-1206075,Dec X Canteen,Directional-C,False,False,8.561,8.561,8.561,9.222,9.161,5.0,0.0,,google,601,ambiguous,,
-503960,Blue Bean Coffee Shop,Rankable-B,True,True,8.488,8.488,8.488,8.343,8.945,7.5,0.0,,google,200,confirmed,,
-1842631,Snitterfield Arms,Rankable-B,True,True,9.203,9.203,9.203,9.426,8.74,10.0,0.0,,google,113,confirmed,,
-1896714,The Townhouse Also Trading As JR Hotel And Restaurants LTD,Rankable-B,True,True,9.125,9.125,9.125,9.518,8.485,10.0,0.0,,google,576,confirmed,,
-1291217,Gardener's Retreat,Directional-C,False,False,7.398,7.398,7.398,7.0,6.884,10.0,0.0,,google,8,confirmed,,STALE-2Y
-1228994,Mor,Rankable-B,True,True,9.209,9.209,9.209,9.354,8.818,10.0,0.0,,google,277,confirmed,,
-1453409,Bidford Juniors Football Club,Directional-C,False,False,7.304,7.304,7.304,9.484,6.968,2.5,0.0,,google,6,confirmed,,
-503552,Premier Inn,Rankable-B,True,True,8.555,8.555,8.555,9.219,8.316,7.5,0.0,,google,1695,confirmed,,
-503821,The Balti Hut,Rankable-B,True,True,7.478,7.478,7.478,7.24,7.682,7.5,0.0,,google,144,confirmed,,
-1790270,Bardia's,Rankable-B,True,True,7.786,7.786,7.786,5.874,8.748,10.0,0.0,,google,949,confirmed,,
-1854458,Costa Coffee,Rankable-B,True,True,8.836,8.836,8.836,9.796,7.595,10.0,0.0,,google,11,confirmed,,
-503479,The Pavillion,Rankable-B,True,True,8.924,8.924,8.924,9.606,8.793,7.5,0.0,,google,3288,confirmed,,
-503541,Costa,Rankable-B,True,True,8.27,8.27,8.27,9.219,6.849,10.0,0.0,,google,27,confirmed,,
-1835033,The Cottage Of Content,Rankable-B,True,True,8.052,8.052,8.052,7.08,8.267,10.0,0.0,,google,600,confirmed,,
-1474392,The Pavilion Coffee Shop And Community Space,Rankable-B,True,True,8.187,8.187,8.187,8.944,7.743,7.5,0.0,,google,20,confirmed,,
-736236,JNB Cafe,Rankable-B,True,True,7.856,7.856,7.856,7.0,8.735,7.5,0.0,,google,196,confirmed,,STALE-2Y
-503715,Cafe Living,Rankable-B,True,True,7.324,7.324,7.324,5.464,8.086,10.0,0.0,,google,1550,confirmed,,
-1622072,Hudson's,Rankable-B,True,True,7.612,7.612,7.612,6.016,8.235,10.0,0.0,,google,133,confirmed,,
-1266894,Barnabys,Rankable-B,True,True,8.236,8.236,8.236,9.195,7.628,7.5,0.0,,google,1190,confirmed,,
-1552322,Costa Coffee,Rankable-B,True,False,7.829,7.829,7.829,9.723,7.088,5.0,0.0,,google,98,confirmed,,
-1421992,Deli Cafe,Rankable-B,True,True,8.969,8.969,8.969,9.576,8.918,7.5,0.0,,google,516,confirmed,,
-503105,Avon Spice,Rankable-B,True,True,9.063,9.063,9.063,9.201,8.629,10.0,0.0,,google,315,confirmed,,
-1789006,The Pickled Crab Deli,Rankable-B,True,True,9.299,9.299,9.299,9.677,8.73,10.0,0.0,,google,192,confirmed,,
-503148,Nuthurst Grange Country House,Rankable-B,True,True,7.827,7.827,7.827,5.767,8.934,10.0,0.0,,google,592,confirmed,,
-1421981,Peppers,Rankable-B,True,True,8.57,8.57,8.57,8.378,8.263,10.0,0.0,,google,148,confirmed,,
-503286,George's Cafe,Rankable-B,True,True,8.953,8.953,8.953,8.753,8.782,10.0,0.0,,google,125,confirmed,,
-1552333,Costa Coffee,Rankable-B,True,True,8.367,8.367,8.367,9.446,6.863,10.0,0.0,,google,35,confirmed,,
-1485802,Kitty's Kitchen Catering Ltd,Rankable-B,True,True,7.786,7.786,7.786,7.0,8.581,7.5,0.0,,google,121,confirmed,,STALE-2Y
-1495078,Four Seasons Pho Limited,Rankable-B,True,True,7.942,7.942,7.942,7.0,8.094,10.0,0.0,,google,165,confirmed,,STALE-2Y
-503240,Henley Ice Cream Limited,Rankable-B,True,True,9.21,9.21,9.21,8.904,9.219,10.0,0.0,,google,1163,confirmed,,
-1912631,Shipston Bengal Cuisine,Rankable-B,True,True,5.031,5.031,5.031,,7.847,10.0,0.0,,google,127,confirmed,,
-1253300,The Keys,Rankable-B,True,True,7.155,7.155,7.155,7.0,8.012,5.0,0.0,,google,387,confirmed,,STALE-2Y
-503270,Kings Court Hotel,Directional-C,False,False,3.727,3.727,3.727,9.318,,0.0,0.0,,,0,confirmed,,
-1799220,Burger King,Rankable-B,True,True,7.63,7.63,7.63,8.455,6.941,7.5,0.0,,google,222,confirmed,,
-1344517,The Fox Inn,Rankable-B,True,True,7.434,7.434,7.434,4.919,8.815,10.0,0.0,,google,273,confirmed,,
-1781021,Stratford Upon Avon Baptist Church,Rankable-B,True,True,7.943,7.943,7.943,9.669,7.389,5.0,0.0,,google,12,confirmed,,
-503401,Shukurs,Rankable-B,True,True,8.484,8.484,8.484,7.173,9.144,10.0,0.0,,google,528,confirmed,,
-503854,The Lime Tree Restaurant,Rankable-B,True,True,8.786,8.786,8.786,9.537,8.548,7.5,0.0,,google,1823,confirmed,,
-979161,Karen's Korner,Rankable-B,True,False,5.835,5.835,5.835,2.903,8.72,5.0,0.0,,google,108,confirmed,,
-676561,The Embankment,Rankable-B,True,True,7.672,7.672,7.672,7.043,8.287,7.5,0.0,,google,822,confirmed,,
-1747702,Beleza Rodizio,Rankable-B,True,True,9.553,9.553,9.553,9.256,9.668,10.0,0.0,,google,976,confirmed,,
-1397584,The Bluebell,Rankable-B,True,True,9.019,9.019,9.019,9.085,8.633,10.0,0.0,,google,324,confirmed,,
-1838726,The Cowshed Cafe,Rankable-B,True,True,7.477,7.477,7.477,5.93,8.01,10.0,0.0,,google,380,confirmed,,
-503555,Dog Lane Fishery Caravanning And Camping Site,Rankable-B,True,False,7.101,7.101,7.101,5.0,8.836,7.5,0.0,,google,303,confirmed,,STALE-5Y
-503089,Touchdown Cafe,Rankable-B,True,True,8.455,8.455,8.455,7.284,8.982,10.0,0.0,,google,1042,confirmed,,
-1765854,The Roebuck Inn Alcester,Profile-only-D,False,False,0.0,1.5,1.5,3.751,,0.0,0.0,,,0,confirmed,,
-1808716,Fast Flavour,Rankable-B,True,True,8.246,8.246,8.246,9.248,7.605,7.5,0.0,,google,95,confirmed,,
-1804017,Cafe 86B,Rankable-B,True,True,8.454,8.454,8.454,8.866,8.406,7.5,0.0,,google,46,confirmed,,
-1577024,Puddleduck Cafe Ltd,Rankable-B,True,False,8.643,8.643,8.643,9.742,8.88,5.0,0.0,,google,75,confirmed,,
-1796548,The Kingfisher FishBar,Rankable-B,True,True,9.118,9.118,9.118,9.302,8.661,10.0,0.0,,google,388,confirmed,,
-1854461,The Red Lion,Rankable-B,True,True,9.407,9.407,9.407,9.837,8.828,10.0,0.0,,google,291,confirmed,,
-503926,Harbury Library Cafe,Rankable-B,True,True,8.675,8.675,8.675,8.612,8.288,10.0,0.0,,google,28,confirmed,,
-1388307,Chrissie's Kitchen,Rankable-B,True,True,7.645,7.645,7.645,7.0,9.099,5.0,0.0,,google,81,confirmed,,STALE-2Y
-503772,McDonald's,Rankable-B,True,True,8.422,8.422,8.422,9.22,7.186,10.0,0.0,,google,1565,confirmed,,
-503478,Starbucks,Rankable-B,True,True,8.711,8.711,8.711,9.961,7.171,10.0,0.0,,google,551,confirmed,,
-1800191,Chapter 23,Rankable-B,True,True,8.772,8.772,8.772,9.331,8.699,7.5,0.0,,google,103,confirmed,,
-1774608,NO4 Bar And Restaurant,Rankable-B,True,True,9.037,9.037,9.037,8.796,8.93,10.0,0.0,,google,190,confirmed,,
-1747700,The Still House Café,Rankable-B,True,True,8.098,8.098,8.098,7.0,8.441,10.0,0.0,,google,62,confirmed,,STALE-2Y
-1556368,Prospero Lounge,Rankable-B,True,True,9.035,9.035,9.035,9.272,8.502,10.0,0.0,,google,713,confirmed,,
-565220,Four Teas,Rankable-B,True,True,7.595,7.595,7.595,5.626,8.543,10.0,0.0,,google,1603,confirmed,,
-502962,Curry Republic,Rankable-B,True,True,7.501,7.501,7.501,5.537,8.412,10.0,0.0,,google,128,confirmed,,
-1388303,Lily's,Rankable-B,True,True,8.885,8.885,8.885,8.395,8.95,10.0,0.0,,google,119,confirmed,,
-1827674,Pickled & Tipsy's Cafe,Rankable-B,True,True,8.765,8.765,8.765,9.355,7.829,10.0,0.0,,google,23,confirmed,,
-502877,DoubleTree By Hilton,Rankable-B,True,True,7.843,7.843,7.843,8.385,8.308,5.0,0.0,,google,1321,confirmed,,
-503584,Cardamom,Rankable-B,True,True,9.133,9.133,9.133,9.116,8.86,10.0,0.0,,google,347,confirmed,,
-1802818,11/17 Salt Beef Bar,Rankable-B,True,False,8.648,8.598,8.648,9.754,8.769,5.0,0.05,michelin_guide,google,83,confirmed,,
-1884822,WINGERS STRATFORD,Rankable-B,True,True,7.645,7.645,7.645,7.496,7.825,7.5,0.0,,google,44,confirmed,,
-1796553,Mr Odie's,Rankable-B,True,True,8.999,8.999,8.999,8.477,9.13,10.0,0.0,,google,85,confirmed,,
-1381141,The Bull's Head,Rankable-B,True,True,9.259,9.259,9.259,9.327,8.951,10.0,0.0,,google,698,confirmed,,
-1589295,The Tempest,Directional-C,False,False,8.022,8.022,8.022,7.373,8.772,7.5,0.0,,google,122,ambiguous,,
-502864,Hussains,Rankable-B,True,True,8.445,8.445,8.445,9.303,7.997,7.5,0.0,,google,333,confirmed,,
-1513917,The Water Margin @ The Hollybush,Directional-C,False,False,7.902,7.902,7.902,7.15,7.872,10.0,0.0,,google,73,ambiguous,,
-1672980,Greggs PLC,Rankable-B,True,True,8.467,8.467,8.467,9.834,6.742,10.0,0.0,,google,61,confirmed,,
-1826838,Mouchak,Rankable-B,True,True,7.031,7.031,7.031,5.441,7.455,10.0,0.0,,google,12,confirmed,,
-559158,No 37 Cafe,Rankable-B,True,True,9.041,9.041,9.041,9.585,8.238,10.0,0.0,,google,430,confirmed,,
-565221,Costa,Rankable-B,True,True,8.996,8.996,8.996,9.527,8.189,10.0,0.0,,google,284,confirmed,,
-1743693,The Food Of Love,Rankable-B,True,True,8.648,8.648,8.648,9.616,8.169,7.5,0.0,,google,248,confirmed,,
-503218,Burger King - Southbound,Directional-C,False,False,6.587,6.587,6.587,8.77,4.342,7.5,0.0,,google,67,ambiguous,,
-1721314,Aston Martin Lagonda,Rankable-B,True,True,8.961,8.961,8.961,9.572,8.906,7.5,0.0,,google,467,confirmed,,
-1623426,Red Hot Mamma Pizzeria,Rankable-B,True,True,9.498,9.498,9.498,9.382,9.435,10.0,0.0,,google,953,confirmed,,
-1662496,Coffee Clouds,Rankable-B,True,True,8.159,8.159,8.159,8.577,8.841,5.0,0.0,,google,312,confirmed,,
-1754519,Nanas Caff,Directional-C,False,False,7.938,7.938,7.938,9.634,7.41,5.0,0.0,,google,8,confirmed,,
-1735216,The Stables,Rankable-B,True,True,8.871,8.871,8.871,9.202,9.034,7.5,0.0,,google,282,confirmed,,
-1699665,Nel's At The Pavilion,Rankable-B,True,True,9.057,9.057,9.057,9.564,9.125,7.5,0.0,,google,461,confirmed,,
-1467814,Stratford Adventure Golf,Rankable-B,True,True,8.749,8.749,8.749,9.606,8.404,7.5,0.0,,google,293,confirmed,,
-503282,Arrow Mill,Rankable-B,True,True,9.421,9.421,9.421,9.925,8.781,10.0,0.0,,google,2005,confirmed,,
-1774610,Digby's Events,Directional-C,False,False,3.87,3.87,3.87,9.674,,0.0,0.0,,,0,probable,,
-1266889,Turkish Stonebakers,Rankable-B,True,True,8.499,8.499,8.499,7.081,9.26,10.0,0.0,,google,296,confirmed,,
-503342,Burger King - Northbound,Directional-C,False,False,7.356,7.356,7.356,9.756,4.342,10.0,0.0,,google,67,ambiguous,,
-1908606,Bruno's Bakery,Rankable-B,True,True,8.933,8.933,8.933,8.648,8.831,10.0,0.0,,google,296,confirmed,,
-1796547,Feel Good Crystals,Rankable-B,True,True,9.457,9.457,9.457,9.678,9.079,10.0,0.0,,google,106,confirmed,,
-1756585,Annie's Cafe & Event Catering,Rankable-B,True,True,8.715,8.715,8.715,9.629,8.307,7.5,0.0,,google,95,confirmed,,
-1690228,Compton Verney Cafe,Directional-C,False,False,4.54,4.54,4.54,8.539,,7.5,0.0,,,0,confirmed,,
-1029137,The Buck And Bell,Rankable-B,True,True,7.849,7.849,7.849,7.092,8.639,7.5,0.0,,google,336,confirmed,,
-503261,Thespians Indian Restaurant,Rankable-B,True,True,7.848,7.848,7.848,7.313,7.606,10.0,0.0,,google,584,confirmed,,
-1871632,Sorrento Restaurant Taste Of Italy,Rankable-B,True,True,7.769,7.769,7.769,5.913,8.675,10.0,0.0,,google,430,confirmed,,
-503444,Crowne Plaza,Rankable-B,True,True,8.199,8.199,8.199,9.253,8.329,5.0,0.0,,google,3182,confirmed,,
-1155879,Mid-England Barrow Ltd,Directional-C,False,False,6.248,6.248,6.248,5.0,6.939,7.5,0.0,,google,2,confirmed,,STALE-5Y
-1339998,Cotswold Cafe,Rankable-B,True,True,9.349,9.349,9.349,9.474,9.02,10.0,0.0,,google,265,confirmed,,
-1056848,Espresso Barn,Rankable-B,True,True,8.028,8.028,8.028,9.801,8.295,2.5,0.0,,google,92,confirmed,,
-502863,Hotel Indigo And The Woodsman,Rankable-B,True,True,8.557,8.557,8.557,9.174,9.193,5.0,0.0,,google,829,confirmed,,
-1019047,Miller And Carter,Rankable-B,True,True,8.581,8.581,8.581,7.0,9.513,10.0,0.0,,google,9123,confirmed,,STALE-2Y
-504050,Bishops Bowls Lake Cafe,Rankable-B,True,True,7.328,7.328,7.328,5.781,8.647,7.5,0.0,,google,146,confirmed,,
-503102,Ashorne Hill Management College,Rankable-B,True,True,8.601,8.601,8.601,9.85,8.69,5.0,0.0,,google,490,confirmed,,
-1826833,Revs Automobilia,Rankable-B,True,True,8.362,8.362,8.362,8.883,9.02,5.0,0.0,,google,140,confirmed,,
-1176874,The Garden Shed Cafe,Rankable-B,True,True,8.362,8.362,8.362,7.126,8.914,10.0,0.0,,google,499,confirmed,,
-1838728,Elders Who Lunch (Hartley Locums),Rankable-B,True,True,7.983,7.983,7.983,8.502,7.682,7.5,0.0,,google,14,confirmed,,
-503734,Premier Inn,Rankable-B,True,True,8.474,8.474,8.474,9.55,7.842,7.5,0.0,,google,863,confirmed,,
-503711,Arden Tandoori,Rankable-B,True,True,8.725,8.725,8.725,8.454,8.54,10.0,0.0,,google,202,confirmed,,
-503931,Bella Italia Also Trading As Super Nonna,Directional-C,False,False,,7.659,7.659,7.0,8.298,7.5,0.0,,google,1029,confirmed,,STALE-2Y
-1411434,Earlswood Lunch Club,Rankable-B,True,True,7.288,7.288,7.288,8.776,7.562,2.5,0.0,,google,32,confirmed,,
-1206079,Building 523 Costa And Kitchen,Directional-C,False,False,8.711,8.711,8.711,9.597,9.161,5.0,0.0,,google,601,ambiguous,,
-502838,Alveston Manor Hotel,Rankable-B,True,True,7.843,7.843,7.843,9.395,7.411,5.0,0.0,,google,1944,confirmed,,
-502681,Billesley Manor Hotel,Rankable-B,True,True,7.892,7.892,7.892,8.767,8.079,5.0,0.0,,google,1215,confirmed,,
-1622078,Sushi Land,Rankable-B,True,True,8.373,8.373,8.373,8.404,8.638,7.5,0.0,,google,142,confirmed,,
-1622076,Caffe Nero,Rankable-B,True,True,7.906,7.906,7.906,7.0,8.014,10.0,0.0,,google,393,confirmed,,STALE-2Y
-676557,Plantarium,Rankable-B,True,True,9.311,9.311,9.311,8.72,9.608,10.0,0.0,,google,581,confirmed,,
-503319,Shipston Pizza And Kebab House,Rankable-B,True,True,7.286,7.286,7.286,5.877,7.634,10.0,0.0,,google,110,confirmed,,
-503369,Studley Castle,Rankable-B,True,True,8.387,8.387,8.387,9.219,8.776,5.0,0.0,,google,1706,confirmed,,
-1131857,Stratford Town FC,Rankable-B,True,True,8.346,8.346,8.346,8.885,8.148,7.5,0.0,,google,219,confirmed,,
-502970,China Garden,Rankable-B,True,True,6.024,6.024,6.024,4.35,6.186,10.0,0.0,,google,147,confirmed,,
-1584576,Libertine Burger,Rankable-B,True,True,8.529,8.529,8.529,8.437,8.12,10.0,0.0,,google,187,confirmed,,
-1317981,Kolshi Restaurant,Rankable-B,True,True,9.311,9.311,9.311,8.936,9.415,10.0,0.0,,google,774,confirmed,,
-502816,Loxleys Restaurant And Wine Bar,Rankable-B,True,True,9.144,9.144,9.144,8.716,9.239,10.0,0.0,,google,1677,confirmed,,
+id,fhrsid,name,rcs_v4_final,base_score,adjusted_score,confidence_class,coverage_status,rankable,league_table_eligible,companies_house,penalties,caps
+1354963,1354963,The Tea Shed,,7.125,7.125,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1584577,1584577,Shakespeare's,8.03,8.03,8.03,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1695937,1695937,Impasto Micro-Pizzeria,9.223,9.223,9.223,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1896718,1896718,Birmingham City Football Club Ltd,7.747,7.747,7.747,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+503081,503081,Sans Oriental Restaurant,8.952,8.952,8.952,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1927834,1927834,Golden Putter Stratford Upon,4.479,4.479,4.479,Directional-C,coverage-partial,False,False,unmatched,[],[]
+503585,503585,Redwings Horse Sanctuary,,7.294,7.294,Directional-C,coverage-partial,False,False,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=914, r=5""}]"
+1622070,1622070,Carluccio's,8.867,8.867,8.867,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503554,503554,The Bridge,8.183,8.183,8.183,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=731, r=5""}]"
+503316,503316,Lambs,9.311,9.311,9.311,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1381156,1381156,Pick Thai Ltd,8.518,8.518,8.518,Rankable-B,coverage-ready,True,False,unmatched,[],[]
+1299513,1299513,Oxheart,9.186,9.186,9.186,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+1826837,1826837,Cafe Chutneys,7.443,7.443,7.443,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1563336,1563336,Chopstix South,7.395,7.395,7.395,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1364372,1364372,The Bell Inn,8.937,8.937,8.937,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503343,503343,Starbucks -  Southbound,7.704,7.704,7.704,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1302779,1302779,The Olde Mint,7.875,7.875,7.875,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1826834,1826834,Ferment And Flour (Bastardos),8.251,8.251,8.251,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+1500965,1500965,Cafe Des Fleurs,8.976,8.976,8.976,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503918,503918,Southam Gateway Coffee Shop Ltd,8.718,8.718,8.718,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503141,503141,NFU Mutual,8.482,8.482,8.482,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1622074,1622074,Lexi's Loving Spoonful,6.853,6.853,6.853,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1799218,1799218,Pizza Junction Kineton Ltd,9.245,9.245,9.245,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503972,503972,The George Hotel,8.87,8.87,8.87,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1712197,1712197,The Sandwich Shop,8.174,8.174,8.174,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1291215,1291215,Gardener's Retreat,8.082,8.082,8.082,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+676556,676556,The Straw Kitchen,8.91,8.91,8.91,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503032,503032,The Spice Room,9.06,9.06,9.06,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1911092,1911092,Coughton Court Cafe,4.436,4.436,4.436,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1800190,1800190,CAMEO Lunch Club,6.043,6.043,6.043,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+1339997,1339997,The Margin,8.854,8.854,8.854,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1747703,1747703,GAIL's Stratford-Upon-Avon,8.987,8.987,8.987,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1452414,1452414,Subway,6.456,6.456,6.456,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503481,503481,The Opposition,9.269,9.269,9.269,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1808717,1808717,Bistrot Pierre,6.989,6.989,6.989,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+503820,503820,Cafe 16,9.112,9.112,9.112,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1253303,1253303,Ettington Garden Cafe,8.859,8.859,8.859,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1206081,1206081,South Costa,8.711,8.711,8.711,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1705603,1705603,Escape Arts,7.005,7.005,7.005,Directional-C,coverage-partial,False,False,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=778, r=5""}]"
+1739369,1739369,Paul's Catering,7.844,7.844,7.844,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1024960,1024960,Starbucks Drive Thru,8.32,8.32,8.32,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503345,503345,KFC - Southbound,7.862,7.862,7.862,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1266904,1266904,Good Breakfast,6.796,6.796,6.796,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+1297845,1297845,Lounge@26,9.19,9.19,9.19,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1089841,1089841,Cotswold Distillery Cafe,8.284,8.284,8.284,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=752, r=5""}]"
+1672985,1672985,Bidford Community Fridge & Cafe,8.021,8.021,8.021,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=771, r=5""}]"
+503054,503054,Stratford Manor Hotel,8.621,8.621,8.621,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503525,503525,Shah's,9.309,9.309,9.309,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+504014,504014,The Kings Head,9.221,9.221,9.221,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1284339,1284339,The Yew Tree,8.494,8.494,8.494,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1774612,1774612,International Circus Churros 2,8.856,8.856,8.856,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+502872,502872,Ettington Park Hotel,9.363,9.363,9.363,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1210746,1210746,The Alcester Inn,8.882,8.882,8.882,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503216,503216,Welcombe Hotel Golf Resort \& Spa,6.621,6.621,6.621,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503781,503781,The Bishops Fryer,9.028,9.028,9.028,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1421980,1421980,Tzatziki34,7.18,7.18,7.18,Rankable-B,coverage-ready,True,False,unmatched,[],[]
+1246463,1246463,The Avon Lounge,8.183,8.183,8.183,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1847445,1847445,Soma,8.617,8.617,8.617,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1774606,1774606,Bumbles,8.996,8.996,8.996,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+650308,650308,New Summer Palace Restaurant,7.06,7.06,7.06,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1896717,1896717,Lithos Restaurant,7.572,7.572,7.572,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+1622082,1622082,The Crofts Cafe Also Trading As New York Pizzas,3.403,3.403,3.403,Directional-C,coverage-partial,False,False,unmatched,[],[]
+503732,503732,Pizza Hut Restaurants - Dine In,,7.875,7.875,Directional-C,coverage-partial,False,False,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=750, r=5""}]"
+1388310,1388310,The Coach House,8.631,8.631,8.631,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1584574,1584574,Stratford On Avon Golf Club,8.65,8.65,8.65,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1927833,1927833,Slimming World,5.043,5.043,5.043,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1552328,1552328,The Phoenix,9.275,9.275,9.275,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+502702,502702,Bannatyne Health Club And Spa Wildmoor,8.928,8.928,8.928,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1739370,1739370,Corte Campana,9.106,9.106,9.106,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1014807,1014807,McDonald's,8.49,8.49,8.49,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1093181,1093181,Coffee#1 Limited,,8.281,8.281,Directional-C,coverage-partial,False,False,unmatched,[],[]
+503376,503376,The Garden Cafe,9.209,9.209,9.209,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1016715,1016715,Shakespaw Cat Cafe,9.111,9.111,9.111,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+504026,504026,Ragley Hall Catering,8.394,8.394,8.394,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1747706,1747706,The Long Itch Diner,8.227,8.227,8.227,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503114,503114,Mount Everest Nepalese Cuisine,7.012,7.012,7.012,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1871630,1871630,LeBuns,8.878,8.878,8.878,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1695933,1695933,Hobsons Patisseries,7.429,7.429,7.429,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503735,503735,Costa,8.984,8.984,8.984,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1152776,1152776,Gilks' Garage Cafe,9.677,9.677,9.677,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503565,503565,A G D Equipment Ltd,8.48,8.48,8.48,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+503292,503292,Wildwood Kitchen,8.286,8.286,8.286,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1800192,1800192,Havilands Tea Room And Restaurant,4.864,4.864,4.864,Rankable-B,coverage-ready,True,False,unmatched,[],[]
+1754520,1754520,Cinnamon Arch,8.604,8.604,8.604,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1206075,1206075,Dec X Canteen,8.561,8.561,8.561,Directional-C,coverage-partial,False,False,unmatched,[],[]
+503960,503960,Blue Bean Coffee Shop,8.488,8.488,8.488,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1842631,1842631,Snitterfield Arms,9.203,9.203,9.203,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1896714,1896714,The Townhouse Also Trading As JR Hotel And Restaurants LTD,9.125,9.125,9.125,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1291217,1291217,Gardener's Retreat,7.398,7.398,7.398,Directional-C,coverage-partial,False,False,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=786, r=5""}]"
+1228994,1228994,Mor,9.209,9.209,9.209,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1453409,1453409,Bidford Juniors Football Club,7.304,7.304,7.304,Directional-C,coverage-partial,False,False,unmatched,[],[]
+503552,503552,Premier Inn,8.555,8.555,8.555,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503821,503821,The Balti Hut,7.478,7.478,7.478,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1790270,1790270,Bardia's,7.786,7.786,7.786,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1854458,1854458,Costa Coffee,8.836,8.836,8.836,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+503479,503479,The Pavillion,8.924,8.924,8.924,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503541,503541,Costa,8.27,8.27,8.27,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+1835033,1835033,The Cottage Of Content,8.052,8.052,8.052,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1474392,1474392,The Pavilion Coffee Shop And Community Space,8.187,8.187,8.187,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+736236,736236,JNB Cafe,7.856,7.856,7.856,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=1064, r=5""}]"
+503715,503715,Cafe Living,7.324,7.324,7.324,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1622072,1622072,Hudson's,7.612,7.612,7.612,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1266894,1266894,Barnabys,8.236,8.236,8.236,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1552322,1552322,Costa Coffee,7.829,7.829,7.829,Rankable-B,coverage-ready,True,False,unmatched,[],[]
+1421992,1421992,Deli Cafe,8.969,8.969,8.969,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503105,503105,Avon Spice,9.063,9.063,9.063,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1789006,1789006,The Pickled Crab Deli,9.299,9.299,9.299,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503148,503148,Nuthurst Grange Country House,7.827,7.827,7.827,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1421981,1421981,Peppers,8.57,8.57,8.57,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503286,503286,George's Cafe,8.953,8.953,8.953,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1552333,1552333,Costa Coffee,8.367,8.367,8.367,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1485802,1485802,Kitty's Kitchen Catering Ltd,7.786,7.786,7.786,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=778, r=5""}]"
+1495078,1495078,Four Seasons Pho Limited,7.942,7.942,7.942,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=771, r=5""}]"
+503240,503240,Henley Ice Cream Limited,9.21,9.21,9.21,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1912631,1912631,Shipston Bengal Cuisine,5.031,5.031,5.031,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+1253300,1253300,The Keys,7.155,7.155,7.155,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=792, r=4""}]"
+503270,503270,Kings Court Hotel,3.727,3.727,3.727,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1799220,1799220,Burger King,7.63,7.63,7.63,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1344517,1344517,The Fox Inn,7.434,7.434,7.434,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+1781021,1781021,Stratford Upon Avon Baptist Church,7.943,7.943,7.943,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+503401,503401,Shukurs,8.484,8.484,8.484,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503854,503854,The Lime Tree Restaurant,8.786,8.786,8.786,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+979161,979161,Karen's Korner,5.835,5.835,5.835,Rankable-B,coverage-ready,True,False,unmatched,[],[]
+676561,676561,The Embankment,7.672,7.672,7.672,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1747702,1747702,Beleza Rodizio,9.553,9.553,9.553,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1397584,1397584,The Bluebell,9.019,9.019,9.019,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1838726,1838726,The Cowshed Cafe,7.477,7.477,7.477,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503555,503555,Dog Lane Fishery Caravanning And Camping Site,7.101,7.101,7.101,Rankable-B,coverage-ready,True,False,unmatched,[],"[{""code"": ""STALE-5Y"", ""effect"": ""TrustCompliance cap 5.0"", ""reason"": ""days_since_rd=4063""}]"
+503089,503089,Touchdown Cafe,8.455,8.455,8.455,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1765854,1765854,The Roebuck Inn Alcester,0.0,1.5,1.5,Profile-only-D,coverage-partial,False,False,unmatched,[],[]
+1808716,1808716,Fast Flavour,8.246,8.246,8.246,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1804017,1804017,Cafe 86B,8.454,8.454,8.454,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1577024,1577024,Puddleduck Cafe Ltd,8.643,8.643,8.643,Rankable-B,coverage-ready,True,False,unmatched,[],[]
+1796548,1796548,The Kingfisher FishBar,9.118,9.118,9.118,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1854461,1854461,The Red Lion,9.407,9.407,9.407,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503926,503926,Harbury Library Cafe,8.675,8.675,8.675,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+1388307,1388307,Chrissie's Kitchen,7.645,7.645,7.645,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=788, r=5""}]"
+503772,503772,McDonald's,8.422,8.422,8.422,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503478,503478,Starbucks,8.711,8.711,8.711,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1800191,1800191,Chapter 23,8.772,8.772,8.772,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1774608,1774608,NO4 Bar And Restaurant,9.037,9.037,9.037,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1747700,1747700,The Still House Café,8.098,8.098,8.098,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=752, r=5""}]"
+1556368,1556368,Prospero Lounge,9.035,9.035,9.035,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+565220,565220,Four Teas,7.595,7.595,7.595,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+502962,502962,Curry Republic,7.501,7.501,7.501,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1388303,1388303,Lily's,8.885,8.885,8.885,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1827674,1827674,Pickled & Tipsy's Cafe,8.765,8.765,8.765,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+502877,502877,DoubleTree By Hilton,7.843,7.843,7.843,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503584,503584,Cardamom,9.133,9.133,9.133,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1802818,1802818,11/17 Salt Beef Bar,8.648,8.598,8.648,Rankable-B,coverage-ready,True,False,unmatched,[],[]
+1884822,1884822,WINGERS STRATFORD,7.645,7.645,7.645,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1796553,1796553,Mr Odie's,8.999,8.999,8.999,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1381141,1381141,The Bull's Head,9.259,9.259,9.259,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1589295,1589295,The Tempest,8.022,8.022,8.022,Directional-C,coverage-partial,False,False,unmatched,[],[]
+502864,502864,Hussains,8.445,8.445,8.445,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1513917,1513917,The Water Margin @ The Hollybush,7.902,7.902,7.902,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1672980,1672980,Greggs PLC,8.467,8.467,8.467,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1826838,1826838,Mouchak,7.031,7.031,7.031,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+559158,559158,No 37 Cafe,9.041,9.041,9.041,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+565221,565221,Costa,8.996,8.996,8.996,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1743693,1743693,The Food Of Love,8.648,8.648,8.648,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503218,503218,Burger King - Southbound,6.587,6.587,6.587,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1721314,1721314,Aston Martin Lagonda,8.961,8.961,8.961,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1623426,1623426,Red Hot Mamma Pizzeria,9.498,9.498,9.498,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1662496,1662496,Coffee Clouds,8.159,8.159,8.159,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1754519,1754519,Nanas Caff,7.938,7.938,7.938,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1735216,1735216,The Stables,8.871,8.871,8.871,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1699665,1699665,Nel's At The Pavilion,9.057,9.057,9.057,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1467814,1467814,Stratford Adventure Golf,8.749,8.749,8.749,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503282,503282,Arrow Mill,9.421,9.421,9.421,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1774610,1774610,Digby's Events,3.87,3.87,3.87,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1266889,1266889,Turkish Stonebakers,8.499,8.499,8.499,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503342,503342,Burger King - Northbound,7.356,7.356,7.356,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1908606,1908606,Bruno's Bakery,8.933,8.933,8.933,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1796547,1796547,Feel Good Crystals,9.457,9.457,9.457,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1756585,1756585,Annie's Cafe & Event Catering,8.715,8.715,8.715,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1690228,1690228,Compton Verney Cafe,4.54,4.54,4.54,Directional-C,coverage-partial,False,False,unmatched,[],[]
+1029137,1029137,The Buck And Bell,7.849,7.849,7.849,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503261,503261,Thespians Indian Restaurant,7.848,7.848,7.848,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1871632,1871632,Sorrento Restaurant Taste Of Italy,7.769,7.769,7.769,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503444,503444,Crowne Plaza,8.199,8.199,8.199,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1155879,1155879,Mid-England Barrow Ltd,6.248,6.248,6.248,Directional-C,coverage-partial,False,False,unmatched,[],"[{""code"": ""STALE-5Y"", ""effect"": ""TrustCompliance cap 5.0"", ""reason"": ""days_since_rd=2446""}]"
+1339998,1339998,Cotswold Cafe,9.349,9.349,9.349,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1056848,1056848,Espresso Barn,8.028,8.028,8.028,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+502863,502863,Hotel Indigo And The Woodsman,8.557,8.557,8.557,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1019047,1019047,Miller And Carter,8.581,8.581,8.581,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=746, r=5""}]"
+504050,504050,Bishops Bowls Lake Cafe,7.328,7.328,7.328,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503102,503102,Ashorne Hill Management College,8.601,8.601,8.601,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1826833,1826833,Revs Automobilia,8.362,8.362,8.362,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1176874,1176874,The Garden Shed Cafe,8.362,8.362,8.362,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1838728,1838728,Elders Who Lunch (Hartley Locums),7.983,7.983,7.983,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+503734,503734,Premier Inn,8.474,8.474,8.474,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503711,503711,Arden Tandoori,8.725,8.725,8.725,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503931,503931,Bella Italia Also Trading As Super Nonna,,7.659,7.659,Directional-C,coverage-partial,False,False,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=744, r=5""}]"
+1411434,1411434,Earlswood Lunch Club,7.288,7.288,7.288,Rankable-B,coverage-partial,True,True,unmatched,[],[]
+1206079,1206079,Building 523 Costa And Kitchen,8.711,8.711,8.711,Directional-C,coverage-partial,False,False,unmatched,[],[]
+502838,502838,Alveston Manor Hotel,7.843,7.843,7.843,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+502681,502681,Billesley Manor Hotel,7.892,7.892,7.892,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1622078,1622078,Sushi Land,8.373,8.373,8.373,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1622076,1622076,Caffe Nero,7.906,7.906,7.906,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=919, r=5""}]"
+676557,676557,Plantarium,9.311,9.311,9.311,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503319,503319,Shipston Pizza And Kebab House,7.286,7.286,7.286,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+503369,503369,Studley Castle,8.387,8.387,8.387,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1131857,1131857,Stratford Town FC,8.346,8.346,8.346,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+502970,502970,China Garden,6.024,6.024,6.024,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1584576,1584576,Libertine Burger,8.529,8.529,8.529,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1317981,1317981,Kolshi Restaurant,9.311,9.311,9.311,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+502816,502816,Loxleys Restaurant And Wine Bar,9.144,9.144,9.144,Rankable-B,coverage-ready,True,True,unmatched,[],[]

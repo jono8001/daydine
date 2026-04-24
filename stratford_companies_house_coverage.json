@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "reason": "COMPANIES_HOUSE_API_KEY not set",
+  "total_establishments": 208,
+  "matched": 0,
+  "unmatched": 208
+}
