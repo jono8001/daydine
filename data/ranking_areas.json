@@ -3,6 +3,7 @@
   "areas": [
     {
       "slug": "stratford-upon-avon",
+      "legacy_slugs": ["stratford-on-avon"],
       "display_name": "Stratford-upon-Avon",
       "la_name": "Stratford-on-Avon",
       "region": "Warwickshire",
