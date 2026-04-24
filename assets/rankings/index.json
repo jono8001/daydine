@@ -2,10 +2,24 @@
   "last_updated": "2026-04-24",
   "available": [
     {
-      "slug": "stratford-on-avon",
+      "slug": "stratford-upon-avon",
       "la_name": "Stratford-on-Avon",
       "display_name": "Stratford-upon-Avon",
       "region": "Warwickshire",
+      "area_type": "town",
+      "status": "live",
+      "methodology_version": "V4 official-source mode",
+      "total_venues": 70,
+      "top_score": 9.553
+    }
+  ],
+  "operator_areas": [
+    {
+      "slug": "stratford-on-avon-district",
+      "la_name": "Stratford-on-Avon",
+      "display_name": "Stratford-on-Avon District",
+      "region": "Warwickshire",
+      "area_type": "district",
       "status": "live",
       "methodology_version": "V4 official-source mode",
       "total_venues": 168,
