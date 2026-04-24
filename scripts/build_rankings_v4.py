@@ -38,9 +38,19 @@ RETAIL_OR_AMBIGUOUS_TERMS = {
     "convenience_store", "supermarket", "market", "farm_shop",
 }
 
+STRONG_GOOGLE_FOOD_TYPES = {
+    "restaurant", "cafe", "coffee_shop", "bar", "pub", "bakery",
+    "meal_takeaway", "fast_food_restaurant", "pizza_restaurant",
+    "sandwich_shop", "ice_cream_shop",
+}
+
 
 def slugify(value: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+
+
+def tokenise(value: str) -> set[str]:
+    return set(re.findall(r"[a-z0-9_]+", value.lower()))
 
 
 def read_json(path: Path) -> Any:
@@ -76,19 +86,29 @@ def is_food_led_public_venue(record: dict[str, Any]) -> bool:
     if not has_fsa_backing(record):
         return False
 
+    name = str(record.get("n") or "").lower()
+    name_tokens = tokenise(name)
     blob = text_blob(record)
-    has_food_signal = any(term in blob for term in FOOD_LED_TERMS)
-    has_retail_signal = any(term in blob for term in RETAIL_OR_AMBIGUOUS_TERMS)
-
+    blob_tokens = tokenise(blob)
     google_types = set(str(t).lower() for t in (record.get("gty") or []))
-    strong_google_food = bool(google_types & {
-        "restaurant", "cafe", "coffee_shop", "bar", "pub", "bakery",
-        "meal_takeaway", "fast_food_restaurant", "pizza_restaurant",
-        "sandwich_shop", "ice_cream_shop",
-    })
 
-    # Retail-like venues must have a strong food-service type to appear publicly.
-    if has_retail_signal and not strong_google_food:
+    has_food_signal = bool(blob_tokens & FOOD_LED_TERMS)
+    has_retail_signal = bool(blob_tokens & RETAIL_OR_AMBIGUOUS_TERMS)
+    name_has_food_signal = bool(name_tokens & FOOD_LED_TERMS)
+    name_has_retail_signal = bool(name_tokens & RETAIL_OR_AMBIGUOUS_TERMS)
+    strong_google_food = bool(google_types & STRONG_GOOGLE_FOOD_TYPES)
+
+    # If the public trading name is retail-led, do not let a generic Google
+    # cafe/food type alone pull it into a diner leaderboard. Examples: crystal,
+    # gift, gallery or shop names that may have an FSA registration but are not
+    # primarily places to eat. A name such as "Farm Shop Cafe" or "Garden Cafe"
+    # still passes because the name itself carries a food-led term.
+    if name_has_retail_signal and not name_has_food_signal:
+        return False
+
+    # Retail-like venues must have either an explicit food-led name or a strong
+    # Google food-service type to appear publicly.
+    if has_retail_signal and not (name_has_food_signal or strong_google_food):
         return False
 
     return has_food_signal or strong_google_food
