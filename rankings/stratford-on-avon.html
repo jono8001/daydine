@@ -1,69 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>Stratford-upon-Avon Restaurant Rankings — DayDine Market Index</title>
-  <meta name="description" content="Stratford-upon-Avon restaurant rankings by the Restaurant Confidence Score. 190 venues scored weekly across 40 public market signals.">
+  <title>Stratford-upon-Avon trusted restaurant guide — DayDine</title>
+  <meta name="description" content="A simple public-evidence guide to trusted restaurants, pubs and cafes in Stratford-upon-Avon. Confidence labels, clear caveats and no paid ranking.">
   <link rel="canonical" href="https://daydine.vercel.app/rankings/stratford-on-avon">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Stratford-upon-Avon Rankings — DayDine">
-  <meta property="og:description" content="190 venues ranked by the Restaurant Confidence Score. Updated weekly from public market signals.">
+  <meta property="og:title" content="Stratford-upon-Avon trusted restaurant guide — DayDine">
+  <meta property="og:description" content="Find reliable places to eat in Stratford-upon-Avon using public evidence, not paid placement.">
   <meta property="og:url" content="https://daydine.vercel.app/rankings/stratford-on-avon">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/assets/daydine.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body data-page-type="diner">
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav class="nav">
   <div class="nav-inner">
-    <a class="nav-brand" href="/">
-      <img class="nav-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
-    </a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a class="nav-brand" href="/"><img class="nav-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine"></a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links">
       <a class="nav-link active" href="/rankings">Rankings</a>
       <a class="nav-link" href="/search">Search</a>
-      <a class="nav-link" href="/reports">Reports</a>
       <a class="nav-link" href="/methodology">Methodology</a>
-      <a class="btn btn-primary nav-cta" href="/reports">Get a Market Report</a>
+      <a class="nav-link" href="/reports">For restaurants</a>
+      <a class="btn btn-primary nav-cta" href="/rankings/stratford-on-avon">Find somewhere to eat</a>
     </div>
   </div>
 </nav>
 
-<section class="section" style="padding-top: 80px; padding-bottom: 48px;">
+<main id="main">
+<section class="section" style="padding-top:80px; padding-bottom:48px;">
   <div class="container">
-    <a class="kicker" href="/rankings" style="display:inline-block; margin-bottom: 12px;">&larr; All Markets</a>
-    <div class="kicker kicker-accent mb-1">Market Index</div>
+    <a class="kicker" href="/rankings" style="display:inline-block; margin-bottom:12px;">← All local guides</a>
+    <div class="kicker kicker-accent mb-1">Live trusted guide</div>
     <h1 class="h-display h-display-lg mb-2" id="pageTitle">Stratford-upon-Avon</h1>
-    <p class="body-md" id="pageMeta">Loading…</p>
+    <p class="body-lg" style="max-width:720px;">
+      A simple starting point for choosing where to eat. DayDine looks for strong public evidence:
+      customer validation, hygiene/compliance, opening information and clear contact or booking visibility.
+    </p>
+    <p class="body-md" id="pageMeta" style="margin-top:12px;">Loading…</p>
   </div>
 </section>
 
-<section class="section" style="padding-top: 0; padding-bottom: 64px;">
-  <div class="container">
-    <!-- Category filters -->
-    <div id="categoryFilters" class="filter-bar" style="display:none;"></div>
+<div class="proof-bar">
+  <div class="proof-bar-inner">
+    <div class="proof-stat"><span class="proof-num">No</span><span class="proof-label">paid ranking</span></div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat"><span class="proof-num">Clear</span><span class="proof-label">confidence label</span></div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat"><span class="proof-num">Public</span><span class="proof-label">evidence only</span></div>
+    <div class="proof-divider"></div>
+    <div class="proof-stat"><span class="proof-num">Check</span><span class="proof-label">menu before travelling</span></div>
+  </div>
+</div>
 
-    <!-- Table meta -->
-    <div class="table-meta">
-      <span class="table-meta-count" id="tableCount"></span>
-      <span>Scored by 40 signals · <a href="/methodology" style="color: var(--accent); font-weight: 500;">How scores work &rarr;</a></span>
+<section class="section" style="padding-top:48px; padding-bottom:64px;">
+  <div class="container">
+    <div class="row-end mb-4">
+      <div>
+        <div class="kicker mb-1">Choose by type</div>
+        <h2 class="h-display h-display-md">Places to check first</h2>
+      </div>
+      <a class="btn btn-ghost" href="/methodology">How DayDine decides →</a>
     </div>
 
-    <!-- Rankings table -->
+    <div id="categoryFilters" class="filter-bar" style="display:none;"></div>
+
+    <div class="table-meta">
+      <span class="table-meta-count" id="tableCount"></span>
+      <span>Confidence labels are guide rails, not guarantees.</span>
+    </div>
+
     <div class="rank-table" id="rankingsTable">
       <div class="rank-head">
         <div>Rank</div>
         <div>Venue</div>
-        <div>Category</div>
+        <div>Type</div>
+        <div style="text-align:center;">Confidence</div>
         <div style="text-align:center;">Score</div>
-        <div style="text-align:center;">Movement</div>
       </div>
       <div id="rankingsBody"></div>
     </div>
@@ -72,144 +89,53 @@
   </div>
 </section>
 
-<section class="section section-alt" style="padding-top: 64px; padding-bottom: 64px;">
+<section class="section section-alt" style="padding-top:64px; padding-bottom:64px;">
   <div class="container container-narrow center">
-    <div class="kicker kicker-accent mb-1">For Operators</div>
-    <h2 class="h-display h-display-md mb-2">See where you rank — and what to do about it</h2>
-    <p class="body-lg mb-3" style="max-width: 580px; margin: 0 auto;">
-      Your Position Report shows your exact rank, your five closest competitors,
-      and the specific actions that will move you up. £49, delivered within 48 hours.
+    <div class="kicker kicker-accent mb-1">How to use this guide</div>
+    <h2 class="h-display h-display-md mb-2">Use DayDine as a fast second opinion.</h2>
+    <p class="body-lg mb-3" style="max-width:620px; margin:0 auto;">
+      DayDine helps you reduce risk. Start with the strongest public-evidence venues, then check the restaurant’s own website, menu, opening hours and booking availability before you go.
     </p>
-    <div class="row" style="justify-content: center;">
-      <a class="btn btn-primary btn-lg" href="/reports">Get a Market Report</a>
-      <a class="btn btn-secondary btn-lg" href="/sample">View Sample</a>
+    <a class="btn btn-secondary btn-lg" href="/methodology">Read the simple method</a>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container container-narrow">
+    <div class="kicker kicker-accent mb-2">For operators</div>
+    <h2 class="cta-band-title">The public guide is simple. The operator report goes deeper.</h2>
+    <p class="body-lg mb-3" style="max-width:640px; margin-left:auto; margin-right:auto;">
+      Restaurants can see why they rank where they rank, who is ahead, and which public signals would most improve their market position.
+    </p>
+    <div class="row" style="justify-content:center;">
+      <a class="btn btn-primary btn-lg" href="/reports">View operator reports</a>
+      <a class="btn btn-secondary btn-lg" href="/sample">View sample</a>
     </div>
   </div>
 </section>
+</main>
 
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <div class="footer-col">
-        <div class="footer-brand">
-          <img class="footer-brand-logo" src="/assets/daydine-logo.png" alt="DayDine">
-        </div>
-        <p class="footer-tagline">UK hospitality intelligence.<br>Public-signal market rankings.</p>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Intelligence</div>
-        <a class="footer-link" href="/rankings">Market Rankings</a>
-        <a class="footer-link" href="/search">Restaurant Search</a>
-        <a class="footer-link" href="/methodology">Methodology</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Operator Tools</div>
-        <a class="footer-link" href="/reports">Position Reports</a>
-        <a class="footer-link" href="/sample">Sample Report</a>
-        <a class="footer-link" href="/pricing">Pricing</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-heading">Coverage</div>
-        <a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a>
-        <span class="footer-link footer-link-muted">5 markets in pipeline</span>
-        <a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market &rarr;</a>
-      </div>
+      <div class="footer-col"><div class="footer-brand"><img class="footer-brand-logo" src="/assets/daydine-wordmark.svg" alt="DayDine"></div><p class="footer-tagline">A public-evidence guide to trusted places to eat.</p></div>
+      <div class="footer-col"><div class="footer-heading">For diners</div><a class="footer-link" href="/rankings">Rankings</a><a class="footer-link" href="/search">Restaurant search</a><a class="footer-link" href="/methodology">How it works</a></div>
+      <div class="footer-col"><div class="footer-heading">For operators</div><a class="footer-link" href="/reports">Position reports</a><a class="footer-link" href="/sample">Sample report</a><a class="footer-link" href="/pricing">Pricing</a></div>
+      <div class="footer-col"><div class="footer-heading">Coverage</div><a class="footer-link" href="/rankings/stratford-on-avon">Stratford-upon-Avon</a><a class="footer-link" href="mailto:hello@daydine.com?subject=Area%20request">Request a market →</a></div>
     </div>
-    <div class="footer-bottom">
-      <p class="footer-copy">&copy; 2026 DayDine. Rankings powered by the Restaurant Confidence Score.</p>
-    </div>
+    <div class="footer-bottom"><p class="footer-copy">© 2026 DayDine. No paid ranking. Public evidence only.</p></div>
   </div>
 </footer>
 
 <script src="/assets/daydine.js"></script>
 <script>
-  let allVenues = [];
-  let activeCat = 'all';
-
-  function esc(s) {
-    const el = document.createElement('span');
-    el.textContent = s == null ? '' : String(s);
-    return el.innerHTML;
-  }
-  function formatDate(iso) {
-    if (!iso) return '';
-    const d = new Date(iso);
-    return isNaN(d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-  }
-
-  (async function() {
-    try {
-      const resp = await fetch('/assets/rankings/stratford-on-avon.json');
-      if (!resp.ok) throw new Error('fetch failed');
-      const data = await resp.json();
-      allVenues = data.venues || [];
-
-      document.getElementById('pageTitle').textContent = data.display_name;
-      document.getElementById('pageMeta').innerHTML =
-        `${data.total_venues} venues ranked &middot; Last updated ${formatDate(data.last_updated)} &middot; Refreshed weekly`;
-
-      // Category filters
-      const cats = {};
-      allVenues.forEach(v => { cats[v.category] = (cats[v.category] || 0) + 1; });
-      const sorted = Object.entries(cats).sort((a, b) => b[1] - a[1]);
-      const bar = document.getElementById('categoryFilters');
-      bar.style.display = '';
-      bar.innerHTML = `<button class="filter-btn active" data-cat="all">All<span class="filter-count">${allVenues.length}</span></button>` +
-        sorted.map(([c, n]) => `<button class="filter-btn" data-cat="${esc(c)}">${esc(c)}<span class="filter-count">${n}</span></button>`).join('');
-      bar.addEventListener('click', e => {
-        const btn = e.target.closest('.filter-btn');
-        if (!btn) return;
-        activeCat = btn.dataset.cat;
-        bar.querySelectorAll('.filter-btn').forEach(b => b.classList.toggle('active', b === btn));
-        render();
-      });
-
-      document.getElementById('tableCount').textContent =
-        `Showing ${allVenues.length} of ${data.total_venues} venues`;
-      render();
-
-      if (data.others_count > 0) {
-        const note = document.getElementById('othersNote');
-        note.style.display = '';
-        note.innerHTML = `<span class="kicker">And <strong style="font-size:14px;color:var(--text);">${data.others_count}</strong> other ranked venues in ${esc(data.display_name)} &middot; <a style="color:var(--accent);font-weight:500;" href="/reports">See your full position &rarr;</a></span>`;
-      }
-    } catch (err) {
-      document.getElementById('pageMeta').textContent = 'Unable to load rankings.';
-    }
-  })();
-
-  function movementHtml(venue) {
-    var m = venue.movement, d = venue.movement_delta || 0;
-    if (m === 'up') return '<span class="movement-delta movement-delta-up">&#9650; ' + d + '</span>';
-    if (m === 'down') return '<span class="movement-delta movement-delta-down">&#9660; ' + Math.abs(d) + '</span>';
-    if (m === 'same') return '<span class="movement-delta movement-delta-same">&#8212;</span>';
-    return '<span class="movement movement-new">NEW</span>';
-  }
-
-  function render() {
-    const filtered = activeCat === 'all' ? allVenues : allVenues.filter(v => v.category === activeCat);
-    document.getElementById('rankingsBody').innerHTML = filtered.map(venue => {
-      const bandClass = 'score-badge-' + (venue.band_class || 'good');
-      const rankClass = venue.rank <= 3 ? 'rank-num rank-num-top' : 'rank-num';
-      return `
-        <div class="rank-row">
-          <div class="${rankClass}">#${venue.rank}</div>
-          <div>
-            <div class="rank-name">${esc(venue.name)}</div>
-            <div class="rank-sub">${esc(venue.postcode)}</div>
-          </div>
-          <div class="rank-category">${esc(venue.category)}</div>
-          <div class="rank-score">
-            <span class="score-badge ${bandClass}">
-              <span class="score-badge-num">${Number(venue.rcs_final).toFixed(1)}</span>
-              <span class="score-badge-max">/ 10</span>
-            </span>
-          </div>
-          <div class="rank-change">${movementHtml(venue)}</div>
-        </div>
-      `;
-    }).join('');
-  }
+let allVenues=[];let activeCat='all';
+function esc(s){const el=document.createElement('span');el.textContent=s==null?'':String(s);return el.innerHTML;}
+function shortCat(cat){return String(cat||'').replace(/\s*\(General\)\s*$/,'');}
+function formatDate(iso){if(!iso)return '';const d=new Date(iso);return isNaN(d)?iso:d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
+function confidenceLabel(v){const score=Number(v.rcs_final||0);if((v.rcs_band||'')==='Excellent'||score>=8.2)return 'Excellent safe bet';if((v.rcs_band||'')==='Good'||score>=7.0)return 'Highly promising';if(score>=5.8)return 'Good, check first';return 'Thin evidence';}
+(async function(){try{const resp=await fetch('/assets/rankings/stratford-on-avon.json');if(!resp.ok)throw new Error('fetch failed');const data=await resp.json();allVenues=data.venues||[];document.getElementById('pageTitle').textContent=data.display_name;document.getElementById('pageMeta').innerHTML=`${data.total_venues} venues in the live guide · Last updated ${formatDate(data.last_updated)}`;const cats={};allVenues.forEach(v=>{cats[v.category]=(cats[v.category]||0)+1;});const sorted=Object.entries(cats).sort((a,b)=>b[1]-a[1]);const bar=document.getElementById('categoryFilters');bar.style.display='';bar.innerHTML=`<button class="filter-btn active" data-cat="all">All<span class="filter-count">${allVenues.length}</span></button>`+sorted.map(([c,n])=>`<button class="filter-btn" data-cat="${esc(c)}">${esc(shortCat(c))}<span class="filter-count">${n}</span></button>`).join('');bar.addEventListener('click',e=>{const btn=e.target.closest('.filter-btn');if(!btn)return;activeCat=btn.dataset.cat;bar.querySelectorAll('.filter-btn').forEach(b=>b.classList.toggle('active',b===btn));render();});document.getElementById('tableCount').textContent=`Showing ${allVenues.length} guide entries`;render();if(data.others_count>0){const note=document.getElementById('othersNote');note.style.display='';note.innerHTML=`<span class="kicker">And <strong style="font-size:14px;color:var(--text);">${data.others_count}</strong> other ranked venues in ${esc(data.display_name)} · <a style="color:var(--accent);font-weight:500;" href="/reports">operators can see the full position report →</a></span>`;}}catch(err){document.getElementById('pageMeta').textContent='Unable to load guide.';}})();
+function render(){const filtered=activeCat==='all'?allVenues:allVenues.filter(v=>v.category===activeCat);document.getElementById('tableCount').textContent=`Showing ${filtered.length} guide entries`;document.getElementById('rankingsBody').innerHTML=filtered.map(v=>`<div class="rank-row"><div class="${v.rank<=3?'rank-num rank-num-top':'rank-num'}">#${v.rank}</div><div><div class="rank-name">${esc(v.name)}</div><div class="rank-sub">${esc(v.postcode||'')}</div></div><div class="rank-category">${esc(shortCat(v.category))}</div><div class="rank-change">${confidenceLabel(v)}</div><div class="rank-score"><span class="score-badge score-badge-${v.band_class||'good'}"><span class="score-badge-num">${Number(v.rcs_final||0).toFixed(1)}</span><span class="score-badge-max">/ 10</span></span></div></div>`).join('');}
 </script>
 </body>
 </html>
