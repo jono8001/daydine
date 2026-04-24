@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Build public DayDine ranking JSON from V4 scoring output."""
+"""Build public DayDine ranking JSON from V4 scoring output.
+
+The public leaderboard is stricter than the internal V4 scorecard. A venue can
+have a useful operator report if it is FSA-registered and Google-enriched, but
+it should only appear in the diner-facing leaderboard when it is clearly
+food-led. This keeps non-food-led FSA registrations, retail shops with limited
+food activity, and ambiguous Google matches out of the public top list.
+"""
 from __future__ import annotations
 
 import argparse
@@ -12,6 +19,24 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 RANKINGS_DIR = ROOT / "assets" / "rankings"
 INDEX_FILE = RANKINGS_DIR / "index.json"
+
+# Google/FSA terms that make a venue food-led enough for the public guide.
+FOOD_LED_TERMS = {
+    "restaurant", "cafe", "coffee", "tea", "tearoom", "tea_room", "pub",
+    "bar", "inn", "bakery", "baker", "takeaway", "meal_takeaway",
+    "fast_food", "food", "meal", "diner", "bistro", "pizzeria", "pizza",
+    "kitchen", "grill", "brasserie", "tavern", "hotel", "lodging",
+    "catering", "caterer", "sandwich", "fish_and_chips", "ice_cream",
+}
+
+# Terms that often indicate a retail/non-food-led primary proposition. They do
+# not automatically exclude a venue if Google/FSA also clearly marks it as food
+# led, but they stop weak/ambiguous matches entering the public leaderboard.
+RETAIL_OR_AMBIGUOUS_TERMS = {
+    "shop", "store", "retail", "crystal", "crystals", "gift", "gifts",
+    "jewellery", "jewelry", "boutique", "gallery", "garden_centre",
+    "convenience_store", "supermarket", "market", "farm_shop",
+}
 
 
 def slugify(value: str) -> str:
@@ -30,6 +55,45 @@ def write_json(path: Path, data: dict[str, Any]) -> None:
         handle.write("\n")
 
 
+def text_blob(record: dict[str, Any]) -> str:
+    parts: list[str] = []
+    for key in ("n", "a", "bt", "business_type", "businessType", "BusinessType"):
+        value = record.get(key)
+        if value:
+            parts.append(str(value))
+    parts.extend(str(v) for v in record.get("gty") or [])
+    return " ".join(parts).lower()
+
+
+def has_fsa_backing(record: dict[str, Any]) -> bool:
+    """Require a real FSA/FHRS anchor for public-ranking eligibility."""
+    return any(record.get(key) not in (None, "", "AwaitingInspection")
+               for key in ("r", "rd", "sh", "ss", "sm", "fsa_id", "id"))
+
+
+def is_food_led_public_venue(record: dict[str, Any]) -> bool:
+    """Return True when FSA + type evidence indicate a diner-facing venue."""
+    if not has_fsa_backing(record):
+        return False
+
+    blob = text_blob(record)
+    has_food_signal = any(term in blob for term in FOOD_LED_TERMS)
+    has_retail_signal = any(term in blob for term in RETAIL_OR_AMBIGUOUS_TERMS)
+
+    google_types = set(str(t).lower() for t in (record.get("gty") or []))
+    strong_google_food = bool(google_types & {
+        "restaurant", "cafe", "coffee_shop", "bar", "pub", "bakery",
+        "meal_takeaway", "fast_food_restaurant", "pizza_restaurant",
+        "sandwich_shop", "ice_cream_shop",
+    })
+
+    # Retail-like venues must have a strong food-service type to appear publicly.
+    if has_retail_signal and not strong_google_food:
+        return False
+
+    return has_food_signal or strong_google_food
+
+
 def band(score: float) -> tuple[str, str]:
     if score >= 8.0:
         return "Excellent", "excellent"
@@ -45,7 +109,7 @@ def band(score: float) -> tuple[str, str]:
 
 
 def category(record: dict[str, Any]) -> str:
-    joined = (" ".join(record.get("gty") or []) + " " + (record.get("n") or "")).lower()
+    joined = text_blob(record)
     if any(x in joined for x in ["cafe", "coffee", "tea_room", "tearoom"]):
         return "Cafe / Coffee Shop"
     if any(x in joined for x in ["pub", "bar", "inn"]):
@@ -85,11 +149,16 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
           la: str, display: str, top_n: int) -> dict[str, Any]:
     old = prior_ranks(RANKINGS_DIR / f"{slug}.json")
     eligible = []
+    excluded_non_food = 0
     for key, item in scores.items():
         score = item.get("rcs_v4_final")
         if score is None or not item.get("league_table_eligible"):
             continue
-        eligible.append((float(score), str(key), item, establishments.get(str(key), {})))
+        record = establishments.get(str(key), {})
+        if not is_food_led_public_venue(record):
+            excluded_non_food += 1
+            continue
+        eligible.append((float(score), str(key), item, record))
     eligible.sort(key=lambda row: row[0], reverse=True)
 
     venues = []
@@ -125,6 +194,7 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
         "total_venues": len(venues),
         "top_n": len(visible),
         "others_count": max(0, len(venues) - len(visible)),
+        "excluded_non_food_or_ambiguous": excluded_non_food,
         "last_updated": date.today().isoformat(),
         "venues": visible,
     }
@@ -166,6 +236,7 @@ def main() -> int:
     write_json(RANKINGS_DIR / f"{slug}.json", area)
     write_json(INDEX_FILE, update_index(area, args.region))
     print(f"Built V4 public rankings for {area['display_name']}: {area['total_venues']} eligible, {area['top_n']} visible")
+    print(f"Excluded non-food/ambiguous public entries: {area['excluded_non_food_or_ambiguous']}")
     return 0
 
 
