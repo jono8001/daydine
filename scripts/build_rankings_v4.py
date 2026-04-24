@@ -68,6 +68,8 @@ HOTEL_TYPES = {"hotel", "lodging", "bed_and_breakfast", "guest_house"}
 CAFE_TYPES = {"cafe", "coffee_shop", "tea_house"}
 TAKEAWAY_TYPES = {"meal_takeaway", "fast_food_restaurant", "sandwich_shop"}
 BAKERY_TYPES = {"bakery"}
+BAKERY_NAME_TERMS = {"bakery", "baker", "patisserie", "patisseries", "gail", "gails"}
+CAFE_NAME_TERMS = {"cafe", "coffee", "tearoom", "tea_room", "starbucks", "costa", "coffee1"}
 RESTAURANT_TYPES = {
     "restaurant", "british_restaurant", "italian_restaurant",
     "thai_restaurant", "chinese_restaurant", "indian_restaurant",
@@ -235,6 +237,8 @@ def category(record: dict[str, Any]) -> str:
     Eligibility is FSA-first, but category labelling should be more specific
     and public-friendly. It therefore prefers Google Places types and explicit
     venue-name terms before falling back to the broader official FSA type.
+    Bakery and cafe signals deliberately beat generic takeaway signals because
+    Google often attaches meal_takeaway to bakeries, coffee shops and chains.
     """
     business_type = fsa_business_type(record)
     name = norm(record.get("n"))
@@ -246,12 +250,12 @@ def category(record: dict[str, Any]) -> str:
         return "Pub / Bar"
     if google_types & HOTEL_TYPES or any(x in joined for x in ["hotel", "lodging", "accommodation", "guest house"]):
         return "Hotel / Accommodation"
+    if google_types & BAKERY_TYPES or name_tokens & BAKERY_NAME_TERMS:
+        return "Bakery"
+    if google_types & CAFE_TYPES or name_tokens & CAFE_NAME_TERMS:
+        return "Cafe / Coffee Shop"
     if google_types & TAKEAWAY_TYPES or any(x in joined for x in ["meal_takeaway", "takeaway", "delivery", "fast_food"]):
         return "Takeaway / Delivery"
-    if google_types & BAKERY_TYPES or "bakery" in name_tokens:
-        return "Bakery"
-    if google_types & CAFE_TYPES or any(x in name_tokens for x in ["cafe", "coffee", "tearoom", "tea_room"]):
-        return "Cafe / Coffee Shop"
     if google_types & RESTAURANT_TYPES:
         return "Restaurant (General)"
 
