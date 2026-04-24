@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
-  <title>Stratford-upon-Avon rankings — DayDine</title>
-  <meta name="description" content="Stratford-upon-Avon restaurants, pubs and cafes scored on the 0–10 Restaurant Confidence Scale. 190 venues ranked on public market data.">
+  <title>Stratford-upon-Avon trusted restaurant guide — DayDine</title>
+  <meta name="description" content="A simple public-evidence guide to trusted restaurants, pubs and cafes in Stratford-upon-Avon. Confidence labels, clear caveats and no paid ranking.">
   <link rel="canonical" href="https://daydine.vercel.app/rankings/stratford-on-avon">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Stratford-upon-Avon rankings — DayDine">
-  <meta property="og:description" content="190 Stratford-upon-Avon venues ranked by the Restaurant Confidence Score.">
+  <meta property="og:title" content="Stratford-upon-Avon trusted restaurant guide — DayDine">
+  <meta property="og:description" content="Find reliable places to eat in Stratford-upon-Avon using public evidence, not paid placement.">
   <meta property="og:url" content="https://daydine.vercel.app/rankings/stratford-on-avon">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
 <header class="masthead">
   <div class="masthead-inner">
     <a class="wordmark" href="/">Day<em>dine</em></a>
-    <div class="mast-issue" id="issueStamp">Rankings · <b id="issueMarket">Stratford-upon-Avon</b></div>
+    <div class="mast-issue" id="issueStamp">Trusted guide · <b>Stratford-upon-Avon</b></div>
     <button class="mast-toggle" aria-label="Menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -38,67 +38,51 @@
 </header>
 
 <div class="sub-strip">
-  <span>Local authority · <b id="ssMarket">—</b></span>
+  <span><b>No paid ranking</b></span>
   <span class="dot">·</span>
-  <span><b id="ssVenues">—</b> venues ranked</span>
+  <span>Public evidence only</span>
   <span class="dot">·</span>
-  <span>Last updated <b id="ssUpdated">—</b></span>
-  <span class="dot">·</span>
-  <span>RCS V4</span>
+  <span>Check menu and opening times before travelling</span>
 </div>
 
 <main id="main">
-
-<!-- ================ HEADER ================ -->
 <div class="rk-head">
   <div>
-    <div class="rk-kicker" id="rkKicker">Live market · First UK leaderboard</div>
+    <a class="rk-kicker" href="/rankings">← All local guides</a>
     <h1 class="rk-title" id="rkTitle">Stratford-<em>upon-Avon</em></h1>
   </div>
   <div class="rk-meta">
-    <div><b id="rkTotal">—</b> venues ranked</div>
-    <div>Top <b id="rkTopScore">—</b> · RCS V4</div>
+    <div><b id="rkTotal">—</b> guide entries</div>
+    <div>Updated <b id="rkUpdated">—</b></div>
   </div>
 </div>
-<p class="rk-dek" id="rkDek">
-  Every ranked venue scored on the 0–10 Restaurant Confidence Scale. Public data only.
-  Hygiene, customer platforms and commercial-readiness signals in three weighted components.
+<p class="rk-dek">
+  A simple starting point for choosing where to eat. DayDine looks for strong public evidence:
+  customer validation, hygiene/compliance, opening information and clear contact or booking visibility.
 </p>
 
-<div class="fsa-banner" id="fsaBanner" style="display:none;">
-  <span class="lbl">FSA preview</span>
-  <p class="note">
-    <b>This market is not yet on the full RCS V4 pipeline.</b> The list below is ranked on
-    public Food Standards Agency data only — hygiene score, confidence in management, structural
-    compliance. Customer-platform and commercial-readiness signals land when the market enters validation.
-    <a href="mailto:hello@daydine.co.uk?subject=Notify%20me%20when%20RCS%20V4%20goes%20live">Notify me when this market goes live →</a>
-  </p>
-</div>
-
-<!-- ================ FILTER BAR ================ -->
 <div class="filterbar" id="filterBar">
   <label class="field">
-    <span class="field-label">Category</span>
-    <select id="fCategory"><option value="all">All categories</option></select>
+    <span class="field-label">Type</span>
+    <select id="fCategory"><option value="all">All types</option></select>
   </label>
   <label class="field">
-    <span class="field-label">Band</span>
+    <span class="field-label">Confidence</span>
     <select id="fBand">
-      <option value="all">All bands</option>
-      <option value="Excellent">Excellent</option>
-      <option value="Good">Good</option>
-      <option value="Generally Satisfactory">Generally Satisfactory</option>
-      <option value="Improvement Necessary">Improvement Necessary</option>
-      <option value="Major Improvement">Major Improvement</option>
-      <option value="Urgent Improvement">Urgent Improvement</option>
+      <option value="all">All confidence levels</option>
+      <option value="Excellent">Excellent safe bet</option>
+      <option value="Good">Highly promising</option>
+      <option value="Generally Satisfactory">Good, check first</option>
+      <option value="Improvement Necessary">Thin evidence</option>
+      <option value="Major Improvement">Thin evidence</option>
+      <option value="Urgent Improvement">Thin evidence</option>
     </select>
   </label>
   <label class="field">
     <span class="field-label">Sort</span>
     <select id="fSort">
-      <option value="rank">Rank ↑</option>
-      <option value="score">RCS ↓</option>
-      <option value="movement">Biggest movers</option>
+      <option value="rank">Recommended order</option>
+      <option value="score">Score ↓</option>
       <option value="name">Name (A–Z)</option>
     </select>
   </label>
@@ -109,11 +93,10 @@
   </label>
 </div>
 
-<!-- ================ TABLE ================ -->
 <div class="rk-wrap">
   <div class="rk-bar">
     <span id="rkCount">Loading…</span>
-    <span>Showing <b id="rkShown">—</b> of <b id="rkTotalInline">—</b> · <a href="/methodology">How scores work →</a></span>
+    <span>Confidence labels are guide rails, not guarantees. <a href="/methodology">How DayDine decides →</a></span>
   </div>
 
   <table class="rl-table" id="rkTable">
@@ -121,90 +104,56 @@
       <tr>
         <th style="width:72px; padding-left:20px;">Rank</th>
         <th>Venue</th>
-        <th class="rl-cat">Category</th>
-        <th style="text-align:right; width:84px;">RCS</th>
-        <th class="rl-band" style="text-align:right;">Band</th>
-        <th class="rl-conv" style="text-align:right;">Sources</th>
-        <th style="text-align:right; width:72px;">Δ</th>
+        <th class="rl-cat">Type</th>
+        <th style="text-align:right;">Confidence</th>
+        <th style="text-align:right; width:84px;">Score</th>
       </tr>
     </thead>
     <tbody id="rkBody">
-      <tr><td colspan="7" class="rk-empty">Loading rankings…</td></tr>
+      <tr><td colspan="5" class="rk-empty">Loading guide…</td></tr>
     </tbody>
   </table>
 </div>
 
-<!-- ================ OTHERS COLLAPSED ================ -->
-<div class="others" id="othersWrap" style="display:none;">
-  <div class="others-head">
-    <h3 class="others-title">And <em id="othersN">—</em> <span id="othersLabel">other ranked venues</span></h3>
-    <span class="others-sub" id="othersSub">Ranks 11 onwards · RCS order</span>
-    <button class="others-toggle" id="othersToggle" aria-expanded="false">Show all</button>
-  </div>
-  <div class="others-list" id="othersList"></div>
-</div>
-
-<!-- ================ METHODOLOGY NOTE ================ -->
 <section class="meth-note">
   <div>
-    <h3>The <em>score</em>, briefly.</h3>
+    <h3>Use DayDine as a fast <em>second opinion.</em></h3>
   </div>
   <dl>
     <div>
-      <dt>Trust &amp; Compliance · 40%</dt>
-      <dd>FSA/FHRS hygiene rating, structural compliance, confidence in management, inspection recency. Public-register data; older inspections decay over time.</dd>
+      <dt>Start with confidence</dt>
+      <dd>Look first at venues with strong public evidence and clear information.</dd>
     </div>
     <div>
-      <dt>Customer Validation · 45%</dt>
-      <dd>Bayesian-shrunk ratings from Google, TripAdvisor and OpenTable. The "Sources" column indicates whether independent platforms agree on the venue.</dd>
+      <dt>Check before travelling</dt>
+      <dd>Always check the restaurant’s own website, menu, opening hours and booking availability.</dd>
     </div>
     <div>
-      <dt>Commercial Readiness · 15%</dt>
-      <dd>Is the venue set up to trade? Online presence, hours completeness, reservation and delivery paths, photo coverage, Companies House signals.</dd>
+      <dt>No paid ranking</dt>
+      <dd>Operators can buy deeper reports, not higher public positions.</dd>
     </div>
     <div>
-      <dt>Confidence gating</dt>
-      <dd>A venue is ranked only if it has sufficient signal coverage. Low-coverage venues are held in a directional or profile-only tier rather than being given a misleading rank. <a href="/methodology">Full methodology →</a></dd>
+      <dt>For restaurants</dt>
+      <dd>The deeper operator report explains who is ahead, why, and what would improve the venue’s position. <a href="/for-restaurants">Learn more →</a></dd>
     </div>
   </dl>
 </section>
-
 </main>
 
 <footer class="foot">
   <div class="foot-inner">
     <div class="foot-col">
       <h5>DayDine</h5>
-      <p>A data-driven ranking of where to eat in Britain. <b>Public market signals. Transparent methodology. No pay-to-play.</b></p>
+      <p>A public-evidence guide to trusted places to eat. <b>No paid placement. Clear caveats. Simple decisions.</b></p>
     </div>
-    <div class="foot-col">
-      <h5>Read</h5>
-      <a href="/rankings">Rankings</a>
-      <a href="/search">Establishment search</a>
-      <a href="/methodology">Methodology</a>
-    </div>
-    <div class="foot-col">
-      <h5>Operators</h5>
-      <a href="/for-restaurants">Position &amp; Competitor Report</a>
-      <a href="/for-restaurants#preview">Preview your rank</a>
-      <a href="/for-restaurants#pricing">Pricing</a>
-    </div>
-    <div class="foot-col">
-      <h5>About</h5>
-      <a href="/methodology">How RCS V4 works</a>
-      <a href="mailto:hello@daydine.co.uk">Contact</a>
-    </div>
+    <div class="foot-col"><h5>Read</h5><a href="/rankings">Rankings</a><a href="/search">Establishment search</a><a href="/methodology">Methodology</a></div>
+    <div class="foot-col"><h5>Operators</h5><a href="/for-restaurants">Position &amp; Competitor Report</a><a href="/for-restaurants#preview">Preview your rank</a><a href="/for-restaurants#pricing">Pricing</a></div>
+    <div class="foot-col"><h5>About</h5><a href="/methodology">How DayDine works</a><a href="mailto:hello@daydine.co.uk">Contact</a></div>
   </div>
-  <div class="foot-bottom">
-    <span>© 2026 DayDine</span>
-    <span>Methodology V4</span>
-    <span>Made in the UK</span>
-    <a class="operator-link" href="/for-restaurants">For restaurants: see your own ranking →</a>
-  </div>
+  <div class="foot-bottom"><span>© 2026 DayDine</span><span>No paid ranking</span><span>Made in the UK</span></div>
 </footer>
 
 <script>
-// ---- Masthead mobile toggle ----
 (function () {
   var t = document.querySelector('.mast-toggle');
   var n = document.querySelector('.mast-nav');
@@ -214,329 +163,23 @@
     t.setAttribute('aria-expanded', String(open));
   });
 })();
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function fmtDate(iso){if(!iso)return '—';var d=new Date(iso+'T00:00:00');return isNaN(d)?iso:d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
+function shortCat(cat){return String(cat||'').replace(/\s*\(General\)\s*$/,'');}
+function confidenceLabel(v){var score=Number(v.rcs_final||0);if((v.rcs_band||'')==='Excellent'||score>=8.2)return 'Excellent safe bet';if((v.rcs_band||'')==='Good'||score>=7.0)return 'Highly promising';if(score>=5.8)return 'Good, check first';return 'Thin evidence';}
 
-// ---- Helpers ----
-function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]; }); }
-function fmtDate(iso) {
-  if (!iso) return '—';
-  var d = new Date(iso + 'T00:00:00');
-  return isNaN(d) ? iso : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
-}
-function shortCat(cat) { return String(cat || '').replace(/\s*\(General\)\s*$/, ''); }
-function normalBand(b) {
-  if (!b) return 'good';
-  if (b === 'Excellent') return 'excellent';
-  if (b === 'Good') return 'good';
-  if (b === 'Generally Satisfactory') return 'satisfactory';
-  if (b === 'Improvement Necessary') return 'improvement';
-  if (b === 'Major Improvement') return 'major';
-  if (b === 'Urgent Improvement') return 'urgent';
-  return 'good';
-}
-function convLabel(c) {
-  return c === 'converged' ? '✓ Agree'
-       : c === 'diverged'  ? '⚠ Split'
-       : c === 'mild'      ? '· Mild split'
-       : '· Neutral';
-}
-function moveHtml(v) {
-  var d = v.movement_delta || 0;
-  if (v.movement === 'up')   return '<span class="rl-move up">▲'   + d + '</span>';
-  if (v.movement === 'down') return '<span class="rl-move down">▼' + Math.abs(d) + '</span>';
-  if (v.movement === 'new')  return '<span class="rl-move new">NEW</span>';
-  return '<span class="rl-move same">—</span>';
-}
-
-// ---- Slug resolution ----
-var DATA_SLUG = (function () {
-  var m = window.location.pathname.match(/\/rankings\/([^\/]+?)(?:\.html)?$/);
-  if (m && m[1] && m[1] !== 'rankings') return m[1];
-  var qp = new URLSearchParams(window.location.search).get('market');
-  return qp || 'stratford-on-avon';
-})();
-
-var ALL = [];
-var FILTERED = [];
-var TOP_N = 10;
-var MARKET_META = {};
-var FIREBASE_URL = 'https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app';
-
-// Main load: try the curated RCS JSON; if missing, fall back to FSA-only from Firebase.
-fetch('/assets/rankings/index.json').then(function (r) { return r.ok ? r.json() : null; })
-  .catch(function () { return null; })
-  .then(function (idx) {
-    return fetch('/assets/rankings/' + DATA_SLUG + '.json')
-      .then(function (r) {
-        if (r.ok) return r.json().then(function (d) { return { data: d, idx: idx, fsaFallback: false }; });
-        // JSON 404 — try FSA fallback
-        return loadFSAFallback(DATA_SLUG, idx).then(function (d) { return { data: d, idx: idx, fsaFallback: true }; });
-      })
-      .catch(function () { return loadFSAFallback(DATA_SLUG, idx).then(function (d) { return { data: d, idx: idx, fsaFallback: true }; }); });
-  })
-  .then(function (result) {
-    if (!result || !result.data) {
-      // Nothing in curated JSON, nothing in Firebase for this LA.
-      renderNoData(result && result.idx);
-      return;
-    }
-    bindMarket(result.data, result.idx, result.fsaFallback);
-  })
-  .catch(function () { renderNoData(null); });
-
-function renderNoData(idx) {
-  var display = slugToDisplayName(DATA_SLUG, idx);
-  document.getElementById('rkTitle').innerHTML = emphasise(display);
-  document.title = display + ' rankings — DayDine';
-  document.getElementById('issueMarket').textContent = display;
-  document.getElementById('ssMarket').textContent = display;
-  document.getElementById('rkKicker').textContent = 'Not yet indexed';
-  var meta = document.querySelector('.rk-meta');
-  if (meta) meta.innerHTML = '';
-  document.getElementById('rkBody').innerHTML =
-    '<tr><td colspan="7" class="rk-empty">' +
-    'No ranked data for <b>' + esc(display) + '</b> yet. ' +
-    '<a href="mailto:hello@daydine.co.uk?subject=' +
-    encodeURIComponent('Market request: ' + display) +
-    '" style="color:var(--accent); border-bottom:1px solid currentColor;">Request this market</a>' +
-    ' · <a href="/rankings" style="color:var(--accent);">See live markets →</a>' +
-    '</td></tr>';
-  document.getElementById('rkCount').textContent = '';
-}
-
-function bindMarket(data, idx, fsaFallback) {
-  MARKET_META = data;
-  ALL = (data.venues || []).slice();
-  TOP_N = data.top_n || 10;
-
-  var displayName = data.display_name || data.la_name || DATA_SLUG;
-  document.getElementById('rkTitle').innerHTML = emphasise(displayName);
-  document.title = displayName + ' rankings — DayDine';
-  document.getElementById('issueMarket').textContent = displayName;
-  document.getElementById('ssMarket').textContent = displayName;
-  document.getElementById('ssVenues').textContent = data.total_venues || ALL.length;
-  document.getElementById('ssUpdated').textContent = fmtDate(data.last_updated);
-  document.getElementById('rkTotal').textContent = data.total_venues || ALL.length;
-  document.getElementById('rkTotalInline').textContent = data.total_venues || ALL.length;
-  if (ALL.length) {
-    var top = Math.max.apply(null, ALL.map(function (v) { return v.rcs_final || 0; }));
-    document.getElementById('rkTopScore').textContent = top.toFixed(2);
-  }
-
-  if (fsaFallback) {
-    document.getElementById('fsaBanner').style.display = '';
-    document.getElementById('rkKicker').textContent = 'FSA preview · Full RCS V4 pipeline pending';
-    var meta = document.querySelector('.rk-meta');
-    if (meta) meta.innerHTML = '<div><b>' + (data.total_venues || ALL.length) + '</b> FSA-ranked</div><div>Top <b>' + (ALL[0] && ALL[0].rcs_final != null ? ALL[0].rcs_final.toFixed(2) : '—') + '</b> · FSA only</div>';
-  } else if (idx && idx.available) {
-    var inAvail = idx.available.some(function (a) { return a.slug === DATA_SLUG; });
-    if (!inAvail) document.getElementById('rkKicker').textContent = 'Pipeline market';
-  }
-
-  // Category filter options
-  var cats = {};
-  ALL.forEach(function (v) { cats[v.category] = (cats[v.category] || 0) + 1; });
-  var sel = document.getElementById('fCategory');
-  Object.keys(cats).sort(function (a, b) { return cats[b] - cats[a]; }).forEach(function (c) {
-    var opt = document.createElement('option');
-    opt.value = c; opt.textContent = c + ' · ' + cats[c];
-    sel.appendChild(opt);
-  });
-
+var ALL=[];var FILTERED=[];var TOP_N=10;
+fetch('/assets/rankings/stratford-on-avon.json').then(function(r){return r.json();}).then(function(data){
+  ALL=(data.venues||[]).slice();TOP_N=data.top_n||10;
+  document.getElementById('rkTotal').textContent=data.total_venues||ALL.length;
+  document.getElementById('rkUpdated').textContent=fmtDate(data.last_updated);
+  var cats={};ALL.forEach(function(v){cats[v.category]=(cats[v.category]||0)+1;});
+  var sel=document.getElementById('fCategory');Object.keys(cats).sort(function(a,b){return cats[b]-cats[a];}).forEach(function(c){var opt=document.createElement('option');opt.value=c;opt.textContent=shortCat(c)+' · '+cats[c];sel.appendChild(opt);});
   renderAll();
-}
-
-// ---- FSA fallback from Firebase RTDB REST ----
-function slugToLAName(slug, idx) {
-  if (!slug) return null;
-  // Check index.json (available + pipeline) for explicit la_name
-  if (idx) {
-    var all = (idx.available || []).concat(idx.pipeline || []);
-    for (var i = 0; i < all.length; i++) {
-      if (all[i].slug === slug && all[i].la_name) return all[i].la_name;
-    }
-  }
-  // Fallback: title-case the slug ("bath" → "Bath", "north-east-lincolnshire" → "North East Lincolnshire")
-  return slug.split('-').map(function (w) { return w.charAt(0).toUpperCase() + w.slice(1); }).join(' ');
-}
-function slugToDisplayName(slug, idx) {
-  if (idx) {
-    var all = (idx.available || []).concat(idx.pipeline || []);
-    for (var i = 0; i < all.length; i++) {
-      if (all[i].slug === slug && all[i].display_name) return all[i].display_name;
-    }
-  }
-  return slugToLAName(slug, idx);
-}
-function fsaCategorise(row) {
-  var gty = row.gty || [];
-  var joined = (Array.isArray(gty) ? gty.join(' ') : String(gty)).toLowerCase();
-  if (/pub|bar|beer_garden/.test(joined)) return 'Pub / Bar';
-  if (/cafe|coffee_shop|tea_house/.test(joined)) return 'Cafe / Coffee Shop';
-  if (/bakery/.test(joined)) return 'Bakery';
-  if (/hotel|lodging|inn/.test(joined)) return 'Hotel / Accommodation';
-  if (/meal_takeaway|meal_delivery|fast_food/.test(joined)) return 'Takeaway / Delivery';
-  if (/restaurant|food/.test(joined)) return 'Restaurant (General)';
-  return 'Restaurant (General)';
-}
-function fsaBandFor(score) {
-  if (score == null) return ['Insufficient Data', 'good'];
-  if (score >= 8.0) return ['Excellent', 'excellent'];
-  if (score >= 6.5) return ['Good', 'good'];
-  if (score >= 5.0) return ['Generally Satisfactory', 'satisfactory'];
-  if (score >= 3.5) return ['Improvement Necessary', 'improvement'];
-  if (score >= 2.0) return ['Major Improvement', 'major'];
-  return ['Urgent Improvement', 'urgent'];
-}
-function loadFSAFallback(slug, idx) {
-  var la = slugToLAName(slug, idx);
-  var display = slugToDisplayName(slug, idx);
-  var url = FIREBASE_URL + '/daydine/establishments.json?orderBy=%22la%22&equalTo=%22' + encodeURIComponent(la) + '%22';
-  return fetch(url).then(function (r) {
-    if (!r.ok) return null;
-    return r.json();
-  }).then(function (raw) {
-    if (!raw) return null;
-    var rows = Object.keys(raw).map(function (id) { return Object.assign({ _id: id }, raw[id]); })
-      .filter(function (r) { return r.s != null && r.n; });
-    if (!rows.length) return null;
-    rows.sort(function (a, b) { return (b.s || 0) - (a.s || 0); });
-    var venues = rows.map(function (r, i) {
-      var b = fsaBandFor(r.s);
-      return {
-        rank: i + 1,
-        name: r.n,
-        postcode: r.pc || '',
-        category: fsaCategorise(r),
-        rcs_final: typeof r.s === 'number' ? r.s : parseFloat(r.s),
-        rcs_band: b[0],
-        band_class: b[1],
-        convergence: 'neutral',
-        movement: 'same',
-        movement_delta: 0
-      };
-    });
-    return {
-      la_name: la,
-      display_name: display,
-      slug: slug,
-      total_venues: venues.length,
-      top_n: Math.min(10, venues.length),
-      others_count: Math.max(0, venues.length - 10),
-      last_updated: '',
-      venues: venues,
-      _is_fsa_fallback: true
-    };
-  }).catch(function () { return null; });
-}
-
-function emphasise(name) {
-  // Wrap the second word (if any) in <em> so "Stratford-upon-Avon" → "Stratford-<em>upon-Avon</em>"
-  if (!name) return '';
-  var parts = name.split(/[-\s]/);
-  if (parts.length < 2) return esc(name);
-  var first = esc(parts[0]);
-  var rest  = esc(parts.slice(1).join(name.indexOf('-') >= 0 ? '-' : ' '));
-  return first + (name.indexOf('-') >= 0 ? '-' : ' ') + '<em>' + rest + '</em>';
-}
-
-// ---- Filter + sort + render ----
-function applyFilters() {
-  var cat = document.getElementById('fCategory').value;
-  var band = document.getElementById('fBand').value;
-  var sort = document.getElementById('fSort').value;
-  var q = document.getElementById('fSearch').value.trim().toLowerCase();
-
-  var out = ALL.slice();
-  if (cat !== 'all')  out = out.filter(function (v) { return v.category === cat; });
-  if (band !== 'all') out = out.filter(function (v) { return v.rcs_band === band; });
-  if (q) out = out.filter(function (v) {
-    return (v.name || '').toLowerCase().indexOf(q) >= 0
-        || (v.postcode || '').toLowerCase().indexOf(q) >= 0;
-  });
-
-  if (sort === 'score')      out.sort(function (a, b) { return (b.rcs_final || 0) - (a.rcs_final || 0); });
-  else if (sort === 'movement') out.sort(function (a, b) { return Math.abs(b.movement_delta || 0) - Math.abs(a.movement_delta || 0) || a.rank - b.rank; });
-  else if (sort === 'name')  out.sort(function (a, b) { return (a.name || '').localeCompare(b.name || ''); });
-  else                       out.sort(function (a, b) { return a.rank - b.rank; });
-
-  FILTERED = out;
-}
-
-function renderAll() {
-  applyFilters();
-
-  var body = document.getElementById('rkBody');
-  var topSlice = FILTERED.slice(0, TOP_N);
-  if (!topSlice.length) {
-    body.innerHTML = '<tr><td colspan="7" class="rk-empty">Nothing matches those filters. Try loosening one.</td></tr>';
-  } else {
-    body.innerHTML = topSlice.map(function (v) {
-      var band = normalBand(v.band_class || v.rcs_band);
-      var conv = (v.convergence || 'neutral').toLowerCase();
-      return '<tr class="rl-row' + (v.rank <= 3 ? ' top3' : '') + '">' +
-             '<td class="rl-rank">' + String(v.rank).padStart(2, '0') + '</td>' +
-             '<td><div class="rl-name">' + esc(v.name) + '</div>' +
-             '<div class="rl-sub">' + esc(v.postcode || '') + '</div></td>' +
-             '<td class="rl-cat">' + esc(shortCat(v.category)) + '</td>' +
-             '<td class="rl-score">' + (v.rcs_final != null ? v.rcs_final.toFixed(2) : '—') + '</td>' +
-             '<td class="rl-band"><span class="pill ' + band + '">' + esc(v.rcs_band || '—') + '</span></td>' +
-             '<td class="rl-conv ' + conv + '">' + convLabel(conv) + '</td>' +
-             '<td>' + moveHtml(v) + '</td>' +
-             '</tr>';
-    }).join('');
-  }
-
-  document.getElementById('rkShown').textContent = topSlice.length;
-  var totalMatch = FILTERED.length;
-  document.getElementById('rkCount').textContent =
-    totalMatch + ' match' + (totalMatch === 1 ? '' : 'es') +
-    (totalMatch > TOP_N ? ' · showing first ' + TOP_N : '');
-
-  // Others: anything past top_n
-  var others = FILTERED.slice(TOP_N);
-  var wrap = document.getElementById('othersWrap');
-  if (others.length) {
-    wrap.style.display = '';
-    document.getElementById('othersN').textContent = others.length;
-    document.getElementById('othersLabel').textContent = others.length === 1 ? 'other ranked venue' : 'other ranked venues';
-    document.getElementById('othersSub').textContent = 'Ranks ' + (TOP_N + 1) + ' onwards';
-    var rowsHtml = others.map(function (v) {
-      return '<div class="o-row">' +
-             '<div class="o-rank">' + String(v.rank).padStart(2, '0') + '</div>' +
-             '<div><div class="o-name">' + esc(v.name) + '</div><div class="o-sub">' + esc(v.postcode || '') + '</div></div>' +
-             '<div class="o-cat">' + esc(shortCat(v.category)) + '</div>' +
-             '<div class="o-score">' + (v.rcs_final != null ? v.rcs_final.toFixed(2) : '—') + '</div>' +
-             '<div class="o-band">' + esc(v.rcs_band || '—') + '</div>' +
-             '</div>';
-    }).join('');
-    document.getElementById('othersList').innerHTML = rowsHtml;
-  } else if (MARKET_META.others_count) {
-    // JSON may already provide a pre-computed others_count (e.g. ranks 11+ of 190).
-    wrap.style.display = '';
-    document.getElementById('othersN').textContent = MARKET_META.others_count;
-    document.getElementById('othersLabel').textContent = MARKET_META.others_count === 1 ? 'other ranked venue' : 'other ranked venues';
-    document.getElementById('othersSub').textContent = 'Not surfaced on this page · see the full ' + (MARKET_META.total_venues || '') + '-venue list';
-    document.getElementById('othersList').innerHTML = '<div style="padding:16px 0; font-family: var(--serif); font-style: italic; color: var(--ink-dim);">The full list is published as a feed for operator reports. <a href="/for-restaurants" style="color: var(--accent); border-bottom: 1px solid currentColor;">See your own rank →</a></div>';
-  } else {
-    wrap.style.display = 'none';
-  }
-}
-
-// ---- Events ----
-['fCategory', 'fBand', 'fSort'].forEach(function (id) {
-  document.getElementById(id).addEventListener('change', renderAll);
-});
-document.getElementById('fSearch').addEventListener('input', function () {
-  // debounce
-  clearTimeout(window._fsT);
-  window._fsT = setTimeout(renderAll, 120);
-});
-document.getElementById('othersToggle').addEventListener('click', function () {
-  var list = document.getElementById('othersList');
-  var open = list.classList.toggle('open');
-  this.setAttribute('aria-expanded', String(open));
-  this.textContent = open ? 'Hide' : 'Show all';
-});
+}).catch(function(){document.getElementById('rkBody').innerHTML='<tr><td colspan="5" class="rk-empty">Unable to load guide.</td></tr>';});
+function applyFilters(){var cat=document.getElementById('fCategory').value;var band=document.getElementById('fBand').value;var sort=document.getElementById('fSort').value;var q=document.getElementById('fSearch').value.trim().toLowerCase();var out=ALL.slice();if(cat!=='all')out=out.filter(function(v){return v.category===cat;});if(band!=='all')out=out.filter(function(v){return v.rcs_band===band;});if(q)out=out.filter(function(v){return (v.name||'').toLowerCase().indexOf(q)>=0||(v.postcode||'').toLowerCase().indexOf(q)>=0;});if(sort==='score')out.sort(function(a,b){return (b.rcs_final||0)-(a.rcs_final||0);});else if(sort==='name')out.sort(function(a,b){return (a.name||'').localeCompare(b.name||'');});else out.sort(function(a,b){return a.rank-b.rank;});FILTERED=out;}
+function renderAll(){applyFilters();var body=document.getElementById('rkBody');var topSlice=FILTERED.slice(0,TOP_N);if(!topSlice.length){body.innerHTML='<tr><td colspan="5" class="rk-empty">Nothing matches those filters. Try loosening one.</td></tr>';}else{body.innerHTML=topSlice.map(function(v){return '<tr class="rl-row'+(v.rank<=3?' top3':'')+'"><td class="rl-rank">'+String(v.rank).padStart(2,'0')+'</td><td><div class="rl-name">'+esc(v.name)+'</div><div class="rl-sub">'+esc(v.postcode||'')+'</div></td><td class="rl-cat">'+esc(shortCat(v.category))+'</td><td class="rl-band">'+esc(confidenceLabel(v))+'</td><td class="rl-score">'+Number(v.rcs_final||0).toFixed(2)+'</td></tr>';}).join('');}document.getElementById('rkCount').textContent=FILTERED.length+' match'+(FILTERED.length===1?'':'es')+(FILTERED.length>TOP_N?' · showing first '+TOP_N:'');}
+['fCategory','fBand','fSort'].forEach(function(id){document.getElementById(id).addEventListener('change',renderAll);});document.getElementById('fSearch').addEventListener('input',function(){clearTimeout(window._fsT);window._fsT=setTimeout(renderAll,120);});
 </script>
 </body>
 </html>
