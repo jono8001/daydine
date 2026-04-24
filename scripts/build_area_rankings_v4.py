@@ -93,18 +93,7 @@ def add_area_metadata(area_json: dict[str, Any], area: dict[str, Any], distances
     if area.get("radius_km") is not None:
         area_json["radius_km"] = area.get("radius_km")
 
-    if distances:
-        for venue in area_json.get("venues", []):
-            # Use name/postcode fallback because the public top list intentionally
-            # does not expose raw internal keys. Distance is best-effort only.
-            for key, km in distances.items():
-                # The build output is sorted after filtering; names can duplicate,
-                # so distance is primarily useful as area-level metadata. Avoid
-                # fragile key exposure in public JSON.
-                pass
-        area_json["distance_filter_applied"] = True
-    else:
-        area_json["distance_filter_applied"] = False
+    area_json["distance_filter_applied"] = bool(distances)
     return area_json
 
 
@@ -172,6 +161,17 @@ def main() -> int:
         output["region"] = area.get("region")
         add_area_metadata(output, area, distances)
         write_json(RANKINGS_DIR / f"{slug}.json", output)
+
+        # Backwards-compatible aliases let older pages and links continue to
+        # consume the canonical town data while the new canonical slug rolls out.
+        for legacy_slug in area.get("legacy_slugs", []):
+            alias_output = dict(output)
+            alias_output["canonical_slug"] = slug
+            alias_output["slug"] = legacy_slug
+            alias_output["legacy_alias"] = True
+            write_json(RANKINGS_DIR / f"{legacy_slug}.json", alias_output)
+            print(f"Wrote legacy alias {legacy_slug}.json -> {slug}.json")
+
         outputs.append(output)
         print(
             f"Built {slug}: {output['total_venues']} eligible, "
