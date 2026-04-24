@@ -60,16 +60,12 @@ jobs:
             --out-json stratford_rcs_v4_scores.json \
             --out-csv stratford_rcs_v4_scores.csv
 
-      - name: Build public Stratford ranking JSON from V4
+      - name: Build configured town and district ranking JSON from V4
         run: |
-          python scripts/build_rankings_v4.py \
+          python scripts/build_area_rankings_v4.py \
             --scores stratford_rcs_v4_scores.json \
             --establishments stratford_establishments.json \
-            --la "Stratford-on-Avon" \
-            --display "Stratford-upon-Avon" \
-            --region "Warwickshire" \
-            --slug stratford-on-avon \
-            --top-n 10
+            --areas data/ranking_areas.json
 
       - name: V4 scoring regression checks
         run: |
