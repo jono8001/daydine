@@ -7,6 +7,8 @@
   "top_n": 10,
   "others_count": 158,
   "excluded_non_food_or_ambiguous": 1,
+  "excluded_by_public_override": 0,
+  "included_by_public_override": 0,
   "last_updated": "2026-04-24",
   "venues": [
     {
@@ -24,7 +26,8 @@
       "confidence_class": "Rankable-B",
       "coverage_status": "coverage-ready",
       "single_platform_caveat": true,
-      "public_evidence_label": "Official Google + FSA evidence"
+      "public_evidence_label": "Official Google + FSA evidence",
+      "public_override": null
     },
     {
       "rank": 2,
@@ -41,7 +44,8 @@
       "confidence_class": "Rankable-B",
       "coverage_status": "coverage-ready",
       "single_platform_caveat": true,
-      "public_evidence_label": "Official Google + FSA evidence"
+      "public_evidence_label": "Official Google + FSA evidence",
+      "public_override": null
     },
     {
       "rank": 3,
@@ -58,7 +62,8 @@
       "confidence_class": "Rankable-B",
       "coverage_status": "coverage-ready",
       "single_platform_caveat": true,
-      "public_evidence_label": "Official Google + FSA evidence"
+      "public_evidence_label": "Official Google + FSA evidence",
+      "public_override": null
     },
     {
       "rank": 4,
@@ -75,7 +80,8 @@
       "confidence_class": "Rankable-B",
       "coverage_status": "coverage-ready",
       "single_platform_caveat": true,
-      "public_evidence_label": "Official Google + FSA evidence"
+      "public_evidence_label": "Official Google + FSA evidence",
+      "public_override": null
     },
     {
       "rank": 5,
@@ -92,7 +98,8 @@
       "confidence_class": "Rankable-B",
       "coverage_status": "coverage-ready",
       "single_platform_caveat": true,
-      "public_evidence_label": "Official Google + FSA evidence"
+      "public_evidence_label": "Official Google + FSA evidence",
+      "public_override": null
     },
     {
       "rank": 6,
@@ -109,7 +116,8 @@
       "confidence_class": "Rankable-B",
       "coverage_status": "coverage-ready",
       "single_platform_caveat": true,
-      "public_evidence_label": "Official Google + FSA evidence"
+      "public_evidence_label": "Official Google + FSA evidence",
+      "public_override": null
     },
     {
       "rank": 7,
@@ -126,7 +134,8 @@
       "confidence_class": "Rankable-B",
       "coverage_status": "coverage-ready",
       "single_platform_caveat": true,
-      "public_evidence_label": "Official Google + FSA evidence"
+      "public_evidence_label": "Official Google + FSA evidence",
+      "public_override": null
     },
     {
       "rank": 8,
@@ -143,7 +152,8 @@
       "confidence_class": "Rankable-B",
       "coverage_status": "coverage-ready",
       "single_platform_caveat": true,
-      "public_evidence_label": "Official Google + FSA evidence"
+      "public_evidence_label": "Official Google + FSA evidence",
+      "public_override": null
     },
     {
       "rank": 9,
@@ -160,7 +170,8 @@
       "confidence_class": "Rankable-B",
       "coverage_status": "coverage-ready",
       "single_platform_caveat": true,
-      "public_evidence_label": "Official Google + FSA evidence"
+      "public_evidence_label": "Official Google + FSA evidence",
+      "public_override": null
     },
     {
       "rank": 10,
@@ -177,7 +188,8 @@
       "confidence_class": "Rankable-B",
       "coverage_status": "coverage-ready",
       "single_platform_caveat": true,
-      "public_evidence_label": "Official Google + FSA evidence"
+      "public_evidence_label": "Official Google + FSA evidence",
+      "public_override": null
     }
   ]
 }
