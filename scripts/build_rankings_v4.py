@@ -17,6 +17,9 @@ Public category labels are deliberately different from eligibility:
 - FSA type decides whether the venue can appear;
 - Google Places types and venue-name terms decide whether the label shown to
   diners is Restaurant, Cafe, Pub, Hotel, Takeaway, etc.
+
+Manual public overrides are supported via data/public_ranking_overrides.json.
+They affect only assets/rankings/*.json, not V4 scores or operator reports.
 """
 from __future__ import annotations
 
@@ -30,6 +33,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 RANKINGS_DIR = ROOT / "assets" / "rankings"
 INDEX_FILE = RANKINGS_DIR / "index.json"
+OVERRIDES_FILE = ROOT / "data" / "public_ranking_overrides.json"
 
 PUBLIC_FSA_BUSINESS_TYPES = {
     "restaurant/cafe/canteen",
@@ -97,6 +101,55 @@ def write_json(path: Path, data: dict[str, Any]) -> None:
 
 def norm(value: Any) -> str:
     return str(value or "").strip().lower()
+
+
+def canonical_name(value: Any) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", norm(value)).strip()
+
+
+def load_overrides() -> dict[str, list[dict[str, Any]]]:
+    if not OVERRIDES_FILE.exists():
+        return {"exclude_public": [], "include_public": [], "rename_public": []}
+    data = read_json(OVERRIDES_FILE)
+    return {
+        "exclude_public": [x for x in data.get("exclude_public", []) if isinstance(x, dict)],
+        "include_public": [x for x in data.get("include_public", []) if isinstance(x, dict)],
+        "rename_public": [x for x in data.get("rename_public", []) if isinstance(x, dict)],
+    }
+
+
+def record_identifiers(name: str, key: str, item: dict[str, Any], record: dict[str, Any]) -> dict[str, str]:
+    return {
+        "key": norm(key),
+        "name": canonical_name(name),
+        "fhrsid": norm(item.get("fhrsid") or record.get("fhrsid") or record.get("id")),
+        "gpid": norm(record.get("gpid")),
+        "postcode": norm(record.get("pc")),
+    }
+
+
+def override_matches(override: dict[str, Any], identifiers: dict[str, str]) -> bool:
+    """Match an override by fhrsid, gpid, key, or name+optional postcode."""
+    for field in ("fhrsid", "gpid", "key"):
+        value = norm(override.get(field))
+        if value and value == identifiers.get(field):
+            return True
+
+    name = canonical_name(override.get("name"))
+    if not name or name != identifiers.get("name"):
+        return False
+
+    postcode = norm(override.get("postcode"))
+    if postcode and postcode != identifiers.get("postcode"):
+        return False
+    return True
+
+
+def matching_override(overrides: list[dict[str, Any]], identifiers: dict[str, str]) -> dict[str, Any] | None:
+    for override in overrides:
+        if override_matches(override, identifiers):
+            return override
+    return None
 
 
 def text_blob(record: dict[str, Any]) -> str:
@@ -239,26 +292,54 @@ def movement(name: str, rank: int, old: dict[str, int]) -> tuple[str, int]:
 def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
           la: str, display: str, top_n: int) -> dict[str, Any]:
     old = prior_ranks(RANKINGS_DIR / f"{slug}.json")
+    overrides = load_overrides()
     eligible = []
     excluded_non_food = 0
+    excluded_by_override = 0
+    included_by_override = 0
+
     for key, item in scores.items():
         score = item.get("rcs_v4_final")
         if score is None or not item.get("league_table_eligible"):
             continue
         record = establishments.get(str(key), {})
-        if not is_food_led_public_venue(record):
+        name = item.get("name") or record.get("n") or str(key)
+        ids = record_identifiers(name, str(key), item, record)
+
+        exclude = matching_override(overrides["exclude_public"], ids)
+        if exclude:
+            excluded_by_override += 1
+            continue
+
+        include = matching_override(overrides["include_public"], ids)
+        if include:
+            included_by_override += 1
+        elif not is_food_led_public_venue(record):
             excluded_non_food += 1
             continue
-        eligible.append((float(score), str(key), item, record))
+
+        rename = matching_override(overrides["rename_public"], ids)
+        public_name = rename.get("public_name") if rename else None
+        if public_name:
+            item = dict(item)
+            item["name"] = public_name
+
+        eligible.append((float(score), str(key), item, record, include, rename))
+
     eligible.sort(key=lambda row: row[0], reverse=True)
 
     venues = []
-    for rank, (score, key, item, rec) in enumerate(eligible, 1):
+    for rank, (score, key, item, rec, include_override, rename_override) in enumerate(eligible, 1):
         b, bc = band(score)
         name = item.get("name") or rec.get("n") or key
         mv, mv_delta = movement(name, rank, old)
         platforms = item.get("source_family_summary", {}).get("customer_platforms") or []
         google_only = platforms == ["google"]
+        override_notes = []
+        if include_override:
+            override_notes.append("include_public")
+        if rename_override:
+            override_notes.append("rename_public")
         venues.append({
             "rank": rank,
             "name": name,
@@ -275,6 +356,7 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
             "coverage_status": item.get("coverage_status"),
             "single_platform_caveat": google_only,
             "public_evidence_label": "Official Google + FSA evidence" if google_only else "Multi-source public evidence",
+            "public_override": override_notes or None,
         })
 
     visible = venues[:top_n]
@@ -287,6 +369,8 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
         "top_n": len(visible),
         "others_count": max(0, len(venues) - len(visible)),
         "excluded_non_food_or_ambiguous": excluded_non_food,
+        "excluded_by_public_override": excluded_by_override,
+        "included_by_public_override": included_by_override,
         "last_updated": date.today().isoformat(),
         "venues": visible,
     }
@@ -329,6 +413,8 @@ def main() -> int:
     write_json(INDEX_FILE, update_index(area, args.region))
     print(f"Built V4 public rankings for {area['display_name']}: {area['total_venues']} eligible, {area['top_n']} visible")
     print(f"Excluded non-food/ambiguous public entries: {area['excluded_non_food_or_ambiguous']}")
+    print(f"Excluded by public override: {area['excluded_by_public_override']}")
+    print(f"Included by public override: {area['included_by_public_override']}")
     return 0
 
 
