@@ -51,12 +51,18 @@ jobs:
       - name: Resolve entities
         run: python .github/scripts/resolve_entities.py
 
-      - name: Run V4 scoring engine
+      - name: Enrich Companies House risk layer
+        env:
+          COMPANIES_HOUSE_API_KEY: ${{ secrets.COMPANIES_HOUSE_API_KEY }}
+        run: python .github/scripts/enrich_companies_house.py
+
+      - name: Run V4 scoring engine with risk layer
         run: |
-          python rcs_scoring_v4.py \
+          python scripts/run_v4_scoring_with_risk.py \
             --input stratford_establishments.json \
             --menus stratford_menus.json \
             --editorial stratford_editorial.json \
+            --companies-house stratford_companies_house.json \
             --out-json stratford_rcs_v4_scores.json \
             --out-csv stratford_rcs_v4_scores.csv
 
