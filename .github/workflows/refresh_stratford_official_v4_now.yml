@@ -1,5 +1,7 @@
 name: Refresh Stratford Official Google V4 Now
 
+# Trigger bump: 2026-04-24T03:12Z
+
 on:
   push:
     branches: [main]
@@ -206,7 +208,6 @@ jobs:
           from datetime import date
           from pathlib import Path
 
-          root = Path('.')
           scores = json.loads(Path('stratford_rcs_v4_scores.json').read_text(encoding='utf-8'))
           est = json.loads(Path('stratford_establishments.json').read_text(encoding='utf-8'))
           out_dir = Path('assets/rankings')
