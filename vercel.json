@@ -9,5 +9,16 @@
   "redirects": [
     { "source": "/pricing", "destination": "/for-restaurants#pricing", "permanent": true },
     { "source": "/reports", "destination": "/for-restaurants#preview", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/assets/rankings/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, max-age=0"
+        }
+      ]
+    }
   ]
 }
