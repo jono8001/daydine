@@ -1,7 +1,9 @@
 {
-  "enabled": false,
-  "reason": "COMPANIES_HOUSE_API_KEY not set",
+  "enabled": true,
   "total_establishments": 208,
-  "matched": 0,
-  "unmatched": 208
+  "searched": 212,
+  "matched": 69,
+  "unmatched": 139,
+  "api_errors": 0,
+  "match_policy": "high-confidence exact/strong name matches only"
 }

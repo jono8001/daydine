@@ -3,9 +3,9 @@
   "display_name": "Stratford-upon-Avon",
   "slug": "stratford-upon-avon",
   "methodology_version": "V4 official-source mode",
-  "total_venues": 70,
+  "total_venues": 62,
   "top_n": 10,
-  "others_count": 60,
+  "others_count": 52,
   "excluded_non_food_or_ambiguous": 0,
   "excluded_by_public_override": 0,
   "included_by_public_override": 0,
@@ -13,7 +13,7 @@
     {
       "category": "Restaurant (General)",
       "slug": "restaurant-general",
-      "total_venues": 25,
+      "total_venues": 21,
       "top_n": 5,
       "venues": [
         {
@@ -116,7 +116,7 @@
     {
       "category": "Cafe / Coffee Shop",
       "slug": "cafe-coffee-shop",
-      "total_venues": 13,
+      "total_venues": 12,
       "top_n": 5,
       "venues": [
         {
@@ -158,7 +158,7 @@
           "category_rank": 2
         },
         {
-          "rank": 16,
+          "rank": 15,
           "name": "No 37 Cafe",
           "postcode": "CV37 6EE",
           "category": "Cafe / Coffee Shop",
@@ -177,7 +177,7 @@
           "category_rank": 3
         },
         {
-          "rank": 19,
+          "rank": 18,
           "name": "Mr Odie's",
           "postcode": "CV37 6QT",
           "category": "Cafe / Coffee Shop",
@@ -196,7 +196,7 @@
           "category_rank": 4
         },
         {
-          "rank": 21,
+          "rank": 20,
           "name": "Costa",
           "postcode": "CV37 0HZ",
           "category": "Cafe / Coffee Shop",
@@ -219,7 +219,7 @@
     {
       "category": "Pub / Bar",
       "slug": "pub-bar",
-      "total_venues": 13,
+      "total_venues": 12,
       "top_n": 5,
       "venues": [
         {
@@ -299,7 +299,7 @@
           "category_rank": 4
         },
         {
-          "rank": 17,
+          "rank": 16,
           "name": "NO4 Bar And Restaurant",
           "postcode": "CV37 6YY",
           "category": "Pub / Bar",
@@ -322,7 +322,7 @@
     {
       "category": "Takeaway / Delivery",
       "slug": "takeaway-delivery",
-      "total_venues": 12,
+      "total_venues": 10,
       "top_n": 5,
       "venues": [
         {
@@ -345,7 +345,7 @@
           "category_rank": 1
         },
         {
-          "rank": 20,
+          "rank": 19,
           "name": "GAIL's Stratford-Upon-Avon",
           "postcode": "CV37 6AU",
           "category": "Takeaway / Delivery",
@@ -364,7 +364,7 @@
           "category_rank": 2
         },
         {
-          "rank": 22,
+          "rank": 21,
           "name": "Deli Cafe",
           "postcode": "CV37 6QB",
           "category": "Takeaway / Delivery",
@@ -383,7 +383,7 @@
           "category_rank": 3
         },
         {
-          "rank": 29,
+          "rank": 26,
           "name": "Starbucks",
           "postcode": "CV37 6AU",
           "category": "Takeaway / Delivery",
@@ -402,7 +402,7 @@
           "category_rank": 4
         },
         {
-          "rank": 31,
+          "rank": 28,
           "name": "The Food Of Love",
           "postcode": "CV37 6QW",
           "category": "Takeaway / Delivery",
@@ -429,7 +429,7 @@
       "top_n": 5,
       "venues": [
         {
-          "rank": 33,
+          "rank": 30,
           "name": "Hotel Indigo And The Woodsman",
           "postcode": "CV37 6HA",
           "category": "Hotel / Accommodation",
@@ -448,7 +448,7 @@
           "category_rank": 1
         },
         {
-          "rank": 48,
+          "rank": 42,
           "name": "Crowne Plaza",
           "postcode": "CV37 6YR",
           "category": "Hotel / Accommodation",
@@ -467,7 +467,7 @@
           "category_rank": 2
         },
         {
-          "rank": 54,
+          "rank": 48,
           "name": "Alveston Manor Hotel",
           "postcode": "CV37 7HP",
           "category": "Hotel / Accommodation",
@@ -486,7 +486,7 @@
           "category_rank": 3
         },
         {
-          "rank": 58,
+          "rank": 50,
           "name": "The Embankment",
           "postcode": "CV37 7LS",
           "category": "Hotel / Accommodation",
@@ -505,7 +505,7 @@
           "category_rank": 4
         },
         {
-          "rank": 68,
+          "rank": 60,
           "name": "Welcombe Hotel Golf Resort \\& Spa",
           "postcode": "CV37 0NR",
           "category": "Hotel / Accommodation",
@@ -551,7 +551,7 @@
           "category_rank": 1
         },
         {
-          "rank": 64,
+          "rank": 56,
           "name": "Hobsons Patisseries",
           "postcode": "CV37 6PT",
           "category": "Bakery",
