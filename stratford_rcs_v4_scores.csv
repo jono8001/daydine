@@ -1,5 +1,5 @@
 id,fhrsid,name,rcs_v4_final,base_score,adjusted_score,confidence_class,coverage_status,rankable,league_table_eligible,companies_house,penalties,caps
-1354963,1354963,The Tea Shed,,7.125,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+1354963,1354963,The Tea Shed,,7.125,7.125,Directional-C,coverage-partial,False,False,unmatched,[],[]
 1584577,1584577,Shakespeare's,8.03,8.03,8.03,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1695937,1695937,Impasto Micro-Pizzeria,9.223,9.223,9.223,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1896718,1896718,Birmingham City Football Club Ltd,7.747,7.747,7.747,Rankable-B,coverage-partial,True,True,matched,[],[]
@@ -45,7 +45,7 @@ id,fhrsid,name,rcs_v4_final,base_score,adjusted_score,confidence_class,coverage_
 1297845,1297845,Lounge@26,9.19,9.19,9.19,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1089841,1089841,Cotswold Distillery Cafe,8.284,8.284,8.284,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=752, r=5""}]"
 1672985,1672985,Bidford Community Fridge & Cafe,8.021,8.021,8.021,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=771, r=5""}]"
-503054,503054,Stratford Manor Hotel,3.0,8.621,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+503054,503054,Stratford Manor Hotel,8.621,8.621,8.621,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 503525,503525,Shah's,9.309,9.309,9.309,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 504014,504014,The Kings Head,9.221,9.221,9.221,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1284339,1284339,The Yew Tree,8.494,8.494,8.494,Rankable-B,coverage-ready,True,True,unmatched,[],[]
@@ -68,7 +68,7 @@ id,fhrsid,name,rcs_v4_final,base_score,adjusted_score,confidence_class,coverage_
 1552328,1552328,The Phoenix,9.275,9.275,9.275,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 502702,502702,Bannatyne Health Club And Spa Wildmoor,8.928,8.928,8.928,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1739370,1739370,Corte Campana,9.106,9.106,9.106,Rankable-B,coverage-ready,True,True,unmatched,[],[]
-1014807,1014807,McDonald's,3.0,8.49,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+1014807,1014807,McDonald's,8.49,8.49,8.49,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1093181,1093181,Coffee#1 Limited,,8.281,8.281,Directional-C,coverage-partial,False,False,matched,[],[]
 503376,503376,The Garden Cafe,9.209,9.209,9.209,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1016715,1016715,Shakespaw Cat Cafe,9.111,9.111,9.111,Rankable-B,coverage-ready,True,True,unmatched,[],[]
@@ -82,21 +82,21 @@ id,fhrsid,name,rcs_v4_final,base_score,adjusted_score,confidence_class,coverage_
 503565,503565,A G D Equipment Ltd,8.48,8.48,8.48,Rankable-B,coverage-partial,True,True,unmatched,[],[]
 503292,503292,Wildwood Kitchen,8.286,8.286,8.286,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1800192,1800192,Havilands Tea Room And Restaurant,4.864,4.864,4.864,Rankable-B,coverage-ready,True,False,unmatched,[],[]
-1754520,1754520,Cinnamon Arch,3.0,8.604,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+1754520,1754520,Cinnamon Arch,8.604,8.604,8.604,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1206075,1206075,Dec X Canteen,8.561,8.561,8.561,Directional-C,coverage-partial,False,False,unmatched,[],[]
 503960,503960,Blue Bean Coffee Shop,8.488,8.488,8.488,Rankable-B,coverage-ready,True,True,unmatched,[],[]
-1842631,1842631,Snitterfield Arms,3.0,9.203,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
-1896714,1896714,The Townhouse Also Trading As JR Hotel And Restaurants LTD,9.125,9.125,9.125,Rankable-B,coverage-ready,True,True,matched,[],[]
+1842631,1842631,Snitterfield Arms,9.203,9.203,9.203,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1896714,1896714,The Townhouse Also Trading As JR Hotel And Restaurants LTD,9.125,9.125,9.125,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1291217,1291217,Gardener's Retreat,7.398,7.398,7.398,Directional-C,coverage-partial,False,False,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=786, r=5""}]"
 1228994,1228994,Mor,9.209,9.209,9.209,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1453409,1453409,Bidford Juniors Football Club,7.304,7.304,7.304,Directional-C,coverage-partial,False,False,unmatched,[],[]
 503552,503552,Premier Inn,8.555,8.555,8.555,Rankable-B,coverage-ready,True,True,matched,[],[]
-503821,503821,The Balti Hut,7.178,7.478,7.178,Rankable-B,coverage-ready,True,True,matched,"[{""code"": ""CH-3"", ""effect"": ""-0.30 absolute"", ""reason"": ""accounts_overdue_days=114""}]",[]
-1790270,1790270,Bardia's,7.486,7.786,7.486,Rankable-B,coverage-ready,True,True,matched,"[{""code"": ""CH-3"", ""effect"": ""-0.30 absolute"", ""reason"": ""accounts_overdue_days=1059""}]",[]
+503821,503821,The Balti Hut,7.478,7.478,7.478,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1790270,1790270,Bardia's,7.786,7.786,7.786,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1854458,1854458,Costa Coffee,8.836,8.836,8.836,Rankable-B,coverage-partial,True,True,matched,[],[]
 503479,503479,The Pavillion,8.924,8.924,8.924,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 503541,503541,Costa,8.27,8.27,8.27,Rankable-B,coverage-partial,True,True,unmatched,[],[]
-1835033,1835033,The Cottage Of Content,3.0,8.052,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+1835033,1835033,The Cottage Of Content,8.052,8.052,8.052,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1474392,1474392,The Pavilion Coffee Shop And Community Space,8.187,8.187,8.187,Rankable-B,coverage-partial,True,True,unmatched,[],[]
 736236,736236,JNB Cafe,7.856,7.856,7.856,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=1064, r=5""}]"
 503715,503715,Cafe Living,7.324,7.324,7.324,Rankable-B,coverage-ready,True,True,unmatched,[],[]
@@ -104,23 +104,23 @@ id,fhrsid,name,rcs_v4_final,base_score,adjusted_score,confidence_class,coverage_
 1266894,1266894,Barnabys,8.236,8.236,8.236,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1552322,1552322,Costa Coffee,7.829,7.829,7.829,Rankable-B,coverage-ready,True,False,matched,[],[]
 1421992,1421992,Deli Cafe,8.969,8.969,8.969,Rankable-B,coverage-ready,True,True,unmatched,[],[]
-503105,503105,Avon Spice,3.0,9.063,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+503105,503105,Avon Spice,9.063,9.063,9.063,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1789006,1789006,The Pickled Crab Deli,9.299,9.299,9.299,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 503148,503148,Nuthurst Grange Country House,7.827,7.827,7.827,Rankable-B,coverage-ready,True,True,matched,[],[]
 1421981,1421981,Peppers,8.57,8.57,8.57,Rankable-B,coverage-ready,True,True,unmatched,[],[]
-503286,503286,George's Cafe,3.0,8.953,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+503286,503286,George's Cafe,8.953,8.953,8.953,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1552333,1552333,Costa Coffee,8.367,8.367,8.367,Rankable-B,coverage-ready,True,True,matched,[],[]
-1485802,1485802,Kitty's Kitchen Catering Ltd,3.0,7.786,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=778, r=5""}, {""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+1485802,1485802,Kitty's Kitchen Catering Ltd,7.786,7.786,7.786,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=778, r=5""}]"
 1495078,1495078,Four Seasons Pho Limited,7.942,7.942,7.942,Rankable-B,coverage-ready,True,True,matched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=771, r=5""}]"
 503240,503240,Henley Ice Cream Limited,9.21,9.21,9.21,Rankable-B,coverage-ready,True,True,matched,[],[]
-1912631,1912631,Shipston Bengal Cuisine,3.0,5.031,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+1912631,1912631,Shipston Bengal Cuisine,5.031,5.031,5.031,Rankable-B,coverage-partial,True,True,unmatched,[],[]
 1253300,1253300,The Keys,7.155,7.155,7.155,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=792, r=4""}]"
 503270,503270,Kings Court Hotel,3.727,3.727,3.727,Directional-C,coverage-partial,False,False,unmatched,[],[]
 1799220,1799220,Burger King,7.63,7.63,7.63,Rankable-B,coverage-ready,True,True,unmatched,[],[]
-1344517,1344517,The Fox Inn,3.0,7.434,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+1344517,1344517,The Fox Inn,7.434,7.434,7.434,Rankable-B,coverage-partial,True,True,unmatched,[],[]
 1781021,1781021,Stratford Upon Avon Baptist Church,7.943,7.943,7.943,Rankable-B,coverage-partial,True,True,matched,[],[]
 503401,503401,Shukurs,8.484,8.484,8.484,Rankable-B,coverage-ready,True,True,unmatched,[],[]
-503854,503854,The Lime Tree Restaurant,3.0,8.786,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+503854,503854,The Lime Tree Restaurant,8.786,8.786,8.786,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 979161,979161,Karen's Korner,5.835,5.835,5.835,Rankable-B,coverage-ready,True,False,unmatched,[],[]
 676561,676561,The Embankment,7.672,7.672,7.672,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1747702,1747702,Beleza Rodizio,9.553,9.553,9.553,Rankable-B,coverage-ready,True,True,unmatched,[],[]
@@ -136,15 +136,15 @@ id,fhrsid,name,rcs_v4_final,base_score,adjusted_score,confidence_class,coverage_
 1854461,1854461,The Red Lion,9.407,9.407,9.407,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 503926,503926,Harbury Library Cafe,8.675,8.675,8.675,Rankable-B,coverage-partial,True,True,unmatched,[],[]
 1388307,1388307,Chrissie's Kitchen,7.645,7.645,7.645,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=788, r=5""}]"
-503772,503772,McDonald's,3.0,8.422,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+503772,503772,McDonald's,8.422,8.422,8.422,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 503478,503478,Starbucks,8.711,8.711,8.711,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1800191,1800191,Chapter 23,8.772,8.772,8.772,Rankable-B,coverage-ready,True,True,matched,[],[]
 1774608,1774608,NO4 Bar And Restaurant,9.037,9.037,9.037,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1747700,1747700,The Still House Café,8.098,8.098,8.098,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=752, r=5""}]"
 1556368,1556368,Prospero Lounge,9.035,9.035,9.035,Rankable-B,coverage-ready,True,True,unmatched,[],[]
-565220,565220,Four Teas,3.0,7.595,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
-502962,502962,Curry Republic,3.0,7.501,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
-1388303,1388303,Lily's,2.7,8.885,2.7,Directional-C,coverage-partial,False,False,matched,"[{""code"": ""CH-3"", ""effect"": ""-0.30 absolute"", ""reason"": ""accounts_overdue_days=3401""}]","[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+565220,565220,Four Teas,7.595,7.595,7.595,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+502962,502962,Curry Republic,7.501,7.501,7.501,Rankable-B,coverage-ready,True,True,unmatched,[],[]
+1388303,1388303,Lily's,8.885,8.885,8.885,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1827674,1827674,Pickled & Tipsy's Cafe,8.765,8.765,8.765,Rankable-B,coverage-partial,True,True,unmatched,[],[]
 502877,502877,DoubleTree By Hilton,7.843,7.843,7.843,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 503584,503584,Cardamom,9.133,9.133,9.133,Rankable-B,coverage-ready,True,True,unmatched,[],[]
@@ -167,7 +167,7 @@ id,fhrsid,name,rcs_v4_final,base_score,adjusted_score,confidence_class,coverage_
 1754519,1754519,Nanas Caff,7.938,7.938,7.938,Directional-C,coverage-partial,False,False,unmatched,[],[]
 1735216,1735216,The Stables,8.871,8.871,8.871,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1699665,1699665,Nel's At The Pavilion,9.057,9.057,9.057,Rankable-B,coverage-ready,True,True,unmatched,[],[]
-1467814,1467814,Stratford Adventure Golf,8.749,8.749,8.749,Rankable-B,coverage-ready,True,True,matched,[],[]
+1467814,1467814,Stratford Adventure Golf,8.749,8.749,8.749,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 503282,503282,Arrow Mill,9.421,9.421,9.421,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1774610,1774610,Digby's Events,3.87,3.87,3.87,Directional-C,coverage-partial,False,False,unmatched,[],[]
 1266889,1266889,Turkish Stonebakers,8.499,8.499,8.499,Rankable-B,coverage-ready,True,True,unmatched,[],[]
@@ -197,11 +197,11 @@ id,fhrsid,name,rcs_v4_final,base_score,adjusted_score,confidence_class,coverage_
 1206079,1206079,Building 523 Costa And Kitchen,8.711,8.711,8.711,Directional-C,coverage-partial,False,False,unmatched,[],[]
 502838,502838,Alveston Manor Hotel,7.843,7.843,7.843,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 502681,502681,Billesley Manor Hotel,7.892,7.892,7.892,Rankable-B,coverage-ready,True,True,matched,[],[]
-1622078,1622078,Sushi Land,3.0,8.373,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+1622078,1622078,Sushi Land,8.373,8.373,8.373,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1622076,1622076,Caffe Nero,7.906,7.906,7.906,Rankable-B,coverage-ready,True,True,unmatched,[],"[{""code"": ""STALE-2Y"", ""effect"": ""TrustCompliance soft cap 7.0"", ""reason"": ""days_since_rd=919, r=5""}]"
 676557,676557,Plantarium,9.311,9.311,9.311,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 503319,503319,Shipston Pizza And Kebab House,7.286,7.286,7.286,Rankable-B,coverage-ready,True,True,unmatched,[],[]
-503369,503369,Studley Castle,3.0,8.387,3.0,Directional-C,coverage-partial,False,False,matched,[],"[{""code"": ""CH-1"", ""effect"": ""cap 3.0"", ""reason"": ""company_status=dissolved""}]"
+503369,503369,Studley Castle,8.387,8.387,8.387,Rankable-B,coverage-ready,True,True,unmatched,[],[]
 1131857,1131857,Stratford Town FC,8.346,8.346,8.346,Rankable-B,coverage-ready,True,True,matched,[],[]
 502970,502970,China Garden,6.024,6.024,6.024,Rankable-B,coverage-ready,True,True,matched,[],[]
 1584576,1584576,Libertine Burger,8.529,8.529,8.529,Rankable-B,coverage-ready,True,True,matched,[],[]

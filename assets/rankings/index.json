@@ -9,7 +9,7 @@
       "area_type": "town",
       "status": "live",
       "methodology_version": "V4 official-source mode",
-      "total_venues": 62,
+      "total_venues": 70,
       "top_score": 9.553
     }
   ],
@@ -22,7 +22,7 @@
       "area_type": "district",
       "status": "live",
       "methodology_version": "V4 official-source mode",
-      "total_venues": 151,
+      "total_venues": 168,
       "top_score": 9.677
     }
   ],

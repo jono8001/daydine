@@ -1,0 +1,209 @@
+{
+  "policy_mode": "review_required_for_risk",
+  "raw_matches": 69,
+  "passed_to_scoring": 47,
+  "held_for_review": 22,
+  "rejected_by_review": 0,
+  "approved_by_review": 0,
+  "clean_active_passed": 47,
+  "held_records": [
+    {
+      "fhrsid": "1354963",
+      "venue_name": "The Tea Shed",
+      "company_name": "THE TEA SHED LTD",
+      "company_number": "13398508",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "503054",
+      "venue_name": "Stratford Manor Hotel",
+      "company_name": "STRATFORD MANOR HOTEL LIMITED",
+      "company_number": "03086142",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1014807",
+      "venue_name": "McDonald's",
+      "company_name": "MCDONALD'S LTD",
+      "company_number": "SC598200",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1754520",
+      "venue_name": "Cinnamon Arch",
+      "company_name": "CINNAMON ARCH LTD",
+      "company_number": "15418285",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1842631",
+      "venue_name": "Snitterfield Arms",
+      "company_name": "SNITTERFIELD ARMS LIMITED",
+      "company_number": "12303908",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1896714",
+      "venue_name": "The Townhouse Also Trading As JR Hotel And Restaurants LTD",
+      "company_name": "CHURCH STREET TOWNHOUSE LTD",
+      "company_number": "08634992",
+      "company_status": "active",
+      "accounts_overdue_days": 24,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "503821",
+      "venue_name": "The Balti Hut",
+      "company_name": "BALTI HUT LIMITED",
+      "company_number": "14759540",
+      "company_status": "active",
+      "accounts_overdue_days": 114,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1790270",
+      "venue_name": "Bardia's",
+      "company_name": "BARDIA'S LIMITED",
+      "company_number": "10918319",
+      "company_status": "active",
+      "accounts_overdue_days": 1059,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1835033",
+      "venue_name": "The Cottage Of Content",
+      "company_name": "THE COTTAGE OF CONTENT LTD",
+      "company_number": "06642224",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "503105",
+      "venue_name": "Avon Spice",
+      "company_name": "AVON SPICE LTD",
+      "company_number": "08732946",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "503286",
+      "venue_name": "George's Cafe",
+      "company_name": "GEORGE'S CAFE LIMITED",
+      "company_number": "06039032",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1485802",
+      "venue_name": "Kitty's Kitchen Catering Ltd",
+      "company_name": "KITTY'S KITCHEN CATERING LTD",
+      "company_number": "13959953",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1912631",
+      "venue_name": "Shipston Bengal Cuisine",
+      "company_name": "SHIPSTON BENGAL CUISINE LTD",
+      "company_number": "07964980",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1344517",
+      "venue_name": "The Fox Inn",
+      "company_name": "THE FOX INN LIMITED",
+      "company_number": "05506682",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "503854",
+      "venue_name": "The Lime Tree Restaurant",
+      "company_name": "LIME TREE RESTAURANT LTD",
+      "company_number": "12688691",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "503772",
+      "venue_name": "McDonald's",
+      "company_name": "MCDONALD'S LTD",
+      "company_number": "SC598200",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "565220",
+      "venue_name": "Four Teas",
+      "company_name": "THE FOUR TEAS CAFE LIMITED",
+      "company_number": "07540764",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "502962",
+      "venue_name": "Curry Republic",
+      "company_name": "CURRY REPUBLIC LTD",
+      "company_number": "05393671",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1388303",
+      "venue_name": "Lily's",
+      "company_name": "LILY'S LIMITED",
+      "company_number": "04749702",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 3401,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1467814",
+      "venue_name": "Stratford Adventure Golf",
+      "company_name": "STRATFORD ADVENTURE GOLF LTD",
+      "company_number": "13837106",
+      "company_status": "active",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "1622078",
+      "venue_name": "Sushi Land",
+      "company_name": "SUSHI LAND LTD",
+      "company_number": "08357712",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    },
+    {
+      "fhrsid": "503369",
+      "venue_name": "Studley Castle",
+      "company_name": "STUDLEY CASTLE LIMITED",
+      "company_number": "04155565",
+      "company_status": "dissolved",
+      "accounts_overdue_days": 0,
+      "decision": "pending_review"
+    }
+  ]
+}
