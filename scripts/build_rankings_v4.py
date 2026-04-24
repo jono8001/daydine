@@ -12,6 +12,11 @@ Public eligibility is now FSA-first:
 - Google Places type is enrichment and sanity-check evidence, not the sole
   authority for public restaurant eligibility;
 - retail-led public names are excluded unless the name itself is food-led.
+
+Public category labels are deliberately different from eligibility:
+- FSA type decides whether the venue can appear;
+- Google Places types and venue-name terms decide whether the label shown to
+  diners is Restaurant, Cafe, Pub, Hotel, Takeaway, etc.
 """
 from __future__ import annotations
 
@@ -26,10 +31,6 @@ ROOT = Path(__file__).resolve().parent.parent
 RANKINGS_DIR = ROOT / "assets" / "rankings"
 INDEX_FILE = RANKINGS_DIR / "index.json"
 
-# Official FHRS business types considered diner-facing enough for the public
-# guide. Broader FSA registrations such as Retailers - other, Manufacturers,
-# Distributors/Transporters, School/College, Caring Premises, etc. can still
-# exist in the internal/operator layer but should not lead the public list.
 PUBLIC_FSA_BUSINESS_TYPES = {
     "restaurant/cafe/canteen",
     "pub/bar/nightclub",
@@ -38,7 +39,6 @@ PUBLIC_FSA_BUSINESS_TYPES = {
     "mobile caterer",
 }
 
-# Google/name terms that make a venue food-led enough for the public guide.
 FOOD_LED_TERMS = {
     "restaurant", "cafe", "coffee", "tea", "tearoom", "tea_room", "pub",
     "bar", "inn", "bakery", "baker", "takeaway", "meal_takeaway",
@@ -47,7 +47,6 @@ FOOD_LED_TERMS = {
     "catering", "caterer", "sandwich", "fish_and_chips", "ice_cream",
 }
 
-# Terms that often indicate a retail/non-food-led primary proposition.
 RETAIL_OR_AMBIGUOUS_TERMS = {
     "shop", "store", "retail", "crystal", "crystals", "gift", "gifts",
     "jewellery", "jewelry", "boutique", "gallery", "garden_centre",
@@ -58,6 +57,21 @@ STRONG_GOOGLE_FOOD_TYPES = {
     "restaurant", "cafe", "coffee_shop", "bar", "pub", "bakery",
     "meal_takeaway", "fast_food_restaurant", "pizza_restaurant",
     "sandwich_shop", "ice_cream_shop",
+}
+
+PUB_TYPES = {"pub", "bar", "wine_bar", "cocktail_bar", "beer_hall", "night_club"}
+HOTEL_TYPES = {"hotel", "lodging", "bed_and_breakfast", "guest_house"}
+CAFE_TYPES = {"cafe", "coffee_shop", "tea_house"}
+TAKEAWAY_TYPES = {"meal_takeaway", "fast_food_restaurant", "sandwich_shop"}
+BAKERY_TYPES = {"bakery"}
+RESTAURANT_TYPES = {
+    "restaurant", "british_restaurant", "italian_restaurant",
+    "thai_restaurant", "chinese_restaurant", "indian_restaurant",
+    "pizza_restaurant", "seafood_restaurant", "steak_house", "fine_dining_restaurant",
+    "vegan_restaurant", "vegetarian_restaurant", "mediterranean_restaurant",
+    "japanese_restaurant", "french_restaurant", "mexican_restaurant",
+    "turkish_restaurant", "greek_restaurant", "spanish_restaurant",
+    "brunch_restaurant", "breakfast_restaurant",
 }
 
 
@@ -109,13 +123,11 @@ def fsa_business_type(record: dict[str, Any]) -> str:
 
 
 def has_fsa_backing(record: dict[str, Any]) -> bool:
-    """Require a real FSA/FHRS anchor for public-ranking eligibility."""
     return any(record.get(key) not in (None, "", "AwaitingInspection")
                for key in ("r", "rd", "sh", "ss", "sm", "fsa_id", "fhrsid", "id"))
 
 
 def official_fsa_public_type(record: dict[str, Any]) -> bool | None:
-    """Return True/False when official FSA business type is known, else None."""
     business_type = fsa_business_type(record)
     if not business_type:
         return None
@@ -123,7 +135,6 @@ def official_fsa_public_type(record: dict[str, Any]) -> bool | None:
 
 
 def is_food_led_public_venue(record: dict[str, Any]) -> bool:
-    """Return True when FSA + type evidence indicate a diner-facing venue."""
     if not has_fsa_backing(record):
         return False
 
@@ -140,24 +151,12 @@ def is_food_led_public_venue(record: dict[str, Any]) -> bool:
     strong_google_food = bool(google_types & STRONG_GOOGLE_FOOD_TYPES)
     official_type_ok = official_fsa_public_type(record)
 
-    # Primary rule: if official FSA business type is available, use it as the
-    # public leaderboard gate. Google can enrich/categorise the record but
-    # should not override a non-public FSA type into the diner list.
     if official_type_ok is False:
         return False
-
-    # Retail-led public trading names remain excluded unless the name itself
-    # also carries a food-led term, e.g. "Farm Shop Cafe".
     if name_has_retail_signal and not name_has_food_signal:
         return False
-
-    # If the official type is known and public-facing, it is enough, provided
-    # the retail-name safeguard above has not fired.
     if official_type_ok is True:
         return True
-
-    # Fallback only for older compact data before FHRS business-type enrichment:
-    # require food-led Google/name evidence, with an ambiguity guard.
     if has_retail_signal and not (name_has_food_signal or strong_google_food):
         return False
     return has_food_signal or strong_google_food
@@ -178,18 +177,40 @@ def band(score: float) -> tuple[str, str]:
 
 
 def category(record: dict[str, Any]) -> str:
+    """Return the diner-facing category label.
+
+    Eligibility is FSA-first, but category labelling should be more specific
+    and public-friendly. It therefore prefers Google Places types and explicit
+    venue-name terms before falling back to the broader official FSA type.
+    """
     business_type = fsa_business_type(record)
+    name = norm(record.get("n"))
+    name_tokens = tokenise(name)
     joined = text_blob(record)
-    if business_type == "pub/bar/nightclub" or any(x in joined for x in ["pub", "bar", "inn"]):
+    google_types = set(str(t).lower() for t in (record.get("gty") or []))
+
+    if google_types & PUB_TYPES or any(x in name_tokens for x in ["pub", "bar", "inn"]):
         return "Pub / Bar"
-    if business_type == "takeaway/sandwich shop" or any(x in joined for x in ["meal_takeaway", "takeaway", "delivery", "fast_food", "sandwich"]):
-        return "Takeaway / Delivery"
-    if business_type == "hotel/bed & breakfast/guest house" or any(x in joined for x in ["hotel", "lodging", "accommodation", "guest house"]):
+    if google_types & HOTEL_TYPES or any(x in joined for x in ["hotel", "lodging", "accommodation", "guest house"]):
         return "Hotel / Accommodation"
-    if any(x in joined for x in ["cafe", "coffee", "tea_room", "tearoom"]):
-        return "Cafe / Coffee Shop"
-    if "bakery" in joined:
+    if google_types & TAKEAWAY_TYPES or any(x in joined for x in ["meal_takeaway", "takeaway", "delivery", "fast_food"]):
+        return "Takeaway / Delivery"
+    if google_types & BAKERY_TYPES or "bakery" in name_tokens:
         return "Bakery"
+    if google_types & CAFE_TYPES or any(x in name_tokens for x in ["cafe", "coffee", "tearoom", "tea_room"]):
+        return "Cafe / Coffee Shop"
+    if google_types & RESTAURANT_TYPES:
+        return "Restaurant (General)"
+
+    # Fallback only after specific public signals have been tried.
+    if business_type == "pub/bar/nightclub":
+        return "Pub / Bar"
+    if business_type == "takeaway/sandwich shop":
+        return "Takeaway / Delivery"
+    if business_type == "hotel/bed & breakfast/guest house":
+        return "Hotel / Accommodation"
+    if business_type == "mobile caterer":
+        return "Catering / Mobile Food"
     return "Restaurant (General)"
 
 
