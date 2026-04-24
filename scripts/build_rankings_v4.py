@@ -6,6 +6,12 @@ have a useful operator report if it is FSA-registered and Google-enriched, but
 it should only appear in the diner-facing leaderboard when it is clearly
 food-led. This keeps non-food-led FSA registrations, retail shops with limited
 food activity, and ambiguous Google matches out of the public top list.
+
+Public eligibility is now FSA-first:
+- official FHRS/FSA business type is the primary gate when available;
+- Google Places type is enrichment and sanity-check evidence, not the sole
+  authority for public restaurant eligibility;
+- retail-led public names are excluded unless the name itself is food-led.
 """
 from __future__ import annotations
 
@@ -20,7 +26,19 @@ ROOT = Path(__file__).resolve().parent.parent
 RANKINGS_DIR = ROOT / "assets" / "rankings"
 INDEX_FILE = RANKINGS_DIR / "index.json"
 
-# Google/FSA terms that make a venue food-led enough for the public guide.
+# Official FHRS business types considered diner-facing enough for the public
+# guide. Broader FSA registrations such as Retailers - other, Manufacturers,
+# Distributors/Transporters, School/College, Caring Premises, etc. can still
+# exist in the internal/operator layer but should not lead the public list.
+PUBLIC_FSA_BUSINESS_TYPES = {
+    "restaurant/cafe/canteen",
+    "pub/bar/nightclub",
+    "takeaway/sandwich shop",
+    "hotel/bed & breakfast/guest house",
+    "mobile caterer",
+}
+
+# Google/name terms that make a venue food-led enough for the public guide.
 FOOD_LED_TERMS = {
     "restaurant", "cafe", "coffee", "tea", "tearoom", "tea_room", "pub",
     "bar", "inn", "bakery", "baker", "takeaway", "meal_takeaway",
@@ -29,9 +47,7 @@ FOOD_LED_TERMS = {
     "catering", "caterer", "sandwich", "fish_and_chips", "ice_cream",
 }
 
-# Terms that often indicate a retail/non-food-led primary proposition. They do
-# not automatically exclude a venue if Google/FSA also clearly marks it as food
-# led, but they stop weak/ambiguous matches entering the public leaderboard.
+# Terms that often indicate a retail/non-food-led primary proposition.
 RETAIL_OR_AMBIGUOUS_TERMS = {
     "shop", "store", "retail", "crystal", "crystals", "gift", "gifts",
     "jewellery", "jewelry", "boutique", "gallery", "garden_centre",
@@ -65,9 +81,16 @@ def write_json(path: Path, data: dict[str, Any]) -> None:
         handle.write("\n")
 
 
+def norm(value: Any) -> str:
+    return str(value or "").strip().lower()
+
+
 def text_blob(record: dict[str, Any]) -> str:
     parts: list[str] = []
-    for key in ("n", "a", "bt", "business_type", "businessType", "BusinessType"):
+    for key in (
+        "n", "a", "bt", "business_type", "businessType", "BusinessType",
+        "fsa_business_type", "fsa_business_name",
+    ):
         value = record.get(key)
         if value:
             parts.append(str(value))
@@ -75,10 +98,28 @@ def text_blob(record: dict[str, Any]) -> str:
     return " ".join(parts).lower()
 
 
+def fsa_business_type(record: dict[str, Any]) -> str:
+    return norm(
+        record.get("fsa_business_type")
+        or record.get("BusinessType")
+        or record.get("businessType")
+        or record.get("business_type")
+        or record.get("bt")
+    )
+
+
 def has_fsa_backing(record: dict[str, Any]) -> bool:
     """Require a real FSA/FHRS anchor for public-ranking eligibility."""
     return any(record.get(key) not in (None, "", "AwaitingInspection")
-               for key in ("r", "rd", "sh", "ss", "sm", "fsa_id", "id"))
+               for key in ("r", "rd", "sh", "ss", "sm", "fsa_id", "fhrsid", "id"))
+
+
+def official_fsa_public_type(record: dict[str, Any]) -> bool | None:
+    """Return True/False when official FSA business type is known, else None."""
+    business_type = fsa_business_type(record)
+    if not business_type:
+        return None
+    return business_type in PUBLIC_FSA_BUSINESS_TYPES
 
 
 def is_food_led_public_venue(record: dict[str, Any]) -> bool:
@@ -97,20 +138,28 @@ def is_food_led_public_venue(record: dict[str, Any]) -> bool:
     name_has_food_signal = bool(name_tokens & FOOD_LED_TERMS)
     name_has_retail_signal = bool(name_tokens & RETAIL_OR_AMBIGUOUS_TERMS)
     strong_google_food = bool(google_types & STRONG_GOOGLE_FOOD_TYPES)
+    official_type_ok = official_fsa_public_type(record)
 
-    # If the public trading name is retail-led, do not let a generic Google
-    # cafe/food type alone pull it into a diner leaderboard. Examples: crystal,
-    # gift, gallery or shop names that may have an FSA registration but are not
-    # primarily places to eat. A name such as "Farm Shop Cafe" or "Garden Cafe"
-    # still passes because the name itself carries a food-led term.
+    # Primary rule: if official FSA business type is available, use it as the
+    # public leaderboard gate. Google can enrich/categorise the record but
+    # should not override a non-public FSA type into the diner list.
+    if official_type_ok is False:
+        return False
+
+    # Retail-led public trading names remain excluded unless the name itself
+    # also carries a food-led term, e.g. "Farm Shop Cafe".
     if name_has_retail_signal and not name_has_food_signal:
         return False
 
-    # Retail-like venues must have either an explicit food-led name or a strong
-    # Google food-service type to appear publicly.
+    # If the official type is known and public-facing, it is enough, provided
+    # the retail-name safeguard above has not fired.
+    if official_type_ok is True:
+        return True
+
+    # Fallback only for older compact data before FHRS business-type enrichment:
+    # require food-led Google/name evidence, with an ambiguity guard.
     if has_retail_signal and not (name_has_food_signal or strong_google_food):
         return False
-
     return has_food_signal or strong_google_food
 
 
@@ -129,17 +178,18 @@ def band(score: float) -> tuple[str, str]:
 
 
 def category(record: dict[str, Any]) -> str:
+    business_type = fsa_business_type(record)
     joined = text_blob(record)
+    if business_type == "pub/bar/nightclub" or any(x in joined for x in ["pub", "bar", "inn"]):
+        return "Pub / Bar"
+    if business_type == "takeaway/sandwich shop" or any(x in joined for x in ["meal_takeaway", "takeaway", "delivery", "fast_food", "sandwich"]):
+        return "Takeaway / Delivery"
+    if business_type == "hotel/bed & breakfast/guest house" or any(x in joined for x in ["hotel", "lodging", "accommodation", "guest house"]):
+        return "Hotel / Accommodation"
     if any(x in joined for x in ["cafe", "coffee", "tea_room", "tearoom"]):
         return "Cafe / Coffee Shop"
-    if any(x in joined for x in ["pub", "bar", "inn"]):
-        return "Pub / Bar"
     if "bakery" in joined:
         return "Bakery"
-    if any(x in joined for x in ["hotel", "lodging", "accommodation"]):
-        return "Hotel / Accommodation"
-    if any(x in joined for x in ["meal_takeaway", "takeaway", "delivery", "fast_food"]):
-        return "Takeaway / Delivery"
     return "Restaurant (General)"
 
 
@@ -193,6 +243,7 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
             "name": name,
             "postcode": rec.get("pc", ""),
             "category": category(rec),
+            "fsa_business_type": fsa_business_type(rec) or None,
             "rcs_final": round(score, 3),
             "rcs_band": b,
             "band_class": bc,
