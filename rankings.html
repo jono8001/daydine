@@ -67,7 +67,7 @@
       <div class="section-eyebrow">Active guide</div>
       <h2 class="section-title">Stratford-upon-Avon</h2>
     </div>
-    <a class="section-link" href="/rankings/stratford-on-avon">Open the Stratford guide →</a>
+    <a class="section-link" href="/rankings/stratford-upon-avon">Open the Stratford guide →</a>
   </div>
   <div class="market-grid" id="marketCards">
     <div class="mkt soon"><div class="mkt-head"><div class="mkt-name">Loading…</div></div></div>
@@ -143,23 +143,49 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){retur
 function shortCat(cat){return String(cat||'').replace(/\s*\(General\)\s*$/,'');}
 function fmtDate(iso){if(!iso)return '—';var d=new Date(iso+'T00:00:00');return isNaN(d)?iso:d.toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}
 function confidenceLabel(v){var score=Number(v.rcs_final||0);if((v.rcs_band||'')==='Excellent'||score>=8.2)return 'Excellent safe bet';if((v.rcs_band||'')==='Good'||score>=7.0)return 'Highly promising';if(score>=5.8)return 'Good, check first';return 'Thin evidence';}
+function explainBrief(v){
+  var bits=[];
+  if(v.rcs_band==='Excellent'||Number(v.rcs_final||0)>=8.5) bits.push('excellent evidence score');
+  if(v.fsa_business_type) bits.push('FSA-backed food venue');
+  if(v.confidence_class) bits.push(v.confidence_class);
+  if(v.single_platform_caveat) bits.push('Google-led customer signal');
+  return bits.slice(0,3).join(' · ');
+}
+function topThreePanel(venues){
+  if(!venues||!venues.length){return '<div style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);">Top picks load after the guide refreshes.</div>';}
+  return '<div style="font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:14px;">Top 3 right now</div>'+
+    venues.slice(0,3).map(function(v){return '<div style="display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:baseline;padding:10px 0;border-top:1px solid rgba(42,29,18,.12);"><span style="font-family:var(--mono);font-weight:600;color:var(--accent);">#'+esc(v.rank)+'</span><span><b style="font-family:var(--serif);font-size:20px;">'+esc(v.name)+'</b><br><span style="font-size:12px;color:var(--ink-dim);">'+esc(shortCat(v.category))+' · '+esc(explainBrief(v))+'</span></span><span style="font-family:var(--mono);font-weight:600;">'+Number(v.rcs_final||0).toFixed(2)+'</span></div>';}).join('');
+}
 
 Promise.all([
   fetch('/assets/rankings/index.json').then(r=>r.json()).catch(()=>null),
-  fetch('/assets/rankings/stratford-on-avon.json').then(r=>r.json()).catch(()=>null)
+  fetch('/assets/rankings/stratford-upon-avon.json').then(r=>r.json()).catch(()=>null)
 ]).then(function(results){
   var idx=results[0]; var strat=results[1];
   var cards=document.getElementById('marketCards');
   if(idx&&idx.available){
     var total=0;
-    cards.innerHTML=idx.available.map(function(e){total+=Number(e.total_venues||0);return '<a class="mkt live" href="/rankings/'+esc(e.slug)+'"><div class="mkt-head"><div class="mkt-name">'+esc(e.display_name)+'</div><span class="mkt-tag live">Live</span></div><div class="mkt-sub">'+esc(e.total_venues)+' venues · top score '+Number(e.top_score||0).toFixed(1)+' · updated '+fmtDate(idx.last_updated)+'</div><div class="mkt-cta">Open local guide →</div></a>';}).join('');
+    cards.innerHTML=idx.available.map(function(e){
+      total+=Number(e.total_venues||0);
+      var href='/rankings/'+esc(e.slug);
+      var isStrat=e.slug==='stratford-upon-avon';
+      var panel=isStrat&&strat?topThreePanel(strat.venues||[]):'<div style="font-family:var(--mono);font-size:12px;color:var(--ink-dim);">Open the guide to see the current top picks.</div>';
+      return '<a class="mkt live" href="'+href+'" style="display:flex;gap:28px;align-items:stretch;flex-wrap:wrap;padding:0;overflow:hidden;">'+
+        '<div style="flex:1 1 300px;padding:24px 24px 28px 24px;">'+
+          '<div class="mkt-head"><div class="mkt-name">'+esc(e.display_name)+'</div><span class="mkt-tag live">Live</span></div>'+
+          '<div class="mkt-sub">'+esc(e.total_venues)+' venues · top score '+Number(e.top_score||0).toFixed(1)+' · updated '+fmtDate(idx.last_updated)+'</div>'+
+          '<div class="mkt-cta">Open local guide →</div>'+
+        '</div>'+
+        '<div style="flex:1.4 1 420px;background:rgba(42,29,18,.07);border-left:1px solid var(--rule);padding:22px 26px;min-height:190px;">'+panel+'</div>'+
+      '</a>';
+    }).join('');
     document.getElementById('rkTotal').textContent=total||'—';
     if(idx.pipeline&&idx.pipeline.length){document.getElementById('pipelineSection').style.display='';document.getElementById('pipelineMarkets').innerHTML=idx.pipeline.map(function(m){return '<span class="mkt-tag '+(m.status==='validating'?'validating':'requested')+'">'+esc(m.display_name)+' · '+(m.status==='validating'?'Validating':'Requested')+'</span>';}).join('');}
   }
   if(strat&&strat.venues){
     var venues=strat.venues.slice(0,10);
     document.getElementById('tableCount').textContent=(strat.total_venues||venues.length)+' venues · updated '+fmtDate(strat.last_updated);
-    document.getElementById('featuredTableBody').innerHTML=venues.map(function(v){return '<tr class="rl-row"><td class="rl-rank">'+String(v.rank).padStart(2,'0')+'</td><td><div class="rl-name">'+esc(v.name)+'</div><div class="rl-sub">'+esc(v.postcode||'')+'</div></td><td class="rl-cat">'+esc(shortCat(v.category))+'</td><td class="rl-band">'+esc(confidenceLabel(v))+'</td><td class="rl-score">'+Number(v.rcs_final||0).toFixed(2)+'</td></tr>';}).join('');
+    document.getElementById('featuredTableBody').innerHTML=venues.map(function(v){return '<tr class="rl-row"><td class="rl-rank">'+String(v.rank).padStart(2,'0')+'</td><td><div class="rl-name">'+esc(v.name)+'</div><div class="rl-sub">'+esc(v.postcode||'')+' · '+esc(explainBrief(v))+'</div></td><td class="rl-cat">'+esc(shortCat(v.category))+'</td><td class="rl-band">'+esc(confidenceLabel(v))+'</td><td class="rl-score">'+Number(v.rcs_final||0).toFixed(2)+'</td></tr>';}).join('');
   }
 }).catch(function(){});
 </script>
