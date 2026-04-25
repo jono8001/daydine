@@ -1,0 +1,218 @@
+name: Refresh Leamington Spa Official Google V4 Now
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refresh_leamington_official_v4_now.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-leamington-official-v4-now
+  cancel-in-progress: false
+
+jobs:
+  refresh-leamington-official-v4:
+    name: Official Google Places refresh + V4 Leamington Spa public ranking
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip requests
+
+      - name: Fetch fresh Warwick District base for Leamington Spa
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+          import requests
+
+          url = "https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app/daydine/establishments.json"
+          params = {"orderBy": '"la"', "equalTo": '"Warwick"'}
+          out_path = "leamington_establishments.json"
+          print("Fetching Warwick District establishments from Firebase RTDB...")
+          print("  params:", params)
+          resp = requests.get(url, params=params, timeout=90)
+          print("  HTTP:", resp.status_code)
+          resp.raise_for_status()
+          data = resp.json() or {}
+          if not isinstance(data, dict) or len(data) < 1:
+              print("ERROR: no Warwick District establishments returned; refusing to continue", file=sys.stderr)
+              sys.exit(3)
+          cv_count = sum(1 for r in data.values() if isinstance(r, dict) and str(r.get("pc", "")).startswith("CV"))
+          print(f"Fetched {len(data)} establishments; CV postcodes: {cv_count}")
+          with open(out_path, "w", encoding="utf-8") as f:
+              json.dump(data, f, indent=2, ensure_ascii=False)
+              f.write("\n")
+          print(f"Saved {out_path}")
+          PY
+
+      - name: Prepare Leamington side files
+        run: |
+          printf '{}\n' > leamington_menus.json
+          printf '{}\n' > leamington_editorial.json
+          cp leamington_establishments.json stratford_establishments.json
+          rm -f stratford_google_enrichment.json stratford_entity_resolution_report.json stratford_companies_house.json stratford_companies_house_coverage.json
+
+      - name: Enrich official FHRS business types
+        run: python .github/scripts/enrich_fsa_business_types.py
+
+      - name: Fresh official Google Places enrichment only
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: python .github/scripts/enrich_google_stratford.py
+
+      - name: Merge official Google enrichment into Leamington establishments
+        run: python .github/scripts/merge_enrichment.py
+
+      - name: Resolve entities
+        run: python .github/scripts/resolve_entities.py
+
+      - name: Enrich Companies House risk layer
+        env:
+          COMPANIES_HOUSE_API_KEY: ${{ secrets.COMPANIES_HOUSE_API_KEY }}
+        run: python .github/scripts/enrich_companies_house.py
+
+      - name: Preserve Leamington-specific enriched artefacts
+        run: |
+          cp stratford_establishments.json leamington_establishments.json
+          cp stratford_google_enrichment.json leamington_google_enrichment.json
+          cp stratford_entity_resolution_report.json leamington_entity_resolution_report.json
+          cp stratford_companies_house.json leamington_companies_house.json
+          cp stratford_companies_house_coverage.json leamington_companies_house_coverage.json
+
+      - name: Run V4 scoring engine with risk-layer fallback
+        run: |
+          set +e
+          python scripts/run_v4_scoring_with_risk.py \
+            --input leamington_establishments.json \
+            --menus leamington_menus.json \
+            --editorial leamington_editorial.json \
+            --companies-house leamington_companies_house.json \
+            --out-json leamington_rcs_v4_scores.json \
+            --out-csv leamington_rcs_v4_scores.csv
+          RISK_STATUS=$?
+          set -e
+
+          if [ "$RISK_STATUS" -ne 0 ]; then
+            echo "Risk-aware V4 runner failed with status $RISK_STATUS; falling back to canonical V4 scorer without Companies House risk caps."
+            python rcs_scoring_v4.py \
+              --input leamington_establishments.json \
+              --menus leamington_menus.json \
+              --editorial leamington_editorial.json \
+              --out-json leamington_rcs_v4_scores.json \
+              --out-csv leamington_rcs_v4_scores.csv
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          Path('leamington_companies_house_runtime_status.json').write_text(json.dumps({
+            'risk_scoring_enabled': False,
+            'fallback_used': True,
+            'reason': 'risk-aware runner failed; canonical V4 scorer used so public rankings remain fresh'
+          }, indent=2) + '\n')
+          PY
+          else
+            python - <<'PY'
+          import json
+          from pathlib import Path
+          Path('leamington_companies_house_runtime_status.json').write_text(json.dumps({
+            'risk_scoring_enabled': True,
+            'fallback_used': False,
+            'reason': 'risk-aware runner completed'
+          }, indent=2) + '\n')
+          PY
+          fi
+
+      - name: Build Leamington Spa ranking JSON from V4
+        run: |
+          cp assets/rankings/index.json /tmp/daydine_index_before.json || printf '{"available":[],"operator_areas":[],"pipeline":[]}\n' > /tmp/daydine_index_before.json
+          cat > /tmp/leamington_ranking_area.json <<'JSON'
+          {
+            "areas": [
+              {
+                "slug": "leamington-spa",
+                "display_name": "Leamington Spa",
+                "la_name": "Warwick",
+                "region": "Warwickshire",
+                "area_type": "town",
+                "public": true,
+                "operator": true,
+                "centre": { "lat": 52.2852, "lon": -1.5201 },
+                "radius_km": 4.0,
+                "top_n": 10,
+                "description": "Town-centre diner guide for Leamington Spa and nearby walkable/short-trip venues. Intended for public restaurant discovery."
+              }
+            ]
+          }
+          JSON
+          python scripts/build_area_rankings_v4.py \
+            --scores leamington_rcs_v4_scores.json \
+            --establishments leamington_establishments.json \
+            --areas /tmp/leamington_ranking_area.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          before = json.loads(Path('/tmp/daydine_index_before.json').read_text())
+          leam = json.loads(Path('assets/rankings/leamington-spa.json').read_text())
+          entry = {
+              'slug': leam['slug'],
+              'la_name': leam['la_name'],
+              'display_name': leam['display_name'],
+              'region': leam.get('region', 'Warwickshire'),
+              'area_type': leam.get('area_type'),
+              'status': 'live',
+              'methodology_version': leam.get('methodology_version'),
+              'total_venues': leam.get('total_venues'),
+              'top_score': leam['venues'][0]['rcs_final'] if leam.get('venues') else None,
+          }
+          available = [x for x in before.get('available', []) if x.get('slug') != 'leamington-spa']
+          available.append(entry)
+          before['available'] = sorted(available, key=lambda x: x.get('display_name','').lower())
+          before['last_updated'] = leam.get('last_updated')
+          before.setdefault('operator_areas', before.get('operator_areas', []))
+          before.setdefault('pipeline', before.get('pipeline', []))
+          Path('assets/rankings/index.json').write_text(json.dumps(before, indent=2, ensure_ascii=False) + '\n')
+          PY
+
+      - name: Restore Stratford tracked artefacts after Leamington run
+        run: |
+          git restore stratford_establishments.json stratford_google_enrichment.json stratford_entity_resolution_report.json stratford_companies_house.json stratford_companies_house_coverage.json 2>/dev/null || true
+          rm -f stratford_companies_house_runtime_status.json
+
+      - name: V4 scoring regression checks
+        run: |
+          python -m tests.test_coverage_status
+          python -m tests.test_v4_report_guardrails
+
+      - name: Commit refreshed Leamington official-source V4 data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add leamington_*.json leamington_*.csv assets/rankings/leamington-spa.json assets/rankings/index.json .github/workflows/refresh_leamington_official_v4_now.yml
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+
+          git stash
+          git pull --rebase origin main
+          git stash pop || true
+          git add leamington_*.json leamington_*.csv assets/rankings/leamington-spa.json assets/rankings/index.json .github/workflows/refresh_leamington_official_v4_now.yml
+          git diff --cached --quiet && echo "No changes after pull" && exit 0
+
+          if git grep -n -E '^(<{7} .+|={7}$|>{7} .+)$' -- . ':!*.md' ':!.github/**' ; then
+            echo "Conflict markers detected; refusing to commit"
+            exit 1
+          fi
+
+          git commit -m "Refresh Leamington Spa official Google Places data and V4 ranking"
+          git push
