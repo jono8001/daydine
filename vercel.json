@@ -4,7 +4,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/search", "destination": "/search-v2.html" }
+    { "source": "/search", "destination": "/search-v2.html" },
+    { "source": "/uk-establishments", "destination": "/uk-establishments.html" }
   ],
   "redirects": [
     { "source": "/rankings/stratford-on-avon", "destination": "/rankings/stratford-upon-avon", "permanent": false },
