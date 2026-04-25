@@ -1,5 +1,5 @@
 {
-  "_note": "Ranking areas separate the data-collection unit from the public diner-facing geography. Local-authority/district areas are useful for operator intelligence; town/neighbourhood areas are the main public product.",
+  "_note": "Ranking areas separate the data-collection unit from the public diner-facing geography. Local-authority/district areas are useful for operator intelligence; town/neighbourhood areas are the main public product. Public visibility is top 30 overall and up to 30 per category.",
   "areas": [
     {
       "slug": "stratford-upon-avon",
@@ -15,7 +15,7 @@
         "lon": -1.7073
       },
       "radius_km": 4.0,
-      "top_n": 10,
+      "top_n": 30,
       "description": "Town-centre diner guide for Stratford-upon-Avon and nearby walkable/short-trip venues. Intended for public restaurant discovery."
     },
     {
@@ -26,7 +26,7 @@
       "area_type": "district",
       "public": false,
       "operator": true,
-      "top_n": 10,
+      "top_n": 30,
       "description": "Wider local-authority market view for operator intelligence, including villages, destination pubs, hotels and surrounding settlements."
     }
   ]
