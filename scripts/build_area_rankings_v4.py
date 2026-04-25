@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RANKINGS_DIR = ROOT / "assets" / "rankings"
 INDEX_FILE = RANKINGS_DIR / "index.json"
 DEFAULT_AREAS_FILE = ROOT / "data" / "ranking_areas.json"
+DEFAULT_TOP_N = 30
 
 
 def safe_float(value: Any) -> float | None:
@@ -35,7 +36,6 @@ def safe_float(value: Any) -> float | None:
 
 
 def distance_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
-    """Haversine distance in kilometres."""
     radius = 6371.0088
     phi1 = math.radians(lat1)
     phi2 = math.radians(lat2)
@@ -46,7 +46,6 @@ def distance_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
 
 
 def record_in_area(record: dict[str, Any], area: dict[str, Any]) -> tuple[bool, float | None]:
-    """Return (in_area, distance_km_or_none)."""
     if area.get("area_type") == "district":
         return True, None
 
@@ -156,14 +155,12 @@ def main() -> int:
             slug=slug,
             la=area.get("la_name", ""),
             display=area.get("display_name", slug),
-            top_n=int(area.get("top_n", 10)),
+            top_n=int(area.get("top_n", DEFAULT_TOP_N)),
         )
         output["region"] = area.get("region")
         add_area_metadata(output, area, distances)
         write_json(RANKINGS_DIR / f"{slug}.json", output)
 
-        # Backwards-compatible aliases let older pages and links continue to
-        # consume the canonical town data while the new canonical slug rolls out.
         for legacy_slug in area.get("legacy_slugs", []):
             alias_output = dict(output)
             alias_output["canonical_slug"] = slug
