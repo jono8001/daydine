@@ -8,8 +8,8 @@
       "region": "Warwickshire",
       "area_type": "town",
       "status": "live",
-      "methodology_version": "V4 official-source mode",
-      "total_venues": 70,
+      "methodology_version": "V4 DayDine RCS official-source mode",
+      "total_venues": 69,
       "top_score": 9.553
     }
   ],
@@ -21,8 +21,8 @@
       "region": "Warwickshire",
       "area_type": "district",
       "status": "live",
-      "methodology_version": "V4 official-source mode",
-      "total_venues": 168,
+      "methodology_version": "V4 DayDine RCS official-source mode",
+      "total_venues": 167,
       "top_score": 9.676
     }
   ],
