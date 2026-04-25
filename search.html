@@ -741,7 +741,7 @@
         alert("No results found near your location.");
       }
     } catch (err) {
-      if (err.code === 1) alert("Location access denied. Please allow location access and try again.");
+      if (err.code === 1) alert("Location access is blocked for this browser. To use Near Me, allow location access for Safari/Chrome in your phone settings, then return and try again. You can also type a town or postcode in the Location box and press Search.");
       else alert("Could not determine location: " + err.message);
     } finally {
       btnNearMe.disabled = false;
