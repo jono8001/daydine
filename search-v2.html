@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light">
+  <title>Search restaurants by place and type — DayDine</title>
+  <meta name="description" content="Search DayDine by location and type. Find bakeries, cafes, pubs, restaurants and other food venues in live ranked markets.">
+  <link rel="canonical" href="https://daydine.vercel.app/search">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/daydine.css">
+  <style>
+    main { max-width: 980px; margin: 0 auto; padding: 48px 24px 80px; }
+    .search-panel { background: var(--surface-1); border: 1px solid var(--border); padding: 28px; box-shadow: var(--shadow); }
+    .search-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-subtle); }
+    .field input, .field select { width: 100%; box-sizing: border-box; padding: 14px 16px; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius); font-family: var(--sans); font-size: 16px; }
+    .field input:focus, .field select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(180,110,35,.14); }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 22px; }
+    .primary { flex: 1 1 240px; padding: 15px 22px; border-radius: var(--radius); border: 1px solid var(--accent-dark); background: linear-gradient(135deg, var(--accent), var(--accent-hover)); color: var(--text); font-family: var(--sans); font-size: 17px; font-weight: 700; cursor: pointer; }
+    .secondary { flex: 0 1 auto; padding: 14px 18px; border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface-1); color: var(--accent); font-family: var(--sans); font-weight: 700; text-decoration: none; cursor: pointer; }
+    .note { margin-top: 18px; color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+    .hint-card { margin-top: 28px; background: var(--surface-2); border: 1px solid var(--border); padding: 20px; }
+    .hint-card h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 26px; }
+    .examples { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .chip { border: 1px solid var(--border); background: var(--surface-1); color: var(--accent); padding: 8px 10px; border-radius: 999px; font-size: 13px; cursor: pointer; }
+    @media (max-width: 720px) {
+      main { padding: 32px 24px 64px; }
+      .search-panel { padding: 22px; }
+      .search-grid { grid-template-columns: 1fr; gap: 14px; }
+      .primary, .secondary { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body class="ed" data-page-type="diner">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="/">Day<em>dine</em></a>
+    <div class="mast-issue">Search · <b>place + type</b></div>
+    <button class="mast-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="mast-nav">
+      <a href="/">Home</a>
+      <a href="/rankings">Rankings</a>
+      <a href="/search" class="on">Search</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/for-restaurants">For restaurants</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <div class="kicker kicker-accent mb-1">Restaurant search</div>
+  <h1 class="h-display h-display-md" style="margin-bottom:10px;">Search by place and type.</h1>
+  <p class="body-md" style="max-width:680px; margin-bottom:28px;">Find places in live DayDine guides by category, or open the full UK establishment database for broad FSA/Google search.</p>
+
+  <section class="search-panel">
+    <div class="search-grid">
+      <div class="field full">
+        <label for="fLocation">Location</label>
+        <input id="fLocation" type="text" placeholder="Town, city or postcode… e.g. Stratford-upon-Avon" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="fType">Type</label>
+        <select id="fType">
+          <option value="">Any type</option>
+          <option value="Restaurant (General)">Restaurant</option>
+          <option value="Cafe / Coffee Shop">Cafe / Coffee Shop</option>
+          <option value="Bakery">Bakery</option>
+          <option value="Pub / Bar">Pub / Bar</option>
+          <option value="Takeaway / Delivery">Takeaway / Delivery</option>
+          <option value="Hotel / Accommodation">Hotel / Accommodation</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fDistance">Distance</label>
+        <select id="fDistance">
+          <option>1 mile</option>
+          <option>3 miles</option>
+          <option selected>5 miles</option>
+          <option>10 miles</option>
+          <option>25 miles</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="fName">Optional name</label>
+        <input id="fName" type="text" placeholder="Optional — e.g. GAIL's, Mor, Costa…">
+      </div>
+    </div>
+    <div class="actions">
+      <button class="primary" id="btnSearch">Search</button>
+      <button class="secondary" id="btnNearMe" type="button">Use Near Me</button>
+      <a class="secondary" href="/search.html">Open full UK database</a>
+    </div>
+    <p class="note" id="searchNote">Type filters currently work for live ranked markets. Stratford-upon-Avon is live now. More towns can be added as DayDine expands.</p>
+  </section>
+
+  <section class="hint-card">
+    <h3>Try this</h3>
+    <p class="body-sm">Search for bakeries, cafés or pubs in Stratford-upon-Avon.</p>
+    <div class="examples">
+      <button class="chip" data-loc="Stratford-upon-Avon" data-type="Bakery">Bakeries in Stratford</button>
+      <button class="chip" data-loc="Stratford-upon-Avon" data-type="Cafe / Coffee Shop">Cafés in Stratford</button>
+      <button class="chip" data-loc="Stratford-upon-Avon" data-type="Pub / Bar">Pubs in Stratford</button>
+      <button class="chip" data-loc="Stratford-upon-Avon" data-type="Restaurant (General)">Restaurants in Stratford</button>
+    </div>
+  </section>
+</main>
+<footer class="foot">
+  <div class="foot-bottom"><span>© 2026 DayDine</span><span>No paid ranking</span><span>Made in the UK</span></div>
+</footer>
+<script>
+(function(){var t=document.querySelector('.mast-toggle');var n=document.querySelector('.mast-nav');if(!t||!n)return;t.addEventListener('click',function(){var open=n.classList.toggle('open');t.setAttribute('aria-expanded',String(open));});})();
+function normalise(value){return String(value||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();}
+function isStratford(value){var v=normalise(value);return v==='stratford'||v.indexOf('stratford upon avon')>=0||v.indexOf('stratford on avon')>=0||v.indexOf('cv37')>=0;}
+function runSearch(){
+  var location=document.getElementById('fLocation').value;
+  var type=document.getElementById('fType').value;
+  var name=document.getElementById('fName').value.trim();
+  if(isStratford(location)){
+    var url='/rankings/stratford-upon-avon';
+    var params=[];
+    if(type) params.push('type='+encodeURIComponent(type));
+    if(name) params.push('q='+encodeURIComponent(name));
+    if(params.length) url+='?'+params.join('&');
+    window.location.href=url;
+    return;
+  }
+  if(type){
+    alert('Type search is currently available for live ranked guides. Stratford-upon-Avon is live now. For the full UK database, choose Any type or open the full UK database.');
+    return;
+  }
+  window.location.href='/search.html';
+}
+document.getElementById('btnSearch').addEventListener('click',runSearch);
+document.getElementById('fLocation').addEventListener('keydown',function(e){if(e.key==='Enter')runSearch();});
+document.getElementById('fName').addEventListener('keydown',function(e){if(e.key==='Enter')runSearch();});
+document.querySelectorAll('.chip').forEach(function(chip){chip.addEventListener('click',function(){document.getElementById('fLocation').value=chip.dataset.loc;document.getElementById('fType').value=chip.dataset.type;runSearch();});});
+document.getElementById('btnNearMe').addEventListener('click',function(){
+  if(!navigator.geolocation){alert('Near Me is not available in this browser. You can still type a town or postcode.');return;}
+  navigator.geolocation.getCurrentPosition(function(){alert('Near Me will be connected to ranked local guides as DayDine expands. For now, type Stratford-upon-Avon or use the full UK database.');},function(){alert('Location access is blocked for this browser. To use Near Me, allow location access for Safari/Chrome in your phone settings, then return and try again. You can also type a town or postcode.');});
+});
+</script>
+</body>
+</html>
