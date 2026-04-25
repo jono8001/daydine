@@ -1,5 +1,7 @@
 name: One-off Restore UK Lookup With Scoring Status
 
+# Trigger bump: 2026-04-25T10:05Z
+
 on:
   push:
     branches: [main]
@@ -48,7 +50,6 @@ jobs:
           for old, new in replacements.items():
               text = text.replace(old, new)
 
-          # Add styling for scoring-status badges.
           style = '''
     .score-status {
       display: inline-block;
@@ -68,12 +69,10 @@ jobs:
           if '.score-status {' not in text:
               text = text.replace('    /* ---- Pagination ---- */', style + '\n    /* ---- Pagination ---- */', 1)
 
-          # Add a status column to the table if not present.
           header_anchor = '<th class="sortable" data-key="r">Record rating <span class="arrow"></span></th>'
           if '<th>DayDine status</th>' not in text and header_anchor in text:
               text = text.replace(header_anchor, '<th>DayDine status</th>\n            ' + header_anchor, 1)
 
-          # Inject helper functions before the render logic.
           helper = r'''
   function normStatusText(value) {
     return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
@@ -82,7 +81,6 @@ jobs:
     const la = normStatusText(rec.la || rec.local_authority || '');
     const pc = normStatusText(rec.pc || rec.postcode || '');
     const name = normStatusText(rec.n || rec.name || '');
-    // Stratford-upon-Avon is live; Leamington becomes live once the Leamington workflow produces assets/rankings/leamington-spa.json.
     if (pc.indexOf('cv37') === 0 || la.indexOf('stratford') >= 0) return true;
     if (pc.indexOf('cv31') === 0 || pc.indexOf('cv32') === 0 || name.indexOf('leamington') >= 0) return true;
     return false;
@@ -103,8 +101,6 @@ jobs:
               marker = '  // ---- Haversine distance (miles) ----'
               text = text.replace(marker, helper + '\n' + marker, 1)
 
-          # Best-effort row-column injection. The restored page renders rows using template strings.
-          # Insert the new cell before the rating cell in common variants.
           if 'data-label="DayDine status"' not in text:
               text = text.replace(
                   '<td data-label="FSA Rating">',
@@ -115,14 +111,7 @@ jobs:
                   '<td data-label="DayDine status">${scoringStatusHtml(r)}</td>\n            <td data-label="Record rating">'
               )
 
-          # Add contact details to the expanded detail block where fields exist.
           if 'Contact details' not in text:
-              text = text.replace(
-                  '<div class="detail-section-title">Details</div>',
-                  '<div class="detail-section-title">Details</div>',
-                  1
-              )
-              # Append a contact snippet near website/Google detail if possible.
               text = text.replace(
                   '</div>\n          </div>\n        </td>\n      </tr>',
                   '<div class="detail-section"><div class="detail-section-title">Contact details</div><div class="detail-grid"><div><div class="dl-label">Website</div><div class="dl-val">${r.web_url ? safeLink(r.web_url, \'Website\') : \'—\'}</div></div><div><div class="dl-label">Phone</div><div class="dl-val">${esc(r.phone || r.nationalPhoneNumber || r.internationalPhoneNumber || \'—\')}</div></div></div></div></div>\n          </div>\n        </td>\n      </tr>',
