@@ -1,25 +1,30 @@
 #!/usr/bin/env python3
 """Generate an example operator report tracking snapshot.
 
-This is a standalone example generator for the new operator-report tracking
-product layer. It does not replace the main V4 report generator; it produces a
-clear sample markdown section so the product shape can be reviewed immediately.
-
-Usage:
-    python scripts/generate_operator_tracking_example.py \
-      --market stratford \
-      --venue "Lambs" \
-      --out outputs/examples/Lambs_tracking_snapshot_example.md
+This standalone example generator demonstrates the operator-report tracking
+product layer: exact position, public visibility, gap-to-top-30, category
+visibility and deterministic tie-break notes.
 """
 from __future__ import annotations
 
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from operator_intelligence.ranking_tiebreaker import (  # noqa: E402
+    explanation_for_venue,
+    sort_key as rcs_sort_key,
+    tiebreak_values,
+)
+
+PUBLIC_OVERALL_LIMIT = 30
+PUBLIC_CATEGORY_LIMIT = 30
 
 MARKETS = {
     "stratford": {
@@ -80,16 +85,25 @@ def build_rows(scores: dict[str, Any], establishments: dict[str, Any]) -> list[d
         if final is None or not block.get("league_table_eligible"):
             continue
         record = establishments.get(str(key)) or establishments.get(str(block.get("fhrsid"))) or {}
+        name = block.get("name") or record.get("public_name") or record.get("n") or str(key)
         rows.append({
             "key": str(key),
             "fhrsid": str(block.get("fhrsid") or record.get("fhrsid") or record.get("id") or key),
-            "name": block.get("name") or record.get("public_name") or record.get("n") or str(key),
+            "name": name,
             "postcode": record.get("pc") or "",
             "score": final,
+            "rcs_final": round(final, 3),
             "category": category(record),
             "confidence_class": block.get("confidence_class") or "",
+            "score_block": block,
+            "record": record,
+            "tie_break": tiebreak_values(block, record, name),
+            "tie_break_note": None,
         })
-    rows.sort(key=lambda r: r["score"], reverse=True)
+    rows.sort(key=lambda r: rcs_sort_key(r["score"], r.get("score_block") or {}, r.get("record") or {}, r.get("name") or ""))
+    for i, row in enumerate(rows):
+        previous = rows[i - 1] if i else None
+        row["tie_break_note"] = explanation_for_venue(row, previous)
     return rows
 
 
@@ -114,10 +128,10 @@ def gap_text(rank: int, current_score: float, rows: list[dict[str, Any]], thresh
 
 
 def visibility(rank: int, category_rank: int) -> str:
-    if rank <= 10:
-        return "Public top 10 overall"
-    if category_rank <= 3:
-        return "Public category top 3"
+    if rank <= PUBLIC_OVERALL_LIMIT:
+        return "Public top 30 overall"
+    if category_rank <= PUBLIC_CATEGORY_LIMIT:
+        return "Category top 30"
     return "Tracked, but not currently public-shortlisted"
 
 
@@ -143,27 +157,30 @@ def render_snapshot(market: dict[str, str], rows: list[dict[str, Any]], venue: d
     out("|---|---:|---|")
     out(f"| Local market | {market['label']} | Fully scored DayDine market |")
     out(f"| Overall DayDine position | #{rank} of {len(rows)} | {visibility(rank, category_rank)} |")
-    out(f"| Category position | #{category_rank} of {len(category_rows)} {venue['category'].replace(' (General)', '').lower()} venues | Public category visibility starts at top 3 |")
+    out(f"| Category position | #{category_rank} of {len(category_rows)} {venue['category'].replace(' (General)', '').lower()} venues | Public category visibility runs to the category top 30 |")
     out(f"| DayDine RCS | {fmt(current_score)} | Current baseline for future movement tracking |")
-    out(f"| Gap to public top 10 | {gap_text(rank, current_score, rows, 10, 'public top 10')} | Shows whether the venue is close to public overall visibility |")
-    out(f"| Gap to category top 3 | {gap_text(category_rank, current_score, category_rows, 3, venue['category'].replace(' (General)', '') + ' top 3')} | Shows whether the venue is close to category visibility |")
+    out(f"| Gap to public top 30 | {gap_text(rank, current_score, rows, PUBLIC_OVERALL_LIMIT, 'public top 30')} | Shows whether the venue is close to public overall visibility |")
+    out(f"| Gap to category top 30 | {gap_text(category_rank, current_score, category_rows, PUBLIC_CATEGORY_LIMIT, venue['category'].replace(' (General)', '') + ' top 30')} | Shows whether the venue is close to category visibility |")
     out("| Monthly movement | Baseline month | Next report can show up/down movement when prior snapshot is supplied |")
+    if venue.get("tie_break_note"):
+        out(f"| Tie-break status | Joint score | {venue['tie_break_note']} |")
     out("")
     out("**Nearest overall competitors**")
     out("")
-    out("| Rank | Venue | Category | RCS | Gap vs you |")
-    out("|---:|---|---|---:|---:|")
+    out("| Rank | Venue | Category | RCS | Gap vs you | Tie-break note |")
+    out("|---:|---|---|---:|---:|---|")
     for idx, row in enumerate(neighbours, lower + 1):
         gap = row["score"] - current_score
         marker = "you" if row is venue else f"{gap:+.3f}"
-        out(f"| #{idx} | {row['name']} | {row['category'].replace(' (General)', '')} | {fmt(row['score'])} | {marker} |")
+        note = row.get("tie_break_note") or "—"
+        out(f"| #{idx} | {row['name']} | {row['category'].replace(' (General)', '')} | {fmt(row['score'])} | {marker} | {note} |")
     out("")
     out("**Operator focus for next month**")
     out("")
-    if rank <= 10 or category_rank <= 3:
+    if rank <= PUBLIC_OVERALL_LIMIT or category_rank <= PUBLIC_CATEGORY_LIMIT:
         out("- Protect current public visibility: keep listings complete, maintain review momentum, and avoid hygiene/compliance issues that could cap the score.")
     else:
-        out("- Treat the top-10/category-top-3 gap as the monthly target: focus first on missing commercial-readiness signals, then review volume/validation, then trust/compliance caps.")
+        out("- Treat the top-30/category-top-30 gap as the monthly target: focus first on missing commercial-readiness signals, then review volume/validation, then trust/compliance caps.")
     out("- Use this section month by month: the paid report should show whether position, category rank and RCS are moving, not just explain the current score.")
     out("")
     return "\n".join(lines)
