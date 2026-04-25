@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "total_establishments": 292,
+  "searched": 295,
+  "matched": 99,
+  "unmatched": 193,
+  "api_errors": 0,
+  "match_policy": "high-confidence exact/strong name matches only"
+}

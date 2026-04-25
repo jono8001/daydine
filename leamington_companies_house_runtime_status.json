@@ -1,0 +1,5 @@
+{
+  "risk_scoring_enabled": true,
+  "fallback_used": false,
+  "reason": "risk-aware runner completed"
+}

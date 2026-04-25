@@ -2,6 +2,17 @@
   "last_updated": "2026-04-25",
   "available": [
     {
+      "slug": "leamington-spa",
+      "la_name": "Warwick",
+      "display_name": "Leamington Spa",
+      "region": "Warwickshire",
+      "area_type": "town",
+      "status": "live",
+      "methodology_version": "V4 DayDine RCS official-source mode",
+      "total_venues": 137,
+      "top_score": 9.163
+    },
+    {
       "slug": "stratford-upon-avon",
       "la_name": "Stratford-on-Avon",
       "display_name": "Stratford-upon-Avon",
