@@ -1,0 +1,113 @@
+name: One-off Regenerate Top-30 Tie-break Outputs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/oneoff_regenerate_top30_tiebreak_outputs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile patched scripts
+        run: |
+          python -m py_compile \
+            operator_intelligence/ranking_tiebreaker.py \
+            scripts/build_rankings_v4.py \
+            scripts/build_area_rankings_v4.py \
+            operator_intelligence/tracking_snapshot.py \
+            scripts/generate_operator_tracking_example.py
+
+      - name: Regenerate Stratford and Leamington public ranking JSON
+        run: |
+          set -euo pipefail
+          cat > /tmp/leamington_area.json <<'JSON'
+          {
+            "areas": [
+              {
+                "slug": "leamington-spa",
+                "display_name": "Leamington Spa",
+                "la_name": "Warwick",
+                "region": "Warwickshire",
+                "area_type": "town",
+                "public": true,
+                "operator": true,
+                "centre": { "lat": 52.2852, "lon": -1.5201 },
+                "radius_km": 4.0,
+                "top_n": 30,
+                "description": "Town-centre diner guide for Leamington Spa and nearby walkable/short-trip venues."
+              }
+            ]
+          }
+          JSON
+
+          python scripts/build_area_rankings_v4.py \
+            --scores stratford_rcs_v4_scores.json \
+            --establishments stratford_establishments.json
+          cp assets/rankings/index.json /tmp/index_after_stratford.json
+
+          python scripts/build_area_rankings_v4.py \
+            --scores leamington_rcs_v4_scores.json \
+            --establishments leamington_establishments.json \
+            --areas /tmp/leamington_area.json
+
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          old = json.loads(Path('/tmp/index_after_stratford.json').read_text())
+          new = json.loads(Path('assets/rankings/index.json').read_text())
+          by_slug = {entry['slug']: entry for entry in old.get('available', [])}
+          for entry in new.get('available', []):
+              by_slug[entry['slug']] = entry
+          old['available'] = sorted(by_slug.values(), key=lambda x: x.get('display_name', '').lower())
+          old['last_updated'] = new.get('last_updated') or old.get('last_updated')
+          Path('assets/rankings/index.json').write_text(json.dumps(old, indent=2, ensure_ascii=False) + '\n')
+          PY
+
+      - name: Regenerate Lambs tracking snapshot example
+        run: |
+          python scripts/generate_operator_tracking_example.py \
+            --market stratford \
+            --venue "Lambs" \
+            --out outputs/examples/Lambs_tracking_snapshot_example.md
+
+      - name: Validate regenerated outputs
+        run: |
+          grep -q "Gap to public top 30" outputs/examples/Lambs_tracking_snapshot_example.md
+          grep -q "Category top 30" outputs/examples/Lambs_tracking_snapshot_example.md
+          grep -q "#9 of 169" outputs/examples/Lambs_tracking_snapshot_example.md
+          grep -q "#3 of 56" outputs/examples/Lambs_tracking_snapshot_example.md
+          python - <<'PY'
+          import json
+          s = json.load(open('assets/rankings/stratford-upon-avon.json'))
+          assert s['top_n'] == 30, s['top_n']
+          assert 'v3.4.1' in s['methodology_version'], s['methodology_version']
+          assert all(c['top_n'] <= 30 for c in s['category_rankings'])
+          assert any(v.get('tie_break_note') for v in s['venues']), 'expected visible tie-break note in top 30'
+          print('Stratford total:', s['total_venues'])
+          print('Stratford visible:', s['top_n'])
+          print('Category caps:', {c['category']: c['top_n'] for c in s['category_rankings']})
+          PY
+
+      - name: Commit regenerated outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/rankings/*.json outputs/examples/Lambs_tracking_snapshot_example.md
+          git diff --cached --quiet && echo "No regenerated output changes" && exit 0
+          git commit -m "Regenerate top-30 tie-break ranking outputs"
+          git push
