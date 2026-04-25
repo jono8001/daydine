@@ -125,7 +125,7 @@
           "postcode": "CV35 0JZ",
           "category": "Cafe / Coffee Shop",
           "fsa_business_type": "restaurant/cafe/canteen",
-          "rcs_final": 9.677,
+          "rcs_final": 9.676,
           "rcs_band": "Excellent",
           "band_class": "excellent",
           "convergence": "single-platform",
@@ -144,7 +144,7 @@
           "postcode": "",
           "category": "Cafe / Coffee Shop",
           "fsa_business_type": "restaurant/cafe/canteen",
-          "rcs_final": 9.349,
+          "rcs_final": 9.348,
           "rcs_band": "Excellent",
           "band_class": "excellent",
           "convergence": "single-platform",
@@ -486,7 +486,7 @@
           "category_rank": 3
         },
         {
-          "rank": 98,
+          "rank": 97,
           "name": "Studley Castle",
           "postcode": "B80 7AJ",
           "category": "Hotel / Accommodation",
@@ -505,7 +505,7 @@
           "category_rank": 4
         },
         {
-          "rank": 112,
+          "rank": 111,
           "name": "Crowne Plaza",
           "postcode": "CV37 6YR",
           "category": "Hotel / Accommodation",
@@ -589,7 +589,7 @@
           "category_rank": 3
         },
         {
-          "rank": 92,
+          "rank": 91,
           "name": "Greggs PLC",
           "postcode": "B49 6EH",
           "category": "Bakery",
@@ -608,7 +608,7 @@
           "category_rank": 4
         },
         {
-          "rank": 122,
+          "rank": 121,
           "name": "Bidford Community Fridge & Cafe",
           "postcode": "B50 4QB",
           "category": "Bakery",
@@ -630,7 +630,7 @@
     }
   ],
   "category_count": 6,
-  "last_updated": "2026-04-24",
+  "last_updated": "2026-04-25",
   "venues": [
     {
       "rank": 1,
@@ -638,7 +638,7 @@
       "postcode": "CV35 0JZ",
       "category": "Cafe / Coffee Shop",
       "fsa_business_type": "restaurant/cafe/canteen",
-      "rcs_final": 9.677,
+      "rcs_final": 9.676,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "single-platform",
@@ -746,7 +746,7 @@
       "postcode": "",
       "category": "Cafe / Coffee Shop",
       "fsa_business_type": "restaurant/cafe/canteen",
-      "rcs_final": 9.349,
+      "rcs_final": 9.348,
       "rcs_band": "Excellent",
       "band_class": "excellent",
       "convergence": "single-platform",

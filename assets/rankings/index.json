@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-24",
+  "last_updated": "2026-04-25",
   "available": [
     {
       "slug": "stratford-upon-avon",
@@ -23,7 +23,7 @@
       "status": "live",
       "methodology_version": "V4 official-source mode",
       "total_venues": 168,
-      "top_score": 9.677
+      "top_score": 9.676
     }
   ],
   "pipeline": [
