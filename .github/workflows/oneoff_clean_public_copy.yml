@@ -1,0 +1,110 @@
+name: One-off Clean Public Copy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/oneoff_clean_public_copy.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  clean-public-copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Remove source/internal wording from public UI
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          changed = False
+
+          replacements = {
+              'excellent evidence score': 'strong RCS confidence',
+              'FSA-backed food venue': 'DayDine checked venue',
+              'Google-led customer signal': 'public-signal confidence',
+              'Official Google + FSA evidence': 'DayDine RCS assessed',
+              'Multi-source public evidence': 'DayDine RCS assessed',
+              'Google + FSA evidence, with clear caveats': 'DayDine RCS, with clear scoring caveats',
+              'DayDine is a public-evidence guide. We look beyond star ratings to show which places have strong customer validation,\n  hygiene evidence and enough public information to make a confident choice.': 'DayDine uses the Restaurant Confidence Score to turn public signals into simple local shortlists. Fully scored markets show public top lists; partial UK records remain in the wider establishment lookup until their area is processed.',
+              'DayDine currently uses official Google Places metadata, FSA/FHRS food hygiene evidence and reviewed Companies House risk checks where available.': 'Live guides are built from the DayDine Restaurant Confidence Score. See the methodology page for how the score is constructed and checked.',
+              'Multi-platform customer corroboration is not yet active, so customer validation is currently Google-led.': 'The public site shows top 10 overall and top 3 by category. Full position tracking, category rank and competitor gap sit inside the operator report.',
+              'A town-centred guide for choosing where to eat in Stratford-upon-Avon. DayDine uses public evidence from FSA/FHRS and official Google Places metadata, then applies clear public eligibility and override rules.': 'A town-centred guide for choosing where to eat in Stratford-upon-Avon. This is a fully scored DayDine market using the Restaurant Confidence Score.',
+              'DayDine currently uses official Google Places metadata, FSA/FHRS food hygiene evidence and reviewed Companies House risk checks where available.': 'This guide is built from the DayDine Restaurant Confidence Score. See the methodology page for how the score is constructed and checked.',
+              'Multi-platform customer corroboration is not yet active, so customer validation is currently Google-led.': 'The public guide shows the top 10 overall and top 3 by category. Full rank, category position and competitor gap are available in the operator report.',
+              'Venues are FSA/FHRS-backed and enriched with official Google Places metadata.': 'Venues in this guide have passed DayDine eligibility, category and confidence checks.',
+              'Where shown, customer validation is currently Google-led until additional public platforms are activated.': 'Public pages show shortlist visibility; full tracking belongs in the operator report.',
+          }
+
+          for path in [Path('rankings.html'), Path('rankings/stratford-upon-avon.html')]:
+              if not path.exists():
+                  continue
+              text = path.read_text(encoding='utf-8')
+              original = text
+              for old, new in replacements.items():
+                  text = text.replace(old, new)
+
+              # Replace public-facing JS explanation helpers with RCS-led copy.
+              start = text.find('function explainBrief(v){')
+              if start != -1:
+                  end = text.find('\n}', start)
+                  if end != -1:
+                      end += 2
+                      new_fn = """function explainBrief(v){
+  var bits=[];
+  bits.push(v.daydine_scoring_label || 'DayDine Restaurant Confidence Score');
+  if(v.rcs_band==='Excellent'||Number(v.rcs_final||0)>=8.5) bits.push('strong RCS confidence');
+  if(v.confidence_class) bits.push('fully scored market');
+  return bits.slice(0,3).join(' · ');
+}"""
+                      text = text[:start] + new_fn + text[end:]
+
+              start = text.find('function evidenceSummary(v){')
+              if start != -1:
+                  end = text.find('\n}', start)
+                  if end != -1:
+                      end += 2
+                      new_fn = """function evidenceSummary(v){
+  var bits=[];
+  bits.push(v.daydine_scoring_label || 'DayDine Restaurant Confidence Score');
+  if(v.rcs_band==='Excellent'||Number(v.rcs_final||0)>=8.5) bits.push('strong RCS confidence');
+  if(v.confidence_class) bits.push('fully scored market');
+  bits.push(v.methodology_label || 'see RCS methodology');
+  return bits.slice(0,4).join(' · ');
+}"""
+                      text = text[:start] + new_fn + text[end:]
+
+              if text != original:
+                  path.write_text(text, encoding='utf-8')
+                  changed = True
+
+          # Also patch the scoring output builder so future refreshes use the new labels.
+          path = Path('scripts/build_rankings_v4.py')
+          if path.exists():
+              text = path.read_text(encoding='utf-8')
+              original = text
+              text = text.replace('category_rankings = build_category_rankings(venues, per_category=5)', 'category_rankings = build_category_rankings(venues, per_category=3)')
+              text = text.replace('"public_evidence_label": "Official Google + FSA evidence" if google_only else "Multi-source public evidence",', '"daydine_scoring_status": "fully_scored",\n            "daydine_scoring_label": "DayDine Restaurant Confidence Score",\n            "public_visibility_label": "Public top-list venue" if rank <= 10 else "Tracked in live market",\n            "methodology_label": "See RCS methodology",')
+              if text != original:
+                  path.write_text(text, encoding='utf-8')
+                  changed = True
+
+          if not changed:
+              raise SystemExit('No public copy changes were made')
+          PY
+
+      - name: Commit cleaned public copy
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add rankings.html rankings/stratford-upon-avon.html scripts/build_rankings_v4.py
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Clean public copy around DayDine RCS"
+          git push
