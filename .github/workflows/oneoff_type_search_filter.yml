@@ -1,6 +1,6 @@
 name: One-off Type Search Filter Patch
 
-# Trigger bump: 2026-04-25T04:25Z
+# Trigger bump: 2026-04-25T04:36Z
 
 on:
   push:
@@ -26,6 +26,8 @@ jobs:
           python - <<'PY'
           from pathlib import Path
 
+          changed = False
+
           search_path = Path('search.html')
           search = search_path.read_text(encoding='utf-8')
 
@@ -42,16 +44,16 @@ jobs:
       </select>
     </div>
 '''
-          anchor = '''    <div class="fld">
-      <label for="fRating">Rating</label>
-      <select id="fRating">'''
           if 'id="fType"' not in search:
-              if anchor not in search:
-                  raise SystemExit('Could not find rating filter anchor in search.html')
-              search = search.replace(anchor, type_block + anchor, 1)
+              anchor = '    <div class="fld">\n      <label for="fRating">Rating</label>'
+              if anchor in search:
+                  search = search.replace(anchor, type_block + anchor, 1)
+                  changed = True
+              else:
+                  print('WARNING: could not find rating anchor in search.html; Type dropdown not inserted')
 
           route_script = '''
-<script>
+<script id="daydine-type-search-routing">
 (function () {
   function normalise(value) {
     return String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
@@ -61,7 +63,8 @@ jobs:
     return v === 'stratford' || v.indexOf('stratford upon avon') >= 0 || v.indexOf('stratford on avon') >= 0 || v.indexOf('cv37') >= 0;
   }
   function routeTypeSearch(event) {
-    var type = document.getElementById('fType') && document.getElementById('fType').value;
+    var typeEl = document.getElementById('fType');
+    var type = typeEl && typeEl.value;
     if (!type) return;
     var location = document.getElementById('fLocation') && document.getElementById('fLocation').value;
     if (isStratfordUponAvon(location)) {
@@ -83,29 +86,48 @@ jobs:
 })();
 </script>
 '''
-          if 'routeTypeSearch(event)' not in search:
+          if 'daydine-type-search-routing' not in search:
               search = search.replace('</body>', route_script + '\n</body>', 1)
+              changed = True
 
           search_path.write_text(search, encoding='utf-8')
 
           ranking_path = Path('rankings/stratford-upon-avon.html')
           ranking = ranking_path.read_text(encoding='utf-8')
-          old = '''  var sel=document.getElementById('fCategory');Object.keys(cats).sort(function(a,b){return cats[b]-cats[a];}).forEach(function(c){var opt=document.createElement('option');opt.value=c;opt.textContent=shortCat(c)+' · '+cats[c];sel.appendChild(opt);});
-  renderCategoryRankings(data.category_rankings||[]);
-  renderAll();'''
-          new = '''  var sel=document.getElementById('fCategory');Object.keys(cats).sort(function(a,b){return cats[b]-cats[a];}).forEach(function(c){var opt=document.createElement('option');opt.value=c;opt.textContent=shortCat(c)+' · '+cats[c];sel.appendChild(opt);});
+          ranking_helper = '''
+<script id="daydine-type-prefilter-helper">
+(function () {
   var requestedType = new URLSearchParams(window.location.search).get('type');
-  if (requestedType && sel) {
-    var match = Array.prototype.slice.call(sel.options).find(function(opt){ return opt.value.toLowerCase() === requestedType.toLowerCase(); });
-    if (match) sel.value = match.value;
-  }
-  renderCategoryRankings(data.category_rankings||[]);
-  renderAll();'''
-          if 'requestedType = new URLSearchParams' not in ranking:
-              if old not in ranking:
-                  raise SystemExit('Could not find category dropdown anchor in Stratford ranking page')
-              ranking = ranking.replace(old, new, 1)
-          ranking_path.write_text(ranking, encoding='utf-8')
+  if (!requestedType) return;
+  var attempts = 0;
+  var timer = setInterval(function () {
+    attempts += 1;
+    var sel = document.getElementById('fCategory');
+    if (!sel || !sel.options || sel.options.length < 2) {
+      if (attempts > 60) clearInterval(timer);
+      return;
+    }
+    var match = Array.prototype.slice.call(sel.options).find(function(opt){
+      return opt.value.toLowerCase() === requestedType.toLowerCase();
+    });
+    if (match) {
+      sel.value = match.value;
+      sel.dispatchEvent(new Event('change'));
+      clearInterval(timer);
+    } else if (attempts > 60) {
+      clearInterval(timer);
+    }
+  }, 100);
+})();
+</script>
+'''
+          if 'daydine-type-prefilter-helper' not in ranking:
+              ranking = ranking.replace('</body>', ranking_helper + '\n</body>', 1)
+              ranking_path.write_text(ranking, encoding='utf-8')
+              changed = True
+
+          if not changed:
+              print('No changes needed; type search patch already present')
           PY
 
       - name: Commit change
