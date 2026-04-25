@@ -1,0 +1,33 @@
+name: One-off Promote Search V2
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/oneoff_promote_search_v2.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote-search-v2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Promote search v2 to primary search page
+        run: |
+          cp search-v2.html search.html
+
+      - name: Commit promoted search page
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add search.html
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Promote intuitive type search to primary search page"
+          git push
