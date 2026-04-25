@@ -1,0 +1,23 @@
+{
+  "_note": "Public destination clustering only. These clusters affect assets/rankings/*.json output, not underlying V4 scores or operator reports. Use for same-premises public destinations such as resident kitchens, shared trading footprints, or venue-with-food-brand arrangements.",
+  "clusters": [
+    {
+      "canonical_public_name": "The Phoenix / Impasto Pizza",
+      "canonical_category": "Pub / Bar",
+      "public_display_category": "Pub / Bar · Pizza",
+      "reason": "Impasto operates as the resident pizza kitchen at The Phoenix public premises.",
+      "public_display": "merge",
+      "operator_reports": "keep_separate",
+      "members": [
+        {
+          "name": "The Phoenix",
+          "postcode": "CV37 6QY"
+        },
+        {
+          "name": "Impasto Micro-Pizzeria",
+          "postcode": "CV37 6QY"
+        }
+      ]
+    }
+  ]
+}
