@@ -2,23 +2,17 @@
 """Build public DayDine ranking JSON from V4 scoring output.
 
 The public leaderboard is stricter than the internal V4 scorecard. A venue can
-have a useful operator report if it is FSA-registered and Google-enriched, but
-it should only appear in the diner-facing leaderboard when it is clearly
-food-led. This keeps non-food-led FSA registrations, retail shops with limited
-food activity, and ambiguous Google matches out of the public top list.
+have a useful operator report if it is registered and enriched, but it should
+only appear in the diner-facing leaderboard when it is clearly food-led.
 
-Public eligibility is now FSA-first:
-- official FHRS/FSA business type is the primary gate when available;
-- Google Places type is enrichment and sanity-check evidence, not the sole
-  authority for public restaurant eligibility;
-- retail-led public names are excluded unless the name itself is food-led.
-
-Public category labels are deliberately different from eligibility:
-- FSA type decides whether the venue can appear;
-- Google Places types and venue-name terms decide whether the label shown to
-  diners is Restaurant, Cafe, Pub, Hotel, Takeaway, etc.
+Public output principles:
+- public pages show top 10 overall and top 3 by category;
+- public copy leads with DayDine Restaurant Confidence Score labels;
+- shared public destinations can be clustered without merging underlying
+  operator records or V4 scores.
 
 Manual public overrides are supported via data/public_ranking_overrides.json.
+Manual public clusters are supported via data/public_venue_clusters.json.
 They affect only assets/rankings/*.json, not V4 scores or operator reports.
 """
 from __future__ import annotations
@@ -34,6 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 RANKINGS_DIR = ROOT / "assets" / "rankings"
 INDEX_FILE = RANKINGS_DIR / "index.json"
 OVERRIDES_FILE = ROOT / "data" / "public_ranking_overrides.json"
+CLUSTERS_FILE = ROOT / "data" / "public_venue_clusters.json"
 
 PUBLIC_FSA_BUSINESS_TYPES = {
     "restaurant/cafe/canteen",
@@ -120,6 +115,13 @@ def load_overrides() -> dict[str, list[dict[str, Any]]]:
     }
 
 
+def load_clusters() -> list[dict[str, Any]]:
+    if not CLUSTERS_FILE.exists():
+        return []
+    data = read_json(CLUSTERS_FILE)
+    return [x for x in data.get("clusters", []) if isinstance(x, dict)]
+
+
 def record_identifiers(name: str, key: str, item: dict[str, Any], record: dict[str, Any]) -> dict[str, str]:
     return {
         "key": norm(key),
@@ -151,6 +153,24 @@ def matching_override(overrides: list[dict[str, Any]], identifiers: dict[str, st
     for override in overrides:
         if override_matches(override, identifiers):
             return override
+    return None
+
+
+def cluster_member_matches(member: dict[str, Any], venue: dict[str, Any]) -> bool:
+    name = canonical_name(member.get("name"))
+    postcode = norm(member.get("postcode"))
+    if not name or name != canonical_name(venue.get("name")):
+        return False
+    if postcode and postcode != norm(venue.get("postcode")):
+        return False
+    return True
+
+
+def find_cluster_for_venue(clusters: list[dict[str, Any]], venue: dict[str, Any]) -> dict[str, Any] | None:
+    for cluster in clusters:
+        for member in cluster.get("members", []):
+            if isinstance(member, dict) and cluster_member_matches(member, venue):
+                return cluster
     return None
 
 
@@ -234,11 +254,10 @@ def band(score: float) -> tuple[str, str]:
 def category(record: dict[str, Any]) -> str:
     """Return the diner-facing category label.
 
-    Eligibility is FSA-first, but category labelling should be more specific
-    and public-friendly. It therefore prefers Google Places types and explicit
-    venue-name terms before falling back to the broader official FSA type.
-    Bakery and cafe signals deliberately beat generic takeaway signals because
-    Google often attaches meal_takeaway to bakeries, coffee shops and chains.
+    Eligibility is official-register-first, but category labelling should be
+    specific and public-friendly. Bakery and cafe signals deliberately beat
+    generic takeaway signals because Google often attaches meal_takeaway to
+    bakeries, coffee shops and chains.
     """
     business_type = fsa_business_type(record)
     name = norm(record.get("n"))
@@ -259,7 +278,6 @@ def category(record: dict[str, Any]) -> str:
     if google_types & RESTAURANT_TYPES:
         return "Restaurant (General)"
 
-    # Fallback only after specific public signals have been tried.
     if business_type == "pub/bar/nightclub":
         return "Pub / Bar"
     if business_type == "takeaway/sandwich shop":
@@ -271,7 +289,7 @@ def category(record: dict[str, Any]) -> str:
     return "Restaurant (General)"
 
 
-def build_category_rankings(venues: list[dict[str, Any]], per_category: int = 5) -> list[dict[str, Any]]:
+def build_category_rankings(venues: list[dict[str, Any]], per_category: int = 3) -> list[dict[str, Any]]:
     """Return compact top lists for each diner-facing category."""
     grouped: dict[str, list[dict[str, Any]]] = {}
     for venue in venues:
@@ -316,10 +334,62 @@ def movement(name: str, rank: int, old: dict[str, int]) -> tuple[str, int]:
     return "same", 0
 
 
+def apply_public_clusters(venues: list[dict[str, Any]], clusters: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int]:
+    """Merge same-premises public destinations while preserving source members.
+
+    This is public-output-only. The highest scoring member anchors the public
+    score; source members remain listed in the metadata for auditability.
+    """
+    if not clusters:
+        return venues, 0
+
+    clustered: dict[int, list[dict[str, Any]]] = {}
+    unclustered: list[dict[str, Any]] = []
+
+    for venue in venues:
+        cluster = find_cluster_for_venue(clusters, venue)
+        if cluster:
+            clustered.setdefault(id(cluster), []).append({"venue": venue, "cluster": cluster})
+        else:
+            unclustered.append(venue)
+
+    merged_count = 0
+    merged_venues: list[dict[str, Any]] = list(unclustered)
+    for entries in clustered.values():
+        if not entries:
+            continue
+        cluster = entries[0]["cluster"]
+        members = [entry["venue"] for entry in entries]
+        primary = max(members, key=lambda v: float(v.get("rcs_final") or 0))
+        merged = dict(primary)
+        merged["name"] = cluster.get("canonical_public_name") or primary.get("name")
+        merged["category"] = cluster.get("canonical_category") or primary.get("category")
+        if cluster.get("public_display_category"):
+            merged["public_display_category"] = cluster.get("public_display_category")
+        merged["public_cluster"] = True
+        merged["public_cluster_reason"] = cluster.get("reason")
+        merged["operator_reports"] = cluster.get("operator_reports", "keep_separate")
+        merged["cluster_members"] = [
+            {
+                "name": v.get("name"),
+                "postcode": v.get("postcode"),
+                "category": v.get("category"),
+                "rcs_final": v.get("rcs_final"),
+            }
+            for v in sorted(members, key=lambda v: float(v.get("rcs_final") or 0), reverse=True)
+        ]
+        merged_venues.append(merged)
+        merged_count += max(0, len(members) - 1)
+
+    merged_venues.sort(key=lambda v: float(v.get("rcs_final") or 0), reverse=True)
+    return merged_venues, merged_count
+
+
 def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
           la: str, display: str, top_n: int) -> dict[str, Any]:
     old = prior_ranks(RANKINGS_DIR / f"{slug}.json")
     overrides = load_overrides()
+    clusters = load_clusters()
     eligible = []
     excluded_non_food = 0
     excluded_by_override = 0
@@ -355,50 +425,57 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
 
     eligible.sort(key=lambda row: row[0], reverse=True)
 
-    venues = []
-    for rank, (score, key, item, rec, include_override, rename_override) in enumerate(eligible, 1):
+    raw_venues = []
+    for score, key, item, rec, include_override, rename_override in eligible:
         b, bc = band(score)
         name = item.get("name") or rec.get("n") or key
-        mv, mv_delta = movement(name, rank, old)
-        platforms = item.get("source_family_summary", {}).get("customer_platforms") or []
-        google_only = platforms == ["google"]
         override_notes = []
         if include_override:
             override_notes.append("include_public")
         if rename_override:
             override_notes.append("rename_public")
-        venues.append({
-            "rank": rank,
+        raw_venues.append({
             "name": name,
             "postcode": rec.get("pc", ""),
             "category": category(rec),
-            "fsa_business_type": fsa_business_type(rec) or None,
             "rcs_final": round(score, 3),
             "rcs_band": b,
             "band_class": bc,
-            "convergence": "single-platform" if google_only else "multi-platform",
-            "movement": mv,
-            "movement_delta": mv_delta,
-            "confidence_class": item.get("confidence_class"),
-            "coverage_status": item.get("coverage_status"),
-            "single_platform_caveat": google_only,
-            "public_evidence_label": "Official Google + FSA evidence" if google_only else "Multi-source public evidence",
+            "movement": "new",
+            "movement_delta": 0,
+            "daydine_scoring_status": "fully_scored",
+            "daydine_scoring_label": "DayDine Restaurant Confidence Score",
+            "public_visibility_label": "Tracked in live market",
+            "methodology_label": "See RCS methodology",
             "public_override": override_notes or None,
         })
 
-    visible = venues[:top_n]
-    category_rankings = build_category_rankings(venues, per_category=5)
+    venues, clustered_duplicates_removed = apply_public_clusters(raw_venues, clusters)
+
+    ranked_venues = []
+    for rank, venue in enumerate(venues, 1):
+        v = dict(venue)
+        v["rank"] = rank
+        v["public_visibility_label"] = "Public top 10" if rank <= top_n else "Tracked in live market"
+        mv, mv_delta = movement(v.get("name", ""), rank, old)
+        v["movement"] = mv
+        v["movement_delta"] = mv_delta
+        ranked_venues.append(v)
+
+    visible = ranked_venues[:top_n]
+    category_rankings = build_category_rankings(ranked_venues, per_category=3)
     return {
         "la_name": la,
         "display_name": display,
         "slug": slug,
-        "methodology_version": "V4 official-source mode",
-        "total_venues": len(venues),
+        "methodology_version": "V4 DayDine RCS official-source mode",
+        "total_venues": len(ranked_venues),
         "top_n": len(visible),
-        "others_count": max(0, len(venues) - len(visible)),
+        "others_count": max(0, len(ranked_venues) - len(visible)),
         "excluded_non_food_or_ambiguous": excluded_non_food,
         "excluded_by_public_override": excluded_by_override,
         "included_by_public_override": included_by_override,
+        "public_clusters_applied": clustered_duplicates_removed,
         "category_rankings": category_rankings,
         "category_count": len(category_rankings),
         "last_updated": date.today().isoformat(),
@@ -445,6 +522,7 @@ def main() -> int:
     print(f"Excluded non-food/ambiguous public entries: {area['excluded_non_food_or_ambiguous']}")
     print(f"Excluded by public override: {area['excluded_by_public_override']}")
     print(f"Included by public override: {area['included_by_public_override']}")
+    print(f"Public duplicate clusters removed: {area['public_clusters_applied']}")
     print(f"Category-specific lists: {area['category_count']}")
     return 0
 
