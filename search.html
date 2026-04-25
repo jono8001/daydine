@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
   <title>Search restaurants by place and type — DayDine</title>
-  <meta name="description" content="Search DayDine by location and type. Find bakeries, cafes, pubs, restaurants and other food venues in live ranked markets.">
+  <meta name="description" content="Search DayDine by location and type. Find bakeries, cafes, pubs, restaurants and other food venues in fully scored DayDine markets.">
   <link rel="canonical" href="https://daydine.vercel.app/search">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,7 +56,7 @@
 <main id="main">
   <div class="kicker kicker-accent mb-1">Restaurant search</div>
   <h1 class="h-display h-display-md" style="margin-bottom:10px;">Search by place and type.</h1>
-  <p class="body-md" style="max-width:680px; margin-bottom:28px;">Find places in live DayDine guides by category, or open the full UK establishment database for broad FSA/Google search.</p>
+  <p class="body-md" style="max-width:680px; margin-bottom:28px;">Find places in fully scored DayDine markets by category. Fully scored markets use the DayDine Restaurant Confidence Score; other UK records are kept as partial establishment records until their local area is processed.</p>
 
   <section class="search-panel">
     <div class="search-grid">
@@ -94,9 +94,9 @@
     <div class="actions">
       <button class="primary" id="btnSearch">Search</button>
       <button class="secondary" id="btnNearMe" type="button">Use Near Me</button>
-      <a class="secondary" href="/search.html">Open full UK database</a>
+      <a class="secondary" href="/search.html">Open UK establishment lookup</a>
     </div>
-    <p class="note" id="searchNote">Type filters currently work for live ranked markets. Stratford-upon-Avon is live now. More towns can be added as DayDine expands.</p>
+    <p class="note" id="searchNote">Stratford-upon-Avon is currently a fully scored DayDine market. Type search works in fully scored markets; the wider UK lookup remains useful for partial records while expansion continues. <a href="/methodology">See the RCS methodology →</a></p>
   </section>
 
   <section class="hint-card">
@@ -111,7 +111,7 @@
   </section>
 </main>
 <footer class="foot">
-  <div class="foot-bottom"><span>© 2026 DayDine</span><span>No paid ranking</span><span>Made in the UK</span></div>
+  <div class="foot-bottom"><span>© 2026 DayDine</span><span>Restaurant Confidence Score</span><span>Made in the UK</span></div>
 </footer>
 <script>
 (function(){var t=document.querySelector('.mast-toggle');var n=document.querySelector('.mast-nav');if(!t||!n)return;t.addEventListener('click',function(){var open=n.classList.toggle('open');t.setAttribute('aria-expanded',String(open));});})();
@@ -131,7 +131,7 @@ function runSearch(){
     return;
   }
   if(type){
-    alert('Type search is currently available for live ranked guides. Stratford-upon-Avon is live now. For the full UK database, choose Any type or open the full UK database.');
+    alert('Type search is currently available in fully scored DayDine markets. Stratford-upon-Avon is live now. For other areas, choose Any type or open the UK establishment lookup.');
     return;
   }
   window.location.href='/search.html';
@@ -142,7 +142,7 @@ document.getElementById('fName').addEventListener('keydown',function(e){if(e.key
 document.querySelectorAll('.chip').forEach(function(chip){chip.addEventListener('click',function(){document.getElementById('fLocation').value=chip.dataset.loc;document.getElementById('fType').value=chip.dataset.type;runSearch();});});
 document.getElementById('btnNearMe').addEventListener('click',function(){
   if(!navigator.geolocation){alert('Near Me is not available in this browser. You can still type a town or postcode.');return;}
-  navigator.geolocation.getCurrentPosition(function(){alert('Near Me will be connected to ranked local guides as DayDine expands. For now, type Stratford-upon-Avon or use the full UK database.');},function(){alert('Location access is blocked for this browser. To use Near Me, allow location access for Safari/Chrome in your phone settings, then return and try again. You can also type a town or postcode.');});
+  navigator.geolocation.getCurrentPosition(function(){alert('Near Me will be connected to fully scored DayDine markets as expansion continues. For now, type Stratford-upon-Avon or use the UK establishment lookup.');},function(){alert('Location access is blocked for this browser. To use Near Me, allow location access for Safari/Chrome in your phone settings, then return and try again. You can also type a town or postcode.');});
 });
 </script>
 </body>
