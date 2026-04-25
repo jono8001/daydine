@@ -1,0 +1,52 @@
+name: One-off Location Permission Message Fix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/oneoff_location_permission_message.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-location-copy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Update location permission copy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('search.html')
+          text = path.read_text(encoding='utf-8')
+          old_plain = 'Location access denied. Please allow location access and try again.'
+          new_plain = 'Location access is blocked for this browser. To use Near Me, allow location access for Safari/Chrome in your phone settings, then return and try again. You can also type a town or postcode in the Location box and press Search.'
+          replacements = [
+              (old_plain, new_plain),
+              ('Location access denied', 'Location access is blocked for this browser'),
+              ('Please allow location access and try again.', 'Allow location access for Safari/Chrome in your phone settings, then return and try again. Or type a town or postcode in the Location box.'),
+          ]
+          changed = False
+          for old, new in replacements:
+              if old in text:
+                  text = text.replace(old, new)
+                  changed = True
+          if not changed:
+              raise SystemExit('No matching location-permission text found in search.html')
+          path.write_text(text, encoding='utf-8')
+          PY
+
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add search.html
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Clarify location permission guidance on search page"
+          git push
