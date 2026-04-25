@@ -2,7 +2,7 @@
 
 This module turns the monthly operator report into a tracking product by
 adding exact market position, category position, public-visibility status,
-gap-to-public thresholds and nearest competitors.
+gap-to-public top-30 thresholds and nearest competitors.
 
 Important guardrail: it only renders for league-eligible Rankable reports.
 Directional-C and Profile-only-D reports must not leak rank claims.
@@ -14,6 +14,11 @@ import re
 from pathlib import Path
 from typing import Any, Callable
 
+from operator_intelligence.ranking_tiebreaker import (
+    explanation_for_venue,
+    sort_key as rcs_sort_key,
+    tiebreak_values,
+)
 from operator_intelligence.v4_adapter import (
     ReportInputs,
     MODE_RANKABLE_A,
@@ -21,6 +26,8 @@ from operator_intelligence.v4_adapter import (
 )
 
 ROOT = Path(__file__).resolve().parents[1]
+PUBLIC_OVERALL_LIMIT = 30
+PUBLIC_CATEGORY_LIMIT = 30
 
 
 def _norm(value: Any) -> str:
@@ -45,7 +52,6 @@ def _short_category(cat: str | None) -> str:
 
 
 def _market_for_inputs(inputs: ReportInputs) -> dict[str, str] | None:
-    """Map known fully scored areas to their score and establishment files."""
     pc = (inputs.postcode or "").upper().replace(" ", "")
     la = _norm(inputs.la)
     address = _norm(inputs.address)
@@ -76,7 +82,6 @@ def _load_json(path: str) -> dict[str, Any]:
 
 
 def _category(record: dict[str, Any]) -> str:
-    """Small local category helper matching the public guide vocabulary."""
     name = _norm(record.get("n"))
     bt = _norm(record.get("fsa_business_type") or record.get("bt"))
     gty = {_norm(t).replace(" ", "_") for t in (record.get("gty") or [])}
@@ -108,7 +113,12 @@ def _row_for(key: str, score_block: dict[str, Any], establishments: dict[str, An
         "name": name,
         "postcode": record.get("pc") or "",
         "score": score,
+        "rcs_final": round(score, 3),
         "category": _category(record),
+        "score_block": score_block,
+        "record": record,
+        "tie_break": tiebreak_values(score_block, record, name),
+        "tie_break_note": None,
     }
 
 
@@ -176,10 +186,10 @@ def _gap_text(rank: int, current_score: float, rows: list[dict[str, Any]], thres
 
 
 def _visibility(rank: int, category_rank: int) -> str:
-    if rank <= 10:
-        return "Public top 10 overall"
-    if category_rank <= 3:
-        return "Public category top 3"
+    if rank <= PUBLIC_OVERALL_LIMIT:
+        return "Public top 30 overall"
+    if category_rank <= PUBLIC_CATEGORY_LIMIT:
+        return "Category top 30"
     return "Tracked, but not currently public-shortlisted"
 
 
@@ -194,17 +204,15 @@ def _load_market_rows(inputs: ReportInputs) -> tuple[dict[str, str] | None, list
         row = _row_for(str(key), block, establishments)
         if row:
             rows.append(row)
-    rows.sort(key=lambda r: r["score"], reverse=True)
+    rows.sort(key=lambda r: rcs_sort_key(r["score"], r.get("score_block") or {}, r.get("record") or {}, r.get("name") or ""))
+    for i, row in enumerate(rows):
+        previous = rows[i - 1] if i else None
+        row["tie_break_note"] = explanation_for_venue(row, previous)
     current = _current_row_key(inputs, rows)
     return market, rows, current
 
 
 def render_operator_tracking_snapshot(out: Callable[[str], None], inputs: ReportInputs) -> None:
-    """Render the operator tracking snapshot.
-
-    Called from the main report generator after the V4 score card. It is
-    deliberately silent when rank claims are not allowed.
-    """
     if inputs.report_mode not in {MODE_RANKABLE_A, MODE_RANKABLE_B}:
         return
     if not inputs.league_table_eligible or inputs.rcs_v4_final is None:
@@ -224,8 +232,8 @@ def render_operator_tracking_snapshot(out: Callable[[str], None], inputs: Report
     category_rows = [row for row in rows if row["category"] == category]
     category_rank = next(i for i, row in enumerate(category_rows, 1) if row is current)
 
-    top10_gap = _gap_text(rank, current_score, rows, 10, "public top 10")
-    cat3_gap = _gap_text(category_rank, current_score, category_rows, 3, f"{_short_category(category)} top 3")
+    top30_gap = _gap_text(rank, current_score, rows, PUBLIC_OVERALL_LIMIT, "public top 30")
+    cat30_gap = _gap_text(category_rank, current_score, category_rows, PUBLIC_CATEGORY_LIMIT, f"{_short_category(category)} top 30")
     public_visibility = _visibility(rank, category_rank)
     movement = _movement_text(inputs, rank, category_rank, current_score)
 
@@ -237,11 +245,13 @@ def render_operator_tracking_snapshot(out: Callable[[str], None], inputs: Report
     out("|---|---:|---|")
     out(f"| Local market | {market['label']} | Fully scored DayDine market |")
     out(f"| Overall DayDine position | #{rank} of {len(rows)} | {public_visibility} |")
-    out(f"| Category position | #{category_rank} of {len(category_rows)} {_short_category(category).lower()} venues | Public category visibility starts at top 3 |")
+    out(f"| Category position | #{category_rank} of {len(category_rows)} {_short_category(category).lower()} venues | Public category visibility runs to the category top 30 |")
     out(f"| DayDine RCS | {_fmt(current_score)} | Current baseline for future movement tracking |")
-    out(f"| Gap to public top 10 | {top10_gap} | Shows whether the venue is close to public overall visibility |")
-    out(f"| Gap to category top 3 | {cat3_gap} | Shows whether the venue is close to category visibility |")
+    out(f"| Gap to public top 30 | {top30_gap} | Shows whether the venue is close to public overall visibility |")
+    out(f"| Gap to category top 30 | {cat30_gap} | Shows whether the venue is close to category visibility |")
     out(f"| Monthly movement | {movement} | Used to track whether actions are translating into visible progress |")
+    if current.get("tie_break_note"):
+        out(f"| Tie-break status | Joint score | {current['tie_break_note']} |")
     out("")
 
     lower = max(0, rank - 3)
@@ -250,19 +260,20 @@ def render_operator_tracking_snapshot(out: Callable[[str], None], inputs: Report
     if neighbours:
         out("**Nearest overall competitors**")
         out("")
-        out("| Rank | Venue | Category | RCS | Gap vs you |")
-        out("|---:|---|---|---:|---:|")
+        out("| Rank | Venue | Category | RCS | Gap vs you | Tie-break note |")
+        out("|---:|---|---|---:|---:|---|")
         for idx, row in enumerate(neighbours, lower + 1):
             gap = row["score"] - current_score
             marker = "you" if row is current else (f"{gap:+.3f}")
-            out(f"| #{idx} | {row['name']} | {_short_category(row['category'])} | {_fmt(row['score'])} | {marker} |")
+            note = row.get("tie_break_note") or "—"
+            out(f"| #{idx} | {row['name']} | {_short_category(row['category'])} | {_fmt(row['score'])} | {marker} | {note} |")
         out("")
 
     out("**Operator focus for next month**")
     out("")
-    if rank <= 10 or category_rank <= 3:
+    if rank <= PUBLIC_OVERALL_LIMIT or category_rank <= PUBLIC_CATEGORY_LIMIT:
         out("- Protect current public visibility: keep the listing complete, maintain review momentum, and avoid hygiene/compliance issues that could cap the score.")
     else:
-        out("- Treat the top-10/category-top-3 gap as the monthly target: focus first on missing commercial-readiness signals, then review volume/validation, then any trust/compliance caps.")
+        out("- Treat the top-30/category-top-30 gap as the monthly target: focus first on missing commercial-readiness signals, then review volume/validation, then any trust/compliance caps.")
     out("- Use this section month by month: the paid report should show whether position, category rank and RCS are moving, not just explain the current score.")
     out("")
