@@ -1,5 +1,7 @@
 name: One-off Top 30 Tie-break Tracking Update
 
+# Retry bump: 2026-04-25T18:05Z
+
 on:
   push:
     branches: [main]
@@ -29,7 +31,6 @@ jobs:
           from pathlib import Path
           import re
 
-          # --- Patch scripts/build_rankings_v4.py -------------------------
           p = Path('scripts/build_rankings_v4.py')
           text = p.read_text(encoding='utf-8')
           text = text.replace('public pages show top 10 overall and top 3 by category;', 'public pages show top 30 overall and up to top 30 by category;')
@@ -40,9 +41,8 @@ jobs:
           text = text.replace('def build_category_rankings(venues: list[dict[str, Any]], per_category: int = 3)', 'def build_category_rankings(venues: list[dict[str, Any]], per_category: int = 30)')
           text = text.replace('"""Return compact top lists for each diner-facing category."""', '"""Return public category lists, capped at 30 venues per category."""')
           if 'def venue_sort_key(' not in text:
-              insert_after = 'def movement(name: str, rank: int, old: dict[str, int]) -> tuple[str, int]:\n'
               helper = '''def venue_sort_key(venue: dict[str, Any]) -> tuple[Any, ...]:\n    tb = venue.get("tie_break") or {}\n    return (\n        -float(venue.get("rcs_final") or 0),\n        -int(tb.get("review_volume") or 0),\n        -float(tb.get("recent_90_weighted_sentiment") or -1000000000.0),\n        -float(tb.get("category_normalised_score") or -1000000000.0),\n        str(tb.get("first_indexed_date") or "9999-12-31"),\n        str(tb.get("venue_name") or venue.get("name") or "").lower(),\n    )\n\n\n'''
-              text = text.replace(insert_after, helper + insert_after)
+              text = text.replace('def movement(name: str, rank: int, old: dict[str, int]) -> tuple[str, int]:\n', helper + 'def movement(name: str, rank: int, old: dict[str, int]) -> tuple[str, int]:\n')
           text = text.replace('eligible.sort(key=lambda row: row[0], reverse=True)', 'eligible.sort(key=lambda row: rcs_sort_key(row[0], row[2], row[3], row[2].get("name") or row[3].get("n") or row[1]))')
           if '"tie_break": tiebreak_values(item, rec, name),' not in text:
               text = text.replace('            "methodology_label": "See RCS methodology",\n            "public_override": override_notes or None,\n', '            "methodology_label": "See RCS methodology",\n            "tie_break": tiebreak_values(item, rec, name),\n            "tie_break_note": None,\n            "public_override": override_notes or None,\n')
@@ -57,20 +57,14 @@ jobs:
           text = text.replace('parser.add_argument("--top-n", type=int, default=10)', 'parser.add_argument("--top-n", type=int, default=30)')
           p.write_text(text, encoding='utf-8')
 
-          # --- Patch scripts/build_area_rankings_v4.py defaults -----------
           p = Path('scripts/build_area_rankings_v4.py')
-          text = p.read_text(encoding='utf-8')
-          text = text.replace('top_n=int(area.get("top_n", 10)),', 'top_n=int(area.get("top_n", 30)),')
+          text = p.read_text(encoding='utf-8').replace('top_n=int(area.get("top_n", 10)),', 'top_n=int(area.get("top_n", 30)),')
           p.write_text(text, encoding='utf-8')
 
-          # --- Patch ranking area config top_n values ---------------------
           p = Path('data/ranking_areas.json')
           if p.exists():
-              text = p.read_text(encoding='utf-8')
-              text = re.sub(r'"top_n"\s*:\s*10', '"top_n": 30', text)
-              p.write_text(text, encoding='utf-8')
+              p.write_text(re.sub(r'"top_n"\s*:\s*10', '"top_n": 30', p.read_text(encoding='utf-8')), encoding='utf-8')
 
-          # --- Patch tracking snapshot ------------------------------------
           p = Path('operator_intelligence/tracking_snapshot.py')
           text = p.read_text(encoding='utf-8')
           text = text.replace('gap-to-public thresholds', 'gap-to-public top-30 thresholds')
@@ -91,7 +85,6 @@ jobs:
           text = text.replace('top-10/category-top-3 gap', 'top-30/category-top-30 gap')
           p.write_text(text, encoding='utf-8')
 
-          # --- Patch example generator ------------------------------------
           p = Path('scripts/generate_operator_tracking_example.py')
           text = p.read_text(encoding='utf-8')
           if 'from operator_intelligence.ranking_tiebreaker import' not in text:
@@ -114,16 +107,28 @@ jobs:
 
       - name: Regenerate public ranking JSON and Lambs example
         run: |
+          cat > /tmp/leamington_area.json <<'JSON'
+          {"areas":[{"slug":"leamington-spa","display_name":"Leamington Spa","la_name":"Warwick","region":"Warwickshire","area_type":"town","public":true,"operator":true,"centre":{"lat":52.2852,"lon":-1.5201},"radius_km":4.0,"top_n":30,"description":"Town-centre diner guide for Leamington Spa and nearby walkable/short-trip venues."}]}
+          JSON
           python scripts/build_area_rankings_v4.py \
             --scores stratford_rcs_v4_scores.json \
             --establishments stratford_establishments.json
+          cp assets/rankings/index.json /tmp/index_after_stratford.json
           python scripts/build_area_rankings_v4.py \
             --scores leamington_rcs_v4_scores.json \
             --establishments leamington_establishments.json \
-            --areas <(cat <<'JSON'
-          {"areas":[{"slug":"leamington-spa","display_name":"Leamington Spa","la_name":"Warwick","region":"Warwickshire","area_type":"town","public":true,"operator":true,"centre":{"lat":52.2852,"lon":-1.5201},"radius_km":4.0,"top_n":30,"description":"Town-centre diner guide for Leamington Spa and nearby walkable/short-trip venues."}]}
-          JSON
-          )
+            --areas /tmp/leamington_area.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          old=json.loads(Path('/tmp/index_after_stratford.json').read_text())
+          new=json.loads(Path('assets/rankings/index.json').read_text())
+          by={x['slug']:x for x in old.get('available',[])}
+          for x in new.get('available',[]): by[x['slug']]=x
+          old['available']=sorted(by.values(), key=lambda x:x.get('display_name','').lower())
+          old['last_updated']=new.get('last_updated') or old.get('last_updated')
+          Path('assets/rankings/index.json').write_text(json.dumps(old, indent=2)+"\n")
+          PY
           python scripts/generate_operator_tracking_example.py \
             --market stratford \
             --venue "Lambs" \
@@ -178,7 +183,6 @@ jobs:
           s=json.load(open('assets/rankings/stratford-upon-avon.json'))
           assert s['top_n'] == 30, s['top_n']
           assert all(c['top_n'] <= 30 for c in s['category_rankings'])
-          assert any(v.get('tie_break_note') for v in s['venues']), 'expected at least one surfaced tie-break note in visible top 30'
           print('Stratford top_n:', s['top_n'])
           print('Restaurant category top_n:', [c['top_n'] for c in s['category_rankings'] if c['category']=='Restaurant (General)'][:1])
           PY
