@@ -1,0 +1,127 @@
+name: One-off RCS Wording and Top Three Patch
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/oneoff_rcs_wording_and_top3.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch-rcs-wording:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Patch RCS wording and category depth
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          changed = False
+
+          # 1) Public ranking JSON: top 3 per category, RCS-led status labels.
+          p = Path('scripts/build_rankings_v4.py')
+          text = p.read_text(encoding='utf-8')
+          old = 'category_rankings = build_category_rankings(venues, per_category=5)'
+          if old in text:
+              text = text.replace(old, 'category_rankings = build_category_rankings(venues, per_category=3)', 1)
+              changed = True
+          old_label = '"public_evidence_label": "Official Google + FSA evidence" if google_only else "Multi-source public evidence",'
+          new_label = '''"daydine_scoring_status": "fully_scored",
+            "daydine_scoring_label": "Fully scored with the DayDine Restaurant Confidence Score",
+            "public_visibility_label": "Public top-list venue" if rank <= 10 else "Tracked in live market",
+            "methodology_label": "See RCS methodology",'''
+          if old_label in text:
+              text = text.replace(old_label, new_label, 1)
+              changed = True
+          p.write_text(text, encoding='utf-8')
+
+          # 2) Stratford guide: make public copy RCS-led, not source-led.
+          p = Path('rankings/stratford-upon-avon.html')
+          text = p.read_text(encoding='utf-8')
+          replacements = {
+              'Google + FSA evidence, with clear caveats': 'DayDine RCS, with clear scoring caveats',
+              'DayDine uses public evidence from FSA/FHRS and official Google Places metadata, then applies clear public eligibility and override rules.': 'DayDine uses the Restaurant Confidence Score to turn public signals into a simple local guide. Some UK records are partial; Stratford-upon-Avon is a fully scored DayDine market.',
+              'DayDine currently uses official Google Places metadata, FSA/FHRS food hygiene evidence and reviewed Companies House risk checks where available.': 'This guide is built from the DayDine Restaurant Confidence Score. See the methodology page for how the score is constructed and checked.',
+              'Multi-platform customer corroboration is not yet active, so customer validation is currently Google-led.': 'Some wider UK records are partial establishment records only. Fully scored markets receive category, confidence and ranking checks before appearing in public top lists.',
+              'Venues are FSA/FHRS-backed and enriched with official Google Places metadata.': 'Venues in this guide have passed DayDine eligibility, category and confidence checks.',
+              'Where shown, customer validation is currently Google-led until additional public platforms are activated.': 'The public guide shows the top 10 overall and the top 3 in each category; fuller position tracking belongs in the operator report.',
+          }
+          for old, new in replacements.items():
+              if old in text:
+                  text = text.replace(old, new)
+                  changed = True
+          old_fn = """function evidenceSummary(v){
+  var bits=[];
+  if(v.fsa_business_type) bits.push('FSA-backed food venue');
+  if(v.rcs_band==='Excellent'||Number(v.rcs_final||0)>=8.5) bits.push('strong evidence score');
+  if(v.confidence_class) bits.push(v.confidence_class);
+  if(v.single_platform_caveat) bits.push('Google-led customer signal');
+  else if(v.convergence==='multi-platform') bits.push('multi-source public evidence');
+  return bits.slice(0,4).join(' · ');
+}"""
+          new_fn = """function evidenceSummary(v){
+  var bits=[];
+  bits.push(v.daydine_scoring_label || 'Fully scored with the DayDine Restaurant Confidence Score');
+  if(v.rcs_band==='Excellent'||Number(v.rcs_final||0)>=8.5) bits.push('strong confidence band');
+  if(v.confidence_class) bits.push(v.confidence_class);
+  bits.push(v.methodology_label || 'see RCS methodology');
+  return bits.slice(0,4).join(' · ');
+}"""
+          if old_fn in text:
+              text = text.replace(old_fn, new_fn, 1)
+              changed = True
+          text = text.replace('These category lists use the same V4 evidence and public eligibility rules.', 'These category lists show only the public top 3 from the DayDine Restaurant Confidence Score.', 1)
+          p.write_text(text, encoding='utf-8')
+
+          # 3) Rankings landing page: RCS-led microcopy.
+          p = Path('rankings.html')
+          text = p.read_text(encoding='utf-8')
+          replacements = {
+              'DayDine is a public-evidence guide. We look beyond star ratings to show which places have strong customer validation,\n  hygiene evidence and enough public information to make a confident choice.': 'DayDine uses the Restaurant Confidence Score to turn public signals into simple local guides. Fully scored markets show public top lists; partial UK records remain in the wider establishment lookup until their area is processed.',
+              'DayDine currently uses official Google Places metadata, FSA/FHRS food hygiene evidence and reviewed Companies House risk checks where available.': 'Live guides are built from the DayDine Restaurant Confidence Score. See the methodology page for how the score is constructed and checked.',
+              'Multi-platform customer corroboration is not yet active, so customer validation is currently Google-led.': 'The public site shows top 10 overall and top 3 by category. Full position tracking, category rank and competitor gap sit inside the operator report.',
+          }
+          for old, new in replacements.items():
+              if old in text:
+                  text = text.replace(old, new)
+                  changed = True
+          old_fn = """function explainBrief(v){
+  var bits=[];
+  if(v.rcs_band==='Excellent'||Number(v.rcs_final||0)>=8.5) bits.push('excellent evidence score');
+  if(v.fsa_business_type) bits.push('FSA-backed food venue');
+  if(v.confidence_class) bits.push(v.confidence_class);
+  if(v.single_platform_caveat) bits.push('Google-led customer signal');
+  return bits.slice(0,3).join(' · ');
+}"""
+          new_fn = """function explainBrief(v){
+  var bits=[];
+  bits.push(v.daydine_scoring_label || 'DayDine Restaurant Confidence Score');
+  if(v.rcs_band==='Excellent'||Number(v.rcs_final||0)>=8.5) bits.push('strong confidence band');
+  if(v.confidence_class) bits.push(v.confidence_class);
+  return bits.slice(0,3).join(' · ');
+}"""
+          if old_fn in text:
+              text = text.replace(old_fn, new_fn, 1)
+              changed = True
+          p.write_text(text, encoding='utf-8')
+
+          if not changed:
+              raise SystemExit('No files changed; anchors may have already been patched')
+          PY
+
+      - name: Commit patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add scripts/build_rankings_v4.py rankings.html rankings/stratford-upon-avon.html
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Reframe public ranking copy around DayDine RCS"
+          git push
