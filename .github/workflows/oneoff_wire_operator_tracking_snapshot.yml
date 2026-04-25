@@ -1,0 +1,101 @@
+name: One-off Wire Operator Tracking Snapshot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/oneoff_wire_operator_tracking_snapshot.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  wire-tracking-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Insert tracking snapshot into V4 report generator
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('operator_intelligence/v4_report_generator.py')
+          text = path.read_text(encoding='utf-8')
+          original = text
+
+          import_line = 'from operator_intelligence.tracking_snapshot import render_operator_tracking_snapshot\n'
+          if import_line not in text:
+              anchor = '    FINANCIAL_IMPACT_FALLBACK_THIN,\n    FINANCIAL_IMPACT_FALLBACK_DIRECTIONAL,\n)\n\n# ---------------------------------------------------------------------------\n# Formatting helpers'
+              if anchor not in text:
+                  raise SystemExit('Could not find import anchor in v4_report_generator.py')
+              text = text.replace(
+                  anchor,
+                  '    FINANCIAL_IMPACT_FALLBACK_THIN,\n    FINANCIAL_IMPACT_FALLBACK_DIRECTIONAL,\n)\n' + import_line + '\n# ---------------------------------------------------------------------------\n# Formatting helpers',
+                  1,
+              )
+
+          if 'render_operator_tracking_snapshot(out, inputs)' not in text:
+              pattern = re.compile(r'(?m)^(\s*)_render_score_card\(out, inputs\)\s*$')
+              def repl(match):
+                  indent = match.group(1)
+                  return match.group(0) + '\n' + indent + 'render_operator_tracking_snapshot(out, inputs)'
+              text, count = pattern.subn(repl, text, count=1)
+              if count != 1:
+                  raise SystemExit('Could not find _render_score_card(out, inputs) call to wire tracking snapshot')
+
+          if text == original:
+              print('No changes needed; tracking snapshot already wired')
+          else:
+              path.write_text(text, encoding='utf-8')
+              print('Wired operator tracking snapshot into report generator')
+          PY
+
+      - name: Add tracking snapshot product spec note
+        run: |
+          cat > docs/Operator-Report-Tracking-Snapshot.md <<'MD'
+          # Operator Report Tracking Snapshot
+
+          The V4 operator report now includes a **Monthly Tracking Snapshot** for league-eligible Rankable reports.
+
+          This section is intended to make the report a repeatable tracking product rather than a one-off score explanation.
+
+          It shows:
+
+          - local market position;
+          - category position;
+          - public visibility status;
+          - DayDine RCS;
+          - gap to public top 10;
+          - gap to category top 3;
+          - month-on-month movement when a prior snapshot is supplied;
+          - nearest overall competitors;
+          - next-month operator focus.
+
+          Guardrail: Directional-C, Profile-only-D and Closed reports do not show rank claims or top-list gap claims.
+          MD
+
+      - name: Smoke-test import and report QA modules
+        run: |
+          python - <<'PY'
+          import operator_intelligence.tracking_snapshot as ts
+          import operator_intelligence.v4_report_generator as gen
+          import operator_intelligence.v4_report_spec as spec
+          print('tracking snapshot module:', ts.__name__)
+          print('report generator import ok:', gen.__name__)
+          print('report spec import ok:', spec.__name__)
+          PY
+
+      - name: Commit operator tracking report upgrade
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add operator_intelligence/v4_report_generator.py docs/Operator-Report-Tracking-Snapshot.md
+          git diff --cached --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Wire operator tracking snapshot into V4 reports"
+          git push
