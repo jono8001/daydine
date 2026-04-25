@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 """Build public DayDine ranking JSON from V4 scoring output.
 
-The public leaderboard is stricter than the internal V4 scorecard. A venue can
-have a useful operator report if it is registered and enriched, but it should
-only appear in the diner-facing leaderboard when it is clearly food-led.
-
 Public output principles:
-- public pages show top 10 overall and top 3 by category;
+- public pages show top 30 overall and up to 30 venues by category;
 - public copy leads with DayDine Restaurant Confidence Score labels;
+- identical rounded RCS values are resolved with deterministic tie-breaks;
 - shared public destinations can be clustered without merging underlying
   operator records or V4 scores.
 
@@ -20,15 +17,26 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from datetime import date
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from operator_intelligence.ranking_tiebreaker import (  # noqa: E402
+    explanation_for_venue,
+    sort_key as rcs_sort_key,
+    tiebreak_values,
+)
+
 RANKINGS_DIR = ROOT / "assets" / "rankings"
 INDEX_FILE = RANKINGS_DIR / "index.json"
 OVERRIDES_FILE = ROOT / "data" / "public_ranking_overrides.json"
 CLUSTERS_FILE = ROOT / "data" / "public_venue_clusters.json"
+PUBLIC_OVERALL_LIMIT = 30
+PUBLIC_CATEGORY_LIMIT = 30
 
 PUBLIC_FSA_BUSINESS_TYPES = {
     "restaurant/cafe/canteen",
@@ -133,7 +141,6 @@ def record_identifiers(name: str, key: str, item: dict[str, Any], record: dict[s
 
 
 def override_matches(override: dict[str, Any], identifiers: dict[str, str]) -> bool:
-    """Match an override by fhrsid, gpid, key, or name+optional postcode."""
     for field in ("fhrsid", "gpid", "key"):
         value = norm(override.get(field))
         if value and value == identifiers.get(field):
@@ -252,13 +259,6 @@ def band(score: float) -> tuple[str, str]:
 
 
 def category(record: dict[str, Any]) -> str:
-    """Return the diner-facing category label.
-
-    Eligibility is official-register-first, but category labelling should be
-    specific and public-friendly. Bakery and cafe signals deliberately beat
-    generic takeaway signals because Google often attaches meal_takeaway to
-    bakeries, coffee shops and chains.
-    """
     business_type = fsa_business_type(record)
     name = norm(record.get("n"))
     name_tokens = tokenise(name)
@@ -289,8 +289,20 @@ def category(record: dict[str, Any]) -> str:
     return "Restaurant (General)"
 
 
-def build_category_rankings(venues: list[dict[str, Any]], per_category: int = 3) -> list[dict[str, Any]]:
-    """Return compact top lists for each diner-facing category."""
+def venue_sort_key(venue: dict[str, Any]) -> tuple[Any, ...]:
+    tb = venue.get("tie_break") or {}
+    return (
+        -float(venue.get("rcs_final") or 0),
+        -int(tb.get("review_volume") or 0),
+        -float(tb.get("recent_90_weighted_sentiment") or -1_000_000_000.0),
+        -float(tb.get("category_normalised_score") or -1_000_000_000.0),
+        str(tb.get("first_indexed_date") or "9999-12-31"),
+        str(tb.get("venue_name") or venue.get("name") or "").lower(),
+    )
+
+
+def build_category_rankings(venues: list[dict[str, Any]], per_category: int = PUBLIC_CATEGORY_LIMIT) -> list[dict[str, Any]]:
+    """Return public category lists, capped at 30 venues per category."""
     grouped: dict[str, list[dict[str, Any]]] = {}
     for venue in venues:
         grouped.setdefault(venue.get("category") or "Other", []).append(venue)
@@ -301,6 +313,8 @@ def build_category_rankings(venues: list[dict[str, Any]], per_category: int = 3)
         for category_rank, venue in enumerate(items[:per_category], 1):
             public_venue = dict(venue)
             public_venue["category_rank"] = category_rank
+            if category_rank <= PUBLIC_CATEGORY_LIMIT:
+                public_venue["category_visibility_label"] = "Category top 30"
             top_items.append(public_venue)
         category_rankings.append({
             "category": cat,
@@ -335,11 +349,6 @@ def movement(name: str, rank: int, old: dict[str, int]) -> tuple[str, int]:
 
 
 def apply_public_clusters(venues: list[dict[str, Any]], clusters: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int]:
-    """Merge same-premises public destinations while preserving source members.
-
-    This is public-output-only. The highest scoring member anchors the public
-    score; source members remain listed in the metadata for auditability.
-    """
     if not clusters:
         return venues, 0
 
@@ -360,7 +369,7 @@ def apply_public_clusters(venues: list[dict[str, Any]], clusters: list[dict[str,
             continue
         cluster = entries[0]["cluster"]
         members = [entry["venue"] for entry in entries]
-        primary = max(members, key=lambda v: float(v.get("rcs_final") or 0))
+        primary = sorted(members, key=venue_sort_key)[0]
         merged = dict(primary)
         merged["name"] = cluster.get("canonical_public_name") or primary.get("name")
         merged["category"] = cluster.get("canonical_category") or primary.get("category")
@@ -375,18 +384,19 @@ def apply_public_clusters(venues: list[dict[str, Any]], clusters: list[dict[str,
                 "postcode": v.get("postcode"),
                 "category": v.get("category"),
                 "rcs_final": v.get("rcs_final"),
+                "tie_break": v.get("tie_break"),
             }
-            for v in sorted(members, key=lambda v: float(v.get("rcs_final") or 0), reverse=True)
+            for v in sorted(members, key=venue_sort_key)
         ]
         merged_venues.append(merged)
         merged_count += max(0, len(members) - 1)
 
-    merged_venues.sort(key=lambda v: float(v.get("rcs_final") or 0), reverse=True)
+    merged_venues.sort(key=venue_sort_key)
     return merged_venues, merged_count
 
 
 def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
-          la: str, display: str, top_n: int) -> dict[str, Any]:
+          la: str, display: str, top_n: int = PUBLIC_OVERALL_LIMIT) -> dict[str, Any]:
     old = prior_ranks(RANKINGS_DIR / f"{slug}.json")
     overrides = load_overrides()
     clusters = load_clusters()
@@ -420,15 +430,15 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
         if public_name:
             item = dict(item)
             item["name"] = public_name
+            name = public_name
 
-        eligible.append((float(score), str(key), item, record, include, rename))
+        eligible.append((float(score), str(key), item, record, include, rename, name))
 
-    eligible.sort(key=lambda row: row[0], reverse=True)
+    eligible.sort(key=lambda row: rcs_sort_key(row[0], row[2], row[3], row[6]))
 
     raw_venues = []
-    for score, key, item, rec, include_override, rename_override in eligible:
+    for score, key, item, rec, include_override, rename_override, name in eligible:
         b, bc = band(score)
-        name = item.get("name") or rec.get("n") or key
         override_notes = []
         if include_override:
             override_notes.append("include_public")
@@ -447,6 +457,8 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
             "daydine_scoring_label": "DayDine Restaurant Confidence Score",
             "public_visibility_label": "Tracked in live market",
             "methodology_label": "See RCS methodology",
+            "tie_break": tiebreak_values(item, rec, name),
+            "tie_break_note": None,
             "public_override": override_notes or None,
         })
 
@@ -455,20 +467,33 @@ def build(scores: dict[str, Any], establishments: dict[str, Any], slug: str,
     ranked_venues = []
     for rank, venue in enumerate(venues, 1):
         v = dict(venue)
+        previous_v = ranked_venues[-1] if ranked_venues else None
         v["rank"] = rank
-        v["public_visibility_label"] = "Public top 10" if rank <= top_n else "Tracked in live market"
+        v["tie_break_note"] = explanation_for_venue(v, previous_v)
+        v["public_visibility_label"] = "Public top 30 overall" if rank <= top_n else "Tracked in live market"
         mv, mv_delta = movement(v.get("name", ""), rank, old)
         v["movement"] = mv
         v["movement_delta"] = mv_delta
         ranked_venues.append(v)
 
     visible = ranked_venues[:top_n]
-    category_rankings = build_category_rankings(ranked_venues, per_category=3)
+    category_rankings = build_category_rankings(ranked_venues, per_category=PUBLIC_CATEGORY_LIMIT)
     return {
         "la_name": la,
         "display_name": display,
         "slug": slug,
-        "methodology_version": "V4 DayDine RCS official-source mode",
+        "methodology_version": "DayDine RCS v3.4.1 — V4 official-source mode with deterministic tie-breaks",
+        "public_visibility_model": {
+            "overall": "Top 30 overall",
+            "category": "Full category list up to 30 entries",
+            "tie_break_hierarchy": [
+                "higher review volume",
+                "higher recent-90-day weighted sentiment",
+                "higher category-normalised score",
+                "earliest first-indexed date",
+                "alphabetical venue name",
+            ],
+        },
         "total_venues": len(ranked_venues),
         "top_n": len(visible),
         "others_count": max(0, len(ranked_venues) - len(visible)),
@@ -509,7 +534,7 @@ def main() -> int:
     parser.add_argument("--display", default="Stratford-upon-Avon")
     parser.add_argument("--region", default="Warwickshire")
     parser.add_argument("--slug")
-    parser.add_argument("--top-n", type=int, default=10)
+    parser.add_argument("--top-n", type=int, default=PUBLIC_OVERALL_LIMIT)
     args = parser.parse_args()
 
     slug = args.slug or slugify(args.la)
