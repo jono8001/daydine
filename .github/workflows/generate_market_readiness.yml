@@ -17,6 +17,7 @@ on:
       - 'assets/rankings/*.json'
       - 'admin-markets.html'
       - '.github/workflows/generate_market_readiness.yml'
+      - '.github/triggers/generate_market_readiness.txt'
 
 permissions:
   contents: write
