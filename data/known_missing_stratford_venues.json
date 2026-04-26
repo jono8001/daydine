@@ -1,0 +1,25 @@
+{
+  "_note": "High-confidence Stratford venues that must not silently disappear from public search/listings when the current trial slice or generated ranking assets miss them. These records are not a substitute for the canonical FSA establishment pull; they are a guardrail and audit list.",
+  "venues": [
+    {
+      "fhrsid": "503480",
+      "public_name": "The Vintner Wine Bar",
+      "fsa_name": "Vintner Wine Bar",
+      "aka": [
+        "The Vintner",
+        "Vintner",
+        "Vintner Wine Bar"
+      ],
+      "address": "The Vintner, 5 Sheep Street, Stratford-upon-Avon",
+      "postcode": "CV37 6EF",
+      "local_authority": "Stratford-on-Avon",
+      "business_type": "Restaurant/Cafe/Canteen",
+      "fsa_rating": 5,
+      "inspection_date": "2024-05-09",
+      "website": "https://www.the-vintner.co.uk/",
+      "phone": "01789 297259",
+      "reason": "Present in official FHRS and DayDine report/review artifacts, but missing from the current public Stratford ranking/listing asset. Should be included in the next canonical FSA pull and public ranking rebuild.",
+      "status": "needs_canonical_rebuild"
+    }
+  ]
+}
