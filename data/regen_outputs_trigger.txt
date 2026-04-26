@@ -1,2 +1,2 @@
-triggered_at=2026-04-25T18:55Z
-reason=regenerate_top30_tiebreak_outputs
+triggered_at=2026-04-25T19:08Z
+reason=regenerate_top30_tiebreak_outputs_after_direct_source_patch
