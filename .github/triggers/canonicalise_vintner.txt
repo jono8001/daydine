@@ -1,0 +1,5 @@
+Trigger canonical Vintner repair workflow.
+
+FHRSID: 503480
+Venue: The Vintner Wine Bar
+Purpose: Run scripts/canonicalise_vintner.py and commit canonical Stratford source, score and ranking outputs.
