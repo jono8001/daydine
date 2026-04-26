@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-04-26T19:03:43.671373+00:00",
+  "market": "stratford-upon-avon",
+  "display_name": "Stratford-upon-Avon",
+  "area_type": "town",
+  "public": true,
+  "operator": true,
+  "data_source_prefix": "stratford",
+  "status": "warning",
+  "counts": {
+    "total_establishments": 209,
+    "total_scored": 204,
+    "total_rankable": 170,
+    "total_public_ranking_venues": 30,
+    "total_category_ranking_entries": 70,
+    "aliases_missing_from_establishments": 0,
+    "aliases_unresolved_without_guardrail": 0,
+    "known_missing_venues": 1,
+    "active_known_missing_venues": 0,
+    "duplicate_or_ambiguous_gpid_groups": 6
+  },
+  "files": {
+    "area_config": "data/ranking_areas.json",
+    "establishments": "stratford_establishments.json",
+    "scores": "stratford_rcs_v4_scores.json",
+    "ranking": "assets/rankings/stratford-upon-avon.json"
+  },
+  "top_warnings": [
+    "6 duplicate/ambiguous Google Place group(s) recorded"
+  ],
+  "alias_missing_from_establishments": [],
+  "alias_unresolved_without_guardrail": [],
+  "active_known_missing_venues": [],
+  "known_missing_venues": [
+    {
+      "fhrsid": "503480",
+      "public_name": "The Vintner Wine Bar",
+      "fsa_name": "Vintner Wine Bar",
+      "aka": [
+        "The Vintner",
+        "Vintner",
+        "Vintner Wine Bar"
+      ],
+      "address": "The Vintner, 5 Sheep Street, Stratford-upon-Avon",
+      "postcode": "CV37 6EF",
+      "local_authority": "Stratford-on-Avon",
+      "business_type": "Restaurant/Cafe/Canteen",
+      "fsa_rating": 5,
+      "inspection_date": "2024-05-09",
+      "website": "https://www.the-vintner.co.uk/",
+      "phone": "01789 297259",
+      "reason": "Present in official FHRS and DayDine report/review artifacts, but missing from the current public Stratford ranking/listing asset. Should be included in the next canonical FSA pull and public ranking rebuild.",
+      "status": "resolved",
+      "resolved_by": "scripts/canonicalise_vintner.py",
+      "resolved_note": "Canonical Stratford establishment, V4 score and public ranking output now include FHRSID 503480.",
+      "guardrail_file": "data/known_missing_stratford_venues.json"
+    }
+  ],
+  "duplicate_or_ambiguous_gpid_groups": [
+    {
+      "gpid": "ChIJ5dKkTxIyd0gRLtoZH_DSEyc",
+      "fhrsids": [
+        "1206081",
+        "1206075",
+        "1206079"
+      ],
+      "names": [
+        "South Costa",
+        "Dec X Canteen",
+        "Building 523 Costa And Kitchen"
+      ],
+      "reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here."
+    },
+    {
+      "gpid": "ChIJOV7_VJwzd0gRyA1PYI__0uU",
+      "fhrsids": [
+        "503218",
+        "503342"
+      ],
+      "names": [],
+      "reason": null
+    },
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "disambiguation_type": "service_station_shared",
+      "fhrsids": [
+        "503343",
+        "503218"
+      ],
+      "names": [
+        "Starbucks - Southbound",
+        "Burger King - Southbound"
+      ],
+      "reason": "Two separate brands share the service-station forecourt. Google Places returns one listing for the whole site; the FSA records each brand separately. Until each brand has a distinct Google Business Profile, both venues are flagged ambiguous and remain in Directional-C."
+    },
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "disambiguation_type": "rebrand_or_relocation",
+      "fhrsids": [
+        "1339997",
+        "1513917"
+      ],
+      "names": [
+        "The Margin",
+        "The Water Margin @ The Hollybush"
+      ],
+      "reason": "Two FSA records at different postcodes share one Google Place. Most commonly this is a rebrand or a relocation where the Google Business Profile survived and the old FSA record was not retired. Without operator confirmation it is not safe to assume either is closed."
+    },
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "disambiguation_type": "multi_tenant_site",
+      "fhrsids": [
+        "1206081",
+        "1206075",
+        "1206079"
+      ],
+      "names": [
+        "South Costa",
+        "Dec X Canteen",
+        "Building 523 Costa And Kitchen"
+      ],
+      "reason": "Three separately FSA-registered food units inside a single private industrial site (JLR Gaydon Test Centre). Google Places has one listing for the site as a whole, so all three FHRS records resolve to the same Google Place ID. Public ranking is not the right surface for private-site canteens; Directional-C is the correct permanent class here."
+    },
+    {
+      "gpid_conflict": "duplicate_gpid",
+      "disambiguation_type": "food_hall_unit",
+      "fhrsids": [
+        "1847445",
+        "1589295"
+      ],
+      "names": [
+        "Soma",
+        "The Tempest"
+      ],
+      "reason": "Two separately FSA-registered units inside the Bell Court food hall share one Google Place ID (likely the hall's shared listing). Until each unit has a distinct Google Business Profile, both remain ambiguous and land in Directional-C."
+    }
+  ]
+}

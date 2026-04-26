@@ -1,0 +1,60 @@
+{
+  "generated_at": "2026-04-26T19:03:43.665161+00:00",
+  "status": "warning",
+  "total_markets": 2,
+  "ready_markets": 0,
+  "warning_markets": 2,
+  "blocked_markets": 0,
+  "markets": [
+    {
+      "slug": "stratford-on-avon-district",
+      "display_name": "Stratford-on-Avon District",
+      "area_type": "district",
+      "public": false,
+      "operator": true,
+      "status": "warning",
+      "generated_at": "2026-04-26T19:03:43.677948+00:00",
+      "readiness_url": "/assets/market-readiness/stratford-on-avon-district.json",
+      "counts": {
+        "total_establishments": 209,
+        "total_scored": 204,
+        "total_rankable": 170,
+        "total_public_ranking_venues": 30,
+        "total_category_ranking_entries": 122,
+        "aliases_missing_from_establishments": 0,
+        "aliases_unresolved_without_guardrail": 0,
+        "known_missing_venues": 1,
+        "active_known_missing_venues": 0,
+        "duplicate_or_ambiguous_gpid_groups": 6
+      },
+      "warning_count": 1,
+      "active_known_missing_venues": 0,
+      "duplicate_or_ambiguous_gpid_groups": 6
+    },
+    {
+      "slug": "stratford-upon-avon",
+      "display_name": "Stratford-upon-Avon",
+      "area_type": "town",
+      "public": true,
+      "operator": true,
+      "status": "warning",
+      "generated_at": "2026-04-26T19:03:43.671373+00:00",
+      "readiness_url": "/assets/market-readiness/stratford-upon-avon.json",
+      "counts": {
+        "total_establishments": 209,
+        "total_scored": 204,
+        "total_rankable": 170,
+        "total_public_ranking_venues": 30,
+        "total_category_ranking_entries": 70,
+        "aliases_missing_from_establishments": 0,
+        "aliases_unresolved_without_guardrail": 0,
+        "known_missing_venues": 1,
+        "active_known_missing_venues": 0,
+        "duplicate_or_ambiguous_gpid_groups": 6
+      },
+      "warning_count": 1,
+      "active_known_missing_venues": 0,
+      "duplicate_or_ambiguous_gpid_groups": 6
+    }
+  ]
+}
