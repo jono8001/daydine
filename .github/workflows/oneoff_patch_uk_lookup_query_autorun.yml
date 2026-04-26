@@ -1,0 +1,58 @@
+name: One-off Patch UK Lookup Query Autorun
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/oneoff_patch_uk_lookup_query_autorun.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Insert query-parameter autorun into UK lookup
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('uk-establishments.html')
+          text = path.read_text(encoding='utf-8')
+          marker = "$('next').addEventListener('click',()=>{if((PAGE+1)*PAGE_SIZE<FILTERED.length){PAGE++;render();}});"
+          insert = """
+// Auto-run when linked from /search, e.g. /uk-establishments?location=London&name=cafe
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const loc = params.get('location') || params.get('q') || params.get('area') || '';
+  const name = params.get('name') || params.get('venue') || '';
+  const rating = params.get('rating') || '';
+  if (loc) $('fLocation').value = loc;
+  if (name) $('fName').value = name;
+  if (rating && $('fRating')) $('fRating').value = rating;
+  if (loc || name) setTimeout(search, 150);
+})();
+"""
+          if 'Auto-run when linked from /search' not in text:
+              if marker not in text:
+                  raise SystemExit('marker not found')
+              text = text.replace(marker, marker + '\n' + insert, 1)
+              path.write_text(text, encoding='utf-8')
+              print('Inserted autorun script')
+          else:
+              print('Autorun script already present')
+          PY
+
+      - name: Commit patch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add uk-establishments.html
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Make UK establishment lookup autorun from search params"
+          git push
