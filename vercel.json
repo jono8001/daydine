@@ -6,7 +6,8 @@
   "rewrites": [
     { "source": "/search", "destination": "/search-v2.html" },
     { "source": "/uk-establishments", "destination": "/uk-establishments.html" },
-    { "source": "/admin/reports", "destination": "/admin-reports.html" }
+    { "source": "/admin/reports", "destination": "/admin-reports.html" },
+    { "source": "/admin/markets", "destination": "/admin-markets.html" }
   ],
   "redirects": [
     { "source": "/rankings/stratford-on-avon", "destination": "/rankings/stratford-upon-avon", "permanent": false },
