@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-25",
+  "last_updated": "2026-04-26",
   "available": [
     {
       "slug": "leamington-spa",
@@ -8,7 +8,7 @@
       "region": "Warwickshire",
       "area_type": "town",
       "status": "live",
-      "methodology_version": "V4 DayDine RCS official-source mode",
+      "methodology_version": "DayDine RCS v3.4.1 \u2014 V4 official-source mode with deterministic tie-breaks",
       "total_venues": 137,
       "top_score": 9.163
     },
@@ -19,7 +19,7 @@
       "region": "Warwickshire",
       "area_type": "town",
       "status": "live",
-      "methodology_version": "V4 DayDine RCS official-source mode",
+      "methodology_version": "DayDine RCS v3.4.1 \u2014 V4 official-source mode with deterministic tie-breaks",
       "total_venues": 69,
       "top_score": 9.553
     }
@@ -32,7 +32,7 @@
       "region": "Warwickshire",
       "area_type": "district",
       "status": "live",
-      "methodology_version": "V4 DayDine RCS official-source mode",
+      "methodology_version": "DayDine RCS v3.4.1 \u2014 V4 official-source mode with deterministic tie-breaks",
       "total_venues": 167,
       "top_score": 9.676
     }
