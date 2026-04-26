@@ -1,24 +1,9 @@
 name: V4 Report Guardrails
 
-# Pilot-readiness gate for the V4 operator report layer.
+# Pilot-readiness gate for the V4 operator report layer and public market data.
 #
-# Runs on every push and pull request that touches the V4 report
-# code, its tests, or the V4 scoring inputs. Gates:
-#
-#   1. Guardrail test suite — the 24 narrative / structural /
-#      per-class rules in tests/test_v4_report_guardrails.py.
-#   2. Recommendation-history lifecycle tests — the 9 tests in
-#      tests/test_v4_history.py covering new -> ongoing -> resolved
-#      -> reopened transitions and suppression-mode safety.
-#   3. Reproducible sample generation — regenerates the seven
-#      canonical samples under samples/v4/monthly/ and asserts the
-#      run summary matches the version committed on the branch.
-#   4. End-to-end QA aggregate — every *_qa.json must show zero
-#      errors and zero warnings.
-#
-# Any failure blocks merge. Neither step calls out to external APIs
-# or modifies scoring data. The workflow does not write back to the
-# repository.
+# Runs on every push and pull request that touches the V4 report code,
+# scoring inputs, market outputs, or public market-data guardrails.
 
 on:
   push:
@@ -29,12 +14,19 @@ on:
       - 'tests/test_v4_report_guardrails.py'
       - 'tests/test_v4_history.py'
       - 'tests/test_v4_legacy_boundary.py'
+      - 'tests/test_market_data_integrity.py'
       - 'scripts/generate_v4_samples.py'
+      - 'scripts/check_market_readiness.py'
       - 'rcs_scoring_v4.py'
       - 'stratford_establishments.json'
       - 'stratford_rcs_v4_scores.json'
       - 'stratford_menus.json'
       - 'stratford_editorial.json'
+      - 'data/entity_aliases.json'
+      - 'data/known_missing_*_venues.json'
+      - 'data/ranking_areas.json'
+      - 'assets/rankings/*.json'
+      - 'search-v2.html'
       - 'samples/v4/monthly/_summary_*.json'
       - '.github/workflows/v4_report_checks.yml'
   pull_request:
@@ -45,12 +37,19 @@ on:
       - 'tests/test_v4_report_guardrails.py'
       - 'tests/test_v4_history.py'
       - 'tests/test_v4_legacy_boundary.py'
+      - 'tests/test_market_data_integrity.py'
       - 'scripts/generate_v4_samples.py'
+      - 'scripts/check_market_readiness.py'
       - 'rcs_scoring_v4.py'
       - 'stratford_establishments.json'
       - 'stratford_rcs_v4_scores.json'
       - 'stratford_menus.json'
       - 'stratford_editorial.json'
+      - 'data/entity_aliases.json'
+      - 'data/known_missing_*_venues.json'
+      - 'data/ranking_areas.json'
+      - 'assets/rankings/*.json'
+      - 'search-v2.html'
       - 'samples/v4/monthly/_summary_*.json'
       - '.github/workflows/v4_report_checks.yml'
   workflow_dispatch:
@@ -60,7 +59,7 @@ permissions:
 
 jobs:
   guardrails:
-    name: V4 report guardrail tests + sample reproducibility
+    name: V4 report guardrails + market data integrity
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -73,9 +72,7 @@ jobs:
       - name: Install runtime-only deps (none required for V4 report)
         run: |
           python -m pip install --upgrade pip
-          # The V4 report layer is pure stdlib. If a dep is added
-          # later, extend this line rather than adding a requirements
-          # file to the report path.
+          # The V4 report layer and market integrity tests are pure stdlib.
 
       - name: Run V4 guardrail test suite
         run: python -m tests.test_v4_report_guardrails
@@ -86,6 +83,12 @@ jobs:
       - name: Enforce V4 ↔ V3.4 legacy import boundary
         run: python -m tests.test_v4_legacy_boundary
 
+      - name: Run public market data integrity tests
+        run: python -m tests.test_market_data_integrity
+
+      - name: Generate Stratford market-readiness summary
+        run: python scripts/check_market_readiness.py --market stratford-upon-avon --strict
+
       - name: Regenerate V4 samples (reproducible; no network)
         run: python scripts/generate_v4_samples.py
 
@@ -94,9 +97,7 @@ jobs:
           python - <<'PY'
           """Fail the build if the regenerated run summary diverges
           from the committed baseline. Reviewers should update the
-          committed summary deliberately; silent drift is caught
-          here."""
-          import json
+          committed summary deliberately; silent drift is caught here."""
           import subprocess
           import sys
 
