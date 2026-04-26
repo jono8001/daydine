@@ -18,6 +18,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+INACTIVE_GUARDRAIL_STATUSES = {"resolved", "not_public"}
 
 
 def read_json(path: Path, default=None):
@@ -47,15 +48,22 @@ class AliasGuardrailIntegrityTest(unittest.TestCase):
                 if fhrsid:
                     self.known_missing[fhrsid] = venue
 
-    def test_every_alias_exists_or_has_known_missing_guardrail(self):
+    def active_known_missing(self):
+        return {
+            fhrsid: venue for fhrsid, venue in self.known_missing.items()
+            if venue.get("status") not in INACTIVE_GUARDRAIL_STATUSES
+        }
+
+    def test_every_alias_exists_or_has_active_known_missing_guardrail(self):
         failures = []
+        active_guardrails = self.active_known_missing()
         for alias in self.aliases:
             fhrsid = str(alias.get("fhrsid") or "").strip()
             if not fhrsid:
                 continue
             if fhrsid in self.establishments:
                 continue
-            if fhrsid in self.known_missing:
+            if fhrsid in active_guardrails:
                 continue
             failures.append({
                 "fhrsid": fhrsid,
@@ -66,7 +74,7 @@ class AliasGuardrailIntegrityTest(unittest.TestCase):
             failures,
             [],
             "Every alias FHRSID must either exist in stratford_establishments.json "
-            "or be explicitly documented in data/known_missing_*_venues.json."
+            "or be explicitly documented in data/known_missing_*_venues.json with an active guardrail status."
         )
 
     def test_known_missing_guardrails_are_explained_and_actionable(self):
@@ -83,16 +91,13 @@ class AliasGuardrailIntegrityTest(unittest.TestCase):
             )
         self.assertEqual(failures, [])
 
-    def test_known_missing_public_venues_are_surfaced_by_search_layer(self):
-        """Known missing venues are a temporary safety valve. If they are public,
-        search-v2 must load the guardrail file so users don't get a dead result.
-        """
-        public_known_missing = [
+    def test_active_known_missing_public_venues_are_surfaced_by_search_layer(self):
+        active_public_known_missing = [
             v for v in self.known_missing.values()
-            if v.get("status") != "not_public"
+            if v.get("status") not in INACTIVE_GUARDRAIL_STATUSES
         ]
-        if not public_known_missing:
-            self.skipTest("No public known-missing venues configured")
+        if not active_public_known_missing:
+            self.skipTest("No active public known-missing venues configured")
         search_html = (ROOT / "search-v2.html").read_text(encoding="utf-8")
         self.assertIn("known_missing_stratford_venues.json", search_html)
         self.assertIn("Known missing venue", search_html)
@@ -110,15 +115,29 @@ class MarketReadinessScriptTest(unittest.TestCase):
         self.assertEqual(
             summary["counts"]["aliases_unresolved_without_guardrail"],
             0,
-            "Alias FHRSIDs must not be unresolved without an explicit guardrail."
+            "Alias FHRSIDs must not be unresolved without an explicit active guardrail."
         )
 
-    def test_vintner_guardrail_remains_visible_until_canonical_rebuild(self):
+    def test_vintner_is_canonical_or_has_active_guardrail(self):
         module = load_readiness_module()
         summary = module.build_summary("stratford-upon-avon")
-        known = {str(v.get("fhrsid")): v for v in summary["known_missing_venues"]}
-        if "503480" not in known:
-            self.skipTest("Vintner has been canonicalised; guardrail can now be removed after verifying rankings.")
+        establishments = read_json(ROOT / "stratford_establishments.json", {}) or {}
+        scores = read_json(ROOT / "stratford_rcs_v4_scores.json", {}) or {}
+        ranking = read_json(ROOT / "assets" / "rankings" / "stratford-upon-avon.json", {}) or {}
+        all_ranked = list(ranking.get("venues", []) or [])
+        for category in ranking.get("category_rankings", []) or []:
+            all_ranked.extend(category.get("venues", []) or [])
+
+        if "503480" in establishments:
+            self.assertIn("503480", scores)
+            self.assertTrue(
+                any("vintner" in str(v.get("name", "")).lower() for v in all_ranked),
+                "Vintner is canonical in source data and scores, so it must appear in public ranking/category output."
+            )
+            return
+
+        known = {str(v.get("fhrsid")): v for v in summary["active_known_missing_venues"]}
+        self.assertIn("503480", known)
         self.assertEqual(known["503480"].get("status"), "needs_canonical_rebuild")
         self.assertIn("Vintner", known["503480"].get("public_name", ""))
 
