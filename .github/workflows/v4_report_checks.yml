@@ -1,9 +1,7 @@
 name: V4 Report Guardrails
 
-# Pilot-readiness gate for the V4 operator report layer and public market data.
-#
-# Runs on every push and pull request that touches the V4 report code,
-# scoring inputs, market outputs, or public market-data guardrails.
+# Pilot-readiness gate for the V4 operator report layer, public market data,
+# and generic market-pipeline orchestration.
 
 on:
   push:
@@ -15,8 +13,11 @@ on:
       - 'tests/test_v4_history.py'
       - 'tests/test_v4_legacy_boundary.py'
       - 'tests/test_market_data_integrity.py'
+      - 'tests/test_run_market_pipeline.py'
       - 'scripts/generate_v4_samples.py'
       - 'scripts/check_market_readiness.py'
+      - 'scripts/generate_market_readiness.py'
+      - 'scripts/run_market_pipeline.py'
       - 'rcs_scoring_v4.py'
       - 'stratford_establishments.json'
       - 'stratford_rcs_v4_scores.json'
@@ -26,6 +27,7 @@ on:
       - 'data/known_missing_*_venues.json'
       - 'data/ranking_areas.json'
       - 'assets/rankings/*.json'
+      - 'assets/market-readiness/*.json'
       - 'search-v2.html'
       - 'samples/v4/monthly/_summary_*.json'
       - '.github/workflows/v4_report_checks.yml'
@@ -38,8 +40,11 @@ on:
       - 'tests/test_v4_history.py'
       - 'tests/test_v4_legacy_boundary.py'
       - 'tests/test_market_data_integrity.py'
+      - 'tests/test_run_market_pipeline.py'
       - 'scripts/generate_v4_samples.py'
       - 'scripts/check_market_readiness.py'
+      - 'scripts/generate_market_readiness.py'
+      - 'scripts/run_market_pipeline.py'
       - 'rcs_scoring_v4.py'
       - 'stratford_establishments.json'
       - 'stratford_rcs_v4_scores.json'
@@ -49,6 +54,7 @@ on:
       - 'data/known_missing_*_venues.json'
       - 'data/ranking_areas.json'
       - 'assets/rankings/*.json'
+      - 'assets/market-readiness/*.json'
       - 'search-v2.html'
       - 'samples/v4/monthly/_summary_*.json'
       - '.github/workflows/v4_report_checks.yml'
@@ -69,10 +75,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install runtime-only deps (none required for V4 report)
+      - name: Install runtime-only deps
         run: |
           python -m pip install --upgrade pip
-          # The V4 report layer and market integrity tests are pure stdlib.
+          # The V4 report layer, market integrity tests and pipeline orchestration tests are pure stdlib.
 
       - name: Run V4 guardrail test suite
         run: python -m tests.test_v4_report_guardrails
@@ -85,6 +91,12 @@ jobs:
 
       - name: Run public market data integrity tests
         run: python -m tests.test_market_data_integrity
+
+      - name: Run generic market pipeline tests
+        run: python -m tests.test_run_market_pipeline
+
+      - name: Dry-run generic Stratford market pipeline
+        run: python scripts/run_market_pipeline.py --market stratford-upon-avon --dry-run
 
       - name: Generate Stratford market-readiness summary
         run: python scripts/check_market_readiness.py --market stratford-upon-avon --strict
