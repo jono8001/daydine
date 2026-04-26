@@ -19,7 +19,9 @@
       "website": "https://www.the-vintner.co.uk/",
       "phone": "01789 297259",
       "reason": "Present in official FHRS and DayDine report/review artifacts, but missing from the current public Stratford ranking/listing asset. Should be included in the next canonical FSA pull and public ranking rebuild.",
-      "status": "needs_canonical_rebuild"
+      "status": "resolved",
+      "resolved_by": "scripts/canonicalise_vintner.py",
+      "resolved_note": "Canonical Stratford establishment, V4 score and public ranking output now include FHRSID 503480."
     }
   ]
 }

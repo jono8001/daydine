@@ -2,25 +2,14 @@
   "last_updated": "2026-04-26",
   "available": [
     {
-      "slug": "leamington-spa",
-      "la_name": "Warwick",
-      "display_name": "Leamington Spa",
-      "region": "Warwickshire",
-      "area_type": "town",
-      "status": "live",
-      "methodology_version": "DayDine RCS v3.4.1 \u2014 V4 official-source mode with deterministic tie-breaks",
-      "total_venues": 137,
-      "top_score": 9.163
-    },
-    {
       "slug": "stratford-upon-avon",
       "la_name": "Stratford-on-Avon",
       "display_name": "Stratford-upon-Avon",
       "region": "Warwickshire",
       "area_type": "town",
       "status": "live",
-      "methodology_version": "DayDine RCS v3.4.1 \u2014 V4 official-source mode with deterministic tie-breaks",
-      "total_venues": 69,
+      "methodology_version": "DayDine RCS v3.4.1 — V4 official-source mode with deterministic tie-breaks",
+      "total_venues": 70,
       "top_score": 9.553
     }
   ],
@@ -32,8 +21,8 @@
       "region": "Warwickshire",
       "area_type": "district",
       "status": "live",
-      "methodology_version": "DayDine RCS v3.4.1 \u2014 V4 official-source mode with deterministic tie-breaks",
-      "total_venues": 167,
+      "methodology_version": "DayDine RCS v3.4.1 — V4 official-source mode with deterministic tie-breaks",
+      "total_venues": 168,
       "top_score": 9.676
     }
   ],

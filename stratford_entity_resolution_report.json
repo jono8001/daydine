@@ -1,10 +1,8 @@
 {
   "generated_by": "resolve_entities.py",
-  "total_establishments": 208,
+  "total_establishments": 209,
   "manual_aliases_applied": 8,
-  "manual_aliases_missing_fhrsids": [
-    "503480"
-  ],
+  "manual_aliases_missing_fhrsids": [],
   "auto_parsed_trade_as": 0,
   "records_with_public_name": 8,
   "records_with_trading_names": 8,
@@ -178,9 +176,13 @@
       "public_names": []
     },
     "Vintner": {
-      "resolved_fhrsids": [],
-      "resolved": false,
-      "public_names": []
+      "resolved_fhrsids": [
+        "503480"
+      ],
+      "resolved": true,
+      "public_names": [
+        "The Vintner Wine Bar"
+      ]
     },
     "Lambs": {
       "resolved_fhrsids": [

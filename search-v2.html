@@ -48,7 +48,7 @@ function marketFor(input){const v=norm(input);if(!v)return null;return MARKETS.f
 function setupDatalist(){const d=$('locationOptions');MARKETS.forEach(m=>{let o=document.createElement('option');o.value=m.name;d.appendChild(o);m.aliases.slice(0,4).forEach(a=>{let x=document.createElement('option');x.value=a;d.appendChild(x);});});}
 function mergeVenues(data,market){const map=new Map();function add(v){if(!v||!v.name)return;const key=norm(v.name)+'|'+norm(v.postcode);const old=map.get(key)||{};map.set(key,Object.assign({},old,v,{market:market.name,marketSlug:market.slug}));}(data.venues||[]).forEach(add);(data.category_rankings||[]).forEach(g=>(g.venues||[]).forEach(v=>add(Object.assign({category_rank:v.category_rank},v))));return [...map.values()];}
 async function loadMarket(m){const r=await fetch('/assets/rankings/'+m.slug+'.json',{cache:'no-store'});if(!r.ok)throw new Error('Missing ranking file for '+m.name);const rows=mergeVenues(await r.json(),m);return rows.concat(await loadKnownMissingForMarket(m));}
-async function loadKnownMissingForMarket(m){if(m.slug!=='stratford-upon-avon')return [];try{const r=await fetch('/data/known_missing_stratford_venues.json',{cache:'no-store'});if(!r.ok)return [];const data=await r.json();return (data.venues||[]).map(v=>({
+async function loadKnownMissingForMarket(m){if(m.slug!=='stratford-upon-avon')return [];try{const r=await fetch('/data/known_missing_stratford_venues.json',{cache:'no-store'});if(!r.ok)return [];const data=await r.json();return (data.venues||[]).filter(v=>v.status!=='resolved').map(v=>({
   name:v.public_name||v.fsa_name,
   postcode:v.postcode,
   category:'Restaurant (General)',

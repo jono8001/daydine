@@ -1,16 +1,6 @@
 {
   "_note": "Public leaderboard safety valve only. These overrides affect assets/rankings/*.json output, not V4 scores or operator reports.",
-  "exclude_public": [
-  ],
-  "include_public": [
-    {
-      "fhrsid": "503480",
-      "name": "Vintner Wine Bar",
-      "public_name": "The Vintner Wine Bar",
-      "postcode": "CV37 6EF",
-      "reason": "Known Stratford hospitality venue with official FHRSID 503480. Required so Vintner is not lost from public Stratford listings when source/category filters are regenerated."
-    }
-  ],
-  "rename_public": [
-  ]
+  "exclude_public": [],
+  "include_public": [],
+  "rename_public": []
 }
