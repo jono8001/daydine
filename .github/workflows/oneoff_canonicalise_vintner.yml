@@ -1,0 +1,77 @@
+name: One-off canonicalise Vintner
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/oneoff_canonicalise_vintner.yml'
+      - '.github/triggers/canonicalise_vintner.txt'
+      - 'scripts/canonicalise_vintner.py'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: oneoff-canonicalise-vintner
+  cancel-in-progress: false
+
+jobs:
+  canonicalise-vintner:
+    name: Canonicalise FHRSID 503480 into Stratford outputs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run canonical Vintner repair
+        run: python scripts/canonicalise_vintner.py
+
+      - name: Run market data integrity tests
+        run: python -m tests.test_market_data_integrity
+
+      - name: Run Stratford readiness check
+        run: python scripts/check_market_readiness.py --market stratford-upon-avon --strict
+
+      - name: Verify Vintner is present in source, score and ranking output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          fhrsid = '503480'
+          establishments = json.loads(Path('stratford_establishments.json').read_text())
+          scores = json.loads(Path('stratford_rcs_v4_scores.json').read_text())
+          ranking = json.loads(Path('assets/rankings/stratford-upon-avon.json').read_text())
+          all_ranked = list(ranking.get('venues', []))
+          for category in ranking.get('category_rankings', []):
+              all_ranked.extend(category.get('venues', []))
+          assert fhrsid in establishments, 'Vintner missing from establishments'
+          assert fhrsid in scores, 'Vintner missing from V4 scores'
+          assert any('vintner' in (v.get('name') or '').lower() for v in all_ranked), 'Vintner missing from ranking/category output'
+          print('Vintner canonicalisation verified.')
+          PY
+
+      - name: Commit canonical Vintner outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stratford_establishments.json \
+                  stratford_rcs_v4_scores.json \
+                  assets/rankings/stratford-upon-avon.json \
+                  assets/rankings/stratford-on-avon.json \
+                  assets/rankings/stratford-on-avon-district.json \
+                  assets/rankings/index.json \
+                  data/public_ranking_overrides.json \
+                  data/known_missing_stratford_venues.json \
+                  stratford_entity_resolution_report.json \
+                  search-v2.html
+          git diff --cached --quiet && echo "No canonical Vintner data changes to commit" && exit 0
+          git commit -m "Canonicalise Vintner in Stratford market data"
+          git push
