@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin Reports — DayDine</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/daydine.css">
+  <style>
+    main{max-width:1240px;margin:0 auto;padding:42px 24px 90px}.title{font-family:var(--serif);font-size:clamp(42px,6vw,78px);line-height:.96;margin:8px 0 12px}.dek{max-width:780px;color:var(--text-muted);font-size:17px;line-height:1.6}.panel{margin-top:24px;background:var(--surface-1);border:1px solid var(--border);box-shadow:var(--shadow);padding:20px}.filters{display:grid;grid-template-columns:1.1fr .8fr .8fr .8fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--text-subtle)}input,select{padding:12px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font:15px var(--sans)}.meta{margin-top:12px;color:var(--text-muted);font-size:13px}.reports{margin-top:20px;display:grid;gap:12px}.card{background:var(--surface-1);border:1px solid var(--border);box-shadow:var(--shadow-xs);padding:18px;display:grid;grid-template-columns:1fr auto;gap:18px}.name{font-family:var(--serif);font-size:30px;line-height:1.05;margin-bottom:6px}.sub{color:var(--text-muted);line-height:1.5}.pills{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}.pill{display:inline-flex;padding:5px 8px;border:1px solid var(--border);border-radius:999px;background:var(--surface-2);font-size:12px;font-weight:700;color:var(--accent)}.actions{display:flex;flex-direction:column;gap:8px;min-width:190px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border:1px solid var(--accent-dark);border-radius:var(--radius);text-decoration:none;background:linear-gradient(135deg,var(--accent),var(--accent-hover));font-weight:800;color:var(--text)}.btn.secondary{background:var(--surface-1);border-color:var(--border);color:var(--accent)}.small{font-size:12px;color:var(--text-subtle);margin-top:8px}.empty{padding:24px;color:var(--text-muted);background:var(--surface-2);border:1px solid var(--border)}@media(max-width:820px){.filters{grid-template-columns:1fr}.card{grid-template-columns:1fr}.actions{min-width:0}.title{font-size:44px}}
+  </style>
+</head>
+<body class="ed" data-page-type="admin">
+<header class="masthead"><div class="masthead-inner"><a class="wordmark" href="/">Day<em>dine</em></a><div class="mast-issue">Admin · <b>Operator reports</b></div><nav class="mast-nav"><a href="/">Home</a><a href="/rankings">Rankings</a><a href="/search">Search</a><a href="/for-restaurants">For restaurants</a></nav></div></header>
+<main>
+  <div class="kicker kicker-accent">Internal report library</div>
+  <h1 class="title">Operator reports.</h1>
+  <p class="dek">A simple internal library for reviewing generated operator reports before sending them to venues. This is the first admin layer; later it can become a full CRM and email-sending console.</p>
+
+  <section class="panel">
+    <div class="filters">
+      <div class="field"><label for="q">Search venue/report</label><input id="q" placeholder="Lambs, Stratford, tracking…"></div>
+      <div class="field"><label for="market">Market</label><select id="market"><option value="">All markets</option></select></div>
+      <div class="field"><label for="status">Status</label><select id="status"><option value="">Any status</option><option>draft</option><option>ready</option><option>sent</option></select></div>
+      <div class="field"><label for="type">Report type</label><select id="type"><option value="">All types</option></select></div>
+    </div>
+    <div class="meta" id="meta">Loading report manifest…</div>
+  </section>
+
+  <section class="reports" id="reports"></section>
+</main>
+<script>
+const $=id=>document.getElementById(id);let all=[];
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function norm(v){return String(v||'').toLowerCase();}
+function fillSelect(id, values){const el=$(id);values.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;el.appendChild(o);});}
+function render(){const q=norm($('q').value), m=$('market').value, s=$('status').value, t=$('type').value;const rows=all.filter(r=>{const blob=norm([r.venue,r.market,r.category,r.report_type,r.rank_summary,r.notes].join(' '));return (!q||blob.includes(q))&&(!m||r.market===m)&&(!s||r.status===s)&&(!t||r.report_type===t);});$('meta').textContent=rows.length+' report(s) shown · '+all.length+' total in manifest';$('reports').innerHTML=rows.length?rows.map(r=>`<article class="card"><div><div class="name">${esc(r.venue)}</div><div class="sub"><b>${esc(r.report_type)}</b> · ${esc(r.market)} · ${esc(r.month)}<br>${esc(r.rank_summary)}<br>${esc(r.public_visibility)}</div><div class="pills"><span class="pill">${esc(r.status)}</span><span class="pill">${esc(r.category)}</span><span class="pill">${esc(r.methodology)}</span></div><div class="small">Requested: ${r.requested?'yes':'no'} · Sent: ${r.sent?'yes':'no'} ${r.sent_at?('· '+esc(r.sent_at)):''}<br>${esc(r.notes||'')}</div></div><div class="actions"><a class="btn" href="${esc(r.github_url)}" target="_blank" rel="noopener">Open report</a><a class="btn secondary" href="${esc(r.path)}" target="_blank" rel="noopener">Raw file</a><button class="btn secondary" onclick="navigator.clipboard.writeText(location.origin+'${esc(r.path)}')">Copy raw link</button></div></article>`).join(''):'<div class="empty">No reports match these filters.</div>';}
+async function init(){try{const res=await fetch('/assets/operator-reports/manifest.json',{cache:'no-store'});const data=await res.json();all=data.reports||[];fillSelect('market',[...new Set(all.map(r=>r.market).filter(Boolean))].sort());fillSelect('type',[...new Set(all.map(r=>r.report_type).filter(Boolean))].sort());['q','market','status','type'].forEach(id=>$(id).addEventListener('input',render));render();}catch(e){$('meta').textContent='Could not load report manifest.';console.error(e);}}
+init();
+</script>
+</body>
+</html>
