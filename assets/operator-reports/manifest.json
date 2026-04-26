@@ -1,0 +1,43 @@
+{
+  "last_updated": "2026-04-26",
+  "reports": [
+    {
+      "id": "lambs-full-2026-04",
+      "venue": "Lambs",
+      "market": "Stratford-upon-Avon",
+      "category": "Restaurant",
+      "month": "2026-04",
+      "status": "ready",
+      "report_type": "Full Operator Intelligence Report",
+      "methodology": "DayDine RCS v3.4.1 + V4 operator report shell",
+      "rank_summary": "#9 of 169 overall · #3 of 56 restaurant venues",
+      "public_visibility": "Public top 30 overall · Category top 30",
+      "path": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md",
+      "github_url": "https://github.com/jono8001/daydine/blob/main/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md",
+      "operator_email": "",
+      "requested": false,
+      "sent": false,
+      "sent_at": "",
+      "notes": "Example paid operator report combining original report sections with the new monthly tracking snapshot."
+    },
+    {
+      "id": "lambs-tracking-2026-04",
+      "venue": "Lambs",
+      "market": "Stratford-upon-Avon",
+      "category": "Restaurant",
+      "month": "2026-04",
+      "status": "ready",
+      "report_type": "Monthly Tracking Snapshot",
+      "methodology": "DayDine RCS v3.4.1",
+      "rank_summary": "#9 of 169 overall · #3 of 56 restaurant venues",
+      "public_visibility": "Public top 30 overall · Category top 30",
+      "path": "/outputs/examples/Lambs_tracking_snapshot_example.md",
+      "github_url": "https://github.com/jono8001/daydine/blob/main/outputs/examples/Lambs_tracking_snapshot_example.md",
+      "operator_email": "",
+      "requested": false,
+      "sent": false,
+      "sent_at": "",
+      "notes": "Short example showing the tracking section only."
+    }
+  ]
+}
