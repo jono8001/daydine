@@ -1,0 +1,3 @@
+Trigger market-readiness asset generation.
+
+Purpose: run scripts/generate_market_readiness.py and commit assets/market-readiness/*.json for /admin/markets.
