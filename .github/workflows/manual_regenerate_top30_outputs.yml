@@ -1,0 +1,97 @@
+name: Manual Regenerate Top-30 Outputs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Compile scripts
+        run: |
+          python -m py_compile operator_intelligence/ranking_tiebreaker.py
+          python -m py_compile scripts/build_rankings_v4.py
+          python -m py_compile scripts/build_area_rankings_v4.py
+          python -m py_compile scripts/generate_operator_tracking_example.py
+
+      - name: Regenerate Stratford outputs
+        run: |
+          python scripts/build_area_rankings_v4.py \
+            --scores stratford_rcs_v4_scores.json \
+            --establishments stratford_establishments.json
+          cp assets/rankings/index.json /tmp/index_after_stratford.json
+
+      - name: Regenerate Leamington outputs
+        run: |
+          cat > /tmp/leamington_area.json <<'JSON'
+          {"areas":[{"slug":"leamington-spa","display_name":"Leamington Spa","la_name":"Warwick","region":"Warwickshire","area_type":"town","public":true,"operator":true,"centre":{"lat":52.2852,"lon":-1.5201},"radius_km":4.0,"top_n":30,"description":"Town-centre diner guide for Leamington Spa and nearby walkable/short-trip venues."}]}
+          JSON
+          python scripts/build_area_rankings_v4.py \
+            --scores leamington_rcs_v4_scores.json \
+            --establishments leamington_establishments.json \
+            --areas /tmp/leamington_area.json
+
+      - name: Merge ranking index
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          old = json.loads(Path('/tmp/index_after_stratford.json').read_text())
+          new = json.loads(Path('assets/rankings/index.json').read_text())
+          by_slug = {entry['slug']: entry for entry in old.get('available', [])}
+          for entry in new.get('available', []):
+              by_slug[entry['slug']] = entry
+          old['available'] = sorted(by_slug.values(), key=lambda x: x.get('display_name', '').lower())
+          old['last_updated'] = new.get('last_updated') or old.get('last_updated')
+          Path('assets/rankings/index.json').write_text(json.dumps(old, indent=2, ensure_ascii=False) + '\n')
+          PY
+
+      - name: Regenerate Lambs example
+        run: |
+          python scripts/generate_operator_tracking_example.py \
+            --market stratford \
+            --venue "Lambs" \
+            --out outputs/examples/Lambs_tracking_snapshot_example.md
+
+      - name: Validate and print counts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          s = json.loads(Path('assets/rankings/stratford-upon-avon.json').read_text())
+          l = json.loads(Path('assets/rankings/leamington-spa.json').read_text())
+          ex = Path('outputs/examples/Lambs_tracking_snapshot_example.md').read_text()
+          assert s['top_n'] == 30
+          assert l['top_n'] == 30
+          assert 'v3.4.1' in s['methodology_version']
+          assert 'v3.4.1' in l['methodology_version']
+          assert 'Gap to public top 30' in ex
+          assert 'Category top 30' in ex
+          print('STRATFORD_TOTAL', s['total_venues'])
+          print('STRATFORD_TOP_N', s['top_n'])
+          print('LEAMINGTON_TOTAL', l['total_venues'])
+          print('LEAMINGTON_TOP_N', l['top_n'])
+          for line in ex.splitlines():
+              if 'Overall DayDine position' in line or 'Category position' in line:
+                  print(line)
+          PY
+
+      - name: Commit outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/rankings/*.json outputs/examples/Lambs_tracking_snapshot_example.md
+          git diff --cached --quiet && echo "No regenerated output changes" && exit 0
+          git commit -m "Regenerate top-30 tie-break ranking outputs"
+          git push
