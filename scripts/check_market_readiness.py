@@ -24,6 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 AREAS_FILE = ROOT / "data" / "ranking_areas.json"
 ALIASES_FILE = ROOT / "data" / "entity_aliases.json"
 RANKINGS_DIR = ROOT / "assets" / "rankings"
+RESOLVED_GUARDRAIL_STATUSES = {"resolved", "not_public"}
 
 
 def slugify(value: str) -> str:
@@ -64,13 +65,6 @@ def resolve_area(market: str) -> dict[str, Any]:
 
 
 def data_prefix_for_area(area: dict[str, Any]) -> str:
-    """Infer the committed source-data prefix for the configured area.
-
-    The current repo has one canonical source dataset for the Stratford-on-Avon
-    local-authority pull, from which both Stratford town and Stratford district
-    outputs are built. This helper keeps the convention explicit until a richer
-    markets config adds data_source_prefix directly.
-    """
     if area.get("data_source_prefix"):
         return str(area["data_source_prefix"])
     la = norm(area.get("la_name"))
@@ -97,8 +91,16 @@ def load_known_missing() -> dict[str, dict[str, Any]]:
     return records
 
 
+def active_known_missing(known_missing: dict[str, dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    return {
+        fhrsid: venue for fhrsid, venue in known_missing.items()
+        if venue.get("status") not in RESOLVED_GUARDRAIL_STATUSES
+    }
+
+
 def collect_alias_warnings(establishments: dict[str, Any], known_missing: dict[str, dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     aliases = read_json(ALIASES_FILE, {"aliases": []}).get("aliases", [])
+    active_guardrails = active_known_missing(known_missing)
     missing = []
     unresolved = []
     for alias in aliases:
@@ -113,7 +115,7 @@ def collect_alias_warnings(establishments: dict[str, Any], known_missing: dict[s
             "postcode": alias.get("postcode"),
         }
         missing.append(entry)
-        if fhrsid not in known_missing:
+        if fhrsid not in active_guardrails:
             unresolved.append(entry)
     return missing, unresolved
 
@@ -150,6 +152,7 @@ def build_summary(market: str) -> dict[str, Any]:
     scores = read_json(scores_path, {}) or {}
     ranking = read_json(ranking_path, {}) or {}
     known_missing = load_known_missing()
+    active_guardrails = active_known_missing(known_missing)
     alias_missing, alias_unresolved = collect_alias_warnings(establishments, known_missing)
     duplicate_gpids = collect_duplicate_gpids(prefix)
 
@@ -166,11 +169,11 @@ def build_summary(market: str) -> dict[str, Any]:
     if not public_venues:
         warnings.append(f"No public ranking venues loaded from {ranking_path.relative_to(ROOT)}")
     if alias_unresolved:
-        warnings.append(f"{len(alias_unresolved)} alias FHRSID(s) are missing from establishments and are not covered by known-missing guardrails")
+        warnings.append(f"{len(alias_unresolved)} alias FHRSID(s) are missing from establishments and are not covered by active known-missing guardrails")
     if alias_missing:
         warnings.append(f"{len(alias_missing)} alias FHRSID(s) are missing from establishments; see alias_missing_from_establishments")
-    if known_missing:
-        warnings.append(f"{len(known_missing)} known-missing venue guardrail(s) active; canonical data rebuild still required")
+    if active_guardrails:
+        warnings.append(f"{len(active_guardrails)} active known-missing venue guardrail(s); canonical data rebuild still required")
     if duplicate_gpids:
         warnings.append(f"{len(duplicate_gpids)} duplicate/ambiguous Google Place group(s) recorded")
     if ranking.get("total_venues") and len(public_venues) < min(30, ranking.get("total_venues", 0)):
@@ -199,11 +202,13 @@ def build_summary(market: str) -> dict[str, Any]:
             "aliases_missing_from_establishments": len(alias_missing),
             "aliases_unresolved_without_guardrail": len(alias_unresolved),
             "known_missing_venues": len(known_missing),
+            "active_known_missing_venues": len(active_guardrails),
             "duplicate_or_ambiguous_gpid_groups": len(duplicate_gpids),
         },
         "alias_missing_from_establishments": alias_missing,
         "alias_unresolved_without_guardrail": alias_unresolved,
         "known_missing_venues": list(known_missing.values()),
+        "active_known_missing_venues": list(active_guardrails.values()),
         "duplicate_or_ambiguous_gpid_groups": duplicate_gpids[:20],
         "top_warnings": warnings[:20],
         "status": "blocked" if alias_unresolved else ("warning" if warnings else "ready"),
