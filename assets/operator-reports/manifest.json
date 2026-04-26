@@ -38,6 +38,25 @@
       "sent": false,
       "sent_at": "",
       "notes": "Short example showing the tracking section only."
+    },
+    {
+      "id": "lambs-revenue-opportunity-2026-04",
+      "venue": "Lambs",
+      "market": "Stratford-upon-Avon",
+      "category": "Restaurant",
+      "month": "2026-04",
+      "status": "draft",
+      "report_type": "Revenue Opportunity & Rank-Band Analysis",
+      "methodology": "DayDine RCS v3.4.1 + conservative rank-band association model",
+      "rank_summary": "#9 of 169 overall · Top 10 rank band",
+      "public_visibility": "Public top 30 overall · Category top 30",
+      "path": "/outputs/examples/Lambs_revenue_opportunity_rank_band_example_2026-04.md",
+      "github_url": "https://github.com/jono8001/daydine/blob/main/outputs/examples/Lambs_revenue_opportunity_rank_band_example_2026-04.md",
+      "operator_email": "",
+      "requested": false,
+      "sent": false,
+      "sent_at": "",
+      "notes": "Draft revenue-opportunity model. Uses conservative correlation wording; no causal turnover guarantee."
     }
   ]
 }
