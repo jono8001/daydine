@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>UK establishment lookup — DayDine</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/daydine.css">
+  <style>
+    main{max-width:1280px;margin:0 auto;padding:40px 20px 80px}.title{font-family:var(--serif);font-size:clamp(42px,6vw,76px);line-height:.95;margin:8px 0 12px}.dek{max-width:820px;color:var(--text-muted);line-height:1.58}.panel{background:var(--surface-1);border:1px solid var(--border);box-shadow:var(--shadow);padding:18px;margin-top:22px}.grid{display:grid;grid-template-columns:1.2fr 1.2fr .7fr auto;gap:10px;align-items:end}.field{display:flex;flex-direction:column;gap:6px}.field label{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--text-subtle)}input,select{height:42px;padding:9px 12px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:14px var(--sans);border-radius:0}.btn,button{height:42px;padding:0 16px;border:1px solid var(--accent-dark);background:var(--text);color:var(--bg);font:800 13px var(--sans);cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}.btn.secondary,button.secondary{background:var(--surface-1);color:var(--accent);border-color:var(--border)}.status{margin:18px 0;color:var(--text-muted);line-height:1.5}.board{display:none;border-top:2px solid var(--text);border-bottom:1px solid var(--border);overflow-x:auto}.head,.row{display:grid;grid-template-columns:minmax(280px,2fr) minmax(220px,1.4fr) minmax(220px,1.2fr) 80px minmax(180px,1fr);gap:14px;align-items:center;min-width:1040px}.head{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-subtle);padding:10px 8px;border-bottom:1px solid var(--text)}.row{padding:12px 8px;border-bottom:1px solid var(--border)}.name{font-weight:800}.muted{color:var(--text-muted);font-size:13px}.pill{display:inline-block;margin:2px 4px 2px 0;padding:4px 7px;border:1px solid var(--border);border-radius:999px;background:var(--surface-2);font-size:11px;color:var(--accent);font-weight:700;white-space:nowrap}.pager{display:flex;gap:8px;justify-content:center;margin-top:18px}.hidden{display:none}@media(max-width:820px){.grid{grid-template-columns:1fr}.board{margin-left:-20px;margin-right:-20px}.title{font-size:44px}}
+  </style>
+</head>
+<body class="ed" data-page-type="diner">
+<header class="masthead"><div class="masthead-inner"><a class="wordmark" href="/">Day<em>dine</em></a><div class="mast-issue">UK lookup · <b>auto search</b></div><nav class="mast-nav"><a href="/">Home</a><a href="/rankings">Rankings</a><a href="/search">Search</a><a href="/for-restaurants">For restaurants</a></nav></div></header>
+<main>
+  <div class="kicker kicker-accent">UK establishment lookup</div>
+  <h1 class="title">Search UK records.</h1>
+  <p class="dek">Fully scored markets link back to DayDine ranking boards. Other areas show partial establishment records until a full DayDine score is built.</p>
+  <section class="panel"><div class="grid">
+    <div class="field"><label for="fLocation">Location</label><input id="fLocation" list="locs" placeholder="London, Westminster, Stratford-upon-Avon, Leamington Spa"><datalist id="locs"><option>London</option><option>Westminster</option><option>Camden</option><option>Southwark</option><option>Hackney</option><option>Stratford-upon-Avon</option><option>Leamington Spa</option></datalist></div>
+    <div class="field"><label for="fName">Name contains</label><input id="fName" placeholder="Optional — cafe, Gail's, Rudy's…"></div>
+    <div class="field"><label for="fRating">Hygiene</label><select id="fRating"><option value="">Any</option><option value="5">5</option><option value="4">4+</option><option value="3">3+</option><option value="2">2+</option><option value="1">1+</option><option value="0">0+</option></select></div>
+    <button id="btnSearch">Search</button>
+  </div></section>
+  <div id="status" class="status">Enter a location or arrive here from the rank-board search.</div>
+  <section id="board" class="board"><div class="head"><span>Name</span><span>Location</span><span>DayDine status</span><span>Hygiene</span><span>Contact</span></div><div id="rows"></div></section>
+  <div class="pager"><button class="secondary" id="prev">Previous</button><button class="secondary" id="next">Next</button></div>
+</main>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script>
+const firebaseConfig={apiKey:"AIzaSyBiFeN9DeiNnDFdu3O4uVTILnQANYsLdkA",authDomain:"recursive-research-eu.firebaseapp.com",databaseURL:"https://recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app",projectId:"recursive-research-eu",storageBucket:"recursive-research-eu.firebasestorage.app",messagingSenderId:"205357382117",appId:"1:205357382117:web:5b01c86ed33572abce170c"};
+firebase.initializeApp(firebaseConfig);const REF=firebase.database().ref('daydine/establishments');
+const $=id=>document.getElementById(id);let ALL=[],FILTERED=[],PAGE=0;const PAGE_SIZE=30;
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+function objRows(data){return Object.keys(data||{}).map(k=>Object.assign({_id:k},data[k]));}
+const LONDON_LAS=['City of London Corporation','City of London','Westminster','Camden','Islington','Hackney','Tower Hamlets','Southwark','Lambeth','Kensington and Chelsea','Hammersmith and Fulham','Wandsworth','Lewisham','Greenwich','Newham','Haringey','Brent','Ealing','Hounslow','Richmond-Upon-Thames','Merton','Croydon','Bromley','Bexley','Havering','Barking and Dagenham','Redbridge','Waltham Forest','Enfield','Barnet','Harrow','Hillingdon','Kingston-Upon-Thames','Sutton'];
+function fullyScoredFileFor(q){const v=norm(q);if(v.includes('leamington')||v==='cv31'||v==='cv32')return {label:'Leamington Spa',url:'/leamington_establishments.json',rank:'/rankings/leamington-spa'};if(v.includes('stratford')||v==='cv37')return {label:'Stratford-upon-Avon',url:'/stratford_establishments.json',rank:'/rankings/stratford-upon-avon'};return null;}
+function authorityGroupFor(q){const v=norm(q);if(['london','greater london','central london'].includes(v))return {label:'London',authorities:LONDON_LAS};const borough={'westminster':'Westminster','camden':'Camden','southwark':'Southwark','hackney':'Hackney','islington':'Islington','lambeth':'Lambeth'}[v];if(borough)return {label:borough,authorities:[borough]};return null;}
+function isFullyScored(r){const pc=norm(r.pc||r.postcode),la=norm(r.la||r.local_authority);return pc.startsWith('cv37')||pc.startsWith('cv31')||pc.startsWith('cv32')||la.includes('stratford')||la.includes('warwick');}
+function statusHtml(r){return isFullyScored(r)?'<span class="pill">Fully scored market</span><span class="pill">RCS area</span>':'<span class="pill">Partial record</span><span class="pill">Pending RCS</span>';}
+function queryFor(r){return encodeURIComponent([r.n||r.name||'',r.pc||'',r.la||''].filter(Boolean).join(' '));}
+function contactHtml(r){const web=r.web_url||r.websiteUri||r.website,phone=r.phone||r.nationalPhoneNumber||r.internationalPhoneNumber,b=[];if(web){let href=String(web).startsWith('http')?web:'https://'+web;b.push('<a class="linkish" target="_blank" rel="noopener" href="'+esc(href)+'">Website</a>');}if(phone)b.push(esc(phone));if(!b.length){const q=queryFor(r);b.push('<a class="linkish" target="_blank" rel="noopener" href="https://www.google.com/search?q='+q+'">Search web</a>');b.push('<a class="linkish" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query='+q+'">Maps</a>');}return b.join(' · ');}
+async function fetchJsonRows(url){const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error('Could not load '+url);return objRows(await r.json());}
+async function fetchByLA(la){const snap=await REF.orderByChild('la').equalTo(la).once('value');return objRows(snap.val()||{});}
+async function fetchByAuthorities(authorities){let chunks=[];for(let i=0;i<authorities.length;i+=4){$('status').textContent='Searching '+Math.min(i+4,authorities.length)+'/'+authorities.length+' areas…';chunks.push(...(await Promise.all(authorities.slice(i,i+4).map(fetchByLA))).flat());}return chunks;}
+async function fetchDefault(){return (await Promise.all([fetchJsonRows('/stratford_establishments.json'),fetchJsonRows('/leamington_establishments.json')])).flat();}
+function apply(){const q=norm($('fName').value),min=$('fRating').value;FILTERED=ALL.filter(r=>(!q||norm(r.n||r.name).includes(q))&&(min===''||Number(r.r)>=Number(min))).sort((a,b)=>String(a.n||'').localeCompare(String(b.n||'')));PAGE=0;render();}
+function render(){const start=PAGE*PAGE_SIZE,rows=FILTERED.slice(start,start+PAGE_SIZE);$('board').style.display='block';$('status').textContent=FILTERED.length+' matches · showing '+(rows.length?start+1:0)+'–'+Math.min(start+PAGE_SIZE,FILTERED.length);$('rows').innerHTML=rows.map(r=>'<article class="row"><div><div class="name">'+esc(r.n||r.name||'Unnamed')+'</div><div class="muted">'+esc(r.bt||r.fsa_business_type||'')+'</div></div><div><div>'+esc(r.pc||'')+'</div><div class="muted">'+esc(r.la||r.local_authority||'')+'</div></div><div>'+statusHtml(r)+'</div><div class="mono">'+esc(r.r==null?'—':r.r)+'</div><div>'+contactHtml(r)+'</div></article>').join('')||'<article class="row"><div>No matches.</div></article>';$('prev').disabled=PAGE===0;$('next').disabled=start+PAGE_SIZE>=FILTERED.length;}
+async function search(){try{const loc=$('fLocation').value.trim();$('board').style.display='none';if(!loc){$('status').textContent='Loading default live market records…';ALL=await fetchDefault();apply();return;}const scored=fullyScoredFileFor(loc);if(scored){$('status').innerHTML='Loading '+scored.label+' records… <a href="'+scored.rank+'">Open ranked guide</a>';ALL=await fetchJsonRows(scored.url);apply();return;}const group=authorityGroupFor(loc);if(group){ALL=await fetchByAuthorities(group.authorities);apply();return;}$('status').textContent='No direct local authority mapping yet. Try London, Westminster, Camden, Stratford-upon-Avon or Leamington Spa.';}catch(e){console.error(e);$('status').textContent='Lookup failed: '+(e.message||'try again');}}
+$('btnSearch').addEventListener('click',search);['fLocation','fName'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')search();}));$('fName').addEventListener('input',()=>{if(ALL.length)apply();});$('fRating').addEventListener('change',()=>{if(ALL.length)apply();});$('prev').addEventListener('click',()=>{if(PAGE>0){PAGE--;render();}});$('next').addEventListener('click',()=>{if((PAGE+1)*PAGE_SIZE<FILTERED.length){PAGE++;render();}});
+(function(){const p=new URLSearchParams(location.search);const loc=p.get('location')||p.get('q')||p.get('area')||'';const name=p.get('name')||p.get('venue')||'';if(loc)$('fLocation').value=loc;if(name)$('fName').value=name;if(loc||name)setTimeout(search,120);})();
+</script>
+</body>
+</html>
