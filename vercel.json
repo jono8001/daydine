@@ -5,7 +5,8 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/search", "destination": "/search-v2.html" },
-    { "source": "/uk-establishments", "destination": "/uk-establishments.html" }
+    { "source": "/uk-establishments", "destination": "/uk-establishments.html" },
+    { "source": "/admin/reports", "destination": "/admin-reports.html" }
   ],
   "redirects": [
     { "source": "/rankings/stratford-on-avon", "destination": "/rankings/stratford-upon-avon", "permanent": false },
@@ -15,6 +16,15 @@
   "headers": [
     {
       "source": "/assets/rankings/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/assets/operator-reports/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
