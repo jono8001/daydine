@@ -15,6 +15,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/generate_operator_dashboards.py'
+      - 'scripts/apply_dashboard_report_alignment.py'
       - 'tests/test_generate_operator_dashboards.py'
       - 'data/operator_dashboard_targets.json'
       - 'data/ranking_areas.json'
@@ -68,7 +69,10 @@ jobs:
             python scripts/generate_operator_dashboards.py --month "${{ steps.args.outputs.month }}"
           fi
 
-      - name: Verify Lambs latest dashboard has history and movement
+      - name: Apply report alignment overlays
+        run: python scripts/apply_dashboard_report_alignment.py
+
+      - name: Verify Lambs latest dashboard has history, movement and report alignment
         run: |
           python - <<'PY'
           import json
@@ -79,7 +83,14 @@ jobs:
           assert data.get('history'), 'Lambs dashboard must include retained history'
           assert data.get('movement'), 'Lambs dashboard must include movement summary'
           assert data['history'][-1]['month'] == data['month'], 'Latest history entry must match dashboard month'
-          print('Operator dashboard history verified for Lambs.')
+          assert data.get('report_aligned') is True, 'Lambs dashboard must be report-aligned'
+          assert data['headline']['overall_rank'] == 9, 'Lambs operator rank must match report (#9)'
+          assert data['headline']['overall_total'] == 169, 'Lambs operator total must match report (169)'
+          assert data['headline']['category_rank'] == 3, 'Lambs category rank must match report (#3)'
+          assert data['headline']['category_total'] == 56, 'Lambs category total must match report (56)'
+          assert abs(float(data['scores']['operator_v4_score']) - 8.939) < 0.001, 'Lambs operator V4 score must match report'
+          assert data.get('public_context'), 'Lambs must also retain the current public diner view'
+          print('Operator dashboard history + report alignment verified for Lambs.')
           PY
 
       - name: Commit dashboard assets
