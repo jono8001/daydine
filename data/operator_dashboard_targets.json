@@ -1,0 +1,46 @@
+{
+  "month": "2026-04",
+  "_note": "MVP operator dashboard targets. Each target is generated into assets/operator-dashboards/<venue_slug>/<month>.json and surfaced via /operator/<venue_slug>.",
+  "dashboards": [
+    {
+      "venue_slug": "lambs",
+      "venue": "Lambs",
+      "market": "stratford-upon-avon",
+      "postcode": "CV37 6EF",
+      "status": "ready",
+      "client_status": "review",
+      "operator_email": "",
+      "source_report": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md"
+    },
+    {
+      "venue_slug": "the-vintner-wine-bar",
+      "venue": "The Vintner Wine Bar",
+      "market": "stratford-upon-avon",
+      "postcode": "CV37 6EF",
+      "fhrsid": "503480",
+      "status": "draft",
+      "client_status": "draft",
+      "operator_email": ""
+    },
+    {
+      "venue_slug": "loxleys",
+      "venue": "Loxleys Restaurant and Wine Bar",
+      "market": "stratford-upon-avon",
+      "postcode": "CV37 6EF",
+      "fhrsid": "502816",
+      "status": "draft",
+      "client_status": "draft",
+      "operator_email": ""
+    },
+    {
+      "venue_slug": "the-opposition",
+      "venue": "The Opposition",
+      "market": "stratford-upon-avon",
+      "postcode": "CV37 6EF",
+      "fhrsid": "503481",
+      "status": "draft",
+      "client_status": "draft",
+      "operator_email": ""
+    }
+  ]
+}
