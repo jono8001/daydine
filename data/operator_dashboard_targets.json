@@ -1,6 +1,6 @@
 {
   "month": "2026-04",
-  "_note": "MVP operator dashboard targets. Each target is generated into assets/operator-dashboards/<venue_slug>/<month>.json and surfaced via /operator/<venue_slug>.",
+  "_note": "MVP operator dashboard targets. Each target is generated into assets/operator-dashboards/<venue_slug>/<month>.json and surfaced via /operator/<venue_slug>. Report-aligned fields preserve the commercial facts from the detailed operator report so the client screen does not drift away from the report narrative.",
   "dashboards": [
     {
       "venue_slug": "lambs",
@@ -10,7 +10,89 @@
       "status": "ready",
       "client_status": "review",
       "operator_email": "",
-      "source_report": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md"
+      "source_report": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md",
+      "report_aligned": {
+        "enabled": true,
+        "report_label": "Full Operator Intelligence Report · 2026-04",
+        "operator_market_name": "Stratford-upon-Avon wider operator market",
+        "operator_market_rank": 9,
+        "operator_market_total": 169,
+        "operator_category_rank": 3,
+        "operator_category_total": 56,
+        "operator_category_label": "restaurant venues",
+        "public_visibility": "Inside the public top 30 overall and category top 30",
+        "tracking_status": "Strong public visibility; protect position and monitor nearby score clusters.",
+        "operator_v4_score": 8.939,
+        "confidence_class": "Rankable-B",
+        "rankable": true,
+        "league_eligible": true,
+        "entity_match": "confirmed",
+        "commercial_readiness_score": 7.5,
+        "commercial_readiness_gap": "No direct observed booking/contact path",
+        "commercial_impact": {
+          "confidence": "Low",
+          "monthly_revenue_impact": "£250 – £760",
+          "annual_projection": "£3,000 – £9,120",
+          "cost_band": "£200 – £1,000",
+          "payback_window": "1 – 3 months",
+          "wording_guardrail": "Directional estimate only. Exact numbers require internal cover and spend data."
+        },
+        "components": [
+          {
+            "name": "Trust & Compliance",
+            "score": 9.152,
+            "summary": "Trust & Compliance is strong. There is no immediate compliance-led commercial concern, but inspection recency and management-confidence signals should remain protected.",
+            "evidence": "FHRS 5 · last inspection 2026-01-13 · 5 signals used"
+          },
+          {
+            "name": "Customer Validation",
+            "score": 9.229,
+            "summary": "Strong Google evidence, but still single-platform. A second customer-platform source would improve evidence breadth and confidence.",
+            "evidence": "Google 1,372 reviews @ 4.7"
+          },
+          {
+            "name": "Commercial Readiness",
+            "score": 7.5,
+            "summary": "Website, menu and opening hours are visible, but a direct booking/contact path is not confirmed in the public record.",
+            "evidence": "Website present · menu present · hours 7/7 · booking/contact absent"
+          }
+        ],
+        "priorities": [
+          {
+            "title": "Add a second customer-platform listing",
+            "target": "Customer Validation",
+            "why": "Customer Validation is currently single-platform. A second source would improve confidence and reduce reliance on Google alone.",
+            "evidence": "Only Google is present as a customer platform.",
+            "action": "Claim or strengthen an additional legitimate review/listing source such as TripAdvisor or OpenTable where appropriate.",
+            "expected_upside": "Raises the achievable confidence class toward Rankable-A.",
+            "next_milestone": "Confirm legitimate second-platform presence"
+          },
+          {
+            "title": "Publish a reachable phone number or direct booking link",
+            "target": "Commercial Readiness",
+            "why": "The booking/contact path carries 25% of Commercial Readiness and is not confirmed in the public record.",
+            "evidence": "Public record does not show a confirmed direct booking/contact path.",
+            "action": "Add a public phone number, direct reservation URL, or booking path to the main public listing.",
+            "expected_upside": "Improves Commercial Readiness and reduces customer drop-off.",
+            "next_milestone": "Add direct contact path to public listing"
+          },
+          {
+            "title": "Defend review strength and score stability",
+            "target": "Customer Validation / tie-break strength",
+            "why": "Lambs is already in the public top 30 and restaurant category top 30, but it sits close to other high-scoring venues.",
+            "evidence": "Nearby competitors sit at or near the same rounded RCS value.",
+            "action": "Maintain legitimate review momentum and ensure listing accuracy does not degrade.",
+            "expected_upside": "Protects rank within a tight score cluster.",
+            "next_milestone": "Monitor monthly review-count movement"
+          }
+        ],
+        "what_not_to_do": [
+          "Do not chase artificial reviews. Review growth should be legitimate and sustainable.",
+          "Do not assume photos, price level, social content, parking or delivery options directly move the score unless they connect to observable Commercial Readiness fields.",
+          "Do not over-focus on food-quality claims from compliance data; FHRS is a compliance signal, not a food-quality score."
+        ],
+        "final_takeaway": "Lambs is already a high-performing and publicly visible operator in the DayDine Stratford-upon-Avon market. The commercial priority is to protect visibility and strengthen evidence breadth: add a second customer-platform source, improve the observed booking/contact path, and monitor the high-score cluster each month."
+      }
     },
     {
       "venue_slug": "the-vintner-wine-bar",
