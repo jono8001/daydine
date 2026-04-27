@@ -25,6 +25,7 @@ AREAS_FILE = ROOT / "data" / "ranking_areas.json"
 ALIASES_FILE = ROOT / "data" / "entity_aliases.json"
 RANKINGS_DIR = ROOT / "assets" / "rankings"
 RESOLVED_GUARDRAIL_STATUSES = {"resolved", "not_public"}
+LEGACY_ALIAS_DEFAULT_PREFIX = "stratford"
 
 
 def slugify(value: str) -> str:
@@ -57,6 +58,7 @@ def resolve_area(market: str) -> dict[str, Any]:
             area.get("slug"),
             area.get("display_name"),
             area.get("la_name"),
+            area.get("data_source_prefix"),
             *(area.get("legacy_slugs") or []),
         ]
         if wanted in {slugify(str(a)) for a in aliases if a}:
@@ -76,16 +78,37 @@ def data_prefix_for_area(area: dict[str, Any]) -> str:
     return slugify(area.get("slug") or area.get("display_name") or "market")
 
 
-def load_known_missing() -> dict[str, dict[str, Any]]:
+def infer_guardrail_prefix(path: Path, venue: dict[str, Any]) -> str:
+    explicit = venue.get("data_source_prefix") or venue.get("source_prefix")
+    if explicit:
+        return str(explicit)
+    name = path.name.lower()
+    if name.startswith("known_missing_") and name.endswith("_venues.json"):
+        return name.removeprefix("known_missing_").removesuffix("_venues.json")
+    return LEGACY_ALIAS_DEFAULT_PREFIX
+
+
+def alias_prefix(alias: dict[str, Any]) -> str:
+    # Existing alias table was created for the Stratford trial before source
+    # prefixes existed. Treat unscoped aliases as Stratford so they do not block
+    # Leamington/Warwick or future markets.
+    return str(alias.get("data_source_prefix") or alias.get("source_prefix") or LEGACY_ALIAS_DEFAULT_PREFIX)
+
+
+def load_known_missing(prefix: str | None = None) -> dict[str, dict[str, Any]]:
     records: dict[str, dict[str, Any]] = {}
     for file_name in sorted(glob.glob(str(ROOT / "data" / "known_missing_*_venues.json"))):
         path = Path(file_name)
         data = read_json(path, {"venues": []})
         for venue in data.get("venues", []):
+            venue_prefix = infer_guardrail_prefix(path, venue)
+            if prefix and venue_prefix != prefix:
+                continue
             fhrsid = str(venue.get("fhrsid") or "").strip()
             if not fhrsid:
                 continue
             enriched = dict(venue)
+            enriched["data_source_prefix"] = venue_prefix
             enriched["guardrail_file"] = str(path.relative_to(ROOT))
             records[fhrsid] = enriched
     return records
@@ -98,12 +121,14 @@ def active_known_missing(known_missing: dict[str, dict[str, Any]]) -> dict[str, 
     }
 
 
-def collect_alias_warnings(establishments: dict[str, Any], known_missing: dict[str, dict[str, Any]]) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+def collect_alias_warnings(establishments: dict[str, Any], known_missing: dict[str, dict[str, Any]], prefix: str) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     aliases = read_json(ALIASES_FILE, {"aliases": []}).get("aliases", [])
     active_guardrails = active_known_missing(known_missing)
     missing = []
     unresolved = []
     for alias in aliases:
+        if alias_prefix(alias) != prefix:
+            continue
         fhrsid = str(alias.get("fhrsid") or "").strip()
         if not fhrsid:
             continue
@@ -113,6 +138,7 @@ def collect_alias_warnings(establishments: dict[str, Any], known_missing: dict[s
             "fhrsid": fhrsid,
             "public_name": alias.get("public_name"),
             "postcode": alias.get("postcode"),
+            "data_source_prefix": alias_prefix(alias),
         }
         missing.append(entry)
         if fhrsid not in active_guardrails:
@@ -151,9 +177,9 @@ def build_summary(market: str) -> dict[str, Any]:
     establishments = read_json(establishments_path, {}) or {}
     scores = read_json(scores_path, {}) or {}
     ranking = read_json(ranking_path, {}) or {}
-    known_missing = load_known_missing()
+    known_missing = load_known_missing(prefix)
     active_guardrails = active_known_missing(known_missing)
-    alias_missing, alias_unresolved = collect_alias_warnings(establishments, known_missing)
+    alias_missing, alias_unresolved = collect_alias_warnings(establishments, known_missing, prefix)
     duplicate_gpids = collect_duplicate_gpids(prefix)
 
     scored = [s for s in scores.values() if s.get("rcs_v4_final") is not None]
@@ -169,9 +195,9 @@ def build_summary(market: str) -> dict[str, Any]:
     if not public_venues:
         warnings.append(f"No public ranking venues loaded from {ranking_path.relative_to(ROOT)}")
     if alias_unresolved:
-        warnings.append(f"{len(alias_unresolved)} alias FHRSID(s) are missing from establishments and are not covered by active known-missing guardrails")
+        warnings.append(f"{len(alias_unresolved)} source-scoped alias FHRSID(s) are missing from establishments and are not covered by active known-missing guardrails")
     if alias_missing:
-        warnings.append(f"{len(alias_missing)} alias FHRSID(s) are missing from establishments; see alias_missing_from_establishments")
+        warnings.append(f"{len(alias_missing)} source-scoped alias FHRSID(s) are missing from establishments; see alias_missing_from_establishments")
     if active_guardrails:
         warnings.append(f"{len(active_guardrails)} active known-missing venue guardrail(s); canonical data rebuild still required")
     if duplicate_gpids:
