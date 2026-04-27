@@ -1,0 +1,175 @@
+{
+  "id": "the-vintner-wine-bar-2026-04",
+  "generated_at": "2026-04-27T17:51:37.429736+00:00",
+  "venue_slug": "the-vintner-wine-bar",
+  "venue": "The Vintner Wine Bar",
+  "also_trading_as": "",
+  "market": "Stratford-upon-Avon",
+  "market_slug": "stratford-upon-avon",
+  "category": "Pub / Bar",
+  "month": "2026-04",
+  "status": "draft",
+  "client_status": "draft",
+  "operator_email": "",
+  "methodology": "DayDine RCS v3.4.1 — V4 official-source mode with deterministic tie-breaks",
+  "headline": {
+    "overall_rank": 35,
+    "overall_total": 70,
+    "category_rank": 9,
+    "category_total": 14,
+    "public_visibility": "Tracked in live market · Category top 30",
+    "tracking_status": "Category-visible venue; improve evidence breadth and monitor route to overall top 30."
+  },
+  "scores": {
+    "public_rcs": 8.496,
+    "operator_v4_score": 8.496,
+    "confidence_class": "Rankable-A",
+    "rankable": true,
+    "league_eligible": true,
+    "entity_match": "confirmed"
+  },
+  "components": [
+    {
+      "name": "Trust & Compliance",
+      "score": 8.523,
+      "summary": "Compliance evidence from FHRS/FSA. This is a trust signal, not a food-quality score.",
+      "evidence": "FSA/FHRS present · 5 signals used"
+    },
+    {
+      "name": "Customer Validation",
+      "score": 8.803,
+      "summary": "Multi-platform customer validation improves evidence breadth.",
+      "evidence": "Google 887 reviews @ 4.6 · Tripadvisor 20 reviews @ 4.4"
+    },
+    {
+      "name": "Commercial Readiness",
+      "score": 7.5,
+      "summary": "Measures whether a guest can find, understand and act on the venue online.",
+      "evidence": "3 commercial-readiness signals used"
+    }
+  ],
+  "monthly_tracking": [
+    {
+      "label": "Overall rank",
+      "value": "#35 of 70",
+      "meaning": "Tracked in live market"
+    },
+    {
+      "label": "Category rank",
+      "value": "#9",
+      "meaning": "Category top 30"
+    },
+    {
+      "label": "DayDine RCS",
+      "value": "8.496",
+      "meaning": "Current baseline for future movement"
+    },
+    {
+      "label": "Monthly movement",
+      "value": "new",
+      "meaning": "Future snapshots can show up/down movement"
+    }
+  ],
+  "nearest_competitors": [
+    {
+      "rank": 33,
+      "venue": "Premier Inn",
+      "category": "Pub / Bar",
+      "rcs": 8.555,
+      "gap": "+0.059"
+    },
+    {
+      "rank": 34,
+      "venue": "Libertine Burger",
+      "category": "Restaurant (General)",
+      "rcs": 8.529,
+      "gap": "+0.033"
+    },
+    {
+      "rank": 35,
+      "venue": "The Vintner Wine Bar",
+      "category": "Pub / Bar",
+      "rcs": 8.496,
+      "gap": "you"
+    },
+    {
+      "rank": 36,
+      "venue": "McDonald's",
+      "category": "Takeaway / Delivery",
+      "rcs": 8.49,
+      "gap": "-0.006"
+    },
+    {
+      "rank": 37,
+      "venue": "A G D Equipment Ltd",
+      "category": "Restaurant (General)",
+      "rcs": 8.48,
+      "gap": "-0.016"
+    }
+  ],
+  "priorities": [
+    {
+      "title": "Reduce booking/contact friction",
+      "target": "Commercial Readiness",
+      "why": "Commercial Readiness is below the top band, so there may be visible friction in the customer path.",
+      "action": "Check that website, menu, opening hours, phone and booking/reservation links are obvious and current on public profiles.",
+      "expected_upside": "Improves customer-path confidence and reduces guest drop-off."
+    },
+    {
+      "title": "Protect rank in the local score cluster",
+      "target": "Ranking stability",
+      "why": "The venue is currently ranked #35 and nearby venues may be separated by small score gaps.",
+      "action": "Monitor review-count movement, listing accuracy and any inspection changes monthly.",
+      "expected_upside": "Protects public visibility and gives early warning of competitor movement."
+    }
+  ],
+  "commercial_impact": {
+    "confidence": "Low",
+    "monthly_revenue_impact": "£250 – £760",
+    "annual_projection": "£3,000 – £9,120",
+    "cost_band": "£200 – £1,000",
+    "payback_window": "1 – 3 months",
+    "wording_guardrail": "Directional estimate only. Exact numbers require internal cover and spend data."
+  },
+  "watch_list": [
+    "Overall rank movement",
+    "Category-rank movement",
+    "Review-count movement",
+    "Emergence or loss of a second review/listing platform",
+    "Public contact/booking path completeness",
+    "Any FHRS re-inspection activity"
+  ],
+  "evidence": {
+    "fhrsid": "503480",
+    "fsa_rating": 5,
+    "last_inspection_date": "2024-05-09",
+    "google_rating": 4.6,
+    "google_review_count": 887,
+    "google_place_id": "ChIJM4d8OjLOcEgRtipI76ULZ6E",
+    "website_present": true,
+    "menu_online": false,
+    "opening_hours": "present",
+    "direct_booking_contact_observed": true
+  },
+  "source_report": "",
+  "download_report_url": "",
+  "history": [
+    {
+      "month": "2026-04",
+      "overall_rank": 35,
+      "category_rank": 9,
+      "public_rcs": 8.496,
+      "operator_v4_score": 8.496,
+      "google_review_count": 887,
+      "confidence_class": "Rankable-A",
+      "status": "draft"
+    }
+  ],
+  "movement": {
+    "overall_rank_delta": 0,
+    "category_rank_delta": 0,
+    "public_rcs_delta": 0,
+    "review_count_delta": 0,
+    "summary": "Baseline month — movement will appear after the next monthly snapshot."
+  }
+}

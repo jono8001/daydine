@@ -1,18 +1,72 @@
 {
   "last_updated": "2026-04-27",
+  "generated_at": "2026-04-27T17:51:37.444709+00:00",
+  "month": "2026-04",
   "dashboards": [
     {
       "id": "lambs-2026-04",
       "venue_slug": "lambs",
       "venue": "Lambs",
       "market": "Stratford-upon-Avon",
-      "category": "Restaurant",
+      "category": "Restaurant (General)",
       "month": "2026-04",
       "status": "ready",
+      "client_status": "review",
       "snapshot_url": "/assets/operator-dashboards/lambs/2026-04.json",
+      "latest_url": "/assets/operator-dashboards/lambs/latest.json",
       "dashboard_url": "/operator/lambs",
       "source_report": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md",
-      "notes": "MVP generated operator screen. PDF/download remains a later export layer."
+      "history_months": 1,
+      "notes": "Generated operator dashboard snapshot with retained monthly history."
+    },
+    {
+      "id": "loxleys-2026-04",
+      "venue_slug": "loxleys",
+      "venue": "Loxleys Restaurant And Wine Bar",
+      "market": "Stratford-upon-Avon",
+      "category": "Pub / Bar",
+      "month": "2026-04",
+      "status": "draft",
+      "client_status": "draft",
+      "snapshot_url": "/assets/operator-dashboards/loxleys/2026-04.json",
+      "latest_url": "/assets/operator-dashboards/loxleys/latest.json",
+      "dashboard_url": "/operator/loxleys",
+      "source_report": "",
+      "history_months": 1,
+      "notes": "Generated operator dashboard snapshot with retained monthly history."
+    },
+    {
+      "id": "the-opposition-2026-04",
+      "venue_slug": "the-opposition",
+      "venue": "The Opposition",
+      "market": "Stratford-upon-Avon",
+      "category": "Restaurant (General)",
+      "month": "2026-04",
+      "status": "draft",
+      "client_status": "draft",
+      "snapshot_url": "/assets/operator-dashboards/the-opposition/2026-04.json",
+      "latest_url": "/assets/operator-dashboards/the-opposition/latest.json",
+      "dashboard_url": "/operator/the-opposition",
+      "source_report": "",
+      "history_months": 1,
+      "notes": "Generated operator dashboard snapshot with retained monthly history."
+    },
+    {
+      "id": "the-vintner-wine-bar-2026-04",
+      "venue_slug": "the-vintner-wine-bar",
+      "venue": "The Vintner Wine Bar",
+      "market": "Stratford-upon-Avon",
+      "category": "Pub / Bar",
+      "month": "2026-04",
+      "status": "draft",
+      "client_status": "draft",
+      "snapshot_url": "/assets/operator-dashboards/the-vintner-wine-bar/2026-04.json",
+      "latest_url": "/assets/operator-dashboards/the-vintner-wine-bar/latest.json",
+      "dashboard_url": "/operator/the-vintner-wine-bar",
+      "source_report": "",
+      "history_months": 1,
+      "notes": "Generated operator dashboard snapshot with retained monthly history."
     }
-  ]
+  ],
+  "errors": []
 }

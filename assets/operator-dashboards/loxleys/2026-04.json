@@ -1,28 +1,28 @@
 {
-  "id": "lambs-2026-04",
-  "generated_at": "2026-04-27T17:51:37.422237+00:00",
-  "venue_slug": "lambs",
-  "venue": "Lambs",
+  "id": "loxleys-2026-04",
+  "generated_at": "2026-04-27T17:51:37.436716+00:00",
+  "venue_slug": "loxleys",
+  "venue": "Loxleys Restaurant And Wine Bar",
   "also_trading_as": "",
   "market": "Stratford-upon-Avon",
   "market_slug": "stratford-upon-avon",
-  "category": "Restaurant (General)",
+  "category": "Pub / Bar",
   "month": "2026-04",
-  "status": "ready",
-  "client_status": "review",
+  "status": "draft",
+  "client_status": "draft",
   "operator_email": "",
   "methodology": "DayDine RCS v3.4.1 — V4 official-source mode with deterministic tie-breaks",
   "headline": {
-    "overall_rank": 4,
+    "overall_rank": 9,
     "overall_total": 70,
     "category_rank": null,
-    "category_total": 24,
+    "category_total": 14,
     "public_visibility": "Public top 30 overall",
     "tracking_status": "Strong public visibility; protect position and monitor nearby score clusters."
   },
   "scores": {
-    "public_rcs": 9.311,
-    "operator_v4_score": 9.311,
+    "public_rcs": 9.143,
+    "operator_v4_score": 9.143,
     "confidence_class": "Rankable-B",
     "rankable": true,
     "league_eligible": true,
@@ -31,15 +31,15 @@
   "components": [
     {
       "name": "Trust & Compliance",
-      "score": 9.145,
+      "score": 8.715,
       "summary": "Compliance evidence from FHRS/FSA. This is a trust signal, not a food-quality score.",
       "evidence": "FSA/FHRS present · 5 signals used"
     },
     {
       "name": "Customer Validation",
-      "score": 9.229,
+      "score": 9.239,
       "summary": "Single-platform evidence reduces confidence breadth even when rating strength is good.",
-      "evidence": "Google 1376 reviews @ 4.7"
+      "evidence": "Google 1677 reviews @ 4.7"
     },
     {
       "name": "Commercial Readiness",
@@ -51,7 +51,7 @@
   "monthly_tracking": [
     {
       "label": "Overall rank",
-      "value": "#4 of 70",
+      "value": "#9 of 70",
       "meaning": "Public top 30 overall"
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       "label": "DayDine RCS",
-      "value": "9.311",
+      "value": "9.143",
       "meaning": "Current baseline for future movement"
     },
     {
@@ -72,39 +72,39 @@
   ],
   "nearest_competitors": [
     {
-      "rank": 2,
-      "venue": "Red Hot Mamma Pizzeria",
+      "rank": 7,
+      "venue": "The Opposition",
       "category": "Restaurant (General)",
-      "rcs": 9.498,
-      "gap": "+0.187"
+      "rcs": 9.269,
+      "gap": "+0.126"
     },
     {
-      "rank": 3,
-      "venue": "The Red Lion",
+      "rank": 8,
+      "venue": "Mor",
+      "category": "Bakery",
+      "rcs": 9.209,
+      "gap": "+0.066"
+    },
+    {
+      "rank": 9,
+      "venue": "Loxleys Restaurant And Wine Bar",
       "category": "Pub / Bar",
-      "rcs": 9.407,
-      "gap": "+0.096"
-    },
-    {
-      "rank": 4,
-      "venue": "Lambs",
-      "category": "Restaurant (General)",
-      "rcs": 9.311,
+      "rcs": 9.143,
       "gap": "you"
     },
     {
-      "rank": 5,
-      "venue": "Plantarium",
-      "category": "Cafe / Coffee Shop",
-      "rcs": 9.311,
-      "gap": "+0.000"
+      "rank": 10,
+      "venue": "The Townhouse Also Trading As JR Hotel And Restaurants LTD",
+      "category": "Pub / Bar",
+      "rcs": 9.125,
+      "gap": "-0.018"
     },
     {
-      "rank": 6,
-      "venue": "The Phoenix / Impasto Pizza",
-      "category": "Pub / Bar",
-      "rcs": 9.275,
-      "gap": "-0.036"
+      "rank": 11,
+      "venue": "The Kingfisher FishBar",
+      "category": "Takeaway / Delivery",
+      "rcs": 9.118,
+      "gap": "-0.025"
     }
   ],
   "priorities": [
@@ -118,7 +118,7 @@
     {
       "title": "Protect rank in the local score cluster",
       "target": "Ranking stability",
-      "why": "The venue is currently ranked #4 and nearby venues may be separated by small score gaps.",
+      "why": "The venue is currently ranked #9 and nearby venues may be separated by small score gaps.",
       "action": "Monitor review-count movement, listing accuracy and any inspection changes monthly.",
       "expected_upside": "Protects public visibility and gives early warning of competitor movement."
     }
@@ -140,29 +140,29 @@
     "Any FHRS re-inspection activity"
   ],
   "evidence": {
-    "fhrsid": "503316",
+    "fhrsid": "502816",
     "fsa_rating": 5,
-    "last_inspection_date": "2026-01-13",
+    "last_inspection_date": "2026-03-24",
     "google_rating": 4.7,
-    "google_review_count": 1376,
-    "google_place_id": "ChIJ07kQJjLOcEgR6LZ0g4f17Eg",
+    "google_review_count": 1677,
+    "google_place_id": "ChIJPakIOjLOcEgRqV2Dw8uh8QU",
     "website_present": true,
     "menu_online": false,
     "opening_hours": "present",
     "direct_booking_contact_observed": true
   },
-  "source_report": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md",
-  "download_report_url": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md",
+  "source_report": "",
+  "download_report_url": "",
   "history": [
     {
       "month": "2026-04",
-      "overall_rank": 4,
+      "overall_rank": 9,
       "category_rank": null,
-      "public_rcs": 9.311,
-      "operator_v4_score": 9.311,
-      "google_review_count": 1376,
+      "public_rcs": 9.143,
+      "operator_v4_score": 9.143,
+      "google_review_count": 1677,
       "confidence_class": "Rankable-B",
-      "status": "ready"
+      "status": "draft"
     }
   ],
   "movement": {
