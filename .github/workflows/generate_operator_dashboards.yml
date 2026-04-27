@@ -1,0 +1,92 @@
+name: Generate operator dashboards
+
+on:
+  workflow_dispatch:
+    inputs:
+      month:
+        description: 'Snapshot month, YYYY-MM'
+        required: false
+        default: '2026-04'
+      venue:
+        description: 'Optional venue_slug to generate only one dashboard'
+        required: false
+        default: ''
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/generate_operator_dashboards.py'
+      - 'tests/test_generate_operator_dashboards.py'
+      - 'data/operator_dashboard_targets.json'
+      - 'data/ranking_areas.json'
+      - 'assets/rankings/*.json'
+      - 'stratford_establishments.json'
+      - 'stratford_rcs_v4_scores.json'
+      - 'leamington_establishments.json'
+      - 'leamington_rcs_v4_scores.json'
+      - 'operator-dashboard.html'
+      - '.github/workflows/generate_operator_dashboards.yml'
+      - '.github/triggers/generate_operator_dashboards.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-operator-dashboards
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    name: Generate committed operator dashboard snapshots
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run operator dashboard generator tests
+        run: python -m tests.test_generate_operator_dashboards
+
+      - name: Resolve generation inputs
+        id: args
+        run: |
+          MONTH="${{ github.event.inputs.month }}"
+          VENUE="${{ github.event.inputs.venue }}"
+          if [ -z "$MONTH" ]; then MONTH="2026-04"; fi
+          echo "month=$MONTH" >> "$GITHUB_OUTPUT"
+          echo "venue=$VENUE" >> "$GITHUB_OUTPUT"
+
+      - name: Generate dashboard snapshots
+        run: |
+          if [ -n "${{ steps.args.outputs.venue }}" ]; then
+            python scripts/generate_operator_dashboards.py --month "${{ steps.args.outputs.month }}" --venue "${{ steps.args.outputs.venue }}"
+          else
+            python scripts/generate_operator_dashboards.py --month "${{ steps.args.outputs.month }}"
+          fi
+
+      - name: Verify Lambs latest dashboard has history and movement
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('assets/operator-dashboards/lambs/latest.json')
+          assert p.exists(), 'Missing Lambs latest operator dashboard snapshot'
+          data = json.loads(p.read_text())
+          assert data.get('history'), 'Lambs dashboard must include retained history'
+          assert data.get('movement'), 'Lambs dashboard must include movement summary'
+          assert data['history'][-1]['month'] == data['month'], 'Latest history entry must match dashboard month'
+          print('Operator dashboard history verified for Lambs.')
+          PY
+
+      - name: Commit dashboard assets
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/operator-dashboards
+          git diff --cached --quiet && echo "No dashboard asset changes to commit" && exit 0
+          git commit -m "Generate operator dashboard snapshots"
+          git push
