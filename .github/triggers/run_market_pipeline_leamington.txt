@@ -1,0 +1,4 @@
+Trigger generic market pipeline for Leamington Spa.
+
+Command expected in workflow:
+python scripts/run_market_pipeline.py --market leamington-spa
