@@ -8,6 +8,10 @@ This wrapper separates the data-collection unit from the public geography:
 
 It delegates scoring/eligibility/overrides to build_rankings_v4.py and only
 filters records by configured area before building each output file.
+
+Important: this script can be run for a subset of areas via a generated areas
+file. In that case it merges the rebuilt areas into the existing market registry
+instead of replacing unrelated live markets.
 """
 from __future__ import annotations
 
@@ -96,31 +100,44 @@ def add_area_metadata(area_json: dict[str, Any], area: dict[str, Any], distances
     return area_json
 
 
-def build_index(area_outputs: list[dict[str, Any]], pipeline_from_existing: list[dict[str, Any]] | None = None) -> dict[str, Any]:
-    available = []
-    operator_areas = []
-    for area in area_outputs:
-        entry = {
-            "slug": area["slug"],
-            "la_name": area["la_name"],
-            "display_name": area["display_name"],
-            "region": area.get("region", "Warwickshire"),
-            "area_type": area.get("area_type"),
-            "status": "live",
-            "methodology_version": area.get("methodology_version"),
-            "total_venues": area.get("total_venues"),
-            "top_score": area["venues"][0]["rcs_final"] if area.get("venues") else None,
-        }
-        if area.get("public"):
-            available.append(entry)
-        if area.get("operator") and not area.get("public"):
-            operator_areas.append(entry)
-
+def index_entry(area: dict[str, Any]) -> dict[str, Any]:
     return {
-        "last_updated": area_outputs[0].get("last_updated") if area_outputs else None,
-        "available": sorted(available, key=lambda x: x["display_name"].lower()),
-        "operator_areas": sorted(operator_areas, key=lambda x: x["display_name"].lower()),
-        "pipeline": pipeline_from_existing or [],
+        "slug": area["slug"],
+        "la_name": area["la_name"],
+        "display_name": area["display_name"],
+        "region": area.get("region", "Warwickshire"),
+        "area_type": area.get("area_type"),
+        "status": "live",
+        "methodology_version": area.get("methodology_version"),
+        "total_venues": area.get("total_venues"),
+        "top_score": area["venues"][0]["rcs_final"] if area.get("venues") else None,
+    }
+
+
+def build_index(area_outputs: list[dict[str, Any]], pipeline_from_existing: list[dict[str, Any]] | None = None) -> dict[str, Any]:
+    existing = read_json(INDEX_FILE) if INDEX_FILE.exists() else {}
+    available_by_slug = {entry.get("slug"): entry for entry in existing.get("available", []) if entry.get("slug")}
+    operator_by_slug = {entry.get("slug"): entry for entry in existing.get("operator_areas", []) if entry.get("slug")}
+
+    for area in area_outputs:
+        entry = index_entry(area)
+        slug = entry["slug"]
+        if area.get("public"):
+            available_by_slug[slug] = entry
+            operator_by_slug.pop(slug, None)
+        elif area.get("operator"):
+            operator_by_slug[slug] = entry
+            available_by_slug.pop(slug, None)
+        else:
+            available_by_slug.pop(slug, None)
+            operator_by_slug.pop(slug, None)
+
+    last_updated = area_outputs[0].get("last_updated") if area_outputs else existing.get("last_updated")
+    return {
+        "last_updated": last_updated,
+        "available": sorted(available_by_slug.values(), key=lambda x: str(x.get("display_name", "")).lower()),
+        "operator_areas": sorted(operator_by_slug.values(), key=lambda x: str(x.get("display_name", "")).lower()),
+        "pipeline": pipeline_from_existing if pipeline_from_existing is not None else existing.get("pipeline", []),
     }
 
 
