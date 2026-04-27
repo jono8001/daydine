@@ -1,0 +1,8 @@
+Trigger operator dashboard generation.
+
+Purpose: run scripts/generate_operator_dashboards.py and commit assets/operator-dashboards/*.json.
+
+Expected first client screen:
+- /operator/lambs
+- retained monthly history
+- movement summary fields
