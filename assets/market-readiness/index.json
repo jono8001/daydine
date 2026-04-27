@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T16:41:32.411154+00:00",
+  "generated_at": "2026-04-27T16:42:15.614762+00:00",
   "status": "blocked",
   "total_markets": 3,
   "ready_markets": 0,
@@ -13,7 +13,7 @@
       "public": true,
       "operator": true,
       "status": "blocked",
-      "generated_at": "2026-04-27T16:41:32.435781+00:00",
+      "generated_at": "2026-04-27T16:42:15.637619+00:00",
       "readiness_url": "/assets/market-readiness/leamington-spa.json",
       "counts": {
         "total_establishments": 292,
@@ -38,7 +38,7 @@
       "public": false,
       "operator": true,
       "status": "warning",
-      "generated_at": "2026-04-27T16:41:32.426576+00:00",
+      "generated_at": "2026-04-27T16:42:15.629047+00:00",
       "readiness_url": "/assets/market-readiness/stratford-on-avon-district.json",
       "counts": {
         "total_establishments": 209,
@@ -63,7 +63,7 @@
       "public": true,
       "operator": true,
       "status": "warning",
-      "generated_at": "2026-04-27T16:41:32.418449+00:00",
+      "generated_at": "2026-04-27T16:42:15.621660+00:00",
       "readiness_url": "/assets/market-readiness/stratford-upon-avon.json",
       "counts": {
         "total_establishments": 209,
