@@ -1,0 +1,83 @@
+name: Run market pipeline
+
+on:
+  workflow_dispatch:
+    inputs:
+      market:
+        description: 'Market slug from data/ranking_areas.json'
+        required: true
+        default: 'leamington-spa'
+      force_score:
+        description: 'Re-run V4 scoring even if score JSON exists'
+        required: false
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/run_market_pipeline.py'
+      - 'scripts/build_area_rankings_v4.py'
+      - 'scripts/build_rankings_v4.py'
+      - 'scripts/generate_market_readiness.py'
+      - 'scripts/check_market_readiness.py'
+      - 'tests/test_run_market_pipeline.py'
+      - 'data/ranking_areas.json'
+      - 'leamington_establishments.json'
+      - 'leamington_rcs_v4_scores.json'
+      - '.github/workflows/run_market_pipeline.yml'
+      - '.github/triggers/run_market_pipeline_leamington.txt'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: run-market-pipeline
+  cancel-in-progress: false
+
+jobs:
+  run:
+    name: Run configured market pipeline
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Resolve target market
+        id: target
+        run: |
+          MARKET="${{ github.event.inputs.market }}"
+          if [ -z "$MARKET" ]; then MARKET="leamington-spa"; fi
+          echo "market=$MARKET" >> "$GITHUB_OUTPUT"
+          echo "Running market pipeline for $MARKET"
+
+      - name: Run pipeline
+        run: |
+          if [ "${{ github.event.inputs.force_score }}" = "true" ]; then
+            python scripts/run_market_pipeline.py --market "${{ steps.target.outputs.market }}" --force-score
+          else
+            python scripts/run_market_pipeline.py --market "${{ steps.target.outputs.market }}"
+          fi
+
+      - name: Run market pipeline tests
+        run: python -m tests.test_run_market_pipeline
+
+      - name: Run market data integrity tests
+        run: python -m tests.test_market_data_integrity
+
+      - name: Commit pipeline outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/rankings \
+                  assets/market-readiness \
+                  outputs/market-pipeline \
+                  data/ranking_areas.json
+          git diff --cached --quiet && echo "No pipeline output changes to commit" && exit 0
+          git commit -m "Run market pipeline for ${{ steps.target.outputs.market }}"
+          git push
