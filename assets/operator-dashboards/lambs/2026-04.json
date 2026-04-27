@@ -1,6 +1,6 @@
 {
   "id": "lambs-2026-04",
-  "generated_at": "2026-04-27T18:13:59.690545+00:00",
+  "generated_at": "2026-04-27T18:14:23.309707+00:00",
   "venue_slug": "lambs",
   "venue": "Lambs",
   "also_trading_as": "",
@@ -186,7 +186,7 @@
     "summary": "Baseline month — movement will appear after the next monthly snapshot."
   },
   "report_aligned": true,
-  "alignment_applied_at": "2026-04-27T18:13:59.747951+00:00",
+  "alignment_applied_at": "2026-04-27T18:14:23.375024+00:00",
   "operator_context": {
     "label": "Operator intelligence view",
     "report_label": "Full Operator Intelligence Report · 2026-04",
