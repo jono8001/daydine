@@ -1,11 +1,36 @@
 {
-  "generated_at": "2026-04-26T19:07:33.925862+00:00",
-  "status": "warning",
-  "total_markets": 2,
+  "generated_at": "2026-04-27T16:17:06.918748+00:00",
+  "status": "blocked",
+  "total_markets": 3,
   "ready_markets": 0,
   "warning_markets": 2,
-  "blocked_markets": 0,
+  "blocked_markets": 1,
   "markets": [
+    {
+      "slug": "leamington-spa",
+      "display_name": "Leamington Spa",
+      "area_type": "town",
+      "public": true,
+      "operator": true,
+      "status": "blocked",
+      "generated_at": "2026-04-27T16:17:06.941379+00:00",
+      "readiness_url": "/assets/market-readiness/leamington-spa.json",
+      "counts": {
+        "total_establishments": 292,
+        "total_scored": 287,
+        "total_rankable": 252,
+        "total_public_ranking_venues": 30,
+        "total_category_ranking_entries": 110,
+        "aliases_missing_from_establishments": 9,
+        "aliases_unresolved_without_guardrail": 9,
+        "known_missing_venues": 1,
+        "active_known_missing_venues": 0,
+        "duplicate_or_ambiguous_gpid_groups": 7
+      },
+      "warning_count": 3,
+      "active_known_missing_venues": 0,
+      "duplicate_or_ambiguous_gpid_groups": 7
+    },
     {
       "slug": "stratford-on-avon-district",
       "display_name": "Stratford-on-Avon District",
@@ -13,7 +38,7 @@
       "public": false,
       "operator": true,
       "status": "warning",
-      "generated_at": "2026-04-26T19:07:33.940354+00:00",
+      "generated_at": "2026-04-27T16:17:06.933160+00:00",
       "readiness_url": "/assets/market-readiness/stratford-on-avon-district.json",
       "counts": {
         "total_establishments": 209,
@@ -38,7 +63,7 @@
       "public": true,
       "operator": true,
       "status": "warning",
-      "generated_at": "2026-04-26T19:07:33.932998+00:00",
+      "generated_at": "2026-04-27T16:17:06.926131+00:00",
       "readiness_url": "/assets/market-readiness/stratford-upon-avon.json",
       "counts": {
         "total_establishments": 209,
