@@ -11,9 +11,32 @@
       "methodology_version": "DayDine RCS v3.4.1 — V4 official-source mode with deterministic tie-breaks",
       "total_venues": 169,
       "top_score": 9.195
+    },
+    {
+      "slug": "stratford-upon-avon",
+      "la_name": "Stratford-on-Avon",
+      "display_name": "Stratford-upon-Avon",
+      "region": "Warwickshire",
+      "area_type": "town",
+      "status": "live",
+      "methodology_version": "DayDine RCS v3.4.1 — V4 official-source mode with deterministic tie-breaks",
+      "total_venues": 70,
+      "top_score": 9.553
     }
   ],
-  "operator_areas": [],
+  "operator_areas": [
+    {
+      "slug": "stratford-on-avon-district",
+      "la_name": "Stratford-on-Avon",
+      "display_name": "Stratford-on-Avon District",
+      "region": "Warwickshire",
+      "area_type": "district",
+      "status": "live",
+      "methodology_version": "DayDine RCS v3.4.1 — V4 official-source mode with deterministic tie-breaks",
+      "total_venues": 168,
+      "top_score": 9.676
+    }
+  ],
   "pipeline": [
     {
       "slug": "warwick",
