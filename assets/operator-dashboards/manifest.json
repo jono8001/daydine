@@ -1,6 +1,6 @@
 {
   "last_updated": "2026-04-27",
-  "generated_at": "2026-04-27T18:13:21.700212+00:00",
+  "generated_at": "2026-04-27T18:13:59.708518+00:00",
   "month": "2026-04",
   "dashboards": [
     {
@@ -17,7 +17,8 @@
       "dashboard_url": "/operator/lambs",
       "source_report": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md",
       "history_months": 1,
-      "notes": "Generated operator dashboard snapshot with retained monthly history."
+      "notes": "Generated dashboard with report-aligned commercial facts and retained monthly history.",
+      "report_aligned": true
     },
     {
       "id": "loxleys-2026-04",
