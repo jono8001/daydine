@@ -7,7 +7,9 @@
     { "source": "/search", "destination": "/search-v2.html" },
     { "source": "/uk-establishments", "destination": "/uk-establishments.html" },
     { "source": "/admin/reports", "destination": "/admin-reports.html" },
-    { "source": "/admin/markets", "destination": "/admin-markets.html" }
+    { "source": "/admin/markets", "destination": "/admin-markets.html" },
+    { "source": "/operator/:venue", "destination": "/operator-dashboard.html" },
+    { "source": "/operator-dashboard", "destination": "/operator-dashboard.html" }
   ],
   "redirects": [
     { "source": "/rankings/stratford-on-avon", "destination": "/rankings/stratford-upon-avon", "permanent": false },
@@ -26,6 +28,15 @@
     },
     {
       "source": "/assets/operator-reports/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/assets/operator-dashboards/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
