@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T16:43:01.524031+00:00",
+  "generated_at": "2026-04-27T17:01:43.850297+00:00",
   "market": "stratford-upon-avon",
   "display_name": "Stratford-upon-Avon",
   "area_type": "town",
@@ -53,6 +53,7 @@
       "status": "resolved",
       "resolved_by": "scripts/canonicalise_vintner.py",
       "resolved_note": "Canonical Stratford establishment, V4 score and public ranking output now include FHRSID 503480.",
+      "data_source_prefix": "stratford",
       "guardrail_file": "data/known_missing_stratford_venues.json"
     }
   ],

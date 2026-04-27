@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-04-27T16:43:01.517266+00:00",
-  "status": "blocked",
+  "generated_at": "2026-04-27T17:01:43.843512+00:00",
+  "status": "warning",
   "total_markets": 3,
   "ready_markets": 0,
-  "warning_markets": 2,
-  "blocked_markets": 1,
+  "warning_markets": 3,
+  "blocked_markets": 0,
   "markets": [
     {
       "slug": "leamington-spa",
@@ -12,8 +12,8 @@
       "area_type": "town",
       "public": true,
       "operator": true,
-      "status": "blocked",
-      "generated_at": "2026-04-27T16:43:01.539390+00:00",
+      "status": "warning",
+      "generated_at": "2026-04-27T17:01:43.865795+00:00",
       "readiness_url": "/assets/market-readiness/leamington-spa.json",
       "counts": {
         "total_establishments": 292,
@@ -21,13 +21,13 @@
         "total_rankable": 252,
         "total_public_ranking_venues": 30,
         "total_category_ranking_entries": 117,
-        "aliases_missing_from_establishments": 9,
-        "aliases_unresolved_without_guardrail": 9,
-        "known_missing_venues": 1,
+        "aliases_missing_from_establishments": 0,
+        "aliases_unresolved_without_guardrail": 0,
+        "known_missing_venues": 0,
         "active_known_missing_venues": 0,
         "duplicate_or_ambiguous_gpid_groups": 7
       },
-      "warning_count": 3,
+      "warning_count": 1,
       "active_known_missing_venues": 0,
       "duplicate_or_ambiguous_gpid_groups": 7
     },
@@ -38,7 +38,7 @@
       "public": false,
       "operator": true,
       "status": "warning",
-      "generated_at": "2026-04-27T16:43:01.531036+00:00",
+      "generated_at": "2026-04-27T17:01:43.857474+00:00",
       "readiness_url": "/assets/market-readiness/stratford-on-avon-district.json",
       "counts": {
         "total_establishments": 209,
@@ -63,7 +63,7 @@
       "public": true,
       "operator": true,
       "status": "warning",
-      "generated_at": "2026-04-27T16:43:01.524031+00:00",
+      "generated_at": "2026-04-27T17:01:43.850297+00:00",
       "readiness_url": "/assets/market-readiness/stratford-upon-avon.json",
       "counts": {
         "total_establishments": 209,

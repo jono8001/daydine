@@ -1,21 +1,21 @@
 {
-  "generated_at": "2026-04-27T16:43:01.539390+00:00",
+  "generated_at": "2026-04-27T17:01:43.865795+00:00",
   "market": "leamington-spa",
   "display_name": "Leamington Spa",
   "area_type": "town",
   "public": true,
   "operator": true,
   "data_source_prefix": "leamington",
-  "status": "blocked",
+  "status": "warning",
   "counts": {
     "total_establishments": 292,
     "total_scored": 287,
     "total_rankable": 252,
     "total_public_ranking_venues": 30,
     "total_category_ranking_entries": 117,
-    "aliases_missing_from_establishments": 9,
-    "aliases_unresolved_without_guardrail": 9,
-    "known_missing_venues": 1,
+    "aliases_missing_from_establishments": 0,
+    "aliases_unresolved_without_guardrail": 0,
+    "known_missing_venues": 0,
     "active_known_missing_venues": 0,
     "duplicate_or_ambiguous_gpid_groups": 7
   },
@@ -26,130 +26,12 @@
     "ranking": "assets/rankings/leamington-spa.json"
   },
   "top_warnings": [
-    "9 alias FHRSID(s) are missing from establishments and are not covered by active known-missing guardrails",
-    "9 alias FHRSID(s) are missing from establishments; see alias_missing_from_establishments",
     "7 duplicate/ambiguous Google Place group(s) recorded"
   ],
-  "alias_missing_from_establishments": [
-    {
-      "fhrsid": "1896714",
-      "public_name": "The Church Street Townhouse",
-      "postcode": "CV37 6HB"
-    },
-    {
-      "fhrsid": "1622082",
-      "public_name": "New York Pizzas",
-      "postcode": "CV37 6PH"
-    },
-    {
-      "fhrsid": "503931",
-      "public_name": "Super Nonna",
-      "postcode": "CV37 6JG"
-    },
-    {
-      "fhrsid": "503480",
-      "public_name": "The Vintner Wine Bar",
-      "postcode": "CV37 6EF"
-    },
-    {
-      "fhrsid": "502816",
-      "public_name": "Loxleys Restaurant and Wine Bar",
-      "postcode": "CV37 6EF"
-    },
-    {
-      "fhrsid": "503316",
-      "public_name": "Lambs",
-      "postcode": "CV37 6EF"
-    },
-    {
-      "fhrsid": "503481",
-      "public_name": "The Opposition",
-      "postcode": "CV37 6EF"
-    },
-    {
-      "fhrsid": "1381156",
-      "public_name": "Pick Thai",
-      "postcode": "CV37 6HB"
-    },
-    {
-      "fhrsid": "502864",
-      "public_name": "Hussains Indian Cuisine",
-      "postcode": "CV37 6EP"
-    }
-  ],
-  "alias_unresolved_without_guardrail": [
-    {
-      "fhrsid": "1896714",
-      "public_name": "The Church Street Townhouse",
-      "postcode": "CV37 6HB"
-    },
-    {
-      "fhrsid": "1622082",
-      "public_name": "New York Pizzas",
-      "postcode": "CV37 6PH"
-    },
-    {
-      "fhrsid": "503931",
-      "public_name": "Super Nonna",
-      "postcode": "CV37 6JG"
-    },
-    {
-      "fhrsid": "503480",
-      "public_name": "The Vintner Wine Bar",
-      "postcode": "CV37 6EF"
-    },
-    {
-      "fhrsid": "502816",
-      "public_name": "Loxleys Restaurant and Wine Bar",
-      "postcode": "CV37 6EF"
-    },
-    {
-      "fhrsid": "503316",
-      "public_name": "Lambs",
-      "postcode": "CV37 6EF"
-    },
-    {
-      "fhrsid": "503481",
-      "public_name": "The Opposition",
-      "postcode": "CV37 6EF"
-    },
-    {
-      "fhrsid": "1381156",
-      "public_name": "Pick Thai",
-      "postcode": "CV37 6HB"
-    },
-    {
-      "fhrsid": "502864",
-      "public_name": "Hussains Indian Cuisine",
-      "postcode": "CV37 6EP"
-    }
-  ],
+  "alias_missing_from_establishments": [],
+  "alias_unresolved_without_guardrail": [],
   "active_known_missing_venues": [],
-  "known_missing_venues": [
-    {
-      "fhrsid": "503480",
-      "public_name": "The Vintner Wine Bar",
-      "fsa_name": "Vintner Wine Bar",
-      "aka": [
-        "The Vintner",
-        "Vintner",
-        "Vintner Wine Bar"
-      ],
-      "address": "The Vintner, 5 Sheep Street, Stratford-upon-Avon",
-      "postcode": "CV37 6EF",
-      "local_authority": "Stratford-on-Avon",
-      "business_type": "Restaurant/Cafe/Canteen",
-      "fsa_rating": 5,
-      "inspection_date": "2024-05-09",
-      "website": "https://www.the-vintner.co.uk/",
-      "phone": "01789 297259",
-      "reason": "Present in official FHRS and DayDine report/review artifacts, but missing from the current public Stratford ranking/listing asset. Should be included in the next canonical FSA pull and public ranking rebuild.",
-      "status": "resolved",
-      "resolved_by": "scripts/canonicalise_vintner.py",
-      "resolved_note": "Canonical Stratford establishment, V4 score and public ranking output now include FHRSID 503480.",
-      "guardrail_file": "data/known_missing_stratford_venues.json"
-    }
-  ],
+  "known_missing_venues": [],
   "duplicate_or_ambiguous_gpid_groups": [
     {
       "gpid": "ChIJqayD1AJKd0gRNCUF-T8qbOw",
