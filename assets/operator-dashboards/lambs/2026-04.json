@@ -1,0 +1,112 @@
+{
+  "id": "lambs-2026-04",
+  "venue_slug": "lambs",
+  "venue": "Lambs",
+  "also_trading_as": "Lambs Restaurant",
+  "market": "Stratford-upon-Avon",
+  "category": "Restaurant",
+  "month": "2026-04",
+  "status": "ready",
+  "methodology": "DayDine RCS v3.4.1 visibility model + V4 operator report shell",
+  "headline": {
+    "overall_rank": 9,
+    "overall_total": 169,
+    "category_rank": 3,
+    "category_total": 56,
+    "public_visibility": "Public top 30 overall · Category top 30",
+    "tracking_status": "Strong public visibility; protect position and monitor nearby score clusters"
+  },
+  "scores": {
+    "public_rcs": 9.311,
+    "operator_v4_score": 8.939,
+    "confidence_class": "Rankable-B",
+    "rankable": true,
+    "league_eligible": true,
+    "entity_match": "confirmed"
+  },
+  "components": [
+    {
+      "name": "Trust & Compliance",
+      "score": 9.152,
+      "summary": "Strong compliance evidence. FHRS rating 5 with recent inspection evidence.",
+      "evidence": "FSA / FHRS present · 5 signals used"
+    },
+    {
+      "name": "Customer Validation",
+      "score": 9.229,
+      "summary": "Strong Google evidence, but currently single-platform.",
+      "evidence": "Google 1,372 reviews @ 4.7"
+    },
+    {
+      "name": "Commercial Readiness",
+      "score": 7.5,
+      "summary": "Website, menu and opening hours are present; direct booking/contact path is not confirmed.",
+      "evidence": "Website yes · menu yes · hours 7/7 · booking/contact absent"
+    }
+  ],
+  "monthly_tracking": [
+    {"label": "Overall rank", "value": "#9 of 169", "meaning": "Public top 30 overall"},
+    {"label": "Category rank", "value": "#3 of 56", "meaning": "Restaurant category top 30"},
+    {"label": "DayDine RCS", "value": "9.311", "meaning": "Current baseline for future movement"},
+    {"label": "Monthly movement", "value": "Baseline month", "meaning": "Future reports can show up/down movement"}
+  ],
+  "nearest_competitors": [
+    {"rank": 7, "venue": "Ettington Park Hotel", "category": "Hotel / Accommodation", "rcs": 9.363, "gap": "+0.052"},
+    {"rank": 8, "venue": "Cotswold Cafe", "category": "Cafe / Coffee Shop", "rcs": 9.348, "gap": "+0.037"},
+    {"rank": 9, "venue": "Lambs", "category": "Restaurant", "rcs": 9.311, "gap": "you"},
+    {"rank": 10, "venue": "Kolshi Restaurant", "category": "Restaurant", "rcs": 9.311, "gap": "+0.000"},
+    {"rank": 11, "venue": "Plantarium", "category": "Cafe / Coffee Shop", "rcs": 9.311, "gap": "+0.000"}
+  ],
+  "priorities": [
+    {
+      "title": "Add a second customer-platform listing",
+      "target": "Customer Validation",
+      "why": "Customer Validation is currently single-platform. A second source would improve confidence and reduce reliance on Google alone.",
+      "action": "Claim or strengthen an additional legitimate review/listing source such as TripAdvisor or OpenTable where appropriate.",
+      "expected_upside": "Raises the achievable confidence class toward Rankable-A."
+    },
+    {
+      "title": "Publish a reachable phone number or direct booking link",
+      "target": "Commercial Readiness",
+      "why": "The booking/contact path carries 25% of Commercial Readiness and is not confirmed in the public record.",
+      "action": "Add a public phone number, direct reservation URL, or booking path to the main public listing.",
+      "expected_upside": "Improves Commercial Readiness and reduces customer drop-off."
+    },
+    {
+      "title": "Defend review strength and score stability",
+      "target": "Customer Validation / tie-break strength",
+      "why": "Lambs is already in the public top 30 and sits close to other high-scoring venues.",
+      "action": "Maintain legitimate review momentum and ensure listing accuracy does not degrade.",
+      "expected_upside": "Protects rank within a tight score cluster."
+    }
+  ],
+  "commercial_impact": {
+    "confidence": "Low",
+    "monthly_revenue_impact": "£250 – £760",
+    "annual_projection": "£3,000 – £9,120",
+    "cost_band": "£200 – £1,000",
+    "payback_window": "1 – 3 months",
+    "wording_guardrail": "Directional estimate only. Exact numbers require internal cover and spend data."
+  },
+  "watch_list": [
+    "Google review-count movement",
+    "Emergence of a second review/listing platform",
+    "Public contact/booking path completeness",
+    "Any FHRS re-inspection activity",
+    "Movement of venues sharing the same rounded RCS score"
+  ],
+  "evidence": {
+    "fhrsid": "503316",
+    "fsa_rating": 5,
+    "last_inspection_date": "2026-01-13",
+    "google_rating": 4.7,
+    "google_review_count": 1372,
+    "google_place_id": "ChIJ07kQJjLOcEgR6LZ0g4f17Eg",
+    "website_present": true,
+    "menu_online": true,
+    "opening_hours": "7/7 days",
+    "direct_booking_contact_observed": false
+  },
+  "source_report": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md",
+  "download_report_url": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md"
+}
