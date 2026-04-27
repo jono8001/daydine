@@ -1,3 +1,5 @@
 Trigger market-readiness asset generation.
 
 Purpose: run scripts/generate_market_readiness.py and commit assets/market-readiness/*.json for /admin/markets.
+
+Retrigger reason: source-aware alias readiness checks so Leamington is not blocked by Stratford aliases.
