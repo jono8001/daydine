@@ -1,7 +1,7 @@
 {
   "la_name": "Warwick",
   "display_name": "Leamington Spa",
-  "slug": "leamington-spa",
+  "slug": "royal-leamington-spa",
   "methodology_version": "DayDine RCS v3.4.1 — V4 official-source mode with deterministic tie-breaks",
   "public_visibility_model": {
     "overall": "Top 30 overall",
@@ -3839,5 +3839,7 @@
     "lon": -1.5337
   },
   "radius_km": 4.0,
-  "distance_filter_applied": true
+  "distance_filter_applied": true,
+  "canonical_slug": "leamington-spa",
+  "legacy_alias": true
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-27T16:17:06.941379+00:00",
+  "generated_at": "2026-04-27T16:29:42.492518+00:00",
   "market": "leamington-spa",
   "display_name": "Leamington Spa",
   "area_type": "town",
@@ -12,7 +12,7 @@
     "total_scored": 287,
     "total_rankable": 252,
     "total_public_ranking_venues": 30,
-    "total_category_ranking_entries": 110,
+    "total_category_ranking_entries": 117,
     "aliases_missing_from_establishments": 9,
     "aliases_unresolved_without_guardrail": 9,
     "known_missing_venues": 1,

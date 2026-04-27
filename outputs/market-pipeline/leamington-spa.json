@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-04-27T16:29:42.499419+00:00",
+  "market": "leamington-spa",
+  "display_name": "Leamington Spa",
+  "data_source_prefix": "leamington",
+  "status": "blocked",
+  "area": {
+    "slug": "leamington-spa",
+    "legacy_slugs": [
+      "royal-leamington-spa"
+    ],
+    "data_source_prefix": "leamington",
+    "display_name": "Leamington Spa",
+    "la_name": "Warwick",
+    "region": "Warwickshire",
+    "area_type": "town",
+    "public": true,
+    "operator": true,
+    "centre": {
+      "lat": 52.2893,
+      "lon": -1.5337
+    },
+    "radius_km": 4.0,
+    "top_n": 30,
+    "description": "Town-centre diner guide for Leamington Spa using the Warwick source dataset, filtered around the Parade and town-centre hospitality area."
+  },
+  "source_areas": [
+    "leamington-spa"
+  ],
+  "files": {
+    "establishments": "leamington_establishments.json",
+    "scores_json": "leamington_rcs_v4_scores.json",
+    "scores_csv": "leamington_rcs_v4_scores.csv",
+    "menus": "leamington_menus.json",
+    "editorial": "leamington_editorial.json",
+    "companies_house": "leamington_companies_house_risk.json",
+    "companies_house_review_audit": "leamington_companies_house_review_audit.json",
+    "entity_resolution_report": "leamington_entity_resolution_report.json"
+  },
+  "outputs": {
+    "ranking": "assets/rankings/leamington-spa.json",
+    "readiness": "assets/market-readiness/leamington-spa.json",
+    "summary": "outputs/market-pipeline/leamington-spa.json"
+  },
+  "steps": [
+    {
+      "cmd": [
+        "reuse",
+        "leamington_rcs_v4_scores.json"
+      ],
+      "returncode": 0
+    },
+    {
+      "cmd": [
+        "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+        "scripts/build_area_rankings_v4.py",
+        "--scores",
+        "leamington_rcs_v4_scores.json",
+        "--establishments",
+        "leamington_establishments.json",
+        "--areas",
+        "outputs/market-pipeline/leamington_ranking_areas.generated.json"
+      ],
+      "dry_run": false,
+      "returncode": 0
+    },
+    {
+      "cmd": [
+        "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+        "scripts/generate_market_readiness.py"
+      ],
+      "dry_run": false,
+      "returncode": 0
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "next_steps": [
+    "Review /admin/markets and the generated readiness JSON.",
+    "Check famous/local venues manually before using the market commercially.",
+    "If status is warning, clear or explicitly accept the listed warnings before broad launch."
+  ]
+}
