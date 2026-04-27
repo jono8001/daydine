@@ -2,3 +2,5 @@ Trigger generic market pipeline for Leamington Spa.
 
 Command expected in workflow:
 python scripts/run_market_pipeline.py --market leamington-spa
+
+Retrigger reason: after fixing scripts/build_area_rankings_v4.py so single-market runs merge into assets/rankings/index.json instead of replacing other markets.
