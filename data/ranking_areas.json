@@ -4,6 +4,7 @@
     {
       "slug": "stratford-upon-avon",
       "legacy_slugs": ["stratford-on-avon"],
+      "data_source_prefix": "stratford",
       "display_name": "Stratford-upon-Avon",
       "la_name": "Stratford-on-Avon",
       "region": "Warwickshire",
@@ -20,6 +21,7 @@
     },
     {
       "slug": "stratford-on-avon-district",
+      "data_source_prefix": "stratford",
       "display_name": "Stratford-on-Avon District",
       "la_name": "Stratford-on-Avon",
       "region": "Warwickshire",
@@ -28,6 +30,24 @@
       "operator": true,
       "top_n": 30,
       "description": "Wider local-authority market view for operator intelligence, including villages, destination pubs, hotels and surrounding settlements."
+    },
+    {
+      "slug": "leamington-spa",
+      "legacy_slugs": ["royal-leamington-spa"],
+      "data_source_prefix": "leamington",
+      "display_name": "Leamington Spa",
+      "la_name": "Warwick",
+      "region": "Warwickshire",
+      "area_type": "town",
+      "public": true,
+      "operator": true,
+      "centre": {
+        "lat": 52.2893,
+        "lon": -1.5337
+      },
+      "radius_km": 4.0,
+      "top_n": 30,
+      "description": "Town-centre diner guide for Leamington Spa using the Warwick source dataset, filtered around the Parade and town-centre hospitality area."
     }
   ]
 }
