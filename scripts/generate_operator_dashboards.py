@@ -385,7 +385,7 @@ def build_dashboard(target: dict[str, Any], month: str) -> dict[str, Any]:
     scores = read_json(ROOT / f"{prefix}_rcs_v4_scores.json", {}) or {}
     row = find_ranking_row(target, ranking)
     if not row:
-        raise SystemExit(f"Could not find venue '{target.get('venue')}' in assets/rankings/{market_slug}.json")
+        raise ValueError(f"Could not find venue '{target.get('venue')}' in assets/rankings/{market_slug}.json")
     fhrsid = find_fhrsid(target, establishments)
     est = establishments.get(fhrsid, {}) if fhrsid else {}
     score = scores.get(fhrsid, {}) if fhrsid else {}
@@ -439,14 +439,28 @@ def build_dashboard(target: dict[str, Any], month: str) -> dict[str, Any]:
     return attach_history(snapshot)
 
 
-def generate(month_override: str | None = None, venue_filter: str | None = None) -> dict[str, Any]:
+def generate(month_override: str | None = None, venue_filter: str | None = None, strict: bool = False) -> dict[str, Any]:
     config = read_json(TARGETS_FILE, {"dashboards": [], "month": "2026-04"}) or {}
     month = month_override or config.get("month") or "2026-04"
     dashboards = []
+    errors = []
     for target in config.get("dashboards", []) or []:
         if venue_filter and target.get("venue_slug") != venue_filter:
             continue
-        snapshot = build_dashboard(target, month)
+        try:
+            snapshot = build_dashboard(target, month)
+        except Exception as exc:
+            error = {
+                "venue_slug": target.get("venue_slug"),
+                "venue": target.get("venue"),
+                "market": target.get("market"),
+                "error": str(exc),
+            }
+            errors.append(error)
+            print(f"Skipped {target.get('venue_slug')}: {exc}")
+            if strict:
+                raise
+            continue
         folder = OUT_DIR / snapshot["venue_slug"]
         month_path = folder / f"{month}.json"
         latest_path = folder / "latest.json"
@@ -473,6 +487,7 @@ def generate(month_override: str | None = None, venue_filter: str | None = None)
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "month": month,
         "dashboards": sorted(dashboards, key=lambda d: (d["venue"].lower(), d["month"])),
+        "errors": errors,
     }
     write_json(OUT_DIR / "manifest.json", manifest)
     return manifest
@@ -482,9 +497,12 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--month", help="Snapshot month, YYYY-MM")
     parser.add_argument("--venue", help="Optional venue_slug to generate only one dashboard")
+    parser.add_argument("--strict", action="store_true", help="Fail if any configured dashboard cannot be generated")
     args = parser.parse_args()
-    manifest = generate(args.month, args.venue)
+    manifest = generate(args.month, args.venue, args.strict)
     print(f"Generated {len(manifest['dashboards'])} operator dashboard snapshot(s) for {manifest['month']}")
+    if manifest.get("errors"):
+        print(f"Skipped {len(manifest['errors'])} dashboard target(s); see manifest errors")
     return 0
 
 
