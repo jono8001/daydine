@@ -1,9 +1,10 @@
 # DayDine Professional SaaS Roadmap
 
-**Status:** Working delivery plan  
+**Status:** Working delivery plan — strategy locked for next build phase  
 **Owner:** DayDine  
 **Created:** April 2026  
-**Purpose:** Convert DayDine from a strong public-ranking prototype into a professional UK restaurant intelligence SaaS with public rankings, authenticated client dashboards, admin tooling, monthly low-cost data refreshes, and a defensible methodology.
+**Last updated:** 28 April 2026  
+**Purpose:** Convert DayDine from a strong public-ranking prototype into a professional UK hospitality intelligence SaaS with public rankings, authenticated client dashboards, admin tooling, monthly low-cost data refreshes, and a defensible proprietary methodology.
 
 ---
 
@@ -11,15 +12,40 @@
 
 DayDine should become:
 
-> A UK restaurant market intelligence platform that publishes public evidence-based restaurant rankings and sells authenticated monthly intelligence dashboards to restaurant operators.
+> A UK hospitality intelligence platform that publishes public DayDine Intelligence rankings and sells authenticated monthly intelligence dashboards to restaurant operators.
 
 The correct operating model is:
 
 1. **Public site:** fast, public, mostly generated/static, suitable for diners and SEO.
 2. **Client portal:** Firebase-authenticated, venue-specific dashboards, monthly movement, downloadable reports.
 3. **Admin portal:** Firebase-authenticated internal tooling for market readiness, pipeline status, clients, reports, entity-review and publish decisions.
-4. **Data pipeline:** batch-refresh public/licensed data once per month, cache results, and never call expensive APIs from public page views.
-5. **Methodology:** evolve from a simple weighted score into a confidence-aware evidence-ranking model supported by venue-universe coverage certificates and entity-resolution audits.
+4. **Data pipeline:** batch-refresh authorised public/licensed data once per month, cache results, and never call expensive APIs from public page views.
+5. **Methodology:** evolve from V4 into V5 DayDine Evidence Rank, a proprietary confidence-aware hospitality intelligence model.
+
+### 0.1 Strategic lock, 28 April 2026
+
+DayDine will not try to beat Tripadvisor by claiming more review data. Tripadvisor has broad coverage and substantial review history, especially for already-visible venues. DayDine's competitive advantage must be different:
+
+> Tripadvisor shows who is already popular. DayDine reveals who is proven, under-discovered, rising or overexposed.
+
+Therefore V5 must position DayDine as a proprietary hospitality intelligence model that:
+
+- includes authorised review evidence, initially Google rating and Google review volume;
+- does not depend on Tripadvisor/OpenTable data at launch;
+- does not ingest unauthorised Tripadvisor/OpenTable review data;
+- separates popularity from quality;
+- separates evidence confidence from score;
+- uses category-normalised ranking;
+- surfaces DayDine Signals such as Proven Leader, Hidden Gem, Rising Venue and Overexposed;
+- retains public mystique by explaining principles, not exact formula or public scorecards.
+
+Primary planning references:
+
+```text
+docs/ADR-002-Authorised-Review-Data-And-V5-Positioning.md
+docs/DayDine-V5-Evidence-Rank-Blueprint.md
+docs/DayDine-Current-State-And-Next-Actions.md
+```
 
 ---
 
@@ -38,7 +64,7 @@ Monthly pipeline run -> collect/enrich/cache -> store results -> website reads c
 Incorrect model:
 
 ```text
-User opens ranking page -> call Google/Tripadvisor live
+User opens ranking page -> call Google/Tripadvisor/OpenTable live
 ```
 
 ### 1.2 Product principle
@@ -47,9 +73,9 @@ The public site and client product are related but not identical.
 
 | Surface | Purpose | Data emphasis |
 |---|---|---|
-| Public rankings | Diner-facing discovery and brand trust | public-evidence rank, confidence, coverage |
+| Public rankings | Diner-facing discovery and brand trust | DayDine Intelligence Rank, Evidence Confidence, coverage, category context |
 | Client dashboard | Operator value and monthly monitoring | movement, visibility, commercial gaps, action priorities |
-| Admin console | Internal quality control | data completeness, ambiguous matches, pipeline readiness |
+| Admin console | Internal quality control | data completeness, ambiguous matches, pipeline readiness, source diagnostics |
 
 ### 1.3 Methodology principle
 
@@ -57,17 +83,20 @@ DayDine should avoid claiming that it has objectively identified the "best resta
 
 Preferred public wording:
 
-> Top-ranked by DayDine's public-evidence confidence model.
+> Ranked by DayDine's proprietary hospitality intelligence model.
 
-Or:
+Alternative:
 
-> Best-evidenced restaurants in this market, based on public trust, customer validation, recognition, visibility and confidence signals.
+> DayDine rankings include authorised public review evidence, including Google review rating and review volume, alongside trust, category, visibility and market-intelligence signals.
 
 Avoid:
 
 > Objectively the best restaurants.
+> We analyse all reviews across the web.
+> We include Tripadvisor/OpenTable reviews.
+> Here is the full formula and exact weights.
 
-Unless DayDine later adds first-party inspection, verified diner panels, critic partnerships, or licensed editorial review data.
+Unless DayDine later adds first-party inspection, verified diner panels, critic partnerships, or licensed editorial/review data, it must not overclaim restaurant-quality objectivity or full review-universe coverage.
 
 ### 1.4 Moat principle
 
@@ -80,9 +109,19 @@ The moat should be:
 - monthly historical data;
 - human-reviewed ambiguity decisions;
 - coverage certificates;
-- probabilistic ranking/confidence modelling;
+- V5 Evidence Confidence logic;
+- category-normalised ranks;
+- DayDine Signals and Gap Signal;
 - operator interpretation and action history;
-- trusted UK restaurant intelligence brand.
+- trusted UK hospitality intelligence brand.
+
+### 1.5 Public mystique principle
+
+Public methodology should be:
+
+> Transparent principles. Proprietary machinery. No pay-to-play.
+
+Public pages should show rank, movement, category rank, Evidence Confidence, DayDine Signal and concise intelligence notes. They should not reveal exact weights, formula, source-by-source component scorecards or gaming instructions.
 
 ---
 
@@ -211,10 +250,13 @@ venues/{venueId}
   canonicalName
   fhrsid
   googlePlaceId
-  tripadvisorId
+  tripadvisorId optional/deferred
+  opentableId optional/deferred
   companiesHouseNumber
   marketSlug
   category
+  daydineSignal
+  evidenceConfidence
   address
   postcode
   tradingNames[]
@@ -242,6 +284,8 @@ operatorDashboards/{venueId}/snapshots/{month}
   operatorContext
   publicContext
   scores
+  evidenceConfidence
+  daydineSignal
   movement
   priorities
   commercialImpact
@@ -280,6 +324,8 @@ pipelineRuns/{runId}
   warnings[]
   errors[]
   artifactUrls[]
+  sourceCallCounts
+  estimatedCost
 ```
 
 ### 3.8 Coverage certificates
@@ -326,62 +372,64 @@ Day 7: publish dashboards and public updates
 2. Determine candidate dining venue universe
 3. Google Places discovery/enrichment for unmatched/new venues only
 4. Google Details refresh for existing venues using field masks and cached place IDs
-5. Tripadvisor metadata refresh for targeted venues only
-6. Companies House refresh where a company match exists or is needed
+5. Companies House refresh where a company match exists or is needed
+6. Optional OSM/coverage cross-check for missing venues
 7. Optional expert-recognition refresh: Michelin/AA/manual curated sources
-8. Entity resolution and ambiguity detection
-9. Human QA for ambiguous/high-impact cases
-10. Score calculation
-11. Rank simulation / confidence modelling
-12. Coverage certificate generation
-13. Public ranking publish
-14. Client dashboard snapshot generation
-15. Admin/client notification
+8. Optional Tripadvisor/OpenTable refresh ONLY if approved/licensed/API-compatible route exists
+9. Entity resolution and ambiguity detection
+10. Human QA for ambiguous/high-impact cases
+11. V4 baseline score calculation
+12. V5 Evidence Rank calculation beside V4
+13. Category ranks and DayDine Signal generation
+14. Coverage certificate generation
+15. Public ranking publish
+16. Client dashboard snapshot generation
+17. Admin/client notification
 ```
 
 ### 4.3 Cost-control rules
 
 1. Cache every third-party response with timestamp and source hash.
-2. Do not call Google/Tripadvisor for unchanged venues unless scheduled refresh is due.
+2. Do not call Google or any future licensed sources for unchanged venues unless scheduled refresh is due.
 3. Use Google Place IDs once resolved; avoid repeated text search.
 4. Use Google field masks to request only necessary fields.
-5. Avoid full review-text collection except for paid reports or QA samples.
-6. Use Tripadvisor metadata first; full reviews only selectively.
-7. Do not use OpenTable in the core model until pricing/licensing is clear.
-8. Batch by active paid/priority markets first.
-9. Store monthly snapshots so trend analysis does not require historical re-pulls.
-10. Add budget alarms before scaling beyond pilot markets.
+5. Avoid full review-text collection except for licensed/authorised paid-report QA samples.
+6. Do not use Tripadvisor/OpenTable in the launch core model unless access is authorised and documented.
+7. Batch by active paid/priority markets first.
+8. Store monthly snapshots so trend analysis does not require historical re-pulls.
+9. Add budget alarms before scaling beyond pilot markets.
+10. Never call expensive APIs from public page views.
 
 ### 4.4 Source priority
 
-#### Core sources now
+#### Core launch sources
 
 | Source | Role | Cost posture |
 |---|---|---|
 | FSA/FHRS | venue universe and compliance | free/low cost |
-| Google Places | public identity, rating/count, hours, website/contact | paid but manageable if cached |
-| Tripadvisor | rating/count/category metadata, selected review context | controlled use |
+| Google Places | identity, rating/count, hours, website/contact | paid but manageable if cached |
 | Companies House | entity risk and status | low cost/free API, but matching effort |
 | Manual local QA | high-value missing/ambiguous venue review | human cost, strong moat |
+| OSM/coverage cross-check | missing venue audit | low cost |
+| Expert recognition | Michelin/AA/local awards where legally clean | manual/licensing-aware |
 
-#### Later sources
+#### Deferred / conditional sources
 
-| Source | Role | Timing |
+| Source | Role | Condition |
 |---|---|---|
-| OpenTable / ResDiary / Dish Cult | booking/review/availability intelligence | later, after pricing clarity |
-| AA Rosettes | expert recognition | add early if low-friction |
-| Michelin | expert recognition | add manually/licensing-aware first |
+| Tripadvisor | rating/count/category metadata, if authorised | official/licensed/API-compatible route only |
+| OpenTable / ResDiary / Dish Cult | booking/review/availability intelligence | later, after pricing/licensing clarity |
+| Full review text | narrative/context only | licensed/authorised and not headline ranking by default |
 | Good Food Guide / Harden's | benchmark/editorial layer | later, licensing-aware |
-| OSM/Overpass | missing venue cross-check | useful for coverage confidence |
 | Ordnance Survey / UPRN | address validation | later if needed |
 
 ---
 
 ## 5. Methodology evolution
 
-### 5.1 Current problem
+### 5.1 Current baseline
 
-The current V4 method is stronger than the older V3.4 structure, but it is still a fixed-weight score. It is good for a first serious public-evidence model, but not enough to claim "best restaurants" in a cast-iron ordinary-language sense.
+V4 is the strongest current implemented methodology baseline.
 
 Current V4 should be treated as:
 
@@ -391,31 +439,50 @@ Not:
 
 > Objective restaurant quality score.
 
-### 5.2 Target methodology: DayDine Evidence Rank Model
+Important V4 principles to preserve:
 
-Develop a V5-style model with:
+- FHRS is compliance/trust, not food quality.
+- Review text sentiment should not drive headline ranking.
+- Missing data must not inflate scores.
+- Confidence/rankability must be separate from score.
+- Single-platform customer validation should cap confidence.
+- Entity ambiguity must block or reduce rankability.
 
-1. Venue-universe completeness.
-2. Entity-resolution confidence.
-3. Multi-platform customer validation.
-4. Expert-recognition layer.
-5. Trust/compliance layer.
-6. Commercial accessibility layer.
-7. Market-presence and durability layer.
-8. Uncertainty intervals.
-9. Rank probabilities.
-10. Coverage certificates.
+### 5.2 Target methodology: V5 DayDine Evidence Rank Model
 
-### 5.3 Suggested public evidence families
+V5 is now the next methodology build direction.
 
-| Evidence family | Role | Public ranking weight direction |
-|---|---|---:|
-| Customer appeal / validation | customer rating/count metadata, bias-corrected | 40-45% |
-| Expert recognition | Michelin, AA, credible guides | 15-20% |
-| Trust & compliance | FHRS/FSA | 10-15% |
-| Market presence / durability | review volume, cross-platform consistency, trading continuity | 10-15% |
-| Commercial accessibility | website/menu/hours/contact/booking | 5-10% |
-| Entity and coverage confidence | certainty of match and venue universe | gating / confidence factor |
+V5 should include:
+
+1. Authorised review evidence, initially Google rating and review volume.
+2. Venue-universe completeness.
+3. Entity-resolution confidence.
+4. Evidence Confidence independent from score.
+5. Capped/saturating review-volume benefit.
+6. Bayesian/shrinkage-aware rating logic.
+7. Category-normalised ranking.
+8. DayDine Signals: Proven Leader, Established Favourite, Hidden Gem, Rising Venue, Specialist Pick, Overexposed, Under-Evidenced, Profile Only.
+9. DayDine Gap Signal: difference between public visibility and underlying evidence/intelligence.
+10. Expert-recognition layer, manually/licensing-aware first.
+11. Trust/compliance layer.
+12. Commercial-accessibility layer.
+13. Market-presence and durability layer.
+14. Coverage certificates.
+15. Later uncertainty intervals and rank probabilities.
+
+### 5.3 Suggested evidence families
+
+Do not publish exact public weights. Internally, V5 should start with these evidence families:
+
+| Evidence family | Role |
+|---|---|
+| Authorised review evidence | Google rating/count initially; bias-corrected and volume-capped. |
+| Trust & compliance | FHRS/FSA gates, caps and confidence effects. |
+| Venue surface/accessibility | website, menu, hours, phone, booking/contact path. |
+| Category and occasion context | fair comparison across pubs, cafés, fine dining, casual venues, etc. |
+| Recognition | Michelin, AA, local awards/press where legally clean. |
+| Market presence/momentum | monthly movement, durability and visibility. |
+| Entity and coverage confidence | certainty of venue match and completeness of market universe. |
 
 ### 5.4 Separate public and operator scoring emphasis
 
@@ -425,43 +492,38 @@ Operator dashboard should emphasise commercial readiness more heavily because it
 
 | Product | Emphasis |
 |---|---|
-| Public ranking | best-evidenced restaurants in a market/category |
-| Operator dashboard | how visible, credible and commercially capture-ready the restaurant appears externally |
+| Public ranking | DayDine Intelligence Rank, Evidence Confidence, category position, public discovery |
+| Operator dashboard | visibility, credibility, commercial capture-readiness, movement and action priorities |
 
 ### 5.5 Mathematical upgrades
 
 #### Bayesian rating model
 
-For each platform:
+For each authorised platform:
 
 ```text
-shrunk_rating = (n * observed_rating + k * platform_prior) / (n + k)
+shrunk_rating = (n * observed_rating + k * platform_or_category_prior) / (n + k)
 ```
 
-Use platform-specific priors and pseudo-counts.
+Use market/category priors where possible.
 
-#### Platform bias correction
+#### Saturating review count
 
-Estimate each platform's typical rating distribution by category and market type.
+Review-count benefit should saturate. More reviews should improve confidence, not endlessly dominate quality.
 
-Example:
-
-```text
-Google 4.6 may not mean the same thing as Tripadvisor 4.6.
-```
-
-#### Uncertainty intervals
+#### Evidence Confidence
 
 Each venue should have:
 
 ```text
 score_estimate
-lower_bound
-upper_bound
-confidence_class
+score_band or uncertainty range
+Evidence Confidence
+DayDine Signal
+coverage_status
 ```
 
-#### Rank simulation
+#### Rank simulation, later V5 phase
 
 Monthly ranking should eventually use simulation:
 
@@ -469,7 +531,7 @@ Monthly ranking should eventually use simulation:
 For each venue:
   sample score from venue uncertainty distribution
   rank all venues
-Repeat 10,000 times
+Repeat many times
 Calculate expected rank, top-10 probability, top-30 probability
 ```
 
@@ -489,23 +551,10 @@ Always provide:
 ```text
 overall rank
 category rank
-confidence class
-rank band
+Evidence Confidence
+DayDine Signal
+rank band when available
 ```
-
-This reduces unfair comparisons between cafés, pubs, fine-dining venues and takeaways.
-
-### 5.6 Minimum evidence to rank
-
-A venue should only appear in the primary league table if:
-
-1. It is in the confirmed venue universe.
-2. It has an FSA/FHRS record or explicitly justified equivalent.
-3. It has confirmed public trading identity.
-4. It has at least one customer-validation source.
-5. It is not closed or unresolved.
-6. It passes entity-resolution thresholds.
-7. It passes confidence/rankability gates.
 
 ---
 
@@ -526,13 +575,11 @@ Venues included in public ranking
 Venues excluded as non-restaurant/private/institutional
 Venues excluded as closed
 Venues with confirmed Google match
-Venues with Tripadvisor match
+Venues with any approved second-source match if available
 Venues with Companies House match
 Ambiguous entity groups
 Known-missing high-profile venues
-Rankable-A/B count
-Directional-C count
-Profile-only-D count
+Rankable/Directional/Profile-only counts
 Human reviewer
 Publish decision
 ```
@@ -560,28 +607,23 @@ View market coverage
 
 ## Stage 0 — Freeze, document, stabilise
 
-**Goal:** Stop feature sprawl and establish the professional roadmap.
+**Status:** Completed enough to move to build.
 
-### Tasks
-
-- Add this roadmap to the repo.
-- Mark current operator/admin pages as prototype/internal.
-- Create launch readiness checklist.
-- Create architecture decision record.
-- Document public/static vs Firebase-authenticated boundaries.
-
-### Deliverables
+### Completed/planned docs
 
 ```text
 docs/DayDine-Professional-SaaS-Roadmap.md
 docs/DayDine-Launch-Readiness.md
 docs/ADR-001-Public-Static-Plus-Firebase-SaaS.md
+docs/ADR-002-Authorised-Review-Data-And-V5-Positioning.md
+docs/DayDine-V5-Evidence-Rank-Blueprint.md
 ```
 
 ### Acceptance criteria
 
 - Repo clearly states current limitations.
 - No one mistakes static operator pages for secure client access.
+- V5 strategy is defined before implementation.
 - Next development work follows this roadmap.
 
 ---
@@ -637,6 +679,7 @@ viewer: limited read-only client access
 - Lambs dashboard loads only after login.
 - Lambs dashboard preserves report-aligned content.
 - Dashboard shows operator context and public context separately.
+- Dashboard can show Evidence Confidence and DayDine Signal when V5 is available.
 - Static JSON is no longer the canonical client record.
 
 ---
@@ -654,6 +697,7 @@ viewer: limited read-only client access
 /admin/pipeline
 /admin/place-review
 /admin/coverage
+/admin/methodology-audit
 ```
 
 ### Tasks
@@ -681,7 +725,7 @@ viewer: limited read-only client access
 ### Tasks
 
 - Create canonical venue identity model.
-- Link FSA ID, Google Place ID, Tripadvisor ID and Companies House ID.
+- Link FSA ID, Google Place ID, Companies House ID and any approved future Tripadvisor/OpenTable IDs.
 - Add resolver status and reviewer notes.
 - Generate coverage certificate for Stratford.
 - Generate coverage certificate for Leamington.
@@ -705,11 +749,11 @@ viewer: limited read-only client access
 - Add monthly scheduled GitHub Action or Firebase-triggered function.
 - Pull FSA/FHRS.
 - Refresh Google only where due.
-- Refresh Tripadvisor metadata selectively.
 - Refresh Companies House matches.
+- Run optional approved/licensed source refreshes only if available.
 - Run entity resolution.
 - Generate market readiness.
-- Generate rankings.
+- Generate V4 baseline and V5 outputs.
 - Generate client snapshots.
 - Store pipeline run summary.
 
@@ -724,47 +768,54 @@ viewer: limited read-only client access
 
 ## Stage 6 — Methodology V5 prototype
 
-**Goal:** Move beyond simple fixed-weight scoring.
+**Goal:** Move beyond simple fixed-weight scoring into DayDine Evidence Rank.
 
 ### Tasks
 
 - Build V5 experimental model beside V4.
-- Add expert-recognition field schema.
-- Add uncertainty intervals.
-- Add rank probability simulation.
+- Add V5 output schema.
+- Add DayDine Signal classifier.
+- Add Evidence Confidence classifier.
+- Add Gap Signal classifier.
 - Add category-normalised ranking.
+- Add expert-recognition field schema.
 - Add source coverage scoring.
 - Compare V4 vs V5 on Stratford and Leamington.
+- Later add uncertainty intervals and rank probability simulation.
 
 ### Acceptance criteria
 
 - V5 produces interpretable outputs.
-- Top movers are explainable.
-- V5 improves confidence handling without creating black-box confusion.
-- Public wording remains conservative and defensible.
+- Top movers are explainable internally.
+- V5 improves confidence handling without creating public black-box confusion.
+- V5 does not require Tripadvisor/OpenTable launch data.
+- Public wording remains proprietary, premium and defensible.
 
 ---
 
 ## Stage 7 — Public methodology and trust layer
 
-**Goal:** Make the site credible to diners, operators and press.
+**Goal:** Make the site credible to diners, operators and press without exposing the full model.
 
 ### Tasks
 
 - Rewrite public methodology in plain English.
 - Remove confusing V3.4/V4 transition wording from public surface once cutover is ready.
+- Remove any stale claims about 40+ signals, aspect-level review intelligence or cross-source review convergence unless true.
 - Add coverage explanation.
 - Add correction/appeal process.
 - Add data-source page.
 - Add score limitations.
 - Add update cadence.
+- Add clear explanation that exact weights/formula are proprietary to prevent gaming.
 
 ### Acceptance criteria
 
 - A public user can understand what the ranking means.
 - An operator can challenge or correct factual issues.
 - The site does not overclaim objective dining quality.
-- Confidence classes are explained.
+- The site does not imply Tripadvisor/OpenTable review ingestion unless true.
+- Confidence classes and DayDine Signals are explained.
 
 ---
 
@@ -810,6 +861,7 @@ viewer: limited read-only client access
 - Coverage certificate complete.
 - Entity ambiguity reviewed.
 - Public top 30 manually spot-checked.
+- Hidden Gems list manually spot-checked.
 - Known high-profile venues present or explained.
 - Methodology output reviewed.
 - Admin publish decision recorded.
@@ -846,38 +898,40 @@ Rules:
 - Prefer Place ID refresh over text search.
 - Store last refresh timestamp.
 - Do not collect review text for headline ranking.
+- Treat Google rating/count as authorised review evidence, but cap confidence because it is one platform.
 
 ### 8.2 Tripadvisor
 
-Use for metadata first.
+Not a launch dependency.
 
-Minimum fields:
+Permitted future uses:
 
 ```text
 tripadvisor_id
 rating
 review_count
-ranking/category where available
+ranking/category where authorised
 url
 last_refreshed
 ```
 
 Rules:
 
-- Avoid full review pulls at scale.
-- Use only for customer validation and cross-platform breadth.
-- Full review text only for paid report narratives or QA samples.
+- Use only through official/licensed/API-compatible or legally reviewed routes.
+- Do not rely on unauthorised scraping as the core model.
+- Full review text is not a headline-ranking dependency.
 
 ### 8.3 OpenTable and booking platforms
 
-Do not include in core model now.
+Do not include in the launch core model.
 
 Later use cases:
 
 - booking availability;
-- review metadata;
+- review metadata if authorised;
 - reservation friction;
-- operator report intelligence.
+- operator report intelligence;
+- external reference links.
 
 ### 8.4 Expert recognition
 
@@ -945,14 +999,9 @@ Use to ask:
 
 ## 10. Immediate next implementation stack
 
-### Stack A — Freeze and documentation
+The next phase is now build, not more planning.
 
-1. Add this roadmap.
-2. Add launch readiness doc.
-3. Add architecture decision record.
-4. Mark operator/admin static routes as prototype/internal.
-
-### Stack B — Firebase Auth foundation
+### Stack A — Firebase Auth foundation
 
 1. Add Firebase config module.
 2. Add `/login`.
@@ -962,7 +1011,7 @@ Use to ask:
 6. Add draft Firebase rules.
 7. Add local/mock mode for development.
 
-### Stack C — First protected client dashboard
+### Stack B — First protected client dashboard
 
 1. Seed Lambs venue/client/user access records.
 2. Migrate Lambs snapshot into Firebase.
@@ -970,18 +1019,18 @@ Use to ask:
 4. Hide or redirect `/operator/lambs` behind login.
 5. Confirm client cannot access other dashboards.
 
-### Stack D — Market coverage certificates
+### Stack C — Market coverage certificates
 
 1. Generate Stratford coverage certificate.
 2. Generate Leamington coverage certificate.
 3. Add coverage panel to ranking pages.
 4. Add admin coverage review screen.
 
-### Stack E — Methodology V5 blueprint
+### Stack D — Methodology V5 prototype
 
-1. Write V5 technical blueprint.
-2. Add uncertainty/rank-probability prototype.
-3. Add expert-recognition schema.
+1. Implement V5 deterministic output beside V4.
+2. Add DayDine Signal, Evidence Confidence and Gap Signal.
+3. Add category-normalised ranking.
 4. Compare V4 vs V5 on Stratford.
 5. Decide public cutover language.
 
@@ -992,18 +1041,19 @@ Use to ask:
 DayDine is professional-ready when:
 
 1. Public rankings have coverage certificates.
-2. Public methodology is stable and non-transitional.
-3. Client dashboards require login.
-4. Client users can only see their own venues.
-5. Admin pages require admin role.
-6. Monthly data pipeline runs from cached/batch sources.
-7. Google/Tripadvisor costs are bounded and logged.
-8. Ambiguous entities are reviewed before ranking.
-9. Known missing high-profile venues are managed.
-10. Dashboard movement over time is retained.
-11. Report/PDF export exists.
-12. Correction/appeal workflow exists.
-13. Terms/privacy and pricing are ready.
+2. Public methodology is stable, premium and non-transitional.
+3. Public methodology mentions authorised review evidence but does not imply Tripadvisor/OpenTable ingestion.
+4. Client dashboards require login.
+5. Client users can only see their own venues.
+6. Admin pages require admin role.
+7. Monthly data pipeline runs from cached/batch sources.
+8. Google and any future licensed-source costs are bounded and logged.
+9. Ambiguous entities are reviewed before ranking.
+10. Known missing high-profile venues are managed.
+11. Dashboard movement over time is retained.
+12. Report/PDF export exists.
+13. Correction/appeal workflow exists.
+14. Terms/privacy and pricing are ready.
 
 ---
 
@@ -1017,16 +1067,16 @@ Next engineering move:
 Implement Firebase Auth + role-based /client and /admin foundations.
 ```
 
-Next methodology move:
+Next data/trust move:
 
 ```text
 Build the coverage certificate system for Stratford and Leamington.
 ```
 
-Next data move:
+Next methodology move:
 
 ```text
-Design the canonical venue identity graph and monthly cached enrichment pipeline.
+Build V5 Evidence Rank deterministic outputs beside V4.
 ```
 
-These three moves turn DayDine from a strong prototype into the foundation of a professional SaaS product.
+These moves turn DayDine from a strong prototype into the foundation of a professional SaaS product.
