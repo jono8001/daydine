@@ -513,9 +513,69 @@ Acceptance criteria:
 
 ---
 
-## 10. Suggested prompt for the next chat
+## 10. Latest session update — 28 April 2026
 
-Paste this into a new chat if context is lost:
+### What changed in this session
+
+- Reframed DayDine's competitive strategy against Tripadvisor and OpenTable.
+- Confirmed that DayDine should not try to compete as a full review-data aggregator at launch.
+- Locked the idea that Google rating/review volume can be described as authorised review evidence, but Tripadvisor/OpenTable review ingestion must not be implied unless authorised access exists.
+- Clarified that V4 is the current implemented baseline and V5 is the next methodology build direction.
+- Created the V5 Evidence Rank direction: proprietary hospitality intelligence, DayDine Signals, Evidence Confidence, Gap Signal, category-normalised ranking, capped review-volume benefit and public methodology mystique.
+- Clarified that the client-dashboard build must be a reusable protected framework, not a Lambs-specific project.
+- Preserved prior planning/history docs; the new documents sit on top of the previous V4/TripAdvisor/Firebase planning work rather than replacing it.
+
+### Files changed
+
+```text
+docs/DayDine-Current-State-And-Next-Actions.md
+docs/DayDine-Professional-SaaS-Roadmap.md
+docs/ADR-002-Authorised-Review-Data-And-V5-Positioning.md
+docs/DayDine-V5-Evidence-Rank-Blueprint.md
+docs/DayDine-Client-Dashboard-Pilot-Pattern.md
+```
+
+### Commits made
+
+```text
+344b791 - Update DayDine handover with V5 strategy lock and build next actions
+e4abf5f - Add ADR-002 for authorised review data and V5 positioning
+8ea6eee - Add V5 Evidence Rank blueprint
+3ba59be - Update SaaS roadmap for V5 strategy lock and build phase
+ca666ae - Clarify protected dashboard pilot pattern is not Lambs-specific
+d156741 - Clarify next build is generic protected dashboard framework, not Lambs-specific
+```
+
+This final handover update is an additional commit after the above list.
+
+### Decisions made
+
+1. **V5 is the next methodology destination.** V4 remains the preserved implemented baseline and should be compared against V5 before any cutover.
+2. **DayDine should not depend on unauthorised Tripadvisor/OpenTable scraping.** Tripadvisor/OpenTable can be future sources only through official/licensed/API-compatible or legally reviewed routes.
+3. **Google reviews count as authorised review evidence.** DayDine can say its rankings include review evidence, but must specify authorised public review evidence and avoid implying full cross-web review coverage.
+4. **Public methodology should have mystique.** Explain principles, coverage and confidence bands, but do not publish exact formula, weights or public source-by-source scorecards.
+5. **DayDine's wedge is hospitality intelligence, not review volume.** Tripadvisor shows who is already popular; DayDine should reveal Proven Leaders, Hidden Gems, Rising Venues and Overexposed venues.
+6. **Client dashboard build is framework-first.** Lambs is only a possible first fixture because data exists; the product must be generic and venue-agnostic.
+7. **The next phase is build.** Do not do more strategy unless a concrete blocker appears.
+
+### Current blockers or risks
+
+- Firebase Auth, role-aware `/client` and `/admin`, and Firebase security rules are not yet implemented.
+- Static admin/operator pages and public JSON are still not suitable for real paid-client data.
+- Coverage certificates for Stratford-upon-Avon and Leamington Spa are not yet built.
+- V5 Evidence Rank is defined but not yet implemented.
+- Public methodology/copy may still contain older V3/V4 language or over-specific claims; it should be reviewed before public beta.
+- Launch credibility depends on clear wording: authorised review evidence is included, but Tripadvisor/OpenTable review ingestion is not currently part of the launch model.
+- Leamington still has warning status due to ambiguous/duplicate Google Place groups.
+- Monthly external refresh/cost logging is not yet a complete end-to-end pipeline.
+
+### Next 3 actions
+
+1. **Build Firebase Auth + protected app shells.** Add `/login`, `/client`, `/admin`, role guards, logout flow and initial Firebase security rules. Reuse the existing Firebase config pattern where appropriate.
+2. **Build the generic protected client-dashboard framework.** Implement the client/venue/access/snapshot data pattern and seed one existing fixture only to prove the framework. Do not hard-code Lambs-specific behaviour.
+3. **Build coverage certificates and then V5 deterministic outputs.** Generate Stratford and Leamington coverage certificates, then prototype V5 beside V4 with DayDine Signal, Evidence Confidence, category ranks and Gap Signal.
+
+### Suggested prompt for the next chat
 
 ```text
 We are continuing work on the DayDine repo: https://github.com/jono8001/daydine
