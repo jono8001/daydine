@@ -18,9 +18,10 @@ Before doing any implementation, please read these project-memory files:
 1. docs/DayDine-Professional-SaaS-Roadmap.md
 2. docs/DayDine-V5-Evidence-Rank-Blueprint.md
 3. docs/ADR-002-Authorised-Review-Data-And-V5-Positioning.md
-4. docs/DayDine-Prior-Work-Inventory.md
-5. docs/DayDine-Roadmap-Implementation-Control.md
-6. docs/DayDine-Current-State-And-Next-Actions.md
+4. docs/DayDine-Client-Dashboard-Pilot-Pattern.md
+5. docs/DayDine-Prior-Work-Inventory.md
+6. docs/DayDine-Roadmap-Implementation-Control.md
+7. docs/DayDine-Current-State-And-Next-Actions.md
 
 Then continue from the current next action. Do not rebuild from scratch. Reuse, migrate, refactor or consciously retire prior work according to the control note.
 ```
@@ -128,7 +129,23 @@ Avoid claiming:
 
 unless DayDine later adds first-party inspection, verified diner panels, critic partnerships, or licensed editorial review data.
 
-### 3.4 Prior work preservation
+### 3.4 Client dashboard build clarification
+
+The next client-dashboard build is **not** about Lambs as a strategic one-restaurant focus.
+
+The correct build objective is:
+
+> Build a reusable protected client-dashboard framework, then seed one or two existing dashboard records as fixtures to prove that the framework works.
+
+Lambs may be the first fixture only because the repo already has a rich report-aligned prototype dashboard for Lambs. The code must be generic and venue-agnostic. Adding a second venue should require data/config only, not bespoke code.
+
+Reference:
+
+```text
+docs/DayDine-Client-Dashboard-Pilot-Pattern.md
+```
+
+### 3.5 Prior work preservation
 
 Every roadmap stage must check:
 
@@ -175,6 +192,14 @@ docs/ADR-002-Authorised-Review-Data-And-V5-Positioning.md
 ```
 
 Purpose: supersedes any planning assumption that DayDine's launch ranking depends on unauthorised Tripadvisor/OpenTable scraping. Locks the competitive position and public methodology style.
+
+### Client dashboard pilot-pattern clarification
+
+```text
+docs/DayDine-Client-Dashboard-Pilot-Pattern.md
+```
+
+Purpose: clarifies that the SaaS build must create a reusable protected dashboard framework; Lambs is only a possible first fixture, not the strategic product focus.
 
 ### Prior work inventory
 
@@ -271,7 +296,7 @@ Current Lambs dashboard is report-aligned:
 
 But:
 
-> This is still static/prototype. It must be migrated into Firebase before being used as a real client product.
+> This is still static/prototype. The next build must create a generic protected dashboard framework first. Lambs can be used as a first seed fixture only if it helps prove the framework.
 
 ---
 
@@ -399,6 +424,7 @@ Future role:
 8. Tripadvisor/OpenTable are not launch dependencies unless authorised/licensed/API-compatible access is secured.
 9. Before each major build, check prior work inventory.
 10. Public methodology should have mystique: transparent principles, proprietary machinery.
+11. Client-dashboard work must be framework-first, not Lambs-specific.
 
 ---
 
@@ -432,22 +458,32 @@ Acceptance criteria:
 - admin user can access admin shell;
 - Firebase/security rules enforce access, not only frontend hiding.
 
-### Next action 2 — Protected Lambs dashboard migration
+### Next action 2 — Protected client-dashboard framework
 
-Migrate the current report-aligned Lambs static dashboard into Firebase:
+Build a reusable protected dashboard framework, then seed one existing dashboard as a fixture to prove the pattern.
+
+Possible first fixture:
 
 ```text
-venues/lambs
-clients/lambs
-clientVenueAccess/client_lambs_lambs
-operatorDashboards/lambs/snapshots/2026-04
+assets/operator-dashboards/lambs/latest.json
+```
+
+Target generic data pattern:
+
+```text
+clients/{clientId}
+venues/{venueId}
+clientVenueAccess/{clientId}_{venueId}
+operatorDashboards/{venueId}/snapshots/{month}
 ```
 
 Acceptance criteria:
 
-- Lambs client user can see Lambs only.
-- Admin can see/manage Lambs.
-- Static `/operator/lambs` is no longer the canonical client product.
+- framework is generic and venue-agnostic;
+- first seeded client user can see only assigned venue(s);
+- admin can see/manage all seeded venues;
+- adding a second venue requires data/config only, not bespoke code;
+- static `/operator/<venue>` routes are no longer canonical client products.
 
 ### Next action 3 — Coverage certificate system
 
@@ -489,16 +525,17 @@ Please use the GitHub connector/API tool to read these files first:
 1. docs/DayDine-Professional-SaaS-Roadmap.md
 2. docs/DayDine-V5-Evidence-Rank-Blueprint.md
 3. docs/ADR-002-Authorised-Review-Data-And-V5-Positioning.md
-4. docs/DayDine-Prior-Work-Inventory.md
-5. docs/DayDine-Roadmap-Implementation-Control.md
-6. docs/DayDine-Current-State-And-Next-Actions.md
+4. docs/DayDine-Client-Dashboard-Pilot-Pattern.md
+5. docs/DayDine-Prior-Work-Inventory.md
+6. docs/DayDine-Roadmap-Implementation-Control.md
+7. docs/DayDine-Current-State-And-Next-Actions.md
 
 Then begin the build phase. Do not do more strategy unless a blocker appears.
 
 Current build priority:
 
 1. Firebase Auth + role-based /client and /admin foundations.
-2. Migrate Lambs dashboard into protected Firebase data.
+2. Build the generic protected client-dashboard framework and seed the first existing fixture only to prove the pattern.
 3. Build Stratford and Leamington coverage certificates.
 4. Prototype V5 Evidence Rank beside V4.
 
