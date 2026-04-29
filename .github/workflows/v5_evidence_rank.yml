@@ -1,0 +1,150 @@
+name: V5 Evidence Rank Prototype
+
+# Generates repeatable V5 prototype outputs beside V4.
+#
+# Scope:
+# - Rebuilds Stratford/Leamington coverage certificates from readiness assets.
+# - Builds experimental V5 Evidence Rank JSON outputs under assets/v5/.
+# - Runs basic JSON/schema sanity checks.
+# - Uploads the generated outputs as an artifact.
+# - Optionally commits generated outputs back to the branch when requested manually.
+#
+# This workflow does not call external APIs and does not deploy Firebase.
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_outputs:
+        description: 'Commit generated assets/coverage and assets/v5 outputs back to the branch'
+        required: true
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+      reason:
+        description: 'Optional audit note'
+        required: false
+        default: ''
+  push:
+    paths:
+      - 'scripts/build_coverage_certificates.py'
+      - 'scripts/build_v5_evidence_rank.py'
+      - 'assets/market-readiness/**'
+      - 'assets/rankings/**'
+      - '*_rcs_v4_scores.json'
+      - '.github/workflows/v5_evidence_rank.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: v5-evidence-rank-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-v5:
+    name: Build V5 prototype outputs
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Record run context
+        run: |
+          echo "Run ID:        ${{ github.run_id }}"
+          echo "Ref:           ${{ github.ref }}"
+          echo "SHA:           ${{ github.sha }}"
+          echo "Event:         ${{ github.event_name }}"
+          echo "Commit outputs:${{ github.event.inputs.commit_outputs }}"
+          echo "Reason:        ${{ github.event.inputs.reason }}"
+
+      - name: Build coverage certificates
+        run: python scripts/build_coverage_certificates.py --markets stratford-upon-avon leamington-spa
+
+      - name: Build V5 Evidence Rank prototype
+        run: python scripts/build_v5_evidence_rank.py --markets stratford-upon-avon leamington-spa
+
+      - name: Validate generated JSON
+        run: |
+          python - <<'PY'
+          import glob
+          import json
+          import sys
+
+          paths = sorted(glob.glob('assets/coverage/*.json') + glob.glob('assets/v5/*.json'))
+          if not paths:
+              sys.exit('No coverage/V5 JSON files generated')
+          for path in paths:
+              with open(path, encoding='utf-8') as f:
+                  json.load(f)
+              print(f'valid json: {path}')
+          PY
+
+      - name: Validate V5 contract basics
+        run: |
+          python - <<'PY'
+          import json
+          import sys
+
+          required = {
+              'venue_id',
+              'market_slug',
+              'canonical_name',
+              'category',
+              'v5_score_estimate',
+              'v5_overall_rank',
+              'v5_category_rank',
+              'evidence_confidence',
+              'coverage_status',
+              'daydine_signal',
+              'daydine_gap_signal',
+              'public_intelligence_note',
+          }
+          for market in ['stratford-upon-avon', 'leamington-spa']:
+              with open(f'assets/v5/{market}.json', encoding='utf-8') as f:
+                  data = json.load(f)
+              if data.get('status') != 'experimental':
+                  sys.exit(f'{market}: expected status=experimental')
+              records = data.get('records') or []
+              if not records:
+                  sys.exit(f'{market}: no public V5 records emitted')
+              missing = required - set(records[0])
+              if missing:
+                  sys.exit(f'{market}: first record missing fields {sorted(missing)}')
+              if 'internal_diagnostics' in records[0]:
+                  sys.exit(f'{market}: public records must not expose internal_diagnostics')
+              internal = data.get('internal_records') or []
+              if not internal or 'internal_diagnostics' not in internal[0]:
+                  sys.exit(f'{market}: internal_records should retain diagnostics for admin QA')
+              print(f'{market}: {len(records)} V5 records validated')
+          PY
+
+      - name: Upload V5 artifact bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: daydine-v5-prototype-${{ github.run_id }}
+          if-no-files-found: error
+          retention-days: 30
+          path: |
+            assets/coverage/**
+            assets/v5/**
+
+      - name: Commit generated outputs when requested
+        if: github.event_name == 'workflow_dispatch' && github.event.inputs.commit_outputs == 'true'
+        run: |
+          if git diff --quiet -- assets/coverage assets/v5; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/coverage assets/v5
+          git commit -m "Generate V5 Evidence Rank prototype outputs"
+          git push
