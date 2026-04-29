@@ -1,0 +1,41 @@
+{
+  "certificate_id": "leamington-spa_2026-04",
+  "market_slug": "leamington-spa",
+  "market_name": "Leamington Spa",
+  "month": "2026-04",
+  "generated_at": "2026-04-29T00:00:00Z",
+  "source_readiness_asset": "/assets/market-readiness/leamington-spa.json",
+  "source_ranking_asset": "/assets/rankings/leamington-spa.json",
+  "status": "warning",
+  "publish_decision": "public ranking live; certificate flags ambiguity warnings for admin review",
+  "summary_public": "Coverage: 30 public ranking venues shown from 292 establishments reviewed. 252 venues are currently rankable in the wider source set. Known missing active venues: 0. Ambiguous Google Place groups: 7.",
+  "counts": {
+    "fsa_records_considered": 292,
+    "candidate_dining_venues": 287,
+    "included_in_public_ranking": 30,
+    "rankable_venues": 252,
+    "directional_or_profile_venues": 35,
+    "known_missing_venues": 0,
+    "active_known_missing_venues": 0,
+    "ambiguous_entity_groups": 7,
+    "category_ranking_entries": 117
+  },
+  "known_missing_high_profile_venues": [],
+  "ambiguity_summary": [
+    "7 duplicate/ambiguous Google Place group(s) recorded in readiness output.",
+    "Some Leamington ambiguity records currently have no human-readable reason and should be reviewed before paid-client use.",
+    "No active known-missing venue blocker is currently recorded for Leamington Spa."
+  ],
+  "admin_next_actions": [
+    "Review unresolved duplicate Google Place IDs with blank names/reasons.",
+    "Confirm no prominent Leamington public dining venues are missing from the local market universe.",
+    "Expose the public summary on the Leamington ranking page before V5 public cutover."
+  ],
+  "source_files": {
+    "area_config": "data/ranking_areas.json",
+    "establishments": "leamington_establishments.json",
+    "scores": "leamington_rcs_v4_scores.json",
+    "ranking": "assets/rankings/leamington-spa.json",
+    "readiness": "assets/market-readiness/leamington-spa.json"
+  }
+}
