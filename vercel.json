@@ -6,9 +6,13 @@
   "rewrites": [
     { "source": "/search", "destination": "/search-v2.html" },
     { "source": "/uk-establishments", "destination": "/uk-establishments.html" },
-    { "source": "/admin/reports", "destination": "/admin-reports.html" },
-    { "source": "/admin/markets", "destination": "/admin-markets.html" },
-    { "source": "/operator/:venue", "destination": "/operator-dashboard.html" },
+    { "source": "/login", "destination": "/login.html" },
+    { "source": "/client", "destination": "/client.html" },
+    { "source": "/client/venues/:venue", "destination": "/client-venue.html" },
+    { "source": "/admin", "destination": "/admin.html" },
+    { "source": "/admin/reports", "destination": "/admin-reports-protected.html" },
+    { "source": "/admin/markets", "destination": "/admin-markets-protected.html" },
+    { "source": "/operator/:venue", "destination": "/client-venue.html" },
     { "source": "/operator-dashboard", "destination": "/operator-dashboard.html" }
   ],
   "redirects": [
@@ -27,6 +31,15 @@
       ]
     },
     {
+      "source": "/assets/coverage/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, max-age=0"
+        }
+      ]
+    },
+    {
       "source": "/assets/operator-reports/(.*)",
       "headers": [
         {
@@ -37,6 +50,15 @@
     },
     {
       "source": "/assets/operator-dashboards/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, no-cache, must-revalidate, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/(login|client|admin)(.*)",
       "headers": [
         {
           "key": "Cache-Control",
