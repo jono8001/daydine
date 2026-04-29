@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Login — DayDine</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/daydine.css">
+  <style>
+    main{max-width:1040px;margin:0 auto;padding:56px 24px 90px}.hero{display:grid;grid-template-columns:1.05fr .8fr;gap:28px;align-items:start}.title{font-family:var(--serif);font-size:clamp(44px,7vw,84px);line-height:.94;margin:8px 0 14px}.dek{max-width:680px;color:var(--text-muted);font-size:17px;line-height:1.6}.panel{background:var(--surface-1);border:1px solid var(--border);box-shadow:var(--shadow);padding:22px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}.field label{font-family:var(--mono);font-size:10px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--text-subtle)}input{padding:13px 14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font:15px var(--sans)}.btn,button{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border:1px solid var(--accent-dark);border-radius:var(--radius);text-decoration:none;background:linear-gradient(135deg,var(--accent),var(--accent-hover));font-weight:800;color:var(--text);cursor:pointer}.btn.secondary,button.secondary{background:var(--surface-1);border-color:var(--border);color:var(--accent)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.status{margin-top:14px;color:var(--text-muted);line-height:1.45}.note{margin-top:18px;border:1px solid var(--border);background:var(--surface-2);padding:14px;color:var(--text-muted);line-height:1.45}.small{font-size:12px;color:var(--text-subtle);margin-top:10px}@media(max-width:840px){.hero{grid-template-columns:1fr}.title{font-size:46px}}
+  </style>
+</head>
+<body class="ed" data-page-type="login">
+<header class="masthead"><div class="masthead-inner"><a class="wordmark" href="/">Day<em>dine</em></a><div class="mast-issue">Secure · <b>Client/admin login</b></div><nav class="mast-nav"><a href="/">Home</a><a href="/rankings">Rankings</a><a href="/for-restaurants">For restaurants</a></nav></div></header>
+<main>
+  <section class="hero">
+    <div>
+      <div class="kicker kicker-accent">DayDine portal</div>
+      <h1 class="title">Sign in to DayDine.</h1>
+      <p class="dek">Use this page for protected client dashboards and internal admin tools. Public rankings remain fast and cacheable; private dashboard and admin data now sit behind Firebase Auth and database rules.</p>
+      <div class="note"><b>Firebase project:</b> this portal uses <code>recursive-research-eu</code>, the same project already used by the UK/FSA establishment lookup. Private paths are stored under <code>daydine_saas</code>.</div>
+    </div>
+    <form class="panel" id="loginForm">
+      <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required placeholder="you@example.com"></div>
+      <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="Password"></div>
+      <div class="actions"><button type="submit">Sign in</button><button type="button" class="secondary" id="resetBtn">Reset password</button></div>
+      <div class="status" id="status">Waiting for sign-in.</div>
+      <div class="small">A Firebase Auth account is not enough by itself. The UID also needs a DayDine profile under <code>daydine_saas/users/{uid}</code>.</div>
+    </form>
+  </section>
+</main>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="/assets/daydine-firebase.js"></script>
+<script src="/assets/daydine-auth.js"></script>
+<script>
+const statusEl=document.getElementById('status');
+function setStatus(msg){statusEl.textContent=msg;}
+function email(){return document.getElementById('email').value.trim();}
+function password(){return document.getElementById('password').value;}
+document.getElementById('loginForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  setStatus('Signing in…');
+  try{
+    const session=await DayDineAuth.signIn(email(),password());
+    location.replace(DayDineAuth.destinationFor(session.profile));
+  }catch(err){
+    console.error(err);
+    setStatus(err && err.message ? err.message : 'Could not sign in.');
+  }
+});
+document.getElementById('resetBtn').addEventListener('click',async function(){
+  if(!email()){setStatus('Enter your email first, then press reset password.');return;}
+  try{await DayDineAuth.resetPassword(email());setStatus('Password reset email sent.');}
+  catch(err){console.error(err);setStatus(err && err.message ? err.message : 'Could not send reset email.');}
+});
+if(new URLSearchParams(location.search).get('inactive')) setStatus('This DayDine account is inactive.');
+</script>
+</body>
+</html>
