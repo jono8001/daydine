@@ -1,0 +1,231 @@
+{
+  "daydine_saas": {
+    "users": {
+      "REPLACE_WITH_FIREBASE_ADMIN_UID": {
+        "email": "admin@example.com",
+        "displayName": "DayDine Admin",
+        "role": "admin",
+        "active": true,
+        "createdAt": "2026-04-29T00:00:00Z",
+        "setupNote": "Replace this UID and email with the real Firebase Auth admin user before importing."
+      },
+      "REPLACE_WITH_FIREBASE_CLIENT_UID": {
+        "email": "client@example.com",
+        "displayName": "Lambs Client Fixture",
+        "role": "client",
+        "clientId": "lambs",
+        "venueIds": {
+          "lambs": true
+        },
+        "active": true,
+        "createdAt": "2026-04-29T00:00:00Z",
+        "setupNote": "Replace this UID and email with the real Firebase Auth client user before importing."
+      }
+    },
+    "clients": {
+      "lambs": {
+        "name": "Lambs",
+        "billingStatus": "trial",
+        "plan": "pilot",
+        "primaryContactEmail": "client@example.com",
+        "createdAt": "2026-04-29T00:00:00Z",
+        "notes": "First protected client-dashboard fixture. Used to prove generic client portal access control and dashboard rendering."
+      }
+    },
+    "venues": {
+      "lambs": {
+        "publicName": "Lambs",
+        "canonicalName": "Lambs",
+        "marketSlug": "stratford-upon-avon",
+        "marketName": "Stratford-upon-Avon",
+        "category": "Restaurant (General)",
+        "fhrsid": "503316",
+        "googlePlaceId": "ChIJ07kQJjLOcEgR6LZ0g4f17Eg",
+        "entityResolutionStatus": "confirmed",
+        "entityResolutionConfidence": "high",
+        "evidenceConfidence": "Rankable-B",
+        "daydineSignal": "Protected dashboard fixture",
+        "latestSnapshotMonth": "2026-04",
+        "status": "ready",
+        "createdAt": "2026-04-29T00:00:00Z",
+        "seedSource": "assets/operator-dashboards/lambs/latest.json"
+      }
+    },
+    "clientVenueAccess": {
+      "lambs_lambs": {
+        "clientId": "lambs",
+        "venueId": "lambs",
+        "accessLevel": "owner",
+        "active": true,
+        "createdAt": "2026-04-29T00:00:00Z"
+      }
+    },
+    "operatorDashboards": {
+      "lambs": {
+        "snapshots": {
+          "2026-04": {
+            "id": "lambs-2026-04",
+            "generated_at": "2026-04-27T18:14:23.309707+00:00",
+            "venue_slug": "lambs",
+            "venue": "Lambs",
+            "market": "Stratford-upon-Avon",
+            "market_slug": "stratford-upon-avon",
+            "category": "Restaurant (General)",
+            "month": "2026-04",
+            "status": "ready",
+            "client_status": "review",
+            "methodology": "DayDine RCS v3.4.1 — V4 official-source mode with deterministic tie-breaks",
+            "headline": {
+              "overall_rank": 9,
+              "overall_total": 169,
+              "category_rank": 3,
+              "category_total": 56,
+              "public_visibility": "Inside the public top 30 overall and category top 30",
+              "tracking_status": "Strong public visibility; protect position and monitor nearby score clusters."
+            },
+            "scores": {
+              "public_rcs": 9.311,
+              "operator_v4_score": 8.939,
+              "confidence_class": "Rankable-B",
+              "rankable": true,
+              "league_eligible": true,
+              "entity_match": "confirmed"
+            },
+            "components": [
+              {
+                "name": "Trust & Compliance",
+                "score": 9.152,
+                "summary": "Trust & Compliance is strong. There is no immediate compliance-led commercial concern, but inspection recency and management-confidence signals should remain protected.",
+                "evidence": "FHRS 5 · last inspection 2026-01-13 · 5 signals used"
+              },
+              {
+                "name": "Customer Validation",
+                "score": 9.229,
+                "summary": "Strong Google evidence, but still single-platform. A second authorised customer-platform source would improve evidence breadth and confidence.",
+                "evidence": "Google 1,376 reviews @ 4.7"
+              },
+              {
+                "name": "Commercial Readiness",
+                "score": 7.5,
+                "summary": "Website, menu and opening hours are visible, but a direct booking/contact path is not fully confirmed in the public record.",
+                "evidence": "Website present · menu checked · opening hours present"
+              }
+            ],
+            "monthly_tracking": [
+              {
+                "label": "Overall rank",
+                "value": "#4 of 70",
+                "meaning": "Public top 30 overall"
+              },
+              {
+                "label": "DayDine RCS",
+                "value": "9.311",
+                "meaning": "Current baseline for future movement"
+              },
+              {
+                "label": "Monthly movement",
+                "value": "same",
+                "meaning": "Future snapshots can show up/down movement"
+              }
+            ],
+            "nearest_competitors": [
+              {
+                "rank": 2,
+                "venue": "Red Hot Mamma Pizzeria",
+                "category": "Restaurant (General)",
+                "rcs": 9.498,
+                "gap": "+0.187"
+              },
+              {
+                "rank": 3,
+                "venue": "The Red Lion",
+                "category": "Pub / Bar",
+                "rcs": 9.407,
+                "gap": "+0.096"
+              },
+              {
+                "rank": 4,
+                "venue": "Lambs",
+                "category": "Restaurant (General)",
+                "rcs": 9.311,
+                "gap": "you"
+              }
+            ],
+            "priorities": [
+              {
+                "title": "Add a second customer-platform listing",
+                "target": "Customer Validation",
+                "why": "Customer Validation is currently single-platform. A second authorised source would improve confidence and reduce reliance on Google alone.",
+                "evidence": "Only Google is present as a customer platform in the current fixture.",
+                "action": "Claim or strengthen an additional legitimate review/listing source where appropriate.",
+                "expected_upside": "Raises the achievable confidence class toward Rankable-A."
+              },
+              {
+                "title": "Publish a reachable phone number or direct booking link",
+                "target": "Commercial Readiness",
+                "why": "The booking/contact path is commercially important and not fully confirmed in the public record.",
+                "evidence": "Public record does not show a fully confirmed direct booking/contact path.",
+                "action": "Add a public phone number, direct reservation URL, or clear booking path to the main public listing.",
+                "expected_upside": "Improves Commercial Readiness and reduces customer drop-off."
+              }
+            ],
+            "commercial_impact": {
+              "confidence": "Low",
+              "monthly_revenue_impact": "£250 – £760",
+              "annual_projection": "£3,000 – £9,120",
+              "cost_band": "£200 – £1,000",
+              "payback_window": "1 – 3 months",
+              "wording_guardrail": "Directional estimate only. Exact numbers require internal cover and spend data."
+            },
+            "history": [
+              {
+                "month": "2026-04",
+                "overall_rank": 9,
+                "category_rank": 3,
+                "public_rcs": 9.311,
+                "operator_v4_score": 8.939,
+                "google_review_count": 1376,
+                "confidence_class": "Rankable-B",
+                "status": "ready"
+              }
+            ],
+            "movement": {
+              "overall_rank_delta": 0,
+              "category_rank_delta": 0,
+              "public_rcs_delta": 0,
+              "review_count_delta": 0,
+              "summary": "Baseline month — movement will appear after the next monthly snapshot."
+            },
+            "operator_context": {
+              "label": "Operator intelligence view",
+              "market": "Stratford-upon-Avon wider operator market",
+              "overall_rank": 9,
+              "overall_total": 169,
+              "category_rank": 3,
+              "category_total": 56,
+              "category_label": "restaurant venues",
+              "visibility": "Inside the public top 30 overall and category top 30",
+              "note": "This is the report-aligned commercial/operator view used for client interpretation and recommendations."
+            },
+            "public_context": {
+              "label": "Current public diner view",
+              "market": "Stratford-upon-Avon",
+              "overall_rank": 4,
+              "overall_total": 70,
+              "category_rank": null,
+              "category_total": 24,
+              "public_rcs": 9.311,
+              "visibility": "Public top 30 overall",
+              "note": "This reflects the current public town-market ranking asset and may differ from the wider operator intelligence report view."
+            },
+            "final_takeaway": "Lambs is already a high-performing and publicly visible operator in the DayDine Stratford-upon-Avon market. The commercial priority is to protect visibility and strengthen evidence breadth: add a second authorised customer-platform source, improve the observed booking/contact path, and monitor the high-score cluster each month.",
+            "commercial_readiness_gap": "No fully confirmed direct booking/contact path",
+            "commercial_readiness_score": 7.5,
+            "report_aligned": true,
+            "download_report_url": "/outputs/examples/Lambs_full_operator_report_with_tracking_2026-04.md"
+          }
+        }
+      }
+    }
+  }
+}
