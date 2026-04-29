@@ -1,0 +1,48 @@
+{
+  "certificate_id": "stratford-upon-avon_2026-04",
+  "market_slug": "stratford-upon-avon",
+  "market_name": "Stratford-upon-Avon",
+  "month": "2026-04",
+  "generated_at": "2026-04-29T00:00:00Z",
+  "source_readiness_asset": "/assets/market-readiness/stratford-upon-avon.json",
+  "source_ranking_asset": "/assets/rankings/stratford-upon-avon.json",
+  "status": "warning",
+  "publish_decision": "public ranking live; certificate flags ambiguity warnings for admin review",
+  "summary_public": "Coverage: 30 public ranking venues shown from 209 establishments reviewed. 170 venues are currently rankable in the wider source set. Known missing active venues: 0. Ambiguous Google Place groups: 6.",
+  "counts": {
+    "fsa_records_considered": 209,
+    "candidate_dining_venues": 204,
+    "included_in_public_ranking": 30,
+    "rankable_venues": 170,
+    "directional_or_profile_venues": 34,
+    "known_missing_venues": 1,
+    "active_known_missing_venues": 0,
+    "ambiguous_entity_groups": 6,
+    "category_ranking_entries": 70
+  },
+  "known_missing_high_profile_venues": [
+    {
+      "fhrsid": "503480",
+      "public_name": "The Vintner Wine Bar",
+      "status": "resolved",
+      "note": "Canonical Stratford establishment, V4 score and public ranking output now include FHRSID 503480. Retained in the certificate as prior guardrail history."
+    }
+  ],
+  "ambiguity_summary": [
+    "6 duplicate/ambiguous Google Place group(s) recorded in readiness output.",
+    "Known multi-tenant/private-site cases should remain Directional-C or profile-only unless separately resolved.",
+    "No active known-missing venue blocker remains for Stratford-upon-Avon."
+  ],
+  "admin_next_actions": [
+    "Review and classify remaining ambiguous Google Place groups.",
+    "Keep resolved Vintner guardrail in audit trail until next clean source pull confirms canonical stability.",
+    "Expose the public summary on the Stratford ranking page before V5 public cutover."
+  ],
+  "source_files": {
+    "area_config": "data/ranking_areas.json",
+    "establishments": "stratford_establishments.json",
+    "scores": "stratford_rcs_v4_scores.json",
+    "ranking": "assets/rankings/stratford-upon-avon.json",
+    "readiness": "assets/market-readiness/stratford-upon-avon.json"
+  }
+}
