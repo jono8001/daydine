@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-04-29T00:00:00Z",
+  "status": "warning",
+  "total_certificates": 2,
+  "certificates": [
+    {
+      "certificate_id": "stratford-upon-avon_2026-04",
+      "market_slug": "stratford-upon-avon",
+      "market_name": "Stratford-upon-Avon",
+      "month": "2026-04",
+      "status": "warning",
+      "url": "/assets/coverage/stratford-upon-avon.json",
+      "summary_public": "Coverage: 30 public ranking venues shown from 209 establishments reviewed. 170 venues are currently rankable in the wider source set. Known missing active venues: 0. Ambiguous Google Place groups: 6."
+    },
+    {
+      "certificate_id": "leamington-spa_2026-04",
+      "market_slug": "leamington-spa",
+      "market_name": "Leamington Spa",
+      "month": "2026-04",
+      "status": "warning",
+      "url": "/assets/coverage/leamington-spa.json",
+      "summary_public": "Coverage: 30 public ranking venues shown from 292 establishments reviewed. 252 venues are currently rankable in the wider source set. Known missing active venues: 0. Ambiguous Google Place groups: 7."
+    }
+  ]
+}
