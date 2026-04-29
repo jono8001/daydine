@@ -91,7 +91,32 @@ firebase.json
 vercel.json
 ```
 
-Firebase config is centralised in `assets/daydine-firebase.js`. Auth/profile/access helpers are centralised in `assets/daydine-auth.js`. Rules/config are committed but still need deploying to `recursive-research-eu`.
+Firebase config is centralised in `assets/daydine-firebase.js`. Auth/profile/access helpers are centralised in `assets/daydine-auth.js`.
+
+Repo configuration points to:
+
+```text
+recursive-research-eu
+recursive-research-eu-default-rtdb.europe-west1.firebasedatabase.app
+```
+
+Rules/config are committed but still need deploying to `recursive-research-eu` from an authenticated local Firebase CLI or authorised deploy environment.
+
+### Live Firebase status verified by user on 29 April 2026
+
+```text
+Project: recursive-research-eu
+Realtime Database instance: recursive-research-eu-default-rtdb, europe-west1
+Email/password auth: enabled
+Admin Firebase Auth user: created and verified outside repo
+Client Firebase Auth user: created and verified outside repo
+Current live top-level DB nodes: daydine, evidtrace
+Current live DB does not yet have daydine_saas
+```
+
+Important decision: **do not commit live Firebase UIDs or live account emails to the public repo.** Generate the live seed locally with CLI args/environment variables only.
+
+`evidtrace` is a separate concern and not part of DayDine. The DayDine rules file does not include an `evidtrace` rule. The current accepted decision is to disregard it and allow it to be locked out by the DayDine rules deploy unless a future separate decision says otherwise.
 
 ### Protected client-dashboard framework
 
@@ -119,9 +144,21 @@ Seed assets:
 ```text
 data/firebase_daydine_saas_seed_lambs.json
 scripts/build_firebase_saas_seed.py
+scripts/deploy_firebase_saas_seed.sh
 ```
 
-Before importing the seed, replace the placeholder admin/client UIDs with real Firebase Auth UIDs.
+`data/firebase_daydine_saas_seed_lambs.json` remains a template/reference seed and should not be edited with live UIDs/emails. Live import should be generated locally with:
+
+```bash
+python3 scripts/build_firebase_saas_seed.py \
+  --admin-uid "<admin Firebase Auth UID>" \
+  --admin-email "<admin email>" \
+  --client-uid "<client Firebase Auth UID>" \
+  --client-email "<client email>" \
+  --strict \
+  --saas-only \
+  --out tmp/daydine_saas_seed_lambs.json
+```
 
 ### Protected admin modules
 
@@ -136,7 +173,7 @@ assets/operator-dashboards/*
 
 ### Vercel routes
 
-`vercel.json` now routes protected pages to the new shells. Legacy operator links redirect:
+`vercel.json` routes protected pages to the new shells. Legacy operator links redirect:
 
 ```text
 /operator/:venue -> /client/venues/:venue
@@ -163,16 +200,34 @@ Leamington Spa: 292 establishments reviewed, 287 candidate/scored dining venues,
 
 Both markets remain `warning`, not `ready`, because ambiguous Google Place groups still need admin review.
 
-### V5 prototype builder
+### V5 prototype outputs
 
-Added:
+V5 prototype builder and workflow exist:
 
 ```text
 scripts/build_v5_evidence_rank.py
 .github/workflows/v5_evidence_rank.yml
 ```
 
-The V5 builder reads existing V4 ranking/readiness/coverage inputs and emits experimental outputs under `assets/v5/`. Generated `assets/v5/*.json` outputs still need to be produced/committed unless the workflow has been run with `commit_outputs=true`.
+V5 outputs have now been generated and committed under:
+
+```text
+assets/v5/index.json
+assets/v5/stratford-upon-avon.json
+assets/v5/leamington-spa.json
+```
+
+Current `assets/v5/index.json` summary:
+
+```text
+Generated: 2026-04-29T16:29:09Z
+Status: experimental
+Markets: 2
+Stratford-upon-Avon: 70 V5 records
+Leamington Spa: 117 V5 records
+```
+
+V5 remains experimental and must not be publicly cut over until QA and public methodology copy are reviewed.
 
 ---
 
@@ -189,7 +244,10 @@ admin-reports.html report-library concept
 admin-markets.html market-readiness concept
 assets/market-readiness/*.json
 assets/rankings/*.json
+assets/coverage/*.json
 V4 score files
+scripts/build_coverage_certificates.py
+scripts/build_v5_evidence_rank.py
 ```
 
 Migrated:
@@ -199,6 +257,7 @@ Lambs dashboard fixture -> Firebase seed shape
 Static admin/report concepts -> protected admin modules
 Static operator-dashboard concept -> protected generic client dashboard
 Readiness counts -> coverage certificate assets
+V4/ranking/coverage inputs -> V5 experimental assets
 ```
 
 Refactored:
@@ -209,6 +268,7 @@ Auth and role logic -> shared daydine-auth.js
 Vercel routes -> protected client/admin routes
 Coverage generation -> repeatable script
 V5 prototype -> repeatable script + workflow
+Firebase seed generation -> deployment-safe strict builder with local UID args
 ```
 
 Archived/retained as legacy reference:
@@ -224,149 +284,176 @@ Retired: nothing deleted or retired yet.
 
 ---
 
-## 5. Latest session update — 29 April 2026 handover sync
+## 5. Latest session update — 29 April 2026 Firebase/V5 operational handover
 
 ### What changed in this session
 
-- Synced the current DayDine state after the user continued some work from an iPhone and noted that the earlier visible chat context was stale.
-- Re-read the latest repo handover and recent repo history rather than relying on the older visible chat section.
-- Confirmed the correct Firebase project is `recursive-research-eu`, not `recursive-research-agent`.
-- Confirmed that the current repo is already past initial Firebase/Auth implementation: protected shells, rules, seed fixture, coverage certificates, V5 builder and V5 workflow are committed.
-- No application/scoring/Firebase/workflow implementation was changed in this mini-session; this was a handover/state-preservation update only.
+- Re-read the required control docs and continued from the existing DayDine build phase rather than restarting strategy.
+- Confirmed that the correct Firebase project remains `recursive-research-eu` and the SaaS private root remains `daydine_saas`.
+- Confirmed the user created and verified one admin Firebase Auth user and one test client Firebase Auth user outside the repo.
+- Confirmed live Realtime Database currently has `daydine` and `evidtrace`, but no `daydine_saas`; therefore the SaaS import will be additive if targeted correctly.
+- Confirmed current live Firebase rules are loose, while repo `database.rules.json` is the locked-down DayDine ruleset to deploy.
+- Confirmed V5 Evidence Rank prototype outputs were generated and committed to `assets/v5/`.
+- Confirmed Vercel status check on the V5 output commit was green.
+- Established that live Firebase UIDs/emails should not be committed to the public repo; the seed should be generated locally with CLI args and `--strict --saas-only`.
+- Provided the exact local Firebase CLI sequence for generating the live seed, deploying rules, merging `/daydine_saas`, and verifying Firebase paths.
+- Did **not** deploy Firebase rules or import live Firebase data from ChatGPT, because this chat has no authenticated Firebase CLI/admin deployment tool.
 
 ### Files changed in this session
 
 ```text
+scripts/deploy_firebase_saas_seed.sh
 docs/DayDine-Current-State-And-Next-Actions.md
 ```
 
-### Commits made
-
-Recent build-phase commits already present before this handover sync include:
+Notes:
 
 ```text
-f65227f - Extend DayDine Firebase bootstrap for SaaS auth
-672009a - Add shared Firebase auth and role guards
-1cac8d6 - Add Firebase login page for client and admin portals
-6cdf0e2 - Add protected client portal shell
-4010dd0 - Add protected generic client dashboard renderer
-13d6de7 - Add protected admin portal shell
-d516727 - Add protected admin reports module
-7b87d34 - Add protected admin markets module
-310e974 - Wire protected client and admin routes
-14e46d2 - Add Realtime Database rules for DayDine SaaS roles
-5a1447f - Add Firebase SaaS seed builder for first dashboard fixture
-e90c8d1 - Add Stratford coverage certificate
-26b6185 - Add Leamington coverage certificate
-5bcb567 - Add coverage certificate index
-9dcfba9 - Add Firebase SaaS seed fixture for Lambs dashboard
-ca261df - Tighten SaaS database rules for admin collection reads
-6039a14 - Add repeatable coverage certificate builder
-bbe4463 - Add V5 Evidence Rank prototype builder
-3089aa7 - Add Firebase deployment config for SaaS rules
-4cd344f - Pin Firebase project for DayDine SaaS rules
-cc5d7cd - Redirect legacy operator links to protected client dashboards
-879a655 - Add V5 Evidence Rank generation workflow
-8410b0a - Update DayDine handover after Firebase and V5 build phase
+scripts/deploy_firebase_saas_seed.sh was added before the later decision to prefer direct local CLI commands. It contains no live UIDs or live emails and can be ignored or removed in a later cleanup if desired.
+No live Firebase UID/email seed was committed to the repo.
 ```
 
-This handover sync is the only commit made during the present mini-session.
+### Commits made / confirmed in this session
+
+```text
+410392c0 - Generate V5 Evidence Rank prototype outputs
+af0b3b8 - Add safe Firebase SaaS seed deploy helper
+```
+
+This handover update is also being committed as:
+
+```text
+Update DayDine handover after Firebase deploy preparation
+```
 
 ### Decisions made
 
-1. Treat the 29 April handover and latest repo history as the source of truth, not the older visible chat section.
-2. Continue with the already-built Firebase/Auth/client/admin foundation rather than restarting the build from scratch.
-3. Keep `recursive-research-eu` as the active Firebase project for DayDine because it already holds the public FSA/FHRS lookup data and the new SaaS paths are configured there.
-4. Keep Lambs as a first dashboard fixture only; the strategic product remains the generic protected client-dashboard framework.
-5. The next work should be operational deployment/QA and V5 output generation, not more methodology strategy.
+1. Do not restart strategy or rebuild; continue implementation from the existing Firebase/Auth/V5 foundation.
+2. Keep `recursive-research-eu` as the active Firebase project.
+3. Keep `daydine_saas` as the private SaaS root.
+4. Do not commit live Firebase UIDs or live account emails to the public repo.
+5. Generate the live seed locally using `scripts/build_firebase_saas_seed.py` with `--strict --saas-only` and CLI args.
+6. Use `firebase database:update /daydine_saas ...`, never `firebase database:set`, for the SaaS import.
+7. Do not touch `/daydine` or `/daydine/establishments` during the SaaS import.
+8. Disregard `evidtrace` as non-DayDine; accept that deploying DayDine rules will lock it unless separately handled later.
+9. Treat V5 outputs as experimental and not a public cutover.
+10. Treat Lambs as the first protected dashboard fixture only, not the strategic product focus.
 
 ---
 
 ## 6. Current blockers / risks
 
-1. Firebase rules are committed but not deployed to `recursive-research-eu`.
-2. Real Firebase Auth users still need to be created/configured outside ChatGPT.
-3. Seed data still contains placeholder UIDs and must not be imported until replaced.
-4. Protected pages need browser QA after seed/rules deployment.
-5. V5 outputs under `assets/v5/` still need to be generated and committed.
-6. Stratford has 6 ambiguous Google Place groups; Leamington has 7, so both markets remain `warning`.
-7. Public methodology/copy still needs review before any V5 public cutover.
-8. Static prototype pages still exist and must be treated as reference only, not the real client product.
+1. Firebase rules are committed in repo but still need to be deployed to `recursive-research-eu` from an authenticated Firebase CLI/session.
+2. `/daydine_saas` does not yet exist in the live Realtime Database until the local import is run.
+3. Protected browser QA cannot be completed until rules are deployed and `/daydine_saas` is imported.
+4. The current live Firebase rules are loose; deploying repo rules will lock down the database. This is desired for DayDine, but it will also lock `evidtrace` because no rule is included for it.
+5. V5 outputs exist, but both Stratford and Leamington remain `warning` because ambiguous Google Place groups still need admin review.
+6. Public methodology/copy still needs review before any V5 public cutover.
+7. Static prototype pages still exist and must be treated as reference only, not the real client product.
+8. `scripts/deploy_firebase_saas_seed.sh` exists as an optional helper but the current preferred operational instruction is the direct local CLI command sequence, not committing filled UID/email values.
 
 ---
 
 ## 7. Next 3 actions
 
-### Next action 1 — Firebase deploy and seed
+### Next action 1 — Run local Firebase deploy/import
 
-In Firebase/local CLI:
-
-```text
-1. Confirm project: recursive-research-eu.
-2. Enable Email/Password sign-in if not already enabled.
-3. Create one admin Firebase Auth user.
-4. Create one test client Firebase Auth user.
-5. Replace placeholder UIDs in data/firebase_daydine_saas_seed_lambs.json.
-6. Import/merge the seed under Realtime Database.
-7. Deploy database.rules.json.
-```
-
-Suggested CLI:
+From the DayDine repo root, run the direct local sequence using the verified Firebase Auth UID/email values held outside the repo:
 
 ```bash
+git checkout main
+git pull --ff-only origin main
+mkdir -p tmp
+
+python3 scripts/build_firebase_saas_seed.py \
+  --admin-uid "<admin Firebase Auth UID>" \
+  --admin-email "<admin email>" \
+  --client-uid "<client Firebase Auth UID>" \
+  --client-email "<client email>" \
+  --strict \
+  --saas-only \
+  --out tmp/daydine_saas_seed_lambs.json
+
+grep -q "REPLACE_WITH_FIREBASE" tmp/daydine_saas_seed_lambs.json && echo "ERROR: placeholder still present" || echo "OK: no placeholders"
+python3 -m json.tool tmp/daydine_saas_seed_lambs.json >/dev/null && echo "OK: valid JSON"
+
 firebase use recursive-research-eu
-firebase deploy --only database
+firebase deploy --only database --project recursive-research-eu
+firebase database:update /daydine_saas tmp/daydine_saas_seed_lambs.json \
+  --project recursive-research-eu \
+  --instance recursive-research-eu-default-rtdb
 ```
 
-### Next action 2 — Generate and validate V5 outputs
-
-Run GitHub Actions workflow:
+Expected success signals:
 
 ```text
-V5 Evidence Rank Prototype
-commit_outputs = true
+Strict validation passed: no placeholder Firebase Auth UIDs remain.
+OK: no placeholders
+OK: valid JSON
+Deploy complete!
+Data updated successfully
 ```
 
-or locally:
+### Next action 2 — Run Firebase sanity checks
+
+Check these live paths after import:
 
 ```bash
-python scripts/build_coverage_certificates.py --markets stratford-upon-avon leamington-spa
-python scripts/build_v5_evidence_rank.py --markets stratford-upon-avon leamington-spa
-git add assets/coverage assets/v5
-git commit -m "Generate V5 Evidence Rank prototype outputs"
-git push
+firebase database:get /daydine_saas/users/<adminUid>/role \
+  --project recursive-research-eu \
+  --instance recursive-research-eu-default-rtdb
+
+firebase database:get /daydine_saas/users/<clientUid>/clientId \
+  --project recursive-research-eu \
+  --instance recursive-research-eu-default-rtdb
+
+firebase database:get /daydine_saas/users/<clientUid>/venueIds/lambs \
+  --project recursive-research-eu \
+  --instance recursive-research-eu-default-rtdb
+
+firebase database:get /daydine_saas/operatorDashboards/lambs/snapshots/2026-04/venue \
+  --project recursive-research-eu \
+  --instance recursive-research-eu-default-rtdb
+
+firebase database:get /daydine/establishments \
+  --project recursive-research-eu \
+  --instance recursive-research-eu-default-rtdb \
+  --shallow
 ```
 
-Then inspect:
+Expected results:
 
 ```text
-assets/v5/stratford-upon-avon.json
-assets/v5/leamington-spa.json
-assets/v5/index.json
+"admin"
+"lambs"
+true
+"Lambs"
+/daydine/establishments returns a JSON object of keys, not null
 ```
 
-### Next action 3 — QA protected SaaS routes
+### Next action 3 — QA protected SaaS routes on Vercel
 
-After Firebase deploy/seed, test:
+After Firebase deploy/import, test:
 
 ```text
-/login
-/client
-/client/venues/lambs
-/admin
-/admin/reports
-/admin/markets
-/operator/lambs -> should redirect to /client/venues/lambs
+https://daydine.vercel.app/login
+https://daydine.vercel.app/client
+https://daydine.vercel.app/client/venues/lambs
+https://daydine.vercel.app/admin
+https://daydine.vercel.app/admin/reports
+https://daydine.vercel.app/admin/markets
+https://daydine.vercel.app/operator/lambs
 ```
 
 Acceptance checks:
 
 ```text
-Unauthenticated users are redirected to login.
-Client user sees only assigned venue(s).
-Client user cannot read another venue dashboard.
-Admin user can access admin shell and all seeded venues.
-Protected pages read Firebase data, not public operator JSON.
+Signed out/incognito users are redirected to /login for /client and /admin routes.
+Admin user can access /client, /client/venues/lambs, /admin, /admin/reports and /admin/markets.
+Client user can access /client and /client/venues/lambs only.
+Client user cannot access /admin, /admin/reports or /admin/markets.
+/operator/lambs redirects to /client/venues/lambs.
+Protected pages read Firebase /daydine_saas data, not public operator JSON.
 ```
 
 ---
@@ -387,19 +474,23 @@ Please use the GitHub connector/API tool to read these files first:
 7. docs/DayDine-Roadmap-Implementation-Control.md
 
 Current state:
-- Firebase Auth/client/admin shells have been committed.
+- Firebase Auth/client/admin shells are committed.
 - Correct Firebase project is recursive-research-eu.
 - SaaS private data root is daydine_saas.
 - database.rules.json, firebase.json and .firebaserc are committed.
+- Admin and client Firebase Auth users have been created and verified outside the repo.
+- Do not commit live Firebase UIDs/emails to the public repo.
+- Live Realtime Database currently has daydine and evidtrace, but no daydine_saas yet.
+- The repo rules file intentionally locks root read/write to false and permits public read for daydine/establishments while protecting daydine_saas.
 - Lambs is only the first protected dashboard fixture, not the strategic product focus.
 - Coverage certificates exist for Stratford and Leamington.
-- scripts/build_v5_evidence_rank.py and .github/workflows/v5_evidence_rank.yml exist.
-- The last session was a handover sync only: no implementation files were changed beyond docs/DayDine-Current-State-And-Next-Actions.md.
+- V5 Evidence Rank outputs have been generated and committed under assets/v5/ in commit 410392c0.
+- Firebase rules and the /daydine_saas seed still need to be deployed/imported locally via Firebase CLI.
 
 Current priority:
-1. Deploy Firebase Realtime Database rules and import the seeded Lambs fixture after replacing placeholder UIDs.
-2. Run the V5 Evidence Rank Prototype workflow with commit_outputs=true, or run the V5 scripts locally and commit assets/v5 outputs.
-3. QA /login, /client, /client/venues/lambs, /admin, /admin/reports, /admin/markets.
+1. Run the local Firebase CLI sequence to generate tmp/daydine_saas_seed_lambs.json with --strict --saas-only, deploy database.rules.json, and merge-import only /daydine_saas using firebase database:update.
+2. Verify live Firebase paths: admin role, client clientId, client venueIds/lambs, Lambs dashboard snapshot, and that /daydine/establishments still exists.
+3. QA /login, /client, /client/venues/lambs, /admin, /admin/reports, /admin/markets and /operator/lambs on daydine.vercel.app with admin, client and signed-out sessions.
 
 Do not restart strategy. Do not rebuild from scratch. Follow the implementation control note and state which prior assets are reused, migrated, refactored, archived or retired.
 ```
