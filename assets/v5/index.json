@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-04-29T16:29:09Z",
+  "status": "experimental",
+  "total_markets": 2,
+  "markets": [
+    {
+      "market_slug": "stratford-upon-avon",
+      "market_name": "Stratford-upon-Avon",
+      "status": "experimental",
+      "methodology_version": "V5.0 deterministic Evidence Rank prototype",
+      "records": 70,
+      "url": "/assets/v5/stratford-upon-avon.json",
+      "coverage_certificate_url": "/assets/coverage/stratford-upon-avon.json"
+    },
+    {
+      "market_slug": "leamington-spa",
+      "market_name": "Leamington Spa",
+      "status": "experimental",
+      "methodology_version": "V5.0 deterministic Evidence Rank prototype",
+      "records": 117,
+      "url": "/assets/v5/leamington-spa.json",
+      "coverage_certificate_url": "/assets/coverage/leamington-spa.json"
+    }
+  ]
+}
