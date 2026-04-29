@@ -1,0 +1,76 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "daydine": {
+      "establishments": {
+        ".read": true,
+        ".write": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'"
+      }
+    },
+
+    "daydine_saas": {
+      "users": {
+        "$uid": {
+          ".read": "auth != null && (auth.uid == $uid || root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin')",
+          ".write": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'"
+        }
+      },
+
+      "clients": {
+        "$clientId": {
+          ".read": "auth != null && (root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin' || root.child('daydine_saas/users').child(auth.uid).child('clientId').val() == $clientId)",
+          ".write": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'"
+        }
+      },
+
+      "venues": {
+        "$venueId": {
+          ".read": "auth != null && (root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin' || root.child('daydine_saas/users').child(auth.uid).child('venueIds').child($venueId).val() == true)",
+          ".write": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'"
+        }
+      },
+
+      "clientVenueAccess": {
+        "$accessId": {
+          ".read": "auth != null && (root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin' || data.child('clientId').val() == root.child('daydine_saas/users').child(auth.uid).child('clientId').val())",
+          ".write": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'"
+        }
+      },
+
+      "operatorDashboards": {
+        "$venueId": {
+          ".read": "auth != null && (root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin' || root.child('daydine_saas/users').child(auth.uid).child('venueIds').child($venueId).val() == true)",
+          ".write": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'",
+          "snapshots": {
+            "$month": {
+              ".validate": "newData.hasChildren(['venue_slug','venue','market','month','status'])"
+            }
+          }
+        }
+      },
+
+      "marketReadiness": {
+        "$marketSlug": {
+          ".read": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'",
+          ".write": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'"
+        }
+      },
+
+      "coverageCertificates": {
+        "$certificateId": {
+          ".read": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'",
+          ".write": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'"
+        }
+      },
+
+      "pipelineRuns": {
+        "$runId": {
+          ".read": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'",
+          ".write": "auth != null && root.child('daydine_saas/users').child(auth.uid).child('role').val() == 'admin'"
+        }
+      }
+    }
+  }
+}
