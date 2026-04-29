@@ -7,7 +7,8 @@ name: V5 Evidence Rank Prototype
 # - Builds experimental V5 Evidence Rank JSON outputs under assets/v5/.
 # - Runs basic JSON/schema sanity checks.
 # - Uploads the generated outputs as an artifact.
-# - Optionally commits generated outputs back to the branch when requested manually.
+# - Commits generated outputs back to main after relevant main-branch input changes,
+#   and optionally commits generated outputs when requested manually.
 #
 # This workflow does not call external APIs and does not deploy Firebase.
 
@@ -27,6 +28,8 @@ on:
         required: false
         default: ''
   push:
+    branches:
+      - main
     paths:
       - 'scripts/build_coverage_certificates.py'
       - 'scripts/build_v5_evidence_rank.py'
@@ -136,8 +139,8 @@ jobs:
             assets/coverage/**
             assets/v5/**
 
-      - name: Commit generated outputs when requested
-        if: github.event_name == 'workflow_dispatch' && github.event.inputs.commit_outputs == 'true'
+      - name: Commit generated outputs when requested or on main input pushes
+        if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.event.inputs.commit_outputs == 'true')
         run: |
           if git diff --quiet -- assets/coverage assets/v5; then
             echo "No generated changes to commit."
