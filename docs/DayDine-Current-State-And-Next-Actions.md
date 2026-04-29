@@ -2,72 +2,32 @@
 
 **Status:** Active handover file  
 **Last updated:** 29 April 2026  
-**Purpose:** Preserve DayDine project context between long AI/coding conversations. This file should be updated at the end of major work sessions or before starting a new conversation.
+**Purpose:** Preserve DayDine context between long AI/coding sessions. The repo is the project memory; update this file before ending a major session.
 
 ---
 
-## 1. How to use this file
+## 1. Strategic direction
 
-When starting a new ChatGPT / Claude / Codex session, paste this instruction:
+DayDine is being built as a professional UK hospitality intelligence SaaS with:
 
-```text
-We are working on the DayDine repo: https://github.com/jono8001/daydine
+- a public ranking/search/methodology site for diners;
+- Firebase-authenticated client dashboards for operators;
+- Firebase-authenticated admin tooling for internal market, report, pipeline and QA workflows;
+- low-cost monthly batch refreshes rather than live paid API calls on page views;
+- V5 DayDine Evidence Rank as the next methodology destination, built beside V4 before any cutover.
 
-Before doing any implementation, please read these project-memory files:
+Core positioning remains:
 
-1. docs/DayDine-Professional-SaaS-Roadmap.md
-2. docs/DayDine-V5-Evidence-Rank-Blueprint.md
-3. docs/ADR-002-Authorised-Review-Data-And-V5-Positioning.md
-4. docs/DayDine-Client-Dashboard-Pilot-Pattern.md
-5. docs/DayDine-Prior-Work-Inventory.md
-6. docs/DayDine-Roadmap-Implementation-Control.md
-7. docs/DayDine-Current-State-And-Next-Actions.md
+> DayDine must not compete with Tripadvisor by pretending to have more review data. DayDine should compete as a proprietary hospitality intelligence platform that includes authorised review evidence, separates popularity from quality, and identifies Proven Leaders, Hidden Gems, Rising Venues and Overexposed venues across the whole local market.
 
-Then continue from the current next action. Do not rebuild from scratch. Reuse, migrate, refactor or consciously retire prior work according to the control note.
-```
-
-Rule:
-
-> The repo is now the project memory. Long chats should update this file before they end.
+Allowed public wording: authorised public review evidence, including Google rating and Google review volume.  
+Avoid: claiming Tripadvisor/OpenTable ingestion, full cross-web review coverage, objective restaurant-quality judgement, exact public formula or exact weights.
 
 ---
 
-## 2. Strategic direction locked
+## 2. Architecture and Firebase decision
 
-DayDine should become a professional UK hospitality intelligence SaaS with:
-
-1. **Public ranking site** for diners, SEO and market authority.
-2. **Firebase-authenticated client portal** for restaurant operators.
-3. **Firebase-authenticated admin portal** for internal market, report, pipeline and QA workflows.
-4. **Low-cost monthly data pipeline** that pulls/enriches data once per month and caches results.
-5. **V5 DayDine Evidence Rank** as the next methodology destination.
-
-The central strategic decision remains:
-
-> DayDine must not compete with Tripadvisor by pretending to have more review data. DayDine must compete as a proprietary hospitality intelligence platform that includes authorised review evidence, separates popularity from quality, and identifies Proven Leaders, Hidden Gems, Rising Venues and Overexposed venues across the whole local market.
-
-DayDine can say it includes review evidence because it uses authorised public review data, including Google review rating and Google review volume. It must not imply that Tripadvisor or OpenTable reviews are ingested unless a legal/licensed/API-compatible route is actually in place.
-
-Preferred positioning:
-
-> Ranked by DayDine's proprietary hospitality intelligence model, using authorised review evidence, public trust signals, category context, market visibility and evidence confidence.
-
-Avoid:
-
-```text
-We analyse every review across the web.
-We include Tripadvisor/OpenTable reviews.
-Objectively the best restaurants.
-Transparent formula / exact component scorecard.
-```
-
-The public methodology should have **transparent principles but proprietary machinery**.
-
----
-
-## 3. Architecture decision
-
-Accepted target model:
+Accepted model:
 
 ```text
 Public rankings/search/methodology = public, fast, generated/cacheable
@@ -75,9 +35,7 @@ Client dashboards/admin tools = Firebase Auth + database rules
 Monthly data refresh = batch/cached, not live API calls per user page view
 ```
 
-Current hosting approach:
-
-> Hybrid first: keep public static site on Vercel temporarily, use Firebase Auth/database for client/admin. Move fully to Firebase Hosting later only if useful.
+Current hosting approach: **hybrid first**. Keep the public static site on Vercel temporarily; use Firebase Auth/database for client/admin.
 
 Correct Firebase project:
 
@@ -85,15 +43,15 @@ Correct Firebase project:
 recursive-research-eu
 ```
 
-This was confirmed from the existing public UK/FSA establishment lookup in `uk-establishments.html`. Do **not** use `recursive-research-agent` for the DayDine SaaS work unless a deliberate migration decision is made.
+Do **not** use `recursive-research-agent` for current DayDine SaaS/Auth work unless a deliberate migration decision is made. `recursive-research-eu` was confirmed from the existing public UK/FSA establishment lookup in `uk-establishments.html`.
 
-Private SaaS paths now live under:
+Private SaaS data root:
 
 ```text
 daydine_saas
 ```
 
-Public FHRS/FSA lookup remains under the existing public path:
+Existing public FHRS/FSA lookup root remains:
 
 ```text
 daydine/establishments
@@ -101,49 +59,11 @@ daydine/establishments
 
 ---
 
-## 4. Methodology state
+## 3. Current technical state
 
-### 4.1 Current baseline
+### Firebase/Auth foundation
 
-V4 is the strongest current implemented methodology baseline.
-
-Important V4 principles to preserve:
-
-1. FHRS is compliance/trust, not food quality.
-2. Review text sentiment should not drive headline ranking.
-3. Missing data must not inflate scores.
-4. Confidence/rankability must be separate from score.
-5. Single-platform customer validation should cap confidence.
-6. Entity ambiguity must block or reduce rankability.
-7. Operator dashboards and public rankings can have different emphasis.
-
-### 4.2 V5 destination
-
-V5 is now the next methodology build direction, not a speculative idea.
-
-V5 must include:
-
-- authorised review evidence, initially Google rating and review volume;
-- capped review-volume benefit;
-- Bayesian/shrinkage-aware rating logic;
-- evidence confidence bands separate from score;
-- category-normalised ranking;
-- DayDine Signals: Proven Leader, Hidden Gem, Rising Venue, Overexposed, Under-Evidenced/Profile Only;
-- DayDine Gap Signal;
-- coverage certificates;
-- entity-resolution confidence;
-- monthly movement and rank-change logic;
-- public methodology that explains principles but not exact weights or formula.
-
-V5 should be built beside V4 and compared before any public cutover.
-
----
-
-## 5. Current technical state after 29 April build session
-
-### 5.1 Firebase/Auth foundation
-
-Added a first protected SaaS foundation:
+Protected SaaS routes have been committed:
 
 ```text
 /login
@@ -154,7 +74,7 @@ Added a first protected SaaS foundation:
 /admin/markets
 ```
 
-New/updated files:
+Key files:
 
 ```text
 assets/daydine-firebase.js
@@ -171,45 +91,18 @@ firebase.json
 vercel.json
 ```
 
-Firebase config is centralised in:
+Firebase config is centralised in `assets/daydine-firebase.js`. Auth/profile/access helpers are centralised in `assets/daydine-auth.js`. Rules/config are committed but still need deploying to `recursive-research-eu`.
 
-```text
-assets/daydine-firebase.js
-```
+### Protected client-dashboard framework
 
-Auth/profile/access helpers are centralised in:
-
-```text
-assets/daydine-auth.js
-```
-
-Database rules are in:
-
-```text
-database.rules.json
-```
-
-Firebase deployment config is in:
-
-```text
-firebase.json
-.firebaserc
-```
-
-Important caveat:
-
-> Firebase rules have been committed but not deployed from this chat. A human or CI job still needs to run Firebase deploy against `recursive-research-eu`.
-
-### 5.2 Protected client-dashboard framework
-
-Built a generic protected dashboard renderer:
+A generic protected dashboard renderer exists in:
 
 ```text
 client.html
 client-venue.html
 ```
 
-Target data model:
+Target model:
 
 ```text
 daydine_saas/users/{uid}
@@ -221,35 +114,18 @@ daydine_saas/operatorDashboards/{venueId}/snapshots/{month}
 
 Lambs is only the first fixture, not the strategic product focus.
 
-Seed assets added:
+Seed assets:
 
 ```text
 data/firebase_daydine_saas_seed_lambs.json
 scripts/build_firebase_saas_seed.py
 ```
 
-Before importing the seed, replace:
+Before importing the seed, replace the placeholder admin/client UIDs with real Firebase Auth UIDs.
 
-```text
-REPLACE_WITH_FIREBASE_ADMIN_UID
-REPLACE_WITH_FIREBASE_CLIENT_UID
-```
+### Protected admin modules
 
-with real Firebase Auth UIDs.
-
-### 5.3 Protected admin modules
-
-New protected admin shells:
-
-```text
-/admin
-/admin/reports
-/admin/markets
-```
-
-These wrap the previous static admin concepts with Firebase Auth and admin-only role checks.
-
-The older static files remain as legacy/prototype references:
+Protected admin shells now exist for `/admin`, `/admin/reports` and `/admin/markets`. Older static files remain as legacy/prototype references only:
 
 ```text
 admin-reports.html
@@ -258,30 +134,17 @@ operator-dashboard.html
 assets/operator-dashboards/*
 ```
 
-### 5.4 Vercel route changes
+### Vercel routes
 
-`vercel.json` now routes:
-
-```text
-/login -> login.html
-/client -> client.html
-/client/venues/:venue -> client-venue.html
-/admin -> admin.html
-/admin/reports -> admin-reports-protected.html
-/admin/markets -> admin-markets-protected.html
-```
-
-Legacy operator links now redirect:
+`vercel.json` now routes protected pages to the new shells. Legacy operator links redirect:
 
 ```text
 /operator/:venue -> /client/venues/:venue
 ```
 
-This fixes the prior risk where old `/operator/:venue` links could accidentally default to Lambs inside the protected renderer.
+### Coverage certificates
 
-### 5.5 Coverage certificates
-
-Added first coverage certificate assets:
+Coverage certificate assets exist:
 
 ```text
 assets/coverage/stratford-upon-avon.json
@@ -290,29 +153,17 @@ assets/coverage/index.json
 scripts/build_coverage_certificates.py
 ```
 
-Current certificate summaries:
+Current summaries:
 
 ```text
-Stratford-upon-Avon:
-- 209 establishments reviewed
-- 204 candidate/scored dining venues
-- 170 rankable venues
-- 30 public ranking venues
-- 0 active known-missing venues
-- 6 ambiguous Google Place groups
+Stratford-upon-Avon: 209 establishments reviewed, 204 candidate/scored dining venues, 170 rankable venues, 30 public ranking venues, 0 active known-missing venues, 6 ambiguous Google Place groups.
 
-Leamington Spa:
-- 292 establishments reviewed
-- 287 candidate/scored dining venues
-- 252 rankable venues
-- 30 public ranking venues
-- 0 active known-missing venues
-- 7 ambiguous Google Place groups
+Leamington Spa: 292 establishments reviewed, 287 candidate/scored dining venues, 252 rankable venues, 30 public ranking venues, 0 active known-missing venues, 7 ambiguous Google Place groups.
 ```
 
 Both markets remain `warning`, not `ready`, because ambiguous Google Place groups still need admin review.
 
-### 5.6 V5 prototype builder
+### V5 prototype builder
 
 Added:
 
@@ -321,49 +172,13 @@ scripts/build_v5_evidence_rank.py
 .github/workflows/v5_evidence_rank.yml
 ```
 
-The V5 builder reads existing V4 ranking/readiness/coverage inputs and emits experimental outputs under:
-
-```text
-assets/v5/
-```
-
-V5.0 output fields include:
-
-```text
-venue_id
-market_slug
-canonical_name
-category
-v5_score_estimate
-v5_score_band
-v5_overall_rank
-v5_category_rank
-evidence_confidence
-coverage_status
-entity_resolution_confidence
-daydine_signal
-daydine_gap_signal
-public_intelligence_note
-internal_diagnostics
-```
-
-The workflow:
-
-```text
-.github/workflows/v5_evidence_rank.yml
-```
-
-can be manually dispatched and can optionally commit generated `assets/coverage` and `assets/v5` outputs back to the branch.
-
-Important caveat:
-
-> The V5 generator has been committed, but generated `assets/v5/*.json` outputs have not yet been committed unless the workflow is run with `commit_outputs=true` or the script is run locally and outputs are committed.
+The V5 builder reads existing V4 ranking/readiness/coverage inputs and emits experimental outputs under `assets/v5/`. Generated `assets/v5/*.json` outputs still need to be produced/committed unless the workflow has been run with `commit_outputs=true`.
 
 ---
 
-## 6. Prior assets handled in the 29 April build session
+## 4. Prior assets handled in the build phase
 
-### Reused
+Reused:
 
 ```text
 uk-establishments.html Firebase config
@@ -377,7 +192,7 @@ assets/rankings/*.json
 V4 score files
 ```
 
-### Migrated
+Migrated:
 
 ```text
 Lambs dashboard fixture -> Firebase seed shape
@@ -386,7 +201,7 @@ Static operator-dashboard concept -> protected generic client dashboard
 Readiness counts -> coverage certificate assets
 ```
 
-### Refactored
+Refactored:
 
 ```text
 Firebase setup -> shared daydine-firebase.js
@@ -396,7 +211,7 @@ Coverage generation -> repeatable script
 V5 prototype -> repeatable script + workflow
 ```
 
-### Archived / retained as legacy reference
+Archived/retained as legacy reference:
 
 ```text
 operator-dashboard.html
@@ -405,13 +220,29 @@ admin-markets.html
 assets/operator-dashboards/*
 ```
 
-### Retired
-
-Nothing deleted or retired yet.
+Retired: nothing deleted or retired yet.
 
 ---
 
-## 7. Commits made on 29 April 2026
+## 5. Latest session update — 29 April 2026 handover sync
+
+### What changed in this session
+
+- Synced the current DayDine state after the user continued some work from an iPhone and noted that the earlier visible chat context was stale.
+- Re-read the latest repo handover and recent repo history rather than relying on the older visible chat section.
+- Confirmed the correct Firebase project is `recursive-research-eu`, not `recursive-research-agent`.
+- Confirmed that the current repo is already past initial Firebase/Auth implementation: protected shells, rules, seed fixture, coverage certificates, V5 builder and V5 workflow are committed.
+- No application/scoring/Firebase/workflow implementation was changed in this mini-session; this was a handover/state-preservation update only.
+
+### Files changed in this session
+
+```text
+docs/DayDine-Current-State-And-Next-Actions.md
+```
+
+### Commits made
+
+Recent build-phase commits already present before this handover sync include:
 
 ```text
 f65227f - Extend DayDine Firebase bootstrap for SaaS auth
@@ -436,33 +267,42 @@ bbe4463 - Add V5 Evidence Rank prototype builder
 4cd344f - Pin Firebase project for DayDine SaaS rules
 cc5d7cd - Redirect legacy operator links to protected client dashboards
 879a655 - Add V5 Evidence Rank generation workflow
+8410b0a - Update DayDine handover after Firebase and V5 build phase
 ```
 
-This handover update is an additional commit after the above list.
+This handover sync is the only commit made during the present mini-session.
+
+### Decisions made
+
+1. Treat the 29 April handover and latest repo history as the source of truth, not the older visible chat section.
+2. Continue with the already-built Firebase/Auth/client/admin foundation rather than restarting the build from scratch.
+3. Keep `recursive-research-eu` as the active Firebase project for DayDine because it already holds the public FSA/FHRS lookup data and the new SaaS paths are configured there.
+4. Keep Lambs as a first dashboard fixture only; the strategic product remains the generic protected client-dashboard framework.
+5. The next work should be operational deployment/QA and V5 output generation, not more methodology strategy.
 
 ---
 
-## 8. Current blockers / risks
+## 6. Current blockers / risks
 
-1. **Firebase is not yet deployed.** `database.rules.json`, `firebase.json` and `.firebaserc` are committed, but rules still need deploying to `recursive-research-eu`.
-2. **No real Firebase Auth users are configured from this chat.** Create admin/client users in Firebase Auth and use their real UIDs in the seed data.
-3. **Seed data still contains placeholder UIDs.** Do not import without replacing the placeholders.
-4. **Protected pages need browser QA.** Test `/login`, `/client`, `/client/venues/lambs`, `/admin`, `/admin/reports`, `/admin/markets` after Firebase seed/rules deployment.
-5. **V5 outputs are not yet generated/committed.** Run the new V5 workflow manually with `commit_outputs=true`, or run scripts locally and commit `assets/v5/*.json`.
-6. **Market status remains warning.** Stratford has 6 ambiguous Google Place groups; Leamington has 7. These need admin review before claiming fully clean coverage.
-7. **Public methodology/copy still needs update before public V5 cutover.** Do not expose exact formula/weights.
-8. **The static prototype pages still exist.** They are retained for reference, but real client use should go through protected routes.
+1. Firebase rules are committed but not deployed to `recursive-research-eu`.
+2. Real Firebase Auth users still need to be created/configured outside ChatGPT.
+3. Seed data still contains placeholder UIDs and must not be imported until replaced.
+4. Protected pages need browser QA after seed/rules deployment.
+5. V5 outputs under `assets/v5/` still need to be generated and committed.
+6. Stratford has 6 ambiguous Google Place groups; Leamington has 7, so both markets remain `warning`.
+7. Public methodology/copy still needs review before any V5 public cutover.
+8. Static prototype pages still exist and must be treated as reference only, not the real client product.
 
 ---
 
-## 9. Immediate next 3 actions
+## 7. Next 3 actions
 
 ### Next action 1 — Firebase deploy and seed
 
-In the Firebase console / local CLI:
+In Firebase/local CLI:
 
 ```text
-1. Confirm project: recursive-research-eu
+1. Confirm project: recursive-research-eu.
 2. Enable Email/Password sign-in if not already enabled.
 3. Create one admin Firebase Auth user.
 4. Create one test client Firebase Auth user.
@@ -471,7 +311,7 @@ In the Firebase console / local CLI:
 7. Deploy database.rules.json.
 ```
 
-Suggested CLI commands once authenticated locally:
+Suggested CLI:
 
 ```bash
 firebase use recursive-research-eu
@@ -480,7 +320,7 @@ firebase deploy --only database
 
 ### Next action 2 — Generate and validate V5 outputs
 
-Run the GitHub Actions workflow:
+Run GitHub Actions workflow:
 
 ```text
 V5 Evidence Rank Prototype
@@ -531,7 +371,7 @@ Protected pages read Firebase data, not public operator JSON.
 
 ---
 
-## 10. Suggested prompt for the next chat
+## 8. Suggested prompt for the next chat
 
 ```text
 We are continuing work on the DayDine repo: https://github.com/jono8001/daydine
@@ -554,6 +394,7 @@ Current state:
 - Lambs is only the first protected dashboard fixture, not the strategic product focus.
 - Coverage certificates exist for Stratford and Leamington.
 - scripts/build_v5_evidence_rank.py and .github/workflows/v5_evidence_rank.yml exist.
+- The last session was a handover sync only: no implementation files were changed beyond docs/DayDine-Current-State-And-Next-Actions.md.
 
 Current priority:
 1. Deploy Firebase Realtime Database rules and import the seeded Lambs fixture after replacing placeholder UIDs.
@@ -565,7 +406,7 @@ Do not restart strategy. Do not rebuild from scratch. Follow the implementation 
 
 ---
 
-## 11. Handover update rule
+## 9. Handover update rule
 
 At the end of every major DayDine session, update this file with:
 
@@ -578,5 +419,3 @@ Current blockers
 Next 3 actions
 Suggested next-chat prompt if changed
 ```
-
-This keeps future chats short and prevents losing the thread.
