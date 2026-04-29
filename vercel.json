@@ -12,10 +12,10 @@
     { "source": "/admin", "destination": "/admin.html" },
     { "source": "/admin/reports", "destination": "/admin-reports-protected.html" },
     { "source": "/admin/markets", "destination": "/admin-markets-protected.html" },
-    { "source": "/operator/:venue", "destination": "/client-venue.html" },
     { "source": "/operator-dashboard", "destination": "/operator-dashboard.html" }
   ],
   "redirects": [
+    { "source": "/operator/:venue", "destination": "/client/venues/:venue", "permanent": false },
     { "source": "/rankings/stratford-on-avon", "destination": "/rankings/stratford-upon-avon", "permanent": false },
     { "source": "/pricing", "destination": "/for-restaurants#pricing", "permanent": true },
     { "source": "/reports", "destination": "/for-restaurants#preview", "permanent": true }
