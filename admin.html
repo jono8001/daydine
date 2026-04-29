@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin Portal — DayDine</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/daydine.css">
+  <style>
+    main{max-width:1220px;margin:0 auto;padding:42px 24px 90px}.title{font-family:var(--serif);font-size:clamp(42px,6vw,78px);line-height:.96;margin:8px 0 12px}.dek{max-width:850px;color:var(--text-muted);font-size:17px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:24px}.card{background:var(--surface-1);border:1px solid var(--border);box-shadow:var(--shadow-xs);padding:18px}.card h2{font-family:var(--serif);font-size:30px;line-height:1.05;margin:0 0 8px}.card p{color:var(--text-muted);line-height:1.5}.btn,button{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border:1px solid var(--accent-dark);border-radius:var(--radius);text-decoration:none;background:linear-gradient(135deg,var(--accent),var(--accent-hover));font-weight:800;color:var(--text);cursor:pointer}.btn.secondary,button.secondary{background:var(--surface-1);border-color:var(--border);color:var(--accent)}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.empty{max-width:860px;margin:46px auto;padding:24px;background:var(--surface-1);border:1px solid var(--border);box-shadow:var(--shadow);color:var(--text-muted);line-height:1.55}.note{margin-top:24px;border:1px solid var(--border);background:var(--surface-2);padding:14px;color:var(--text-muted);line-height:1.45}.metric-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;margin-top:18px}.metric{border:1px solid var(--border);background:var(--surface-2);padding:14px}.metric b{display:block;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:var(--text-subtle);margin-bottom:6px}.metric span{font-family:var(--serif);font-size:30px}@media(max-width:720px){.title{font-size:44px}}
+  </style>
+</head>
+<body class="ed" data-page-type="admin">
+<header class="masthead"><div class="masthead-inner"><a class="wordmark" href="/">Day<em>dine</em></a><div class="mast-issue">Admin · <b>Protected console</b></div><nav class="mast-nav"><a href="/client">Client</a><a href="/rankings">Rankings</a><button class="secondary" id="logoutBtn" type="button">Logout</button></nav></div></header>
+<main id="app"><section class="empty">Checking admin access…</section></main>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="/assets/daydine-firebase.js"></script>
+<script src="/assets/daydine-auth.js"></script>
+<script>
+const app=document.getElementById('app');
+function esc(s){return DayDineAuth.esc(s);}
+async function init(){
+  const session=await DayDineAuth.requireAuth({roles:['admin'],target:'#app'});
+  document.getElementById('logoutBtn').addEventListener('click',DayDineAuth.signOut);
+  const profile=session.profile;
+  app.innerHTML=`<section><div class="kicker kicker-accent">Protected admin portal</div><h1 class="title">DayDine control room.</h1><p class="dek">This shell is the authenticated foundation for market readiness, report review, client-dashboard management, coverage certificates and future pipeline controls.</p><div class="metric-row"><div class="metric"><b>Signed in as</b><span>${esc(profile.email)}</span></div><div class="metric"><b>Role</b><span>${esc(profile.role)}</span></div><div class="metric"><b>Firebase project</b><span>${esc(DayDineFirebase.projectId)}</span></div></div><div class="grid"><article class="card"><h2>Markets</h2><p>Review configured markets, readiness warnings, ambiguous Google Place groups and known missing venue guardrails.</p><div class="actions"><a class="btn" href="/admin/markets">Open markets</a></div></article><article class="card"><h2>Reports</h2><p>Review operator report manifests and open protected client dashboard screens for seeded records.</p><div class="actions"><a class="btn" href="/admin/reports">Open reports</a></div></article><article class="card"><h2>Client fixture</h2><p>Open the generic protected client portal and verify venue assignments against Firebase rules.</p><div class="actions"><a class="btn" href="/client">Open client portal</a><a class="btn secondary" href="/client/venues/lambs">Open Lambs fixture</a></div></article></div><div class="note"><b>Current foundation:</b> admin pages are now guarded by Firebase Auth at the page level and private data reads are expected under <code>daydine_saas</code>. Realtime Database rules must be deployed before real client data is added.</div></section>`;
+}
+init();
+</script>
+</body>
+</html>
